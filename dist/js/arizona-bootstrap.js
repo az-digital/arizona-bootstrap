@@ -1,7 +1,7 @@
 /*!
-  * Bootstrap v0.0.1 (https://bitbucket.org/uadigital/arizona-bootstrap#readme)
-  * Copyright 2011-2019 UA Digital Contributors
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * Arizona Bootstrap v0.0.1 (https://bitbucket.org/uadigital/arizona-bootstrap#readme)
+  * Copyright 2019 The Arizona Board of Regents on behalf of The University of Arizona
+  * Licensed under BSD-3-Clause (https://bitbucket.org/uadigital/arizona-bootstrap/raw/master/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :
