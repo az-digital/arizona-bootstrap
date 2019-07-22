@@ -14,7 +14,7 @@ destination:    ./_gh_pages
 host:           "localhost"
 port:           9001
 baseurl:        ""
-url:            "https://getbootstrap.com"
+url:            "http://uadigital.arizona.edu/arizona-bootstrap"
 encoding:       UTF-8
 exclude:
   - docs/0.0/assets/scss/
@@ -26,8 +26,7 @@ plugins:
 
 # Social
 title:              "Arizona Bootstrap"
-description:        "The most popular HTML, CSS, and JS library in the world."
-twitter:            getbootstrap
+description:        "University of Arizona theme for Bootstrap."
 authors:            "UA Digital contributors"
 social_image_path:  /docs/0.0/assets/brand/bootstrap-social.png
 social_logo_path:   /docs/0.0/assets/brand/bootstrap-social-logo.png
@@ -36,25 +35,19 @@ social_logo_path:   /docs/0.0/assets/brand/bootstrap-social-logo.png
 current_version:      0.0.1
 current_ruby_version: 0.0.1
 docs_version:         0.0
-repo:                 "https://github.com/twbs/bootstrap"
-slack:                "https://bootstrap-slack.herokuapp.com"
-opencollective:       "https://opencollective.com/bootstrap"
-blog:                 "https://blog.getbootstrap.com"
-expo:                 "https://expo.getbootstrap.com"
-themes:               "https://themes.getbootstrap.com"
+repo:                 "https://bitbucket.org/uadigital/arizona-bootstrap"
+slack:                "https://quickstart.arizona.edu/join-us-on-slack"
+quickstart:           "https://quickstart.arizona.edu"
 
 download:
-  source:           "https://github.com/twbs/bootstrap/archive/v4.3.1.zip"
-  dist:             "https://github.com/twbs/bootstrap/releases/download/v4.3.1/bootstrap-4.3.1-dist.zip"
+  source:           "https://bitbucket.org/uadigital/arizona-bootstrap/get/v0.0.1.zip"
+  dist:             "https://bitbucket.org/uadigital/arizona-bootstrap/downloads/arizona-bootstrap-v0.0.1.zip"
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
-  css:              "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  css_hash:         "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  js:               "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  js_hash:          "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  js_bundle:        "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-  js_bundle_hash:   "sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+  css:              "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.min.css"
+  js:               "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.min.js"
+  js_bundle:        "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.bundle.min.js"
   jquery:           "https://code.jquery.com/jquery-3.4.1.slim.min.js"
   jquery_hash:      "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
   popper:           "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"

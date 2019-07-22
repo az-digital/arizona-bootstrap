@@ -5,7 +5,7 @@
     - title: Contents
     - title: Browsers & devices
     - title: JavaScript
-    - title: Theming
+    # - title: Theming
     - title: Build tools
     # - title: Best practices # TODO: Write this content
     - title: Webpack
@@ -86,6 +86,5 @@
   pages:
     - title: Overview
     - title: Team
-    - title: Brand
     - title: License
     - title: Translations

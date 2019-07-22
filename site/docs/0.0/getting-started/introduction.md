@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Introduction
-description: Get started with Bootstrap, the world's most popular framework for building responsive, mobile-first sites, with BootstrapCDN and a template starter page.
+description: Get started with Arizona Bootstrap, the University of Arizona's theme for Bootstrap, with the UA Digital CDN and a template starter page.
 group: getting-started
 redirect_from:
   - "/docs/"
@@ -14,14 +14,14 @@ toc: true
 
 ## Quick start
 
-Looking to quickly add Bootstrap to your project? Use BootstrapCDN, provided for free by the folks at StackPath. Using a package manager or need to download the source files? [Head to the downloads page]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/download/).
+Looking to quickly add {{ site.title }} to your project? Use The UA Digital CDN. Using a package manager or need to download the source files? [Head to the downloads page]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/download/).
 
 ### CSS
 
 Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
 
 {% highlight html %}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
 {% endhighlight %}
 
 ### JS
@@ -33,12 +33,12 @@ We use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final
 {% highlight html %}
 <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
 <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+<script src="{{ site.cdn.js }}" crossorigin="anonymous"></script>
 {% endhighlight %}
 
 Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you're at all unsure about the general page structure, keep reading for an example page template.
 
-Our `bootstrap.bundle.js` and `bootstrap.bundle.min.js` include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/). For more information about what's included in Bootstrap, please see our [contents]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/contents/#precompiled-bootstrap) section.
+Our `arizona-bootstrap.bundle.js` and `arizona-bootstrap.bundle.min.js` include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/). For more information about what's included in {{ site.title }}, please see our [contents]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/contents/#precompiled-bootstrap) section.
 
 <details>
 <summary class="text-primary mb-3">Show components requiring JavaScript</summary>
@@ -68,8 +68,8 @@ Be sure to have your pages set up with the latest design and development standar
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+    <!-- {{ site.title }} CSS -->
+    <link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
 
     <title>Hello, world!</title>
   </head>
@@ -77,10 +77,10 @@ Be sure to have your pages set up with the latest design and development standar
     <h1>Hello, world!</h1>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then {{ site.title }} JS -->
     <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
     <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-    <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ site.cdn.js }}" crossorigin="anonymous"></script>
   </body>
 </html>
 {% endhighlight %}
@@ -89,11 +89,11 @@ That's all you need for overall page requirements. Visit the [Layout docs]({{ si
 
 ## Important globals
 
-Bootstrap employs a handful of important global styles and settings that you'll need to be aware of when using it, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
+{{ site.title }} employs a handful of important global styles and settings that you'll need to be aware of when using it, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
 
 ### HTML5 doctype
 
-Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some funky incomplete styling, but including it shouldn't cause any considerable hiccups.
+{{ site.title }} requires the use of the HTML5 doctype. Without it, you'll see some funky incomplete styling, but including it shouldn't cause any considerable hiccups.
 
 {% highlight html %}
 <!doctype html>
@@ -104,7 +104,7 @@ Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some fun
 
 ### Responsive meta tag
 
-Bootstrap is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive viewport meta tag** to your `<head>`.
+{{ site.title }} is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive viewport meta tag** to your `<head>`.
 
 {% highlight html %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -134,13 +134,6 @@ For improved cross-browser rendering, we use [Reboot]({{ site.baseurl }}/docs/{{
 
 ## Community
 
-Stay up to date on the development of Bootstrap and reach out to the community with these helpful resources.
+Stay up to date on the development of {{ site.title }} and reach out to the community with these helpful resources.
 
-- Follow [@getbootstrap on Twitter](https://twitter.com/{{ site.twitter }}).
-- Read and subscribe to [The Official Bootstrap Blog]({{ site.blog }}/).
-- Join [the official Slack room]({{ site.slack }}/).
-- Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`bootstrap-4`](https://stackoverflow.com/questions/tagged/bootstrap-4)).
-- Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/search?q=keywords:bootstrap) or similar delivery mechanisms for maximum discoverability.
-
-You can also follow [@getbootstrap on Twitter](https://twitter.com/{{ site.twitter }}) for the latest gossip and awesome music videos.
+- Join [the official Slack workspace]({{ site.slack }}/).
