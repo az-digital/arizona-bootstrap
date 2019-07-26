@@ -8,8 +8,8 @@ pipelines:
           script:
             - npm install
             - bundle install
-            - npm run docs
             - npm run dist
+            - npm run docs
             - export access_token=$(curl -s -X POST -u "${CLIENT_ID}:${CLIENT_SECRET}" https://bitbucket.org/site/oauth2/access_token -d grant_type=client_credentials -d scopes="repository"| jq --raw-output '.access_token')
             - aws configure set preview.cloudfront true
             - aws s3 sync --cache-control max-age=691200 dist/ s3://${AWS_S3_BUCKET_CDN}/lib/arizona-bootstrap/${BITBUCKET_TAG}/
@@ -42,6 +42,7 @@ pipelines:
           script:
             - npm install
             - bundle install
+            - npm run dist
             - npm run docs
             - export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
             - export COMMIT_MSG=$(git log -1 --pretty=%B)
