@@ -86,6 +86,6 @@
     "shx": "^0.3.2",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.1",
-    "uglify-js": "^3.6.0"
+    "uglify-es": "^3.3.9"
   }
 }
