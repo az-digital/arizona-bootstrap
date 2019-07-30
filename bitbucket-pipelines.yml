@@ -1,49 +1,76 @@
 image: uadigital/arizona-node-base:0.0.2
+definitions:
+  caches:
+    bundler: vendor/bundle
+  steps:
+    - step: &install
+        name: Install dependencies
+        caches:
+          - node
+          - bundler
+        artifacts:
+          - .bundle/**
+          - node_modules/**
+          - vendor/bundle/**
+        script:
+          - npm install
+          - bundle install --deployment
+    - step: &dist
+        name: Compile assets
+        artifacts:
+          - dist/**
+        script:
+          - npm run dist
 pipelines:
   tags:
     '*':
+      - step: *install
+      - step: *dist
       - step:
-          caches:
-            - node
+          name: Deploy assets to CDN
           script:
-            - npm install
-            - bundle install
-            - npm run dist
-            - npm run docs
-            - export access_token=$(curl -s -X POST -u "${CLIENT_ID}:${CLIENT_SECRET}" https://bitbucket.org/site/oauth2/access_token -d grant_type=client_credentials -d scopes="repository"| jq --raw-output '.access_token')
             - aws configure set preview.cloudfront true
             - aws s3 sync --cache-control max-age=691200 dist/ s3://${AWS_S3_BUCKET_CDN}/lib/arizona-bootstrap/${BITBUCKET_TAG}/
             - aws s3 sync --cache-control max-age=691200 dist/ s3://${AWS_S3_BUCKET_CDN}/lib/arizona-bootstrap/latest/
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_TAG}/
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/latest/
-            - aws s3 sync --cache-control max-age=691200 _site/ s3://${AWS_S3_BUCKET_UADIGITAL}/arizona-bootstrap/
             - aws cloudfront create-invalidation --distribution-id $CF_DISTRO_ID --paths /lib/arizona-bootstrap/latest/*
-            - git config --global user.name "$BITBUCKET_REPO_OWNER"
-            - git config --global user.email "noreply@bitbucket.org"
+      - step:
+          name: Build & deploy review sites
+          script:
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/${BITBUCKET_TAG}
+            - npm run docs-review
+            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_TAG}/
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/latest
+            - npm run docs-review
+            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/latest/
+      - step:
+          name: Build & deploy documentation site
+          script:
+            - export JEKYLL_ENV=production
+            - npm run docs
+            - aws s3 sync --cache-control max-age=691200 _site/ s3://${AWS_S3_BUCKET_UADIGITAL}/arizona-bootstrap/
 
   branches:
     master:
+      - step: *install
+      - step: *dist
       - step:
-          caches:
-            - node
+          name: Deploy assets to CDN
           script:
-            - npm install
-            - bundle install
-            - npm run dist
             - aws configure set preview.cloudfront true
             - aws s3 sync --cache-control max-age=691200 dist/ s3://${AWS_S3_BUCKET_CDN}/lib/arizona-bootstrap/master/
-            - npm run docs
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/master/
             - aws cloudfront create-invalidation --distribution-id $CF_DISTRO_ID --paths /lib/arizona-bootstrap/master/*
-    UADIGITAL*:
       - step:
-          caches:
-            - node
+          name: Build & deploy documentation site
           script:
-            - npm install
-            - bundle install
-            - npm run dist
-            - npm run docs
-            - export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-            - export COMMIT_MSG=$(git log -1 --pretty=%B)
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BRANCH}/
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/master
+            - npm run docs-review
+            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/master/
+    UADIGITAL*:
+      - step: *install
+      - step: *dist
+      - step:
+          name: Build & deploy review site
+          script:
+            - export UAZ_REVIEW_BASEURL="/arizona-bootstrap-review/${BITBUCKET_BRANCH}"
+            - npm run docs-review
+            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_BRANCH}/
