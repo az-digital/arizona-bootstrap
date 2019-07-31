@@ -51,7 +51,7 @@
     "url": "git+https://bitbucket.org/uadigital/arizona-bootstrap.git"
   },
   "author": "UA Digital Contributors",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "homepage": "https://bitbucket.org/uadigital/arizona-bootstrap#readme",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
