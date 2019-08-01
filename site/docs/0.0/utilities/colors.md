@@ -8,12 +8,21 @@ toc: true
 
 ## Color
 
+### Brand
+
+{% capture example %}
+{% for color in site.data.colors %}
+<p class="text-{{ color.name }}{% if color.name == "white" or color.name == "cool-gray" or color.name == "warm-gray" %} bg-dark{% endif %}">.text-{{ color.name }}</p>{% endfor %}
+{% endcapture %}
+{% include example.html content=example %}
+
+### Theme
+
 {% capture example %}
 {% for color in site.data.theme-colors %}
 <p class="text-{{ color.name }}{% if color.name == "light" %} bg-dark{% endif %}">.text-{{ color.name }}</p>{% endfor %}
 <p class="text-body">.text-body</p>
 <p class="text-muted">.text-muted</p>
-<p class="text-white bg-dark">.text-white</p>
 <p class="text-black-50">.text-black-50</p>
 <p class="text-white-50 bg-dark">.text-white-50</p>
 {% endcapture %}
@@ -33,10 +42,19 @@ Contextual text classes also work well on anchors with the provided hover and fo
 
 Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` utilities.
 
+### Brand
+
+{% capture example %}
+{% for color in site.data.colors %}
+<div class="p-3 mb-2 bg-{{ color.name }}">.bg-{{ color.name }}</div>{% endfor %}
+{% endcapture %}
+{% include example.html content=example %}
+
+### Theme
+
 {% capture example %}
 {% for color in site.data.theme-colors %}
-<div class="p-3 mb-2 bg-{{ color.name }} {% if color.name == "light" or color.name == "warning" %}text-dark{% else %}text-white{% endif %}">.bg-{{ color.name }}</div>{% endfor %}
-<div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+<div class="p-3 mb-2 bg-{{ color.name }}">.bg-{{ color.name }}</div>{% endfor %}
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 {% endcapture %}
 {% include example.html content=example %}

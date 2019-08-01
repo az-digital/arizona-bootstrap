@@ -15,7 +15,7 @@
     "css-lint": "npm-run-all --parallel css-lint-*",
     "css-lint-main": "stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css-lint-docs": "stylelint \"site/docs/**/assets/scss/*.scss\" \"site/docs/**/*.css\" --cache --cache-location .cache/.stylelintcache",
-    "css-lint-vars": "fusv scss/ site/docs/",
+    "css-lint-vars": "fusv scss/ site/docs/ --ignore '$enable-rounded,$font-family-monospace,$font-family-base'",
     "css-minify": "npm-run-all --parallel css-minify-*",
     "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/arizona-bootstrap.min.css dist/css/arizona-bootstrap.css",
     "css-minify-docs": "cross-env-shell cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output site/docs/$npm_package_version_short/assets/css/docs.min.css site/docs/$npm_package_version_short/assets/css/docs.min.css",

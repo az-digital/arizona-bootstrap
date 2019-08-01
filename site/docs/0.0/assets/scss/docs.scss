@@ -23,6 +23,11 @@
 //
 // Happy Bootstrapping!
 
+// Load Arizona Bootstrap overrides
+@import "../../../../../scss/custom-variables";
+@import "../../../../../scss/custom-styles";
+
+
 // Load Bootstrap variables and mixins
 @import "../../../../../node_modules/bootstrap/scss/functions";
 @import "../../../../../node_modules/bootstrap/scss/variables";
@@ -44,6 +49,10 @@
 @import "clipboard-js";
 @import "placeholder-img";
 
+// Load Arizona Bootstrap docs overrides
+@import "custom-docs";
+
 // Load docs dependencies
 @import "syntax";
 @import "anchor";
+

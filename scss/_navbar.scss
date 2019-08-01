@@ -1,0 +1,53 @@
+// Overrides for the Navbar component
+
+// >> .navbar
+.navbar {
+  padding: $navbar-padding-y $navbar-padding-x;
+}
+
+// >> .navbar-nav
+.navbar-nav .nav-link,
+.navbar-brand {
+  padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+}
+
+
+.navbar-dark {
+  .btn-outline-info,
+  .btn-outline-success,
+  .btn-outline-warning {
+    color: $white;
+  }
+
+  .btn-outline-info {
+    &:hover {
+      color: $midnight;
+    }
+  }
+}
+
+.navbar-light {
+  border-color: $navbar-light-border-color;
+  border-style: solid;
+  border-width: $navbar-light-border-width;
+
+  .nav-item {
+    .nav-link {
+      color: $navbar-light-link-color;
+    }
+
+    &:hover {
+      color: $navbar-light-link-color;
+      background-color: $navbar-light-link-hover-bg;
+    }
+
+    &.active,
+    &:active {
+      .nav-link {
+        color: $navbar-light-link-active-color;
+        background-color: $navbar-light-link-active-bg;
+      }
+    }
+  }
+}
+

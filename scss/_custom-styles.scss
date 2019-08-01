@@ -1,1 +1,168 @@
-// Define additional styles here.
+
+// > COLOR CLASSES
+
+//
+// >> Text Color
+//
+//
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    // check for color contrast
+    @if $value == $sky {
+      // stylelint-disable-next-line declaration-no-important
+      color: $azurite !important;
+    }
+    @else {
+      color: $value;
+    }
+  }
+}
+
+//
+// >> Background Color
+//
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    color: $white;
+    background-color: $value;
+
+    // check for color contrast
+    @if $value == $sky or $value == $oasis or $value == $cool-gray or $value == $warm-gray or $value == $silver or $value == $leaf {
+      color: $midnight;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $midnight;
+      }
+    }
+    @else if $value == $bloom or $value == $white {
+      color: $black;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $black;
+      }
+    }
+    @else {
+      color: $white;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+    }
+  }
+}
+@each $color, $value in $theme-colors {
+  .bg-#{$color} {
+    // check for color contrast
+    @if $value == $sky or $value == $leaf {
+      color: $midnight;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $midnight;
+      }
+    }
+    @else if $value == $bloom {
+      color: $black;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $black;
+      }
+    }
+    @else {
+      color: $white;
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+    }
+    background-color: $value;
+  }
+}
+
+//
+// >>> Gray Background Color
+//
+@each $color, $value in $grays {
+  $background: $value;
+  $text-color: $black;
+
+  // check for color contrast
+  @if $color == "600" or $color == "700" or $color == "800" or $color == "900" {
+    $text-color: $white;
+  }
+
+  .bg-gray-#{$color} {
+    color: $text-color;
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $text-color;
+    }
+    background-color: $background;
+  }
+}
+
+.bg-light {
+  color: $black;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $black;
+  }
+  background-color: $light;
+}
+.bg-dark {
+  color: $white;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+  }
+  background-color: $dark;
+}

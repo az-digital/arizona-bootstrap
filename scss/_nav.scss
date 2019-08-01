@@ -1,0 +1,53 @@
+// Overrides for Navigation
+
+.navbar {
+  padding: 0 1rem;
+}
+.navbar-nav-scroll {
+  display: flex;
+  align-self: stretch;
+}
+
+.nav-pills .nav-link,
+.nav-tabs .nav-link,
+.nav-link {
+  color: $nav-link-color;
+
+  &:hover {
+    color: $nav-link-hover-color;
+  }
+
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+
+  &.active,
+  &:active {
+    color: $nav-link-active-color;
+  }
+}
+
+.nav-pills .nav-link,
+.nav-link {
+  &.active,
+  &:active {
+    background-color: $nav-link-active-bg;
+  }
+}
+
+.nav-pills {
+  .show > .nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+}
+
+.nav-tabs {
+  .nav-link {
+
+    &.active,
+    &:active {
+      background-color: $white;
+    }
+  }
+}

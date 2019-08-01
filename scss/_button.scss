@@ -1,0 +1,36 @@
+// Overrides for the Button component
+
+@each $color, $value in $theme-colors {
+  // increased specificity to .btn.btn-* to ensure overrides takes prescidence
+  .btn-#{$color} {
+    @include button-variant($value);
+  }
+}
+
+
+// Verfy accessible color contrast
+.btn-success,
+.btn-info {
+  &:hover {
+    color: $midnight;
+  }
+}
+.btn-warning {
+  &:hover {
+    color: $black;
+  }
+}
+.btn-secondary {
+  &:hover {
+    background-color: $azurite;
+  }
+}
+.btn-outline-info {
+  color: $azurite;
+}
+.btn-outline-warning {
+  color: $ash;
+  &:hover {
+    color: $black;
+  }
+}

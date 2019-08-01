@@ -1,0 +1,137 @@
+// Overrides specific to the docs
+
+//
+// > NAV
+//
+//
+// >> Navbar
+//
+.bd-navbar {
+  background-color: $white;
+  border-bottom: 1px solid $cool_gray;
+
+  .navbar-nav {
+    align-items: stretch;
+    align-self: stretch;
+
+    .nav-item {
+      display: flex;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      font-weight: 700;
+      color: $azurite;
+
+      &.active,
+      &:active,
+      &:hover {
+        color: $midnight;
+        background-color: $cool_gray;
+      }
+    }
+  }
+}
+
+
+//
+// >> Sidebar
+//
+.bd-toc-item {
+  &.active {
+    .bd-toc-link {
+      color: $midnight;
+      background-color: $gray-400;
+    }
+
+    &:hover {
+      .bd-toc-link {
+        background-color: $gray-400;
+      }
+    }
+  }
+
+  .bd-toc-link {
+    padding: .75rem 1rem;
+    color: $azurite;
+
+    &:hover {
+      color: $midnight;
+      background-color: $cool_gray;
+    }
+  }
+}
+
+.bd-sidenav,
+.bd-sidebar {
+  li {
+    a {
+      color: $midnight;
+    }
+  }
+  .nav {
+    // included for docs specifically
+    .bd-sidenav-active {
+      a {
+        background-color: $cool_gray;
+      }
+
+      &:hover {
+        a {
+          background-color: $cool_gray;
+        }
+      }
+    }
+    li {
+      a {
+        &:hover {
+          color: $midnight;
+          background-color: $gray-100;
+        }
+      }
+    }
+  }
+}
+
+
+//
+// > LAYOUT
+//
+.bd-example-container-header {
+  background-color: $blue;
+}
+.bd-example-container-sidebar {
+  background-color: $bloom;
+}
+.bd-example-container-body {
+  background-color: $river;
+}
+
+.bd-example-row .row > .col,
+.bd-example-row .row > [class^="col-"] {
+  background-color: $cool-gray;
+  border-color: $gray-400;
+}
+
+.bd-example-row-flex-cols .row {
+  background-color: rgba($bloom, .1);
+}
+
+.btn-bd-primary,
+.btn-bd-download {
+  color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:active {
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary, .25);
+  }
+}
+
