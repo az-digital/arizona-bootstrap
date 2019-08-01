@@ -1,0 +1,201 @@
+/*
+The following styles are intended for backwards-compatability for sites moving
+from UA Bootstrap (Bootstrap 3) to Arizona Bootstrap (Bootstrap 4). This is to
+avoid breaking changes; sites should not use these components/classes as they
+have been deprecated in Bootstrap 4.
+*/
+
+//
+// > COMPONENTS
+//
+
+// >> Buttons
+.btn-default {
+  @extend .btn-red;
+}
+.btn-primary {
+  @extend .btn-blue;
+}
+.btn-hollow-default {
+  @extend .btn-outline-red;
+}
+.btn-hollow-primary {
+  @extend .btn-outline-blue;
+}
+
+// wells, panels, and thumbnails
+.well,
+.panel,
+.thumbnail {
+  @extend .card;
+}
+
+// >> Labels
+.label {
+  @extend .badge;
+}
+.label-default {
+  @extend .badge-red;
+}
+.label-primary {
+  @extend .badge-blue;
+}
+.label-success {
+  @extend .badge-success;
+}
+.label-info {
+  @extend .badge-info;
+}
+.label-warning {
+  @extend .badge-warning;
+}
+.label-danger {
+  @extend .badge-danger;
+}
+.label-muted {
+  @extend .badge-light;
+}
+
+
+// >> Panels
+.panel {
+  @extend .border;
+  @extend .bg-white;
+  @extend .shadow-sm;
+
+  .panel-heading,
+  .panel-footer {
+    @extend .card-body;
+  }
+  .panel-footer {
+    @extend .bg-light;
+  }
+  .panel-title {
+    @extend .mb-0;
+    font-size: 18px;
+  }
+  .panel-body {
+    @extend .card-body;
+  }
+}
+.panel-default {
+  .panel-heading {
+    @extend .bg-light;
+  }
+}
+.panel-primary {
+  .panel-heading {
+    @extend .bg-blue;
+  }
+}
+.panel-success {
+  .panel-heading {
+    @extend .bg-success;
+  }
+}
+.panel-info {
+  .panel-heading {
+    @extend .bg-info;
+  }
+}
+.panel-warning {
+  .panel-heading {
+    @extend .bg-warning;
+  }
+}
+.panel-danger {
+  .panel-heading {
+    @extend .bg-danger;
+  }
+}
+
+
+// >> Modal Dark
+.modal-bg-dark {
+  @extend .bg-dark;
+}
+
+
+// >> Thumbnail
+.thumbnail {
+  a > img,
+  > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .caption {
+    @extend .card-body;
+  }
+}
+
+// >> Well
+.well {
+  @extend .bg-light;
+  @extend .card-body;
+}
+
+
+
+//
+// > UTILITIES
+//
+
+// >> Text Size
+@for $i from 1 through 6 {
+  .text-size-h#{$i} {
+    @extend .h#{$i};
+    @extend .mb-0;
+  }
+}
+
+// >> Colors
+
+// >>> Primary
+.bg-primary {
+  @extend .bg-blue;
+}
+.text-primary {
+  @extend .text-blue;
+}
+
+// >>> Card Colors
+.card-primary {
+  @extend .bg-blue;
+}
+.card-success {
+  @extend .bg-success;
+}
+.card-info {
+  @extend .bg-info;
+}
+.card-warning {
+  @extend .bg-warning;
+}
+.card-danger {
+  @extend .bg-danger;
+}
+.card-inverse {
+  @extend .bg-dark;
+  @extend .text-white;
+}
+.card-primary-outline {
+  @extend .border-blue;
+}
+.card-success-outline {
+  @extend .border-success;
+}
+.card-info-outline {
+  @extend .border-info;
+}
+.card-warning-outline {
+  @extend .border-warning;
+}
+.card-danger-outline {
+  @extend .border-danger;
+}
+
+
+

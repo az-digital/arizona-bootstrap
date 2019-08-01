@@ -152,11 +152,11 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
 Use spinners within buttons to indicate an action is currently processing or taking place. You may also swap the text out of the spinner element and utilize button text as needed.
 
 {% capture example %}
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   <span class="sr-only">Loading...</span>
 </button>
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Loading...
 </button>
@@ -164,11 +164,11 @@ Use spinners within buttons to indicate an action is currently processing or tak
 {% include example.html content=example %}
 
 {% capture example %}
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
   <span class="sr-only">Loading...</span>
 </button>
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
   Loading...
 </button>

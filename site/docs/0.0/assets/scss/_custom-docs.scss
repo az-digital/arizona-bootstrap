@@ -118,20 +118,20 @@
   background-color: rgba($bloom, .1);
 }
 
-.btn-bd-primary,
+.btn-bd-red,
 .btn-bd-download {
-  color: $primary;
-  border-color: $primary;
+  color: $red;
+  border-color: $red;
 
   &:hover,
   &:active {
     color: $white;
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $red;
+    border-color: $red;
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px rgba($primary, .25);
+    box-shadow: 0 0 0 3px rgba($red, .25);
   }
 }
 

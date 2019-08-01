@@ -251,7 +251,7 @@ Various buttons are supported as part of these navbar forms, too. This is also a
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
     <button class="btn btn-outline-success" type="button">Main button</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+    <button class="btn btn-sm btn-outline-blue" type="button">Smaller button</button>
   </form>
 </nav>
 {% endcapture %}
@@ -331,7 +331,7 @@ Theming the navbar has never been easier thanks to the combination of theming cl
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-red">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -382,7 +382,7 @@ Theming the navbar has never been easier thanks to the combination of theming cl
       </ul>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-red my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </nav>
@@ -393,7 +393,7 @@ Theming the navbar has never been easier thanks to the combination of theming cl
   <!-- Navbar content -->
 </nav>
 
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-dark bg-red">
   <!-- Navbar content -->
 </nav>
 

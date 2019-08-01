@@ -29,7 +29,7 @@ Here's a quick example to demonstrate Bootstrap's form styles. Keep reading for 
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-red">Submit</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -151,7 +151,7 @@ If you want to have `<input readonly>` elements in your form styled as plain tex
     <label for="inputPassword2" class="sr-only">Password</label>
     <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+  <button type="submit" class="btn btn-red mb-2">Confirm identity</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -375,7 +375,7 @@ More complex layouts can also be created with the grid system.
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-red">Sign in</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -438,7 +438,7 @@ At times, you maybe need to use margin or padding utilities to create that perfe
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-red">Sign in</button>
     </div>
   </div>
 </form>
@@ -523,7 +523,7 @@ The example below uses a flexbox utility to vertically center the contents and c
       </div>
     </div>
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      <button type="submit" class="btn btn-red mb-2">Submit</button>
     </div>
   </div>
 </form>
@@ -557,7 +557,7 @@ You can then remix that once again with size-specific column classes.
       </div>
     </div>
     <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-red">Submit</button>
     </div>
   </div>
 </form>
@@ -585,7 +585,7 @@ And of course [custom form controls](#custom-forms) are supported.
       </div>
     </div>
     <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-red">Submit</button>
     </div>
   </div>
 </form>
@@ -622,7 +622,7 @@ You may need to manually address the width and alignment of individual form cont
     </label>
   </div>
 
-  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  <button type="submit" class="btn btn-red mb-2">Submit</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -644,7 +644,7 @@ Custom form controls and selects are also supported.
     <label class="custom-control-label" for="customControlInline">Remember my preference</label>
   </div>
 
-  <button type="submit" class="btn btn-primary my-1">Submit</button>
+  <button type="submit" class="btn btn-red my-1">Submit</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -723,7 +723,7 @@ Add the `disabled` attribute to a `<fieldset>` to disable all the controls withi
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-red">Submit</button>
   </fieldset>
 </form>
 {% endcapture %}
@@ -840,7 +840,7 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-red" type="submit">Submit form</button>
 </form>
 
 <script>
@@ -918,7 +918,7 @@ While these feedback styles cannot be styled with CSS, you can still customize t
       </label>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-red" type="submit">Submit form</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -994,7 +994,7 @@ We recommend using client-side validation, but in case you require server-side v
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-red" type="submit">Submit form</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}
@@ -1114,7 +1114,7 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-red" type="submit">Submit form</button>
 </form>
 {% endcapture %}
 {% include example.html content=example %}

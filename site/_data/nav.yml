@@ -29,13 +29,16 @@
 - title: Components
   pages:
     - title: Alerts
+    - title: Background Wrappers
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
     - title: Button group
+    - title: Callouts
     - title: Card
     - title: Carousel
     - title: Collapse
+    - title: Deprecated
     - title: Dropdowns
     - title: Forms
     - title: Input group

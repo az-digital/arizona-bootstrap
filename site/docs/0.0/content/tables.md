@@ -566,7 +566,7 @@ Regular table background variants are not available with the dark table, however
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-primary">
+      <tr class="bg-red">
         <th scope="row">1</th>
         <td>Cell</td>
         <td>Cell</td>
@@ -617,7 +617,7 @@ Regular table background variants are not available with the dark table, however
 
 {% highlight html %}
 <!-- On rows -->
-<tr class="bg-primary">...</tr>
+<tr class="bg-red">...</tr>
 <tr class="bg-success">...</tr>
 <tr class="bg-warning">...</tr>
 <tr class="bg-danger">...</tr>
@@ -625,7 +625,7 @@ Regular table background variants are not available with the dark table, however
 
 <!-- On cells (`td` or `th`) -->
 <tr>
-  <td class="bg-primary">...</td>
+  <td class="bg-red">...</td>
   <td class="bg-success">...</td>
   <td class="bg-warning">...</td>
   <td class="bg-danger">...</td>

@@ -1,15 +1,20 @@
 
+//
 // > COLOR CLASSES
+//
 
 //
 // >> Text Color
 //
-//
+
+// >>> Brand
 @each $color, $value in $colors {
   .text-#{$color} {
     color: $value;
   }
 }
+
+// >>> Theme
 @each $color, $value in $theme-colors {
   .text-#{$color} {
     // check for color contrast
@@ -23,9 +28,18 @@
   }
 }
 
+// >>> Grays
+@each $color, $value in $grays {
+  .text-gray-#{$color} {
+    color: $value;
+  }
+}
+
 //
 // >> Background Color
 //
+
+// >>> Brand
 @each $color, $value in $colors {
   .bg-#{$color} {
     color: $white;
@@ -70,6 +84,8 @@
     }
   }
 }
+
+// >>> Theme
 @each $color, $value in $theme-colors {
   .bg-#{$color} {
     // check for color contrast
@@ -85,7 +101,7 @@
         color: $midnight;
       }
     }
-    @else if $value == $bloom {
+    @else if $value == $warning {
       color: $black;
       p,
       h1,
@@ -113,9 +129,7 @@
   }
 }
 
-//
-// >>> Gray Background Color
-//
+// >>> Grays
 @each $color, $value in $grays {
   $background: $value;
   $text-color: $black;
@@ -165,4 +179,43 @@
     color: $white;
   }
   background-color: $dark;
+
+  .close {
+    color: $white;
+  }
 }
+
+//
+// >> Border Colors
+//
+@each $color, $value in $colors {
+  .border-#{$color} {
+    border-color: $value;
+  }
+}
+
+
+
+//
+// > TYPOGRAPHY
+//
+
+// >> Headings
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-headings;
+} */
+
+// >> Sans
+.sans {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+}
+
+
+

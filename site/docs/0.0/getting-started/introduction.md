@@ -41,7 +41,7 @@ Curious which components explicitly require jQuery, our JS, and Popper.js? Click
 Our `arizona-bootstrap.bundle.js` and `arizona-bootstrap.bundle.min.js` include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/). For more information about what's included in {{ site.title }}, please see our [contents]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/contents/#precompiled-bootstrap) section.
 
 <details>
-<summary class="text-primary mb-3">Show components requiring JavaScript</summary>
+<summary class="text-red mb-3">Show components requiring JavaScript</summary>
 {% capture markdown %}
 - Alerts for dismissing
 - Buttons for toggling states and checkbox/radio functionality

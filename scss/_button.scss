@@ -1,9 +1,74 @@
 // Overrides for the Button component
 
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
 @each $color, $value in $theme-colors {
   // increased specificity to .btn.btn-* to ensure overrides takes prescidence
   .btn-#{$color} {
     @include button-variant($value);
+  }
+}
+
+.btn-link {
+  color: $link-color;
+
+  /* @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  } */
+
+  // No need for an active state here
+}
+
+
+// hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
+.btn-red {
+  @include button-variant($chili);
+  background-color: $chili;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+}
+.btn-blue {
+  @include button-variant($blue);
+  background-color: $blue;
+  &:hover {
+    color: $white;
+    background-color: $azurite;
+  }
+}
+
+.btn-outline-red {
+  color: $chili;
+  border-color: $chili;
+  &:hover {
+    color: $white;
+    background-color: $chili;
+  }
+}
+.btn-outline-blue {
+  color: $blue;
+  border-color: $blue;
+  &:hover {
+    color: $white;
+    background-color: $blue;
   }
 }
 
@@ -18,11 +83,6 @@
 .btn-warning {
   &:hover {
     color: $black;
-  }
-}
-.btn-secondary {
-  &:hover {
-    background-color: $azurite;
   }
 }
 .btn-outline-info {

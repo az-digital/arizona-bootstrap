@@ -38,13 +38,13 @@ The media queries effect screen widths with the given breakpoint *or larger*. Fo
 ## Examples
 
 {% capture example %}
-<div class="d-inline p-2 bg-primary text-white">d-inline</div>
+<div class="d-inline p-2 bg-red text-white">d-inline</div>
 <div class="d-inline p-2 bg-dark text-white">d-inline</div>
 {% endcapture %}
 {% include example.html content=example %}
 
 {% capture example %}
-<span class="d-block p-2 bg-primary text-white">d-block</span>
+<span class="d-block p-2 bg-red text-white">d-block</span>
 <span class="d-block p-2 bg-dark text-white">d-block</span>
 {% endcapture %}
 {% include example.html content=example %}

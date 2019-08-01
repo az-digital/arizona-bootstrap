@@ -38,6 +38,15 @@ Contextual text classes also work well on anchors with the provided hover and fo
 {% endcapture %}
 {% include example.html content=example %}
 
+### Grayscale
+
+{% capture example %}
+{% for color in site.data.grays %}
+<p{% if color.name == 100 or color.name == 200 or color.name == 300 or color.name == 400 or color.name == 500 %} class="bg-dark"{% endif %}><span class="text-gray-{{ color.name }}">.text-gray-{{ color.name }}</span></p>{% endfor %}
+{% endcapture %}
+{% include example.html content=example %}
+
+
 ## Background color
 
 Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` utilities.
@@ -56,6 +65,14 @@ Similar to the contextual text color classes, easily set the background of an el
 {% for color in site.data.theme-colors %}
 <div class="p-3 mb-2 bg-{{ color.name }}">.bg-{{ color.name }}</div>{% endfor %}
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Grayscale
+
+{% capture example %}
+{% for color in site.data.grays %}
+<div class="p-3 mb-2 bg-gray-{{ color.name }}">.bg-gray-{{ color.name }}</div>{% endfor %}
 {% endcapture %}
 {% include example.html content=example %}
 

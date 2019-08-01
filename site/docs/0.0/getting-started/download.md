@@ -15,7 +15,7 @@ Download ready-to-use compiled code for **{{ site.title }} v{{ site.current_vers
 
 This doesn't include documentation, source files, or any optional JavaScript dependencies (jQuery and Popper.js).
 
-<a href="{{ site.download.dist }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download {{ site.title }}');">Download</a>
+<a href="{{ site.download.dist }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download {{ site.title }}');">Download</a>
 
 ## Source files
 
@@ -26,7 +26,7 @@ Compile {{ site.title }} with your own asset pipeline by downloading our source 
 
 Should you require [build tools]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/build-tools/#tooling-setup), they are included for developing {{ site.title }} and its docs, but they're likely unsuitable for your own purposes.
 
-<a href="{{ site.download.source }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
+<a href="{{ site.download.source }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 
 ## UA Digital CDN
 

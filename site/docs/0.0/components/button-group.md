@@ -12,9 +12,9 @@ Wrap a series of buttons with `.btn` in `.btn-group`. Add on optional JavaScript
 
 {% capture example %}
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">Left</button>
-  <button type="button" class="btn btn-secondary">Middle</button>
-  <button type="button" class="btn btn-secondary">Right</button>
+  <button type="button" class="btn btn-blue">Left</button>
+  <button type="button" class="btn btn-blue">Middle</button>
+  <button type="button" class="btn btn-blue">Right</button>
 </div>
 {% endcapture %}
 {% include example.html content=example %}
@@ -35,18 +35,18 @@ Combine sets of button groups into button toolbars for more complex components. 
 {% capture example %}
 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group mr-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-secondary">1</button>
-    <button type="button" class="btn btn-secondary">2</button>
-    <button type="button" class="btn btn-secondary">3</button>
-    <button type="button" class="btn btn-secondary">4</button>
+    <button type="button" class="btn btn-blue">1</button>
+    <button type="button" class="btn btn-blue">2</button>
+    <button type="button" class="btn btn-blue">3</button>
+    <button type="button" class="btn btn-blue">4</button>
   </div>
   <div class="btn-group mr-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-secondary">5</button>
-    <button type="button" class="btn btn-secondary">6</button>
-    <button type="button" class="btn btn-secondary">7</button>
+    <button type="button" class="btn btn-blue">5</button>
+    <button type="button" class="btn btn-blue">6</button>
+    <button type="button" class="btn btn-blue">7</button>
   </div>
   <div class="btn-group" role="group" aria-label="Third group">
-    <button type="button" class="btn btn-secondary">8</button>
+    <button type="button" class="btn btn-blue">8</button>
   </div>
 </div>
 {% endcapture %}
@@ -57,10 +57,10 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 {% capture example %}
 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group mr-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-secondary">1</button>
-    <button type="button" class="btn btn-secondary">2</button>
-    <button type="button" class="btn btn-secondary">3</button>
-    <button type="button" class="btn btn-secondary">4</button>
+    <button type="button" class="btn btn-blue">1</button>
+    <button type="button" class="btn btn-blue">2</button>
+    <button type="button" class="btn btn-blue">3</button>
+    <button type="button" class="btn btn-blue">4</button>
   </div>
   <div class="input-group">
     <div class="input-group-prepend">
@@ -72,10 +72,10 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 
 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group" role="group" aria-label="First group">
-    <button type="button" class="btn btn-secondary">1</button>
-    <button type="button" class="btn btn-secondary">2</button>
-    <button type="button" class="btn btn-secondary">3</button>
-    <button type="button" class="btn btn-secondary">4</button>
+    <button type="button" class="btn btn-blue">1</button>
+    <button type="button" class="btn btn-blue">2</button>
+    <button type="button" class="btn btn-blue">3</button>
+    <button type="button" class="btn btn-blue">4</button>
   </div>
   <div class="input-group">
     <div class="input-group-prepend">
@@ -93,21 +93,21 @@ Instead of applying button sizing classes to every button in a group, just add `
 
 <div class="bd-example">
   <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
-    <button type="button" class="btn btn-secondary">Left</button>
-    <button type="button" class="btn btn-secondary">Middle</button>
-    <button type="button" class="btn btn-secondary">Right</button>
+    <button type="button" class="btn btn-blue">Left</button>
+    <button type="button" class="btn btn-blue">Middle</button>
+    <button type="button" class="btn btn-blue">Right</button>
   </div>
   <br>
   <div class="btn-group" role="group" aria-label="Default button group">
-    <button type="button" class="btn btn-secondary">Left</button>
-    <button type="button" class="btn btn-secondary">Middle</button>
-    <button type="button" class="btn btn-secondary">Right</button>
+    <button type="button" class="btn btn-blue">Left</button>
+    <button type="button" class="btn btn-blue">Middle</button>
+    <button type="button" class="btn btn-blue">Right</button>
   </div>
   <br>
   <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-    <button type="button" class="btn btn-secondary">Left</button>
-    <button type="button" class="btn btn-secondary">Middle</button>
-    <button type="button" class="btn btn-secondary">Right</button>
+    <button type="button" class="btn btn-blue">Left</button>
+    <button type="button" class="btn btn-blue">Middle</button>
+    <button type="button" class="btn btn-blue">Right</button>
   </div>
 </div>
 
@@ -123,11 +123,11 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
 
 {% capture example %}
 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-  <button type="button" class="btn btn-secondary">1</button>
-  <button type="button" class="btn btn-secondary">2</button>
+  <button type="button" class="btn btn-blue">1</button>
+  <button type="button" class="btn btn-blue">2</button>
 
   <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="btnGroupDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Dropdown
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -145,22 +145,22 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
 
 <div class="bd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
   </div>
 </div>
 
 
 <div class="bd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
@@ -168,10 +168,10 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
-    <button type="button" class="btn btn-secondary">Button</button>
-    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
+    <button type="button" class="btn btn-blue">Button</button>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop2" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop2">
@@ -180,7 +180,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop3" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop3">
@@ -189,7 +189,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop4" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop4">
