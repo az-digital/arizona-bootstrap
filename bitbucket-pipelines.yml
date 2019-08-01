@@ -62,6 +62,9 @@ pipelines:
             - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/master
             - npm run docs-review
             - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/master/
+            - export S3_URL="${S3_REVIEW_URL}/master"
+            - export BUILD_STATUS="{\"key\":\"review\", \"state\":\"SUCCESSFUL\", \"name\":\"Review Site\", \"url\":\"${S3_URL}\"}"
+            - curl -H "Content-Type:application/json" -X POST --user "${BB_AUTH_STRING}" -d "${BUILD_STATUS}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/commit/${BITBUCKET_COMMIT}/statuses/build"
     UADIGITAL*:
       - step: *install
       - step:
@@ -71,3 +74,7 @@ pipelines:
             - export UAZ_REVIEW_BASEURL="/arizona-bootstrap-review/${BITBUCKET_BRANCH}"
             - npm run docs-review
             - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_BRANCH}/
+            - export S3_URL="${S3_REVIEW_URL}/${BITBUCKET_BRANCH}"
+            - export BUILD_STATUS="{\"key\":\"review\", \"state\":\"SUCCESSFUL\", \"name\":\"Review Site\", \"url\":\"${S3_URL}\"}"
+            - curl -H "Content-Type:application/json" -X POST --user "${BB_AUTH_STRING}" -d "${BUILD_STATUS}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/commit/${BITBUCKET_COMMIT}/statuses/build"
+
