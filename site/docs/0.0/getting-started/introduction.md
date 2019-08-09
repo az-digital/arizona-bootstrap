@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Introduction
-description: Get started with Arizona Bootstrap, the University of Arizona's theme for Bootstrap, with the UA Digital CDN and a template starter page.
+description: Get started with Arizona Bootstrap, the University of Arizona's theme for Bootstrap, with the Arizona Digital CDN and a template starter page.
 group: getting-started
 redirect_from:
   - "/docs/"
-  - "/docs/4.3/"
-  - "/docs/4.3/getting-started/"
+  - "/docs/0.0/"
+  - "/docs/0.0/getting-started/"
   - "/docs/getting-started/"
   - "/getting-started/"
 toc: true
@@ -14,7 +14,7 @@ toc: true
 
 ## Quick start
 
-Looking to quickly add {{ site.title }} to your project? Use The UA Digital CDN. Using a package manager or need to download the source files? [Head to the downloads page]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/download/).
+Looking to quickly add {{ site.title }} to your project? Use The Arizona Digital CDN. Using a package manager or need to download the source files? [Head to the downloads page]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/download/).
 
 ### CSS
 

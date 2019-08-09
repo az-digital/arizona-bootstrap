@@ -50,7 +50,7 @@
     "type": "git",
     "url": "git+https://bitbucket.org/uadigital/arizona-bootstrap.git"
   },
-  "author": "UA Digital Contributors",
+  "author": "Arizona Digital Contributors",
   "license": "MIT",
   "homepage": "https://bitbucket.org/uadigital/arizona-bootstrap#readme",
   "devDependencies": {

@@ -28,7 +28,7 @@ Should you require [build tools]({{ site.baseurl }}/docs/{{ site.docs_version }}
 
 <a href="{{ site.download.source }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 
-## UA Digital CDN
+## Arizona Digital CDN
 
 Skip the download with the UA Digital CDN to deliver cached version of {{ site.title }}'s compiled CSS and JS to your project.
 

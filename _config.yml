@@ -27,7 +27,7 @@ plugins:
 # Social
 title:              "Arizona Bootstrap"
 description:        "University of Arizona theme for Bootstrap."
-authors:            "UA Digital contributors"
+authors:            "Arizona Digital contributors"
 social_image_path:  /docs/0.0/assets/brand/bootstrap-social.png
 social_logo_path:   /docs/0.0/assets/brand/bootstrap-social-logo.png
 
