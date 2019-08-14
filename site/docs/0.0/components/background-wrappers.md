@@ -9,55 +9,56 @@ redirect_from:
 toc: true
 ---
 
-## Examples
 
 Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/#background-color) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility.
 
-To use a background wrapper, you must close the current container, add your background wrapper, and then open the container again.
+<figure class="highlight"><pre><code class="language-html" data-lang="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-12"</span><span class="nt">&gt;</span>
+      [ ... ]
+    <span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close column --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close row --&gt;</span>
+<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close container --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"background-wrapper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    [ ... ]
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- close background wrapper --&gt;</span></code></pre></figure>
+
+## Examples
+
+Click on the background color options below to see a live preview of what the background wrapper looks like in your selected color and/or background pattern.
+
+<div class="row mb-3">
+{% for color in site.data.colors %}
+  <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-3">
+    <button id="background-wrapper-btn-{{ color.name }}" data-bgcolor="{{ color.name }}" class="btn btn-block btn-background-wrapper-demo bg-{{ color.name }}">{{ color.name | capitalize }}</button>
+  </div>
+{% endfor %}
+</div>
+<div class="row mb-5 pt-0 pb-4 pt-xl-4 bg-gray-100 bg-triangles-centered">
+  <div class="col-6 col-lg-4 col-xl-3 mt-3 mt-xl-0">
+    <button id="triangles-background-btn-top-left" data-triangles="triangles-top-left" class="btn btn-block btn-outline-blue btn-triangle-background-demo">Triangles Top Left</button>
+  </div>
+  <div class="col-6 col-lg-4 col-xl-3 mt-3 mt-xl-0">
+    <button id="triangles-background-btn-centered" data-triangles="triangles-centered" class="btn btn-block btn-outline-blue btn-triangle-background-demo">Triangles Centered</button>
+  </div>
+  <div class="col-6 col-lg-4 col-xl-3 mt-3 mt-xl-0">
+    <button id="triangles-background-btn-top-right" data-triangles="triangles-top-right" class="btn btn-block btn-outline-blue btn-triangle-background-demo">Triangles Top Right</button>
+  </div>
+  <div class="col-6 col-lg-4 col-xl-3 mt-3 mt-xl-0">
+    <button id="triangles-background-btn-trilines" data-triangles="trilines" class="btn btn-block btn-outline-blue btn-triangle-background-demo">Trilines</button>
+  </div>
+</div>
 
 {% capture example %}
-<div class="background-wrapper bg-cool-gray">
+<div class="background-wrapper" id="background-wrapper-live-demo">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <p class="h3 sans text-midnight">Plain Background Wrapper</p>
-        <p>A background wrapper using only a background-color.<br />View the accessibility standards followed at The University of Arizona</p>
-        <p><a href="http://itaccessibility.arizona.edu/guidelines/standards" class="btn btn-blue" target="_blank">Accessibility Standards</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="background-wrapper bg-white bg-triangles-top-left">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="h3 sans text-midnight">Triangles Top Left</p>
-        <p>A background wrapper using a triangle pattern on the top left.<br />View the accessibility standards followed at The University of Arizona</p>
-        <p><a href="http://itaccessibility.arizona.edu/guidelines/standards" class="btn btn-blue" target="_blank">Accessibility Standards</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="background-wrapper bg-cool-gray bg-triangles-top-right">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="h3 sans text-midnight">Triangles Top Right</p>
-        <p>A background wrapper using a triangle pattern on the top right.<br />View the accessibility standards followed at The University of Arizona</p>
-        <p><a href="http://itaccessibility.arizona.edu/guidelines/standards" class="btn btn-blue" target="_blank">Accessibility Standards</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="background-wrapper bg-white bg-triangles-centered">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="h3 sans text-midnight">Triangles Centered</p>
-        <p>A background wrapper using a triangle pattern in the center.<br />View the accessibility standards followed at The University of Arizona</p>
+        <p class="h3 sans text-midnight">Background Wrapper Example</p>
+        <p>A background wrapper can use any combination of the background color utility classes and the background pattern options. However, you must ensure your selection ensures sufficient color contrast and proper accessibility standards.</p>
         <p><a href="http://itaccessibility.arizona.edu/guidelines/standards" class="btn btn-blue" target="_blank">Accessibility Standards</a></p>
       </div>
     </div>
@@ -65,5 +66,4 @@ To use a background wrapper, you must close the current container, add your back
 </div>
 {% endcapture %}
 {% include example.html content=example %}
-
 

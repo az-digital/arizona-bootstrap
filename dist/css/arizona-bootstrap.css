@@ -10161,18 +10161,24 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fff;
 }
 
-.bg-gray-100 {
+.bg-gray-100, .bg-silver-tint {
   color: #000;
   background-color: #f8f9fa;
 }
 
-.bg-gray-100 p,
+.bg-gray-100 p, .bg-silver-tint p,
 .bg-gray-100 h1,
+.bg-silver-tint h1,
 .bg-gray-100 h2,
+.bg-silver-tint h2,
 .bg-gray-100 h3,
+.bg-silver-tint h3,
 .bg-gray-100 h4,
+.bg-silver-tint h4,
 .bg-gray-100 h5,
-.bg-gray-100 h6 {
+.bg-silver-tint h5,
+.bg-gray-100 h6,
+.bg-silver-tint h6 {
   color: #000;
 }
 
@@ -10797,6 +10803,136 @@ h6 {
   background-blend-mode: initial;
 }
 
+.bg-trilines {
+  background-image: url("img/trilines.svg");
+  background-size: auto 305px;
+  background-position: top right;
+  background-position: top 0 right -1em;
+  background-repeat: no-repeat;
+}
+
+.bg-trilines p,
+.bg-trilines li,
+.bg-trilines hr {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-trilines.bg-blue p, .panel-primary .bg-trilines.panel-heading p, .bg-trilines.bg-primary p, .bg-trilines.card-primary p,
+.bg-trilines.bg-blue li,
+.panel-primary .bg-trilines.panel-heading li,
+.bg-trilines.bg-primary li,
+.bg-trilines.card-primary li,
+.bg-trilines.bg-blue hr,
+.panel-primary .bg-trilines.panel-heading hr,
+.bg-trilines.bg-primary hr,
+.bg-trilines.card-primary hr {
+  background-color: rgba(12, 35, 75, 0.7);
+}
+
+.bg-trilines.bg-red p,
+.bg-trilines.bg-red li,
+.bg-trilines.bg-red hr {
+  background-color: rgba(171, 5, 32, 0.7);
+}
+
+.bg-trilines.bg-white p, .bg-trilines.panel p,
+.bg-trilines.bg-white li,
+.bg-trilines.panel li,
+.bg-trilines.bg-white hr,
+.bg-trilines.panel hr {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-trilines.bg-bloom p,
+.bg-trilines.bg-bloom li,
+.bg-trilines.bg-bloom hr {
+  background-color: rgba(239, 64, 86, 0.7);
+}
+
+.bg-trilines.bg-chili p,
+.bg-trilines.bg-chili li,
+.bg-trilines.bg-chili hr {
+  background-color: rgba(139, 0, 21, 0.7);
+}
+
+.bg-trilines.bg-sky p,
+.bg-trilines.bg-sky li,
+.bg-trilines.bg-sky hr {
+  background-color: rgba(129, 211, 235, 0.7);
+}
+
+.bg-trilines.bg-oasis p,
+.bg-trilines.bg-oasis li,
+.bg-trilines.bg-oasis hr {
+  background-color: rgba(55, 141, 189, 0.7);
+}
+
+.bg-trilines.bg-azurite p,
+.bg-trilines.bg-azurite li,
+.bg-trilines.bg-azurite hr {
+  background-color: rgba(30, 82, 136, 0.7);
+}
+
+.bg-trilines.bg-midnight p,
+.bg-trilines.bg-midnight li,
+.bg-trilines.bg-midnight hr {
+  background-color: rgba(0, 28, 72, 0.7);
+}
+
+.bg-trilines.bg-cool-gray p,
+.bg-trilines.bg-cool-gray li,
+.bg-trilines.bg-cool-gray hr {
+  background-color: rgba(226, 233, 235, 0.7);
+}
+
+.bg-trilines.bg-warm-gray p,
+.bg-trilines.bg-warm-gray li,
+.bg-trilines.bg-warm-gray hr {
+  background-color: rgba(244, 237, 229, 0.7);
+}
+
+.bg-trilines.bg-leaf p,
+.bg-trilines.bg-leaf li,
+.bg-trilines.bg-leaf hr {
+  background-color: rgba(112, 184, 101, 0.7);
+}
+
+.bg-trilines.bg-river p,
+.bg-trilines.bg-river li,
+.bg-trilines.bg-river hr {
+  background-color: rgba(0, 125, 132, 0.7);
+}
+
+.bg-trilines.bg-silver p,
+.bg-trilines.bg-silver li,
+.bg-trilines.bg-silver hr {
+  background-color: rgba(158, 171, 174, 0.7);
+}
+
+.bg-trilines.bg-mesa p,
+.bg-trilines.bg-mesa li,
+.bg-trilines.bg-mesa hr {
+  background-color: rgba(169, 92, 66, 0.7);
+}
+
+.bg-trilines.bg-ash p,
+.bg-trilines.bg-ash li,
+.bg-trilines.bg-ash hr {
+  background-color: rgba(64, 54, 53, 0.7);
+}
+
+.bg-trilines.bg-sage p,
+.bg-trilines.bg-sage li,
+.bg-trilines.bg-sage hr {
+  background-color: rgba(74, 99, 78, 0.7);
+}
+
+.bg-trilines.bg-black p,
+.bg-trilines.bg-black li,
+.bg-trilines.bg-black hr {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .callout {
   padding: 1.25rem;
   margin-top: 1.25rem;
@@ -11220,6 +11356,24 @@ from UA Bootstrap (Bootstrap 3) to Arizona Bootstrap (Bootstrap 4). This is to
 avoid breaking changes; sites should not use these components/classes as they
 have been deprecated in Bootstrap 4.
 */
+.bg-triangles-fade {
+  background-image: url("img/fading-triangles.svg");
+  background-repeat: repeat-x;
+  background-size: auto 450px;
+}
+
+.bg-catalinas-abstract {
+  background-image: url("img/catalinas-abstract.svg");
+  background-repeat: repeat-x;
+  background-size: auto 230px;
+}
+
+.bg-triangles-mosaic {
+  background-image: url("img/mosaic-triangles.svg");
+  background-repeat: repeat;
+  background-size: auto 130px;
+}
+
 .panel .panel-title {
   font-size: 18px;
 }

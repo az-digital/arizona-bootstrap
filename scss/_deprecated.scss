@@ -9,6 +9,30 @@ have been deprecated in Bootstrap 4.
 // > COMPONENTS
 //
 
+// >> Background Wrappers
+.bg-triangles-fade {
+  background: {
+    image: url("img/fading-triangles.svg");
+    repeat: repeat-x;
+    size: auto 450px;
+  }
+}
+.bg-catalinas-abstract {
+  background: {
+    image: url("img/catalinas-abstract.svg");
+    repeat: repeat-x;
+    size: auto 230px;
+  }
+}
+.bg-triangles-mosaic {
+  background: {
+    image: url("img/mosaic-triangles.svg");
+    repeat: repeat;
+    size: auto 130px;
+  }
+}
+
+
 // >> Buttons
 .btn-default {
   @extend .btn-red;
@@ -197,5 +221,8 @@ have been deprecated in Bootstrap 4.
   @extend .border-danger;
 }
 
-
+// >>> Background Colors
+.bg-silver-tint {
+  @extend .bg-gray-100;
+}
 

@@ -135,3 +135,54 @@
   }
 }
 
+
+//
+// > COMPONENTS
+//
+
+// >> Background Wrapper Demo
+.btn-background-wrapper-demo,
+.btn-triangle-background-demo {
+  position: relative;
+  top: 0;
+  @include transition(box-shadow .2s, top .2s);
+
+  &.demo-active {
+    top: -5px;
+    box-shadow: 0 7px 6px -4px $gray-700;
+  }
+}
+
+
+.btn-background-wrapper-demo {
+  &:hover {
+    color: $white;
+  }
+
+  &.bg-sky,
+  &.bg-oasis,
+  &.bg-cool-gray,
+  &.bg-warm-gray,
+  &.bg-leaf,
+  &.bg-silver {
+    &:hover {
+      color: $midnight;
+    }
+  }
+  &.bg-bloom,
+  &.bg-white {
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.btn-triangle-background-demo {
+  background-color: $white;
+
+  &.demo-active {
+    color: $white;
+    background-color: $azurite;
+  }
+}
+

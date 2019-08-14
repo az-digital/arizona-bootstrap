@@ -11,6 +11,32 @@ toc: true
 
 ## Components
 
+### Background wrappers
+
+In Bootstrap 3, the following background wrapper patterns were marked as deprecated. They are also deprecated in Bootstrap 4 and have been removed from the docs. Background patterns for triangles top-left, top-right, centered, and tri-lines are still available.
+
+<div class="background-wrapper bg-triangles-fade bg-silver-tint mb-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="h3 mb-0">Triangles Fade Background Wrapper</p>
+    </div>
+  </div>
+</div>
+<div class="background-wrapper bg-catalinas-abstract mb-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="h3 mb-0">Catalinas Abstract Background Wrapper</p>
+    </div>
+  </div>
+</div>
+<div class="background-wrapper bg-triangles-mosaic bg-sky">
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="h3 mb-0">Triangle Mosaic Background Wrapper</p>
+    </div>
+  </div>
+</div>
+
 ### Buttons
 
 In Bootstrap 4, `.btn-default` has been deprecated. Pointing `.btn-default` to `.btn-primary` would result in a red button, and pointing `.btn-secondary` would result in a blue button. Conflicts with backwards-compatibility arose with `secondary` being blue, since `primary` was blue in UA Bootstrap. This means existing sites using the blue button would suddenly become red. In favor of more intuitive buttons, we have also removed `primary` and `secondary` from `theme colors` in favor of `.btn-red` and `.btn-blue`.
@@ -182,3 +208,6 @@ Text size classes have been extended by combining header classes (e.g., `.h1`) w
 <p class="text-size-h{{ i }}">.text-size-h{{ i }}</p>
 {% endfor %}
 
+### Background color
+
+<p class="p-3 mb-2 bg-silver-tint">.bg-silver-tint</p>

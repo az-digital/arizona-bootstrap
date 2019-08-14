@@ -71,4 +71,29 @@
     blend-mode: initial;
   }
 }
+// >>> Trilines
+.bg-trilines {
+  background: {
+    image: url("img/trilines.svg");
+    size: auto 305px;
+    position: top right;
+    position: top 0 right -1em;
+    repeat: no-repeat;
+  }
 
+  p,
+  li,
+  hr {
+    background-color: rgba(255, 255, 255, .7);
+  }
+
+  @each $color, $value in $colors {
+    &.bg-#{$color} {
+      p,
+      li,
+      hr {
+        background-color: rgba($value, .7);
+      }
+    }
+  }
+}
