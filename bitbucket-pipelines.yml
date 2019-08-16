@@ -31,12 +31,14 @@ pipelines:
           name: Build & deploy review sites
           script:
             - npm run dist
-            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/${BITBUCKET_TAG}
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap/${BITBUCKET_TAG}
             - npm run docs-review
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_TAG}/
-            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/latest
+            - aws s3 sync --delete _site/ s3://${AWS_S3_BUCKET_REVIEW}/arizona-bootstrap/${BITBUCKET_TAG}/
+            - aws cloudfront create-invalidation --distribution-id ${REVIEW_CF_DISTRO_ID} --paths /arizona-bootstrap/${BITBUCKET_TAG}/*
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap/latest
             - npm run docs-review
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/latest/
+            - aws s3 sync --delete _site/ s3://${AWS_S3_BUCKET_REVIEW}/arizona-bootstrap/latest/
+            - aws cloudfront create-invalidation --distribution-id ${REVIEW_CF_DISTRO_ID} --paths /arizona-bootstrap/latest/*
       - step:
           name: Build & deploy documentation site
           script:
@@ -59,9 +61,10 @@ pipelines:
           name: Build & deploy documentation site
           script:
             - npm run dist
-            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap-review/master
+            - export UAZ_REVIEW_BASEURL=/arizona-bootstrap/master
             - npm run docs-review
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/master/
+            - aws s3 sync --delete _site/ s3://${AWS_S3_BUCKET_REVIEW}/arizona-bootstrap/master/
+            - aws cloudfront create-invalidation --distribution-id ${REVIEW_CF_DISTRO_ID} --paths /arizona-bootstrap/master/*
             - export S3_URL="${S3_REVIEW_URL}/master"
             - export BUILD_STATUS="{\"key\":\"review\", \"state\":\"SUCCESSFUL\", \"name\":\"Review Site\", \"url\":\"${S3_URL}\"}"
             - curl -H "Content-Type:application/json" -X POST --user "${BB_AUTH_STRING}" -d "${BUILD_STATUS}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/commit/${BITBUCKET_COMMIT}/statuses/build"
@@ -71,9 +74,10 @@ pipelines:
           name: Build & deploy review site
           script:
             - npm run dist
-            - export UAZ_REVIEW_BASEURL="/arizona-bootstrap-review/${BITBUCKET_BRANCH}"
+            - export UAZ_REVIEW_BASEURL="/arizona-bootstrap/${BITBUCKET_BRANCH}"
             - npm run docs-review
-            - aws s3 sync _site/ s3://${AWS_S3_BUCKET}/arizona-bootstrap-review/${BITBUCKET_BRANCH}/
+            - aws s3 sync --delete _site/ s3://${AWS_S3_BUCKET_REVIEW}/arizona-bootstrap/${BITBUCKET_BRANCH}/
+            - aws cloudfront create-invalidation --distribution-id ${REVIEW_CF_DISTRO_ID} --paths /arizona-bootstrap/${BITBUCKET_BRANCH}/*
             - export S3_URL="${S3_REVIEW_URL}/${BITBUCKET_BRANCH}"
             - export BUILD_STATUS="{\"key\":\"review\", \"state\":\"SUCCESSFUL\", \"name\":\"Review Site\", \"url\":\"${S3_URL}\"}"
             - curl -H "Content-Type:application/json" -X POST --user "${BB_AUTH_STRING}" -d "${BUILD_STATUS}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/commit/${BITBUCKET_COMMIT}/statuses/build"
