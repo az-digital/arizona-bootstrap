@@ -1,20 +1,14 @@
-image: uadigital/arizona-node-base:0.0.2
+image: uadigital/uaz-node-jre-jekyll:1.1.1
 definitions:
-  caches:
-    bundler: vendor/bundle
   steps:
     - step: &install
         name: Install dependencies
         caches:
           - node
-          - bundler
         artifacts:
-          - .bundle/**
           - node_modules/**
-          - vendor/bundle/**
         script:
           - npm install
-          - bundle install --deployment
 pipelines:
   tags:
     '*':
