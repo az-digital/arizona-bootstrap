@@ -67,6 +67,7 @@ pipelines:
       - step:
           name: Build & deploy review site
           script:
+            - npm run lint
             - npm run dist
             - export UAZ_REVIEW_BASEURL="/arizona-bootstrap/${BITBUCKET_BRANCH}"
             - npm run docs-review
