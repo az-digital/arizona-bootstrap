@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-## Text alignment
+## Text Alignment
 
 Easily realign text to components with text alignment classes.
 
@@ -29,7 +29,7 @@ For left, right, and center alignment, responsive classes are available that use
 {% endcapture %}
 {% include example.html content=example %}
 
-## Text wrapping and overflow
+## Text Wrapping and Overflow
 
 Wrap text with a `.text-wrap` class.
 
@@ -66,7 +66,7 @@ For longer content, you can add a `.text-truncate` class to truncate the text wi
 {% endcapture %}
 {% include example.html content=example %}
 
-## Word break
+## Word Break
 
 Prevent long strings of text from breaking your components' layout by using `.text-break` to set `overflow-wrap: break-word` (and `word-break: break-word` for IE & Edge compatibility).
 
@@ -75,20 +75,20 @@ Prevent long strings of text from breaking your components' layout by using `.te
 {% endcapture %}
 {% include example.html content=example %}
 
-## Text transform
+## Text Transform
 
 Transform text in components with text capitalization classes.
 
 {% capture example %}
 <p class="text-lowercase">Lowercased text.</p>
 <p class="text-uppercase">Uppercased text.</p>
-<p class="text-capitalize">CapiTaliZed text.</p>
+<p class="text-capitalize">capitalized text.</p>
 {% endcapture %}
 {% include example.html content=example %}
 
 Note how `.text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
 
-## Font weight and italics
+## Font Weight and Italics
 
 Quickly change the weight (boldness) of text or italicize text.
 
@@ -111,7 +111,7 @@ Change a selection to our monospace font stack with `.text-monospace`.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Reset color
+## Reset Color
 
 Reset a text or link's color with `.text-reset`, so that it inherits the color from its parent.
 
@@ -122,7 +122,7 @@ Reset a text or link's color with `.text-reset`, so that it inherits the color f
 {% endcapture %}
 {% include example.html content=example %}
 
-## Text decoration
+## Text Decoration
 
 Remove a text decoration with a `.text-decoration-none` class.
 

@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-## Common values
+## Common Values
 
 Quick positioning classes are available, though they are not responsive.
 
@@ -18,7 +18,7 @@ Quick positioning classes are available, though they are not responsive.
 <div class="position-sticky">...</div>
 {% endhighlight %}
 
-## Fixed top
+## Fixed Top
 
 Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.
 
@@ -26,7 +26,7 @@ Position an element at the top of the viewport, from edge to edge. Be sure you u
 <div class="fixed-top">...</div>
 {% endhighlight %}
 
-## Fixed bottom
+## Fixed Bottom
 
 Position an element at the bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.
 
@@ -34,7 +34,7 @@ Position an element at the bottom of the viewport, from edge to edge. Be sure yo
 <div class="fixed-bottom">...</div>
 {% endhighlight %}
 
-## Sticky top
+## Sticky Top
 
 Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The `.sticky-top` utility uses CSS's `position: sticky`, which isn't fully supported in all browsers.
 

@@ -36,7 +36,7 @@ current_version:      0.0.1
 current_ruby_version: 0.0.1
 docs_version:         0.0
 repo:                 "https://bitbucket.org/uadigital/arizona-bootstrap"
-slack:                "https://quickstart.arizona.edu/join-us-on-slack"
+slack:                "/about/get-involved/#connect-with-us-on-slack"
 quickstart:           "https://quickstart.arizona.edu"
 
 download:

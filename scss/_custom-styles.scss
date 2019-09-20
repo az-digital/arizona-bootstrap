@@ -27,12 +27,8 @@
     }
   }
 }
-
-// >>> Grays
-@each $color, $value in $grays {
-  .text-gray-#{$color} {
-    color: $value;
-  }
+.text-dark-silver {
+  color: $dark-silver;
 }
 
 //
@@ -54,8 +50,26 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $midnight;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
     @else if $value == $bloom or $value == $white {
@@ -66,8 +80,26 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $black;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
     @else {
@@ -78,10 +110,35 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $white;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
+  }
+}
+
+// >>> Brand Transparent
+@each $color, $value in $colors-transparent {
+  .bg-#{$color} {
+    @include background-transparent($value);
   }
 }
 
@@ -97,8 +154,26 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $midnight;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
     @else if $value == $warning {
@@ -109,8 +184,26 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $black;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
     @else {
@@ -121,8 +214,26 @@
       h3,
       h4,
       h5,
-      h6 {
+      h6,
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6 {
         color: $white;
+        @each $text-color, $text-value in $colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
+        @each $text-color, $text-value in $theme-colors {
+          // ensure elements using color classes aren't overwritten
+          &.text-#{$text-color} {
+            color: $text-value;
+          }
+        }
       }
     }
     background-color: $value;
@@ -132,28 +243,47 @@
 // >>> Grays
 @each $color, $value in $grays {
   $background: $value;
-  $text-color: $black;
+  $text: $black;
 
   // check for color contrast
   @if $color == "600" or $color == "700" or $color == "800" or $color == "900" {
-    $text-color: $white;
+    $text: $white;
   }
 
   .bg-gray-#{$color} {
-    color: $text-color;
+    color: $text;
     p,
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6 {
-      color: $text-color;
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      color: $text;
+      @each $text-color, $text-value in $colors {
+        // ensure elements using color classes aren't overwritten
+        &.text-#{$text-color} {
+          color: $text-value;
+        }
+      }
+      @each $text-color, $text-value in $theme-colors {
+        // ensure elements using color classes aren't overwritten
+        &.text-#{$text-color} {
+          color: $text-value;
+        }
+      }
     }
     background-color: $background;
   }
 }
 
+// ensure color contrast
 .bg-light {
   color: $black;
   p,
@@ -162,8 +292,26 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
     color: $black;
+    @each $text-color, $text-value in $colors {
+      // ensure elements using color classes aren't overwritten
+      &.text-#{$text-color} {
+        color: $text-value;
+      }
+    }
+    @each $text-color, $text-value in $theme-colors {
+      // ensure elements using color classes aren't overwritten
+      &.text-#{$text-color} {
+        color: $text-value;
+      }
+    }
   }
   background-color: $light;
 }
@@ -175,8 +323,26 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
     color: $white;
+    @each $text-color, $text-value in $colors {
+      // ensure elements using color classes aren't overwritten
+      &.text-#{$text-color} {
+        color: $text-value;
+      }
+    }
+    @each $text-color, $text-value in $theme-colors {
+      // ensure elements using color classes aren't overwritten
+      &.text-#{$text-color} {
+        color: $text-value;
+      }
+    }
   }
   background-color: $dark;
 
@@ -184,6 +350,7 @@
     color: $white;
   }
 }
+
 
 //
 // >> Border Colors
@@ -200,22 +367,40 @@
 // > TYPOGRAPHY
 //
 
-// >> Headings
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+// >> Font
+// >>> Heading Style
+.heading-style {
   font-family: $font-family-headings;
-} */
-
-// >> Sans
+  color: $dark-silver;
+}
+// >>> Sans
 .sans {
   font-family: $font-family-sans-serif;
   font-weight: 500;
 }
 
+// >> Lists
+// >>> Triangle
+/* stylelint-disable-next-line */
+.ul-triangles {
+  overflow: hidden;
 
+  li {
+    position: relative;
+    padding-left: 0;
+    list-style: none;
 
+    &::before {
+      position: absolute;
+      top: 8px;
+      left: -.8em;
+      width: 0;
+      height: 0;
+      content: "";
+      border-top: 4px solid transparent;
+      border-right: 0;
+      border-bottom: 4px solid transparent;
+      border-left: 4px solid $blue;
+    }
+  }
+}

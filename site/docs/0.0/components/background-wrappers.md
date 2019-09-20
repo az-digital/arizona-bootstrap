@@ -10,23 +10,24 @@ toc: true
 ---
 
 
-Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/#background-color) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility.
+Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/#background-color) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility. {{ site.title }} provides a [color contrast tool]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/color-contrast) that shows you which Branded color combinations are accessible.
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-12"</span><span class="nt">&gt;</span>
-      [ ... ]
-    <span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close column --&gt;</span>
-  <span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close row --&gt;</span>
-<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- close container --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"background-wrapper"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-    [ ... ]
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- close background wrapper --&gt;</span></code></pre></figure>
+{% highlight html %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      ...
+    </div> <!-- close column -->
+  </div> <!-- close row -->
+</div> <!-- close container -->
+<div class="background-wrapper">
+  <div class="container">
+    ...
+  </div>
+</div><!-- close background wrapper -->
+{% endhighlight %}
 
-## Examples
+## Live Demo
 
 Click on the background color options below to see a live preview of what the background wrapper looks like in your selected color and/or background pattern.
 
@@ -57,7 +58,7 @@ Click on the background color options below to see a live preview of what the ba
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <p class="h3 sans text-midnight">Background Wrapper Example</p>
+        <h3>Background Wrapper Example</h3>
         <p>A background wrapper can use any combination of the background color utility classes and the background pattern options. However, you must ensure your selection ensures sufficient color contrast and proper accessibility standards.</p>
         <p><a href="http://itaccessibility.arizona.edu/guidelines/standards" class="btn btn-blue" target="_blank">Accessibility Standards</a></p>
       </div>

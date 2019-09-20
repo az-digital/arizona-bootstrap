@@ -1,14 +1,30 @@
 // Overrides specific to the docs
 
 //
+// > MISC
+//
+.highlight pre {
+  padding-bottom: 1em;
+}
+
+
+//
+// > TYPOGRAPHY
+//
+.bd-title,
+.bd-content-title {
+  font-family: $font-family-sans-serif;
+  color: $gray-700;
+}
+
+
+//
 // > NAV
 //
-//
 // >> Navbar
-//
 .bd-navbar {
   background-color: $white;
-  border-bottom: 1px solid $cool_gray;
+  border-bottom: 1px solid $gray-200;
 
   .navbar-nav {
     align-items: stretch;
@@ -28,16 +44,12 @@
       &:active,
       &:hover {
         color: $midnight;
-        background-color: $cool_gray;
+        background-color: $gray-200;
       }
     }
   }
 }
-
-
-//
 // >> Sidebar
-//
 .bd-toc-item {
   &.active {
     .bd-toc-link {
@@ -58,7 +70,7 @@
 
     &:hover {
       color: $midnight;
-      background-color: $cool_gray;
+      background-color: $gray-200;
     }
   }
 }
@@ -74,12 +86,12 @@
     // included for docs specifically
     .bd-sidenav-active {
       a {
-        background-color: $cool_gray;
+        background-color: $gray-200;
       }
 
       &:hover {
         a {
-          background-color: $cool_gray;
+          background-color: $gray-200;
         }
       }
     }
@@ -110,7 +122,7 @@
 
 .bd-example-row .row > .col,
 .bd-example-row .row > [class^="col-"] {
-  background-color: $cool-gray;
+  background-color: $gray-200;
   border-color: $gray-400;
 }
 

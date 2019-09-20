@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: about
 title: License
 description: Information about Arizona Bootstrap's open source license.
 group: about

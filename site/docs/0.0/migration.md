@@ -11,12 +11,12 @@ toc: true
 
 Here are the big ticket items you'll want to be aware of when moving from UA Bootstrap **(based on Bootstrap v3)** to {{ site.title }} **(based on Bootstrap v4)**.
 
-### Browser support
+### Browser Support
 
 - Dropped IE8, IE9, and iOS 6 support. v4 is now only IE10+ and iOS 7+. For sites needing either of those, use v3.
 - Added official support for Android v5.0 Lollipop's Browser and WebView. Earlier versions of the Android Browser and WebView remain only unofficially supported.
 
-### Global changes
+### Global Changes
 
 - **Flexbox is enabled by default.** In general this means a move away from floats and more across our components.
 - Switched from `px` to `rem` as our primary CSS unit, though pixels are still used for media queries and grid behavior as device viewports are not affected by type size.
@@ -25,7 +25,7 @@ Here are the big ticket items you'll want to be aware of when moving from UA Boo
 - Non-responsive usage of {{ site.title }} is no longer supported.
 - Added dozens of new [utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/) for common CSS property-value pairs and margin/padding spacing shortcuts.
 
-### Grid system
+### Grid System
 
 - **Moved to flexbox.**
   - Added support for flexbox in the grid mixins and predefined classes.
@@ -49,7 +49,7 @@ Here are the big ticket items you'll want to be aware of when moving from UA Boo
 - **Dropped the pager component** as it was essentially slightly customized buttons.
 - **Refactored nearly all components** to use more un-nested class selectors instead of over-specific children selectors.
 
-## By component
+## By Component
 
 This list highlights key changes by component between v3.x.x and v4.0.0.
 
@@ -105,7 +105,7 @@ New to Bootstrap 4 is the [Reboot]({{ site.baseurl }}/docs/{{ site.docs_version 
   - Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in v4.
 - Change buttons' `[disabled]` to `:disabled` as IE9+ supports `:disabled`. However `fieldset[disabled]` is still necessary because [native disabled fieldsets are still buggy in IE11](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset#Browser_compatibility).
 
-### Button group
+### Button Group
 
 - Rewrote component with flexbox.
 - Removed `.btn-group-justified`. As a replacement you can use `<div class="btn-group d-flex" role="group"></div>` as a wrapper around elements with `.w-100`.
@@ -123,14 +123,14 @@ New to Bootstrap 4 is the [Reboot]({{ site.baseurl }}/docs/{{ site.docs_version 
 - Dropdown items now require `.dropdown-item`.
 - Dropdown toggles no longer require an explicit `<span class="caret"></span>`; this is now provided automatically via CSS's `::after` on `.dropdown-toggle`.
 
-### Grid system
+### Grid System
 
 - Added a new `576px` grid breakpoint as `sm`, meaning there are now five total tiers (`xs`, `sm`, `md`, `lg`, and `xl`).
 - Renamed the responsive grid modifier classes from `.col-{breakpoint}-{modifier}-{size}` to `.{modifier}-{breakpoint}-{size}` for simpler grid classes.
 - Dropped push and pull modifier classes for the new flexbox-powered `order` classes. For example, instead of `.col-8.push-4` and `.col-4.pull-8`, you'd use `.col-8.order-2` and `.col-4.order-1`.
 - Added flexbox utility classes for grid system and components.
 
-### List groups
+### List Groups
 
 - Rewrote component with flexbox.
 - Replaced `a.list-group-item` with an explicit class, `.list-group-item-action`, for styling link and button versions of list group items.
@@ -171,14 +171,14 @@ The navbar has been entirely rewritten in flexbox with improved support for alig
 
 - An explicit class, `.breadcrumb-item`, is now required on the descendants of `.breadcrumb`s
 
-### Labels and badges
+### Labels and Badges
 
 - Consolidated `.label` and `.badge` to disambiguate from the `<label>` element and simplify related components.
 - Added `.badge-pill` as modifier for rounded "pill" look.
 - Badges are no longer floated automatically in list groups and other components. Utility classes are now required for that.
 - `.badge-default` has been dropped and `.badge-secondary` added to match component modifier classes used elsewhere.
 
-### Panels, thumbnails, and wells
+### Panels, Thumbnails, and Wells
 
 Dropped entirely for the new card component.
 
@@ -228,7 +228,7 @@ Dropped entirely for the new card component.
   - Dropped `.center-block` for the new `.mx-auto` class.
 - Clearfix updated to drop support for older browser versions.
 
-### Vendor prefix mixins
+### Vendor Prefix Mixins
 
 Bootstrap 3's [vendor prefix](https://www.lifewire.com/css-vendor-prefixes-3466867) mixins, which were deprecated in v3.2.0, have been removed in Bootstrap 4. Since we use [Autoprefixer](https://github.com/postcss/autoprefixer), they're no longer necessary.
 
@@ -247,7 +247,7 @@ Our documentation received an upgrade across the board as well. Here's the low d
 - Pages have been reorganized for simpler content and a more approachable hierarchy.
 - We moved from regular CSS to SCSS to take full advantage of Bootstrap's variables, mixins, and more.
 
-### Responsive utilities
+### Responsive Utilities
 
 All `@screen-` variables have been removed in v4.0.0. Use the `media-breakpoint-up()`, `media-breakpoint-down()`, or `media-breakpoint-only()` Sass mixins or the `$grid-breakpoints` Sass map instead.
 

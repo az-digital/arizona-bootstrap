@@ -25,6 +25,13 @@
   }
 }
 
+//
+// > TRANSPARENT BACKGROUND COLORS
+//
+@mixin background-transparent($bg-color) {
+  background-color: rgba($bg-color, .7);
+}
+
 
 //
 // > BADGES

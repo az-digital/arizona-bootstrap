@@ -6,7 +6,13 @@ group: utilities
 toc: true
 ---
 
-## Color
+## Overview
+
+{{ site.title }} offers two "types" or colors: Brand colors and contextual (theme) colors. Brand colors are a collection of Arizona Branded colors offered by the <a href="https://brand.arizona.edu/ua-color-palette" target="_blank">Brand website</a>. Contextual colors are a smaller selection of Brand colors that are used to convey meaning and contextual information (e.g., success, warning, dager).
+
+When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim Color Contrast Checker</a> to verify your color contrast. Or, for your convenience, {{ site.title }} also provides a [helpful tool]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/color-contrast) to determine which Brand text colors have sufficient color contrast on other Brand background colors.
+
+## Text Color
 
 ### Brand
 
@@ -16,7 +22,7 @@ toc: true
 {% endcapture %}
 {% include example.html content=example %}
 
-### Theme
+### Contextual (Theme)
 
 {% capture example %}
 {% for color in site.data.theme-colors %}
@@ -38,16 +44,8 @@ Contextual text classes also work well on anchors with the provided hover and fo
 {% endcapture %}
 {% include example.html content=example %}
 
-### Grayscale
 
-{% capture example %}
-{% for color in site.data.grays %}
-<p{% if color.name == 100 or color.name == 200 or color.name == 300 or color.name == 400 or color.name == 500 %} class="bg-dark"{% endif %}><span class="text-gray-{{ color.name }}">.text-gray-{{ color.name }}</span></p>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
-
-
-## Background color
+## Background Color
 
 Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` utilities.
 
@@ -59,7 +57,7 @@ Similar to the contextual text color classes, easily set the background of an el
 {% endcapture %}
 {% include example.html content=example %}
 
-### Theme
+### Contextual (Theme)
 
 {% capture example %}
 {% for color in site.data.theme-colors %}
@@ -76,7 +74,7 @@ Similar to the contextual text color classes, easily set the background of an el
 {% endcapture %}
 {% include example.html content=example %}
 
-## Background gradient
+## Background Gradient
 
 When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg-gradient-` utility classes. [Learn about our Sass options]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/theming/#sass-options) to enable these classes and more.
 
@@ -84,7 +82,7 @@ When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg
 - `.bg-gradient-{{ color.name }}`{% endfor %}
 
 {% capture callout %}
-#### Dealing with specificity
+#### Dealing with Specificity
 
 Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element's content in a `<div>` with the class.
 {% endcapture %}

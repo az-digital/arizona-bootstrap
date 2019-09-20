@@ -1,13 +1,4 @@
 // Overrides for Navigation
-
-.navbar {
-  padding: 0 1rem;
-}
-.navbar-nav-scroll {
-  display: flex;
-  align-self: stretch;
-}
-
 .nav-pills .nav-link,
 .nav-tabs .nav-link,
 .nav-link {
@@ -43,11 +34,68 @@
 }
 
 .nav-tabs {
+  border-bottom-color: $nav-tabs-border-color;
+
+  .nav-item {
+    & + .nav-item {
+      margin-left: .5rem;
+    }
+  }
   .nav-link {
+    background-color: $nav-tabs-link-bg;
 
     &.active,
     &:active {
-      background-color: $white;
+      background-color: $nav-tabs-link-active-bg;
+      border-color: $nav-tabs-link-active-border-color;
+    }
+  }
+
+  &.nav-tabs-lg {
+    flex-direction: column;
+
+    .nav-item {
+      & + .nav-item {
+        margin-left: 0;
+      }
+    }
+
+    .nav-link {
+      text-transform: uppercase;
+      background-color: $nav-tabs-link-active-bg;
+      border-width: 0;
+
+      &.active,
+      &:active {
+        background-color: $nav-tabs-link-bg;
+      }
     }
   }
 }
+
+@include media-breakpoint-up(lg) {
+  .nav-tabs {
+    &.nav-tabs-lg {
+      flex-direction: row;
+
+      .nav-item {
+        & + .nav-item {
+          margin-left: .5rem;
+        }
+      }
+
+      .nav-link {
+        padding: $nav-tabs-lg-link-padding;
+        background-color: $nav-tabs-link-bg;
+        border: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+        &.active,
+        &:active {
+          background-color: $nav-tabs-link-active-bg;
+          border-color: $nav-tabs-link-active-border-color;
+        }
+      }
+    }
+  }
+}
+

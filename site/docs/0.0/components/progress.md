@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## How it works
+## How it Works
 
 Progress components are built with two HTML elements, some CSS to set the width, and a few attributes. We don't use [the HTML5 `<progress>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress), ensuring you can stack progress bars, animate them, and place text labels over them.
 
@@ -90,7 +90,7 @@ Use background utility classes to change the appearance of individual progress b
 {% endcapture %}
 {% include example.html content=example %}
 
-## Multiple bars
+## Multiple Bars
 
 Include multiple progress bars in a progress component if you need.
 
@@ -126,7 +126,7 @@ Add `.progress-bar-striped` to any `.progress-bar` to apply a stripe via CSS gra
 {% endcapture %}
 {% include example.html content=example %}
 
-## Animated stripes
+## Animated Stripes
 
 The striped gradient can also be animated. Add `.progress-bar-animated` to `.progress-bar` to animate the stripes right to left via CSS3 animations.
 

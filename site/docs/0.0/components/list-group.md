@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## Basic example
+## Basic Example
 
 The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
 
@@ -21,7 +21,7 @@ The most basic list group is an unordered list with list items and the proper cl
 {% endcapture %}
 {% include example.html content=example %}
 
-## Active items
+## Active Items
 
 Add `.active` to a `.list-group-item` to indicate the current active selection.
 
@@ -36,7 +36,7 @@ Add `.active` to a `.list-group-item` to indicate the current active selection.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Disabled items
+## Disabled Items
 
 Add `.disabled` to a `.list-group-item` to make it _appear_ disabled. Note that some elements with `.disabled` will also require custom JavaScript to fully disable their click events (e.g., links).
 
@@ -51,7 +51,7 @@ Add `.disabled` to a `.list-group-item` to make it _appear_ disabled. Note that 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Links and buttons
+## Links and Buttons
 
 Use `<a>`s or `<button>`s to create _actionable_ list group items with hover, disabled, and active states by adding `.list-group-item-action`. We separate these pseudo-classes to ensure list groups made of non-interactive elements (like `<li>`s or `<div>`s) don't provide a click or tap affordance.
 
@@ -116,7 +116,7 @@ Add `.list-group-horizontal` to change the layout of list group items from verti
 {% endcapture %}
 {% include example.html content=example %}{% endfor %}
 
-## Contextual classes
+## Contextual Classes
 
 Use contextual classes to style list items with a stateful background and color.
 
@@ -144,7 +144,7 @@ Contextual classes also work with `.list-group-item-action`. Note the addition o
 
 {% include callout-warning-color-assistive-technologies.md %}
 
-## With badges
+## With Badges
 
 Add badges to any list group item to show unread counts, activity, and more with the help of some [utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/).
 
@@ -166,7 +166,7 @@ Add badges to any list group item to show unread counts, activity, and more with
 {% endcapture %}
 {% include example.html content=example %}
 
-## Custom content
+## Custom Content
 
 Add nearly any HTML within, even for linked list groups like the one below, with the help of [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/).
 
@@ -254,7 +254,7 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
 </div>
 {% endhighlight %}
 
-### Using data attributes
+### Using Data Attributes
 
 You can activate a list group navigation without writing any JavaScript by simply specifying `data-toggle="list"` or on an element. Use these data attributes on `.list-group-item`.
 
@@ -298,7 +298,7 @@ $('#myList a:last-child').tab('show') // Select last tab
 $('#myList a:nth-child(3)').tab('show') // Select third tab
 {% endhighlight %}
 
-### Fade effect
+### Fade Effect
 
 To make tabs panel fade in, add `.fade` to each `.tab-pane`. The first tab pane must also have `.show` to make the initial content visible.
 

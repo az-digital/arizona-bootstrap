@@ -46,12 +46,20 @@ have been deprecated in Bootstrap 4.
 .btn-hollow-primary {
   @extend .btn-outline-blue;
 }
+.btn-hollow-reverse {
+  @extend .btn-outline-white;
+}
 
 // wells, panels, and thumbnails
 .well,
 .panel,
 .thumbnail {
   @extend .card;
+}
+
+// >> Inputs
+.input-group-btn {
+  @extend .input-group-prepend;
 }
 
 // >> Labels
@@ -79,7 +87,6 @@ have been deprecated in Bootstrap 4.
 .label-muted {
   @extend .badge-light;
 }
-
 
 // >> Panels
 .panel {
@@ -134,12 +141,6 @@ have been deprecated in Bootstrap 4.
 }
 
 
-// >> Modal Dark
-.modal-bg-dark {
-  @extend .bg-dark;
-}
-
-
 // >> Thumbnail
 .thumbnail {
   a > img,
@@ -159,6 +160,14 @@ have been deprecated in Bootstrap 4.
 .well {
   @extend .bg-light;
   @extend .card-body;
+
+  &.well-hollow {
+    @extend .bg-white;
+  }
+
+  &.well-sm {
+    @extend .p-2;
+  }
 }
 
 
@@ -167,22 +176,34 @@ have been deprecated in Bootstrap 4.
 // > UTILITIES
 //
 
-// >> Text Size
-@for $i from 1 through 6 {
-  .text-size-h#{$i} {
-    @extend .h#{$i};
-    @extend .mb-0;
+// >> Column Offset
+@for $i from 1 through 11 {
+  .col-xs-offset-#{$i} {
+    @extend .offset-#{$i};
+  }
+  .col-sm-offset-#{$i} {
+    @extend .offset-sm-#{$i};
+  }
+  .col-md-offset-#{$i} {
+    @extend .offset-md-#{$i};
+  }
+  .col-lg-offset-#{$i} {
+    @extend .offset-lg-#{$i};
+  }
+  .col-xl-offset-#{$i} {
+    @extend .offset-xl-#{$i};
   }
 }
 
+
 // >> Colors
 
-// >>> Primary
+// >>> Background Colors
+.bg-silver-tint {
+  @extend .bg-gray-100;
+}
 .bg-primary {
   @extend .bg-blue;
-}
-.text-primary {
-  @extend .text-blue;
 }
 
 // >>> Card Colors
@@ -221,8 +242,130 @@ have been deprecated in Bootstrap 4.
   @extend .border-danger;
 }
 
-// >>> Background Colors
-.bg-silver-tint {
-  @extend .bg-gray-100;
+
+// >>> Text Colors
+.text-primary {
+  @extend .text-blue;
 }
+
+// >> Modal Dark
+.modal-bg-dark {
+  @extend .bg-dark;
+
+  .modal-content {
+    @extend .bg-white;
+  }
+
+  .close {
+    color: $black;
+  }
+}
+
+// >> Navbar Default
+.navbar-default {
+  @extend .navbar-light;
+}
+
+// >> Text
+
+// >>> List
+/* stylelint-disable-next-line */
+ul.triangle {
+  @extend .ul-triangles;
+}
+
+// >>> Page Header
+.page-header {
+  @extend .mt-5, .mb-4, .pb-3;
+}
+
+// >>> Responsive Text Alignment *-not Classes
+.text-left-not-xs,
+.text-left-not-sm,
+.text-left-not-md,
+.text-left-not-lg {
+  @extend .text-left;
+}
+.text-center-not-xs,
+.text-center-not-sm,
+.text-center-not-md,
+.text-center-not-lg {
+  @extend .text-center;
+}
+.text-right-not-xs,
+.text-right-not-sm,
+.text-right-not-md,
+.text-right-not-lg {
+  @extend .text-right;
+}
+.text-justify-not-xs,
+.text-justify-not-sm,
+.text-justify-not-md,
+.text-justify-not-lg {
+  @extend .text-justify;
+}
+
+@include media-breakpoint-only(xs) {
+  .text-left-not-xs,
+  .text-center-not-xs,
+  .text-right-not-xs,
+  .text-justify-not-xs {
+    // stylelint-disable-next-line declaration-no-important
+    text-align: inherit !important;
+  }
+}
+@include media-breakpoint-only(sm) {
+  .text-left-not-sm,
+  .text-center-not-sm,
+  .text-right-not-sm,
+  .text-justify-not-sm {
+    // stylelint-disable-next-line declaration-no-important
+    text-align: inherit !important;
+  }
+}
+@include media-breakpoint-only(md) {
+  .text-left-not-md,
+  .text-center-not-md,
+  .text-right-not-md,
+  .text-justify-not-md {
+    // stylelint-disable-next-line declaration-no-important
+    text-align: inherit !important;
+  }
+}
+@include media-breakpoint-only(lg) {
+  .text-left-not-lg,
+  .text-center-not-lg,
+  .text-right-not-lg,
+  .text-justify-not-lg {
+    // stylelint-disable-next-line declaration-no-important
+    text-align: inherit !important;
+  }
+}
+
+
+// >>> Text Size
+@for $i from 1 through 6 {
+  .text-size-h#{$i} {
+    @extend .h#{$i};
+    @extend .mb-0;
+  }
+
+}
+// >>> Text Vertical Align
+.margin-align-top {
+  @extend .align-text-bottom;
+}
+.margin-align-middle {
+  @extend .align-middle;
+}
+.margin-align-bottom {
+  @extend .align-text-top;
+}
+.margin-zero-top {
+  @extend .mt-0;
+}
+.margin-zero-bottom {
+  @extend .mb-0;
+}
+
 

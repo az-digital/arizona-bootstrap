@@ -1,39 +1,26 @@
-// Overrides for the Button component
+// Overrides for the Button and Button Group components
 
+//
+// > BUTTONS
+//
+
+// >> Base
 .btn {
-  font-weight: 700;
+  font-weight: $btn-font-weight;
   text-transform: uppercase;
   letter-spacing: .04em;
+  white-space: normal;
+  border-width: $btn-border-width;
 }
 
+// >> Variants
 @each $color, $value in $theme-colors {
-  // increased specificity to .btn.btn-* to ensure overrides takes prescidence
   .btn-#{$color} {
     @include button-variant($value);
   }
 }
-
 .btn-link {
   color: $link-color;
-
-  /* @include hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
-
-  &:focus,
-  &.focus {
-    text-decoration: $link-hover-decoration;
-    box-shadow: none;
-  }
-
-  &:disabled,
-  &.disabled {
-    color: $btn-link-disabled-color;
-    pointer-events: none;
-  } */
-
-  // No need for an active state here
 }
 
 
@@ -41,20 +28,27 @@
 .btn-red {
   @include button-variant($chili);
   background-color: $chili;
-  &:hover {
+  @include hover {
     color: $white;
     background-color: $red;
   }
+  &.active,
+  &:active {
+    background-color: lighten($chili, 5%);
+  }
 }
 .btn-blue {
-  @include button-variant($blue);
+  @include button-variant($midnight);
   background-color: $blue;
-  &:hover {
+  @include hover {
     color: $white;
     background-color: $azurite;
   }
+  &.active,
+  &:active {
+    background-color: lighten($blue, 10%);
+  }
 }
-
 .btn-outline-red {
   color: $chili;
   border-color: $chili;
@@ -71,11 +65,20 @@
     background-color: $blue;
   }
 }
+.btn-outline-white {
+  color: $white;
+  border-color: $white;
+  &:hover {
+    color: $gray-800;
+    background-color: $white;
+  }
+}
 
 
-// Verfy accessible color contrast
+// >> Variant Accessibility
 .btn-success,
-.btn-info {
+.btn-info,
+.btn-outline-info {
   &:hover {
     color: $midnight;
   }
@@ -94,3 +97,39 @@
     color: $black;
   }
 }
+.btn-outline-light {
+  color: $ash;
+}
+
+// >> Arrow Buttons
+.btn-arrow {
+  &::after {
+    content: "\00a0»";
+  }
+}
+
+
+//
+// > BUTTON GROUP
+//
+
+// >> Justified
+.btn-group-justified {
+  display: flex;
+
+  .btn {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+// >> Block
+.btn-group-block {
+  @extend .btn-block;
+  .btn {
+    @extend .btn-block;
+  }
+  .dropdown-menu {
+    min-width: 100%;
+  }
+}
+

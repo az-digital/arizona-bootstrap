@@ -41,7 +41,7 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 {% endcapture %}
 {% include example.html content=example %}
 
-## Contextual variations
+## Contextual Variations
 
 Add any of the below mentioned modifier classes to change the appearance of a badge.
 
@@ -54,7 +54,8 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 
 {% include callout-warning-color-assistive-technologies.md %}
 
-## Pill badges
+{% comment %}
+## Pill Badges
 
 Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
 
@@ -64,6 +65,7 @@ Use the `.badge-pill` modifier class to make badges more rounded (with a larger 
 <span class="badge badge-pill badge-{{ color.name }}">{{ color.name | capitalize }}</span>{% endfor %}
 {% endcapture %}
 {% include example.html content=example %}
+{% endcomment %}
 
 ## Links
 

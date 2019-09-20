@@ -12,6 +12,8 @@ Due to the widespread use of tables across third-party widgets like calendars an
 
 Using the most basic table markup, here's how `.table`-based tables look in Bootstrap. **All table styles are inherited in Bootstrap 4**, meaning any nested tables will be styled in the same manner as the parent.
 
+### Default
+
 {% capture example %}
 <table class="table">
   <thead>
@@ -45,6 +47,8 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
 </table>
 {% endcapture %}
 {% include example.html content=example %}
+
+### Dark
 
 You can also invert the colors—with light text on dark backgrounds—with `.table-dark`.
 
@@ -82,7 +86,7 @@ You can also invert the colors—with light text on dark backgrounds—with `.ta
 {% endcapture %}
 {% include example.html content=example %}
 
-## Table head options
+## Table Head Options
 
 Similar to tables and dark tables, use the modifier classes `.thead-light` or `.thead-dark` to make `<thead>`s appear light or dark gray.
 
@@ -151,13 +155,13 @@ Similar to tables and dark tables, use the modifier classes `.thead-light` or `.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Striped rows
+## Striped Rows
 
 Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`.
 
 {% capture example %}
 <table class="table table-striped">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -223,13 +227,13 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
 {% endcapture %}
 {% include example.html content=example %}
 
-## Bordered table
+## Bordered Table
 
 Add `.table-bordered` for borders on all sides of the table and cells.
 
 {% capture example %}
 <table class="table table-bordered">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -293,13 +297,13 @@ Add `.table-bordered` for borders on all sides of the table and cells.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Borderless table
+## Borderless Table
 
 Add `.table-borderless` for a table without borders.
 
 {% capture example %}
 <table class="table table-borderless">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -365,13 +369,13 @@ Add `.table-borderless` for a table without borders.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Hoverable rows
+## Hoverable Rows
 
 Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 
 {% capture example %}
 <table class="table table-hover">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -435,13 +439,13 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Small table
+## Small Table
 
 Add `.table-sm` to make tables more compact by cutting cell padding in half.
 
 {% capture example %}
 <table class="table table-sm">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -505,7 +509,7 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Contextual classes
+## Contextual Classes
 
 Use contextual classes to color table rows or individual cells.
 
@@ -646,7 +650,7 @@ A `<caption>` functions like a heading for a table. It helps users with screen r
 {% capture example %}
 <table class="table">
   <caption>List of users</caption>
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -678,25 +682,25 @@ A `<caption>` functions like a heading for a table. It helps users with screen r
 {% endcapture %}
 {% include example.html content=example %}
 
-## Responsive tables
+## Responsive Tables
 
 Responsive tables allow tables to be scrolled horizontally with ease. Make any table responsive across all viewports by wrapping a `.table` with `.table-responsive`. Or, pick a maximum breakpoint with which to have a responsive table up to by using `.table-responsive{-sm|-md|-lg|-xl}`.
 
 {% capture callout %}
-##### Vertical clipping/truncation
+##### Vertical Clipping/Truncation
 
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-### Always responsive
+### Always Responsive
 
 Across every breakpoint, use `.table-responsive` for horizontally scrolling tables.
 
 <div class="bd-example">
   <div class="table-responsive">
     <table class="table">
-      <thead>
+      <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Heading</th>
@@ -755,12 +759,15 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
 {% highlight html %}
 <div class="table-responsive">
   <table class="table">
-    ...
+    <thead class="thead-light"> ... </thead>
+    <tbody>
+      ...
+    </tbody>
   </table>
 </div>
 {% endhighlight %}
 
-### Breakpoint specific
+### Breakpoint Specific
 
 Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
 
@@ -770,7 +777,7 @@ Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables u
 <div class="bd-example">
 <div class="table-responsive{{ bp.abbr }}">
   <table class="table">
-    <thead>
+    <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Heading</th>
@@ -824,7 +831,10 @@ Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables u
 {% highlight html %}
 <div class="table-responsive{{ bp.abbr }}">
   <table class="table">
-    ...
+    <thead class="thead-light"> ... </thead>
+    <tbody>
+      ...
+    </tbody>
   </table>
 </div>
 {% endhighlight %}

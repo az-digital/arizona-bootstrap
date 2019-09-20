@@ -18,7 +18,7 @@ Here are our guidelines and reasons for choosing what to override in Reboot:
 - For easier scaling across device sizes, block elements should use `rem`s for `margin`s.
 - Keep declarations of `font`-related properties to a minimum, using `inherit` whenever possible.
 
-## Page defaults
+## Page Defaults
 
 The `<html>` and `<body>` elements are updated to provide better page-wide defaults. More specifically:
 
@@ -27,7 +27,7 @@ The `<html>` and `<body>` elements are updated to provide better page-wide defau
 - The `<body>` also sets a global `font-family`, `line-height`, and `text-align`. This is inherited later by some form elements to prevent font inconsistencies.
 - For safety, the `<body>` has a declared `background-color`, defaulting to `#fff`.
 
-## Native font stack
+## Native Font Stack
 
 The default web fonts (Helvetica Neue, Helvetica, and Arial) have been dropped in Bootstrap 4 and replaced with a "native font stack" for optimum text rendering on every device and OS. Read more about [native font stacks in this *Smashing Magazine* article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
@@ -49,7 +49,7 @@ $font-family-sans-serif:
 
 This `font-family` is applied to the `<body>` and automatically inherited globally throughout Bootstrap. To switch the global `font-family`, update `$font-family-base` and recompile Bootstrap.
 
-## Headings and paragraphs
+## Headings and Paragraphs
 
 All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-top` removed. Headings have `margin-bottom: .5rem` added and paragraphs `margin-bottom: 1rem` for easy spacing.
 
@@ -145,7 +145,7 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
   </dl>
 </div>
 
-## Preformatted text
+## Preformatted Text
 
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
 
@@ -294,7 +294,7 @@ These changes, and more, are demonstrated below.
   </fieldset>
 </form>
 
-## Misc elements
+## Misc Elements
 
 ### Address
 
@@ -325,7 +325,7 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
   </blockquote>
 </div>
 
-### Inline elements
+### Inline Elements
 
 The `<abbr>` element receives basic styling to make it stand out amongst paragraph text.
 
@@ -349,7 +349,7 @@ The default `cursor` on summary is `text`, so we reset that to `pointer` to conv
   </details>
 </div>
 
-## HTML5 `[hidden]` attribute
+## HTML5 `[hidden]` Attribute
 
 HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden), which is styled as `display: none` by default. Borrowing an idea from [PureCSS](https://purecss.io/), we improve upon this default by making `[hidden] { display: none !important; }` to help prevent its `display` from getting accidentally overridden. While `[hidden]` isn't natively supported by IE10, the explicit declaration in our CSS gets around that problem.
 
@@ -358,7 +358,7 @@ HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.o
 {% endhighlight %}
 
 {% capture callout %}
-##### jQuery incompatibility
+##### jQuery Incompatibility
 
 `[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
 {% endcapture %}

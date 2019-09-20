@@ -12,7 +12,7 @@ Bootstrap "spinners" can be used to show the loading state in your projects. The
 
 For accessibility purposes, each loader here includes `role="status"` and a nested `<span class="sr-only">Loading...</span>`.
 
-## Border spinner
+## Border Spinner
 
 Use the border spinners for a lightweight loading indicator.
 
@@ -40,7 +40,7 @@ The border spinner uses `currentColor` for its `border-color`, meaning you can c
 {% endcapture %}
 {% include callout.html content=callout type="info" %}
 
-## Growing spinner
+## Growing Spinner
 
 If you don't fancy a border spinner, switch to the grow spinner. While it doesn't technically spin, it does repeatedly grow!
 
@@ -110,7 +110,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
 {% endcapture %}
 {% include example.html content=example %}
 
-#### Text align
+#### Text Align
 
 {% capture example %}
 <div class="text-center">

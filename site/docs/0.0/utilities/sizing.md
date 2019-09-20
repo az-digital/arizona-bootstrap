@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-## Relative to the parent
+## Relative to the Parent
 
 Width and height utilities are generated from the `$sizes` Sass map in `_variables.scss`. Includes support for `25%`, `50%`, `75%`, `100%`, and `auto` by default. Modify those values as you need to generate different utilities here.
 
@@ -44,7 +44,7 @@ You can also use `max-width: 100%;` and `max-height: 100%;` utilities as needed.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Relative to the viewport
+## Relative to the Viewport
 
 You can also use utilities to set the width and height relative to the viewport.
 

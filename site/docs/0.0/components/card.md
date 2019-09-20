@@ -28,7 +28,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Content types
+## Content Types
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what's supported.
 
@@ -45,7 +45,7 @@ The building block of a card is the `.card-body`. Use it whenever you need a pad
 {% endcapture %}
 {% include example.html content=example %}
 
-### Titles, text, and links
+### Titles, Text, and Links
 
 Card titles are used by adding `.card-title` to a `<h*>` tag. In the same way, links are added and placed next to each other by adding `.card-link` to an `<a>` tag.
 
@@ -78,7 +78,7 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 {% endcapture %}
 {% include example.html content=example %}
 
-### List groups
+### List Groups
 
 Create lists of content in a card with a flush list group.
 
@@ -107,7 +107,7 @@ Create lists of content in a card with a flush list group.
 {% endcapture %}
 {% include example.html content=example %}
 
-### Kitchen sink
+### Kitchen Sink
 
 Mix and match multiple content types to create the card you need, or throw everything in there. Shown below are image styles, blocks, text styles, and a list group—all wrapped in a fixed-width card.
 
@@ -131,7 +131,7 @@ Mix and match multiple content types to create the card you need, or throw every
 {% endcapture %}
 {% include example.html content=example %}
 
-### Header and footer
+### Header and Footer
 
 Add an optional header and/or footer within a card.
 
@@ -199,7 +199,7 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
 
 Cards assume no specific `width` to start, so they'll be 100% wide unless otherwise stated. You can change this as needed with custom CSS, grid classes, grid Sass mixins, or utilities.
 
-### Using grid markup
+### Using Grid Markup
 
 Using the grid, wrap cards in columns and rows as needed.
 
@@ -227,7 +227,7 @@ Using the grid, wrap cards in columns and rows as needed.
 {% endcapture %}
 {% include example.html content=example %}
 
-### Using utilities
+### Using Utilities
 
 Use our handful of [available sizing utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/sizing/) to quickly set a card's width.
 
@@ -250,7 +250,7 @@ Use our handful of [available sizing utilities]({{ site.baseurl }}/docs/{{ site.
 {% endcapture %}
 {% include example.html content=example %}
 
-### Using custom CSS
+### Using Custom CSS
 
 Use custom CSS in your stylesheets or as inline styles to set a width.
 
@@ -265,7 +265,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Text alignment
+## Text Alignment
 
 You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment).
 
@@ -352,7 +352,7 @@ Add some navigation to a card's header (or block) with Bootstrap's [nav componen
 
 Cards include a few options for working with images. Choose from appending "image caps" at either end of a card, overlaying images with card content, or simply embedding the image in a card.
 
-### Image caps
+### Image Caps
 
 Similar to headers and footers, cards can include top and bottom "image caps"—images at the top or bottom of a card.
 
@@ -376,7 +376,7 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
 {% endcapture %}
 {% include example.html content=example %}
 
-### Image overlays
+### Image Overlays
 
 Turn an image into a card background and overlay your card's text. Depending on the image, you may or may not need additional styles or utilities.
 
@@ -419,7 +419,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
 {% endcapture %}
 {% include example.html content=example %}
 
-## Card styles
+## Card Styles
 
 Cards include various options for customizing their backgrounds, borders, and color.
 
@@ -429,7 +429,7 @@ Use [text and background utilities]({{ site.baseurl }}/docs/{{ site.docs_version
 
 {% capture example %}
 {% for color in site.data.theme-colors %}
-<div class="card{% unless color.name == "light" %} text-white{% endunless %} bg-{{ color.name }} mb-3" style="max-width: 18rem;">
+<div class="card bg-{{ color.name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <h5 class="card-title">{{ color.name | capitalize }} card title</h5>
@@ -457,7 +457,60 @@ Use [border utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities
 {% endcapture %}
 {% include example.html content=example %}
 
-### Mixins utilities
+### Borderless
+
+Borderless cards both remove the border and make the entire card clickable. You can use any of the available utility classes to style your card and its text.
+
+{% capture example %}  
+<div class="card card-borderless card-clickable" style="max-width: 18rem;">
+  <a class="card-body" href="#">
+    <h5 class="card-title">Borderless Card Title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-clickable-link">Link to Content</p>
+  </a>
+</div>
+<div class="card card-borderless card-clickable" style="max-width: 18rem;">
+  <a class="card-body" href="#">
+    <h5 class="card-title text-midnight">Borderless Card Title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-clickable-link text-uppercase">Link to Content</p>
+  </a>
+</div>
+<div class="card card-borderless card-clickable bg-light" style="max-width: 18rem;">
+  <a class="card-body" href="#">
+    <h5 class="card-title text-midnight">Borderless Card Title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-clickable-link font-weight-bold text-uppercase">Link to Content</p>
+  </a>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Landing Grid
+
+The landing grid card makes the entire card clickable and is useful for landing pages.
+
+{% capture example %}
+<div class="card-deck">
+  <div class="card card-landing-grid card-clickable">
+    <a href="#" class="card-body">
+      <h3 class="card-text text-uppercase text-azurite">Freshmen</h3>
+      <p class="card-text">You are an incoming freshman if you will soon graduate from high school, you have graduated, or you have a GED and have not enrolled in college since graduating.</p>
+      <p class="card-clickable-link text-uppercase btn-arrow">How to Apply</p>
+    </a>
+  </div>
+  <div class="card card-landing-grid card-clickable">
+    <a href="#" class="card-body">
+      <h3 class="card-text text-uppercase text-azurite">Transfer</h3>
+      <p class="card-text">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
+      <p class="card-clickable-link text-uppercase btn-arrow">How to Apply</p>
+    </a>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Mixins Utilities
 
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
@@ -473,11 +526,11 @@ You can also change the borders on the card header and footer as needed, and eve
 {% endcapture %}
 {% include example.html content=example %}
 
-## Card layout
+## Card Layout
 
 In addition to styling the content within cards, Bootstrap includes a few options for laying out series of cards. For the time being, **these layout options are not yet responsive**.
 
-### Card groups
+### Card Groups
 
 Use card groups to render cards as a single, attached element with equal width and height columns. Card groups use `display: flex;` to achieve their uniform sizing.
 
@@ -549,7 +602,7 @@ When using card groups with footers, their content will automatically line up.
 {% endcapture %}
 {% include example.html content=example %}
 
-### Card decks
+### Card Decks
 
 Need a set of equal width and height cards that aren't attached to one another? Use card decks.
 
@@ -621,7 +674,7 @@ Just like with card groups, card footers in decks will automatically line up.
 {% endcapture %}
 {% include example.html content=example %}
 
-### Card columns
+### Card Columns
 
 Cards can be organized into [Masonry](https://masonry.desandro.com/)-like columns with just CSS by wrapping them in `.card-columns`. Cards are built with CSS `column` properties instead of flexbox for easier alignment. Cards are ordered from top to bottom and left to right.
 

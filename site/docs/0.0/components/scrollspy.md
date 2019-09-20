@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## How it works
+## How it Works
 
 Scrollspy has a few requirements to function properly:
 
@@ -18,7 +18,7 @@ Scrollspy has a few requirements to function properly:
 
 When successfully implemented, your nav or list group will update accordingly, moving the `.active` class from one item to the next based on their associated targets.
 
-## Example in navbar
+## Example in Navbar
 
 Scroll the area below the navbar and watch the active class change. The dropdown items will be highlighted as well.
 
@@ -94,7 +94,7 @@ Scroll the area below the navbar and watch the active class change. The dropdown
 </div>
 {% endhighlight %}
 
-## Example with nested nav
+## Example with Nested Nav
 
 Scrollspy also works with nested `.nav`s. If a nested `.nav` is `.active`, its parents will also be `.active`. Scroll the area next to the navbar and watch the active class change.
 
@@ -175,7 +175,7 @@ Scrollspy also works with nested `.nav`s. If a nested `.nav` is `.active`, its p
 </div>
 {% endhighlight %}
 
-## Example with list-group
+## Example with List-group
 
 Scrollspy also works with `.list-group`s. Scroll the area next to the list group and watch the active class change.
 
@@ -226,7 +226,7 @@ Scrollspy also works with `.list-group`s. Scroll the area next to the list group
 
 ## Usage
 
-### Via data attributes
+### Via Data Attributes
 
 To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any Bootstrap `.nav` component.
 
@@ -257,14 +257,14 @@ $('body').scrollspy({ target: '#navbar-example' })
 {% endhighlight %}
 
 {% capture callout %}
-#### Resolvable ID targets required
+#### Resolvable ID Targets Required
 
 Navbar links must have resolvable id targets. For example, a `<a href="#home">home</a>` must correspond to something in the DOM like `<div id="home"></div>`.
 {% endcapture %}
 {% include callout.html content=callout type="danger" %}
 
 {% capture callout %}
-#### Non-`:visible` target elements ignored
+#### Non-`:visible` Target Elements Ignored
 
 Target elements that are not [`:visible` according to jQuery](https://api.jquery.com/visible-selector/) will be ignored and their corresponding nav items will never be highlighted.
 {% endcapture %}

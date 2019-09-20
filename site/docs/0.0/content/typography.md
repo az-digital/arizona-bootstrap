@@ -6,7 +6,7 @@ group: content
 toc: true
 ---
 
-## Global settings
+## Global Settings
 
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/).
 
@@ -34,65 +34,65 @@ All HTML headings, `<h1>` through `<h6>`, are available.
       <td>
         {{ "`<h1></h1>`" | markdownify }}
       </td>
-      <td><span class="h1">h1. Bootstrap heading</span></td>
+      <td><span class="h1">Page Title</span></td>
     </tr>
     <tr>
       <td>
         {{ "`<h2></h2>`" | markdownify }}
       </td>
-      <td><span class="h2">h2. Bootstrap heading</span></td>
+      <td><span class="h2">Section Heading</span></td>
     </tr>
     <tr>
       <td>
         {{ "`<h3></h3>`" | markdownify }}
       </td>
-      <td><span class="h3">h3. Bootstrap heading</span></td>
+      <td><span class="h3">Subsection Heading</span></td>
     </tr>
     <tr>
       <td>
         {{ "`<h4></h4>`" | markdownify }}
       </td>
-      <td><span class="h4">h4. Bootstrap heading</span></td>
+      <td><span class="h4">Subsection Heading</span></td>
     </tr>
     <tr>
       <td>
         {{ "`<h5></h5>`" | markdownify }}
       </td>
-      <td><span class="h5">h5. Bootstrap heading</span></td>
+      <td><span class="h5">Subsection Heading</span></td>
     </tr>
     <tr>
       <td>
         {{ "`<h6></h6>`" | markdownify }}
       </td>
-      <td><span class="h6">h6. Bootstrap heading</span></td>
+      <td><span class="h6">Subsection Heading</span></td>
     </tr>
   </tbody>
 </table>
 
 {% highlight html %}
-<h1>h1. Bootstrap heading</h1>
-<h2>h2. Bootstrap heading</h2>
-<h3>h3. Bootstrap heading</h3>
-<h4>h4. Bootstrap heading</h4>
-<h5>h5. Bootstrap heading</h5>
-<h6>h6. Bootstrap heading</h6>
+<h1>Page Title</h1>
+<h2>Section Heading</h2>
+<h3>Subsection Heading</h3>
+<h4>Subsection Heading</h4>
+<h5>Subsection Heading</h5>
+<h6>Subsection Heading</h6>
 {% endhighlight %}
 
 `.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
 
 {% capture example %}
-<p class="h1">h1. Bootstrap heading</p>
-<p class="h2">h2. Bootstrap heading</p>
-<p class="h3">h3. Bootstrap heading</p>
-<p class="h4">h4. Bootstrap heading</p>
-<p class="h5">h5. Bootstrap heading</p>
-<p class="h6">h6. Bootstrap heading</p>
+<p class="h1">Heading 1 Style</p>
+<p class="h2">Heading 2 Style</p>
+<p class="h3">Heading 3 Style</p>
+<p class="h4">Heading 4 Style</p>
+<p class="h5">Heading 5 Style</p>
+<p class="h6">Heading 6 Style</p>
 {% endcapture %}
 {% include example.html content=example %}
 
-### Customizing headings
+### Customizing Headings
 
-Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.
+Use any of the available [utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text) to customize your heading text by changing its color, size, style, transformation, etc.
 
 {% capture example %}
 <h3>
@@ -102,7 +102,7 @@ Use the included utility classes to recreate the small secondary heading text fr
 {% endcapture %}
 {% include example.html content=example %}
 
-## Display headings
+## Display Headings
 
 Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style. Keep in mind these headings are not responsive by default, but it's possible to enable [responsive font sizes](#responsive-font-sizes).
 
@@ -143,7 +143,7 @@ Make a paragraph stand out by adding `.lead`.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Inline text elements
+## Inline Text Elements
 
 Styling for common inline HTML5 elements.
 
@@ -163,7 +163,32 @@ Styling for common inline HTML5 elements.
 
 While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance while `<i>` is mostly for voice, technical terms, etc.
 
-## Text utilities
+## Links
+
+Default links include a red text color and an underline on hover. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling. 
+
+{% capture example %}
+<a href="#">Default Link</a>
+{% endcapture %}
+{% include example.html content=example %}
+
+<!-- Use the `.external-links` class in combination with the `.ua-brand-icons` class on the `<html>` tag to automatically add external link styling to all links in the document that travel outside the current site.
+
+<div class="bd-example external-links ua-brand-icons">
+  <a href="#">External Link</a>
+</div>
+{% highlight html %}
+<html class="external-links ua-brand-icons">
+  <h2><a href="https://uadigital.arizona.edu/ua-bootstrap/" target="_blank">H2 Link</a> with text</h2>
+  <ul class="triangle">
+    <li><a href="https://uadigital.arizona.edu/ua-bootstrap/">Link</a></li>
+    <li><a href="https://uanews.arizona.edu" target="_blank">UA News External Link</a></li>
+  </ul>
+  <div class="btn btn-default" target="_blank">External Link Button</div>
+</html>
+{% endhighlight %} -->
+
+## Text Utilities
 
 Change text alignment, transform, style, weight, and color with our [text utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/) and [color utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/).
 
@@ -190,7 +215,7 @@ For quoting blocks of content from another source within your document. Wrap `<b
 {% endcapture %}
 {% include example.html content=example %}
 
-### Naming a source
+### Naming a Source
 
 Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the name of the source work in `<cite>`.
 
@@ -204,7 +229,7 @@ Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the 
 
 ### Alignment
 
-Use text utilities as needed to change the alignment of your blockquote.
+Use text utilities as needed to change the alignment of your blockquote. You can also add the `.blockquote-reverse` in combination with `.text-right` to right-align your blockquote and shift its border to the right.
 
 {% capture example %}
 <blockquote class="blockquote text-center">
@@ -222,7 +247,61 @@ Use text utilities as needed to change the alignment of your blockquote.
 {% endcapture %}
 {% include example.html content=example %}
 
+{% capture example %}
+<blockquote class="blockquote blockquote-reverse text-right">
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+{% endcapture %}
+{% include example.html content=example %}
+
 ## Lists
+
+### Ordered
+
+Ordered lists are good for content that requires sequential or hierarchical ordering.
+
+{% capture example %}
+<ol>
+  <li>First, Lorem ipsum dolor sit amet</li>
+  <li>Second, Consectetur adipiscing elit</li>
+  <li>Third, Integer molestie lorem at massa</li>
+  <li>Fourth, Facilisis in pretium nisl aliquet</li>
+  <li>Last, Nulla volutpat aliquam velit</li>
+</ol>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Unordered
+
+Unordered lists are good for generic content that doesn't have any sort of sequantial order.
+
+{% capture example %}
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Triangles
+
+Add the `.ul-triangles` class to your **unordered list** to replace the default bullets with triangles. Triangle list items function the same as an unordered list.
+
+{% capture example %}
+<ul class="ul-triangles">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
 
 ### Unstyled
 
@@ -262,7 +341,7 @@ Remove a list's bullets and apply some light `margin` with a combination of two 
 {% endcapture %}
 {% include example.html content=example %}
 
-### Description list alignment
+### Description List Alignment
 
 Align terms and descriptions horizontally by using our grid system's predefined classes (or semantic mixins). For longer terms, you can optionally add a `.text-truncate` class to truncate the text with an ellipsis.
 
@@ -294,7 +373,7 @@ Align terms and descriptions horizontally by using our grid system's predefined 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Responsive font sizes
+## Responsive Font Sizes
 
 Bootstrap v4.3 ships with the option to enable responsive font sizes, allowing text to scale more naturally across device and viewport sizes. <abbr title="Responsive font sizes">RFS</abbr> can be enabled by changing the `$enable-responsive-font-sizes` Sass variable to `true` and recompiling Bootstrap.
 

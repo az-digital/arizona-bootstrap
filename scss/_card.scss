@@ -1,5 +1,6 @@
-// Overrides for the Card component
+// Overrides & Custom for the Card component
 
+// >> Card Header
 .card {
   .card-header {
     background-color: $card-cap-bg;
@@ -28,3 +29,49 @@
     }
   }
 }
+
+
+// >> Clickable Card (Borderless & Landing Grid)
+.card-clickable {
+  border: {
+    top-width: 0;
+    right-width: 1px;
+    bottom-width: 1px;
+    left-width: 0;
+    color: $sky;
+  }
+
+  .card-body {
+    padding: 2.5rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .card-clickable-link {
+    @extend .mb-0;
+    color: $link-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// >> Borderless Card
+.card-borderless {
+  @extend .border-0;
+
+  &:hover {
+    .card-clickable-link {
+      text-decoration: underline;
+    }
+  }
+}
+
+// >> Landing Grid
+.card-landing-grid {
+  &:hover {
+    background-color: $gray-200;
+  }
+}
+

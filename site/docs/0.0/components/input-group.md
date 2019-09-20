@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## Basic example
+## Basic Example
 
 Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place `<label>`s outside the input group.
 
@@ -96,7 +96,7 @@ Add the relative form sizing classes to the `.input-group` itself and contents w
 {% endcapture %}
 {% include example.html content=example %}
 
-## Checkboxes and radios
+## Checkboxes and Radios
 
 Place any checkbox or radio option within an input group's addon instead of text.
 
@@ -121,7 +121,7 @@ Place any checkbox or radio option within an input group's addon instead of text
 {% endcapture %}
 {% include example.html content=example %}
 
-## Multiple inputs
+## Multiple Inputs
 
 While multiple `<input>`s are supported visually, validation styles are only available for input groups with a single `<input>`.
 
@@ -136,7 +136,7 @@ While multiple `<input>`s are supported visually, validation styles are only ava
 {% endcapture %}
 {% include example.html content=example %}
 
-## Multiple addons
+## Multiple Addons
 
 Multiple add-ons are supported and can be mixed with checkbox and radio input versions.
 
@@ -159,7 +159,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 {% endcapture %}
 {% include example.html content=example %}
 
-## Button addons
+## Button Addons
 
 {% capture example %}
 <div class="input-group mb-3">
@@ -194,7 +194,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 {% endcapture %}
 {% include example.html content=example %}
 
-## Buttons with dropdowns
+## Buttons with Dropdowns
 
 {% capture example %}
 <div class="input-group mb-3">
@@ -227,7 +227,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 {% endcapture %}
 {% include example.html content=example %}
 
-## Segmented buttons
+## Segmented Buttons
 
 {% capture example %}
 <div class="input-group mb-3">
@@ -266,11 +266,11 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 {% endcapture %}
 {% include example.html content=example %}
 
-## Custom forms
+## Custom Forms
 
 Input groups include support for custom selects and custom file inputs. Browser default versions of these are not supported.
 
-### Custom select
+### Custom Select
 
 {% capture example %}
 <div class="input-group mb-3">
@@ -323,7 +323,7 @@ Input groups include support for custom selects and custom file inputs. Browser 
 {% endcapture %}
 {% include example.html content=example %}
 
-### Custom file input
+### Custom File Input
 
 {% capture example %}
 <div class="input-group mb-3">

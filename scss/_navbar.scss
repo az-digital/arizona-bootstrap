@@ -11,19 +11,9 @@
   padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
 }
 
-
-.navbar-dark {
-  .btn-outline-info,
-  .btn-outline-success,
-  .btn-outline-warning {
-    color: $white;
-  }
-
-  .btn-outline-info {
-    &:hover {
-      color: $midnight;
-    }
-  }
+.navbar-nav-scroll {
+  display: flex;
+  align-self: stretch;
 }
 
 .navbar-light {

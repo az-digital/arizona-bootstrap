@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## Basic example
+## Basic Example
 
 Wrap a series of buttons with `.btn` in `.btn-group`. Add on optional JavaScript radio and checkbox style behavior with [our buttons plugin]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/buttons/#button-plugin).
 
@@ -20,7 +20,7 @@ Wrap a series of buttons with `.btn` in `.btn-group`. Add on optional JavaScript
 {% include example.html content=example %}
 
 {% capture callout %}
-##### Ensure correct `role` and provide a label
+##### Ensure Correct `role` and Provide a Label
 
 In order for assistive technologies (such as screen readers) to convey that a series of buttons is grouped, an appropriate `role` attribute needs to be provided. For button groups, this would be `role="group"`, while toolbars should have a `role="toolbar"`.
 
@@ -28,7 +28,7 @@ In addition, groups and toolbars should be given an explicit label, as most assi
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-## Button toolbar
+## Button Toolbar
 
 Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.
 
@@ -111,6 +111,19 @@ Instead of applying button sizing classes to every button in a group, just add `
   </div>
 </div>
 
+## Justified
+
+Add the `.btn-group-justified` class to your `.btn-group` to make each button in the group the same size and span the full-width of its containing `div`. The buttons will remain the same size, regardless of the amount of text in each button.
+
+{% capture example %}
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+  <button type="button" class="btn btn-red">Left Button with More Text</button>
+  <button type="button" class="btn btn-blue">Middle</button>
+  <button type="button" class="btn btn-info">Right Button</button>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
 {% highlight html %}
 <div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
 <div class="btn-group" role="group" aria-label="...">...</div>
@@ -139,7 +152,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
 {% endcapture %}
 {% include example.html content=example %}
 
-## Vertical variation
+## Vertical Variation
 
 Make a set of buttons appear vertically stacked rather than horizontally. **Split button dropdowns are not supported here.**
 
@@ -205,3 +218,22 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
   ...
 </div>
 {% endhighlight %}
+
+### Block
+
+Add the `.btn-group-block` class to your `.btn-group-vertical` to make all buttons and dropdowns inside inherit the `.btn-block` style, and span the full width of the containing `div`.
+
+{% capture example %}
+<div class="btn-group-vertical btn-group-block" role="group" aria-label="Block button group" style="max-width: 500px;">
+  <button type="button" class="btn btn-red">Button</button>
+  <div class="btn-group" role="group">
+    <button id="btnGroupVerticalDropBlock" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDropBlock">
+      <a class="dropdown-item" href="#">Dropdown link</a>
+      <a class="dropdown-item" href="#">Dropdown link</a>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}

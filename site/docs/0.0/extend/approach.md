@@ -48,7 +48,7 @@ There are two `z-index` scales in Bootstrap—elements within a component and ov
 - `0` is default (initial), `1` is `:hover`, `2` is `:active`/`.active`, and `3` is `:focus`.
 - This approach matches our expectations of highest user priority. If an element is focused, it's in view and at the user's attention. Active elements are second highest because they indicate state. Hover is third highest because it indicates user intent, but nearly _anything_ can be hovered.
 
-### Overlay components
+### Overlay Components
 
 Bootstrap includes several components that function as an overlay of some kind. This includes, in order of highest `z-index`, dropdowns, fixed and sticky navbars, modals, tooltips, and popovers. These components have their own `z-index` scale that begins at `1000`. This starting number was chosen arbitrarily and serves as a small buffer between our styles and your project's custom styles.
 
@@ -56,7 +56,7 @@ Each overlay component increases its `z-index` value slightly in such a way that
 
 Learn more about this in our [`z-index` layout page]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/overview/#z-index).
 
-## HTML and CSS over JS
+## HTML and CSS Over JS
 
 Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.
 

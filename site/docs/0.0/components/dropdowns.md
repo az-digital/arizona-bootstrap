@@ -26,7 +26,7 @@ However, Bootstrap does add built-in support for most standard keyboard menu int
 
 Wrap the dropdown's toggle (your button or link) and the dropdown menu within `.dropdown`, or another element that declares `position: relative;`. Dropdowns can be triggered from `<a>` or `<button>` elements to better fit your potential needs.
 
-### Single button
+### Single Button
 
 Any single `.btn` can be turned into a dropdown toggle with some markup changes. Here's how you can put them to work with either `<button>` elements:
 
@@ -142,7 +142,7 @@ The best part is you can do this with any button variant, too:
 </div>
 {% endhighlight %}
 
-### Split button
+### Split Button
 
 Similarly, create split button dropdowns with virtually the same markup as single button dropdowns, but with the addition of `.dropdown-toggle-split` for proper spacing around the dropdown caret.
 
@@ -537,7 +537,7 @@ Trigger dropdown menus at the left of the elements by adding `.dropleft` to the 
 </div>
 {% endhighlight %}
 
-## Menu items
+## Menu Items
 
 Historically dropdown menu contents *had* to be links, but that's no longer the case with v4. Now you can optionally use `<button>` elements in your dropdowns instead of just `<a>`s.
 
@@ -593,7 +593,7 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Menu alignment
+## Menu Alignment
 
 By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add `.dropdown-menu-right` to a `.dropdown-menu` to right align the dropdown menu.
 
@@ -616,7 +616,7 @@ By default, a dropdown menu is automatically positioned 100% from the top and al
 {% endcapture %}
 {% include example.html content=example %}
 
-### Responsive alignment
+### Responsive Alignment
 
 If you want to use responsive alignment, disable dynamic positioning by adding the `data-display="static"` attribute and use the responsive variation classes.
 
@@ -654,7 +654,7 @@ To align **left** the dropdown menu with the given breakpoint or larger, add `.d
 
 Note that you don't need to add a `data-display="static"` attribute to dropdown buttons in navbars, since Popper.js isn't used in navbars.
 
-## Menu content
+## Menu Content
 
 ### Headers
 
@@ -755,7 +755,7 @@ Put a form within a dropdown menu, or make it into a dropdown menu, and use [mar
 {% endcapture %}
 {% include example.html content=example %}
 
-## Dropdown options
+## Dropdown Options
 
 Use `data-offset` or `data-reference` to change the location of the dropdown.
 
@@ -797,7 +797,7 @@ On touch-enabled devices, opening a dropdown adds empty (`$.noop`) `mouseover` h
 {% endcapture %}
 {% include callout.html content=callout type="info" %}
 
-### Via data attributes
+### Via Data Attributes
 
 Add `data-toggle="dropdown"` to a link or button to toggle a dropdown.
 
@@ -821,7 +821,7 @@ $('.dropdown-toggle').dropdown()
 {% endhighlight %}
 
 {% capture callout %}
-##### `data-toggle="dropdown"` still required
+##### `data-toggle="dropdown"` Still Required
 
 Regardless of whether you call your dropdown via JavaScript or instead use the data-api, `data-toggle="dropdown"` is always required to be present on the dropdown's trigger element.
 {% endcapture %}

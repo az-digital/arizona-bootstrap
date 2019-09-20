@@ -5,12 +5,12 @@ description: Guidance and suggestions for using external icon libraries with Boo
 group: extend
 ---
 
-Bootstrap doesn't include an icon library by default, but we have a handful of recommendations for you to choose from. While most icon sets include multiple file formats, we prefer SVG implementations for their improved accessibility and vector support.
+{{ site.title }} doesn't include an icon library by default, but we have a handful of recommendations for you to choose from. While most icon sets include multiple file formats, we prefer SVG implementations for their improved accessibility and vector support.
+
 
 ## Preferred
 
 We've tested and used these icon sets ourselves.
-
 - [Font Awesome](https://fontawesome.com/)
 - [Iconic](https://github.com/iconic/open-iconic)
 - [Octicons](https://octicons.github.com/)

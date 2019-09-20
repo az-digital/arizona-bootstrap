@@ -12,21 +12,21 @@ toc: true
 
 The overall accessibility of any project built with {{ site.title }} depends in large part on the author's markup, additional styling, and scripting they've included. However, provided that these have been implemented correctly, it should be perfectly possible to create websites and applications with {{ site.title }} that fulfill [<abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0](https://www.w3.org/TR/WCAG20/) (A/AA/AAA), [Section 508](https://www.section508.gov/) and similar accessibility standards and requirements.
 
-### Structural markup
+### Structural Markup
 
 {{ site.title }}'s styling and layout can be applied to a wide range of markup structures. This documentation aims to provide developers with best practice examples to demonstrate the use of {{ site.title }} itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.
 
-### Interactive components
+### Interactive Components
 
 {{ site.title }}'s interactive components—such as modal dialogs, dropdown menus and custom tooltips—are designed to work for touch, mouse and keyboard users. Through the use of relevant [<abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr>](https://www.w3.org/WAI/standards-guidelines/aria/) roles and attributes, these components should also be understandable and operable using assistive technologies (such as screen readers).
 
 Because {{ site.title }}'s components are purposely designed to be fairly generic, authors may need to include further <abbr title="Accessible Rich Internet Applications">ARIA</abbr> roles and attributes, as well as JavaScript behavior, to more accurately convey the precise nature and functionality of their component. This is usually noted in the documentation.
 
-### Color contrast
+### Color Contrast
 
 Most colors that currently make up {{ site.title }}'s default palette—used throughout the framework for things such as button variations, alert variations, form validation indicators—lead to *insufficient* color contrast (below the recommended [WCAG 2.0 color contrast ratio of 4.5:1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)) when used against a light background. Authors will need to manually modify/extend these default colors to ensure adequate color contrast ratios.
 
-### Visually hidden content
+### Visually Hidden Content
 
 Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the `.sr-only` class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.
 
@@ -43,11 +43,11 @@ For visually hidden interactive controls, such as traditional "skip" links, `.sr
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 {% endhighlight %}
 
-### Reduced motion
+### Reduced Motion
 
 {{ site.title }} includes support for the [`prefers-reduced-motion` media feature](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion). In browsers/environments that allow the user to specify their preference for reduced motion, most CSS transition effects in {{ site.title }} (for instance, when a modal dialog is opened or closed, or the sliding animation in carousels) will be disabled.
 
-## Additional resources
+## Additional Resources
 
 - [IT Accessibility information from the Disability Resource Center](https://itaccessibility.arizona.edu/)
 - [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)

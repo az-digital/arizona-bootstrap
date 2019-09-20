@@ -17,7 +17,7 @@ This doesn't include documentation, source files, or any optional JavaScript dep
 
 <a href="{{ site.download.dist }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download {{ site.title }}');">Download</a>
 
-## Source files
+## Source Files
 
 Compile {{ site.title }} with your own asset pipeline by downloading our source Sass, JavaScript, and documentation files. This option requires some additional tooling:
 
@@ -44,7 +44,7 @@ If you're using our compiled JavaScript, don't forget to include CDN versions of
 <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
 {% endhighlight %}
 
-## Package managers
+## Package Managers
 
 Pull in {{ site.title }}'s **source files** into nearly any project with some of the most popular package managers. No matter the package manager, {{ site.title }} will **require a Sass compiler and [Autoprefixer](https://github.com/postcss/autoprefixer)** for a setup that matches our official compiled versions.
 

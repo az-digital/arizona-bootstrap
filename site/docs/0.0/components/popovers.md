@@ -26,7 +26,7 @@ Things to know when using the popover plugin:
 
 Keep reading to see how popovers work with some examples.
 
-## Example: Enable popovers everywhere
+## Example: Enable Popovers Everywhere
 
 One way to initialize all popovers on a page would be to select them by their `data-toggle` attribute:
 
@@ -36,7 +36,7 @@ $(function () {
 })
 {% endhighlight %}
 
-## Example: Using the `container` option
+## Example: Using the `container` Option
 
 When you have some styles on a parent element that interfere with a popover, you'll want to specify a custom `container` so that the popover's HTML appears within that element instead.
 
@@ -55,7 +55,7 @@ $(function () {
 {% endcapture %}
 {% include example.html content=example %}
 
-### Four directions
+### Four Directions
 
 Four options are available: top, right, bottom, and left aligned.
 
@@ -95,12 +95,12 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 </button>
 {% endhighlight %}
 
-### Dismiss on next click
+### Dismiss on Next Click
 
 Use the `focus` trigger to dismiss popovers on the user's next click of a different element than the toggle element.
 
 {% capture callout %}
-#### Specific markup required for dismiss-on-next-click
+#### Specific Markup Required for Dismiss-on-next-click
 
 For proper cross-browser and cross-platform behavior, you must use the `<a>` tag, _not_ the `<button>` tag, and you also must include a [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute.
 {% endcapture %}
@@ -117,7 +117,7 @@ $('.popover-dismiss').popover({
 })
 {% endhighlight %}
 
-### Disabled elements
+### Disabled Elements
 
 Elements with the `disabled` attribute aren't interactive, meaning users cannot hover or click them to trigger a popover (or tooltip). As a workaround, you'll want to trigger the popover from a wrapper `<div>` or `<span>` and override the `pointer-events` on the disabled element.
 
@@ -137,7 +137,7 @@ Enable popovers via JavaScript:
 {% highlight js %}$('#example').popover(options){% endhighlight %}
 
 {% capture callout %}
-### Making popovers work for keyboard and assistive technology users
+### Making Popovers Work for Keyboard and Assistive Technology Users
 
 To allow keyboard users to activate your popovers, you should only add them to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as `<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users, and most assistive technologies currently do not announce the popover's content in this situation. Additionally, do not rely solely on `hover` as the trigger for your popovers, as this will make them impossible to trigger for keyboard users.
 
@@ -288,7 +288,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
 </table>
 
 {% capture callout %}
-#### Data attributes for individual popovers
+#### Data Attributes for Individual Popovers
 
 Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.
 {% endcapture %}

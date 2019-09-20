@@ -37,7 +37,7 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 {% include example.html content=example %}
 </div>
 
-## Border color
+## Border Color
 
 Change the border color using utilities built on our theme colors.
 

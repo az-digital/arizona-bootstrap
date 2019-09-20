@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## Base nav
+## Base Nav
 
 Navigation available in Bootstrap share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
 
@@ -47,11 +47,11 @@ Classes are used throughout, so your markup can be super flexible. Use `<ul>`s l
 {% endcapture %}
 {% include example.html content=example %}
 
-## Available styles
+## Available Styles
 
 Change the style of `.nav`s component with modifiers and utilities. Mix and match as needed, or build your own.
 
-### Horizontal alignment
+### Horizontal Alignment
 
 Change the horizontal alignment of your nav with [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/grid/#horizontal-alignment). By default, navs are left-aligned, but you can easily change them to center or right aligned.
 
@@ -151,6 +151,28 @@ Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabb
 {% endcapture %}
 {% include example.html content=example %}
 
+### Large Tabs
+
+Take that same HTML and add `.nav-tabs-lg` to create larger tabs which become vertical on smaller screens.
+
+{% capture example %}
+<ul class="nav nav-tabs nav-tabs-lg">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
 ### Pills
 
 Take that same HTML, but use `.nav-pills` instead:
@@ -173,7 +195,7 @@ Take that same HTML, but use `.nav-pills` instead:
 {% endcapture %}
 {% include example.html content=example %}
 
-### Fill and justify
+### Fill and Justify
 
 Force your `.nav`'s contents to extend the full available width one of two modifier classes. To proportionately fill all available space with your `.nav-item`s, use `.nav-fill`. Notice that all horizontal space is occupied, but not every nav item has the same width.
 
@@ -239,7 +261,7 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation, be sure to 
 
 {% endcapture %}
 {% include example.html content=example %}
-## Working with flex utilities
+## Working with Flex Utilities
 
 If you need responsive nav variations, consider using a series of [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
 
@@ -253,17 +275,17 @@ If you need responsive nav variations, consider using a series of [flexbox utili
 {% endcapture %}
 {% include example.html content=example %}
 
-## Regarding accessibility
+## Regarding Accessibility
 
 If you're using navs to provide a navigation bar, be sure to add a `role="navigation"` to the most logical parent container of the `<ul>`, or wrap a `<nav>` element around the whole navigation. Do not add the role to the `<ul>` itself, as this would prevent it from being announced as an actual list by assistive technologies.
 
 Note that navigation bars, even if visually styled as tabs with the `.nav-tabs` class, should **not** be given `role="tablist"`, `role="tab"` or `role="tabpanel"` attributes. These are only appropriate for dynamic tabbed interfaces, as described in the [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr> Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#tabpanel). See [JavaScript behavior](#javascript-behavior) for dynamic tabbed interfaces in this section for an example.
 
-## Using dropdowns
+## Using Dropdowns
 
 Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/dropdowns/#usage).
 
-### Tabs with dropdowns
+### Tabs with Dropdowns
 
 {% capture example %}
 <ul class="nav nav-tabs">
@@ -290,7 +312,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
 {% endcapture %}
 {% include example.html content=example %}
 
-### Pills with dropdowns
+### Pills with Dropdowns
 
 {% capture example %}
 <ul class="nav nav-pills">
@@ -317,7 +339,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
 {% endcapture %}
 {% include example.html content=example %}
 
-## JavaScript behavior
+## JavaScript Behavior
 
 Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our navigational tabs and pills to create tabbable panes of local content, even via dropdown menus.
 
@@ -507,7 +529,7 @@ And with vertical pills.
 </div>
 {% endhighlight %}
 
-### Using data attributes
+### Using Data Attributes
 
 You can activate a tab or pill navigation without writing any JavaScript by simply specifying `data-toggle="tab"` or `data-toggle="pill"` on an element. Use these data attributes on `.nav-tabs` or `.nav-pills`.
 
@@ -557,7 +579,7 @@ $('#myTab li:last-child a').tab('show') // Select last tab
 $('#myTab li:nth-child(3) a').tab('show') // Select third tab
 {% endhighlight %}
 
-### Fade effect
+### Fade Effect
 
 To make tabs fade in, add `.fade` to each `.tab-pane`. The first tab pane must also have `.show` to make the initial content visible.
 
