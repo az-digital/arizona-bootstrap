@@ -279,7 +279,7 @@ In {{ site.title }}, what was previously `.input-group-btn` has been replaced by
       <button class="btn btn-red">{% include icons/lightning.svg width="20" height="20" class="text-white" %}</button>
       <button class="btn btn-blue">Action</button>
     </div>
-    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon">
   </div>
 </div>
 

@@ -23,11 +23,12 @@
     "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
     "css-prefix-docs": "postcss --config build/postcss.config.js --replace \"site/docs/**/*.css\" \"site/docs/**/*.css\"",
     "dist": "npm-run-all --parallel css js",
-    "docs": "npm-run-all css-docs js-docs docs-compile",
-    "docs-review": "npm-run-all css-docs js-docs docs-compile-review",
+    "docs": "npm-run-all css-docs js-docs docs-compile docs-lint",
+    "docs-review": "npm-run-all css-docs js-docs docs-compile-review docs-lint",
     "docs-compile": "bundle exec jekyll build",
     "docs-compile-review": "bundle exec jekyll build --baseurl $UAZ_REVIEW_BASEURL",
     "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
+    "docs-lint": "node build/vnu-jar.js",
     "docs-serve": "bundle exec jekyll serve",
     "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
     "js": "npm-run-all js-copy-*",
@@ -40,7 +41,7 @@
     "js-minify": "npm-run-all --parallel js-minify-docs",
     "js-minify-docs": "cross-env-shell uglifyjs --mangle --comments \\\"/^!/\\\" --output site/docs/$npm_package_version_short/assets/js/docs.min.js site/docs/$npm_package_version_short/assets/js/vendor/anchor.min.js site/docs/$npm_package_version_short/assets/js/vendor/clipboard.min.js site/docs/$npm_package_version_short/assets/js/vendor/bs-custom-file-input.min.js \"site/docs/$npm_package_version_short/assets/js/src/*.js\"",
     "lint": "npm-run-all --parallel js-lint css-lint",
-    "test": "npm-run-all lint dist docs-compile",
+    "test": "npm-run-all lint dist docs-compile js-test docs-lint",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
     "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\"",
@@ -72,6 +73,7 @@
     "shx": "^0.3.2",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.1",
-    "uglify-js": "^3.6.0"
+    "uglify-js": "^3.6.0",
+    "vnu-jar": "19.9.4"
   }
 }
