@@ -171,7 +171,7 @@ In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl 
 
 ### Panels
 
-Panels have been extended using a combination of the `.card` class (and its child classes) and the .bg-light class. "Expanding" or "collapsible" panels, however, are still available as an {{ site.title }} component: [Collapse]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/collapse).
+Panels have been extended using a combination of the `.card` class (and its child classes) and the `.bg-light` class. "Expanding" or "collapsible" panels, however, are still available as an {{ site.title }} component: [Collapse]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/collapse).
 
 <div class="bd-example">
   <div class="panel panel-default mb-2">
@@ -267,6 +267,17 @@ The syntax for column offsets has changed in {{ site.title }}. Previously, you w
       <div class="bg-gray-200 p-2 col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
     </div>
   </div>
+</div>
+
+### Pull Left/Right
+
+The syntax for pulling content to the left/right has changed to `.float-left` and `.float-right`.
+
+<div class="bd-example">
+  <img class="pull-left mr-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit scelerisque in dictum non consectetur a erat nam. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Dui nunc mattis enim ut tellus elementum sagittis vitae. Id donec ultrices tincidunt arcu non sodales. Enim diam vulputate ut pharetra sit. Amet consectetur adipiscing elit ut aliquam purus sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan. Purus semper eget duis at tellus at urna. A condimentum vitae sapien pellentesque. Cras adipiscing enim eu turpis egestas. Consequat semper viverra nam libero justo laoreet sit amet. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Id venenatis a condimentum vitae. Ultricies integer quis auctor elit sed vulputate mi sit amet.</p>
+  <img class="pull-right ml-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <p class="lead">Turpis cursus in hac habitasse platea dictumst quisque. Tellus cras adipiscing enim eu. Lectus sit amet est placerat in egestas. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Sed euismod nisi porta lorem. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Convallis posuere morbi leo urna molestie at elementum. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Vulputate dignissim suspendisse in est ante in nibh mauris.</p>
 </div>
 
 ### Input Group Button
@@ -365,6 +376,15 @@ The `.page-header` class available in UA Bootstrap has been removed in {{ site.t
 
 <div class="bd-example">
   <p class="page-header"><span class="h1">Page Header</span></p>
+</div>
+
+### Fonts & Font Styles
+
+You can replicate these effect by using the available [font weight and italic]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#font-weight-and-italics) and font family classes.
+
+<div class="bd-example">
+  <p class="bold">.bold</p>
+  <p class="sans">.sans</p>
 </div>
 
 ### Responsive Text Alignment *-not Classes

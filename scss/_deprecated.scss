@@ -195,6 +195,14 @@ have been deprecated in Bootstrap 4.
   }
 }
 
+// >> Pull Left/Right
+.pull-left {
+  @extend .float-left;
+}
+.pull-right {
+  @extend .float-right;
+}
+
 
 // >> Colors
 
@@ -267,6 +275,14 @@ have been deprecated in Bootstrap 4.
 }
 
 // >> Text
+
+// >>> Fonts & Font Styles
+.bold {
+  @extend .font-weight-bold;
+}
+.sans {
+  @extend .text-sans;
+}
 
 // >>> List
 /* stylelint-disable-next-line */

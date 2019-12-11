@@ -39,6 +39,7 @@
       padding: 1.25rem 1.5rem;
       font-weight: 700;
       color: $azurite;
+      text-decoration: none;
 
       &.active,
       &:active,
@@ -67,6 +68,7 @@
   .bd-toc-link {
     padding: .75rem 1rem;
     color: $azurite;
+    text-decoration: none;
 
     &:hover {
       color: $midnight;
@@ -80,6 +82,7 @@
   li {
     a {
       color: $midnight;
+      text-decoration: none;
     }
   }
   .nav {

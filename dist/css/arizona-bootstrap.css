@@ -7223,11 +7223,11 @@ button.modal-bg-dark:focus {
   }
 }
 
-.float-left {
+.float-left, .pull-left {
   float: left !important;
 }
 
-.float-right {
+.float-right, .pull-right {
   float: right !important;
 }
 
@@ -11180,7 +11180,7 @@ button.modal-bg-dark:focus {
   font-weight: 400 !important;
 }
 
-.font-weight-bold {
+.font-weight-bold, .bold {
   font-weight: 700 !important;
 }
 
@@ -45452,7 +45452,7 @@ h2,
   color: #49595e;
 }
 
-.sans {
+.text-sans, .sans {
   font-family: MiloWeb, Verdana, Geneva, sans-serif;
   font-weight: 500;
 }
@@ -45482,9 +45482,9 @@ h2,
 }
 
 .blockquote {
+  font-size: 1.25rem;
   padding: .75rem 1.5rem;
   margin-bottom: 1.5rem;
-  font-size: 1.25rem;
   border-color: #0c234b;
   border-style: solid;
   border-width: 0 0 0 5px;
@@ -45504,6 +45504,20 @@ h5,
 h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-h6 {
   font-family: MiloWeb, Verdana, Geneva, sans-serif;
   color: #49595e;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.mailto {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
 }
 
 .badge-success, .label-success {
@@ -45564,6 +45578,7 @@ h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-
 .btn {
   font-weight: 500;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: .04em;
   white-space: normal;
   border-width: 2px;
@@ -45750,6 +45765,7 @@ h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-
 
 .dropdown-item {
   color: #1e5288;
+  text-decoration: none;
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
@@ -45765,11 +45781,14 @@ h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-
 .nav-tabs .nav-link,
 .nav-link {
   color: #1e5288;
+  text-decoration: none;
 }
 
-.nav-pills .nav-link:hover,
+.nav-pills .nav-link:hover, .nav-pills .nav-link:focus,
 .nav-tabs .nav-link:hover,
-.nav-link:hover {
+.nav-tabs .nav-link:focus,
+.nav-link:hover,
+.nav-link:focus {
   color: #001c48;
 }
 
