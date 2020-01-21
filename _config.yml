@@ -32,22 +32,18 @@ social_image_path:  /docs/0.0/assets/brand/bootstrap-social.png
 social_logo_path:   /docs/0.0/assets/brand/bootstrap-social-logo.png
 
 # Custom variables
-current_version:      0.0.1
-current_ruby_version: 0.0.1
+current_version:      0.0.2
+current_ruby_version: 0.0.2
 docs_version:         0.0
-repo:                 "https://bitbucket.org/uadigital/arizona-bootstrap"
+repo:                 "https://github.com/az-digital/arizona-bootstrap"
 slack:                "/about/get-involved/#connect-with-us-on-slack"
-quickstart:           "https://quickstart.arizona.edu"
+azdigital:            "https://digital.arizona.edu"
 
 download:
-  source:           "https://bitbucket.org/uadigital/arizona-bootstrap/get/v0.0.1.zip"
-  dist:             "https://bitbucket.org/uadigital/arizona-bootstrap/downloads/arizona-bootstrap-v0.0.1.zip"
+  source:           "https://github.com/az-digital/arizona-bootstrap/archive/master.zip"
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
-  css:              "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.min.css"
-  js:               "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.min.js"
-  js_bundle:        "https://cdn.uadigital.arizona.edu/lib/arizona-bootstrap/v0.0.1/arizona-bootstrap.bundle.min.js"
   jquery:           "https://code.jquery.com/jquery-3.4.1.slim.min.js"
   jquery_hash:      "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
   popper:           "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
@@ -59,4 +55,3 @@ toc:
   no_toc_section_class:
     - "bd-callout"
     - "bd-example"
-

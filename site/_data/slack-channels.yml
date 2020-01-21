@@ -3,13 +3,13 @@
     - purpose: "For topics and questions concerning web/digital accessibility"
 
 - channel: "#arizona-bootstrap"
-  description: 
+  description:
     - purpose: "For topics and questions concerning Arizona Bootstrap (Bootstrap 4)"
 
 - channel: "#arizona-bootstrap-builds"
   description:
-      - purpose: "For topics concerning the arizona-bootstrap build process on Bitbucket"
-      - purpose: "For automated Bitbucket updates concerning the arizona-bootstrap repo"
+      - purpose: "For topics concerning the arizona-bootstrap build process on GitHub"
+      - purpose: "For automated GitHub updates concerning the arizona-bootstrap repo"
 
 - channel: "#drupal-security"
   description:
@@ -23,7 +23,7 @@
     - purpose: "For topics and information concerning Friday and Wednesday meetings"
 
 - channel: "#ua-bootstrap"
-  description: 
+  description:
     - purpose: "For topics and questions concerning UA Bootstrap (Bootstrap 3)"
 
 - channel: "#ua-bootstrap-builds"
