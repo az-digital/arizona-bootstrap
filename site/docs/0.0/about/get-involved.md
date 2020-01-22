@@ -69,4 +69,4 @@ Arizona Digital currently uses utilizes GitHub to host and review code contained
 
 ## Submit or Work on a Ticket
 
-Arizona Digital utilizes Jira to handle issue tracking for its products. If you want to contribute, you can check the backlog and claim an unassigned ticket you want to work on. Or, if you have a specific issue that isn't already created, you can create a new ticket and work on it.
+Arizona Digital utilizes GitHub Projects to handle issue tracking for its products. If you want to contribute, you can check the backlog and claim an unassigned ticket you want to work on. Or, if you have a specific issue that isn't already created, you can create a new ticket and work on it.
