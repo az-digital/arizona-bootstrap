@@ -1,5 +1,5 @@
 - name: "arizona-bootstrap"
-  link: "https://bitbucket.org/uadigital/arizona-bootstrap/"
+  link: "https://github.com/az-digital/arizona-bootstrap/"
   description: "Source code for the Arizona branded version of Bootstrap 4 and its docs site"
 
 - name: "ua-bootstrap"
