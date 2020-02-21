@@ -24,6 +24,23 @@
       padding: .75rem 1.25rem;
       color: $dark-silver;
       text-align: left;
+
+      &::after {
+        position: absolute;
+        top: -4px;
+        right: 25px;
+        display: inline-block;
+        font-size: 2em;
+        content: "\221F";
+        transform: rotate(-45deg);
+      }
+
+    }
+    .btn[aria-expanded="true"] {
+      &::after {
+        top: 6px;
+        transform: rotate(135deg);
+      }
     }
   }
 }

@@ -5,9 +5,9 @@ avoid breaking changes; sites should not use these components/classes as they
 have been deprecated in Bootstrap 4.
 */
 
-//
-// > COMPONENTS
-//
+/*
+* > COMPONENTS
+*/
 
 // >> Background Wrappers
 .bg-triangles-fade {
@@ -172,9 +172,9 @@ have been deprecated in Bootstrap 4.
 
 
 
-//
-// > UTILITIES
-//
+/*
+* > UTILITIES
+*/
 
 // >> Column Offset
 @for $i from 1 through 11 {
@@ -279,9 +279,6 @@ have been deprecated in Bootstrap 4.
 // >>> Fonts & Font Styles
 .bold {
   @extend .font-weight-bold;
-}
-.sans {
-  @extend .text-sans;
 }
 
 // >>> List

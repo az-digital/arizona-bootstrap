@@ -56030,7 +56030,7 @@ h2,
   color: #49595e;
 }
 
-.text-sans, .sans {
+.text-sans {
   font-family: MiloWeb, Verdana, Geneva, sans-serif;
   font-weight: 500;
 }
@@ -59132,6 +59132,9 @@ from UA Bootstrap (Bootstrap 3) to Arizona Bootstrap (Bootstrap 4). This is to
 avoid breaking changes; sites should not use these components/classes as they
 have been deprecated in Bootstrap 4.
 */
+/*
+* > COMPONENTS
+*/
 .bg-triangles-fade {
   background-image: url("img/fading-triangles.svg");
   background-repeat: repeat-x;
@@ -59163,6 +59166,9 @@ have been deprecated in Bootstrap 4.
   margin-left: auto;
 }
 
+/*
+* > UTILITIES
+*/
 .modal-bg-dark .close {
   color: #000;
 }
@@ -59283,6 +59289,23 @@ have been deprecated in Bootstrap 4.
   padding: .75rem 1.25rem;
   color: #49595e;
   text-align: left;
+}
+
+.accordion .card-header .btn::after {
+  position: absolute;
+  top: -4px;
+  right: 25px;
+  display: inline-block;
+  font-size: 2em;
+  content: "\221F";
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.accordion .card-header .btn[aria-expanded="true"]::after {
+  top: 6px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .carousel-caption {

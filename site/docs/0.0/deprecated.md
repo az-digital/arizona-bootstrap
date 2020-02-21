@@ -384,7 +384,6 @@ You can replicate these effect by using the available [font weight and italic]({
 
 <div class="bd-example">
   <p class="bold">.bold</p>
-  <p class="sans">.sans</p>
 </div>
 
 ### Responsive Text Alignment *-not Classes
@@ -438,6 +437,10 @@ Components and utility classes that were marked as deprecated in UA Bootstrap ha
 ### Column Push/Pull
 
 The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/grid/#order-classes). These classes are not backwards compatible and will need to be updated to use {{ site.title }}'s classes.
+
+### Mailto
+
+The `.mailto` class, which is placed directly on the `<a>` link tag, has been deprecated in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Wrapping and Overflow]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-wrapping-and-overflow) for more details.
 
 ### No Line Height
 
