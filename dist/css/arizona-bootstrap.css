@@ -59312,6 +59312,34 @@ have been deprecated in Bootstrap 4.
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* .ua-gallery-item,
+.az-gallery-item, {
+  height: 100%;
+}
+.ua-gallery-carousel-image,
+.az-gallery-carousel-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 70%;
+  max-height: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.ua-gallery-caption,
+.az-gallery-caption {
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  left: 20%;
+  z-index: 10;
+  padding: .75rem;
+  margin: 0;
+} */
+.photo-gallery-grid-img {
+  max-width: 100%;
+}
+
 #hide-inaccessible-label {
   cursor: pointer;
 }

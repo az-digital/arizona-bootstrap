@@ -1,9 +1,11 @@
 // Photo Gallery custom component
 
-.ua-gallery-item {
+/* .ua-gallery-item,
+.az-gallery-item, {
   height: 100%;
 }
-.ua-gallery-carousel-image {
+.ua-gallery-carousel-image,
+.az-gallery-carousel-image {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,7 +14,8 @@
   transform: translate(-50%, -50%);
 }
 
-.ua-gallery-caption {
+.ua-gallery-caption,
+.az-gallery-caption {
   position: absolute;
   right: 20%;
   bottom: 0;
@@ -20,4 +23,8 @@
   z-index: 10;
   padding: .75rem;
   margin: 0;
+} */
+
+.photo-gallery-grid-img {
+  max-width: 100%;
 }
