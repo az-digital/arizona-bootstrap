@@ -32,7 +32,7 @@
     "docs-serve": "bundle exec jekyll serve",
     "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
     "js": "npm-run-all js-copy-*",
-    "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do sed -i -e s/sourceMappingURL=bootstrap/sourceMappingURL=arizona-bootstrap/ \"$f\"; mv \"$f\" $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
+    "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do sed -i \"\" -e s/sourceMappingURL=bootstrap/sourceMappingURL=arizona-bootstrap/ \"$f\"; mv \"$f\" $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
     "js-copy-docs": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/js/ site/docs/$npm_package_version_short/dist/",
     "js-docs": "npm-run-all js-minify-docs",
     "js-minify": "npm-run-all --parallel js-minify-docs",
