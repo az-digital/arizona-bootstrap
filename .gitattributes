@@ -14,5 +14,5 @@
 # Don't diff or textually merge source maps
 *.map   binary
 
-bootstrap.css linguist-vendored=false
-bootstrap.js linguist-vendored=false
+arizona-bootstrap.css linguist-vendored=false
+arizona-bootstrap.js linguist-vendored=false
