@@ -32,20 +32,16 @@
     "docs-serve": "bundle exec jekyll serve",
     "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
     "js": "npm-run-all js-copy-*",
-    "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do mv $f $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
+    "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do sed -i \"\" -e s/sourceMappingURL=bootstrap/sourceMappingURL=arizona-bootstrap/ \"$f\"; mv \"$f\" $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
     "js-copy-docs": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/js/ site/docs/$npm_package_version_short/dist/",
-    "js-docs": "npm-run-all js-lint-docs js-minify-docs",
-    "js-lint": "npm-run-all --continue-on-error --parallel js-lint-*",
-    "js-lint-main": "eslint --cache --cache-location .cache/.eslintcache build/",
-    "js-lint-docs": "eslint --cache --cache-location .cache/.eslintcache site/",
+    "js-docs": "npm-run-all js-minify-docs",
     "js-minify": "npm-run-all --parallel js-minify-docs",
     "js-minify-docs": "cross-env-shell uglifyjs --mangle --comments \\\"/^!/\\\" --output site/docs/$npm_package_version_short/assets/js/docs.min.js site/docs/$npm_package_version_short/assets/js/vendor/anchor.min.js site/docs/$npm_package_version_short/assets/js/vendor/clipboard.min.js site/docs/$npm_package_version_short/assets/js/vendor/bs-custom-file-input.min.js \"site/docs/$npm_package_version_short/assets/js/src/*.js\"",
-    "lint": "npm-run-all --parallel js-lint css-lint",
-    "test": "npm-run-all lint dist docs-compile js-test docs-lint",
+    "lint": "npm-run-all --parallel css-lint-*",
+    "test": "npm-run-all lint dist docs-compile docs-lint",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
-    "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\"",
-    "watch-js-docs": "nodemon --watch \"site/docs/**/assets/js/src/\" --ext js --exec \"npm run js-docs\""
+    "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\""
   },
   "repository": {
     "type": "git",
@@ -55,17 +51,15 @@
   "license": "MIT",
   "homepage": "https://github.com/az-digital/arizona-bootstrap",
   "devDependencies": {
-    "autoprefixer": "^9.7.3",
-    "babel-eslint": "^10.0.3",
+    "autoprefixer": "^9.7.4",
     "bootstrap": "^4.4.1",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^5.2.1",
-    "eslint": "^5.16.0",
     "find-unused-sass-variables": "^0.6.0",
     "glob": "^7.1.6",
-    "http-server": "^0.12.0",
+    "http-server": "^0.12.1",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.5",
     "popper.js": "^1.16.0",
@@ -73,7 +67,7 @@
     "shx": "^0.3.2",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.5.0",
-    "uglify-js": "^3.7.3",
-    "vnu-jar": "19.9.4"
+    "uglify-js": "^3.7.7",
+    "vnu-jar": "20.1.2"
   }
 }
