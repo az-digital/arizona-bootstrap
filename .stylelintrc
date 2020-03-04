@@ -11,6 +11,6 @@
       "border-bottom-left-radius",
       "transition"
     ],
-    "scss/dollar-variable-default": null
+    "function-blacklist": ["calc"]
   }
 }
