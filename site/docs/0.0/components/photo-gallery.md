@@ -48,5 +48,29 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		        </a>
 			</div>
 		</div>
+		<div id="myGalleryModal" class="modal bg-dark" tabindex="-1" role="dialog" aria-labelledby="myGalleryModalLabel">
+			<div id="myGallery" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="../../dist/css/img/photo-gallery-demo/gallery-img-1.jpg" class="d-block w-100" alt="A hand holding a little mirror">
+						<div class="carousel-caption d-none d-md-block">
+				        	<h5 class="text-sky">First slide label</h5>
+				        	<p>A hand holding a little mirror</p>
+				        </div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#myGallery" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#myGallery" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
 	</div>
 </div>
+
+
+
