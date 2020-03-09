@@ -24,7 +24,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="0">
+				<a href="#myGallery" data-slide-to="1">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="../../dist/css/img/photo-gallery-demo/gallery-img-2-thumb.jpg 1x">
 		              	<img class="photo-gallery-grid-img" src="../../dist/css/img/photo-gallery-demo/gallery-img-2.jpg" alt="University of Arizona Spring Fling" title="">
@@ -32,7 +32,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="0">
+				<a href="#myGallery" data-slide-to="2">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="../../dist/css/img/photo-gallery-demo/gallery-img-3-thumb.jpg 1x">
 		              	<img class="photo-gallery-grid-img" src="../../dist/css/img/photo-gallery-demo/gallery-img-3.jpg" alt="University graduate on stage wearing cap and gown" title="">
@@ -40,7 +40,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="0">
+				<a href="#myGallery" data-slide-to="3">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="../../dist/css/img/photo-gallery-demo/gallery-img-4-thumb.jpg 1x">
 		              	<img class="photo-gallery-grid-img" src="../../dist/css/img/photo-gallery-demo/gallery-img-4.jpg" alt="Ceiling tiles" title="">
@@ -48,12 +48,45 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		        </a>
 			</div>
 		</div>
-		<div id="myGalleryModal" class="modal bg-dark" tabindex="-1" role="dialog" aria-labelledby="myGalleryModalLabel">
-			<div id="myGallery" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="../../dist/css/img/photo-gallery-demo/gallery-img-1.jpg" class="d-block w-100" alt="A hand holding a little mirror">
-						<div class="carousel-caption d-none d-md-block">
+		<!-- Modal -->
+		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog" aria-labelledby="myGalleryModalLabel">
+			<div id="myGallery" class="carousel az-gallery slide" data-ride="carousel" data-interval="false">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		         	<span aria-hidden="true">&times;</span>
+		        </button>
+				<div class="carousel-inner az-gallery-inner">
+					<div class="carousel-item az-gallery-item active">
+						<div class="carousel-image">
+							<img src="../../dist/css/img/photo-gallery-demo/gallery-img-1.jpg" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+						</div>
+						<div class="carousel-caption az-gallery-caption d-block">
+				        	<h5 class="text-sky">First slide label</h5>
+				        	<p>A hand holding a little mirror</p>
+				        </div>
+					</div>
+					<div class="carousel-item az-gallery-item">
+						<div class="carousel-image">
+							<img src="../../dist/css/img/photo-gallery-demo/gallery-img-2.jpg" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+						</div>
+						<div class="carousel-caption az-gallery-caption d-block">
+				        	<h5 class="text-sky">First slide label</h5>
+				        	<p>A hand holding a little mirror</p>
+				        </div>
+					</div>
+					<div class="carousel-item az-gallery-item">
+						<div class="carousel-image">
+							<img src="../../dist/css/img/photo-gallery-demo/gallery-img-3.jpg" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+						</div>
+						<div class="carousel-caption az-gallery-caption d-block">
+				        	<h5 class="text-sky">First slide label</h5>
+				        	<p>A hand holding a little mirror</p>
+				        </div>
+					</div>
+					<div class="carousel-item az-gallery-item">
+						<div class="carousel-image">
+							<img src="../../dist/css/img/photo-gallery-demo/gallery-img-4.jpg" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+						</div>
+						<div class="carousel-caption az-gallery-caption d-block">
 				        	<h5 class="text-sky">First slide label</h5>
 				        	<p>A hand holding a little mirror</p>
 				        </div>
