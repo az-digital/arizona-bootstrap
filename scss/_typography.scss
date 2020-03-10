@@ -1,8 +1,8 @@
 // Overrides to typography
 
-//
-// > BLOCKQUOTE
-//
+/*
+* > BLOCKQUOTE
+*/
 .blockquote {
   @include font-size($font-size-base * 1.25);
   padding: .75rem 1.5rem;
@@ -16,22 +16,24 @@
   }
 }
 
-//
-// > BODY
-//
+/*
+* > BODY
+*/
 body {
   color: $ash;
 }
 
-//
-// > HEADINGS
-//
+/*
+* > HEADINGS
+*/
 
 // >> h1 and h2
 h1,
 h2,
 .h1,
 .h2 {
+  margin: $heading-margins;
+  color: $red;
   @extend .heading-style;
 }
 
@@ -44,13 +46,14 @@ h6,
 .h4,
 .h5,
 .h6 {
+  margin: $heading-margins;
   font-family: $font-family-sans-serif;
   color: $dark-silver;
 }
 
-//
-// > LINKS
-//
+/*
+* > LINKS
+*/
 a {
   font-weight: 700;
   text-decoration: underline;

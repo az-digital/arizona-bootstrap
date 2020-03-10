@@ -34,37 +34,37 @@ All HTML headings, `<h1>` through `<h6>`, are available.
       <td>
         {{ "`<h1></h1>`" | markdownify }}
       </td>
-      <td><span class="h1">Page Title</span></td>
+      <td><h1>Page Title</h1></td>
     </tr>
     <tr>
       <td>
         {{ "`<h2></h2>`" | markdownify }}
       </td>
-      <td><span class="h2">Section Heading</span></td>
+      <td><h2>Section Heading</h2></td>
     </tr>
     <tr>
       <td>
         {{ "`<h3></h3>`" | markdownify }}
       </td>
-      <td><span class="h3">Subsection Heading</span></td>
+      <td><h3>Subsection Heading</h3></td>
     </tr>
     <tr>
       <td>
         {{ "`<h4></h4>`" | markdownify }}
       </td>
-      <td><span class="h4">Subsection Heading</span></td>
+      <td><h4>Subsection Heading</h4></td>
     </tr>
     <tr>
       <td>
         {{ "`<h5></h5>`" | markdownify }}
       </td>
-      <td><span class="h5">Subsection Heading</span></td>
+      <td><h5>Subsection Heading</h5></td>
     </tr>
     <tr>
       <td>
         {{ "`<h6></h6>`" | markdownify }}
       </td>
-      <td><span class="h6">Subsection Heading</span></td>
+      <td><h6>Subsection Heading</h6></td>
     </tr>
   </tbody>
 </table>
