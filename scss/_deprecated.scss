@@ -171,7 +171,6 @@ have been deprecated in Bootstrap 4.
 }
 
 
-
 /*
 * > UTILITIES
 */
@@ -272,6 +271,12 @@ have been deprecated in Bootstrap 4.
 // >> Navbar Default
 .navbar-default {
   @extend .navbar-light;
+}
+
+// >> Navbar Divider
+.divider,
+.nav-divider {
+  @extend .dropdown-divider;
 }
 
 // >> Text
@@ -380,5 +385,4 @@ ul.triangle {
 .margin-zero-bottom {
   @extend .mb-0;
 }
-
 

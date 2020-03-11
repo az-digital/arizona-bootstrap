@@ -78,7 +78,7 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <h6>Subsection Heading</h6>
 {% endhighlight %}
 
-`.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
+`.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element. Combine these classes with margin classes to modify their margins (e.g., `m-0` to remove margins).
 
 {% capture example %}
 <p class="h1">Heading 1 Style</p>

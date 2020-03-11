@@ -33,7 +33,6 @@ h2,
 .h1,
 .h2 {
   margin: $heading-margins;
-  color: $red;
   @extend .heading-style;
 }
 

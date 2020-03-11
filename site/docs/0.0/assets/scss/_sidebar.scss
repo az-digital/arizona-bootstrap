@@ -8,6 +8,7 @@
   @supports (position: sticky) {
     position: sticky;
     top: 4rem;
+    /* stylelint-disable-next-line */
     height: calc(100vh - 4rem);
     overflow-y: auto;
   }
@@ -56,6 +57,7 @@
       position: sticky;
       top: 4rem;
       z-index: 1000;
+      /* stylelint-disable-next-line */
       height: calc(100vh - 4rem);
     }
     border-right: 1px solid rgba(0, 0, 0, .1);
@@ -74,6 +76,7 @@
 
   @include media-breakpoint-up(md) {
     @supports (position: sticky) {
+      /* stylelint-disable-next-line */
       max-height: calc(100vh - 9rem);
       overflow-y: auto;
     }
