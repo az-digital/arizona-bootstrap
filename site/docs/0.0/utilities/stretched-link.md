@@ -17,7 +17,7 @@ Multiple links and tap targets are not recommended with stretched links. However
   <div class="card-body">
     <h5 class="card-title">Card with stretched link</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+    <a href="#" class="btn btn-red stretched-link">Go somewhere</a>
   </div>
 </div>
 {% endcapture %}
@@ -53,7 +53,7 @@ Columns are `position: relative` by default, so clickable columns only require t
 {% endcapture %}
 {% include example.html content=example %}
 
-## Identifying the containing block
+## Identifying the Containing Block
 
 If the stretched link doesn't seem to work, the [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block) will probably be the cause. The following CSS properties will make an element the containing block:
 

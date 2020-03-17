@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-## How it works
+## How it Works
 
 The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a bit of JavaScript. It works with a series of images, text, or custom markup. It also includes support for previous/next controls and indicators.
 
@@ -24,7 +24,7 @@ Carousels don't automatically normalize slide dimensions. As such, you may need 
 
 **The `.active` class needs to be added to one of the slides** otherwise the carousel will not be visible. Also be sure to set a unique id on the `.carousel` for optional controls, especially if you're using multiple carousels on a single page. Control and indicator elements must have a `data-target` attribute (or `href` for links) that matches the id of the `.carousel` element.
 
-### Slides only
+### Slides Only
 
 Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-100` on carousel images to prevent browser default image alignment.
 
@@ -45,7 +45,7 @@ Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-
 {% endcapture %}
 {% include example.html content=example %}
 
-### With controls
+### With Controls
 
 Adding in the previous and next controls:
 
@@ -74,7 +74,7 @@ Adding in the previous and next controls:
 {% endcapture %}
 {% include example.html content=example %}
 
-### With indicators
+### With Indicators
 
 You can also add the indicators to the carousel, alongside the controls, too.
 
@@ -108,7 +108,7 @@ You can also add the indicators to the carousel, alongside the controls, too.
 {% endcapture %}
 {% include example.html content=example %}
 
-### With captions
+### With Captions
 
 Add captions to your slides easily with the `.carousel-caption` element within any `.carousel-item`. They can be easily hidden on smaller viewports, as shown below, with optional [display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/). We hide them initially with `.d-none` and bring them back on medium-sized devices with `.d-md-block`.
 
@@ -122,23 +122,23 @@ Add captions to your slides easily with the `.carousel-caption` element within a
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+        <img class="d-block w-100" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
+          <h5 class="text-sky">First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
-        {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+        <img class="d-block w-100" alt="Example image 2" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
+          <h5 class="text-sky">Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+        <img class="d-block w-100" alt="Example image 3" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
+          <h5 class="text-sky">Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
       </div>
@@ -185,7 +185,7 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
 {% endcapture %}
 {% include example.html content=example %}
 
-### Individual `.carousel-item` interval
+### Individual `.carousel-item` Interval
 
 Add `data-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
 
@@ -217,7 +217,7 @@ Add `data-interval=""` to a `.carousel-item` to change the amount of time to del
 
 ## Usage
 
-### Via data attributes
+### Via Data Attributes
 
 Use data attributes to easily control the position of the carousel. `data-slide` accepts the keywords `prev` or `next`, which alters the slide position relative to its current position. Alternatively, use `data-slide-to` to pass a raw slide index to the carousel `data-slide-to="2"`, which shifts the slide position to a particular index beginning with `0`.
 
@@ -359,6 +359,6 @@ $('#myCarousel').on('slide.bs.carousel', function () {
 })
 {% endhighlight %}
 
-### Change transition duration
+### Change Transition Duration
 
 The transition duration of `.carousel-item` can be changed with the `$carousel-transition` Sass variable before compiling or custom styles if you're using the compiled CSS. If multiple transitions are applied, make sure the transform transition is defined first (eg. `transition: transform 2s ease, opacity .5s ease-out`).

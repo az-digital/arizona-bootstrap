@@ -1,21 +1,22 @@
-- title: Getting started
+- title: Getting Started
   pages:
     - title: Introduction
+    - title: Accessibility
+    - title: Color Contrast
     - title: Download
     - title: Contents
-    - title: Browsers & devices
+    - title: Browsers & Devices
     - title: JavaScript
     # - title: Theming
-    - title: Build tools
+    - title: Build Tools
     # - title: Best practices # TODO: Write this content
     - title: Webpack
-    - title: Accessibility
 
 - title: Layout
   pages:
     - title: Overview
     - title: Grid
-    - title: Utilities for layout
+    - title: Utilities for Layout
 
 - title: Content
   pages:
@@ -29,19 +30,21 @@
 - title: Components
   pages:
     - title: Alerts
+    - title: Background Wrappers
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
-    - title: Button group
+    - title: Button Group
+    - title: Callouts
     - title: Card
     - title: Carousel
     - title: Collapse
     - title: Dropdowns
     - title: Forms
-    - title: Input group
+    - title: Input Group
     - title: Jumbotron
-    - title: List group
-    - title: Media object
+    - title: List Group
+    - title: Media Object
     - title: Modal
     - title: Navs
     - title: Navbar
@@ -57,22 +60,22 @@
   pages:
     - title: Borders
     - title: Clearfix
-    - title: Close icon
+    - title: Close Icon
     - title: Colors
     - title: Display
     - title: Embed
     - title: Flex
     - title: Float
-    - title: Image replacement
+    - title: Image Replacement
     - title: Overflow
     - title: Position
-    - title: Screen readers
+    - title: Screen Readers
     - title: Shadows
     - title: Sizing
     - title: Spacing
-    - title: Stretched link
+    - title: Stretched Link
     - title: Text
-    - title: Vertical align
+    - title: Vertical Align
     - title: Visibility
 
 - title: Extend
@@ -82,9 +85,4 @@
 
 - title: Migration
 
-- title: About
-  pages:
-    - title: Overview
-    - title: Team
-    - title: License
-    - title: Translations
+- title: Deprecated

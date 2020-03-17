@@ -1,0 +1,56 @@
+- channel: "#accessibility"
+  description:
+    - purpose: "For topics and questions concerning web/digital accessibility"
+
+- channel: "#arizona-bootstrap"
+  description:
+    - purpose: "For topics and questions concerning Arizona Bootstrap (Bootstrap 4)"
+
+- channel: "#arizona-bootstrap-builds"
+  description:
+      - purpose: "For topics concerning the arizona-bootstrap build process on GitHub"
+      - purpose: "For automated GitHub updates concerning the arizona-bootstrap repo"
+
+- channel: "#drupal-security"
+  description:
+    - purpose: "For topics concerning Drupal security and security releases/concerns"
+    - purpose: "For automated Drupal.org security notifications"
+
+- channel: "#friday-meetings"
+  description:
+    - purpose: "Main source of communication for Arizona Digital"
+    - purpose: "For general discussions, questions, and topics concerning Arizona Digital"
+    - purpose: "For topics and information concerning Friday and Wednesday meetings"
+
+- channel: "#ua-bootstrap"
+  description:
+    - purpose: "For topics and questions concerning UA Bootstrap (Bootstrap 3)"
+
+- channel: "#ua-bootstrap-builds"
+  description:
+    - purpose: "For automated pull request updates concerning the ua-bootstrap repo"
+
+- channel: "#ua-quickstart"
+  description:
+    - purpose: "For topics and questions concerning UA Quickstart (Drupal 7)"
+    - purpose: "For automated Bitbucket notifications concerning the ua_quickstart repo"
+
+- channel: "#ua-quickstart-builds"
+  description:
+    - purpose: "For automated pull request updates concerning the ua_quickstart repo"
+
+- channel: "#ua-quickstart-d8"
+  description:
+    - purpose: "For topics and questions concerning the migration of UA Quickstart from Drupal 7 to Drupal 8"
+
+- channel: "#uadigital-ci"
+  description:
+    - purpose: "For automated tasks and CI (continuous integration)"
+
+- channel: "#uadigital-docs"
+  description:
+    - purpose: "For topics concerning documentation for Arizona Digital and its products"
+
+- channel: "#uadigital-general"
+  description:
+    - purpose: "For general discussion and side conversations"

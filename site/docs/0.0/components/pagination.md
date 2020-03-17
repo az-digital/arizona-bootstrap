@@ -25,7 +25,7 @@ In addition, as pages likely have more than one such navigation section, it's ad
 {% endcapture %}
 {% include example.html content=example %}
 
-## Working with icons
+## Working with Icons
 
 Looking to use an icon or symbol in place of text for some pagination links? Be sure to provide proper screen reader support with `aria` attributes.
 
@@ -50,7 +50,7 @@ Looking to use an icon or symbol in place of text for some pagination links? Be 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Disabled and active states
+## Disabled and Active States
 
 Pagination links are customizable for different circumstances. Use `.disabled` for links that appear un-clickable and `.active` to indicate the current page.
 
@@ -168,6 +168,16 @@ Change the alignment of pagination components with [flexbox utilities]({{ site.b
     <li class="page-item">
       <a class="page-link" href="#">Next</a>
     </li>
+  </ul>
+</nav>
+{% endcapture %}
+{% include example.html content=example %}
+
+{% capture example %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-between">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
   </ul>
 </nav>
 {% endcapture %}

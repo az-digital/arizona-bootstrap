@@ -23,7 +23,7 @@ Wrap any embed like an `<iframe>` in a parent element with `.embed-responsive` a
 {% endcapture %}
 {% include example.html content=example %}
 
-## Aspect ratios
+## Aspect Ratios
 
 Aspect ratios can be customized with modifier classes. By default the following ratio classes are provided:
 

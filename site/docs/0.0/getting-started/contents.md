@@ -32,7 +32,7 @@ arizona-bootstrap/
 
 This is the most basic form of {{ site.title }}: precompiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (`arizona-bootstrap.*`), as well as compiled and minified CSS and JS (`arizona-bootstrap.min.*`). [source maps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`arizona-bootstrap.*.map`) are available for use with certain browsers' developer tools. Bundled JS files (`arizona-bootstrap.bundle.js` and minified `arizona-bootstrap.bundle.min.js`) include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/).
 
-## CSS files
+## CSS Files
 
 {{ site.title }} includes a handful of options for including some or all of our compiled CSS.
 
@@ -60,7 +60,7 @@ This is the most basic form of {{ site.title }}: precompiled files for quick dro
   </tbody>
 </table>
 
-## JS files
+## JS Files
 
 Similarly, we have options for including some or all of our compiled JavaScript.
 
@@ -92,7 +92,7 @@ Similarly, we have options for including some or all of our compiled JavaScript.
   </tbody>
 </table>
 
-## {{ site.title }} source code
+## {{ site.title }} Source Code
 
 The {{ site.title }} source code download includes the precompiled CSS and JavaScript assets, along with source Sass, JavaScript, and documentation. More specifically, it includes the following and more:
 

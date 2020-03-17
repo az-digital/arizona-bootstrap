@@ -112,7 +112,7 @@ Change the order of content in media objects by modifying the HTML itself, or by
 {% endcapture %}
 {% include example.html content=example %}
 
-## Media list
+## Media List
 
 Because the media object has so few structural requirements, you can also use these classes on list HTML elements. On your `<ul>` or `<ol>`, add the `.list-unstyled` to remove any browser default list styles, and then apply `.media` to your `<li>`s. As always, use spacing utilities wherever needed to fine tune.
 

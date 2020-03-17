@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-## Enable flex behaviors
+## Enable Flex Behaviors
 
 Apply `display` utilities to create a flexbox container and transform **direct children elements** into flex items. Flex containers and items are able to be modified further with additional flex properties.
 
@@ -70,7 +70,7 @@ Responsive variations also exist for `flex-direction`.
 - `.flex{{ bp.abbr }}-column`
 - `.flex{{ bp.abbr }}-column-reverse`{% endfor %}
 
-## Justify content
+## Justify Content
 
 Use `justify-content` utilities on flexbox containers to change the alignment of flex items on the main axis (the x-axis to start, y-axis if `flex-direction: column`). Choose from `start` (browser default), `end`, `center`, `between`, or `around`.
 
@@ -119,7 +119,7 @@ Responsive variations also exist for `justify-content`.
 - `.justify-content{{ bp.abbr }}-between`
 - `.justify-content{{ bp.abbr }}-around`{% endfor %}
 
-## Align items
+## Align Items
 
 Use `align-items` utilities on flexbox containers to change the alignment of flex items on the cross axis (the y-axis to start, x-axis if `flex-direction: column`). Choose from `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
 
@@ -168,7 +168,7 @@ Responsive variations also exist for `align-items`.
 - `.align-items{{ bp.abbr }}-baseline`
 - `.align-items{{ bp.abbr }}-stretch`{% endfor %}
 
-## Align self
+## Align Self
 
 Use `align-self` utilities on flexbox items to individually change their alignment on the cross axis (the y-axis to start, x-axis if `flex-direction: column`). Choose from the same options as `align-items`: `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
 
@@ -235,7 +235,7 @@ Responsive variations also exist for `flex-fill`.
 {% for bp in site.data.breakpoints %}
 - `.flex{{ bp.abbr }}-fill`{% endfor %}
 
-## Grow and shrink
+## Grow and Shrink
 
 Use `.flex-grow-*` utilities to toggle a flex item's ability to grow to fill available space. In the example below, the `.flex-grow-1` elements uses all available space it can, while allowing the remaining two flex items their necessary space.
 
@@ -264,7 +264,7 @@ Responsive variations also exist for `flex-grow` and `flex-shrink`.
 - `.flex{{ bp.abbr }}-{grow|shrink}-0`
 - `.flex{{ bp.abbr }}-{grow|shrink}-1`{% endfor %}
 
-## Auto margins
+## Auto Margins
 
 Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (`.mr-auto`), and pushing two items to the left (`.ml-auto`).
 
@@ -291,7 +291,7 @@ Flexbox can do some pretty awesome things when you mix flex alignments with auto
 {% endcapture %}
 {% include example.html content=example %}
 
-### With align-items
+### With Align-items
 
 Vertically move one flex item to the top or bottom of a container by mixing `align-items`, `flex-direction: column`, and `margin-top: auto` or `margin-bottom: auto`.
 
@@ -408,7 +408,7 @@ Responsive variations also exist for `order`.
 {% for bp in site.data.breakpoints %}{% for i in (0..12) %}
 - `.order{{ bp.abbr }}-{{ i }}`{% endfor %}{% endfor %}
 
-## Align content
+## Align Content
 
 Use `align-content` utilities on flexbox containers to align flex items *together* on the cross axis. Choose from `start` (browser default), `end`, `center`, `between`, `around`, or `stretch`. To demonstrate these utilities, we've enforced `flex-wrap: wrap` and increased the number of flex items.
 

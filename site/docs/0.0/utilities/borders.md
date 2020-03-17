@@ -3,7 +3,7 @@ layout: docs
 title: Borders
 description: Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.
 group: utilities
-redirect_from: "/docs/4.3/utilities/"
+redirect_from: "/docs/0.0/utilities/"
 toc: true
 ---
 
@@ -37,7 +37,7 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 {% include example.html content=example %}
 </div>
 
-## Border color
+## Border Color
 
 Change the border color using utilities built on our theme colors.
 

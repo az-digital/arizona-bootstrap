@@ -6,7 +6,7 @@ group: content
 toc: true
 ---
 
-## Responsive images
+## Responsive Images
 
 Images in {{ site.title }} are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
 
@@ -19,13 +19,13 @@ Images in {{ site.title }} are made responsive with `.img-fluid`. `max-width: 10
 {% endhighlight %}
 
 {% capture callout %}
-##### SVG images and IE 10
+##### SVG Images and IE 10
 
 In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately sized. To fix this, add `width: 100% \9;` where necessary. This fix improperly sizes other image formats, so {{ site.title }} doesn't apply it automatically.
 {% endcapture %}
 {% include callout.html content=callout type="warning" %}
 
-## Image thumbnails
+## Image Thumbnails
 
 In addition to our [border-radius utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/borders/), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
 
@@ -37,7 +37,7 @@ In addition to our [border-radius utilities]({{ site.baseurl }}/docs/{{ site.doc
 <img src="..." alt="..." class="img-thumbnail">
 {% endhighlight %}
 
-## Aligning images
+## Aligning Images
 
 Align images with the [helper float classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/float/) or [text alignment classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/#horizontal-centering).
 

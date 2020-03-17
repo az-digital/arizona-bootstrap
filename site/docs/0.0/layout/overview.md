@@ -3,7 +3,7 @@ layout: docs
 title: Overview
 description: Components and options for laying out your Arizona Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.
 group: layout
-redirect_from: "/docs/4.3/layout/"
+redirect_from: "/docs/0.0/layout/"
 toc: true
 ---
 
@@ -44,7 +44,7 @@ Use `.container-fluid` for a full width container, spanning the entire width of 
 {% endhighlight %}
 
 
-## Responsive breakpoints
+## Responsive Breakpoints
 
 Since {{ site.title }} is developed to be mobile first, we use a handful of [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
 

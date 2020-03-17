@@ -12,7 +12,7 @@ Bootstrap "spinners" can be used to show the loading state in your projects. The
 
 For accessibility purposes, each loader here includes `role="status"` and a nested `<span class="sr-only">Loading...</span>`.
 
-## Border spinner
+## Border Spinner
 
 Use the border spinners for a lightweight loading indicator.
 
@@ -40,7 +40,7 @@ The border spinner uses `currentColor` for its `border-color`, meaning you can c
 {% endcapture %}
 {% include callout.html content=callout type="info" %}
 
-## Growing spinner
+## Growing Spinner
 
 If you don't fancy a border spinner, switch to the grow spinner. While it doesn't technically spin, it does repeatedly grow!
 
@@ -110,7 +110,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
 {% endcapture %}
 {% include example.html content=example %}
 
-#### Text align
+#### Text Align
 
 {% capture example %}
 <div class="text-center">
@@ -152,11 +152,11 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
 Use spinners within buttons to indicate an action is currently processing or taking place. You may also swap the text out of the spinner element and utilize button text as needed.
 
 {% capture example %}
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   <span class="sr-only">Loading...</span>
 </button>
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Loading...
 </button>
@@ -164,11 +164,11 @@ Use spinners within buttons to indicate an action is currently processing or tak
 {% include example.html content=example %}
 
 {% capture example %}
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
   <span class="sr-only">Loading...</span>
 </button>
-<button class="btn btn-primary" type="button" disabled>
+<button class="btn btn-red" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
   Loading...
 </button>

@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-## How it works
+## How it Works
 
 Change the value of the [`display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/display) with our responsive display utility classes. We purposely support only a subset of all possible values for `display`. Classes can be combined for various effects as you need.
 
@@ -38,18 +38,18 @@ The media queries effect screen widths with the given breakpoint *or larger*. Fo
 ## Examples
 
 {% capture example %}
-<div class="d-inline p-2 bg-primary text-white">d-inline</div>
+<div class="d-inline p-2 bg-red text-white">d-inline</div>
 <div class="d-inline p-2 bg-dark text-white">d-inline</div>
 {% endcapture %}
 {% include example.html content=example %}
 
 {% capture example %}
-<span class="d-block p-2 bg-primary text-white">d-block</span>
+<span class="d-block p-2 bg-red text-white">d-block</span>
 <span class="d-block p-2 bg-dark text-white">d-block</span>
 {% endcapture %}
 {% include example.html content=example %}
 
-## Hiding elements
+## Hiding Elements
 
 For faster mobile-friendly development, use responsive display classes for showing and hiding elements by device. Avoid creating entirely different versions of the same site, instead hide elements responsively for each screen size.
 
@@ -78,7 +78,7 @@ To show an element only on a given interval of screen sizes you can combine one 
 {% endcapture %}
 {% include example.html content=example %}
 
-## Display in print
+## Display in Print
 
 Change the `display` value of elements when printing with our print display utility classes. Includes support for the same `display` values as our responsive `.d-*` utilities.
 

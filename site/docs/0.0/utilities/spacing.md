@@ -6,9 +6,9 @@ group: utilities
 toc: true
 ---
 
-## How it works
+## How it Works
 
-Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from `.25rem` to `3rem`.
+Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from `.25rem` to `8rem`. Classes are determined relative to `$spacer`, which equals `1rem`.
 
 ## Notation
 
@@ -39,6 +39,11 @@ Where *size* is one of:
 * `3` - (by default) for classes that set the `margin` or `padding` to `$spacer`
 * `4` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
 * `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
+* `6` - (by default) for classes that set the `margin` or `padding` to `$spacer * 4`
+* `7` - (by default) for classes that set the `margin` or `padding` to `$spacer * 5`
+* `8` - (by default) for classes that set the `margin` or `padding` to `$spacer * 6`
+* `9` - (by default) for classes that set the `margin` or `padding` to `$spacer * 7`
+* `10` - (by default) for classes that set the `margin` or `padding` to `$spacer * 8`
 * `auto` - for classes that set the `margin` to auto
 
 (You can add more sizes by adding entries to the `$spacers` Sass map variable.)
@@ -66,7 +71,40 @@ Here are some representative examples of these classes:
 }
 {% endhighlight %}
 
-### Horizontal centering
+### Padding
+
+Padding modifies the space inside the div.
+
+{% capture example %}
+<div class="row">
+  <div class="col">
+    <div class="p-3 bg-light">Less inner padding</div>
+  </div>
+  <div class="col">
+    <div class="p-6 bg-light">More inner padding</div>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Margin
+
+Margin modifies the space outside the div.
+
+{% capture example %}
+<div class="row">
+  <div class="col">
+    <div class="my-3 bg-light">Less outer margin</div>
+  </div>
+  <div class="col">
+    <div class="my-6 bg-light">More outer margin</div>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+
+### Horizontal Centering
 
 Additionally, {{ site.title }} also includes an `.mx-auto` class for horizontally centering fixed-width block level content—that is, content that has `display: block` and a `width` set—by setting the horizontal margins to `auto`.
 
@@ -82,7 +120,7 @@ Additionally, {{ site.title }} also includes an `.mx-auto` class for horizontall
 </div>
 {% endhighlight %}
 
-### Negative margin
+### Negative Margin
 
 In CSS, `margin` properties can utilize negative values (`padding` cannot). As of 4.2, we've added negative margin utilities for every non-zero integer size listed above (e.g., `1`, `2`, `3`, `4`, `5`). These utilities are ideal for customizing grid column gutters across breakpoints.
 

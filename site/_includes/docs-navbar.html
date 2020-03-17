@@ -5,11 +5,14 @@
         <a class="nav-link {% if page.layout == "home" %}active{% endif %}" href="{{ site.baseurl }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+        <a class="nav-link {% if page.layout == "about" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if page.title == "Examples" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
+        <a class="nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link {% if page.title == "Examples" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
+      </li> -->
     </ul>
   </div>
 
@@ -26,13 +29,13 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link p-2" href="{{ site.repo }}" target="_blank" rel="noopener" aria-label="BitBucket">
-        {%- include icons/github.svg class="navbar-nav-svg" -%}
+      <a class="nav-link p-2" href="{{ site.repo }}" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github text-azurite"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link p-2" href="{{ site.slack }}/" target="_blank" rel="noopener" aria-label="Slack">
-        {%- include icons/slack.svg class="navbar-nav-svg" -%}
+      <a class="nav-link p-2" href="{{ site.baseurl }}/docs/{{ site.docs_version }}{{ site.slack }}" rel="noopener" aria-label="Slack">
+        <i class="fab fa-slack-hash text-azurite"></i>
       </a>
     </li>
   </ul>
