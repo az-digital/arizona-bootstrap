@@ -1,0 +1,200 @@
+// Overrides specific to the docs
+
+//
+// > MISC
+//
+.highlight pre {
+  padding-bottom: 1em;
+}
+
+
+//
+// > TYPOGRAPHY
+//
+.bd-title,
+.bd-content-title {
+  font-family: $font-family-sans-serif;
+  color: $gray-700;
+}
+
+
+//
+// > NAV
+//
+// >> Navbar
+.bd-navbar {
+  background-color: $white;
+  border-bottom: 1px solid $gray-200;
+
+  .navbar-nav {
+    align-items: stretch;
+    align-self: stretch;
+
+    .nav-item {
+      display: flex;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      font-weight: 700;
+      color: $azurite;
+
+      &.active,
+      &:active,
+      &:hover {
+        color: $midnight;
+        background-color: $gray-200;
+      }
+    }
+  }
+}
+// >> Sidebar
+.bd-toc-item {
+  &.active {
+    .bd-toc-link {
+      color: $midnight;
+      background-color: $gray-400;
+    }
+
+    &:hover {
+      .bd-toc-link {
+        background-color: $gray-400;
+      }
+    }
+  }
+
+  .bd-toc-link {
+    padding: .75rem 1rem;
+    color: $azurite;
+
+    &:hover {
+      color: $midnight;
+      background-color: $gray-200;
+    }
+  }
+}
+
+.bd-sidenav,
+.bd-sidebar {
+  li {
+    a {
+      color: $midnight;
+    }
+  }
+  .nav {
+    // included for docs specifically
+    .bd-sidenav-active {
+      a {
+        background-color: $gray-200;
+      }
+
+      &:hover {
+        a {
+          background-color: $gray-200;
+        }
+      }
+    }
+    li {
+      a {
+        &:hover {
+          color: $midnight;
+          background-color: $gray-100;
+        }
+      }
+    }
+  }
+}
+
+
+//
+// > LAYOUT
+//
+.bd-example-container-header {
+  background-color: $blue;
+}
+.bd-example-container-sidebar {
+  background-color: $bloom;
+}
+.bd-example-container-body {
+  background-color: $river;
+}
+
+.bd-example-row .row > .col,
+.bd-example-row .row > [class^="col-"] {
+  background-color: $gray-200;
+  border-color: $gray-400;
+}
+
+.bd-example-row-flex-cols .row {
+  background-color: rgba($bloom, .1);
+}
+
+.btn-bd-red,
+.btn-bd-download {
+  color: $red;
+  border-color: $red;
+
+  &:hover,
+  &:active {
+    color: $white;
+    background-color: $red;
+    border-color: $red;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($red, .25);
+  }
+}
+
+
+//
+// > COMPONENTS
+//
+
+// >> Background Wrapper Demo
+.btn-background-wrapper-demo,
+.btn-triangle-background-demo {
+  position: relative;
+  top: 0;
+  @include transition(box-shadow .2s, top .2s);
+
+  &.demo-active {
+    top: -5px;
+    box-shadow: 0 7px 6px -4px $gray-700;
+  }
+}
+
+
+.btn-background-wrapper-demo {
+  &:hover {
+    color: $white;
+  }
+
+  &.bg-sky,
+  &.bg-oasis,
+  &.bg-cool-gray,
+  &.bg-warm-gray,
+  &.bg-leaf,
+  &.bg-silver {
+    &:hover {
+      color: $midnight;
+    }
+  }
+  &.bg-bloom,
+  &.bg-white {
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.btn-triangle-background-demo {
+  background-color: $white;
+
+  &.demo-active {
+    color: $white;
+    background-color: $azurite;
+  }
+}
+

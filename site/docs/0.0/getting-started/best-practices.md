@@ -12,7 +12,7 @@ We've designed and developed {{ site.title }} to work in a number of environment
 {% endcapture %}
 {% include callout.html content=callout type="info" %}
 
-### General outline
+### General Outline
 
 - Working with CSS
 - Working with Sass files

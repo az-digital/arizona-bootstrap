@@ -25,7 +25,7 @@ Things to know when using the tooltip plugin:
 
 Got all that? Great, let's see how they work with some examples.
 
-## Example: Enable tooltips everywhere
+## Example: Enable Tooltips Everywhere
 
 One way to initialize all tooltips on a page would be to select them by their `data-toggle` attribute:
 
@@ -48,25 +48,25 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
 
 <div class="bd-example tooltip-demo">
   <div class="bd-example-tooltips">
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
+    <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+    <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+    <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+    <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+    <button type="button" class="btn btn-blue" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
   </div>
 </div>
 
 {% highlight html %}
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+<button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+<button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
   Tooltip on right
 </button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+<button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
   Tooltip on bottom
 </button>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+<button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
   Tooltip on left
 </button>
 {% endhighlight %}
@@ -74,7 +74,7 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
 And with custom HTML added:
 
 {% highlight html %}
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+<button type="button" class="btn btn-blue" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
   Tooltip with HTML
 </button>
 {% endhighlight %}
@@ -105,7 +105,7 @@ $('#example').tooltip({ boundary: 'window' })
 The required markup for a tooltip is only a `data` attribute and `title` on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to `top` by the plugin).
 
 {% capture callout %}
-##### Making tooltips work for keyboard and assistive technology users
+##### Making Tooltips Work for Keyboard and Assistive Technology Users
 
 You should only add tooltips to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as `<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users, and most assistive technologies currently do not announce the tooltip in this situation. Additionally, do not rely solely on `hover` as the trigger for your tooltip, as this will make your tooltips impossible to trigger for keyboard users.
 {% endcapture %}
@@ -124,14 +124,14 @@ You should only add tooltips to HTML elements that are traditionally keyboard-fo
 </div>
 {% endhighlight %}
 
-### Disabled elements
+### Disabled Elements
 
 Elements with the `disabled` attribute aren't interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you'll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`, and override the `pointer-events` on the disabled element.
 
 <div class="tooltip-demo">
 {% capture example %}
 <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
-  <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
+  <button class="btn btn-red" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
 {% endcapture %}
 {% include example.html content=example %}
@@ -280,7 +280,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
 </table>
 
 {% capture callout %}
-#### Data attributes for individual tooltips
+#### Data Attributes for Individual Tooltips
 
 Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.
 {% endcapture %}

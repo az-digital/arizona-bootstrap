@@ -6,7 +6,7 @@ group: content
 toc: true
 ---
 
-## Inline code
+## Inline Code
 
 Wrap inline snippets of code with `<code>`. Be sure to escape HTML angle brackets.
 
@@ -15,7 +15,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Code blocks
+## Code Blocks
 
 Use `<pre>`s for multiple lines of code. Once again, be sure to escape any angle brackets in the code for proper rendering. You may optionally add the `.pre-scrollable` class, which will set a max-height of 340px and provide a y-axis scrollbar.
 
@@ -35,7 +35,7 @@ For indicating variables use the `<var>` tag.
 {% endcapture %}
 {% include example.html content=example %}
 
-## User input
+## User Input
 
 Use the `<kbd>` to indicate input that is typically entered via keyboard.
 
@@ -45,7 +45,7 @@ To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
 {% endcapture %}
 {% include example.html content=example %}
 
-## Sample output
+## Sample Output
 
 For indicating sample output from a program use the `<samp>` tag.
 

@@ -1,0 +1,104 @@
+// Overrides to Mixins
+
+//
+// > ALERTS
+//
+@mixin alert-variant($background) {
+  // check for inaccessible color contrast
+  $alert-text-color: $white;
+
+  @if $background == $sky or $background == $leaf {
+    $alert-text-color: $midnight;
+  }
+  @else if $background == $bloom {
+    $alert-text-color: $black;
+  }
+
+  color: $alert-text-color;
+  background-color: $background;
+  border: none;
+  .alert-link {
+    color: $alert-text-color;
+  }
+  hr {
+    border-top-color: $alert-text-color;
+  }
+}
+
+//
+// > TRANSPARENT BACKGROUND COLORS
+//
+@mixin background-transparent($bg-color) {
+  background-color: rgba($bg-color, .7);
+}
+
+
+//
+// > BADGES
+//
+@mixin badge-variant($background) {
+  // check for inaccessible color contrast
+  $badge-text-color: $white;
+
+  @if $background == $sky or $background == $leaf or $background == $light {
+    $badge-text-color: $midnight;
+  }
+  @else if $background == $warning {
+    $badge-text-color: $black;
+  }
+
+  color: $badge-text-color;
+  background-color: $background;
+}
+
+
+//
+// > BUTTONS
+//
+
+// >> Regular
+@mixin button-variant($background) {
+  // check for inaccessible color contrast
+  $button-text-color: $white;
+
+  @if $background == $sky or $background == $leaf or $background == $light {
+    $button-text-color: $midnight;
+  }
+  @else if $background == $warning {
+    $button-text-color: $black;
+  }
+
+  color: $button-text-color;
+}
+
+// >> Outline
+@mixin button-outline-variant($color) {
+  color: $color;
+  border-color: $color;
+
+  @include hover {
+    background-color: $color;
+    border-color: $color;
+  }
+}
+
+
+//
+// > CALLOUTS
+//
+@mixin callout-variant($color) {
+  border-left-color: $color;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: $color;
+  }
+}

@@ -5,7 +5,7 @@ description: Provide contextual feedback messages for typical user actions with 
 group: components
 redirect_from:
   - "/components/"
-  - "/docs/4.3/components/"
+  - "/docs/0.0/components/"
 toc: true
 ---
 
@@ -23,7 +23,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 
 {% include callout-warning-color-assistive-technologies.md %}
 
-### Link color
+### Link Color
 
 Use the `.alert-link` utility class to quickly provide matching colored links within any alert.
 
@@ -35,7 +35,7 @@ Use the `.alert-link` utility class to quickly provide matching colored links wi
 {% endcapture %}
 {% include example.html content=example %}
 
-### Additional content
+### Additional Content
 
 Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
 
@@ -72,7 +72,7 @@ You can see this in action with a live demo:
 {% endcapture %}
 {% include example.html content=example %}
 
-## JavaScript behavior
+## JavaScript Behavior
 
 ### Triggers
 

@@ -31,7 +31,7 @@ group: components
 {% endcapture %}
 {% include example.html content=example %}
 
-## Changing the separator
+## Changing the Separator
 
 Separators are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by changing `$breadcrumb-divider`. The [quote](https://sass-lang.com/documentation/Sass/Script/Functions.html#quote-instance_method) function is needed to generate the quotes around a string, so if you want `>` as separator, you can use this:
 

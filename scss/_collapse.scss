@@ -1,0 +1,29 @@
+// Overrides & custom for the Collapse component
+
+// make entire accordion header clickable for accessibility and UX
+.accordion {
+  .card-header {
+    padding: 0;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      padding: 0;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: .75rem 1.25rem;
+      color: $dark-silver;
+      text-align: left;
+    }
+  }
+}

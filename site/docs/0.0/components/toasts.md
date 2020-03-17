@@ -222,7 +222,7 @@ When using `autohide: false`, you must add a close button to allow users to dism
 {% endcapture %}
 {% include example.html content=example class="bg-light" %}
 
-## JavaScript behavior
+## JavaScript Behavior
 
 ### Usage
 

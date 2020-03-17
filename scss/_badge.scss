@@ -1,0 +1,35 @@
+// Overrides for the Badge component
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    @include badge-variant($value);
+  }
+}
+
+// Include red & blue
+.badge-red {
+  @include badge-variant($chili);
+  &.badge-link {
+    &:hover {
+      color: $white;
+      background-color: $red;
+    }
+  }
+}
+.badge-blue {
+  @include badge-variant($blue);
+  &.badge-link {
+    &:hover {
+      color: $white;
+      background-color: $azurite;
+    }
+  }
+}
+
+// Include badge-light for useage within buttons
+.btn {
+  .badge-light {
+    color: $midnight;
+    background-color: $cool-gray;
+  }
+}

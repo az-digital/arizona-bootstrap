@@ -6,7 +6,7 @@ group: getting-started
 toc: true
 ---
 
-## Individual or compiled
+## Individual or Compiled
 
 Plugins can be included individually (using {{ site.title }}'s individual `js/dist/*.js`), or all at once using `arizona-bootstrap.js` or the minified `arizona-bootstrap.min.js` (don't include both).
 
@@ -18,7 +18,7 @@ Some plugins and CSS components depend on other plugins. If you include plugins 
 
 Our dropdowns, popovers and tooltips also depend on [Popper.js](https://popper.js.org/).
 
-## Data attributes
+## Data Attributes
 
 Nearly all {{ site.title }} plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to **only use one set of data attributes on a single element** (e.g., you cannot trigger a tooltip and modal from the same button.)
 
@@ -74,7 +74,7 @@ $('#myModal').modal('show') // initializes and invokes show immediately
 
 Each plugin also exposes its raw constructor on a `Constructor` property: `$.fn.popover.Constructor`. If you'd like to get a particular plugin instance, retrieve it directly from an element: `$('[rel="popover"]').data('popover')`.
 
-### Asynchronous functions and transitions
+### Asynchronous Functions and Transitions
 
 All programmatic API methods are **asynchronous** and return to the caller once the transition is started but **before it ends**.
 
@@ -97,7 +97,7 @@ $('#myCarousel').carousel('1') // Will start sliding to the slide 1 and returns 
 $('#myCarousel').carousel('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
 {% endhighlight %}
 
-### Default settings
+### Default Settings
 
 You can change the default settings for a plugin by modifying the plugin's `Constructor.Default` object:
 
@@ -106,7 +106,7 @@ You can change the default settings for a plugin by modifying the plugin's `Cons
 $.fn.modal.Constructor.Default.keyboard = false
 {% endhighlight %}
 
-## No conflict
+## No Conflict
 
 Sometimes it is necessary to use {{ site.title }} plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the plugin you wish to revert the value of.
 
@@ -115,7 +115,7 @@ var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previous
 $.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the {{ site.title }} functionality
 {% endhighlight %}
 
-## Version numbers
+## Version Numbers
 
 The version of each of {{ site.title }}'s jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
@@ -123,12 +123,12 @@ The version of each of {{ site.title }}'s jQuery plugins can be accessed via the
 $.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
 {% endhighlight %}
 
-## No special fallbacks when JavaScript is disabled
+## No Special Fallbacks when JavaScript is Disabled
 
 {{ site.title }}'s plugins don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
 
 {% capture callout %}
-##### Third-party libraries
+##### Third-party Libraries
 
 **{{ site.title }} does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
 {% endcapture %}

@@ -6,7 +6,7 @@ group: getting-started
 toc: true
 ---
 
-## Tooling setup
+## Tooling Setup
 
 {{ site.title }} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
 
@@ -22,7 +22,7 @@ When completed, you'll be able to run the various commands provided from the com
 [install-ruby]: https://www.ruby-lang.org/en/documentation/installation/
 [gembundler]: https://bundler.io/
 
-## Using npm scripts
+## Using npm Scripts
 
 Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes the following commands and tasks:
 
@@ -38,9 +38,9 @@ Run `npm run` to see all the npm scripts.
 
 {{ site.title }} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
 
-We maintain the list of browsers supported through Autoprefixer in a separate file within our BitBucket repository. See [.browserslistrc]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc) for details.
+We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [.browserslistrc]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc) for details.
 
-## Local documentation
+## Local Documentation
 
 Running our documentation locally requires the use of Jekyll, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here's how to get it started:
 
