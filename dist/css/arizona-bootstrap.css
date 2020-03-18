@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "https://cdn.uadigital.arizona.edu/lib/ua-brand-fonts/1.0.0/milo.min.css";
+@import "https://use.typekit.net/tgs5qmz.css";
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -36,7 +36,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif;
+  --font-family-sans-serif: proxima-nova, Verdana, Geneva, sans-serif;
   --font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
@@ -59,7 +59,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -5482,7 +5482,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5594,7 +5594,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -45448,12 +45448,12 @@ a.text-dark:hover, a.text-dark:focus {
 h2,
 .h1, .text-size-h1,
 .h2, .text-size-h2 {
-  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-family: proxima-nova, Verdana, Geneva, sans-serif;
   color: #49595e;
 }
 
 .sans {
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, Verdana, Geneva, sans-serif;
   font-weight: 500;
 }
 
@@ -45502,7 +45502,7 @@ h3,
 h4,
 h5,
 h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-h6 {
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, Verdana, Geneva, sans-serif;
   color: #49595e;
 }
 
