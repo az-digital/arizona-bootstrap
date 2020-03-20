@@ -1,17 +1,17 @@
 ---
 layout: docs
-title: Deprecated
-description: Styles and classes available in UA Bootstrap (Bootstrap 3) that have been deprecated, replaced, or removed in Arizona Bootstrap (Bootstrap 4).
-group: deprecated
+title: Backwards Compatibility
+description: Some styles and classes available in UA Bootstrap (Bootstrap 3) have been deprecated, replaced, or removed in Arizona Bootstrap (Bootstrap 4).
+group: backwards-compatibility
 redirect_from:
-  - "/deprecated/"
-  - "/docs/4.3/deprecated/"
+  - "/backwards-compatibility/"
+  - "/docs/4.3/backwards-compatibility/"
 toc: true
 ---
 
 ## Overview
 
-Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{ site.title }}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{ site.title }}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{ site.title }}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/deprecated/#removed-utility-classes) and [Removed Components]({{ site.baseurl }}/docs/{{ site.docs_version }}/deprecated/#removed-components) sections.
+Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{ site.title }}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{ site.title }}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{ site.title }}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/backwards-compatibility/#removed-utility-classes) and [Removed Components]({{ site.baseurl }}/docs/{{ site.docs_version }}/backwards-compatibility/#removed-components) sections.
 
 ## Backwards Compatible Components
 

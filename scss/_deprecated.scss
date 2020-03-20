@@ -5,9 +5,9 @@ avoid breaking changes; sites should not use these components/classes as they
 have been deprecated in Bootstrap 4.
 */
 
-//
-// > COMPONENTS
-//
+/*
+* > COMPONENTS
+*/
 
 // >> Background Wrappers
 .bg-triangles-fade {
@@ -171,10 +171,9 @@ have been deprecated in Bootstrap 4.
 }
 
 
-
-//
-// > UTILITIES
-//
+/*
+* > UTILITIES
+*/
 
 // >> Column Offset
 @for $i from 1 through 11 {
@@ -193,6 +192,14 @@ have been deprecated in Bootstrap 4.
   .col-xl-offset-#{$i} {
     @extend .offset-xl-#{$i};
   }
+}
+
+// >> Pull Left/Right
+.pull-left {
+  @extend .float-left;
+}
+.pull-right {
+  @extend .float-right;
 }
 
 
@@ -266,7 +273,18 @@ have been deprecated in Bootstrap 4.
   @extend .navbar-light;
 }
 
+// >> Navbar Divider
+.divider,
+.nav-divider {
+  @extend .dropdown-divider;
+}
+
 // >> Text
+
+// >>> Fonts & Font Styles
+.bold {
+  @extend .font-weight-bold;
+}
 
 // >>> List
 /* stylelint-disable-next-line */
@@ -367,5 +385,4 @@ ul.triangle {
 .margin-zero-bottom {
   @extend .mb-0;
 }
-
 

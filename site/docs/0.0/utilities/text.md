@@ -102,12 +102,23 @@ Quickly change the weight (boldness) of text or italicize text.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Monospace
+## Font Families 
 
-Change a selection to our monospace font stack with `.text-monospace`.
+### Monospace
+
+Change a selection of text to our monospace font stack with `.text-monospace`.
 
 {% capture example %}
-<p class="text-monospace">This is in monospace</p>
+<p class="text-monospace">This is monospace text</p>
+{% endcapture %}
+{% include example.html content=example %}
+
+### Sans
+
+Change a selection of text to our sans font with `.text-sans`.
+
+{% capture example %}
+<p class="text-sans">This is sans text</p>
 {% endcapture %}
 {% include example.html content=example %}
 

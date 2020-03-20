@@ -7,7 +7,10 @@
 // >> Base
 .btn {
   font-weight: $btn-font-weight;
-  text-transform: uppercase;
+  text: {
+    transform: uppercase;
+    decoration: none;
+  }
   letter-spacing: .04em;
   white-space: normal;
   border-width: $btn-border-width;
@@ -28,7 +31,7 @@
 .btn-red {
   @include button-variant($chili);
   background-color: $chili;
-  @include hover {
+  @include hover() {
     color: $white;
     background-color: $red;
   }
@@ -40,7 +43,7 @@
 .btn-blue {
   @include button-variant($midnight);
   background-color: $blue;
-  @include hover {
+  @include hover() {
     color: $white;
     background-color: $azurite;
   }
