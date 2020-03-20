@@ -11568,2074 +11568,6 @@ a.text-dark:hover, a.text-dark:focus {
 * > CALLOUTS
 */
 /*
-* > COLOR CLASSES
-*/
-/*
-* >> Background Color
-*/
-.bg-blue, .panel-primary .panel-heading, .bg-primary, .card-primary {
-  color: #fff;
-  background-color: #0c234b;
-}
-
-.bg-blue h1, .panel-primary .panel-heading h1, .bg-primary h1, .card-primary h1,
-.bg-blue h2,
-.panel-primary .panel-heading h2,
-.bg-primary h2,
-.card-primary h2,
-.bg-blue h3,
-.panel-primary .panel-heading h3,
-.bg-primary h3,
-.card-primary h3,
-.bg-blue h4,
-.panel-primary .panel-heading h4,
-.bg-primary h4,
-.card-primary h4,
-.bg-blue h5,
-.panel-primary .panel-heading h5,
-.bg-primary h5,
-.card-primary h5,
-.bg-blue h6,
-.panel-primary .panel-heading h6,
-.bg-primary h6,
-.card-primary h6,
-.bg-blue .h1,
-.panel-primary .panel-heading .h1,
-.bg-primary .h1,
-.card-primary .h1,
-.bg-blue .text-size-h1,
-.panel-primary .panel-heading .text-size-h1,
-.bg-primary .text-size-h1,
-.card-primary .text-size-h1,
-.bg-blue .h2,
-.panel-primary .panel-heading .h2,
-.bg-primary .h2,
-.card-primary .h2,
-.bg-blue .text-size-h2,
-.panel-primary .panel-heading .text-size-h2,
-.bg-primary .text-size-h2,
-.card-primary .text-size-h2,
-.bg-blue .h3,
-.panel-primary .panel-heading .h3,
-.bg-primary .h3,
-.card-primary .h3,
-.bg-blue .text-size-h3,
-.panel-primary .panel-heading .text-size-h3,
-.bg-primary .text-size-h3,
-.card-primary .text-size-h3,
-.bg-blue .h4,
-.panel-primary .panel-heading .h4,
-.bg-primary .h4,
-.card-primary .h4,
-.bg-blue .text-size-h4,
-.panel-primary .panel-heading .text-size-h4,
-.bg-primary .text-size-h4,
-.card-primary .text-size-h4,
-.bg-blue .h5,
-.panel-primary .panel-heading .h5,
-.bg-primary .h5,
-.card-primary .h5,
-.bg-blue .text-size-h5,
-.panel-primary .panel-heading .text-size-h5,
-.bg-primary .text-size-h5,
-.card-primary .text-size-h5,
-.bg-blue .h6,
-.panel-primary .panel-heading .h6,
-.bg-primary .h6,
-.card-primary .h6,
-.bg-blue .text-size-h6,
-.panel-primary .panel-heading .text-size-h6,
-.bg-primary .text-size-h6,
-.card-primary .text-size-h6 {
-  color: #fff;
-}
-
-.bg-red {
-  color: #fff;
-  background-color: #ab0520;
-}
-
-.bg-red h1,
-.bg-red h2,
-.bg-red h3,
-.bg-red h4,
-.bg-red h5,
-.bg-red h6,
-.bg-red .h1,
-.bg-red .text-size-h1,
-.bg-red .h2,
-.bg-red .text-size-h2,
-.bg-red .h3,
-.bg-red .text-size-h3,
-.bg-red .h4,
-.bg-red .text-size-h4,
-.bg-red .h5,
-.bg-red .text-size-h5,
-.bg-red .h6,
-.bg-red .text-size-h6 {
-  color: #fff;
-}
-
-.bg-white,
-.panel, .well.well-hollow, .modal-bg-dark .modal-content {
-  color: #000;
-  background-color: #fff;
-}
-
-.bg-white h1, .panel h1, .well.well-hollow h1, .modal-bg-dark .modal-content h1,
-.bg-white h2,
-.panel h2,
-.well.well-hollow h2,
-.modal-bg-dark .modal-content h2,
-.bg-white h3,
-.panel h3,
-.well.well-hollow h3,
-.modal-bg-dark .modal-content h3,
-.bg-white h4,
-.panel h4,
-.well.well-hollow h4,
-.modal-bg-dark .modal-content h4,
-.bg-white h5,
-.panel h5,
-.well.well-hollow h5,
-.modal-bg-dark .modal-content h5,
-.bg-white h6,
-.panel h6,
-.well.well-hollow h6,
-.modal-bg-dark .modal-content h6,
-.bg-white .h1,
-.panel .h1,
-.well.well-hollow .h1,
-.modal-bg-dark .modal-content .h1,
-.bg-white .text-size-h1,
-.panel .text-size-h1,
-.well.well-hollow .text-size-h1,
-.modal-bg-dark .modal-content .text-size-h1,
-.bg-white .h2,
-.panel .h2,
-.well.well-hollow .h2,
-.modal-bg-dark .modal-content .h2,
-.bg-white .text-size-h2,
-.panel .text-size-h2,
-.well.well-hollow .text-size-h2,
-.modal-bg-dark .modal-content .text-size-h2,
-.bg-white .h3,
-.panel .h3,
-.well.well-hollow .h3,
-.modal-bg-dark .modal-content .h3,
-.bg-white .text-size-h3,
-.panel .text-size-h3,
-.well.well-hollow .text-size-h3,
-.modal-bg-dark .modal-content .text-size-h3,
-.bg-white .h4,
-.panel .h4,
-.well.well-hollow .h4,
-.modal-bg-dark .modal-content .h4,
-.bg-white .text-size-h4,
-.panel .text-size-h4,
-.well.well-hollow .text-size-h4,
-.modal-bg-dark .modal-content .text-size-h4,
-.bg-white .h5,
-.panel .h5,
-.well.well-hollow .h5,
-.modal-bg-dark .modal-content .h5,
-.bg-white .text-size-h5,
-.panel .text-size-h5,
-.well.well-hollow .text-size-h5,
-.modal-bg-dark .modal-content .text-size-h5,
-.bg-white .h6,
-.panel .h6,
-.well.well-hollow .h6,
-.modal-bg-dark .modal-content .h6,
-.bg-white .text-size-h6,
-.panel .text-size-h6,
-.well.well-hollow .text-size-h6,
-.modal-bg-dark .modal-content .text-size-h6 {
-  color: #000;
-}
-
-.bg-bloom {
-  color: #000;
-  background-color: #ef4056;
-}
-
-.bg-bloom h1,
-.bg-bloom h2,
-.bg-bloom h3,
-.bg-bloom h4,
-.bg-bloom h5,
-.bg-bloom h6,
-.bg-bloom .h1,
-.bg-bloom .text-size-h1,
-.bg-bloom .h2,
-.bg-bloom .text-size-h2,
-.bg-bloom .h3,
-.bg-bloom .text-size-h3,
-.bg-bloom .h4,
-.bg-bloom .text-size-h4,
-.bg-bloom .h5,
-.bg-bloom .text-size-h5,
-.bg-bloom .h6,
-.bg-bloom .text-size-h6 {
-  color: #000;
-}
-
-.bg-chili {
-  color: #fff;
-  background-color: #8b0015;
-}
-
-.bg-chili h1,
-.bg-chili h2,
-.bg-chili h3,
-.bg-chili h4,
-.bg-chili h5,
-.bg-chili h6,
-.bg-chili .h1,
-.bg-chili .text-size-h1,
-.bg-chili .h2,
-.bg-chili .text-size-h2,
-.bg-chili .h3,
-.bg-chili .text-size-h3,
-.bg-chili .h4,
-.bg-chili .text-size-h4,
-.bg-chili .h5,
-.bg-chili .text-size-h5,
-.bg-chili .h6,
-.bg-chili .text-size-h6 {
-  color: #fff;
-}
-
-.bg-sky {
-  color: #000;
-  background-color: #81d3eb;
-}
-
-.bg-sky h1,
-.bg-sky h2,
-.bg-sky h3,
-.bg-sky h4,
-.bg-sky h5,
-.bg-sky h6,
-.bg-sky .h1,
-.bg-sky .text-size-h1,
-.bg-sky .h2,
-.bg-sky .text-size-h2,
-.bg-sky .h3,
-.bg-sky .text-size-h3,
-.bg-sky .h4,
-.bg-sky .text-size-h4,
-.bg-sky .h5,
-.bg-sky .text-size-h5,
-.bg-sky .h6,
-.bg-sky .text-size-h6 {
-  color: #000;
-}
-
-.bg-oasis {
-  color: #000;
-  background-color: #378dbd;
-}
-
-.bg-oasis h1,
-.bg-oasis h2,
-.bg-oasis h3,
-.bg-oasis h4,
-.bg-oasis h5,
-.bg-oasis h6,
-.bg-oasis .h1,
-.bg-oasis .text-size-h1,
-.bg-oasis .h2,
-.bg-oasis .text-size-h2,
-.bg-oasis .h3,
-.bg-oasis .text-size-h3,
-.bg-oasis .h4,
-.bg-oasis .text-size-h4,
-.bg-oasis .h5,
-.bg-oasis .text-size-h5,
-.bg-oasis .h6,
-.bg-oasis .text-size-h6 {
-  color: #000;
-}
-
-.bg-azurite {
-  color: #fff;
-  background-color: #1e5288;
-}
-
-.bg-azurite h1,
-.bg-azurite h2,
-.bg-azurite h3,
-.bg-azurite h4,
-.bg-azurite h5,
-.bg-azurite h6,
-.bg-azurite .h1,
-.bg-azurite .text-size-h1,
-.bg-azurite .h2,
-.bg-azurite .text-size-h2,
-.bg-azurite .h3,
-.bg-azurite .text-size-h3,
-.bg-azurite .h4,
-.bg-azurite .text-size-h4,
-.bg-azurite .h5,
-.bg-azurite .text-size-h5,
-.bg-azurite .h6,
-.bg-azurite .text-size-h6 {
-  color: #fff;
-}
-
-.bg-midnight {
-  color: #fff;
-  background-color: #001c48;
-}
-
-.bg-midnight h1,
-.bg-midnight h2,
-.bg-midnight h3,
-.bg-midnight h4,
-.bg-midnight h5,
-.bg-midnight h6,
-.bg-midnight .h1,
-.bg-midnight .text-size-h1,
-.bg-midnight .h2,
-.bg-midnight .text-size-h2,
-.bg-midnight .h3,
-.bg-midnight .text-size-h3,
-.bg-midnight .h4,
-.bg-midnight .text-size-h4,
-.bg-midnight .h5,
-.bg-midnight .text-size-h5,
-.bg-midnight .h6,
-.bg-midnight .text-size-h6 {
-  color: #fff;
-}
-
-.bg-cool-gray {
-  color: #000;
-  background-color: #e2e9eb;
-}
-
-.bg-cool-gray h1,
-.bg-cool-gray h2,
-.bg-cool-gray h3,
-.bg-cool-gray h4,
-.bg-cool-gray h5,
-.bg-cool-gray h6,
-.bg-cool-gray .h1,
-.bg-cool-gray .text-size-h1,
-.bg-cool-gray .h2,
-.bg-cool-gray .text-size-h2,
-.bg-cool-gray .h3,
-.bg-cool-gray .text-size-h3,
-.bg-cool-gray .h4,
-.bg-cool-gray .text-size-h4,
-.bg-cool-gray .h5,
-.bg-cool-gray .text-size-h5,
-.bg-cool-gray .h6,
-.bg-cool-gray .text-size-h6 {
-  color: #000;
-}
-
-.bg-warm-gray {
-  color: #000;
-  background-color: #f4ede5;
-}
-
-.bg-warm-gray h1,
-.bg-warm-gray h2,
-.bg-warm-gray h3,
-.bg-warm-gray h4,
-.bg-warm-gray h5,
-.bg-warm-gray h6,
-.bg-warm-gray .h1,
-.bg-warm-gray .text-size-h1,
-.bg-warm-gray .h2,
-.bg-warm-gray .text-size-h2,
-.bg-warm-gray .h3,
-.bg-warm-gray .text-size-h3,
-.bg-warm-gray .h4,
-.bg-warm-gray .text-size-h4,
-.bg-warm-gray .h5,
-.bg-warm-gray .text-size-h5,
-.bg-warm-gray .h6,
-.bg-warm-gray .text-size-h6 {
-  color: #000;
-}
-
-.bg-leaf {
-  color: #000;
-  background-color: #70b865;
-}
-
-.bg-leaf h1,
-.bg-leaf h2,
-.bg-leaf h3,
-.bg-leaf h4,
-.bg-leaf h5,
-.bg-leaf h6,
-.bg-leaf .h1,
-.bg-leaf .text-size-h1,
-.bg-leaf .h2,
-.bg-leaf .text-size-h2,
-.bg-leaf .h3,
-.bg-leaf .text-size-h3,
-.bg-leaf .h4,
-.bg-leaf .text-size-h4,
-.bg-leaf .h5,
-.bg-leaf .text-size-h5,
-.bg-leaf .h6,
-.bg-leaf .text-size-h6 {
-  color: #000;
-}
-
-.bg-river {
-  color: #fff;
-  background-color: #007d84;
-}
-
-.bg-river h1,
-.bg-river h2,
-.bg-river h3,
-.bg-river h4,
-.bg-river h5,
-.bg-river h6,
-.bg-river .h1,
-.bg-river .text-size-h1,
-.bg-river .h2,
-.bg-river .text-size-h2,
-.bg-river .h3,
-.bg-river .text-size-h3,
-.bg-river .h4,
-.bg-river .text-size-h4,
-.bg-river .h5,
-.bg-river .text-size-h5,
-.bg-river .h6,
-.bg-river .text-size-h6 {
-  color: #fff;
-}
-
-.bg-silver {
-  color: #000;
-  background-color: #9eabae;
-}
-
-.bg-silver h1,
-.bg-silver h2,
-.bg-silver h3,
-.bg-silver h4,
-.bg-silver h5,
-.bg-silver h6,
-.bg-silver .h1,
-.bg-silver .text-size-h1,
-.bg-silver .h2,
-.bg-silver .text-size-h2,
-.bg-silver .h3,
-.bg-silver .text-size-h3,
-.bg-silver .h4,
-.bg-silver .text-size-h4,
-.bg-silver .h5,
-.bg-silver .text-size-h5,
-.bg-silver .h6,
-.bg-silver .text-size-h6 {
-  color: #000;
-}
-
-.bg-mesa {
-  color: #fff;
-  background-color: #a95c42;
-}
-
-.bg-mesa h1,
-.bg-mesa h2,
-.bg-mesa h3,
-.bg-mesa h4,
-.bg-mesa h5,
-.bg-mesa h6,
-.bg-mesa .h1,
-.bg-mesa .text-size-h1,
-.bg-mesa .h2,
-.bg-mesa .text-size-h2,
-.bg-mesa .h3,
-.bg-mesa .text-size-h3,
-.bg-mesa .h4,
-.bg-mesa .text-size-h4,
-.bg-mesa .h5,
-.bg-mesa .text-size-h5,
-.bg-mesa .h6,
-.bg-mesa .text-size-h6 {
-  color: #fff;
-}
-
-.bg-ash {
-  color: #fff;
-  background-color: #403635;
-}
-
-.bg-ash h1,
-.bg-ash h2,
-.bg-ash h3,
-.bg-ash h4,
-.bg-ash h5,
-.bg-ash h6,
-.bg-ash .h1,
-.bg-ash .text-size-h1,
-.bg-ash .h2,
-.bg-ash .text-size-h2,
-.bg-ash .h3,
-.bg-ash .text-size-h3,
-.bg-ash .h4,
-.bg-ash .text-size-h4,
-.bg-ash .h5,
-.bg-ash .text-size-h5,
-.bg-ash .h6,
-.bg-ash .text-size-h6 {
-  color: #fff;
-}
-
-.bg-sage {
-  color: #fff;
-  background-color: #4a634e;
-}
-
-.bg-sage h1,
-.bg-sage h2,
-.bg-sage h3,
-.bg-sage h4,
-.bg-sage h5,
-.bg-sage h6,
-.bg-sage .h1,
-.bg-sage .text-size-h1,
-.bg-sage .h2,
-.bg-sage .text-size-h2,
-.bg-sage .h3,
-.bg-sage .text-size-h3,
-.bg-sage .h4,
-.bg-sage .text-size-h4,
-.bg-sage .h5,
-.bg-sage .text-size-h5,
-.bg-sage .h6,
-.bg-sage .text-size-h6 {
-  color: #fff;
-}
-
-.bg-black {
-  color: #fff;
-  background-color: #000;
-}
-
-.bg-black h1,
-.bg-black h2,
-.bg-black h3,
-.bg-black h4,
-.bg-black h5,
-.bg-black h6,
-.bg-black .h1,
-.bg-black .text-size-h1,
-.bg-black .h2,
-.bg-black .text-size-h2,
-.bg-black .h3,
-.bg-black .text-size-h3,
-.bg-black .h4,
-.bg-black .text-size-h4,
-.bg-black .h5,
-.bg-black .text-size-h5,
-.bg-black .h6,
-.bg-black .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-red {
-  color: #fff;
-  background-color: rgba(171, 5, 32, 0.7);
-}
-
-.bg-transparent-red h1,
-.bg-transparent-red h2,
-.bg-transparent-red h3,
-.bg-transparent-red h4,
-.bg-transparent-red h5,
-.bg-transparent-red h6,
-.bg-transparent-red .h1,
-.bg-transparent-red .text-size-h1,
-.bg-transparent-red .h2,
-.bg-transparent-red .text-size-h2,
-.bg-transparent-red .h3,
-.bg-transparent-red .text-size-h3,
-.bg-transparent-red .h4,
-.bg-transparent-red .text-size-h4,
-.bg-transparent-red .h5,
-.bg-transparent-red .text-size-h5,
-.bg-transparent-red .h6,
-.bg-transparent-red .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-bloom {
-  color: #fff;
-  background-color: rgba(239, 64, 86, 0.7);
-}
-
-.bg-transparent-bloom h1,
-.bg-transparent-bloom h2,
-.bg-transparent-bloom h3,
-.bg-transparent-bloom h4,
-.bg-transparent-bloom h5,
-.bg-transparent-bloom h6,
-.bg-transparent-bloom .h1,
-.bg-transparent-bloom .text-size-h1,
-.bg-transparent-bloom .h2,
-.bg-transparent-bloom .text-size-h2,
-.bg-transparent-bloom .h3,
-.bg-transparent-bloom .text-size-h3,
-.bg-transparent-bloom .h4,
-.bg-transparent-bloom .text-size-h4,
-.bg-transparent-bloom .h5,
-.bg-transparent-bloom .text-size-h5,
-.bg-transparent-bloom .h6,
-.bg-transparent-bloom .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-chili {
-  color: #fff;
-  background-color: rgba(139, 0, 21, 0.7);
-}
-
-.bg-transparent-chili h1,
-.bg-transparent-chili h2,
-.bg-transparent-chili h3,
-.bg-transparent-chili h4,
-.bg-transparent-chili h5,
-.bg-transparent-chili h6,
-.bg-transparent-chili .h1,
-.bg-transparent-chili .text-size-h1,
-.bg-transparent-chili .h2,
-.bg-transparent-chili .text-size-h2,
-.bg-transparent-chili .h3,
-.bg-transparent-chili .text-size-h3,
-.bg-transparent-chili .h4,
-.bg-transparent-chili .text-size-h4,
-.bg-transparent-chili .h5,
-.bg-transparent-chili .text-size-h5,
-.bg-transparent-chili .h6,
-.bg-transparent-chili .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-blue {
-  color: #fff;
-  background-color: rgba(12, 35, 75, 0.7);
-}
-
-.bg-transparent-blue h1,
-.bg-transparent-blue h2,
-.bg-transparent-blue h3,
-.bg-transparent-blue h4,
-.bg-transparent-blue h5,
-.bg-transparent-blue h6,
-.bg-transparent-blue .h1,
-.bg-transparent-blue .text-size-h1,
-.bg-transparent-blue .h2,
-.bg-transparent-blue .text-size-h2,
-.bg-transparent-blue .h3,
-.bg-transparent-blue .text-size-h3,
-.bg-transparent-blue .h4,
-.bg-transparent-blue .text-size-h4,
-.bg-transparent-blue .h5,
-.bg-transparent-blue .text-size-h5,
-.bg-transparent-blue .h6,
-.bg-transparent-blue .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-sky {
-  color: #fff;
-  background-color: rgba(129, 211, 235, 0.7);
-}
-
-.bg-transparent-sky h1,
-.bg-transparent-sky h2,
-.bg-transparent-sky h3,
-.bg-transparent-sky h4,
-.bg-transparent-sky h5,
-.bg-transparent-sky h6,
-.bg-transparent-sky .h1,
-.bg-transparent-sky .text-size-h1,
-.bg-transparent-sky .h2,
-.bg-transparent-sky .text-size-h2,
-.bg-transparent-sky .h3,
-.bg-transparent-sky .text-size-h3,
-.bg-transparent-sky .h4,
-.bg-transparent-sky .text-size-h4,
-.bg-transparent-sky .h5,
-.bg-transparent-sky .text-size-h5,
-.bg-transparent-sky .h6,
-.bg-transparent-sky .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-oasis {
-  color: #fff;
-  background-color: rgba(55, 141, 189, 0.7);
-}
-
-.bg-transparent-oasis h1,
-.bg-transparent-oasis h2,
-.bg-transparent-oasis h3,
-.bg-transparent-oasis h4,
-.bg-transparent-oasis h5,
-.bg-transparent-oasis h6,
-.bg-transparent-oasis .h1,
-.bg-transparent-oasis .text-size-h1,
-.bg-transparent-oasis .h2,
-.bg-transparent-oasis .text-size-h2,
-.bg-transparent-oasis .h3,
-.bg-transparent-oasis .text-size-h3,
-.bg-transparent-oasis .h4,
-.bg-transparent-oasis .text-size-h4,
-.bg-transparent-oasis .h5,
-.bg-transparent-oasis .text-size-h5,
-.bg-transparent-oasis .h6,
-.bg-transparent-oasis .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-azurite {
-  color: #fff;
-  background-color: rgba(30, 82, 136, 0.7);
-}
-
-.bg-transparent-azurite h1,
-.bg-transparent-azurite h2,
-.bg-transparent-azurite h3,
-.bg-transparent-azurite h4,
-.bg-transparent-azurite h5,
-.bg-transparent-azurite h6,
-.bg-transparent-azurite .h1,
-.bg-transparent-azurite .text-size-h1,
-.bg-transparent-azurite .h2,
-.bg-transparent-azurite .text-size-h2,
-.bg-transparent-azurite .h3,
-.bg-transparent-azurite .text-size-h3,
-.bg-transparent-azurite .h4,
-.bg-transparent-azurite .text-size-h4,
-.bg-transparent-azurite .h5,
-.bg-transparent-azurite .text-size-h5,
-.bg-transparent-azurite .h6,
-.bg-transparent-azurite .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-midnight {
-  color: #fff;
-  background-color: rgba(0, 28, 72, 0.7);
-}
-
-.bg-transparent-midnight h1,
-.bg-transparent-midnight h2,
-.bg-transparent-midnight h3,
-.bg-transparent-midnight h4,
-.bg-transparent-midnight h5,
-.bg-transparent-midnight h6,
-.bg-transparent-midnight .h1,
-.bg-transparent-midnight .text-size-h1,
-.bg-transparent-midnight .h2,
-.bg-transparent-midnight .text-size-h2,
-.bg-transparent-midnight .h3,
-.bg-transparent-midnight .text-size-h3,
-.bg-transparent-midnight .h4,
-.bg-transparent-midnight .text-size-h4,
-.bg-transparent-midnight .h5,
-.bg-transparent-midnight .text-size-h5,
-.bg-transparent-midnight .h6,
-.bg-transparent-midnight .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-cool-gray {
-  color: #fff;
-  background-color: rgba(226, 233, 235, 0.7);
-}
-
-.bg-transparent-cool-gray h1,
-.bg-transparent-cool-gray h2,
-.bg-transparent-cool-gray h3,
-.bg-transparent-cool-gray h4,
-.bg-transparent-cool-gray h5,
-.bg-transparent-cool-gray h6,
-.bg-transparent-cool-gray .h1,
-.bg-transparent-cool-gray .text-size-h1,
-.bg-transparent-cool-gray .h2,
-.bg-transparent-cool-gray .text-size-h2,
-.bg-transparent-cool-gray .h3,
-.bg-transparent-cool-gray .text-size-h3,
-.bg-transparent-cool-gray .h4,
-.bg-transparent-cool-gray .text-size-h4,
-.bg-transparent-cool-gray .h5,
-.bg-transparent-cool-gray .text-size-h5,
-.bg-transparent-cool-gray .h6,
-.bg-transparent-cool-gray .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-warm-gray {
-  color: #fff;
-  background-color: rgba(244, 237, 229, 0.7);
-}
-
-.bg-transparent-warm-gray h1,
-.bg-transparent-warm-gray h2,
-.bg-transparent-warm-gray h3,
-.bg-transparent-warm-gray h4,
-.bg-transparent-warm-gray h5,
-.bg-transparent-warm-gray h6,
-.bg-transparent-warm-gray .h1,
-.bg-transparent-warm-gray .text-size-h1,
-.bg-transparent-warm-gray .h2,
-.bg-transparent-warm-gray .text-size-h2,
-.bg-transparent-warm-gray .h3,
-.bg-transparent-warm-gray .text-size-h3,
-.bg-transparent-warm-gray .h4,
-.bg-transparent-warm-gray .text-size-h4,
-.bg-transparent-warm-gray .h5,
-.bg-transparent-warm-gray .text-size-h5,
-.bg-transparent-warm-gray .h6,
-.bg-transparent-warm-gray .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-leaf {
-  color: #fff;
-  background-color: rgba(112, 184, 101, 0.7);
-}
-
-.bg-transparent-leaf h1,
-.bg-transparent-leaf h2,
-.bg-transparent-leaf h3,
-.bg-transparent-leaf h4,
-.bg-transparent-leaf h5,
-.bg-transparent-leaf h6,
-.bg-transparent-leaf .h1,
-.bg-transparent-leaf .text-size-h1,
-.bg-transparent-leaf .h2,
-.bg-transparent-leaf .text-size-h2,
-.bg-transparent-leaf .h3,
-.bg-transparent-leaf .text-size-h3,
-.bg-transparent-leaf .h4,
-.bg-transparent-leaf .text-size-h4,
-.bg-transparent-leaf .h5,
-.bg-transparent-leaf .text-size-h5,
-.bg-transparent-leaf .h6,
-.bg-transparent-leaf .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-river {
-  color: #fff;
-  background-color: rgba(0, 125, 132, 0.7);
-}
-
-.bg-transparent-river h1,
-.bg-transparent-river h2,
-.bg-transparent-river h3,
-.bg-transparent-river h4,
-.bg-transparent-river h5,
-.bg-transparent-river h6,
-.bg-transparent-river .h1,
-.bg-transparent-river .text-size-h1,
-.bg-transparent-river .h2,
-.bg-transparent-river .text-size-h2,
-.bg-transparent-river .h3,
-.bg-transparent-river .text-size-h3,
-.bg-transparent-river .h4,
-.bg-transparent-river .text-size-h4,
-.bg-transparent-river .h5,
-.bg-transparent-river .text-size-h5,
-.bg-transparent-river .h6,
-.bg-transparent-river .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-silver {
-  color: #fff;
-  background-color: rgba(158, 171, 174, 0.7);
-}
-
-.bg-transparent-silver h1,
-.bg-transparent-silver h2,
-.bg-transparent-silver h3,
-.bg-transparent-silver h4,
-.bg-transparent-silver h5,
-.bg-transparent-silver h6,
-.bg-transparent-silver .h1,
-.bg-transparent-silver .text-size-h1,
-.bg-transparent-silver .h2,
-.bg-transparent-silver .text-size-h2,
-.bg-transparent-silver .h3,
-.bg-transparent-silver .text-size-h3,
-.bg-transparent-silver .h4,
-.bg-transparent-silver .text-size-h4,
-.bg-transparent-silver .h5,
-.bg-transparent-silver .text-size-h5,
-.bg-transparent-silver .h6,
-.bg-transparent-silver .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-mesa {
-  color: #fff;
-  background-color: rgba(169, 92, 66, 0.7);
-}
-
-.bg-transparent-mesa h1,
-.bg-transparent-mesa h2,
-.bg-transparent-mesa h3,
-.bg-transparent-mesa h4,
-.bg-transparent-mesa h5,
-.bg-transparent-mesa h6,
-.bg-transparent-mesa .h1,
-.bg-transparent-mesa .text-size-h1,
-.bg-transparent-mesa .h2,
-.bg-transparent-mesa .text-size-h2,
-.bg-transparent-mesa .h3,
-.bg-transparent-mesa .text-size-h3,
-.bg-transparent-mesa .h4,
-.bg-transparent-mesa .text-size-h4,
-.bg-transparent-mesa .h5,
-.bg-transparent-mesa .text-size-h5,
-.bg-transparent-mesa .h6,
-.bg-transparent-mesa .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-ash {
-  color: #fff;
-  background-color: rgba(64, 54, 53, 0.7);
-}
-
-.bg-transparent-ash h1,
-.bg-transparent-ash h2,
-.bg-transparent-ash h3,
-.bg-transparent-ash h4,
-.bg-transparent-ash h5,
-.bg-transparent-ash h6,
-.bg-transparent-ash .h1,
-.bg-transparent-ash .text-size-h1,
-.bg-transparent-ash .h2,
-.bg-transparent-ash .text-size-h2,
-.bg-transparent-ash .h3,
-.bg-transparent-ash .text-size-h3,
-.bg-transparent-ash .h4,
-.bg-transparent-ash .text-size-h4,
-.bg-transparent-ash .h5,
-.bg-transparent-ash .text-size-h5,
-.bg-transparent-ash .h6,
-.bg-transparent-ash .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-sage {
-  color: #fff;
-  background-color: rgba(74, 99, 78, 0.7);
-}
-
-.bg-transparent-sage h1,
-.bg-transparent-sage h2,
-.bg-transparent-sage h3,
-.bg-transparent-sage h4,
-.bg-transparent-sage h5,
-.bg-transparent-sage h6,
-.bg-transparent-sage .h1,
-.bg-transparent-sage .text-size-h1,
-.bg-transparent-sage .h2,
-.bg-transparent-sage .text-size-h2,
-.bg-transparent-sage .h3,
-.bg-transparent-sage .text-size-h3,
-.bg-transparent-sage .h4,
-.bg-transparent-sage .text-size-h4,
-.bg-transparent-sage .h5,
-.bg-transparent-sage .text-size-h5,
-.bg-transparent-sage .h6,
-.bg-transparent-sage .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-white {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.bg-transparent-white h1,
-.bg-transparent-white h2,
-.bg-transparent-white h3,
-.bg-transparent-white h4,
-.bg-transparent-white h5,
-.bg-transparent-white h6,
-.bg-transparent-white .h1,
-.bg-transparent-white .text-size-h1,
-.bg-transparent-white .h2,
-.bg-transparent-white .text-size-h2,
-.bg-transparent-white .h3,
-.bg-transparent-white .text-size-h3,
-.bg-transparent-white .h4,
-.bg-transparent-white .text-size-h4,
-.bg-transparent-white .h5,
-.bg-transparent-white .text-size-h5,
-.bg-transparent-white .h6,
-.bg-transparent-white .text-size-h6 {
-  color: #fff;
-}
-
-.bg-transparent-black {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.bg-transparent-black h1,
-.bg-transparent-black h2,
-.bg-transparent-black h3,
-.bg-transparent-black h4,
-.bg-transparent-black h5,
-.bg-transparent-black h6,
-.bg-transparent-black .h1,
-.bg-transparent-black .text-size-h1,
-.bg-transparent-black .h2,
-.bg-transparent-black .text-size-h2,
-.bg-transparent-black .h3,
-.bg-transparent-black .text-size-h3,
-.bg-transparent-black .h4,
-.bg-transparent-black .text-size-h4,
-.bg-transparent-black .h5,
-.bg-transparent-black .text-size-h5,
-.bg-transparent-black .h6,
-.bg-transparent-black .text-size-h6 {
-  color: #fff;
-}
-
-.bg-success, .panel-success .panel-heading, .card-success {
-  color: #000;
-  background-color: #70b865;
-}
-
-.bg-success h1, .panel-success .panel-heading h1, .card-success h1,
-.bg-success h2,
-.panel-success .panel-heading h2,
-.card-success h2,
-.bg-success h3,
-.panel-success .panel-heading h3,
-.card-success h3,
-.bg-success h4,
-.panel-success .panel-heading h4,
-.card-success h4,
-.bg-success h5,
-.panel-success .panel-heading h5,
-.card-success h5,
-.bg-success h6,
-.panel-success .panel-heading h6,
-.card-success h6,
-.bg-success .h1,
-.panel-success .panel-heading .h1,
-.card-success .h1,
-.bg-success .text-size-h1,
-.panel-success .panel-heading .text-size-h1,
-.card-success .text-size-h1,
-.bg-success .h2,
-.panel-success .panel-heading .h2,
-.card-success .h2,
-.bg-success .text-size-h2,
-.panel-success .panel-heading .text-size-h2,
-.card-success .text-size-h2,
-.bg-success .h3,
-.panel-success .panel-heading .h3,
-.card-success .h3,
-.bg-success .text-size-h3,
-.panel-success .panel-heading .text-size-h3,
-.card-success .text-size-h3,
-.bg-success .h4,
-.panel-success .panel-heading .h4,
-.card-success .h4,
-.bg-success .text-size-h4,
-.panel-success .panel-heading .text-size-h4,
-.card-success .text-size-h4,
-.bg-success .h5,
-.panel-success .panel-heading .h5,
-.card-success .h5,
-.bg-success .text-size-h5,
-.panel-success .panel-heading .text-size-h5,
-.card-success .text-size-h5,
-.bg-success .h6,
-.panel-success .panel-heading .h6,
-.card-success .h6,
-.bg-success .text-size-h6,
-.panel-success .panel-heading .text-size-h6,
-.card-success .text-size-h6 {
-  color: #000;
-}
-
-.bg-info, .panel-info .panel-heading, .card-info {
-  color: #000;
-  background-color: #81d3eb;
-}
-
-.bg-info h1, .panel-info .panel-heading h1, .card-info h1,
-.bg-info h2,
-.panel-info .panel-heading h2,
-.card-info h2,
-.bg-info h3,
-.panel-info .panel-heading h3,
-.card-info h3,
-.bg-info h4,
-.panel-info .panel-heading h4,
-.card-info h4,
-.bg-info h5,
-.panel-info .panel-heading h5,
-.card-info h5,
-.bg-info h6,
-.panel-info .panel-heading h6,
-.card-info h6,
-.bg-info .h1,
-.panel-info .panel-heading .h1,
-.card-info .h1,
-.bg-info .text-size-h1,
-.panel-info .panel-heading .text-size-h1,
-.card-info .text-size-h1,
-.bg-info .h2,
-.panel-info .panel-heading .h2,
-.card-info .h2,
-.bg-info .text-size-h2,
-.panel-info .panel-heading .text-size-h2,
-.card-info .text-size-h2,
-.bg-info .h3,
-.panel-info .panel-heading .h3,
-.card-info .h3,
-.bg-info .text-size-h3,
-.panel-info .panel-heading .text-size-h3,
-.card-info .text-size-h3,
-.bg-info .h4,
-.panel-info .panel-heading .h4,
-.card-info .h4,
-.bg-info .text-size-h4,
-.panel-info .panel-heading .text-size-h4,
-.card-info .text-size-h4,
-.bg-info .h5,
-.panel-info .panel-heading .h5,
-.card-info .h5,
-.bg-info .text-size-h5,
-.panel-info .panel-heading .text-size-h5,
-.card-info .text-size-h5,
-.bg-info .h6,
-.panel-info .panel-heading .h6,
-.card-info .h6,
-.bg-info .text-size-h6,
-.panel-info .panel-heading .text-size-h6,
-.card-info .text-size-h6 {
-  color: #000;
-}
-
-.bg-warning, .panel-warning .panel-heading, .card-warning {
-  color: #000;
-  background-color: #f19e1f;
-}
-
-.bg-warning h1, .panel-warning .panel-heading h1, .card-warning h1,
-.bg-warning h2,
-.panel-warning .panel-heading h2,
-.card-warning h2,
-.bg-warning h3,
-.panel-warning .panel-heading h3,
-.card-warning h3,
-.bg-warning h4,
-.panel-warning .panel-heading h4,
-.card-warning h4,
-.bg-warning h5,
-.panel-warning .panel-heading h5,
-.card-warning h5,
-.bg-warning h6,
-.panel-warning .panel-heading h6,
-.card-warning h6,
-.bg-warning .h1,
-.panel-warning .panel-heading .h1,
-.card-warning .h1,
-.bg-warning .text-size-h1,
-.panel-warning .panel-heading .text-size-h1,
-.card-warning .text-size-h1,
-.bg-warning .h2,
-.panel-warning .panel-heading .h2,
-.card-warning .h2,
-.bg-warning .text-size-h2,
-.panel-warning .panel-heading .text-size-h2,
-.card-warning .text-size-h2,
-.bg-warning .h3,
-.panel-warning .panel-heading .h3,
-.card-warning .h3,
-.bg-warning .text-size-h3,
-.panel-warning .panel-heading .text-size-h3,
-.card-warning .text-size-h3,
-.bg-warning .h4,
-.panel-warning .panel-heading .h4,
-.card-warning .h4,
-.bg-warning .text-size-h4,
-.panel-warning .panel-heading .text-size-h4,
-.card-warning .text-size-h4,
-.bg-warning .h5,
-.panel-warning .panel-heading .h5,
-.card-warning .h5,
-.bg-warning .text-size-h5,
-.panel-warning .panel-heading .text-size-h5,
-.card-warning .text-size-h5,
-.bg-warning .h6,
-.panel-warning .panel-heading .h6,
-.card-warning .h6,
-.bg-warning .text-size-h6,
-.panel-warning .panel-heading .text-size-h6,
-.card-warning .text-size-h6 {
-  color: #000;
-}
-
-.bg-danger, .panel-danger .panel-heading, .card-danger {
-  color: #fff;
-  background-color: #a95c42;
-}
-
-.bg-danger h1, .panel-danger .panel-heading h1, .card-danger h1,
-.bg-danger h2,
-.panel-danger .panel-heading h2,
-.card-danger h2,
-.bg-danger h3,
-.panel-danger .panel-heading h3,
-.card-danger h3,
-.bg-danger h4,
-.panel-danger .panel-heading h4,
-.card-danger h4,
-.bg-danger h5,
-.panel-danger .panel-heading h5,
-.card-danger h5,
-.bg-danger h6,
-.panel-danger .panel-heading h6,
-.card-danger h6,
-.bg-danger .h1,
-.panel-danger .panel-heading .h1,
-.card-danger .h1,
-.bg-danger .text-size-h1,
-.panel-danger .panel-heading .text-size-h1,
-.card-danger .text-size-h1,
-.bg-danger .h2,
-.panel-danger .panel-heading .h2,
-.card-danger .h2,
-.bg-danger .text-size-h2,
-.panel-danger .panel-heading .text-size-h2,
-.card-danger .text-size-h2,
-.bg-danger .h3,
-.panel-danger .panel-heading .h3,
-.card-danger .h3,
-.bg-danger .text-size-h3,
-.panel-danger .panel-heading .text-size-h3,
-.card-danger .text-size-h3,
-.bg-danger .h4,
-.panel-danger .panel-heading .h4,
-.card-danger .h4,
-.bg-danger .text-size-h4,
-.panel-danger .panel-heading .text-size-h4,
-.card-danger .text-size-h4,
-.bg-danger .h5,
-.panel-danger .panel-heading .h5,
-.card-danger .h5,
-.bg-danger .text-size-h5,
-.panel-danger .panel-heading .text-size-h5,
-.card-danger .text-size-h5,
-.bg-danger .h6,
-.panel-danger .panel-heading .h6,
-.card-danger .h6,
-.bg-danger .text-size-h6,
-.panel-danger .panel-heading .text-size-h6,
-.card-danger .text-size-h6 {
-  color: #fff;
-}
-
-.bg-light,
-.panel .panel-footer, .panel-default .panel-heading, .well {
-  color: #000;
-  background-color: #dee2e6;
-}
-
-.bg-light h1, .panel .panel-footer h1, .panel-default .panel-heading h1, .well h1,
-.bg-light h2,
-.panel .panel-footer h2,
-.panel-default .panel-heading h2,
-.well h2,
-.bg-light h3,
-.panel .panel-footer h3,
-.panel-default .panel-heading h3,
-.well h3,
-.bg-light h4,
-.panel .panel-footer h4,
-.panel-default .panel-heading h4,
-.well h4,
-.bg-light h5,
-.panel .panel-footer h5,
-.panel-default .panel-heading h5,
-.well h5,
-.bg-light h6,
-.panel .panel-footer h6,
-.panel-default .panel-heading h6,
-.well h6,
-.bg-light .h1,
-.panel .panel-footer .h1,
-.panel-default .panel-heading .h1,
-.well .h1,
-.bg-light .text-size-h1,
-.panel .panel-footer .text-size-h1,
-.panel-default .panel-heading .text-size-h1,
-.well .text-size-h1,
-.bg-light .h2,
-.panel .panel-footer .h2,
-.panel-default .panel-heading .h2,
-.well .h2,
-.bg-light .text-size-h2,
-.panel .panel-footer .text-size-h2,
-.panel-default .panel-heading .text-size-h2,
-.well .text-size-h2,
-.bg-light .h3,
-.panel .panel-footer .h3,
-.panel-default .panel-heading .h3,
-.well .h3,
-.bg-light .text-size-h3,
-.panel .panel-footer .text-size-h3,
-.panel-default .panel-heading .text-size-h3,
-.well .text-size-h3,
-.bg-light .h4,
-.panel .panel-footer .h4,
-.panel-default .panel-heading .h4,
-.well .h4,
-.bg-light .text-size-h4,
-.panel .panel-footer .text-size-h4,
-.panel-default .panel-heading .text-size-h4,
-.well .text-size-h4,
-.bg-light .h5,
-.panel .panel-footer .h5,
-.panel-default .panel-heading .h5,
-.well .h5,
-.bg-light .text-size-h5,
-.panel .panel-footer .text-size-h5,
-.panel-default .panel-heading .text-size-h5,
-.well .text-size-h5,
-.bg-light .h6,
-.panel .panel-footer .h6,
-.panel-default .panel-heading .h6,
-.well .h6,
-.bg-light .text-size-h6,
-.panel .panel-footer .text-size-h6,
-.panel-default .panel-heading .text-size-h6,
-.well .text-size-h6 {
-  color: #000;
-}
-
-.bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
-  color: #fff;
-  background-color: #343a40;
-}
-
-.bg-dark h1, .callout-dark h1, .card-inverse h1, .modal-bg-dark h1,
-.bg-dark h2,
-.callout-dark h2,
-.card-inverse h2,
-.modal-bg-dark h2,
-.bg-dark h3,
-.callout-dark h3,
-.card-inverse h3,
-.modal-bg-dark h3,
-.bg-dark h4,
-.callout-dark h4,
-.card-inverse h4,
-.modal-bg-dark h4,
-.bg-dark h5,
-.callout-dark h5,
-.card-inverse h5,
-.modal-bg-dark h5,
-.bg-dark h6,
-.callout-dark h6,
-.card-inverse h6,
-.modal-bg-dark h6,
-.bg-dark .h1,
-.callout-dark .h1,
-.card-inverse .h1,
-.modal-bg-dark .h1,
-.bg-dark .text-size-h1,
-.callout-dark .text-size-h1,
-.card-inverse .text-size-h1,
-.modal-bg-dark .text-size-h1,
-.bg-dark .h2,
-.callout-dark .h2,
-.card-inverse .h2,
-.modal-bg-dark .h2,
-.bg-dark .text-size-h2,
-.callout-dark .text-size-h2,
-.card-inverse .text-size-h2,
-.modal-bg-dark .text-size-h2,
-.bg-dark .h3,
-.callout-dark .h3,
-.card-inverse .h3,
-.modal-bg-dark .h3,
-.bg-dark .text-size-h3,
-.callout-dark .text-size-h3,
-.card-inverse .text-size-h3,
-.modal-bg-dark .text-size-h3,
-.bg-dark .h4,
-.callout-dark .h4,
-.card-inverse .h4,
-.modal-bg-dark .h4,
-.bg-dark .text-size-h4,
-.callout-dark .text-size-h4,
-.card-inverse .text-size-h4,
-.modal-bg-dark .text-size-h4,
-.bg-dark .h5,
-.callout-dark .h5,
-.card-inverse .h5,
-.modal-bg-dark .h5,
-.bg-dark .text-size-h5,
-.callout-dark .text-size-h5,
-.card-inverse .text-size-h5,
-.modal-bg-dark .text-size-h5,
-.bg-dark .h6,
-.callout-dark .h6,
-.card-inverse .h6,
-.modal-bg-dark .h6,
-.bg-dark .text-size-h6,
-.callout-dark .text-size-h6,
-.card-inverse .text-size-h6,
-.modal-bg-dark .text-size-h6 {
-  color: #fff;
-}
-
-.bg-gray-100, .bg-silver-tint {
-  color: #000;
-  background-color: #f8f9fa;
-}
-
-.bg-gray-100 h1, .bg-silver-tint h1,
-.bg-gray-100 h2,
-.bg-silver-tint h2,
-.bg-gray-100 h3,
-.bg-silver-tint h3,
-.bg-gray-100 h4,
-.bg-silver-tint h4,
-.bg-gray-100 h5,
-.bg-silver-tint h5,
-.bg-gray-100 h6,
-.bg-silver-tint h6,
-.bg-gray-100 .h1,
-.bg-silver-tint .h1,
-.bg-gray-100 .text-size-h1,
-.bg-silver-tint .text-size-h1,
-.bg-gray-100 .h2,
-.bg-silver-tint .h2,
-.bg-gray-100 .text-size-h2,
-.bg-silver-tint .text-size-h2,
-.bg-gray-100 .h3,
-.bg-silver-tint .h3,
-.bg-gray-100 .text-size-h3,
-.bg-silver-tint .text-size-h3,
-.bg-gray-100 .h4,
-.bg-silver-tint .h4,
-.bg-gray-100 .text-size-h4,
-.bg-silver-tint .text-size-h4,
-.bg-gray-100 .h5,
-.bg-silver-tint .h5,
-.bg-gray-100 .text-size-h5,
-.bg-silver-tint .text-size-h5,
-.bg-gray-100 .h6,
-.bg-silver-tint .h6,
-.bg-gray-100 .text-size-h6,
-.bg-silver-tint .text-size-h6 {
-  color: #000;
-}
-
-.bg-gray-200 {
-  color: #000;
-  background-color: #e9ecef;
-}
-
-.bg-gray-200 h1,
-.bg-gray-200 h2,
-.bg-gray-200 h3,
-.bg-gray-200 h4,
-.bg-gray-200 h5,
-.bg-gray-200 h6,
-.bg-gray-200 .h1,
-.bg-gray-200 .text-size-h1,
-.bg-gray-200 .h2,
-.bg-gray-200 .text-size-h2,
-.bg-gray-200 .h3,
-.bg-gray-200 .text-size-h3,
-.bg-gray-200 .h4,
-.bg-gray-200 .text-size-h4,
-.bg-gray-200 .h5,
-.bg-gray-200 .text-size-h5,
-.bg-gray-200 .h6,
-.bg-gray-200 .text-size-h6 {
-  color: #000;
-}
-
-.bg-gray-300 {
-  color: #000;
-  background-color: #dee2e6;
-}
-
-.bg-gray-300 h1,
-.bg-gray-300 h2,
-.bg-gray-300 h3,
-.bg-gray-300 h4,
-.bg-gray-300 h5,
-.bg-gray-300 h6,
-.bg-gray-300 .h1,
-.bg-gray-300 .text-size-h1,
-.bg-gray-300 .h2,
-.bg-gray-300 .text-size-h2,
-.bg-gray-300 .h3,
-.bg-gray-300 .text-size-h3,
-.bg-gray-300 .h4,
-.bg-gray-300 .text-size-h4,
-.bg-gray-300 .h5,
-.bg-gray-300 .text-size-h5,
-.bg-gray-300 .h6,
-.bg-gray-300 .text-size-h6 {
-  color: #000;
-}
-
-.bg-gray-400 {
-  color: #000;
-  background-color: #ced4da;
-}
-
-.bg-gray-400 h1,
-.bg-gray-400 h2,
-.bg-gray-400 h3,
-.bg-gray-400 h4,
-.bg-gray-400 h5,
-.bg-gray-400 h6,
-.bg-gray-400 .h1,
-.bg-gray-400 .text-size-h1,
-.bg-gray-400 .h2,
-.bg-gray-400 .text-size-h2,
-.bg-gray-400 .h3,
-.bg-gray-400 .text-size-h3,
-.bg-gray-400 .h4,
-.bg-gray-400 .text-size-h4,
-.bg-gray-400 .h5,
-.bg-gray-400 .text-size-h5,
-.bg-gray-400 .h6,
-.bg-gray-400 .text-size-h6 {
-  color: #000;
-}
-
-.bg-gray-500 {
-  color: #000;
-  background-color: #adb5bd;
-}
-
-.bg-gray-500 h1,
-.bg-gray-500 h2,
-.bg-gray-500 h3,
-.bg-gray-500 h4,
-.bg-gray-500 h5,
-.bg-gray-500 h6,
-.bg-gray-500 .h1,
-.bg-gray-500 .text-size-h1,
-.bg-gray-500 .h2,
-.bg-gray-500 .text-size-h2,
-.bg-gray-500 .h3,
-.bg-gray-500 .text-size-h3,
-.bg-gray-500 .h4,
-.bg-gray-500 .text-size-h4,
-.bg-gray-500 .h5,
-.bg-gray-500 .text-size-h5,
-.bg-gray-500 .h6,
-.bg-gray-500 .text-size-h6 {
-  color: #000;
-}
-
-.bg-gray-600 {
-  color: #fff;
-  background-color: #6c757d;
-}
-
-.bg-gray-600 h1,
-.bg-gray-600 h2,
-.bg-gray-600 h3,
-.bg-gray-600 h4,
-.bg-gray-600 h5,
-.bg-gray-600 h6,
-.bg-gray-600 .h1,
-.bg-gray-600 .text-size-h1,
-.bg-gray-600 .h2,
-.bg-gray-600 .text-size-h2,
-.bg-gray-600 .h3,
-.bg-gray-600 .text-size-h3,
-.bg-gray-600 .h4,
-.bg-gray-600 .text-size-h4,
-.bg-gray-600 .h5,
-.bg-gray-600 .text-size-h5,
-.bg-gray-600 .h6,
-.bg-gray-600 .text-size-h6 {
-  color: #fff;
-}
-
-.bg-gray-700 {
-  color: #fff;
-  background-color: #495057;
-}
-
-.bg-gray-700 h1,
-.bg-gray-700 h2,
-.bg-gray-700 h3,
-.bg-gray-700 h4,
-.bg-gray-700 h5,
-.bg-gray-700 h6,
-.bg-gray-700 .h1,
-.bg-gray-700 .text-size-h1,
-.bg-gray-700 .h2,
-.bg-gray-700 .text-size-h2,
-.bg-gray-700 .h3,
-.bg-gray-700 .text-size-h3,
-.bg-gray-700 .h4,
-.bg-gray-700 .text-size-h4,
-.bg-gray-700 .h5,
-.bg-gray-700 .text-size-h5,
-.bg-gray-700 .h6,
-.bg-gray-700 .text-size-h6 {
-  color: #fff;
-}
-
-.bg-gray-800 {
-  color: #fff;
-  background-color: #343a40;
-}
-
-.bg-gray-800 h1,
-.bg-gray-800 h2,
-.bg-gray-800 h3,
-.bg-gray-800 h4,
-.bg-gray-800 h5,
-.bg-gray-800 h6,
-.bg-gray-800 .h1,
-.bg-gray-800 .text-size-h1,
-.bg-gray-800 .h2,
-.bg-gray-800 .text-size-h2,
-.bg-gray-800 .h3,
-.bg-gray-800 .text-size-h3,
-.bg-gray-800 .h4,
-.bg-gray-800 .text-size-h4,
-.bg-gray-800 .h5,
-.bg-gray-800 .text-size-h5,
-.bg-gray-800 .h6,
-.bg-gray-800 .text-size-h6 {
-  color: #fff;
-}
-
-.bg-gray-900 {
-  color: #fff;
-  background-color: #212529;
-}
-
-.bg-gray-900 h1,
-.bg-gray-900 h2,
-.bg-gray-900 h3,
-.bg-gray-900 h4,
-.bg-gray-900 h5,
-.bg-gray-900 h6,
-.bg-gray-900 .h1,
-.bg-gray-900 .text-size-h1,
-.bg-gray-900 .h2,
-.bg-gray-900 .text-size-h2,
-.bg-gray-900 .h3,
-.bg-gray-900 .text-size-h3,
-.bg-gray-900 .h4,
-.bg-gray-900 .text-size-h4,
-.bg-gray-900 .h5,
-.bg-gray-900 .text-size-h5,
-.bg-gray-900 .h6,
-.bg-gray-900 .text-size-h6 {
-  color: #fff;
-}
-
-.bg-light,
-.panel .panel-footer, .panel-default .panel-heading, .well {
-  color: #000;
-  background-color: #dee2e6;
-}
-
-.bg-light h1, .panel .panel-footer h1, .panel-default .panel-heading h1, .well h1,
-.bg-light h2,
-.panel .panel-footer h2,
-.panel-default .panel-heading h2,
-.well h2,
-.bg-light h3,
-.panel .panel-footer h3,
-.panel-default .panel-heading h3,
-.well h3,
-.bg-light h4,
-.panel .panel-footer h4,
-.panel-default .panel-heading h4,
-.well h4,
-.bg-light h5,
-.panel .panel-footer h5,
-.panel-default .panel-heading h5,
-.well h5,
-.bg-light h6,
-.panel .panel-footer h6,
-.panel-default .panel-heading h6,
-.well h6,
-.bg-light .h1,
-.panel .panel-footer .h1,
-.panel-default .panel-heading .h1,
-.well .h1,
-.bg-light .text-size-h1,
-.panel .panel-footer .text-size-h1,
-.panel-default .panel-heading .text-size-h1,
-.well .text-size-h1,
-.bg-light .h2,
-.panel .panel-footer .h2,
-.panel-default .panel-heading .h2,
-.well .h2,
-.bg-light .text-size-h2,
-.panel .panel-footer .text-size-h2,
-.panel-default .panel-heading .text-size-h2,
-.well .text-size-h2,
-.bg-light .h3,
-.panel .panel-footer .h3,
-.panel-default .panel-heading .h3,
-.well .h3,
-.bg-light .text-size-h3,
-.panel .panel-footer .text-size-h3,
-.panel-default .panel-heading .text-size-h3,
-.well .text-size-h3,
-.bg-light .h4,
-.panel .panel-footer .h4,
-.panel-default .panel-heading .h4,
-.well .h4,
-.bg-light .text-size-h4,
-.panel .panel-footer .text-size-h4,
-.panel-default .panel-heading .text-size-h4,
-.well .text-size-h4,
-.bg-light .h5,
-.panel .panel-footer .h5,
-.panel-default .panel-heading .h5,
-.well .h5,
-.bg-light .text-size-h5,
-.panel .panel-footer .text-size-h5,
-.panel-default .panel-heading .text-size-h5,
-.well .text-size-h5,
-.bg-light .h6,
-.panel .panel-footer .h6,
-.panel-default .panel-heading .h6,
-.well .h6,
-.bg-light .text-size-h6,
-.panel .panel-footer .text-size-h6,
-.panel-default .panel-heading .text-size-h6,
-.well .text-size-h6 {
-  color: #000;
-}
-
-.bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
-  color: #fff;
-  background-color: #343a40;
-}
-
-.bg-dark h1, .callout-dark h1, .card-inverse h1, .modal-bg-dark h1,
-.bg-dark h2,
-.callout-dark h2,
-.card-inverse h2,
-.modal-bg-dark h2,
-.bg-dark h3,
-.callout-dark h3,
-.card-inverse h3,
-.modal-bg-dark h3,
-.bg-dark h4,
-.callout-dark h4,
-.card-inverse h4,
-.modal-bg-dark h4,
-.bg-dark h5,
-.callout-dark h5,
-.card-inverse h5,
-.modal-bg-dark h5,
-.bg-dark h6,
-.callout-dark h6,
-.card-inverse h6,
-.modal-bg-dark h6,
-.bg-dark .h1,
-.callout-dark .h1,
-.card-inverse .h1,
-.modal-bg-dark .h1,
-.bg-dark .text-size-h1,
-.callout-dark .text-size-h1,
-.card-inverse .text-size-h1,
-.modal-bg-dark .text-size-h1,
-.bg-dark .h2,
-.callout-dark .h2,
-.card-inverse .h2,
-.modal-bg-dark .h2,
-.bg-dark .text-size-h2,
-.callout-dark .text-size-h2,
-.card-inverse .text-size-h2,
-.modal-bg-dark .text-size-h2,
-.bg-dark .h3,
-.callout-dark .h3,
-.card-inverse .h3,
-.modal-bg-dark .h3,
-.bg-dark .text-size-h3,
-.callout-dark .text-size-h3,
-.card-inverse .text-size-h3,
-.modal-bg-dark .text-size-h3,
-.bg-dark .h4,
-.callout-dark .h4,
-.card-inverse .h4,
-.modal-bg-dark .h4,
-.bg-dark .text-size-h4,
-.callout-dark .text-size-h4,
-.card-inverse .text-size-h4,
-.modal-bg-dark .text-size-h4,
-.bg-dark .h5,
-.callout-dark .h5,
-.card-inverse .h5,
-.modal-bg-dark .h5,
-.bg-dark .text-size-h5,
-.callout-dark .text-size-h5,
-.card-inverse .text-size-h5,
-.modal-bg-dark .text-size-h5,
-.bg-dark .h6,
-.callout-dark .h6,
-.card-inverse .h6,
-.modal-bg-dark .h6,
-.bg-dark .text-size-h6,
-.callout-dark .text-size-h6,
-.card-inverse .text-size-h6,
-.modal-bg-dark .text-size-h6 {
-  color: #fff;
-}
-
-.bg-dark .close, .callout-dark .close, .card-inverse .close, .modal-bg-dark .close {
-  color: #fff;
-}
-
-/*
-* >> Text Color
-*/
-.text-blue, .text-primary {
-  color: #0c234b;
-}
-
-.text-red {
-  color: #ab0520;
-}
-
-.text-white, .card-inverse {
-  color: #fff;
-}
-
-.text-bloom {
-  color: #ef4056;
-}
-
-.text-chili {
-  color: #8b0015;
-}
-
-.text-sky {
-  color: #81d3eb;
-}
-
-.text-oasis {
-  color: #378dbd;
-}
-
-.text-azurite {
-  color: #1e5288;
-}
-
-.text-midnight {
-  color: #001c48;
-}
-
-.text-cool-gray {
-  color: #e2e9eb;
-}
-
-.text-warm-gray {
-  color: #f4ede5;
-}
-
-.text-leaf {
-  color: #70b865;
-}
-
-.text-river {
-  color: #007d84;
-}
-
-.text-silver {
-  color: #9eabae;
-}
-
-.text-mesa {
-  color: #a95c42;
-}
-
-.text-ash {
-  color: #403635;
-}
-
-.text-sage {
-  color: #4a634e;
-}
-
-.text-black {
-  color: #000;
-}
-
-.text-success {
-  color: #70b865;
-}
-
-.text-info {
-  color: #1e5288 !important;
-}
-
-.text-warning {
-  color: #f19e1f;
-}
-
-.text-danger {
-  color: #a95c42;
-}
-
-.text-light {
-  color: #dee2e6;
-}
-
-.text-dark {
-  color: #343a40;
-}
-
-.text-dark-silver {
-  color: #49595e;
-}
-
-/*
-* >> Border Colors
-*/
-.border-blue, .card-primary-outline {
-  border-color: #0c234b;
-}
-
-.border-red {
-  border-color: #ab0520;
-}
-
-.border-white {
-  border-color: #fff;
-}
-
-.border-bloom {
-  border-color: #ef4056;
-}
-
-.border-chili {
-  border-color: #8b0015;
-}
-
-.border-sky {
-  border-color: #81d3eb;
-}
-
-.border-oasis {
-  border-color: #378dbd;
-}
-
-.border-azurite {
-  border-color: #1e5288;
-}
-
-.border-midnight {
-  border-color: #001c48;
-}
-
-.border-cool-gray {
-  border-color: #e2e9eb;
-}
-
-.border-warm-gray {
-  border-color: #f4ede5;
-}
-
-.border-leaf {
-  border-color: #70b865;
-}
-
-.border-river {
-  border-color: #007d84;
-}
-
-.border-silver {
-  border-color: #9eabae;
-}
-
-.border-mesa {
-  border-color: #a95c42;
-}
-
-.border-ash {
-  border-color: #403635;
-}
-
-.border-sage {
-  border-color: #4a634e;
-}
-
-.border-black {
-  border-color: #000;
-}
-
-/*
-* > TYPOGRAPHY
-*/
-.heading-style, h1,
-h2,
-.h1, .text-size-h1,
-.h2, .text-size-h2 {
-  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-  color: #49595e;
-}
-
-.text-sans {
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
-  font-weight: 500;
-}
-
-/* stylelint-disable-next-line */
-.ul-triangles, ul.triangle {
-  overflow: hidden;
-}
-
-.ul-triangles li, ul.triangle li {
-  position: relative;
-  padding-left: 0;
-  list-style: none;
-}
-
-.ul-triangles li::before, ul.triangle li::before {
-  position: absolute;
-  top: 8px;
-  left: -.8em;
-  width: 0;
-  height: 0;
-  content: "";
-  border-top: 4px solid transparent;
-  border-right: 0;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid #0c234b;
-}
-
-/*
 * > BLOCKQUOTE
 */
 .blockquote {
@@ -13675,6 +11607,7 @@ h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-
   margin: 1.042em 0 0.667em;
   font-family: MiloWeb, Verdana, Geneva, sans-serif;
   color: #49595e;
+  color: inherit;
 }
 
 /*
@@ -16985,5 +14918,501 @@ have been deprecated in Bootstrap 4.
 
 #hide-inaccessible-label {
   cursor: pointer;
+}
+
+/*
+* > COLOR CLASSES
+*/
+/*
+* >> Background Color
+*/
+.bg-blue, .panel-primary .panel-heading, .bg-primary, .card-primary {
+  color: #fff !important;
+  background-color: #0c234b;
+}
+
+.bg-red {
+  color: #fff !important;
+  background-color: #ab0520;
+}
+
+.bg-white,
+.panel, .well.well-hollow, .modal-bg-dark .modal-content {
+  color: #000 !important;
+  background-color: #fff;
+}
+
+.bg-bloom {
+  color: #000 !important;
+  background-color: #ef4056;
+}
+
+.bg-chili {
+  color: #fff !important;
+  background-color: #8b0015;
+}
+
+.bg-sky {
+  color: #000 !important;
+  background-color: #81d3eb;
+}
+
+.bg-oasis {
+  color: #000 !important;
+  background-color: #378dbd;
+}
+
+.bg-azurite {
+  color: #fff !important;
+  background-color: #1e5288;
+}
+
+.bg-midnight {
+  color: #fff !important;
+  background-color: #001c48;
+}
+
+.bg-cool-gray {
+  color: #000 !important;
+  background-color: #e2e9eb;
+}
+
+.bg-warm-gray {
+  color: #000 !important;
+  background-color: #f4ede5;
+}
+
+.bg-leaf {
+  color: #000 !important;
+  background-color: #70b865;
+}
+
+.bg-river {
+  color: #fff !important;
+  background-color: #007d84;
+}
+
+.bg-silver {
+  color: #000 !important;
+  background-color: #9eabae;
+}
+
+.bg-mesa {
+  color: #fff !important;
+  background-color: #a95c42;
+}
+
+.bg-ash {
+  color: #fff !important;
+  background-color: #403635;
+}
+
+.bg-sage {
+  color: #fff !important;
+  background-color: #4a634e;
+}
+
+.bg-black {
+  color: #fff !important;
+  background-color: #000;
+}
+
+.bg-transparent-red {
+  color: #fff !important;
+  background-color: rgba(171, 5, 32, 0.7);
+}
+
+.bg-transparent-bloom {
+  color: #fff !important;
+  background-color: rgba(239, 64, 86, 0.7);
+}
+
+.bg-transparent-chili {
+  color: #fff !important;
+  background-color: rgba(139, 0, 21, 0.7);
+}
+
+.bg-transparent-blue {
+  color: #fff !important;
+  background-color: rgba(12, 35, 75, 0.7);
+}
+
+.bg-transparent-sky {
+  color: #fff !important;
+  background-color: rgba(129, 211, 235, 0.7);
+}
+
+.bg-transparent-oasis {
+  color: #fff !important;
+  background-color: rgba(55, 141, 189, 0.7);
+}
+
+.bg-transparent-azurite {
+  color: #fff !important;
+  background-color: rgba(30, 82, 136, 0.7);
+}
+
+.bg-transparent-midnight {
+  color: #fff !important;
+  background-color: rgba(0, 28, 72, 0.7);
+}
+
+.bg-transparent-cool-gray {
+  color: #fff !important;
+  background-color: rgba(226, 233, 235, 0.7);
+}
+
+.bg-transparent-warm-gray {
+  color: #fff !important;
+  background-color: rgba(244, 237, 229, 0.7);
+}
+
+.bg-transparent-leaf {
+  color: #fff !important;
+  background-color: rgba(112, 184, 101, 0.7);
+}
+
+.bg-transparent-river {
+  color: #fff !important;
+  background-color: rgba(0, 125, 132, 0.7);
+}
+
+.bg-transparent-silver {
+  color: #fff !important;
+  background-color: rgba(158, 171, 174, 0.7);
+}
+
+.bg-transparent-mesa {
+  color: #fff !important;
+  background-color: rgba(169, 92, 66, 0.7);
+}
+
+.bg-transparent-ash {
+  color: #fff !important;
+  background-color: rgba(64, 54, 53, 0.7);
+}
+
+.bg-transparent-sage {
+  color: #fff !important;
+  background-color: rgba(74, 99, 78, 0.7);
+}
+
+.bg-transparent-white {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-transparent-black {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bg-success, .panel-success .panel-heading, .card-success {
+  color: #000 !important;
+  background-color: #70b865;
+}
+
+.bg-info, .panel-info .panel-heading, .card-info {
+  color: #000 !important;
+  background-color: #81d3eb;
+}
+
+.bg-warning, .panel-warning .panel-heading, .card-warning {
+  color: #000 !important;
+  background-color: #f19e1f;
+}
+
+.bg-danger, .panel-danger .panel-heading, .card-danger {
+  color: #fff !important;
+  background-color: #a95c42;
+}
+
+.bg-light,
+.panel .panel-footer, .panel-default .panel-heading, .well {
+  color: #000 !important;
+  background-color: #dee2e6;
+}
+
+.bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
+  color: #fff !important;
+  background-color: #343a40;
+}
+
+.bg-gray-100, .bg-silver-tint {
+  color: #000 !important;
+  background-color: #f8f9fa;
+}
+
+.bg-gray-200 {
+  color: #000 !important;
+  background-color: #e9ecef;
+}
+
+.bg-gray-300 {
+  color: #000 !important;
+  background-color: #dee2e6;
+}
+
+.bg-gray-400 {
+  color: #000 !important;
+  background-color: #ced4da;
+}
+
+.bg-gray-500 {
+  color: #000 !important;
+  background-color: #adb5bd;
+}
+
+.bg-gray-600 {
+  color: #fff !important;
+  background-color: #6c757d;
+}
+
+.bg-gray-700 {
+  color: #fff !important;
+  background-color: #495057;
+}
+
+.bg-gray-800 {
+  color: #fff !important;
+  background-color: #343a40;
+}
+
+.bg-gray-900 {
+  color: #fff !important;
+  background-color: #212529;
+}
+
+.bg-light,
+.panel .panel-footer, .panel-default .panel-heading, .well {
+  color: #000 !important;
+  background-color: #dee2e6;
+}
+
+.bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
+  color: #fff !important;
+  background-color: #343a40;
+}
+
+.bg-dark .close, .callout-dark .close, .card-inverse .close, .modal-bg-dark .close {
+  color: #fff;
+}
+
+/*
+* >> Text Color
+*/
+.text-blue, .text-primary {
+  color: #0c234b !important;
+}
+
+.text-red {
+  color: #ab0520 !important;
+}
+
+.text-white, .card-inverse {
+  color: #fff !important;
+}
+
+.text-bloom {
+  color: #ef4056 !important;
+}
+
+.text-chili {
+  color: #8b0015 !important;
+}
+
+.text-sky {
+  color: #81d3eb !important;
+}
+
+.text-oasis {
+  color: #378dbd !important;
+}
+
+.text-azurite {
+  color: #1e5288 !important;
+}
+
+.text-midnight {
+  color: #001c48 !important;
+}
+
+.text-cool-gray {
+  color: #e2e9eb !important;
+}
+
+.text-warm-gray {
+  color: #f4ede5 !important;
+}
+
+.text-leaf {
+  color: #70b865 !important;
+}
+
+.text-river {
+  color: #007d84 !important;
+}
+
+.text-silver {
+  color: #9eabae !important;
+}
+
+.text-mesa {
+  color: #a95c42 !important;
+}
+
+.text-ash {
+  color: #403635 !important;
+}
+
+.text-sage {
+  color: #4a634e !important;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+.text-success {
+  color: #70b865 !important;
+}
+
+.text-info {
+  color: #1e5288 !important;
+}
+
+.text-warning {
+  color: #f19e1f !important;
+}
+
+.text-danger {
+  color: #a95c42 !important;
+}
+
+.text-light {
+  color: #dee2e6 !important;
+}
+
+.text-dark {
+  color: #343a40 !important;
+}
+
+.text-dark-silver {
+  color: #49595e !important;
+}
+
+/*
+* >> Border Colors
+*/
+.border-blue, .card-primary-outline {
+  border-color: #0c234b;
+}
+
+.border-red {
+  border-color: #ab0520;
+}
+
+.border-white {
+  border-color: #fff;
+}
+
+.border-bloom {
+  border-color: #ef4056;
+}
+
+.border-chili {
+  border-color: #8b0015;
+}
+
+.border-sky {
+  border-color: #81d3eb;
+}
+
+.border-oasis {
+  border-color: #378dbd;
+}
+
+.border-azurite {
+  border-color: #1e5288;
+}
+
+.border-midnight {
+  border-color: #001c48;
+}
+
+.border-cool-gray {
+  border-color: #e2e9eb;
+}
+
+.border-warm-gray {
+  border-color: #f4ede5;
+}
+
+.border-leaf {
+  border-color: #70b865;
+}
+
+.border-river {
+  border-color: #007d84;
+}
+
+.border-silver {
+  border-color: #9eabae;
+}
+
+.border-mesa {
+  border-color: #a95c42;
+}
+
+.border-ash {
+  border-color: #403635;
+}
+
+.border-sage {
+  border-color: #4a634e;
+}
+
+.border-black {
+  border-color: #000;
+}
+
+/*
+* > TYPOGRAPHY
+*/
+.heading-style, h1,
+h2,
+.h1, .text-size-h1,
+.h2, .text-size-h2 {
+  font-family: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  color: #49595e;
+}
+
+.text-sans {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-weight: 500;
+}
+
+/* stylelint-disable-next-line */
+.ul-triangles, ul.triangle {
+  overflow: hidden;
+}
+
+.ul-triangles li, ul.triangle li {
+  position: relative;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ul-triangles li::before, ul.triangle li::before {
+  position: absolute;
+  top: 8px;
+  left: -.8em;
+  width: 0;
+  height: 0;
+  content: "";
+  border-top: 4px solid transparent;
+  border-right: 0;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #0c234b;
 }
 /*# sourceMappingURL=arizona-bootstrap.css.map */

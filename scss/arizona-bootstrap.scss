@@ -53,9 +53,8 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/print";
 
-// Arizona Bootstrap imports.
+// Arizona Bootstrap mixins.
 @import "mixins";
-@import "custom-styles";
 // @import "alert";
 @import "typography";
 @import "badge";
@@ -76,3 +75,5 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "carousel";
 @import "photo-gallery";
 @import "color-contrast";
+// Arizona Bootstrap custom styles.
+@import "custom-styles";

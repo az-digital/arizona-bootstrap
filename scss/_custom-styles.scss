@@ -62,7 +62,8 @@
 // >>> Brand
 @each $color, $value in $colors {
   .text-#{$color} {
-    color: $value;
+    // stylelint-disable-next-line declaration-no-important
+    color: $value !important;
   }
 }
 
@@ -75,12 +76,14 @@
       color: $azurite !important;
     }
     @else {
-      color: $value;
+      // stylelint-disable-next-line declaration-no-important
+      color: $value !important;
     }
   }
 }
 .text-dark-silver {
-  color: $dark-silver;
+  // stylelint-disable-next-line declaration-no-important
+  color: $dark-silver !important;
 }
 
 /*

@@ -44,11 +44,11 @@ In UA Bootstrap, the following background wrapper patterns were marked as deprec
     </div>
   </div>
 </div>
-  
+
 
 ### Buttons
 
-In {{ site.title }}, Button classes have changed as follows: 
+In {{ site.title }}, Button classes have changed as follows:
 
 #### Default, Primary, and Secondary
 
@@ -157,7 +157,7 @@ In {{ site.title }}, color-specific cards can be replicated by using the [backgr
 
 ### Labels
 
-In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles. 
+In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles.
 
 <div class="bd-example">
   <span class="label label-default">Default</span>
@@ -184,7 +184,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
   </div>
   <div class="panel panel-primary mb-2">
     <div class="panel-heading">
-      <span class="h3 panel-title">Panel Primary</span>
+      <span class="h3 panel-title text-sky">Panel Primary</span>
     </div>
     <div class="panel-body">
       <p>This is an example of how the backwards-compatible Panel looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
@@ -207,7 +207,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
 
 ### Thumbnails
 
-Thumbnails have been extended using a combination of the `.card` class and its child classes. 
+Thumbnails have been extended using a combination of the `.card` class and its child classes.
 
 <div class="bd-example">
   <div class="row">
@@ -232,7 +232,7 @@ Wells have been extended using a combination of the `.card` class and the `.bg-l
   </div>
   <div class="well well-hollow my-3">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>hollow well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
-  </div> 
+  </div>
   <div class="well well-sm">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>small well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
@@ -475,7 +475,7 @@ The decision was made to remove all `.*-primary` and `.*-secondary` classes from
 
 ### Tooltip Arrow
 
-In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used. 
+In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used.
 
 ## Removed Components
 
