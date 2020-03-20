@@ -134,7 +134,7 @@
   color: $color;
   border-color: $color;
 
-  @include hover {
+  @include hover() {
     background-color: $color;
     border-color: $color;
   }
