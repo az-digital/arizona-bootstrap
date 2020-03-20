@@ -171,7 +171,7 @@ In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl 
 
 ### Panels
 
-Panels have been extended using a combination of the `.card` class (and its child classes) and the .bg-light class. "Expanding" or "collapsible" panels, however, are still available as an {{ site.title }} component: [Collapse]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/collapse).
+Panels have been extended using a combination of the `.card` class (and its child classes) and the `.bg-light` class. "Expanding" or "collapsible" panels, however, are still available as an {{ site.title }} component: [Collapse]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/collapse).
 
 <div class="bd-example">
   <div class="panel panel-default mb-2">
@@ -269,6 +269,17 @@ The syntax for column offsets has changed in {{ site.title }}. Previously, you w
   </div>
 </div>
 
+### Pull Left/Right
+
+The syntax for pulling content to the left/right has changed to `.float-left` and `.float-right`.
+
+<div class="bd-example">
+  <img class="pull-left mr-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit scelerisque in dictum non consectetur a erat nam. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Dui nunc mattis enim ut tellus elementum sagittis vitae. Id donec ultrices tincidunt arcu non sodales. Enim diam vulputate ut pharetra sit. Amet consectetur adipiscing elit ut aliquam purus sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan. Purus semper eget duis at tellus at urna. A condimentum vitae sapien pellentesque. Cras adipiscing enim eu turpis egestas. Consequat semper viverra nam libero justo laoreet sit amet. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Id venenatis a condimentum vitae. Ultricies integer quis auctor elit sed vulputate mi sit amet.</p>
+  <img class="pull-right ml-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <p class="lead">Turpis cursus in hac habitasse platea dictumst quisque. Tellus cras adipiscing enim eu. Lectus sit amet est placerat in egestas. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Sed euismod nisi porta lorem. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Convallis posuere morbi leo urna molestie at elementum. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Vulputate dignissim suspendisse in est ante in nibh mauris.</p>
+</div>
+
 ### Input Group Button
 
 In {{ site.title }}, what was previously `.input-group-btn` has been replaced by `.input-group-append`.
@@ -358,6 +369,25 @@ The `.navbar-default` class can be extended by utilizing the `.navbar-light` cla
 </nav>
 </div>
 
+### Navbar Divider
+
+The `.divider` and `.nav-divider` classes have been replaced by the `.dropdown-divider` class.
+
+<div class="bd-example">
+  <div class="dropdown">
+    <a class="btn btn-blue dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown link
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div>
+
 
 ### Page Header
 
@@ -365,6 +395,14 @@ The `.page-header` class available in UA Bootstrap has been removed in {{ site.t
 
 <div class="bd-example">
   <p class="page-header"><span class="h1">Page Header</span></p>
+</div>
+
+### Fonts & Font Styles
+
+You can replicate these effect by using the available [font weight and italic]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#font-weight-and-italics) and font family classes.
+
+<div class="bd-example">
+  <p class="bold">.bold</p>
 </div>
 
 ### Responsive Text Alignment *-not Classes
@@ -418,6 +456,10 @@ Components and utility classes that were marked as deprecated in UA Bootstrap ha
 ### Column Push/Pull
 
 The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/grid/#order-classes). These classes are not backwards compatible and will need to be updated to use {{ site.title }}'s classes.
+
+### Mailto
+
+The `.mailto` class, which is placed directly on the `<a>` link tag, has been deprecated in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Wrapping and Overflow]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-wrapping-and-overflow) for more details.
 
 ### No Line Height
 
