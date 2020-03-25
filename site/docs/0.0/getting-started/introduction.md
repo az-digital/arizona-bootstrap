@@ -70,7 +70,7 @@ Be sure to have your pages set up with the latest design and development standar
 
     <!-- Arizona Bootstrap CSS -->
     <!-- UPDATE once CDN available -->
-    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/UADIGITAL-2072/docs/0.0/dist/css/arizona-bootstrap.min.css">
+    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/css/arizona-bootstrap.min.css">
 
     <title>Arizona Bootstrap Starter Template</title>
   </head>
@@ -110,7 +110,7 @@ Be sure to have your pages set up with the latest design and development standar
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
     <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/UADIGITAL-2072/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <script src="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}
@@ -131,7 +131,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
 
     <!-- Arizona Bootstrap CSS -->
     <!-- UPDATE once CDN available -->
-    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/UADIGITAL-2072/docs/0.0/dist/css/arizona-bootstrap.min.css">
+    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/css/arizona-bootstrap.min.css">
 
     <title>Arizona Bootstrap Starter Template</title>
   </head>
@@ -171,7 +171,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
     <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/UADIGITAL-2072/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <script src="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}

@@ -3,8 +3,10 @@
 .nav-tabs .nav-link,
 .nav-link {
   color: $nav-link-color;
+  text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $nav-link-hover-color;
   }
 

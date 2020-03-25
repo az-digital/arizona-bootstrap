@@ -1,14 +1,25 @@
 // Overrides for the Dropdown component
+.dropdown-menu {
+  background-color: $dropdown-bg-color;
+}
+
 .dropdown-item {
   color: $dropdown-link-color;
+  text-decoration: none;
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $dropdown-link-hover-color;
     background-color: $dropdown-link-hover-bg;
   }
 
   &.active,
   &:active {
-    color: $dropdown-link-active-bg;
+    color: $dropdown-link-active-color;
+    background-color: $dropdown-link-active-bg;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $dropdown-link-disabled-color;
   }
 }

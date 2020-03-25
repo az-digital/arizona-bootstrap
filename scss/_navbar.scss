@@ -24,10 +24,14 @@
   .nav-item {
     .nav-link {
       color: $navbar-light-link-color;
+
+      &:hover {
+        color: $navbar-light-link-active-color;
+      }
     }
 
     &:hover {
-      color: $navbar-light-link-color;
+      color: $navbar-light-link-active-color;
       background-color: $navbar-light-link-hover-bg;
     }
 
