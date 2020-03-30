@@ -184,7 +184,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
   </div>
   <div class="panel panel-primary mb-2">
     <div class="panel-heading">
-      <span class="h3 panel-title text-sky">Panel Primary</span>
+      <span class="h3 panel-title">Panel Primary</span>
     </div>
     <div class="panel-body">
       <p>This is an example of how the backwards-compatible Panel looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
