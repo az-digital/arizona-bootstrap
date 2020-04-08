@@ -29,7 +29,6 @@
 @mixin text-color-contrast($bg-color) {
   @if $bg-color == $bloom or $bg-color == $white or $bg-color == $sky or $bg-color == $oasis or $bg-color == $cool-gray or $bg-color == $warm-gray or $bg-color == $silver or $bg-color == $leaf or $bg-color == $warning or $bg-color == $light or $bg-color == $gray-100 or $bg-color == $gray-200 or $bg-color == $gray-300 or $bg-color == $gray-400 or $bg-color == $gray-500 {
     color: $black;
-    p,
     h1,
     h2,
     h3,
@@ -48,7 +47,6 @@
   @else {
     // background color dark enough for white text
     color: $white;
-    p,
     h1,
     h2,
     h3,
