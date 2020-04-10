@@ -4,34 +4,6 @@
 */
 
 /*
-* >> Text Color
-*/
-
-// >>> Brand
-@each $color, $value in $colors {
-  .text-#{$color} {
-    color: $value;
-  }
-}
-
-// >>> Theme
-@each $color, $value in $theme-colors {
-  .text-#{$color} {
-    // check for color contrast
-    @if $value == $sky {
-      // stylelint-disable-next-line declaration-no-important
-      color: $azurite !important;
-    }
-    @else {
-      color: $value;
-    }
-  }
-}
-.text-dark-silver {
-  color: $dark-silver;
-}
-
-/*
 * >> Background Color
 */
 
@@ -82,6 +54,37 @@
   }
 }
 
+
+/*
+* >> Text Color
+*/
+
+// >>> Brand
+@each $color, $value in $colors {
+  .text-#{$color} {
+    // stylelint-disable-next-line declaration-no-important
+    color: $value !important;
+  }
+}
+
+// >>> Theme
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    // check for color contrast
+    @if $value == $sky {
+      // stylelint-disable-next-line declaration-no-important
+      color: $azurite !important;
+    }
+    @else {
+      // stylelint-disable-next-line declaration-no-important
+      color: $value !important;
+    }
+  }
+}
+.text-dark-silver {
+  // stylelint-disable-next-line declaration-no-important
+  color: $dark-silver !important;
+}
 
 /*
 * >> Border Colors
