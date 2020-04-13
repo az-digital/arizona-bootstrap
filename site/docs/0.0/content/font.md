@@ -59,7 +59,7 @@ shared assets.
 
 
 ## Global settings
-For projects not using Arizona Bootstrap, follow these instructions on how to add Proxima Nova to your website. Be aware that Arizona Bootstrap reference links come "pre-loaded" with the Proxima Nova font suite. In other words, if you're using Arizona Bootstrap, font installation instructions are not required.
+For projects not using Arizona Bootstrap, [follow these instructions](#instructions) on how to add Proxima Nova to your website. Be aware that Arizona Bootstrap reference links come "pre-loaded" with the Proxima Nova font suite. In other words, if you're using Arizona Bootstrap, font installation instructions are not required.
 
 
 ### **Native Fallback Fonts**
@@ -103,7 +103,7 @@ $font-family-sans-serif:
    instructions on how to use the different weights and styles.
 
 ### **Instructions**
-  Be aware that [Arizona Bootstrap reference links](index.html#ua-bootstrap-reference-links) come "pre-loaded"
+  Be aware that Arizona Bootstrap reference links come "pre-loaded"
   with the Proxima Nova font suite. In other words, if you're using Arizona Bootstrap, font
   installation instructions are not required.<span class="label
   label-warning">Important</span>
