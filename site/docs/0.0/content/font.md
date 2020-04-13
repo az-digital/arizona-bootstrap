@@ -63,15 +63,12 @@ For projects not using Arizona Bootstrap, follow these instructions on how to ad
 
 
 ### **Native Fallback Fonts**
-The fallback web fonts (Verdana, Geneva) have been dropped in Arizona Bootstrap 4 and replaced with a “native font stack” for optimum text rendering on every device and OS. Read more about native font stacks in this Smashing Magazine article.
-Not all web browsers know about web fonts, and thus we must include consistent
-fallback typefaces so that your visitor see the same font families when they
-visit UA sites. Below is the official font stack for both Milo Sans and Milo
-Serif.
-.
-Native font stack
-The default web fonts (Helvetica Neue, Helvetica, and Arial) have been dropped in Bootstrap 4 and replaced with a “native font stack” for optimum text rendering on every device and OS. Read more about native font stacks in this Smashing Magazine article.
+The fallback web fonts (Verdana, Geneva) have been dropped in Arizona Bootstrap
+4 and replaced with a “native font stack” for optimum text rendering on every
+device and OS. Read more about
+[native font stacks in this Smashing Magazine article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
+```
 $font-family-sans-serif:
 // Safari for macOS and iOS (San Francisco)
 -apple-system,
@@ -85,8 +82,10 @@ $font-family-sans-serif:
   "Helvetica Neue", Arial, sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-
-  This font-family is applied to the <body> and automatically inherited globally throughout Bootstrap. To switch the global font-family, update $font-family-base and recompile Bootstrap.
+```
+  This `font-family` is applied to the `<body>` and automatically inherited
+  globally throughout Bootstrap. To switch the global `font-family`, update
+  `$font-family-base` and recompile Arizona Bootstrap.
 
 ## How to Use
   The Milo font suite is available for official use by UA employees through
