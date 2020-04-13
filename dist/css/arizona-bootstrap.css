@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "https://cdn.uadigital.arizona.edu/lib/ua-brand-fonts/1.0.0/milo.min.css";
+@import "https://use.typekit.net/tgs5qmz.css";
 /*
 * > COLORS
 */
@@ -11578,11 +11578,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #0c234b;
 }
 
-.bg-blue p, .panel-primary .panel-heading p, .bg-primary p, .card-primary p,
-.bg-blue h1,
-.panel-primary .panel-heading h1,
-.bg-primary h1,
-.card-primary h1,
+.bg-blue h1, .panel-primary .panel-heading h1, .bg-primary h1, .card-primary h1,
 .bg-blue h2,
 .panel-primary .panel-heading h2,
 .bg-primary h2,
@@ -11659,7 +11655,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #ab0520;
 }
 
-.bg-red p,
 .bg-red h1,
 .bg-red h2,
 .bg-red h3,
@@ -11687,11 +11682,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #fff;
 }
 
-.bg-white p, .panel p, .well.well-hollow p, .modal-bg-dark .modal-content p,
-.bg-white h1,
-.panel h1,
-.well.well-hollow h1,
-.modal-bg-dark .modal-content h1,
+.bg-white h1, .panel h1, .well.well-hollow h1, .modal-bg-dark .modal-content h1,
 .bg-white h2,
 .panel h2,
 .well.well-hollow h2,
@@ -11768,7 +11759,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #ef4056;
 }
 
-.bg-bloom p,
 .bg-bloom h1,
 .bg-bloom h2,
 .bg-bloom h3,
@@ -11795,7 +11785,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #8b0015;
 }
 
-.bg-chili p,
 .bg-chili h1,
 .bg-chili h2,
 .bg-chili h3,
@@ -11822,7 +11811,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #81d3eb;
 }
 
-.bg-sky p,
 .bg-sky h1,
 .bg-sky h2,
 .bg-sky h3,
@@ -11849,7 +11837,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #378dbd;
 }
 
-.bg-oasis p,
 .bg-oasis h1,
 .bg-oasis h2,
 .bg-oasis h3,
@@ -11876,7 +11863,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #1e5288;
 }
 
-.bg-azurite p,
 .bg-azurite h1,
 .bg-azurite h2,
 .bg-azurite h3,
@@ -11903,7 +11889,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #001c48;
 }
 
-.bg-midnight p,
 .bg-midnight h1,
 .bg-midnight h2,
 .bg-midnight h3,
@@ -11930,7 +11915,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #e2e9eb;
 }
 
-.bg-cool-gray p,
 .bg-cool-gray h1,
 .bg-cool-gray h2,
 .bg-cool-gray h3,
@@ -11957,7 +11941,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #f4ede5;
 }
 
-.bg-warm-gray p,
 .bg-warm-gray h1,
 .bg-warm-gray h2,
 .bg-warm-gray h3,
@@ -11984,7 +11967,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #70b865;
 }
 
-.bg-leaf p,
 .bg-leaf h1,
 .bg-leaf h2,
 .bg-leaf h3,
@@ -12011,7 +11993,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #007d84;
 }
 
-.bg-river p,
 .bg-river h1,
 .bg-river h2,
 .bg-river h3,
@@ -12038,7 +12019,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #9eabae;
 }
 
-.bg-silver p,
 .bg-silver h1,
 .bg-silver h2,
 .bg-silver h3,
@@ -12065,7 +12045,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #a95c42;
 }
 
-.bg-mesa p,
 .bg-mesa h1,
 .bg-mesa h2,
 .bg-mesa h3,
@@ -12092,7 +12071,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #403635;
 }
 
-.bg-ash p,
 .bg-ash h1,
 .bg-ash h2,
 .bg-ash h3,
@@ -12119,7 +12097,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #4a634e;
 }
 
-.bg-sage p,
 .bg-sage h1,
 .bg-sage h2,
 .bg-sage h3,
@@ -12146,7 +12123,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #000;
 }
 
-.bg-black p,
 .bg-black h1,
 .bg-black h2,
 .bg-black h3,
@@ -12173,7 +12149,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(171, 5, 32, 0.7);
 }
 
-.bg-transparent-red p,
 .bg-transparent-red h1,
 .bg-transparent-red h2,
 .bg-transparent-red h3,
@@ -12200,7 +12175,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(239, 64, 86, 0.7);
 }
 
-.bg-transparent-bloom p,
 .bg-transparent-bloom h1,
 .bg-transparent-bloom h2,
 .bg-transparent-bloom h3,
@@ -12227,7 +12201,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(139, 0, 21, 0.7);
 }
 
-.bg-transparent-chili p,
 .bg-transparent-chili h1,
 .bg-transparent-chili h2,
 .bg-transparent-chili h3,
@@ -12254,7 +12227,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(12, 35, 75, 0.7);
 }
 
-.bg-transparent-blue p,
 .bg-transparent-blue h1,
 .bg-transparent-blue h2,
 .bg-transparent-blue h3,
@@ -12281,7 +12253,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(129, 211, 235, 0.7);
 }
 
-.bg-transparent-sky p,
 .bg-transparent-sky h1,
 .bg-transparent-sky h2,
 .bg-transparent-sky h3,
@@ -12308,7 +12279,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(55, 141, 189, 0.7);
 }
 
-.bg-transparent-oasis p,
 .bg-transparent-oasis h1,
 .bg-transparent-oasis h2,
 .bg-transparent-oasis h3,
@@ -12335,7 +12305,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(30, 82, 136, 0.7);
 }
 
-.bg-transparent-azurite p,
 .bg-transparent-azurite h1,
 .bg-transparent-azurite h2,
 .bg-transparent-azurite h3,
@@ -12362,7 +12331,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(0, 28, 72, 0.7);
 }
 
-.bg-transparent-midnight p,
 .bg-transparent-midnight h1,
 .bg-transparent-midnight h2,
 .bg-transparent-midnight h3,
@@ -12389,7 +12357,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(226, 233, 235, 0.7);
 }
 
-.bg-transparent-cool-gray p,
 .bg-transparent-cool-gray h1,
 .bg-transparent-cool-gray h2,
 .bg-transparent-cool-gray h3,
@@ -12416,7 +12383,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(244, 237, 229, 0.7);
 }
 
-.bg-transparent-warm-gray p,
 .bg-transparent-warm-gray h1,
 .bg-transparent-warm-gray h2,
 .bg-transparent-warm-gray h3,
@@ -12443,7 +12409,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(112, 184, 101, 0.7);
 }
 
-.bg-transparent-leaf p,
 .bg-transparent-leaf h1,
 .bg-transparent-leaf h2,
 .bg-transparent-leaf h3,
@@ -12470,7 +12435,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(0, 125, 132, 0.7);
 }
 
-.bg-transparent-river p,
 .bg-transparent-river h1,
 .bg-transparent-river h2,
 .bg-transparent-river h3,
@@ -12497,7 +12461,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(158, 171, 174, 0.7);
 }
 
-.bg-transparent-silver p,
 .bg-transparent-silver h1,
 .bg-transparent-silver h2,
 .bg-transparent-silver h3,
@@ -12524,7 +12487,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(169, 92, 66, 0.7);
 }
 
-.bg-transparent-mesa p,
 .bg-transparent-mesa h1,
 .bg-transparent-mesa h2,
 .bg-transparent-mesa h3,
@@ -12551,7 +12513,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(64, 54, 53, 0.7);
 }
 
-.bg-transparent-ash p,
 .bg-transparent-ash h1,
 .bg-transparent-ash h2,
 .bg-transparent-ash h3,
@@ -12578,7 +12539,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(74, 99, 78, 0.7);
 }
 
-.bg-transparent-sage p,
 .bg-transparent-sage h1,
 .bg-transparent-sage h2,
 .bg-transparent-sage h3,
@@ -12605,7 +12565,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.bg-transparent-white p,
 .bg-transparent-white h1,
 .bg-transparent-white h2,
 .bg-transparent-white h3,
@@ -12632,7 +12591,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.bg-transparent-black p,
 .bg-transparent-black h1,
 .bg-transparent-black h2,
 .bg-transparent-black h3,
@@ -12659,10 +12617,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #70b865;
 }
 
-.bg-success p, .panel-success .panel-heading p, .card-success p,
-.bg-success h1,
-.panel-success .panel-heading h1,
-.card-success h1,
+.bg-success h1, .panel-success .panel-heading h1, .card-success h1,
 .bg-success h2,
 .panel-success .panel-heading h2,
 .card-success h2,
@@ -12722,10 +12677,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #81d3eb;
 }
 
-.bg-info p, .panel-info .panel-heading p, .card-info p,
-.bg-info h1,
-.panel-info .panel-heading h1,
-.card-info h1,
+.bg-info h1, .panel-info .panel-heading h1, .card-info h1,
 .bg-info h2,
 .panel-info .panel-heading h2,
 .card-info h2,
@@ -12785,10 +12737,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #f19e1f;
 }
 
-.bg-warning p, .panel-warning .panel-heading p, .card-warning p,
-.bg-warning h1,
-.panel-warning .panel-heading h1,
-.card-warning h1,
+.bg-warning h1, .panel-warning .panel-heading h1, .card-warning h1,
 .bg-warning h2,
 .panel-warning .panel-heading h2,
 .card-warning h2,
@@ -12848,10 +12797,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #a95c42;
 }
 
-.bg-danger p, .panel-danger .panel-heading p, .card-danger p,
-.bg-danger h1,
-.panel-danger .panel-heading h1,
-.card-danger h1,
+.bg-danger h1, .panel-danger .panel-heading h1, .card-danger h1,
 .bg-danger h2,
 .panel-danger .panel-heading h2,
 .card-danger h2,
@@ -12912,11 +12858,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #dee2e6;
 }
 
-.bg-light p, .panel .panel-footer p, .panel-default .panel-heading p, .well p,
-.bg-light h1,
-.panel .panel-footer h1,
-.panel-default .panel-heading h1,
-.well h1,
+.bg-light h1, .panel .panel-footer h1, .panel-default .panel-heading h1, .well h1,
 .bg-light h2,
 .panel .panel-footer h2,
 .panel-default .panel-heading h2,
@@ -12993,11 +12935,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #343a40;
 }
 
-.bg-dark p, .callout-dark p, .card-inverse p, .modal-bg-dark p,
-.bg-dark h1,
-.callout-dark h1,
-.card-inverse h1,
-.modal-bg-dark h1,
+.bg-dark h1, .callout-dark h1, .card-inverse h1, .modal-bg-dark h1,
 .bg-dark h2,
 .callout-dark h2,
 .card-inverse h2,
@@ -13074,9 +13012,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #f8f9fa;
 }
 
-.bg-gray-100 p, .bg-silver-tint p,
-.bg-gray-100 h1,
-.bg-silver-tint h1,
+.bg-gray-100 h1, .bg-silver-tint h1,
 .bg-gray-100 h2,
 .bg-silver-tint h2,
 .bg-gray-100 h3,
@@ -13119,7 +13055,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #e9ecef;
 }
 
-.bg-gray-200 p,
 .bg-gray-200 h1,
 .bg-gray-200 h2,
 .bg-gray-200 h3,
@@ -13146,7 +13081,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #dee2e6;
 }
 
-.bg-gray-300 p,
 .bg-gray-300 h1,
 .bg-gray-300 h2,
 .bg-gray-300 h3,
@@ -13173,7 +13107,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #ced4da;
 }
 
-.bg-gray-400 p,
 .bg-gray-400 h1,
 .bg-gray-400 h2,
 .bg-gray-400 h3,
@@ -13200,7 +13133,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #adb5bd;
 }
 
-.bg-gray-500 p,
 .bg-gray-500 h1,
 .bg-gray-500 h2,
 .bg-gray-500 h3,
@@ -13227,7 +13159,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #6c757d;
 }
 
-.bg-gray-600 p,
 .bg-gray-600 h1,
 .bg-gray-600 h2,
 .bg-gray-600 h3,
@@ -13254,7 +13185,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #495057;
 }
 
-.bg-gray-700 p,
 .bg-gray-700 h1,
 .bg-gray-700 h2,
 .bg-gray-700 h3,
@@ -13281,7 +13211,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #343a40;
 }
 
-.bg-gray-800 p,
 .bg-gray-800 h1,
 .bg-gray-800 h2,
 .bg-gray-800 h3,
@@ -13308,7 +13237,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #212529;
 }
 
-.bg-gray-900 p,
 .bg-gray-900 h1,
 .bg-gray-900 h2,
 .bg-gray-900 h3,
@@ -13336,11 +13264,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #dee2e6;
 }
 
-.bg-light p, .panel .panel-footer p, .panel-default .panel-heading p, .well p,
-.bg-light h1,
-.panel .panel-footer h1,
-.panel-default .panel-heading h1,
-.well h1,
+.bg-light h1, .panel .panel-footer h1, .panel-default .panel-heading h1, .well h1,
 .bg-light h2,
 .panel .panel-footer h2,
 .panel-default .panel-heading h2,
@@ -13417,11 +13341,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #343a40;
 }
 
-.bg-dark p, .callout-dark p, .card-inverse p, .modal-bg-dark p,
-.bg-dark h1,
-.callout-dark h1,
-.card-inverse h1,
-.modal-bg-dark h1,
+.bg-dark h1, .callout-dark h1, .card-inverse h1, .modal-bg-dark h1,
 .bg-dark h2,
 .callout-dark h2,
 .card-inverse h2,
@@ -13687,7 +13607,7 @@ h2,
 }
 
 .text-sans {
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
 }
 
@@ -13753,7 +13673,7 @@ h4,
 h5,
 h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-h6 {
   margin: 1.042em 0 0.667em;
-  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #49595e;
 }
 

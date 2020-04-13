@@ -19,14 +19,14 @@ course there are pluses and minus to each approach.
 
 #### Managing your own project
 
-**Pluses**
+**Advantages**
 - You can tailor your font project to only include the fonts that your web site
 or app uses, minimizing the number of assets an end user
 - If tailoring your own web project you may benefit with perfomance gains on
 first end user page load of your site or app if the user has never visited one of the other
 websites (Arizona.edu for example) that includes the centrally managed font.
 
-**Minuses**
+**Disadvantages**
 - Performance loss if your end-user has already downloaded the centrally managed
 font library from one of the other sites that use the centrally managed font.
 - You have to manage your own font in typekit, which comes with a number of
@@ -35,7 +35,7 @@ it is not tied to a specific user and all of the risk that that entails.
 
 #### Using the centrally managed project
 
-**Pluses**
+**Advantages**
 - Worry-free font hosting.
 - No managing department or team-level creative cloud accounts to ensure your
 font isn't tied to one team-member
@@ -44,7 +44,7 @@ shared assets.
 - You can easily switch to a self-managed model and back again.
 - Centralized documentation on how to integrate into other shared assets.
 
-**Minuses**
+**Disadvantages**
 - Less flexibility in regards to which fonts are available to your project.
 - Workflow challenges with making updates to centrally managed web fonts.
 
@@ -89,19 +89,22 @@ $font-family-sans-serif:
   `$font-family-base` and recompile Arizona Bootstrap.
 
 ## How to Use
-  The Milo font suite is available for official use by UA employees through
-  a license with FontShop. Please follow the instructions below to ensure
-  compliance with the license.
+  The Proxima Nova font suite is available for official use by University of Arizona
+  employees through a license with Adobe Typekit.
+
+### Reference link
+  Arizona Bootstrap uses a Creative Cloud Library with shared governance to
+  manage our font reference links within Arizona Bootstrap. Alternatively, place
+  this line of code at the top of your main stylesheet.
+
+  ```@import "https://use.typekit.net/tgs5qmz.css";```
+
+   If using the font independently from Arizona Bootstrap, below are
+   instructions on how to use the different weights and styles.
 
 ### **Instructions**
-
-  Before using the Milo font suite, please complete the <a href="https://brand.arizona.edu/font-license-agreement" target="_blank">font license
-  agreement</a> <span class="label
-  label-warning">Important</span>
-
-  For projects not using UA Bootstrap, follow these instructions on <a href="https://brand.arizona.edu/how-add-milo-your-website" target="_blank">how to add Milo to your website</a>.
-  Be aware that [UA Bootstrap reference links](index.html#ua-bootstrap-reference-links) come "pre-loaded"
-  with the Milo font suite. In other words, if you're using UA Bootstrap, font
+  Be aware that [Arizona Bootstrap reference links](index.html#ua-bootstrap-reference-links) come "pre-loaded"
+  with the Proxima Nova font suite. In other words, if you're using Arizona Bootstrap, font
   installation instructions are not required.<span class="label
   label-warning">Important</span>
 
