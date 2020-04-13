@@ -42,6 +42,7 @@
     - title: Collapse
     - title: Dropdowns
     - title: Forms
+    - title: Horizontal Rule
     - title: Input Group
     - title: Jumbotron
     - title: List Group
@@ -50,6 +51,7 @@
     - title: Navs
     - title: Navbar
     - title: Pagination
+    - title: Photo Gallery
     - title: Popovers
     - title: Progress
     - title: Scrollspy
@@ -86,4 +88,4 @@
 
 - title: Migration
 
-- title: Deprecated
+- title: Backwards Compatibility

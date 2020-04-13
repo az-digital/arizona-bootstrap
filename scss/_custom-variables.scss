@@ -1,35 +1,27 @@
-//
-// > COLORS
-//
+/*
+* > COLORS
+*/
 
-//
 // >> Brand Colors
-//
 $red: #ab0520;
 $bloom: #ef4056;
 $chili: #8b0015;
-
 $blue: #0c234b;
 $sky: #81d3eb;
 $oasis: #378dbd;
 $azurite: #1e5288;
 $midnight: #001c48;
-
 $cool-gray: #e2e9eb;
 $warm-gray: #f4ede5;
-
 $leaf: #70b865;
 $river: #007d84;
 $silver: #9eabae;
 $dark-silver: #49595e;  // to be used for text only
 $mesa: #a95c42;
-
 $ash: #403635;
 $sage: #4a634e;
-
 $white: #fff;
 $black: #000;
-
 
 $colors: ();
 $colors: map-merge(
@@ -57,9 +49,7 @@ $colors: map-merge(
 );
 
 
-//
 // >> Transparent Brand Colors
-//
 $transparent-red: rgba($red, .8);
 $transparent-bloom: rgba($bloom, .8);
 $transparent-chili: rgba($chili, .8);
@@ -110,9 +100,7 @@ $colors-transparent: map-merge(
 );
 
 
-//
 // >> Grayscale Colors
-//
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -122,8 +110,6 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-
-
 
 $grays: ();
 $grays: map-merge(
@@ -142,10 +128,7 @@ $grays: map-merge(
 );
 
 
-//
 // >> Theme Colors
-//
-
 $success: $leaf;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
@@ -173,9 +156,9 @@ $theme-colors: map-merge(
 
 $enable-rounded: false;
 
-//
-// > FONTS
-//
+/*
+* > FONTS
+*/
 $font-size-base: 1rem;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -187,10 +170,12 @@ $font-family-base:       $font-family-sans-serif !default;
 
 $link-color: $chili;
 
+$heading-margins: 1.042em 0 .667em;
 
-//
-// > SPACING
-//
+
+/*
+* > SPACING
+*/
 $spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -212,11 +197,11 @@ $spacers: map-merge(
   $spacers
 );
 
+$enable-responsive-font-sizing: true;
 
-
-//
-// > COMPONENTS
-//
+/*
+* > COMPONENTS
+*/
 
 // >> Breadcrumbs
 $breadcrumb-color: $azurite;
@@ -231,10 +216,13 @@ $card-cap-bg: $gray-200;
 $card-cap-bg-darken: rgba($black, .075);
 
 // >> Dropdowns
-$dropdown-link-color: $azurite;
-$dropdown-link-hover-color: $midnight;
-$dropdown-link-hover-bg: $gray-100;
-$dropdown-link-active-bg: $gray-200;
+$dropdown-bg-color: $blue;
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $azurite;
+$dropdown-link-active-bg: $white;
+$dropdown-link-active-color: $blue;
+$dropdown-link-disabled-color: $gray-600;
 
 // >> Jumbotron
 $jumbotron-bg: $white;

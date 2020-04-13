@@ -1,17 +1,17 @@
 ---
 layout: docs
-title: Deprecated
-description: Styles and classes available in UA Bootstrap (Bootstrap 3) that have been deprecated, replaced, or removed in Arizona Bootstrap (Bootstrap 4).
-group: deprecated
+title: Backwards Compatibility
+description: Some styles and classes available in UA Bootstrap (Bootstrap 3) have been deprecated, replaced, or removed in Arizona Bootstrap (Bootstrap 4).
+group: backwards-compatibility
 redirect_from:
-  - "/deprecated/"
-  - "/docs/4.3/deprecated/"
+  - "/backwards-compatibility/"
+  - "/docs/4.3/backwards-compatibility/"
 toc: true
 ---
 
 ## Overview
 
-Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{ site.title }}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{ site.title }}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{ site.title }}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/deprecated/#removed-utility-classes) and [Removed Components]({{ site.baseurl }}/docs/{{ site.docs_version }}/deprecated/#removed-components) sections.
+Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{ site.title }}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{ site.title }}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{ site.title }}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/backwards-compatibility/#removed-utility-classes) and [Removed Components]({{ site.baseurl }}/docs/{{ site.docs_version }}/backwards-compatibility/#removed-components) sections.
 
 ## Backwards Compatible Components
 
@@ -44,11 +44,11 @@ In UA Bootstrap, the following background wrapper patterns were marked as deprec
     </div>
   </div>
 </div>
-  
+
 
 ### Buttons
 
-In {{ site.title }}, Button classes have changed as follows: 
+In {{ site.title }}, Button classes have changed as follows:
 
 #### Default, Primary, and Secondary
 
@@ -157,7 +157,7 @@ In {{ site.title }}, color-specific cards can be replicated by using the [backgr
 
 ### Labels
 
-In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles. 
+In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles.
 
 <div class="bd-example">
   <span class="label label-default">Default</span>
@@ -207,7 +207,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
 
 ### Thumbnails
 
-Thumbnails have been extended using a combination of the `.card` class and its child classes. 
+Thumbnails have been extended using a combination of the `.card` class and its child classes.
 
 <div class="bd-example">
   <div class="row">
@@ -232,7 +232,7 @@ Wells have been extended using a combination of the `.card` class and the `.bg-l
   </div>
   <div class="well well-hollow my-3">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>hollow well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
-  </div> 
+  </div>
   <div class="well well-sm">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>small well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
@@ -475,7 +475,7 @@ The decision was made to remove all `.*-primary` and `.*-secondary` classes from
 
 ### Tooltip Arrow
 
-In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used. 
+In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used.
 
 ## Removed Components
 
