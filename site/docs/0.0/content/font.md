@@ -70,8 +70,9 @@ device and OS. Read more about
 
 ```
 $font-family-sans-serif:
-// Safari for macOS and iOS (San Francisco)
--apple-system,
+  proxima-nova,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
   // Chrome < 56 for macOS (San Francisco)
   BlinkMacSystemFont,
   // Windows
@@ -115,9 +116,9 @@ $font-family-sans-serif:
     font-style: normal;
     word-wrap: break-word;
   }
-.proxima-nova-bold span:first-child {
-  text-transform: uppercase;
-}
+  .proxima-nova-bold span:first-child {
+    text-transform: uppercase;
+  }
 </style>
 
 <div class="bd-example">
