@@ -13750,7 +13750,7 @@ a {
 }
 
 .badge-pill {
-  border-radius: 10rem;
+  border-radius: 0.25rem;
 }
 
 .btn {
