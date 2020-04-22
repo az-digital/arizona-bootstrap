@@ -1,8 +1,8 @@
 // Overrides to Mixins
 
 /*
-* > ALERTS
-*/
+ * > ALERTS
+ */
 @mixin alert-variant($background) {
   @include text-color-contrast($background);
   background-color: $background;
@@ -17,8 +17,8 @@
 }
 
 /*
-* > BACKGROUND COLORS
-*/
+ * > BACKGROUND COLORS
+ */
 
 // >> Transparent Backgrounds
 @mixin background-transparent($bg-color) {
@@ -29,7 +29,6 @@
 @mixin text-color-contrast($bg-color) {
   @if $bg-color == $bloom or $bg-color == $white or $bg-color == $sky or $bg-color == $oasis or $bg-color == $cool-gray or $bg-color == $warm-gray or $bg-color == $silver or $bg-color == $leaf or $bg-color == $warning or $bg-color == $light or $bg-color == $gray-100 or $bg-color == $gray-200 or $bg-color == $gray-300 or $bg-color == $gray-400 or $bg-color == $gray-500 {
     color: $black;
-    p,
     h1,
     h2,
     h3,
@@ -42,25 +41,12 @@
     .h4,
     .h5,
     .h6 {
-      color: $black;
-      @each $text-color, $text-value in $colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
-      @each $text-color, $text-value in $theme-colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
+      color: inherit;
     }
   }
   @else {
     // background color dark enough for white text
     color: $white;
-    p,
     h1,
     h2,
     h3,
@@ -73,27 +59,15 @@
     .h4,
     .h5,
     .h6 {
-      color: $white;
-      @each $text-color, $text-value in $colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
-      @each $text-color, $text-value in $theme-colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
+      color: inherit;
     }
   }
 }
 
 
 /*
-* > BADGES
-*/
+ * > BADGES
+ */
 @mixin badge-variant($background) {
   // check for inaccessible color contrast
   $badge-text-color: $white;
@@ -104,15 +78,14 @@
   @else if $background == $warning {
     $badge-text-color: $black;
   }
-
   color: $badge-text-color;
   background-color: $background;
 }
 
 
 /*
-* > BUTTONS
-*/
+ * > BUTTONS
+ */
 
 // >> Regular
 @mixin button-variant($background) {
@@ -142,8 +115,8 @@
 
 
 /*
-* > CALLOUTS
-*/
+ * > CALLOUTS
+ */
 @mixin callout-variant($color) {
   border-left-color: $color;
 
