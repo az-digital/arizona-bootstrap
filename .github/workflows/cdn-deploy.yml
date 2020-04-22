@@ -1,0 +1,34 @@
+name: Build & deploy CDN assets
+
+on:
+  push:
+    branches:
+      - master
+      - feature/59
+
+jobs:
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build CDN assets
+        # uses: actions/github-script@5d03ada4b0a753e9460b312e61cc4f8fdeacf163
+        run: |
+          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${{ github.head_ref }}"
+          docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-cdn-assets.sh
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Deploy CDN assets to S3 + CloudFront
+        run: |
+            aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${{ github.head_ref }}/
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${{ github.head_ref }}/*
