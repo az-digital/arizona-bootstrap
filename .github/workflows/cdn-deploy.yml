@@ -15,10 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
       - name: Build CDN assets
         # uses: actions/github-script@5d03ada4b0a753e9460b312e61cc4f8fdeacf163
         run: |
-          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${{ github.head_ref }}"
+          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
           docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-cdn-assets.sh
 
       - name: Configure AWS credentials
@@ -30,5 +31,5 @@ jobs:
 
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
-            aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${{ github.head_ref }}/
-            aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${{ github.head_ref }}/*
+            aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${AZ_TRIMMED_REF}/
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${AZ_TRIMMED_REF}/*
