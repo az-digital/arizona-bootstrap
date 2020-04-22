@@ -6,7 +6,8 @@ on:
       - master
 
 jobs:
-  main:
+  review-site:
+    name: Build & deploy review site
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
