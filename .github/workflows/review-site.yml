@@ -24,7 +24,15 @@ jobs:
         run: |
           aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}/arizona-bootstrap/${{ github.head_ref }}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths /arizona-bootstrap/${{ github.head_ref }}/*
-      - name: Display review site URL
-        # TODO: replace with step that publishes link to review site on PR.
+      - name: Add link to review site on pull request
         run: |
-          echo "Review site deployed to https://review.digital.arizona.edu/arizona-bootstrap/${{ github.head_ref }}"
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "context": "review",
+            "state": "success",
+            "description": "Review Site",
+            "target_url": "https://review.digital.arizona.edu/arizona-bootstrap/${{ github.head_ref }}"
+            }'
