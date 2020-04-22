@@ -37,7 +37,7 @@ jobs:
             aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${AZ_TRIMMED_REF}/*
 
       - name: Deploy CDN assets to S3 + CloudFront (latest)
-        if: github.event_name == 'tags'
+        if: startsWith('refs/tags/', github.ref)
         run: |
           aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
