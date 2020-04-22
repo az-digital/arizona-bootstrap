@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+
       - name: Build CDN assets
         # uses: actions/github-script@5d03ada4b0a753e9460b312e61cc4f8fdeacf163
         run: |
@@ -34,3 +35,9 @@ jobs:
         run: |
             aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${AZ_TRIMMED_REF}/
             aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${AZ_TRIMMED_REF}/*
+
+      - name: Deploy CDN assets to S3 + CloudFront (latest)
+        if: github.event_name == 'tag'
+        run: |
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
