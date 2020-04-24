@@ -29,7 +29,7 @@
     "docs-compile-review": "bundle exec jekyll build --baseurl $UAZ_REVIEW_BASEURL",
     "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
     "docs-lint": "node build/vnu-jar.js",
-    "docs-serve": "bundle exec jekyll serve",
+    "docs-serve": "bundle exec jekyll serve --host $UAZ_HOST",
     "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
     "js": "npm-run-all js-copy-*",
     "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do sed -i \"\" -e s/sourceMappingURL=bootstrap/sourceMappingURL=arizona-bootstrap/ \"$f\"; mv \"$f\" $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
