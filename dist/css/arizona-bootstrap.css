@@ -13749,6 +13749,10 @@ a {
   background-color: #e2e9eb;
 }
 
+.badge-pill {
+  border-radius: 0.25rem;
+}
+
 .btn {
   font-weight: 500;
   text-transform: uppercase;
