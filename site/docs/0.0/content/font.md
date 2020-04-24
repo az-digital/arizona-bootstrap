@@ -7,6 +7,11 @@ redirect_from: "/docs/4.3/content/"
 toc: true
 ---
 
+<div class="alert alert-warning" role="alert">
+  <p class="h4 alert-heading">Heads Up!</p>
+  If you're using Arizona Bootstrap, Proxima Nova comes "pre-loaded." No installation required!
+</div>
+
 ## Centrally managed typekit webfont
 
 For ease of integration into web projects around campus, the Arizona Digital
@@ -63,14 +68,13 @@ For projects not using Arizona Bootstrap, [follow these instructions](#instructi
 
 
 ### **Native Fallback Fonts**
-The fallback web fonts (Verdana, Geneva) have been dropped in Arizona Bootstrap
-4 and replaced with a “native font stack” for optimum text rendering on every
-device and OS. Read more about
+The fallback web font for Arizona Bootstrap is Calibri. Additional fallbacks follow Bootstrap 4's use of “native font stack” for optimum text rendering on every device and OS. Read more about
 [native font stacks in this Smashing Magazine article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
 ```
 $font-family-sans-serif:
   proxima-nova,
+  calibri,
   // Safari for macOS and iOS (San Francisco)
   -apple-system,
   // Chrome < 56 for macOS (San Francisco)
@@ -93,6 +97,12 @@ $font-family-sans-serif:
   employees through a license with Adobe Typekit.
 
 ### Reference link
+
+  <div class="alert alert-danger" role="alert">
+    <p class="h4 alert-heading">Beware!</p>
+      For the time being, this reference link is tied to an individual developer's Adobe Typekit account. It will eventually be replaced with a better long term option. Please do not use the reference below for any public facing projects. 
+  </div>
+
   Arizona Bootstrap uses a Creative Cloud Library with shared governance to
   manage our font reference links within Arizona Bootstrap. Alternatively, place
   this line of code at the top of your main stylesheet.
