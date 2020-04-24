@@ -59,11 +59,11 @@
     vertical-align: text-top;
   }
 
-  .dropdown-menu {
+  /*.dropdown-menu {
     @include font-size(.875rem);
-  }
+  }*/
 
-  .dropdown-item.active {
+  /* .dropdown-item.active {
     font-weight: 600;
     color: $gray-900;
     background-color: transparent;
@@ -71,5 +71,5 @@
     background-repeat: no-repeat;
     background-position: .4rem .6rem;
     background-size: .75rem .75rem;
-  }
+  } */
 }
