@@ -18,5 +18,5 @@ Please refer to the [Contributing doc](./contributing.md).
 Arizona Bootstrap is built off of Bootstrap 4, and UA Bootstrap is built off of Bootstrap 3.
 
 <!-- URLs doesn't exist yet -->
-- [Learn about migration from Bootstrap 3 to Bootstrap 4](digital.arizona.edu/arizona-bootstrap/master/docs/0.0/migration)
-- [Learn about migration from UA Bootstrap to Arizona Bootstrap](digital.arizona.edu/arizona-bootstrap/master/docs/0.0/backwards-compatibility)
+- [Learn about migrating from Bootstrap 3 to Bootstrap 4](digital.arizona.edu/arizona-bootstrap/master/docs/0.0/migration)
+- [Learn about backwards compatibility between UA Bootstrap and Arizona Bootstrap](digital.arizona.edu/arizona-bootstrap/master/docs/0.0/backwards-compatibility)

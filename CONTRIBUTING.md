@@ -4,19 +4,15 @@ Want to contribute? Any release of Arizona Bootstrap is tested and ready to use,
 
 If you want to get involved, you can:
 
-<ul>
-  <li>Request access to join the discussion on Slack (see below)</li>
-  <li>Participate in Friday meetings and Wednesday pull request review sessions (ask for more details in Slack)</li>
-  <li>Submit pull requests on GitHub</li>
-</ul>
+- Request access to join the discussion on Slack ([learn more]((digital.arizona.edu/arizona-bootstrap/master/docs/0.0/about/get-involved))
+- Participate in Friday meetings and Wednesday pull request review sessions (ask for more details in Slack)
+- Submit pull requests on GitHub
 
 Questions, bug reports or suggestions can also be emailed to [uadigital@email.arizona.edu](mailto:uadigital@email.arizona.edu) or (preferably!) reported on Slack.
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
-
 ## Installation 
 
-Include Arizona Bootstrap’s source Sass and JavaScript files via npm, Composer or Meteor. Package managed installs don’t include documentation, but do include our build system and readme.
+Include Arizona Bootstrap’s source Sass and JavaScript files via `npm`. Package managed installs don’t include documentation, but do include our build system and readme.
 
 `npm install https://github.com/az-digital/arizona-bootstrap`
 
@@ -29,7 +25,7 @@ Include Arizona Bootstrap’s source Sass and JavaScript files via npm, Composer
 
 ## Policies
 
-Contributions to Arizona Bootstrap must adhere to Arizona Digital's policies and Code of Conduct.
+Contributions to Arizona Bootstrap must adhere to Arizona Digital's policies and [Code of Conduct](https://github.com/az-digital/policies/blob/master/code-of-conduct.md).
 
 - [Arizona Digital merging policies](https://github.com/az-digital/policies/blob/master/code-of-conduct.md)
 - [Arizona Digital Code of Conduct](https://github.com/az-digital/policies/blob/master/code-of-conduct.md)
