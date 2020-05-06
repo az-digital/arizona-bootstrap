@@ -24,7 +24,7 @@
     "css-prefix-docs": "postcss --config build/postcss.config.js --replace \"site/docs/**/*.css\"",
     "dist": "npm-run-all --parallel css js",
     "docs": "npm-run-all css-docs js-docs docs-compile docs-lint",
-    "docs-review": "npm-run-all css-docs js-docs docs-compile-review",
+    "docs-review": "npm-run-all css-docs js-docs docs-compile-review docs-lint",
     "docs-compile": "bundle exec jekyll build",
     "docs-compile-review": "bundle exec jekyll build --baseurl $UAZ_REVIEW_BASEURL",
     "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
