@@ -9,5 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check code for linting errors
         run: |
-          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
-          docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/lint.sh
+          docker run --rm -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/lint.sh
