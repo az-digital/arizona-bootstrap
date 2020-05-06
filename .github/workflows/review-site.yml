@@ -11,8 +11,13 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
-      - name: Build review site artifact
+      - name: Find the push source branch name
+          if: github.event_name != 'pull_request'
+          run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+      - name: Find the pull request source branch name
+          if: github.event_name == 'pull_request'
+          run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_HEAD_REF}"
+       - name: Build review site artifact
         run: |
           export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
           docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-review-site.sh
