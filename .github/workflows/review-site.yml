@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Find the push source branch name
-          if: ${{ github.event_name != 'pull_request' }}
-          run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+        if: ${{ github.event_name != 'pull_request' }}
+        run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
       - name: Find the pull request source branch name
-          if: ${{ github.event_name == 'pull_request' }}
-          run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_HEAD_REF}"
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_HEAD_REF}"
        - name: Build review site artifact
         run: |
           export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
