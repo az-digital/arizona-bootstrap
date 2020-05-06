@@ -10,16 +10,14 @@
 // >>> Brand
 @each $color, $value in $colors {
   .bg-#{$color} {
-    // check for color contrast
     @include text-color-contrast($value);
     background-color: $value;
-
   }
 }
 
 // >>> Brand Transparent
-@each $color, $value in $colors-transparent {
-  .bg-#{$color} {
+@each $color, $value in $colors {
+  .bg-transparent-#{$color} {
     @include text-color-contrast($value);
     @include background-transparent($value);
   }
@@ -107,7 +105,7 @@
   color: $dark-silver;
 }
 // >>> Sans
-.text-sans {
+.sans {
   font-family: $font-family-sans-serif;
   font-weight: 500;
 }

@@ -1,0 +1,12 @@
+name: Check code for linting errors
+on: pull_request
+
+jobs:
+  review-site:
+    name: Check code for linting errors
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check code for linting errors
+        run: |
+          docker run --rm -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/lint.sh
