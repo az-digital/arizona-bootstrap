@@ -1,0 +1,92 @@
+# Release workflow
+#
+# Release PR manually created with:
+#   Minor & Patch Releases:
+#     - Updated dist assets
+#     - Updated version info in package.json
+#   Minor Releases Only:
+#   - Update version references in documentation
+#
+# Workflow triggered upon push to master containing changes to package.json
+#  If version number has changed (and is not dev):
+#     - Creates release tag
+#     - Pushes release tag
+#     - Creates GitHub release (and release notes?)
+#     - Updates arizona-bootstrap-packagist repo (@kevcooper suggested adding a GitHub actions workflow to the arizona-bootstrap-packagist repo that can be triggered by an arizona-bootstrap release/tag)
+#     - Changes version info in package.json "back to dev"
+#     - Commits and pushes
+
+on:
+  push:
+    branch:
+      - master
+      - user-story/*
+    paths:
+      - package.json
+
+name: Upload Release Asset
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build Variables
+        run: |
+          echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+          echo "::set-env name=AZ_VERSION::$(cat package.json | jq '.version')"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${AZ_VERSION}
+          release_name: Release ${AZ_VERSION}
+          draft: false
+          prerelease: false
+      - name: Back to dev # This would actually build your project, using zip for an example artifact
+        run: |
+          npm version "${AZ_VERSION}-dev"
+          # sed -i package.json "s/${AZ_VERSION}/${AZ_VERSION}-dev/g"
+          git add package.json
+          git commit -m 'Back to dev'
+          git push
+      # - name: Zip Assets
+      #   run: |
+      #     zip -r -x\*.git* az_quickstart.zip az_quickstart
+      # - name: Tar Assets
+      #   run: |
+      #     tar --exclude '*.git*' -c -z -f az_quickstart.tar.gz az_quickstart
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: Release ${{ github.ref }}
+      #     draft: false
+      #     prerelease: false
+      # - name: Upload Zip Assets
+      #   id: upload-zip-asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+      #     asset_path: ./az_quickstart.zip
+      #     asset_name: az_quickstart.zip
+      #     asset_content_type: application/zip
+      # - name: Upload Tar Asset
+      #   id: upload-tar-asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+      #     asset_path: ./az_quickstart.tar.gz
+      #     asset_name: az_quickstart.tar.gz
+      #     asset_content_type: application/x-gzip
