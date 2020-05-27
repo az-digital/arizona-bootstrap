@@ -50,10 +50,11 @@ jobs:
       - name: Back to dev # This would actually build your project, using zip for an example artifact
         run: |
           npm version "${AZ_VERSION}-dev"
-          # sed -i package.json "s/${AZ_VERSION}/${AZ_VERSION}-dev/g"
-          git add package.json
-          git commit -m 'Back to dev'
           git push
+          # sed -i package.json "s/${AZ_VERSION}/${AZ_VERSION}-dev/g"
+          # git add package.json
+          # git commit -m 'Back to dev'
+          # git push
       # - name: Zip Assets
       #   run: |
       #     zip -r -x\*.git* az_quickstart.zip az_quickstart
