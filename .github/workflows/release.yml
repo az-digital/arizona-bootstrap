@@ -18,7 +18,7 @@
 
 on:
   push:
-    branch:
+    branches:
       - master
     paths:
       - package.json
