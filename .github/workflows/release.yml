@@ -48,7 +48,8 @@ jobs:
           prerelease: false
       - name: Back to dev
         run: |
-          sed -i -e "s/${AZ_VERSION}/${AZ_VERSION}-dev/g" -e "s/${AZ_SHORT_VERSION}/${AZ_SHORT_VERSION}-dev/g" package.json
+          jq ".version = \"${AZ_VERSION}-dev\" | .version_short = \"${AZ_SHORT_VERSION}-dev\"" package.json > package.json.new
+          mv package.json.new package.json
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           git add package.json
