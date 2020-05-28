@@ -1,6 +1,6 @@
 {
   "name": "arizona-bootstrap",
-  "version": "0.0.19-alpha1",
+  "version": "0.0.19-alpha1-dev",
   "version_short": "0.0",
   "description": "University of Arizona theme for Bootstrap.",
   "scripts": {
