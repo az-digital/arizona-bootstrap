@@ -35,8 +35,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Variables
         run: |
-          echo "::set-env name=AZ_VERSION::$(cat package.json | jq -r '.version')"
-          echo "::set-env name=AZ_SHORT_VERSION::$(cat package.json | jq -r '.version_short')"
+          echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
+          echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
