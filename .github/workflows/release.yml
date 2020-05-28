@@ -20,6 +20,7 @@ on:
   push:
     branches:
       - master
+      - user-story/*
     paths:
       - package.json
 
@@ -46,7 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.AZ_VERSION }}
+          tag_name: "v${{ env.AZ_VERSION }}"
           release_name: Release ${{ env.AZ_VERSION }}
           draft: false
           prerelease: ${{ contains(env.AZ_VERSION, '-alpha') }}
