@@ -59,6 +59,6 @@ jobs:
           mv package-lock.json.new package-lock.json
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          git add package.json
+          git add package.json package-lock.json
           git commit -m 'Back to dev'
           git push
