@@ -37,8 +37,12 @@ jobs:
         run: |
           echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
           echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
+      - name: Release Guard
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') || endsWith(env.AZ_SHORT_VERSION, '-dev') }}
+        run: |
+          exit 1
       - name: Create Release
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == 'false' }}
+        # if: ${{ endsWith(env.AZ_VERSION, '-dev') == 'false' && endsWith(env.AZ_SHORT_VERSION, '-dev') == 'false' }}
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -49,7 +53,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Back to dev
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == 'false' }}
+        # if: ${{ endsWith(env.AZ_VERSION, '-dev') == 'false' && endsWith(env.AZ_SHORT_VERSION, '-dev') == 'false' }}
         run: |
           jq --arg suffix '-dev' '.version |= . + $suffix | .version_short |= . + $suffix' package.json > package.json.new
           mv package.json.new package.json
