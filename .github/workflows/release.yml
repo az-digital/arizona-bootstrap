@@ -1,0 +1,61 @@
+# Release workflow
+#
+# Release PR manually created with:
+#   Minor & Patch Releases:
+#     - Updated dist assets
+#     - Updated version info in package.json
+#   Minor Releases Only:
+#   - Update version references in documentation
+#
+# Workflow triggered upon push to master containing changes to package.json
+#  If version number has changed (and is not dev):
+#     - Creates release tag
+#     - Pushes release tag
+#     - Creates GitHub release (and release notes?)
+#     - Updates arizona-bootstrap-packagist repo (@kevcooper suggested adding a GitHub actions workflow to the arizona-bootstrap-packagist repo that can be triggered by an arizona-bootstrap release/tag)
+#     - Changes version info in package.json "back to dev"
+#     - Commits and pushes
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - package.json
+
+name: Create Release
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build Variables
+        run: |
+          echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
+          echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
+      - name: Create Release
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v${{ env.AZ_VERSION }}"
+          release_name: "v${{ env.AZ_VERSION }}"
+          draft: false
+          prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
+      - name: Back to dev
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          jq --arg suffix '-dev' '.version |= . + $suffix' package.json > package.json.new
+          mv package.json.new package.json
+          jq --arg suffix '-dev' '.version |= . + $suffix' package-lock.json > package-lock.json.new
+          mv package-lock.json.new package-lock.json
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add package.json package-lock.json
+          git commit -m 'Back to dev'
+          git push
