@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
       - name: Build Variables
         run: |
           echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
