@@ -49,7 +49,7 @@ jobs:
           tag_name: "v${{ env.AZ_VERSION }}"
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
-          prerelease: ${{ contains(env.AZ_VERSION, '-alpha') }}
+          prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
       - name: Back to dev
         run: |
           jq --arg suffix '-dev' '.version |= . + $suffix' package.json > package.json.new
