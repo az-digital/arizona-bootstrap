@@ -13,8 +13,8 @@ source:         "site"
 destination:    ./_site
 host:           "localhost"
 port:           9001
-baseurl:        "/arizona-bootstrap"
-url:            "http://uadigital.arizona.edu/arizona-bootstrap"
+baseurl:        "/bootstrap"
+url:            "http://digital.arizona.edu/bootstrap"
 encoding:       UTF-8
 exclude:
   - docs/0.0/assets/scss/
