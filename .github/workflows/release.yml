@@ -50,18 +50,6 @@ jobs:
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
-      - name: Back to dev
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
-        run: |
-          jq --arg suffix '-dev' '.version |= . + $suffix' package.json > package.json.new
-          mv package.json.new package.json
-          jq --arg suffix '-dev' '.version |= . + $suffix' package-lock.json > package-lock.json.new
-          mv package-lock.json.new package-lock.json
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --global user.name "${GITHUB_ACTOR}"
-          git add package.json package-lock.json
-          git commit -m 'Back to dev'
-          git push
       # - name: Find the tag
       #   if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
       #   run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
@@ -81,4 +69,16 @@ jobs:
           git commit -m "Update docs for ${AZ_VERSION}"
           git push
           rm ${HOME}/.ssh/az_digital_deploy_key
+      - name: Back to dev
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          jq --arg suffix '-dev' '.version |= . + $suffix' package.json > package.json.new
+          mv package.json.new package.json
+          jq --arg suffix '-dev' '.version |= . + $suffix' package-lock.json > package-lock.json.new
+          mv package-lock.json.new package-lock.json
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add package.json package-lock.json
+          git commit -m 'Back to dev'
+          git push
 
