@@ -63,7 +63,11 @@ jobs:
         run: |
           echo "${{ secrets.AZ_DIGITAL_SITE_DEPLOY_KEY }}" > ${HOME}/.ssh/az_digital_deploy_key
           chmod 600 ${HOME}/.ssh/az_digital_deploy_key
-          ssh-agent $(ssh-add ${HOME}/.ssh/az_digital_deploy_key; git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu)
+          (
+            export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
+            git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
+            unset GIT_SSH_COMMAND
+          )
           rsync --delete _site /tmp/digital.arizona.edu/docs/bootstrap
           cd /tmp/digital.arizona.edu
           git add docs/bootstrap
