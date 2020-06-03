@@ -59,6 +59,8 @@ jobs:
           export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_VERSION}"
           docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-review-site.sh
       - name: Update digital.arizona.edu
+        # When we figure out the repository_dispatch event, we should do that here
+        # to notify digital.arizona.edu of a new version.
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           (
@@ -88,4 +90,3 @@ jobs:
           git add package.json package-lock.json
           git commit -m 'Back to dev'
           git push
-
