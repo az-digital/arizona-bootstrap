@@ -61,21 +61,21 @@ jobs:
       - name: Update digital.arizona.edu
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
-          echo "${{ secrets.AZ_DIGITAL_SITE_DEPLOY_KEY }}" > ${HOME}/.ssh/az_digital_deploy_key
-          chmod 600 ${HOME}/.ssh/az_digital_deploy_key
           (
+            echo "${{ secrets.AZ_DIGITAL_SITE_DEPLOY_KEY }}" > ${HOME}/.ssh/az_digital_deploy_key
+            chmod 600 ${HOME}/.ssh/az_digital_deploy_key
             git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
             git config --global user.name "${GITHUB_ACTOR}"
             export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
             git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
             unset GIT_SSH_COMMAND
+            rsync --recursive --delete _site /tmp/digital.arizona.edu/docs/bootstrap
+            cd /tmp/digital.arizona.edu
+            git add docs/bootstrap
+            git commit -m "Update docs for ${AZ_VERSION}"
+            git push
+            rm ${HOME}/.ssh/az_digital_deploy_key
           )
-          rsync --recursive --delete _site /tmp/digital.arizona.edu/docs/bootstrap
-          cd /tmp/digital.arizona.edu
-          git add docs/bootstrap
-          git commit -m "Update docs for ${AZ_VERSION}"
-          git push
-          rm ${HOME}/.ssh/az_digital_deploy_key
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
