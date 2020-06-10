@@ -197,7 +197,7 @@ Take that same HTML, but use `.nav-pills` instead:
 
 ### Utility Links
 
-Apply a "utility link" style to your navigation to provide a more muted appearance. 
+Take that same HTML, but use `.nav-utility` instead to provide a more muted appearance. 
 
 {% capture example %}
 <ul class="nav nav-utility">
