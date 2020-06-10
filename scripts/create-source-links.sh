@@ -48,8 +48,7 @@ linkwhitelist=".stylelintignore \
   CONTRIBUTING.md \
   LICENSE \
   README.md \
-  _config.yml \
-  build \
+  _config_template.yml \
   dist \
   js \
   scripts \
@@ -89,4 +88,13 @@ for x in $linkwhitelist ; do
 done
 [ $nfound -gt 0 ] \
   || errorexit "Nothing linked: all entries in ${AZ_BOOTSTRAP_SOURCE_DIR} missing"
+
+#------------------------------------------------------------------------------
+# Copy, don't link, the build subdirectory.
+
+logmessage "Copying the /build subdirectory"
+
+cp -R "${AZ_BOOTSTRAP_SOURCE_DIR}/build" "${AZ_BOOTSTRAP_DEST_DIR}/build" \
+ || errorexit "Couldn't copy the /build subdirectory from ${AZ_BOOTSTRAP_SOURCE_DIR} to ${AZ_BOOTSTRAP_DEST_DIR}"
+
 normalexit "Linked $nfound entries"
