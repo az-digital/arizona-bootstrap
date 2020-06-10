@@ -195,6 +195,26 @@ Take that same HTML, but use `.nav-pills` instead:
 {% endcapture %}
 {% include example.html content=example %}
 
+### Utility Links
+
+Apply a "utility link" style to your navigation to provide a more muted appearance. 
+
+{% capture example %}
+<ul class="nav nav-utility">
+  <li class="nav-item">
+    <a href="#" class="nav-link">Link</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Longer Link</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Much Longer Utility Link</a>
+  </li>
+</ul>
+{% endcapture %}
+{% include example.html content=example %}
+
+
 ### Fill and Justify
 
 Force your `.nav`'s contents to extend the full available width one of two modifier classes. To proportionately fill all available space with your `.nav-item`s, use `.nav-fill`. Notice that all horizontal space is occupied, but not every nav item has the same width.
