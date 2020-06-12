@@ -75,6 +75,29 @@
   }
 }
 
+
+.nav-utility {
+  margin: $nav-utility-margin;
+  .nav-item {
+    padding: $nav-utility-item-padding;
+  }
+  .nav-link {
+    padding: 0;
+    font: {
+      size: $nav-utility-link-font-size;
+      weight: $nav-utility-link-font-weight;
+    }
+    color: $nav-utility-link-color;
+    border-bottom: $nav-utility-link-border-width solid transparent;
+
+    &:hover,
+    &:focus {
+      border-bottom: $nav-utility-link-border-width solid $nav-utility-link-border-hover-color;
+    }
+  }
+}
+
+
 @include media-breakpoint-up(lg) {
   .nav-tabs {
     &.nav-tabs-lg {
