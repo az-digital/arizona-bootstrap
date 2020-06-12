@@ -41,7 +41,7 @@ jobs:
           echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
-          echo "::set-env name=AZ_DOCKER_IMAGE::${ImageID=#labelledimage}"
+          echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
       - name: Create Release
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         id: create_release

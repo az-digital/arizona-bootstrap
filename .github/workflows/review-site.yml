@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
-          echo "::set-env name=AZ_DOCKER_IMAGE::${ImageID=#labelledimage}"
+          echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
           echo "::set-env name=AZ_REVIEW_BASEURL::/bootstrap/${AZ_TRIMMED_REF}" 
       - name: Build review site artifact
         run: |
