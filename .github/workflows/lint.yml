@@ -10,7 +10,8 @@ jobs:
       - name: Build variables
         run: |
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
-          echo "::set-env name=AZ_DOCKER_IMAGE::$(scripts/build-container.sh)"
+          labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
+          echo "::set-env name=AZ_DOCKER_IMAGE::${ImageID=#labelledimage}"
       - name: Run the code linting checks
         run: |
           docker run --rm -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE lint

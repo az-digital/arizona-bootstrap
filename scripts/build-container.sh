@@ -78,4 +78,9 @@ fi
 #------------------------------------------------------------------------------
 # Emit the pre-existing or newly built image ID.
 
-docker image ls "$ephemeral" | grep "$lockhash" | awk '{ print $3 }'
+imagelsout=$(docker image ls "$ephemeral" | grep "$lockhash")
+[ -n "$imagelsout" ] \
+  || errorexit  "Couldn't find the Docker image ID code"
+echo "$imagelsout" | awk '{ print "ImageID=" $3 }'
+
+normalexit "Docker image available"
