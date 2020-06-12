@@ -16,11 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+      - name: Build variables
+        run: |
+          echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+          echo "::set-env name=AZ_DOCKER_IMAGE::$(scripts/build-container.sh)"
 
       - name: Build CDN assets
         run: |
-          docker run --rm -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-cdn-assets.sh
+          docker run --rm -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE build-cdn-assets
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114

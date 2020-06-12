@@ -2,11 +2,15 @@ name: Check code for linting errors
 on: pull_request
 
 jobs:
-  review-site:
+  lint-code:
     name: Check code for linting errors
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Check code for linting errors
+      - name: Build variables
         run: |
-          docker run --rm -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/lint.sh
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+          echo "::set-env name=AZ_DOCKER_IMAGE::$(scripts/build-container.sh)"
+      - name: Run the code linting checks
+        run: |
+          docker run --rm -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE lint

@@ -17,10 +17,14 @@ jobs:
       - name: Find the pull request source branch name
         if: ${{ github.event_name == 'pull_request' }}
         run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_HEAD_REF}"
+      - name: Build variables
+        run: |
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+          echo "::set-env name=AZ_DOCKER_IMAGE::$(scripts/build-container.sh)"
+          echo "::set-env name=AZ_REVIEW_BASEURL::/bootstrap/${AZ_TRIMMED_REF}" 
       - name: Build review site artifact
         run: |
-          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
-          docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-review-site.sh
+          docker run --rm -e "AZ_SITE_BASE_URL=$AZ_REVIEW_BASEURL" -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE build-review-site
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
         with:
@@ -34,4 +38,4 @@ jobs:
       - name: Display review site URL
         # TODO: replace with step that publishes link to review site on PR.
         run: |
-          echo "Review site deployed to https://review.digital.arizona.edu/arizona-bootstrap/${AZ_TRIMMED_REF}"
+          echo "Review site deployed to https://review.digital.arizona.edu/${AZ_REVIEW_BASEURL}"

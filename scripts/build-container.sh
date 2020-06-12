@@ -62,9 +62,20 @@ tagsearch=$(docker image ls "$ephemeral" ) \
 #------------------------------------------------------------------------------
 # If the ephemeral image doesn't yet exist, build it.
 
-if  echo "$tagsearch" | grep -q "$ephemeral" ; then
+if echo "$tagsearch" | grep -q "$lockhash" ; then
   logmessage "Found a pre-built image, ${ephemeral}"
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
-  docker build -t "$ephemeral" .
+  if [ -z "$AZ_BOOTSTRAP_SOURCE_DIR" ] ; then
+    docker build -t "$ephemeral" . \
+      || errorexit "Failed to build a new ${ephemeral} Docker image"
+  else
+    docker build -t "$ephemeral" --build-arg AZ_BOOTSTRAP_SOURCE_DIR . \
+      || errorexit "Failed to build a new ${ephemeral} Docker image preconfigured with the ${AZ_BOOTSTRAP_SOURCE_DIR} shared source directory"
+  fi
 fi
+
+#------------------------------------------------------------------------------
+# Emit the pre-existing or newly built image ID.
+
+docker image ls "$ephemeral" | grep "$lockhash" | awk '{ print $3 }'
