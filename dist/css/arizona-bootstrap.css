@@ -14040,6 +14040,26 @@ a {
   background-color: #e9ecef;
 }
 
+.nav-utility {
+  margin: 1rem 0 1.5rem 0;
+}
+
+.nav-utility .nav-item {
+  padding: 0 0.6rem;
+}
+
+.nav-utility .nav-link {
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #49595e;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-utility .nav-link:hover, .nav-utility .nav-link:focus {
+  border-bottom: 2px solid #49595e;
+}
+
 @media (min-width: 992px) {
   .nav-tabs.nav-tabs-lg {
     -ms-flex-direction: row;
