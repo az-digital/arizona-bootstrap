@@ -25,7 +25,7 @@ jobs:
           echo "::set-env name=AZ_REVIEW_BASEURL::/bootstrap/${AZ_TRIMMED_REF}" 
       - name: Build review site artifact
         run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=$AZ_REVIEW_BASEURL" -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE build-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=$AZ_REVIEW_BASEURL" -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE expose-review-site
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
         with:
