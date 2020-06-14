@@ -54,6 +54,7 @@ RUN apt-get update \
     python3-pip \
     python3-setuptools \
     python3-wheel \
+    rsync \
     ruby \
   && rm -rf /var/lib/apt/lists/* \
   && gem install -N bundler -v 1.17.3 \
