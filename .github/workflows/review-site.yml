@@ -34,9 +34,9 @@ jobs:
           aws-region: us-west-2
       - name: Deploy review site artifact to S3 + CloudFront
         run: |
-          aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}/${AZ_REVIEW_BASEURL}/
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths /${AZ_REVIEW_BASEURL}/*
+          aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}${AZ_REVIEW_BASEURL}/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths ${AZ_REVIEW_BASEURL}/*
       - name: Display review site URL
         # TODO: replace with step that publishes link to review site on PR.
         run: |
-          echo "Review site deployed to https://review.digital.arizona.edu/${AZ_REVIEW_BASEURL}"
+          echo "Review site deployed to https://review.digital.arizona.edu${AZ_REVIEW_BASEURL}"
