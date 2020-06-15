@@ -50,7 +50,7 @@ fi
 
 : "${AZ_STATIC_SITE_DIR:=_site}"
 
-original="${AZ_BOOTSTRAP_DEST_DIR}/${AZ_STATIC_SITE_DIR}"
+original="${AZ_BOOTSTRAP_DEST_DIR}/${AZ_STATIC_SITE_DIR}/"
 copy="${AZ_BOOTSTRAP_SOURCE_DIR}/${AZ_STATIC_SITE_DIR}"
 
 #------------------------------------------------------------------------------
