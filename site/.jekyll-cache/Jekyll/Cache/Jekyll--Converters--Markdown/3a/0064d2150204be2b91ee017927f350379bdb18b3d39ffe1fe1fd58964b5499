@@ -1,5 +1,0 @@
-I"d
-<h5 id="data-toggledropdown-still-required"><code class="highlighter-rouge">data-toggle="dropdown"</code> Still Required</h5>
-
-<p>Regardless of whether you call your dropdown via JavaScript or instead use the data-api, <code class="highlighter-rouge">data-toggle="dropdown"</code> is always required to be present on the dropdown’s trigger element.</p>
-:ET

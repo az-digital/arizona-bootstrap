@@ -1,5 +1,0 @@
-I"K
-<h5 id="vertical-clippingtruncation">Vertical Clipping/Truncation</h5>
-
-<p>Responsive tables make use of <code class="highlighter-rouge">overflow-y: hidden</code>, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.</p>
-:ET

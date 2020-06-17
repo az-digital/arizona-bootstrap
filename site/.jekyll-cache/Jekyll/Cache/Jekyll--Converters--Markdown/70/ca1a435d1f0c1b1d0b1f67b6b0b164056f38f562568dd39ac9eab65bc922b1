@@ -1,5 +1,0 @@
-I"l
-<h4 id="non-visible-target-elements-ignored">Non-<code class="highlighter-rouge">:visible</code> Target Elements Ignored</h4>
-
-<p>Target elements that are not <a href="https://api.jquery.com/visible-selector/"><code class="highlighter-rouge">:visible</code> according to jQuery</a> will be ignored and their corresponding nav items will never be highlighted.</p>
-:ET

@@ -1,5 +1,0 @@
-I"�
-<h5 id="associating-help-text-with-form-controls">Associating Help Text with Form Controls</h5>
-
-<p>Help text should be explicitly associated with the form control it relates to using the <code class="highlighter-rouge">aria-describedby</code> attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.</p>
-:ET

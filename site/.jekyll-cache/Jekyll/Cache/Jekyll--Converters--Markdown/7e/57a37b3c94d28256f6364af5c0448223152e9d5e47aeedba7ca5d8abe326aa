@@ -1,5 +1,0 @@
-I"z
-<h4 id="cross-browser-compatibility">Cross-browser Compatibility</h4>
-
-<p>While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don’t fully support the <code class="highlighter-rouge">disabled</code> attribute on a <code class="highlighter-rouge">&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
-:ET
