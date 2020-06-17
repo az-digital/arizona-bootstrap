@@ -1,0 +1,2 @@
+I"é<p><code class="highlighter-rouge">rem</code> units in media queries should be calculated using <code class="highlighter-rouge">font-size: initial</code>, not the root elementâ€™s <code class="highlighter-rouge">font-size</code></p>
+:ET

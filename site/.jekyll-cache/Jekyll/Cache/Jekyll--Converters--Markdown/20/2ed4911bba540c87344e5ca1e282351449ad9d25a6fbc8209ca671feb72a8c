@@ -1,0 +1,25 @@
+I"Ö
+<div class="bd-callout bd-callout-warning">
+<h5 id="warning">Warning</h5>
+
+<p>The <code class="highlighter-rouge">text-hide()</code> class and mixin has been deprecated as of v4.1. It will be removed entirely in v5.</p>
+</div>
+
+<p>Utilize the <code class="highlighter-rouge">.text-hide</code> class or mixin to help replace an elementâ€™s text content with a background image.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-hide"</span><span class="nt">&gt;</span>Custom heading<span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Usage as a mixin</span>
+<span class="nc">.heading</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">text-hide</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Use the <code class="highlighter-rouge">.text-hide</code> class to maintain the accessibility and SEO benefits of heading tags, but want to utilize a <code class="highlighter-rouge">background-image</code> instead of text.</p>
+
+<div class="bd-example">
+  <h1 class="text-hide" style="background-image: url('/arizona-bootstrap/docs/0.0/assets/brand/bootstrap-solid.svg'); width: 50px; height: 50px;">Bootstrap</h1>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-hide"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;</span>Bootstrap<span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+
+:ET

@@ -1,0 +1,3 @@
+I".
+<p><strong>Why not use <code class="highlighter-rouge">border-color</code> utilities?</strong> Each border spinner specifies a <code class="highlighter-rouge">transparent</code> border for at least one side, so <code class="highlighter-rouge">.border-{color}</code> utilities would override that.</p>
+:ET

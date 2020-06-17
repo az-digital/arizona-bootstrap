@@ -1,0 +1,7 @@
+I"y
+<h5 id="flexbug-12-inline-elements-arent-treated-as-flex-items">Flexbug #12: Inline elements aren’t treated as flex items</h5>
+
+<p>Internet Explorer 10-11 do not render inline elements like links or images (or <code class="highlighter-rouge">::before</code> and <code class="highlighter-rouge">::after</code> pseudo-elements) as flex items. The only workaround is to set a non-inline <code class="highlighter-rouge">display</code> value (e.g., <code class="highlighter-rouge">block</code>, <code class="highlighter-rouge">inline-block</code>, or <code class="highlighter-rouge">flex</code>). We suggest using <code class="highlighter-rouge">.d-flex</code>, one of our <a href="/arizona-bootstrap/docs/0.0/utilities/display/">display utilities</a>, as an easy fix.</p>
+
+<p><strong>Source:</strong> <a href="https://github.com/philipwalton/flexbugs#flexbug-12">Flexbugs on GitHub</a></p>
+:ET

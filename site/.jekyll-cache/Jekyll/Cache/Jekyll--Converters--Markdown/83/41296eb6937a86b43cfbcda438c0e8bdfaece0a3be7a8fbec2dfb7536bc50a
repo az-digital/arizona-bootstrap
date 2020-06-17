@@ -1,0 +1,16 @@
+I"+<p>Barebones <code class="highlighter-rouge">overflow</code> functionality is provided for two values by default, and they are not responsive.</p>
+
+<div class="bd-example d-md-flex">
+  <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-width: 260px; max-height: 100px;">
+    This is an example of using <code>.overflow-auto</code> on an element with set width and height dimensions. By design, this content will vertically scroll.
+  </div>
+  <div class="overflow-hidden p-3 bg-light" style="max-width: 260px; max-height: 100px;">
+    This is an example of using <code>.overflow-hidden</code> on an element with set width and height dimensions.
+  </div>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overflow-auto"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overflow-hidden"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>Using Sass variables, you may customize the overflow utilities by changing the <code class="highlighter-rouge">$overflows</code> variable in <code class="highlighter-rouge">_variables.scss</code>.</p>
+:ET

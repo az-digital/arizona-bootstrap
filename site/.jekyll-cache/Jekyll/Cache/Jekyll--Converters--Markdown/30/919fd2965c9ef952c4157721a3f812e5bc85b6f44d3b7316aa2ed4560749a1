@@ -1,0 +1,5 @@
+I"ø
+<h4 id="specific-markup-required-for-dismiss-on-next-click">Specific Markup Required for Dismiss-on-next-click</h4>
+
+<p>For proper cross-browser and cross-platform behavior, you must use the <code class="highlighter-rouge">&lt;a&gt;</code> tag, <em>not</em> the <code class="highlighter-rouge">&lt;button&gt;</code> tag, and you also must include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex"><code class="highlighter-rouge">tabindex</code></a> attribute.</p>
+:ET

@@ -1,0 +1,5 @@
+I"y
+<h5 id="svg-images-and-ie-10">SVG Images and IE 10</h5>
+
+<p>In Internet Explorer 10, SVG images with <code class="highlighter-rouge">.img-fluid</code> are disproportionately sized. To fix this, add <code class="highlighter-rouge">width: 100% \9;</code> where necessary. This fix improperly sizes other image formats, so Arizona Bootstrap doesn’t apply it automatically.</p>
+:ET

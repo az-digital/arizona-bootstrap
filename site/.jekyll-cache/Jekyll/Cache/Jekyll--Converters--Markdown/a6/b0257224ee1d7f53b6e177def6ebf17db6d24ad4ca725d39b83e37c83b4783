@@ -1,0 +1,3 @@
+I"â
+<p>We currently recommend using custom validation styles, as native browser default validation messages are not consistently exposed to assistive technologies in all browsers (most notably, Chrome on desktop and mobile).</p>
+:ET

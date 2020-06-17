@@ -1,0 +1,5 @@
+I"X
+<h5 id="third-party-libraries">Third-party Libraries</h5>
+
+<p><strong>Arizona Bootstrap does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code class="highlighter-rouge">.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.</p>
+:ET

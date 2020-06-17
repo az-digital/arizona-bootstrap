@@ -1,0 +1,5 @@
+I"7
+<h4 id="dealing-with-specificity">Dealing with Specificity</h4>
+
+<p>Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element’s content in a <code class="highlighter-rouge">&lt;div&gt;</code> with the class.</p>
+:ET

@@ -1,0 +1,171 @@
+I"�<p>If you want to get involved, you can:</p>
+
+<ul>
+  <li>Request access to join the discussion on Slack (see below)</li>
+  <li>Participate in Friday meetings and Wednesday pull request review sessions (ask for more details in Slack)</li>
+  <li>Submit pull requests on GitHub</li>
+</ul>
+
+<p>Questions, bug reports or suggestions can also be emailed to <a href="mailto:uadigital@email.arizona.edu">uadigital@email.arizona.edu</a> or (preferably!) reported on Slack.</p>
+
+<h2 id="join-our-meetings">Join Our Meetings</h2>
+
+<p>Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meetings are held on Zoom and dedicate the entire hour to reviewing and merging pull requests on <a href="/arizona-bootstrap/docs/0.0/about/get-involved/#review-or-contribute-code">GitHub</a>. Friday meetings are hosted in-person in UITS-116 (and can also be joined remotely via Zoom) and dedicate two hours to reviewing and merging pull requests, and covering topics concerning Drupal 8. For more details, connect with us on Slack on our <code class="highlighter-rouge">#friday-meetings</code> channel.</p>
+
+<h2 id="connect-with-us-on-slack">Connect with Us on Slack</h2>
+
+<p>The Arizona Digital team utilizes a variety of Slack channels ranging from general discussions to specific repos and products. You are welcome to join any and all of these channels. Below you will find all of our Slack channels and a description of the channel’s purpose.</p>
+
+<p><strong>To connect with us on Slack, you must first <a href="https://quickstart.arizona.edu/join-us-on-slack" target="_blank">request access to the UArizona workspace</a>.</strong> Once added, you can join any of the channels listed below.</p>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Channel</th>
+      <th scope="col">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#accessibility</td>
+      <td>
+        <ul>
+          <li>For topics and questions concerning web/digital accessibility</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#arizona-bootstrap</td>
+      <td>
+        <ul>
+          <li>For topics and questions concerning Arizona Bootstrap (Bootstrap 4)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#arizona-bootstrap-builds</td>
+      <td>
+        <ul>
+          <li>For topics concerning the arizona-bootstrap build process on GitHub</li>
+          <li>For automated GitHub updates concerning the arizona-bootstrap repo</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#drupal-security</td>
+      <td>
+        <ul>
+          <li>For topics concerning Drupal security and security releases/concerns</li>
+          <li>For automated Drupal.org security notifications</li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="table-success">
+      <td>#friday-meetings</td>
+      <td>
+        <ul>
+          <li>Main source of communication for Arizona Digital</li>
+          <li>For general discussions, questions, and topics concerning Arizona Digital</li>
+          <li>For topics and information concerning Friday and Wednesday meetings</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#ua-bootstrap</td>
+      <td>
+        <ul>
+          <li>For topics and questions concerning UA Bootstrap (Bootstrap 3)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#ua-bootstrap-builds</td>
+      <td>
+        <ul>
+          <li>For automated pull request updates concerning the ua-bootstrap repo</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#ua-quickstart</td>
+      <td>
+        <ul>
+          <li>For topics and questions concerning UA Quickstart (Drupal 7)</li>
+          <li>For automated Bitbucket notifications concerning the ua_quickstart repo</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#ua-quickstart-builds</td>
+      <td>
+        <ul>
+          <li>For automated pull request updates concerning the ua_quickstart repo</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#ua-quickstart-d8</td>
+      <td>
+        <ul>
+          <li>For topics and questions concerning the migration of UA Quickstart from Drupal 7 to Drupal 8</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#uadigital-ci</td>
+      <td>
+        <ul>
+          <li>For automated tasks and CI (continuous integration)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#uadigital-docs</td>
+      <td>
+        <ul>
+          <li>For topics concerning documentation for Arizona Digital and its products</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>#uadigital-general</td>
+      <td>
+        <ul>
+          <li>For general discussion and side conversations</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="review-or-contribute-code">Review or Contribute Code</h2>
+
+<p>Arizona Digital currently uses utilizes GitHub to host and review code contained in Git repositories, and formerly used Bitbucket. Our repos are public and can be easily cloned if you want to contribute or review code. Below you will find all of our code repositories (with a link) and a description of the repo’s contents.</p>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Repo Name</th>
+      <th scope="col">Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/az-digital/arizona-bootstrap/" target="_blank">arizona-bootstrap</a></td>
+      <td>Source code for the Arizona branded version of Bootstrap 4 and its docs site</td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/uadigital/ua-bootstrap/" target="_blank">ua-bootstrap</a></td>
+      <td>Source code for the Arizona branded version of Bootstrap 3 and its docs site</td>
+    </tr>
+    <tr>
+      <td><a href="https://bitbucket.org/ua_drupal/ua_quickstart/" target="_blank">ua_quickstart</a></td>
+      <td>Source code for the Arizona branded Drupal 7 distribution (Quickstart)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="submit-or-work-on-a-ticket">Submit or Work on a Ticket</h2>
+
+<p>Arizona Digital utilizes GitHub Projects to handle issue tracking for its products. If you want to contribute, you can check the backlog and claim an unassigned ticket you want to work on. Or, if you have a specific issue that isn’t already created, you can create a new ticket and work on it.</p>
+:ET

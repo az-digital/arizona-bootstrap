@@ -1,0 +1,16 @@
+I"L<p>We’ve designed and developed Arizona Bootstrap to work in a number of environments. Here are some of the best practices we’ve gathered from years of working on and using it ourselves.</p>
+
+<div class="bd-callout bd-callout-info">
+<p><strong>Heads up!</strong> This copy is a work in progress.</p>
+</div>
+
+<h3 id="general-outline">General Outline</h3>
+
+<ul>
+  <li>Working with CSS</li>
+  <li>Working with Sass files</li>
+  <li>Building new CSS components</li>
+  <li>Working with flexbox</li>
+  <li>Ask in <a href="/about/get-involved/#connect-with-us-on-slack">Slack</a></li>
+</ul>
+:ET

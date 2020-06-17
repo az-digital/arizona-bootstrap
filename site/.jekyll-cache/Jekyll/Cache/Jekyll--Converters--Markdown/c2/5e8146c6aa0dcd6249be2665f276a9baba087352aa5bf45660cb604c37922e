@@ -1,0 +1,3 @@
+I"©
+<p>On touch-enabled devices, opening a dropdown adds empty (<code class="highlighter-rouge">$.noop</code>) <code class="highlighter-rouge">mouseover</code> handlers to the immediate children of the <code class="highlighter-rouge">&lt;body&gt;</code> element. This admittedly ugly hack is necessary to work around a <a href="https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html">quirk in iOSâ€™ event delegation</a>, which would otherwise prevent a tap anywhere outside of the dropdown from triggering the code that closes the dropdown. Once the dropdown is closed, these additional empty <code class="highlighter-rouge">mouseover</code> handlers are removed.</p>
+:ET

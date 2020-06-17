@@ -1,0 +1,2 @@
+I"–<p>Significant performance hit for dynamic SVGs with text depending on the number of fonts in <code class="highlighter-rouge">font-family</code>.</p>
+:ET

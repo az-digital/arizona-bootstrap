@@ -1,0 +1,3 @@
+I"õ
+<p>Note that for security reasons the <code class="highlighter-rouge">sanitize</code>, <code class="highlighter-rouge">sanitizeFn</code> and <code class="highlighter-rouge">whiteList</code> options cannot be supplied using data attributes.</p>
+:ET
