@@ -60,7 +60,7 @@ jobs:
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_VERSION}"
-          docker run --rm -e "AZ_SITE_BASE_URL=$AZ_REVIEW_BASEURL" -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR AZ_DOCKER_IMAGE build-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):/${AZ_BOOTSTRAP_SOURCE_DIR} ${AZ_DOCKER_IMAGE} build-review-site
       - name: Update digital.arizona.edu
         # When we figure out the repository_dispatch event, we should do that here
         # to notify digital.arizona.edu of a new version.
