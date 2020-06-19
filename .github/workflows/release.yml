@@ -59,7 +59,7 @@ jobs:
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_VERSION}"
-          docker run --rm -e "AZ_SITE_BASE_URL=$AZ_REVIEW_BASEURL" -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR AZ_DOCKER_IMAGE build-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):/${AZ_BOOTSTRAP_SOURCE_DIR} ${AZ_DOCKER_IMAGE} expose-review-site
       - name: Update digital.arizona.edu
         # When we figure out the repository_dispatch event, we should do that here
         # to notify digital.arizona.edu of a new version.
@@ -72,9 +72,9 @@ jobs:
             git config --global user.name "${GITHUB_ACTOR}"
             export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
             git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
-            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs/bootstrap
+            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs/arizona-bootstrap
             cd /tmp/digital.arizona.edu
-            git add docs/bootstrap
+            git add docs/arizona-bootstrap
             git commit -m "Update docs for ${AZ_VERSION}"
             git push
             unset GIT_SSH_COMMAND
