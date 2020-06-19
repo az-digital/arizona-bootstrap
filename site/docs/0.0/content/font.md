@@ -83,7 +83,7 @@ $font-family-sans-serif:
   // Windows
   "Segoe UI",
   // Android
-  "Roboto",
+  Roboto,
   // Basic web fallback
   "Helvetica Neue", Arial, sans-serif,
   // Emoji fonts
@@ -494,7 +494,7 @@ Below are two examples of how you would use the Proxima Nova fonts in your code.
 </div>
 {% highlight css %}
 .pn {
-  font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 // Not strictly necessary, since Arizona Bootstrap already sets <em> to italic.
 .pn em {
@@ -521,7 +521,7 @@ bolder.
 **Example 2**
 
 {% highlight css %}
-p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 {% endhighlight %}
 
 {% highlight css %}
