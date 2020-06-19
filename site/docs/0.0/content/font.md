@@ -9,13 +9,14 @@ toc: true
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 alert-heading">Heads Up!</p>
-  If you're using Arizona Bootstrap, Proxima Nova comes "pre-loaded." No installation required!
+  If you're using Arizona Bootstrap, Proxima Nova will still need to be added to
+  your project.
 </div>
 
 ## Centrally managed typekit webfont
 
 For ease of integration into web projects around campus, the Arizona Digital
-team manages a typekit webfont project that is referenced in Arizona Bootstrap.
+team manages a typekit webfont project that can be referenced by your site.
 
 #### Notes to consider when using the centrally mananged webfont project.
 Our license with typekit allows anyone with a netid to create their own webfont
@@ -71,7 +72,7 @@ For projects not using Arizona Bootstrap, [follow these instructions](#instructi
 The fallback web font for Arizona Bootstrap is Calibri. Additional fallbacks follow Bootstrap 4's use of “native font stack” for optimum text rendering on every device and OS. Read more about
 [native font stacks in this Smashing Magazine article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
-```
+{% highlight css %}
 $font-family-sans-serif:
   proxima-nova,
   calibri,
@@ -87,7 +88,7 @@ $font-family-sans-serif:
   "Helvetica Neue", Arial, sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-```
+{% endhighlight %}
   This `font-family` is applied to the `<body>` and automatically inherited
   globally throughout Bootstrap. To switch the global `font-family`, update
   `$font-family-base` and recompile Arizona Bootstrap.
@@ -107,16 +108,24 @@ $font-family-sans-serif:
   manage our font reference links within Arizona Bootstrap. Alternatively, place
   this line of code at the top of your main stylesheet.
 
-  ```@import "https://use.typekit.net/tgs5qmz.css";```
+  Put this within your `<head>` tag above the reference to
+  arizona-bootstrap.css.
+
+  {% highlight html %}
+  <!-- Proxima Nova reference. -->
+  <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Arizona Bootstrap reference. -->
+  <link href="/arizona-bootstrap/feature/10-add-proxima-nova-font/docs/0.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+  {% endhighlight %}
 
    If using the font independently from Arizona Bootstrap, below are
    instructions on how to use the different weights and styles.
 
 ### **Instructions**
-  Be aware that Arizona Bootstrap reference links come "pre-loaded"
-  with the Proxima Nova font suite. In other words, if you're using Arizona Bootstrap, font
-  installation instructions are not required.<span class="label
-  label-warning">Important</span>
+  The following istructions are for adding specific CSS classes for font weights
+  or styles.  If using Arizona Bootstrap, you will most likely not need to do
+  this unless you are trying to use a specific variant.
+  <span class="label label-warning">Important</span>
 
   <div>
     <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>

@@ -67,11 +67,10 @@ Be sure to have your pages set up with the latest design and development standar
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Proxima Nova font. -->
+    <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
-    <!-- UPDATE once CDN available -->
-    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/css/arizona-bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/master/css/arizona-bootstrap.min.css">
     <title>Arizona Bootstrap Starter Template</title>
   </head>
   <body>
@@ -97,7 +96,7 @@ Be sure to have your pages set up with the latest design and development standar
       <div class="container py-4">
         <div class="row">
           <div class="col-12">
-            <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> 
+            <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button>
             <hr />
             <small class="text-black">The University of Arizona</small>
           </div>
@@ -128,10 +127,10 @@ If you want your footer to remain at the bottom of the page even when you don't 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Proxima Nova font. -->
+    <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
-    <!-- UPDATE once CDN available -->
-    <link rel="stylesheet" href="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/css/arizona-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/master/css/arizona-bootstrap.min.css">
 
     <title>Arizona Bootstrap Starter Template</title>
   </head>
@@ -158,7 +157,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
       <div class="container py-4">
         <div class="row">
           <div class="col-12">
-            <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> 
+            <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button>
             <hr />
             <small class="text-black">The University of Arizona</small>
           </div>
