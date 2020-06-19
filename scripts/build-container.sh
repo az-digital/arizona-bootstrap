@@ -19,7 +19,7 @@ set -e
 : "${AZ_EPHEMERALIMAGENAME:=az-nodejs-ephemeral}"
 
 #------------------------------------------------------------------------------
-# Utility function definitions.
+# Utility definitions.
 
 errorexit () {
   echo "** $1." >&2
@@ -49,6 +49,20 @@ fi
 
 command -v docker > /dev/null \
   || errorexit "This reqires access to a Docker installation to run"
+
+if ! command -v sha256sum > /dev/null ; then
+  if command -v shasum > /dev/null ; then
+    alias sha256sum='shasum -a 256'
+  elif command -v CertUtil > /dev/null ; then
+    sha256sum () {
+      for f in "$@" ; do
+        CertUtil -hashfile "$f" SHA256 | grep -E '^[0-9a-f]+$'
+      done
+    }
+  else
+    errorexit "Can't find anything to compute SHA256 checksums"
+  fi
+fi
 
 #------------------------------------------------------------------------------
 # Use the checksum for the Ruby Gem and Node.js npm lockfiles as an image tag.
