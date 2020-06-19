@@ -100,7 +100,7 @@ $font-family-sans-serif:
 
   <div class="alert alert-danger" role="alert">
     <p class="h4 alert-heading">Beware!</p>
-      For the time being, this reference link is tied to an individual developer's Adobe Typekit account. It will eventually be replaced with a better long term option. Please do not use the reference below for any public facing projects. 
+      For the time being, this reference link is tied to an individual developer's Adobe Typekit account. It will eventually be replaced with a better long term option. Please do not use the reference below for any public facing projects.
   </div>
 
   Arizona Bootstrap uses a Creative Cloud Library with shared governance to
@@ -122,17 +122,6 @@ $font-family-sans-serif:
     <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
   </div>
 ### Proxima Nova Bold
-  <style>
-  .proxima-nova-bold {
-    font-family: proxima-nova, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    word-wrap: break-word;
-  }
-  .proxima-nova-bold span:first-child {
-    text-transform: uppercase;
-  }
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova-bold">
@@ -163,18 +152,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Bold Italic
 
-<style>
-.proxima-nova-bold-italic {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-bold-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-bold-italic">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -203,18 +180,6 @@ $font-family-sans-serif:
 <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova' data-font-name='Proxima Nova Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 ### Proxima Nova Regular
-
-<style>
-.proxima-nova {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  word-wrap: break-word;
-}
-.proxima-nova span:first-child {
-  text-transform: uppercase;
-}
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova">
@@ -245,18 +210,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Italic
 
-<style>
-.proxima-nova-italic {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-italic">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -285,18 +238,6 @@ $font-family-sans-serif:
 <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 ### Proxima Nova Extra Condensed Bold Italic
-
-<style>
-.proxima-nova-ec-bold-italic {
-  font-family: proxima-nova-extra-condensed, sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-ec-bold-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova-ec-bold-italic">
@@ -327,18 +268,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Extra Condensed Bold
 
-<style>
-.proxima-nova-ec-bold {
-  font-family: proxima-nova-extra-condensed, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  word-wrap: break-word;
-}
-.proxima-nova-ec-bold span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-ec-bold">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -367,18 +296,6 @@ $font-family-sans-serif:
 <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 ### Proxima Nova Extra Condensed Italic
-
-<style>
-.proxima-nova-ec-italic {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-ec-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova-ec-italic">
@@ -409,18 +326,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Extra Condensed Regular
 
-<style>
-.proxima-nova-ec {
-  font-family: proxima-nova-extra-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  word-wrap: break-word;
-}
-.proxima-nova-ec span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-ec">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -449,19 +354,6 @@ $font-family-sans-serif:
 <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-bold' data-font-name='Proxima Nova Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 ### Proxima Nova Condensed Bold
-
-
-<style>
-.proxima-nova-c-bold {
-  font-family: proxima-nova-condensed, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  word-wrap: break-word;
-}
-.proxima-nova-c-bold span:first-child {
-  text-transform: uppercase;
-}
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova-c-bold">
@@ -492,19 +384,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Condensed Bold Italic
 
-
-<style>
-.proxima-nova-c-bold-italic {
-  font-family: proxima-nova-condensed, sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-c-bold-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-c-bold-italic">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -534,18 +413,6 @@ $font-family-sans-serif:
 </div>
 ### Proxima Nova Condensed Regular
 
-<style>
-.proxima-nova-c {
-  font-family: proxima-nova-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  word-wrap: break-word;
-}
-.proxima-nova-c span:first-child {
-  text-transform: uppercase;
-}
-</style>
-
 <div class="bd-example">
 <div class="proxima-nova-c">
 <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
@@ -573,17 +440,6 @@ $font-family-sans-serif:
 <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-italic' data-font-name='Proxima Nova Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 ### Proxima Nova Condensed Italic
-<style>
-.proxima-nova-c-italic {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  word-wrap: break-word;
-}
-.proxima-nova-c-italic span:first-child {
-  text-transform: uppercase;
-}
-</style>
 
 <div class="bd-example">
 <div class="proxima-nova-c-italic">
@@ -615,18 +471,6 @@ Below are two examples of how you would use the Proxima Nova fonts in your code.
 
 **Example 1**
 
-<style>
-  .pn {
-    font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-  .pn em {
-    font-style: italic;
-  }
-  bolder.
-  .pn strong {
-    font-weight:700;
-  }
-</style>
 <div class="bd-example">
   <h2 class="pn">Hello World!</h2>
   <div class="pn">
@@ -685,11 +529,11 @@ p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Seg
 <div class="modal-body">
 <h1 id="js-change-font-name">FF Milo Serif Web Black Italic</h1>
 <div class="sample shadow">
-<form id="bigcontrol" action="javascript:customView Sample();" name="bigcontrol"><a id="abcView" name="abcView SampleBtn" onclick="abcSample()" type="button" style="margin-right:15px; margin-bottom:15px;" class="SampleBtn btn btn-mesa">ABC</a>
+<form id="bigcontrol" action="javascript:customView Sample();" name="bigcontrol"><a id="abcView" name="abcView" onclick="abcSample()" type="button" style="margin-right:15px; margin-bottom:15px;" class="SampleBtn btn btn-mesa">ABC</a>
 <p><strong>Or try your own text:</strong></p><span class="nobr">
 <div class="input-group">
 <input maxlength="120" name="customSampleText" size="62" type="text" value="Bear Down, Arizona. Bear Down, red and blue." class="form-control"/>
-<div class="input-group-btn"><a id="customSampleBtn" name="customSampleBtn" onclick="customSample()" type="button" class="btn btn-info">Go</a></div>
+<div class="input-group-btn"><button id="customSampleBtn" name="customSampleBtn" onclick="customSample()" type="button" class="btn btn-info">Go</a></div>
 </div></span>
 </form>
 <table id="js-specimen-modal-font" class="table table-striped">
