@@ -8,7 +8,7 @@ toc: true
 
 ## About
 
-The Photo Gallery component displays a collection of images in a grid layout. Individual images can be clicked on to view a larger version of that image. Once an image is clicked, the entire gallery opens in a modal slideshow, where users can scroll through the images. 
+The Photo Gallery component displays a collection of images in a grid layout. Individual images can be clicked on to view a larger version of that image. Once an image is clicked, the entire gallery opens in a modal slideshow, where users can scroll through the images.
 
 ## Example
 
@@ -49,7 +49,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			</div>
 		</div>
 		<!-- Modal -->
-		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog" aria-labelledby="myGalleryModalLabel">
+		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog">
 			<div id="myGallery" class="carousel az-gallery slide" data-ride="carousel" data-interval="false">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		         	<span aria-hidden="true">&times;</span>

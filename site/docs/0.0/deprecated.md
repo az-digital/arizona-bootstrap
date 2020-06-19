@@ -44,11 +44,11 @@ In UA Bootstrap, the following background wrapper patterns were marked as deprec
     </div>
   </div>
 </div>
-  
+
 
 ### Buttons
 
-In {{ site.title }}, Button classes have changed as follows: 
+In {{ site.title }}, Button classes have changed as follows:
 
 #### Default, Primary, and Secondary
 
@@ -157,7 +157,7 @@ In {{ site.title }}, color-specific cards can be replicated by using the [backgr
 
 ### Labels
 
-In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles. 
+In {{ site.title }}, labels have been replaced with the [Badge]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/badge) component. Labels can be replicated by extending the `.badge` styles.
 
 <div class="bd-example">
   <span class="label label-default">Default</span>
@@ -207,7 +207,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
 
 ### Thumbnails
 
-Thumbnails have been extended using a combination of the `.card` class and its child classes. 
+Thumbnails have been extended using a combination of the `.card` class and its child classes.
 
 <div class="bd-example">
   <div class="row">
@@ -232,7 +232,7 @@ Wells have been extended using a combination of the `.card` class and the `.bg-l
   </div>
   <div class="well well-hollow my-3">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>hollow well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
-  </div> 
+  </div>
   <div class="well well-sm">
     <p class="mb-0">This is an example of how the backwards-compatible <strong>small well</strong> looks in {{ site.title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
@@ -274,9 +274,9 @@ The syntax for column offsets has changed in {{ site.title }}. Previously, you w
 The syntax for pulling content to the left/right has changed to `.float-left` and `.float-right`.
 
 <div class="bd-example">
-  <img class="pull-left mr-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <img class="pull-left mr-3" width="350" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
   <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit scelerisque in dictum non consectetur a erat nam. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Dui nunc mattis enim ut tellus elementum sagittis vitae. Id donec ultrices tincidunt arcu non sodales. Enim diam vulputate ut pharetra sit. Amet consectetur adipiscing elit ut aliquam purus sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan. Purus semper eget duis at tellus at urna. A condimentum vitae sapien pellentesque. Cras adipiscing enim eu turpis egestas. Consequat semper viverra nam libero justo laoreet sit amet. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Id venenatis a condimentum vitae. Ultricies integer quis auctor elit sed vulputate mi sit amet.</p>
-  <img class="pull-right ml-3" width="350px" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+  <img class="pull-right ml-3" width="350" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
   <p class="lead">Turpis cursus in hac habitasse platea dictumst quisque. Tellus cras adipiscing enim eu. Lectus sit amet est placerat in egestas. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Sed euismod nisi porta lorem. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Convallis posuere morbi leo urna molestie at elementum. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Vulputate dignissim suspendisse in est ante in nibh mauris.</p>
 </div>
 
@@ -475,7 +475,7 @@ The decision was made to remove all `.*-primary` and `.*-secondary` classes from
 
 ### Tooltip Arrow
 
-In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used. 
+In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ site.title }}, the class `.arrow` is used.
 
 ## Removed Components
 

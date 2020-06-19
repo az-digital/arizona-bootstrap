@@ -529,12 +529,12 @@ p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Seg
 <div class="modal-body">
 <h1 id="js-change-font-name">FF Milo Serif Web Black Italic</h1>
 <div class="sample shadow">
-<form id="bigcontrol" action="javascript:customView Sample();" name="bigcontrol"><a id="abcView" name="abcView" onclick="abcSample()" type="button" style="margin-right:15px; margin-bottom:15px;" class="SampleBtn btn btn-mesa">ABC</a>
-<p><strong>Or try your own text:</strong></p><span class="nobr">
+<form id="bigcontrol" action="javascript:customView Sample();" name="bigcontrol"><button id="abcView" name="abcView" onclick="abcSample()" type="button" style="margin-right:15px; margin-bottom:15px;" class="SampleBtn btn btn-mesa">ABC</button>
+<p><strong>Or try your own text:</strong></p>
 <div class="input-group">
 <input maxlength="120" name="customSampleText" size="62" type="text" value="Bear Down, Arizona. Bear Down, red and blue." class="form-control"/>
-<div class="input-group-btn"><button id="customSampleBtn" name="customSampleBtn" onclick="customSample()" type="button" class="btn btn-info">Go</a></div>
-</div></span>
+<div class="input-group-btn"><button id="customSampleBtn" name="customSampleBtn" onclick="customSample()" type="button" class="btn btn-info">Go</button></div>
+</div>
 </form>
 <table id="js-specimen-modal-font" class="table table-striped">
 <tbody>
