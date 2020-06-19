@@ -20,7 +20,6 @@ on:
   push:
     branches:
       - master
-      - user-story/60-docs
     paths:
       - package.json
 
