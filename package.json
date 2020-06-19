@@ -1,6 +1,6 @@
 {
   "name": "arizona-bootstrap",
-  "version": "0.0.2",
+  "version": "0.0.3-dev",
   "version_short": "0.0",
   "description": "University of Arizona theme for Bootstrap.",
   "scripts": {
@@ -29,7 +29,7 @@
     "docs-compile-review": "bundle exec jekyll build --baseurl $UAZ_REVIEW_BASEURL",
     "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
     "docs-lint": "node build/vnu-jar.js",
-    "docs-serve": "bundle exec jekyll serve",
+    "docs-serve": "bundle exec jekyll serve --host $UAZ_HOST",
     "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
     "js": "npm-run-all js-copy-*",
     "js-copy-bs": "cross-env-shell shx cp -r node_modules/bootstrap/dist/js/ dist/ && for f in dist/js/bootstrap*; do sed -i \"\" -e s/sourceMappingURL=bootstrap/sourceMappingURL=arizona-bootstrap/ \"$f\"; mv \"$f\" $(echo \"$f\" | sed s/bootstrap/arizona-bootstrap/); done",
@@ -39,6 +39,7 @@
     "js-minify-docs": "cross-env-shell terser --mangle --comments \\\"/^!/\\\" --output site/docs/$npm_package_version_short/assets/js/docs.min.js site/docs/$npm_package_version_short/assets/js/vendor/anchor.min.js site/docs/$npm_package_version_short/assets/js/vendor/clipboard.min.js site/docs/$npm_package_version_short/assets/js/vendor/bs-custom-file-input.min.js \"site/docs/$npm_package_version_short/assets/js/src/*.js\"",
     "lint": "npm-run-all --parallel css-lint-*",
     "test": "npm-run-all lint dist docs-compile docs-lint",
+    "version": "npm run dist && git add -A dist",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
     "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\""

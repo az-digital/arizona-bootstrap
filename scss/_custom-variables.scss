@@ -203,6 +203,9 @@ $enable-responsive-font-sizing: true;
 * > COMPONENTS
 */
 
+// >> Badges
+$badge-pill-radius: .25rem;
+
 // >> Breadcrumbs
 $breadcrumb-color: $azurite;
 $breadcrumb-bg: $white;
@@ -243,6 +246,15 @@ $nav-tabs-lg-link-padding: 1.25em 1.75em;
 
 $nav-pills-link-active-color: $midnight;
 $nav-pills-link-active-bg: $gray-200;
+
+// >>> Utility Links
+$nav-utility-margin: 1rem 0 1.5rem 0;
+$nav-utility-item-padding: 0 .6rem;
+$nav-utility-link-font-weight: 500;
+$nav-utility-link-font-size: 1rem;
+$nav-utility-link-color: $dark-silver;
+$nav-utility-link-border-width: 2px;
+$nav-utility-link-border-hover-color: $dark-silver;
 
 // >> Navbar
 $navbar-padding-y: 0;
