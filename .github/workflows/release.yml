@@ -36,8 +36,10 @@ jobs:
           ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
       - name: Build Variables
         run: |
+          echo "::set-env name=AZ_REVIEW_STEM::arizona-bootstrap"
           echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
           echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
+          echo "::set-env name=AZ_REVIEW_BASEURL::/${AZ_REVIEW_STEM}/${AZ_VERSION}"
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
           echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
@@ -58,7 +60,6 @@ jobs:
       - name: Build review site artifact
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
-          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_VERSION}"
           docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):/${AZ_BOOTSTRAP_SOURCE_DIR} ${AZ_DOCKER_IMAGE} expose-review-site
       - name: Update digital.arizona.edu
         # When we figure out the repository_dispatch event, we should do that here
@@ -72,9 +73,9 @@ jobs:
             git config --global user.name "${GITHUB_ACTOR}"
             export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
             git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
-            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs/arizona-bootstrap
+            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs${AZ_REVIEW_BASEURL}
             cd /tmp/digital.arizona.edu
-            git add docs/arizona-bootstrap
+            git add docs/${AZ_REVIEW_STEM}
             git commit -m "Update docs for ${AZ_VERSION}"
             git push
             unset GIT_SSH_COMMAND
