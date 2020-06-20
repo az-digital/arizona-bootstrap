@@ -36,13 +36,16 @@ jobs:
           ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
       - name: Build Variables
         run: |
-          echo "::set-env name=AZ_REVIEW_STEM::arizona-bootstrap"
-          echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
-          echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
-          echo "::set-env name=AZ_REVIEW_BASEURL::/${AZ_REVIEW_STEM}/${AZ_VERSION}"
-          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
+          stem='arizona-bootstrap'
+          version=$(jq -r '.version' package.json)
+          version_short=$(jq -r '.version_short' package.json)
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
+          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}/${version}"
+          echo "::set-env name=AZ_REVIEW_STEM::${stem}"
+          echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
+          echo "::set-env name=AZ_VERSION::${version}"
       - name: Create Release
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         id: create_release
