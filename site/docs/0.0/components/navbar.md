@@ -51,7 +51,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -85,7 +85,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -225,7 +225,7 @@ You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrap
         <a class="nav-link" href="#">Pricing</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
