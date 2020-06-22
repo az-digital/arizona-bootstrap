@@ -39,6 +39,7 @@ Here's an example of all the sub-components included in a responsive light-theme
 ## Example
 
 Include example of "default" navbar (`.navbar-light`).
+The use of a `button` element is recommended for the `.dropdown-toggle` in your navbar, given that your dropdown will open on click.
 
 {% capture example %}
 <nav class="navbar navbar-expand-lg navbar-light">
