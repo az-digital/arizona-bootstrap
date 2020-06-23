@@ -43,7 +43,7 @@ jobs:
           version_short=$(jq -r '.version_short' package.json)
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
           echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
-          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}/${version}"
+          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}"
           echo "::set-env name=AZ_REVIEW_STEM::${stem}"
           echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
           echo "::set-env name=AZ_VERSION::${version}"
