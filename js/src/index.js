@@ -13,6 +13,8 @@ import {
   Util
 } from '../../node_modules/bootstrap/js/src/index.js'
 
+import { default as Offcanvas } from './offcanvas.js'
+
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.3.1): index.js
@@ -32,5 +34,6 @@ export {
   Scrollspy,
   Tab,
   Toast,
-  Tooltip
+  Tooltip,
+  Offcanvas
 }
