@@ -26,6 +26,7 @@
     "docs": "npm-run-all css-docs js-docs docs-compile docs-lint",
     "docs-review": "npm-run-all css-docs js-docs docs-compile-review docs-lint",
     "docs-compile": "bundle exec jekyll build",
+    "docs-compile-review": "bundle exec jekyll build --baseurl $UAZ_REVIEW_BASEURL",
     "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
     "docs-lint": "node build/vnu-jar.js",
     "docs-serve": "bundle exec jekyll serve --host $UAZ_HOST",
