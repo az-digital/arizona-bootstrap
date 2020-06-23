@@ -7,6 +7,4 @@
 
 import $ from 'jquery'
 
-export default () =>  $('[data-toggle="offcanvas"]').on('click', function () {
-  $('.offcanvas-offcanvas').toggleClass('open')
-})
+export default () =>  $('[data-toggle="offcanvas"]').on('click', () => $('.offcanvas-offcanvas').toggleClass('open'))
