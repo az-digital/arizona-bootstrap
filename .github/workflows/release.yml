@@ -57,9 +57,6 @@ jobs:
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
-      # - name: Find the tag
-      #   if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
-      #   run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_REF#refs/*/}"
       - name: Build review site artifact
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
