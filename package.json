@@ -76,6 +76,7 @@
     "bootstrap": "^4.4.1",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^7.0.2",
+    "eslint": "^7.1.0",
     "find-unused-sass-variables": "^2.0.0",
     "glob": "^7.1.6",
     "jquery": "^3.5.1",
