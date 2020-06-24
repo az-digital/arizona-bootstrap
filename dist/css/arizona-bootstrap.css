@@ -14083,6 +14083,12 @@ a {
   padding: 0 1rem;
 }
 
+.navbar-nav .nav-link {
+  font-weight: 700;
+  background-color: inherit;
+  border: none;
+}
+
 .navbar-nav .nav-link,
 .navbar-brand {
   padding: 1.25rem 1.5rem;
