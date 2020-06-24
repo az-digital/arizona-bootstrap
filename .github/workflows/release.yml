@@ -1,29 +1,10 @@
-# Release workflow
-#
-# Release PR manually created with:
-#   Minor & Patch Releases:
-#     - Updated dist assets
-#     - Updated version info in package.json
-#   Minor Releases Only:
-#   - Update version references in documentation
-#
-# Workflow triggered upon push to master containing changes to package.json
-#  If version number has changed (and is not dev):
-#     - Creates release tag
-#     - Pushes release tag
-#     - Creates GitHub release (and release notes?)
-#     - Updates arizona-bootstrap-packagist repo (@kevcooper suggested adding a GitHub actions workflow to the arizona-bootstrap-packagist repo that can be triggered by an arizona-bootstrap release/tag)
-#     - Changes version info in package.json "back to dev"
-#     - Commits and pushes
-
+name: Create Release
 on:
   push:
     branches:
       - master
     paths:
       - package.json
-
-name: Create Release
 
 jobs:
   release:
