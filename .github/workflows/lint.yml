@@ -7,11 +7,28 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Build variables
+      - name: Set variables for Docker images
+        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
+          lockhash=$(sha256sum Dockerfile Gemfile.lock package-lock.json | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          registry='docker.pkg.github.com'
+          imageprefix="${registry}/${GITHUB_REPOSITORY}/"
+          imagename='az-nodejs-ephemeral'
+          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
+          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
-          labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
-          echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
+      - name: Docker authentication
+        run: |
+          docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+      - name: Search for Docker image
+        continue-on-error: true
+        run: |
+          docker pull "$AZ_EPHEMERAL_IMAGE"
+      - name: Conditionally rebuild and save the Docker image
+        if: ${{ failure() }}
+        run: |
+          docker build -t "$AZ_EPHEMERAL_IMAGE" --build-arg AZ_BOOTSTRAP_SOURCE_DIR .
+          docker push "$AZ_EPHEMERAL_IMAGE"
       - name: Run the code linting checks
         run: |
-          docker run --rm -v $(pwd):/$AZ_BOOTSTRAP_SOURCE_DIR $AZ_DOCKER_IMAGE lint
+          docker run --rm -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint

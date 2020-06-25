@@ -15,14 +15,33 @@ jobs:
         uses: actions/checkout@v2
         with:
           ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
-      - name: Build Variables
+      - name: Set variables for Docker images
+        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
-          labelledimage=$(scripts/build-container.sh | grep 'ImageID=')
+          lockhash=$(sha256sum Dockerfile Gemfile.lock package-lock.json | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          registry='docker.pkg.github.com'
+          imageprefix="${registry}/${GITHUB_REPOSITORY}/"
+          imagename='az-nodejs-ephemeral'
+          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
+          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+      - name: Docker authentication
+        run: |
+          docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+      - name: Search for Docker image
+        continue-on-error: true
+        run: |
+          docker pull "$AZ_EPHEMERAL_IMAGE"
+      - name: Conditionally rebuild and save the Docker image
+        if: ${{ failure() }}
+        run: |
+          docker build -t "$AZ_EPHEMERAL_IMAGE" --build-arg AZ_BOOTSTRAP_SOURCE_DIR .
+          docker push "$AZ_EPHEMERAL_IMAGE"
+      - name: Build variables
+        run: |
           stem='arizona-bootstrap'
           version=$(jq -r '.version' package.json)
           version_short=$(jq -r '.version_short' package.json)
-          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
-          echo "::set-env name=AZ_DOCKER_IMAGE::${labelledimage#ImageID=}"
           echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}"
           echo "::set-env name=AZ_REVIEW_STEM::${stem}"
           echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
@@ -41,7 +60,7 @@ jobs:
       - name: Build review site artifact
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):/${AZ_BOOTSTRAP_SOURCE_DIR} ${AZ_DOCKER_IMAGE} expose-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
       - name: Update digital.arizona.edu
         # When we figure out the repository_dispatch event, we should do that here
         # to notify digital.arizona.edu of a new version.
