@@ -11,13 +11,12 @@ permalink:      pretty
 # Server
 source:         "site"
 destination:    ./_site
-host:           "localhost"
+host:           "{{az_site_host}}"
 port:           9001
-baseurl:        "/arizona-bootstrap"
-url:            "http://uadigital.arizona.edu/arizona-bootstrap"
+baseurl:        "{{az_site_base_url}}"
 encoding:       UTF-8
 exclude:
-  - docs/0.0/assets/scss/
+  - "docs/{{az_site_docs_version}}/assets/scss/"
 
 plugins:
   - jekyll-redirect-from
@@ -28,17 +27,16 @@ plugins:
 title:              "Arizona Bootstrap"
 description:        "University of Arizona theme for Bootstrap."
 authors:            "Arizona Digital contributors"
-social_image_path:  /docs/0.0/assets/brand/bootstrap-social.png
-social_logo_path:   /docs/0.0/assets/brand/bootstrap-social-logo.png
+social_image_path:  "{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social.png"
+social_logo_path:   "{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
 
 # Custom variables
-current_version:      0.0.2
-current_ruby_version: 0.0.2
-docs_version:         0.0
+current_version:      "{{az_version}}"
+docs_version:         "{{az_short_version}}"
 repo:                 "https://github.com/az-digital/arizona-bootstrap"
 slack:                "/about/get-involved/#connect-with-us-on-slack"
 azdigital:            "https://digital.arizona.edu"
-az_quickstart:           "https://github.com/az-digital/az_quickstart"
+az_quickstart:        "https://github.com/az-digital/az_quickstart"
 
 download:
   source:           "https://github.com/az-digital/arizona-bootstrap/archive/master.zip"

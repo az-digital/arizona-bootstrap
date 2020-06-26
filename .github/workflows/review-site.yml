@@ -17,10 +17,35 @@ jobs:
       - name: Find the pull request source branch name
         if: ${{ github.event_name == 'pull_request' }}
         run: echo "::set-env name=AZ_TRIMMED_REF::${GITHUB_HEAD_REF}"
+      - name: Set variables for Docker images
+        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
+        run: |
+          lockhash=$(sha256sum Dockerfile Gemfile.lock package-lock.json | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          registry='docker.pkg.github.com'
+          imageprefix="${registry}/${GITHUB_REPOSITORY}/"
+          imagename='az-nodejs-ephemeral'
+          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
+          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
+          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+      - name: Docker authentication
+        run: |
+          docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+      - name: Search for Docker image
+        id: dockerpull
+        continue-on-error: true
+        run: |
+          docker pull "$AZ_EPHEMERAL_IMAGE"
+      - name: Conditionally rebuild and save the Docker image
+        if: ${{ steps.dockerpull.outcome == 'failure' }}
+        run: |
+          docker build -t "$AZ_EPHEMERAL_IMAGE" .
+          docker push "$AZ_EPHEMERAL_IMAGE"
+      - name: Build variables
+        run: |
+          echo "::set-env name=AZ_REVIEW_BASEURL::/arizona-bootstrap/${AZ_TRIMMED_REF}"
       - name: Build review site artifact
         run: |
-          export AZ_REVIEW_BASEURL="/arizona-bootstrap/${AZ_TRIMMED_REF}"
-          docker run --rm -e "UAZ_REVIEW_BASEURL=$AZ_REVIEW_BASEURL" -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-review-site.sh
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
         with:
@@ -29,9 +54,9 @@ jobs:
           aws-region: us-west-2
       - name: Deploy review site artifact to S3 + CloudFront
         run: |
-          aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}/arizona-bootstrap/${AZ_TRIMMED_REF}/
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths /arizona-bootstrap/${AZ_TRIMMED_REF}/*
+          aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}${AZ_REVIEW_BASEURL}/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths ${AZ_REVIEW_BASEURL}/*
       - name: Display review site URL
         # TODO: replace with step that publishes link to review site on PR.
         run: |
-          echo "Review site deployed to https://review.digital.arizona.edu/arizona-bootstrap/${AZ_TRIMMED_REF}"
+          echo "Review site deployed to https://review.digital.arizona.edu${AZ_REVIEW_BASEURL}"
