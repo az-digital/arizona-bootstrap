@@ -4550,15 +4550,11 @@
     return Toast._jQueryInterface
   };
 
-  /**
-   * --------------------------------------------------------------------------
-   * Arizona Bootstrap: offcanvas.js
-   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  var offcanvas = (() => $('[data-toggle="offcanvas"]').on('click', function () {
-    $('.offcanvas-offcanvas').toggleClass('open');
-  }));
+  (function ($) {
+    $('[data-toggle="offcanvas"]').on('click', function () {
+      $('.offcanvas-collapse').toggleClass('open');
+    });
+  })($);
 
   exports.Alert = Alert;
   exports.Button = Button;
@@ -4566,7 +4562,6 @@
   exports.Collapse = Collapse;
   exports.Dropdown = Dropdown;
   exports.Modal = Modal;
-  exports.Offcanvas = offcanvas;
   exports.Popover = Popover;
   exports.Scrollspy = ScrollSpy;
   exports.Tab = Tab;

@@ -13,11 +13,18 @@ import {
   Util
 } from '../../node_modules/bootstrap/js/src/index.js'
 
-import { default as Offcanvas } from './offcanvas.js'
+import $ from 'jquery'
+
+// Arizona Bootstrap offcanvas navigation menu toggle.
+(function ($) {
+  $('[data-toggle="offcanvas"]').on('click', () => {
+    $('.offcanvas-collapse').toggleClass('open')
+  })
+}($))
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): index.js
+ * Bootstrap (v4.5.0): index.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -34,6 +41,5 @@ export {
   Scrollspy,
   Tab,
   Toast,
-  Tooltip,
-  Offcanvas
+  Tooltip
 }
