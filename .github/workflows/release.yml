@@ -82,6 +82,31 @@ jobs:
             unset GIT_SSH_COMMAND
             rm ${HOME}/.ssh/az_digital_deploy_key
           )
+      - name: Update packagist
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          (
+            echo "${{ secrets.AZ_BOOTSTRAP_PACKAGIST_DEPLOY_KEY }}" > ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+            chmod 600 ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git config --global user.name "${GITHUB_ACTOR}"
+            GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_bootstrap_packagist_deploy_key"
+            export GIT_SSH_COMMAND
+            distwhitelist='css js'
+            srcroot='dist'
+            clonedir='/tmp/arizona-bootstrap-packagist/'
+            git clone git@github.com:az-digital/arizona-bootstrap-packagist.git "$clonedir"
+            for w in $distwhitelist ; do
+              rsync --recursive --delete "${srcroot}/${w}" "$clonedir"
+            done
+            cd "$clonedir"
+            git add .
+            git commit -m "Update Arizona Bootstrap Packagist for ${AZ_VERSION}"
+            git push
+            unset GIT_SSH_COMMAND
+            rm ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+          )
+
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
