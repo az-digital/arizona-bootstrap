@@ -51,6 +51,7 @@ linkwhitelist=".stylelintignore \
   _config_template.yml \
   dist \
   js \
+  node_modules/bootstrap \
   scripts \
   scss \
   site \
