@@ -32,12 +32,13 @@ jobs:
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
 
       - name: Search for Docker image
+        id: dockerpull
         continue-on-error: true
         run: |
           docker pull "$AZ_EPHEMERAL_IMAGE"
 
       - name: Conditionally rebuild and save the Docker image
-        if: ${{ failure() }}
+        if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
           docker build -t "$AZ_EPHEMERAL_IMAGE" --build-arg AZ_BOOTSTRAP_SOURCE_DIR .
           docker push "$AZ_EPHEMERAL_IMAGE"
