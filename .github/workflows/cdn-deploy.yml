@@ -40,7 +40,7 @@ jobs:
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
-          docker build -t "$AZ_EPHEMERAL_IMAGE" --build-arg AZ_BOOTSTRAP_SOURCE_DIR .
+          docker build -t "$AZ_EPHEMERAL_IMAGE" --build-arg AZ_BOOTSTRAP_SOURCE_DIR="$AZ_BOOTSTRAP_SOURCE_DIR" .
           docker push "$AZ_EPHEMERAL_IMAGE"
 
       - name: Build variables
