@@ -19,3 +19,4 @@ create-jekyll-config
 
 npm run dist
 npm run docs
+npm run lint
