@@ -37,7 +37,7 @@ COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
 COPY scripts/sync-static-site-dir.sh /usr/local/bin/sync-static-site-dir
 
-# Persist the build args as environment variables.
+# Build args don't normally persis as environment variables.
 ARG AZ_BOOTSTRAP_DEST_DIR
 ENV AZ_BOOTSTRAP_DEST_DIR ${AZ_BOOTSTRAP_DEST_DIR:-/azbuild/arizona-bootstrap}
 ARG AZ_BOOTSTRAP_SOURCE_DIR
