@@ -14119,6 +14119,67 @@ a {
   background-color: #e9ecef;
 }
 
+.offcanvas-toggle {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .offcanvas-toggle {
+    display: block;
+  }
+  .navbar-offcanvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 70%;
+    height: 100vh;
+    padding: 3rem 0;
+    overflow-y: auto;
+    background-color: #0c234b;
+    border: none;
+    box-shadow: -10px 0 20px 0 #495057;
+    /* stylelint-disable */
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* stylelint-enable */
+  }
+  .navbar-offcanvas.open {
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+    /* Account for horizontal padding on navbar */
+  }
+  .navbar-offcanvas .navbar-nav {
+    width: 100%;
+  }
+  .navbar-offcanvas .navbar-nav .show > .nav-link {
+    color: #fff;
+  }
+  .navbar-offcanvas .nav-item:hover {
+    background-color: transparent;
+  }
+  .navbar-offcanvas .nav-item.active .nav-link {
+    color: #fff;
+    background-color: #1e5288;
+  }
+  .navbar-offcanvas .nav-item .nav-link {
+    color: #fff;
+  }
+  .navbar-offcanvas .nav-item .nav-link.disabled {
+    font-weight: 400;
+    color: #6c757d;
+  }
+  .navbar-offcanvas .nav-item .nav-link:hover, .navbar-offcanvas .nav-item .nav-link:focus {
+    color: #fff;
+    background-color: inherit;
+  }
+}
+
 .background-wrapper {
   width: 100%;
   padding: 3rem 0;
