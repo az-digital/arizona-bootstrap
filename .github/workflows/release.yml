@@ -126,10 +126,12 @@ jobs:
       # Ideally this would be handled by a separate cdn-deploy action
       # ========================================================================
       - name: Build CDN assets
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           docker run --rm -v $(pwd):"/$AZ_BOOTSTRAP_SOURCE_DIR" "$AZ_EPHEMERAL_IMAGE" build-cdn-assets
 
       - name: Configure AWS credentials
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -137,12 +139,13 @@ jobs:
           aws-region: us-west-2
 
       - name: Deploy CDN assets to S3 + CloudFront
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
             aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${AZ_VERSION}/
             aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${AZ_VERSION}/*
 
       - name: Update 'latest' CDN assets to S3 + CloudFront
-        if: startsWith(github.ref, 'refs/tags/')
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
