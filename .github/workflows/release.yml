@@ -119,3 +119,31 @@ jobs:
           git add package.json package-lock.json
           git commit -m 'Back to dev'
           git push
+
+      # ========================================================================
+      # Another mitigation until we start using repository_dispatch
+      # or figure out how to get tags created in this action to trigger other actions.
+      # Ideally this would be handled by a separate cdn-deploy action
+      # ========================================================================
+      - name: Build CDN assets
+        run: |
+          docker run --rm -v $(pwd):"/$AZ_BOOTSTRAP_SOURCE_DIR" "$AZ_EPHEMERAL_IMAGE" build-cdn-assets
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Deploy CDN assets to S3 + CloudFront
+        run: |
+            aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${AZ_VERSION}/
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${AZ_VERSION}/*
+
+      - name: Update 'latest' CDN assets to S3 + CloudFront
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
+      # ========================================================================
