@@ -56,8 +56,8 @@
   }
   .navbar-offcanvas {
     position: fixed;
-    top: 0;
     right: 0;
+    left: 0;
     z-index: 2000;
 
     align-items: flex-start;
@@ -68,7 +68,6 @@
     overflow-y: auto;
     background-color: $navbar-offcanvas-bg;
     border: none;
-    box-shadow: -10px 0 20px 0 $gray-700;
 
     /* stylelint-disable */
     transition: -webkit-transform .3s ease-in-out;
@@ -80,6 +79,7 @@
     &.open {
       -webkit-transform: translateX(-1rem);
       transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+      box-shadow: -10px 0 20px 0 $gray-700;
     }
     /* stylelint-enable */
 

@@ -14140,7 +14140,6 @@ a {
     overflow-y: auto;
     background-color: #0c234b;
     border: none;
-    box-shadow: -10px 0 20px 0 #495057;
     /* stylelint-disable */
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
@@ -14153,6 +14152,7 @@ a {
     -webkit-transform: translateX(-1rem);
     transform: translateX(-1rem);
     /* Account for horizontal padding on navbar */
+    box-shadow: -10px 0 20px 0 #495057;
   }
   .navbar-offcanvas .navbar-nav {
     width: 100%;

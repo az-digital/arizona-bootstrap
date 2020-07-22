@@ -517,6 +517,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
+    <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo">CLOSE</button>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
