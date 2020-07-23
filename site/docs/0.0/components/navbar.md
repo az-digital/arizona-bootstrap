@@ -39,6 +39,7 @@ Here's an example of all the sub-components included in a responsive light-theme
 ## Example
 
 Include example of "default" navbar (`.navbar-light`).
+The use of a `button` element is recommended for the `.dropdown-toggle` in your navbar, given that your dropdown will open on click.
 
 {% capture example %}
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -50,9 +51,9 @@ Include example of "default" navbar (`.navbar-light`).
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
-        </a>
+        </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -84,9 +85,9 @@ Include example of "default" navbar (`.navbar-light`).
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
-        </a>
+        </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -224,9 +225,9 @@ You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrap
         <a class="nav-link" href="#">Pricing</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
-        </a>
+        </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -517,7 +518,6 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-    <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo">CLOSE</button>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -526,10 +526,10 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOffCanvas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownOffCanvas">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
@@ -539,7 +539,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
-    </ul> 
+    </ul>
   </div>
 </nav>
 {% endcapture %}
