@@ -3,6 +3,8 @@
 /site/.jekyll-cache/
 /site/.jekyll-metadata
 /site/docs/**/dist/
+_config.yml
+
 # Hugo folders
 /resources/
 
