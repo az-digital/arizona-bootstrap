@@ -20,4 +20,17 @@
 
   <script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
 
+  <script>
+  
+  $(function(){ 
+    console.log("Page has loaded.");
+    $('[data-toggle="offcanvas"]').on('click', function (){
+      $('#navbarOffcanvasDemo').toggleClass('open');
+    });
+    $('#navbarOffcanvasDemoClose').on('cick', function(){
+      console.log("Button clicked");
+      $('#navbarOffcanvasDemo').toggleClass('open');
+    });
+  });
+</script>
 {%- endif -%}

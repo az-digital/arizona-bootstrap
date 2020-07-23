@@ -539,7 +539,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
-    </ul>
+    </ul> 
   </div>
 </nav>
 {% endcapture %}
