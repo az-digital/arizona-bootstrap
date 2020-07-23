@@ -14129,14 +14129,14 @@ a {
   }
   .navbar-offcanvas {
     position: fixed;
-    top: 0;
     right: 0;
+    left: 0;
     z-index: 2000;
     -ms-flex-align: start;
     align-items: flex-start;
     width: 70%;
     height: 100vh;
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
     overflow-y: auto;
     background-color: #0c234b;
     border: none;

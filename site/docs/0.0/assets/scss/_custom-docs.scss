@@ -109,12 +109,10 @@
   }
 }
 
+/* stylelint-disable */
 // >> Off-canvas Nav example
 #navbarOffcanvasDemoClose {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2000;
+  position: relative;
   display: none;
 
   color: $white;
@@ -127,8 +125,14 @@
   #navbarOffcanvasDemoClose {
     display: inline-block;
   }
+  .navbar-offcanvas {
+    &.open {
+      -webkit-transform: translateX(0);
+      transform: translateX(0); /* Account for horizontal padding on navbar */
+    }
+  }
 }
-
+/* stylelint-enable */
 
 //
 // > LAYOUT

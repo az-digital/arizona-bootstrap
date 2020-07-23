@@ -517,7 +517,15 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-    <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo">CLOSE</button>
+    <div class="navbar-offcanvas-utilities">
+      <div class="bg-red d-flex justify-content-end">
+        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo">CLOSE</button>
+      </div>
+      <form class="navbar-offcanvas-search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
