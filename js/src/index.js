@@ -1,3 +1,4 @@
+import { version } from '../../package.json';
 import {
   Alert,
   Button,
@@ -12,28 +13,8 @@ import {
   Tooltip,
   Util
 } from '../../node_modules/bootstrap/js/src/index.js'
+import Offcanvasmenu from './offcanvasmenu';
 
-import $ from 'jquery'
-
-// Arizona Bootstrap offcanvas navigation menu toggle.
-//(function ($) {
-  //$('[data-toggle="offcanvas"]').on('click', () => {
-    //console.log(this);
-    //$('.offcanvas-collapse').toggleClass('open')
-  //})
-//}($))
-$(function(){
-  console.log("Page has loaded.");
-  $('[data-toggle="offcanvas"]').on('click', function (){
-    $('#navbarOffcanvasDemo').toggleClass('open');
-    $(this).attr('aria-expanded', true);
-  });
-  $('#navbarOffcanvasDemoClose').on('cick', function(){
-    console.log("Button clicked");
-    $('#navbarOffcanvasDemo').toggleClass('open');
-    $(this).attr('aria-expanded', false);
-  });
-});
 
 
 /**
@@ -55,5 +36,6 @@ export {
   Scrollspy,
   Tab,
   Toast,
-  Tooltip
+  Tooltip,
+  Offcanvasmenu
 }

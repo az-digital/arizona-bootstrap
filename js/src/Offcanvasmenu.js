@@ -6,7 +6,8 @@
  */
 
 import $ from 'jquery'
-import Util from './util'
+import Util from '../../node_modules/bootstrap/js/src/util.js'
+import { version } from '../../package.json';
 
 /**
  * ------------------------------------------------------------------------
@@ -15,8 +16,8 @@ import Util from './util'
  */
 
 const NAME                = 'offcanvasmenu'
-const VERSION             = '4.5.0'
-const DATA_KEY            = 'bs.collapse'
+const AZ_VERSION          = `${version}`
+const DATA_KEY            = 'az.offcanvasmenu'
 const EVENT_KEY           = `.${DATA_KEY}`
 const DATA_API_KEY        = '.data-api'
 const JQUERY_NO_CONFLICT  = $.fn[NAME]
@@ -37,16 +38,16 @@ const EVENT_HIDE           = `hide${EVENT_KEY}`
 const EVENT_HIDDEN         = `hidden${EVENT_KEY}`
 const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
 
-const CLASS_NAME_SHOW       = 'show'
-const CLASS_NAME_COLLAPSE   = 'collapse'
+const CLASS_NAME_SHOW       = 'open'
+const CLASS_NAME_COLLAPSE   = 'offcanvas-toggle'
 const CLASS_NAME_COLLAPSING = 'collapsing'
 const CLASS_NAME_COLLAPSED  = 'collapsed'
 
 const DIMENSION_WIDTH  = 'width'
 const DIMENSION_HEIGHT = 'height'
 
-const SELECTOR_ACTIVES     = '.show, .collapsing'
-const SELECTOR_DATA_TOGGLE = '[data-toggle="collapse"]'
+const SELECTOR_ACTIVES     = '.open, .collapsing'
+const SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]'
 
 /**
  * ------------------------------------------------------------------------
@@ -54,14 +55,14 @@ const SELECTOR_DATA_TOGGLE = '[data-toggle="collapse"]'
  * ------------------------------------------------------------------------
  */
 
-class Collapse {
+class Offcanvasmenu {
   constructor(element, config) {
     this._isTransitioning = false
     this._element         = element
     this._config          = this._getConfig(config)
     this._triggerArray    = [].slice.call(document.querySelectorAll(
-      `[data-toggle="collapse"][href="#${element.id}"],` +
-      `[data-toggle="collapse"][data-target="#${element.id}"]`
+      `[data-toggle="offcanvas"][href="#${element.id}"],` +
+      `[data-toggle="offcanvas"][data-target="#${element.id}"]`
     ))
 
     const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE))
@@ -80,7 +81,7 @@ class Collapse {
     this._parent = this._config.parent ? this._getParent() : null
 
     if (!this._config.parent) {
-      this._addAriaAndCollapsedClass(this._element, this._triggerArray)
+      this._addAriaAndOffcanvasmenudClass(this._element, this._triggerArray)
     }
 
     if (this._config.toggle) {
@@ -90,8 +91,8 @@ class Collapse {
 
   // Getters
 
-  static get VERSION() {
-    return VERSION
+  static get AZ_VERSION() {
+    return AZ_VERSION
   }
 
   static get Default() {
@@ -146,7 +147,7 @@ class Collapse {
     }
 
     if (actives) {
-      Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide')
+      Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'hide')
       if (!activesData) {
         $(actives).data(DATA_KEY, null)
       }
@@ -296,8 +297,8 @@ class Collapse {
     const children = [].slice.call(parent.querySelectorAll(selector))
 
     $(children).each((i, element) => {
-      this._addAriaAndCollapsedClass(
-        Collapse._getTargetFromElement(element),
+      this._addAriaAndOffcanvasmenudClass(
+        Offcanvasmenu._getTargetFromElement(element),
         [element]
       )
     })
@@ -305,7 +306,7 @@ class Collapse {
     return parent
   }
 
-  _addAriaAndCollapsedClass(element, triggerArray) {
+  _addAriaAndOffcanvasmenudClass(element, triggerArray) {
     const isOpen = $(element).hasClass(CLASS_NAME_SHOW)
 
     if (triggerArray.length) {
@@ -337,7 +338,7 @@ class Collapse {
       }
 
       if (!data) {
-        data = new Collapse(this, _config)
+        data = new Offcanvasmenu(this, _config)
         $this.data(DATA_KEY, data)
       }
 
@@ -371,7 +372,7 @@ $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
     const $target = $(this)
     const data    = $target.data(DATA_KEY)
     const config  = data ? 'toggle' : $trigger.data()
-    Collapse._jQueryInterface.call($target, config)
+    Offcanvasmenu._jQueryInterface.call($target, config)
   })
 })
 
@@ -381,12 +382,12 @@ $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
  * ------------------------------------------------------------------------
  */
 
-$.fn[NAME] = Collapse._jQueryInterface
-$.fn[NAME].Constructor = Collapse
+$.fn[NAME] = Offcanvasmenu._jQueryInterface
+$.fn[NAME].Constructor = Offcanvasmenu
 $.fn[NAME].noConflict = () => {
   $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Collapse._jQueryInterface
+  return Offcanvasmenu._jQueryInterface
 }
 
-export default Collapse
+export default Offcanvasmenu
 
