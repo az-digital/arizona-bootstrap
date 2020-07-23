@@ -10,6 +10,7 @@
 /.bundle/
 /vendor/
 /.ruby-version
+/_config.yml
 
 # Numerous always-ignore extensions
 *.diff
