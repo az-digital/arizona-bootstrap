@@ -16,3 +16,7 @@
 
 arizona-bootstrap.css linguist-vendored=false
 arizona-bootstrap.js linguist-vendored=false
+
+dist/**/*   -diff
+*.min.css   -diff
+*.min.js    -diff
