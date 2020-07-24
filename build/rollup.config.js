@@ -1,6 +1,5 @@
 'use strict'
-
-import json from '@rollup/plugin-json';
+const json = require('@rollup/plugin-json')
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
 const resolve = require('@rollup/plugin-node-resolve')
