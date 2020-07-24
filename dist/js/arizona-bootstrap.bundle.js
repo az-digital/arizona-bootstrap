@@ -7250,18 +7250,16 @@
     toggle: 'boolean',
     parent: '(string|element)'
   };
-  var EVENT_SHOW$5 = "show" + EVENT_KEY$b;
-  var EVENT_SHOWN$5 = "shown" + EVENT_KEY$b;
-  var EVENT_HIDE$5 = "hide" + EVENT_KEY$b;
-  var EVENT_HIDDEN$5 = "hidden" + EVENT_KEY$b;
-  var EVENT_CLICK_DATA_API$7 = "click" + EVENT_KEY$b + DATA_API_KEY$8;
-  var CLASS_NAME_SHOW$8 = 'open';
-  var CLASS_NAME_COLLAPSE$1 = 'offcanvas-toggle';
-  var CLASS_NAME_COLLAPSING$1 = 'collapsing';
-  var CLASS_NAME_COLLAPSED$1 = 'collapsed';
-  var DIMENSION_WIDTH$1 = 'width';
-  var DIMENSION_HEIGHT$1 = 'height';
-  var SELECTOR_ACTIVES$1 = '.open, .collapsing';
+  var EVENT_OPEN = "open" + EVENT_KEY$b;
+  var EVENT_OPENED = "opened" + EVENT_KEY$b;
+  var EVENT_CLOSE$1 = "close" + EVENT_KEY$b;
+  var EVENT_CLOSED$1 = "closed" + EVENT_KEY$b;
+  var TA_API = "click" + EVENT_KEY$b + DATA_API_KEY$8;
+  var CLASS_NAME_OPEN$1 = 'open';
+  var CLASS_NAME_CLOSE = 'offcanvas-toggle';
+  var CLASS_NAME_CLOSING = 'closing';
+  var CLASS_NAME_CLOSED = 'closed';
+  var SELECTOR_ACTIVES$1 = '.open, .closing';
   var SELECTOR_DATA_TOGGLE$5 = '[data-toggle="offcanvas"]';
   /**
    * ------------------------------------------------------------------------
@@ -7307,17 +7305,17 @@
 
     // Public
     _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(CLASS_NAME_SHOW$8)) {
-        this.hide();
+      if ($(this._element).hasClass(CLASS_NAME_OPEN$1)) {
+        this.close();
       } else {
-        this.show();
+        this.open();
       }
     };
 
-    _proto.show = function show() {
+    _proto.open = function open() {
       var _this = this;
 
-      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$8)) {
+      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_OPEN$1)) {
         return;
       }
 
@@ -7330,7 +7328,7 @@
             return elem.getAttribute('data-parent') === _this._config.parent;
           }
 
-          return elem.classList.contains(CLASS_NAME_COLLAPSE$1);
+          return elem.classList.contains(CLASS_NAME_CLOSE);
         });
 
         if (actives.length === 0) {
@@ -7346,7 +7344,7 @@
         }
       }
 
-      var startEvent = $.Event(EVENT_SHOW$5);
+      var startEvent = $.Event(EVENT_OPEN);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -7354,59 +7352,49 @@
       }
 
       if (actives) {
-        Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'hide');
+        Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'close');
 
         if (!activesData) {
           $(actives).data(DATA_KEY$b, null);
         }
       }
 
-      var dimension = this._getDimension();
-
-      $(this._element).removeClass(CLASS_NAME_COLLAPSE$1).addClass(CLASS_NAME_COLLAPSING$1);
-      this._element.style[dimension] = 0;
+      $(this._element).removeClass(CLASS_NAME_CLOSE).addClass(CLASS_NAME_CLOSING);
 
       if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED$1).attr('aria-expanded', true);
+        $(this._triggerArray).removeClass(CLASS_NAME_CLOSED).attr('aria-expanded', true);
       }
 
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this._element).removeClass(CLASS_NAME_COLLAPSING$1).addClass(CLASS_NAME_COLLAPSE$1 + " " + CLASS_NAME_SHOW$8);
-        _this._element.style[dimension] = '';
+        $(_this._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
 
         _this.setTransitioning(false);
 
-        $(_this._element).trigger(EVENT_SHOWN$5);
+        $(_this._element).trigger(EVENT_OPENED);
       };
 
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
-    _proto.hide = function hide() {
+    _proto.close = function close() {
       var _this2 = this;
 
-      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$8)) {
+      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_OPEN$1)) {
         return;
       }
 
-      var startEvent = $.Event(EVENT_HIDE$5);
+      var startEvent = $.Event(EVENT_CLOSE$1);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
-      var dimension = this._getDimension();
-
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
-      $(this._element).addClass(CLASS_NAME_COLLAPSING$1).removeClass(CLASS_NAME_COLLAPSE$1 + " " + CLASS_NAME_SHOW$8);
+      $(this._element).addClass(CLASS_NAME_CLOSING).removeClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -7417,8 +7405,8 @@
           if (selector !== null) {
             var $elem = $([].slice.call(document.querySelectorAll(selector)));
 
-            if (!$elem.hasClass(CLASS_NAME_SHOW$8)) {
-              $(trigger).addClass(CLASS_NAME_COLLAPSED$1).attr('aria-expanded', false);
+            if (!$elem.hasClass(CLASS_NAME_OPEN$1)) {
+              $(trigger).addClass(CLASS_NAME_CLOSED).attr('aria-expanded', false);
             }
           }
         }
@@ -7429,10 +7417,9 @@
       var complete = function complete() {
         _this2.setTransitioning(false);
 
-        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING$1).addClass(CLASS_NAME_COLLAPSE$1).trigger(EVENT_HIDDEN$5);
+        $(_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED$1);
       };
 
-      this._element.style[dimension] = '';
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
@@ -7459,11 +7446,6 @@
       return config;
     };
 
-    _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH$1);
-      return hasWidth ? DIMENSION_WIDTH$1 : DIMENSION_HEIGHT$1;
-    };
-
     _proto._getParent = function _getParent() {
       var _this3 = this;
 
@@ -7479,7 +7461,7 @@
         parent = document.querySelector(this._config.parent);
       }
 
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
+      var selector = "[data-toggle=\"offcanvas\"][data-parent=\"" + this._config.parent + "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
       $(children).each(function (i, element) {
         _this3._addAriaAndOffcanvasmenudClass(Offcanvasmenu._getTargetFromElement(element), [element]);
@@ -7488,10 +7470,10 @@
     };
 
     _proto._addAriaAndOffcanvasmenudClass = function _addAriaAndOffcanvasmenudClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$8);
+      var isOpen = $(element).hasClass(CLASS_NAME_OPEN$1);
 
       if (triggerArray.length) {
-        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED$1, !isOpen).attr('aria-expanded', isOpen);
+        $(triggerArray).toggleClass(CLASS_NAME_CLOSED, !isOpen).attr('aria-expanded', isOpen);
       }
     } // Static
     ;
@@ -7508,7 +7490,7 @@
 
         var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$8), $this.data()), typeof config === 'object' && config ? config : {});
 
-        if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
+        if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
           _config.toggle = false;
         }
 
@@ -7548,8 +7530,9 @@
    */
 
 
-  $(document).on(EVENT_CLICK_DATA_API$7, SELECTOR_DATA_TOGGLE$5, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+  $(document).on(TA_API, SELECTOR_DATA_TOGGLE$5, function (event) {
+    // preventDefault only for <a> elements (which change the URL) not inside the
+    // offcanvas element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
     }
