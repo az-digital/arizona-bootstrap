@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v0.0.3-dev (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v0.0.4-dev (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2020 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
   */
@@ -11,7 +11,7 @@
 
   $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
 
-  var version = "0.0.3-dev";
+  var version = "0.0.4-dev";
 
   /**
    * --------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-FROM debian:buster-20200514-slim as fulldevenv
+FROM debian:buster-20200720-slim as fulldevenv
 
 WORKDIR /build
 
@@ -17,7 +17,7 @@ RUN apt-get update \
   && gem install -N bundler -v 1.17.3 \
   && bundle install --deployment
 
-FROM node:12.17.0-buster-slim
+FROM node:12.18.2-buster-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -25,8 +25,8 @@ ENV PATH ${JAVA_HOME}/bin:${PATH}
 
 COPY --from=fulldevenv /build /rubytooling/
 
-COPY --from=openjdk:11.0.7-jre-slim-buster "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.7-jre-slim-buster /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.8-jre-slim-buster "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.8-jre-slim-buster /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -37,7 +37,7 @@ COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
 COPY scripts/sync-static-site-dir.sh /usr/local/bin/sync-static-site-dir
 
-# Build args don't normally persis as environment variables.
+# Build args don't normally persist as environment variables.
 ARG AZ_BOOTSTRAP_DEST_DIR
 ENV AZ_BOOTSTRAP_DEST_DIR ${AZ_BOOTSTRAP_DEST_DIR:-/azbuild/arizona-bootstrap}
 ARG AZ_BOOTSTRAP_SOURCE_DIR
@@ -60,7 +60,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && gem install -N bundler -v 1.17.3 \
   && bundle config gemfile '/rubytooling/Gemfile' \
-  && pip3 install 'awscli~=1.18.71'; \
+  && pip3 install 'awscli~=1.18.104'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && bundle install \
