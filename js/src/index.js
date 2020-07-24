@@ -1,4 +1,3 @@
-import { version } from '../../package.json';
 import {
   Alert,
   Button,
@@ -13,9 +12,7 @@ import {
   Tooltip,
   Util
 } from '../../node_modules/bootstrap/js/src/index.js'
-import Offcanvasmenu from './offcanvasmenu';
-
-
+import Offcanvasmenu from './offcanvasmenu'
 
 /**
  * --------------------------------------------------------------------------

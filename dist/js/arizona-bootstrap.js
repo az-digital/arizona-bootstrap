@@ -12,8 +12,6 @@
   $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
   Popper = Popper && Object.prototype.hasOwnProperty.call(Popper, 'default') ? Popper['default'] : Popper;
 
-  var version = "0.0.4-dev";
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v4.5.0): util.js
@@ -4616,6 +4614,8 @@
 
     return target;
   }
+
+  var version = "0.0.4-dev";
 
   /**
    * ------------------------------------------------------------------------

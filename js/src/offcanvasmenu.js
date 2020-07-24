@@ -7,7 +7,7 @@
 
 import $ from 'jquery'
 import Util from '../../node_modules/bootstrap/js/src/util.js'
-import { version } from '../../package.json';
+import { version } from '../../package.json'
 
 /**
  * ------------------------------------------------------------------------
