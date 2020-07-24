@@ -21,3 +21,5 @@ arizona-bootstrap.js linguist-vendored=false
 *.min.js    -diff
 
 dist/**/*   merge=ours
+*.min.css   merge=ours
+*.min.js    merge=ours
