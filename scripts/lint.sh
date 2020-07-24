@@ -9,7 +9,7 @@
 #
 #------------------------------------------------------------------------------
 
-set -e
+set -ex
 
 create-source-links
 
@@ -17,6 +17,8 @@ cd "$AZ_BOOTSTRAP_DEST_DIR"
 
 create-jekyll-config
 
+npm install
+bundle install
 npm run dist
 npm run docs
 npm run lint
