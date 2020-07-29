@@ -14190,7 +14190,7 @@ a {
   .navbar-offcanvas .nav-item.show .dropdown-toggle,
   .navbar-offcanvas .nav-item.show .dropdown-toggle:hover,
   .navbar-offcanvas .nav-item.show .dropdown-toggle:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
   }
   .navbar-offcanvas .nav-item.show .dropdown-toggle::after {
     content: "\002D";
@@ -14208,7 +14208,7 @@ a {
   }
   .navbar-offcanvas .dropdown-menu {
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
     border: none;
   }
   .navbar-offcanvas .dropdown-toggle {

@@ -111,20 +111,8 @@
 
 /* stylelint-disable */
 // >> Off-canvas Nav example
-#navbarOffcanvasDemoClose {
-  position: relative;
-  display: none;
-
-  color: $white;
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-
-}
 @include media-breakpoint-down(md) {
-  #navbarOffcanvasDemoClose {
-    display: inline-block;
-  }
+
   .navbar-offcanvas {
     &.open {
       -webkit-transform: translateX(0);

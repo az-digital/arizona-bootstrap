@@ -518,12 +518,12 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
     <div class="navbar-offcanvas-header">
-      <div class="bg-chili py-1 px-3 d-flex justify-content-between">
-        <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
+      <div class="bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-offcanvas-home btn btn-red d-flex flex-column align-items-center">
           <span class="material-icons">home</span>
           <span>HOME</span>
         </a>
-        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center">
+        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red d-flex flex-column align-items-center">
           <span class="material-icons">close</span>
           <span>CLOSE</span>
         </button>
