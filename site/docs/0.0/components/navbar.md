@@ -517,23 +517,34 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-    <div class="navbar-offcanvas-utilities">
-      <div class="bg-red d-flex justify-content-end">
-        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo">CLOSE</button>
+    <div class="navbar-offcanvas-header">
+      <div class="bg-chili py-1 px-3 d-flex justify-content-between">
+        <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
+          <span class="material-icons">home</span>
+          <span>HOME</span>
+        </a>
+        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center">
+          <span class="material-icons">close</span>
+          <span>CLOSE</span>
+        </button>
       </div>
-      <form class="navbar-offcanvas-search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-blue my-2 my-sm-0" type="submit">Search</button>
+      <form class="navbar-offcanvas-search bg-white pr-3">
+        <div class="input-group">
+          <input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn" type="submit"><span class="material-icons">search</span></button>
+          </div>
+        </div>
       </form>
     </div>
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item nav-item-parent active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-item-parent">
         <a class="nav-link" href="#">Link</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item nav-item-parent dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
@@ -544,7 +555,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-item-parent">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul> 
