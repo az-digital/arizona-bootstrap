@@ -21,6 +21,7 @@ import Offcanvasmenu from './offcanvasmenu'
  * --------------------------------------------------------------------------
  */
 
+
 export {
   Util,
   Alert,
@@ -36,3 +37,21 @@ export {
   Tooltip,
   Offcanvasmenu
 }
+$('.dropdown.keep-open').on({
+  "shown.bs.dropdown": function() {
+    $(this).attr('data-closable',false);
+       console.log('dropdown');
+  },
+  "click": function() {
+    $(this).attr('data-closable',true);
+       console.log('click');
+  },
+  "hide.bs.dropdown": function(e) {
+    let closable = $(this).attr('data-closable');
+    if (closable == 'false') {
+       e.stopPropagation();
+       console.log('this after');
+      return false;
+    }
+  }
+});

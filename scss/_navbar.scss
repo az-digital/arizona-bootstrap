@@ -48,22 +48,30 @@
 .offcanvas-toggle {
   display: none;
 }
+.navbar-offcanvas {
+  .navbar-offcanvas-header {
+    display: none;
+  }
+}
+
 
 // >> .navbar-offcanvas
+
+
 @include media-breakpoint-down(md) {
   .offcanvas-toggle {
     display: block;
   }
   .navbar-offcanvas {
     position: fixed;
+    top: 0;
     right: 0;
-    left: 0;
     z-index: 2000;
 
     align-items: flex-start;
-    width: 70%;
+    width: 90vw;
     height: 100vh;
-    padding: 3rem 0;
+    padding: 0 0 3rem;
 
     overflow-y: auto;
     background-color: $navbar-offcanvas-bg;
@@ -73,15 +81,34 @@
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+
+
     &.open {
-      -webkit-transform: translateX(-1rem);
-      transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
       box-shadow: -10px 0 20px 0 $gray-700;
     }
     /* stylelint-enable */
+
+    .navbar-offcanvas-header {
+      display: block;
+    }
+
+    .navbar-offcanvas-home {
+      font-weight: 400;
+      color: $navbar-offcanvas-link-color;
+      text-decoration: none;
+    }
+
+    .navbar-offcanvas-search {
+      .form-control {
+        height: auto;
+        margin: 0;
+        border: none;
+      }
+    }
 
 
     .navbar-nav {
@@ -91,19 +118,40 @@
         color: $navbar-offcanvas-link-color;
       }
     }
+
+    .nav-item-parent {
+      .nav-link {
+        text-transform: uppercase;
+      }
+    }
+
     .nav-item {
       &:hover {
         background-color: transparent;
       }
-      &.active {
+      &.active, {
         .nav-link {
           color: $navbar-offcanvas-link-color;
           background-color: $navbar-offcanvas-link-active-bg;
         }
       }
 
+      &.show {
+        .dropdown-toggle,
+        .dropdown-toggle:hover,
+        .dropdown-toggle:focus {
+          background-color: $navbar-offcanvas-bg-expanded;
+        }
+        .dropdown-toggle {
+          &::after {
+            content: "\002D";
+          }
+        }
+      }
+
       .nav-link {
         color: $navbar-offcanvas-link-color;
+
 
         &.disabled {
           font-weight: 400;
@@ -113,8 +161,34 @@
         &:hover,
         &:focus {
           color: $navbar-offcanvas-link-color;
-          background-color: inherit;
+          background-color: $navbar-offcanvas-bg;
         }
+      }
+    }
+
+    .dropdown-menu {
+      margin: 0;
+      background-color: $navbar-offcanvas-bg-expanded;
+      border: none;
+    }
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      /* &[aria-expanded="true"] {
+        background-color: $navbar-offcanvas-bg-expanded;
+
+        &::after {
+          content: "\002D";
+        }
+      } */
+
+      &::after {
+        font-size: 1.5rem;
+        vertical-align: unset;
+        content: "\002B";
+        border: none;
       }
     }
   }

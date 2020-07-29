@@ -1,0 +1,142 @@
+---
+layout: examples
+title: Navbar template
+---
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-default">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="navbar-offcanvas-container">
+			<div class="navbar-offcanvas" id="navbarOffcanvasDemo">
+				<div class="navbar-offcanvas-header">
+					<div class="bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
+						<a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
+							<span class="material-icons">home</span>
+							<span>HOME</span>
+						</a>
+						<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
+							<span class="material-icons">close</span>
+							<span>CLOSE</span>
+						</button>
+					</div>
+					<form class="navbar-offcanvas-search bg-white pr-3">
+						<div class="input-group">
+							<input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
+							<div class="input-group-append">
+								<button class="btn" type="submit"><span class="material-icons">search</span></button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<ul class="navbar-nav">
+					<li class="nav-item nav-item-parent dropdown keep-open">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Undergraduate
+						</a>
+						<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
+							<a class="dropdown-item" href="#">Degrees & Concentrations</a>
+							<a class="dropdown-item" href="#">Prospective student information</a>
+						</div>
+					</li>
+					<li class="nav-item nav-item-parent dropdown keep-open">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Graduate
+						</a>
+						<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
+							<a class="dropdown-item" href="#">Degrees & Concentrations</a>
+							<a class="dropdown-item" href="#">Prospective student information</a>
+						</div>
+					  <li class="nav-item">
+					  	<a class="nav-link" href="#">Current students</a>
+					  </li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main role="main">
+	<!-- Marketing messaging and featurettes
+	 ================================================== -->
+	 <!-- Wrap the rest of the page in another container to center all the content. -->
+
+	 <div class="container marketing">
+
+		 <!-- Three columns of text below the carousel -->
+		 <div class="row">
+			 <div class="col-lg-4">
+				 {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %}
+				 <h2>Heading</h2>
+				 <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			 </div><!-- /.col-lg-4 -->
+			 <div class="col-lg-4">
+				 {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %}
+				 <h2>Heading</h2>
+				 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			 </div><!-- /.col-lg-4 -->
+			 <div class="col-lg-4">
+				 {% include icons/placeholder.svg width="140" height="140" background="#777" color="#777" class="rounded-circle" %}
+				 <h2>Heading</h2>
+				 <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			 </div><!-- /.col-lg-4 -->
+		 </div><!-- /.row -->
+
+
+		 <!-- START THE FEATURETTES -->
+
+		 <hr class="featurette-divider">
+
+		 <div class="row featurette">
+			 <div class="col-md-7">
+				 <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+				 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			 </div>
+			 <div class="col-md-5">
+				 {% include icons/placeholder.svg width="500" height="500" background="#eee" color="#aaa" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" %}
+			 </div>
+		 </div>
+
+		 <hr class="featurette-divider">
+
+		 <div class="row featurette">
+			 <div class="col-md-7 order-md-2">
+				 <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+				 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			 </div>
+			 <div class="col-md-5 order-md-1">
+				 {% include icons/placeholder.svg width="500" height="500" background="#eee" color="#aaa" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" %}
+			 </div>
+		 </div>
+
+		 <hr class="featurette-divider">
+
+		 <div class="row featurette">
+			 <div class="col-md-7">
+				 <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+				 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			 </div>
+			 <div class="col-md-5">
+				 {% include icons/placeholder.svg width="500" height="500" background="#eee" color="#aaa" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" %}
+			 </div>
+		 </div>
+
+		 <hr class="featurette-divider">
+
+		 <!-- /END THE FEATURETTES -->
+
+	 </div><!-- /.container -->
+
+
+	 <!-- FOOTER -->
+	 <footer class="container">
+		 <p class="float-right"><a href="#">Back to top</a></p>
+		 <p>&copy; 2017-{{ site.time | date: "%Y" }} Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	 </footer>
+</main>
+
