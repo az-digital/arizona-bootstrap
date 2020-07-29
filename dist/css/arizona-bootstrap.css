@@ -14123,6 +14123,10 @@ a {
   display: none;
 }
 
+.navbar-offcanvas .navbar-offcanvas-header {
+  display: none;
+}
+
 @media (max-width: 991.98px) {
   .offcanvas-toggle {
     display: block;
@@ -14154,6 +14158,9 @@ a {
     /* Account for horizontal padding on navbar */
     box-shadow: -10px 0 20px 0 #495057;
   }
+  .navbar-offcanvas .navbar-offcanvas-header {
+    display: block;
+  }
   .navbar-offcanvas .navbar-offcanvas-home {
     font-weight: 400;
     color: #fff;
@@ -14180,6 +14187,14 @@ a {
     color: #fff;
     background-color: #1e5288;
   }
+  .navbar-offcanvas .nav-item.show .dropdown-toggle,
+  .navbar-offcanvas .nav-item.show .dropdown-toggle:hover,
+  .navbar-offcanvas .nav-item.show .dropdown-toggle:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navbar-offcanvas .nav-item.show .dropdown-toggle::after {
+    content: "\002D";
+  }
   .navbar-offcanvas .nav-item .nav-link {
     color: #fff;
   }
@@ -14203,12 +14218,13 @@ a {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-  }
-  .navbar-offcanvas .dropdown-toggle[aria-expanded="true"] {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  .navbar-offcanvas .dropdown-toggle[aria-expanded="true"]::after {
-    content: "\002D";
+    /* &[aria-expanded="true"] {
+        background-color: $navbar-offcanvas-bg-expanded;
+
+        &::after {
+          content: "\002D";
+        }
+      } */
   }
   .navbar-offcanvas .dropdown-toggle::after {
     font-size: 1.5rem;
