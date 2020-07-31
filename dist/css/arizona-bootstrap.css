@@ -14187,6 +14187,32 @@ a {
   .offcanvas-toggle {
     display: block;
   }
+  .navbar-light, .navbar-default,
+  .navbar-default {
+    padding: 0;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+  }
+  .arizona-logo {
+    display: inline-block;
+    float: left;
+    width: 276px;
+    max-width: 80%;
+    height: 20px;
+    padding: 0 0 0 .6rem;
+    margin: 19px 0 20px;
+  }
+  .redbar {
+    max-height: 59px;
+  }
+  .redbar span,
+  .redbar .btn {
+    font-size: 13px;
+  }
+  .redbar .material-icons {
+    font-size: 21px;
+  }
   .navbar-offcanvas {
     position: fixed;
     top: 0;
@@ -14211,7 +14237,6 @@ a {
   .navbar-offcanvas.open {
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    box-shadow: -10px 0 20px 0 #495057;
   }
   .navbar-offcanvas .navbar-offcanvas-header {
     display: block;
