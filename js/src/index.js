@@ -37,44 +37,45 @@ export {
   Tooltip,
   Offcanvasmenu
 }
-    // Optimalisation: Store the references outside the event handler:
-    var $window = $(window);
-    //var $pane = $('#pane1');
 
-    function offCanvasDropdowns() {
-        var windowsize = $window.width();
-        if (windowsize < 768) {
-          console.log(windowsize);
-          $('.dropdown.keep-open .dropdown-toggle').on('click', function() {
-            if ($(this).next().hasClass('show')) {
-              $(this).parents('.dropdown-menu').first().find('.show').toggleClass("show").attr('aria-expanded','false');
-            }
-            if ($(this).attr('aria-expanded') == 'true') {
-              $(this).attr('aria-expanded',false);
-              $(this).parent().removeClass('show');
-            }
-            else {
-              $(this).attr('aria-expanded',true);
-              $(this).parent().addClass('show');
-              //this._element.focus()
-              console.log(this);
-            }
+// Optimalisation: Store the references outside the event handler:
+var $window = $(window);
+//var $pane = $('#pane1');
 
-            var $subMenu = $(this).next(".dropdown-menu");
-            $subMenu.toggleClass('show');
+function offCanvasDropdowns() {
+  var windowsize = $window.width();
+  if (windowsize < 768) {
+    console.log(windowsize);
+    $('.dropdown.keep-open .dropdown-toggle').on('click', function() {
+      if ($(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').toggleClass("show").attr('aria-expanded','false');
+      }
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).attr('aria-expanded',false);
+        $(this).parent().removeClass('show');
+      }
+      else {
+        $(this).attr('aria-expanded',true);
+        $(this).parent().addClass('show');
+        //this._element.focus()
+        console.log(this);
+      }
 
-            //$(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-            //console.log('hidden');
-            //$('.dropdown-submenu .show').removeClass("show").attr('aria-expanded','false') ;
-            //});
+      var $subMenu = $(this).next(".dropdown-menu");
+      $subMenu.toggleClass('show');
+
+      //$(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+      //console.log('hidden');
+      //$('.dropdown-submenu .show').removeClass("show").attr('aria-expanded','false') ;
+      //});
 
 
-            return false;
-          });
-        }
-    }
-    // Bind event listener
-    $window.resize(offCanvasDropdowns);
+      return false;
+    });
+  }
+}
+// Bind event listener
+$window.resize(offCanvasDropdowns);
 
 //} );
 //$('.dropdown.keep-open').off().on({
