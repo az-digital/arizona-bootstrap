@@ -92,7 +92,7 @@ done
 #------------------------------------------------------------------------------
 # Copy, don't link, the build, js, and site subdirectories as well as root .eslintrc.json file.
 
-logmessage "Copying the /build, /js. and /site subdirectories and root .eslintrc.json file"
+logmessage "Copying the /build, /js, and /site subdirectories and root .eslintrc.json file"
 
 cp -R "${AZ_BOOTSTRAP_SOURCE_DIR}/build" "${AZ_BOOTSTRAP_DEST_DIR}/build" \
  || errorexit "Couldn't copy the /build subdirectory from ${AZ_BOOTSTRAP_SOURCE_DIR} to ${AZ_BOOTSTRAP_DEST_DIR}"
