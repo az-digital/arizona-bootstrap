@@ -2,12 +2,12 @@
 
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
-const resolve = require('@rollup/plugin-node-resolve')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const banner = require('./banner.js')
 
-const BUNDLE  = process.env.BUNDLE === 'true'
+const BUNDLE = process.env.BUNDLE === 'true'
 
-let fileDest  = 'arizona-bootstrap.js'
+let fileDest = 'arizona-bootstrap.js'
 const external = ['jquery', 'popper.js']
 const plugins = [
   babel({
@@ -27,7 +27,7 @@ if (BUNDLE) {
   // Remove last entry in external array to bundle Popper
   external.pop()
   delete globals['popper.js']
-  plugins.push(resolve())
+  plugins.push(nodeResolve())
 }
 
 module.exports = {
