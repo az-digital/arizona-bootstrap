@@ -1,4 +1,4 @@
-FROM debian:buster-20200720-slim as fulldevenv
+FROM debian:buster-20200803-slim as fulldevenv
 
 WORKDIR /build
 
@@ -14,10 +14,10 @@ RUN apt-get update \
     libc6-dev \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/* \
-  && gem install -N bundler -v 1.17.3 \
+  && gem install -N bundler -v 2.1.4 \
   && bundle install --deployment
 
-FROM node:12.18.2-buster-slim
+FROM node:12.18.3-buster-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -58,9 +58,9 @@ RUN apt-get update \
     rsync \
     ruby \
   && rm -rf /var/lib/apt/lists/* \
-  && gem install -N bundler -v 1.17.3 \
+  && gem install -N bundler -v 2.1.4 \
   && bundle config gemfile '/rubytooling/Gemfile' \
-  && pip3 install 'awscli~=1.18.104'; \
+  && pip3 install 'awscli~=1.18.115'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && bundle install \
