@@ -17,6 +17,8 @@ set -e
 : "${AZ_IMAGEPREFIX:=azdigital/}"
 # Docker base image name
 : "${AZ_EPHEMERALIMAGENAME:=az-nodejs-ephemeral}"
+# Temporary hash file name
+: "${AZ_HASHTEMP:=az_hashtemp}"
 
 #------------------------------------------------------------------------------
 # Utility definitions.
@@ -50,24 +52,28 @@ fi
 command -v docker > /dev/null \
   || errorexit "This reqires access to a Docker installation to run"
 
-if ! command -v sha256sum > /dev/null ; then
-  if command -v shasum > /dev/null ; then
-    alias sha256sum='shasum -a 256'
-  elif command -v CertUtil > /dev/null ; then
-    sha256sum () {
-      for f in "$@" ; do
-        CertUtil -hashfile "$f" SHA256 | grep -E '^[0-9a-f]+$'
-      done
-    }
-  else
-    errorexit "Can't find anything to compute SHA256 checksums"
-  fi
+if command -v sha256sum > /dev/null ; then
+  taghash () {
+    find "$@" -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }'
+  }
+elif command -v shasum > /dev/null ; then
+  taghash () {
+    find "$@" -type f -exec shasum -a 256 {} \; | awk '{ print $1 }' | shasum -a 256  - | awk '{ print $1 }'
+  }
+elif command -v CertUtil > /dev/null ; then
+  taghash () {
+    find "$@" -type f -exec CertUtil -hashfile {} SHA256 \; | grep -E '^[0-9a-f]+$' > "$AZ_HASHTEMP"
+    CertUtil -hashfile "$AZ_HASHTEMP" SHA256
+    rm "$AZ_HASHTEMP"
+  }
+else
+  errorexit "Can't find anything to compute SHA256 checksums"
 fi
 
 #------------------------------------------------------------------------------
 # Use the checksum for the Ruby Gem and Node.js npm lockfiles as an image tag.
 
-lockhash=$(sha256sum Dockerfile Gemfile.lock package-lock.json | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }') \
+lockhash=$(taghash Dockerfile Gemfile.lock package-lock.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"
 ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
 tagsearch=$(docker image ls "$ephemeral" ) \
