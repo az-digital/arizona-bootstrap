@@ -51,8 +51,8 @@
   "license": "MIT",
   "homepage": "https://github.com/az-digital/arizona-bootstrap",
   "devDependencies": {
-    "autoprefixer": "^9.8.4",
-    "bootstrap": "^4.5.0",
+    "autoprefixer": "^9.8.6",
+    "bootstrap": "^4.5.2",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^7.0.2",
     "find-unused-sass-variables": "^2.0.0",
