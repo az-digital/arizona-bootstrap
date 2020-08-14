@@ -23,6 +23,8 @@ cd "$AZ_BOOTSTRAP_DEST_DIR"
 create-jekyll-config
 
 npm run dist
-npm run docs
+npm run css-docs
+npm run js-docs
+npm run docs-build
 
 sync-static-site-dir
