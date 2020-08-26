@@ -540,36 +540,51 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     </div>
     <ul class="navbar-nav">
       <li class="nav-item nav-item-parent dropdown active">
-        <a class="nav-link dropdown-toggle" href="#" id="undergraduateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Undergraduate
+        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admissions
         </a>
-        <div class="dropdown-menu" aria-labelledby="undergraduateDropdown">
-          <a class="dropdown-item" href="#">Degrees & Concentrations</a>
-          <a class="dropdown-item" href="#">Prospective Student Information</a>
-          <a class="dropdown-item" href="#">Current Students</a>
+        <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+          <a class="dropdown-item" href="#">Dropdown Menu Item #1</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
         </div>
       </li>
       <li class="nav-item nav-item-parent dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="graduateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Graduate
+        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Academics
         </a>
-        <div class="dropdown-menu" aria-labelledby="graduateDropdown">
-          <a class="dropdown-item" href="#">Degrees & Concentrations</a>
-          <a class="dropdown-item" href="#">Prospective Student Information</a>
-          <a class="dropdown-item" href="#">Current Students</a>
+        <div class="dropdown-menu" aria-labelledby="academicsDropdown">
+          <a class="dropdown-item" href="#">Dropdown Menu Item #1</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
         </div>
       </li>
       <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">News & Events</a>
+        <a class="nav-link" href="#">Research</a>
       </li>
       <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">Resources</a>
+        <a class="nav-link" href="#">Student Life</a>
       </li>
       <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">People</a>
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Leadership</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Alumni</a>
       </li>
       <li class="nav-item nav-item-parent">
         <a class="nav-link" href="#">Give</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Athletics</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Long Menu Title that Wraps to a Second Line</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Long Menu Title that Wraps to a Second Line</a>
       </li>
     </ul> 
   </div>

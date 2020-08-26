@@ -13642,11 +13642,13 @@ a {
     top: 0;
     right: 0;
     z-index: 2000;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     width: 90%;
     height: 100vh;
+    max-height: 100vh;
     padding: 0 0 3rem;
-    overflow-y: auto;
+    overflow-y: hidden;
     background-color: #0c234b;
     border: none;
     /* stylelint-disable */
@@ -13661,6 +13663,7 @@ a {
   }
   .navbar-offcanvas .navbar-offcanvas-header {
     display: block;
+    width: 100%;
   }
   .navbar-offcanvas .navbar-offcanvas-home {
     font-weight: 400;
@@ -13674,6 +13677,7 @@ a {
   }
   .navbar-offcanvas .navbar-nav {
     width: 100%;
+    overflow-y: auto;
   }
   .navbar-offcanvas .navbar-nav .show > .nav-link {
     color: #fff;
