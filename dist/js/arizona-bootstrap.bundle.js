@@ -7536,51 +7536,17 @@
 
   var setViewportWidth = function setViewportWidth() {
     viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    console.log(viewportWidth);
   };
 
-  $('html').css('overflow-x', 'hidden');
-  $('html').css('max-width', '100vw');
-  $('body').css('overflow-x', 'hidden');
-  $('body').css('max-width', '100vw');
   $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
     setViewportWidth();
 
-    if (viewportWidth > 768) {
-      return;
-    } else {
-      if ($(this).next().hasClass('show')) {
-        $(this).parents('.dropdown-menu').first().find('.show').removeClass("show").attr('aria-expanded', 'false');
-        console.log("hasClass('show')");
-      }
-
-      if ($(this).attr('aria-expanded') == 'true') {
-        console.log("aria-expanded = true");
-        $(this).attr('aria-expanded', false);
-        $(this).parent().removeClass('show'); //$(this).dropdown('hide');
-      } else {
-        console.log("aria-expanded = false");
-        $(this).attr('aria-expanded', true);
-        $(this).parent().addClass('show');
-      }
-
-      console.log("end");
-      var $subMenu = $(this).next(".dropdown-menu");
-      $subMenu.toggleClass('show');
-
-      if ($subMenu.attr('aria-expanded') == true) {
-        $subMenu.attr('aria-expanded', false);
-      } else {
-        $subMenu.attr('aria-expanded', true);
-      }
-
+    if (viewportWidth < 768) {
+      $(this).next('.dropdown-menu').toggle();
+      event.stopPropagation();
       return false;
     }
-  }); // On resize events, recalculate and log
-  //window.addEventListener('resize', function () {
-  //setViewportWidth();
-  //}, false);
-
+  });
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
