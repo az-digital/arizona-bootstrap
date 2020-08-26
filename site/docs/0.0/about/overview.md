@@ -20,4 +20,4 @@ UA Bootstrap was originally created by the [UA Digital team](https://bitbucket.o
 
 ## Get Involved
 
-Join the conversation on [Slack]({{ site.slack }}) or get involved with {{ site.title }} development by [opening an issue](https://github.com/az-digital/arizona-bootstrap/issues) or submitting a pull request.
+Join the conversation on [Slack]({{ site.baseurl }}/docs/{{ site.docs_version }}{{ site.slack }}) or get involved with {{ site.title }} development by [opening an issue](https://github.com/az-digital/arizona-bootstrap/issues) or submitting a pull request.
