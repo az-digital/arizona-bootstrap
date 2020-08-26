@@ -75,7 +75,7 @@
     z-index: 2000;
 
     align-items: flex-start;
-    width: 70%;
+    width: 90%;
     height: 100vh;
     padding: 0 0 3rem;
 
@@ -156,6 +156,7 @@
 
       .nav-link {
         color: $navbar-offcanvas-link-color;
+        padding: $navbar-offcanvas-link-padding;
 
 
         &.disabled {
@@ -175,19 +176,16 @@
       margin: 0;
       background-color: $navbar-offcanvas-bg-expanded;
       border: none;
+      padding: 0 0 0 1rem;
+
+      .dropdown-item {
+        padding: $navbar-offcanvas-dropdown-link-padding;
+      }
     }
     .dropdown-toggle {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      /* &[aria-expanded="true"] {
-        background-color: $navbar-offcanvas-bg-expanded;
-
-        &::after {
-          content: "\002D";
-        }
-      } */
 
       &::after {
         font-size: 1.5rem;

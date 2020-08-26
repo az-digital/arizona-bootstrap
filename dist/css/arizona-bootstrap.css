@@ -13643,7 +13643,7 @@ a {
     right: 0;
     z-index: 2000;
     align-items: flex-start;
-    width: 70%;
+    width: 90%;
     height: 100vh;
     padding: 0 0 3rem;
     overflow-y: auto;
@@ -13698,6 +13698,7 @@ a {
   }
   .navbar-offcanvas .nav-item .nav-link {
     color: #fff;
+    padding: 1rem;
   }
   .navbar-offcanvas .nav-item .nav-link.disabled {
     font-weight: 400;
@@ -13711,18 +13712,15 @@ a {
     margin: 0;
     background-color: rgba(255, 255, 255, 0.15);
     border: none;
+    padding: 0 0 0 1rem;
+  }
+  .navbar-offcanvas .dropdown-menu .dropdown-item {
+    padding: 0.5rem;
   }
   .navbar-offcanvas .dropdown-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* &[aria-expanded="true"] {
-        background-color: $navbar-offcanvas-bg-expanded;
-
-        &::after {
-          content: "\002D";
-        }
-      } */
   }
   .navbar-offcanvas .dropdown-toggle::after {
     font-size: 1.5rem;

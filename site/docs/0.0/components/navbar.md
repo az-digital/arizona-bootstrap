@@ -519,7 +519,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
     <div class="navbar-offcanvas-header">
-      <div class="bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
+      <div class="bg-chili d-flex justify-content-between align-items-center">
         <a href="/" class="navbar-offcanvas-home btn btn-red d-flex flex-column align-items-center">
           <span class="material-icons">home</span>
           <span>HOME</span>
@@ -529,7 +529,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
           <span>CLOSE</span>
         </button>
       </div>
-      <form class="navbar-offcanvas-search bg-white pr-3">
+      <form class="navbar-offcanvas-search bg-white">
         <div class="input-group">
           <input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -539,25 +539,37 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
       </form>
     </div>
     <ul class="navbar-nav">
-      <li class="nav-item nav-item-parent active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item nav-item-parent dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="undergraduateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Undergraduate
+        </a>
+        <div class="dropdown-menu" aria-labelledby="undergraduateDropdown">
+          <a class="dropdown-item" href="#">Degrees & Concentrations</a>
+          <a class="dropdown-item" href="#">Prospective Student Information</a>
+          <a class="dropdown-item" href="#">Current Students</a>
+        </div>
       </li>
       <li class="nav-item nav-item-parent dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <a class="nav-link dropdown-toggle" href="#" id="graduateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Graduate
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-menu" aria-labelledby="graduateDropdown">
+          <a class="dropdown-item" href="#">Degrees & Concentrations</a>
+          <a class="dropdown-item" href="#">Prospective Student Information</a>
+          <a class="dropdown-item" href="#">Current Students</a>
         </div>
       </li>
       <li class="nav-item nav-item-parent">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="#">News & Events</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Resources</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">People</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Give</a>
       </li>
     </ul> 
   </div>
