@@ -3,71 +3,114 @@ layout: examples
 title: Navbar template
 ---
   <!--   ++++++++++++++ Place inside body tag ++++++++++++++   -->
-<header id="region_header_ua" class="l-arizona-header bg-red">
-  <div class="container l-container">
-    <div class="row">
-      <a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo">
-         <img alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.uadigital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" class="arizona-line-logo">
-      </a>
-	    <nav class="navbar navbar-expand-lg navbar-light">
+<header id="header" class="header" role="banner" aria-label="Site header">
+  <div class="bg-red">
+   <div class="container">
+     <div class="row">
+       <div class="col-10 col-sm-3 pr-0">
+         <a href="https://www.arizona.edu" title="The University of Arizona homepage">
+           <img alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.uadigital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" class="pt-4 pb-3 pl-2">
+         </a>
+       </div>
 	    	<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-default float-right">
 	    		<span class="navbar-toggler-icon"></span>
 	    	</button>
-	    	<div class="navbar-offcanvas-container">
-	    		<div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-	    			<div class="navbar-offcanvas-header">
-	    				<div class="redbar bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
-	    					<a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
-	    						<span class="material-icons">home</span>
-                  <span>HOME</span>
-	    					</a>
-	    					<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
-	    						<span class="material-icons">close</span>
-                  <span>CLOSE</span>
-	    					</button>
-	    				</div>
-	    				<form class="navbar-offcanvas-search bg-white pr-3">
-	    					<div class="input-group">
-	    						<input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
-	    						<div class="input-group-append">
-	    							<button class="btn" type="submit"><span class="material-icons">search</span></button>
-	    						</div>
-	    					</div>
-	    				</form>
-	    			</div>
-	    			<ul class="navbar-nav">
-	    				<li class="nav-item nav-item-parent dropdown keep-open">
-	    					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    						Undergraduate
-	    					</a>
-	    					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-	    						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
-	    						<a class="dropdown-item" href="#">Prospective student information</a>
-	    					</div>
-	    				</li>
-	    				<li class="nav-item nav-item-parent dropdown keep-open">
-	    					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    						Graduate
-	    					</a>
-	    					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
-	    						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
-	    						<a class="dropdown-item" href="#">Prospective student information</a>
-	    					</div>
-	    				</li>
-	    				<li class="nav-item nav-item-parent">
-	    				  	<a class="nav-link" href="#">Current students</a>
-	    				</li>
-	    			</ul>
-	    		</div>
-	    	</div>
-	    </nav>
      </div>
    </div>
+  </div>
+  <div class="header page-row" id="header_site">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="/" title="Quickstart Review | Home" class="header_logo" rel="home"><img src="http://7b5e2985-cedf-4a13-ab91-3a35916c835d--pr-257.probo.build/profiles/custom/az_quickstart/themes/custom/az_barrio/logo.png" alt="Quickstart Review | Home" class="img-fluid"></a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-8">
+          <div class="row">
+            <div class="col">
+              <nav aria-labelledby="block-az-utility-links-menu" id="block-az-utility-links" class="block block-menu navigation menu--az-utility-links">
+                <h2 class="sr-only" id="block-az-utility-links-menu">Utility Links</h2>
+                <ul class="clearfix nav nav-utility ml-auto justify-content-end">
+                  <li class="nav-item">
+                    <a href="https://quickstart.arizona.edu/" class="text-muted nav-link nav-link-https--quickstartarizonaedu-">Utility 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://brand.arizona.edu/" class="text-muted nav-link nav-link-https--brandarizonaedu-">Utility 2</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="search-block-form block block-search block-search-form-block" data-drupal-selector="search-block-form" id="block-az-barrio-search" role="search">
+                <div class="content container-inline">
+                  <div class="content container-inline">
+                    <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8" class="search-form search-block-form form-row">
+                      <fieldset class="js-form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label form-group">
+                        <label for="edit-keys" class="sr-only">Search</label>
+                        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Search">
+                      </fieldset>
+                      <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-group" id="edit-actions">
+                        <button data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit btn btn-primary">Search</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </div>
 </header>
-<header>
-</header>
-
-<main role="main">
+<div class="navbar-offcanvas-container">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  	<div class="navbar-offcanvas-container">
+  		<div class="navbar-offcanvas" id="navbarOffcanvasDemo">
+  			<div class="navbar-offcanvas-header">
+  				<div class="redbar bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
+  					<a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
+  						<span class="material-icons">home</span>
+              <span>HOME</span>
+  					</a>
+  					<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
+  						<span class="material-icons">close</span>
+              <span>CLOSE</span>
+  					</button>
+  				</div>
+  				<form class="navbar-offcanvas-search bg-white pr-3">
+  					<div class="input-group">
+  						<input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
+  						<div class="input-group-append">
+  							<button class="btn" type="submit"><span class="material-icons">search</span></button>
+  						</div>
+  					</div>
+  				</form>
+  			</div>
+  			<ul class="navbar-nav">
+  				<li class="nav-item nav-item-parent dropdown keep-open">
+  					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  						Undergraduate
+  					</a>
+  					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
+  						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
+  						<a class="dropdown-item" href="#">Prospective student information</a>
+  					</div>
+  				</li>
+  				<li class="nav-item nav-item-parent dropdown keep-open">
+  					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  						Graduate
+  					</a>
+  					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
+  						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
+  						<a class="dropdown-item" href="#">Prospective student information</a>
+  					</div>
+  				</li>
+  				<li class="nav-item nav-item-parent">
+  				  	<a class="nav-link" href="#">Current students</a>
+  				</li>
+  			</ul>
+  		</div>
+  	</div>
+  </nav>
+</div>
 	<!-- Marketing messaging and featurettes
 	 ================================================== -->
 	 <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -147,5 +190,4 @@ title: Navbar template
 		 <p class="float-right"><a href="#">Back to top</a></p>
 		 <p>&copy; 2017-{{ site.time | date: "%Y" }} Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 	 </footer>
-</main>
 

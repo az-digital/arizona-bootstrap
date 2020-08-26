@@ -525,7 +525,7 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
           <span class="material-icons">home</span>
           <span>HOME</span>
         </a>
-        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
+        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
           <span class="material-icons">close</span>
           <span>CLOSE</span>
         </button>

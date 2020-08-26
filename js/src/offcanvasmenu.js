@@ -58,8 +58,8 @@ class Offcanvasmenu {
     this._element         = element
     this._config          = this._getConfig(config)
     this._triggerArray    = [].slice.call(document.querySelectorAll(
-      `[data-toggle="offcanvas"][href="#${element.id}"],` +
-      `[data-toggle="offcanvas"][data-target="#${element.id}"]`
+                                                                    `[data-toggle="offcanvas"][href="#${element.id}"],` +
+                                                                    `[data-toggle="offcanvas"][data-target="#${element.id}"]`
     ))
 
     const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE))
@@ -107,7 +107,7 @@ class Offcanvasmenu {
 
   open() {
     if (this._isTransitioning ||
-      $(this._element).hasClass(CLASS_NAME_OPEN)) {
+        $(this._element).hasClass(CLASS_NAME_OPEN)) {
       return
     }
 
@@ -179,7 +179,7 @@ class Offcanvasmenu {
 
   close() {
     if (this._isTransitioning ||
-      !$(this._element).hasClass(CLASS_NAME_OPEN)) {
+        !$(this._element).hasClass(CLASS_NAME_OPEN)) {
       return
     }
 
@@ -273,8 +273,8 @@ class Offcanvasmenu {
 
     $(children).each((i, element) => {
       this._addAriaAndOffcanvasmenudClass(
-        Offcanvasmenu._getTargetFromElement(element),
-        [element]
+                                          Offcanvasmenu._getTargetFromElement(element),
+                                          [element]
       )
     })
 
@@ -326,6 +326,65 @@ class Offcanvasmenu {
     })
   }
 }
+
+/**
+ * ------------------------------------------------------------------------
+ * Viewport conditional dropdown menu override for offcanvas meun.
+ * ------------------------------------------------------------------------
+ */
+
+// Define our viewportWidth variable
+var viewportWidth;
+
+// @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
+// Set/update the viewportWidth value
+var setViewportWidth = function () {
+  viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  console.log(viewportWidth);
+}
+
+$('html').css('overflow-x', 'hidden');
+$('html').css('max-width', '100vw');
+$('body').css('overflow-x', 'hidden');
+$('body').css('max-width', '100vw');
+$('.dropdown.keep-open .dropdown-toggle').on('click', function(event) {
+  setViewportWidth();
+  if (viewportWidth > 768) {
+    return;
+  } else {
+    if ($(this).next().hasClass('show')) {
+      $(this).parents('.dropdown-menu').first().find('.show').removeClass("show").attr('aria-expanded','false');
+      console.log("hasClass('show')");
+    }
+    if ($(this).attr('aria-expanded') == 'true') {
+      console.log("aria-expanded = true");
+      $(this).attr('aria-expanded',false);
+      $(this).parent().removeClass('show');
+      //$(this).dropdown('hide');
+    }
+    else {
+      console.log("aria-expanded = false");
+      $(this).attr('aria-expanded',true);
+      $(this).parent().addClass('show');
+    }
+    console.log("end");
+    var $subMenu = $(this).next(".dropdown-menu");
+
+    $subMenu.toggleClass('show');
+    if ($subMenu.attr('aria-expanded') == true) {
+      $subMenu.attr('aria-expanded',false);
+    }
+    else {
+      $subMenu.attr('aria-expanded',true);
+    }
+    return false;
+  }
+});
+
+// On resize events, recalculate and log
+//window.addEventListener('resize', function () {
+  //setViewportWidth();
+//}, false);
 
 /**
  * ------------------------------------------------------------------------
