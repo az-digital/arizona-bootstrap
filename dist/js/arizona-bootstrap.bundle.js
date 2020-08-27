@@ -13,8 +13,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -208,8 +208,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): alert.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): alert.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -220,7 +220,7 @@
    */
 
   const NAME                = 'alert';
-  const VERSION             = '4.5.0';
+  const VERSION             = '4.5.2';
   const DATA_KEY            = 'bs.alert';
   const EVENT_KEY           = `.${DATA_KEY}`;
   const DATA_API_KEY        = '.data-api';
@@ -377,8 +377,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): button.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): button.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -389,7 +389,7 @@
    */
 
   const NAME$1                = 'button';
-  const VERSION$1             = '4.5.0';
+  const VERSION$1             = '4.5.2';
   const DATA_KEY$1            = 'bs.button';
   const EVENT_KEY$1           = `.${DATA_KEY$1}`;
   const DATA_API_KEY$1        = '.data-api';
@@ -528,10 +528,9 @@
           return
         }
 
-        if (initialButton.tagName === 'LABEL' && inputBtn && inputBtn.type === 'checkbox') {
-          event.preventDefault(); // work around event sent to label and input
+        if (initialButton.tagName !== 'LABEL' || inputBtn && inputBtn.type !== 'checkbox') {
+          Button._jQueryInterface.call($(button), 'toggle');
         }
-        Button._jQueryInterface.call($(button), 'toggle');
       }
     })
     .on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, (event) => {
@@ -581,8 +580,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): carousel.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): carousel.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -593,7 +592,7 @@
    */
 
   const NAME$2                   = 'carousel';
-  const VERSION$2                = '4.5.0';
+  const VERSION$2                = '4.5.2';
   const DATA_KEY$2               = 'bs.carousel';
   const EVENT_KEY$2              = `.${DATA_KEY$2}`;
   const DATA_API_KEY$2           = '.data-api';
@@ -1174,8 +1173,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): collapse.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): collapse.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -1186,7 +1185,7 @@
    */
 
   const NAME$3                = 'collapse';
-  const VERSION$3             = '4.5.0';
+  const VERSION$3             = '4.5.2';
   const DATA_KEY$3            = 'bs.collapse';
   const EVENT_KEY$3           = `.${DATA_KEY$3}`;
   const DATA_API_KEY$3        = '.data-api';
@@ -4175,8 +4174,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): dropdown.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): dropdown.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -4187,7 +4186,7 @@
    */
 
   const NAME$4                     = 'dropdown';
-  const VERSION$4                  = '4.5.0';
+  const VERSION$4                  = '4.5.2';
   const DATA_KEY$4                 = 'bs.dropdown';
   const EVENT_KEY$4                = `.${DATA_KEY$4}`;
   const DATA_API_KEY$4             = '.data-api';
@@ -4704,8 +4703,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): modal.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): modal.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -4716,7 +4715,7 @@
    */
 
   const NAME$5               = 'modal';
-  const VERSION$5            = '4.5.0';
+  const VERSION$5            = '4.5.2';
   const DATA_KEY$5           = 'bs.modal';
   const EVENT_KEY$5          = `.${DATA_KEY$5}`;
   const DATA_API_KEY$5       = '.data-api';
@@ -4939,12 +4938,25 @@
           return
         }
 
+        const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+
+        if (!isModalOverflowing) {
+          this._element.style.overflowY = 'hidden';
+        }
+
         this._element.classList.add(CLASS_NAME_STATIC);
 
-        const modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+        const modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        $(this._element).off(Util.TRANSITION_END);
 
         $(this._element).one(Util.TRANSITION_END, () => {
           this._element.classList.remove(CLASS_NAME_STATIC);
+          if (!isModalOverflowing) {
+            $(this._element).one(Util.TRANSITION_END, () => {
+              this._element.style.overflowY = '';
+            })
+              .emulateTransitionEnd(this._element, modalTransitionDuration);
+          }
         })
           .emulateTransitionEnd(modalTransitionDuration);
         this._element.focus();
@@ -4966,6 +4978,7 @@
       this._element.style.display = 'block';
       this._element.removeAttribute('aria-hidden');
       this._element.setAttribute('aria-modal', true);
+      this._element.setAttribute('role', 'dialog');
 
       if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
         modalBody.scrollTop = 0;
@@ -5045,6 +5058,7 @@
       this._element.style.display = 'none';
       this._element.setAttribute('aria-hidden', true);
       this._element.removeAttribute('aria-modal');
+      this._element.removeAttribute('role');
       this._isTransitioning = false;
       this._showBackdrop(() => {
         $(document.body).removeClass(CLASS_NAME_OPEN);
@@ -5312,8 +5326,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -5440,8 +5454,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tooltip.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tooltip.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -5452,7 +5466,7 @@
    */
 
   const NAME$6                  = 'tooltip';
-  const VERSION$6               = '4.5.0';
+  const VERSION$6               = '4.5.2';
   const DATA_KEY$6              = 'bs.tooltip';
   const EVENT_KEY$6             = `.${DATA_KEY$6}`;
   const JQUERY_NO_CONFLICT$6    = $.fn[NAME$6];
@@ -6203,8 +6217,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): popover.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): popover.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6215,7 +6229,7 @@
    */
 
   const NAME$7                = 'popover';
-  const VERSION$7             = '4.5.0';
+  const VERSION$7             = '4.5.2';
   const DATA_KEY$7            = 'bs.popover';
   const EVENT_KEY$7           = `.${DATA_KEY$7}`;
   const JQUERY_NO_CONFLICT$7  = $.fn[NAME$7];
@@ -6379,8 +6393,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): scrollspy.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): scrollspy.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6391,7 +6405,7 @@
    */
 
   const NAME$8               = 'scrollspy';
-  const VERSION$8            = '4.5.0';
+  const VERSION$8            = '4.5.2';
   const DATA_KEY$8           = 'bs.scrollspy';
   const EVENT_KEY$8          = `.${DATA_KEY$8}`;
   const DATA_API_KEY$6       = '.data-api';
@@ -6695,8 +6709,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tab.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tab.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6707,7 +6721,7 @@
    */
 
   const NAME$9               = 'tab';
-  const VERSION$9            = '4.5.0';
+  const VERSION$9            = '4.5.2';
   const DATA_KEY$9           = 'bs.tab';
   const EVENT_KEY$9          = `.${DATA_KEY$9}`;
   const DATA_API_KEY$7       = '.data-api';
@@ -6945,8 +6959,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): toast.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): toast.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6957,7 +6971,7 @@
    */
 
   const NAME$a               = 'toast';
-  const VERSION$a            = '4.5.0';
+  const VERSION$a            = '4.5.2';
   const DATA_KEY$a           = 'bs.toast';
   const EVENT_KEY$a          = `.${DATA_KEY$a}`;
   const JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -7025,6 +7039,8 @@
         return
       }
 
+      this._clearTimeout();
+
       if (this._config.animation) {
         this._element.classList.add(CLASS_NAME_FADE$5);
       }
@@ -7072,8 +7088,7 @@
     }
 
     dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
+      this._clearTimeout();
 
       if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
         this._element.classList.remove(CLASS_NAME_SHOW$7);
@@ -7124,6 +7139,11 @@
       } else {
         complete();
       }
+    }
+
+    _clearTimeout() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
     }
 
     // Static
@@ -7179,53 +7199,22 @@
     return Constructor;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+  function _extends$1() {
+    _extends$1 = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
 
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
       }
-    }
 
-    return target;
+      return target;
+    };
+
+    return _extends$1.apply(this, arguments);
   }
 
   var version = "0.0.4-dev";
@@ -7439,7 +7428,7 @@
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default$8), config);
+      config = _extends$1({}, Default$8, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
 
       Util.typeCheckConfig(NAME$b, config, DefaultType$8);
@@ -7488,7 +7477,7 @@
         var $this = $(this);
         var data = $this.data(DATA_KEY$b);
 
-        var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$8), $this.data()), typeof config === 'object' && config ? config : {});
+        var _config = _extends$1({}, Default$8, $this.data(), typeof config === 'object' && config ? config : {});
 
         if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
           _config.toggle = false;
