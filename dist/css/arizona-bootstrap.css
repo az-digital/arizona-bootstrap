@@ -13659,7 +13659,7 @@ a {
   .navbar-offcanvas.open {
     transform: translateX(-1rem);
     /* Account for horizontal padding on navbar */
-    box-shadow: -10px 0 20px 0 #495057;
+    box-shadow: -200px 0 0px 0 rgba(0, 0, 0, 0.7);
   }
   .navbar-offcanvas .navbar-offcanvas-header {
     display: block;

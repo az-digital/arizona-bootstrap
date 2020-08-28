@@ -577,15 +577,6 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
       <li class="nav-item nav-item-parent">
         <a class="nav-link" href="#">Give</a>
       </li>
-      <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">Athletics</a>
-      </li>
-      <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">Long Menu Title that Wraps to a Second Line</a>
-      </li>
-      <li class="nav-item nav-item-parent">
-        <a class="nav-link" href="#">Long Menu Title that Wraps to a Second Line</a>
-      </li>
     </ul> 
   </div>
 </nav>

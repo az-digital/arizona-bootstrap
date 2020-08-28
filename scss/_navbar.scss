@@ -95,7 +95,7 @@
     &.open {
       -webkit-transform: translateX(-1rem);
       transform: translateX(-1rem); /* Account for horizontal padding on navbar */
-      box-shadow: -10px 0 20px 0 $gray-700;
+      box-shadow: -200px 0 0px 0 rgba($black, .7);
     }
     /* stylelint-enable */
 
