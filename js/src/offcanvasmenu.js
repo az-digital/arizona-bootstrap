@@ -58,7 +58,7 @@ class Offcanvasmenu {
     this._element         = element
     this._config          = this._getConfig(config)
     this._triggerArray    = [].slice.call(document.querySelectorAll(
-                                                                    `[data-toggle="offcanvas"][href="#${element.id}"],` +
+      `[data-toggle="offcanvas"][href="#${element.id}"],` +
                                                                     `[data-toggle="offcanvas"][data-target="#${element.id}"]`
     ))
 
@@ -273,8 +273,8 @@ class Offcanvasmenu {
 
     $(children).each((i, element) => {
       this._addAriaAndOffcanvasmenudClass(
-                                          Offcanvasmenu._getTargetFromElement(element),
-                                          [element]
+        Offcanvasmenu._getTargetFromElement(element),
+        [element]
       )
     })
 
@@ -334,22 +334,22 @@ class Offcanvasmenu {
  */
 
 // Define our viewportWidth variable
-var viewportWidth;
+let VIEWPORT_WIDTH = false
+const XS_BREAKPOINT_MAX = 767
 
 // @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
 // Set/update the viewportWidth value
-var setViewportWidth = function () {
-  viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+function setViewportWidth() {
+  VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth
 }
 
-$('.dropdown.keep-open .dropdown-toggle').on('click', function(event) {
-  setViewportWidth();
-  if (viewportWidth < 768) {
-    $(this).next('.dropdown-menu').toggle();
-    event.stopPropagation();
-    return false;
+$('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
+  setViewportWidth()
+  if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+    $(this).next('.dropdown-menu').toggle()
+    event.stopPropagation()
   }
-});
+})
 
 /**
  * ------------------------------------------------------------------------

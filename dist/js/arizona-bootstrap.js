@@ -4907,20 +4907,20 @@
   // Define our viewportWidth variable
 
 
-  var viewportWidth; // @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
+  var VIEWPORT_WIDTH = false;
+  var XS_BREAKPOINT_MAX = 767; // @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
   // Set/update the viewportWidth value
 
-  var setViewportWidth = function setViewportWidth() {
-    viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-  };
+  function setViewportWidth() {
+    VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth;
+  }
 
   $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
     setViewportWidth();
 
-    if (viewportWidth < 768) {
+    if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
       $(this).next('.dropdown-menu').toggle();
       event.stopPropagation();
-      return false;
     }
   });
   /**
