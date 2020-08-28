@@ -329,22 +329,21 @@ class Offcanvasmenu {
 
 /**
  * ------------------------------------------------------------------------
- * Viewport conditional dropdown menu override for offcanvas meun.
+ * Viewport conditional dropdown menu override for offcanvas menu.
  * ------------------------------------------------------------------------
  */
 
-// Define our viewportWidth variable
 let VIEWPORT_WIDTH = false
 const XS_BREAKPOINT_MAX = 767
 
 // @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
-// Set/update the viewportWidth value
-function setViewportWidth() {
+// Get the viewportWidth value.
+function getViewportWidth() {
   VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth
 }
 
 $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
-  setViewportWidth()
+  getViewportWidth()
   if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
     $(this).next('.dropdown-menu').toggle()
     event.stopPropagation()
