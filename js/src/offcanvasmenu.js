@@ -7,7 +7,6 @@
 
 import $ from 'jquery'
 import Util from '../../node_modules/bootstrap/js/src/util.js'
-import pkg from '../../package.json'
 
 /**
  * ------------------------------------------------------------------------
@@ -16,7 +15,7 @@ import pkg from '../../package.json'
  */
 
 const NAME                = 'offcanvasmenu'
-const AZ_VERSION          = `v${pkg.version}`
+const AZ_VERSION          = 'v0.0.4'
 const DATA_KEY            = 'az.offcanvasmenu'
 const EVENT_KEY           = `.${DATA_KEY}`
 const DATA_API_KEY        = '.data-api'
