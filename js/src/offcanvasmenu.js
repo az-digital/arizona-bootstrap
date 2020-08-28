@@ -7,7 +7,7 @@
 
 import $ from 'jquery'
 import Util from '../../node_modules/bootstrap/js/src/util.js'
-import { version } from '../../package.json'
+import pkg from '../../package.json'
 
 /**
  * ------------------------------------------------------------------------
@@ -16,7 +16,7 @@ import { version } from '../../package.json'
  */
 
 const NAME                = 'offcanvasmenu'
-const AZ_VERSION          = `${version}`
+const AZ_VERSION          = `v${pkg.version}`
 const DATA_KEY            = 'az.offcanvasmenu'
 const EVENT_KEY           = `.${DATA_KEY}`
 const DATA_API_KEY        = '.data-api'
@@ -36,7 +36,7 @@ const EVENT_OPEN           = `open${EVENT_KEY}`
 const EVENT_OPENED         = `opened${EVENT_KEY}`
 const EVENT_CLOSE          = `close${EVENT_KEY}`
 const EVENT_CLOSED         = `closed${EVENT_KEY}`
-const TA_API = `click${EVENT_KEY}${DATA_API_KEY}`
+const DATA_API             = `click${EVENT_KEY}${DATA_API_KEY}`
 
 const CLASS_NAME_OPEN      = 'open'
 const CLASS_NAME_CLOSE     = 'offcanvas-toggle'
@@ -59,7 +59,7 @@ class Offcanvasmenu {
     this._config          = this._getConfig(config)
     this._triggerArray    = [].slice.call(document.querySelectorAll(
       `[data-toggle="offcanvas"][href="#${element.id}"],` +
-                                                                    `[data-toggle="offcanvas"][data-target="#${element.id}"]`
+      `[data-toggle="offcanvas"][data-target="#${element.id}"]`
     ))
 
     const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE))
@@ -357,7 +357,7 @@ $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
  * ------------------------------------------------------------------------
  */
 
-$(document).on(TA_API, SELECTOR_DATA_TOGGLE, function (event) {
+$(document).on(DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
   // preventDefault only for <a> elements (which change the URL) not inside the
   // offcanvas element
   if (event.currentTarget.tagName === 'A') {
