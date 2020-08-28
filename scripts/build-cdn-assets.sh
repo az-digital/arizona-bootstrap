@@ -9,11 +9,10 @@
 #
 #------------------------------------------------------------------------------
 
-set -ex
+set -e
 
 create-source-links
 
 cd "$AZ_BOOTSTRAP_DEST_DIR"
-npm install
-bundle install
+
 npm run dist
