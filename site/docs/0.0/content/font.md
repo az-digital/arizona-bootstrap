@@ -111,21 +111,21 @@ this line of code at the top of your main stylesheet.
 
 Put this within your `<head>` tag above the reference to arizona-bootstrap.css.
 
-  {% highlight html %}
-  <!-- Proxima Nova reference. -->
-  <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Arizona Bootstrap reference. -->
-  <link href="/arizona-bootstrap/feature/10-add-proxima-nova-font/docs/0.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
-  {% endhighlight %}
+{% highlight html %}
+<!-- Proxima Nova reference. -->
+<link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Arizona Bootstrap reference. -->
+<link href="/arizona-bootstrap/feature/10-add-proxima-nova-font/docs/0.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+{% endhighlight %}
 
-  If using the font independently from Arizona Bootstrap, below are
-  instructions on how to use the different weights and styles.
+If using the font independently from Arizona Bootstrap, below are
+instructions on how to use the different weights and styles.
 
-  ### **Instructions**
-  The following istructions are for adding specific CSS classes for font weights
-  or styles.  If using Arizona Bootstrap, you will most likely not need to do
-  this unless you are trying to use a specific variant.
-  <span class="label label-warning">Important</span>
+### **Instructions**
+The following istructions are for adding specific CSS classes for font weights
+or styles.  If using Arizona Bootstrap, you will most likely not need to do
+this unless you are trying to use a specific variant.
+<span class="label label-warning">Important</span>
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
