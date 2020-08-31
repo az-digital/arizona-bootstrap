@@ -114,7 +114,7 @@ Be sure to have your pages set up with the latest design and development standar
 </html>
 {% endhighlight %}
 
-That's all you need for overall page requirements. Visit the [Layout docs]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/overview/) or [our official examples]({{ site.baseurl }}/docs/{{ site.docs_version }}/examples/) to start laying out your site's content and components.
+That's all you need for overall page requirements. Visit the [Layout docs]({{ site.baseurl }}/docs/{{ site.docs_version }}/layout/overview/) to start laying out your site's content and components.
 
 ## Sticky Footer Template
 
@@ -224,4 +224,4 @@ For improved cross-browser rendering, we use [Reboot]({{ site.baseurl }}/docs/{{
 
 Stay up to date on the development of {{ site.title }} and reach out to the community with these helpful resources.
 
-- Join [the official Slack workspace]({{ site.slack }}/).
+- Join [the official Slack workspace]({{ site.baseurl }}/docs/{{ site.docs_version }}{{ site.slack }}/).

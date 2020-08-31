@@ -1,7 +1,7 @@
 #!/bin/sh
 #------------------------------------------------------------------------------
 #
-# build-review-site.sh: build the documentation site with the latest changes.
+# expose-review-site.sh: build the documentation site, copy back to the source
 #
 # Required environment variables
 # - AZ_BOOTSTRAP_DEST_DIR Internal directory used for the build
@@ -23,4 +23,8 @@ cd "$AZ_BOOTSTRAP_DEST_DIR"
 create-jekyll-config
 
 npm run dist
-npm run docs
+npm run css-docs
+npm run js-docs
+npm run docs-build
+
+sync-static-site-dir
