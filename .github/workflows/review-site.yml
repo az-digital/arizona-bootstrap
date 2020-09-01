@@ -20,8 +20,7 @@ jobs:
       - name: Set variables for Docker images
         # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
-          tar -cf scripts.tar scripts
-          lockhash=$(sha256sum Dockerfile Gemfile.lock package-lock.json scripts.tar | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          lockhash=$(find Dockerfile Gemfile.lock package-lock.json scripts -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'

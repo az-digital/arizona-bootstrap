@@ -19,7 +19,7 @@ import Offcanvasmenu from './offcanvasmenu';
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.5.0): index.js
+ * Bootstrap (v4.5.2): index.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */

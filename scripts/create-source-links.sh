@@ -43,14 +43,15 @@ fi
 #------------------------------------------------------------------------------
 # List of things to link (being selective, not taking the entire directory).
 
-linkwhitelist=".stylelintignore \
+linkwhitelist=".babelrc.js \
+  .eslintignore \
+  .stylelintignore \
   .stylelintrc \
   CONTRIBUTING.md \
   LICENSE \
   README.md \
   _config_template.yml \
   dist \
-  js \
   scripts \
   scss \
   site \
@@ -92,9 +93,15 @@ done
 #------------------------------------------------------------------------------
 # Copy, don't link, the build subdirectory.
 
-logmessage "Copying the /build subdirectory"
+logmessage "Copying the /build and /js subdirectories and root .eslintrc.json file"
 
 cp -R "${AZ_BOOTSTRAP_SOURCE_DIR}/build" "${AZ_BOOTSTRAP_DEST_DIR}/build" \
  || errorexit "Couldn't copy the /build subdirectory from ${AZ_BOOTSTRAP_SOURCE_DIR} to ${AZ_BOOTSTRAP_DEST_DIR}"
+
+cp -R "${AZ_BOOTSTRAP_SOURCE_DIR}/js" "${AZ_BOOTSTRAP_DEST_DIR}/js" \
+ || errorexit "Couldn't copy the /js subdirectory from ${AZ_BOOTSTRAP_SOURCE_DIR} to ${AZ_BOOTSTRAP_DEST_DIR}"
+
+cp "${AZ_BOOTSTRAP_SOURCE_DIR}/.eslintrc.json" "${AZ_BOOTSTRAP_DEST_DIR}/.eslintrc.json" \
+ || errorexit "Couldn't copy the .eslintrc.json file from ${AZ_BOOTSTRAP_SOURCE_DIR} tp ${AZ_BOOTSTRAP_DEST_DIR}"
 
 normalexit "Linked $nfound entries"

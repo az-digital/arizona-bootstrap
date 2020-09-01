@@ -1,14 +1,13 @@
 'use strict'
 
-import json from '@rollup/plugin-json';
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
-const resolve = require('@rollup/plugin-node-resolve')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const banner = require('./banner.js')
 
-const BUNDLE  = process.env.BUNDLE === 'true'
+const BUNDLE = process.env.BUNDLE === 'true'
 
-let fileDest  = 'arizona-bootstrap.js'
+let fileDest = 'arizona-bootstrap.js'
 const external = ['jquery', 'popper.js']
 const plugins = [
   babel({
@@ -16,8 +15,7 @@ const plugins = [
     exclude: 'node_modules/**',
     // Include the helpers in the bundle, at most one copy of each
     babelHelpers: 'bundled'
-  }),
-  json()
+  })
 ]
 const globals = {
   jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
@@ -29,7 +27,7 @@ if (BUNDLE) {
   // Remove last entry in external array to bundle Popper
   external.pop()
   delete globals['popper.js']
-  plugins.push(resolve())
+  plugins.push(nodeResolve())
 }
 
 module.exports = {

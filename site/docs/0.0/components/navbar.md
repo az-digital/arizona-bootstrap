@@ -517,27 +517,64 @@ Adding the `.navbar-offcanvas` class to your `.navbar-nav` will incorporate an o
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo"> CLOSE</button>
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+    <div class="navbar-offcanvas-header">
+      <div class="bg-chili d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-offcanvas-home btn btn-red d-flex flex-column align-items-center">
+          <span class="material-icons">home</span>
+          <span>HOME</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red d-flex flex-column align-items-center">
+          <span class="material-icons">close</span>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <form class="navbar-offcanvas-search bg-white">
+        <div class="input-group">
+          <input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn" type="submit"><span class="material-icons">search</span></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item nav-item-parent dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admissions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+          <a class="dropdown-item" href="#">Dropdown Menu Item #1</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item nav-item-parent dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Academics
+        </a>
+        <div class="dropdown-menu" aria-labelledby="academicsDropdown">
+          <a class="dropdown-item" href="#">Dropdown Menu Item #1</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
+          <a class="dropdown-item" href="#">Dropdown Menu Item #2</a>
+        </div>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Research</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Student Life</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Leadership</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Alumni</a>
+      </li>
+      <li class="nav-item nav-item-parent">
+        <a class="nav-link" href="#">Give</a>
       </li>
     </ul>
   </div>

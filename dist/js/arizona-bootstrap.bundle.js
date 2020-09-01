@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v0.0.3-dev (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v0.0.4-dev (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2020 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
   */
@@ -11,12 +11,10 @@
 
   $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
 
-  var version = "0.0.3-dev";
-
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -210,8 +208,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): alert.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): alert.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -222,7 +220,7 @@
    */
 
   const NAME                = 'alert';
-  const VERSION             = '4.5.0';
+  const VERSION             = '4.5.2';
   const DATA_KEY            = 'bs.alert';
   const EVENT_KEY           = `.${DATA_KEY}`;
   const DATA_API_KEY        = '.data-api';
@@ -379,8 +377,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): button.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): button.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -391,7 +389,7 @@
    */
 
   const NAME$1                = 'button';
-  const VERSION$1             = '4.5.0';
+  const VERSION$1             = '4.5.2';
   const DATA_KEY$1            = 'bs.button';
   const EVENT_KEY$1           = `.${DATA_KEY$1}`;
   const DATA_API_KEY$1        = '.data-api';
@@ -530,10 +528,9 @@
           return
         }
 
-        if (initialButton.tagName === 'LABEL' && inputBtn && inputBtn.type === 'checkbox') {
-          event.preventDefault(); // work around event sent to label and input
+        if (initialButton.tagName !== 'LABEL' || inputBtn && inputBtn.type !== 'checkbox') {
+          Button._jQueryInterface.call($(button), 'toggle');
         }
-        Button._jQueryInterface.call($(button), 'toggle');
       }
     })
     .on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, (event) => {
@@ -583,8 +580,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): carousel.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): carousel.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -595,7 +592,7 @@
    */
 
   const NAME$2                   = 'carousel';
-  const VERSION$2                = '4.5.0';
+  const VERSION$2                = '4.5.2';
   const DATA_KEY$2               = 'bs.carousel';
   const EVENT_KEY$2              = `.${DATA_KEY$2}`;
   const DATA_API_KEY$2           = '.data-api';
@@ -1176,8 +1173,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): collapse.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): collapse.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -1188,7 +1185,7 @@
    */
 
   const NAME$3                = 'collapse';
-  const VERSION$3             = '4.5.0';
+  const VERSION$3             = '4.5.2';
   const DATA_KEY$3            = 'bs.collapse';
   const EVENT_KEY$3           = `.${DATA_KEY$3}`;
   const DATA_API_KEY$3        = '.data-api';
@@ -4177,8 +4174,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): dropdown.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): dropdown.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -4189,7 +4186,7 @@
    */
 
   const NAME$4                     = 'dropdown';
-  const VERSION$4                  = '4.5.0';
+  const VERSION$4                  = '4.5.2';
   const DATA_KEY$4                 = 'bs.dropdown';
   const EVENT_KEY$4                = `.${DATA_KEY$4}`;
   const DATA_API_KEY$4             = '.data-api';
@@ -4706,8 +4703,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): modal.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): modal.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -4718,7 +4715,7 @@
    */
 
   const NAME$5               = 'modal';
-  const VERSION$5            = '4.5.0';
+  const VERSION$5            = '4.5.2';
   const DATA_KEY$5           = 'bs.modal';
   const EVENT_KEY$5          = `.${DATA_KEY$5}`;
   const DATA_API_KEY$5       = '.data-api';
@@ -4941,12 +4938,25 @@
           return
         }
 
+        const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+
+        if (!isModalOverflowing) {
+          this._element.style.overflowY = 'hidden';
+        }
+
         this._element.classList.add(CLASS_NAME_STATIC);
 
-        const modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+        const modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        $(this._element).off(Util.TRANSITION_END);
 
         $(this._element).one(Util.TRANSITION_END, () => {
           this._element.classList.remove(CLASS_NAME_STATIC);
+          if (!isModalOverflowing) {
+            $(this._element).one(Util.TRANSITION_END, () => {
+              this._element.style.overflowY = '';
+            })
+              .emulateTransitionEnd(this._element, modalTransitionDuration);
+          }
         })
           .emulateTransitionEnd(modalTransitionDuration);
         this._element.focus();
@@ -4968,6 +4978,7 @@
       this._element.style.display = 'block';
       this._element.removeAttribute('aria-hidden');
       this._element.setAttribute('aria-modal', true);
+      this._element.setAttribute('role', 'dialog');
 
       if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
         modalBody.scrollTop = 0;
@@ -5047,6 +5058,7 @@
       this._element.style.display = 'none';
       this._element.setAttribute('aria-hidden', true);
       this._element.removeAttribute('aria-modal');
+      this._element.removeAttribute('role');
       this._isTransitioning = false;
       this._showBackdrop(() => {
         $(document.body).removeClass(CLASS_NAME_OPEN);
@@ -5314,8 +5326,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -5442,8 +5454,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tooltip.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tooltip.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -5454,7 +5466,7 @@
    */
 
   const NAME$6                  = 'tooltip';
-  const VERSION$6               = '4.5.0';
+  const VERSION$6               = '4.5.2';
   const DATA_KEY$6              = 'bs.tooltip';
   const EVENT_KEY$6             = `.${DATA_KEY$6}`;
   const JQUERY_NO_CONFLICT$6    = $.fn[NAME$6];
@@ -6205,8 +6217,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): popover.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): popover.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6217,7 +6229,7 @@
    */
 
   const NAME$7                = 'popover';
-  const VERSION$7             = '4.5.0';
+  const VERSION$7             = '4.5.2';
   const DATA_KEY$7            = 'bs.popover';
   const EVENT_KEY$7           = `.${DATA_KEY$7}`;
   const JQUERY_NO_CONFLICT$7  = $.fn[NAME$7];
@@ -6381,8 +6393,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): scrollspy.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): scrollspy.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6393,7 +6405,7 @@
    */
 
   const NAME$8               = 'scrollspy';
-  const VERSION$8            = '4.5.0';
+  const VERSION$8            = '4.5.2';
   const DATA_KEY$8           = 'bs.scrollspy';
   const EVENT_KEY$8          = `.${DATA_KEY$8}`;
   const DATA_API_KEY$6       = '.data-api';
@@ -6697,8 +6709,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): tab.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tab.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6709,7 +6721,7 @@
    */
 
   const NAME$9               = 'tab';
-  const VERSION$9            = '4.5.0';
+  const VERSION$9            = '4.5.2';
   const DATA_KEY$9           = 'bs.tab';
   const EVENT_KEY$9          = `.${DATA_KEY$9}`;
   const DATA_API_KEY$7       = '.data-api';
@@ -6947,8 +6959,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): toast.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): toast.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -6959,7 +6971,7 @@
    */
 
   const NAME$a               = 'toast';
-  const VERSION$a            = '4.5.0';
+  const VERSION$a            = '4.5.2';
   const DATA_KEY$a           = 'bs.toast';
   const EVENT_KEY$a          = `.${DATA_KEY$a}`;
   const JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -7027,6 +7039,8 @@
         return
       }
 
+      this._clearTimeout();
+
       if (this._config.animation) {
         this._element.classList.add(CLASS_NAME_FADE$5);
       }
@@ -7074,8 +7088,7 @@
     }
 
     dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
+      this._clearTimeout();
 
       if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
         this._element.classList.remove(CLASS_NAME_SHOW$7);
@@ -7124,358 +7137,6 @@
           .one(Util.TRANSITION_END, complete)
           .emulateTransitionEnd(transitionDuration);
       } else {
-        complete();
-      }
-    }
-
-    // Static
-
-    static _jQueryInterface(config) {
-      return this.each(function () {
-        const $element = $(this);
-        let data       = $element.data(DATA_KEY$a);
-        const _config  = typeof config === 'object' && config;
-
-        if (!data) {
-          data = new Toast(this, _config);
-          $element.data(DATA_KEY$a, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError(`No method named "${config}"`)
-          }
-
-          data[config](this);
-        }
-      })
-    }
-  }
-
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$a]             = Toast._jQueryInterface;
-  $.fn[NAME$a].Constructor = Toast;
-  $.fn[NAME$a].noConflict  = () => {
-    $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
-    return Toast._jQueryInterface
-  };
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
-  }
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$b = 'offcanvasmenu';
-  var AZ_VERSION = "" + version;
-  var DATA_KEY$b = 'az.offcanvasmenu';
-  var EVENT_KEY$b = "." + DATA_KEY$b;
-  var DATA_API_KEY$8 = '.data-api';
-  var JQUERY_NO_CONFLICT$b = $.fn[NAME$b];
-  var Default$8 = {
-    toggle: true,
-    parent: ''
-  };
-  var DefaultType$8 = {
-    toggle: 'boolean',
-    parent: '(string|element)'
-  };
-  var EVENT_SHOW$5 = "show" + EVENT_KEY$b;
-  var EVENT_SHOWN$5 = "shown" + EVENT_KEY$b;
-  var EVENT_HIDE$5 = "hide" + EVENT_KEY$b;
-  var EVENT_HIDDEN$5 = "hidden" + EVENT_KEY$b;
-  var EVENT_CLICK_DATA_API$7 = "click" + EVENT_KEY$b + DATA_API_KEY$8;
-  var CLASS_NAME_SHOW$8 = 'open';
-  var CLASS_NAME_COLLAPSE$1 = 'offcanvas-toggle';
-  var CLASS_NAME_COLLAPSING$1 = 'collapsing';
-  var CLASS_NAME_COLLAPSED$1 = 'collapsed';
-  var DIMENSION_WIDTH$1 = 'width';
-  var DIMENSION_HEIGHT$1 = 'height';
-  var SELECTOR_ACTIVES$1 = '.open, .collapsing';
-  var SELECTOR_DATA_TOGGLE$5 = '[data-toggle="offcanvas"]';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  var Offcanvasmenu = /*#__PURE__*/function () {
-    function Offcanvasmenu(element, config) {
-      this._isTransitioning = false;
-      this._element = element;
-      this._config = this._getConfig(config);
-      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"offcanvas\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"offcanvas\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$5));
-
-      for (var i = 0, len = toggleList.length; i < len; i++) {
-        var elem = toggleList[i];
-        var selector = Util.getSelectorFromElement(elem);
-        var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
-          return foundElem === element;
-        });
-
-        if (selector !== null && filterElement.length > 0) {
-          this._selector = selector;
-
-          this._triggerArray.push(elem);
-        }
-      }
-
-      this._parent = this._config.parent ? this._getParent() : null;
-
-      if (!this._config.parent) {
-        this._addAriaAndOffcanvasmenudClass(this._element, this._triggerArray);
-      }
-
-      if (this._config.toggle) {
-        this.toggle();
-      }
-    } // Getters
-
-
-    var _proto = Offcanvasmenu.prototype;
-
-    // Public
-    _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(CLASS_NAME_SHOW$8)) {
-        this.hide();
-      } else {
-        this.show();
-      }
-    };
-
-    _proto.show = function show() {
-      var _this = this;
-
-      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$8)) {
-        return;
-      }
-
-      var actives;
-      var activesData;
-
-      if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES$1)).filter(function (elem) {
-          if (typeof _this._config.parent === 'string') {
-            return elem.getAttribute('data-parent') === _this._config.parent;
-          }
-
-          return elem.classList.contains(CLASS_NAME_COLLAPSE$1);
-        });
-
-        if (actives.length === 0) {
-          actives = null;
-        }
-      }
-
-      if (actives) {
-        activesData = $(actives).not(this._selector).data(DATA_KEY$b);
-
-        if (activesData && activesData._isTransitioning) {
-          return;
-        }
-      }
-
-      var startEvent = $.Event(EVENT_SHOW$5);
-      $(this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (actives) {
-        Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'hide');
-
-        if (!activesData) {
-          $(actives).data(DATA_KEY$b, null);
-        }
-      }
-
-      var dimension = this._getDimension();
-
-      $(this._element).removeClass(CLASS_NAME_COLLAPSE$1).addClass(CLASS_NAME_COLLAPSING$1);
-      this._element.style[dimension] = 0;
-
-      if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED$1).attr('aria-expanded', true);
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        $(_this._element).removeClass(CLASS_NAME_COLLAPSING$1).addClass(CLASS_NAME_COLLAPSE$1 + " " + CLASS_NAME_SHOW$8);
-        _this._element.style[dimension] = '';
-
-        _this.setTransitioning(false);
-
-        $(_this._element).trigger(EVENT_SHOWN$5);
-      };
-
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
-    };
-
-    _proto.hide = function hide() {
-      var _this2 = this;
-
-      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$8)) {
-        return;
-      }
-
-      var startEvent = $.Event(EVENT_HIDE$5);
-      $(this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      var dimension = this._getDimension();
-
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      Util.reflow(this._element);
-      $(this._element).addClass(CLASS_NAME_COLLAPSING$1).removeClass(CLASS_NAME_COLLAPSE$1 + " " + CLASS_NAME_SHOW$8);
-      var triggerArrayLength = this._triggerArray.length;
-
-      if (triggerArrayLength > 0) {
-        for (var i = 0; i < triggerArrayLength; i++) {
-          var trigger = this._triggerArray[i];
-          var selector = Util.getSelectorFromElement(trigger);
-
-          if (selector !== null) {
-            var $elem = $([].slice.call(document.querySelectorAll(selector)));
-
-            if (!$elem.hasClass(CLASS_NAME_SHOW$8)) {
-              $(trigger).addClass(CLASS_NAME_COLLAPSED$1).attr('aria-expanded', false);
-            }
-          }
-        }
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        _this2.setTransitioning(false);
-
-        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING$1).addClass(CLASS_NAME_COLLAPSE$1).trigger(EVENT_HIDDEN$5);
-      };
-
-      this._element.style[dimension] = '';
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-    };
-
-    _proto.setTransitioning = function setTransitioning(isTransitioning) {
-      this._isTransitioning = isTransitioning;
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$b);
-      this._config = null;
-      this._parent = null;
-      this._element = null;
-      this._triggerArray = null;
-      this._isTransitioning = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2(_objectSpread2({}, Default$8), config);
-      config.toggle = Boolean(config.toggle); // Coerce string values
-
-      Util.typeCheckConfig(NAME$b, config, DefaultType$8);
-      return config;
-    };
-
-    _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH$1);
-      return hasWidth ? DIMENSION_WIDTH$1 : DIMENSION_HEIGHT$1;
-    };
-
-    _proto._getParent = function _getParent() {
-      var _this3 = this;
-
-      var parent;
-
-      if (Util.isElement(this._config.parent)) {
-        parent = this._config.parent; // It's a jQuery object
-
-        if (typeof this._config.parent.jquery !== 'undefined') {
-          parent = this._config.parent[0];
-        }
-      } else {
         parent = document.querySelector(this._config.parent);
       }
 
@@ -7493,24 +7154,20 @@
       if (triggerArray.length) {
         $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED$1, !isOpen).attr('aria-expanded', isOpen);
       }
-    } // Static
-    ;
+    }
 
-    Offcanvasmenu._getTargetFromElement = function _getTargetFromElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      return selector ? document.querySelector(selector) : null;
-    };
+    _clearTimeout() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
+    }
 
-    Offcanvasmenu._jQueryInterface = function _jQueryInterface(config) {
+    // Static
+
+    static _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY$b);
-
-        var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, Default$8), $this.data()), typeof config === 'object' && config ? config : {});
-
-        if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
-          _config.toggle = false;
-        }
+        const $element = $(this);
+        let data       = $element.data(DATA_KEY$a);
+        const _config  = typeof config === 'object' && config;
 
         if (!data) {
           data = new Offcanvasmenu(this, _config);
@@ -7519,64 +7176,26 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError(`No method named "${config}"`)
           }
 
           data[config]();
         }
-      });
-    };
+      })
+    }
+  }
 
-    _createClass(Offcanvasmenu, null, [{
-      key: "AZ_VERSION",
-      get: function get() {
-        return AZ_VERSION;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$8;
-      }
-    }]);
-
-    return Offcanvasmenu;
-  }();
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
 
-
-  $(document).on(EVENT_CLICK_DATA_API$7, SELECTOR_DATA_TOGGLE$5, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
-      event.preventDefault();
-    }
-
-    var $trigger = $(this);
-    var selector = Util.getSelectorFromElement(this);
-    var selectors = [].slice.call(document.querySelectorAll(selector));
-    $(selectors).each(function () {
-      var $target = $(this);
-      var data = $target.data(DATA_KEY$b);
-      var config = data ? 'toggle' : $trigger.data();
-
-      Offcanvasmenu._jQueryInterface.call($target, config);
-    });
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$b] = Offcanvasmenu._jQueryInterface;
-  $.fn[NAME$b].Constructor = Offcanvasmenu;
-
-  $.fn[NAME$b].noConflict = function () {
-    $.fn[NAME$b] = JQUERY_NO_CONFLICT$b;
-    return Offcanvasmenu._jQueryInterface;
+  $.fn[NAME$a]             = Toast._jQueryInterface;
+  $.fn[NAME$a].Constructor = Toast;
+  $.fn[NAME$a].noConflict  = () => {
+    $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
+    return Toast._jQueryInterface
   };
 
   exports.Alert = Alert;
