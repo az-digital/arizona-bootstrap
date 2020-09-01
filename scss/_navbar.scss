@@ -62,6 +62,32 @@
   .offcanvas-toggle {
     display: block;
   }
+  .navbar-light,
+  .navbar-default {
+    padding: 0;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+  }
+  .arizona-logo {
+    display: inline-block;
+    float: left;
+    width: 276px;
+    max-width: 80%;
+    height: 20px;
+    padding: 0 0 0 .6rem;
+    margin: 19px 0 20px;
+  }
+  .redbar {
+    max-height: 59px;
+  }
+  .redbar span,
+  .redbar .btn {
+    font-size: 13px;
+  }
+  .redbar .material-icons {
+    font-size: 21px;
+  }
   .navbar-offcanvas {
     position: fixed;
     top: 0;
@@ -83,9 +109,10 @@
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+
+
     &.open {
       -webkit-transform: translateX(-1rem);
       transform: translateX(-1rem); /* Account for horizontal padding on navbar */
@@ -153,8 +180,8 @@
       }
 
       .nav-link {
-        color: $navbar-offcanvas-link-color;
         padding: $navbar-offcanvas-link-padding;
+        color: $navbar-offcanvas-link-color;
 
 
         &.disabled {
@@ -171,10 +198,10 @@
     }
 
     .dropdown-menu {
+      padding: 0 0 0 1rem;
       margin: 0;
       background-color: $navbar-offcanvas-bg-expanded;
       border: none;
-      padding: 0 0 0 1rem;
 
       .dropdown-item {
         padding: $navbar-offcanvas-dropdown-link-padding;

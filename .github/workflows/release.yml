@@ -1,29 +1,10 @@
-# Release workflow
-#
-# Release PR manually created with:
-#   Minor & Patch Releases:
-#     - Updated dist assets
-#     - Updated version info in package.json
-#   Minor Releases Only:
-#   - Update version references in documentation
-#
-# Workflow triggered upon push to master containing changes to package.json
-#  If version number has changed (and is not dev):
-#     - Creates release tag
-#     - Pushes release tag
-#     - Creates GitHub release (and release notes?)
-#     - Updates arizona-bootstrap-packagist repo (@kevcooper suggested adding a GitHub actions workflow to the arizona-bootstrap-packagist repo that can be triggered by an arizona-bootstrap release/tag)
-#     - Changes version info in package.json "back to dev"
-#     - Commits and pushes
-
+name: Create Release
 on:
   push:
     branches:
       - master
     paths:
       - package.json
-
-name: Create Release
 
 jobs:
   release:
@@ -59,8 +40,13 @@ jobs:
           docker push "$AZ_EPHEMERAL_IMAGE"
       - name: Build variables
         run: |
-          echo "::set-env name=AZ_VERSION::$(jq -r '.version' package.json)"
-          echo "::set-env name=AZ_SHORT_VERSION::$(jq -r '.version_short' package.json)"
+          stem='arizona-bootstrap'
+          version=$(jq -r '.version' package.json)
+          version_short=$(jq -r '.version_short' package.json)
+          echo "::set-env name=AZ_REVIEW_BASEURL::/${stem}"
+          echo "::set-env name=AZ_REVIEW_STEM::${stem}"
+          echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
+          echo "::set-env name=AZ_VERSION::${version}"
       - name: Create Release
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         id: create_release
@@ -72,6 +58,55 @@ jobs:
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
+      - name: Build review site artifact
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+      - name: Update digital.arizona.edu
+        # When we figure out the repository_dispatch event, we should do that here
+        # to notify digital.arizona.edu of a new version.
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          (
+            echo "${{ secrets.AZ_DIGITAL_SITE_DEPLOY_KEY }}" > ${HOME}/.ssh/az_digital_deploy_key
+            chmod 600 ${HOME}/.ssh/az_digital_deploy_key
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git config --global user.name "${GITHUB_ACTOR}"
+            export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
+            git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
+            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs${AZ_REVIEW_BASEURL}
+            cd /tmp/digital.arizona.edu
+            git add docs/${AZ_REVIEW_STEM}
+            git commit -m "Update Arizona Bootstrap docs for ${AZ_VERSION}"
+            git push
+            unset GIT_SSH_COMMAND
+            rm ${HOME}/.ssh/az_digital_deploy_key
+          )
+      - name: Update packagist
+        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
+        run: |
+          (
+            echo "${{ secrets.AZ_BOOTSTRAP_PACKAGIST_DEPLOY_KEY }}" > ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+            chmod 600 ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+            git config --global user.name "${GITHUB_ACTOR}"
+            GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_bootstrap_packagist_deploy_key"
+            export GIT_SSH_COMMAND
+            distwhitelist='css js'
+            srcroot='dist'
+            clonedir='/tmp/arizona-bootstrap-packagist/'
+            git clone git@github.com:az-digital/arizona-bootstrap-packagist.git "$clonedir"
+            for w in $distwhitelist ; do
+              rsync --recursive --delete "${srcroot}/${w}" "$clonedir"
+            done
+            cd "$clonedir"
+            git add .
+            git commit -m "Update Arizona Bootstrap Packagist for ${AZ_VERSION}"
+            git push
+            unset GIT_SSH_COMMAND
+            rm ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
+          )
+
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |

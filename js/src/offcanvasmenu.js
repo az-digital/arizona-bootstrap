@@ -1,13 +1,12 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.5.0): collapse.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Arizona Bootstrap: offcanvasmenu.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
 import $ from 'jquery'
 import Util from '../../node_modules/bootstrap/js/src/util.js'
-import { version } from '../../package.json';
 
 /**
  * ------------------------------------------------------------------------
@@ -16,7 +15,7 @@ import { version } from '../../package.json';
  */
 
 const NAME                = 'offcanvasmenu'
-const AZ_VERSION          = `${version}`
+const AZ_VERSION          = 'v0.0.4'
 const DATA_KEY            = 'az.offcanvasmenu'
 const EVENT_KEY           = `.${DATA_KEY}`
 const DATA_API_KEY        = '.data-api'
@@ -32,21 +31,18 @@ const DefaultType = {
   parent : '(string|element)'
 }
 
-const EVENT_SHOW           = `show${EVENT_KEY}`
-const EVENT_SHOWN          = `shown${EVENT_KEY}`
-const EVENT_HIDE           = `hide${EVENT_KEY}`
-const EVENT_HIDDEN         = `hidden${EVENT_KEY}`
-const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
+const EVENT_OPEN           = `open${EVENT_KEY}`
+const EVENT_OPENED         = `opened${EVENT_KEY}`
+const EVENT_CLOSE          = `close${EVENT_KEY}`
+const EVENT_CLOSED         = `closed${EVENT_KEY}`
+const DATA_API             = `click${EVENT_KEY}${DATA_API_KEY}`
 
-const CLASS_NAME_SHOW       = 'open'
-const CLASS_NAME_COLLAPSE   = 'offcanvas-toggle'
-const CLASS_NAME_COLLAPSING = 'collapsing'
-const CLASS_NAME_COLLAPSED  = 'collapsed'
+const CLASS_NAME_OPEN      = 'open'
+const CLASS_NAME_CLOSE     = 'offcanvas-toggle'
+const CLASS_NAME_CLOSING   = 'closing'
+const CLASS_NAME_CLOSED    = 'closed'
 
-const DIMENSION_WIDTH  = 'width'
-const DIMENSION_HEIGHT = 'height'
-
-const SELECTOR_ACTIVES     = '.open, .collapsing'
+const SELECTOR_ACTIVES     = '.open, .closing'
 const SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]'
 
 /**
@@ -100,18 +96,17 @@ class Offcanvasmenu {
   }
 
   // Public
-
   toggle() {
-    if ($(this._element).hasClass(CLASS_NAME_SHOW)) {
-      this.hide()
+    if ($(this._element).hasClass(CLASS_NAME_OPEN)) {
+      this.close()
     } else {
-      this.show()
+      this.open()
     }
   }
 
-  show() {
+  open() {
     if (this._isTransitioning ||
-      $(this._element).hasClass(CLASS_NAME_SHOW)) {
+        $(this._element).hasClass(CLASS_NAME_OPEN)) {
       return
     }
 
@@ -125,7 +120,7 @@ class Offcanvasmenu {
             return elem.getAttribute('data-parent') === this._config.parent
           }
 
-          return elem.classList.contains(CLASS_NAME_COLLAPSE)
+          return elem.classList.contains(CLASS_NAME_CLOSE)
         })
 
       if (actives.length === 0) {
@@ -140,30 +135,26 @@ class Offcanvasmenu {
       }
     }
 
-    const startEvent = $.Event(EVENT_SHOW)
+    const startEvent = $.Event(EVENT_OPEN)
     $(this._element).trigger(startEvent)
     if (startEvent.isDefaultPrevented()) {
       return
     }
 
     if (actives) {
-      Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'hide')
+      Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'close')
       if (!activesData) {
         $(actives).data(DATA_KEY, null)
       }
     }
 
-    const dimension = this._getDimension()
-
     $(this._element)
-      .removeClass(CLASS_NAME_COLLAPSE)
-      .addClass(CLASS_NAME_COLLAPSING)
-
-    this._element.style[dimension] = 0
+      .removeClass(CLASS_NAME_CLOSE)
+      .addClass(CLASS_NAME_CLOSING)
 
     if (this._triggerArray.length) {
       $(this._triggerArray)
-        .removeClass(CLASS_NAME_COLLAPSED)
+        .removeClass(CLASS_NAME_CLOSED)
         .attr('aria-expanded', true)
     }
 
@@ -171,48 +162,37 @@ class Offcanvasmenu {
 
     const complete = () => {
       $(this._element)
-        .removeClass(CLASS_NAME_COLLAPSING)
-        .addClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW}`)
-
-      this._element.style[dimension] = ''
+        .removeClass(CLASS_NAME_CLOSING)
+        .addClass(`${CLASS_NAME_CLOSE} ${CLASS_NAME_OPEN}`)
 
       this.setTransitioning(false)
 
-      $(this._element).trigger(EVENT_SHOWN)
+      $(this._element).trigger(EVENT_OPENED)
     }
-
-    const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1)
-    const scrollSize = `scroll${capitalizedDimension}`
     const transitionDuration = Util.getTransitionDurationFromElement(this._element)
 
     $(this._element)
       .one(Util.TRANSITION_END, complete)
       .emulateTransitionEnd(transitionDuration)
-
-    this._element.style[dimension] = `${this._element[scrollSize]}px`
   }
 
-  hide() {
+  close() {
     if (this._isTransitioning ||
-      !$(this._element).hasClass(CLASS_NAME_SHOW)) {
+        !$(this._element).hasClass(CLASS_NAME_OPEN)) {
       return
     }
 
-    const startEvent = $.Event(EVENT_HIDE)
+    const startEvent = $.Event(EVENT_CLOSE)
     $(this._element).trigger(startEvent)
     if (startEvent.isDefaultPrevented()) {
       return
     }
 
-    const dimension = this._getDimension()
-
-    this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`
-
     Util.reflow(this._element)
 
     $(this._element)
-      .addClass(CLASS_NAME_COLLAPSING)
-      .removeClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW}`)
+      .addClass(CLASS_NAME_CLOSING)
+      .removeClass(`${CLASS_NAME_CLOSE} ${CLASS_NAME_OPEN}`)
 
     const triggerArrayLength = this._triggerArray.length
     if (triggerArrayLength > 0) {
@@ -222,8 +202,8 @@ class Offcanvasmenu {
 
         if (selector !== null) {
           const $elem = $([].slice.call(document.querySelectorAll(selector)))
-          if (!$elem.hasClass(CLASS_NAME_SHOW)) {
-            $(trigger).addClass(CLASS_NAME_COLLAPSED)
+          if (!$elem.hasClass(CLASS_NAME_OPEN)) {
+            $(trigger).addClass(CLASS_NAME_CLOSED)
               .attr('aria-expanded', false)
           }
         }
@@ -235,12 +215,11 @@ class Offcanvasmenu {
     const complete = () => {
       this.setTransitioning(false)
       $(this._element)
-        .removeClass(CLASS_NAME_COLLAPSING)
-        .addClass(CLASS_NAME_COLLAPSE)
-        .trigger(EVENT_HIDDEN)
+        .removeClass(CLASS_NAME_CLOSING)
+        .addClass(CLASS_NAME_CLOSE)
+        .trigger(EVENT_CLOSED)
     }
 
-    this._element.style[dimension] = ''
     const transitionDuration = Util.getTransitionDurationFromElement(this._element)
 
     $(this._element)
@@ -274,11 +253,6 @@ class Offcanvasmenu {
     return config
   }
 
-  _getDimension() {
-    const hasWidth = $(this._element).hasClass(DIMENSION_WIDTH)
-    return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT
-  }
-
   _getParent() {
     let parent
 
@@ -293,7 +267,7 @@ class Offcanvasmenu {
       parent = document.querySelector(this._config.parent)
     }
 
-    const selector = `[data-toggle="collapse"][data-parent="${this._config.parent}"]`
+    const selector = `[data-toggle="offcanvas"][data-parent="${this._config.parent}"]`
     const children = [].slice.call(parent.querySelectorAll(selector))
 
     $(children).each((i, element) => {
@@ -307,11 +281,11 @@ class Offcanvasmenu {
   }
 
   _addAriaAndOffcanvasmenudClass(element, triggerArray) {
-    const isOpen = $(element).hasClass(CLASS_NAME_SHOW)
+    const isOpen = $(element).hasClass(CLASS_NAME_OPEN)
 
     if (triggerArray.length) {
       $(triggerArray)
-        .toggleClass(CLASS_NAME_COLLAPSED, !isOpen)
+        .toggleClass(CLASS_NAME_CLOSED, !isOpen)
         .attr('aria-expanded', isOpen)
     }
   }
@@ -333,7 +307,7 @@ class Offcanvasmenu {
         ...typeof config === 'object' && config ? config : {}
       }
 
-      if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
+      if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
         _config.toggle = false
       }
 
@@ -354,12 +328,36 @@ class Offcanvasmenu {
 
 /**
  * ------------------------------------------------------------------------
+ * Viewport conditional dropdown menu override for offcanvas menu.
+ * ------------------------------------------------------------------------
+ */
+
+let VIEWPORT_WIDTH = false
+const XS_BREAKPOINT_MAX = 767
+
+// @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
+// Get the viewportWidth value.
+function getViewportWidth() {
+  VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth
+}
+
+$('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
+  getViewportWidth()
+  if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+    $(this).next('.dropdown-menu').toggle()
+    event.stopPropagation()
+  }
+})
+
+/**
+ * ------------------------------------------------------------------------
  * Data Api implementation
  * ------------------------------------------------------------------------
  */
 
-$(document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-  // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+$(document).on(DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  // preventDefault only for <a> elements (which change the URL) not inside the
+  // offcanvas element
   if (event.currentTarget.tagName === 'A') {
     event.preventDefault()
   }

@@ -4524,22 +4524,7 @@
           .one(Util.TRANSITION_END, complete)
           .emulateTransitionEnd(transitionDuration);
       } else {
-        parent = document.querySelector(this._config.parent);
-      }
-
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
-      var children = [].slice.call(parent.querySelectorAll(selector));
-      $(children).each(function (i, element) {
-        _this3._addAriaAndOffcanvasmenudClass(Offcanvasmenu._getTargetFromElement(element), [element]);
-      });
-      return parent;
-    };
-
-    _proto._addAriaAndOffcanvasmenudClass = function _addAriaAndOffcanvasmenudClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$8);
-
-      if (triggerArray.length) {
-        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED$1, !isOpen).attr('aria-expanded', isOpen);
+        complete();
       }
     }
 
@@ -4557,8 +4542,8 @@
         const _config  = typeof config === 'object' && config;
 
         if (!data) {
-          data = new Offcanvasmenu(this, _config);
-          $this.data(DATA_KEY$b, data);
+          data = new Toast(this, _config);
+          $element.data(DATA_KEY$a, data);
         }
 
         if (typeof config === 'string') {
@@ -4566,7 +4551,7 @@
             throw new TypeError(`No method named "${config}"`)
           }
 
-          data[config]();
+          data[config](this);
         }
       })
     }
@@ -4574,7 +4559,7 @@
 
   /**
    * ------------------------------------------------------------------------
-   * Data Api implementation
+   * jQuery
    * ------------------------------------------------------------------------
    */
 
@@ -4583,6 +4568,394 @@
   $.fn[NAME$a].noConflict  = () => {
     $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
     return Toast._jQueryInterface
+  };
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  var NAME$b = 'offcanvasmenu';
+  var AZ_VERSION = 'v0.0.4';
+  var DATA_KEY$b = 'az.offcanvasmenu';
+  var EVENT_KEY$b = "." + DATA_KEY$b;
+  var DATA_API_KEY$8 = '.data-api';
+  var JQUERY_NO_CONFLICT$b = $.fn[NAME$b];
+  var Default$8 = {
+    toggle: true,
+    parent: ''
+  };
+  var DefaultType$8 = {
+    toggle: 'boolean',
+    parent: '(string|element)'
+  };
+  var EVENT_OPEN = "open" + EVENT_KEY$b;
+  var EVENT_OPENED = "opened" + EVENT_KEY$b;
+  var EVENT_CLOSE$1 = "close" + EVENT_KEY$b;
+  var EVENT_CLOSED$1 = "closed" + EVENT_KEY$b;
+  var DATA_API = "click" + EVENT_KEY$b + DATA_API_KEY$8;
+  var CLASS_NAME_OPEN$1 = 'open';
+  var CLASS_NAME_CLOSE = 'offcanvas-toggle';
+  var CLASS_NAME_CLOSING = 'closing';
+  var CLASS_NAME_CLOSED = 'closed';
+  var SELECTOR_ACTIVES$1 = '.open, .closing';
+  var SELECTOR_DATA_TOGGLE$5 = '[data-toggle="offcanvas"]';
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  var Offcanvasmenu = /*#__PURE__*/function () {
+    function Offcanvasmenu(element, config) {
+      this._isTransitioning = false;
+      this._element = element;
+      this._config = this._getConfig(config);
+      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"offcanvas\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"offcanvas\"][data-target=\"#" + element.id + "\"]")));
+      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$5));
+
+      for (var i = 0, len = toggleList.length; i < len; i++) {
+        var elem = toggleList[i];
+        var selector = Util.getSelectorFromElement(elem);
+        var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
+          return foundElem === element;
+        });
+
+        if (selector !== null && filterElement.length > 0) {
+          this._selector = selector;
+
+          this._triggerArray.push(elem);
+        }
+      }
+
+      this._parent = this._config.parent ? this._getParent() : null;
+
+      if (!this._config.parent) {
+        this._addAriaAndOffcanvasmenudClass(this._element, this._triggerArray);
+      }
+
+      if (this._config.toggle) {
+        this.toggle();
+      }
+    } // Getters
+
+
+    var _proto = Offcanvasmenu.prototype;
+
+    // Public
+    _proto.toggle = function toggle() {
+      if ($(this._element).hasClass(CLASS_NAME_OPEN$1)) {
+        this.close();
+      } else {
+        this.open();
+      }
+    };
+
+    _proto.open = function open() {
+      var _this = this;
+
+      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_OPEN$1)) {
+        return;
+      }
+
+      var actives;
+      var activesData;
+
+      if (this._parent) {
+        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES$1)).filter(function (elem) {
+          if (typeof _this._config.parent === 'string') {
+            return elem.getAttribute('data-parent') === _this._config.parent;
+          }
+
+          return elem.classList.contains(CLASS_NAME_CLOSE);
+        });
+
+        if (actives.length === 0) {
+          actives = null;
+        }
+      }
+
+      if (actives) {
+        activesData = $(actives).not(this._selector).data(DATA_KEY$b);
+
+        if (activesData && activesData._isTransitioning) {
+          return;
+        }
+      }
+
+      var startEvent = $.Event(EVENT_OPEN);
+      $(this._element).trigger(startEvent);
+
+      if (startEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      if (actives) {
+        Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'close');
+
+        if (!activesData) {
+          $(actives).data(DATA_KEY$b, null);
+        }
+      }
+
+      $(this._element).removeClass(CLASS_NAME_CLOSE).addClass(CLASS_NAME_CLOSING);
+
+      if (this._triggerArray.length) {
+        $(this._triggerArray).removeClass(CLASS_NAME_CLOSED).attr('aria-expanded', true);
+      }
+
+      this.setTransitioning(true);
+
+      var complete = function complete() {
+        $(_this._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
+
+        _this.setTransitioning(false);
+
+        $(_this._element).trigger(EVENT_OPENED);
+      };
+
+      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+    };
+
+    _proto.close = function close() {
+      var _this2 = this;
+
+      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_OPEN$1)) {
+        return;
+      }
+
+      var startEvent = $.Event(EVENT_CLOSE$1);
+      $(this._element).trigger(startEvent);
+
+      if (startEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      Util.reflow(this._element);
+      $(this._element).addClass(CLASS_NAME_CLOSING).removeClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
+      var triggerArrayLength = this._triggerArray.length;
+
+      if (triggerArrayLength > 0) {
+        for (var i = 0; i < triggerArrayLength; i++) {
+          var trigger = this._triggerArray[i];
+          var selector = Util.getSelectorFromElement(trigger);
+
+          if (selector !== null) {
+            var $elem = $([].slice.call(document.querySelectorAll(selector)));
+
+            if (!$elem.hasClass(CLASS_NAME_OPEN$1)) {
+              $(trigger).addClass(CLASS_NAME_CLOSED).attr('aria-expanded', false);
+            }
+          }
+        }
+      }
+
+      this.setTransitioning(true);
+
+      var complete = function complete() {
+        _this2.setTransitioning(false);
+
+        $(_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED$1);
+      };
+
+      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+    };
+
+    _proto.setTransitioning = function setTransitioning(isTransitioning) {
+      this._isTransitioning = isTransitioning;
+    };
+
+    _proto.dispose = function dispose() {
+      $.removeData(this._element, DATA_KEY$b);
+      this._config = null;
+      this._parent = null;
+      this._element = null;
+      this._triggerArray = null;
+      this._isTransitioning = null;
+    } // Private
+    ;
+
+    _proto._getConfig = function _getConfig(config) {
+      config = _extends({}, Default$8, config);
+      config.toggle = Boolean(config.toggle); // Coerce string values
+
+      Util.typeCheckConfig(NAME$b, config, DefaultType$8);
+      return config;
+    };
+
+    _proto._getParent = function _getParent() {
+      var _this3 = this;
+
+      var parent;
+
+      if (Util.isElement(this._config.parent)) {
+        parent = this._config.parent; // It's a jQuery object
+
+        if (typeof this._config.parent.jquery !== 'undefined') {
+          parent = this._config.parent[0];
+        }
+      } else {
+        parent = document.querySelector(this._config.parent);
+      }
+
+      var selector = "[data-toggle=\"offcanvas\"][data-parent=\"" + this._config.parent + "\"]";
+      var children = [].slice.call(parent.querySelectorAll(selector));
+      $(children).each(function (i, element) {
+        _this3._addAriaAndOffcanvasmenudClass(Offcanvasmenu._getTargetFromElement(element), [element]);
+      });
+      return parent;
+    };
+
+    _proto._addAriaAndOffcanvasmenudClass = function _addAriaAndOffcanvasmenudClass(element, triggerArray) {
+      var isOpen = $(element).hasClass(CLASS_NAME_OPEN$1);
+
+      if (triggerArray.length) {
+        $(triggerArray).toggleClass(CLASS_NAME_CLOSED, !isOpen).attr('aria-expanded', isOpen);
+      }
+    } // Static
+    ;
+
+    Offcanvasmenu._getTargetFromElement = function _getTargetFromElement(element) {
+      var selector = Util.getSelectorFromElement(element);
+      return selector ? document.querySelector(selector) : null;
+    };
+
+    Offcanvasmenu._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var $this = $(this);
+        var data = $this.data(DATA_KEY$b);
+
+        var _config = _extends({}, Default$8, $this.data(), typeof config === 'object' && config ? config : {});
+
+        if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
+          _config.toggle = false;
+        }
+
+        if (!data) {
+          data = new Offcanvasmenu(this, _config);
+          $this.data(DATA_KEY$b, data);
+        }
+
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new TypeError("No method named \"" + config + "\"");
+          }
+
+          data[config]();
+        }
+      });
+    };
+
+    _createClass(Offcanvasmenu, null, [{
+      key: "AZ_VERSION",
+      get: function get() {
+        return AZ_VERSION;
+      }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default$8;
+      }
+    }]);
+
+    return Offcanvasmenu;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * Viewport conditional dropdown menu override for offcanvas menu.
+   * ------------------------------------------------------------------------
+   */
+
+
+  var VIEWPORT_WIDTH = false;
+  var XS_BREAKPOINT_MAX = 767; // @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
+  // Get the viewportWidth value.
+
+  function getViewportWidth() {
+    VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth;
+  }
+
+  $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
+    getViewportWidth();
+
+    if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+      $(this).next('.dropdown-menu').toggle();
+      event.stopPropagation();
+    }
+  });
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+
+  $(document).on(DATA_API, SELECTOR_DATA_TOGGLE$5, function (event) {
+    // preventDefault only for <a> elements (which change the URL) not inside the
+    // offcanvas element
+    if (event.currentTarget.tagName === 'A') {
+      event.preventDefault();
+    }
+
+    var $trigger = $(this);
+    var selector = Util.getSelectorFromElement(this);
+    var selectors = [].slice.call(document.querySelectorAll(selector));
+    $(selectors).each(function () {
+      var $target = $(this);
+      var data = $target.data(DATA_KEY$b);
+      var config = data ? 'toggle' : $trigger.data();
+
+      Offcanvasmenu._jQueryInterface.call($target, config);
+    });
+  });
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME$b] = Offcanvasmenu._jQueryInterface;
+  $.fn[NAME$b].Constructor = Offcanvasmenu;
+
+  $.fn[NAME$b].noConflict = function () {
+    $.fn[NAME$b] = JQUERY_NO_CONFLICT$b;
+    return Offcanvasmenu._jQueryInterface;
   };
 
   exports.Alert = Alert;

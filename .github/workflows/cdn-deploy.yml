@@ -5,7 +5,7 @@ on:
     branches:
       - master
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+*'
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
   deploy:
@@ -49,7 +49,7 @@ jobs:
 
       - name: Build CDN assets
         run: |
-          docker run --rm -v $(pwd):/arizona-bootstrap azdigital/az-node-jre-jekyll:0.0.2 /arizona-bootstrap/scripts/build-cdn-assets.sh
+          docker run --rm -v $(pwd):"/$AZ_BOOTSTRAP_SOURCE_DIR" "$AZ_EPHEMERAL_IMAGE" build-cdn-assets
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@b77dc228388218453070969c00c26dc392ecb114
