@@ -213,3 +213,146 @@
   }
 }
 
+.proxima-nova-bold {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-bold-italic {
+  font-family: proxima-nova, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-italic {
+  font-family: proxima-nova, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-ec-bold {
+  font-family: proxima-nova-extra-condensed, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-ec-bold-italic {
+  font-family: proxima-nova-extra-condensed, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-ec-italic {
+  font-family: proxima-nova, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-ec {
+  font-family: proxima-nova-extra-condensed, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-c-bold {
+  font-family: proxima-nova-condensed, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-c-bold-italic {
+  font-family: proxima-nova-condensed, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-c {
+  font-family: proxima-nova-condensed, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.proxima-nova-c-italic {
+  font-family: proxima-nova, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  span:first-child {
+    text-transform: uppercase;
+  }
+}
+
+.pn {
+  font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  em {
+    font-style: italic;
+  }
+}
+
+.pn strong {
+  font-weight: 700;
+}
