@@ -42,8 +42,11 @@ const CLASS_NAME_CLOSE     = 'offcanvas-toggle'
 const CLASS_NAME_CLOSING   = 'closing'
 const CLASS_NAME_CLOSED    = 'closed'
 
-const SELECTOR_ACTIVES     = '.open, .closing'
-const SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]'
+const CLASS_NAME_BACKDROP  = 'menu-backdrop'
+const CLASS_NAME_SHOW      = 'show'
+
+const SELECTOR_ACTIVES         = '.open, .closing'
+const SELECTOR_DATA_TOGGLE     = '[data-toggle="offcanvas"]'
 
 /**
  * ------------------------------------------------------------------------
@@ -56,6 +59,7 @@ class Offcanvasmenu {
     this._isTransitioning = false
     this._element         = element
     this._config          = this._getConfig(config)
+    this._backdrop        = null
     this._triggerArray    = [].slice.call(document.querySelectorAll(
       `[data-toggle="offcanvas"][href="#${element.id}"],` +
       `[data-toggle="offcanvas"][data-target="#${element.id}"]`
@@ -77,7 +81,7 @@ class Offcanvasmenu {
     this._parent = this._config.parent ? this._getParent() : null
 
     if (!this._config.parent) {
-      this._addAriaAndOffcanvasmenudClass(this._element, this._triggerArray)
+      this._addAriaAndOffcanvasmenuClass(this._element, this._triggerArray)
     }
 
     if (this._config.toggle) {
@@ -104,9 +108,15 @@ class Offcanvasmenu {
     }
   }
 
+  _removeBackdrop() {
+    if (this._backdrop) {
+      $(this._backdrop).remove()
+      this._backdrop = null
+    }
+  }
+
   open() {
-    if (this._isTransitioning ||
-        $(this._element).hasClass(CLASS_NAME_OPEN)) {
+    if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_OPEN)) {
       return
     }
 
@@ -147,6 +157,16 @@ class Offcanvasmenu {
         $(actives).data(DATA_KEY, null)
       }
     }
+
+    this._backdrop = document.createElement('div')
+    this._backdrop.className = CLASS_NAME_BACKDROP
+    this._backdrop.setAttribute('data-toggle', 'offcanvas')
+    this._backdrop.setAttribute('aria-controls', this._config.target)
+    this._backdrop.setAttribute('data-target', this._config.target)
+    this._backdrop.setAttribute('aria-expanded', 'true')
+    $(this._backdrop).appendTo(document.body)
+    this._backdrop.classList.add(CLASS_NAME_SHOW)
+
 
     $(this._element)
       .removeClass(CLASS_NAME_CLOSE)
@@ -214,6 +234,7 @@ class Offcanvasmenu {
 
     const complete = () => {
       this.setTransitioning(false)
+      this._removeBackdrop()
       $(this._element)
         .removeClass(CLASS_NAME_CLOSING)
         .addClass(CLASS_NAME_CLOSE)
@@ -271,7 +292,7 @@ class Offcanvasmenu {
     const children = [].slice.call(parent.querySelectorAll(selector))
 
     $(children).each((i, element) => {
-      this._addAriaAndOffcanvasmenudClass(
+      this._addAriaAndOffcanvasmenuClass(
         Offcanvasmenu._getTargetFromElement(element),
         [element]
       )
@@ -280,7 +301,7 @@ class Offcanvasmenu {
     return parent
   }
 
-  _addAriaAndOffcanvasmenudClass(element, triggerArray) {
+  _addAriaAndOffcanvasmenuClass(element, triggerArray) {
     const isOpen = $(element).hasClass(CLASS_NAME_OPEN)
 
     if (triggerArray.length) {
@@ -326,6 +347,7 @@ class Offcanvasmenu {
   }
 }
 
+
 /**
  * ------------------------------------------------------------------------
  * Viewport conditional dropdown menu override for offcanvas menu.
@@ -344,6 +366,13 @@ function getViewportWidth() {
 $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
   getViewportWidth()
   if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+    if ($(this).attr('aria-expanded') === 'true') {
+      $(this).parent().removeClass('show')
+      $(this).attr('aria-expanded', false)
+    } else {
+      $(this).parent().addClass('show')
+      $(this).attr('aria-expanded', true)
+    }
     $(this).next('.dropdown-menu').toggle()
     event.stopPropagation()
   }

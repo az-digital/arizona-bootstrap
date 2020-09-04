@@ -7246,6 +7246,8 @@
   var CLASS_NAME_CLOSE = 'offcanvas-toggle';
   var CLASS_NAME_CLOSING = 'closing';
   var CLASS_NAME_CLOSED = 'closed';
+  var CLASS_NAME_BACKDROP$1 = 'menu-backdrop';
+  var CLASS_NAME_SHOW$8 = 'show';
   var SELECTOR_ACTIVES$1 = '.open, .closing';
   var SELECTOR_DATA_TOGGLE$5 = '[data-toggle="offcanvas"]';
   /**
@@ -7259,6 +7261,7 @@
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
+      this._backdrop = null;
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"offcanvas\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"offcanvas\"][data-target=\"#" + element.id + "\"]")));
       var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$5));
 
@@ -7279,7 +7282,7 @@
       this._parent = this._config.parent ? this._getParent() : null;
 
       if (!this._config.parent) {
-        this._addAriaAndOffcanvasmenudClass(this._element, this._triggerArray);
+        this._addAriaAndOffcanvasmenuClass(this._element, this._triggerArray);
       }
 
       if (this._config.toggle) {
@@ -7296,6 +7299,13 @@
         this.close();
       } else {
         this.open();
+      }
+    };
+
+    _proto._removeBackdrop = function _removeBackdrop() {
+      if (this._backdrop) {
+        $(this._backdrop).remove();
+        this._backdrop = null;
       }
     };
 
@@ -7345,6 +7355,21 @@
           $(actives).data(DATA_KEY$b, null);
         }
       }
+
+      this._backdrop = document.createElement('div');
+      this._backdrop.className = CLASS_NAME_BACKDROP$1;
+
+      this._backdrop.setAttribute('data-toggle', 'offcanvas');
+
+      this._backdrop.setAttribute('aria-controls', this._config.target);
+
+      this._backdrop.setAttribute('data-target', this._config.target);
+
+      this._backdrop.setAttribute('aria-expanded', 'true');
+
+      $(this._backdrop).appendTo(document.body);
+
+      this._backdrop.classList.add(CLASS_NAME_SHOW$8);
 
       $(this._element).removeClass(CLASS_NAME_CLOSE).addClass(CLASS_NAME_CLOSING);
 
@@ -7404,6 +7429,8 @@
       var complete = function complete() {
         _this2.setTransitioning(false);
 
+        _this2._removeBackdrop();
+
         $(_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED$1);
       };
 
@@ -7451,12 +7478,12 @@
       var selector = "[data-toggle=\"offcanvas\"][data-parent=\"" + this._config.parent + "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
       $(children).each(function (i, element) {
-        _this3._addAriaAndOffcanvasmenudClass(Offcanvasmenu._getTargetFromElement(element), [element]);
+        _this3._addAriaAndOffcanvasmenuClass(Offcanvasmenu._getTargetFromElement(element), [element]);
       });
       return parent;
     };
 
-    _proto._addAriaAndOffcanvasmenudClass = function _addAriaAndOffcanvasmenudClass(element, triggerArray) {
+    _proto._addAriaAndOffcanvasmenuClass = function _addAriaAndOffcanvasmenuClass(element, triggerArray) {
       var isOpen = $(element).hasClass(CLASS_NAME_OPEN$1);
 
       if (triggerArray.length) {
@@ -7529,6 +7556,14 @@
     getViewportWidth();
 
     if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+      if ($(this).attr('aria-expanded') === 'true') {
+        $(this).parent().removeClass('show');
+        $(this).attr('aria-expanded', false);
+      } else {
+        $(this).parent().addClass('show');
+        $(this).attr('aria-expanded', true);
+      }
+
       $(this).next('.dropdown-menu').toggle();
       event.stopPropagation();
     }
