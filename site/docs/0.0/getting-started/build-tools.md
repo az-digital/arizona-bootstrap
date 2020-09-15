@@ -8,7 +8,7 @@ toc: true
 
 ## Ways to Change and Build Arizona Bootstrap
 
-If you are one of the developers who can make changes to the main [Arizona Bootstrap repository]({{ site.repo }}), the built-in continuous integration feature called GitHub Actions takes care of building a new version including your suggested changes and presenting it on a generally visible review web site. See the [CONTRIBUTING]({{ site.repo}}/blob/master/CONTRIBUTING.md) document for more details about how to do this. If you're working from a fork of the main Arizona Bootstrap repository elsewhere on GitHub, the GitHub Actions automated builds should still work, but will require extensive initial setup on your part, and in particular you will have to establish your own arrangements for hosting the review sites, since the main repository is using AWS with some very specific access arrangements.
+If you are one of the developers who can make changes to the main [Arizona Bootstrap repository]({{ site.repo }}), the built-in continuous integration feature called GitHub Actions takes care of building a new version including your suggested changes and presenting it on a generally visible review web site. See the [CONTRIBUTING]({{ site.repo}}/blob/main/CONTRIBUTING.md) document for more details about how to do this. If you're working from a fork of the main Arizona Bootstrap repository elsewhere on GitHub, the GitHub Actions automated builds should still work, but will require extensive initial setup on your part, and in particular you will have to establish your own arrangements for hosting the review sites, since the main repository is using AWS with some very specific access arrangements.
 
 Docker simplifies building Arizona Bootstrap locally, either in advance of changing the main repository, or if you want some independent customizations, and makes it easy to view the changes in a web browser through a local link.
 
@@ -74,7 +74,7 @@ There are a few more convenience commands to use with `docker run` in addition t
 
 However for maximum flexibility,the easiest option is to run a full interactive shell within the container, specifying just `/bin/bash` (this will not only have access to all the convenience shell commands, but all of the npm scripts as well).
 
-The examples here assume you have access to a POSIX-compatible shell, like the ones built in to Linux and MacOS, or included as part of Git for Windows, but if this is inconvenient for you and you're happy running command-line Docker commands in some other way, the Docker-specific parts should still work if you simply copy them out of the examples or scripts and make the small changes necessary for them to work the way you expect. 
+The examples here assume you have access to a POSIX-compatible shell, like the ones built in to Linux and MacOS, or included as part of Git for Windows, but if this is inconvenient for you and you're happy running command-line Docker commands in some other way, the Docker-specific parts should still work if you simply copy them out of the examples or scripts and make the small changes necessary for them to work the way you expect.
 
 ## Traditional Twitter Bootstrap Tooling Setup
 
