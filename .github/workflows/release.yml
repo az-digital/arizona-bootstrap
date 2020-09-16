@@ -106,7 +106,11 @@ jobs:
             unset GIT_SSH_COMMAND
             rm ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
           )
-
+      - name: Upload package.json
+        uses: actions/upload-artifact@v1
+        with:
+          name: package.json
+          path: package.json
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
@@ -150,3 +154,30 @@ jobs:
           aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
       # ========================================================================
+
+  dispatch:
+    needs: release
+    strategy:
+      matrix:
+        repo:
+          - az-digital/arizona-bootstrap-packagist
+          - az-digital/digital.arizona.edu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download package.json
+        uses: actions/download-artifact@v1
+        with:
+          name: package.json
+      - name: Release variables
+        run: |
+          version=$(jq -r '.version' package.json)
+          version_short=$(jq -r '.version_short' package.json)
+          echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
+          echo "::set-env name=AZ_VERSION::${version}"
+      - name: Notify dependencies
+        uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: az_bootstrap_release
+          client-payload: '{"version": "${{ env.AZ_VERSION }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
