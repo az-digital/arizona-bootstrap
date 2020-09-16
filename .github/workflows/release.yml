@@ -65,32 +65,6 @@ jobs:
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
 
-      - name: Build review site artifact
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
-        run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
-
-      - name: Update digital.arizona.edu
-        # When we figure out the repository_dispatch event, we should do that here
-        # to notify digital.arizona.edu of a new version.
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
-        run: |
-          (
-            echo "${{ secrets.AZ_DIGITAL_SITE_DEPLOY_KEY }}" > ${HOME}/.ssh/az_digital_deploy_key
-            chmod 600 ${HOME}/.ssh/az_digital_deploy_key
-            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-            git config --global user.name "${GITHUB_ACTOR}"
-            export GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_digital_deploy_key"
-            git clone git@github.com:az-digital/digital.arizona.edu.git /tmp/digital.arizona.edu
-            rsync --recursive --delete _site/ /tmp/digital.arizona.edu/docs${AZ_REVIEW_BASEURL}
-            cd /tmp/digital.arizona.edu
-            git add docs/${AZ_REVIEW_STEM}
-            git commit -m "Update Arizona Bootstrap docs for ${AZ_VERSION}"
-            git push
-            unset GIT_SSH_COMMAND
-            rm ${HOME}/.ssh/az_digital_deploy_key
-          )
-
       - name: Upload package.json
         uses: actions/upload-artifact@v1
         with:
