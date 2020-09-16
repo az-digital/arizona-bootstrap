@@ -98,12 +98,14 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: package.json
+
       - name: Release variables
         run: |
           version=$(jq -r '.version' package.json)
           version_short=$(jq -r '.version_short' package.json)
           echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
           echo "::set-env name=AZ_VERSION::${version}"
+
       - name: Notify dependencies
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
