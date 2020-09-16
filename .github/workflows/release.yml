@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+
       - name: Set variables for Docker images
         # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
@@ -25,19 +26,23 @@ jobs:
           echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
           echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
           echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+
       - name: Search for Docker image
         id: dockerpull
         continue-on-error: true
         run: |
           docker pull "$AZ_EPHEMERAL_IMAGE"
+
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
           docker build -t "$AZ_EPHEMERAL_IMAGE" .
           docker push "$AZ_EPHEMERAL_IMAGE"
+
       - name: Build variables
         run: |
           stem='arizona-bootstrap'
@@ -47,6 +52,7 @@ jobs:
           echo "::set-env name=AZ_REVIEW_STEM::${stem}"
           echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
           echo "::set-env name=AZ_VERSION::${version}"
+
       - name: Create Release
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         id: create_release
@@ -58,10 +64,12 @@ jobs:
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
+
       - name: Build review site artifact
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
           docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+
       - name: Update digital.arizona.edu
         # When we figure out the repository_dispatch event, we should do that here
         # to notify digital.arizona.edu of a new version.
@@ -82,35 +90,13 @@ jobs:
             unset GIT_SSH_COMMAND
             rm ${HOME}/.ssh/az_digital_deploy_key
           )
-      - name: Update packagist
-        if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
-        run: |
-          (
-            echo "${{ secrets.AZ_BOOTSTRAP_PACKAGIST_DEPLOY_KEY }}" > ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
-            chmod 600 ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
-            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-            git config --global user.name "${GITHUB_ACTOR}"
-            GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/az_bootstrap_packagist_deploy_key"
-            export GIT_SSH_COMMAND
-            distwhitelist='css js'
-            srcroot='dist'
-            clonedir='/tmp/arizona-bootstrap-packagist/'
-            git clone git@github.com:az-digital/arizona-bootstrap-packagist.git "$clonedir"
-            for w in $distwhitelist ; do
-              rsync --recursive --delete "${srcroot}/${w}" "$clonedir"
-            done
-            cd "$clonedir"
-            git add .
-            git commit -m "Update Arizona Bootstrap Packagist for ${AZ_VERSION}"
-            git push
-            unset GIT_SSH_COMMAND
-            rm ${HOME}/.ssh/az_bootstrap_packagist_deploy_key
-          )
+
       - name: Upload package.json
         uses: actions/upload-artifact@v1
         with:
           name: package.json
           path: package.json
+
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
         run: |
