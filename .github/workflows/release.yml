@@ -68,8 +68,8 @@ jobs:
       - name: Upload package.json
         uses: actions/upload-artifact@v1
         with:
-          name: package.json
-          path: package.json
+          name: artifact
+          path: ./package.json
 
       - name: Back to dev
         if: ${{ endsWith(env.AZ_VERSION, '-dev') == false }}
@@ -97,12 +97,12 @@ jobs:
       - name: Download package.json
         uses: actions/download-artifact@v1
         with:
-          name: package.json
+          name: artifact
 
       - name: Release variables
         run: |
-          version=$(jq -r '.version' package.json)
-          version_short=$(jq -r '.version_short' package.json)
+          version=$(jq -r '.version' artifact/package.json)
+          version_short=$(jq -r '.version_short' artifact/package.json)
           echo "::set-env name=AZ_SHORT_VERSION::${version_short}"
           echo "::set-env name=AZ_VERSION::${version}"
 
