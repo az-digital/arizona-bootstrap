@@ -5,7 +5,7 @@ description: Want to contribute? Any release of Arizona Bootstrap is tested and 
 group: about
 redirect_from:
   - "/about/"
-  - "/docs/0.0/about/"
+  - "/docs/2.0/about/"
 toc: true
 ---
 

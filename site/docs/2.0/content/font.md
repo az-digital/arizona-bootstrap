@@ -115,7 +115,7 @@ Put this within your `<head>` tag above the reference to arizona-bootstrap.css.
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
-<link href="/arizona-bootstrap/feature/10-add-proxima-nova-font/docs/0.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
+<link href="/arizona-bootstrap/feature/10-add-proxima-nova-font/docs/2.0/dist/css/arizona-bootstrap.css" rel="stylesheet">
 {% endhighlight %}
 
 If using the font independently from Arizona Bootstrap, below are
