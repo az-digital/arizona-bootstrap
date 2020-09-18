@@ -5,7 +5,7 @@ description: Learn more about the team maintaining Arizona Bootstrap, how and wh
 group: about
 redirect_from:
   - "/about/"
-  - "/docs/0.0/about/"
+  - "/docs/2.0/about/"
 ---
 
 ## Team
