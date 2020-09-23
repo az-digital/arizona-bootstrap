@@ -7,7 +7,7 @@
 
 // >> .navbar-nav
 .navbar-nav .nav-link {
-  font-weight: 700;
+  font-weight: $navbar-nav-link-font-weight;
   background-color: inherit;
   border: none;
 }
