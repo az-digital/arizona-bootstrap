@@ -7,14 +7,16 @@ title: Navbar template
   <div class="bg-red">
    <div class="container">
      <div class="row">
-       <div class="col-10 col-sm-3 pr-0">
+       <div class="col-10 col-md-3 pr-0">
          <a href="https://www.arizona.edu" title="The University of Arizona homepage">
            <img alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.uadigital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" class="pt-4 pb-3 pl-2">
          </a>
        </div>
-	    	<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-default float-right">
-	    		<span class="navbar-toggler-icon"></span>
-	    	</button>
+       <div class="col-2 col-md-9 pr-0 d-lg-none d-flex justify-content-end">
+         <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
+           <span class="material-icons"> menu </span>
+         </button>
+       </div>
      </div>
    </div>
   </div>
@@ -60,56 +62,139 @@ title: Navbar template
     </div> <!-- /.container -->
   </div>
 </header>
-<div class="navbar-offcanvas-container">
-  <nav class="navbar navbar-expand-lg navbar-light">
-  	<div class="navbar-offcanvas-container">
-  		<div class="navbar-offcanvas" id="navbarOffcanvasDemo">
-  			<div class="navbar-offcanvas-header">
-  				<div class="redbar bg-chili py-1 px-3 d-flex justify-content-between align-items-center">
-  					<a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center">
-  						<span class="material-icons">home</span>
-              <span>HOME</span>
-  					</a>
-  					<button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-default">
-  						<span class="material-icons">close</span>
-              <span>CLOSE</span>
-  					</button>
-  				</div>
-  				<form class="navbar-offcanvas-search bg-white pr-3">
-  					<div class="input-group">
-  						<input class="form-control p-3" type="search" placeholder="Search" aria-label="Search">
-  						<div class="input-group-append">
-  							<button class="btn" type="submit"><span class="material-icons">search</span></button>
-  						</div>
-  					</div>
-  				</form>
-  			</div>
-  			<ul class="navbar-nav">
-  				<li class="nav-item nav-item-parent dropdown keep-open">
-  					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  						Undergraduate
-  					</a>
-  					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-  						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
-  						<a class="dropdown-item" href="#">Prospective student information</a>
-  					</div>
-  				</li>
-  				<li class="nav-item nav-item-parent dropdown keep-open">
-  					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  						Graduate
-  					</a>
-  					<div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
-  						<a class="dropdown-item" href="#">Degrees & Concentrations</a>
-  						<a class="dropdown-item" href="#">Prospective student information</a>
-  					</div>
-  				</li>
-  				<li class="nav-item nav-item-parent">
-  				  	<a class="nav-link" href="#">Current students</a>
-  				</li>
-  			</ul>
-  		</div>
-  	</div>
-  </nav>
+
+<div class="container">
+  <div class="row">
+    <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
+      <div class="navbar-offcanvas-header">
+        <div class="bg-chili d-flex justify-content-between align-items-center">
+          <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
+            <span class="material-icons">home</span>
+            <span>HOME</span>
+          </a>
+          <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
+            <span class="material-icons">close</span>
+            <span>CLOSE</span>
+          </button>
+        </div>
+        <form class="navbar-offcanvas-search bg-white pr-3">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn" type="submit"><span class="material-icons">search</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="navbar-nav flex-lg-row">
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="ADMISSIONSdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Admissions
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="ADMISSIONSdropdown">
+            <a class="dropdown-item active" href="#">Admissions Overview<span class="sr-only">(current)</span> </a>
+            <a class="dropdown-item" href="https://www.arizona.edu/how-apply-uarizona">Apply</a>
+            <a class="dropdown-item" href="https://admissions.arizona.edu/cost-aid">Cost & Aid</a>
+            <a class="dropdown-item" href="https://admissions.arizona.edu/request-info">Request Information</a>
+            <a class="dropdown-item" href="https://www.arizona.edu/student-life/virtual-visit">Visit Virtually</a>
+            <a class="dropdown-item" href="https://admissions.arizona.edu">Freshman & Transfer</a>
+            <a class="dropdown-item" href="http://admissions.arizona.edu/how-to-apply/international">International</a>
+            <a class="dropdown-item" href="http://grad.arizona.edu">Graduate</a>
+            <a class="dropdown-item" href="https://ce.arizona.edu">Continuing & Professional Education</a>
+            <a class="dropdown-item" href="https://online.arizona.edu">Arizona Online</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="ACADEMICSdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Academics
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="ACADEMICSdropdown">
+            <a class="dropdown-item" href="#">Academic Resources</a>
+            <a class="dropdown-item" href="#">Undergraduate Majors</a>
+            <a class="dropdown-item" href="#">Graduate Programs</a>
+            <a class="dropdown-item" href="#">Colleges & Schools</a>
+            <a class="dropdown-item" href="#">Health Sciences</a>
+            <a class="dropdown-item" href="#">Class Registration</a>
+            <a class="dropdown-item" href="#">Libraries</a>
+            <a class="dropdown-item" href="#">Global Engagement</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="RESEARCHdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Research
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="RESEARCHdropdown">
+            <a class="dropdown-item" href="#">Research, Innovation & Impact</a>
+            <a class="dropdown-item" href="#">Corporate Engagement</a>
+            <a class="dropdown-item" href="#">Research Centers</a>
+            <a class="dropdown-item" href="#">Resources for Researchers</a>
+            <a class="dropdown-item" href="#">Research Opportunities for Students</a>
+            <a class="dropdown-item" href="#">Environment & Sustainability</a>
+            <a class="dropdown-item" href="#">Libraries</a>
+            <a class="dropdown-item" href="#">Global Engagement</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="STUDENTLIFEdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Student life
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="STUDENTLIFEdropdown">
+            <a class="dropdown-item" href="#">Student Life Overview</a>
+            <a class="dropdown-item" href="#">Living on Campus</a>
+            <a class="dropdown-item" href="#">Things To Do</a>
+            <a class="dropdown-item" href="#">Getting Involved</a>
+            <a class="dropdown-item" href="#">Spirit & Traditions</a>
+            <a class="dropdown-item" href="#">All About Tucson</a>
+            <a class="dropdown-item" href="#">Virtual Visit</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="ABOUTdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            About
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="ABOUTdropdown">
+            <a class="dropdown-item" href="#">About Arizona</a>
+            <a class="dropdown-item" href="#">Purpose & Values</a>
+            <a class="dropdown-item" href="#">Faculty Awards & Honors</a>
+            <a class="dropdown-item" href="#">Spirit & Traditions</a>
+            <a class="dropdown-item" href="#">Diversity & Inclusion</a>
+            <a class="dropdown-item" href="#">Strategic Plan</a>
+            <a class="dropdown-item" href="#">News</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent">
+          <a class="nav-link" href="#">Leadership</a>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="ALUMNIdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Alumni
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="ALUMNIdropdown">
+            <a class="dropdown-item" href="#">Alumni Association</a>
+            <a class="dropdown-item" href="#">Chapters & Clubs</a>
+            <a class="dropdown-item" href="#">Membership</a>
+            <a class="dropdown-item" href="#">Join Today</a>
+            <a class="dropdown-item" href="#">Make a Gift</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent dropdown keep-open">
+          <button class="nav-link dropdown-toggle" id="GIVEdropdown" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Give
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="GIVEdropdown">
+            <a class="dropdown-item" href="#">Support Arizona</a>
+            <a class="dropdown-item" href="#">Give Today</a>
+          </div>
+        </li>
+        <li class="nav-item nav-item-parent">
+          <a class="nav-link" href="https://arizonawildcats.com">Athletics</a>
+        </li>
+        <li class="nav-item nav-item-parent">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 	<!-- Marketing messaging and featurettes
 	 ================================================== -->

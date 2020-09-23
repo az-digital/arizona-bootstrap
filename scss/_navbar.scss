@@ -6,6 +6,12 @@
 }
 
 // >> .navbar-nav
+.navbar-nav .nav-link {
+  font-weight: 700;
+  background-color: inherit;
+  border: none;
+}
+
 .navbar-nav .nav-link,
 .navbar-brand {
   padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;

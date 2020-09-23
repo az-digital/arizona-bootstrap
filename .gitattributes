@@ -6,7 +6,3 @@
 
 arizona-bootstrap.css linguist-vendored=false
 arizona-bootstrap.js linguist-vendored=false
-
-dist/**/*   merge=theirs
-*.min.css   merge=theirs
-*.min.js    merge=theirs

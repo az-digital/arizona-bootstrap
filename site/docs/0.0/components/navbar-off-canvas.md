@@ -11,7 +11,7 @@ toc: true
 Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-canvas experience for mobile devices.
 
 {% capture example %}
-<div class="d-lg-none d-flex justify-content-end justify-content-lg-start">
+<div class="d-lg-none d-flex justify-content-end">
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
     <span class="material-icons"> menu </span>
   </button>
@@ -45,18 +45,18 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       <a class="nav-link" href="#">Link</a>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
+      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Admissions
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
         <a class="dropdown-item" href="#">Another action</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">

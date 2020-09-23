@@ -26,7 +26,6 @@
   cursor: pointer;
   animation: .3s linear fadein;
 }
-
 .navbar-offcanvas {
   position: fixed;
   top: 0;
@@ -47,8 +46,7 @@
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   transform: translateX(100vw);
   &.open {
-    transform: translateX(-1rem); /* Account for horizontal padding on navbar */
-    //box-shadow: -200px 0 0px 0 rgba($black, .7);
+    transform: translateX(0); /* Account for horizontal padding on navbar */
   }
 
   .navbar-offcanvas-header {
@@ -113,7 +111,8 @@
     .nav-link {
       padding: $navbar-offcanvas-link-padding;
       color: $navbar-offcanvas-link-color;
-
+      text-align: left;
+      width: 100%;
 
       &.disabled {
         font-weight: 400;
@@ -150,6 +149,10 @@
       border: none;
     }
   }
+}
+
+.container .navbar-offcanvas.open {
+  transform: translateX(0); /* Account for horizontal padding on container */
 }
 
 @include media-breakpoint-up(lg) {
@@ -251,7 +254,6 @@
         .dropdown-toggle:focus {
           background-color: $navbar-light-link-hover-bg;
           color: $navbar-light-active-color;
-
         }
         .dropdown-toggle {
           &::after {
@@ -269,6 +271,7 @@
       border: $dropdown-border-width solid $dropdown-border-color;
       @include border-radius($dropdown-border-radius);
       @include box-shadow($dropdown-box-shadow);
+      position: absolute;
       .dropdown-item {
         padding: $dropdown-item-padding-y $dropdown-item-padding-x;
       }

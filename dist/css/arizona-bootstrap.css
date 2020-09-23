@@ -14124,6 +14124,12 @@ a {
   padding: 0 1rem;
 }
 
+.navbar-nav .nav-link {
+  font-weight: 700;
+  background-color: inherit;
+  border: none;
+}
+
 .navbar-nav .nav-link,
 .navbar-brand {
   padding: 1.25rem 1.5rem;
@@ -14224,8 +14230,8 @@ a {
 }
 
 .navbar-offcanvas.open {
-  -webkit-transform: translateX(-1rem);
-  transform: translateX(-1rem);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
   /* Account for horizontal padding on navbar */
 }
 
@@ -14281,6 +14287,8 @@ a {
 .navbar-offcanvas .nav-item .nav-link {
   padding: 1rem;
   color: #fff;
+  text-align: left;
+  width: 100%;
 }
 
 .navbar-offcanvas .nav-item .nav-link.disabled {
@@ -14318,6 +14326,12 @@ a {
   vertical-align: unset;
   content: "\002B";
   border: none;
+}
+
+.container .navbar-offcanvas.open {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  /* Account for horizontal padding on container */
 }
 
 @media (min-width: 992px) {
@@ -14422,6 +14436,7 @@ a {
     background-color: #0c234b;
     border: none;
     border: 1px solid rgba(0, 0, 0, 0.15);
+    position: absolute;
   }
   .navbar-offcanvas .dropdown-menu .dropdown-item {
     padding: 0.25rem 1.5rem;

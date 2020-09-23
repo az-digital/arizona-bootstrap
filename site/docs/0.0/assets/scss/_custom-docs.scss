@@ -113,7 +113,6 @@
 
 .navbar-offcanvas {
   &.open {
-    -webkit-transform: translateX(0);
     transform: translateX(0); /* Account for horizontal padding on navbar */
   }
 }
