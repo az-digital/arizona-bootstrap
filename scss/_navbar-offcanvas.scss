@@ -27,7 +27,7 @@
   animation: .3s linear fadein;
 }
 
-.navbar-off-canvas {
+.navbar-offcanvas {
   position: fixed;
   top: 0;
   right: 0;
@@ -153,7 +153,7 @@
 }
 
 @include media-breakpoint-up(lg) {
-  .navbar-off-canvas {
+  .navbar-offcanvas {
     position: relative;
     display: -ms-flexbox;
     display: flex;

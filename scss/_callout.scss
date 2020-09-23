@@ -20,7 +20,7 @@
     @include border-radius();
   }
 
-  & + .callout {
+  + .callout {
     margin-top: -.25rem;
   }
 }

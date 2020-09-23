@@ -39,7 +39,7 @@
   border-bottom-color: $nav-tabs-border-color;
 
   .nav-item {
-    & + .nav-item {
+    + .nav-item {
       margin-left: .5rem;
     }
   }
@@ -57,7 +57,7 @@
     flex-direction: column;
 
     .nav-item {
-      & + .nav-item {
+      + .nav-item {
         margin-left: 0;
       }
     }
@@ -104,7 +104,7 @@
       flex-direction: row;
 
       .nav-item {
-        & + .nav-item {
+        + .nav-item {
           margin-left: .5rem;
         }
       }

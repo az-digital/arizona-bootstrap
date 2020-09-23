@@ -109,18 +109,14 @@
   }
 }
 
-/* stylelint-disable */
-// >> Off-canvas Nav example
-@include media-breakpoint-down(md) {
+// >> Off Canvas Navbar example
 
-  .navbar-offcanvas {
-    &.open {
-      -webkit-transform: translateX(0);
-      transform: translateX(0); /* Account for horizontal padding on navbar */
-    }
+.navbar-offcanvas {
+  &.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); /* Account for horizontal padding on navbar */
   }
 }
-/* stylelint-enable */
 
 //
 // > LAYOUT
