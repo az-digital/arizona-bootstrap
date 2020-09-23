@@ -1,7 +1,7 @@
 /*!
-  * Arizona Bootstrap v0.0.4-dev (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v2.0.2-dev (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2020 The Arizona Board of Regents on behalf of The University of Arizona
-  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
+  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :

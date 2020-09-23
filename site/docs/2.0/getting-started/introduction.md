@@ -5,8 +5,8 @@ description: Get started with Arizona Bootstrap, the University of Arizona's the
 group: getting-started
 redirect_from:
   - "/docs/"
-  - "/docs/0.0/"
-  - "/docs/0.0/getting-started/"
+  - "/docs/2.0/"
+  - "/docs/2.0/getting-started/"
   - "/docs/getting-started/"
   - "/getting-started/"
 toc: true
@@ -70,7 +70,7 @@ Be sure to have your pages set up with the latest design and development standar
     <!-- Proxima Nova font. -->
     <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/master/css/arizona-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/css/arizona-bootstrap.min.css">
     <title>Arizona Bootstrap Starter Template</title>
   </head>
   <body>
@@ -109,7 +109,7 @@ Be sure to have your pages set up with the latest design and development standar
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
     <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <script src="https://review.digital.arizona.edu/arizona-bootstrap/main/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}
@@ -130,7 +130,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
     <!-- Proxima Nova font. -->
     <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/master/css/arizona-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/css/arizona-bootstrap.min.css">
 
     <title>Arizona Bootstrap Starter Template</title>
   </head>
@@ -170,7 +170,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
     <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/master/docs/0.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <script src="https://review.digital.arizona.edu/arizona-bootstrap/main/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}
