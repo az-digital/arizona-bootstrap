@@ -6,17 +6,6 @@ group: getting-started
 toc: true
 ---
 
-## Compiled CSS and JS
-
-Download ready-to-use compiled code for **{{ site.title }} v{{ site.current_version}}** to easily drop into your project, which includes:
-
-- Compiled and minified CSS bundles (see [CSS files comparison]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/contents/#css-files))
-- Compiled and minified JavaScript plugins
-
-This doesn't include documentation, source files, or any optional JavaScript dependencies (jQuery and Popper.js).
-
-<a href="{{ site.download.dist }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download {{ site.title }}');">Download</a>
-
 ## Source Files
 
 Compile {{ site.title }} with your own asset pipeline by downloading our source Sass, JavaScript, and documentation files. This option requires some additional tooling:
