@@ -262,13 +262,21 @@ $navbar-nav-link-padding-y: 1.25rem;
 $navbar-nav-link-padding-x: 1.5rem;
 $navbar-nav-link-font-weight: 700;
 
-
 $navbar-light-border-color: $gray-200;
 $navbar-light-border-width: 1px 0;
 $navbar-light-link-color: $azurite;
 $navbar-light-link-active-color: $midnight;
 $navbar-light-link-active-bg: $gray-200;
 $navbar-light-link-hover-bg: $gray-100;
+
+// >>> Navbar Off-canvas
+$navbar-offcanvas-bg: $blue;
+$navbar-offcanvas-bg-expanded: rgba($white, .15);
+$navbar-offcanvas-link-padding: 1rem;
+$navbar-offcanvas-dropdown-link-padding: .5rem;
+$navbar-offcanvas-link-color: $white;
+$navbar-offcanvas-link-disabled-color: $gray-600;
+$navbar-offcanvas-link-active-bg: $azurite;
 
 // >> Pagination
 $pagination-color: $breadcrumb-color;

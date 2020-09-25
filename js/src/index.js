@@ -12,6 +12,7 @@ import {
   Tooltip,
   Util
 } from '../../node_modules/bootstrap/js/src/index.js'
+import Offcanvasmenu from './offcanvasmenu'
 
 /**
  * --------------------------------------------------------------------------
@@ -32,5 +33,6 @@ export {
   Scrollspy,
   Tab,
   Toast,
-  Tooltip
+  Tooltip,
+  Offcanvasmenu
 }

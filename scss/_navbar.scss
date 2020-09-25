@@ -5,13 +5,13 @@
   padding: $navbar-padding-y $navbar-padding-x;
 }
 
+// >> .navbar-nav
 .navbar-nav .nav-link {
   font-weight: $navbar-nav-link-font-weight;
   background-color: inherit;
   border: none;
 }
 
-// >> .navbar-nav
 .navbar-nav .nav-link,
 .navbar-brand {
   padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
@@ -50,4 +50,3 @@
     }
   }
 }
-

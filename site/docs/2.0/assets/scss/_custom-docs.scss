@@ -109,6 +109,13 @@
   }
 }
 
+// >> Off Canvas Navbar example
+
+.navbar-offcanvas {
+  &.open {
+    transform: translateX(0); /* Account for horizontal padding on navbar */
+  }
+}
 
 //
 // > LAYOUT
