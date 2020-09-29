@@ -68,7 +68,7 @@ Be sure to have your pages set up with the latest design and development standar
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Proxima Nova font. -->
-    <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/css/arizona-bootstrap.min.css">
     <title>Arizona Bootstrap Starter Template</title>
@@ -128,7 +128,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Proxima Nova font. -->
-    <link href="https://use.typekit.net/tgs5qmz.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Arizona Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/css/arizona-bootstrap.min.css">
 

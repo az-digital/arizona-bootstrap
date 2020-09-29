@@ -13,18 +13,18 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 {% capture example %}
 <div class="d-lg-none d-flex justify-content-end">
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons"> menu </span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
       <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
-        <span class="material-icons">home</span>
+        <span class="material-icons-sharp">home</span>
         <span>HOME</span>
       </a>
       <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
-        <span class="material-icons">close</span>
+        <span class="material-icons-sharp">close</span>
         <span>CLOSE</span>
       </button>
     </div>
@@ -32,7 +32,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn" type="submit"><span class="material-icons">search</span></button>
+          <button class="btn" type="submit"><span class="material-icons-sharp">search</span></button>
         </div>
       </div>
     </form>
