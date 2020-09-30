@@ -517,7 +517,7 @@ With no `.navbar-brand` shown in lowest breakpoint:
 {% capture example %}
 <nav class="navbar navbar-expand-lg navbar-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="material-icons"> menu </span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">Hidden brand</a>
@@ -547,7 +547,7 @@ With a brand name shown on the left and toggler on the right:
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="material-icons"> menu </span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -576,7 +576,7 @@ With a toggler on the left and brand name on the right:
 {% capture example %}
 <nav class="navbar navbar-expand-lg navbar-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="material-icons"> menu </span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <a class="navbar-brand" href="#">Navbar</a>
 
@@ -615,7 +615,7 @@ Sometimes you want to use the collapse plugin to trigger hidden content elsewher
   </div>
   <nav class="navbar navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="material-icons"> menu </span>
+      <span class="material-icons-sharp"> menu </span>
     </button>
   </nav>
 </div>
