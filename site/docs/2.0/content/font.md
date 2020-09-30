@@ -13,15 +13,15 @@ toc: true
   your project.
 </div>
 
-## Centrally managed typekit webfont
+## Centrally managed Typekit webfont
 
 For ease of integration into web projects around campus, the Arizona Digital
-team manages a typekit webfont project that can be referenced by your site.
+team manages a Typekit webfont project that can be referenced by your site.
 
 #### Notes to consider when using the centrally mananged webfont project.
-Our license with typekit allows anyone with a netid to create their own webfont
+Our license with Typekit allows anyone with a netid to create their own webfont
 project in Creative Cloud Typekit and use it in all of their web projects. Of
-course there are advantages and Disadvantages to each approach.
+course there are advantages and disadvantages to each approach.
 
 #### Managing your own project
 
@@ -36,7 +36,7 @@ managed font.
 **Disadvantages**
 - Performance loss if your end-user has already downloaded the centrally managed
   font library from one of the other sites that use the centrally managed font.
-- You have to manage your own font in typekit under your netid, or a department
+- You have to manage your own font in Typekit under your netid, or a department
   managed netid, which comes with the risk with managing yet another service on
   your own.
 

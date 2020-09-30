@@ -5,6 +5,12 @@ description: Guidance and suggestions for using icon libraries with Arizona Boot
 group: extend
 ---
 
+<div class="alert alert-warning" role="alert">
+  <p class="h4 alert-heading">Heads Up!</p>
+  If you're using Arizona Bootstrap, Material Design Sharp icons will still need
+  to be added to your project if you would like to use them.
+</div>
+
 These icons have been approved to use within Arizona web assets like Arizona
 Quickstart, and Arizona Bootstrap.
 

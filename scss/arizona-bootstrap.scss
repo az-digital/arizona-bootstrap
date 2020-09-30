@@ -16,6 +16,8 @@
 $colors: map-remove($colors, "indigo", "purple", "pink", "orange", "yellow", "green", "teal", "cyan", "gray", "gray-dark");
 $theme-colors: map-remove($theme-colors, "primary", "secondary");
 
+// Optional asset overrides.
+@import "custom-asset-overrides";
 // Optional Bootstrap imports.
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
