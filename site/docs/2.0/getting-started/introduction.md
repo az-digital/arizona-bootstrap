@@ -105,11 +105,10 @@ Be sure to have your pages set up with the latest design and development standar
     </footer>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Arizona Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
-    <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/main/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <!-- jQuery first, then Arizona Bootstrap JS -->
+    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <!-- Arizona Bootstrap -->
+    <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}
@@ -164,13 +163,11 @@ If you want your footer to remain at the bottom of the page even when you don't 
         </div>
       </div>
     </footer>
-
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Arizona Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
-    <!-- UPDATE once CDN available -->
-    <script src="https://review.digital.arizona.edu/arizona-bootstrap/main/docs/2.0/dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <!-- jQuery first, then Arizona Bootstrap JS -->
+    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <!-- Arizona Bootstrap -->
+    <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
 </html>
 {% endhighlight %}
