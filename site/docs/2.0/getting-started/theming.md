@@ -390,10 +390,10 @@ Here are the variables we include (note that the `:root` is required). They're l
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
-  --gray: #6c757d;
+  --gray: #51595c;
   --gray-dark: #343a40;
   --primary: #007bff;
-  --secondary: #6c757d;
+  --secondary: #51595c;
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
