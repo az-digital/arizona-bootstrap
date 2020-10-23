@@ -14,9 +14,9 @@ jobs:
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'
-          echo "::set-env name=AZ_DOCKER_REGISTRY::${registry}"
-          echo "::set-env name=AZ_EPHEMERAL_IMAGE::${imageprefix}${imagename}:${lockhash}"
-          echo "::set-env name=AZ_BOOTSTRAP_SOURCE_DIR::arizona-bootstrap-src"
+          echo "AZ_DOCKER_REGISTRY=${registry}" >> ${GITHUB_ENV}
+          echo "AZ_EPHEMERAL_IMAGE=${imageprefix}${imagename}:${lockhash}" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SOURCE_DIR=arizona-bootstrap-src" >> ${GITHUB_ENV}
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
