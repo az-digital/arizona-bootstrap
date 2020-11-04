@@ -14,13 +14,13 @@ supported as shown below.
 ### This header should only be used when near a Block "A" logo.
 
 <header class="bg-red arizona-header" id="header_arizona">
-  <section class="container l-container">
+  <div class="container l-container">
     <div class="row">
       <a class="arizona-logo" href="http://www.arizona.edu" title="The University of Arizona homepage">
         <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg"/>
       </a>
     </div>
-  </section>
+  </div>
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red mr-1">
       <span class="material-icons-sharp"> search </span>
@@ -32,13 +32,13 @@ supported as shown below.
 </header>
 {% highlight html %}
 <header class="bg-red arizona-header" id="header_arizona">
-  <section class="container l-container">
+  <div class="container l-container">
     <div class="row">
       <a class="arizona-logo" href="http://www.arizona.edu" title="The University of Arizona homepage">
         <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg"/>
       </a>
     </div>
-  </section>
+  </div>
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red mr-1">
       <span class="material-icons-sharp"> search </span>
