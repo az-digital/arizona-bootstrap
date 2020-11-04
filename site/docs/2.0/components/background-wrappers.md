@@ -9,7 +9,6 @@ redirect_from:
 toc: true
 ---
 
-
 Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/#background-color) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility. {{ site.title }} provides a [color contrast tool]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/color-contrast) that shows you which Branded color combinations are accessible.
 
 {% highlight html %}
