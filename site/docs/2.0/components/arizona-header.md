@@ -6,9 +6,12 @@ group: components
 toc: true
 ---
 
-The University of Arizona wordmark header is to be used on all subdomains of
-arizona.edu. Extending the header to save room on your site, especially in
-mobile, with nav and search buttons is supported as shown below.
+## Wordmark header
+The header is to be used on all subdomains of arizona.edu. Extending the header
+to save room on your site, especially in mobile, with nav and search buttons is
+supported as shown below.
+
+### This header should only be used when near a Block "A" logo.
 
 <header class="bg-red arizona-header" id="header_arizona">
   <section class="container l-container">
