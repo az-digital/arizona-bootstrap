@@ -43,9 +43,9 @@ download:
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
-  css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/arizona-bootstrap.min.css"
-  js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/arizona-bootstrap.min.js"
-  js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/arizona-bootstrap.bundle.min.js"
+  css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.min.css"
+  js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.min.js"
+  js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.bundle.min.js"
   jquery:           "https://code.jquery.com/jquery-3.5.1.slim.min.js"
   jquery_hash:      "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
   popper:           "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
