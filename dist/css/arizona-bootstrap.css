@@ -237,6 +237,7 @@ caption {
 
 th {
   text-align: inherit;
+  text-align: -webkit-match-parent;
 }
 
 label {
@@ -3527,6 +3528,8 @@ input.btn-group-block[type="button"],
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -4955,6 +4958,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
@@ -11499,7 +11503,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-break {
   word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
 }
 
 .text-reset {
@@ -13680,42 +13684,66 @@ h2,
   position: relative;
 }
 
+.block-a-line-logo {
+  width: auto;
+  height: 36px;
+  margin: 5px 20px 0 10px;
+}
+
+.arizona-line-logo {
+  width: 211px;
+  height: 16px;
+  margin: 17px 20px 17px 10px;
+}
+
+@media (min-width: 576px) {
+  .arizona-line-logo {
+    width: 266.41px;
+    height: 19.8px;
+    margin: 15.11px 20px 15.1px 10px;
+  }
+}
+
 .arizona-logo {
   display: inline-block;
   float: left;
-  width: 276px;
   max-width: 80%;
-  height: 20px;
-  padding: 0 0 0 .6rem;
-  margin: 19px 0 20px;
 }
 
 .redbar-buttons {
   position: absolute;
   top: 0;
   right: 0;
-  height: 59px;
-  max-height: 59px;
-  padding-right: 1px;
+  height: 50px;
+  max-height: 50px;
 }
 
-.redbar-buttons .btn.btn-red, .redbar-buttons .btn.btn-default {
-  width: 39px;
-  height: 59px;
+.btn-redbar .icon-text {
+  margin: -5px;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.btn-redbar .icon {
+  margin: -5px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.btn.btn-redbar {
+  width: 50px;
+  height: 50px;
   padding: 0;
-  border: 2px solid #8b0015;
+  color: #fff;
+  background-color: #ab0520;
+  border: 2px solid #ab0520;
 }
 
-.redbar-buttons .btn.btn-red:focus, .redbar-buttons .btn.btn-default:focus, .redbar-buttons .btn.btn-red.focus, .redbar-buttons .btn.focus.btn-default {
-  border: 2px solid #ab0520;
+.btn.btn-redbar:focus, .btn.btn-redbar.focus {
+  background-color: #8b0015;
+  border: 2px solid #8b0015;
   outline: 0;
   box-shadow: none;
-}
-
-@media (min-width: 576px) {
-  .redbar-buttons .btn.btn-red, .redbar-buttons .btn.btn-default {
-    width: 59px;
-  }
 }
 
 /*

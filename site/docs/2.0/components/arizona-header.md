@@ -22,11 +22,13 @@ supported as shown below.
     </div>
   </div>
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red mr-1">
-      <span class="material-icons-sharp"> search </span>
+    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
+      <span class="icon material-icons-sharp"> search </span>
+      <div class="icon-text"> search </div>
     </button>
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-      <span class="material-icons-sharp"> menu </span>
+    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
+      <span class="icon material-icons-sharp"> menu </span>
+      <div class="icon-text"> menu </div>
     </button>
   </div>
 </header>
@@ -40,14 +42,15 @@ supported as shown below.
     </div>
   </div>
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red mr-1">
-      <span class="material-icons-sharp"> search </span>
+    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
+      <span class="icon material-icons-sharp"> search </span>
+      <div class="icon-text"> search </div>
     </button>
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-      <span class="material-icons-sharp"> menu </span>
+    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
+      <span class="icon material-icons-sharp"> menu </span>
+      <div class="icon-text"> menu </div>
     </button>
   </div>
 </header>
 {% endhighlight %}
-
 <div id="navbarOffcanvasDemo"> </div>
