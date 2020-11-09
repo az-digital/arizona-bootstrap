@@ -24,11 +24,11 @@ supported as shown below.
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
       <span class="icon material-icons-sharp"> search </span>
-      <div class="icon-text"> search </div>
+      <span class="icon-text"> search </span>
     </button>
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
       <span class="icon material-icons-sharp"> menu </span>
-      <div class="icon-text"> menu </div>
+      <span class="icon-text"> menu </span>
     </button>
   </div>
 </header>
@@ -44,11 +44,11 @@ supported as shown below.
   <div class="redbar-buttons d-lg-none d-flex justify-content-end">
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
       <span class="icon material-icons-sharp"> search </span>
-      <div class="icon-text"> search </div>
+      <span class="icon-text"> search </span>
     </button>
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
       <span class="icon material-icons-sharp"> menu </span>
-      <div class="icon-text"> menu </div>
+      <span class="icon-text"> menu </span>
     </button>
   </div>
 </header>
