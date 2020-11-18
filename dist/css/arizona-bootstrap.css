@@ -13680,6 +13680,73 @@ h2,
   border-left: 4px solid #0c234b;
 }
 
+.arizona-header {
+  position: relative;
+}
+
+.block-a-line-logo {
+  width: auto;
+  height: 36px;
+  margin: 5px 20px 0 10px;
+}
+
+.arizona-line-logo {
+  width: 211px;
+  height: 16px;
+  margin: 17px 20px 17px 10px;
+}
+
+@media (min-width: 576px) {
+  .arizona-line-logo {
+    width: 266.41px;
+    height: 19.8px;
+    margin: 15.11px 20px 15.1px 10px;
+  }
+}
+
+.arizona-logo {
+  display: inline-block;
+  float: left;
+  max-width: 80%;
+}
+
+.redbar-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  max-height: 50px;
+}
+
+.btn-redbar .icon-text {
+  display: block;
+  margin: -5px;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.btn-redbar .icon {
+  margin: -5px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.btn.btn-redbar {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  color: #fff;
+  background-color: #ab0520;
+  border: 2px solid #ab0520;
+}
+
+.btn.btn-redbar:focus, .btn.btn-redbar.focus {
+  background-color: #8b0015;
+  border: 2px solid #8b0015;
+  outline: 0;
+  box-shadow: none;
+}
+
 /*
 * > BLOCKQUOTE
 */
