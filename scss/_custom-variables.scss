@@ -149,6 +149,10 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+$text-muted:                          $gray-700 !default;
+$nav-link-disabled-color:             $text-muted !default;
+$dropdown-link-disabled-color:        $text-muted !default;
+
 //
 // Options
 //
