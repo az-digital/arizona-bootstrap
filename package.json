@@ -102,7 +102,7 @@
     "shx": "^0.3.3",
     "stylelint": "^13.7.2",
     "stylelint-config-twbs-bootstrap": "^2.1.0",
-    "terser": "^4.8.0",
+    "terser": "^5.5.1",
     "vnu-jar": "20.6.30"
   },
   "files": [
