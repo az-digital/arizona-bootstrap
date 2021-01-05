@@ -14,26 +14,26 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 <div class="d-lg-none d-flex justify-content-end">
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">search</span>
-    Search
+    <span>Search</span>
   </button>
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">menu</span>
-    Menu
+    <span>Menu</span>
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
-      <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
+      <button href="/" class="navbar-offcanvas-home btn btn-red btn-menu">
         <span class="material-icons-sharp">home</span>
-        <span>HOME</span>
-      </a>
-      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
+        <span>Home</span>
+      </button>
+      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
         <span class="material-icons-sharp">close</span>
-        <span>CLOSE</span>
+        <span>Close</span>
       </button>
     </div>
-    <form class="navbar-offcanvas-search bg-white pr-3">
+    <form class="navbar-offcanvas-search bg-white">
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">

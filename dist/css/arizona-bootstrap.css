@@ -2951,17 +2951,17 @@ fieldset:disabled a.btn {
 }
 
 .btn-menu {
-    width: 60px;
-    height: 50px;
-    border: 0;
-    padding: 0;
+  width: 60px;
+  height: 50px;
+  border: 0;
+  padding: 0;
+  font-size: 10px;
 }
 
 .btn-menu > span.material-icons-sharp {
-    height: 24px;
-    width: 24px;
-    display: block;
-    margin: auto;
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -14300,10 +14300,10 @@ a {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 90%;
+  width: 325px;
+  max-width: 90%;
   height: 100vh;
   max-height: 100vh;
-  padding: 0 0 3rem;
   overflow-y: hidden;
   background-color: #0c234b;
   border: none;
@@ -14336,6 +14336,23 @@ a {
   height: auto;
   margin: 0;
   border: none;
+}
+
+.navbar-offcanvas-search > .input-group {
+  padding-right: 18px;
+}
+
+.navbar-offcanvas-search > .input-group > input.form-control {
+  height: 60px;
+  padding-left: 20px;
+}
+
+.navbar-offcanvas-search > .input-group > .input-group-append > button.btn-search {
+  height: 60px;
+  width: 60px;
+  font-size: 24px;
+  border: 0;
+  padding: 0;
 }
 
 .navbar-offcanvas .navbar-nav {
