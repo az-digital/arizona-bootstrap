@@ -2950,6 +2950,20 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-menu {
+    width: 60px;
+    height: 50px;
+    border: 0;
+    padding: 0;
+}
+
+.btn-menu > span.material-icons-sharp {
+    height: 24px;
+    width: 24px;
+    display: block;
+    margin: auto;
+}
+
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;

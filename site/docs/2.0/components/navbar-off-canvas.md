@@ -12,8 +12,13 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 
 {% capture example %}
 <div class="d-lg-none d-flex justify-content-end">
-  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons-sharp"> menu </span>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">search</span>
+    Search
+  </button>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">menu</span>
+    Menu
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
