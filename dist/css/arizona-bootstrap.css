@@ -14211,7 +14211,7 @@ a {
 }
 
 .navbar-nav .nav-link {
-  font-weight: 700;
+  font-weight: 500;
   background-color: inherit;
   border: none;
 }
@@ -14388,15 +14388,16 @@ a {
 }
 
 .navbar-offcanvas .nav-item .nav-link {
-  padding: 1rem;
+  padding: 10px 20px;
   color: #fff;
   text-align: left;
   width: 100%;
+  min-height: 48px;
 }
 
 .navbar-offcanvas .nav-item .nav-link.disabled {
   font-weight: 400;
-  color: #6c757d;
+  color: #879097;
 }
 
 .navbar-offcanvas .nav-item .nav-link:hover, .navbar-offcanvas .nav-item .nav-link:focus {
@@ -14422,6 +14423,7 @@ a {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  white-space: normal;
 }
 
 .navbar-offcanvas .dropdown-toggle::after {
@@ -14429,6 +14431,7 @@ a {
   vertical-align: unset;
   content: "\002B";
   border: none;
+  margin-left: 20px;
 }
 
 .container .navbar-offcanvas.open {
