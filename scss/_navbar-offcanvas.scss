@@ -100,7 +100,7 @@
   }
 
   .nav-item {
-    &:hover {
+    &::hover {
       background-color: $navbar-offcanvas-link-hover-bg;
     }
     &.active, {
@@ -112,8 +112,8 @@
 
     &.show {
       .dropdown-toggle,
-      .dropdown-toggle:hover,
-      .dropdown-toggle:focus {
+      .dropdown-toggle ::hover,
+      .dropdown-toggle ::focus {
         background-color: $navbar-offcanvas-bg-expanded;
       }
       .dropdown-toggle {
