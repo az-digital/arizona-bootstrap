@@ -13,6 +13,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 {% capture example %}
 <div class="d-lg-none d-flex justify-content-end">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">search</span>
     <span>Search</span>
@@ -20,6 +21,10 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">menu</span>
     <span>Menu</span>
+=======
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
+    <span class="material-icons-sharp"> menu </span>
+>>>>>>> parent of 3dfdab4... Update button styles when menu is closed
 =======
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
     <span class="material-icons-sharp"> menu </span>
