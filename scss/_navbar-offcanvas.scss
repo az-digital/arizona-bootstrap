@@ -101,7 +101,7 @@
 
   .nav-item {
     &:hover {
-      background-color: transparent;
+      background-color: $navbar-offcanvas-link-active-bg;
     }
     &.active, {
       .nav-link {
@@ -276,14 +276,14 @@
       }
 
       &:hover {
-        color: $navbar-offcanvas-link-color;
-        background-color: $navbar-offcanvas-link-hover-bg;
+        color: $navbar-light-link-active-color;
+        background-color: $navbar-light-link-hover-bg;
       }
       &.active,
       &:active {
         .nav-link {
-          color: $navbar-offcanvas-link-color;
-          background-color: $navbar-offcanvas-link-active-bg;
+          color: $navbar-light-link-active-color;
+          background-color: $navbar-light-link-active-bg;
         }
       }
       &.show {
