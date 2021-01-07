@@ -118,7 +118,7 @@
       }
       .dropdown-toggle {
         &::after {
-          content: "\002D";
+          content: "\e15b";
         }
       }
     }
@@ -162,11 +162,12 @@
     white-space: normal;
 
     &::after {
-      font-size: 1.5rem;
+      font-size: 1rem;
       vertical-align: unset;
-      content: "\002B";
+      content: "\e145";
       border: none;
       margin-left: 20px;
+      font-family: 'Material Icons Sharp';
     }
   }
   .dropdown-divider {
