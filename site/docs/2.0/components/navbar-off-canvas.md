@@ -24,14 +24,14 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
-      <button href="/" class="navbar-offcanvas-home btn btn-red btn-menu">
+      <a href="/" class="navbar-offcanvas-home btn btn-red btn-menu">
         <span class="material-icons-sharp">home</span>
         <span>Home</span>
-      </button>
-      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+      </a>
+      <a id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
         <span class="material-icons-sharp">close</span>
         <span>Close</span>
-      </button>
+      </a>
     </div>
     <form class="navbar-offcanvas-search bg-white">
       <div class="input-group">
@@ -44,15 +44,15 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
   </div>
   <ul class="navbar-nav flex-lg-row">
     <li class="nav-item nav-item-parent active">
-      <button class="nav-link" href="#">Home <span class="sr-only">(current)</span></button>
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item nav-item-parent">
-      <button class="nav-link" href="#">Link</button>
+      <a class="nav-link" href="#">Link</a>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
         Admissions
-      </button>
+      </a>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
         <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
         <a class="dropdown-item" href="#">Another action</a>
@@ -61,9 +61,9 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       </div>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
         Dropdown
-      </button>
+      </a>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
         <a class="dropdown-item" href="#">Action</a>
         <a class="dropdown-item" href="#">Another action</a>
