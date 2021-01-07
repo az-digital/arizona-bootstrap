@@ -101,7 +101,7 @@
 
   .nav-item {
     &:hover {
-      background-color: $navbar-offcanvas-link-active-bg;
+      background-color: $navbar-offcanvas-link-hover-bg;
     }
     &.active, {
       .nav-link {
