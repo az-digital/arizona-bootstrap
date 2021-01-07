@@ -276,14 +276,14 @@
       }
 
       &:hover {
-        color: $navbar-light-link-active-color;
-        background-color: $navbar-light-link-hover-bg;
+        color: $navbar-offcanvas-link-color;
+        background-color: $navbar-offcanvas-link-hover-bg;
       }
       &.active,
       &:active {
         .nav-link {
-          color: $navbar-light-link-active-color;
-          background-color: $navbar-light-link-active-bg;
+          color: $navbar-offcanvas-link-color;
+          background-color: $navbar-offcanvas-link-active-bg;
         }
       }
       &.show {
