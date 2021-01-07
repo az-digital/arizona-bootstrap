@@ -19,10 +19,6 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">menu</span>
     <span>Menu</span>
-  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons-sharp"> menu </span>
-  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons-sharp"> menu </span>
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
