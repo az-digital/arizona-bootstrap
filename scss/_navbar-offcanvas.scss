@@ -85,10 +85,11 @@
   .navbar-nav {
     width: 100%;
     overflow-y: auto;
-
+    .nav-link {
+      font-weight: 500;
+    }
     .show > .nav-link {
       color: $navbar-offcanvas-link-color;
-      font-weight: 500;
     }
   }
 
