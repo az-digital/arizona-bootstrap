@@ -37,7 +37,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn" type="submit"><span class="material-icons-sharp">search</span></button>
+          <button class="btn btn-search" type="submit"><span class="material-icons-sharp">Search</span></button>
         </div>
       </div>
     </form>
