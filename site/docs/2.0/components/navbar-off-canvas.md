@@ -24,11 +24,11 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
-      <a href="/" class="navbar-offcanvas-home btn btn-red btn-menu">
+      <a href="/" class="btn btn-menu btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">home</span>
         <span>Home</span>
       </a>
-      <a id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+      <a id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">close</span>
         <span>Close</span>
       </a>
@@ -44,7 +44,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
   </div>
   <ul class="navbar-nav flex-lg-row">
     <li class="nav-item nav-item-parent active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item nav-item-parent">
       <a class="nav-link" href="#">Link</a>
