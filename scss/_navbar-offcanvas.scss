@@ -134,6 +134,9 @@
       &.disabled {
         font-weight: 400;
         color: $navbar-offcanvas-link-disabled-color;
+        &:hover {
+          background-color: $navbar-offcanvas-bg;
+        }
       }
 
       &:hover,
