@@ -23,7 +23,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
-    <div class="bg-chili d-flex justify-content-between align-items-center">
+    <div class="bg-red d-flex justify-content-between align-items-center">
       <a href="/" class="btn btn-menu btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">home</span>
         <span>Home</span>
