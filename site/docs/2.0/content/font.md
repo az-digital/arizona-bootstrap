@@ -13,57 +13,51 @@ toc: true
   your project.
 </div>
 
+## How to Use
+The Proxima Nova font suite is available for official use by University of Arizona
+employees through a license with Adobe Typekit.
+
+### Reference link
+
+Arizona Bootstrap uses a Creative Cloud Library with shared governance to
+manage our font reference links within Arizona Bootstrap.
+
+Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
+
+{% highlight html %}
+<!-- Proxima Nova reference. -->
+<link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Arizona Bootstrap reference. -->
+<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
+{% endhighlight %}
+
 ## Centrally managed Typekit webfont
 
 For ease of integration into web projects around campus, the Arizona Digital
 team manages a Typekit webfont project that can be referenced by your site.
 
-#### Notes to consider when using the centrally mananged webfont project.
-Our license with Typekit allows anyone with a netid to create their own webfont
-project in Creative Cloud Typekit and use it in all of their web projects. Of
-course there are advantages and disadvantages to each approach.
-
-#### Managing your own project
-
-**Advantages**
-- You can tailor your font project to only include the fonts that your web site
-or app uses, minimizing the number of assets an end-user
-- If tailoring your own web project you may benefit with perfomance gains on
-first end-user page load of your site or app if the user has never visited one
-of the other websites (Arizona.edu for example) that includes the centrally
-managed font.
-
-**Disadvantages**
-- Performance loss if your end-user has already downloaded the centrally managed
-  font library from one of the other sites that use the centrally managed font.
-- You have to manage your own font in Typekit under your netid, or a department
-  managed netid, which comes with the risk with managing yet another service on
-  your own.
-
-#### Using the centrally managed project
-
-Using shared standard assets is inherently faster across multiple
-domains, and any deviation to using shared standard assets should be considered
+Using shared standard assets is inherently faster in the Arizona.edu environment, and any deviation to using shared standard assets should be considered
 carefully by researching traffic-flow between institutional web properties, and
-not solely initial page-load times on one site.  In other words all sites that
+not solely initial page-load times on one site.  All sites that
 link to an arizona.edu subdomain, typically share users with the parent domain,
 and other subdomains. Modern web browsers cache assets based on the address it
 is downloaded from, so if all subdomains share the same asset, the end-user's
 browser will access a cached copy without downloading it again across those
 subdomains.
 
+#### Notes to consider when using the centrally managed webfont project.
+Our license with Typekit allows anyone with a netid to create their own webfont
+project in Creative Cloud Typekit and use it in all of their web projects.
+
+### Managing your own project
+
 **Advantages**
-- Worry-free font hosting.
-- No managing department or team-level creative cloud accounts to ensure your
-font isn't tied to one team-member
-- Leverages browser caching across other domains and subdomains that use the
-shared assets.
-- You can easily switch to a self-managed model and back again.
-- Centralized documentation on how to integrate into other shared assets.
+- You can tailor your font project to only include the fonts that your web site or app uses, minimizing the number of assets an end-user has to download.
+- Faster page load for users that have never visited other Arizona.edu websites that include the centrally managed font.
 
 **Disadvantages**
-- Less flexibility in regards to which font is available to your project.
-- Workflow challenges with making updates to centrally managed web fonts.
+- Slower page load for users that have visited other Arizona.edu websites that include the centrally managed font.
+- You have to manage your own font in Typekit using a netid that is tied to one person, creating a single point of failure if that user leaves the university.
 
 ## Global settings
 [Follow these instructions](#instructions) on how to add Proxima Nova to your
@@ -95,27 +89,6 @@ every device and OS. Read more about [native font stacks in this Smashing Magazi
 This `font-family` is applied to the `<body>` and automatically inherited
 globally throughout Bootstrap. To switch the global `font-family`, update
 `$font-family-base` and recompile Arizona Bootstrap.
-
-## How to Use
-The Proxima Nova font suite is available for official use by University of Arizona
-employees through a license with Adobe Typekit.
-
-### Reference link
-
-Arizona Bootstrap uses a Creative Cloud Library with shared governance to
-manage our font reference links within Arizona Bootstrap.
-
-Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
-
-{% highlight html %}
-<!-- Proxima Nova reference. -->
-<link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
-<!-- Arizona Bootstrap reference. -->
-<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
-{% endhighlight %}
-
-If using the font independently from Arizona Bootstrap, below are
-instructions on how to use the different weights and styles.
 
 ### **Instructions**
 The following istructions are for adding specific CSS classes for font weights
