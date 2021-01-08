@@ -29,8 +29,8 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
         <span>Home</span>
       </a>
       <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-        <span class="material-icons-sharp">close</span>
-        <span>Close</span>
+        <span class="material-icons-sharp mx-auto">close</span>
+        <span cass="mx-auto">Close</span>
       </button>
     </div>
     <form class="navbar-offcanvas-search bg-white">
