@@ -72,7 +72,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       </div>
     </li>
     <li class="nav-item nav-item-parent">
-      <button class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</button>
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </li>
   </ul>
 </nav>
