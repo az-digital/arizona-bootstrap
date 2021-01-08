@@ -28,10 +28,10 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
         <span class="material-icons-sharp">home</span>
         <span>Home</span>
       </a>
-      <a id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
+      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">close</span>
         <span>Close</span>
-      </a>
+      </button>
     </div>
     <form class="navbar-offcanvas-search bg-white">
       <div class="input-group">
@@ -54,7 +54,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
         Admissions
       </a>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-        <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
+        <a class="dropdown-item" href="#">Admissions Overview</a>
         <a class="dropdown-item" href="#">Another action</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
