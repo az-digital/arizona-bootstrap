@@ -276,8 +276,8 @@ $navbar-light-link-hover-bg: $gray-100;
 // >>> Navbar Off-canvas
 $navbar-offcanvas-bg: $blue;
 $navbar-offcanvas-bg-expanded: rgba($white, .15);
-$navbar-offcanvas-link-padding: 1rem;
-$navbar-offcanvas-dropdown-link-padding: .5rem;
+$navbar-offcanvas-link-padding: 12px 20px;
+$navbar-offcanvas-dropdown-link-padding: 14px 20px 14px 35px;
 $navbar-offcanvas-link-color: $white;
 $navbar-offcanvas-link-disabled-color: $gray-500;
 $navbar-offcanvas-link-active-bg: $azurite;

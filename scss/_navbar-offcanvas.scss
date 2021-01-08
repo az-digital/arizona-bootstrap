@@ -126,7 +126,7 @@
     }
 
     .nav-link {
-      padding: 12px 20px;
+      padding: $navbar-offcanvas-link-padding;
       color: $navbar-offcanvas-link-color;
       text-align: left;
       width: 100%;
@@ -155,7 +155,7 @@
     border: none;
 
     .dropdown-item {
-      padding: 14px 20px 14px 35px;
+      padding: $navbar-offcanvas-dropdown-link-padding;
       font-weight: 200;
       white-space: normal;
     }
