@@ -90,6 +90,9 @@
     .show > .nav-link {
       color: $navbar-offcanvas-link-color;
       background-color: $navbar-offcanvas-bg-expanded;
+      &:hover {
+        background-color: $navbar-offcanvas-bg-expanded;
+      }
     }
   }
 
