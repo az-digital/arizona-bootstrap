@@ -88,7 +88,8 @@
       font-weight: 500;
     }
     .show > .nav-link {
-      color: $navbar-offcanvas-bg-expanded;
+      color: $navbar-offcanvas-link-color;
+      background-color: $navbar-offcanvas-bg-expanded;
     }
   }
 
@@ -114,6 +115,7 @@
       .dropdown-toggle ::hover,
       .dropdown-toggle ::focus {
         background-color: $navbar-offcanvas-bg-expanded;
+        cursor: pointer;
       }
       .dropdown-toggle {
         &::after {
