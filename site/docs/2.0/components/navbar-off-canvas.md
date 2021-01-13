@@ -12,34 +12,39 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 
 {% capture example %}
 <div class="d-lg-none d-flex justify-content-end">
-  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red">
-    <span class="material-icons-sharp"> menu </span>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">search</span>
+    <span>Search</span>
+  </button>
+  <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
+    <span class="material-icons-sharp">menu</span>
+    <span>Menu</span>
   </button>
 </div>
 <nav class="navbar-offcanvas" id="navbarOffcanvasDemo">
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
-      <a href="/" class="navbar-offcanvas-home d-flex flex-column align-items-center btn btn-red">
+      <a href="/" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
         <span class="material-icons-sharp">home</span>
-        <span>HOME</span>
+        <span>Home</span>
       </a>
-      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="d-flex flex-column align-items-center btn btn-red">
-        <span class="material-icons-sharp">close</span>
-        <span>CLOSE</span>
+      <button id="navbarOffcanvasDemoClose" data-toggle="offcanvas" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
+        <span class="material-icons-sharp mx-auto">close</span>
+        <span class="mx-auto">Close</span>
       </button>
     </div>
-    <form class="navbar-offcanvas-search bg-white pr-3">
+    <form class="navbar-offcanvas-search bg-white">
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn" type="submit"><span class="material-icons-sharp">search</span></button>
+          <button class="btn btn-search" type="submit"><span class="material-icons-sharp">search</span></button>
         </div>
       </div>
     </form>
   </div>
   <ul class="navbar-nav flex-lg-row">
     <li class="nav-item nav-item-parent active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item nav-item-parent">
       <a class="nav-link" href="#">Link</a>
@@ -49,7 +54,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
         Admissions
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-        <a class="dropdown-item" href="https://www.arizona.edu/admissions-overview">Admissions Overview</a>
+        <a class="dropdown-item" href="#">Admissions Overview</a>
         <a class="dropdown-item" href="#">Another action</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
