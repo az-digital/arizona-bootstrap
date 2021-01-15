@@ -19,7 +19,7 @@ employees through a license with Adobe Typekit.
 
 ### Reference link
 
-Arizona Bootstrap uses Adobe Typekit with a centrally managed netid to
+Arizona Bootstrap uses an Adobe Typekit account with shared governance to
 manage our font reference links within Arizona Bootstrap.
 
 Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
