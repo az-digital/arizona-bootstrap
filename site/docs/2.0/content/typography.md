@@ -165,7 +165,7 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 ## Links
 
-Default links include a red text color and an underline on hover. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling. 
+Default links include a red text color and an underline. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling. 
 
 {% capture example %}
 <a href="#">Default Link</a>
