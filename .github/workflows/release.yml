@@ -53,9 +53,15 @@ jobs:
           echo "AZ_SHORT_VERSION=${version_short}" >> ${GITHUB_ENV}
           echo "AZ_VERSION=${version}" >> ${GITHUB_ENV}
 
-      - name: Build Arizona Bootstrap
+      - name: Update version
         run: |
-          echo "building"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-source-links && npm run --no-git-tag-version "${{ github.event.inputs.version }}"
+          git add dist package.json package-lock.json
+          git commit -m '${{ github.event.inputs.version }}'
+          git push
+          echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
 
       - name: Create Release
         id: create_release
@@ -63,10 +69,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          commitish: "${{ env.RELEASE_SHA }}"
           tag_name: "v${{ env.AZ_VERSION }}"
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
+
+      - name: Save new SHA to file
+        run: |
+          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > variables.json
+
+      - name: Upload variables
+        uses: actions/upload-artifact@v1
+        with:
+          name: artifact
+          path: variables.json
 
   dispatch:
     needs: release
@@ -78,10 +95,19 @@ jobs:
           - az-digital/digital.arizona.edu
     runs-on: ubuntu-latest
     steps:
+    - name: Download variables
+      uses: actions/download-artifact@v1
+      with:
+        name: artifact
+
+    - name: Update environment variables
+      run: |
+        echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
+
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}"}'
