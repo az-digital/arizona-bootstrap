@@ -95,14 +95,14 @@ jobs:
           - az-digital/digital.arizona.edu
     runs-on: ubuntu-latest
     steps:
-    - name: Download variables
-      uses: actions/download-artifact@v1
-      with:
-        name: artifact
+      - name: Download variables
+        uses: actions/download-artifact@v1
+        with:
+          name: artifact
 
-    - name: Update environment variables
-      run: |
-        echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
+      - name: Update environment variables
+        run: |
+          echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
