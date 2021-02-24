@@ -45,13 +45,8 @@ jobs:
 
       - name: Build variables
         run: |
-          stem='arizona-bootstrap'
-          version=$(jq -r '.version' package.json)
-          version_short=$(jq -r '.version_short' package.json)
           echo "AZ_REVIEW_BASEURL=/${stem}" >> ${GITHUB_ENV}
-          echo "AZ_REVIEW_STEM=${stem}" >> ${GITHUB_ENV}
-          echo "AZ_SHORT_VERSION=${version_short}" >> ${GITHUB_ENV}
-          echo "AZ_VERSION=${version}" >> ${GITHUB_ENV}
+          echo "AZ_VERSION=${{ github.event.inputs.version }}" >> ${GITHUB_ENV}
 
       - name: Update version
         run: |
