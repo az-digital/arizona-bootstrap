@@ -16,4 +16,4 @@ create-source-links
 
 cd "$AZ_BOOTSTRAP_DEST_DIR"
 
-npm run version --no-git-tag-version ${AZ_RELEASE_VERSION}
+npm version --no-git-tag-version ${AZ_RELEASE_VERSION}
