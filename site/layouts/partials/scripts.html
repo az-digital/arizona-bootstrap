@@ -1,0 +1,23 @@
+<script src="{{ .Site.Params.cdn.jquery }}" {{ printf "integrity=%q" .Site.Params.cdn.jquery_hash | safeHTMLAttr }} crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/{{ .Site.Params.docs_version }}/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+
+{{ if eq hugo.Environment "production" -}}
+  <script src="/docs/{{ .Site.Params.docs_version }}/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+{{ else -}}
+  <script src="/docs/{{ .Site.Params.docs_version }}/dist/js/arizona-bootstrap.bundle.js"></script>
+{{- end }}
+
+{{ if eq hugo.Environment "production" -}}
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/docs.min.js"></script>
+{{ else -}}
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/vendor/anchor.min.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/vendor/clipboard.min.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/vendor/bs-custom-file-input.min.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/src/application.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/src/ie-emulation-modes-warning.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/src/background-wrapper-demo.js"></script>
+  <script src="/docs/{{ .Site.Params.docs_version }}/assets/js/src/custom-docs.js"></script>
+
+  <script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+
+{{- end }}

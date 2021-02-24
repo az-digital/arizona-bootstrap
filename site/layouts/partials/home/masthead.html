@@ -1,0 +1,27 @@
+<main class="bd-masthead py-5" id="content" role="main">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 text-center text-md-left">
+        <h1 class="bd-title mb-3">{{ .Site.Title }}</h1>
+        <p class="lead">
+          Build responsive, mobile-first projects on the web with the University of Arizona's theme for Bootstrap.
+        </p>
+        <p class="lead mb-4">
+          Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+        </p>
+        <p class="lead mb-4">A team of web-focused volunteers known as Arizona Digital meets weekly to build and test products like Arizona Bootstrap and Arizona Quickstart. Contributions are what keep {{ .Site.Title }} moving and improving, and are in everyone's best interest.</p>
+        <div class="row mx-n2">
+          <div class="col-md px-2">
+            <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" class="btn btn-lg btn-red w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Get started</a>
+          </div>
+          <div class="col-md px-2">
+            <a href="/docs/{{ .Site.Params.docs_version }}/about/get-involved" class="btn btn-lg btn-blue w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Contribute', 'Get Involved');">Contribute</a>
+          </div>
+        </div>
+        <p class="text-muted mb-0">
+          Currently v{{ .Site.Params.current_version }}
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
