@@ -16,4 +16,6 @@ create-source-links
 
 cd "$AZ_BOOTSTRAP_DEST_DIR"
 
-npm version --no-git-tag-version ${AZ_RELEASE_VERSION}
+npm version --unsafe-perm --no-git-tag-version ${AZ_RELEASE_VERSION}
+cp ${AZ_BOOTSTRAP_DEST_DIR}/package.json ${AZ_BOOTSTRAP_SOURCE_DIR}/.
+cp ${AZ_BOOTSTRAP_DEST_DIR}/package-lock.json ${AZ_BOOTSTRAP_SOURCE_DIR}/.
