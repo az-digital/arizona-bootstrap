@@ -6,27 +6,27 @@ group: getting-started
 toc: true
 ---
 
-## Installing {{ site.title }}
+## Installing {{ .Site.Title }}
 
-[Install arizona-bootstrap]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/download/#npm) as a Node.js module using npm.
+[Install arizona-bootstrap]({{< docsref "/getting-started/download/#npm" >}}) as a Node.js module using npm.
 
 ## Importing JavaScript
 
-Import [{{ site.title }}'s JavaScript]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/javascript/) by adding this line to your app's entry point (usually `index.js` or `app.js`):
+Import [{{ .Site.Title }}'s JavaScript]({{< docsref "/getting-started/javascript/" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
 
-{% highlight js %}
+```js
 import 'arizona-bootstrap';
-{% endhighlight %}
+```
 
 Alternatively, you may **import plugins individually** as needed:
 
-{% highlight js %}
+```js
 import 'arizona-bootstrap/js/dist/util';
 import 'arizona-bootstrap/js/dist/alert';
 ...
-{% endhighlight %}
+```
 
-{{ site.title }} is dependent on [jQuery](https://jquery.com/) and [Popper](https://popper.js.org/),
+{{ .Site.Title }} is dependent on [jQuery](https://jquery.com/) and [Popper](https://popper.js.org/),
 these are defined as `peerDependencies`, this means that you will have to make sure to add both of them
 to your `package.json` using `npm install --save jquery popper.js`.
 
@@ -34,18 +34,18 @@ to your `package.json` using `npm install --save jquery popper.js`.
 
 ### Importing Precompiled Sass
 
-To enjoy the full potential of {{ site.title }} and customize it to your needs, use the source files as a part of your project's bundling process.
+To enjoy the full potential of {{ .Site.Title }} and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/theming/). Then, use your main Sass file to import your custom variables, followed by {{ site.title }}:
+First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/getting-started/theming/" >}}). Then, use your main Sass file to import your custom variables, followed by {{ .Site.Title }}:
 
-{% highlight scss %}
+```scss
 @import "custom";
 @import "~arizona-bootstrap/scss/arizona-bootstrap";
-{% endhighlight %}
+```
 
-For {{ site.title }} to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
+For {{ .Site.Title }} to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
 
-{% highlight js %}
+```js
 ...
 {
   test: /\.(scss)$/,
@@ -67,19 +67,19 @@ For {{ site.title }} to compile, make sure you install and use the required load
   }]
 },
 ...
-{% endhighlight %}
+```
 
 ### Importing Compiled CSS
 
-Alternatively, you may use {{ site.title }}'s ready-to-use CSS by simply adding this line to your project's entry point:
+Alternatively, you may use {{ .Site.Title }}'s ready-to-use CSS by simply adding this line to your project's entry point:
 
-{% highlight js %}
+```js
 import 'arizona-bootstrap/dist/css/arizona-bootstrap.min.css';
-{% endhighlight %}
+```
 
 In this case you may use your existing rule for `css` without any special modifications to webpack config, except you don't need `sass-loader` just [style-loader](https://github.com/webpack-contrib/style-loader) and [css-loader](https://github.com/webpack-contrib/css-loader).
 
-{% highlight js %}
+```js
 ...
 module: {
   rules: [
@@ -90,4 +90,4 @@ module: {
   ]
 }
 ...
-{% endhighlight %}
+```

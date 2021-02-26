@@ -83,7 +83,7 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `margin-bottom: 1rem`. Nested lists have no `margin-bottom`.
 
 <div class="bd-example">
-{% capture markdown %}
+{{< markdown >}}
 * Lorem ipsum dolor sit amet
 * Consectetur adipiscing elit
 * Integer molestie lorem at massa
@@ -105,8 +105,7 @@ All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `
 6. Faucibus porta lacus fringilla vel
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
-{% endcapture %}
-{{ markdown | markdownify }}
+{{< /markdown >}}
 </div>
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated `margin`s. `<dd>`s reset `margin-left` to `0` and add `margin-bottom: .5rem`. `<dt>`s are **bolded**.
@@ -137,7 +136,7 @@ The `<pre>` element is reset to remove its `margin-top` and use `rem` units for 
 
 ## Tables
 
-Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}/docs/{{ site.docs_version }}/content/tables/).
+Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{< docsref "/content/tables/" >}}).
 
 <div class="bd-example">
   <table>
@@ -331,15 +330,14 @@ The default `cursor` on summary is `text`, so we reset that to `pointer` to conv
 
 HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden), which is styled as `display: none` by default. Borrowing an idea from [PureCSS](https://purecss.io/), we improve upon this default by making `[hidden] { display: none !important; }` to help prevent its `display` from getting accidentally overridden. While `[hidden]` isn't natively supported by IE10, the explicit declaration in our CSS gets around that problem.
 
-{% highlight html %}
+```html
 <input type="text" hidden>
-{% endhighlight %}
+```
 
-{% capture callout %}
+{{< callout warning >}}
 ##### jQuery Incompatibility
 
 `[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
-To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/visibility/) instead.
+To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{< docsref "/utilities/visibility/" >}}) instead.

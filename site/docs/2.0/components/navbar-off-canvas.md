@@ -10,7 +10,7 @@ toc: true
 
 Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-canvas experience for mobile devices.
 
-{% capture example %}
+{{< example >}}
 <div class="d-lg-none d-flex justify-content-end">
   <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
     <span class="material-icons-sharp">search</span>
@@ -76,5 +76,4 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
     </li>
   </ul>
 </nav>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}

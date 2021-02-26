@@ -9,7 +9,7 @@ toc: true
 
 ## Summary
 
-Here are the big ticket items you'll want to be aware of when moving from UA Bootstrap **(based on Bootstrap v3)** to {{ site.title }} **(based on Bootstrap v4)**.
+Here are the big ticket items you'll want to be aware of when moving from UA Bootstrap **(based on Bootstrap v3)** to {{ .Site.Title }} **(based on Bootstrap v4)**.
 
 ### Browser Support
 
@@ -22,8 +22,8 @@ Here are the big ticket items you'll want to be aware of when moving from UA Boo
 - Switched from `px` to `rem` as our primary CSS unit, though pixels are still used for media queries and grid behavior as device viewports are not affected by type size.
 - Revamped grid tiers to add a fifth option (addressing smaller devices at `576px` and below) and removed the `-xs` infix from those classes. Example: `.col-6.col-sm-4.col-md-3`.
 - Build system overhauled to use a series of npm scripts instead of Gulp. See `package.json` for all scripts, or our project readme for local development needs.
-- Non-responsive usage of {{ site.title }} is no longer supported.
-- Added dozens of new [utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/) for common CSS property-value pairs and margin/padding spacing shortcuts.
+- Non-responsive usage of {{ .Site.Title }} is no longer supported.
+- Added dozens of new [utility classes]({{< docsref "/utilities/" >}}) for common CSS property-value pairs and margin/padding spacing shortcuts.
 
 ### Grid System
 
@@ -42,7 +42,7 @@ Here are the big ticket items you'll want to be aware of when moving from UA Boo
 
 ### Components
 
-- **Dropped panels, thumbnails, and wells** for a new all-encompassing component, [cards]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/card/).
+- **Dropped panels, thumbnails, and wells** for a new all-encompassing component, [cards]({{< docsref "/components/card/" >}}).
 - **Dropped the Affix jQuery plugin.**
   - We recommend using `position: sticky` instead. [See the HTML5 Please entry](https://html5please.com/#sticky) for details and specific polyfill recommendations. One suggestion is to use an `@supports` rule for implementing it (e.g., `@supports (position: sticky) { ... }`)
   - If you were using Affix to apply additional, non-`position` styles, the polyfills might not support your use case. One option for such uses is the third-party [ScrollPos-Styler](https://github.com/acch/scrollpos-styler) library.
@@ -55,7 +55,7 @@ This list highlights key changes by component between v3.x.x and v4.0.0.
 
 ### Reboot
 
-New to Bootstrap 4 is the [Reboot]({{ site.baseurl }}/docs/{{ site.docs_version }}/content/reboot/), a new stylesheet that builds on Normalize with our own somewhat opinionated reset styles. Selectors appearing in this file only use elements—there are no classes here. This isolates our reset styles from our component styles for a more modular approach. Some of the most important resets this includes are the `box-sizing: border-box` change, moving from `em` to `rem` units on many elements, link styles, and many form element resets.
+New to Bootstrap 4 is the [Reboot]({{< docsref "/content/reboot/" >}}), a new stylesheet that builds on Normalize with our own somewhat opinionated reset styles. Selectors appearing in this file only use elements—there are no classes here. This isolates our reset styles from our component styles for a more modular approach. Some of the most important resets this includes are the `box-sizing: border-box` change, moving from `em` to `rem` units on many elements, link styles, and many form element resets.
 
 ### Typography
 
@@ -154,7 +154,7 @@ The navbar has been entirely rewritten in flexbox with improved support for alig
 
 - Responsive navbar behaviors are now applied to the `.navbar` class via the **required** `.navbar-expand-{breakpoint}` where you choose where to collapse the navbar. Previously this was a Less variable modification and required recompiling.
 - `.navbar-default` is now `.navbar-light`, though `.navbar-dark` remains the same. **One of these is required on each navbar.** However, these classes no longer set `background-color`s; instead they essentially only affect `color`.
-- Navbars now require a background declaration of some kind. Choose from our background utilities (`.bg-*`) or set your own with the light/inverse classes above [for mad customization]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/navbar/#color-schemes).
+- Navbars now require a background declaration of some kind. Choose from our background utilities (`.bg-*`) or set your own with the light/inverse classes above [for mad customization]({{< docsref "/components/navbar/#color-schemes" >}}).
 - Given flexbox styles, navbars can now use flexbox utilities for easy alignment options.
 - `.navbar-toggle` is now `.navbar-toggler` and has different styles and inner markup (no more three `<span>`s).
 - Dropped the `.navbar-form` class entirely. It's no longer necessary; instead, just use `.form-inline` and apply margin utilities as necessary.
@@ -188,7 +188,7 @@ Dropped entirely for the new card component.
 - `.panel-default` removed and no replacement.
 - `.panel-group` removed and no replacement. `.card-group` is not a replacement, it is different.
 - `.panel-heading` to `.card-header`
-- `.panel-title` to `.card-title`. Depending on the desired look, you may also want to use [heading elements or classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/content/typography/#headings) (e.g. `<h3>`, `.h3`) or bold elements or classes (e.g. `<strong>`, `<b>`, [`.font-weight-bold`]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#font-weight-and-italics)). Note that `.card-title`, while similarly named, produces a different look than `.panel-title`.
+- `.panel-title` to `.card-title`. Depending on the desired look, you may also want to use [heading elements or classes]({{< docsref "/content/typography/#headings" >}}) (e.g. `<h3>`, `.h3`) or bold elements or classes (e.g. `<strong>`, `<b>`, [`.font-weight-bold`]({{< docsref "/utilities/text/#font-weight-and-italics" >}})). Note that `.card-title`, while similarly named, produces a different look than `.panel-title`.
 - `.panel-body` to `.card-body`
 - `.panel-footer` to `.card-footer`
 - `.panel-primary`, `.panel-success`, `.panel-info`, `.panel-warning`, and `.panel-danger` have been dropped for `.bg-`, `.text-`, and `.border` utilities generated from our `$theme-colors` Sass map.
@@ -218,13 +218,13 @@ Dropped entirely for the new card component.
 
 - **Display, hidden, and more:**
   - Made display utilities responsive (e.g., `.d-none` and `d-{sm,md,lg,xl}-none`).
-  - Dropped the bulk of `.hidden-*` utilities for new [display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/). For example, instead of `.hidden-sm-up`, use `.d-sm-none`. Renamed the `.hidden-print` utilities to use the display utility naming scheme. More info under the [Responsive utilities](#responsive-utilities) section of this page.
+  - Dropped the bulk of `.hidden-*` utilities for new [display utilities]({{< docsref "/utilities/display/" >}}). For example, instead of `.hidden-sm-up`, use `.d-sm-none`. Renamed the `.hidden-print` utilities to use the display utility naming scheme. More info under the [Responsive utilities](#responsive-utilities) section of this page.
   - Added `.float-{sm,md,lg,xl}-{left,right,none}` classes for responsive floats and removed `.pull-left` and `.pull-right` since they're redundant to `.float-left` and `.float-right`.
 - **Type:**
   - Added responsive variations to our text alignment classes `.text-{sm,md,lg,xl}-{left,center,right}`.
 - **Alignment and spacing:**
-  - Added new [responsive margin and padding utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) for all sides, plus vertical and horizontal shorthands.
-  - Added boatload of [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/).
+  - Added new [responsive margin and padding utilities]({{< docsref "/utilities/spacing/" >}}) for all sides, plus vertical and horizontal shorthands.
+  - Added boatload of [flexbox utilities]({{< docsref "/utilities/flex/" >}}).
   - Dropped `.center-block` for the new `.mx-auto` class.
 - Clearfix updated to drop support for older browser versions.
 
@@ -239,7 +239,7 @@ Removed the following mixins: `animation`, `animation-delay`, `animation-directi
 Our documentation received an upgrade across the board as well. Here's the low down:
 
 - We're still using Jekyll, but we have plugins in the mix:
-  - `bugify.rb` is used to efficiently list out the entries on our [browser bugs]({{ site.baseurl }}/docs/{{ site.docs_version }}/browser-bugs/) page.
+  - `bugify.rb` is used to efficiently list out the entries on our [browser bugs]({{< docsref "/browser-bugs/" >}}) page.
   - `example.rb` is a custom fork of the default `highlight.rb` plugin, allowing for easier example-code handling.
   - `callout.rb` is a similar custom fork of that, but designed for our special docs callouts.
   - [jekyll-toc](https://github.com/toshimaru/jekyll-toc) is used to generate our table of contents.

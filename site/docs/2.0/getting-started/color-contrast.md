@@ -8,7 +8,7 @@ toc: true
 
 ## Overview
 
-{{ site.title }} provides a variety of Brand colors ready for use as background and/or text colors. Although these colors are available for use, it is important to maintain sufficient color contrast between your background and foreground (text) colors. This ensures proper accessibility on University of Arizona websites. 
+{{ .Site.Title }} provides a variety of Brand colors ready for use as background and/or text colors. Although these colors are available for use, it is important to maintain sufficient color contrast between your background and foreground (text) colors. This ensures proper accessibility on University of Arizona websites. 
 
 ## University Standards
 
@@ -19,9 +19,9 @@ Below we have provided a table that includes all of the Arizona branded colors. 
 <label id="hide-inaccessible-label">
   <input type="checkbox" id="hide-inaccessible"> <strong>Hide inaccessible color combinations.</strong>
 </label>
-{% assign textcolors = site.data.color-contrast | where: "colorgroup", "text" %}
+{% assign textcolors = .Site.Data.color-contrast | where: "colorgroup", "text" %}
 {% assign textcolors = textcolors[0].colors %}
-{% assign bgcolors = site.data.color-contrast | where: "colorgroup", "bg" %}
+{% assign bgcolors = .Site.Data.color-contrast | where: "colorgroup", "bg" %}
 {% assign bgcolors = bgcolors[0].colors %}
 
 <div class="table-responsive">

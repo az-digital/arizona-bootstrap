@@ -10,7 +10,9 @@ toc: true
 
 The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the `height` from its current value to `0`. Given how CSS handles animations, you cannot use `padding` on a `.collapse` element. Instead, use the class as an independent wrapping element.
 
-{% include callout-info-prefersreducedmotion.md %}
+{{< callout info >}}
+{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< /callout >}}
 
 ## Example
 
@@ -22,7 +24,7 @@ Click the buttons below to show and hide another element via class changes:
 
 You can use a link with the `href` attribute, or a button with the `data-target` attribute. In both cases, the `data-toggle="collapse"` is required.
 
-{% capture example %}
+{{< example >}}
 <p>
   <a class="btn btn-red" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Link with href
@@ -36,15 +38,14 @@ You can use a link with the `href` attribute, or a button with the `data-target`
     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Multiple Targets
 
 A `<button>` or `<a>` can show and hide multiple elements by referencing them with a JQuery selector in its `href` or `data-target` attribute.
 Multiple `<button>` or `<a>` can show and hide an element if they each reference it with their `href` or `data-target` attribute
 
-{% capture example %}
+{{< example >}}
 <p>
   <a class="btn btn-red" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
   <button class="btn btn-red" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
@@ -66,14 +67,13 @@ Multiple `<button>` or `<a>` can show and hide an element if they each reference
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Accordion Example
 
-Using the [card]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/card/) component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use `.accordion` as a wrapper.
+Using the [card]({{< docsref "/components/card/" >}}) component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use `.accordion` as a wrapper.
 
-{% capture example %}
+{{< example >}}
 <div class="accordion" id="ex1_accordionExample">
   <div class="card">
     <div class="card-header" id="ex1_headingOne">
@@ -112,12 +112,11 @@ Using the [card]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/card
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Depending on your use case, you might want to include a heading tag (`.h2`, `.h3`, etc.) around your accordion `button`. Some use cases require the use of a heading tag and others don't. The visual outcome is the same and only impacts semantics. Use at your discretion with accessibility in mind.
 
-{% capture example %}
+{{< example >}}
 <div class="accordion" id="ex2_accordionExample">
   <div class="card">
     <div class="card-header" id="ex2_headingOne">
@@ -162,8 +161,7 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %} 
+{{< /example >}} 
 
 ## Accessibility
 
@@ -193,9 +191,9 @@ To add accordion-like group management to a collapsible area, add the data attri
 
 Enable manually with:
 
-{% highlight js %}
+```js
 $('.collapse').collapse()
-{% endhighlight %}
+```
 
 ### Options
 
@@ -228,17 +226,19 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 ### Methods
 
-{% include callout-danger-async-methods.md %}
+{{< callout danger >}}
+{{< partial "callout-danger-async-methods.md" >}}
+{{< /callout >}}
 
 #### `.collapse(options)`
 
 Activates your content as a collapsible element. Accepts an optional options `object`.
 
-{% highlight js %}
+```js
 $('#myCollapsible').collapse({
   toggle: false
 })
-{% endhighlight %}
+```
 
 #### `.collapse('toggle')`
 
@@ -287,8 +287,8 @@ Bootstrap's collapse class exposes a few events for hooking into collapse functi
   </tbody>
 </table>
 
-{% highlight js %}
+```js
 $('#myCollapsible').on('hidden.bs.collapse', function () {
   // do something...
 })
-{% endhighlight %}
+```

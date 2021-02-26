@@ -52,7 +52,7 @@ Where *size* is one of:
 
 Here are some representative examples of these classes:
 
-{% highlight scss %}
+```scss
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -69,13 +69,13 @@ Here are some representative examples of these classes:
 .p-3 {
   padding: $spacer !important;
 }
-{% endhighlight %}
+```
 
 ### Padding
 
 Padding modifies the space inside the div.
 
-{% capture example %}
+{{< example >}}
 <div class="row">
   <div class="col">
     <div class="p-3 bg-light">Less inner padding</div>
@@ -84,14 +84,13 @@ Padding modifies the space inside the div.
     <div class="p-6 bg-light">More inner padding</div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Margin
 
 Margin modifies the space outside the div.
 
-{% capture example %}
+{{< example >}}
 <div class="row">
   <div class="col">
     <div class="my-3 bg-light">Less outer margin</div>
@@ -100,13 +99,12 @@ Margin modifies the space outside the div.
     <div class="my-6 bg-light">More outer margin</div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 
 ### Horizontal Centering
 
-Additionally, {{ site.title }} also includes an `.mx-auto` class for horizontally centering fixed-width block level content—that is, content that has `display: block` and a `width` set—by setting the horizontal margins to `auto`.
+Additionally, {{ .Site.Title }} also includes an `.mx-auto` class for horizontally centering fixed-width block level content—that is, content that has `display: block` and a `width` set—by setting the horizontal margins to `auto`.
 
 <div class="bd-example">
   <div class="mx-auto" style="width: 200px; background-color: rgba(86,61,124,.15);">
@@ -114,11 +112,11 @@ Additionally, {{ site.title }} also includes an `.mx-auto` class for horizontall
   </div>
 </div>
 
-{% highlight html %}
+```html
 <div class="mx-auto" style="width: 200px;">
   Centered element
 </div>
-{% endhighlight %}
+```
 
 ### Negative Margin
 
@@ -126,18 +124,17 @@ In CSS, `margin` properties can utilize negative values (`padding` cannot). As o
 
 The syntax is nearly the same as the default, positive margin utilities, but with the addition of `n` before the requested size. Here's an example class that's the opposite of `.mt-1`:
 
-{% highlight scss %}
+```scss
 .mt-n1 {
   margin-top: -0.25rem !important;
 }
-{% endhighlight %}
+```
 
-Here's an example of customizing the {{ site.title }} grid at the medium (`md`) breakpoint and above. We've increased the `.col` padding with `.px-md-5` and then counteracted that with `.mx-md-n5` on the parent `.row`.
+Here's an example of customizing the {{ .Site.Title }} grid at the medium (`md`) breakpoint and above. We've increased the `.col` padding with `.px-md-5` and then counteracted that with `.mx-md-n5` on the parent `.row`.
 
-{% capture example %}
+{{< example >}}
 <div class="row mx-md-n5">
   <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
   <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}

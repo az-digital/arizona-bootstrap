@@ -5,12 +5,11 @@ description: Learn about some of the best practices we've gathered from years of
 group: getting-started
 ---
 
-We've designed and developed {{ site.title }} to work in a number of environments. Here are some of the best practices we've gathered from years of working on and using it ourselves.
+We've designed and developed {{ .Site.Title }} to work in a number of environments. Here are some of the best practices we've gathered from years of working on and using it ourselves.
 
-{% capture callout %}
+{{< callout info >}}
 **Heads up!** This copy is a work in progress.
-{% endcapture %}
-{% include callout.html content=callout type="info" %}
+{{< /callout >}}
 
 ### General Outline
 

@@ -10,68 +10,69 @@ toc: true
 
 Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units.
 
-{% capture example %}
+{{< example >}}
 <h1>Example heading <span class="badge badge-blue">New</span></h1>
 <h2>Example heading <span class="badge badge-blue">New</span></h2>
 <h3>Example heading <span class="badge badge-blue">New</span></h3>
 <h4>Example heading <span class="badge badge-blue">New</span></h4>
 <h5>Example heading <span class="badge badge-blue">New</span></h5>
 <h6>Example heading <span class="badge badge-blue">New</span></h6>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Badges can be used as part of links or buttons to provide a counter.
 
-{% capture example %}
+{{< example >}}
 <button type="button" class="btn btn-red">
   Notifications <span class="badge badge-light">4</span>
 </button>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies. While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers at the end of a sentence, link, or button.
 
 Unless the context is clear (as with the "Notifications" example, where it is understood that the "4" is the number of notifications), consider including additional context with a visually hidden piece of additional text.
 
-{% capture example %}
+{{< example >}}
 <button type="button" class="btn btn-red">
   Profile <span class="badge badge-light">9</span>
   <span class="sr-only">unread messages</span>
 </button>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Contextual Variations
 
 Add any of the below mentioned modifier classes to change the appearance of a badge.
 
-{% capture example %}
-<span class="badge badge-red">Red</span>
-<span class="badge badge-blue">Blue</span>{% for color in site.data.theme-colors %}
-<span class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</span>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
+{{< example >}}
+{{< badge.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<span class="badge badge-{{ .name }}">{{ .name | title }}</span>{{- end -}}
+{{< /badge.inline >}}
+{{< /example >}}
 
-{% include callout-warning-color-assistive-technologies.md %}
+{{< callout warning >}}
+{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{{{< /callout >}}}}
 
 ## Pill Badges
 
 Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
 
-{% capture example %}
-<span class="badge badge-pill badge-red">Red</span>
-<span class="badge badge-pill badge-blue">Blue</span>{% for color in site.data.theme-colors %}
-<span class="badge badge-pill badge-{{ color.name }}">{{ color.name | capitalize }}</span>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
+{{< example >}}
+{{< badge.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<span class="badge badge-pill badge-{{ .name }}">{{ .name | title }}</span>{{- end -}}
+{{< /badge.inline >}}
+{{< /example >}}
 
 ## Links
 
 Using the contextual `.badge-*` classes on an `<a>` element quickly provide _actionable_ badges with hover and focus states.
 
-{% capture example %}
+{{< example >}}
+{{< badge.inline >}}
 <a href="#" class="badge badge-link badge-red">Red</a>
-<a href="#" class="badge badge-link badge-blue">Blue</a>{% for color in site.data.theme-colors %}
-<a href="#" class="badge badge-link badge-{{ color.name }}">{{ color.name | capitalize }}</a>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
+<a href="#" class="badge badge-link badge-blue">Blue</a>
+{{- range (index $.Site.Data "theme-colors") }}
+<a href="#" class="badge badge-link badge-{{ .name }}">{{ .name | title }}</a>{{- end -}}
+{{< /badge.inline >}}
+{{< /example >}}

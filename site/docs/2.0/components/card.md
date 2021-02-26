@@ -12,21 +12,20 @@ A **card** is a flexible and extensible content container. It includes options f
 
 ## Example
 
-Cards are built with as little markup and styles as possible, but still manage to deliver a ton of control and customization. Built with flexbox, they offer easy alignment and mix well with other Bootstrap components. They have no `margin` by default, so use [spacing utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/) as needed.
+Cards are built with as little markup and styles as possible, but still manage to deliver a ton of control and customization. Built with flexbox, they offer easy alignment and mix well with other Bootstrap components. They have no `margin` by default, so use [spacing utilities]({{< docsref "/utilities/spacing/" >}}) as needed.
 
 Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they'll naturally fill the full width of its parent element. This is easily customized with our various [sizing options](#sizing).
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
-  {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+  {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Content Types
 
@@ -36,14 +35,13 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 The building block of a card is the `.card-body`. Use it whenever you need a padded section within a card.
 
-{% capture example %}
+{{< example >}}
 <div class="card">
   <div class="card-body">
     This is some text within a card body.
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Titles, Text, and Links
 
@@ -51,7 +49,7 @@ Card titles are used by adding `.card-title` to a `<h*>` tag. In the same way, l
 
 Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-title` and the `.card-subtitle` items are placed in a `.card-body` item, the card title and subtitle are aligned nicely.
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -61,28 +59,26 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Images
 
 `.card-img-top` places an image to the top of the card. With `.card-text`, text can be added to the card. Text within `.card-text` can also be styled with the standard HTML tags.
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
-  {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+  {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### List Groups
 
 Create lists of content in a card with a flush list group.
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Cras justo odio</li>
@@ -90,10 +86,9 @@ Create lists of content in a card with a flush list group.
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
   <div class="card-header">
     Featured
@@ -104,16 +99,15 @@ Create lists of content in a card with a flush list group.
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Kitchen Sink
 
 Mix and match multiple content types to create the card you need, or throw everything in there. Shown below are image styles, blocks, text styles, and a list group—all wrapped in a fixed-width card.
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
-  {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+  {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -128,14 +122,13 @@ Mix and match multiple content types to create the card you need, or throw every
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Header and Footer
 
 Add an optional header and/or footer within a card.
 
-{% capture example %}
+{{< example >}}
 <div class="card">
   <div class="card-header">
     Featured
@@ -146,12 +139,11 @@ Add an optional header and/or footer within a card.
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Card headers can be styled by adding `.card-header` to `<h*>` elements.
 
-{% capture example %}
+{{< example >}}
 <div class="card">
   <h5 class="card-header">Featured</h5>
   <div class="card-body">
@@ -160,10 +152,9 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <div class="card">
   <div class="card-header">
     Quote
@@ -175,10 +166,9 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
     </blockquote>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <div class="card text-center">
   <div class="card-header">
     Featured
@@ -192,8 +182,7 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
     2 days ago
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Sizing
 
@@ -203,7 +192,7 @@ Cards assume no specific `width` to start, so they'll be 100% wide unless otherw
 
 Using the grid, wrap cards in columns and rows as needed.
 
-{% capture example %}
+{{< example >}}
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -224,14 +213,13 @@ Using the grid, wrap cards in columns and rows as needed.
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Using Utilities
 
-Use our handful of [available sizing utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/sizing/) to quickly set a card's width.
+Use our handful of [available sizing utilities]({{< docsref "/utilities/sizing/" >}}) to quickly set a card's width.
 
-{% capture example %}
+{{< example >}}
 <div class="card w-75">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -247,14 +235,13 @@ Use our handful of [available sizing utilities]({{ site.baseurl }}/docs/{{ site.
     <a href="#" class="btn btn-red">Button</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Using Custom CSS
 
 Use custom CSS in your stylesheets or as inline styles to set a width.
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
@@ -262,14 +249,13 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Text Alignment
 
-You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/#text-alignment).
+You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{< docsref "/utilities/text/#text-alignment" >}}).
 
-{% capture example %}
+{{< example >}}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
@@ -293,14 +279,13 @@ You can quickly change the text alignment of any card—in its entirety or speci
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Navigation
 
-Add some navigation to a card's header (or block) with Bootstrap's [nav components]({{ site.baseurl }}/docs/{{ site.docs_version }}/components/navs/).
+Add some navigation to a card's header (or block) with Bootstrap's [nav components]({{< docsref "/components/navs/" >}}).
 
-{% capture example %}
+{{< example >}}
 <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
@@ -321,10 +306,9 @@ Add some navigation to a card's header (or block) with Bootstrap's [nav componen
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
@@ -345,8 +329,7 @@ Add some navigation to a card's header (or block) with Bootstrap's [nav componen
     <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Images
 
@@ -358,7 +341,7 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
 
 <div class="bd-example">
   <div class="card mb-3">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -371,11 +354,11 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-bottom" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-bottom" text="Image cap" >}}
   </div>
 </div>
 
-{% highlight html %}
+```html
 <div class="card mb-3">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
@@ -392,38 +375,36 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
   </div>
   <img src="..." class="card-img-bottom" alt="...">
 </div>
-{% endhighlight %}
+```
 
 ### Image Overlays
 
 Turn an image into a card background and overlay your card's text. Depending on the image, you may or may not need additional styles or utilities.
 
-{% capture example %}
+{{< example >}}
 <div class="card bg-dark text-white">
-  {% include icons/placeholder.svg width="100%" height="270" class="bd-placeholder-img-lg card-img" text="Card image" %}
+  {{< placeholder width="100%" height="270" class="bd-placeholder-img-lg card-img" text="Card image" >}}
   <div class="card-img-overlay">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text">Last updated 3 mins ago</p>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture callout %}
+{{< callout info >}}
 Note that content should not be larger than the height of the image. If content is larger than the image the content will be displayed outside the image.
-{% endcapture %}
-{% include callout.html content=callout type="info" %}
+{{< /callout >}}
 
 ## Horizontal
 
 Using a combination of grid and utility classes, cards can be made horizontal in a mobile-friendly and responsive way. In the example below, we remove the grid gutters with `.no-gutters` and use `.col-md-*` classes to make the card horizontal at the `md` breakpoint. Further adjustments may be needed depending on your card content.
 
-{% capture example %}
+{{< example >}}
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      {% include icons/placeholder.svg width="100%" height="250" class="" text="Image" %}
+      {{< placeholder width="100%" height="250" class="" text="Image" >}}
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -434,8 +415,7 @@ Using a combination of grid and utility classes, cards can be made horizontal in
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Card Styles
 
@@ -443,43 +423,49 @@ Cards include various options for customizing their backgrounds, borders, and co
 
 ### Background and color
 
-Use [text and background utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/) to change the appearance of a card.
+Use [text and background utilities]({{< docsref "/utilities/colors/" >}}) to change the appearance of a card.
 
-{% capture example %}
-{% for color in site.data.theme-colors %}
+{{< example >}}
+{{< card.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
 <div class="card bg-{{ color.name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
-    <h5 class="card-title">{{ color.name | capitalize }} card title</h5>
+    <h5 class="card-title">{{ .name | title }} card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-</div>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
+</div>
+{{{- end -}}
+{{< /card.inline >}}
+{{< /example >}}
 
-{% include callout-warning-color-assistive-technologies.md %}
+{{< callout warning >}}
+{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< /callout >}}
 
 ### Border
 
-Use [border utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/borders/) to change just the `border-color` of a card. Note that you can put `.text-{color}` classes on the parent `.card` or a subset of the card's contents as shown below.
+Use [border utilities]({{< docsref "/utilities/borders/" >}}) to change just the `border-color` of a card. Note that you can put `.text-{color}` classes on the parent `.card` or a subset of the card's contents as shown below.
 
-{% capture example %}
-{% for color in site.data.theme-colors %}
+{{< example >}}
+{{< card.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
 <div class="card border-{{ color.name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
-  <div class="card-body{% unless color.name == "light" %} text-{{ color.name }}{% endunless %}">
-    <h5 class="card-title">{{ color.name | capitalize }} card title</h5>
+  <div class="card-body{{ if not (eq .name "light") }} text-{{ .name }}{{ end }}">
+    <h5 class="card-title">{{ .name | title }} card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-</div>{% endfor %}
-{% endcapture %}
-{% include example.html content=example %}
+</div>
+{{- end -}}
+{{< /card.inline >}}
+{{< /example >}}
 
 ### Borderless
 
 Borderless cards both remove the border and make the entire card clickable. You can use any of the available utility classes to style your card and its text.
 
-{% capture example %}
+{{< example >}}
 <div class="card card-borderless card-clickable" style="max-width: 18rem;">
   <a class="card-body" href="#">
     <h5 class="card-title">Borderless Card Title</h5>
@@ -501,14 +487,13 @@ Borderless cards both remove the border and make the entire card clickable. You 
     <p class="card-clickable-link font-weight-bold text-uppercase">Link to Content</p>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Landing Grid
 
 The landing grid card makes the entire card clickable and is useful for landing pages.
 
-{% capture example %}
+{{< example >}}
 <div class="card-deck">
   <div class="card card-landing-grid card-clickable">
     <a href="#" class="card-body">
@@ -525,14 +510,13 @@ The landing grid card makes the entire card clickable and is useful for landing 
     </a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Mixins Utilities
 
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
-{% capture example %}
+{{< example >}}
 <div class="card border-success mb-3" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-success">Header</div>
   <div class="card-body text-success">
@@ -541,8 +525,7 @@ You can also change the borders on the card header and footer as needed, and eve
   </div>
   <div class="card-footer bg-transparent border-success">Footer</div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Card Layout
 
@@ -552,10 +535,10 @@ In addition to styling the content within cards, Bootstrap includes a few option
 
 Use card groups to render cards as a single, attached element with equal width and height columns. Card groups use `display: flex;` to achieve their uniform sizing.
 
-{% capture example %}
+{{< example >}}
 <div class="card-group">
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -563,7 +546,7 @@ Use card groups to render cards as a single, attached element with equal width a
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -571,7 +554,7 @@ Use card groups to render cards as a single, attached element with equal width a
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -579,15 +562,14 @@ Use card groups to render cards as a single, attached element with equal width a
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 When using card groups with footers, their content will automatically line up.
 
-{% capture example %}
+{{< example >}}
 <div class="card-group">
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -597,7 +579,7 @@ When using card groups with footers, their content will automatically line up.
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -607,7 +589,7 @@ When using card groups with footers, their content will automatically line up.
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -617,17 +599,16 @@ When using card groups with footers, their content will automatically line up.
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Card Decks
 
 Need a set of equal width and height cards that aren't attached to one another? Use card decks.
 
-{% capture example %}
+{{< example >}}
 <div class="card-deck">
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="200" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="200" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -635,7 +616,7 @@ Need a set of equal width and height cards that aren't attached to one another? 
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="200" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="200" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -643,7 +624,7 @@ Need a set of equal width and height cards that aren't attached to one another? 
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="200" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="200" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -651,15 +632,14 @@ Need a set of equal width and height cards that aren't attached to one another? 
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Just like with card groups, card footers in decks will automatically line up.
 
-{% capture example %}
+{{< example >}}
 <div class="card-deck">
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -669,7 +649,7 @@ Just like with card groups, card footers in decks will automatically line up.
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -679,7 +659,7 @@ Just like with card groups, card footers in decks will automatically line up.
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="180" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -689,8 +669,7 @@ Just like with card groups, card footers in decks will automatically line up.
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Card Columns
 
@@ -698,10 +677,10 @@ Cards can be organized into [Masonry](https://masonry.desandro.com/)-like column
 
 **Heads up!** Your mileage with card columns may vary. To prevent cards breaking across columns, we must set them to `display: inline-block` as `column-break-inside: avoid` isn't a bulletproof solution yet.
 
-{% capture example %}
+{{< example >}}
 <div class="card-columns">
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="160" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="160" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title that wraps to a new line</h5>
       <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -718,7 +697,7 @@ Cards can be organized into [Masonry](https://masonry.desandro.com/)-like column
     </blockquote>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="160" class="card-img-top" text="Image cap" %}
+    {{< placeholder width="100%" height="160" class="card-img-top" text="Image cap" >}}
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -743,7 +722,7 @@ Cards can be organized into [Masonry](https://masonry.desandro.com/)-like column
     </div>
   </div>
   <div class="card">
-    {% include icons/placeholder.svg width="100%" height="260" class="card-img" text="Card image" %}
+    {{< placeholder width="100%" height="260" class="card-img" text="Card image" >}}
   </div>
   <div class="card p-3 text-right">
     <blockquote class="blockquote mb-0">
@@ -763,12 +742,11 @@ Cards can be organized into [Masonry](https://masonry.desandro.com/)-like column
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Card columns can also be extended and customized with some additional code. Shown below is an extension of the `.card-columns` class using the same CSS we use—CSS columns— to generate a set of responsive tiers for changing the number of columns.
 
-{% highlight scss %}
+```scss
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 4;
@@ -777,4 +755,4 @@ Card columns can also be extended and customized with some additional code. Show
     column-count: 5;
   }
 }
-{% endhighlight %}
+```

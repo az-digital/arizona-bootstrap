@@ -13,8 +13,8 @@
 
 {%- assign title = include.title | default: 'Placeholder' -%}
 {%- assign class = include.class | default: '' -%}
-{%- assign color = include.color | default: site.data.grays[2].hex -%}
-{%- assign background = include.background | default: site.data.grays[5].hex -%}
+{%- assign color = include.color | default: .Site.Data.grays[2].hex -%}
+{%- assign background = include.background | default: .Site.Data.grays[5].hex -%}
 {%- assign width = include.width | default: '100%' -%}
 {%- assign height = include.height | default: '180' -%}
 

@@ -21,7 +21,7 @@ Questions, bug reports or suggestions can also be emailed to [uadigital@email.ar
 
 ## Join Our Meetings
 
-Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meetings are held on Zoom and dedicate the entire hour to reviewing and merging pull requests on [GitHub]({{ site.baseurl }}/docs/{{ site.docs_version }}/about/get-involved/#review-or-contribute-code). Friday meetings are hosted in-person in UITS-116 (and can also be joined remotely via Zoom) and dedicate two hours to reviewing and merging pull requests, and covering topics concerning Drupal 8. For more details, connect with us on Slack on our `#friday-meetings` channel.
+Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meetings are held on Zoom and dedicate the entire hour to reviewing and merging pull requests on [GitHub]({{< docsref "/about/get-involved/#review-or-contribute-code" >}}). Friday meetings are hosted in-person in UITS-116 (and can also be joined remotely via Zoom) and dedicate two hours to reviewing and merging pull requests, and covering topics concerning Drupal 8. For more details, connect with us on Slack on our `#friday-meetings` channel.
 
 ## Connect with Us on Slack
 
@@ -36,7 +36,7 @@ The Arizona Digital team utilizes a variety of Slack channels ranging from gener
       <th scope="col">Purpose</th>
     </tr>
   </thead>
-  <tbody>{% for slack in site.data.slack-channels %}
+  <tbody>{% for slack in .Site.Data.slack-channels %}
     <tr{% if slack.channel == "#friday-meetings" %} class="table-success"{% endif %}>
       <td>{{ slack.channel }}</td>
       <td>
@@ -59,7 +59,7 @@ Arizona Digital currently uses utilizes GitHub to host and review code contained
       <th scope="col">Contents</th>
     </tr>
   </thead>
-  <tbody>{% for repo in site.data.sourcecode-repos %}
+  <tbody>{% for repo in .Site.Data.sourcecode-repos %}
     <tr>
       <td><a href="{{ repo.link }}" target="_blank">{{ repo.name }}</a></td>
       <td>{{ repo.description }}</td>

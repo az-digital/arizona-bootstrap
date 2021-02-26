@@ -10,46 +10,43 @@ toc: true
 
 The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Active Items
 
 Add `.active` to a `.list-group-item` to indicate the current active selection.
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group">
-  <li class="list-group-item active">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item active" aria-current="true">An active item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Disabled Items
 
 Add `.disabled` to a `.list-group-item` to make it _appear_ disabled. Note that some elements with `.disabled` will also require custom JavaScript to fully disable their click events (e.g., links).
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group">
-  <li class="list-group-item disabled" aria-disabled="true">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item disabled" aria-disabled="true">A disabled item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Links and Buttons
 
@@ -57,48 +54,45 @@ Use `<a>`s or `<button>`s to create _actionable_ list group items with hover, di
 
 Be sure to **not use the standard `.btn` classes here**.
 
-{% capture example %}
+{{< example >}}
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">
-    Cras justo odio
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    The current link item
   </a>
-  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 With `<button>`s, you can also make use of the `disabled` attribute instead of the `.disabled` class. Sadly, `<a>`s don't support the disabled attribute.
 
-{% capture example %}
+{{< example >}}
 <div class="list-group">
-  <button type="button" class="list-group-item list-group-item-action active">
-    Cras justo odio
+  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+    The current button
   </button>
-  <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-  <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-  <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-  <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+  <button type="button" class="list-group-item list-group-item-action">A second item</button>
+  <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+  <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+  <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Flush
 
 Add `.list-group-flush` to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group list-group-flush">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Horizontal
 
@@ -106,101 +100,105 @@ Add `.list-group-horizontal` to change the layout of list group items from verti
 
 **ProTip:** Want equal-width list group items when horizontal? Add `.flex-fill` to each list group item.
 
-{% for bp in site.data.breakpoints %}
-{% capture example %}
-<ul class="list-group list-group-horizontal{{ bp.abbr }}">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
+{{< example >}}
+{{< list-group.inline >}}
+{{- range $.Site.Data.breakpoints }}
+<ul class="list-group list-group-horizontal{{ .abbr }}">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}{% endfor %}
+{{- end -}}
+{{< /list-group.inline >}}
+{{< /example >}}
 
 ## Contextual Classes
 
 Use contextual classes to style list items with a stateful background and color.
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group">
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-
-  {% for color in site.data.theme-colors %}
-  <li class="list-group-item list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</li>{% endfor %}
+  <li class="list-group-item">A simple default list group item</li>
+{{< list.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+  <li class="list-group-item list-group-item-{{ .name }}">A simple {{ .name }} list group item</li>
+{{- end -}}
+{{< /list.inline >}}
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 Contextual classes also work with `.list-group-item-action`. Note the addition of the hover styles here not present in the previous example. Also supported is the `.active` state; apply it to indicate an active selection on a contextual list group item.
 
-{% capture example %}
+{{< example >}}
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-
-  {% for color in site.data.theme-colors %}
-  <a href="#" class="list-group-item list-group-item-action list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</a>{% endfor %}
+  <a href="#" class="list-group-item list-group-item-action">A simple default list group item</a>
+{{< list.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+  <a href="#" class="list-group-item list-group-item-action list-group-item-{{ .name }}">A simple {{ .name }} list group item</a>
+{{- end -}}
+{{< /list.inline >}}
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% include callout-warning-color-assistive-technologies.md %}
+{{< callout warning >}}
+{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< /callout >}}
 
 ## With Badges
 
-Add badges to any list group item to show unread counts, activity, and more with the help of some [utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/).
+Add badges to any list group item to show unread counts, activity, and more with the help of some [utilities]({{< docsref "/utilities/flex" >}}).
 
-{% capture example %}
+{{< example >}}
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Cras justo odio
+    A list item
     <span class="badge badge-red badge-pill">14</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Dapibus ac facilisis in
+    A second list item
     <span class="badge badge-red badge-pill">2</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Morbi leo risus
+    A third list item
     <span class="badge badge-red badge-pill">1</span>
   </li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Custom Content
 
-Add nearly any HTML within, even for linked list groups like the one below, with the help of [flexbox utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/).
+Add nearly any HTML within, even for linked list groups like the one below, with the help of [flexbox utilities]({{< docsref "/utilities/flex" >}}).
 
-{% capture example %}
+{{< example >}}
 <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action active">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       <small>3 days ago</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small>Donec id elit non mi porta.</small>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small>And some small print.</small>
   </a>
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       <small class="text-muted">3 days ago</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>
   </a>
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
       <small class="text-muted">3 days ago</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-## JavaScript behavior
+## JavaScript Behavior
 
 Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our list group to create tabbable panes of local content.
 
@@ -217,23 +215,23 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
     <div class="col-8">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-          <p>Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim eu nostrud do aliquip veniam minim.</p>
+          <p>Some placeholder content in a paragraph relating to "Home". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</p>
         </div>
         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-          <p>Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad.</p>
+          <p>Some placeholder content in a paragraph relating to "Profile". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</p>
         </div>
         <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-          <p>Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt. Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.</p>
+          <p>Some placeholder content in a paragraph relating to "Messages". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</p>
         </div>
         <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-          <p>Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.</p>
+          <p>Some placeholder content in a paragraph relating to "Settings". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-{% highlight html %}
+```html
 <div class="row">
   <div class="col-4">
     <div class="list-group" id="list-tab" role="tablist">
@@ -252,64 +250,64 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
     </div>
   </div>
 </div>
-{% endhighlight %}
+```
 
-### Using Data Attributes
+### Using data attributes
 
 You can activate a list group navigation without writing any JavaScript by simply specifying `data-toggle="list"` or on an element. Use these data attributes on `.list-group-item`.
 
+```html
 <div role="tabpanel">
-{% highlight html %}
-<!-- List group -->
-<div class="list-group" id="myList" role="tablist">
-  <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
-</div>
+  <!-- List group -->
+  <div class="list-group" id="myList" role="tablist">
+    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
+    <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
+    <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+    <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+  </div>
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="home" role="tabpanel">...</div>
-  <div class="tab-pane" id="profile" role="tabpanel">...</div>
-  <div class="tab-pane" id="messages" role="tabpanel">...</div>
-  <div class="tab-pane" id="settings" role="tabpanel">...</div>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home" role="tabpanel">...</div>
+    <div class="tab-pane" id="profile" role="tabpanel">...</div>
+    <div class="tab-pane" id="messages" role="tabpanel">...</div>
+    <div class="tab-pane" id="settings" role="tabpanel">...</div>
+  </div>
 </div>
-{% endhighlight %}
-</div>
+```
 
 ### Via JavaScript
 
 Enable tabbable list item via JavaScript (each list item needs to be activated individually):
 
-{% highlight js %}
-$('#myList a').on('click', function (e) {
-  e.preventDefault()
+```js
+$('#myList a').on('click', function (event) {
+  event.preventDefault()
   $(this).tab('show')
 })
-{% endhighlight %}
+```
 
 You can activate individual list item in several ways:
 
-{% highlight js %}
+```js
 $('#myList a[href="#profile"]').tab('show') // Select tab by name
 $('#myList a:first-child').tab('show') // Select first tab
 $('#myList a:last-child').tab('show') // Select last tab
 $('#myList a:nth-child(3)').tab('show') // Select third tab
-{% endhighlight %}
+```
 
-### Fade Effect
+### Fade effect
 
 To make tabs panel fade in, add `.fade` to each `.tab-pane`. The first tab pane must also have `.show` to make the initial content visible.
 
-{% highlight html %}
+```html
 <div class="tab-content">
   <div class="tab-pane fade show active" id="home" role="tabpanel">...</div>
   <div class="tab-pane fade" id="profile" role="tabpanel">...</div>
   <div class="tab-pane fade" id="messages" role="tabpanel">...</div>
   <div class="tab-pane fade" id="settings" role="tabpanel">...</div>
 </div>
-{% endhighlight %}
+```
 
 ### Methods
 
@@ -317,7 +315,7 @@ To make tabs panel fade in, add `.fade` to each `.tab-pane`. The first tab pane 
 
 Activates a list item element and content container. Tab should have either a `data-target` or an `href` targeting a container node in the DOM.
 
-{% highlight html %}
+```html
 <div class="list-group" id="myList" role="tablist">
   <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
   <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
@@ -337,15 +335,15 @@ Activates a list item element and content container. Tab should have either a `d
     $('#myList a:last-child').tab('show')
   })
 </script>
-{% endhighlight %}
+```
 
 #### .tab('show')
 
 Selects the given list item and shows its associated pane. Any other list item that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (for example, before the `shown.bs.tab` event occurs).
 
-{% highlight js %}
+```js
 $('#someListItem').tab('show')
-{% endhighlight %}
+```
 
 ### Events
 
@@ -385,9 +383,9 @@ If no tab was already active, the `hide.bs.tab` and `hidden.bs.tab` events will 
   </tbody>
 </table>
 
-{% highlight js %}
-$('a[data-toggle="list"]').on('shown.bs.tab', function (e) {
-  e.target // newly activated tab
-  e.relatedTarget // previous active tab
+```js
+$('a[data-toggle="list"]').on('shown.bs.tab', function (event) {
+  event.target // newly activated tab
+  event.relatedTarget // previous active tab
 })
-{% endhighlight %}
+```

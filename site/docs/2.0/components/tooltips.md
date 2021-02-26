@@ -11,7 +11,7 @@ toc: true
 Things to know when using the tooltip plugin:
 
 - Tooltips rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning. You must include [popper.min.js]({{ site.cdn.popper }}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper.js in order for tooltips to work!
-- If you're building our JavaScript from source, it [requires `util.js`]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/javascript/#util).
+- If you're building our JavaScript from source, it [requires `util.js`]({{< docsref "/getting-started/javascript/#util" >}}).
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
 - Specify `container: 'body'` to avoid rendering problems in more complex components (like our input groups, button groups, etc).
@@ -21,7 +21,9 @@ Things to know when using the tooltip plugin:
 - Tooltips must be hidden before their corresponding elements have been removed from the DOM.
 - Tooltips can be triggered thanks to an element inside a shadow DOM.
 
-{% include callout-info-prefersreducedmotion.md %}
+{{< callout info >}}
+{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< /callout >}}
 
 Got all that? Great, let's see how they work with some examples.
 
@@ -29,11 +31,11 @@ Got all that? Great, let's see how they work with some examples.
 
 One way to initialize all tooltips on a page would be to select them by their `data-toggle` attribute:
 
-{% highlight js %}
+```js
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-{% endhighlight %}
+```
 
 ## Examples
 
@@ -56,7 +58,7 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
   </div>
 </div>
 
-{% highlight html %}
+```html
 <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
@@ -69,15 +71,15 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
 <button type="button" class="btn btn-blue" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
   Tooltip on left
 </button>
-{% endhighlight %}
+```
 
 And with custom HTML added:
 
-{% highlight html %}
+```html
 <button type="button" class="btn btn-blue" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
   Tooltip with HTML
 </button>
-{% endhighlight %}
+```
 
 ## Usage
 
@@ -85,33 +87,31 @@ The tooltip plugin generates content and markup on demand, and by default places
 
 Trigger the tooltip via JavaScript:
 
-{% highlight js %}
+```js
 $('#example').tooltip(options)
-{% endhighlight %}
+```
 
-{% capture callout %}
+{{< callout warning >}}
 ##### Overflow `auto` and `scroll`
 
 Tooltip position attempts to automatically change when a parent container has `overflow: auto` or `overflow: scroll` like our `.table-responsive`, but still keeps the original placement's positioning. To resolve, set the `boundary` option to anything other than default value, `'scrollParent'`, such as `'window'`:
 
-{% highlight js %}
+```js
 $('#example').tooltip({ boundary: 'window' })
-{% endhighlight %}
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+```
+{{< /callout >}}
 
 ### Markup
 
 The required markup for a tooltip is only a `data` attribute and `title` on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to `top` by the plugin).
 
-{% capture callout %}
+{{< callout warning >}}
 ##### Making Tooltips Work for Keyboard and Assistive Technology Users
 
 You should only add tooltips to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as `<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users, and most assistive technologies currently do not announce the tooltip in this situation. Additionally, do not rely solely on `hover` as the trigger for your tooltip, as this will make your tooltips impossible to trigger for keyboard users.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
-{% highlight html %}
+```html
 <!-- HTML to write -->
 <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
 
@@ -122,29 +122,27 @@ You should only add tooltips to HTML elements that are traditionally keyboard-fo
     Some tooltip text!
   </div>
 </div>
-{% endhighlight %}
+```
 
 ### Disabled Elements
 
 Elements with the `disabled` attribute aren't interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you'll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`, and override the `pointer-events` on the disabled element.
 
 <div class="tooltip-demo">
-{% capture example %}
+{{< example >}}
 <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
   <button class="btn btn-red" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ### Options
 
 Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-`, as in `data-animation=""`.
 
-{% capture callout %}
+{{< callout warning >}}
 Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` options cannot be supplied using data attributes.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -267,7 +265,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
     <tr>
       <td>whiteList</td>
       <td>object</td>
-      <td><a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/javascript/#sanitizer">Default value</a></td>
+      <td><a href="/docs/{{< param docs_version >}}/getting-started/javascript/#sanitizer">Default value</a></td>
       <td>Object which contains allowed attributes and tags</td>
     </tr>
     <tr>
@@ -279,16 +277,17 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
   </tbody>
 </table>
 
-{% capture callout %}
+{{< callout info >}}
 #### Data Attributes for Individual Tooltips
 
 Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.
-{% endcapture %}
-{% include callout.html content=callout type="info" %}
+{{< /callout >}}
 
 ### Methods
 
-{% include callout-danger-async-methods.md %}
+{{< callout danger >}}
+{{< partial "callout-danger-async-methods.md" >}}
+{{< /callout >}}
 
 #### `$().tooltip(options)`
 
@@ -298,49 +297,49 @@ Attaches a tooltip handler to an element collection.
 
 Reveals an element's tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed.
 
-{% highlight js %}$('#element').tooltip('show'){% endhighlight %}
+```js$('#element').tooltip('show')```
 
 #### `.tooltip('hide')`
 
 Hides an element's tooltip. **Returns to the caller before the tooltip has actually been hidden** (i.e. before the `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-{% highlight js %}$('#element').tooltip('hide'){% endhighlight %}
+```js$('#element').tooltip('hide')```
 
 #### `.tooltip('toggle')`
 
 Toggles an element's tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.bs.tooltip` or `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-{% highlight js %}$('#element').tooltip('toggle'){% endhighlight %}
+```js$('#element').tooltip('toggle')```
 
 #### `.tooltip('dispose')`
 
 Hides and destroys an element's tooltip. Tooltips that use delegation (which are created using [the `selector` option](#options)) cannot be individually destroyed on descendant trigger elements.
 
-{% highlight js %}$('#element').tooltip('dispose'){% endhighlight %}
+```js$('#element').tooltip('dispose')```
 
 #### `.tooltip('enable')`
 
 Gives an element's tooltip the ability to be shown. **Tooltips are enabled by default.**
 
-{% highlight js %}$('#element').tooltip('enable'){% endhighlight %}
+```js$('#element').tooltip('enable')```
 
 #### `.tooltip('disable')`
 
 Removes the ability for an element's tooltip to be shown. The tooltip will only be able to be shown if it is re-enabled.
 
-{% highlight js %}$('#element').tooltip('disable'){% endhighlight %}
+```js$('#element').tooltip('disable')```
 
 #### `.tooltip('toggleEnabled')`
 
 Toggles the ability for an element's tooltip to be shown or hidden.
 
-{% highlight js %}$('#element').tooltip('toggleEnabled'){% endhighlight %}
+```js$('#element').tooltip('toggleEnabled')```
 
 #### `.tooltip('update')`
 
 Updates the position of an element's tooltip.
 
-{% highlight js %}$('#element').tooltip('update'){% endhighlight %}
+```js$('#element').tooltip('update')```
 
 ### Events
 
@@ -375,8 +374,8 @@ Updates the position of an element's tooltip.
   </tbody>
 </table>
 
-{% highlight js %}
+```js
 $('#myTooltip').on('hidden.bs.tooltip', function () {
   // do something...
 })
-{% endhighlight %}
+```

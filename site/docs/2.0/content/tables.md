@@ -14,7 +14,7 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
 
 ### Default
 
-{% capture example %}
+{{< example >}}
 <table class="table">
   <thead>
     <tr>
@@ -45,14 +45,13 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Dark
 
 You can also invert the colors—with light text on dark backgrounds—with `.table-dark`.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-dark">
   <thead>
     <tr>
@@ -83,14 +82,13 @@ You can also invert the colors—with light text on dark backgrounds—with `.ta
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Table Head Options
 
 Similar to tables and dark tables, use the modifier classes `.thead-light` or `.thead-dark` to make `<thead>`s appear light or dark gray.
 
-{% capture example %}
+{{< example >}}
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -152,14 +150,13 @@ Similar to tables and dark tables, use the modifier classes `.thead-light` or `.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Striped Rows
 
 Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-striped">
   <thead class="thead-light">
     <tr>
@@ -190,10 +187,9 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -224,14 +220,13 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Bordered Table
 
 Add `.table-bordered` for borders on all sides of the table and cells.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-bordered">
   <thead class="thead-light">
     <tr>
@@ -261,10 +256,9 @@ Add `.table-bordered` for borders on all sides of the table and cells.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <table class="table table-bordered table-dark">
   <thead>
     <tr>
@@ -294,14 +288,13 @@ Add `.table-bordered` for borders on all sides of the table and cells.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Borderless Table
 
 Add `.table-borderless` for a table without borders.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-borderless">
   <thead class="thead-light">
     <tr>
@@ -331,12 +324,11 @@ Add `.table-borderless` for a table without borders.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 `.table-borderless` can also be used on dark tables.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-borderless table-dark">
   <thead>
     <tr>
@@ -366,14 +358,13 @@ Add `.table-borderless` for a table without borders.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Hoverable Rows
 
 Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-hover">
   <thead class="thead-light">
     <tr>
@@ -403,10 +394,9 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <table class="table table-hover table-dark">
   <thead>
     <tr>
@@ -436,14 +426,13 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Small Table
 
 Add `.table-sm` to make tables more compact by cutting cell padding in half.
 
-{% capture example %}
+{{< example >}}
 <table class="table table-sm">
   <thead class="thead-light">
     <tr>
@@ -473,10 +462,9 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <table class="table table-sm table-dark">
   <thead>
     <tr>
@@ -506,8 +494,7 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Contextual Classes
 
@@ -533,32 +520,38 @@ Use contextual classes to color table rows or individual cells.
         <td>Cell</td>
         <td>Cell</td>
       </tr>
-
-      {% for color in site.data.theme-colors %}
-      <tr class="table-{{ color.name }}">
-        <th scope="row">{{ color.name | capitalize }}</th>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>{% endfor %}
+      {{< table.inline >}}
+      {{- range (index $.Site.Data "theme-colors") }}
+        <tr class="table-{{ .name }}">
+          <th scope="row">{{ .name | title }}</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      {{- end -}}
+      {{< /table.inline >}}
     </tbody>
   </table>
 </div>
 
-{% highlight html %}
+{{< highlight html >}}
 <!-- On rows -->
-<tr class="table-active">...</tr>
-{% for color in site.data.theme-colors %}
-<tr class="table-{{ color.name }}">...</tr>{% endfor %}
+<tr class="table-active">...</tr>{{< table.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<tr class="table-{{ .name }}">...</tr>
+{{- end -}}
+{{< /table.inline >}}
 
 <!-- On cells (`td` or `th`) -->
 <tr>
-  <td class="table-active">...</td>
-  {% for color in site.data.theme-colors %}
-  <td class="table-{{ color.name }}">...</td>{% endfor %}
+  <td class="table-active">...</td>{{< table.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+  <td class="table-{{ .name }}">...</td>
+{{- end -}}
+{{< /table.inline >}}
 </tr>
-{% endhighlight %}
+{{< /highlight >}}
 
-Regular table background variants are not available with the dark table, however, you may use [text or background utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/) to achieve similar styles.
+Regular table background variants are not available with the dark table, however, you may use [text or background utilities]({{< docsref "/utilities/colors/" >}}) to achieve similar styles.
 
 <div class="bd-example">
   <table class="table table-dark">
@@ -619,7 +612,7 @@ Regular table background variants are not available with the dark table, however
   </table>
 </div>
 
-{% highlight html %}
+```html
 <!-- On rows -->
 <tr class="bg-red">...</tr>
 <tr class="bg-success">...</tr>
@@ -635,19 +628,23 @@ Regular table background variants are not available with the dark table, however
   <td class="bg-danger">...</td>
   <td class="bg-info">...</td>
 </tr>
-{% endhighlight %}
+```
 
-{% include callout-warning-color-assistive-technologies.md %}
+{{< callout warning >}}
+{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< /callout >}}
 
 Create responsive tables by wrapping any `.table` with `.table-responsive{-sm|-md|-lg|-xl}`, making the table scroll horizontally at each `max-width` breakpoint of up to (but not including) 576px, 768px, 992px, and 1120px, respectively.
 
-{% include callout-info-mediaqueries-breakpoints.md %}
+{{< callout info >}}
+{{< partial "callout-info-mediaqueries-breakpoints.md" >}}
+{{< /callout >}}
 
 ## Captions
 
 A `<caption>` functions like a heading for a table. It helps users with screen readers to find a table and understand what it's about and decide if they want to read it.
 
-{% capture example %}
+{{< example >}}
 <table class="table">
   <caption>List of users</caption>
   <thead class="thead-light">
@@ -679,19 +676,17 @@ A `<caption>` functions like a heading for a table. It helps users with screen r
     </tr>
   </tbody>
 </table>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Responsive Tables
 
 Responsive tables allow tables to be scrolled horizontally with ease. Make any table responsive across all viewports by wrapping a `.table` with `.table-responsive`. Or, pick a maximum breakpoint with which to have a responsive table up to by using `.table-responsive{-sm|-md|-lg|-xl}`.
 
-{% capture callout %}
+{{< callout warning >}}
 ##### Vertical Clipping/Truncation
 
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
 ### Always Responsive
 
@@ -756,7 +751,7 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
   </div>
 </div>
 
-{% highlight html %}
+```html
 <div class="table-responsive">
   <table class="table">
     <thead class="thead-light"> ... </thead>
@@ -765,7 +760,7 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
     </tbody>
   </table>
 </div>
-{% endhighlight %}
+```
 
 ### Breakpoint Specific
 
@@ -773,7 +768,9 @@ Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables u
 
 **These tables may appear broken until their responsive styles apply at specific viewport widths.**
 
-{% for bp in site.data.breakpoints %}{% unless bp.breakpoint == "xs" %}
+{{< tables.inline >}}
+{{ range $.Site.Data.breakpoints }}
+{{ if not (eq .breakpoint "xs") }}
 <div class="bd-example">
 <div class="table-responsive{{ bp.abbr }}">
   <table class="table">
@@ -828,14 +825,20 @@ Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables u
   </table>
 </div>
 </div>
-{% highlight html %}
-<div class="table-responsive{{ bp.abbr }}">
+{{ end -}}
+{{- end -}}
+{{< /tables.inline >}}
+
+{{< highlight html >}}
+{{< tables.inline >}}
+{{- range $.Site.Data.breakpoints -}}
+{{- if not (eq .breakpoint "xs") }}
+<div class="table-responsive{{ .abbr }}">
   <table class="table">
-    <thead class="thead-light"> ... </thead>
-    <tbody>
-      ...
-    </tbody>
+    ...
   </table>
 </div>
-{% endhighlight %}
-{% endunless %}{% endfor %}
+{{ end -}}
+{{- end -}}
+{{< /tables.inline >}}
+{{< /highlight >}}

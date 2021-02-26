@@ -16,9 +16,9 @@ Barebones `overflow` functionality is provided for two values by default, and th
   </div>
 </div>
 
-{% highlight html %}
+```html
 <div class="overflow-auto">...</div>
 <div class="overflow-hidden">...</div>
-{% endhighlight %}
+```
 
 Using Sass variables, you may customize the overflow utilities by changing the `$overflows` variable in `_variables.scss`.

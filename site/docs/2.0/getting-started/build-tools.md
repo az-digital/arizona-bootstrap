@@ -22,9 +22,9 @@ A custom local Docker image provides the complete development environment.
 
 You can build the image from a shell command line after changing to the directory that includes the `Dockerfile` by running
 
-{% highlight sh %}
+```sh
 scripts/build-container.sh
-{% endhighlight %}
+```
 
 The script tries to discover if you have already built an image using the current versions of several important configuration files, and doesn't try to re-build this if it already exists.
 
@@ -38,9 +38,9 @@ If the image build succeeds, it should finish by showing the image ID code, whic
 
 In a command-line shell, make sure you're in the top-level directory of your local working Arizona Bootstrap copy (the one containing the `Dockerfile`), then enter a command like
 
-{% highlight sh %}
+```sh
 docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
-{% endhighlight %}
+```
 
 - The `-t` and `-i` flags are the usual additions for a container that will be at least semi-interactive.
 - `--rm` makes sure the container will not persist after it has stopped.
@@ -55,17 +55,17 @@ If everything works, you should see a message telling you the static web site is
 
 The usual local development environment hides the final fully built static documentation web site within the Docker container, but you might need to move this to a web server elsewhere the command
 
-{% highlight sh %}
+```sh
 docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e expose-review-site
-{% endhighlight %}
+```
 
 copies the completed site out to a subdirectory called `_site`.
 
 You can specify a prefix to include in all the URLs of the static site by setting an environment variable within the container. For example to include the prefix `/bootstrap/localwip` the command would be
 
-{% highlight sh %}
+```sh
 docker run -t -i --rm -e "AZ_SITE_BASE_URL=/bootstrap/localwip" -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
-{% endhighlight %}
+```
 
 There are a few more convenience commands to use with `docker run` in addition to `serve-review-site` and `expose-review-site`.
 - `build-review-site` rebuilds the files without providing a live view of the changes.
@@ -84,9 +84,9 @@ Twitter Bootstrap provides a configuration file for called `_config.yml` for the
 - `AZ_SITE_HOST` Name or IP address at which to serve the documentation site
 - `AZ_VERSION` Full current Arizona Bootstrap version number
 
-{{ site.title }} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
+{{ .Site.Title }} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
 
-To use our build system and run our documentation locally, you'll need a copy of {{ site.title }}'s source files and Node. Follow these steps and you should be ready to rock:
+To use our build system and run our documentation locally, you'll need a copy of {{ .Site.Title }}'s source files and Node. Follow these steps and you should be ready to rock:
 
 1. [Download and install Node.js](https://nodejs.org/en/download/), which we use to manage our dependencies.
 2. Navigate to the root `/arizona-bootstrap` directory and run `npm install` to install our local dependencies listed in [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json).
@@ -112,7 +112,7 @@ Run `npm run` to see all the npm scripts.
 
 ## Autoprefixer
 
-{{ site.title }} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
+{{ .Site.Title }} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
 
 We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [.browserslistrc]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc) for details.
 

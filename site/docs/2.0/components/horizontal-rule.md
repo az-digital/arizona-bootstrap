@@ -14,11 +14,10 @@ A **horizontal rule** is a component useful for separating content or adding a s
 
 Simply add the `<hr>` tag to your content to add the horizontal rule.
 
-{% capture example %}
+{{< example >}}
 <div class="bd-example">
 	<p>This is a paragraph that I want to separate from the paragraph below.</p>
 	<hr>
 	<p>This is the other paragraph, which is separate from the one above.</p>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}

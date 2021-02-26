@@ -8,9 +8,9 @@ toc: true
 
 ## Supported Browsers
 
-{{ site.title }} supports the **latest, stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 10-11 / Microsoft Edge**.
+{{ .Site.Title }} supports the **latest, stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 10-11 / Microsoft Edge**.
 
-Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, {{ site.title }} should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
+Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, {{ .Site.Title }} should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
 You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc):
 
@@ -34,7 +34,7 @@ We use [Autoprefixer](https://github.com/postcss/autoprefixer) to handle intende
 
 ### Mobile Devices
 
-Generally speaking, {{ site.title }} supports the latest versions of each major platform's default browsers. Note that proxy browsers (such as Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk) are not supported.
+Generally speaking, {{ .Site.Title }} supports the latest versions of each major platform's default browsers. Note that proxy browsers (such as Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk) are not supported.
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -115,9 +115,9 @@ Similarly, the latest versions of most desktop browsers are supported.
 
 For Firefox, in addition to the latest normal stable release, we also support the latest [Extended Support Release (ESR)](https://www.mozilla.org/en-US/firefox/organizations/#faq) version of Firefox.
 
-Unofficially, {{ site.title }} should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 9, though they are not officially supported.
+Unofficially, {{ .Site.Title }} should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 9, though they are not officially supported.
 
-For a list of some of the browser bugs that {{ site.title }} has to grapple with, see our [Wall of browser bugs]({{ site.baseurl }}/docs/{{ site.docs_version }}/browser-bugs/).
+For a list of some of the browser bugs that {{ .Site.Title }} has to grapple with, see our [Wall of browser bugs]({{< docsref "/browser-bugs/" >}}).
 
 ## Internet Explorer
 
@@ -139,7 +139,7 @@ The `.dropdown-backdrop` element isn't used on iOS in the nav because of the com
 
 ## Browser Zooming
 
-Page zooming inevitably presents rendering artifacts in some components, both in {{ site.title }} and the rest of the web. Depending on the issue, we may be able to fix it (search first and then open an issue if need be). However, we tend to ignore these as they often have no direct solution other than hacky workarounds.
+Page zooming inevitably presents rendering artifacts in some components, both in {{ .Site.Title }} and the rest of the web. Depending on the issue, we may be able to fix it (search first and then open an issue if need be). However, we tend to ignore these as they often have no direct solution other than hacky workarounds.
 
 ## Sticky `:hover`/`:focus` on iOS
 
@@ -153,13 +153,13 @@ Even in some modern browsers, printing can be quirky.
 
 As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [issue #14868]({{ site.repo }}/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
 
-{% highlight css %}
+```css
 @media print {
   .container {
     width: auto;
   }
 }
-{% endhighlight %}
+```
 
 ## Android Stock Browser
 
@@ -169,7 +169,7 @@ Out of the box, Android 4.1 (and even some newer releases apparently) ship with 
 
 On `<select>` elements, the Android stock browser will not display the side controls if there is a `border-radius` and/or `border` applied. (See [this StackOverflow question](https://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with) for details.) Use the snippet of code below to remove the offending CSS and render the `<select>` as an unstyled element on the Android stock browser. The user agent sniffing avoids interference with Chrome, Safari, and Mozilla browsers.
 
-{% highlight html %}
+```html
 <script>
 $(function () {
   var nua = navigator.userAgent
@@ -179,13 +179,13 @@ $(function () {
   }
 })
 </script>
-{% endhighlight %}
+```
 
 Want to see an example? [Check out this JS Bin demo](http://jsbin.com/OyaqoDO/2).
 
 ## Validators
 
-In order to provide the best possible experience to old and buggy browsers, {{ site.title }} uses [CSS browser hacks](http://browserhacks.com/) in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid. In a couple places, we also use bleeding-edge CSS features that aren't yet fully standardized, but these are used purely for progressive enhancement.
+In order to provide the best possible experience to old and buggy browsers, {{ .Site.Title }} uses [CSS browser hacks](http://browserhacks.com/) in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid. In a couple places, we also use bleeding-edge CSS features that aren't yet fully standardized, but these are used purely for progressive enhancement.
 
 These validation warnings don't matter in practice since the non-hacky portion of our CSS does fully validate and the hacky portions don't interfere with the proper functioning of the non-hacky portion, hence why we deliberately ignore these particular warnings.
 

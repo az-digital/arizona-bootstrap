@@ -35,7 +35,7 @@ supported as shown below.
     </button>
   </div>
 </header>
-{% highlight html %}
+```html
 <header class="bg-red arizona-header" id="header_arizona">
   <div class="container">
     <div class="row">
@@ -55,5 +55,5 @@ supported as shown below.
     </button>
   </div>
 </header>
-{% endhighlight %}
+```
 <div id="navbarOffcanvasDemo"></div>

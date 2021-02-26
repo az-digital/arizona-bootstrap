@@ -14,27 +14,25 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 ### Additive
 
 <div class="bd-example-border-utils">
-{% capture example %}
+{{< example >}}
 <span class="border"></span>
 <span class="border-top"></span>
 <span class="border-right"></span>
 <span class="border-bottom"></span>
 <span class="border-left"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ### Subtractive
 
 <div class="bd-example-border-utils bd-example-border-utils-0">
-{% capture example %}
+{{< example >}}
 <span class="border-0"></span>
 <span class="border-top-0"></span>
 <span class="border-right-0"></span>
 <span class="border-bottom-0"></span>
 <span class="border-left-0"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Border Color
@@ -42,12 +40,11 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 Change the border color using utilities built on our theme colors.
 
 <div class="bd-example-border-utils">
-{% capture example %}
-{% for color in site.data.theme-colors %}
+{{< example >}}
+{% for color in .Site.Data.theme-colors %}
 <span class="border border-{{ color.name }}"></span>{% endfor %}
 <span class="border border-white"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Border-radius
@@ -65,7 +62,7 @@ Add classes to an element to easily round its corners.
   {%- include icons/placeholder.svg width="75" height="75" class="rounded-0" title="Example non-rounded image (overrides rounding applied elsewhere)" -%}
 </div>
 
-{% highlight html %}
+```html
 <img src="..." alt="..." class="rounded">
 <img src="..." alt="..." class="rounded-top">
 <img src="..." alt="..." class="rounded-right">
@@ -74,7 +71,7 @@ Add classes to an element to easily round its corners.
 <img src="..." alt="..." class="rounded-circle">
 <img src="..." alt="..." class="rounded-pill">
 <img src="..." alt="..." class="rounded-0">
-{% endhighlight %}
+```
 
 ## Sizes
 
@@ -85,7 +82,7 @@ Use `.rounded-lg` or `.rounded-sm` for larger or smaller border-radius.
   {%- include icons/placeholder.svg width="75" height="75" class="rounded-lg" title="Example large rounded image" -%}
 </div>
 
-{% highlight html %}
+```html
 <img src="..." alt="..." class="rounded-sm">
 <img src="..." alt="..." class="rounded-lg">
-{% endhighlight %}
+```

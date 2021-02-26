@@ -7,11 +7,11 @@ group: utilities
 
 Easily clear `float`s by adding `.clearfix` **to the parent element**. Can also be used as a mixin.
 
-{% highlight html %}
+```html
 <div class="clearfix">...</div>
-{% endhighlight %}
+```
 
-{% highlight scss %}
+```scss
 // Mixin itself
 @mixin clearfix() {
   &::after {
@@ -25,14 +25,13 @@ Easily clear `float`s by adding `.clearfix` **to the parent element**. Can also 
 .element {
   @include clearfix;
 }
-{% endhighlight %}
+```
 
 The following example shows how the clearfix can be used. Without the clearfix the wrapping div would not span around the buttons which would cause a broken layout.
 
-{% capture example %}
+{{< example >}}
 <div class="bg-info clearfix">
   <button type="button" class="btn btn-blue float-left">Example Button floated left</button>
   <button type="button" class="btn btn-blue float-right">Example Button floated right</button>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}

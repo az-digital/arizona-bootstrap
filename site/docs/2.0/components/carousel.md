@@ -12,11 +12,13 @@ The carousel is a slideshow for cycling through a series of content, built with 
 
 In browsers where the [Page Visibility API](https://www.w3.org/TR/page-visibility/) is supported, the carousel will avoid sliding when the webpage is not visible to the user (such as when the browser tab is inactive, the browser window is minimized, etc.).
 
-{% include callout-info-prefersreducedmotion.md %}
+{{< callout info >}}
+{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< /callout >}}
 
 Please be aware that nested carousels are not supported, and carousels are generally not compliant with accessibility standards.
 
-Lastly, if you're building our JavaScript from source, it [requires `util.js`]({{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/javascript/#util).
+Lastly, if you're building our JavaScript from source, it [requires `util.js`]({{< docsref "/getting-started/javascript/#util" >}}).
 
 ## Example
 
@@ -28,38 +30,37 @@ Carousels don't automatically normalize slide dimensions. As such, you may need 
 
 Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-100` on carousel images to prevent browser default image alignment.
 
-{% capture example %}
+{{< example >}}
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+        {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### With Controls
 
 Adding in the previous and next controls:
 
-{% capture example %}
+{{< example >}}
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -71,14 +72,13 @@ Adding in the previous and next controls:
     <span class="sr-only">Next</span>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### With Indicators
 
 You can also add the indicators to the carousel, alongside the controls, too.
 
-{% capture example %}
+{{< example >}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -87,13 +87,13 @@ You can also add the indicators to the carousel, alongside the controls, too.
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -105,14 +105,13 @@ You can also add the indicators to the carousel, alongside the controls, too.
     <span class="sr-only">Next</span>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### With Captions
 
-Add captions to your slides easily with the `.carousel-caption` element within any `.carousel-item`. They can be easily hidden on smaller viewports, as shown below, with optional [display utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/). We hide them initially with `.d-none` and bring them back on medium-sized devices with `.d-md-block`.
+Add captions to your slides easily with the `.carousel-caption` element within any `.carousel-item`. They can be easily hidden on smaller viewports, as shown below, with optional [display utilities]({{< docsref "/utilities/display/" >}}). We hide them initially with `.d-none` and bring them back on medium-sized devices with `.d-md-block`.
 
-{% capture example %}
+{{< example >}}
 <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -122,21 +121,21 @@ Add captions to your slides easily with the `.carousel-caption` element within a
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" alt="Example image 1" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+        <img class="d-block w-100" alt="Example image 1" src="/docs/{{< param docs_version >}}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="text-sky">First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" alt="Example image 2" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+        <img class="d-block w-100" alt="Example image 2" src="/docs/{{< param docs_version >}}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="text-sky">Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" alt="Example image 3" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/img/img_placeholders/gallery-img-2.jpg">
+        <img class="d-block w-100" alt="Example image 3" src="/docs/{{< param docs_version >}}/assets/img/img_placeholders/gallery-img-2.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="text-sky">Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -153,24 +152,23 @@ Add captions to your slides easily with the `.carousel-caption` element within a
     </a>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Crossfade
 
 Add `.carousel-fade` to your carousel to animate slides with a fade transition instead of a slide.
 
-{% capture example %}
+{{< example >}}
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -182,24 +180,23 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
     <span class="sr-only">Next</span>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Individual `.carousel-item` Interval
 
 Add `data-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
 
-{% capture example %}
+{{< example >}}
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="10000">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
     </div>
     <div class="carousel-item" data-interval="2000">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
     </div>
     <div class="carousel-item">
-      {% include icons/placeholder.svg width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" %}
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -211,8 +208,7 @@ Add `data-interval=""` to a `.carousel-item` to change the amount of time to del
     <span class="sr-only">Next</span>
   </a>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 
 ## Usage
@@ -227,9 +223,9 @@ The `data-ride="carousel"` attribute is used to mark a carousel as animating sta
 
 Call carousel manually with:
 
-{% highlight js %}
+```js
 $('.carousel').carousel()
-{% endhighlight %}
+```
 
 ### Options
 
@@ -287,17 +283,19 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 ### Methods
 
-{% include callout-danger-async-methods.md %}
+{{< callout danger >}}
+{{< partial "callout-danger-async-methods.md" >}}
+{{< /callout >}}
 
 #### `.carousel(options)`
 
 Initializes the carousel with an optional options `object` and starts cycling through items.
 
-{% highlight js %}
+```js
 $('.carousel').carousel({
   interval: 2000
 })
-{% endhighlight %}
+```
 
 #### `.carousel('cycle')`
 
@@ -353,11 +351,11 @@ All carousel events are fired at the carousel itself (i.e. at the `<div class="c
   </tbody>
 </table>
 
-{% highlight js %}
+```js
 $('#myCarousel').on('slide.bs.carousel', function () {
   // do something...
 })
-{% endhighlight %}
+```
 
 ### Change Transition Duration
 

@@ -9,12 +9,12 @@ Set the `visibility` of elements with our visibility utilities. These utility cl
 
 Apply `.visible` or `.invisible` as needed.
 
-{% highlight html %}
+```html
 <div class="visible">...</div>
 <div class="invisible">...</div>
-{% endhighlight %}
+```
 
-{% highlight scss %}
+```scss
 // Class
 .visible {
   visibility: visible !important;
@@ -31,4 +31,4 @@ Apply `.visible` or `.invisible` as needed.
 .element {
   @include invisible(hidden);
 }
-{% endhighlight %}
+```

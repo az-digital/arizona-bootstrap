@@ -24,12 +24,12 @@ manage our font reference links within Arizona Bootstrap.
 
 Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 
-{% highlight html %}
+```html
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
 <link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
-{% endhighlight %}
+```
 
 ## Centrally managed Typekit webfont
 
@@ -68,7 +68,7 @@ The fallback webfont for Arizona Bootstrap is Calibri. Additional fallbacks
 follow Bootstrap 4's use of "native font stack" for optimum text rendering on
 every device and OS. Read more about [native font stacks in this Smashing Magazine article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
-{% highlight css %}
+```css
   $font-family-sans-serif:
   proxima-nova,
   calibri,
@@ -84,7 +84,7 @@ every device and OS. Read more about [native font stacks in this Smashing Magazi
   "Helvetica Neue", Arial, sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-{% endhighlight %}
+```
 
 This `font-family` is applied to the `<body>` and automatically inherited
 globally throughout Bootstrap. To switch the global `font-family`, update
@@ -110,20 +110,20 @@ this unless you are trying to use a specific variant.
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-bold {
 font-family: proxima-nova, sans-serif;
 font-weight: 700;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-bold">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold-italic' data-font-name='Proxima Nova Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -139,20 +139,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-bold-italic {
 font-family: proxima-nova, sans-serif;
 font-weight: 700;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-bold-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova' data-font-name='Proxima Nova Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -168,20 +168,20 @@ font-style: italic;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova {
 font-family: proxima-nova, sans-serif;
 font-weight: 400;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-italic' data-font-name='Proxima Nova Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -197,20 +197,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-italic {
 font-family: proxima-nova, sans-serif;
 font-weight: 400;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -226,20 +226,20 @@ font-style: italic;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-ec-bold-italic {
 font-family: proxima-nova-extra-condensed, sans-serif;
 font-weight: 700;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-ec-bold-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-bold' data-font-name='Proxima Nova Extra Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -255,20 +255,20 @@ font-style: italic;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-ec-bold {
 font-family: proxima-nova-extra-condensed, sans-serif;
 font-weight: 700;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-ec-bold">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -284,20 +284,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-ec-italic {
 font-family: proxima-nova, sans-serif;
 font-weight: 400;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-ec-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec' data-font-name='Proxima Nova Extra Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -313,20 +313,20 @@ font-style: italic;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-ec {
 font-family: proxima-nova-extra-condensed, sans-serif;
 font-weight: 400;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-ec">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-bold' data-font-name='Proxima Nova Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -342,20 +342,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-c-bold {
 font-family: proxima-nova-condensed, sans-serif;
 font-weight: 700;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-c-bold">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-bold-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -371,20 +371,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-c-bold-italic {
 font-family: proxima-nova-condensed, sans-serif;
 font-weight: 700;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-c-bold-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c' data-font-name='Proxima Nova Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
@@ -400,20 +400,20 @@ font-style: italic;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-c {
 font-family: proxima-nova-condensed, sans-serif;
 font-weight: 400;
 font-style: normal;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-c">
   ...
 </span>
-{% endhighlight %}
+```
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-italic' data-font-name='Proxima Nova Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
@@ -428,20 +428,20 @@ font-style: normal;
   </div>
 </div>
 
-{% highlight css %}
+```css
 .proxima-nova-c-italic {
 font-family: proxima-nova, sans-serif;
 font-weight: 400;
 font-style: italic;
 }
 
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <span class="proxima-nova-c-italic">
   ...
 </span>
-{% endhighlight %}
+```
 
 ### **Examples in CSS**
 
@@ -461,7 +461,7 @@ Below are two examples of how you would use the Proxima Nova fonts in your code.
     <strong><em>Hello World!</em></strong>
   </div>
 </div>
-{% highlight css %}
+```css
 .pn {
 font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -474,8 +474,8 @@ bolder.
 .pn strong {
 font-weight:700;
 }
-{% endhighlight %}
-{% highlight html %}
+```
+```html
 <h2 class="pn">Hello World!</h2>
 <div>
   <em class="pn">Hello World!</em>
@@ -486,16 +486,16 @@ font-weight:700;
 <div>
   <strong class="pn"><em>Hello World!</em></strong>
 </div>
-{% endhighlight %}
+```
 **Example 2**
 
-{% highlight css %}
+```css
 p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
-{% endhighlight %}
+```
 
-{% highlight html %}
+```html
 <p>Hello World!</p>
-{% endhighlight %}
+```
 
 <div id="specimen-modal" tabindex="-1" class="modal fade bs-example-modal-lg">
   <div class="modal-dialog modal-lg">

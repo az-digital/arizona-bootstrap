@@ -16,18 +16,17 @@ Rules are directly applied to `<iframe>`, `<embed>`, `<video>`, and `<object>` e
 
 Wrap any embed like an `<iframe>` in a parent element with `.embed-responsive` and an aspect ratio. The `.embed-responsive-item` isn't strictly required, but we encourage it.
 
-{% capture example %}
+{{< example >}}
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Aspect Ratios
 
 Aspect ratios can be customized with modifier classes. By default the following ratio classes are provided:
 
-{% highlight html %}
+```html
 <!-- 21:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-21by9">
   <iframe class="embed-responsive-item" src="..."></iframe>
@@ -47,15 +46,15 @@ Aspect ratios can be customized with modifier classes. By default the following 
 <div class="embed-responsive embed-responsive-1by1">
   <iframe class="embed-responsive-item" src="..."></iframe>
 </div>
-{% endhighlight %}
+```
 
 Within `_variables.scss`, you can change the aspect ratios you want to use. Here's an example of the `$embed-responsive-aspect-ratios` list:
 
-{% highlight scss %}
+```scss
 $embed-responsive-aspect-ratios: (
   (21 9),
   (16 9),
   (4 3),
   (1 1)
 ) !default;
-{% endhighlight %}
+```

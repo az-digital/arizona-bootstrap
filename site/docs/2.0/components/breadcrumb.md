@@ -7,7 +7,7 @@ group: components
 
 ## Example
 
-{% capture example %}
+{{< example >}}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -28,12 +28,11 @@ group: components
     <li class="breadcrumb-item active" aria-current="page">Data</li>
   </ol>
 </nav>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Changing the Separator
 
-Separators are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by changing `$breadcrumb-divider`. The [quote](https://sass-lang.com/documentation/Sass/Script/Functions.html#quote-instance_method) function is needed to generate the quotes around a string, so if you want `>` as separator, you can use this:
+Separators are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by changing `$breadcrumb-divider`. The [quote](https://sass-lang.com/documentation/modules/string#quote) function is needed to generate the quotes around a string, so if you want `>` as separator, you can use this:
 
 ```scss
 $breadcrumb-divider: quote(">");

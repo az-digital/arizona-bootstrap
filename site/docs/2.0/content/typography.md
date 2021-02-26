@@ -8,9 +8,9 @@ toc: true
 
 ## Global Settings
 
-Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/).
+Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]({{< docsref "/utilities/text/" >}}).
 
-- Use a [native font stack]({{ site.baseurl }}/docs/{{ site.docs_version }}/content/reboot/#native-font-stack) that selects the best `font-family` for each OS and device.
+- Use a [native font stack]({{< docsref "/content/reboot/#native-font-stack" >}}) that selects the best `font-family` for each OS and device.
 - For a more inclusive and accessible type scale, we assume the browser default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
 - Use the `$font-family-base`, `$font-size-base`, and `$line-height-base` attributes as our typographic base applied to the `<body>`.
 - Set the global link color via `$link-color` and apply link underlines only on `:hover`.
@@ -69,38 +69,36 @@ All HTML headings, `<h1>` through `<h6>`, are available.
   </tbody>
 </table>
 
-{% highlight html %}
+```html
 <h1>Page Title</h1>
 <h2>Section Heading</h2>
 <h3>Subsection Heading</h3>
 <h4>Subsection Heading</h4>
 <h5>Subsection Heading</h5>
 <h6>Subsection Heading</h6>
-{% endhighlight %}
+```
 
 `.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element. Combine these classes with margin classes to modify their margins (e.g., `m-0` to remove margins).
 
-{% capture example %}
+{{< example >}}
 <p class="h1">Heading 1 Style</p>
 <p class="h2">Heading 2 Style</p>
 <p class="h3">Heading 3 Style</p>
 <p class="h4">Heading 4 Style</p>
 <p class="h5">Heading 5 Style</p>
 <p class="h6">Heading 6 Style</p>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Customizing Headings
 
-Use any of the available [utility classes]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text) to customize your heading text by changing its color, size, style, transformation, etc.
+Use any of the available [utility classes]({{< docsref "/utilities/text" >}}) to customize your heading text by changing its color, size, style, transformation, etc.
 
-{% capture example %}
+{{< example >}}
 <h3>
   Fancy display heading
   <small class="text-muted">With faded secondary text</small>
 </h3>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Display Headings
 
@@ -125,29 +123,28 @@ Traditional heading elements are designed to work best in the meat of your page 
   </table>
 </div>
 
-{% highlight html %}
+```html
 <h1 class="display-1">Display 1</h1>
 <h1 class="display-2">Display 2</h1>
 <h1 class="display-3">Display 3</h1>
 <h1 class="display-4">Display 4</h1>
-{% endhighlight %}
+```
 
 ## Lead
 
 Make a paragraph stand out by adding `.lead`.
 
-{% capture example %}
+{{< example >}}
 <p class="lead">
   Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
 </p>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Inline Text Elements
 
 Styling for common inline HTML5 elements.
 
-{% capture example %}
+{{< example >}}
 <p>You can use the mark tag to <mark>highlight</mark> text.</p>
 <p><del>This line of text is meant to be treated as deleted text.</del></p>
 <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
@@ -156,8 +153,7 @@ Styling for common inline HTML5 elements.
 <p><small>This line of text is meant to be treated as fine print.</small></p>
 <p><strong>This line rendered as bold text.</strong></p>
 <p><em>This line rendered as italicized text.</em></p>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 `.mark` and `.small` classes are also available to apply the same styles as `<mark>` and `<small>` while avoiding any unwanted semantic implications that the tags would bring.
 
@@ -167,17 +163,16 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 Default links include a red text color and an underline. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling. 
 
-{% capture example %}
+{{< example >}}
 <a href="#">Default Link</a>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 <!-- Use the `.external-links` class in combination with the `.ua-brand-icons` class on the `<html>` tag to automatically add external link styling to all links in the document that travel outside the current site.
 
 <div class="bd-example external-links ua-brand-icons">
   <a href="#">External Link</a>
 </div>
-{% highlight html %}
+```html
 <html class="external-links ua-brand-icons">
   <h2><a href="https://uadigital.arizona.edu/ua-bootstrap/" target="_blank">H2 Link</a> with text</h2>
   <ul class="triangle">
@@ -186,11 +181,11 @@ Default links include a red text color and an underline. You can change a link's
   </ul>
   <div class="btn btn-default" target="_blank">External Link Button</div>
 </html>
-{% endhighlight %} -->
+``` -->
 
 ## Text Utilities
 
-Change text alignment, transform, style, weight, and color with our [text utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/text/) and [color utilities]({{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/).
+Change text alignment, transform, style, weight, and color with our [text utilities]({{< docsref "/utilities/text/" >}}) and [color utilities]({{< docsref "/utilities/colors/" >}}).
 
 ## Abbreviations
 
@@ -198,62 +193,56 @@ Stylized implementation of HTML's `<abbr>` element for abbreviations and acronym
 
 Add `.initialism` to an abbreviation for a slightly smaller font-size.
 
-{% capture example %}
+{{< example >}}
 <p><abbr title="attribute">attr</abbr></p>
 <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Blockquotes
 
 For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.
 
-{% capture example %}
+{{< example >}}
 <blockquote class="blockquote">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Naming a Source
 
 Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the name of the source work in `<cite>`.
 
-{% capture example %}
+{{< example >}}
 <blockquote class="blockquote">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Alignment
 
 Use text utilities as needed to change the alignment of your blockquote. You can also add the `.blockquote-reverse` in combination with `.text-right` to right-align your blockquote and shift its border to the right.
 
-{% capture example %}
+{{< example >}}
 <blockquote class="blockquote text-center">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <blockquote class="blockquote text-right">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
-{% capture example %}
+{{< example >}}
 <blockquote class="blockquote blockquote-reverse text-right">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Lists
 
@@ -261,7 +250,7 @@ Use text utilities as needed to change the alignment of your blockquote. You can
 
 Ordered lists are good for content that requires sequential or hierarchical ordering.
 
-{% capture example %}
+{{< example >}}
 <ol>
   <li>First, Lorem ipsum dolor sit amet</li>
   <li>Second, Consectetur adipiscing elit</li>
@@ -269,14 +258,13 @@ Ordered lists are good for content that requires sequential or hierarchical orde
   <li>Fourth, Facilisis in pretium nisl aliquet</li>
   <li>Last, Nulla volutpat aliquam velit</li>
 </ol>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Unordered
 
 Unordered lists are good for generic content that doesn't have any sort of sequantial order.
 
-{% capture example %}
+{{< example >}}
 <ul>
   <li>Lorem ipsum dolor sit amet</li>
   <li>Consectetur adipiscing elit</li>
@@ -284,14 +272,13 @@ Unordered lists are good for generic content that doesn't have any sort of sequa
   <li>Facilisis in pretium nisl aliquet</li>
   <li>Nulla volutpat aliquam velit</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Triangles
 
 Add the `.ul-triangles` class to your **unordered list** to replace the default bullets with triangles. Triangle list items function the same as an unordered list.
 
-{% capture example %}
+{{< example >}}
 <ul class="ul-triangles">
   <li>Lorem ipsum dolor sit amet</li>
   <li>Consectetur adipiscing elit</li>
@@ -299,15 +286,14 @@ Add the `.ul-triangles` class to your **unordered list** to replace the default 
   <li>Facilisis in pretium nisl aliquet</li>
   <li>Nulla volutpat aliquam velit</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 
 ### Unstyled
 
 Remove the default `list-style` and left margin on list items (immediate children only). **This only applies to immediate children list items**, meaning you will need to add the class for any nested lists as well.
 
-{% capture example %}
+{{< example >}}
 <ul class="list-unstyled">
   <li>Lorem ipsum dolor sit amet</li>
   <li>Consectetur adipiscing elit</li>
@@ -325,27 +311,25 @@ Remove the default `list-style` and left margin on list items (immediate childre
   <li>Aenean sit amet erat nunc</li>
   <li>Eget porttitor lorem</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Inline
 
 Remove a list's bullets and apply some light `margin` with a combination of two classes, `.list-inline` and `.list-inline-item`.
 
-{% capture example %}
+{{< example >}}
 <ul class="list-inline">
   <li class="list-inline-item">Lorem ipsum</li>
   <li class="list-inline-item">Phasellus iaculis</li>
   <li class="list-inline-item">Nulla volutpat</li>
 </ul>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Description List Alignment
 
 Align terms and descriptions horizontally by using our grid system's predefined classes (or semantic mixins). For longer terms, you can optionally add a `.text-truncate` class to truncate the text with an ellipsis.
 
-{% capture example %}
+{{< example >}}
 <dl class="row">
   <dt class="col-sm-3">Description lists</dt>
   <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
@@ -370,8 +354,7 @@ Align terms and descriptions horizontally by using our grid system's predefined 
     </dl>
   </dd>
 </dl>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Responsive Font Sizes
 
