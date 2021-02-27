@@ -36,16 +36,18 @@ The Arizona Digital team utilizes a variety of Slack channels ranging from gener
       <th scope="col">Purpose</th>
     </tr>
   </thead>
-  <tbody>{% for slack in .Site.Data.slack-channels %}
-    <tr{% if slack.channel == "#friday-meetings" %} class="table-success"{% endif %}>
-      <td>{{ slack.channel }}</td>
+  {{< slackchannels.inline >}}
+  <tbody>{{ range .Site.Data.slack-channels }}
+    <tr{{if eq .channel "#friday-meetings" }} class="table-success"{{ end }}>
+      <td>{{ .channel }}</td>
       <td>
-        <ul>{% for topic in slack.description %}
-          <li>{{ topic.purpose }}</li>{% endfor %}
+        <ul>{{ range .description }}
+          <li>{{ .purpose }}</li>{{- end }}
         </ul>
       </td>
-    </tr>{% endfor %}
+    </tr>{{- end }}
   </tbody>
+  {{< /slackchannels.inline >}}
 </table>
 
 ## Review or Contribute Code
@@ -59,12 +61,14 @@ Arizona Digital currently uses utilizes GitHub to host and review code contained
       <th scope="col">Contents</th>
     </tr>
   </thead>
-  <tbody>{% for repo in .Site.Data.sourcecode-repos %}
+  {{< sourcerepos.inline >}}
+  <tbody>{{ range .Site.Data.sourcecode-repos }}
     <tr>
-      <td><a href="{{ repo.link }}" target="_blank">{{ repo.name }}</a></td>
-      <td>{{ repo.description }}</td>
-    </tr>{% endfor %}
+      <td><a href="{{ .link }}" target="_blank">{{ .name }}</a></td>
+      <td>{{ .description }}</td>
+    </tr>{{ endfor }}
   </tbody>
+  {{< /sourcerepos.inline >}}
 </table>
 
 ## Submit or Work on a Ticket

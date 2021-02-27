@@ -17,15 +17,20 @@ When using these colors, it is important to maintain sufficient color contrast b
 ### Brand
 
 {{< example >}}
-{% for color in .Site.Data.colors %}
-<p class="text-{{ color.name }}{% if color.name == "white" or color.name == "cool-gray" or color.name == "warm-gray" %} bg-dark{% endif %}">.text-{{ color.name }}</p>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<p class="text-{{ .name }}{{ if or (eq .name == "white") (eq .name "cool-gray") (eq .name "warm-gray") }} bg-dark{{ end }}">.text-{{ .name }}</p>{{ end }}
+{< /colors.inline >}}
 {{< /example >}}
 
 ### Contextual (Theme)
 
 {{< example >}}
-{% for color in .Site.Data.theme-colors %}
-<p class="text-{{ color.name }}{% if color.name == "light" %} bg-dark{% endif %}">.text-{{ color.name }}</p>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<p class="text-{{ .name }}{{ if eq .name "light" }} bg-dark{{ end }}">.text-{{ .name }}</p>
+{{- end -}}
+{{< /colors.inline >}}
 <p class="text-body">.text-body</p>
 <p class="text-muted">.text-muted</p>
 <p class="text-black-50">.text-black-50</p>
@@ -35,8 +40,10 @@ When using these colors, it is important to maintain sufficient color contrast b
 Contextual text classes also work well on anchors with the provided hover and focus states. **Note that the `.text-white` and `.text-muted` class has no additional link styling beyond underline.**
 
 {{< example >}}
-{% for color in .Site.Data.theme-colors %}
-<p><a href="#" class="text-{{ color.name }}{% if color.name == "light" %} bg-dark{% endif %}">{{ .name | title }} link</a></p>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<p><a href="#" class="text-{{ .name }}{{ if eq .name "light" }} bg-dark{{ end }}">{{ .name | title }} link</a></p>{{ end }}
+{{< /colors.inline >}}
 <p><a href="#" class="text-muted">Muted link</a></p>
 <p><a href="#" class="text-white bg-dark">White link</a></p>
 {{< /example >}}
@@ -49,31 +56,43 @@ Similar to the contextual text color classes, easily set the background of an el
 ### Brand
 
 {{< example >}}
-{% for color in .Site.Data.colors %}
-<div class="p-3 mb-2 bg-{{ color.name }}">.bg-{{ color.name }}</div>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="p-3 mb-2 bg-{{ .name }}">.bg-{{ .name }}</div>
+{{ end }}
+{{< /colors.inline >}}
 {{< /example >}}
 
 ### Contextual (Theme)
 
 {{< example >}}
-{% for color in .Site.Data.theme-colors %}
-<div class="p-3 mb-2 bg-{{ color.name }}">.bg-{{ color.name }}</div>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<div class="p-3 mb-2 bg-{{ .name }}">.bg-{{ .name }}</div>
+{{ end }}
+{{< /colors.inline >}}
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 {{< /example >}}
 
 ### Grayscale
 
 {{< example >}}
-{% for color in .Site.Data.grays %}
-<div class="p-3 mb-2 bg-gray-{{ color.name }}">.bg-gray-{{ color.name }}</div>{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data.grays) }}
+<div class="p-3 mb-2 bg-gray-{{ .name }}">.bg-gray-{{ .name }}</div>
+{{ end }}
+{{< /colors.inline >}}
 {{< /example >}}
 
 ## Background Gradient
 
 When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg-gradient-` utility classes. [Learn about our Sass options]({{< docsref "/getting-started/theming/#sass-options" >}}) to enable these classes and more.
 
-{% for color in .Site.Data.theme-colors %}
-- `.bg-gradient-{{ color.name }}`{% endfor %}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+- `.bg-gradient-{{ .name }}`
+{{ end }}
+{{< /colors.inline >}}
 
 {{< callout info >}}
 #### Dealing with Specificity

@@ -20,9 +20,14 @@ Apply `display` utilities to create a flexbox container and transform **direct c
 
 Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.d{{ bp.abbr }}-flex`
-- `.d{{ bp.abbr }}-inline-flex`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.d{{ .abbr }}-flex`
+- `.d{{ .abbr }}-inline-flex`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Direction
 
@@ -60,11 +65,16 @@ Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`  to st
 
 Responsive variations also exist for `flex-direction`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.flex{{ bp.abbr }}-row`
-- `.flex{{ bp.abbr }}-row-reverse`
-- `.flex{{ bp.abbr }}-column`
-- `.flex{{ bp.abbr }}-column-reverse`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.flex{{ .abbr }}-row`
+- `.flex{{ .abbr }}-row-reverse`
+- `.flex{{ .abbr }}-column`
+- `.flex{{ .abbr }}-column-reverse`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Justify Content
 
@@ -108,12 +118,17 @@ Use `justify-content` utilities on flexbox containers to change the alignment of
 
 Responsive variations also exist for `justify-content`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.justify-content{{ bp.abbr }}-start`
-- `.justify-content{{ bp.abbr }}-end`
-- `.justify-content{{ bp.abbr }}-center`
-- `.justify-content{{ bp.abbr }}-between`
-- `.justify-content{{ bp.abbr }}-around`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.justify-content{{ .abbr }}-start`
+- `.justify-content{{ .abbr }}-end`
+- `.justify-content{{ .abbr }}-center`
+- `.justify-content{{ .abbr }}-between`
+- `.justify-content{{ .abbr }}-around`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Align Items
 
@@ -157,12 +172,17 @@ Use `align-items` utilities on flexbox containers to change the alignment of fle
 
 Responsive variations also exist for `align-items`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.align-items{{ bp.abbr }}-start`
-- `.align-items{{ bp.abbr }}-end`
-- `.align-items{{ bp.abbr }}-center`
-- `.align-items{{ bp.abbr }}-baseline`
-- `.align-items{{ bp.abbr }}-stretch`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.align-items{{ .abbr }}-start`
+- `.align-items{{ .abbr }}-end`
+- `.align-items{{ .abbr }}-center`
+- `.align-items{{ .abbr }}-baseline`
+- `.align-items{{ .abbr }}-stretch`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Align Self
 
@@ -206,12 +226,17 @@ Use `align-self` utilities on flexbox items to individually change their alignme
 
 Responsive variations also exist for `align-self`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.align-self{{ bp.abbr }}-start`
-- `.align-self{{ bp.abbr }}-end`
-- `.align-self{{ bp.abbr }}-center`
-- `.align-self{{ bp.abbr }}-baseline`
-- `.align-self{{ bp.abbr }}-stretch`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.align-self{{ .abbr }}-start`
+- `.align-self{{ .abbr }}-end`
+- `.align-self{{ .abbr }}-center`
+- `.align-self{{ .abbr }}-baseline`
+- `.align-self{{ .abbr }}-stretch`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Fill
 
@@ -227,8 +252,13 @@ Use the `.flex-fill` class on a series of sibling elements to force them into wi
 
 Responsive variations also exist for `flex-fill`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.flex{{ bp.abbr }}-fill`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.flex{{ .abbr }}-fill`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Grow and Shrink
 
@@ -242,7 +272,7 @@ Use `.flex-grow-*` utilities to toggle a flex item's ability to grow to fill ava
 </div>
 {{< /example >}}
 
-Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-1` is forced to wrap it's contents to a new line, "shrinking" to allow more space for the previous flex item with `.w-100`.
+Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-1` is forced to wrap its contents to a new line, "shrinking" to allow more space for the previous flex item with `.w-100`.
 
 {{< example >}}
 <div class="d-flex bd-highlight">
@@ -253,9 +283,14 @@ Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if nece
 
 Responsive variations also exist for `flex-grow` and `flex-shrink`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.flex{{ bp.abbr }}-{grow|shrink}-0`
-- `.flex{{ bp.abbr }}-{grow|shrink}-1`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.flex{{ .abbr }}-{grow|shrink}-0`
+- `.flex{{ .abbr }}-{grow|shrink}-1`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Auto Margins
 
@@ -376,10 +411,15 @@ Change how flex items wrap in a flex container. Choose from no wrapping at all (
 
 Responsive variations also exist for `flex-wrap`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.flex{{ bp.abbr }}-nowrap`
-- `.flex{{ bp.abbr }}-wrap`
-- `.flex{{ bp.abbr }}-wrap-reverse`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.flex{{ .abbr }}-nowrap`
+- `.flex{{ .abbr }}-wrap`
+- `.flex{{ .abbr }}-wrap-reverse`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
 
 ## Order
 
@@ -395,8 +435,16 @@ Change the _visual_ order of specific flex items with a handful of `order` utili
 
 Responsive variations also exist for `order`.
 
-{% for bp in .Site.Data.breakpoints %}{% for i in (0..12) %}
-- `.order{{ bp.abbr }}-{{ i }}`{% endfor %}{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $bp := $.Site.Data.breakpoints -}}
+{{- range (seq 0 12) }}
+- `.order{{ $bp.abbr }}-{{ . }}`
+{{- end -}}
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
+
 
 ## Align Content
 
@@ -552,9 +600,14 @@ Use `align-content` utilities on flexbox containers to align flex items *togethe
 
 Responsive variations also exist for `align-content`.
 
-{% for bp in .Site.Data.breakpoints %}
-- `.align-content{{ bp.abbr }}-start`
-- `.align-content{{ bp.abbr }}-end`
-- `.align-content{{ bp.abbr }}-center`
-- `.align-content{{ bp.abbr }}-around`
-- `.align-content{{ bp.abbr }}-stretch`{% endfor %}
+{{< markdown >}}
+{{< flex.inline >}}
+{{- range $.Site.Data.breakpoints }}
+- `.align-content{{ .abbr }}-start`
+- `.align-content{{ .abbr }}-end`
+- `.align-content{{ .abbr }}-center`
+- `.align-content{{ .abbr }}-around`
+- `.align-content{{ .abbr }}-stretch`
+{{- end -}}
+{{< /flex.inline >}}
+{{< /markdown >}}
