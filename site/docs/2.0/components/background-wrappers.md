@@ -9,7 +9,7 @@ redirect_from:
 toc: true
 ---
 
-Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{< docsref "/utilities/colors/#background-color" >}}) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility. {{ .Site.Title }} provides a [color contrast tool]({{< docsref "/getting-started/color-contrast" >}}) that shows you which Branded color combinations are accessible.
+Background wrappers span the full-width of the screen and help to break up content and add variety to your page layout. You can use any [background color utility class]({{< docsref "/utilities/colors/#background-color" >}}) (e.g., `.bg-blue`) in combination with a background pattern option (e.g., `bg-triangles-top-left`) on your background wrapper. Ensure you maintain proper color contrast and accessibility. {{< ourname >}} provides a [color contrast tool]({{< docsref "/getting-started/color-contrast" >}}) that shows you which Branded color combinations are accessible.
 
 ```html
 <div class="container">

@@ -11,15 +11,15 @@ toc: true
 
 ## Overview
 
-Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{ .Site.Title }}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{ .Site.Title }}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{ .Site.Title }}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{< docsref "/backwards-compatibility/#removed-utility-classes" >}}) and [Removed Components]({{< docsref "/backwards-compatibility/#removed-components" >}}) sections.
+Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{< ourname >}}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{< ourname >}}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{< ourname >}}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{< docsref "/backwards-compatibility/#removed-utility-classes" >}}) and [Removed Components]({{< docsref "/backwards-compatibility/#removed-components" >}}) sections.
 
 ## Backwards Compatible Components
 
-UA Bootstrap utilized components that are no longer supported/maintained in {{ .Site.Title }}, but can be replicated by utilizing a combination of available classes. They have been included with backwards compatibility in Arizona Bootstrap to avoid breaking changes.
+UA Bootstrap utilized components that are no longer supported/maintained in {{< ourname >}}, but can be replicated by utilizing a combination of available classes. They have been included with backwards compatibility in Arizona Bootstrap to avoid breaking changes.
 
 ### Background Wrappers
 
-In UA Bootstrap, the following background wrapper patterns were marked as deprecated. They are also deprecated in {{ .Site.Title }} and have been removed from the docs. Background patterns for triangles top-left, top-right, centered, and tri-lines are still available.
+In UA Bootstrap, the following background wrapper patterns were marked as deprecated. They are also deprecated in {{< ourname >}} and have been removed from the docs. Background patterns for triangles top-left, top-right, centered, and tri-lines are still available.
 
 <div class="bd-example">
   <div class="background-wrapper bg-triangles-fade bg-silver-tint mb-5">
@@ -48,11 +48,11 @@ In UA Bootstrap, the following background wrapper patterns were marked as deprec
 
 ### Buttons
 
-In {{ .Site.Title }}, Button classes have changed as follows:
+In {{< ourname >}}, Button classes have changed as follows:
 
 #### Default, Primary, and Secondary
 
-The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have been deprecated in {{ .Site.Title }}. Similarly, `.btn-secondary` (which is available in base Bootstrap 4) has been removed from {{ .Site.Title }}. These classes have been deprecated in favor of more intuitive button classes (e.g., `.btn-red` and `.btn-blue`). However, `.btn-default` and `.btn-primary` are both backwards compatible, and all three classes can be extended using the [available button color classes]({{< docsref "/components/buttons/#examples" >}}).
+The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have been deprecated in {{< ourname >}}. Similarly, `.btn-secondary` (which is available in base Bootstrap 4) has been removed from {{< ourname >}}. These classes have been deprecated in favor of more intuitive button classes (e.g., `.btn-red` and `.btn-blue`). However, `.btn-default` and `.btn-primary` are both backwards compatible, and all three classes can be extended using the [available button color classes]({{< docsref "/components/buttons/#examples" >}}).
 
 <div class="bd-example mb-3">
   <button type="button" class="btn btn-default">Default Button</button>
@@ -75,7 +75,7 @@ The class `.btn-hollow-reverse` is included with backwards compatibility and can
 
 ### Cards
 
-In {{ .Site.Title }}, color-specific cards can be replicated by using the [background color utility classes]({{< docsref "/utilities/colors/#background-color" >}}) and [border utility classes]({{< docsref "/utilities/borders/" >}}).
+In {{< ourname >}}, color-specific cards can be replicated by using the [background color utility classes]({{< docsref "/utilities/colors/#background-color" >}}) and [border utility classes]({{< docsref "/utilities/borders/" >}}).
 
 <div class="bd-example">
   <div class="row">
@@ -157,7 +157,7 @@ In {{ .Site.Title }}, color-specific cards can be replicated by using the [backg
 
 ### Labels
 
-In {{ .Site.Title }}, labels have been replaced with the [Badge]({{< docsref "/components/badge" >}}) component. Labels can be replicated by extending the `.badge` styles.
+In {{< ourname >}}, labels have been replaced with the [Badge]({{< docsref "/components/badge" >}}) component. Labels can be replicated by extending the `.badge` styles.
 
 <div class="bd-example">
   <span class="label label-default">Default</span>
@@ -171,7 +171,7 @@ In {{ .Site.Title }}, labels have been replaced with the [Badge]({{< docsref "/c
 
 ### Panels
 
-Panels have been extended using a combination of the `.card` class (and its child classes) and the `.bg-light` class. "Expanding" or "collapsible" panels, however, are still available as an {{ .Site.Title }} component: [Collapse]({{< docsref "/components/collapse" >}}).
+Panels have been extended using a combination of the `.card` class (and its child classes) and the `.bg-light` class. "Expanding" or "collapsible" panels, however, are still available as an {{< ourname >}} component: [Collapse]({{< docsref "/components/collapse" >}}).
 
 <div class="bd-example">
   <div class="panel panel-default mb-2">
@@ -179,7 +179,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
       <span class="h3 panel-title">Panel Default</span>
     </div>
     <div class="panel-body">
-      <p>This is an example of how the backwards-compatible Panel looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+      <p>This is an example of how the backwards-compatible Panel looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
     </div>
   </div>
   <div class="panel panel-primary mb-2">
@@ -187,7 +187,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
       <span class="h3 panel-title">Panel Primary</span>
     </div>
     <div class="panel-body">
-      <p>This is an example of how the backwards-compatible Panel looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+      <p>This is an example of how the backwards-compatible Panel looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
     </div>
   </div>
   {{- range (index $.Site.Data "theme-colors") }}
@@ -197,7 +197,7 @@ Panels have been extended using a combination of the `.card` class (and its chil
       <span class="h3 panel-title">Panel {{ .name | title }}</span>
     </div>
     <div class="panel-body">
-      <p>This is an example of how the backwards-compatible Panel looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+      <p>This is an example of how the backwards-compatible Panel looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
     </div>
   </div>
   {{ end }}
@@ -215,7 +215,7 @@ Thumbnails have been extended using a combination of the `.card` class and its c
       <div class="thumbnail">
         <div class="caption">
           <p class="h3">Thumbnail Title</p>
-          <p>This is an example of how the backwards-compatible Thumbnail looks in {{ .Site.Title }}. This component should not be used, but it included here for the sake of verifying its backwards-compatibility.</p>
+          <p>This is an example of how the backwards-compatible Thumbnail looks in {{< ourname >}}. This component should not be used, but it included here for the sake of verifying its backwards-compatibility.</p>
           </div>
       </div>
     </div>
@@ -228,20 +228,20 @@ Wells have been extended using a combination of the `.card` class and the `.bg-l
 
 <div class="bd-example">
   <div class="well">
-    <p class="mb-0">This is an example of how the backwards-compatible <strong>well</strong> looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+    <p class="mb-0">This is an example of how the backwards-compatible <strong>well</strong> looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
   <div class="well well-hollow my-3">
-    <p class="mb-0">This is an example of how the backwards-compatible <strong>hollow well</strong> looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+    <p class="mb-0">This is an example of how the backwards-compatible <strong>hollow well</strong> looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
   <div class="well well-sm">
-    <p class="mb-0">This is an example of how the backwards-compatible <strong>small well</strong> looks in {{ .Site.Title }}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
+    <p class="mb-0">This is an example of how the backwards-compatible <strong>small well</strong> looks in {{< ourname >}}. This component should not be used, but is included here for the sake of verifying its backwards-compatibility.</p>
   </div>
 </div>
 
 
 ## Backwards Compatible Utilities
 
-UA Bootstrap contained utility classes that are no longer supported/maintained in {{ .Site.Title }}, but can be replicated by utilizing a combination of classes. They have been included with backwards compatibility in Arizona Bootstrap to avoid breaking changes.
+UA Bootstrap contained utility classes that are no longer supported/maintained in {{< ourname >}}, but can be replicated by utilizing a combination of classes. They have been included with backwards compatibility in Arizona Bootstrap to avoid breaking changes.
 
 ### Background Color
 
@@ -251,7 +251,7 @@ UA Bootstrap contained utility classes that are no longer supported/maintained i
 
 ### Column Offset
 
-The syntax for column offsets has changed in {{ .Site.Title }}. Previously, you would offset columns using `.col-md-offset-2`. In {{ .Site.Title }}, you use `.offset-md-2`. Refer to [Offsetting Columns]({{< docsref "/layout/grid/#offsetting-columns" >}}) for further details.
+The syntax for column offsets has changed in {{< ourname >}}. Previously, you would offset columns using `.col-md-offset-2`. In {{< ourname >}}, you use `.offset-md-2`. Refer to [Offsetting Columns]({{< docsref "/layout/grid/#offsetting-columns" >}}) for further details.
 
 <div class="bd-example">
   <div class="container">
@@ -282,7 +282,7 @@ The syntax for pulling content to the left/right has changed to `.float-left` an
 
 ### Input Group Button
 
-In {{ .Site.Title }}, what was previously `.input-group-btn` has been replaced by `.input-group-append`.
+In {{< ourname >}}, what was previously `.input-group-btn` has been replaced by `.input-group-append`.
 
 <div class="bd-example">
   <div class="input-group">
@@ -296,7 +296,7 @@ In {{ .Site.Title }}, what was previously `.input-group-btn` has been replaced b
 
 ### Margin Vertical Align
 
-The margin align classes have been replaced in {{ .Site.Title }} with the [vertical align utility classes]({{< docsref "/utilities/vertical-align" >}}).
+The margin align classes have been replaced in {{< ourname >}} with the [vertical align utility classes]({{< docsref "/utilities/vertical-align" >}}).
 
 <div class="bd-example mb-4">
   <p class="bg-light">
@@ -391,7 +391,7 @@ The `.divider` and `.nav-divider` classes have been replaced by the `.dropdown-d
 
 ### Page Header
 
-The `.page-header` class available in UA Bootstrap has been removed in {{ .Site.Title }}. You can replicate its effect by combining headers (e.g., h1, h2, h3, etc.) with [spacing utility classes]({{< docsref "/utilities/spacing/" >}}).
+The `.page-header` class available in UA Bootstrap has been removed in {{< ourname >}}. You can replicate its effect by combining headers (e.g., h1, h2, h3, etc.) with [spacing utility classes]({{< docsref "/utilities/spacing/" >}}).
 
 <div class="bd-example">
   <p class="page-header"><span class="h1">Page Header</span></p>
@@ -407,7 +407,7 @@ You can replicate these effect by using the available [font weight and italic]({
 
 ### Responsive Text Alignment *-not Classes
 
-UA Bootstrap included custom classes that utilized the *-not formatting. These classes are not included in {{ .Site.Title }}, but are backwards compatible and can be extended using a combination of the available [text alignment classes]({{< docsref "/utilities/text/#text-alignment" >}}), which are also responsive using the usual grid breakpoints.
+UA Bootstrap included custom classes that utilized the *-not formatting. These classes are not included in {{< ourname >}}, but are backwards compatible and can be extended using a combination of the available [text alignment classes]({{< docsref "/utilities/text/#text-alignment" >}}), which are also responsive using the usual grid breakpoints.
 
 <div class="bd-example">
   <p class="p-3 mb-0 bg-gray-100 text-left-not-xs">.text-left-not-xs</p>
@@ -441,7 +441,7 @@ Text size classes have been extended by combining header classes (e.g., `.h1`) w
 
 ### Triangle List
 
-In UA Bootstrap, the `.triangle` class was available for unordered lists. This class has been renamed `.ul-triangles` in {{ .Site.Title }}. This rename is to match the naming scheme that the rest of {{ .Site.Title }}'s components follow, and to make it more intuitive that the class can only be used on unordered lists.
+In UA Bootstrap, the `.triangle` class was available for unordered lists. This class has been renamed `.ul-triangles` in {{< ourname >}}. This rename is to match the naming scheme that the rest of {{< ourname >}}'s components follow, and to make it more intuitive that the class can only be used on unordered lists.
 
 <div class="bd-example">
   <ul class="triangle">
@@ -451,11 +451,11 @@ In UA Bootstrap, the `.triangle` class was available for unordered lists. This c
 
 ## Removed Utility Classes
 
-Components and utility classes that were marked as deprecated in UA Bootstrap have been completely removed in {{ .Site.Title }}.
+Components and utility classes that were marked as deprecated in UA Bootstrap have been completely removed in {{< ourname >}}.
 
 ### Column Push/Pull
 
-The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{< docsref "/layout/grid/#order-classes" >}}). These classes are not backwards compatible and will need to be updated to use {{ .Site.Title }}'s classes.
+The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{< docsref "/layout/grid/#order-classes" >}}). These classes are not backwards compatible and will need to be updated to use {{< ourname >}}'s classes.
 
 ### Mailto
 
@@ -463,19 +463,19 @@ The `.mailto` class, which is placed directly on the `<a>` link tag, has been de
 
 ### No Line Height
 
-The `.no-line-height` class has been completely removed and does not have an equivalent in {{ .Site.Title }}.
+The `.no-line-height` class has been completely removed and does not have an equivalent in {{< ourname >}}.
 
 ### Row and Column Buffers
 
-Row and column buffers were deprecated in UA Bootstrap and have been completely removed in {{ .Site.Title }}. For the same effect, please use the [spacing utility classes]({{< docsref "/utilities/spacing" >}}).
+Row and column buffers were deprecated in UA Bootstrap and have been completely removed in {{< ourname >}}. For the same effect, please use the [spacing utility classes]({{< docsref "/utilities/spacing" >}}).
 
 ### Theme Colors
 
-The decision was made to remove all `.*-primary` and `.*-secondary` classes from {{ .Site.Title }} in favor of encouraging the use of more intuitive utility classes, and to avoid backwards compatibility issues with UA Bootstrap.
+The decision was made to remove all `.*-primary` and `.*-secondary` classes from {{< ourname >}} in favor of encouraging the use of more intuitive utility classes, and to avoid backwards compatibility issues with UA Bootstrap.
 
 ### Tooltip Arrow
 
-In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{ .Site.Title }}, the class `.arrow` is used.
+In UA Bootstrap, tooltip markup used the class `.tooltip-arrow` for its arrow. In {{< ourname >}}, the class `.arrow` is used.
 
 ## Removed Components
 
@@ -485,6 +485,6 @@ The `.navbar-inverse` class has been completely removed.
 
 ## Removed JavaScript
 
-Components listed in the JavaScript section of UA Bootstrap (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in {{ .Site.Title }}. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{ .Site.Title }} uses. Some examples include: `remote`, `.in` vs. `.show`, and `viewport` vs. `boundary`. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
+Components listed in the JavaScript section of UA Bootstrap (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in {{< ourname >}}. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Some examples include: `remote`, `.in` vs. `.show`, and `viewport` vs. `boundary`. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
 
 

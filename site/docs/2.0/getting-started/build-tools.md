@@ -84,9 +84,9 @@ Twitter Bootstrap provides a configuration file for called `_config.yml` for the
 - `AZ_SITE_HOST` Name or IP address at which to serve the documentation site
 - `AZ_VERSION` Full current Arizona Bootstrap version number
 
-{{ .Site.Title }} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
+{{< ourname >}} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
 
-To use our build system and run our documentation locally, you'll need a copy of {{ .Site.Title }}'s source files and Node. Follow these steps and you should be ready to rock:
+To use our build system and run our documentation locally, you'll need a copy of {{< ourname >}}'s source files and Node. Follow these steps and you should be ready to rock:
 
 1. [Download and install Node.js](https://nodejs.org/en/download/), which we use to manage our dependencies.
 2. Navigate to the root `/arizona-bootstrap` directory and run `npm install` to install our local dependencies listed in [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json).
@@ -112,7 +112,7 @@ Run `npm run` to see all the npm scripts.
 
 ## Autoprefixer
 
-{{ .Site.Title }} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
+{{< ourname >}} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
 
 We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [.browserslistrc]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc) for details.
 

@@ -7,7 +7,7 @@ group: utilities
 
 Add `.stretched-link` to a link to make its [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) clickable via a `::after` pseudo element. In most cases, this means that an element with `position: relative;` that contains a link with the `.stretched-link` class is clickable.
 
-Cards have `position: relative` by default in {{ .Site.Title }}, so in this case you can safely add the `.stretched-link` class to a link in the card without any other HTML changes.
+Cards have `position: relative` by default in {{< ourname >}}, so in this case you can safely add the `.stretched-link` class to a link in the card without any other HTML changes.
 
 Multiple links and tap targets are not recommended with stretched links. However, some `position` and `z-index` styles can help should this be required.
 

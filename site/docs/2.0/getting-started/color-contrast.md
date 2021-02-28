@@ -8,7 +8,7 @@ toc: true
 
 ## Overview
 
-{{ .Site.Title }} provides a variety of Brand colors ready for use as background and/or text colors. Although these colors are available for use, it is important to maintain sufficient color contrast between your background and foreground (text) colors. This ensures proper accessibility on University of Arizona websites. 
+{{< ourname >}} provides a variety of Brand colors ready for use as background and/or text colors. Although these colors are available for use, it is important to maintain sufficient color contrast between your background and foreground (text) colors. This ensures proper accessibility on University of Arizona websites. 
 
 ## University Standards
 

@@ -8,7 +8,7 @@ toc: true
 
 ## Responsive Images
 
-Images in {{ .Site.Title }} are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
+Images in {{< ourname >}} are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
 
 <div class="bd-example">
   {{< placeholder width="100%" height="250" class="bd-placeholder-img-lg img-fluid" text="Responsive image" >}}
@@ -21,7 +21,7 @@ Images in {{ .Site.Title }} are made responsive with `.img-fluid`. `max-width: 1
 {{< callout warning >}}
 ##### SVG Images and IE 10
 
-In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately sized. To fix this, add `width: 100% \9;` where necessary. This fix improperly sizes other image formats, so {{ .Site.Title }} doesn't apply it automatically.
+In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately sized. To fix this, add `width: 100% \9;` where necessary. This fix improperly sizes other image formats, so {{< ourname >}} doesn't apply it automatically.
 {{< /callout >}}
 
 ## Image Thumbnails

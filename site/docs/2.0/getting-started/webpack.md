@@ -6,13 +6,13 @@ group: getting-started
 toc: true
 ---
 
-## Installing {{ .Site.Title }}
+## Installing {{< ourname >}}
 
 [Install arizona-bootstrap]({{< docsref "/getting-started/download/#npm" >}}) as a Node.js module using npm.
 
 ## Importing JavaScript
 
-Import [{{ .Site.Title }}'s JavaScript]({{< docsref "/getting-started/javascript/" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
+Import [{{< ourname >}}'s JavaScript]({{< docsref "/getting-started/javascript/" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
 
 ```js
 import 'arizona-bootstrap';
@@ -26,7 +26,7 @@ import 'arizona-bootstrap/js/dist/alert';
 ...
 ```
 
-{{ .Site.Title }} is dependent on [jQuery](https://jquery.com/) and [Popper](https://popper.js.org/),
+{{< ourname >}} is dependent on [jQuery](https://jquery.com/) and [Popper](https://popper.js.org/),
 these are defined as `peerDependencies`, this means that you will have to make sure to add both of them
 to your `package.json` using `npm install --save jquery popper.js`.
 
@@ -34,16 +34,16 @@ to your `package.json` using `npm install --save jquery popper.js`.
 
 ### Importing Precompiled Sass
 
-To enjoy the full potential of {{ .Site.Title }} and customize it to your needs, use the source files as a part of your project's bundling process.
+To enjoy the full potential of {{< ourname >}} and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/getting-started/theming/" >}}). Then, use your main Sass file to import your custom variables, followed by {{ .Site.Title }}:
+First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/getting-started/theming/" >}}). Then, use your main Sass file to import your custom variables, followed by {{< ourname >}}:
 
 ```scss
 @import "custom";
 @import "~arizona-bootstrap/scss/arizona-bootstrap";
 ```
 
-For {{ .Site.Title }} to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
+For {{< ourname >}} to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
 
 ```js
 ...
@@ -71,7 +71,7 @@ For {{ .Site.Title }} to compile, make sure you install and use the required loa
 
 ### Importing Compiled CSS
 
-Alternatively, you may use {{ .Site.Title }}'s ready-to-use CSS by simply adding this line to your project's entry point:
+Alternatively, you may use {{< ourname >}}'s ready-to-use CSS by simply adding this line to your project's entry point:
 
 ```js
 import 'arizona-bootstrap/dist/css/arizona-bootstrap.min.css';

@@ -5,7 +5,7 @@ description: Learn about some of the best practices we've gathered from years of
 group: getting-started
 ---
 
-We've designed and developed {{ .Site.Title }} to work in a number of environments. Here are some of the best practices we've gathered from years of working on and using it ourselves.
+We've designed and developed {{< ourname >}} to work in a number of environments. Here are some of the best practices we've gathered from years of working on and using it ourselves.
 
 {{< callout info >}}
 **Heads up!** This copy is a work in progress.

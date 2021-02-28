@@ -9,7 +9,7 @@ toc: true
 
 ## Summary
 
-Here are the big ticket items you'll want to be aware of when moving from UA Bootstrap **(based on Bootstrap v3)** to {{ .Site.Title }} **(based on Bootstrap v4)**.
+Here are the big ticket items you'll want to be aware of when moving from UA Bootstrap **(based on Bootstrap v3)** to {{< ourname >}} **(based on Bootstrap v4)**.
 
 ### Browser Support
 
@@ -22,7 +22,7 @@ Here are the big ticket items you'll want to be aware of when moving from UA Boo
 - Switched from `px` to `rem` as our primary CSS unit, though pixels are still used for media queries and grid behavior as device viewports are not affected by type size.
 - Revamped grid tiers to add a fifth option (addressing smaller devices at `576px` and below) and removed the `-xs` infix from those classes. Example: `.col-6.col-sm-4.col-md-3`.
 - Build system overhauled to use a series of npm scripts instead of Gulp. See `package.json` for all scripts, or our project readme for local development needs.
-- Non-responsive usage of {{ .Site.Title }} is no longer supported.
+- Non-responsive usage of {{< ourname >}} is no longer supported.
 - Added dozens of new [utility classes]({{< docsref "/utilities/" >}}) for common CSS property-value pairs and margin/padding spacing shortcuts.
 
 ### Grid System

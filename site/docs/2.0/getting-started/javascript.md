@@ -8,7 +8,7 @@ toc: true
 
 ## Individual or Compiled
 
-Plugins can be included individually (using {{ .Site.Title }}'s individual `js/dist/*.js`), or all at once using `arizona-bootstrap.js` or the minified `arizona-bootstrap.min.js` (don't include both).
+Plugins can be included individually (using {{< ourname >}}'s individual `js/dist/*.js`), or all at once using `arizona-bootstrap.js` or the minified `arizona-bootstrap.min.js` (don't include both).
 
 If you use a bundler (Webpack, Rollup...), you can use `/js/dist/*.js` files which are UMD ready.
 
@@ -20,7 +20,7 @@ Our dropdowns, popovers and tooltips also depend on [Popper.js](https://popper.j
 
 ## Data Attributes
 
-Nearly all {{ .Site.Title }} plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to **only use one set of data attributes on a single element** (e.g., you cannot trigger a tooltip and modal from the same button.)
+Nearly all {{< ourname >}} plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to **only use one set of data attributes on a single element** (e.g., you cannot trigger a tooltip and modal from the same button.)
 
 However, in some situations it may be desirable to disable this functionality. To disable the data attribute API, unbind all events on the document namespaced with `data-api` like so:
 
@@ -43,7 +43,7 @@ If you use special selectors, for example: `collapse:Example` be sure to escape 
 
 ## Events
 
-{{ .Site.Title }} provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
+{{< ourname >}} provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality. This provides the ability to stop the execution of an action before it starts. Returning false from an event handler will also automatically call `preventDefault()`.
 
@@ -57,7 +57,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 
 ## Programmatic API
 
-We also believe you should be able to use all {{ .Site.Title }} plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.
+We also believe you should be able to use all {{< ourname >}} plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.
 
 ```js
 $('.btn.danger').button('toggle').addClass('fat')
@@ -107,16 +107,16 @@ $.fn.modal.Constructor.Default.keyboard = false
 
 ## No Conflict
 
-Sometimes it is necessary to use {{ .Site.Title }} plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the plugin you wish to revert the value of.
+Sometimes it is necessary to use {{< ourname >}} plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the plugin you wish to revert the value of.
 
 ```js
 var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the {{ .Site.Title }} functionality
+$.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the {{< ourname >}} functionality
 ```
 
 ## Version Numbers
 
-The version of each of {{ .Site.Title }}'s jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
+The version of each of {{< ourname >}}'s jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
 ```js
 $.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
@@ -124,17 +124,17 @@ $.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
 
 ## No Special Fallbacks when JavaScript is Disabled
 
-{{ .Site.Title }}'s plugins don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
+{{< ourname >}}'s plugins don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
 
 {{< callout warning >}}
 ##### Third-party Libraries
 
-**{{ .Site.Title }} does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
+**{{< ourname >}} does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
 {{< /callout >}}
 
 ## Util
 
-All {{ .Site.Title }}'s JavaScript files depend on `util.js` and it has to be included alongside the other JavaScript files. If you're using the compiled (or minified) `bootstrap.js`, there is no need to include this—it's already there.
+All {{< ourname >}}'s JavaScript files depend on `util.js` and it has to be included alongside the other JavaScript files. If you're using the compiled (or minified) `bootstrap.js`, there is no need to include this—it's already there.
 
 `util.js` includes utility functions and a basic helper for `transitionEnd` events as well as a CSS transition emulator. It's used by the other plugins to check for CSS transition support and to catch hanging transitions.
 
