@@ -31,10 +31,13 @@ Background wrappers span the full-width of the screen and help to break up conte
 Click on the background color options below to see a live preview of what the background wrapper looks like in your selected color and/or background pattern.
 
 <div class="row mb-3">
-{{- range (index $.Site.Data "colors") }}
+  {{< wrapperdemo.inline >}}
+  {{ range (index $.Site.Data "colors") }}
   <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-3">
     <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn btn-block btn-background-wrapper-demo bg-{{ .name }}">{{ .name | capitalize }}</button>
-  </div>{{ end -}}
+  </div>
+  {{ end }}
+  {{< /wrapperdemo.inline >}}
 </div>
 <div class="row mb-5 pt-0 pb-4 pt-xl-4 bg-gray-100 bg-triangles-centered">
   <div class="col-6 col-lg-4 col-xl-3 mt-3 mt-xl-0">

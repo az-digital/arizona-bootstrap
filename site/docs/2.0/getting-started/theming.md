@@ -14,7 +14,7 @@ Now, theming is accomplished by Sass variables, Sass maps, and custom CSS. There
 
 ## Sass
 
-Utilize our source Sass files to take advantage of variables, maps, mixins, and more. In our build we've increased the Sass rounding precision to 6 (by default it's 5) to prevent issues with browser rounding.
+Utilize our source Sass files to take advantage of variables, maps, mixins, and more when [compiling Sass]({{< docsref "/getting-started/build-tools#sass" >}}) using your own asset pipeline.
 
 ### File Structure
 
@@ -50,6 +50,8 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 // Option A: Include all of Bootstrap
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Add custom code after this
 ```
 
 ```scss
@@ -60,6 +62,8 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+
+// Include custom variable default overrides here
 
 // Optional
 @import "../node_modules/bootstrap/scss/reboot";
@@ -73,24 +77,38 @@ With that setup in place, you can begin to modify any of the Sass variables and 
 
 ### Variable Defaults
 
-Every Sass variable in Bootstrap 4 includes the `!default` flag allowing you to override the variable's default value in your own Sass without modifying Bootstrap's source code. Copy and paste variables as needed, modify their values, and remove the `!default` flag. If a variable has already been assigned, then it won't be re-assigned by the default values in Bootstrap.
+Every Sass variable in Bootstrap includes the `!default` flag allowing you to override the variable's default value in your own Sass without modifying Bootstrap's source code. Copy and paste variables as needed, modify their values, and remove the `!default` flag. If a variable has already been assigned, then it won't be re-assigned by the default values in Bootstrap.
 
 You will find the complete list of Bootstrap's variables in `scss/_variables.scss`. Some variables are set to `null`, these variables don't output the property unless they are overridden in your configuration.
 
-Variable overrides within the same Sass file can come before or after the default variables. However, when overriding across Sass files, your overrides must come before you import Bootstrap's Sass files.
+Variable overrides must come after our functions, variables, and mixins are imported, but before the rest of the imports.
 
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
 // Your variable overrides
 $body-bg: #000;
 $body-color: #111;
 
 // Bootstrap and its default variables
-@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Optional
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
 ```
 
 Repeat as necessary for any variable in Bootstrap, including the global options below.
+
+{{< callout info >}}
+{{< partial "callout-info-npm-starter.md" >}}
+{{< /callout >}}
 
 ### Maps and Loops
 
@@ -195,7 +213,7 @@ Additional functions could be added in the future or your own custom Sass to cre
 
 ### Color Contrast
 
-One additional function we include in Bootstrap is the color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
+An additional function we include in Bootstrap is the color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
 
 For example, to generate color swatches from our `$theme-colors` map:
 
@@ -231,18 +249,18 @@ You can find and customize these variables for key global options in Bootstrap's
 
 | Variable                                     | Values                             | Description                                                                            |
 | -------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- |
-| `$spacer`                                    | `1rem` (default), or any value > 0 | Specifies the default spacer value to programmatically generate our [spacer utilities]({{< docsref "/utilities/spacing/" >}}). |
+| `$spacer`                                    | `1rem` (default), or any value > 0 | Specifies the default spacer value to programmatically generate our [spacer utilities]({{< docsref "/utilities/spacing" >}}). |
 | `$enable-rounded`                            | `true` (default) or `false`        | Enables predefined `border-radius` styles on various components. |
-| `$enable-shadows`                            | `true` or `false` (default)        | Enables predefined `box-shadow` styles on various components. |
+| `$enable-shadows`                            | `true` or `false` (default)        | Enables predefined decorative `box-shadow` styles on various components. Does not affect `box-shadow`s used for focus states. |
 | `$enable-gradients`                          | `true` or `false` (default)        | Enables predefined gradients via `background-image` styles on various components. |
 | `$enable-transitions`                        | `true` (default) or `false`        | Enables predefined `transition`s on various components. |
-| `$enable-prefers-reduced-motion-media-query` | `true` (default) or `false`        | Enables the [`prefers-reduced-motion` media query]({{< docsref "/getting-started/accessibility/#reduced-motion" >}}), which suppresses certain animations/transitions based on the users' browser/operating system preferences. |
+| `$enable-prefers-reduced-motion-media-query` | `true` (default) or `false`        | Enables the [`prefers-reduced-motion` media query]({{< docsref "/getting-started/accessibility#reduced-motion" >}}), which suppresses certain animations/transitions based on the users' browser/operating system preferences. |
 | `$enable-hover-media-query`                  | `true` or `false` (default)        | **Deprecated** |
 | `$enable-grid-classes`                       | `true` (default) or `false`        | Enables the generation of CSS classes for the grid system (e.g., `.container`, `.row`, `.col-md-1`, etc.). |
 | `$enable-caret`                              | `true` (default) or `false`        | Enables pseudo element caret on `.dropdown-toggle`. |
 | `$enable-pointer-cursor-for-buttons`         | `true` (default) or `false`        | Add "hand" cursor to non-disabled button elements. |
 | `$enable-print-styles`                       | `true` (default) or `false`        | Enables styles for optimizing printing. |
-| `$enable-responsive-font-sizes`              | `true` or `false` (default)        | Enables [responsive font sizes]({{< docsref "/content/typography/#responsive-font-sizes" >}}). |
+| `$enable-responsive-font-sizes`              | `true` or `false` (default)        | Enables [responsive font sizes]({{< docsref "/content/typography#responsive-font-sizes" >}}). |
 | `$enable-validation-icons`                   | `true` (default) or `false`        | Enables `background-image` icons within textual inputs and some custom forms for validation states. |
 | `$enable-deprecation-messages`               | `true` or `false` (default)        | Set to `true` to show warnings when using any of the deprecated mixins and functions that are planned to be removed in `v5`. |
 
@@ -255,13 +273,18 @@ Many of Bootstrap's various components and utilities are built through a series 
 All colors available in Bootstrap 4, are available as Sass variables and a Sass map in `scss/_variables.scss` file. This will be expanded upon in subsequent minor releases to add additional shades, much like the [grayscale palette](#grays) we already include.
 
 <div class="row">
-  {% for color in .Site.Data.colors %}
-    {% unless color.name == "white" or color.name == "gray" or color.name == "gray-dark" %}
+  {{< theme-colors.inline >}}
+  {{- range $.Site.Data.colors }}
+    {{- if (and (not (eq .name "white")) (not (eq .name "gray")) (not (eq .name "gray-dark"))) }}
     <div class="col-md-4">
-        <div class="p-3 mb-3 swatch-{{ color.name }}">{{ .name | title }}</div>
+      <div class="p-3 mb-3 text-monospace swatch-{{ .name }}">
+        <strong class="d-block">${{ .name }}</strong>
+        <small>{{ .hex }}</small>
+      </div>
     </div>
-    {% endunless %}
-  {% endfor %}
+    {{ end -}}
+  {{ end -}}
+  {{< /theme-colors.inline >}}
 </div>
 
 Here's how you can use these in your Sass:
@@ -274,22 +297,24 @@ Here's how you can use these in your Sass:
 .beta { color: color("purple"); }
 ```
 
-[Color utility classes]({{< docsref "/utilities/colors/" >}}) are also available for setting `color` and `background-color`.
+[Color utility classes]({{< docsref "/utilities/colors" >}}) are also available for setting `color` and `background-color`.
 
 {{< callout info >}}
 In the future, we'll aim to provide Sass maps and variables for shades of each color as we've done with the grayscale colors below.
 {{< /callout >}}
 
-### Theme Colors
+### Theme colors
 
 We use a subset of all colors to create a smaller color palette for generating color schemes, also available as Sass variables and a Sass map in Bootstrap's `scss/_variables.scss` file.
 
 <div class="row">
-  {% for color in .Site.Data.theme-colors %}
+  {{< theme-colors.inline >}}
+  {{- range (index $.Site.Data "theme-colors") }}
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-{{ color.name }}">{{ .name | title }}</div>
+      <div class="p-3 mb-3 swatch-{{ .name }}">${{ .name | title }}</div>
     </div>
-  {% endfor %}
+  {{ end -}}
+  {{< /theme-colors.inline >}}
 </div>
 
 ### Grays
@@ -298,9 +323,11 @@ An expansive set of gray variables and a Sass map in `scss/_variables.scss` for 
 
 <div class="row mb-3">
   <div class="col-md-4">
-    {% for color in .Site.Data.grays %}
-      <div class="p-3 swatch-{{ color.name }}">{{ .name | title }}</div>
-    {% endfor %}
+    {{< theme-colors.inline >}}
+    {{- range $.Site.Data.grays }}
+      <div class="p-3 swatch-{{ .name }}">{{ .name | title }}<</div>
+    {{ end -}}
+  {{< /theme-colors.inline >}}
   </div>
 </div>
 
@@ -370,43 +397,24 @@ Should you need to modify your `$grid-breakpoints`, your changes will apply to a
 
 ## CSS Variables
 
-Bootstrap 4 includes around two dozen [CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) in its compiled CSS. These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser's Inspector, a code sandbox, or general prototyping.
+Bootstrap 4 includes around two dozen [CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) in its compiled CSS. These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser's Inspector, a code sandbox, or general prototyping.
 
 ### Available Variables
 
 Here are the variables we include (note that the `:root` is required). They're located in our `_root.scss` file.
 
 ```css
-:root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+{{< root.inline >}}
+{{- $css := readFile "dist/css/arizona-bootstrap.css" -}}
+{{- $match := findRE ":root {([^}]*)}" $css 1 -}}
+
+{{- if (eq (len $match) 0) -}}
+{{- errorf "Got no matches for :root in %q!" $.Page.Path -}}
+{{- end -}}
+
+{{- index $match 0 -}}
+
+{{< /root.inline >}}
 ```
 
 ### Examples

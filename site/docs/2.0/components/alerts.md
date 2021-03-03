@@ -24,7 +24,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 
 {{< callout warning >}}
 {{< partial "callout-warning-color-assistive-technologies.md" >}}
-{{{{< /callout >}}}}
+{{< /callout >}}
 
 ### Link Color
 

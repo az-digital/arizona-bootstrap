@@ -167,22 +167,6 @@ Default links include a red text color and an underline. You can change a link's
 <a href="#">Default Link</a>
 {{< /example >}}
 
-<!-- Use the `.external-links` class in combination with the `.ua-brand-icons` class on the `<html>` tag to automatically add external link styling to all links in the document that travel outside the current site.
-
-<div class="bd-example external-links ua-brand-icons">
-  <a href="#">External Link</a>
-</div>
-```html
-<html class="external-links ua-brand-icons">
-  <h2><a href="https://uadigital.arizona.edu/ua-bootstrap/" target="_blank">H2 Link</a> with text</h2>
-  <ul class="triangle">
-    <li><a href="https://uadigital.arizona.edu/ua-bootstrap/">Link</a></li>
-    <li><a href="https://uanews.arizona.edu" target="_blank">UA News External Link</a></li>
-  </ul>
-  <div class="btn btn-default" target="_blank">External Link Button</div>
-</html>
-``` -->
-
 ## Text Utilities
 
 Change text alignment, transform, style, weight, and color with our [text utilities]({{< docsref "/utilities/text/" >}}) and [color utilities]({{< docsref "/utilities/colors/" >}}).

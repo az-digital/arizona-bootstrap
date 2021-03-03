@@ -49,7 +49,12 @@ Responsive variations also exist for each `float` value.
 
 Here are all the support classes;
 
-{% for bp in .Site.Data.breakpoints %}
+{{< markdown >}}
+{{< float.inline >}}
+{{- range $.Site.Data.breakpoints }}
 - `.float{{ bp.abbr }}-left`
 - `.float{{ bp.abbr }}-right`
-- `.float{{ bp.abbr }}-none`{% endfor %}
+- `.float{{ bp.abbr }}-none`
+{{- end -}}
+{{< /float.inline >}}
+{{< /markdown >}}

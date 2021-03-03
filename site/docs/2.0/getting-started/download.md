@@ -22,15 +22,15 @@ Should you require [build tools]({{< docsref "/getting-started/build-tools/#tool
 Skip the download with the UA Digital CDN to deliver cached version of {{< ourname >}}'s compiled CSS and JS to your project.
 
 ```html
-<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
-<script src="{{ site.cdn.js }}" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
+<script src="{{< param "cdn.js" >}}" crossorigin="anonymous"></script>
 ```
 
 If you're using our compiled JavaScript, don't forget to include CDN versions of jQuery and Popper.js before it.
 
 ```html
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
+<script src="{{< param "cdn.jquery" >}}" integrity="{{< param "cdn.jquery_hash" >}}" crossorigin="anonymous"></script>
+<script src="{{< param "cdn.popper" >}}" integrity="{{< param "cdn.popper_hash" >}}" crossorigin="anonymous"></script>
 ```
 
 ## Package Managers

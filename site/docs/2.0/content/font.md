@@ -28,7 +28,7 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
-<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
 
 ## Centrally managed Typekit webfont

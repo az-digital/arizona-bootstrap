@@ -19,33 +19,33 @@ Below we have provided a table that includes all of the Arizona branded colors. 
 <label id="hide-inaccessible-label">
   <input type="checkbox" id="hide-inaccessible"> <strong>Hide inaccessible color combinations.</strong>
 </label>
-{% assign textcolors = .Site.Data.color-contrast | where: "colorgroup", "text" %}
-{% assign textcolors = textcolors[0].colors %}
-{% assign bgcolors = .Site.Data.color-contrast | where: "colorgroup", "bg" %}
-{% assign bgcolors = bgcolors[0].colors %}
+{{ $textcolors := .Site.Data.color-contrast.colorgroup.text.colors }}
+{{ $bgcolors := .Site.Data.color-contrast.colorgroup.bg.colors }}
 
 <div class="table-responsive">
   <table class="table table-bordered">
     <tr>
-      <th></th>{% for text in textcolors %}    
-      <th class="text-nowrap">.text-{{ text.color }}</th>{% endfor %}
+      <th></th>
+      {{ range $textcolors }}  
+      <th class="text-nowrap">.text-{{ .color }}</th>
+      {{ end }}
     </tr>
-  {% for bg in bgcolors %}
+  {{ range $bg := $bgcolors }}
     <tr>
-      <th class="text-nowrap">.bg-{{ bg.color }}</th>
-      {% for text in textcolors %}
-        {% assign cc = false %}
-        {% for contrast in bg.contrast %}
-          {% if contrast.accessible == text.color %}
-            {% assign cc = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      <td class="bg-{{ bg.color }} text-center align-items-center">
-        <span class="text-{{ text.color }}{% if cc == false %} inaccessible{% endif %}">.text-{{ text.color }}</span>
-      </td>{% endfor %}
+      <th class="text-nowrap">.bg-{{ $bg.color }}</th>
+      {{ range $text := $textcolors }}
+        {{ $cc := false }}
+        {{ range $contrast := $bg.contrast }}
+          {{ if and (not $cc) (eq $contrast.accessible $text.color) }}
+            {{ $cc = true }}
+          {{ end }}
+        {{ end }}
+      <td class="bg-{{ $bg.color }} text-center align-items-center">
+        <span class="text-{{ $text.color }}{{ if (not $cc) }} inaccessible{{ end }}">.text-{{ $text.color }}</span>
+      </td>
+      {{ end }}
     </tr>
-  {% endfor %}
+  {{ end }}
   </table>
 </div>
 

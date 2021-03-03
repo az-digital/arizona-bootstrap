@@ -21,7 +21,7 @@ Looking to quickly add {{< ourname >}} to your project? Use The Arizona Digital 
 Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
 
 ```html
-<link rel="stylesheet" href="{{ site.cdn.css }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
 
 ### JS
@@ -31,9 +31,9 @@ Many of our components require the use of JavaScript to function. Specifically, 
 We use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/), but the full version is also supported.
 
 ```html
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.js }}" crossorigin="anonymous"></script>
+<script src="{{< param "cdn.jquery" >}}" integrity="{{< param "cdn.jquery_hash" >}}" crossorigin="anonymous"></script>
+<script src="{{< param "cdn.popper" >}}" integrity="{{< param "cdn.popper_hash" >}}" crossorigin="anonymous"></script>
+<script src="{{< param "cdn.js" >}}" crossorigin="anonymous"></script>
 ```
 
 Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you're at all unsure about the general page structure, keep reading for an example page template.
@@ -105,7 +105,7 @@ Be sure to have your pages set up with the latest design and development standar
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Arizona Bootstrap JS -->
-    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <script src="{{< param "cdn.jquery" >}}" integrity="{{< param "cdn.jquery_hash" >}}" crossorigin="anonymous"></script>
     <!-- Arizona Bootstrap -->
     <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/js/arizona-bootstrap.bundle.min.js"></script>
   </body>
@@ -164,7 +164,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Arizona Bootstrap JS -->
-    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <script src="{{< param "cdn.jquery" >}}" integrity="{{< param "cdn.jquery_hash" >}}" crossorigin="anonymous"></script>
     <!-- Arizona Bootstrap -->
     <script src="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main/js/arizona-bootstrap.bundle.min.js"></script>
   </body>

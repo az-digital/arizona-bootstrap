@@ -51,7 +51,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 
 {{< callout warning >}}
 {{< partial "callout-warning-color-assistive-technologies.md" >}}
-{{{{< /callout >}}}}
+{{< /callout >}}
 
 ## Pill Badges
 
