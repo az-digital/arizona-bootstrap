@@ -102,9 +102,10 @@ arizona-bootstrap/
 │   ├── css/
 │   └── js/
 ├── site/
-│   └──docs/
-│      └── 0.0/
-│          └── examples/
+│   └──content/
+|      └──docs/
+|         └── 2.0/
+|             └── examples/
 ├── js/
 └── scss/
 ```
