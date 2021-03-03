@@ -1,7 +1,7 @@
 #!/bin/sh
 #------------------------------------------------------------------------------
 #
-# create-jekyll-config.sh: fill in the Jekyll static site generator config.
+# create-hugo-config.sh: fill in the Hugo static site generator config.
 #
 # Environment variables
 # - AZ_SHORT_VERSION Short (generally two-digit) documentation version
@@ -45,10 +45,10 @@ fi
 #------------------------------------------------------------------------------
 # Initial settings and sanity check
 
-jekyll_config_template='_config_template.yml'
-jekyll_config='_config.yml'
-[ -r "$jekyll_config_template" ] \
-  || errorexit "Couldn't read the Jekyll configuration template file"
+hugo_config_template='config_template.yml'
+hugo_config='config.yml'
+[ -r "$hugo_config_template" ] \
+  || errorexit "Couldn't read the Hugo configuration template file"
 
 #------------------------------------------------------------------------------
 # Environment variable defaults.
@@ -81,8 +81,8 @@ sed -e "s#{{az_short_version}}#$AZ_SHORT_VERSION#g" \
   -e "s#{{az_site_base_url}}#$AZ_SITE_BASE_URL#g" \
   -e "s#{{az_site_host}}#$AZ_SITE_HOST#g" \
   -e "s#{{az_version}}#$AZ_VERSION#g" \
-  "$jekyll_config_template" \
-  > "$jekyll_config" \
-  || errorexit "Failed to make the Jekyll configuration ${jekyll_config} frpm the template ${jekyll_config_template}"
+  "$hugo_config_template" \
+  > "$hugo_config" \
+  || errorexit "Failed to make the Hugo configuration ${hugo_config} frpm the template ${hugo_config_template}"
 
-normalexit "Created the ${jekyll_config} Jekyll configuration"
+normalexit "Created the ${hugo_config} Hugo configuration"

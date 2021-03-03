@@ -10,7 +10,7 @@ COPY --from=openjdk:11.0.10-jre-slim-buster /etc/ca-certificates/update.d/docker
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
 COPY scripts/create-source-links.sh /usr/local/bin/create-source-links
-COPY scripts/create-jekyll-config.sh /usr/local/bin/create-jekyll-config
+COPY scripts/create-hugo-config.sh /usr/local/bin/create-hugo-config
 COPY scripts/expose-review-site.sh /usr/local/bin/expose-review-site
 COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site

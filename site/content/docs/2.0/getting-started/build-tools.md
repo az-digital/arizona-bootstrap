@@ -30,7 +30,7 @@ The script tries to discover if you have already built an image using the curren
 
 The initial build will be relatively slow, and may require reasonably fast Internet access. If you see errors that complain about failing to download various resources, and these errors aren't consistent from one build attempt to the next, you may be suffering a connection speed problem.
 
-The build environment uses two different packaging systems: Gems for Ruby (the language the Jekyll static web site building software uses), and the huge set of Node.js packages (that `npm` uses for practically everything else). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.
+The build environment uses a huge set of Node.js packages (under the control of the commonly used `npm` uutility). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.
 
 If the image build succeeds, it should finish by showing the image ID code, which you should note (copy) as the most convenirnt means of referring to the image, since the usual tagged name will be very long (it includes the full hex checksum hash of the configuration files). In the examples that follow, this code is `f855e50fb65e`, but you should substitute the ID from your own image build.
 
@@ -78,7 +78,7 @@ The examples here assume you have access to a POSIX-compatible shell, like the o
 
 ## Traditional Twitter Bootstrap Tooling Setup
 
-Twitter Bootstrap provides a configuration file for called `_config.yml` for the static site builing software (Jekyll), but Arizona Bootstrap omits this, providing instead a template that must have various placeholders filled in to produce the usable version of this file. The script `scripts/create-jekyll-config` automates this process, and can pull some settings like the current version number directly from the `package.json` file, but depends on the `jq` JSON parsing utility to do this. The environment variables that can modify its behavior are
+Twitter Bootstrap provides a configuration file for called `config.yml` for the static site builing software (Hugo), but Arizona Bootstrap omits this, providing instead a template that must have various placeholders filled in to produce the usable version of this file. The script `scripts/create-hugo-config` automates this process, and can pull some settings like the current version number directly from the `package.json` file, but depends on the `jq` JSON parsing utility to do this. The environment variables that can modify its behavior are
 - `AZ_SHORT_VERSION` Short (generally two-digit) documentation version
 - `AZ_SITE_BASE_URL` Pefix to add after the host to all URLs served locally
 - `AZ_SITE_HOST` Name or IP address at which to serve the documentation site
@@ -90,13 +90,6 @@ To use our build system and run our documentation locally, you'll need a copy of
 
 1. [Download and install Node.js](https://nodejs.org/en/download/), which we use to manage our dependencies.
 2. Navigate to the root `/arizona-bootstrap` directory and run `npm install` to install our local dependencies listed in [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json).
-3. [Install Ruby][install-ruby], install [Bundler][gembundler] with `gem install bundler`, and finally run `bundle install`. This will install all Ruby dependencies, such as Jekyll and plugins.
-  - **Windows users:** Read [this guide](https://jekyllrb.com/docs/windows/) to get Jekyll up and running without problems.
-
-When completed, you'll be able to run the various commands provided from the command line.
-
-[install-ruby]: https://www.ruby-lang.org/en/documentation/installation/
-[gembundler]: https://bundler.io/
 
 ## Using npm Scripts
 
@@ -118,13 +111,13 @@ We maintain the list of browsers supported through Autoprefixer in a separate fi
 
 ## Local Documentation
 
-Running our documentation locally requires the use of Jekyll, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here's how to get it started:
+Running our documentation locally requires the use of Hugo, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here's how to get it started:
 
-1. Run through the [tooling setup](#tooling-setup) above to install Jekyll (the site builder) and other Ruby dependencies with `bundle install`.
+1. Run through the [tooling setup](#tooling-setup) above to install Hugo (the site builder).
 2. From the root `/arizona-bootstrap` directory, run `npm run docs-serve` in the command line.
 3. Open `http://localhost:9001` in your browser, and voilà.
 
-Learn more about using Jekyll by reading its [documentation](https://jekyllrb.com/docs/).
+Learn more about using Hugo by reading its [documentation](https://gohugo.io/).
 
 ## Troubleshooting
 

@@ -20,7 +20,7 @@ create-source-links
 
 cd "$AZ_BOOTSTRAP_DEST_DIR"
 
-create-jekyll-config
+create-hugo-config
 
 npm run dist
 npm run docs

@@ -1,16 +1,10 @@
 # Ignore docs files
 /_site/
-/site/.jekyll-cache
-/site/.jekyll-metadata
-/site/docs/**/dist/
 # Hugo folders
 /resources/
 
-# Ignore ruby/bundler files
-/.bundle/
-/vendor/
-/.ruby-version
-/_config.yml
+# In Arizona Bootstrap the Hugo config is derived
+/config.yml
 
 # Numerous always-ignore extensions
 *.diff
@@ -37,6 +31,9 @@
 *.sublime-workspace
 nbproject
 Thumbs.db
+/.vscode/
+# Local Netlify folder
+.netlify
 
 # Komodo
 .komodotools
