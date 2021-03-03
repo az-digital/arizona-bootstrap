@@ -50,7 +50,7 @@ linkwhitelist=".babelrc.js \
   CONTRIBUTING.md \
   LICENSE \
   README.md \
-  _config_template.yml \
+  config_template.yml \
   dist \
   scripts \
   scss \
