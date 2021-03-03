@@ -23,8 +23,8 @@ cd "$AZ_BOOTSTRAP_DEST_DIR"
 create-hugo-config
 
 npm run dist
-npm run css-docs
-npm run js-docs
+npm run css
+npm run js
 npm run docs-build
 
 sync-static-site-dir
