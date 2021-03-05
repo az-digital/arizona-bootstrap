@@ -12,7 +12,7 @@ toc: true
 
 Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, {{< ourname >}} should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
-You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc):
+You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{< param "repo" >}}/raw/v{{< param "current_version" >}}/.browserslistrc):
 
 ```
 # https://github.com/browserslist/browserslist#readme
@@ -151,7 +151,7 @@ Throughout our v4 alpha and beta releases, we included incomplete and commented 
 
 Even in some modern browsers, printing can be quirky.
 
-As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [issue #14868]({{ site.repo }}/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
+As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [issue #14868]({{< param "repo" >}}/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
 
 ```css
 @media print {

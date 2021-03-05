@@ -8,7 +8,7 @@
         <a class="nav-link{{ if eq .Page.Layout "about" }} active{{ end }}" href="/docs/{{ .Site.Params.docs_version }}/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link{{ if eq .Page.Layout "docs" }} active{{ end }}" href="/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+        <a class="nav-link{{ if eq .Page.Layout "docs" }} active{{ end }}" href="/docs/{{ .Site.Params.docs_version }}/getting-started/introduction" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
       </li>
     </ul>
   </div>
@@ -19,9 +19,9 @@
         v{{ .Site.Params.docs_version }}
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/docs/{{ .Site.Params.docs_version }}/">Latest (2.0.x)</a>
+        <a class="dropdown-item active" href="/">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="http://uadigital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
+        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
     </li>
 
@@ -37,5 +37,5 @@
     </li>
   </ul>
 
-  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/docs/{{ .Site.Params.docs_version }}/getting-started/download/">Download</a>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/docs/{{ .Site.Params.docs_version }}/getting-started/download">Download</a>
 </header>

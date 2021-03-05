@@ -8,7 +8,7 @@ toc: true
 
 ## Ways to Change and Build Arizona Bootstrap
 
-If you are one of the developers who can make changes to the main [Arizona Bootstrap repository]({{ site.repo }}), the built-in continuous integration feature called GitHub Actions takes care of building a new version including your suggested changes and presenting it on a generally visible review web site. See the [CONTRIBUTING]({{ site.repo}}/blob/main/CONTRIBUTING.md) document for more details about how to do this. If you're working from a fork of the main Arizona Bootstrap repository elsewhere on GitHub, the GitHub Actions automated builds should still work, but will require extensive initial setup on your part, and in particular you will have to establish your own arrangements for hosting the review sites, since the main repository is using AWS with some very specific access arrangements.
+If you are one of the developers who can make changes to the main [Arizona Bootstrap repository]({{< param "repo" >}}), the built-in continuous integration feature called GitHub Actions takes care of building a new version including your suggested changes and presenting it on a generally visible review web site. See the [CONTRIBUTING]({{< param "repo" >}}/blob/main/CONTRIBUTING.md) document for more details about how to do this. If you're working from a fork of the main Arizona Bootstrap repository elsewhere on GitHub, the GitHub Actions automated builds should still work, but will require extensive initial setup on your part, and in particular you will have to establish your own arrangements for hosting the review sites, since the main repository is using AWS with some very specific access arrangements.
 
 Docker simplifies building Arizona Bootstrap locally, either in advance of changing the main repository, or if you want some independent customizations, and makes it easy to view the changes in a web browser through a local link.
 
@@ -84,16 +84,16 @@ Twitter Bootstrap provides a configuration file for called `config.yml` for the 
 - `AZ_SITE_HOST` Name or IP address at which to serve the documentation site
 - `AZ_VERSION` Full current Arizona Bootstrap version number
 
-{{< ourname >}} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
+{{< ourname >}} uses [npm scripts](https://docs.npmjs.com/misc/scripts) for its build system. Our [package.json]({{< param "repo" >}}/blob/v{{< param "current_version" >}}/package.json) includes convenient methods for working with the framework, including compiling code, running tests, and more.
 
 To use our build system and run our documentation locally, you'll need a copy of {{< ourname >}}'s source files and Node. Follow these steps and you should be ready to rock:
 
 1. [Download and install Node.js](https://nodejs.org/en/download/), which we use to manage our dependencies.
-2. Navigate to the root `/arizona-bootstrap` directory and run `npm install` to install our local dependencies listed in [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json).
+2. Navigate to the root `/arizona-bootstrap` directory and run `npm install` to install our local dependencies listed in [package.json]({{< param "repo" >}}/blob/v{{< param "current_version" >}}/package.json).
 
 ## Using npm Scripts
 
-Our [package.json]({{ site.repo }}/blob/v{{ site.current_version }}/package.json) includes the following commands and tasks:
+Our [package.json]({{< param "repo" >}}/blob/v{{< param "current_version" >}}/package.json) includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
@@ -107,7 +107,7 @@ Run `npm run` to see all the npm scripts.
 
 {{< ourname >}} uses [Autoprefixer][autoprefixer] (included in our build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
 
-We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [.browserslistrc]({{ site.repo }}/raw/v{{ site.current_version }}/.browserslistrc) for details.
+We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [.browserslistrc]({{< param "repo" >}}/raw/v{{< param "current_version" >}}/.browserslistrc) for details.
 
 ## Local Documentation
 
