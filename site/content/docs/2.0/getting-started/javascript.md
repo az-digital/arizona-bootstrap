@@ -119,7 +119,7 @@ $.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the {{< ourname >}}
 The version of each of {{< ourname >}}'s jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
 ```js
-$.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
+$.fn.tooltip.Constructor.VERSION // => "{{< param "current_version" >}}"
 ```
 
 ## No Special Fallbacks when JavaScript is Disabled
