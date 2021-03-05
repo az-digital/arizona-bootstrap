@@ -19,7 +19,7 @@ Quickstart, and Arizona Bootstrap.
 
 ## Material Icons Implementation
 
-Include a the Material Icons' stylesheet to your project in order to use the font icons. [Refer to Material Icons docs](https://google.github.io/material-design-icons/#icon-font-for-the-web) for more information.
+Include a the Material Icons' stylesheet to your project in order to use the font icons. [Refer to Material Icons docs](https://google.github.io/material-design-icons#icon-font-for-the-web) for more information.
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">

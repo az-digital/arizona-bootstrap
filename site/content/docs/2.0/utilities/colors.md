@@ -19,8 +19,8 @@ When using these colors, it is important to maintain sufficient color contrast b
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "colors") }}
-<p class="text-{{ .name }}{{ if or (eq .name == "white") (eq .name "cool-gray") (eq .name "warm-gray") }} bg-dark{{ end }}">.text-{{ .name }}</p>{{ end }}
-{< /colors.inline >}}
+<p class="text-{{ .name }}{{ if or (eq .name "white") (eq .name "cool-gray") (eq .name "warm-gray") }} bg-dark{{ end }}">.text-{{ .name }}</p>{{ end }}
+{{< /colors.inline >}}
 {{< /example >}}
 
 ### Contextual (Theme)
@@ -86,7 +86,7 @@ Similar to the contextual text color classes, easily set the background of an el
 
 ## Background Gradient
 
-When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg-gradient-` utility classes. [Learn about our Sass options]({{< docsref "/getting-started/theming/#sass-options" >}}) to enable these classes and more.
+When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg-gradient-` utility classes. [Learn about our Sass options]({{< docsref "/getting-started/theming#sass-options" >}}) to enable these classes and more.
 
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}

@@ -13,7 +13,7 @@ Compile {{< ourname >}} with your own asset pipeline by downloading our source S
 - Sass compiler (Libsass or Ruby Sass is supported) for compiling your CSS.
 - [Autoprefixer](https://github.com/postcss/autoprefixer) for CSS vendor prefixing
 
-Should you require [build tools]({{< docsref "/getting-started/build-tools/#tooling-setup" >}}), they are included for developing {{< ourname >}} and its docs, but they're likely unsuitable for your own purposes.
+Should you require [build tools]({{< docsref "/getting-started/build-tools#tooling-setup" >}}), they are included for developing {{< ourname >}} and its docs, but they're likely unsuitable for your own purposes.
 
 <a href="{{ site.download.source }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 

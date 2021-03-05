@@ -14,7 +14,7 @@ toc: true
 
 ## Download
 
-Looking to quickly add {{< ourname >}} to your project? Use The Arizona Digital CDN. Using a package manager or need to download the source files? [Head to the downloads page]({{< docsref "/getting-started/download/" >}}).
+Looking to quickly add {{< ourname >}} to your project? Use The Arizona Digital CDN. Using a package manager or need to download the source files? [Head to the downloads page]({{< docsref "/getting-started/download" >}}).
 
 ### CSS
 
@@ -38,7 +38,7 @@ We use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final
 
 Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you're at all unsure about the general page structure, keep reading for an example page template.
 
-Our `arizona-bootstrap.bundle.js` and `arizona-bootstrap.bundle.min.js` include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/). For more information about what's included in {{< ourname >}}, please see our [contents]({{< docsref "/getting-started/contents/#precompiled-bootstrap" >}}) section.
+Our `arizona-bootstrap.bundle.js` and `arizona-bootstrap.bundle.min.js` include [Popper](https://popper.js.org/), but not [jQuery](https://jquery.com/). For more information about what's included in {{< ourname >}}, please see our [contents]({{< docsref "/getting-started/contents#precompiled-bootstrap" >}}) section.
 
 <details>
 <summary class="text-red mb-3">Show components requiring JavaScript</summary>
@@ -112,7 +112,7 @@ Be sure to have your pages set up with the latest design and development standar
 </html>
 ```
 
-That's all you need for overall page requirements. Visit the [Layout docs]({{< docsref "/layout/overview/" >}}) to start laying out your site's content and components.
+That's all you need for overall page requirements. Visit the [Layout docs]({{< docsref "/layout/overview" >}}) to start laying out your site's content and components.
 
 ## Sticky Footer Template
 
@@ -214,10 +214,10 @@ Learn more about [box model and sizing at CSS Tricks](https://css-tricks.com/box
 
 ### Reboot
 
-For improved cross-browser rendering, we use [Reboot]({{< docsref "/content/reboot/" >}}) to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
+For improved cross-browser rendering, we use [Reboot]({{< docsref "/content/reboot" >}}) to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
 
 ## Community
 
 Stay up to date on the development of {{< ourname >}} and reach out to the community with these helpful resources.
 
-- Join [the official Slack workspace](/docs/{{< param docs_version >}}{{ site.slack }}/).
+- Join [the official Slack workspace](/docs/{{< param docs_version >}}{{ {{< param slack >}} }}/).

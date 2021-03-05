@@ -9,7 +9,7 @@
     {{- $url := split .Permalink "/" -}}
     {{- $page_slug := index $url (sub (len $url) 2) -}}
 
-    {{- range $group := .Site.Data.sidebar-about -}}
+    {{- range $group := (index .Site.Data "nav-about") -}}
       {{- $link := $group.title -}}
       {{- $link_slug := $link | urlize -}}
 

@@ -8,7 +8,7 @@ toc: true
 
 ## Overview
 
-Bootstrap's form controls expand on [our Rebooted form styles]({{< docsref "/content/reboot/#forms" >}}) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
+Bootstrap's form controls expand on [our Rebooted form styles]({{< docsref "/content/reboot#forms" >}}) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
 
 Be sure to use an appropriate `type` attribute on all inputs (e.g., `email` for email address or `number` for numerical information) to take advantage of newer input controls like email verification, number selection, and more.
 
@@ -572,11 +572,11 @@ And of course [custom form controls](#custom-forms) are supported.
 
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{< docsref "/utilities/spacing/" >}}) and [flexbox]({{< docsref "/utilities/flex/" >}}) utilities.
+- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{< docsref "/utilities/spacing" >}}) and [flexbox]({{< docsref "/utilities/flex" >}}) utilities.
 - Controls and input groups receive `width: auto` to override the Bootstrap default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
-You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{< docsref "/utilities/spacing/" >}}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
+You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{< docsref "/utilities/spacing" >}}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
 
 {{< example >}}
 <form class="form-inline">
@@ -701,7 +701,7 @@ Add the `disabled` attribute to a `<fieldset>` to disable all the controls withi
 {{< callout warning >}}
 ##### Caveat with Anchors
 
-By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{< docsref "/components/buttons/#disabled-state" >}}) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 10, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
+By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{< docsref "/components/buttons#disabled-state" >}}) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 10, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
 {{< /callout >}}
 
 {{< callout danger >}}
@@ -712,7 +712,7 @@ While Bootstrap will apply these styles in all browsers, Internet Explorer 11 an
 
 ## Validation
 
-Provide valuable, actionable feedback to your users with HTML5 form validation–[available in all our supported browsers](https://caniuse.com/#feat=form-validation). Choose from the browser default validation feedback, or implement custom messages with our built-in classes and starter JavaScript.
+Provide valuable, actionable feedback to your users with HTML5 form validation–[available in all our supported browsers](https://caniuse.com#feat=form-validation). Choose from the browser default validation feedback, or implement custom messages with our built-in classes and starter JavaScript.
 
 {{< callout warning >}}
 We currently recommend using custom validation styles, as native browser default validation messages are not consistently exposed to assistive technologies in all browsers (most notably, Chrome on desktop and mobile).

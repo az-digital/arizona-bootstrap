@@ -11,7 +11,7 @@ toc: true
 
 ## Overview
 
-Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{< ourname >}}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{< ourname >}}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{< ourname >}}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{< docsref "/backwards-compatibility/#removed-utility-classes" >}}) and [Removed Components]({{< docsref "/backwards-compatibility/#removed-components" >}}) sections.
+Although backwards compatibility is included for some components and utilities available in UA Bootstrap, it is highly recommended that you utilize the new classes available in {{< ourname >}}. They are simply included here to lessen the burden on site builders for migrating from Drupal 7 sites using UA Bootstrap to Drupal 8 sites using {{< ourname >}}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{< ourname >}}. Any items that were marked as "deprecated" in UA Bootstrap do not include backwards compatibility; these items are listed in the [Removed Utilities]({{< docsref "/backwards-compatibility#removed-utility-classes" >}}) and [Removed Components]({{< docsref "/backwards-compatibility#removed-components" >}}) sections.
 
 ## Backwards Compatible Components
 
@@ -52,7 +52,7 @@ In {{< ourname >}}, Button classes have changed as follows:
 
 #### Default, Primary, and Secondary
 
-The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have been deprecated in {{< ourname >}}. Similarly, `.btn-secondary` (which is available in base Bootstrap 4) has been removed from {{< ourname >}}. These classes have been deprecated in favor of more intuitive button classes (e.g., `.btn-red` and `.btn-blue`). However, `.btn-default` and `.btn-primary` are both backwards compatible, and all three classes can be extended using the [available button color classes]({{< docsref "/components/buttons/#examples" >}}).
+The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have been deprecated in {{< ourname >}}. Similarly, `.btn-secondary` (which is available in base Bootstrap 4) has been removed from {{< ourname >}}. These classes have been deprecated in favor of more intuitive button classes (e.g., `.btn-red` and `.btn-blue`). However, `.btn-default` and `.btn-primary` are both backwards compatible, and all three classes can be extended using the [available button color classes]({{< docsref "/components/buttons#examples" >}}).
 
 <div class="bd-example mb-3">
   <button type="button" class="btn btn-default">Default Button</button>
@@ -61,7 +61,7 @@ The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have bee
 
 #### Hollow Buttons
 
-Hollow buttons now use the `.btn-outline-*` class. These buttons are included with backwards compatibility and can be extended using the [available outline classes]({{< docsref "/components/buttons/#outline-buttons" >}}).
+Hollow buttons now use the `.btn-outline-*` class. These buttons are included with backwards compatibility and can be extended using the [available outline classes]({{< docsref "/components/buttons#outline-buttons" >}}).
 
 The class `.btn-hollow-reverse` is included with backwards compatibility and can be extended using the `.btn-outline-white` class.
 
@@ -75,7 +75,7 @@ The class `.btn-hollow-reverse` is included with backwards compatibility and can
 
 ### Cards
 
-In {{< ourname >}}, color-specific cards can be replicated by using the [background color utility classes]({{< docsref "/utilities/colors/#background-color" >}}) and [border utility classes]({{< docsref "/utilities/borders/" >}}).
+In {{< ourname >}}, color-specific cards can be replicated by using the [background color utility classes]({{< docsref "/utilities/colors#background-color" >}}) and [border utility classes]({{< docsref "/utilities/borders" >}}).
 
 <div class="bd-example">
   <div class="row">
@@ -251,7 +251,7 @@ UA Bootstrap contained utility classes that are no longer supported/maintained i
 
 ### Column Offset
 
-The syntax for column offsets has changed in {{< ourname >}}. Previously, you would offset columns using `.col-md-offset-2`. In {{< ourname >}}, you use `.offset-md-2`. Refer to [Offsetting Columns]({{< docsref "/layout/grid/#offsetting-columns" >}}) for further details.
+The syntax for column offsets has changed in {{< ourname >}}. Previously, you would offset columns using `.col-md-offset-2`. In {{< ourname >}}, you use `.offset-md-2`. Refer to [Offsetting Columns]({{< docsref "/layout/grid#offsetting-columns" >}}) for further details.
 
 <div class="bd-example">
   <div class="container">
@@ -391,7 +391,7 @@ The `.divider` and `.nav-divider` classes have been replaced by the `.dropdown-d
 
 ### Page Header
 
-The `.page-header` class available in UA Bootstrap has been removed in {{< ourname >}}. You can replicate its effect by combining headers (e.g., h1, h2, h3, etc.) with [spacing utility classes]({{< docsref "/utilities/spacing/" >}}).
+The `.page-header` class available in UA Bootstrap has been removed in {{< ourname >}}. You can replicate its effect by combining headers (e.g., h1, h2, h3, etc.) with [spacing utility classes]({{< docsref "/utilities/spacing" >}}).
 
 <div class="bd-example">
   <p class="page-header"><span class="h1">Page Header</span></p>
@@ -399,7 +399,7 @@ The `.page-header` class available in UA Bootstrap has been removed in {{< ourna
 
 ### Fonts & Font Styles
 
-You can replicate these effect by using the available [font weight and italic]({{< docsref "/utilities/text/#font-weight-and-italics" >}}) and font family classes.
+You can replicate these effect by using the available [font weight and italic]({{< docsref "/utilities/text#font-weight-and-italics" >}}) and font family classes.
 
 <div class="bd-example">
   <p class="bold">.bold</p>
@@ -407,7 +407,7 @@ You can replicate these effect by using the available [font weight and italic]({
 
 ### Responsive Text Alignment *-not Classes
 
-UA Bootstrap included custom classes that utilized the *-not formatting. These classes are not included in {{< ourname >}}, but are backwards compatible and can be extended using a combination of the available [text alignment classes]({{< docsref "/utilities/text/#text-alignment" >}}), which are also responsive using the usual grid breakpoints.
+UA Bootstrap included custom classes that utilized the *-not formatting. These classes are not included in {{< ourname >}}, but are backwards compatible and can be extended using a combination of the available [text alignment classes]({{< docsref "/utilities/text#text-alignment" >}}), which are also responsive using the usual grid breakpoints.
 
 <div class="bd-example">
   <p class="p-3 mb-0 bg-gray-100 text-left-not-xs">.text-left-not-xs</p>
@@ -455,11 +455,11 @@ Components and utility classes that were marked as deprecated in UA Bootstrap ha
 
 ### Column Push/Pull
 
-The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{< docsref "/layout/grid/#order-classes" >}}). These classes are not backwards compatible and will need to be updated to use {{< ourname >}}'s classes.
+The column push/pull classes available in UA Bootstrap have been replaced by [Order Classes]({{< docsref "/layout/grid#order-classes" >}}). These classes are not backwards compatible and will need to be updated to use {{< ourname >}}'s classes.
 
 ### Mailto
 
-The `.mailto` class, which is placed directly on the `<a>` link tag, has been deprecated in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Wrapping and Overflow]({{< docsref "/utilities/text/#text-wrapping-and-overflow" >}}) for more details.
+The `.mailto` class, which is placed directly on the `<a>` link tag, has been deprecated in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Wrapping and Overflow]({{< docsref "/utilities/text#text-wrapping-and-overflow" >}}) for more details.
 
 ### No Line Height
 

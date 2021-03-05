@@ -52,9 +52,9 @@ Here are all the support classes;
 {{< markdown >}}
 {{< float.inline >}}
 {{- range $.Site.Data.breakpoints }}
-- `.float{{ bp.abbr }}-left`
-- `.float{{ bp.abbr }}-right`
-- `.float{{ bp.abbr }}-none`
+- `.float{{ .abbr }}-left`
+- `.float{{ .abbr }}-right`
+- `.float{{ .abbr }}-none`
 {{- end -}}
 {{< /float.inline >}}
 {{< /markdown >}}

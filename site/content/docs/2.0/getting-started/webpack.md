@@ -8,11 +8,11 @@ toc: true
 
 ## Installing {{< ourname >}}
 
-[Install arizona-bootstrap]({{< docsref "/getting-started/download/#npm" >}}) as a Node.js module using npm.
+[Install arizona-bootstrap]({{< docsref "/getting-started/download#npm" >}}) as a Node.js module using npm.
 
 ## Importing JavaScript
 
-Import [{{< ourname >}}'s JavaScript]({{< docsref "/getting-started/javascript/" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
+Import [{{< ourname >}}'s JavaScript]({{< docsref "/getting-started/javascript" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
 
 ```js
 import 'arizona-bootstrap';
@@ -36,7 +36,7 @@ to your `package.json` using `npm install --save jquery popper.js`.
 
 To enjoy the full potential of {{< ourname >}} and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/getting-started/theming/" >}}). Then, use your main Sass file to import your custom variables, followed by {{< ourname >}}:
+First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/getting-started/theming" >}}). Then, use your main Sass file to import your custom variables, followed by {{< ourname >}}:
 
 ```scss
 @import "custom";

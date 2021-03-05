@@ -21,7 +21,7 @@ Questions, bug reports or suggestions can also be emailed to [uadigital@email.ar
 
 ## Join Our Meetings
 
-Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meetings are held on Zoom and dedicate the entire hour to reviewing and merging pull requests on [GitHub]({{< docsref "/about/get-involved/#review-or-contribute-code" >}}). Friday meetings are hosted in-person in UITS-116 (and can also be joined remotely via Zoom) and dedicate two hours to reviewing and merging pull requests, and covering topics concerning Drupal 8. For more details, connect with us on Slack on our `#friday-meetings` channel.
+Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meetings are held on Zoom and dedicate the entire hour to reviewing and merging pull requests on [GitHub]({{< docsref "/about/get-involved#review-or-contribute-code" >}}). Friday meetings are hosted in-person in UITS-116 (and can also be joined remotely via Zoom) and dedicate two hours to reviewing and merging pull requests, and covering topics concerning Drupal 8. For more details, connect with us on Slack on our `#friday-meetings` channel.
 
 ## Connect with Us on Slack
 
@@ -37,7 +37,7 @@ The Arizona Digital team utilizes a variety of Slack channels ranging from gener
     </tr>
   </thead>
   {{< slackchannels.inline >}}
-  <tbody>{{ range .Site.Data.slack-channels }}
+  <tbody>{{ range (index .Site.Data "slack-channels") }}
     <tr{{if eq .channel "#friday-meetings" }} class="table-success"{{ end }}>
       <td>{{ .channel }}</td>
       <td>
@@ -62,11 +62,11 @@ Arizona Digital currently uses utilizes GitHub to host and review code contained
     </tr>
   </thead>
   {{< sourcerepos.inline >}}
-  <tbody>{{ range .Site.Data.sourcecode-repos }}
+  <tbody>{{ range (index .Site.Data "sourcecode-repos") }}
     <tr>
       <td><a href="{{ .link }}" target="_blank">{{ .name }}</a></td>
       <td>{{ .description }}</td>
-    </tr>{{ endfor }}
+    </tr>{{ end }}
   </tbody>
   {{< /sourcerepos.inline >}}
 </table>

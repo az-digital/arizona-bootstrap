@@ -10,7 +10,7 @@ toc: true
 
 {{< ourname >}}'s grid system uses a series of containers, rows, and columns to layout and align content. It's built with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
 
-**New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background) for background, terminology, guidelines, and code snippets.
+**New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox#flexbox-background) for background, terminology, guidelines, and code snippets.
 
 {{< example class="bd-example-row" >}}
 <div class="container">
@@ -39,7 +39,7 @@ Breaking it down, here's how it works:
 - Column classes indicate the number of columns you'd like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use `.col-4`.
 - Column `width`s are set in percentages, so they're always fluid and sized relative to their parent element.
 - Columns have horizontal `padding` to create the gutters between individual columns, however, you can remove the `margin` from rows and `padding` from columns with `.no-gutters` on the `.row`.
-- To make the grid responsive, there are five grid breakpoints, one for each [responsive breakpoint]({{< docsref "/layout/overview/#responsive-breakpoints" >}}): all breakpoints (extra small), small, medium, large, and extra large.
+- To make the grid responsive, there are five grid breakpoints, one for each [responsive breakpoint]({{< docsref "/layout/overview#responsive-breakpoints" >}}): all breakpoints (extra small), small, medium, large, and extra large.
 - Grid breakpoints are based on minimum width media queries, meaning **they apply to that one breakpoint and all those above it** (e.g., `.col-sm-4` applies to small, medium, large, and extra large devices, but not the first `xs` breakpoint).
 - You can use predefined grid classes (like `.col-4`) or [Sass mixins](#sass-mixins) for more semantic markup.
 
@@ -47,7 +47,7 @@ Be aware of the limitations and [bugs around flexbox](https://github.com/philipw
 
 ## Grid Options
 
-While {{< ourname >}} uses `em`s or `rem`s for defining most sizes, `px`s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the [font size](https://drafts.csswg.org/mediaqueries-3/#units).
+While {{< ourname >}} uses `em`s or `rem`s for defining most sizes, `px`s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the [font size](https://drafts.csswg.org/mediaqueries-3#units).
 
 See how aspects of the {{< ourname >}} grid system work across multiple devices with a handy table.
 
@@ -147,7 +147,7 @@ For example, here are two grid layouts that apply to every device and viewport, 
 
 ### Equal-width Multi-line
 
-Create equal-width columns that span multiple lines by inserting a `.w-100` where you want the columns to break to a new line. Make the breaks responsive by mixing `.w-100` with some [responsive display utilities]({{< docsref "/utilities/display/" >}}).
+Create equal-width columns that span multiple lines by inserting a `.w-100` where you want the columns to break to a new line. Make the breaks responsive by mixing `.w-100` with some [responsive display utilities]({{< docsref "/utilities/display" >}}).
 
 There was a [Safari flexbox bug](https://github.com/philipwalton/flexbugs#flexbug-11) that prevented this from working without an explicit `flex-basis` or `border`. There are workarounds for older browser versions, but they shouldn't be necessary if your target browsers don't fall into the buggy versions.
 
@@ -419,7 +419,7 @@ Use flexbox alignment utilities to vertically and horizontally align columns. **
 
 The gutters between columns in our predefined grid classes can be removed with `.no-gutters`. This removes the negative `margin`s from `.row` and the horizontal `padding` from all immediate children columns.
 
-Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors). While this generates a more specific selector, column padding can still be further customized with [spacing utilities]({{< docsref "/utilities/spacing/" >}}).
+Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors). While this generates a more specific selector, column padding can still be further customized with [spacing utilities]({{< docsref "/utilities/spacing" >}}).
 
 **Need an edge-to-edge design?** Drop the parent `.container` or `.container-fluid`.
 
@@ -478,7 +478,7 @@ Breaking columns to a new line in flexbox requires a small hack: add an element 
 </div>
 {{< /example >}}
 
-You may also apply this break at specific breakpoints with our [responsive display utilities]({{< docsref "/utilities/display/" >}}).
+You may also apply this break at specific breakpoints with our [responsive display utilities]({{< docsref "/utilities/display" >}}).
 
 {{< example class="bd-example-row" >}}
 <div class="container">
@@ -537,7 +537,7 @@ There are also responsive `.order-first` and `.order-last` classes that change t
 
 ### Offsetting Columns
 
-You can offset grid columns in two ways: our responsive `.offset-` grid classes and our [margin utilities]({{< docsref "/utilities/spacing/" >}}). Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
+You can offset grid columns in two ways: our responsive `.offset-` grid classes and our [margin utilities]({{< docsref "/utilities/spacing" >}}). Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
 
 #### Offset Classes
 

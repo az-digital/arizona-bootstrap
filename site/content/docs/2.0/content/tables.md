@@ -551,7 +551,7 @@ Use contextual classes to color table rows or individual cells.
 </tr>
 {{< /highlight >}}
 
-Regular table background variants are not available with the dark table, however, you may use [text or background utilities]({{< docsref "/utilities/colors/" >}}) to achieve similar styles.
+Regular table background variants are not available with the dark table, however, you may use [text or background utilities]({{< docsref "/utilities/colors" >}}) to achieve similar styles.
 
 <div class="bd-example">
   <table class="table table-dark">
@@ -772,7 +772,7 @@ Use `.table-responsive{-sm|-md|-lg|-xl}` as needed to create responsive tables u
 {{ range $.Site.Data.breakpoints }}
 {{ if not (eq .breakpoint "xs") }}
 <div class="bd-example">
-<div class="table-responsive{{ bp.abbr }}">
+<div class="table-responsive{{ .abbr }}">
   <table class="table">
     <thead class="thead-light">
       <tr>
