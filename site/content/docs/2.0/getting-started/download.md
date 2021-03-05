@@ -15,7 +15,7 @@ Compile {{< ourname >}} with your own asset pipeline by downloading our source S
 
 Should you require [build tools]({{< docsref "/getting-started/build-tools#tooling-setup" >}}), they are included for developing {{< ourname >}} and its docs, but they're likely unsuitable for your own purposes.
 
-<a href="{{ site.download.source }}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
+<a href="{{< param "download.source" >}}" class="btn btn-bd-red" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 
 ## Arizona Digital CDN
 
@@ -42,7 +42,7 @@ Pull in {{< ourname >}}'s **source files** into nearly any project with some of 
 Install {{< ourname >}} in your Node.js powered apps with npm:
 
 ```sh
-npm install {{ site.repo }}
+npm install {{< param "repo" >}}
 ```
 
 `require('arizona-bootstrap')` will load all of {{< ourname >}}'s jQuery plugins onto the jQuery object. The `arizona-bootstrap` module itself does not export anything. You can manually load {{< ourname >}}'s jQuery plugins individually by loading the `/js/*.js` files under the package's top-level directory.
@@ -57,5 +57,5 @@ npm install {{ site.repo }}
 Install {{< ourname >}} in your Node.js powered apps with [the yarn package](https://yarnpkg.com/en/package/bootstrap):
 
 ```sh
-yarn add {{ site.repo }}
+yarn add {{< param "repo" >}}
 ```
