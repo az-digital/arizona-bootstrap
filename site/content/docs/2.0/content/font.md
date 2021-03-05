@@ -461,6 +461,7 @@ Below are two examples of how you would use the Proxima Nova fonts in your code.
     <strong><em>Hello World!</em></strong>
   </div>
 </div>
+
 ```css
 .pn {
 font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -475,6 +476,7 @@ bolder.
 font-weight:700;
 }
 ```
+
 ```html
 <h2 class="pn">Hello World!</h2>
 <div>

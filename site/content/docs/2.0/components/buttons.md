@@ -50,6 +50,7 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
     <button type="button" class="btn btn-outline-white">White</button>
   </div>
 </div>
+
 ```html
 <div class="bg-dark p-3">
   <button type="button" class="btn btn-outline-white">White</button>

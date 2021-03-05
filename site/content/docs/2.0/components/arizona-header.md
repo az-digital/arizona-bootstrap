@@ -35,6 +35,7 @@ supported as shown below.
     </button>
   </div>
 </header>
+
 ```html
 <header class="bg-red arizona-header" id="header_arizona">
   <div class="container">
