@@ -14,7 +14,7 @@ If you use a bundler (Webpack, Rollup...), you can use `/js/dist/*.js` files whi
 
 ## Dependencies
 
-Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that **all plugins depend on jQuery** (this means jQuery must be included **before** the plugin files). [Consult our `package.json`]({{< param "repo" >}}/blob/v{{ site.current_version }}/package.json) to see which versions of jQuery are supported.
+Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that **all plugins depend on jQuery** (this means jQuery must be included **before** the plugin files). [Consult our `package.json`]({{< param "repo" >}}/blob/v{{< param "current_version" >}}/package.json) to see which versions of jQuery are supported.
 
 Our dropdowns, popovers and tooltips also depend on [Popper.js](https://popper.js.org/).
 
@@ -119,7 +119,7 @@ $.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the {{< ourname >}}
 The version of each of {{< ourname >}}'s jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
 ```js
-$.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
+$.fn.tooltip.Constructor.VERSION // => "{{< param "current_version" >}}"
 ```
 
 ## No Special Fallbacks when JavaScript is Disabled
