@@ -111,6 +111,13 @@ You can add the `.bg-dark` class to the `.modal` div to create a dark background
 
 Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.
 
+{{< example >}}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalLive">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
 <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -130,89 +137,14 @@ Toggle a working modal demo by clicking the button below. It will slide down and
     </div>
   </div>
 </div>
-
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalLive">
-    Launch demo modal
-  </button>
-</div>
-
-```html
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-blue" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-red">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
+{{< /example >}}
 
 ### Scrolling Long Content
 
 When modals become too long for the user's viewport or device, they scroll independent of the page itself. Try the demo below to see what we mean.
 
-<div id="exampleModalLong" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-blue" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-red">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalLong">
-    Launch demo modal
-  </button>
-</div>
-
-```html
+{{< example >}}
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalLong">
   Launch demo modal
@@ -229,7 +161,24 @@ When modals become too long for the user's viewport or device, they scroll indep
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-blue" data-dismiss="modal">Close</button>
@@ -238,10 +187,11 @@ When modals become too long for the user's viewport or device, they scroll indep
     </div>
   </div>
 </div>
-```
+{{< /example >}}
 
 You can also create a scrollable modal that allows scroll the modal body by adding `.modal-dialog-scrollable` to `.modal-dialog`.
 
+{{< example >}}
 <div id="exampleModalScrollable" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -279,44 +229,17 @@ You can also create a scrollable modal that allows scroll the modal body by addi
   </div>
 </div>
 
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalScrollable">
-    Launch demo modal
-  </button>
-</div>
-
-```html
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalScrollable">
   Launch demo modal
 </button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-blue" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-red">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
+{{< /example >}}
 
 ### Vertically Centered
 
 Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 
+{{< example >}}
+<!-- Modal -->
 <div id="exampleModalCenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -337,6 +260,7 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   </div>
 </div>
 
+<!-- Modal -->
 <div id="exampleModalCenteredScrollable" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -361,47 +285,17 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   </div>
 </div>
 
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
-    Vertically centered modal
-  </button>
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenteredScrollable">
-    Vertically centered scrollable modal
-  </button>
-</div>
-
-```html
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalCenteredScrollable">
+  Vertically centered scrollable modal
 </button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-blue" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-red">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
+{{< /example >}}
 
 ### Tooltips and Popovers
 
 [Tooltips]({{< docsref "/components/tooltips" >}}) and [popovers]({{< docsref "/components/popovers" >}}) can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.
 
+{{< example >}}
 <div id="exampleModalPopovers" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -426,26 +320,16 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   </div>
 </div>
 
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalPopovers">
-    Launch demo modal
-  </button>
-</div>
-
-```html
-<div class="modal-body">
-  <h5>Popover in a modal</h5>
-  <p>This <a href="#" role="button" class="btn btn-blue popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-  <hr>
-  <h5>Tooltips in a modal</h5>
-  <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-</div>
-```
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalPopovers">
+  Launch demo modal
+</button>
+{{< /example >}}
 
 ### Using the Grid
 
 Utilize the Bootstrap grid system within a modal by nesting `.container-fluid` within the `.modal-body`. Then, use the normal grid system classes as you would anywhere else.
 
+{{< example >}}
 <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -489,42 +373,10 @@ Utilize the Bootstrap grid system within a modal by nesting `.container-fluid` w
   </div>
 </div>
 
-<div class="bd-example">
 <button type="button" class="btn btn-red" data-toggle="modal" data-target="#gridSystemModal">
   Launch demo modal
 </button>
-</div>
-
-```html
-<div class="modal-body">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-      <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-    </div>
-    <div class="row">
-      <div class="col-sm-9">
-        Level 1: .col-sm-9
-        <div class="row">
-          <div class="col-8 col-sm-6">
-            Level 2: .col-8 .col-sm-6
-          </div>
-          <div class="col-4 col-sm-6">
-            Level 2: .col-4 .col-sm-6
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
+{{< /example >}}
 
 ### Varying Modal Content
 
@@ -533,11 +385,11 @@ Have a bunch of buttons that all trigger the same modal with slightly different 
 Below is a live demo followed by example HTML and JavaScript. For more information, [read the modal events docs](#events) for details on `relatedTarget`.
 
 {{< example >}}
-<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModal" data-whatever="@uofa">Open modal for @uofa</button>
-<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModal" data-whatever="@uaaa">Open modal for @uaaa</button>
-<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModal" data-whatever="@azathletics">Open modal for @azathletics</button>
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalcontent" data-whatever="@uofa">Open modal for @uofa</button>
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalcontent" data-whatever="@uaaa">Open modal for @uaaa</button>
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#exampleModalcontent" data-whatever="@azathletics">Open modal for @azathletics</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalcontent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -550,7 +402,7 @@ Below is a live demo followed by example HTML and JavaScript. For more informati
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" id="recipient-name"/>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
@@ -645,96 +497,53 @@ Modals have three optional sizes, available via modifier classes to be placed on
 
 Our default modal without modifier class constitutes the "medium" size modal.
 
-<div class="bd-example">
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-  <button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
-</div>
-
-```html
+{{< example >}}
+<!-- Extra large modal button -->
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#myExtraLargeModal">Extra large modal</button>
 <!-- Extra large modal -->
-<button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div id="myExtraLargeModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      ...
+      <div class="modal-header">
+        <h5 class="modal-title" id="myExtraLargeModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
+<!-- Large modal button -->
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#myLargeModal">Large modal</button>
 <!-- Large modal -->
-<button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="myLargeModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
+      <div class="modal-header">
+        <h5 class="modal-title" id="myLargeModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
+<!-- Small modal button-->
+<button type="button" class="btn btn-red" data-toggle="modal" data-target="#mySmallModal">Small modal</button>
 <!-- Small modal -->
-<button type="button" class="btn btn-red" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
-```
-
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title h4" id="myExtraLargeModalLabel">Extra large modal</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title h4" id="myLargeModalLabel">Large modal</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div id="mySmallModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title h4" id="mySmallModalLabel">Small modal</h5>
+        <h5 class="modal-title" id="mySmallModalLabel">New message</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
     </div>
   </div>
 </div>
+{{< /example >}}
 
 ## Usage
 
@@ -752,7 +561,9 @@ Activate a modal without writing JavaScript. Set `data-toggle="modal"` on a cont
 
 Call a modal with id `myModal` with a single line of JavaScript:
 
-```js$('#myModal').modal(options)```
+```js
+$('#myModal').modal(options)
+```
 
 ### Options
 
@@ -815,25 +626,33 @@ $('#myModal').modal({
 
 Manually toggles a modal. **Returns to the caller before the modal has actually been shown or hidden** (i.e. before the `shown.bs.modal` or `hidden.bs.modal` event occurs).
 
-```js$('#myModal').modal('toggle')```
+```js
+$('#myModal').modal('toggle')
+```
 
 #### `.modal('show')`
 
 Manually opens a modal. **Returns to the caller before the modal has actually been shown** (i.e. before the `shown.bs.modal` event occurs).
 
-```js$('#myModal').modal('show')```
+```js
+$('#myModal').modal('show')
+```
 
 #### `.modal('hide')`
 
 Manually hides a modal. **Returns to the caller before the modal has actually been hidden** (i.e. before the `hidden.bs.modal` event occurs).
 
-```js$('#myModal').modal('hide')```
+```js
+$('#myModal').modal('hide')
+```
 
 #### `.modal('handleUpdate')`
 
 Manually readjust the modal's position if the height of a modal changes while it is open (i.e. in case a scrollbar appears).
 
-```js$('#myModal').modal('handleUpdate')```
+```js
+$('#myModal').modal('handleUpdate')
+```
 
 #### `.modal('dispose')`
 

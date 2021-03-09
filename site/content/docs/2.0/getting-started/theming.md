@@ -325,7 +325,7 @@ An expansive set of gray variables and a Sass map in `scss/_variables.scss` for 
   <div class="col-md-4">
     {{< theme-colors.inline >}}
     {{- range $.Site.Data.grays }}
-      <div class="p-3 swatch-{{ .name }}">{{ .name | title }}<</div>
+      <div class="p-3 swatch-{{ .name }}">{{ .name | title }}</div>
     {{ end -}}
   {{< /theme-colors.inline >}}
   </div>
