@@ -251,9 +251,6 @@
     .navbar-offcanvas-header {
       display: none;
     }
-    .nav {
-      flex-wrap: wrap;
-    }
     .navbar-nav {
       display: flex;
       flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
