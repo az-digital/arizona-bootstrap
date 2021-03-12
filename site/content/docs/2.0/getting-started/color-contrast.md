@@ -19,53 +19,38 @@ Below we have provided a table that includes all of the Arizona branded colors. 
 <label id="hide-inaccessible-label">
   <input type="checkbox" id="hide-inaccessible"> <strong>Hide inaccessible color combinations.</strong>
 </label>
- {{< contrast.inline >}}
 
-{{ $contrasts := $.Site.Data.contrast }}
-{{ $bgcolors := $.Site.Data.contrast }}
-{{ $elem_key := "text" }}
-
-
+{{< contrast.inline >}}
+{{- $textcolors := (index (where .Site.Data.contrast "colorgroup" "text") 0).colors -}}
+{{- $bgcolors := (index (where .Site.Data.contrast "colorgroup" "bg") 0).colors -}}
 <div class="table-responsive">
   <table class="table table-bordered">
-  {{- range $contrasts }}
-    {{ if eq .colorgroup "text" }}
-      <tr>
-        <th></th>
-        {{- range .colors }}
-          {{- range . }}
-            <th class="text-nowrap">.text-{{ . }}</th>
-          {{- end }}
-        {{- end }}
-      </tr>  
-    {{ end }}
-    {{ if eq .colorgroup "bg" }}
-      {{ range $bg := .colors }}
-        <tr>
-          <th class="text-nowrap">.bg-{{ $bg.color }}</th>
-          {{ $contrast := .contrast}}
-          {{- range $contrasts }}
-            {{ if eq .colorgroup "text" }}
-              {{ range $text := .colors }}
-                {{ $cc := false }}
-                {{ range $contrast := $bg }}
-                  {{ if and (not $cc) (eq . $text.color) }}
-                    {{ $cc = true }}
-                  {{ end }}
-                {{ end }}
-                <td class="bg-{{ $bg.color }} text-center align-items-center">
-                  <span class="text-{{ $text.color }}{{ if (not $cc) }} inaccessible{{ end }}">.text-{{ $text.color }}</span>
-                </td>
-              {{- end}}
-            {{- end}}
-          {{- end}}
-        </tr>
-      {{- end }}
-    {{- end }}
-  {{- end}}
+    <tr>
+      <th></th>
+    {{ range $textcolors -}}
+      <th class="text-nowrap">.text-{{ .color }}</th>
+    {{ end -}}
+    </tr>
+  {{ range $bg := $bgcolors -}}
+    <tr>
+      <th class="text-nowrap">.bg-{{ $bg.color }}</th>
+      {{ range $text := $textcolors -}}
+        {{- $cc := false -}}
+        {{- range $con := $bg.contrast -}}
+          {{- if $con -}}
+            {{- if and (not $cc) (eq $con.accessible $text.color) -}}
+              {{- $cc = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        <td class="bg-{{ $bg.color }} text-center align-items-center">
+          <span class="text-{{ $text.color }}{{ if (not $cc) }} inaccessible{{ end }}">.text-{{ $text.color }}</span>
+        </td>
+      {{ end }}
+    </tr>
+  {{ end -}}
   </table>
-</div> 
-
+</div>
 {{< /contrast.inline >}}
 
 
