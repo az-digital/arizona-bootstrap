@@ -32,37 +32,37 @@ All HTML headings, `<h1>` through `<h6>`, are available.
   <tbody>
     <tr>
       <td>
-        {{ "`<h1></h1>`" | markdownify }}
+        {{< markdown >}}`<h1></h1>`{{< /markdown >}}
       </td>
       <td><h1>Page Title</h1></td>
     </tr>
     <tr>
       <td>
-        {{ "`<h2></h2>`" | markdownify }}
+        {{< markdown >}}`<h2></h2>`{{< /markdown >}}
       </td>
       <td><h2>Section Heading</h2></td>
     </tr>
     <tr>
       <td>
-        {{ "`<h3></h3>`" | markdownify }}
+        {{< markdown >}}`<h3></h3>`{{< /markdown >}}
       </td>
       <td><h3>Subsection Heading</h3></td>
     </tr>
     <tr>
       <td>
-        {{ "`<h4></h4>`" | markdownify }}
+        {{< markdown >}}`<h4></h4>`{{< /markdown >}}
       </td>
       <td><h4>Subsection Heading</h4></td>
     </tr>
     <tr>
       <td>
-        {{ "`<h5></h5>`" | markdownify }}
+        {{< markdown >}}`<h5></h5>`{{< /markdown >}}
       </td>
       <td><h5>Subsection Heading</h5></td>
     </tr>
     <tr>
       <td>
-        {{ "`<h6></h6>`" | markdownify }}
+        {{< markdown >}}`<h6></h6>`{{< /markdown >}}
       </td>
       <td><h6>Subsection Heading</h6></td>
     </tr>
@@ -161,7 +161,7 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 ## Links
 
-Default links include a red text color and an underline. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling. 
+Default links include a red text color and an underline. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling.
 
 {{< example >}}
 <a href="#">Default Link</a>

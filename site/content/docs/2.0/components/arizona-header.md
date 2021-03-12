@@ -16,6 +16,7 @@ supported as shown below.
   The wordmark logo without a Block "A" header should only be used when near a Block "A" logo.
 </div>
 
+{{< example >}}
 <header class="bg-red arizona-header" id="header_arizona">
   <div class="container">
     <div class="row">
@@ -58,3 +59,4 @@ supported as shown below.
 </header>
 ```
 <div id="navbarOffcanvasDemo"></div>
+{{< /example >}}
