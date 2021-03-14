@@ -71,7 +71,7 @@ else
 fi
 
 #------------------------------------------------------------------------------
-# Use the checksum for the Ruby Gem and Node.js npm lockfiles as an image tag.
+# Use the checksum for the scripts, Dockerfile, & npm lockfile as an image tag.
 
 lockhash=$(taghash Dockerfile Gemfile.lock package-lock.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"

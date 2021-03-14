@@ -4,7 +4,7 @@
 # expose-review-site.sh: build the documentation site, copy back to the source
 #
 # Required environment variables
-# - AZ_BOOTSTRAP_DEST_DIR Internal directory used for the build
+# - AZ_BOOTSTRAP_FROZEN_DIR Internal directory with saved npm setup
 # - AZ_BOOTSTRAP_SOURCE_DIR Source directory for files and directories
 #
 # Optional environment variables
@@ -16,9 +16,9 @@
 
 set -e
 
-create-source-links
+copy-npm-config
 
-cd "$AZ_BOOTSTRAP_DEST_DIR"
+cd "$AZ_BOOTSTRAP_SOURCE_DIR"
 
 create-hugo-config
 
@@ -26,5 +26,3 @@ npm run dist
 npm run css
 npm run js
 npm run docs-build
-
-sync-static-site-dir

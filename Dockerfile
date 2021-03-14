@@ -9,22 +9,21 @@ COPY --from=openjdk:11.0.10-jre-slim-buster /etc/ca-certificates/update.d/docker
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
-COPY scripts/create-source-links.sh /usr/local/bin/create-source-links
+COPY scripts/copy-npm-config.sh /usr/local/bin/copy-npm-config
 COPY scripts/create-hugo-config.sh /usr/local/bin/create-hugo-config
 COPY scripts/expose-review-site.sh /usr/local/bin/expose-review-site
 COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
-COPY scripts/sync-static-site-dir.sh /usr/local/bin/sync-static-site-dir
 
 # Build args don't normally persist as environment variables.
-ARG AZ_BOOTSTRAP_DEST_DIR
-ENV AZ_BOOTSTRAP_DEST_DIR ${AZ_BOOTSTRAP_DEST_DIR:-/azbuild/arizona-bootstrap}
+ARG AZ_BOOTSTRAP_FROZEN_DIR
+ENV AZ_BOOTSTRAP_FROZEN_DIR ${AZ_BOOTSTRAP_FROZEN_DIR:-/azbuild/arizona-bootstrap}
 ARG AZ_BOOTSTRAP_SOURCE_DIR
 ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-src}
 
-WORKDIR $AZ_BOOTSTRAP_DEST_DIR
+WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
 
-COPY "package.json" "package-lock.json" "$AZ_BOOTSTRAP_DEST_DIR"/
+COPY "package.json" "package-lock.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
@@ -39,4 +38,5 @@ RUN apt-get update \
   && pip3 install 'awscli~=1.19.13'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
-  && npm install
+  && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
+  && npm ci
