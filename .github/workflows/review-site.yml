@@ -8,7 +8,7 @@ on:
 jobs:
   review-site:
     name: Build & deploy review site
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Find the push source branch name
@@ -18,9 +18,8 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: echo "AZ_TRIMMED_REF=${GITHUB_HEAD_REF}" >> ${GITHUB_ENV}
       - name: Set variables for Docker images
-        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
-          lockhash=$(find Dockerfile Gemfile.lock package-lock.json scripts -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          lockhash=${{ hashFiles('Dockerfile', 'package-lock.json', 'scripts/*') }}
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'

@@ -24,4 +24,4 @@ cd "$AZ_BOOTSTRAP_SOURCE_DIR"
 create-hugo-config
 
 npm run dist
-npm run docs-serve
+npm run docs-serve-external

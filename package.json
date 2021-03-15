@@ -22,6 +22,7 @@
     "docs-vnu": "node build/vnu-jar.js",
     "docs-lint": "npm-run-all --parallel docs-vnu docs-linkinator",
     "docs-serve": "hugo server --port 9001 --disableFastRender",
+    "docs-serve-external": "hugo server --bind '0.0.0.0' --port 9001 --disableFastRender",
     "docs-serve-only": "npx sirv-cli _site --port 9001",
     "js": "npm-run-all js-compile js-minify",
     "js-compile": "npm-run-all --parallel js-compile-*",

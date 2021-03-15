@@ -83,6 +83,6 @@ sed -e "s#{{az_short_version}}#$AZ_SHORT_VERSION#g" \
   -e "s#{{az_version}}#$AZ_VERSION#g" \
   "$hugo_config_template" \
   > "$hugo_config" \
-  || errorexit "Failed to make the Hugo configuration ${hugo_config} frpm the template ${hugo_config_template}"
+  || errorexit "Failed to make the Hugo configuration ${hugo_config} from the template ${hugo_config_template}"
 
 normalexit "Created the ${hugo_config} Hugo configuration"

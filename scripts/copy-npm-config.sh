@@ -44,7 +44,7 @@ fi
 # Initial run-time error checking.
 
 [ -n "$AZ_BOOTSTRAP_FROZEN_DIR" ] \
-  || errorexit "No destination specified"
+  || errorexit "No saved npm configuration directory specified"
 [ -n "$AZ_BOOTSTRAP_SOURCE_DIR" ] \
   || errorexit "No source directory specified"
 [ -d "$AZ_BOOTSTRAP_FROZEN_DIR" ] \
@@ -53,11 +53,17 @@ fi
   || errorexit "Couldn't find the source directory ${AZ_BOOTSTRAP_SOURCE_DIR}"
 
 #------------------------------------------------------------------------------
+# Discover the existing file ownership.
+
+ownership=$(stat --format='%u:%g' "${AZ_BOOTSTRAP_SOURCE_DIR}/package.json") \
+  || errorexit "Failed to determine the ownership of the existing package.json file"
+
+#------------------------------------------------------------------------------
 # Copy the setup.
 
 logmessage "Copying saved configuration from ${AZ_BOOTSTRAP_FROZEN_DIR} to ${AZ_BOOTSTRAP_SOURCE_DIR}"
 
-rsync -r "$AZ_BOOTSTRAP_FROZEN_DIR" "$AZ_BOOTSTRAP_SOURCE_DIR" \
+rsync --recursive --chown="$ownership" --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \
   || errorexit "rsync crashed with status ${?}"
 
-normalexit "Linked $nfound entries"
+normalexit "Copy complete"

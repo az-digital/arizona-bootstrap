@@ -32,11 +32,41 @@ The initial build will be relatively slow, and may require reasonably fast Inter
 
 The build environment uses a huge set of Node.js packages (under the control of the commonly used `npm` uutility). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.
 
-If the image build succeeds, it should finish by showing the image ID code, which you should note (copy) as the most convenirnt means of referring to the image, since the usual tagged name will be very long (it includes the full hex checksum hash of the configuration files). In the examples that follow, this code is `f855e50fb65e`, but you should substitute the ID from your own image build.
-
 ### Viewing the locally built documentation review site
 
-In a command-line shell, make sure you're in the top-level directory of your local working Arizona Bootstrap copy (the one containing the `Dockerfile`), then enter a command like
+If everything works, the script should spin up a review site showing the {{< ourname >}} documentation at a local URL. It should display something like
+
+```text
+> hugo server --bind '0.0.0.0' --port 9001 --disableFastRender
+
+Start building sites … 
+
+                   | EN   
+-------------------+------
+  Pages            |  83  
+  Paginator pages  |   0  
+  Non-page files   | 106  
+  Static files     |  26  
+  Processed images |   0  
+  Aliases          |   1  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Built in 141 ms
+Watching for changes in /arizona-bootstrap-src/{dist,package.json,site}
+Watching for config changes in /arizona-bootstrap-src/config.yml
+Environment: "development"
+Serving pages from memory
+Web Server is available at //localhost:9001/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+```
+To view this, just point a web browser at the URL it gives, here http://localhost:9001/
+
+### Other Docker commands to help local development
+
+If the image build succeeds, you can re-use it to run additional development steps within a Docker container. The build should finish by showing the image ID code, which you should note (copy) as the most convenirnt means of referring to the image, since the usual tagged name will be very long (it includes the full hex checksum hash of the configuration files). In the examples that follow, this code is `f855e50fb65e`, but you should substitute the ID from your own image build.
+
+The following command duplicates what happens in the container-building script, but lets you see the additional details that you might want to modify. In a command-line shell, make sure you're in the top-level directory of your local working Arizona Bootstrap copy (the one containing the `Dockerfile`), then enter a command like
 
 ```sh
 docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
@@ -49,17 +79,7 @@ docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb6
 - `f855e50fb65e` is the image ID is in the case of the example, but as already noted you should substitute the ID from your own Docker image build for this.
 - `serve-review-site` is the command that runs inside the container, building the static documentation web site based on your local version of Arizona Bootstrap and starting a little web server to make it visible.
 
-If everything works, you should see a message telling you the static web site is available at a particular URL. This might be specific to the interior of the Docker container, so you should point your local web browser at a similar URL, but specify it starting with something like `http://localhost:9001...` if you used the `-p 9001:9001` option with the `docker run` command, or choose whatever port you specified there if you modified this option.
-
-### Other Docker commands to help local development
-
-The usual local development environment hides the final fully built static documentation web site within the Docker container, but you might need to move this to a web server elsewhere the command
-
-```sh
-docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e expose-review-site
-```
-
-copies the completed site out to a subdirectory called `_site`.
+If everything works, you should see the message telling you the static web site is available at a particular URL, something like `http://localhost:9001...` if you used the `-p 9001:9001` option with the `docker run` command, or choose whatever port you specified there if you modified this option.
 
 You can specify a prefix to include in all the URLs of the static site by setting an environment variable within the container. For example to include the prefix `/bootstrap/localwip` the command would be
 
@@ -67,9 +87,10 @@ You can specify a prefix to include in all the URLs of the static site by settin
 docker run -t -i --rm -e "AZ_SITE_BASE_URL=/bootstrap/localwip" -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
 ```
 
-There are a few more convenience commands to use with `docker run` in addition to `serve-review-site` and `expose-review-site`.
+There are a few more convenience commands to use with `docker run` in addition to `serve-review-site`
+- `expose-review-site` saves the built files of the documentation review site to the `_site` directory subtree.
 - `build-review-site` rebuilds the files without providing a live view of the changes.
-- `build-cdn-assets` rebuilds the files with the options suitable for uploading them to a CDN.
+- `build-cdn-assets` rebuilds the files in the dist subdirectory with the options suitable for uploading them to a CDN.
 - `lint` runs code quality (linting) checks on the newly built documentation site.
 
 However for maximum flexibility,the easiest option is to run a full interactive shell within the container, specifying just `/bin/bash` (this will not only have access to all the convenience shell commands, but all of the npm scripts as well).
