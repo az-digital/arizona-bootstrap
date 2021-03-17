@@ -36,27 +36,4 @@ supported as shown below.
     </button>
   </div>
 </header>
-
-```html
-<header class="bg-red arizona-header" id="header_arizona">
-  <div class="container">
-    <div class="row">
-      <a class="arizona-logo" href="http://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg"/>
-      </a>
-    </div>
-  </div>
-  <div class="redbar-buttons d-lg-none">
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
-      <span class="icon material-icons-sharp"> search </span>
-      <span class="icon-text"> search </span>
-    </button>
-    <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
-      <span class="icon material-icons-sharp"> menu </span>
-      <span class="icon-text"> menu </span>
-    </button>
-  </div>
-</header>
-```
-<div id="navbarOffcanvasDemo"></div>
 {{< /example >}}
