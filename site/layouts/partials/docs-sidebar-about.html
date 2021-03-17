@@ -23,11 +23,11 @@
 
       <div class="bd-toc-item{{ if $is_active_group }} active{{ end }}">
         <a class="bd-toc-link"
-          {{- if $group.pages -}}
-          href="{{- (printf `docs/%s%s` $.Site.Params.docs_version $group_slug) | relURL -}}"
-        {{- else -}}
-          href="{{- (printf `docs/%s%s/%s` $.Site.Params.docs_version $group_slug $link_slug) | relURL -}}"
-        {{- end -}}>
+          {{ if $group.pages -}}
+            href="{{- (printf `docs/%s/%s/%s/` $.Site.Params.docs_version $group_slug $link_slug) | relURL -}}"
+          {{- else -}}
+            href="{{- (printf `docs/%s/%s` $.Site.Params.docs_version $group_slug) | relURL -}}"
+          {{- end -}}>
           {{ $group.title }}
         </a>
 

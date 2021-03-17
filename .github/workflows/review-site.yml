@@ -45,7 +45,7 @@ jobs:
           echo "AZ_SITE_HOST=https://review.digital.arizona.edu" >> ${GITHUB_ENV}
       - name: Build review site artifact
         run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@e9d3185f7a72ecb1a71000a3f11be505e74e0081
         with:
