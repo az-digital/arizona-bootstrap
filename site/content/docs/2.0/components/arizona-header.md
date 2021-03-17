@@ -36,4 +36,5 @@ supported as shown below.
     </button>
   </div>
 </header>
+<div id="navbarOffcanvasDemo"></div>
 {{< /example >}}
