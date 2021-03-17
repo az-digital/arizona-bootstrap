@@ -5,10 +5,10 @@
         <a class="nav-link{{ if .IsHome }} active{{ end }}" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link{{ if eq .Page.Layout "about" }} active{{ end }}" href="/docs/{{ .Site.Params.docs_version }}/about/overview" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
+        <a class="nav-link{{ if eq .Page.Layout "about" }} active{{ end }}" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/about/overview`) | relURL -}}" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link{{ if eq .Page.Layout "docs" }} active{{ end }}" href="/docs/{{ .Site.Params.docs_version }}/getting-started/introduction" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+        <a class="nav-link{{ if eq .Page.Layout "docs" }} active{{ end }}" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/introduction`) | relURL -}}" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
       </li>
     </ul>
   </div>
@@ -31,11 +31,11 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link p-2" href="/docs/{{ .Site.Params.docs_version }}{{ .Site.Params.slack }}" rel="noopener" aria-label="Slack">
+      <a class="nav-link p-2" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version $.Site.Params.slack) | relURL -}}" rel="noopener" aria-label="Slack">
         <i class="fab fa-1x fa-slack-hash text-azurite"></i>
       </a>
     </li>
   </ul>
 
-  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="/docs/{{ .Site.Params.docs_version }}/getting-started/download">Download</a>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Download</a>
 </header>

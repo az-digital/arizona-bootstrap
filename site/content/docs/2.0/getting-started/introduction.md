@@ -220,4 +220,4 @@ For improved cross-browser rendering, we use [Reboot]({{< docsref "/content/rebo
 
 Stay up to date on the development of {{< ourname >}} and reach out to the community with these helpful resources.
 
-- Join [the official Slack workspace](/docs/{{< param docs_version >}}{{ {{< param slack >}} }}/).
+- Join [the official Slack workspace]({{< docsref "/about/get-involved#connect-with-us-on-slack" >}}).

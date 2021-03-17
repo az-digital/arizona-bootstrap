@@ -20,4 +20,4 @@ UA Bootstrap was originally created by the [UA Digital team](https://bitbucket.o
 
 ## Get Involved
 
-Join the conversation on [Slack](/docs/{{< param docs_version >}}{{< param slack >}}) or get involved with {{< ourname >}} development by [opening an issue]({{< param repo >}}/issues) or submitting a pull request.
+Join the conversation on [Slack]({{< docsref "/about/get-involved#connect-with-us-on-slack" >}}) or get involved with {{< ourname >}} development by [opening an issue]({{< param repo >}}/issues) or submitting a pull request.

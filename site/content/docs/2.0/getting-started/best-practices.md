@@ -17,4 +17,4 @@ We've designed and developed {{< ourname >}} to work in a number of environments
 - Working with Sass files
 - Building new CSS components
 - Working with flexbox
-- Ask in [Slack]({{ {{< param slack >}} }})
+- Ask in [Slack]({{< docsref "/about/get-involved#connect-with-us-on-slack" >}})

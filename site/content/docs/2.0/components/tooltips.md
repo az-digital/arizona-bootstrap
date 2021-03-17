@@ -263,7 +263,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
     <tr>
       <td>whiteList</td>
       <td>object</td>
-      <td><a href="/docs/{{< param docs_version >}}/getting-started/javascript#sanitizer">Default value</a></td>
+      <td><a href="{{< docsref `/getting-started/javascript#sanitizer` >}}">Default value</a></td>
       <td>Object which contains allowed attributes and tags</td>
     </tr>
     <tr>

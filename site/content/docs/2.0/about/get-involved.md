@@ -27,7 +27,7 @@ Arizona Digital hosts weekly meetings on Wednesdays and Fridays. Wednesday meeti
 
 The Arizona Digital team utilizes a variety of Slack channels ranging from general discussions to specific repos and products. You are welcome to join any and all of these channels. Below you will find all of our Slack channels and a description of the channel's purpose.
 
-<strong>To connect with us on Slack, you must first <a href="https://quickstart.arizona.edu/join-us-on-slack" target="_blank">request access to the UArizona workspace</a>.</strong> Once added, you can join any of the channels listed below.
+<strong>To connect with us on Slack, you must first <a href="{{< param slack >}}" target="_blank">request access to the UArizona workspace</a>.</strong> Once added, you can join any of the channels listed below.
 
 <table class="table table-striped">
   <thead class="thead-dark">

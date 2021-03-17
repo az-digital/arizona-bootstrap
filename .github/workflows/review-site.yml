@@ -40,7 +40,9 @@ jobs:
           docker build -t "$AZ_EPHEMERAL_IMAGE" .
           docker push "$AZ_EPHEMERAL_IMAGE"
       - name: Build variables
-        run: echo "AZ_REVIEW_BASEURL=/arizona-bootstrap/${AZ_TRIMMED_REF}" >> ${GITHUB_ENV}
+        run: |
+          echo "AZ_REVIEW_BASEURL=/arizona-bootstrap/${AZ_TRIMMED_REF}" >> ${GITHUB_ENV}
+          echo "AZ_SITE_HOST=https://review.digital.arizona.edu" >> ${GITHUB_ENV}
       - name: Build review site artifact
         run: |
           docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
@@ -57,4 +59,4 @@ jobs:
       - name: Display review site URL
         # TODO: replace with step that publishes link to review site on PR.
         run: |
-          echo "Review site deployed to https://review.digital.arizona.edu${AZ_REVIEW_BASEURL}"
+          echo "Review site deployed to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"

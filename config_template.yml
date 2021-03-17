@@ -1,6 +1,6 @@
 languageCode:           "en"
 title:                  "Arizona Bootstrap"
-baseURL:                "{{az_site_base_url}}"
+baseURL:                "{{az_site_host}}{{az_site_base_url}}"
 enableInlineShortcodes: true
 
 markup:
@@ -44,14 +44,14 @@ module:
 params:
   description:          "University of Arizona theme for Bootstrap."
   authors:              "Arizona Digital contributors"
-  social_image_path:    "{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social.png"
-  social_logo_path:     "{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
+  social_image_path:    "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social.png"
+  social_logo_path:     "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
 
   current_version:      "{{az_version}}"
   docs_version:         "{{az_short_version}}"
   github_org:           "https://github.com/az-digital"
   repo:                 "https://github.com/az-digital/arizona-bootstrap"
-  slack:                "/about/get-involved/#connect-with-us-on-slack"
+  slack:                "https://quickstart.arizona.edu/join-us-on-slack"
   azdigital:            "https://digital.arizona.edu"
   az_quickstart:        "https://github.com/az-digital/az_quickstart"
 
