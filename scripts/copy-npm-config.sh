@@ -63,7 +63,9 @@ ownership=$(stat --format='%u:%g' "${AZ_BOOTSTRAP_SOURCE_DIR}/package.json") \
 
 logmessage "Copying saved configuration from ${AZ_BOOTSTRAP_FROZEN_DIR} to ${AZ_BOOTSTRAP_SOURCE_DIR}"
 
-rsync --recursive --chown="$ownership" --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \
+rsync --recursive --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \
   || errorexit "rsync crashed with status ${?}"
+find "$AZ_BOOTSTRAP_SOURCE_DIR" -user root -exec chown "$ownership" {} \; \
+  || errorexit "Failed to change ownership from root to ${ownership}"
 
 normalexit "Copy complete"

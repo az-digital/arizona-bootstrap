@@ -23,7 +23,7 @@ ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-src}
 
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
 
-COPY "package.json" "package-lock.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
+COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
@@ -39,4 +39,4 @@ RUN apt-get update \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
-  && npm ci
+  && npm install

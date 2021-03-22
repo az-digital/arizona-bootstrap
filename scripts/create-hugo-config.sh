@@ -72,6 +72,8 @@ if [ -z "$AZ_SITE_HOST" ] ; then
   else
     AZ_SITE_HOST='localhost'
   fi
+elif [ "$AZ_SITE_HOST" = 'internal_files' ] ; then
+  AZ_SITE_HOST=''
 fi
 
 #------------------------------------------------------------------------------

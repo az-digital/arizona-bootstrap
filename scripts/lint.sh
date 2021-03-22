@@ -58,6 +58,9 @@ copy-npm-config
 
 cd "$AZ_BOOTSTRAP_SOURCE_DIR"
 
+AZ_SITE_HOST='internal_files'
+export AZ_SITE_HOST
+
 create-hugo-config
 
 npm run dist
