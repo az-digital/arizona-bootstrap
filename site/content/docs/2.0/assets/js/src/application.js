@@ -4,8 +4,8 @@
 
 /*!
  * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
@@ -24,11 +24,16 @@
 
     $('[data-toggle="popover"]').popover()
 
-    $('.toast')
+    $('.bd-example .toast')
       .toast({
         autohide: false
       })
       .toast('show')
+
+    // Live toast demo
+    $('#liveToastBtn').click(function () {
+      $('#liveToast').toast('show')
+    })
 
     // Demos within modals
     $('.tooltip-test').tooltip()
@@ -44,8 +49,8 @@
 
     // Modal relatedTarget demo
     $('#exampleModal').on('show.bs.modal', function (event) {
-      var $button = $(event.relatedTarget)      // Button that triggered the modal
-      var recipient = $button.data('whatever')  // Extract info from data-* attributes
+      var $button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = $button.data('whatever') // Extract info from data-* attributes
       // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
       var $modal = $(this)
@@ -59,7 +64,7 @@
     })
 
     // Insert copy to clipboard button before .highlight
-    $('figure.highlight, div.highlight').each(function () {
+    $('div.highlight').each(function () {
       var btnHtml = '<div class="bd-clipboard"><button type="button" class="btn-clipboard" title="Copy to clipboard">Copy</button></div>'
       $(this).before(btnHtml)
       $('.btn-clipboard')
@@ -90,7 +95,7 @@
     })
 
     clipboard.on('error', function (e) {
-      var modifierKey = /Mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-'
+      var modifierKey = /mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-'
       var fallbackMsg = 'Press ' + modifierKey + 'C to copy'
 
       $(e.trigger)
@@ -109,4 +114,4 @@
 
     bsCustomFileInput.init()
   })
-}(jQuery))
+})(jQuery)
