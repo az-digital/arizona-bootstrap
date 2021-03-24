@@ -24,14 +24,14 @@
 // Happy Bootstrapping!
 
 // Load Arizona Bootstrap overrides
-@import "../../../../../scss/custom-variables";
-// @import "../../../../../scss/custom-styles";
+@import "../../../scss/custom-variables";
+// @import "../../../scss/custom-styles";
 
 
 // Load Bootstrap variables and mixins
-@import "../../../../../node_modules/bootstrap/scss/functions";
-@import "../../../../../node_modules/bootstrap/scss/variables";
-@import "../../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
 
 // Load docs components
 @import "variables";

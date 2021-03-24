@@ -11,9 +11,7 @@
     "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd",
     "css-lint-vars": "fusv scss/ site/assets/scss/",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\"",
-    "css-prefix": "npm-run-all --parallel css-prefix-*",
-    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
-    "css-prefix-examples": "postcss --config build/postcss.config.js --replace \"site/content/**/*.css\"",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
     "dist": "npm-run-all --parallel css js",
     "docs": "npm-run-all docs-build docs-lint",
     "docs-build": "hugo --cleanDestinationDir",
@@ -96,5 +94,8 @@
     "dist/{css,js}/**/*.{css,js,map,svg}",
     "js/{src,dist}/**/*.{js,map}",
     "scss/**/*.scss"
-  ]
+  ],
+  "hugo-bin": {
+    "buildTags": "extended"
+  }
 }
