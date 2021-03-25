@@ -2,7 +2,7 @@
   <div class="navbar-nav-scroll">
     <ul class="navbar-nav bd-navbar-nav flex-row">
       <li class="nav-item">
-        <a class="nav-link{{ if .IsHome }} active{{ end }}" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
+        <a class="nav-link{{ if .IsHome }} active{{ end }}" href="{{ `/` | relURL}}" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Arizona Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link{{ if eq .Page.Layout "about" }} active{{ end }}" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/about/overview`) | relURL -}}" onclick="ga('send', 'event', 'Navbar', 'Community links', 'About');">About</a>
@@ -19,7 +19,7 @@
         v{{ .Site.Params.docs_version }}
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (2.0.x)</a>
+        <a class="dropdown-item active" href="{{ `/` | relURL}}">Latest (2.0.x)</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
       </div>
