@@ -4,10 +4,10 @@
   // COLOR CONTRAST TABLE
   $('#hide-inaccessible').change(function () {
     if ($('#hide-inaccessible').is(':checked')) {
-      $('.inaccessible').css('visibility', 'hidden')  // checked
+      $('.inaccessible').css('visibility', 'hidden') // checked
       $('.inaccessible').parent().css('opacity', '0')
     } else {
-      $('.inaccessible').css('visibility', 'visible')  // unchecked
+      $('.inaccessible').css('visibility', 'visible') // unchecked
       $('.inaccessible').parent().css('opacity', '1')
     }
   })
@@ -34,7 +34,7 @@
     specimenModalFontName.textContent = fontName
   }
 
-  const mySampleIds = ['big1', 'big2', 'big3', 'big4', 'big5', 'big6', 'big7']
+  var mySampleIds = ['big1', 'big2', 'big3', 'big4', 'big5', 'big6', 'big7']
 
   function updateSample(myText) {
     var i
@@ -42,11 +42,13 @@
     for (i in mySampleIds) {
       if (mySampleIds[i]) {
         sample = document.getElementById(mySampleIds[i])
-        sample.innerText = myText
+        sample.textContent = myText
         sample.firstChild.nodeValue = myText
       }
     }
-    if (myText.match(unescape('%79%65%6C%6C%6F%77'))) {
+
+    var pattern = new RegExp(unescape('%79%65%6C%6C%6F%77'))
+    if (pattern.test(myText)) {
       document.getElementsByTagName('h2')[0].style.backgroundColor = '#ffde00'
     }
   }
@@ -54,8 +56,9 @@
   function abcSample() {
     updateSample('A​B​C​D​E​F​G​H​I​J​K​L​M​N​O​P​Q​R​S​T​U​V​W​X​Y​Z a​b​c​d​e​f​g​h​i​j​k​l​m​n​o​p​q​r​s​t​u​v​w​x​y​z 0​1​2​3​4​5​6​7​8​9')
   }
+
   function customSample() {
     updateSample(document.bigcontrol.customSampleText.value)
   }
-}(jQuery))
+})(jQuery)
 

@@ -35,6 +35,7 @@
           $('#background-wrapper-live-demo').removeClass(classesToRemove[i])
         }
       }
+
       // apply new background color
       $('#background-wrapper-live-demo').addClass(backgroundColorClass)
     }
@@ -74,9 +75,10 @@
           $('#background-wrapper-live-demo').removeClass(classesToRemove[i])
         }
       }
+
       // apply new background triangle class
       $('#background-wrapper-live-demo').addClass(backgroundPatternClass)
     }
   })
-}(jQuery))
+})(jQuery)
 
