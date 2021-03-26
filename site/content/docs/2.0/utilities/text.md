@@ -104,14 +104,6 @@ Change a selection of text to our monospace font stack with `.text-monospace`.
 <p class="text-monospace">This is monospace text</p>
 {{< /example >}}
 
-### Sans
-
-Change a selection of text to our sans font with `.text-sans`.
-
-{{< example >}}
-<p class="text-sans">This is sans text</p>
-{{< /example >}}
-
 ## Reset Color
 
 Reset a text or link's color with `.text-reset`, so that it inherits the color from its parent.
