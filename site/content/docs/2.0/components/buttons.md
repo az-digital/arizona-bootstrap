@@ -31,7 +31,7 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {{< example >}}
 <button type="button" class="btn btn-outline-red">Red</button>
 <button type="button" class="btn btn-outline-blue">Blue</button>
-{{{< buttons.inline >}}
+{{< buttons.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
 <button type="button" class="btn btn-outline-{{ .name }}">{{ .name | title }}</button>
 {{- end -}}
