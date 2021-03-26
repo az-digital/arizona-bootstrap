@@ -158,7 +158,9 @@ $dropdown-link-disabled-color:        $text-muted !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-// $enable-rounded: false;
+$enable-rounded: true;
+// With another instance of the horrible workaround for fusv false positives.
+$enable-rounded: if($enable-rounded, false, false);
 
 /*
 * > FONTS
