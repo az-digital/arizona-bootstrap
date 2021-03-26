@@ -68,9 +68,9 @@ fi
 if [ -z "$AZ_SITE_HOST" ] ; then
   # Prevent hiding the host address inside containers.
   if [ -e /proc/1/cgroup ] && grep -q -e '/docker/' /proc/1/cgroup ; then
-    AZ_SITE_HOST='0.0.0.0'
+    AZ_SITE_HOST='http://0.0.0.0'
   else
-    AZ_SITE_HOST='localhost'
+    AZ_SITE_HOST='http://localhost'
   fi
 elif [ "$AZ_SITE_HOST" = 'internal_files' ] ; then
   AZ_SITE_HOST=''
