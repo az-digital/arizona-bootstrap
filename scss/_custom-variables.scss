@@ -158,7 +158,9 @@ $dropdown-link-disabled-color:        $text-muted !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded: false;
+$enable-rounded: true;
+// With another instance of the horrible workaround for fusv false positives.
+$enable-rounded: if($enable-rounded, false, false);
 
 /*
 * > FONTS
@@ -167,8 +169,8 @@ $font-size-base: 1rem;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-headings:   $font-family-sans-serif;
-$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       $font-family-sans-serif !default;
+// $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// $font-family-base:       $font-family-sans-serif !default;
 
 // stylelint-enable value-keyword-case
 
@@ -182,7 +184,6 @@ $heading-margins: 1.042em 0 .667em;
 */
 $spacer: 1rem !default;
 $spacers: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
@@ -200,8 +201,6 @@ $spacers: map-merge(
   ),
   $spacers
 );
-
-$enable-responsive-font-sizing: true;
 
 /*
 * > COMPONENTS

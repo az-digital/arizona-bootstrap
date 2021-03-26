@@ -71,9 +71,9 @@ else
 fi
 
 #------------------------------------------------------------------------------
-# Use the checksum for the Ruby Gem and Node.js npm lockfiles as an image tag.
+# Use the checksum for the scripts, Dockerfile, & npm lockfile as an image tag.
 
-lockhash=$(taghash Dockerfile Gemfile.lock package-lock.json scripts) \
+lockhash=$(taghash Dockerfile package-lock.json package.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"
 ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
 tagsearch=$(docker image ls "$ephemeral" ) \
@@ -96,11 +96,20 @@ else
 fi
 
 #------------------------------------------------------------------------------
-# Emit the pre-existing or newly built image ID.
+# Find the pre-existing or newly built image ID.
 
 imagelsout=$(docker image ls "$ephemeral" | grep "$lockhash")
 [ -n "$imagelsout" ] \
-  || errorexit  "Couldn't find the Docker image ID code"
-echo "$imagelsout" | awk '{ print "ImageID=" $3 }'
+  || errorexit  "Couldn't find the Docker image details"
+imageid=$(echo "$imagelsout" | awk '{ print $3 }')
+[ -n "$imageid" ] \
+  || errorexit  "Couldn't extract the Docker image ID code"
+logmessage "The image ID is ${imageid} (you can use this to run your own Docker containers with the same configuration)"
 
-normalexit "Docker image available"
+#------------------------------------------------------------------------------
+# Spin up a local review site.
+
+docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" serve-review-site \
+  || normalexit "Exited with status ${?}"
+
+errorexit "The web server hosting the review site in the Docker container did not run as expected"

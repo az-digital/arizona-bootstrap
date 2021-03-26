@@ -14,39 +14,39 @@ import Util from '../../node_modules/bootstrap/js/src/util.js'
  * ------------------------------------------------------------------------
  */
 
-const NAME                = 'offcanvasmenu'
-const AZ_VERSION          = 'v0.0.4'
-const DATA_KEY            = 'az.offcanvasmenu'
-const EVENT_KEY           = `.${DATA_KEY}`
-const DATA_API_KEY        = '.data-api'
-const JQUERY_NO_CONFLICT  = $.fn[NAME]
+const NAME = 'offcanvasmenu'
+const AZ_VERSION = 'v0.0.4'
+const DATA_KEY = 'az.offcanvasmenu'
+const EVENT_KEY = `.${DATA_KEY}`
+const DATA_API_KEY = '.data-api'
+const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const Default = {
-  toggle : true,
-  parent : ''
+  toggle: true,
+  parent: ''
 }
 
 const DefaultType = {
-  toggle : 'boolean',
-  parent : '(string|element)'
+  toggle: 'boolean',
+  parent: '(string|element)'
 }
 
-const EVENT_OPEN           = `open${EVENT_KEY}`
-const EVENT_OPENED         = `opened${EVENT_KEY}`
-const EVENT_CLOSE          = `close${EVENT_KEY}`
-const EVENT_CLOSED         = `closed${EVENT_KEY}`
-const DATA_API             = `click${EVENT_KEY}${DATA_API_KEY}`
+const EVENT_OPEN = `open${EVENT_KEY}`
+const EVENT_OPENED = `opened${EVENT_KEY}`
+const EVENT_CLOSE = `close${EVENT_KEY}`
+const EVENT_CLOSED = `closed${EVENT_KEY}`
+const DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
 
-const CLASS_NAME_OPEN      = 'open'
-const CLASS_NAME_CLOSE     = 'offcanvas-toggle'
-const CLASS_NAME_CLOSING   = 'closing'
-const CLASS_NAME_CLOSED    = 'closed'
+const CLASS_NAME_OPEN = 'open'
+const CLASS_NAME_CLOSE = 'offcanvas-toggle'
+const CLASS_NAME_CLOSING = 'closing'
+const CLASS_NAME_CLOSED = 'closed'
 
-const CLASS_NAME_BACKDROP  = 'menu-backdrop'
-const CLASS_NAME_SHOW      = 'show'
+const CLASS_NAME_BACKDROP = 'menu-backdrop'
+const CLASS_NAME_SHOW = 'show'
 
-const SELECTOR_ACTIVES         = '.open, .closing'
-const SELECTOR_DATA_TOGGLE     = '[data-toggle="offcanvas"]'
+const SELECTOR_ACTIVES = '.open, .closing'
+const SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]'
 
 /**
  * ------------------------------------------------------------------------
@@ -57,10 +57,10 @@ const SELECTOR_DATA_TOGGLE     = '[data-toggle="offcanvas"]'
 class Offcanvasmenu {
   constructor(element, config) {
     this._isTransitioning = false
-    this._element         = element
-    this._config          = this._getConfig(config)
-    this._backdrop        = null
-    this._triggerArray    = [].slice.call(document.querySelectorAll(
+    this._element = element
+    this._config = this._getConfig(config)
+    this._backdrop = null
+    this._triggerArray = [].slice.call(document.querySelectorAll(
       `[data-toggle="offcanvas"][href="#${element.id}"],` +
       `[data-toggle="offcanvas"][data-target="#${element.id}"]`
     ))
@@ -70,7 +70,7 @@ class Offcanvasmenu {
       const elem = toggleList[i]
       const selector = Util.getSelectorFromElement(elem)
       const filterElement = [].slice.call(document.querySelectorAll(selector))
-        .filter((foundElem) => foundElem === element)
+        .filter(foundElem => foundElem === element)
 
       if (selector !== null && filterElement.length > 0) {
         this._selector = selector
@@ -125,7 +125,7 @@ class Offcanvasmenu {
 
     if (this._parent) {
       actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES))
-        .filter((elem) => {
+        .filter(elem => {
           if (typeof this._config.parent === 'string') {
             return elem.getAttribute('data-parent') === this._config.parent
           }
@@ -167,7 +167,6 @@ class Offcanvasmenu {
     $(this._backdrop).appendTo(document.body)
     this._backdrop.classList.add(CLASS_NAME_SHOW)
 
-
     $(this._element)
       .removeClass(CLASS_NAME_CLOSE)
       .addClass(CLASS_NAME_CLOSING)
@@ -189,6 +188,7 @@ class Offcanvasmenu {
 
       $(this._element).trigger(EVENT_OPENED)
     }
+
     const transitionDuration = Util.getTransitionDurationFromElement(this._element)
 
     $(this._element)
@@ -255,10 +255,10 @@ class Offcanvasmenu {
   dispose() {
     $.removeData(this._element, DATA_KEY)
 
-    this._config          = null
-    this._parent          = null
-    this._element         = null
-    this._triggerArray    = null
+    this._config = null
+    this._parent = null
+    this._element = null
+    this._triggerArray = null
     this._isTransitioning = null
   }
 
@@ -320,8 +320,8 @@ class Offcanvasmenu {
 
   static _jQueryInterface(config) {
     return this.each(function () {
-      const $this   = $(this)
-      let data      = $this.data(DATA_KEY)
+      const $this = $(this)
+      let data = $this.data(DATA_KEY)
       const _config = {
         ...Default,
         ...$this.data(),
@@ -341,12 +341,12 @@ class Offcanvasmenu {
         if (typeof data[config] === 'undefined') {
           throw new TypeError(`No method named "${config}"`)
         }
+
         data[config]()
       }
     })
   }
 }
-
 
 /**
  * ------------------------------------------------------------------------
@@ -373,6 +373,7 @@ $('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
       $(this).parent().addClass('show')
       $(this).attr('aria-expanded', true)
     }
+
     $(this).next('.dropdown-menu').toggle()
     event.stopPropagation()
   }
@@ -397,8 +398,8 @@ $(document).on(DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
 
   $(selectors).each(function () {
     const $target = $(this)
-    const data    = $target.data(DATA_KEY)
-    const config  = data ? 'toggle' : $trigger.data()
+    const data = $target.data(DATA_KEY)
+    const config = data ? 'toggle' : $trigger.data()
     Offcanvasmenu._jQueryInterface.call($target, config)
   })
 })

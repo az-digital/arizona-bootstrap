@@ -9,7 +9,7 @@ on:
 jobs:
   release:
     name: Create Release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,9 +17,8 @@ jobs:
           ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
 
       - name: Set variables for Docker images
-        # Can't currently use hashFiles(). See: https://github.community/t/hashfiles-with-multiple-patterns/17168
         run: |
-          lockhash=$(find Dockerfile Gemfile.lock package-lock.json scripts -type f -exec sha256sum {} \; | awk '{ print $1 }' | sha256sum - | awk '{ print $1 }')
+          lockhash=${{ hashFiles('Dockerfile', 'package-lock.json', 'scripts/*') }}
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'
