@@ -1,0 +1,11 @@
+<footer class="bd-footer text-muted">
+  <div class="container-fluid p-3 p-md-5">
+    <ul class="bd-footer-links">
+      <li><a href="{{ .Site.Params.repo }}">GitHub</a></li>
+      <li><a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/about/overview`) | relURL -}}">About</a></li>
+    </ul>
+    <p>Arizona Bootstrap is &copy; 2021 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu/">The University of Arizona</a>.</p>
+    <p>Designed and built by members of the <a href="https://github.com/orgs/az-digital/people">Arizona Digital team</a>.</p>
+    <p>Currently v{{ .Site.Params.current_version }}. Code is licensed <a href="{{ .Site.Params.repo }}/raw/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
+  </div>
+</footer>

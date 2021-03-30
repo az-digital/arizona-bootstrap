@@ -4,7 +4,7 @@
 # serve-review-site.sh: serve the documentation site locally.
 #
 # Required environment variables
-# - AZ_BOOTSTRAP_DEST_DIR Internal directory used for the build
+# - AZ_BOOTSTRAP_FROZEN_DIR Internal directory with saved npm setup
 # - AZ_BOOTSTRAP_SOURCE_DIR Source directory for files and directories
 #
 # Optional environment variables
@@ -17,11 +17,11 @@
 
 set -e
 
-create-source-links
+copy-npm-config
 
-cd "$AZ_BOOTSTRAP_DEST_DIR"
+cd "$AZ_BOOTSTRAP_SOURCE_DIR"
 
-create-jekyll-config
+create-hugo-config
 
 npm run dist
-npm run docs-serve
+npm run docs-serve-external
