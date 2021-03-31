@@ -12,22 +12,12 @@ toc: true
 
 Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, {{< ourname >}} should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
-You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{< param "repo" >}}/raw/v{{< param "current_version" >}}/.browserslistrc):
+You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{< param repo >}}/blob/main/.browserslistrc):
 
-```
-# https://github.com/browserslist/browserslist#readme
-
->= 1%
-last 1 major version
-not dead
-Chrome >= 45
-Firefox >= 38
-Edge >= 12
-Explorer >= 10
-iOS >= 9
-Safari >= 9
-Android >= 4.4
-Opera >= 30
+```text
+{{< rf.inline >}}
+{{- readFile ".browserslistrc" | chomp | htmlEscape -}}
+{{< /rf.inline >}}
 ```
 
 We use [Autoprefixer](https://github.com/postcss/autoprefixer) to handle intended browser support via CSS prefixes, which uses [Browserslist](https://github.com/browserslist/browserslist) to manage these browser versions. Consult their documentation for how to integrate these tools into your projects.
@@ -97,7 +87,7 @@ Similarly, the latest versions of most desktop browsers are supported.
       <td class="text-success">Supported</td>
       <td class="text-success">Supported</td>
       <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
+      <td class="text-success">Supported</td>
       <td class="text-success">Supported</td>
       <td class="text-success">Supported</td>
     </tr>
@@ -113,7 +103,7 @@ Similarly, the latest versions of most desktop browsers are supported.
   </tbody>
 </table>
 
-For Firefox, in addition to the latest normal stable release, we also support the latest [Extended Support Release (ESR)](https://www.mozilla.org/en-US/firefox/organizations#faq) version of Firefox.
+For Firefox, in addition to the latest normal stable release, we also support the latest [Extended Support Release (ESR)](https://www.mozilla.org/en-US/firefox/enterprise/) version of Firefox.
 
 Unofficially, {{< ourname >}} should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 9, though they are not officially supported.
 
@@ -121,7 +111,7 @@ For a list of some of the browser bugs that {{< ourname >}} has to grapple with,
 
 ## Internet Explorer
 
-Internet Explorer 10+ is supported; IE9 and down is not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE10, or require prefixed properties for full functionality. Visit [Can I use...](https://caniuse.com/) for details on browser support of CSS3 and HTML5 features. **If you require IE8-9 support, use UA Bootstrap.**
+Internet Explorer 10+ is supported; IE9 and down is not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE10, or require prefixed properties for full functionality. Visit [Can I use...](https://caniuse.com/) for details on browser support of CSS3 and HTML5 features. **If you require IE8-9 support, use [ua-bootstrap](http://uadigital.arizona.edu/ua-bootstrap/).**
 
 ## Modals and Dropdowns on Mobile
 
@@ -135,7 +125,7 @@ As of iOS 9.2, while a modal is open, if the initial touch of a scroll gesture i
 
 ### Navbar Dropdowns
 
-The `.dropdown-backdrop` element isn't used on iOS in the nav because of the complexity of z-indexing. Thus, to close dropdowns in navbars, you must directly click the dropdown element (or [any other element which will fire a click event in iOS](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)).
+The `.dropdown-backdrop` element isn't used on iOS in the nav because of the complexity of z-indexing. Thus, to close dropdowns in navbars, you must directly click the dropdown element (or [any other element which will fire a click event in iOS](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#Safari_Mobile)).
 
 ## Browser Zooming
 
@@ -151,7 +141,7 @@ Throughout our v4 alpha and beta releases, we included incomplete and commented 
 
 Even in some modern browsers, printing can be quirky.
 
-As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [issue #14868]({{< param "repo" >}}/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
+As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [Twitter Bootstrap issue #14868](https://github.com/twbs/bootstrap/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
 
 ```css
 @media print {
@@ -165,7 +155,7 @@ As of Safari v8.0, use of the fixed-width `.container` class can cause Safari to
 
 Out of the box, Android 4.1 (and even some newer releases apparently) ship with the Browser app as the default web browser of choice (as opposed to Chrome). Unfortunately, the Browser app has lots of bugs and inconsistencies with CSS in general.
 
-#### Select Menu
+### Select Menu
 
 On `<select>` elements, the Android stock browser will not display the side controls if there is a `border-radius` and/or `border` applied. (See [this StackOverflow question](https://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with) for details.) Use the snippet of code below to remove the offending CSS and render the `<select>` as an unstyled element on the Android stock browser. The user agent sniffing avoids interference with Chrome, Safari, and Mozilla browsers.
 
