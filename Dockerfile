@@ -1,4 +1,4 @@
-FROM node:14.15.5-buster-slim
+FROM node:14.16.0-buster-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -35,7 +35,7 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.19.13'; \
+  && pip3 install 'awscli~=1.19.41'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
