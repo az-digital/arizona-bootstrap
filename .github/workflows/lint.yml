@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set variables for Docker images
         run: |
-          lockhash=${{ hashFiles('Dockerfile', 'package-lock.json', 'scripts/*') }}
+          lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'
