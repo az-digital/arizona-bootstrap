@@ -93,7 +93,7 @@ else
   workingtitle=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
     || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
   tempname="old${oldhash}"
-  docker run --name "$tempname" "$workingtitle" exit \
+  docker run --name "$tempname" "$workingtitle" true \
     || errorexit "Failed to run a container based on the image ${workingtitle}"
   docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
     || errorexit "Couldn't copy the saved npm setup to the actual source directory"
