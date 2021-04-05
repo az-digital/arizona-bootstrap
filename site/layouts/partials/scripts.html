@@ -1,10 +1,10 @@
 <script src="{{ .Site.Params.cdn.jquery }}" {{ printf "integrity=%q" .Site.Params.cdn.jquery_hash | safeHTMLAttr }} crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/{{ .Site.Params.docs_version }}/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/assets/js/vendor/jquery.slim.min.js`) | relURL -}}"><\/script>')</script>
 
 {{ if eq hugo.Environment "production" -}}
-  <script src="/docs/{{ .Site.Params.docs_version }}/dist/js/arizona-bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js`) | relURL -}}" crossorigin="anonymous"></script>
 {{ else -}}
-  <script src="/docs/{{ .Site.Params.docs_version }}/dist/js/arizona-bootstrap.bundle.js"></script>
+  <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js`) | relURL -}}"></script>
 {{- end }}
 
 {{- $vendor := resources.Match "js/vendor/*.js" -}}
