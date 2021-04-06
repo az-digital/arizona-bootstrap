@@ -34,14 +34,7 @@ jobs:
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Search for Docker image
-        id: dockerpull
-        continue-on-error: true
-        run: |
-          docker pull "$AZ_EPHEMERAL_IMAGE"
-
-      - name: Conditionally rebuild and save the Docker image
-        if: ${{ steps.dockerpull.outcome == 'failure' }}
+      - name: Unconditionally rebuild and save the Docker image
         run: |
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
