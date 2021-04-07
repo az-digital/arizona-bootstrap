@@ -32,7 +32,7 @@
     "js-minify-bundle": "terser --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/arizona-bootstrap.bundle.js.map,includeSources,url=arizona-bootstrap.bundle.min.js.map\" --output dist/js/arizona-bootstrap.bundle.min.js dist/js/arizona-bootstrap.bundle.js",
     "lint": "npm-run-all --parallel js-lint css-lint",
     "test": "npm-run-all lint dist docs-build docs-lint",
-    "version": "npm run dist && git add -A dist",
+    "version": "npm run dist",
     "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-lint css-compile css-prefix\"",
     "watch-css-docs": "nodemon --watch site/assets/scss/ --ext scss --exec \"npm run css-lint\"",

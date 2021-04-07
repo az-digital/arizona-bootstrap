@@ -11,6 +11,7 @@ COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
 COPY scripts/copy-npm-config.sh /usr/local/bin/copy-npm-config
 COPY scripts/create-hugo-config.sh /usr/local/bin/create-hugo-config
+COPY scripts/create-release.sh /usr/local/bin/create-release
 COPY scripts/expose-review-site.sh /usr/local/bin/expose-review-site
 COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
