@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v2.0.6 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v2.0.6-dev (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2021 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -15,7 +15,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): util.js
+   * Bootstrap (v4.6.0): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -210,7 +210,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): alert.js
+   * Bootstrap (v4.6.0): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -221,22 +221,22 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME = 'alert';
-  const VERSION = '4.5.3';
-  const DATA_KEY = 'bs.alert';
-  const EVENT_KEY = `.${DATA_KEY}`;
-  const DATA_API_KEY = '.data-api';
-  const JQUERY_NO_CONFLICT = $__default['default'].fn[NAME];
+  const NAME$b = 'alert';
+  const VERSION$a = '4.6.0';
+  const DATA_KEY$b = 'bs.alert';
+  const EVENT_KEY$b = `.${DATA_KEY$b}`;
+  const DATA_API_KEY$8 = '.data-api';
+  const JQUERY_NO_CONFLICT$b = $__default['default'].fn[NAME$b];
 
   const SELECTOR_DISMISS = '[data-dismiss="alert"]';
 
-  const EVENT_CLOSE = `close${EVENT_KEY}`;
-  const EVENT_CLOSED = `closed${EVENT_KEY}`;
-  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`;
+  const EVENT_CLOSE$1 = `close${EVENT_KEY$b}`;
+  const EVENT_CLOSED$1 = `closed${EVENT_KEY$b}`;
+  const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$8}`;
 
   const CLASS_NAME_ALERT = 'alert';
-  const CLASS_NAME_FADE = 'fade';
-  const CLASS_NAME_SHOW = 'show';
+  const CLASS_NAME_FADE$5 = 'fade';
+  const CLASS_NAME_SHOW$8 = 'show';
 
   /**
    * ------------------------------------------------------------------------
@@ -252,7 +252,7 @@
     // Getters
 
     static get VERSION() {
-      return VERSION
+      return VERSION$a
     }
 
     // Public
@@ -273,7 +273,7 @@
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY);
+      $__default['default'].removeData(this._element, DATA_KEY$b);
       this._element = null;
     }
 
@@ -295,16 +295,16 @@
     }
 
     _triggerCloseEvent(element) {
-      const closeEvent = $__default['default'].Event(EVENT_CLOSE);
+      const closeEvent = $__default['default'].Event(EVENT_CLOSE$1);
 
       $__default['default'](element).trigger(closeEvent);
       return closeEvent
     }
 
     _removeElement(element) {
-      $__default['default'](element).removeClass(CLASS_NAME_SHOW);
+      $__default['default'](element).removeClass(CLASS_NAME_SHOW$8);
 
-      if (!$__default['default'](element).hasClass(CLASS_NAME_FADE)) {
+      if (!$__default['default'](element).hasClass(CLASS_NAME_FADE$5)) {
         this._destroyElement(element);
         return
       }
@@ -319,7 +319,7 @@
     _destroyElement(element) {
       $__default['default'](element)
         .detach()
-        .trigger(EVENT_CLOSED)
+        .trigger(EVENT_CLOSED$1)
         .remove();
     }
 
@@ -328,11 +328,11 @@
     static _jQueryInterface(config) {
       return this.each(function () {
         const $element = $__default['default'](this);
-        let data = $element.data(DATA_KEY);
+        let data = $element.data(DATA_KEY$b);
 
         if (!data) {
           data = new Alert(this);
-          $element.data(DATA_KEY, data);
+          $element.data(DATA_KEY$b, data);
         }
 
         if (config === 'close') {
@@ -359,7 +359,7 @@
    */
 
   $__default['default'](document).on(
-    EVENT_CLICK_DATA_API,
+    EVENT_CLICK_DATA_API$6,
     SELECTOR_DISMISS,
     Alert._handleDismiss(new Alert())
   );
@@ -370,16 +370,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME] = Alert._jQueryInterface;
-  $__default['default'].fn[NAME].Constructor = Alert;
-  $__default['default'].fn[NAME].noConflict = () => {
-    $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
+  $__default['default'].fn[NAME$b] = Alert._jQueryInterface;
+  $__default['default'].fn[NAME$b].Constructor = Alert;
+  $__default['default'].fn[NAME$b].noConflict = () => {
+    $__default['default'].fn[NAME$b] = JQUERY_NO_CONFLICT$b;
     return Alert._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): button.js
+   * Bootstrap (v4.6.0): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -390,29 +390,29 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$1 = 'button';
-  const VERSION$1 = '4.5.3';
-  const DATA_KEY$1 = 'bs.button';
-  const EVENT_KEY$1 = `.${DATA_KEY$1}`;
-  const DATA_API_KEY$1 = '.data-api';
-  const JQUERY_NO_CONFLICT$1 = $__default['default'].fn[NAME$1];
+  const NAME$a = 'button';
+  const VERSION$9 = '4.6.0';
+  const DATA_KEY$a = 'bs.button';
+  const EVENT_KEY$a = `.${DATA_KEY$a}`;
+  const DATA_API_KEY$7 = '.data-api';
+  const JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
 
-  const CLASS_NAME_ACTIVE = 'active';
+  const CLASS_NAME_ACTIVE$3 = 'active';
   const CLASS_NAME_BUTTON = 'btn';
   const CLASS_NAME_FOCUS = 'focus';
 
   const SELECTOR_DATA_TOGGLE_CARROT = '[data-toggle^="button"]';
   const SELECTOR_DATA_TOGGLES = '[data-toggle="buttons"]';
-  const SELECTOR_DATA_TOGGLE = '[data-toggle="button"]';
+  const SELECTOR_DATA_TOGGLE$5 = '[data-toggle="button"]';
   const SELECTOR_DATA_TOGGLES_BUTTONS = '[data-toggle="buttons"] .btn';
   const SELECTOR_INPUT = 'input:not([type="hidden"])';
-  const SELECTOR_ACTIVE = '.active';
+  const SELECTOR_ACTIVE$2 = '.active';
   const SELECTOR_BUTTON = '.btn';
 
-  const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$1}${DATA_API_KEY$1}`;
-  const EVENT_FOCUS_BLUR_DATA_API = `focus${EVENT_KEY$1}${DATA_API_KEY$1} ` +
-                            `blur${EVENT_KEY$1}${DATA_API_KEY$1}`;
-  const EVENT_LOAD_DATA_API = `load${EVENT_KEY$1}${DATA_API_KEY$1}`;
+  const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$a}${DATA_API_KEY$7}`;
+  const EVENT_FOCUS_BLUR_DATA_API = `focus${EVENT_KEY$a}${DATA_API_KEY$7} ` +
+                            `blur${EVENT_KEY$a}${DATA_API_KEY$7}`;
+  const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$a}${DATA_API_KEY$7}`;
 
   /**
    * ------------------------------------------------------------------------
@@ -429,7 +429,7 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$1
+      return VERSION$9
     }
 
     // Public
@@ -444,13 +444,13 @@
 
         if (input) {
           if (input.type === 'radio') {
-            if (input.checked && this._element.classList.contains(CLASS_NAME_ACTIVE)) {
+            if (input.checked && this._element.classList.contains(CLASS_NAME_ACTIVE$3)) {
               triggerChangeEvent = false;
             } else {
-              const activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
+              const activeElement = rootElement.querySelector(SELECTOR_ACTIVE$2);
 
               if (activeElement) {
-                $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE);
+                $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$3);
               }
             }
           }
@@ -458,7 +458,7 @@
           if (triggerChangeEvent) {
             // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
             if (input.type === 'checkbox' || input.type === 'radio') {
-              input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
+              input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE$3);
             }
 
             if (!this.shouldAvoidTriggerChange) {
@@ -473,17 +473,17 @@
 
       if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
         if (addAriaPressed) {
-          this._element.setAttribute('aria-pressed', !this._element.classList.contains(CLASS_NAME_ACTIVE));
+          this._element.setAttribute('aria-pressed', !this._element.classList.contains(CLASS_NAME_ACTIVE$3));
         }
 
         if (triggerChangeEvent) {
-          $__default['default'](this._element).toggleClass(CLASS_NAME_ACTIVE);
+          $__default['default'](this._element).toggleClass(CLASS_NAME_ACTIVE$3);
         }
       }
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$1);
+      $__default['default'].removeData(this._element, DATA_KEY$a);
       this._element = null;
     }
 
@@ -492,11 +492,11 @@
     static _jQueryInterface(config, avoidTriggerChange) {
       return this.each(function () {
         const $element = $__default['default'](this);
-        let data = $element.data(DATA_KEY$1);
+        let data = $element.data(DATA_KEY$a);
 
         if (!data) {
           data = new Button(this);
-          $element.data(DATA_KEY$1, data);
+          $element.data(DATA_KEY$a, data);
         }
 
         data.shouldAvoidTriggerChange = avoidTriggerChange;
@@ -515,7 +515,7 @@
    */
 
   $__default['default'](document)
-    .on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, event => {
+    .on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE_CARROT, event => {
       let button = event.target;
       const initialButton = button;
 
@@ -543,7 +543,7 @@
       $__default['default'](button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
     });
 
-  $__default['default'](window).on(EVENT_LOAD_DATA_API, () => {
+  $__default['default'](window).on(EVENT_LOAD_DATA_API$2, () => {
     // ensure correct active class is set to match the controls' actual values/states
 
     // find all checkboxes/readio buttons inside data-toggle groups
@@ -552,20 +552,20 @@
       const button = buttons[i];
       const input = button.querySelector(SELECTOR_INPUT);
       if (input.checked || input.hasAttribute('checked')) {
-        button.classList.add(CLASS_NAME_ACTIVE);
+        button.classList.add(CLASS_NAME_ACTIVE$3);
       } else {
-        button.classList.remove(CLASS_NAME_ACTIVE);
+        button.classList.remove(CLASS_NAME_ACTIVE$3);
       }
     }
 
     // find all button toggles
-    buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE));
+    buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$5));
     for (let i = 0, len = buttons.length; i < len; i++) {
       const button = buttons[i];
       if (button.getAttribute('aria-pressed') === 'true') {
-        button.classList.add(CLASS_NAME_ACTIVE);
+        button.classList.add(CLASS_NAME_ACTIVE$3);
       } else {
-        button.classList.remove(CLASS_NAME_ACTIVE);
+        button.classList.remove(CLASS_NAME_ACTIVE$3);
       }
     }
   });
@@ -576,16 +576,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$1] = Button._jQueryInterface;
-  $__default['default'].fn[NAME$1].Constructor = Button;
-  $__default['default'].fn[NAME$1].noConflict = () => {
-    $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
+  $__default['default'].fn[NAME$a] = Button._jQueryInterface;
+  $__default['default'].fn[NAME$a].Constructor = Button;
+  $__default['default'].fn[NAME$a].noConflict = () => {
+    $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
     return Button._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): carousel.js
+   * Bootstrap (v4.6.0): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -596,18 +596,18 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$2 = 'carousel';
-  const VERSION$2 = '4.5.3';
-  const DATA_KEY$2 = 'bs.carousel';
-  const EVENT_KEY$2 = `.${DATA_KEY$2}`;
-  const DATA_API_KEY$2 = '.data-api';
-  const JQUERY_NO_CONFLICT$2 = $__default['default'].fn[NAME$2];
+  const NAME$9 = 'carousel';
+  const VERSION$8 = '4.6.0';
+  const DATA_KEY$9 = 'bs.carousel';
+  const EVENT_KEY$9 = `.${DATA_KEY$9}`;
+  const DATA_API_KEY$6 = '.data-api';
+  const JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
   const ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
   const ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
   const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
   const SWIPE_THRESHOLD = 40;
 
-  const Default = {
+  const Default$8 = {
     interval: 5000,
     keyboard: true,
     slide: false,
@@ -616,7 +616,7 @@
     touch: true
   };
 
-  const DefaultType = {
+  const DefaultType$8 = {
     interval: '(number|boolean)',
     keyboard: 'boolean',
     slide: '(boolean|string)',
@@ -630,22 +630,22 @@
   const DIRECTION_LEFT = 'left';
   const DIRECTION_RIGHT = 'right';
 
-  const EVENT_SLIDE = `slide${EVENT_KEY$2}`;
-  const EVENT_SLID = `slid${EVENT_KEY$2}`;
-  const EVENT_KEYDOWN = `keydown${EVENT_KEY$2}`;
-  const EVENT_MOUSEENTER = `mouseenter${EVENT_KEY$2}`;
-  const EVENT_MOUSELEAVE = `mouseleave${EVENT_KEY$2}`;
-  const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$2}`;
-  const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$2}`;
-  const EVENT_TOUCHEND = `touchend${EVENT_KEY$2}`;
-  const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$2}`;
-  const EVENT_POINTERUP = `pointerup${EVENT_KEY$2}`;
-  const EVENT_DRAG_START = `dragstart${EVENT_KEY$2}`;
-  const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}${DATA_API_KEY$2}`;
-  const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$2}${DATA_API_KEY$2}`;
+  const EVENT_SLIDE = `slide${EVENT_KEY$9}`;
+  const EVENT_SLID = `slid${EVENT_KEY$9}`;
+  const EVENT_KEYDOWN = `keydown${EVENT_KEY$9}`;
+  const EVENT_MOUSEENTER = `mouseenter${EVENT_KEY$9}`;
+  const EVENT_MOUSELEAVE = `mouseleave${EVENT_KEY$9}`;
+  const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$9}`;
+  const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$9}`;
+  const EVENT_TOUCHEND = `touchend${EVENT_KEY$9}`;
+  const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$9}`;
+  const EVENT_POINTERUP = `pointerup${EVENT_KEY$9}`;
+  const EVENT_DRAG_START = `dragstart${EVENT_KEY$9}`;
+  const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$9}${DATA_API_KEY$6}`;
+  const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$9}${DATA_API_KEY$6}`;
 
   const CLASS_NAME_CAROUSEL = 'carousel';
-  const CLASS_NAME_ACTIVE$1 = 'active';
+  const CLASS_NAME_ACTIVE$2 = 'active';
   const CLASS_NAME_SLIDE = 'slide';
   const CLASS_NAME_RIGHT = 'carousel-item-right';
   const CLASS_NAME_LEFT = 'carousel-item-left';
@@ -695,11 +695,11 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$2
+      return VERSION$8
     }
 
     static get Default() {
-      return Default
+      return Default$8
     }
 
     // Public
@@ -751,6 +751,8 @@
       }
 
       if (this._config.interval && !this._isPaused) {
+        this._updateInterval();
+
         this._interval = setInterval(
           (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
           this._config.interval
@@ -786,8 +788,8 @@
     }
 
     dispose() {
-      $__default['default'](this._element).off(EVENT_KEY$2);
-      $__default['default'].removeData(this._element, DATA_KEY$2);
+      $__default['default'](this._element).off(EVENT_KEY$9);
+      $__default['default'].removeData(this._element, DATA_KEY$9);
 
       this._items = null;
       this._config = null;
@@ -803,10 +805,10 @@
 
     _getConfig(config) {
       config = {
-        ...Default,
+        ...Default$8,
         ...config
       };
-      Util.typeCheckConfig(NAME$2, config, DefaultType);
+      Util.typeCheckConfig(NAME$9, config, DefaultType$8);
       return config
     }
 
@@ -970,15 +972,32 @@
     _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
         const indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
-        $__default['default'](indicators).removeClass(CLASS_NAME_ACTIVE$1);
+        $__default['default'](indicators).removeClass(CLASS_NAME_ACTIVE$2);
 
         const nextIndicator = this._indicatorsElement.children[
           this._getItemIndex(element)
         ];
 
         if (nextIndicator) {
-          $__default['default'](nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
+          $__default['default'](nextIndicator).addClass(CLASS_NAME_ACTIVE$2);
         }
+      }
+    }
+
+    _updateInterval() {
+      const element = this._activeElement || this._element.querySelector(SELECTOR_ACTIVE_ITEM);
+
+      if (!element) {
+        return
+      }
+
+      const elementInterval = parseInt(element.getAttribute('data-interval'), 10);
+
+      if (elementInterval) {
+        this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
+        this._config.interval = elementInterval;
+      } else {
+        this._config.interval = this._config.defaultInterval || this._config.interval;
       }
     }
 
@@ -1004,7 +1023,7 @@
         eventDirectionName = DIRECTION_RIGHT;
       }
 
-      if (nextElement && $__default['default'](nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
+      if (nextElement && $__default['default'](nextElement).hasClass(CLASS_NAME_ACTIVE$2)) {
         this._isSliding = false;
         return
       }
@@ -1026,6 +1045,7 @@
       }
 
       this._setActiveIndicatorElement(nextElement);
+      this._activeElement = nextElement;
 
       const slidEvent = $__default['default'].Event(EVENT_SLID, {
         relatedTarget: nextElement,
@@ -1042,23 +1062,15 @@
         $__default['default'](activeElement).addClass(directionalClassName);
         $__default['default'](nextElement).addClass(directionalClassName);
 
-        const nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
-        if (nextElementInterval) {
-          this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
-          this._config.interval = nextElementInterval;
-        } else {
-          this._config.interval = this._config.defaultInterval || this._config.interval;
-        }
-
         const transitionDuration = Util.getTransitionDurationFromElement(activeElement);
 
         $__default['default'](activeElement)
           .one(Util.TRANSITION_END, () => {
             $__default['default'](nextElement)
               .removeClass(`${directionalClassName} ${orderClassName}`)
-              .addClass(CLASS_NAME_ACTIVE$1);
+              .addClass(CLASS_NAME_ACTIVE$2);
 
-            $__default['default'](activeElement).removeClass(`${CLASS_NAME_ACTIVE$1} ${orderClassName} ${directionalClassName}`);
+            $__default['default'](activeElement).removeClass(`${CLASS_NAME_ACTIVE$2} ${orderClassName} ${directionalClassName}`);
 
             this._isSliding = false;
 
@@ -1066,8 +1078,8 @@
           })
           .emulateTransitionEnd(transitionDuration);
       } else {
-        $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1);
-        $__default['default'](nextElement).addClass(CLASS_NAME_ACTIVE$1);
+        $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$2);
+        $__default['default'](nextElement).addClass(CLASS_NAME_ACTIVE$2);
 
         this._isSliding = false;
         $__default['default'](this._element).trigger(slidEvent);
@@ -1082,9 +1094,9 @@
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $__default['default'](this).data(DATA_KEY$2);
+        let data = $__default['default'](this).data(DATA_KEY$9);
         let _config = {
-          ...Default,
+          ...Default$8,
           ...$__default['default'](this).data()
         };
 
@@ -1099,7 +1111,7 @@
 
         if (!data) {
           data = new Carousel(this, _config);
-          $__default['default'](this).data(DATA_KEY$2, data);
+          $__default['default'](this).data(DATA_KEY$9, data);
         }
 
         if (typeof config === 'number') {
@@ -1143,7 +1155,7 @@
       Carousel._jQueryInterface.call($__default['default'](target), config);
 
       if (slideIndex) {
-        $__default['default'](target).data(DATA_KEY$2).to(slideIndex);
+        $__default['default'](target).data(DATA_KEY$9).to(slideIndex);
       }
 
       event.preventDefault();
@@ -1156,7 +1168,7 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
 
   $__default['default'](window).on(EVENT_LOAD_DATA_API$1, () => {
     const carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
@@ -1172,16 +1184,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$2] = Carousel._jQueryInterface;
-  $__default['default'].fn[NAME$2].Constructor = Carousel;
-  $__default['default'].fn[NAME$2].noConflict = () => {
-    $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
+  $__default['default'].fn[NAME$9] = Carousel._jQueryInterface;
+  $__default['default'].fn[NAME$9].Constructor = Carousel;
+  $__default['default'].fn[NAME$9].noConflict = () => {
+    $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
     return Carousel._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): collapse.js
+   * Bootstrap (v4.6.0): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1192,30 +1204,30 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$3 = 'collapse';
-  const VERSION$3 = '4.5.3';
-  const DATA_KEY$3 = 'bs.collapse';
-  const EVENT_KEY$3 = `.${DATA_KEY$3}`;
-  const DATA_API_KEY$3 = '.data-api';
-  const JQUERY_NO_CONFLICT$3 = $__default['default'].fn[NAME$3];
+  const NAME$8 = 'collapse';
+  const VERSION$7 = '4.6.0';
+  const DATA_KEY$8 = 'bs.collapse';
+  const EVENT_KEY$8 = `.${DATA_KEY$8}`;
+  const DATA_API_KEY$5 = '.data-api';
+  const JQUERY_NO_CONFLICT$8 = $__default['default'].fn[NAME$8];
 
-  const Default$1 = {
+  const Default$7 = {
     toggle: true,
     parent: ''
   };
 
-  const DefaultType$1 = {
+  const DefaultType$7 = {
     toggle: 'boolean',
     parent: '(string|element)'
   };
 
-  const EVENT_SHOW = `show${EVENT_KEY$3}`;
-  const EVENT_SHOWN = `shown${EVENT_KEY$3}`;
-  const EVENT_HIDE = `hide${EVENT_KEY$3}`;
-  const EVENT_HIDDEN = `hidden${EVENT_KEY$3}`;
-  const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$3}${DATA_API_KEY$3}`;
+  const EVENT_SHOW$4 = `show${EVENT_KEY$8}`;
+  const EVENT_SHOWN$4 = `shown${EVENT_KEY$8}`;
+  const EVENT_HIDE$4 = `hide${EVENT_KEY$8}`;
+  const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$8}`;
+  const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
 
-  const CLASS_NAME_SHOW$1 = 'show';
+  const CLASS_NAME_SHOW$7 = 'show';
   const CLASS_NAME_COLLAPSE = 'collapse';
   const CLASS_NAME_COLLAPSING = 'collapsing';
   const CLASS_NAME_COLLAPSED = 'collapsed';
@@ -1223,8 +1235,8 @@
   const DIMENSION_WIDTH = 'width';
   const DIMENSION_HEIGHT = 'height';
 
-  const SELECTOR_ACTIVES = '.show, .collapsing';
-  const SELECTOR_DATA_TOGGLE$1 = '[data-toggle="collapse"]';
+  const SELECTOR_ACTIVES$1 = '.show, .collapsing';
+  const SELECTOR_DATA_TOGGLE$4 = '[data-toggle="collapse"]';
 
   /**
    * ------------------------------------------------------------------------
@@ -1242,7 +1254,7 @@
         `[data-toggle="collapse"][data-target="#${element.id}"]`
       ));
 
-      const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$1));
+      const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$4));
       for (let i = 0, len = toggleList.length; i < len; i++) {
         const elem = toggleList[i];
         const selector = Util.getSelectorFromElement(elem);
@@ -1269,17 +1281,17 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$3
+      return VERSION$7
     }
 
     static get Default() {
-      return Default$1
+      return Default$7
     }
 
     // Public
 
     toggle() {
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_SHOW$7)) {
         this.hide();
       } else {
         this.show();
@@ -1288,7 +1300,7 @@
 
     show() {
       if (this._isTransitioning ||
-        $__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
+        $__default['default'](this._element).hasClass(CLASS_NAME_SHOW$7)) {
         return
       }
 
@@ -1296,7 +1308,7 @@
       let activesData;
 
       if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES))
+        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES$1))
           .filter(elem => {
             if (typeof this._config.parent === 'string') {
               return elem.getAttribute('data-parent') === this._config.parent
@@ -1311,13 +1323,13 @@
       }
 
       if (actives) {
-        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$3);
+        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$8);
         if (activesData && activesData._isTransitioning) {
           return
         }
       }
 
-      const startEvent = $__default['default'].Event(EVENT_SHOW);
+      const startEvent = $__default['default'].Event(EVENT_SHOW$4);
       $__default['default'](this._element).trigger(startEvent);
       if (startEvent.isDefaultPrevented()) {
         return
@@ -1326,7 +1338,7 @@
       if (actives) {
         Collapse._jQueryInterface.call($__default['default'](actives).not(this._selector), 'hide');
         if (!activesData) {
-          $__default['default'](actives).data(DATA_KEY$3, null);
+          $__default['default'](actives).data(DATA_KEY$8, null);
         }
       }
 
@@ -1349,13 +1361,13 @@
       const complete = () => {
         $__default['default'](this._element)
           .removeClass(CLASS_NAME_COLLAPSING)
-          .addClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW$1}`);
+          .addClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW$7}`);
 
         this._element.style[dimension] = '';
 
         this.setTransitioning(false);
 
-        $__default['default'](this._element).trigger(EVENT_SHOWN);
+        $__default['default'](this._element).trigger(EVENT_SHOWN$4);
       };
 
       const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
@@ -1371,11 +1383,11 @@
 
     hide() {
       if (this._isTransitioning ||
-        !$__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
+        !$__default['default'](this._element).hasClass(CLASS_NAME_SHOW$7)) {
         return
       }
 
-      const startEvent = $__default['default'].Event(EVENT_HIDE);
+      const startEvent = $__default['default'].Event(EVENT_HIDE$4);
       $__default['default'](this._element).trigger(startEvent);
       if (startEvent.isDefaultPrevented()) {
         return
@@ -1389,7 +1401,7 @@
 
       $__default['default'](this._element)
         .addClass(CLASS_NAME_COLLAPSING)
-        .removeClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW$1}`);
+        .removeClass(`${CLASS_NAME_COLLAPSE} ${CLASS_NAME_SHOW$7}`);
 
       const triggerArrayLength = this._triggerArray.length;
       if (triggerArrayLength > 0) {
@@ -1399,7 +1411,7 @@
 
           if (selector !== null) {
             const $elem = $__default['default']([].slice.call(document.querySelectorAll(selector)));
-            if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
+            if (!$elem.hasClass(CLASS_NAME_SHOW$7)) {
               $__default['default'](trigger).addClass(CLASS_NAME_COLLAPSED)
                 .attr('aria-expanded', false);
             }
@@ -1414,7 +1426,7 @@
         $__default['default'](this._element)
           .removeClass(CLASS_NAME_COLLAPSING)
           .addClass(CLASS_NAME_COLLAPSE)
-          .trigger(EVENT_HIDDEN);
+          .trigger(EVENT_HIDDEN$4);
       };
 
       this._element.style[dimension] = '';
@@ -1430,7 +1442,7 @@
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$3);
+      $__default['default'].removeData(this._element, DATA_KEY$8);
 
       this._config = null;
       this._parent = null;
@@ -1443,11 +1455,11 @@
 
     _getConfig(config) {
       config = {
-        ...Default$1,
+        ...Default$7,
         ...config
       };
       config.toggle = Boolean(config.toggle); // Coerce string values
-      Util.typeCheckConfig(NAME$3, config, DefaultType$1);
+      Util.typeCheckConfig(NAME$8, config, DefaultType$7);
       return config
     }
 
@@ -1484,7 +1496,7 @@
     }
 
     _addAriaAndCollapsedClass(element, triggerArray) {
-      const isOpen = $__default['default'](element).hasClass(CLASS_NAME_SHOW$1);
+      const isOpen = $__default['default'](element).hasClass(CLASS_NAME_SHOW$7);
 
       if (triggerArray.length) {
         $__default['default'](triggerArray)
@@ -1503,9 +1515,9 @@
     static _jQueryInterface(config) {
       return this.each(function () {
         const $element = $__default['default'](this);
-        let data = $element.data(DATA_KEY$3);
+        let data = $element.data(DATA_KEY$8);
         const _config = {
-          ...Default$1,
+          ...Default$7,
           ...$element.data(),
           ...(typeof config === 'object' && config ? config : {})
         };
@@ -1516,7 +1528,7 @@
 
         if (!data) {
           data = new Collapse(this, _config);
-          $element.data(DATA_KEY$3, data);
+          $element.data(DATA_KEY$8, data);
         }
 
         if (typeof config === 'string') {
@@ -1536,7 +1548,7 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$4, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
@@ -1548,7 +1560,7 @@
 
     $__default['default'](selectors).each(function () {
       const $target = $__default['default'](this);
-      const data = $target.data(DATA_KEY$3);
+      const data = $target.data(DATA_KEY$8);
       const config = data ? 'toggle' : $trigger.data();
       Collapse._jQueryInterface.call($target, config);
     });
@@ -1560,10 +1572,10 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$3] = Collapse._jQueryInterface;
-  $__default['default'].fn[NAME$3].Constructor = Collapse;
-  $__default['default'].fn[NAME$3].noConflict = () => {
-    $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
+  $__default['default'].fn[NAME$8] = Collapse._jQueryInterface;
+  $__default['default'].fn[NAME$8].Constructor = Collapse;
+  $__default['default'].fn[NAME$8].noConflict = () => {
+    $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
     return Collapse._jQueryInterface
   };
 
@@ -1976,7 +1988,7 @@
     return obj;
   };
 
-  var _extends = Object.assign || function (target) {
+  var _extends$1 = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -1998,7 +2010,7 @@
    * @returns {Object} ClientRect like output
    */
   function getClientRect(offsets) {
-    return _extends({}, offsets, {
+    return _extends$1({}, offsets, {
       right: offsets.left + offsets.width,
       bottom: offsets.top + offsets.height
     });
@@ -2286,7 +2298,7 @@
     };
 
     var sortedAreas = Object.keys(rects).map(function (key) {
-      return _extends({
+      return _extends$1({
         key: key
       }, rects[key], {
         area: getArea(rects[key])
@@ -2928,9 +2940,9 @@
     };
 
     // Update `data` attributes, styles and arrowStyles
-    data.attributes = _extends({}, attributes, data.attributes);
-    data.styles = _extends({}, styles, data.styles);
-    data.arrowStyles = _extends({}, data.offsets.arrow, data.arrowStyles);
+    data.attributes = _extends$1({}, attributes, data.attributes);
+    data.styles = _extends$1({}, styles, data.styles);
+    data.arrowStyles = _extends$1({}, data.offsets.arrow, data.arrowStyles);
 
     return data;
   }
@@ -3210,7 +3222,7 @@
 
         // this object contains `position`, we want to preserve it along with
         // any additional property we may add in the future
-        data.offsets.popper = _extends({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
+        data.offsets.popper = _extends$1({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
 
         data = runModifiers(data.instance.modifiers, data, 'flip');
       }
@@ -3484,7 +3496,7 @@
 
     order.forEach(function (placement) {
       var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
-      popper = _extends({}, popper, check[side](placement));
+      popper = _extends$1({}, popper, check[side](placement));
     });
 
     data.offsets.popper = popper;
@@ -3519,7 +3531,7 @@
         end: defineProperty({}, side, reference[side] + reference[measurement] - popper[measurement])
       };
 
-      data.offsets.popper = _extends({}, popper, shiftOffsets[shiftvariation]);
+      data.offsets.popper = _extends$1({}, popper, shiftOffsets[shiftvariation]);
     }
 
     return data;
@@ -4051,7 +4063,7 @@
       this.update = debounce(this.update.bind(this));
 
       // with {} we create a new object with the options inside it
-      this.options = _extends({}, Popper.Defaults, options);
+      this.options = _extends$1({}, Popper.Defaults, options);
 
       // init state
       this.state = {
@@ -4066,13 +4078,13 @@
 
       // Deep merge modifiers options
       this.options.modifiers = {};
-      Object.keys(_extends({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
-        _this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
+      Object.keys(_extends$1({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
+        _this.options.modifiers[name] = _extends$1({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
       });
 
       // Refactoring modifiers' list (Object => Array)
       this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
-        return _extends({
+        return _extends$1({
           name: name
         }, _this.options.modifiers[name]);
       })
@@ -4183,7 +4195,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): dropdown.js
+   * Bootstrap (v4.6.0): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4194,38 +4206,38 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$4 = 'dropdown';
-  const VERSION$4 = '4.5.3';
-  const DATA_KEY$4 = 'bs.dropdown';
-  const EVENT_KEY$4 = `.${DATA_KEY$4}`;
+  const NAME$7 = 'dropdown';
+  const VERSION$6 = '4.6.0';
+  const DATA_KEY$7 = 'bs.dropdown';
+  const EVENT_KEY$7 = `.${DATA_KEY$7}`;
   const DATA_API_KEY$4 = '.data-api';
-  const JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
-  const ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+  const JQUERY_NO_CONFLICT$7 = $__default['default'].fn[NAME$7];
+  const ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
   const SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
   const TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
   const ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
   const ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
   const RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
-  const REGEXP_KEYDOWN = new RegExp(`${ARROW_UP_KEYCODE}|${ARROW_DOWN_KEYCODE}|${ESCAPE_KEYCODE}`);
+  const REGEXP_KEYDOWN = new RegExp(`${ARROW_UP_KEYCODE}|${ARROW_DOWN_KEYCODE}|${ESCAPE_KEYCODE$1}`);
 
-  const EVENT_HIDE$1 = `hide${EVENT_KEY$4}`;
-  const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$4}`;
-  const EVENT_SHOW$1 = `show${EVENT_KEY$4}`;
-  const EVENT_SHOWN$1 = `shown${EVENT_KEY$4}`;
-  const EVENT_CLICK = `click${EVENT_KEY$4}`;
-  const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$4}${DATA_API_KEY$4}`;
-  const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$4}${DATA_API_KEY$4}`;
-  const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$4}${DATA_API_KEY$4}`;
+  const EVENT_HIDE$3 = `hide${EVENT_KEY$7}`;
+  const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$7}`;
+  const EVENT_SHOW$3 = `show${EVENT_KEY$7}`;
+  const EVENT_SHOWN$3 = `shown${EVENT_KEY$7}`;
+  const EVENT_CLICK = `click${EVENT_KEY$7}`;
+  const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$7}${DATA_API_KEY$4}`;
+  const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$7}${DATA_API_KEY$4}`;
+  const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$7}${DATA_API_KEY$4}`;
 
-  const CLASS_NAME_DISABLED = 'disabled';
-  const CLASS_NAME_SHOW$2 = 'show';
+  const CLASS_NAME_DISABLED$1 = 'disabled';
+  const CLASS_NAME_SHOW$6 = 'show';
   const CLASS_NAME_DROPUP = 'dropup';
   const CLASS_NAME_DROPRIGHT = 'dropright';
   const CLASS_NAME_DROPLEFT = 'dropleft';
   const CLASS_NAME_MENURIGHT = 'dropdown-menu-right';
   const CLASS_NAME_POSITION_STATIC = 'position-static';
 
-  const SELECTOR_DATA_TOGGLE$2 = '[data-toggle="dropdown"]';
+  const SELECTOR_DATA_TOGGLE$3 = '[data-toggle="dropdown"]';
   const SELECTOR_FORM_CHILD = '.dropdown form';
   const SELECTOR_MENU = '.dropdown-menu';
   const SELECTOR_NAVBAR_NAV = '.navbar-nav';
@@ -4238,7 +4250,7 @@
   const PLACEMENT_RIGHT = 'right-start';
   const PLACEMENT_LEFT = 'left-start';
 
-  const Default$2 = {
+  const Default$6 = {
     offset: 0,
     flip: true,
     boundary: 'scrollParent',
@@ -4247,7 +4259,7 @@
     popperConfig: null
   };
 
-  const DefaultType$2 = {
+  const DefaultType$6 = {
     offset: '(number|string|function)',
     flip: 'boolean',
     boundary: '(string|element)',
@@ -4276,25 +4288,25 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$4
+      return VERSION$6
     }
 
     static get Default() {
-      return Default$2
+      return Default$6
     }
 
     static get DefaultType() {
-      return DefaultType$2
+      return DefaultType$6
     }
 
     // Public
 
     toggle() {
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1)) {
         return
       }
 
-      const isActive = $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2);
+      const isActive = $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$6);
 
       Dropdown._clearMenus();
 
@@ -4306,14 +4318,14 @@
     }
 
     show(usePopper = false) {
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1) || $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$6)) {
         return
       }
 
       const relatedTarget = {
         relatedTarget: this._element
       };
-      const showEvent = $__default['default'].Event(EVENT_SHOW$1, relatedTarget);
+      const showEvent = $__default['default'].Event(EVENT_SHOW$3, relatedTarget);
       const parent = Dropdown._getParentFromElement(this._element);
 
       $__default['default'](parent).trigger(showEvent);
@@ -4322,14 +4334,14 @@
         return
       }
 
-      // Disable totally Popper.js for Dropdown in Navbar
+      // Totally disable Popper for Dropdowns in Navbar
       if (!this._inNavbar && usePopper) {
         /**
          * Check for Popper dependency
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)')
+          throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)')
         }
 
         let referenceElement = this._element;
@@ -4367,21 +4379,21 @@
       this._element.focus();
       this._element.setAttribute('aria-expanded', true);
 
-      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$6);
       $__default['default'](parent)
-        .toggleClass(CLASS_NAME_SHOW$2)
-        .trigger($__default['default'].Event(EVENT_SHOWN$1, relatedTarget));
+        .toggleClass(CLASS_NAME_SHOW$6)
+        .trigger($__default['default'].Event(EVENT_SHOWN$3, relatedTarget));
     }
 
     hide() {
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || !$__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1) || !$__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$6)) {
         return
       }
 
       const relatedTarget = {
         relatedTarget: this._element
       };
-      const hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
+      const hideEvent = $__default['default'].Event(EVENT_HIDE$3, relatedTarget);
       const parent = Dropdown._getParentFromElement(this._element);
 
       $__default['default'](parent).trigger(hideEvent);
@@ -4394,15 +4406,15 @@
         this._popper.destroy();
       }
 
-      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$6);
       $__default['default'](parent)
-        .toggleClass(CLASS_NAME_SHOW$2)
-        .trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
+        .toggleClass(CLASS_NAME_SHOW$6)
+        .trigger($__default['default'].Event(EVENT_HIDDEN$3, relatedTarget));
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$4);
-      $__default['default'](this._element).off(EVENT_KEY$4);
+      $__default['default'].removeData(this._element, DATA_KEY$7);
+      $__default['default'](this._element).off(EVENT_KEY$7);
       this._element = null;
       this._menu = null;
       if (this._popper !== null) {
@@ -4436,7 +4448,7 @@
       };
 
       Util.typeCheckConfig(
-        NAME$4,
+        NAME$7,
         config,
         this.constructor.DefaultType
       );
@@ -4513,7 +4525,7 @@
         }
       };
 
-      // Disable Popper.js if we have a static display
+      // Disable Popper if we have a static display
       if (this._config.display === 'static') {
         popperConfig.modifiers.applyStyle = {
           enabled: false
@@ -4530,12 +4542,12 @@
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $__default['default'](this).data(DATA_KEY$4);
+        let data = $__default['default'](this).data(DATA_KEY$7);
         const _config = typeof config === 'object' ? config : null;
 
         if (!data) {
           data = new Dropdown(this, _config);
-          $__default['default'](this).data(DATA_KEY$4, data);
+          $__default['default'](this).data(DATA_KEY$7, data);
         }
 
         if (typeof config === 'string') {
@@ -4554,11 +4566,11 @@
         return
       }
 
-      const toggles = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$2));
+      const toggles = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$3));
 
       for (let i = 0, len = toggles.length; i < len; i++) {
         const parent = Dropdown._getParentFromElement(toggles[i]);
-        const context = $__default['default'](toggles[i]).data(DATA_KEY$4);
+        const context = $__default['default'](toggles[i]).data(DATA_KEY$7);
         const relatedTarget = {
           relatedTarget: toggles[i]
         };
@@ -4572,7 +4584,7 @@
         }
 
         const dropdownMenu = context._menu;
-        if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$2)) {
+        if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$6)) {
           continue
         }
 
@@ -4582,7 +4594,7 @@
           continue
         }
 
-        const hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
+        const hideEvent = $__default['default'].Event(EVENT_HIDE$3, relatedTarget);
         $__default['default'](parent).trigger(hideEvent);
         if (hideEvent.isDefaultPrevented()) {
           continue
@@ -4600,10 +4612,10 @@
           context._popper.destroy();
         }
 
-        $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$6);
         $__default['default'](parent)
-          .removeClass(CLASS_NAME_SHOW$2)
-          .trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
+          .removeClass(CLASS_NAME_SHOW$6)
+          .trigger($__default['default'].Event(EVENT_HIDDEN$3, relatedTarget));
       }
     }
 
@@ -4628,29 +4640,29 @@
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
       if (/input|textarea/i.test(event.target.tagName) ?
-        event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE &&
+        event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE$1 &&
         (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE ||
           $__default['default'](event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return
       }
 
-      if (this.disabled || $__default['default'](this).hasClass(CLASS_NAME_DISABLED)) {
+      if (this.disabled || $__default['default'](this).hasClass(CLASS_NAME_DISABLED$1)) {
         return
       }
 
       const parent = Dropdown._getParentFromElement(this);
-      const isActive = $__default['default'](parent).hasClass(CLASS_NAME_SHOW$2);
+      const isActive = $__default['default'](parent).hasClass(CLASS_NAME_SHOW$6);
 
-      if (!isActive && event.which === ESCAPE_KEYCODE) {
+      if (!isActive && event.which === ESCAPE_KEYCODE$1) {
         return
       }
 
       event.preventDefault();
       event.stopPropagation();
 
-      if (!isActive || (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
-        if (event.which === ESCAPE_KEYCODE) {
-          $__default['default'](parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
+      if (!isActive || (event.which === ESCAPE_KEYCODE$1 || event.which === SPACE_KEYCODE)) {
+        if (event.which === ESCAPE_KEYCODE$1) {
+          $__default['default'](parent.querySelector(SELECTOR_DATA_TOGGLE$3)).trigger('focus');
         }
 
         $__default['default'](this).trigger('click');
@@ -4689,15 +4701,15 @@
    */
 
   $__default['default'](document)
-    .on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler)
+    .on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$3, Dropdown._dataApiKeydownHandler)
     .on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler)
-    .on(`${EVENT_CLICK_DATA_API$4} ${EVENT_KEYUP_DATA_API}`, Dropdown._clearMenus)
-    .on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
+    .on(`${EVENT_CLICK_DATA_API$2} ${EVENT_KEYUP_DATA_API}`, Dropdown._clearMenus)
+    .on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$3, function (event) {
       event.preventDefault();
       event.stopPropagation();
       Dropdown._jQueryInterface.call($__default['default'](this), 'toggle');
     })
-    .on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, e => {
+    .on(EVENT_CLICK_DATA_API$2, SELECTOR_FORM_CHILD, e => {
       e.stopPropagation();
     });
 
@@ -4707,16 +4719,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$4] = Dropdown._jQueryInterface;
-  $__default['default'].fn[NAME$4].Constructor = Dropdown;
-  $__default['default'].fn[NAME$4].noConflict = () => {
-    $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
+  $__default['default'].fn[NAME$7] = Dropdown._jQueryInterface;
+  $__default['default'].fn[NAME$7].Constructor = Dropdown;
+  $__default['default'].fn[NAME$7].noConflict = () => {
+    $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
     return Dropdown._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): modal.js
+   * Bootstrap (v4.6.0): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4727,53 +4739,53 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$5 = 'modal';
-  const VERSION$5 = '4.5.3';
-  const DATA_KEY$5 = 'bs.modal';
-  const EVENT_KEY$5 = `.${DATA_KEY$5}`;
-  const DATA_API_KEY$5 = '.data-api';
-  const JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
-  const ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
+  const NAME$6 = 'modal';
+  const VERSION$5 = '4.6.0';
+  const DATA_KEY$6 = 'bs.modal';
+  const EVENT_KEY$6 = `.${DATA_KEY$6}`;
+  const DATA_API_KEY$3 = '.data-api';
+  const JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
+  const ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
-  const Default$3 = {
+  const Default$5 = {
     backdrop: true,
     keyboard: true,
     focus: true,
     show: true
   };
 
-  const DefaultType$3 = {
+  const DefaultType$5 = {
     backdrop: '(boolean|string)',
     keyboard: 'boolean',
     focus: 'boolean',
     show: 'boolean'
   };
 
-  const EVENT_HIDE$2 = `hide${EVENT_KEY$5}`;
-  const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$5}`;
-  const EVENT_HIDDEN$2 = `hidden${EVENT_KEY$5}`;
-  const EVENT_SHOW$2 = `show${EVENT_KEY$5}`;
-  const EVENT_SHOWN$2 = `shown${EVENT_KEY$5}`;
-  const EVENT_FOCUSIN = `focusin${EVENT_KEY$5}`;
-  const EVENT_RESIZE = `resize${EVENT_KEY$5}`;
-  const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$5}`;
-  const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$5}`;
-  const EVENT_MOUSEUP_DISMISS = `mouseup.dismiss${EVENT_KEY$5}`;
-  const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$5}`;
-  const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$5}${DATA_API_KEY$5}`;
+  const EVENT_HIDE$2 = `hide${EVENT_KEY$6}`;
+  const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$6}`;
+  const EVENT_HIDDEN$2 = `hidden${EVENT_KEY$6}`;
+  const EVENT_SHOW$2 = `show${EVENT_KEY$6}`;
+  const EVENT_SHOWN$2 = `shown${EVENT_KEY$6}`;
+  const EVENT_FOCUSIN = `focusin${EVENT_KEY$6}`;
+  const EVENT_RESIZE = `resize${EVENT_KEY$6}`;
+  const EVENT_CLICK_DISMISS$1 = `click.dismiss${EVENT_KEY$6}`;
+  const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$6}`;
+  const EVENT_MOUSEUP_DISMISS = `mouseup.dismiss${EVENT_KEY$6}`;
+  const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$6}`;
+  const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$6}${DATA_API_KEY$3}`;
 
   const CLASS_NAME_SCROLLABLE = 'modal-dialog-scrollable';
   const CLASS_NAME_SCROLLBAR_MEASURER = 'modal-scrollbar-measure';
-  const CLASS_NAME_BACKDROP = 'modal-backdrop';
-  const CLASS_NAME_OPEN = 'modal-open';
-  const CLASS_NAME_FADE$1 = 'fade';
-  const CLASS_NAME_SHOW$3 = 'show';
+  const CLASS_NAME_BACKDROP$1 = 'modal-backdrop';
+  const CLASS_NAME_OPEN$1 = 'modal-open';
+  const CLASS_NAME_FADE$4 = 'fade';
+  const CLASS_NAME_SHOW$5 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
 
   const SELECTOR_DIALOG = '.modal-dialog';
   const SELECTOR_MODAL_BODY = '.modal-body';
-  const SELECTOR_DATA_TOGGLE$3 = '[data-toggle="modal"]';
-  const SELECTOR_DATA_DISMISS = '[data-dismiss="modal"]';
+  const SELECTOR_DATA_TOGGLE$2 = '[data-toggle="modal"]';
+  const SELECTOR_DATA_DISMISS$1 = '[data-dismiss="modal"]';
   const SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
   const SELECTOR_STICKY_CONTENT = '.sticky-top';
 
@@ -4803,7 +4815,7 @@
     }
 
     static get Default() {
-      return Default$3
+      return Default$5
     }
 
     // Public
@@ -4817,7 +4829,7 @@
         return
       }
 
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$4)) {
         this._isTransitioning = true;
       }
 
@@ -4842,8 +4854,8 @@
       this._setResizeEvent();
 
       $__default['default'](this._element).on(
-        EVENT_CLICK_DISMISS,
-        SELECTOR_DATA_DISMISS,
+        EVENT_CLICK_DISMISS$1,
+        SELECTOR_DATA_DISMISS$1,
         event => this.hide(event)
       );
 
@@ -4876,7 +4888,7 @@
       }
 
       this._isShown = false;
-      const transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
+      const transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$4);
 
       if (transition) {
         this._isTransitioning = true;
@@ -4887,9 +4899,9 @@
 
       $__default['default'](document).off(EVENT_FOCUSIN);
 
-      $__default['default'](this._element).removeClass(CLASS_NAME_SHOW$3);
+      $__default['default'](this._element).removeClass(CLASS_NAME_SHOW$5);
 
-      $__default['default'](this._element).off(EVENT_CLICK_DISMISS);
+      $__default['default'](this._element).off(EVENT_CLICK_DISMISS$1);
       $__default['default'](this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
 
       if (transition) {
@@ -4905,7 +4917,7 @@
 
     dispose() {
       [window, this._element, this._dialog]
-        .forEach(htmlElement => $__default['default'](htmlElement).off(EVENT_KEY$5));
+        .forEach(htmlElement => $__default['default'](htmlElement).off(EVENT_KEY$6));
 
       /**
        * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
@@ -4914,7 +4926,7 @@
        */
       $__default['default'](document).off(EVENT_FOCUSIN);
 
-      $__default['default'].removeData(this._element, DATA_KEY$5);
+      $__default['default'].removeData(this._element, DATA_KEY$6);
 
       this._config = null;
       this._element = null;
@@ -4935,51 +4947,47 @@
 
     _getConfig(config) {
       config = {
-        ...Default$3,
+        ...Default$5,
         ...config
       };
-      Util.typeCheckConfig(NAME$5, config, DefaultType$3);
+      Util.typeCheckConfig(NAME$6, config, DefaultType$5);
       return config
     }
 
     _triggerBackdropTransition() {
-      if (this._config.backdrop === 'static') {
-        const hideEventPrevented = $__default['default'].Event(EVENT_HIDE_PREVENTED);
+      const hideEventPrevented = $__default['default'].Event(EVENT_HIDE_PREVENTED);
 
-        $__default['default'](this._element).trigger(hideEventPrevented);
-        if (hideEventPrevented.isDefaultPrevented()) {
-          return
-        }
-
-        const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
-
-        if (!isModalOverflowing) {
-          this._element.style.overflowY = 'hidden';
-        }
-
-        this._element.classList.add(CLASS_NAME_STATIC);
-
-        const modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
-        $__default['default'](this._element).off(Util.TRANSITION_END);
-
-        $__default['default'](this._element).one(Util.TRANSITION_END, () => {
-          this._element.classList.remove(CLASS_NAME_STATIC);
-          if (!isModalOverflowing) {
-            $__default['default'](this._element).one(Util.TRANSITION_END, () => {
-              this._element.style.overflowY = '';
-            })
-              .emulateTransitionEnd(this._element, modalTransitionDuration);
-          }
-        })
-          .emulateTransitionEnd(modalTransitionDuration);
-        this._element.focus();
-      } else {
-        this.hide();
+      $__default['default'](this._element).trigger(hideEventPrevented);
+      if (hideEventPrevented.isDefaultPrevented()) {
+        return
       }
+
+      const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+
+      if (!isModalOverflowing) {
+        this._element.style.overflowY = 'hidden';
+      }
+
+      this._element.classList.add(CLASS_NAME_STATIC);
+
+      const modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+      $__default['default'](this._element).off(Util.TRANSITION_END);
+
+      $__default['default'](this._element).one(Util.TRANSITION_END, () => {
+        this._element.classList.remove(CLASS_NAME_STATIC);
+        if (!isModalOverflowing) {
+          $__default['default'](this._element).one(Util.TRANSITION_END, () => {
+            this._element.style.overflowY = '';
+          })
+            .emulateTransitionEnd(this._element, modalTransitionDuration);
+        }
+      })
+        .emulateTransitionEnd(modalTransitionDuration);
+      this._element.focus();
     }
 
     _showElement(relatedTarget) {
-      const transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
+      const transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$4);
       const modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
 
       if (!this._element.parentNode ||
@@ -5003,7 +5011,7 @@
         Util.reflow(this._element);
       }
 
-      $__default['default'](this._element).addClass(CLASS_NAME_SHOW$3);
+      $__default['default'](this._element).addClass(CLASS_NAME_SHOW$5);
 
       if (this._config.focus) {
         this._enforceFocus();
@@ -5048,10 +5056,10 @@
     _setEscapeEvent() {
       if (this._isShown) {
         $__default['default'](this._element).on(EVENT_KEYDOWN_DISMISS, event => {
-          if (this._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
+          if (this._config.keyboard && event.which === ESCAPE_KEYCODE) {
             event.preventDefault();
             this.hide();
-          } else if (!this._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
+          } else if (!this._config.keyboard && event.which === ESCAPE_KEYCODE) {
             this._triggerBackdropTransition();
           }
         });
@@ -5075,7 +5083,7 @@
       this._element.removeAttribute('role');
       this._isTransitioning = false;
       this._showBackdrop(() => {
-        $__default['default'](document.body).removeClass(CLASS_NAME_OPEN);
+        $__default['default'](document.body).removeClass(CLASS_NAME_OPEN$1);
         this._resetAdjustments();
         this._resetScrollbar();
         $__default['default'](this._element).trigger(EVENT_HIDDEN$2);
@@ -5090,12 +5098,12 @@
     }
 
     _showBackdrop(callback) {
-      const animate = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1) ?
-        CLASS_NAME_FADE$1 : '';
+      const animate = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$4) ?
+        CLASS_NAME_FADE$4 : '';
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
-        this._backdrop.className = CLASS_NAME_BACKDROP;
+        this._backdrop.className = CLASS_NAME_BACKDROP$1;
 
         if (animate) {
           this._backdrop.classList.add(animate);
@@ -5103,7 +5111,7 @@
 
         $__default['default'](this._backdrop).appendTo(document.body);
 
-        $__default['default'](this._element).on(EVENT_CLICK_DISMISS, event => {
+        $__default['default'](this._element).on(EVENT_CLICK_DISMISS$1, event => {
           if (this._ignoreBackdropClick) {
             this._ignoreBackdropClick = false;
             return
@@ -5113,14 +5121,18 @@
             return
           }
 
-          this._triggerBackdropTransition();
+          if (this._config.backdrop === 'static') {
+            this._triggerBackdropTransition();
+          } else {
+            this.hide();
+          }
         });
 
         if (animate) {
           Util.reflow(this._backdrop);
         }
 
-        $__default['default'](this._backdrop).addClass(CLASS_NAME_SHOW$3);
+        $__default['default'](this._backdrop).addClass(CLASS_NAME_SHOW$5);
 
         if (!callback) {
           return
@@ -5137,7 +5149,7 @@
           .one(Util.TRANSITION_END, callback)
           .emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
-        $__default['default'](this._backdrop).removeClass(CLASS_NAME_SHOW$3);
+        $__default['default'](this._backdrop).removeClass(CLASS_NAME_SHOW$5);
 
         const callbackRemove = () => {
           this._removeBackdrop();
@@ -5146,7 +5158,7 @@
           }
         };
 
-        if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
+        if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$4)) {
           const backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
           $__default['default'](this._backdrop)
@@ -5221,7 +5233,7 @@
           .css('padding-right', `${parseFloat(calculatedPadding) + this._scrollbarWidth}px`);
       }
 
-      $__default['default'](document.body).addClass(CLASS_NAME_OPEN);
+      $__default['default'](document.body).addClass(CLASS_NAME_OPEN$1);
     }
 
     _resetScrollbar() {
@@ -5261,16 +5273,16 @@
 
     static _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
-        let data = $__default['default'](this).data(DATA_KEY$5);
+        let data = $__default['default'](this).data(DATA_KEY$6);
         const _config = {
-          ...Default$3,
+          ...Default$5,
           ...$__default['default'](this).data(),
           ...(typeof config === 'object' && config ? config : {})
         };
 
         if (!data) {
           data = new Modal(this, _config);
-          $__default['default'](this).data(DATA_KEY$5, data);
+          $__default['default'](this).data(DATA_KEY$6, data);
         }
 
         if (typeof config === 'string') {
@@ -5292,7 +5304,7 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
+  $__default['default'](document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$2, function (event) {
     let target;
     const selector = Util.getSelectorFromElement(this);
 
@@ -5300,7 +5312,7 @@
       target = document.querySelector(selector);
     }
 
-    const config = $__default['default'](target).data(DATA_KEY$5) ?
+    const config = $__default['default'](target).data(DATA_KEY$6) ?
       'toggle' : {
         ...$__default['default'](target).data(),
         ...$__default['default'](this).data()
@@ -5332,16 +5344,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$5] = Modal._jQueryInterface;
-  $__default['default'].fn[NAME$5].Constructor = Modal;
-  $__default['default'].fn[NAME$5].noConflict = () => {
-    $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
+  $__default['default'].fn[NAME$6] = Modal._jQueryInterface;
+  $__default['default'].fn[NAME$6].Constructor = Modal;
+  $__default['default'].fn[NAME$6].noConflict = () => {
+    $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
     return Modal._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): tools/sanitizer.js
+   * Bootstrap (v4.6.0): tools/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5469,7 +5481,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): tooltip.js
+   * Bootstrap (v4.6.0): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5480,13 +5492,13 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$6 = 'tooltip';
-  const VERSION$6 = '4.5.3';
-  const DATA_KEY$6 = 'bs.tooltip';
-  const EVENT_KEY$6 = `.${DATA_KEY$6}`;
-  const JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
-  const CLASS_PREFIX = 'bs-tooltip';
-  const BSCLS_PREFIX_REGEX = new RegExp(`(^|\\s)${CLASS_PREFIX}\\S+`, 'g');
+  const NAME$5 = 'tooltip';
+  const VERSION$4 = '4.6.0';
+  const DATA_KEY$5 = 'bs.tooltip';
+  const EVENT_KEY$5 = `.${DATA_KEY$5}`;
+  const JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
+  const CLASS_PREFIX$1 = 'bs-tooltip';
+  const BSCLS_PREFIX_REGEX$1 = new RegExp(`(^|\\s)${CLASS_PREFIX$1}\\S+`, 'g');
   const DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
 
   const DefaultType$4 = {
@@ -5502,6 +5514,7 @@
     container: '(string|element|boolean)',
     fallbackPlacement: '(string|array)',
     boundary: '(string|element)',
+    customClass: '(string|function)',
     sanitize: 'boolean',
     sanitizeFn: '(null|function)',
     whiteList: 'object',
@@ -5531,6 +5544,7 @@
     container: false,
     fallbackPlacement: 'flip',
     boundary: 'scrollParent',
+    customClass: '',
     sanitize: true,
     sanitizeFn: null,
     whiteList: DefaultWhitelist,
@@ -5540,20 +5554,20 @@
   const HOVER_STATE_SHOW = 'show';
   const HOVER_STATE_OUT = 'out';
 
-  const Event = {
-    HIDE: `hide${EVENT_KEY$6}`,
-    HIDDEN: `hidden${EVENT_KEY$6}`,
-    SHOW: `show${EVENT_KEY$6}`,
-    SHOWN: `shown${EVENT_KEY$6}`,
-    INSERTED: `inserted${EVENT_KEY$6}`,
-    CLICK: `click${EVENT_KEY$6}`,
-    FOCUSIN: `focusin${EVENT_KEY$6}`,
-    FOCUSOUT: `focusout${EVENT_KEY$6}`,
-    MOUSEENTER: `mouseenter${EVENT_KEY$6}`,
-    MOUSELEAVE: `mouseleave${EVENT_KEY$6}`
+  const Event$1 = {
+    HIDE: `hide${EVENT_KEY$5}`,
+    HIDDEN: `hidden${EVENT_KEY$5}`,
+    SHOW: `show${EVENT_KEY$5}`,
+    SHOWN: `shown${EVENT_KEY$5}`,
+    INSERTED: `inserted${EVENT_KEY$5}`,
+    CLICK: `click${EVENT_KEY$5}`,
+    FOCUSIN: `focusin${EVENT_KEY$5}`,
+    FOCUSOUT: `focusout${EVENT_KEY$5}`,
+    MOUSEENTER: `mouseenter${EVENT_KEY$5}`,
+    MOUSELEAVE: `mouseleave${EVENT_KEY$5}`
   };
 
-  const CLASS_NAME_FADE$2 = 'fade';
+  const CLASS_NAME_FADE$3 = 'fade';
   const CLASS_NAME_SHOW$4 = 'show';
 
   const SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
@@ -5573,7 +5587,7 @@
   class Tooltip {
     constructor(element, config) {
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)')
+        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)')
       }
 
       // private
@@ -5594,7 +5608,7 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$6
+      return VERSION$4
     }
 
     static get Default() {
@@ -5602,19 +5616,19 @@
     }
 
     static get NAME() {
-      return NAME$6
+      return NAME$5
     }
 
     static get DATA_KEY() {
-      return DATA_KEY$6
+      return DATA_KEY$5
     }
 
     static get Event() {
-      return Event
+      return Event$1
     }
 
     static get EVENT_KEY() {
-      return EVENT_KEY$6
+      return EVENT_KEY$5
     }
 
     static get DefaultType() {
@@ -5723,7 +5737,7 @@
         this.setContent();
 
         if (this.config.animation) {
-          $__default['default'](tip).addClass(CLASS_NAME_FADE$2);
+          $__default['default'](tip).addClass(CLASS_NAME_FADE$3);
         }
 
         const placement = typeof this.config.placement === 'function' ?
@@ -5745,6 +5759,7 @@
         this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
 
         $__default['default'](tip).addClass(CLASS_NAME_SHOW$4);
+        $__default['default'](tip).addClass(this.config.customClass);
 
         // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
@@ -5769,7 +5784,7 @@
           }
         };
 
-        if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
+        if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$3)) {
           const transitionDuration = Util.getTransitionDurationFromElement(this.tip);
 
           $__default['default'](this.tip)
@@ -5819,7 +5834,7 @@
       this._activeTrigger[TRIGGER_FOCUS] = false;
       this._activeTrigger[TRIGGER_HOVER] = false;
 
-      if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
+      if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$3)) {
         const transitionDuration = Util.getTransitionDurationFromElement(tip);
 
         $__default['default'](tip)
@@ -5845,7 +5860,7 @@
     }
 
     addAttachmentClass(attachment) {
-      $__default['default'](this.getTipElement()).addClass(`${CLASS_PREFIX}-${attachment}`);
+      $__default['default'](this.getTipElement()).addClass(`${CLASS_PREFIX$1}-${attachment}`);
     }
 
     getTipElement() {
@@ -5856,7 +5871,7 @@
     setContent() {
       const tip = this.getTipElement();
       this.setElementContent($__default['default'](tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
-      $__default['default'](tip).removeClass(`${CLASS_NAME_FADE$2} ${CLASS_NAME_SHOW$4}`);
+      $__default['default'](tip).removeClass(`${CLASS_NAME_FADE$3} ${CLASS_NAME_SHOW$4}`);
     }
 
     setElementContent($element, content) {
@@ -6137,7 +6152,7 @@
       }
 
       Util.typeCheckConfig(
-        NAME$6,
+        NAME$5,
         config,
         this.constructor.DefaultType
       );
@@ -6165,7 +6180,7 @@
 
     _cleanTipClass() {
       const $tip = $__default['default'](this.getTipElement());
-      const tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+      const tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
       if (tabClass !== null && tabClass.length) {
         $tip.removeClass(tabClass.join(''));
       }
@@ -6185,7 +6200,7 @@
         return
       }
 
-      $__default['default'](tip).removeClass(CLASS_NAME_FADE$2);
+      $__default['default'](tip).removeClass(CLASS_NAME_FADE$3);
       this.config.animation = false;
       this.hide();
       this.show();
@@ -6197,7 +6212,7 @@
     static _jQueryInterface(config) {
       return this.each(function () {
         const $element = $__default['default'](this);
-        let data = $element.data(DATA_KEY$6);
+        let data = $element.data(DATA_KEY$5);
         const _config = typeof config === 'object' && config;
 
         if (!data && /dispose|hide/.test(config)) {
@@ -6206,7 +6221,7 @@
 
         if (!data) {
           data = new Tooltip(this, _config);
-          $element.data(DATA_KEY$6, data);
+          $element.data(DATA_KEY$5, data);
         }
 
         if (typeof config === 'string') {
@@ -6226,16 +6241,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$6] = Tooltip._jQueryInterface;
-  $__default['default'].fn[NAME$6].Constructor = Tooltip;
-  $__default['default'].fn[NAME$6].noConflict = () => {
-    $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
+  $__default['default'].fn[NAME$5] = Tooltip._jQueryInterface;
+  $__default['default'].fn[NAME$5].Constructor = Tooltip;
+  $__default['default'].fn[NAME$5].noConflict = () => {
+    $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
     return Tooltip._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): popover.js
+   * Bootstrap (v4.6.0): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6246,15 +6261,15 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$7 = 'popover';
-  const VERSION$7 = '4.5.3';
-  const DATA_KEY$7 = 'bs.popover';
-  const EVENT_KEY$7 = `.${DATA_KEY$7}`;
-  const JQUERY_NO_CONFLICT$7 = $__default['default'].fn[NAME$7];
-  const CLASS_PREFIX$1 = 'bs-popover';
-  const BSCLS_PREFIX_REGEX$1 = new RegExp(`(^|\\s)${CLASS_PREFIX$1}\\S+`, 'g');
+  const NAME$4 = 'popover';
+  const VERSION$3 = '4.6.0';
+  const DATA_KEY$4 = 'bs.popover';
+  const EVENT_KEY$4 = `.${DATA_KEY$4}`;
+  const JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
+  const CLASS_PREFIX = 'bs-popover';
+  const BSCLS_PREFIX_REGEX = new RegExp(`(^|\\s)${CLASS_PREFIX}\\S+`, 'g');
 
-  const Default$5 = {
+  const Default$3 = {
     ...Tooltip.Default,
     placement: 'right',
     trigger: 'click',
@@ -6265,28 +6280,28 @@
                 '<div class="popover-body"></div></div>'
   };
 
-  const DefaultType$5 = {
+  const DefaultType$3 = {
     ...Tooltip.DefaultType,
     content: '(string|element|function)'
   };
 
-  const CLASS_NAME_FADE$3 = 'fade';
-  const CLASS_NAME_SHOW$5 = 'show';
+  const CLASS_NAME_FADE$2 = 'fade';
+  const CLASS_NAME_SHOW$3 = 'show';
 
   const SELECTOR_TITLE = '.popover-header';
   const SELECTOR_CONTENT = '.popover-body';
 
-  const Event$1 = {
-    HIDE: `hide${EVENT_KEY$7}`,
-    HIDDEN: `hidden${EVENT_KEY$7}`,
-    SHOW: `show${EVENT_KEY$7}`,
-    SHOWN: `shown${EVENT_KEY$7}`,
-    INSERTED: `inserted${EVENT_KEY$7}`,
-    CLICK: `click${EVENT_KEY$7}`,
-    FOCUSIN: `focusin${EVENT_KEY$7}`,
-    FOCUSOUT: `focusout${EVENT_KEY$7}`,
-    MOUSEENTER: `mouseenter${EVENT_KEY$7}`,
-    MOUSELEAVE: `mouseleave${EVENT_KEY$7}`
+  const Event = {
+    HIDE: `hide${EVENT_KEY$4}`,
+    HIDDEN: `hidden${EVENT_KEY$4}`,
+    SHOW: `show${EVENT_KEY$4}`,
+    SHOWN: `shown${EVENT_KEY$4}`,
+    INSERTED: `inserted${EVENT_KEY$4}`,
+    CLICK: `click${EVENT_KEY$4}`,
+    FOCUSIN: `focusin${EVENT_KEY$4}`,
+    FOCUSOUT: `focusout${EVENT_KEY$4}`,
+    MOUSEENTER: `mouseenter${EVENT_KEY$4}`,
+    MOUSELEAVE: `mouseleave${EVENT_KEY$4}`
   };
 
   /**
@@ -6299,31 +6314,31 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$7
+      return VERSION$3
     }
 
     static get Default() {
-      return Default$5
+      return Default$3
     }
 
     static get NAME() {
-      return NAME$7
+      return NAME$4
     }
 
     static get DATA_KEY() {
-      return DATA_KEY$7
+      return DATA_KEY$4
     }
 
     static get Event() {
-      return Event$1
+      return Event
     }
 
     static get EVENT_KEY() {
-      return EVENT_KEY$7
+      return EVENT_KEY$4
     }
 
     static get DefaultType() {
-      return DefaultType$5
+      return DefaultType$3
     }
 
     // Overrides
@@ -6333,7 +6348,7 @@
     }
 
     addAttachmentClass(attachment) {
-      $__default['default'](this.getTipElement()).addClass(`${CLASS_PREFIX$1}-${attachment}`);
+      $__default['default'](this.getTipElement()).addClass(`${CLASS_PREFIX}-${attachment}`);
     }
 
     getTipElement() {
@@ -6353,7 +6368,7 @@
 
       this.setElementContent($tip.find(SELECTOR_CONTENT), content);
 
-      $tip.removeClass(`${CLASS_NAME_FADE$3} ${CLASS_NAME_SHOW$5}`);
+      $tip.removeClass(`${CLASS_NAME_FADE$2} ${CLASS_NAME_SHOW$3}`);
     }
 
     // Private
@@ -6365,7 +6380,7 @@
 
     _cleanTipClass() {
       const $tip = $__default['default'](this.getTipElement());
-      const tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
+      const tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
       if (tabClass !== null && tabClass.length > 0) {
         $tip.removeClass(tabClass.join(''));
       }
@@ -6375,7 +6390,7 @@
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $__default['default'](this).data(DATA_KEY$7);
+        let data = $__default['default'](this).data(DATA_KEY$4);
         const _config = typeof config === 'object' ? config : null;
 
         if (!data && /dispose|hide/.test(config)) {
@@ -6384,7 +6399,7 @@
 
         if (!data) {
           data = new Popover(this, _config);
-          $__default['default'](this).data(DATA_KEY$7, data);
+          $__default['default'](this).data(DATA_KEY$4, data);
         }
 
         if (typeof config === 'string') {
@@ -6404,16 +6419,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$7] = Popover._jQueryInterface;
-  $__default['default'].fn[NAME$7].Constructor = Popover;
-  $__default['default'].fn[NAME$7].noConflict = () => {
-    $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
+  $__default['default'].fn[NAME$4] = Popover._jQueryInterface;
+  $__default['default'].fn[NAME$4].Constructor = Popover;
+  $__default['default'].fn[NAME$4].noConflict = () => {
+    $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
     return Popover._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): scrollspy.js
+   * Bootstrap (v4.6.0): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6424,40 +6439,40 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$8 = 'scrollspy';
-  const VERSION$8 = '4.5.3';
-  const DATA_KEY$8 = 'bs.scrollspy';
-  const EVENT_KEY$8 = `.${DATA_KEY$8}`;
-  const DATA_API_KEY$6 = '.data-api';
-  const JQUERY_NO_CONFLICT$8 = $__default['default'].fn[NAME$8];
+  const NAME$3 = 'scrollspy';
+  const VERSION$2 = '4.6.0';
+  const DATA_KEY$3 = 'bs.scrollspy';
+  const EVENT_KEY$3 = `.${DATA_KEY$3}`;
+  const DATA_API_KEY$2 = '.data-api';
+  const JQUERY_NO_CONFLICT$3 = $__default['default'].fn[NAME$3];
 
-  const Default$6 = {
+  const Default$2 = {
     offset: 10,
     method: 'auto',
     target: ''
   };
 
-  const DefaultType$6 = {
+  const DefaultType$2 = {
     offset: 'number',
     method: 'string',
     target: '(string|element)'
   };
 
-  const EVENT_ACTIVATE = `activate${EVENT_KEY$8}`;
-  const EVENT_SCROLL = `scroll${EVENT_KEY$8}`;
-  const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$8}${DATA_API_KEY$6}`;
+  const EVENT_ACTIVATE = `activate${EVENT_KEY$3}`;
+  const EVENT_SCROLL = `scroll${EVENT_KEY$3}`;
+  const EVENT_LOAD_DATA_API = `load${EVENT_KEY$3}${DATA_API_KEY$2}`;
 
   const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
-  const CLASS_NAME_ACTIVE$2 = 'active';
+  const CLASS_NAME_ACTIVE$1 = 'active';
 
   const SELECTOR_DATA_SPY = '[data-spy="scroll"]';
-  const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
+  const SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
   const SELECTOR_NAV_LINKS = '.nav-link';
   const SELECTOR_NAV_ITEMS = '.nav-item';
   const SELECTOR_LIST_ITEMS = '.list-group-item';
-  const SELECTOR_DROPDOWN = '.dropdown';
+  const SELECTOR_DROPDOWN$1 = '.dropdown';
   const SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
-  const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
+  const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
 
   const METHOD_OFFSET = 'offset';
   const METHOD_POSITION = 'position';
@@ -6490,11 +6505,11 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$8
+      return VERSION$2
     }
 
     static get Default() {
-      return Default$6
+      return Default$2
     }
 
     // Public
@@ -6547,8 +6562,8 @@
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$8);
-      $__default['default'](this._scrollElement).off(EVENT_KEY$8);
+      $__default['default'].removeData(this._element, DATA_KEY$3);
+      $__default['default'](this._scrollElement).off(EVENT_KEY$3);
 
       this._element = null;
       this._scrollElement = null;
@@ -6564,21 +6579,21 @@
 
     _getConfig(config) {
       config = {
-        ...Default$6,
+        ...Default$2,
         ...(typeof config === 'object' && config ? config : {})
       };
 
       if (typeof config.target !== 'string' && Util.isElement(config.target)) {
         let id = $__default['default'](config.target).attr('id');
         if (!id) {
-          id = Util.getUID(NAME$8);
+          id = Util.getUID(NAME$3);
           $__default['default'](config.target).attr('id', id);
         }
 
         config.target = `#${id}`;
       }
 
-      Util.typeCheckConfig(NAME$8, config, DefaultType$6);
+      Util.typeCheckConfig(NAME$3, config, DefaultType$2);
 
       return config
     }
@@ -6649,23 +6664,23 @@
       const $link = $__default['default']([].slice.call(document.querySelectorAll(queries.join(','))));
 
       if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
-        $link.closest(SELECTOR_DROPDOWN)
-          .find(SELECTOR_DROPDOWN_TOGGLE)
-          .addClass(CLASS_NAME_ACTIVE$2);
-        $link.addClass(CLASS_NAME_ACTIVE$2);
+        $link.closest(SELECTOR_DROPDOWN$1)
+          .find(SELECTOR_DROPDOWN_TOGGLE$1)
+          .addClass(CLASS_NAME_ACTIVE$1);
+        $link.addClass(CLASS_NAME_ACTIVE$1);
       } else {
         // Set triggered link as active
-        $link.addClass(CLASS_NAME_ACTIVE$2);
+        $link.addClass(CLASS_NAME_ACTIVE$1);
         // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-        $link.parents(SELECTOR_NAV_LIST_GROUP)
+        $link.parents(SELECTOR_NAV_LIST_GROUP$1)
           .prev(`${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`)
-          .addClass(CLASS_NAME_ACTIVE$2);
+          .addClass(CLASS_NAME_ACTIVE$1);
         // Handle special case when .nav-link is inside .nav-item
-        $link.parents(SELECTOR_NAV_LIST_GROUP)
+        $link.parents(SELECTOR_NAV_LIST_GROUP$1)
           .prev(SELECTOR_NAV_ITEMS)
           .children(SELECTOR_NAV_LINKS)
-          .addClass(CLASS_NAME_ACTIVE$2);
+          .addClass(CLASS_NAME_ACTIVE$1);
       }
 
       $__default['default'](this._scrollElement).trigger(EVENT_ACTIVATE, {
@@ -6675,20 +6690,20 @@
 
     _clear() {
       [].slice.call(document.querySelectorAll(this._selector))
-        .filter(node => node.classList.contains(CLASS_NAME_ACTIVE$2))
-        .forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$2));
+        .filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1))
+        .forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
     }
 
     // Static
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $__default['default'](this).data(DATA_KEY$8);
+        let data = $__default['default'](this).data(DATA_KEY$3);
         const _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
-          $__default['default'](this).data(DATA_KEY$8, data);
+          $__default['default'](this).data(DATA_KEY$3, data);
         }
 
         if (typeof config === 'string') {
@@ -6708,7 +6723,7 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'](window).on(EVENT_LOAD_DATA_API$2, () => {
+  $__default['default'](window).on(EVENT_LOAD_DATA_API, () => {
     const scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     const scrollSpysLength = scrollSpys.length;
 
@@ -6724,16 +6739,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$8] = ScrollSpy._jQueryInterface;
-  $__default['default'].fn[NAME$8].Constructor = ScrollSpy;
-  $__default['default'].fn[NAME$8].noConflict = () => {
-    $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
+  $__default['default'].fn[NAME$3] = ScrollSpy._jQueryInterface;
+  $__default['default'].fn[NAME$3].Constructor = ScrollSpy;
+  $__default['default'].fn[NAME$3].noConflict = () => {
+    $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
     return ScrollSpy._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): tab.js
+   * Bootstrap (v4.6.0): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6744,31 +6759,31 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$9 = 'tab';
-  const VERSION$9 = '4.5.3';
-  const DATA_KEY$9 = 'bs.tab';
-  const EVENT_KEY$9 = `.${DATA_KEY$9}`;
-  const DATA_API_KEY$7 = '.data-api';
-  const JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
+  const NAME$2 = 'tab';
+  const VERSION$1 = '4.6.0';
+  const DATA_KEY$2 = 'bs.tab';
+  const EVENT_KEY$2 = `.${DATA_KEY$2}`;
+  const DATA_API_KEY$1 = '.data-api';
+  const JQUERY_NO_CONFLICT$2 = $__default['default'].fn[NAME$2];
 
-  const EVENT_HIDE$3 = `hide${EVENT_KEY$9}`;
-  const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$9}`;
-  const EVENT_SHOW$3 = `show${EVENT_KEY$9}`;
-  const EVENT_SHOWN$3 = `shown${EVENT_KEY$9}`;
-  const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$9}${DATA_API_KEY$7}`;
+  const EVENT_HIDE$1 = `hide${EVENT_KEY$2}`;
+  const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$2}`;
+  const EVENT_SHOW$1 = `show${EVENT_KEY$2}`;
+  const EVENT_SHOWN$1 = `shown${EVENT_KEY$2}`;
+  const EVENT_CLICK_DATA_API = `click${EVENT_KEY$2}${DATA_API_KEY$1}`;
 
   const CLASS_NAME_DROPDOWN_MENU = 'dropdown-menu';
-  const CLASS_NAME_ACTIVE$3 = 'active';
-  const CLASS_NAME_DISABLED$1 = 'disabled';
-  const CLASS_NAME_FADE$4 = 'fade';
-  const CLASS_NAME_SHOW$6 = 'show';
+  const CLASS_NAME_ACTIVE = 'active';
+  const CLASS_NAME_DISABLED = 'disabled';
+  const CLASS_NAME_FADE$1 = 'fade';
+  const CLASS_NAME_SHOW$2 = 'show';
 
-  const SELECTOR_DROPDOWN$1 = '.dropdown';
-  const SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
-  const SELECTOR_ACTIVE$2 = '.active';
+  const SELECTOR_DROPDOWN = '.dropdown';
+  const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
+  const SELECTOR_ACTIVE = '.active';
   const SELECTOR_ACTIVE_UL = '> li > .active';
-  const SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
-  const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
+  const SELECTOR_DATA_TOGGLE$1 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
+  const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
   const SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
 
   /**
@@ -6785,7 +6800,7 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$9
+      return VERSION$1
     }
 
     // Public
@@ -6793,27 +6808,27 @@
     show() {
       if (this._element.parentNode &&
           this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
-          $__default['default'](this._element).hasClass(CLASS_NAME_ACTIVE$3) ||
-          $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1)) {
+          $__default['default'](this._element).hasClass(CLASS_NAME_ACTIVE) ||
+          $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED)) {
         return
       }
 
       let target;
       let previous;
-      const listElement = $__default['default'](this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
+      const listElement = $__default['default'](this._element).closest(SELECTOR_NAV_LIST_GROUP)[0];
       const selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
-        const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
+        const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE;
         previous = $__default['default'].makeArray($__default['default'](listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      const hideEvent = $__default['default'].Event(EVENT_HIDE$3, {
+      const hideEvent = $__default['default'].Event(EVENT_HIDE$1, {
         relatedTarget: this._element
       });
 
-      const showEvent = $__default['default'].Event(EVENT_SHOW$3, {
+      const showEvent = $__default['default'].Event(EVENT_SHOW$1, {
         relatedTarget: previous
       });
 
@@ -6838,11 +6853,11 @@
       );
 
       const complete = () => {
-        const hiddenEvent = $__default['default'].Event(EVENT_HIDDEN$3, {
+        const hiddenEvent = $__default['default'].Event(EVENT_HIDDEN$1, {
           relatedTarget: this._element
         });
 
-        const shownEvent = $__default['default'].Event(EVENT_SHOWN$3, {
+        const shownEvent = $__default['default'].Event(EVENT_SHOWN$1, {
           relatedTarget: previous
         });
 
@@ -6858,7 +6873,7 @@
     }
 
     dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$9);
+      $__default['default'].removeData(this._element, DATA_KEY$2);
       this._element = null;
     }
 
@@ -6867,10 +6882,10 @@
     _activate(element, container, callback) {
       const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ?
         $__default['default'](container).find(SELECTOR_ACTIVE_UL) :
-        $__default['default'](container).children(SELECTOR_ACTIVE$2);
+        $__default['default'](container).children(SELECTOR_ACTIVE);
 
       const active = activeElements[0];
-      const isTransitioning = callback && (active && $__default['default'](active).hasClass(CLASS_NAME_FADE$4));
+      const isTransitioning = callback && (active && $__default['default'](active).hasClass(CLASS_NAME_FADE$1));
       const complete = () => this._transitionComplete(
         element,
         active,
@@ -6881,7 +6896,7 @@
         const transitionDuration = Util.getTransitionDurationFromElement(active);
 
         $__default['default'](active)
-          .removeClass(CLASS_NAME_SHOW$6)
+          .removeClass(CLASS_NAME_SHOW$2)
           .one(Util.TRANSITION_END, complete)
           .emulateTransitionEnd(transitionDuration);
       } else {
@@ -6891,14 +6906,14 @@
 
     _transitionComplete(element, active, callback) {
       if (active) {
-        $__default['default'](active).removeClass(CLASS_NAME_ACTIVE$3);
+        $__default['default'](active).removeClass(CLASS_NAME_ACTIVE);
 
         const dropdownChild = $__default['default'](active.parentNode).find(
           SELECTOR_DROPDOWN_ACTIVE_CHILD
         )[0];
 
         if (dropdownChild) {
-          $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
+          $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -6906,24 +6921,24 @@
         }
       }
 
-      $__default['default'](element).addClass(CLASS_NAME_ACTIVE$3);
+      $__default['default'](element).addClass(CLASS_NAME_ACTIVE);
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
       }
 
       Util.reflow(element);
 
-      if (element.classList.contains(CLASS_NAME_FADE$4)) {
-        element.classList.add(CLASS_NAME_SHOW$6);
+      if (element.classList.contains(CLASS_NAME_FADE$1)) {
+        element.classList.add(CLASS_NAME_SHOW$2);
       }
 
       if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
-        const dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN$1)[0];
+        const dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN)[0];
 
         if (dropdownElement) {
-          const dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
+          const dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE));
 
-          $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
+          $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -6939,11 +6954,11 @@
     static _jQueryInterface(config) {
       return this.each(function () {
         const $this = $__default['default'](this);
-        let data = $this.data(DATA_KEY$9);
+        let data = $this.data(DATA_KEY$2);
 
         if (!data) {
           data = new Tab(this);
-          $this.data(DATA_KEY$9, data);
+          $this.data(DATA_KEY$2, data);
         }
 
         if (typeof config === 'string') {
@@ -6964,7 +6979,7 @@
    */
 
   $__default['default'](document)
-    .on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
+    .on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE$1, function (event) {
       event.preventDefault();
       Tab._jQueryInterface.call($__default['default'](this), 'show');
     });
@@ -6975,16 +6990,16 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$9] = Tab._jQueryInterface;
-  $__default['default'].fn[NAME$9].Constructor = Tab;
-  $__default['default'].fn[NAME$9].noConflict = () => {
-    $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
+  $__default['default'].fn[NAME$2] = Tab._jQueryInterface;
+  $__default['default'].fn[NAME$2].Constructor = Tab;
+  $__default['default'].fn[NAME$2].noConflict = () => {
+    $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
     return Tab._jQueryInterface
   };
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.3): toast.js
+   * Bootstrap (v4.6.0): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6995,36 +7010,36 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$a = 'toast';
-  const VERSION$a = '4.5.3';
-  const DATA_KEY$a = 'bs.toast';
-  const EVENT_KEY$a = `.${DATA_KEY$a}`;
-  const JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
+  const NAME$1 = 'toast';
+  const VERSION = '4.6.0';
+  const DATA_KEY$1 = 'bs.toast';
+  const EVENT_KEY$1 = `.${DATA_KEY$1}`;
+  const JQUERY_NO_CONFLICT$1 = $__default['default'].fn[NAME$1];
 
-  const EVENT_CLICK_DISMISS$1 = `click.dismiss${EVENT_KEY$a}`;
-  const EVENT_HIDE$4 = `hide${EVENT_KEY$a}`;
-  const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$a}`;
-  const EVENT_SHOW$4 = `show${EVENT_KEY$a}`;
-  const EVENT_SHOWN$4 = `shown${EVENT_KEY$a}`;
+  const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$1}`;
+  const EVENT_HIDE = `hide${EVENT_KEY$1}`;
+  const EVENT_HIDDEN = `hidden${EVENT_KEY$1}`;
+  const EVENT_SHOW = `show${EVENT_KEY$1}`;
+  const EVENT_SHOWN = `shown${EVENT_KEY$1}`;
 
-  const CLASS_NAME_FADE$5 = 'fade';
+  const CLASS_NAME_FADE = 'fade';
   const CLASS_NAME_HIDE = 'hide';
-  const CLASS_NAME_SHOW$7 = 'show';
+  const CLASS_NAME_SHOW$1 = 'show';
   const CLASS_NAME_SHOWING = 'showing';
 
-  const DefaultType$7 = {
+  const DefaultType$1 = {
     animation: 'boolean',
     autohide: 'boolean',
     delay: 'number'
   };
 
-  const Default$7 = {
+  const Default$1 = {
     animation: true,
     autohide: true,
     delay: 500
   };
 
-  const SELECTOR_DATA_DISMISS$1 = '[data-dismiss="toast"]';
+  const SELECTOR_DATA_DISMISS = '[data-dismiss="toast"]';
 
   /**
    * ------------------------------------------------------------------------
@@ -7043,21 +7058,21 @@
     // Getters
 
     static get VERSION() {
-      return VERSION$a
+      return VERSION
     }
 
     static get DefaultType() {
-      return DefaultType$7
+      return DefaultType$1
     }
 
     static get Default() {
-      return Default$7
+      return Default$1
     }
 
     // Public
 
     show() {
-      const showEvent = $__default['default'].Event(EVENT_SHOW$4);
+      const showEvent = $__default['default'].Event(EVENT_SHOW);
 
       $__default['default'](this._element).trigger(showEvent);
       if (showEvent.isDefaultPrevented()) {
@@ -7067,14 +7082,14 @@
       this._clearTimeout();
 
       if (this._config.animation) {
-        this._element.classList.add(CLASS_NAME_FADE$5);
+        this._element.classList.add(CLASS_NAME_FADE);
       }
 
       const complete = () => {
         this._element.classList.remove(CLASS_NAME_SHOWING);
-        this._element.classList.add(CLASS_NAME_SHOW$7);
+        this._element.classList.add(CLASS_NAME_SHOW$1);
 
-        $__default['default'](this._element).trigger(EVENT_SHOWN$4);
+        $__default['default'](this._element).trigger(EVENT_SHOWN);
 
         if (this._config.autohide) {
           this._timeout = setTimeout(() => {
@@ -7098,11 +7113,11 @@
     }
 
     hide() {
-      if (!this._element.classList.contains(CLASS_NAME_SHOW$7)) {
+      if (!this._element.classList.contains(CLASS_NAME_SHOW$1)) {
         return
       }
 
-      const hideEvent = $__default['default'].Event(EVENT_HIDE$4);
+      const hideEvent = $__default['default'].Event(EVENT_HIDE);
 
       $__default['default'](this._element).trigger(hideEvent);
       if (hideEvent.isDefaultPrevented()) {
@@ -7115,13 +7130,13 @@
     dispose() {
       this._clearTimeout();
 
-      if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
-        this._element.classList.remove(CLASS_NAME_SHOW$7);
+      if (this._element.classList.contains(CLASS_NAME_SHOW$1)) {
+        this._element.classList.remove(CLASS_NAME_SHOW$1);
       }
 
-      $__default['default'](this._element).off(EVENT_CLICK_DISMISS$1);
+      $__default['default'](this._element).off(EVENT_CLICK_DISMISS);
 
-      $__default['default'].removeData(this._element, DATA_KEY$a);
+      $__default['default'].removeData(this._element, DATA_KEY$1);
       this._element = null;
       this._config = null;
     }
@@ -7130,13 +7145,13 @@
 
     _getConfig(config) {
       config = {
-        ...Default$7,
+        ...Default$1,
         ...$__default['default'](this._element).data(),
         ...(typeof config === 'object' && config ? config : {})
       };
 
       Util.typeCheckConfig(
-        NAME$a,
+        NAME$1,
         config,
         this.constructor.DefaultType
       );
@@ -7145,16 +7160,16 @@
     }
 
     _setListeners() {
-      $__default['default'](this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, () => this.hide());
+      $__default['default'](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, () => this.hide());
     }
 
     _close() {
       const complete = () => {
         this._element.classList.add(CLASS_NAME_HIDE);
-        $__default['default'](this._element).trigger(EVENT_HIDDEN$4);
+        $__default['default'](this._element).trigger(EVENT_HIDDEN);
       };
 
-      this._element.classList.remove(CLASS_NAME_SHOW$7);
+      this._element.classList.remove(CLASS_NAME_SHOW$1);
       if (this._config.animation) {
         const transitionDuration = Util.getTransitionDurationFromElement(this._element);
 
@@ -7176,12 +7191,12 @@
     static _jQueryInterface(config) {
       return this.each(function () {
         const $element = $__default['default'](this);
-        let data = $element.data(DATA_KEY$a);
+        let data = $element.data(DATA_KEY$1);
         const _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new Toast(this, _config);
-          $element.data(DATA_KEY$a, data);
+          $element.data(DATA_KEY$1, data);
         }
 
         if (typeof config === 'string') {
@@ -7201,10 +7216,10 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
-  $__default['default'].fn[NAME$a].Constructor = Toast;
-  $__default['default'].fn[NAME$a].noConflict = () => {
-    $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
+  $__default['default'].fn[NAME$1] = Toast._jQueryInterface;
+  $__default['default'].fn[NAME$1].Constructor = Toast;
+  $__default['default'].fn[NAME$1].noConflict = () => {
+    $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
     return Toast._jQueryInterface
   };
 
@@ -7224,8 +7239,8 @@
     return Constructor;
   }
 
-  function _extends$1() {
-    _extends$1 = Object.assign || function (target) {
+  function _extends() {
+    _extends = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -7239,7 +7254,7 @@
       return target;
     };
 
-    return _extends$1.apply(this, arguments);
+    return _extends.apply(this, arguments);
   }
 
   /**
@@ -7248,33 +7263,34 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME$b = 'offcanvasmenu';
+  var NAME = 'offcanvasmenu';
   var AZ_VERSION = 'v0.0.4';
-  var DATA_KEY$b = 'az.offcanvasmenu';
-  var EVENT_KEY$b = "." + DATA_KEY$b;
-  var DATA_API_KEY$8 = '.data-api';
-  var JQUERY_NO_CONFLICT$b = $__default['default'].fn[NAME$b];
-  var Default$8 = {
+  var DATA_KEY = 'az.offcanvasmenu';
+  var EVENT_KEY = "." + DATA_KEY;
+  var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $__default['default'].fn[NAME];
+  var Default = {
     toggle: true,
     parent: ''
   };
-  var DefaultType$8 = {
+  var DefaultType = {
     toggle: 'boolean',
     parent: '(string|element)'
   };
-  var EVENT_OPEN = "open" + EVENT_KEY$b;
-  var EVENT_OPENED = "opened" + EVENT_KEY$b;
-  var EVENT_CLOSE$1 = "close" + EVENT_KEY$b;
-  var EVENT_CLOSED$1 = "closed" + EVENT_KEY$b;
-  var DATA_API = "click" + EVENT_KEY$b + DATA_API_KEY$8;
-  var CLASS_NAME_OPEN$1 = 'open';
+  var EVENT_OPEN = "open" + EVENT_KEY;
+  var EVENT_OPENED = "opened" + EVENT_KEY;
+  var EVENT_CLOSE = "close" + EVENT_KEY;
+  var EVENT_CLOSED = "closed" + EVENT_KEY;
+  var DATA_API = "click" + EVENT_KEY + DATA_API_KEY;
+  var CLASS_NAME_OPEN = 'open';
   var CLASS_NAME_CLOSE = 'offcanvas-toggle';
   var CLASS_NAME_CLOSING = 'closing';
   var CLASS_NAME_CLOSED = 'closed';
-  var CLASS_NAME_BACKDROP$1 = 'menu-backdrop';
-  var CLASS_NAME_SHOW$8 = 'show';
-  var SELECTOR_ACTIVES$1 = '.open, .closing';
-  var SELECTOR_DATA_TOGGLE$5 = '[data-toggle="offcanvas"]';
+  var CLASS_NAME_FREEZE = 'offcanvas-toggle-body-freeze';
+  var CLASS_NAME_BACKDROP = 'menu-backdrop';
+  var CLASS_NAME_SHOW = 'show';
+  var SELECTOR_ACTIVES = '.open, .closing';
+  var SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -7288,7 +7304,7 @@
       this._config = this._getConfig(config);
       this._backdrop = null;
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"offcanvas\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"offcanvas\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$5));
+      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE));
 
       for (var i = 0, len = toggleList.length; i < len; i++) {
         var elem = toggleList[i];
@@ -7320,7 +7336,7 @@
 
     // Public
     _proto.toggle = function toggle() {
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_OPEN$1)) {
+      if ($__default['default'](this._element).hasClass(CLASS_NAME_OPEN)) {
         this.close();
       } else {
         this.open();
@@ -7337,7 +7353,7 @@
     _proto.open = function open() {
       var _this = this;
 
-      if (this._isTransitioning || $__default['default'](this._element).hasClass(CLASS_NAME_OPEN$1)) {
+      if (this._isTransitioning || $__default['default'](this._element).hasClass(CLASS_NAME_OPEN)) {
         return;
       }
 
@@ -7345,7 +7361,7 @@
       var activesData;
 
       if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES$1)).filter(function (elem) {
+        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES)).filter(function (elem) {
           if (typeof _this._config.parent === 'string') {
             return elem.getAttribute('data-parent') === _this._config.parent;
           }
@@ -7359,7 +7375,7 @@
       }
 
       if (actives) {
-        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$b);
+        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY);
 
         if (activesData && activesData._isTransitioning) {
           return;
@@ -7377,12 +7393,12 @@
         Offcanvasmenu._jQueryInterface.call($__default['default'](actives).not(this._selector), 'close');
 
         if (!activesData) {
-          $__default['default'](actives).data(DATA_KEY$b, null);
+          $__default['default'](actives).data(DATA_KEY, null);
         }
       }
 
       this._backdrop = document.createElement('div');
-      this._backdrop.className = CLASS_NAME_BACKDROP$1;
+      this._backdrop.className = CLASS_NAME_BACKDROP;
 
       this._backdrop.setAttribute('data-toggle', 'offcanvas');
 
@@ -7394,7 +7410,7 @@
 
       $__default['default'](this._backdrop).appendTo(document.body);
 
-      this._backdrop.classList.add(CLASS_NAME_SHOW$8);
+      this._backdrop.classList.add(CLASS_NAME_SHOW);
 
       $__default['default'](this._element).removeClass(CLASS_NAME_CLOSE).addClass(CLASS_NAME_CLOSING);
 
@@ -7405,10 +7421,11 @@
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $__default['default'](_this._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
+        $__default['default'](_this._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN);
 
         _this.setTransitioning(false);
 
+        document.body.classList.add(CLASS_NAME_FREEZE);
         $__default['default'](_this._element).trigger(EVENT_OPENED);
       };
 
@@ -7419,11 +7436,11 @@
     _proto.close = function close() {
       var _this2 = this;
 
-      if (this._isTransitioning || !$__default['default'](this._element).hasClass(CLASS_NAME_OPEN$1)) {
+      if (this._isTransitioning || !$__default['default'](this._element).hasClass(CLASS_NAME_OPEN)) {
         return;
       }
 
-      var startEvent = $__default['default'].Event(EVENT_CLOSE$1);
+      var startEvent = $__default['default'].Event(EVENT_CLOSE);
       $__default['default'](this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -7431,7 +7448,7 @@
       }
 
       Util.reflow(this._element);
-      $__default['default'](this._element).addClass(CLASS_NAME_CLOSING).removeClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN$1);
+      $__default['default'](this._element).addClass(CLASS_NAME_CLOSING).removeClass(CLASS_NAME_CLOSE + " " + CLASS_NAME_OPEN);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -7442,7 +7459,7 @@
           if (selector !== null) {
             var $elem = $__default['default']([].slice.call(document.querySelectorAll(selector)));
 
-            if (!$elem.hasClass(CLASS_NAME_OPEN$1)) {
+            if (!$elem.hasClass(CLASS_NAME_OPEN)) {
               $__default['default'](trigger).addClass(CLASS_NAME_CLOSED).attr('aria-expanded', false);
             }
           }
@@ -7456,7 +7473,8 @@
 
         _this2._removeBackdrop();
 
-        $__default['default'](_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED$1);
+        document.body.classList.remove(CLASS_NAME_FREEZE);
+        $__default['default'](_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED);
       };
 
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -7468,7 +7486,7 @@
     };
 
     _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$b);
+      $__default['default'].removeData(this._element, DATA_KEY);
       this._config = null;
       this._parent = null;
       this._element = null;
@@ -7478,10 +7496,10 @@
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _extends$1({}, Default$8, config);
+      config = _extends({}, Default, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
 
-      Util.typeCheckConfig(NAME$b, config, DefaultType$8);
+      Util.typeCheckConfig(NAME, config, DefaultType);
       return config;
     };
 
@@ -7509,7 +7527,7 @@
     };
 
     _proto._addAriaAndOffcanvasmenuClass = function _addAriaAndOffcanvasmenuClass(element, triggerArray) {
-      var isOpen = $__default['default'](element).hasClass(CLASS_NAME_OPEN$1);
+      var isOpen = $__default['default'](element).hasClass(CLASS_NAME_OPEN);
 
       if (triggerArray.length) {
         $__default['default'](triggerArray).toggleClass(CLASS_NAME_CLOSED, !isOpen).attr('aria-expanded', isOpen);
@@ -7525,9 +7543,9 @@
     Offcanvasmenu._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $this = $__default['default'](this);
-        var data = $this.data(DATA_KEY$b);
+        var data = $this.data(DATA_KEY);
 
-        var _config = _extends$1({}, Default$8, $this.data(), typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default, $this.data(), typeof config === 'object' && config ? config : {});
 
         if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
           _config.toggle = false;
@@ -7535,7 +7553,7 @@
 
         if (!data) {
           data = new Offcanvasmenu(this, _config);
-          $this.data(DATA_KEY$b, data);
+          $this.data(DATA_KEY, data);
         }
 
         if (typeof config === 'string') {
@@ -7556,7 +7574,7 @@
     }, {
       key: "Default",
       get: function get() {
-        return Default$8;
+        return Default;
       }
     }]);
 
@@ -7599,7 +7617,7 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'](document).on(DATA_API, SELECTOR_DATA_TOGGLE$5, function (event) {
+  $__default['default'](document).on(DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the
     // offcanvas element
     if (event.currentTarget.tagName === 'A') {
@@ -7611,7 +7629,7 @@
     var selectors = [].slice.call(document.querySelectorAll(selector));
     $__default['default'](selectors).each(function () {
       var $target = $__default['default'](this);
-      var data = $target.data(DATA_KEY$b);
+      var data = $target.data(DATA_KEY);
       var config = data ? 'toggle' : $trigger.data();
 
       Offcanvasmenu._jQueryInterface.call($target, config);
@@ -7623,11 +7641,11 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$b] = Offcanvasmenu._jQueryInterface;
-  $__default['default'].fn[NAME$b].Constructor = Offcanvasmenu;
+  $__default['default'].fn[NAME] = Offcanvasmenu._jQueryInterface;
+  $__default['default'].fn[NAME].Constructor = Offcanvasmenu;
 
-  $__default['default'].fn[NAME$b].noConflict = function () {
-    $__default['default'].fn[NAME$b] = JQUERY_NO_CONFLICT$b;
+  $__default['default'].fn[NAME].noConflict = function () {
+    $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
     return Offcanvasmenu._jQueryInterface;
   };
 

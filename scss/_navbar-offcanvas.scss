@@ -2,6 +2,9 @@
 .offcanvas-toggle {
   display: none;
 }
+.offcanvas-toggle-body-freeze {
+  overflow-y: hidden;
+}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -103,7 +106,7 @@
   }
 
   .nav-item {
-    
+
     &.active, {
       .nav-link {
         color: $navbar-offcanvas-link-color;
@@ -156,7 +159,6 @@
 
     .dropdown-item {
       padding: $navbar-offcanvas-dropdown-link-padding;
-      font-weight: 200;
       white-space: normal;
     }
   }
@@ -225,6 +227,7 @@
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    max-width: 100%;
     padding: 0 1rem;
     padding: initial;
     overflow-y: initial;
@@ -266,6 +269,7 @@
         display: block;
         padding: $nav-link-padding-y $nav-link-padding-x;
         text-decoration: if($link-decoration == none, null, none);
+        font-weight: 700;
 
         @include hover-focus() {
           text-decoration: none;
@@ -333,6 +337,7 @@
       position: absolute;
       .dropdown-item {
         padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+        white-space: nowrap;
       }
     }
     .dropdown-toggle {
@@ -348,6 +353,7 @@
         border-right: 0.3em solid transparent;
         border-bottom: 0;
         border-left: 0.3em solid transparent;
+        margin-left: 0.225em
       }
     }
   }
