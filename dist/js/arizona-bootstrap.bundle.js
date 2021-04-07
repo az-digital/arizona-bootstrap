@@ -7286,6 +7286,7 @@
   var CLASS_NAME_CLOSE = 'offcanvas-toggle';
   var CLASS_NAME_CLOSING = 'closing';
   var CLASS_NAME_CLOSED = 'closed';
+  var CLASS_NAME_FREEZE = 'offcanvas-toggle-body-freeze';
   var CLASS_NAME_BACKDROP = 'menu-backdrop';
   var CLASS_NAME_SHOW = 'show';
   var SELECTOR_ACTIVES = '.open, .closing';
@@ -7424,6 +7425,7 @@
 
         _this.setTransitioning(false);
 
+        document.body.classList.add(CLASS_NAME_FREEZE);
         $__default['default'](_this._element).trigger(EVENT_OPENED);
       };
 
@@ -7471,6 +7473,7 @@
 
         _this2._removeBackdrop();
 
+        document.body.classList.remove(CLASS_NAME_FREEZE);
         $__default['default'](_this2._element).removeClass(CLASS_NAME_CLOSING).addClass(CLASS_NAME_CLOSE).trigger(EVENT_CLOSED);
       };
 

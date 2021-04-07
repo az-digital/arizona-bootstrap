@@ -2,6 +2,9 @@
 .offcanvas-toggle {
   display: none;
 }
+.offcanvas-toggle-body-freeze {
+  overflow-y: hidden;
+}
 @keyframes fadein {
   from {
     opacity: 0;

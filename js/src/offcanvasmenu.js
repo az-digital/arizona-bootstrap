@@ -42,6 +42,7 @@ const CLASS_NAME_CLOSE = 'offcanvas-toggle'
 const CLASS_NAME_CLOSING = 'closing'
 const CLASS_NAME_CLOSED = 'closed'
 
+const CLASS_NAME_FREEZE = 'offcanvas-toggle-body-freeze'
 const CLASS_NAME_BACKDROP = 'menu-backdrop'
 const CLASS_NAME_SHOW = 'show'
 
@@ -186,6 +187,8 @@ class Offcanvasmenu {
 
       this.setTransitioning(false)
 
+      document.body.classList.add(CLASS_NAME_FREEZE)
+
       $(this._element).trigger(EVENT_OPENED)
     }
 
@@ -235,6 +238,9 @@ class Offcanvasmenu {
     const complete = () => {
       this.setTransitioning(false)
       this._removeBackdrop()
+
+      document.body.classList.remove(CLASS_NAME_FREEZE)
+
       $(this._element)
         .removeClass(CLASS_NAME_CLOSING)
         .addClass(CLASS_NAME_CLOSE)
