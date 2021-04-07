@@ -9,13 +9,17 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set variables for Docker images
         run: |
-          lockhash=${{ hashFiles('Dockerfile', 'package-lock.json', 'scripts/*') }}
+          oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           registry='docker.pkg.github.com'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'
+          imagestem="${imageprefix}${imagename}:"
           echo "AZ_DOCKER_REGISTRY=${registry}" >> ${GITHUB_ENV}
-          echo "AZ_EPHEMERAL_IMAGE=${imageprefix}${imagename}:${lockhash}" >> ${GITHUB_ENV}
+          echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
+          echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
+          echo "AZ_EPHEMERAL_IMAGE=${imagestem}${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SOURCE_DIR=arizona-bootstrap-src" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
@@ -27,8 +31,16 @@ jobs:
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
-          docker build -t "$AZ_EPHEMERAL_IMAGE" .
-          docker push "$AZ_EPHEMERAL_IMAGE"
+          workingtitle=$(docker build -q . )
+          tempname="old${AZ_OLD_HASH}"
+          docker run --name "$tempname" "$workingtitle" true
+          docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker rm "$tempname"
+          lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
+          ephemeral="${AZ_IMAGE_STEM}${lockhash}"
+          docker tag "$workingtitle" "$ephemeral"
+          docker push "$ephemeral"
+          echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
       - name: Run the code linting checks
         run: |
           docker run --rm -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
