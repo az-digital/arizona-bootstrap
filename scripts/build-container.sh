@@ -128,4 +128,4 @@ logmessage "The image ID is ${imageid} (you can use this to run your own Docker 
 docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" npm run docs-develop \
   || normalexit "Exited with status ${?}"
 
-errorexit "The web server hosting the review site in the Docker container did not run as expected"
+normalexit "The web server hosting the review site in the Docker container stopped (status ${?})"
