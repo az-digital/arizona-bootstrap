@@ -90,20 +90,25 @@ if echo "$tagsearch" | grep -q "$oldhash" ; then
   lockhash="$oldhash"
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
-  workingtitle=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
+  imagenewid=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
     || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
+  workingtitle=$(echo "$imagenewid" | head -1 | sed -e 's/^.*sha256:\([0-9a-f]\{12\}\).*$/\1/' ) \
+    || errorexit "Couldn't extract a short image ID from ${imagenewid}"
   tempname="old${oldhash}"
-  docker run --name "$tempname" "$workingtitle" true \
+  logmessage "Making a throwaway container, ID ${workingtitle}, to extract the updated npm setup"
+  docker run --name "$tempname" "$workingtitle" 'true' \
     || errorexit "Failed to run a container based on the image ${workingtitle}"
   docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
     || errorexit "Couldn't copy the saved npm setup to the actual source directory"
   docker rm "$tempname" \
     || errorexit "Failed to clean up the temporary container ${tempname}"
+  logmessage "Updated the npm setup in the actual source directory, to include in the hash for the tag"
   lockhash=$(taghash Dockerfile package-lock.json package.json scripts) \
     || errorexit "Couldn't obtain the checksum from the updated files"
   ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
   docker tag "$workingtitle" "$ephemeral" \
     || errorexit "Failed to tag the image identified by ${workingtitle} with ${ephemeral}"
+  logmessage "Tagged a new image, ${ephemeral}"
 fi
 
 #------------------------------------------------------------------------------
@@ -120,7 +125,7 @@ logmessage "The image ID is ${imageid} (you can use this to run your own Docker 
 #------------------------------------------------------------------------------
 # Spin up a local review site.
 
-docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" serve-review-site \
+docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" npm run docs-develop \
   || normalexit "Exited with status ${?}"
 
-errorexit "The web server hosting the review site in the Docker container did not run as expected"
+normalexit "The web server hosting the review site in the Docker container stopped (status ${?})"
