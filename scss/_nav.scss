@@ -35,6 +35,26 @@
   }
 }
 
+.nav.nav-pills.flex-column > li {
+    border: solid 1px $nav-pills-link-active-bg;
+    margin: -1px 0 0 0;
+}
+
+.nav.nav-pills.flex-column > li > a:hover,
+.nav.nav-pills.flex-column > li > a:focus {
+    background-color: $nav-pills-link-active-bg;
+}
+
+.nav.nav-pills.flex-column > li > ul > li {
+    border: none;
+}
+
+.nav.nav-pills.flex-column > li > ul > li > a {
+    font-weight: 400;
+    color: $nav-pills-link-active-color;
+    padding-left: 25px;
+}
+
 .nav-tabs {
   border-bottom-color: $nav-tabs-border-color;
 
