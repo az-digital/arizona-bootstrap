@@ -35,7 +35,7 @@
   }
 }
 
-/* stylelint-disable selector-max-type, selector-max-compound-selectors */
+/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column {
   li {
     margin: -1px 0 0;
@@ -55,22 +55,22 @@
         ul {
           li {
             a {
-            padding-left: 35px;
+              padding-left: 35px;
             }
             ul {
               li {
                 a {
-                padding-left: 45px;
+                  padding-left: 45px;
                 }
                 ul {
                   li {
                     a {
-                    padding-left: 55px;
+                      padding-left: 55px;
                     }
                     ul {
                       li {
                         a {
-                        padding-left: 65px;
+                          padding-left: 65px;
                         }
                       }
                     }
@@ -84,7 +84,7 @@
     }
   }
 }
-/* stylelint-enable selector-max-type, selector-max-compound-selectors */
+/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 
 .nav-tabs {
   border-bottom-color: $nav-tabs-border-color;
