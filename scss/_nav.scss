@@ -44,10 +44,10 @@
     a:focus {
       background-color: $nav-pills-link-active-bg;
     }
-     ul {
-       li {
+    ul {
+      li {
         border: none;
-         a {
+        a {
           padding-left: 25px;
           font-weight: 400;
           color: $nav-pills-link-active-color;
@@ -55,24 +55,24 @@
         ul {
           li {
             a {
-             padding-left: 35px;
+            padding-left: 35px;
             }
             ul {
               li {
                 a {
-                 padding-left: 45px;
-                }
-              }
-              ul {
-                li {
-                  a {
-                   padding-left: 55px;
-                  }
+                padding-left: 45px;
                 }
                 ul {
                   li {
                     a {
-                     padding-left: 65px;
+                    padding-left: 55px;
+                    }
+                    ul {
+                      li {
+                        a {
+                        padding-left: 65px;
+                        }
+                      }
                     }
                   }
                 }
