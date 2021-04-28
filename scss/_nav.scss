@@ -44,10 +44,10 @@
     a:focus {
       background-color: $nav-pills-link-active-bg;
     }
-    ul {
-      li {
+    > ul {
+      > li {
         border: none;
-        a {
+        > a {
           padding-left: 25px;
           font-weight: 400;
           color: $nav-pills-link-active-color;
