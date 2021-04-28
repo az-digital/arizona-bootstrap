@@ -17,6 +17,8 @@ set -e
 : "${AZ_IMAGEPREFIX:=azdigital/}"
 # Docker base image name
 : "${AZ_EPHEMERALIMAGENAME:=az-nodejs-ephemeral}"
+# Internal directory for the saved npm setup
+: "${AZ_BOOTSTRAP_FROZEN_DIR:=/azbuild/arizona-bootstrap}"
 # Temporary hash file name
 : "${AZ_HASHTEMP:=az_hashtemp}"
 
@@ -71,36 +73,59 @@ else
 fi
 
 #------------------------------------------------------------------------------
-# Use the checksum for the Ruby Gem and Node.js npm lockfiles as an image tag.
+# Use the checksum for the scripts, Dockerfile, & npm lockfile as an image tag.
 
-lockhash=$(taghash Dockerfile Gemfile.lock package-lock.json scripts) \
+oldhash=$(taghash Dockerfile package-lock.json package.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"
-ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
-tagsearch=$(docker image ls "$ephemeral" ) \
-  || errorexit "Docker error when searching for the presence or absence of the ephemeral image"
+oldtag="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${oldhash}"
+tagsearch=$(docker image ls "$oldtag" ) \
+  || errorexit "Docker error when searching for the presence or absence of an existing image"
 
 #------------------------------------------------------------------------------
-# If the ephemeral image doesn't yet exist, build it.
+# If the image doesn't yet exist, build it.
 
-if echo "$tagsearch" | grep -q "$lockhash" ; then
-  logmessage "Found a pre-built image, ${ephemeral}"
+if echo "$tagsearch" | grep -q "$oldhash" ; then
+  logmessage "Found a pre-built image, ${oldtag}"
+  ephemeral="$oldtag"
+  lockhash="$oldhash"
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
-  if [ -z "$AZ_BOOTSTRAP_SOURCE_DIR" ] ; then
-    docker build -t "$ephemeral" . \
-      || errorexit "Failed to build a new ${ephemeral} Docker image"
-  else
-    docker build -t "$ephemeral" --build-arg AZ_BOOTSTRAP_SOURCE_DIR . \
-      || errorexit "Failed to build a new ${ephemeral} Docker image preconfigured with the ${AZ_BOOTSTRAP_SOURCE_DIR} shared source directory"
-  fi
+  imagenewid=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
+    || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
+  workingtitle=$(echo "$imagenewid" | head -1 | sed -e 's/^.*sha256:\([0-9a-f]\{12\}\).*$/\1/' ) \
+    || errorexit "Couldn't extract a short image ID from ${imagenewid}"
+  tempname="old${oldhash}"
+  logmessage "Making a throwaway container, ID ${workingtitle}, to extract the updated npm setup"
+  docker run --name "$tempname" "$workingtitle" 'true' \
+    || errorexit "Failed to run a container based on the image ${workingtitle}"
+  docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
+    || errorexit "Couldn't copy the saved npm setup to the actual source directory"
+  docker rm "$tempname" \
+    || errorexit "Failed to clean up the temporary container ${tempname}"
+  logmessage "Updated the npm setup in the actual source directory, to include in the hash for the tag"
+  lockhash=$(taghash Dockerfile package-lock.json package.json scripts) \
+    || errorexit "Couldn't obtain the checksum from the updated files"
+  ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
+  docker tag "$workingtitle" "$ephemeral" \
+    || errorexit "Failed to tag the image identified by ${workingtitle} with ${ephemeral}"
+  logmessage "Tagged a new image, ${ephemeral}"
 fi
 
 #------------------------------------------------------------------------------
-# Emit the pre-existing or newly built image ID.
+# Find the pre-existing or newly built image ID.
 
 imagelsout=$(docker image ls "$ephemeral" | grep "$lockhash")
 [ -n "$imagelsout" ] \
-  || errorexit  "Couldn't find the Docker image ID code"
-echo "$imagelsout" | awk '{ print "ImageID=" $3 }'
+  || errorexit  "Couldn't find the Docker image details"
+imageid=$(echo "$imagelsout" | awk '{ print $3 }')
+[ -n "$imageid" ] \
+  || errorexit  "Couldn't extract the Docker image ID code"
+logmessage "The image ID is ${imageid} (you can use this to run your own Docker containers with the same configuration)"
 
-normalexit "Docker image available"
+#------------------------------------------------------------------------------
+# Spin up a local review site.
+
+docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" npm run docs-develop \
+  || normalexit "Exited with status ${?}"
+
+normalexit "The web server hosting the review site in the Docker container stopped (status ${?})"
