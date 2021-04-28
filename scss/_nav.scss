@@ -35,20 +35,22 @@
   }
 }
 
-.nav.nav-pills.flex-column > li {
-  margin: -1px 0 0;
-  border: solid 1px $nav-pills-link-active-bg;
-  a:hover,
-  a:focus {
-    background-color: $nav-pills-link-active-bg;
-  }
-  ul {
-    li {
-      border: none;
-      a {
-        padding-left: 25px;
-        font-weight: 400;
-        color: $nav-pills-link-active-color;
+.nav.nav-pills.flex-column {
+  li {
+    margin: -1px 0 0;
+    border: solid 1px $nav-pills-link-active-bg;
+    a:hover,
+    a:focus {
+      background-color: $nav-pills-link-active-bg;
+    }
+    ul {
+      li {
+        border: none;
+        a {
+          padding-left: 25px;
+          font-weight: 400;
+          color: $nav-pills-link-active-color;
+        }
       }
     }
   }
