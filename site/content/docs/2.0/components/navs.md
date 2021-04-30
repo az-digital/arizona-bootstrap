@@ -185,6 +185,41 @@ Take that same HTML, but use `.nav-pills` instead:
 </ul>
 {{< /example >}}
 
+### Vertical Pills
+
+Pills can be stacked with nested items, too. Just add `.flex-column`.
+
+{{< example >}}
+<ul class="nav nav-pills flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link with sub-items</a>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
 ### Utility Links
 
 Take that same HTML, but use `.nav-utility` instead to provide a more muted appearance. 
