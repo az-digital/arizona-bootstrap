@@ -213,6 +213,10 @@ Dropped entirely for the new card component.
 - Removed support for styled nested tables. All table styles are now inherited in v4 for simpler selectors.
 - Added inverse table variant.
 
+### Footer Menu
+
+The "Topics" menu in the footer originally had the `two-col-menu` class applied to it to split the menu into two equal columns. This has been replaced with the `2-col-split` utility class.
+
 ### Utilities
 
 - **Display, hidden, and more:**

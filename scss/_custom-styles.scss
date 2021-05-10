@@ -192,3 +192,15 @@
     box-shadow: none;
   }
 }
+
+// >> Column split utility.
+
+.2-col-split {
+  column-count: 2;
+}
+.3-col-split {
+  column-count: 3;
+}
+.4-col-split {
+  column-count: 4;
+}
