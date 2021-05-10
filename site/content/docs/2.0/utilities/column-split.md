@@ -7,30 +7,30 @@ group: utilities
 
 ## Text content
 
-These classes can be applied to regular text content. Here's an example of `2-col-split` on a container with text.
+These classes can be applied to regular text content. Here's an example of `split-2-col` on a container with text.
 
 {{< example >}}
-<div class="2-col-split">I'm container with content split into 2 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="split-2-col">I'm container with content split into 2 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 {{< /example >}}
 
-Here's an example of `3-col-split` on a container with text.
+Here's an example of `split-3-col` on a container with text.
 
 {{< example >}}
-<div class="3-col-split">I'm container with content split into 3 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="split-3-col">I'm container with content split into 3 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 {{< /example >}}
 
-Here's an example of `4-col-split` on a container with text.
+Here's an example of `split-4-col` on a container with text.
 
 {{< example >}}
-<div class="4-col-split">I'm container with content split into 4 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="split-4-col">I'm container with content split into 4 columns. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 {{< /example >}}
 
 ## Menu content
 
-These classes can be applied to menus as well. Here's an example of `2-col-split` on a menu.
+These classes can be applied to menus as well. Here's an example of `split-2-col` on a menu.
 
 {{< example >}}
-<ul class="nav flex-column 2-col-split">
+<ul class="nav flex-column split-2-col">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
   </li>
@@ -52,10 +52,10 @@ These classes can be applied to menus as well. Here's an example of `2-col-split
 </ul>
 {{< /example >}}
 
-Here's an example of `3-col-split` on a menu.
+Here's an example of `split-3-col` on a menu.
 
 {{< example >}}
-<ul class="nav flex-column 3-col-split">
+<ul class="nav flex-column split-3-col">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
   </li>

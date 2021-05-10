@@ -195,14 +195,12 @@
 
 // >> Column split utility.
 
-/* stylelint-disable selector-class-pattern */
-.2-col-split {
+.split-2-col {
   column-count: 2;
 }
-.3-col-split {
+.split-3-col {
   column-count: 3;
 }
-.4-col-split {
+.split-4-col {
   column-count: 4;
 }
-/* stylelint-enable selector-class-pattern */
