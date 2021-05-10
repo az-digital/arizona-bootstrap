@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Column split
-description: Allow content to be split evenly between 2, 3, or 4 columns withhin one single column of a grid.
+description: Allow content to be split evenly between 2, 3, or 4 columns within one single column of a grid.
 group: utilities
 ---
 
