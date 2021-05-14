@@ -195,57 +195,48 @@
 
 // >> Column split utility.
 
-.split-2-col {
+[class*=“split-“] {
   display: block;
+}
+.split-2-col {
   column-count: 2;
 }
 .split-3-col {
-  display: block;
   column-count: 3;
 }
 .split-4-col {
-  display: block;
   column-count: 4;
 }
 @include media-breakpoint-up(sm) {
   .split-sm-2-col {
-    display: block;
     column-count: 2;
   }
   .split-sm-3-col {
-    display: block;
     column-count: 3;
   }
   .split-sm-4-col {
-    display: block;
     column-count: 4;
   }
 }
 @include media-breakpoint-up(md) {
   .split-md-2-col {
-    display: block;
     column-count: 2;
   }
   .split-md-3-col {
-    display: block;
     column-count: 3;
   }
   .split-md-4-col {
-    display: block;
     column-count: 4;
   }
 }
 @include media-breakpoint-up(lg) {
   .split-lg-2-col {
-    display: block;
     column-count: 2;
   }
   .split-lg-3-col {
-    display: block;
     column-count: 3;
   }
   .split-lg-4-col {
-    display: block;
     column-count: 4;
   }
 }
