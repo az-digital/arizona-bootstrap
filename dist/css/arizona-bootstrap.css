@@ -13776,6 +13776,82 @@ h2,
   box-shadow: none;
 }
 
+[class*="split-"] {
+  display: block;
+}
+
+.split-2-col {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.split-3-col {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+.split-4-col {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
+
+@media (min-width: 576px) {
+  .split-sm-2-col {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .split-sm-3-col {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+  .split-sm-4-col {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media (min-width: 768px) {
+  .split-md-2-col {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .split-md-3-col {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+  .split-md-4-col {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media (min-width: 992px) {
+  .split-lg-2-col {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .split-lg-3-col {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+  .split-lg-4-col {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
 /*
 * > BLOCKQUOTE
 */
@@ -14146,6 +14222,44 @@ a {
   background-color: #e9ecef;
 }
 
+/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+.nav.nav-pills.flex-column > li {
+  margin: -1px 0 0;
+  border: solid 1px #e9ecef;
+}
+
+.nav.nav-pills.flex-column > li a:hover,
+.nav.nav-pills.flex-column > li a:focus {
+  background-color: #e9ecef;
+}
+
+.nav.nav-pills.flex-column > li ul > li {
+  border: none;
+}
+
+.nav.nav-pills.flex-column > li ul > li a {
+  padding-left: 25px;
+  font-weight: 400;
+  color: #001c48;
+}
+
+.nav.nav-pills.flex-column > li ul > li ul > li a {
+  padding-left: 35px;
+}
+
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li a {
+  padding-left: 45px;
+}
+
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li a {
+  padding-left: 55px;
+}
+
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li ul > li a {
+  padding-left: 65px;
+}
+
+/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav-tabs {
   border-bottom-color: #e9ecef;
 }
