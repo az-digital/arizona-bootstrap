@@ -232,7 +232,8 @@
     padding: initial;
     overflow-y: initial;
     background-color: initial;
-    border: initial;
+    border-top: 1px solid $navbar-light-border-color;
+    border-bottom: 1px solid $navbar-light-border-color;
     -webkit-transform: initial;
     transform: initial;
     top: initial;
@@ -281,12 +282,6 @@
           pointer-events: none;
           cursor: default;
         }
-      }
-    }
-
-    .nav-item-parent {
-      .nav-link {
-        text-transform: initial;
       }
     }
 
