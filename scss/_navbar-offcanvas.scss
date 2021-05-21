@@ -267,7 +267,6 @@
       overflow-y: initial;
 
       .nav-link {
-        display: block;
         padding: $nav-link-padding-y $nav-link-padding-x;
         text-decoration: if($link-decoration == none, null, none);
         font-weight: 700;
@@ -341,8 +340,7 @@
       justify-content: space-between;
 
       &::after {
-        font-size: inherit;
-        vertical-align: 0.255em;
+        font-size: 1.1em;
         content: "";
         border-top: 0.3em solid;
         border-right: 0.3em solid transparent;
