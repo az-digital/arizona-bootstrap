@@ -105,9 +105,8 @@
   .nav-item {
 
     &.active {
-        color: $navbar-offcanvas-link-color;
-        background-color: $navbar-offcanvas-link-active-bg;
-      }
+      color: $navbar-offcanvas-link-color;
+      background-color: $navbar-offcanvas-link-active-bg;
     }
 
     &.show {
