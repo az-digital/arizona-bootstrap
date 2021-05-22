@@ -294,10 +294,8 @@
       }
       &.active,
       &:active {
-        .nav-link {
-          color: $navbar-light-link-active-color;
-          background-color: $navbar-light-link-active-bg;
-        }
+        color: $navbar-light-link-active-color;
+        background-color: $navbar-light-link-active-bg;
       }
       &.show {
         .dropdown-toggle,
