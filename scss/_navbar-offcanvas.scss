@@ -287,15 +287,14 @@
           background-color: $navbar-light-link-hover-bg;
         }
       }
-
-      &:hover {
-        color: $navbar-light-link-active-color;
-        background-color: $navbar-light-link-hover-bg;
-      }
       &.active,
       &:active {
         color: $navbar-light-link-active-color;
         background-color: $navbar-light-link-active-bg;
+      }
+      &:hover {
+        color: $navbar-light-link-active-color;
+        background-color: $navbar-light-link-hover-bg;
       }
       &.show {
         .dropdown-toggle,
