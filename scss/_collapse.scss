@@ -31,7 +31,9 @@
         top: 2px;
         right: 20px;
         display: inline-block;
-        font-family: "Material Icons Sharp, sans-serif";
+        // stylelint-disable font-family-no-missing-generic-family-keyword
+        font-family: "Material Icons Sharp";
+        // stylelint-enable font-family-no-missing-generic-family-keyword
         font-size: 2em;
         content: "\e5cf";
       }
