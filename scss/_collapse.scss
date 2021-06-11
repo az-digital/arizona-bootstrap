@@ -40,7 +40,7 @@
     }
     .btn[aria-expanded="true"] {
       &::after {
-        content: "\e5ce";
+        content: "expand_less";
       }
     }
   }
