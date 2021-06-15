@@ -17548,23 +17548,21 @@ have been deprecated in Bootstrap 4.
   padding: .75rem 1.25rem;
   color: #49595e;
   text-align: left;
+  text-transform: none;
 }
 
 .accordion .card-header .btn::after {
   position: absolute;
-  top: -4px;
-  right: 25px;
+  top: 2px;
+  right: 20px;
   display: inline-block;
+  font-family: "Material Icons Sharp";
   font-size: 2em;
-  content: "\221F";
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  content: "expand_more";
 }
 
 .accordion .card-header .btn[aria-expanded="true"]::after {
-  top: 6px;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
+  content: "expand_less";
 }
 
 .carousel-caption {
