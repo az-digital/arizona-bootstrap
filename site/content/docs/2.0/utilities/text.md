@@ -75,9 +75,9 @@ Allow long strings of text to break to the next line with a hyphen automatically
 
 {{< example >}}
 <div class="card col-2">
-	<div class="card-body">
-		<p>We should all learn about <span class="text-hyphen">Tranformationaltotality</span></p>
-	</div>
+  <div class="card-body">
+    <p>We should all learn about <span class="text-hyphen">Tranformationaltotality</span>.</p>
+  </div>
 </div>
 {{< /example >}}
 
