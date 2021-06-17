@@ -71,10 +71,10 @@ Prevent long strings of text from breaking your components' layout by using `.te
 
 ## HYPHENATE WORD
 
-Allow long strings of text to break to the next line with a hyphen automatically placed at the break point by using `.text-hyphen` to set `hyphens: auto`.
+Allow long strings of text to break to the next line with a hyphen automatically placed at the break point by using `.text-hyphen` to set `hyphens: auto`. This can be applied as a span on single words that are longer than the column width.
 
 {{< example >}}
-<div class="card col-1">
+<div class="card col-2">
 	<div class="card-body">
 		<p>We should all learn about <span class="text-hyphen">Tranformationaltotality</span></p>
 	</div>
