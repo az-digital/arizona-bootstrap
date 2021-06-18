@@ -39,8 +39,8 @@ Add on the `border-thick` utility class to any border utility to set `border-wid
 <span class="border border-thick"></span>
 <span class="border-top border-thick"></span>
 <span class="border-right border-thick"></span>
-<span class="border-bottom-0 border-thick"></span>
-<span class="border-left-0 border-thick"></span>
+<span class="border-bottom border-thick"></span>
+<span class="border-left border-thick"></span>
 {{< /example >}}
 
 
