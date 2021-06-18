@@ -69,6 +69,18 @@ Prevent long strings of text from breaking your components' layout by using `.te
 <p class="text-break">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
 {{< /example >}}
 
+## Hyphenate Word
+
+Allow long strings of text to break to the next line with a hyphen automatically placed at the break point by using `.text-hyphen` to set `hyphens: auto`. This should only be applied as a span on a single word that may be longer than the column width at some screen sizes. Do not use on paragraphs or longer spans of text.
+
+{{< example >}}
+<div class="card col-2">
+  <div class="card-body">
+    <p>We should all learn about <span class="text-hyphen">Tranformationaltotality</span>.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ## Text Transform
 
 Transform text in components with text capitalization classes.

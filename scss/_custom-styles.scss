@@ -108,6 +108,12 @@
   font-family: $font-family-sans-serif;
   font-weight: 500;
 }
+
+// >> Text Hyphenation.
+.text-hyphen {
+  hyphens: auto;
+}
+
 // >> Lists
 .ul-triangles {
   overflow: hidden;
