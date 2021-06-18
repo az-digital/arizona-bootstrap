@@ -6377,23 +6377,23 @@ button.modal-bg-dark:focus {
 
 .border,
 .panel {
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid #dee2e6;
 }
 
 .border-top {
-  border-top: 1px solid #dee2e6 !important;
+  border-top: 1px solid #dee2e6;
 }
 
 .border-right {
-  border-right: 1px solid #dee2e6 !important;
+  border-right: 1px solid #dee2e6;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .border-left {
-  border-left: 1px solid #dee2e6 !important;
+  border-left: 1px solid #dee2e6;
 }
 
 .border-0, .card-borderless {

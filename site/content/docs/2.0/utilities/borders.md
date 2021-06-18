@@ -31,6 +31,19 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 <span class="border-left-0"></span>
 {{< /example >}}
 
+## Border Thickness
+
+Add on the `border-thick` utility class to any border utility to set `border-width: .25rem !important;`.
+
+{{< example class="bd-example-border-utils" >}}
+<span class="border border-thick"></span>
+<span class="border-top border-thick"></span>
+<span class="border-right border-thick"></span>
+<span class="border-bottom-0 border-thick"></span>
+<span class="border-left-0 border-thick"></span>
+{{< /example >}}
+
+
 ## Border Color
 
 Change the border color using utilities built on our theme colors.
