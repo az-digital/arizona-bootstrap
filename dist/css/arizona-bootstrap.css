@@ -13686,6 +13686,13 @@ h2,
   font-weight: 500;
 }
 
+.text-hyphen {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 .ul-triangles, ul.triangle {
   overflow: hidden;
 }
