@@ -247,6 +247,29 @@
   }
 }
 
+// >> Border utility overrides.
+
+.border,
+.panel {
+  border: 1px solid #dee2e6;
+}
+
+.border-top {
+  border-top: 1px solid #dee2e6;
+}
+
+.border-right {
+  border-right: 1px solid #dee2e6;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.border-left {
+  border-left: 1px solid #dee2e6;
+}
+
 // >> Border thick utility.
 
 .border-thick {
