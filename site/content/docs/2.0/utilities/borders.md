@@ -41,8 +41,7 @@ Add on the `border-thick` utility class to any border utility to set `border-wid
 <span class="border-right border-thick"></span>
 <span class="border-bottom border-thick"></span>
 <span class="border-left border-thick"></span>
-{{< /example >}}
-
+{{< /example >}
 
 ## Border Color
 
