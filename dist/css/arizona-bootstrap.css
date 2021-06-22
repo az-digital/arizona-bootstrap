@@ -11725,6 +11725,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-blue a:not(.btn), .panel-primary .panel-heading a:not(.btn), .bg-primary a:not(.btn), .card-primary a:not(.btn) {
+  color: inherit;
+}
+
+.bg-blue .ul-triangles li::before, .panel-primary .panel-heading .ul-triangles li::before, .bg-primary .ul-triangles li::before, .card-primary .ul-triangles li::before, .bg-blue ul.triangle li::before, .panel-primary .panel-heading ul.triangle li::before, .bg-primary ul.triangle li::before, .card-primary ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-red {
   color: #fff;
   background-color: #ab0520;
@@ -11749,6 +11757,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-red .h6,
 .bg-red .text-size-h6 {
   color: inherit;
+}
+
+.bg-red a:not(.btn) {
+  color: inherit;
+}
+
+.bg-red .ul-triangles li::before, .bg-red ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-white,
@@ -11829,6 +11845,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-white .ul-triangles li::before, .panel .ul-triangles li::before, .well.well-hollow .ul-triangles li::before, .modal-bg-dark .modal-content .ul-triangles li::before, .bg-white ul.triangle li::before, .panel ul.triangle li::before, .well.well-hollow ul.triangle li::before, .modal-bg-dark .modal-content ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-bloom {
   color: #000;
   background-color: #ef4056;
@@ -11852,6 +11872,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-bloom .text-size-h5,
 .bg-bloom .h6,
 .bg-bloom .text-size-h6 {
+  color: inherit;
+}
+
+.bg-bloom .ul-triangles li::before, .bg-bloom ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-bloom a:not(.btn) {
   color: inherit;
 }
 
@@ -11881,6 +11909,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-chili a:not(.btn) {
+  color: inherit;
+}
+
+.bg-chili .ul-triangles li::before, .bg-chili ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-sky {
   color: #000;
   background-color: #81d3eb;
@@ -11904,6 +11940,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-sky .text-size-h5,
 .bg-sky .h6,
 .bg-sky .text-size-h6 {
+  color: inherit;
+}
+
+.bg-sky .ul-triangles li::before, .bg-sky ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-sky a:not(.btn) {
   color: inherit;
 }
 
@@ -11933,6 +11977,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-oasis .ul-triangles li::before, .bg-oasis ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-oasis a:not(.btn) {
+  color: inherit;
+}
+
 .bg-azurite {
   color: #fff;
   background-color: #1e5288;
@@ -11957,6 +12009,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-azurite .h6,
 .bg-azurite .text-size-h6 {
   color: inherit;
+}
+
+.bg-azurite a:not(.btn) {
+  color: inherit;
+}
+
+.bg-azurite .ul-triangles li::before, .bg-azurite ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-midnight {
@@ -11985,6 +12045,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-midnight a:not(.btn) {
+  color: inherit;
+}
+
+.bg-midnight .ul-triangles li::before, .bg-midnight ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-cool-gray {
   color: #000;
   background-color: #e2e9eb;
@@ -12009,6 +12077,10 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-cool-gray .h6,
 .bg-cool-gray .text-size-h6 {
   color: inherit;
+}
+
+.bg-cool-gray .ul-triangles li::before, .bg-cool-gray ul.triangle li::before {
+  border-left-color: #000;
 }
 
 .bg-warm-gray {
@@ -12037,6 +12109,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-warm-gray .ul-triangles li::before, .bg-warm-gray ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-leaf {
   color: #000;
   background-color: #70b865;
@@ -12060,6 +12136,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-leaf .text-size-h5,
 .bg-leaf .h6,
 .bg-leaf .text-size-h6 {
+  color: inherit;
+}
+
+.bg-leaf .ul-triangles li::before, .bg-leaf ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-leaf a:not(.btn) {
   color: inherit;
 }
 
@@ -12089,6 +12173,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-river a:not(.btn) {
+  color: inherit;
+}
+
+.bg-river .ul-triangles li::before, .bg-river ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-silver {
   color: #000;
   background-color: #9eabae;
@@ -12112,6 +12204,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-silver .text-size-h5,
 .bg-silver .h6,
 .bg-silver .text-size-h6 {
+  color: inherit;
+}
+
+.bg-silver .ul-triangles li::before, .bg-silver ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-silver a:not(.btn) {
   color: inherit;
 }
 
@@ -12141,6 +12241,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-mesa a:not(.btn) {
+  color: inherit;
+}
+
+.bg-mesa .ul-triangles li::before, .bg-mesa ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-ash {
   color: #fff;
   background-color: #403635;
@@ -12165,6 +12273,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-ash .h6,
 .bg-ash .text-size-h6 {
   color: inherit;
+}
+
+.bg-ash a:not(.btn) {
+  color: inherit;
+}
+
+.bg-ash .ul-triangles li::before, .bg-ash ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-sage {
@@ -12193,6 +12309,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-sage a:not(.btn) {
+  color: inherit;
+}
+
+.bg-sage .ul-triangles li::before, .bg-sage ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-black {
   color: #fff;
   background-color: #000;
@@ -12217,6 +12341,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-black .h6,
 .bg-black .text-size-h6 {
   color: inherit;
+}
+
+.bg-black a:not(.btn) {
+  color: inherit;
+}
+
+.bg-black .ul-triangles li::before, .bg-black ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-transparent-blue {
@@ -12245,6 +12377,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-blue a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-blue .ul-triangles li::before, .bg-transparent-blue ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-red {
   color: #fff;
   background-color: rgba(171, 5, 32, 0.8);
@@ -12269,6 +12409,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-red .h6,
 .bg-transparent-red .text-size-h6 {
   color: inherit;
+}
+
+.bg-transparent-red a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-red .ul-triangles li::before, .bg-transparent-red ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-transparent-white {
@@ -12297,6 +12445,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-white .ul-triangles li::before, .bg-transparent-white ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-transparent-bloom {
   color: #000;
   background-color: rgba(239, 64, 86, 0.8);
@@ -12320,6 +12472,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-bloom .text-size-h5,
 .bg-transparent-bloom .h6,
 .bg-transparent-bloom .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-bloom .ul-triangles li::before, .bg-transparent-bloom ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-transparent-bloom a:not(.btn) {
   color: inherit;
 }
 
@@ -12349,6 +12509,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-chili a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-chili .ul-triangles li::before, .bg-transparent-chili ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-sky {
   color: #000;
   background-color: rgba(129, 211, 235, 0.8);
@@ -12372,6 +12540,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-sky .text-size-h5,
 .bg-transparent-sky .h6,
 .bg-transparent-sky .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-sky .ul-triangles li::before, .bg-transparent-sky ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-transparent-sky a:not(.btn) {
   color: inherit;
 }
 
@@ -12401,6 +12577,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-oasis .ul-triangles li::before, .bg-transparent-oasis ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-transparent-oasis a:not(.btn) {
+  color: inherit;
+}
+
 .bg-transparent-azurite {
   color: #fff;
   background-color: rgba(30, 82, 136, 0.8);
@@ -12425,6 +12609,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-azurite .h6,
 .bg-transparent-azurite .text-size-h6 {
   color: inherit;
+}
+
+.bg-transparent-azurite a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-azurite .ul-triangles li::before, .bg-transparent-azurite ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-transparent-midnight {
@@ -12453,6 +12645,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-midnight a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-midnight .ul-triangles li::before, .bg-transparent-midnight ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-cool-gray {
   color: #000;
   background-color: rgba(226, 233, 235, 0.8);
@@ -12477,6 +12677,10 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-cool-gray .h6,
 .bg-transparent-cool-gray .text-size-h6 {
   color: inherit;
+}
+
+.bg-transparent-cool-gray .ul-triangles li::before, .bg-transparent-cool-gray ul.triangle li::before {
+  border-left-color: #000;
 }
 
 .bg-transparent-warm-gray {
@@ -12505,6 +12709,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-warm-gray .ul-triangles li::before, .bg-transparent-warm-gray ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-transparent-leaf {
   color: #000;
   background-color: rgba(112, 184, 101, 0.8);
@@ -12528,6 +12736,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-leaf .text-size-h5,
 .bg-transparent-leaf .h6,
 .bg-transparent-leaf .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-leaf .ul-triangles li::before, .bg-transparent-leaf ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-transparent-leaf a:not(.btn) {
   color: inherit;
 }
 
@@ -12557,6 +12773,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-river a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-river .ul-triangles li::before, .bg-transparent-river ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-silver {
   color: #000;
   background-color: rgba(158, 171, 174, 0.8);
@@ -12580,6 +12804,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-silver .text-size-h5,
 .bg-transparent-silver .h6,
 .bg-transparent-silver .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-silver .ul-triangles li::before, .bg-transparent-silver ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-transparent-silver a:not(.btn) {
   color: inherit;
 }
 
@@ -12609,6 +12841,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-mesa a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-mesa .ul-triangles li::before, .bg-transparent-mesa ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-ash {
   color: #fff;
   background-color: rgba(64, 54, 53, 0.8);
@@ -12633,6 +12873,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-ash .h6,
 .bg-transparent-ash .text-size-h6 {
   color: inherit;
+}
+
+.bg-transparent-ash a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-ash .ul-triangles li::before, .bg-transparent-ash ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-transparent-sage {
@@ -12661,6 +12909,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-transparent-sage a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-sage .ul-triangles li::before, .bg-transparent-sage ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-transparent-black {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
@@ -12685,6 +12941,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-transparent-black .h6,
 .bg-transparent-black .text-size-h6 {
   color: inherit;
+}
+
+.bg-transparent-black a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-black .ul-triangles li::before, .bg-transparent-black ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-success, .panel-success .panel-heading, .card-success {
@@ -12744,6 +13008,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-success .text-size-h6,
 .panel-success .panel-heading .text-size-h6,
 .card-success .text-size-h6 {
+  color: inherit;
+}
+
+.bg-success .ul-triangles li::before, .panel-success .panel-heading .ul-triangles li::before, .card-success .ul-triangles li::before, .bg-success ul.triangle li::before, .panel-success .panel-heading ul.triangle li::before, .card-success ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-success a:not(.btn), .panel-success .panel-heading a:not(.btn), .card-success a:not(.btn) {
   color: inherit;
 }
 
@@ -12807,6 +13079,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-info .ul-triangles li::before, .panel-info .panel-heading .ul-triangles li::before, .card-info .ul-triangles li::before, .bg-info ul.triangle li::before, .panel-info .panel-heading ul.triangle li::before, .card-info ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-info a:not(.btn), .panel-info .panel-heading a:not(.btn), .card-info a:not(.btn) {
+  color: inherit;
+}
+
 .bg-warning, .panel-warning .panel-heading, .card-warning {
   color: #000;
   background-color: #f19e1f;
@@ -12864,6 +13144,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-warning .text-size-h6,
 .panel-warning .panel-heading .text-size-h6,
 .card-warning .text-size-h6 {
+  color: inherit;
+}
+
+.bg-warning .ul-triangles li::before, .panel-warning .panel-heading .ul-triangles li::before, .card-warning .ul-triangles li::before, .bg-warning ul.triangle li::before, .panel-warning .panel-heading ul.triangle li::before, .card-warning ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-warning a:not(.btn), .panel-warning .panel-heading a:not(.btn), .card-warning a:not(.btn) {
   color: inherit;
 }
 
@@ -12927,6 +13215,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-danger a:not(.btn), .panel-danger .panel-heading a:not(.btn), .card-danger a:not(.btn) {
+  color: inherit;
+}
+
+.bg-danger .ul-triangles li::before, .panel-danger .panel-heading .ul-triangles li::before, .card-danger .ul-triangles li::before, .bg-danger ul.triangle li::before, .panel-danger .panel-heading ul.triangle li::before, .card-danger ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-light,
 .panel .panel-footer, .panel-default .panel-heading, .well {
   color: #000;
@@ -13005,6 +13301,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-light .ul-triangles li::before, .panel .panel-footer .ul-triangles li::before, .panel-default .panel-heading .ul-triangles li::before, .well .ul-triangles li::before, .bg-light ul.triangle li::before, .panel .panel-footer ul.triangle li::before, .panel-default .panel-heading ul.triangle li::before, .well ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
   color: #fff;
   background-color: #343a40;
@@ -13080,6 +13380,14 @@ a.text-dark:hover, a.text-dark:focus {
 .card-inverse .text-size-h6,
 .modal-bg-dark .text-size-h6 {
   color: inherit;
+}
+
+.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn) {
+  color: inherit;
+}
+
+.bg-dark .ul-triangles li::before, .callout-dark .ul-triangles li::before, .card-inverse .ul-triangles li::before, .modal-bg-dark .ul-triangles li::before, .bg-dark ul.triangle li::before, .callout-dark ul.triangle li::before, .card-inverse ul.triangle li::before, .modal-bg-dark ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-gray-100, .bg-silver-tint {
@@ -13125,6 +13433,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-gray-100 .ul-triangles li::before, .bg-silver-tint .ul-triangles li::before, .bg-gray-100 ul.triangle li::before, .bg-silver-tint ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-gray-200 {
   color: #000;
   background-color: #e9ecef;
@@ -13149,6 +13461,10 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-gray-200 .h6,
 .bg-gray-200 .text-size-h6 {
   color: inherit;
+}
+
+.bg-gray-200 .ul-triangles li::before, .bg-gray-200 ul.triangle li::before {
+  border-left-color: #000;
 }
 
 .bg-gray-300 {
@@ -13177,6 +13493,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-gray-300 .ul-triangles li::before, .bg-gray-300 ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-gray-400 {
   color: #000;
   background-color: #ced4da;
@@ -13201,6 +13521,10 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-gray-400 .h6,
 .bg-gray-400 .text-size-h6 {
   color: inherit;
+}
+
+.bg-gray-400 .ul-triangles li::before, .bg-gray-400 ul.triangle li::before {
+  border-left-color: #000;
 }
 
 .bg-gray-500 {
@@ -13229,6 +13553,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-gray-500 .ul-triangles li::before, .bg-gray-500 ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-gray-600 {
   color: #fff;
   background-color: #6c757d;
@@ -13253,6 +13581,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-gray-600 .h6,
 .bg-gray-600 .text-size-h6 {
   color: inherit;
+}
+
+.bg-gray-600 a:not(.btn) {
+  color: inherit;
+}
+
+.bg-gray-600 .ul-triangles li::before, .bg-gray-600 ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-gray-700 {
@@ -13281,6 +13617,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-gray-700 a:not(.btn) {
+  color: inherit;
+}
+
+.bg-gray-700 .ul-triangles li::before, .bg-gray-700 ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-gray-800 {
   color: #fff;
   background-color: #343a40;
@@ -13307,6 +13651,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-gray-800 a:not(.btn) {
+  color: inherit;
+}
+
+.bg-gray-800 .ul-triangles li::before, .bg-gray-800 ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-gray-900 {
   color: #fff;
   background-color: #212529;
@@ -13331,6 +13683,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-gray-900 .h6,
 .bg-gray-900 .text-size-h6 {
   color: inherit;
+}
+
+.bg-gray-900 a:not(.btn) {
+  color: inherit;
+}
+
+.bg-gray-900 .ul-triangles li::before, .bg-gray-900 ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-light,
@@ -13411,6 +13771,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
+.bg-light .ul-triangles li::before, .panel .panel-footer .ul-triangles li::before, .panel-default .panel-heading .ul-triangles li::before, .well .ul-triangles li::before, .bg-light ul.triangle li::before, .panel .panel-footer ul.triangle li::before, .panel-default .panel-heading ul.triangle li::before, .well ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-dark, .callout-dark, .card-inverse, .modal-bg-dark {
   color: #fff;
   background-color: #343a40;
@@ -13486,6 +13850,14 @@ a.text-dark:hover, a.text-dark:focus {
 .card-inverse .text-size-h6,
 .modal-bg-dark .text-size-h6 {
   color: inherit;
+}
+
+.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn) {
+  color: inherit;
+}
+
+.bg-dark .ul-triangles li::before, .callout-dark .ul-triangles li::before, .card-inverse .ul-triangles li::before, .modal-bg-dark .ul-triangles li::before, .bg-dark ul.triangle li::before, .callout-dark ul.triangle li::before, .card-inverse ul.triangle li::before, .modal-bg-dark ul.triangle li::before {
+  border-left-color: #fff;
 }
 
 .bg-dark .close, .callout-dark .close, .card-inverse .close, .modal-bg-dark .close {
