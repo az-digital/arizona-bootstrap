@@ -89,6 +89,7 @@
 */
 @each $color, $value in $colors {
   .border-#{$color} {
+    // stylelint-disable-next-line declaration-no-important
     border-color: $value !important;
   }
 }
@@ -250,6 +251,6 @@
 // >> Border thick utility.
 
 .border-thick {
-  /* stylelint-disable-next-line declaration-no-important */
+  // stylelint-disable-next-line declaration-no-important
   border-width: .25rem !important;
 }
