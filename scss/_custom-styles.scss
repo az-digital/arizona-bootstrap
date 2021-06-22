@@ -89,7 +89,7 @@
 */
 @each $color, $value in $colors {
   .border-#{$color} {
-    border-color: $value;
+    border-color: $value !important;
   }
 }
 
