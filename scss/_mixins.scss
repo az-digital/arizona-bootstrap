@@ -81,13 +81,6 @@
   }
 }
 
-// >> Link Color Contrast Check
-@mixin link-color-contrast($bg-color) {
-  a:not(.btn) {
-    @include text-color-contrast($value);
-  }
-}
-
 
 /*
  * > BADGES
