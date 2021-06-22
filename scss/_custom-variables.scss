@@ -3,25 +3,25 @@
 */
 
 // >> Brand Colors
-$red: #ab0520;
-$bloom: #ef4056;
-$chili: #8b0015;
-$blue: #0c234b;
-$sky: #81d3eb;
-$oasis: #378dbd;
-$azurite: #1e5288;
-$midnight: #001c48;
-$cool-gray: #e2e9eb;
-$warm-gray: #f4ede5;
-$leaf: #70b865;
-$river: #007d84;
-$silver: #9eabae;
-$dark-silver: #49595e;  // to be used for text only
-$mesa: #a95c42;
-$ash: #403635;
-$sage: #4a634e;
-$white: #fff;
-$black: #000;
+$red: #ab0520 !important;
+$bloom: #ef4056 !important;
+$chili: #8b0015 !important;
+$blue: #0c234b !important;
+$sky: #81d3eb !important;
+$oasis: #378dbd !important;
+$azurite: #1e5288 !important;
+$midnight: #001c48 !important;
+$cool-gray: #e2e9eb !important;
+$warm-gray: #f4ede5 !important;
+$leaf: #70b865 !important;
+$river: #007d84 !important;
+$silver: #9eabae !important;
+$dark-silver: #49595e !important;  // to be used for text only
+$mesa: #a95c42 !important;
+$ash: #403635 !important;
+$sage: #4a634e !important;
+$white: #fff !important;
+$black: #000 !important;
 
 $colors: ();
 $colors: map-merge(
@@ -131,7 +131,7 @@ $grays: map-merge(
 // >> Theme Colors
 $success: $leaf;
 $info: $sky;
-$warning: #f19e1f; // to be used for warnings only
+$warning: #f19e1f !important; // to be used for warnings only
 $danger: $mesa;
 $light: $gray-300;
 $dark: $gray-800;
