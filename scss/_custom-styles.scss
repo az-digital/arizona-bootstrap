@@ -250,5 +250,6 @@
 // >> Border thick utility.
 
 .border-thick {
-  border-width: .25rem;
+  /* stylelint-disable-next-line declaration-no-important */
+  border-width: .25rem !important;
 }
