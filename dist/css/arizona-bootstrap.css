@@ -14586,17 +14586,20 @@ a {
   color: #495057;
 }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link:active,
+.nav-pills .nav-link.active, .nav-pills .nav-link:active, .nav-pills .nav-link.is-active,
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link:active,
+.nav-tabs .nav-link.is-active,
 .nav-link.active,
-.nav-link:active {
+.nav-link:active,
+.nav-link.is-active {
   color: #001c48;
 }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link:active,
+.nav-pills .nav-link.active, .nav-pills .nav-link:active, .nav-pills .nav-link.is-active,
 .nav-link.active,
-.nav-link:active {
+.nav-link:active,
+.nav-link.is-active {
   background-color: #e9ecef;
 }
 
@@ -14655,7 +14658,7 @@ a {
   background-color: #e9ecef;
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-link:active {
+.nav-tabs .nav-link.active, .nav-tabs .nav-link:active, .nav-tabs .nav-link.is-active {
   background-color: #fff;
   border-color: #e9ecef #e9ecef #fff;
 }
@@ -14675,7 +14678,7 @@ a {
   border-width: 0;
 }
 
-.nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
+.nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active, .nav-tabs.nav-tabs-lg .nav-link.is-active {
   background-color: #e9ecef;
 }
 
@@ -14712,7 +14715,7 @@ a {
     background-color: #e9ecef;
     border: 1px solid #e9ecef;
   }
-  .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
+  .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active, .nav-tabs.nav-tabs-lg .nav-link.is-active {
     background-color: #fff;
     border-color: #e9ecef #e9ecef #fff;
   }
