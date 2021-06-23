@@ -223,6 +223,7 @@ The "Topics" menu in the footer originally had the `two-col-menu` class applied 
   - Made display utilities responsive (e.g., `.d-none` and `d-{sm,md,lg,xl}-none`).
   - Dropped the bulk of `.hidden-*` utilities for new [display utilities]({{< docsref "/utilities/display" >}}). For example, instead of `.hidden-sm-up`, use `.d-sm-none`. Renamed the `.hidden-print` utilities to use the display utility naming scheme. More info under the [Responsive utilities](#responsive-utilities) section of this page.
   - Added `.float-{sm,md,lg,xl}-{left,right,none}` classes for responsive floats and removed `.pull-left` and `.pull-right` since they're redundant to `.float-left` and `.float-right`.
+  - `.border-top-accent-azurite` and `.border-top-accent-oasis` are replaced with border utilities for size and color.
 - **Type:**
   - Added responsive variations to our text alignment classes `.text-{sm,md,lg,xl}-{left,center,right}`.
 - **Alignment and spacing:**

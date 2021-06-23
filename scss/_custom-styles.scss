@@ -89,7 +89,8 @@
 */
 @each $color, $value in $colors {
   .border-#{$color} {
-    border-color: $value;
+    // stylelint-disable-next-line declaration-no-important
+    border-color: $value !important;
   }
 }
 
@@ -245,4 +246,11 @@
   .split-lg-4-col {
     column-count: 4;
   }
+}
+
+// >> Border thick utility.
+
+.border-thick {
+  // stylelint-disable-next-line declaration-no-important
+  border-width: .25rem !important;
 }
