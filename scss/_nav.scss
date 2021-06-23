@@ -15,7 +15,8 @@
   }
 
   &.active,
-  &:active {
+  &:active,
+  &.is-active {
     color: $nav-link-active-color;
   }
 }
@@ -23,7 +24,8 @@
 .nav-pills .nav-link,
 .nav-link {
   &.active,
-  &:active {
+  &:active,
+  &.is-active {
     background-color: $nav-link-active-bg;
   }
 }
@@ -86,7 +88,8 @@
     background-color: $nav-tabs-link-bg;
 
     &.active,
-    &:active {
+    &:active,
+    &.is-active {
       background-color: $nav-tabs-link-active-bg;
       border-color: $nav-tabs-link-active-border-color;
     }
@@ -107,7 +110,8 @@
       border-width: 0;
 
       &.active,
-      &:active {
+      &:active,
+      &.is-active {
         background-color: $nav-tabs-link-bg;
       }
     }
@@ -154,7 +158,8 @@
         border: $nav-tabs-border-width solid $nav-tabs-border-color;
 
         &.active,
-        &:active {
+        &:active,
+        &.is-active {
           background-color: $nav-tabs-link-active-bg;
           border-color: $nav-tabs-link-active-border-color;
         }
