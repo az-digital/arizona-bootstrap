@@ -13971,75 +13971,75 @@ a.text-dark:hover, a.text-dark:focus {
 * >> Border Colors
 */
 .border-blue, .card-primary-outline {
-  border-color: #0c234b;
+  border-color: #0c234b !important;
 }
 
 .border-red {
-  border-color: #ab0520;
+  border-color: #ab0520 !important;
 }
 
 .border-white {
-  border-color: #fff;
+  border-color: #fff !important;
 }
 
 .border-bloom {
-  border-color: #ef4056;
+  border-color: #ef4056 !important;
 }
 
 .border-chili {
-  border-color: #8b0015;
+  border-color: #8b0015 !important;
 }
 
 .border-sky {
-  border-color: #81d3eb;
+  border-color: #81d3eb !important;
 }
 
 .border-oasis {
-  border-color: #378dbd;
+  border-color: #378dbd !important;
 }
 
 .border-azurite {
-  border-color: #1e5288;
+  border-color: #1e5288 !important;
 }
 
 .border-midnight {
-  border-color: #001c48;
+  border-color: #001c48 !important;
 }
 
 .border-cool-gray {
-  border-color: #e2e9eb;
+  border-color: #e2e9eb !important;
 }
 
 .border-warm-gray {
-  border-color: #f4ede5;
+  border-color: #f4ede5 !important;
 }
 
 .border-leaf {
-  border-color: #70b865;
+  border-color: #70b865 !important;
 }
 
 .border-river {
-  border-color: #007d84;
+  border-color: #007d84 !important;
 }
 
 .border-silver {
-  border-color: #9eabae;
+  border-color: #9eabae !important;
 }
 
 .border-mesa {
-  border-color: #a95c42;
+  border-color: #a95c42 !important;
 }
 
 .border-ash {
-  border-color: #403635;
+  border-color: #403635 !important;
 }
 
 .border-sage {
-  border-color: #4a634e;
+  border-color: #4a634e !important;
 }
 
 .border-black {
-  border-color: #000;
+  border-color: #000 !important;
 }
 
 /*
@@ -14229,6 +14229,10 @@ h2,
     -moz-column-count: 4;
     column-count: 4;
   }
+}
+
+.border-thick {
+  border-width: .25rem !important;
 }
 
 /*
@@ -17937,6 +17941,8 @@ have been deprecated in Bootstrap 4.
   display: inline-block;
   font-family: "Material Icons Sharp";
   font-size: 2em;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
   content: "expand_more";
 }
 
