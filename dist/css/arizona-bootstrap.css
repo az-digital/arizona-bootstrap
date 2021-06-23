@@ -17566,6 +17566,7 @@ have been deprecated in Bootstrap 4.
   font-family: "Material Icons Sharp";
   font-size: 2em;
   content: "expand_more";
+  font-variant-ligatures: no-common-ligatures;
 }
 
 .accordion .card-header .btn[aria-expanded="true"]::after {
