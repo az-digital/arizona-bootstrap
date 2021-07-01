@@ -89,7 +89,7 @@
     "rollup": "^2.52.1",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.1",
-    "terser": "5.1.0",
+    "terser": "5.7.1",
     "trim-newlines": ">=3.0.1",
     "vnu-jar": "21.6.11"
   },
