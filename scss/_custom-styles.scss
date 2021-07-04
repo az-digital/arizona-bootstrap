@@ -254,3 +254,11 @@
   // stylelint-disable-next-line declaration-no-important
   border-width: .25rem !important;
 }
+
+// >> Figure caption.
+
+.figure-caption {
+  border-bottom: 1px solid #eef1f1;
+  padding-bottom: 0.9375em;
+  padding-top: .5em;
+}
