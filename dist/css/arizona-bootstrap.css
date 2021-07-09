@@ -14235,6 +14235,12 @@ h2,
   border-width: .25rem !important;
 }
 
+.figure-caption {
+  padding-top: .5em;
+  padding-bottom: .9375em;
+  border-bottom: 1px solid #e9ecef;
+}
+
 /*
 * > BLOCKQUOTE
 */
