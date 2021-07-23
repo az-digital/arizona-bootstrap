@@ -40,4 +40,5 @@ RUN apt-get update \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
-  && npm install
+  && npm install \
+  && find node_modules -name '.DS_Store' -exec rm {} \;

@@ -43,7 +43,7 @@ Scroll the area below the navbar and watch the active class change. The dropdown
       </li>
     </ul>
   </nav>
-  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example" lang="zxx">
     <h4 id="fat">@fat</h4>
     <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
     <h4 id="mdo">@mdo</h4>
@@ -119,7 +119,7 @@ Scrollspy also works with nested `.nav`s. If a nested `.nav` is `.active`, its p
       </nav>
     </div>
     <div class="col-8">
-      <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2">
+      <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2" lang="zxx">
         <h4 id="item-1">Item 1</h4>
         <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
         <h5 id="item-1-1">Item 1-1</h5>
@@ -190,7 +190,7 @@ Scrollspy also works with `.list-group`s. Scroll the area next to the list group
       </div>
     </div>
     <div class="col-8">
-      <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+      <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" lang="zxx">
         <h4 id="list-item-1">Item 1</h4>
         <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
         <h4 id="list-item-2">Item 2</h4>
