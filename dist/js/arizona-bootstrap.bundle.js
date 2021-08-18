@@ -4193,6 +4193,8 @@
   Popper.placements = placements;
   Popper.Defaults = Defaults;
 
+  var Popper$1 = Popper;
+
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v4.6.0): dropdown.js
@@ -4340,7 +4342,7 @@
          * Check for Popper dependency
          * Popper - https://popper.js.org
          */
-        if (typeof Popper === 'undefined') {
+        if (typeof Popper$1 === 'undefined') {
           throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)')
         }
 
@@ -4364,7 +4366,7 @@
           $__default['default'](parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
-        this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
+        this._popper = new Popper$1(referenceElement, this._menu, this._getPopperConfig());
       }
 
       // If this is a touch-enabled device we add extra
@@ -5586,7 +5588,7 @@
 
   class Tooltip {
     constructor(element, config) {
-      if (typeof Popper === 'undefined') {
+      if (typeof Popper$1 === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)')
       }
 
@@ -5756,7 +5758,7 @@
 
         $__default['default'](this.element).trigger(this.constructor.Event.INSERTED);
 
-        this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
+        this._popper = new Popper$1(this.element, tip, this._getPopperConfig(attachment));
 
         $__default['default'](tip).addClass(CLASS_NAME_SHOW$4);
         $__default['default'](tip).addClass(this.config.customClass);
