@@ -70,8 +70,42 @@
 
 // >> Landing Grid
 .card-landing-grid {
-  &:hover {
-    background-color: $gray-200;
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  box-shadow: 3px 3px 0 0 rgba($sky, .5);
+
+  &.landing-oasis {
+    box-shadow: 3px 3px 0 0 rgba($oasis, .5);
+  }
+  &.landing-azurite {
+    box-shadow: 3px 3px 0 0 rgba($azurite, .5);
+  }
+  &.landing-blue {
+    box-shadow: 3px 3px 0 0 rgba($blue, .5);
+  }
+  &.landing-midnight {
+    box-shadow: 3px 3px 0 0 rgba($midnight, .5);
+  }
+  &.landing-leaf {
+    box-shadow: 3px 3px 0 0 rgba($leaf, .5);
+  }
+  &.landing-river {
+    box-shadow: 3px 3px 0 0 rgba($river, .5);
+  }
+  &.landing-bloom {
+    box-shadow: 3px 3px 0 0 rgba($bloom, .5);
+  }
+  &.landing-red {
+    box-shadow: 3px 3px 0 0 rgba($red, .5);
+  }
+  &.landing-chili {
+    box-shadow: 3px 3px 0 0 rgba($chili, .5);
+  }
+  &.landing-ash {
+    box-shadow: 3px 3px 0 0 rgba($ash, .5);
+  }
+  &.landing-silver {
+    box-shadow: 3px 3px 0 0 rgba($silver, .5);
   }
 }
 

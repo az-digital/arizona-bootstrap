@@ -14543,8 +14543,54 @@ a {
   text-decoration: underline;
 }
 
-.card-landing-grid:hover {
-  background-color: #e9ecef;
+.card-landing-grid {
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  box-shadow: 3px 3px 0 0 rgba(129, 211, 235, 0.5);
+}
+
+.card-landing-grid.landing-oasis {
+  box-shadow: 3px 3px 0 0 rgba(55, 141, 189, 0.5);
+}
+
+.card-landing-grid.landing-azurite {
+  box-shadow: 3px 3px 0 0 rgba(30, 82, 136, 0.5);
+}
+
+.card-landing-grid.landing-blue {
+  box-shadow: 3px 3px 0 0 rgba(12, 35, 75, 0.5);
+}
+
+.card-landing-grid.landing-midnight {
+  box-shadow: 3px 3px 0 0 rgba(0, 28, 72, 0.5);
+}
+
+.card-landing-grid.landing-leaf {
+  box-shadow: 3px 3px 0 0 rgba(112, 184, 101, 0.5);
+}
+
+.card-landing-grid.landing-river {
+  box-shadow: 3px 3px 0 0 rgba(0, 125, 132, 0.5);
+}
+
+.card-landing-grid.landing-bloom {
+  box-shadow: 3px 3px 0 0 rgba(239, 64, 86, 0.5);
+}
+
+.card-landing-grid.landing-red {
+  box-shadow: 3px 3px 0 0 rgba(171, 5, 32, 0.5);
+}
+
+.card-landing-grid.landing-chili {
+  box-shadow: 3px 3px 0 0 rgba(139, 0, 21, 0.5);
+}
+
+.card-landing-grid.landing-ash {
+  box-shadow: 3px 3px 0 0 rgba(64, 54, 53, 0.5);
+}
+
+.card-landing-grid.landing-silver {
+  box-shadow: 3px 3px 0 0 rgba(158, 171, 174, 0.5);
 }
 
 .dropdown-menu {
