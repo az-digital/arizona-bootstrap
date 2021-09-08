@@ -491,23 +491,71 @@ Borderless cards both remove the border and make the entire card clickable. You 
 
 ### Landing Grid
 
-The landing grid card makes the entire card clickable and is useful for landing pages.
+The landing grid card adds a Brand colored box-shadow on the right and bottom sides of the card, while maintaining a border on the top and left sides. Landing grid cards are available in the following Brand colors:
+
+<ul>
+  <li>Sky (default)</li>
+  <li>Oasis</li>
+  <li>Azurite</li>
+  <li>Blue</li>
+  <li>Midnight</li>
+  <li>Leaf</li>
+  <li>River</li>
+  <li>Bloom</li>
+  <li>Red</li>
+  <li>Chili</li>
+  <li>Ash</li>
+  <li>Silver</li>
+</ul>
 
 {{< example >}}
 <div class="card-deck">
-  <div class="card card-landing-grid card-clickable">
-    <a href="#" class="card-body">
-      <h3 class="card-text text-uppercase text-azurite">Freshmen</h3>
-      <p class="card-text">You are an incoming freshman if you will soon graduate from high school, you have graduated, or you have a GED and have not enrolled in college since graduating.</p>
-      <p class="card-clickable-link text-uppercase btn-arrow">How to Apply</p>
-    </a>
+  <div class="card card-landing-grid">
+    <div class="card-body">
+      <h3 class="text-uppercase">Freshmen</h3>
+      <div class="card-text">
+        <p class="mb-0">You are an incoming freshman if you will soon graduate from high school, you have graduated, or you have a GED and have not enrolled in college since graduating.</p>
+      </div>
+    </div>
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">
+      <a href="#">How to Apply</a>
+    </div>
   </div>
-  <div class="card card-landing-grid card-clickable">
-    <a href="#" class="card-body">
-      <h3 class="card-text text-uppercase text-azurite">Transfer</h3>
-      <p class="card-text">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
-      <p class="card-clickable-link text-uppercase btn-arrow">How to Apply</p>
-    </a>
+  <div class="card card-landing-grid">
+    <div class="card-body">
+      <h3 class="text-uppercase">Transfer</h3>
+      <div class="card-text">
+        <p class="mb-0">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
+      </div>
+    </div>
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">  
+      <a href="#">How to Apply</a>
+    </div>
+  </div>
+</div>
+
+<div class="card-deck mt-4">
+  <div class="card card-landing-grid landing-azurite">
+    <div class="card-body">
+      <h3 class="text-uppercase">Freshmen</h3>
+      <div class="card-text">
+        <p class="mb-0">You are an incoming freshman if you will soon graduate from high school, you have graduated, or you have a GED and have not enrolled in college since graduating.</p>
+      </div>
+    </div>
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">
+      <a href="#">How to Apply</a>
+    </div>
+  </div>
+  <div class="card card-landing-grid landing-azurite">
+    <div class="card-body">
+      <h3 class="text-uppercase">Transfer</h3>
+      <div class="card-text">
+        <p class="mb-0">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
+      </div>
+    </div>
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">  
+      <a href="#">How to Apply</a>
+    </div>
   </div>
 </div>
 {{< /example >}}
