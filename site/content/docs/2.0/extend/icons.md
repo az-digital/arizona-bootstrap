@@ -17,9 +17,170 @@ Quickstart, and Arizona Bootstrap.
 - [Arizona Icons](https://github.com/az-digital/az-icons) (Arizona branded icons)
 - [Google Material icons (Sharp)](https://material.io/resources/icons/?style=sharp)
 
+## Arizona Icons Implementation
+
+Include a reference to the Arizona Icons' CDN to your project in order to use the font icons: https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css
+
+[Refer to Arizona Icons GitHub repository](https://github.com/az-digital/az-icons) for more information and resources.
+
+<div class="row">
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-arizona"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-arizona</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-award"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-award</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-cost"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-cost</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-facebook"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-facebook</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-financial-aid"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-financial-aid</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-grad-cap"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-grad-cap</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-instagram"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-instagram</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-linkedin"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-linkedin</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-majors-and-degrees"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-majors-and-degrees</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-map-marker"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-map-marker</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-pinterest"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-pinterest</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-scholarship"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-scholarship</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-sign-post"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-sign-post</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-spotify"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-spotify</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-spring-fling"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-spring-fling</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-tiktok"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-tiktok</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-twitter"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-twitter</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-wildcat"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-wildcat</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 col-md-3 col-sm-1">
+    <div class="well text-center mb-4">
+      <p class="text-size-h2"><i class="az-icon-youtube"></i></p>
+      <div class="small">
+        <p><code class="text-blue">.az-icon-youtube</code></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 ## Material Icons Implementation
 
-Include a the Material Icons' stylesheet to your project in order to use the font icons. [Refer to Material Icons docs](https://google.github.io/material-design-icons#icon-font-for-the-web) for more information.
+Include the Material Icons' stylesheet to your project in order to use the font icons. [Refer to Material Icons docs](https://google.github.io/material-design-icons#icon-font-for-the-web) for more information.
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
