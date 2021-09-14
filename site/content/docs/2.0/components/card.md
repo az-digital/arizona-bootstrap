@@ -463,29 +463,29 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 
 ### Borderless
 
-Borderless cards both remove the border and make the entire card clickable. You can use any of the available utility classes to style your card and its text.
+Borderless cards are cards that have their border removed. You can use any of the available utility classes to style your card and its text.
 
 {{< example >}}
-<div class="card card-borderless card-clickable" style="max-width: 18rem;">
-  <a class="card-body" href="#">
+<div class="card card-borderless" style="max-width: 18rem;">
+  <div class="card-body" href="#">
     <h5 class="card-title">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p class="card-clickable-link">Link to Content</p>
-  </a>
+    <a class="card-link" href="#">Link to Content</a>
+  </div>
 </div>
-<div class="card card-borderless card-clickable" style="max-width: 18rem;">
-  <a class="card-body" href="#">
+<div class="card card-borderless" style="max-width: 18rem;">
+  <div class="card-body" href="#">
     <h5 class="card-title text-midnight">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p class="card-clickable-link text-uppercase">Link to Content</p>
-  </a>
+    <a class="card-link" href="#">Link to Content</a>
+  </div>
 </div>
-<div class="card card-borderless card-clickable bg-light" style="max-width: 18rem;">
-  <a class="card-body" href="#">
+<div class="card card-borderless bg-light" style="max-width: 18rem;">
+  <div class="card-body" href="#">
     <h5 class="card-title text-midnight">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p class="card-clickable-link font-weight-bold text-uppercase">Link to Content</p>
-  </a>
+    <a class="card-link" href="#">Link to Content</a>
+  </div>
 </div>
 {{< /example >}}
 
@@ -718,6 +718,223 @@ Just like with card groups, card footers in decks will automatically line up.
   </div>
 </div>
 {{< /example >}}
+
+### Clickable Card Decks
+
+You can apply a clickable card style/functionality to all of the cards in your deck. Clickable card decks are useful for landing pages or pages where you have a series of link options that send you to other pages/sites.
+
+Clickable cards leverage the [stretched link]({{< docsref "/utilities/stretched-link" >}}) utility class, as well as accessible attributes to improve screen reader experience. Each of the available [card styles](#card-styles) has an associated clickable card style that will be automatically applied.
+
+Adding the clickable card style removes the card link in favor of a visual arrow indicator to make it more apparent that the entire card is clickable, rather than just the button/link text.
+
+{{< example >}}
+<div class="card-deck clickable-card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+
+#### Best Practices
+
+When building the HTML for your clickable card deck cards, ensure you are including the `title` attribute on your anchor `<a>` tag. This will ensure that users using assistive devices (like screenreaders) will receive clear details about the link. The `title` attribute is replacing the standard anchor text in this case, as the anchor text is the double arrow icon.
+
+```html
+<a href="https://arizona.edu/" title="The University of Arizona" aria-label="The University of Arizona">
+  <span class="material-icons-sharp">double_arrow</span>
+</a>
+```
+
+
+#### Background Color Example
+
+Just as with the [background and color](#background-and-color) card style, you can utilize the clickable card deck with background colors utility classes on your individual cards. On hover/focus, cards will receive a darkened version of their applied background color.
+
+<div class="card-deck clickable-card-deck">
+  <div class="card bg-blue">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card bg-azurite">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card bg-river">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="card-deck clickable-card-deck mt-4">
+  <div class="card bg-gray-600">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card bg-gray-400">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card bg-gray-200">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+
+
+#### Border Example
+
+<div class="card-deck clickable-card-deck">
+  <div class="card border-success mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card border-info mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card border-dark mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+
+#### Borderless Example
+
+<div class="card-deck clickable-card-deck">
+  <div class="card card-borderless mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card card-borderless mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card card-borderless mb-3">
+    <div class="card-body">
+      <h3 class="card-title">A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+
+#### Landing Grid Example
+
+Just as with the [landing grid](#landing-grid) card style, you can utilize the clickable card deck with available landing grid color options. The arrow on the clickable card will inherit the same color as your card.
+
+<div class="card-deck clickable-card-deck">
+  <div class="card card-landing-grid">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card card-landing-grid landing-azurite">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+  <div class="card card-landing-grid landing-river">
+    <div class="card-body">
+      <h3>A Sample Card Title</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-body clickable-card-btn-container">
+      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+    </div>
+  </div>
+</div>
+
+
 
 ### Card Columns
 

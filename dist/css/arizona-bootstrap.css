@@ -6522,7 +6522,7 @@ button.modal-bg-dark:focus {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, .clickable-card-btn-container {
   display: -ms-flexbox !important;
   display: flex !important;
 }
@@ -6740,7 +6740,7 @@ button.modal-bg-dark:focus {
   flex-direction: row !important;
 }
 
-.flex-column {
+.flex-column, .clickable-card-btn-container {
   -ms-flex-direction: column !important;
   flex-direction: column !important;
 }
@@ -6800,7 +6800,7 @@ button.modal-bg-dark:focus {
   justify-content: flex-start !important;
 }
 
-.justify-content-end {
+.justify-content-end, .clickable-card-btn-container {
   -ms-flex-pack: end !important;
   justify-content: flex-end !important;
 }
@@ -6825,7 +6825,7 @@ button.modal-bg-dark:focus {
   align-items: flex-start !important;
 }
 
-.align-items-end {
+.align-items-end, .clickable-card-btn-container {
   -ms-flex-align: end !important;
   align-items: flex-end !important;
 }
@@ -14539,10 +14539,6 @@ a {
   text-decoration: none;
 }
 
-.card-borderless:hover .card-clickable-link {
-  text-decoration: underline;
-}
-
 .card-landing-grid {
   border-style: solid;
   border-width: 2px 0 0 2px;
@@ -14591,6 +14587,516 @@ a {
 
 .card-landing-grid.landing-silver {
   box-shadow: 3px 3px 0 0 rgba(158, 171, 174, 0.5);
+}
+
+.clickable-card-deck .card, .clickable-card-deck .well,
+.clickable-card-deck .panel,
+.clickable-card-deck .thumbnail {
+  transition: background-color .3s;
+}
+
+.clickable-card-deck .card:hover .clickable-card-arrow, .clickable-card-deck .well:hover .clickable-card-arrow, .clickable-card-deck .panel:hover .clickable-card-arrow, .clickable-card-deck .thumbnail:hover .clickable-card-arrow, .clickable-card-deck .card:focus .clickable-card-arrow, .clickable-card-deck .well:focus .clickable-card-arrow, .clickable-card-deck .panel:focus .clickable-card-arrow, .clickable-card-deck .thumbnail:focus .clickable-card-arrow, .clickable-card-deck .card:focus-within .clickable-card-arrow, .clickable-card-deck .well:focus-within .clickable-card-arrow, .clickable-card-deck .panel:focus-within .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within .clickable-card-arrow {
+  color: inherit;
+  opacity: 1;
+}
+
+.clickable-card-deck .card:hover.bg-blue, .clickable-card-deck .well:hover.bg-blue, .clickable-card-deck .panel-primary .well.panel-heading:hover, .panel-primary .clickable-card-deck .well.panel-heading:hover, .clickable-card-deck .well.bg-primary:hover, .clickable-card-deck .well.card-primary:hover,
+.clickable-card-deck .panel:hover.bg-blue, .clickable-card-deck .panel-primary .panel.panel-heading:hover, .panel-primary .clickable-card-deck .panel.panel-heading:hover, .clickable-card-deck .panel.bg-primary:hover, .clickable-card-deck .panel.card-primary:hover,
+.clickable-card-deck .thumbnail:hover.bg-blue, .clickable-card-deck .panel-primary .thumbnail.panel-heading:hover, .panel-primary .clickable-card-deck .thumbnail.panel-heading:hover, .clickable-card-deck .thumbnail.bg-primary:hover, .clickable-card-deck .thumbnail.card-primary:hover, .clickable-card-deck .panel-primary .card.panel-heading:hover, .panel-primary .clickable-card-deck .card.panel-heading:hover, .clickable-card-deck .card.bg-primary:hover, .clickable-card-deck .card.card-primary:hover, .clickable-card-deck .card:focus.bg-blue, .clickable-card-deck .well:focus.bg-blue, .clickable-card-deck .panel-primary .well.panel-heading:focus, .panel-primary .clickable-card-deck .well.panel-heading:focus, .clickable-card-deck .well.bg-primary:focus, .clickable-card-deck .well.card-primary:focus,
+.clickable-card-deck .panel:focus.bg-blue, .clickable-card-deck .panel-primary .panel.panel-heading:focus, .panel-primary .clickable-card-deck .panel.panel-heading:focus, .clickable-card-deck .panel.bg-primary:focus, .clickable-card-deck .panel.card-primary:focus,
+.clickable-card-deck .thumbnail:focus.bg-blue, .clickable-card-deck .panel-primary .thumbnail.panel-heading:focus, .panel-primary .clickable-card-deck .thumbnail.panel-heading:focus, .clickable-card-deck .thumbnail.bg-primary:focus, .clickable-card-deck .thumbnail.card-primary:focus, .clickable-card-deck .panel-primary .card.panel-heading:focus, .panel-primary .clickable-card-deck .card.panel-heading:focus, .clickable-card-deck .card.bg-primary:focus, .clickable-card-deck .card.card-primary:focus, .clickable-card-deck .card:focus-within.bg-blue, .clickable-card-deck .well:focus-within.bg-blue, .clickable-card-deck .panel-primary .well.panel-heading:focus-within, .panel-primary .clickable-card-deck .well.panel-heading:focus-within, .clickable-card-deck .well.bg-primary:focus-within, .clickable-card-deck .well.card-primary:focus-within,
+.clickable-card-deck .panel:focus-within.bg-blue, .clickable-card-deck .panel-primary .panel.panel-heading:focus-within, .panel-primary .clickable-card-deck .panel.panel-heading:focus-within, .clickable-card-deck .panel.bg-primary:focus-within, .clickable-card-deck .panel.card-primary:focus-within,
+.clickable-card-deck .thumbnail:focus-within.bg-blue, .clickable-card-deck .panel-primary .thumbnail.panel-heading:focus-within, .panel-primary .clickable-card-deck .thumbnail.panel-heading:focus-within, .clickable-card-deck .thumbnail.bg-primary:focus-within, .clickable-card-deck .thumbnail.card-primary:focus-within, .clickable-card-deck .panel-primary .card.panel-heading:focus-within, .panel-primary .clickable-card-deck .card.panel-heading:focus-within, .clickable-card-deck .card.bg-primary:focus-within, .clickable-card-deck .card.card-primary:focus-within {
+  background-color: #07152c;
+}
+
+.clickable-card-deck .card:hover.bg-red, .clickable-card-deck .well:hover.bg-red,
+.clickable-card-deck .panel:hover.bg-red,
+.clickable-card-deck .thumbnail:hover.bg-red, .clickable-card-deck .card:focus.bg-red, .clickable-card-deck .well:focus.bg-red,
+.clickable-card-deck .panel:focus.bg-red,
+.clickable-card-deck .thumbnail:focus.bg-red, .clickable-card-deck .card:focus-within.bg-red, .clickable-card-deck .well:focus-within.bg-red,
+.clickable-card-deck .panel:focus-within.bg-red,
+.clickable-card-deck .thumbnail:focus-within.bg-red {
+  background-color: #88041a;
+}
+
+.clickable-card-deck .card:hover.bg-white, .clickable-card-deck .well:hover.bg-white, .clickable-card-deck .well.panel:hover, .clickable-card-deck .well.well-hollow:hover, .clickable-card-deck .modal-bg-dark .well.modal-content:hover, .modal-bg-dark .clickable-card-deck .well.modal-content:hover,
+.clickable-card-deck .panel:hover,
+.clickable-card-deck .thumbnail:hover.bg-white, .clickable-card-deck .thumbnail.panel:hover, .clickable-card-deck .modal-bg-dark .thumbnail.modal-content:hover, .modal-bg-dark .clickable-card-deck .thumbnail.modal-content:hover, .clickable-card-deck .modal-bg-dark .card.modal-content:hover, .modal-bg-dark .clickable-card-deck .card.modal-content:hover,
+.clickable-card-deck .modal-bg-dark .modal-content.panel:hover, .modal-bg-dark .clickable-card-deck .modal-content.panel:hover, .clickable-card-deck .card:focus.bg-white, .clickable-card-deck .well:focus.bg-white, .clickable-card-deck .well.panel:focus, .clickable-card-deck .well.well-hollow:focus, .clickable-card-deck .modal-bg-dark .well.modal-content:focus, .modal-bg-dark .clickable-card-deck .well.modal-content:focus,
+.clickable-card-deck .panel:focus,
+.clickable-card-deck .thumbnail:focus.bg-white, .clickable-card-deck .thumbnail.panel:focus, .clickable-card-deck .modal-bg-dark .thumbnail.modal-content:focus, .modal-bg-dark .clickable-card-deck .thumbnail.modal-content:focus, .clickable-card-deck .modal-bg-dark .card.modal-content:focus, .modal-bg-dark .clickable-card-deck .card.modal-content:focus,
+.clickable-card-deck .modal-bg-dark .modal-content.panel:focus, .modal-bg-dark .clickable-card-deck .modal-content.panel:focus, .clickable-card-deck .card:focus-within.bg-white, .clickable-card-deck .well:focus-within.bg-white, .clickable-card-deck .well.panel:focus-within, .clickable-card-deck .well.well-hollow:focus-within, .clickable-card-deck .modal-bg-dark .well.modal-content:focus-within, .modal-bg-dark .clickable-card-deck .well.modal-content:focus-within,
+.clickable-card-deck .panel:focus-within,
+.clickable-card-deck .thumbnail:focus-within.bg-white, .clickable-card-deck .thumbnail.panel:focus-within, .clickable-card-deck .modal-bg-dark .thumbnail.modal-content:focus-within, .modal-bg-dark .clickable-card-deck .thumbnail.modal-content:focus-within, .clickable-card-deck .modal-bg-dark .card.modal-content:focus-within, .modal-bg-dark .clickable-card-deck .card.modal-content:focus-within,
+.clickable-card-deck .modal-bg-dark .modal-content.panel:focus-within, .modal-bg-dark .clickable-card-deck .modal-content.panel:focus-within {
+  background-color: #ededed;
+}
+
+.clickable-card-deck .card:hover.bg-bloom, .clickable-card-deck .well:hover.bg-bloom,
+.clickable-card-deck .panel:hover.bg-bloom,
+.clickable-card-deck .thumbnail:hover.bg-bloom, .clickable-card-deck .card:focus.bg-bloom, .clickable-card-deck .well:focus.bg-bloom,
+.clickable-card-deck .panel:focus.bg-bloom,
+.clickable-card-deck .thumbnail:focus.bg-bloom, .clickable-card-deck .card:focus-within.bg-bloom, .clickable-card-deck .well:focus-within.bg-bloom,
+.clickable-card-deck .panel:focus-within.bg-bloom,
+.clickable-card-deck .thumbnail:focus-within.bg-bloom {
+  background-color: #ec1f39;
+}
+
+.clickable-card-deck .card:hover.bg-chili, .clickable-card-deck .well:hover.bg-chili,
+.clickable-card-deck .panel:hover.bg-chili,
+.clickable-card-deck .thumbnail:hover.bg-chili, .clickable-card-deck .card:focus.bg-chili, .clickable-card-deck .well:focus.bg-chili,
+.clickable-card-deck .panel:focus.bg-chili,
+.clickable-card-deck .thumbnail:focus.bg-chili, .clickable-card-deck .card:focus-within.bg-chili, .clickable-card-deck .well:focus-within.bg-chili,
+.clickable-card-deck .panel:focus-within.bg-chili,
+.clickable-card-deck .thumbnail:focus-within.bg-chili {
+  background-color: #670010;
+}
+
+.clickable-card-deck .card:hover.bg-sky, .clickable-card-deck .well:hover.bg-sky,
+.clickable-card-deck .panel:hover.bg-sky,
+.clickable-card-deck .thumbnail:hover.bg-sky, .clickable-card-deck .card:focus.bg-sky, .clickable-card-deck .well:focus.bg-sky,
+.clickable-card-deck .panel:focus.bg-sky,
+.clickable-card-deck .thumbnail:focus.bg-sky, .clickable-card-deck .card:focus-within.bg-sky, .clickable-card-deck .well:focus-within.bg-sky,
+.clickable-card-deck .panel:focus-within.bg-sky,
+.clickable-card-deck .thumbnail:focus-within.bg-sky {
+  background-color: #62c8e6;
+}
+
+.clickable-card-deck .card:hover.bg-oasis, .clickable-card-deck .well:hover.bg-oasis,
+.clickable-card-deck .panel:hover.bg-oasis,
+.clickable-card-deck .thumbnail:hover.bg-oasis, .clickable-card-deck .card:focus.bg-oasis, .clickable-card-deck .well:focus.bg-oasis,
+.clickable-card-deck .panel:focus.bg-oasis,
+.clickable-card-deck .thumbnail:focus.bg-oasis, .clickable-card-deck .card:focus-within.bg-oasis, .clickable-card-deck .well:focus-within.bg-oasis,
+.clickable-card-deck .panel:focus-within.bg-oasis,
+.clickable-card-deck .thumbnail:focus-within.bg-oasis {
+  background-color: #2f78a1;
+}
+
+.clickable-card-deck .card:hover.bg-azurite, .clickable-card-deck .well:hover.bg-azurite,
+.clickable-card-deck .panel:hover.bg-azurite,
+.clickable-card-deck .thumbnail:hover.bg-azurite, .clickable-card-deck .card:focus.bg-azurite, .clickable-card-deck .well:focus.bg-azurite,
+.clickable-card-deck .panel:focus.bg-azurite,
+.clickable-card-deck .thumbnail:focus.bg-azurite, .clickable-card-deck .card:focus-within.bg-azurite, .clickable-card-deck .well:focus-within.bg-azurite,
+.clickable-card-deck .panel:focus-within.bg-azurite,
+.clickable-card-deck .thumbnail:focus-within.bg-azurite {
+  background-color: #18406b;
+}
+
+.clickable-card-deck .card:hover.bg-midnight, .clickable-card-deck .well:hover.bg-midnight,
+.clickable-card-deck .panel:hover.bg-midnight,
+.clickable-card-deck .thumbnail:hover.bg-midnight, .clickable-card-deck .card:focus.bg-midnight, .clickable-card-deck .well:focus.bg-midnight,
+.clickable-card-deck .panel:focus.bg-midnight,
+.clickable-card-deck .thumbnail:focus.bg-midnight, .clickable-card-deck .card:focus-within.bg-midnight, .clickable-card-deck .well:focus-within.bg-midnight,
+.clickable-card-deck .panel:focus-within.bg-midnight,
+.clickable-card-deck .thumbnail:focus-within.bg-midnight {
+  background-color: #000e24;
+}
+
+.clickable-card-deck .card:hover.bg-cool-gray, .clickable-card-deck .well:hover.bg-cool-gray,
+.clickable-card-deck .panel:hover.bg-cool-gray,
+.clickable-card-deck .thumbnail:hover.bg-cool-gray, .clickable-card-deck .card:focus.bg-cool-gray, .clickable-card-deck .well:focus.bg-cool-gray,
+.clickable-card-deck .panel:focus.bg-cool-gray,
+.clickable-card-deck .thumbnail:focus.bg-cool-gray, .clickable-card-deck .card:focus-within.bg-cool-gray, .clickable-card-deck .well:focus-within.bg-cool-gray,
+.clickable-card-deck .panel:focus-within.bg-cool-gray,
+.clickable-card-deck .thumbnail:focus-within.bg-cool-gray {
+  background-color: #cdd9dc;
+}
+
+.clickable-card-deck .card:hover.bg-warm-gray, .clickable-card-deck .well:hover.bg-warm-gray,
+.clickable-card-deck .panel:hover.bg-warm-gray,
+.clickable-card-deck .thumbnail:hover.bg-warm-gray, .clickable-card-deck .card:focus.bg-warm-gray, .clickable-card-deck .well:focus.bg-warm-gray,
+.clickable-card-deck .panel:focus.bg-warm-gray,
+.clickable-card-deck .thumbnail:focus.bg-warm-gray, .clickable-card-deck .card:focus-within.bg-warm-gray, .clickable-card-deck .well:focus-within.bg-warm-gray,
+.clickable-card-deck .panel:focus-within.bg-warm-gray,
+.clickable-card-deck .thumbnail:focus-within.bg-warm-gray {
+  background-color: #e9dccc;
+}
+
+.clickable-card-deck .card:hover.bg-leaf, .clickable-card-deck .well:hover.bg-leaf,
+.clickable-card-deck .panel:hover.bg-leaf,
+.clickable-card-deck .thumbnail:hover.bg-leaf, .clickable-card-deck .card:focus.bg-leaf, .clickable-card-deck .well:focus.bg-leaf,
+.clickable-card-deck .panel:focus.bg-leaf,
+.clickable-card-deck .thumbnail:focus.bg-leaf, .clickable-card-deck .card:focus-within.bg-leaf, .clickable-card-deck .well:focus-within.bg-leaf,
+.clickable-card-deck .panel:focus-within.bg-leaf,
+.clickable-card-deck .thumbnail:focus-within.bg-leaf {
+  background-color: #5bab4f;
+}
+
+.clickable-card-deck .card:hover.bg-river, .clickable-card-deck .well:hover.bg-river,
+.clickable-card-deck .panel:hover.bg-river,
+.clickable-card-deck .thumbnail:hover.bg-river, .clickable-card-deck .card:focus.bg-river, .clickable-card-deck .well:focus.bg-river,
+.clickable-card-deck .panel:focus.bg-river,
+.clickable-card-deck .thumbnail:focus.bg-river, .clickable-card-deck .card:focus-within.bg-river, .clickable-card-deck .well:focus-within.bg-river,
+.clickable-card-deck .panel:focus-within.bg-river,
+.clickable-card-deck .thumbnail:focus-within.bg-river {
+  background-color: #005b60;
+}
+
+.clickable-card-deck .card:hover.bg-silver, .clickable-card-deck .well:hover.bg-silver,
+.clickable-card-deck .panel:hover.bg-silver,
+.clickable-card-deck .thumbnail:hover.bg-silver, .clickable-card-deck .card:focus.bg-silver, .clickable-card-deck .well:focus.bg-silver,
+.clickable-card-deck .panel:focus.bg-silver,
+.clickable-card-deck .thumbnail:focus.bg-silver, .clickable-card-deck .card:focus-within.bg-silver, .clickable-card-deck .well:focus-within.bg-silver,
+.clickable-card-deck .panel:focus-within.bg-silver,
+.clickable-card-deck .thumbnail:focus-within.bg-silver {
+  background-color: #8b9a9e;
+}
+
+.clickable-card-deck .card:hover.bg-mesa, .clickable-card-deck .well:hover.bg-mesa,
+.clickable-card-deck .panel:hover.bg-mesa,
+.clickable-card-deck .thumbnail:hover.bg-mesa, .clickable-card-deck .card:focus.bg-mesa, .clickable-card-deck .well:focus.bg-mesa,
+.clickable-card-deck .panel:focus.bg-mesa,
+.clickable-card-deck .thumbnail:focus.bg-mesa, .clickable-card-deck .card:focus-within.bg-mesa, .clickable-card-deck .well:focus-within.bg-mesa,
+.clickable-card-deck .panel:focus-within.bg-mesa,
+.clickable-card-deck .thumbnail:focus-within.bg-mesa {
+  background-color: #8f4e38;
+}
+
+.clickable-card-deck .card:hover.bg-ash, .clickable-card-deck .well:hover.bg-ash,
+.clickable-card-deck .panel:hover.bg-ash,
+.clickable-card-deck .thumbnail:hover.bg-ash, .clickable-card-deck .card:focus.bg-ash, .clickable-card-deck .well:focus.bg-ash,
+.clickable-card-deck .panel:focus.bg-ash,
+.clickable-card-deck .thumbnail:focus.bg-ash, .clickable-card-deck .card:focus-within.bg-ash, .clickable-card-deck .well:focus-within.bg-ash,
+.clickable-card-deck .panel:focus-within.bg-ash,
+.clickable-card-deck .thumbnail:focus-within.bg-ash {
+  background-color: #2c2625;
+}
+
+.clickable-card-deck .card:hover.bg-sage, .clickable-card-deck .well:hover.bg-sage,
+.clickable-card-deck .panel:hover.bg-sage,
+.clickable-card-deck .thumbnail:hover.bg-sage, .clickable-card-deck .card:focus.bg-sage, .clickable-card-deck .well:focus.bg-sage,
+.clickable-card-deck .panel:focus.bg-sage,
+.clickable-card-deck .thumbnail:focus.bg-sage, .clickable-card-deck .card:focus-within.bg-sage, .clickable-card-deck .well:focus-within.bg-sage,
+.clickable-card-deck .panel:focus-within.bg-sage,
+.clickable-card-deck .thumbnail:focus-within.bg-sage {
+  background-color: #3b4f3e;
+}
+
+.clickable-card-deck .card:hover.bg-black, .clickable-card-deck .well:hover.bg-black,
+.clickable-card-deck .panel:hover.bg-black,
+.clickable-card-deck .thumbnail:hover.bg-black, .clickable-card-deck .card:focus.bg-black, .clickable-card-deck .well:focus.bg-black,
+.clickable-card-deck .panel:focus.bg-black,
+.clickable-card-deck .thumbnail:focus.bg-black, .clickable-card-deck .card:focus-within.bg-black, .clickable-card-deck .well:focus-within.bg-black,
+.clickable-card-deck .panel:focus-within.bg-black,
+.clickable-card-deck .thumbnail:focus-within.bg-black {
+  background-color: black;
+}
+
+.clickable-card-deck .card:hover.bg-gray-100, .clickable-card-deck .well:hover.bg-gray-100, .clickable-card-deck .well.bg-silver-tint:hover,
+.clickable-card-deck .panel:hover.bg-gray-100, .clickable-card-deck .panel.bg-silver-tint:hover,
+.clickable-card-deck .thumbnail:hover.bg-gray-100, .clickable-card-deck .thumbnail.bg-silver-tint:hover, .clickable-card-deck .card.bg-silver-tint:hover, .clickable-card-deck .card:focus.bg-gray-100, .clickable-card-deck .well:focus.bg-gray-100, .clickable-card-deck .well.bg-silver-tint:focus,
+.clickable-card-deck .panel:focus.bg-gray-100, .clickable-card-deck .panel.bg-silver-tint:focus,
+.clickable-card-deck .thumbnail:focus.bg-gray-100, .clickable-card-deck .thumbnail.bg-silver-tint:focus, .clickable-card-deck .card.bg-silver-tint:focus, .clickable-card-deck .card:focus-within.bg-gray-100, .clickable-card-deck .well:focus-within.bg-gray-100, .clickable-card-deck .well.bg-silver-tint:focus-within,
+.clickable-card-deck .panel:focus-within.bg-gray-100, .clickable-card-deck .panel.bg-silver-tint:focus-within,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-100, .clickable-card-deck .thumbnail.bg-silver-tint:focus-within, .clickable-card-deck .card.bg-silver-tint:focus-within {
+  background-color: #e3e7eb;
+}
+
+.clickable-card-deck .card:hover.bg-gray-200, .clickable-card-deck .well:hover.bg-gray-200,
+.clickable-card-deck .panel:hover.bg-gray-200,
+.clickable-card-deck .thumbnail:hover.bg-gray-200, .clickable-card-deck .card:focus.bg-gray-200, .clickable-card-deck .well:focus.bg-gray-200,
+.clickable-card-deck .panel:focus.bg-gray-200,
+.clickable-card-deck .thumbnail:focus.bg-gray-200, .clickable-card-deck .card:focus-within.bg-gray-200, .clickable-card-deck .well:focus-within.bg-gray-200,
+.clickable-card-deck .panel:focus-within.bg-gray-200,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-200 {
+  background-color: #d4dae0;
+}
+
+.clickable-card-deck .card:hover.bg-gray-300, .clickable-card-deck .well:hover.bg-gray-300,
+.clickable-card-deck .panel:hover.bg-gray-300,
+.clickable-card-deck .thumbnail:hover.bg-gray-300, .clickable-card-deck .card:focus.bg-gray-300, .clickable-card-deck .well:focus.bg-gray-300,
+.clickable-card-deck .panel:focus.bg-gray-300,
+.clickable-card-deck .thumbnail:focus.bg-gray-300, .clickable-card-deck .card:focus-within.bg-gray-300, .clickable-card-deck .well:focus-within.bg-gray-300,
+.clickable-card-deck .panel:focus-within.bg-gray-300,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-300 {
+  background-color: #cad0d7;
+}
+
+.clickable-card-deck .card:hover.bg-gray-400, .clickable-card-deck .well:hover.bg-gray-400,
+.clickable-card-deck .panel:hover.bg-gray-400,
+.clickable-card-deck .thumbnail:hover.bg-gray-400, .clickable-card-deck .card:focus.bg-gray-400, .clickable-card-deck .well:focus.bg-gray-400,
+.clickable-card-deck .panel:focus.bg-gray-400,
+.clickable-card-deck .thumbnail:focus.bg-gray-400, .clickable-card-deck .card:focus-within.bg-gray-400, .clickable-card-deck .well:focus-within.bg-gray-400,
+.clickable-card-deck .panel:focus-within.bg-gray-400,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-400 {
+  background-color: #bac2cb;
+}
+
+.clickable-card-deck .card:hover.bg-gray-500, .clickable-card-deck .well:hover.bg-gray-500,
+.clickable-card-deck .panel:hover.bg-gray-500,
+.clickable-card-deck .thumbnail:hover.bg-gray-500, .clickable-card-deck .card:focus.bg-gray-500, .clickable-card-deck .well:focus.bg-gray-500,
+.clickable-card-deck .panel:focus.bg-gray-500,
+.clickable-card-deck .thumbnail:focus.bg-gray-500, .clickable-card-deck .card:focus-within.bg-gray-500, .clickable-card-deck .well:focus-within.bg-gray-500,
+.clickable-card-deck .panel:focus-within.bg-gray-500,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-500 {
+  background-color: #99a3ad;
+}
+
+.clickable-card-deck .card:hover.bg-gray-600, .clickable-card-deck .well:hover.bg-gray-600,
+.clickable-card-deck .panel:hover.bg-gray-600,
+.clickable-card-deck .thumbnail:hover.bg-gray-600, .clickable-card-deck .card:focus.bg-gray-600, .clickable-card-deck .well:focus.bg-gray-600,
+.clickable-card-deck .panel:focus.bg-gray-600,
+.clickable-card-deck .thumbnail:focus.bg-gray-600, .clickable-card-deck .card:focus-within.bg-gray-600, .clickable-card-deck .well:focus-within.bg-gray-600,
+.clickable-card-deck .panel:focus-within.bg-gray-600,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-600 {
+  background-color: #5b636a;
+}
+
+.clickable-card-deck .card:hover.bg-gray-700, .clickable-card-deck .well:hover.bg-gray-700,
+.clickable-card-deck .panel:hover.bg-gray-700,
+.clickable-card-deck .thumbnail:hover.bg-gray-700, .clickable-card-deck .card:focus.bg-gray-700, .clickable-card-deck .well:focus.bg-gray-700,
+.clickable-card-deck .panel:focus.bg-gray-700,
+.clickable-card-deck .thumbnail:focus.bg-gray-700, .clickable-card-deck .card:focus-within.bg-gray-700, .clickable-card-deck .well:focus-within.bg-gray-700,
+.clickable-card-deck .panel:focus-within.bg-gray-700,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-700 {
+  background-color: #393e44;
+}
+
+.clickable-card-deck .card:hover.bg-gray-800, .clickable-card-deck .well:hover.bg-gray-800,
+.clickable-card-deck .panel:hover.bg-gray-800,
+.clickable-card-deck .thumbnail:hover.bg-gray-800, .clickable-card-deck .card:focus.bg-gray-800, .clickable-card-deck .well:focus.bg-gray-800,
+.clickable-card-deck .panel:focus.bg-gray-800,
+.clickable-card-deck .thumbnail:focus.bg-gray-800, .clickable-card-deck .card:focus-within.bg-gray-800, .clickable-card-deck .well:focus-within.bg-gray-800,
+.clickable-card-deck .panel:focus-within.bg-gray-800,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-800 {
+  background-color: #24282c;
+}
+
+.clickable-card-deck .card:hover.bg-gray-900, .clickable-card-deck .well:hover.bg-gray-900,
+.clickable-card-deck .panel:hover.bg-gray-900,
+.clickable-card-deck .thumbnail:hover.bg-gray-900, .clickable-card-deck .card:focus.bg-gray-900, .clickable-card-deck .well:focus.bg-gray-900,
+.clickable-card-deck .panel:focus.bg-gray-900,
+.clickable-card-deck .thumbnail:focus.bg-gray-900, .clickable-card-deck .card:focus-within.bg-gray-900, .clickable-card-deck .well:focus-within.bg-gray-900,
+.clickable-card-deck .panel:focus-within.bg-gray-900,
+.clickable-card-deck .thumbnail:focus-within.bg-gray-900 {
+  background-color: #111315;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid, .clickable-card-deck .well:hover.card-landing-grid,
+.clickable-card-deck .panel:hover.card-landing-grid,
+.clickable-card-deck .thumbnail:hover.card-landing-grid, .clickable-card-deck .card:focus.card-landing-grid, .clickable-card-deck .well:focus.card-landing-grid,
+.clickable-card-deck .panel:focus.card-landing-grid,
+.clickable-card-deck .thumbnail:focus.card-landing-grid, .clickable-card-deck .card:focus-within.card-landing-grid, .clickable-card-deck .well:focus-within.card-landing-grid,
+.clickable-card-deck .panel:focus-within.card-landing-grid,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid {
+  box-shadow: 7px 7px 0 0 rgba(129, 211, 235, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid .clickable-card-arrow {
+  color: #81d3eb;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-red, .clickable-card-deck .well:hover.card-landing-grid.landing-red,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-red,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-red, .clickable-card-deck .card:focus.card-landing-grid.landing-red, .clickable-card-deck .well:focus.card-landing-grid.landing-red,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-red,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-red, .clickable-card-deck .card:focus-within.card-landing-grid.landing-red, .clickable-card-deck .well:focus-within.card-landing-grid.landing-red,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-red,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-red {
+  box-shadow: 7px 7px 0 0 rgba(171, 5, 32, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-red .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-red .clickable-card-arrow {
+  color: #ab0520;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-bloom, .clickable-card-deck .well:hover.card-landing-grid.landing-bloom,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-bloom,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-bloom, .clickable-card-deck .card:focus.card-landing-grid.landing-bloom, .clickable-card-deck .well:focus.card-landing-grid.landing-bloom,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-bloom,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-bloom, .clickable-card-deck .card:focus-within.card-landing-grid.landing-bloom, .clickable-card-deck .well:focus-within.card-landing-grid.landing-bloom,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-bloom,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-bloom {
+  box-shadow: 7px 7px 0 0 rgba(239, 64, 86, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-bloom .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-bloom .clickable-card-arrow {
+  color: #ef4056;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-chili, .clickable-card-deck .well:hover.card-landing-grid.landing-chili,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-chili,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-chili, .clickable-card-deck .card:focus.card-landing-grid.landing-chili, .clickable-card-deck .well:focus.card-landing-grid.landing-chili,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-chili,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-chili, .clickable-card-deck .card:focus-within.card-landing-grid.landing-chili, .clickable-card-deck .well:focus-within.card-landing-grid.landing-chili,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-chili,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-chili {
+  box-shadow: 7px 7px 0 0 rgba(139, 0, 21, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-chili .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-chili .clickable-card-arrow {
+  color: #8b0015;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-blue, .clickable-card-deck .well:hover.card-landing-grid.landing-blue,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-blue,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-blue, .clickable-card-deck .card:focus.card-landing-grid.landing-blue, .clickable-card-deck .well:focus.card-landing-grid.landing-blue,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-blue,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-blue, .clickable-card-deck .card:focus-within.card-landing-grid.landing-blue, .clickable-card-deck .well:focus-within.card-landing-grid.landing-blue,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-blue,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-blue {
+  box-shadow: 7px 7px 0 0 rgba(12, 35, 75, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-blue .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-blue .clickable-card-arrow {
+  color: #0c234b;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-oasis, .clickable-card-deck .well:hover.card-landing-grid.landing-oasis,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-oasis,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-oasis, .clickable-card-deck .card:focus.card-landing-grid.landing-oasis, .clickable-card-deck .well:focus.card-landing-grid.landing-oasis,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-oasis,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-oasis, .clickable-card-deck .card:focus-within.card-landing-grid.landing-oasis, .clickable-card-deck .well:focus-within.card-landing-grid.landing-oasis,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-oasis,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-oasis {
+  box-shadow: 7px 7px 0 0 rgba(55, 141, 189, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-oasis .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-oasis .clickable-card-arrow {
+  color: #378dbd;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-azurite, .clickable-card-deck .well:hover.card-landing-grid.landing-azurite,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-azurite,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-azurite, .clickable-card-deck .card:focus.card-landing-grid.landing-azurite, .clickable-card-deck .well:focus.card-landing-grid.landing-azurite,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-azurite,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-azurite, .clickable-card-deck .card:focus-within.card-landing-grid.landing-azurite, .clickable-card-deck .well:focus-within.card-landing-grid.landing-azurite,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-azurite,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-azurite {
+  box-shadow: 7px 7px 0 0 rgba(30, 82, 136, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-azurite .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-azurite .clickable-card-arrow {
+  color: #1e5288;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-midnight, .clickable-card-deck .well:hover.card-landing-grid.landing-midnight,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-midnight,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-midnight, .clickable-card-deck .card:focus.card-landing-grid.landing-midnight, .clickable-card-deck .well:focus.card-landing-grid.landing-midnight,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-midnight,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-midnight, .clickable-card-deck .card:focus-within.card-landing-grid.landing-midnight, .clickable-card-deck .well:focus-within.card-landing-grid.landing-midnight,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-midnight,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-midnight {
+  box-shadow: 7px 7px 0 0 rgba(0, 28, 72, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-midnight .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-midnight .clickable-card-arrow {
+  color: #001c48;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-leaf, .clickable-card-deck .well:hover.card-landing-grid.landing-leaf,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-leaf,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-leaf, .clickable-card-deck .card:focus.card-landing-grid.landing-leaf, .clickable-card-deck .well:focus.card-landing-grid.landing-leaf,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-leaf,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-leaf, .clickable-card-deck .card:focus-within.card-landing-grid.landing-leaf, .clickable-card-deck .well:focus-within.card-landing-grid.landing-leaf,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-leaf,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-leaf {
+  box-shadow: 7px 7px 0 0 rgba(112, 184, 101, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-leaf .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-leaf .clickable-card-arrow {
+  color: #70b865;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-river, .clickable-card-deck .well:hover.card-landing-grid.landing-river,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-river,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-river, .clickable-card-deck .card:focus.card-landing-grid.landing-river, .clickable-card-deck .well:focus.card-landing-grid.landing-river,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-river,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-river, .clickable-card-deck .card:focus-within.card-landing-grid.landing-river, .clickable-card-deck .well:focus-within.card-landing-grid.landing-river,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-river,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-river {
+  box-shadow: 7px 7px 0 0 rgba(0, 125, 132, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-river .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-river .clickable-card-arrow {
+  color: #007d84;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-silver, .clickable-card-deck .well:hover.card-landing-grid.landing-silver,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-silver,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-silver, .clickable-card-deck .card:focus.card-landing-grid.landing-silver, .clickable-card-deck .well:focus.card-landing-grid.landing-silver,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-silver,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-silver, .clickable-card-deck .card:focus-within.card-landing-grid.landing-silver, .clickable-card-deck .well:focus-within.card-landing-grid.landing-silver,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-silver,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-silver {
+  box-shadow: 7px 7px 0 0 rgba(158, 171, 174, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-silver .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-silver .clickable-card-arrow {
+  color: #9eabae;
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-ash, .clickable-card-deck .well:hover.card-landing-grid.landing-ash,
+.clickable-card-deck .panel:hover.card-landing-grid.landing-ash,
+.clickable-card-deck .thumbnail:hover.card-landing-grid.landing-ash, .clickable-card-deck .card:focus.card-landing-grid.landing-ash, .clickable-card-deck .well:focus.card-landing-grid.landing-ash,
+.clickable-card-deck .panel:focus.card-landing-grid.landing-ash,
+.clickable-card-deck .thumbnail:focus.card-landing-grid.landing-ash, .clickable-card-deck .card:focus-within.card-landing-grid.landing-ash, .clickable-card-deck .well:focus-within.card-landing-grid.landing-ash,
+.clickable-card-deck .panel:focus-within.card-landing-grid.landing-ash,
+.clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-ash {
+  box-shadow: 7px 7px 0 0 rgba(64, 54, 53, 0.65);
+}
+
+.clickable-card-deck .card:hover.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .well:hover.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .panel:hover.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .thumbnail:hover.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .card:focus.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .well:focus.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .panel:focus.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .thumbnail:focus.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .card:focus-within.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .well:focus-within.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .panel:focus-within.card-landing-grid.landing-ash .clickable-card-arrow, .clickable-card-deck .thumbnail:focus-within.card-landing-grid.landing-ash .clickable-card-arrow {
+  color: #403635;
+}
+
+.clickable-card-deck .card-landing-grid {
+  transition: box-shadow .3s;
+}
+
+.clickable-card-deck .card-landing-grid .clickable-card-arrow {
+  color: #81d3eb;
+}
+
+.clickable-card-deck .card-landing-grid.landing-red .clickable-card-arrow {
+  color: #ab0520;
+}
+
+.clickable-card-deck .card-landing-grid.landing-bloom .clickable-card-arrow {
+  color: #ef4056;
+}
+
+.clickable-card-deck .card-landing-grid.landing-chili .clickable-card-arrow {
+  color: #8b0015;
+}
+
+.clickable-card-deck .card-landing-grid.landing-blue .clickable-card-arrow {
+  color: #0c234b;
+}
+
+.clickable-card-deck .card-landing-grid.landing-oasis .clickable-card-arrow {
+  color: #378dbd;
+}
+
+.clickable-card-deck .card-landing-grid.landing-azurite .clickable-card-arrow {
+  color: #1e5288;
+}
+
+.clickable-card-deck .card-landing-grid.landing-midnight .clickable-card-arrow {
+  color: #001c48;
+}
+
+.clickable-card-deck .card-landing-grid.landing-leaf .clickable-card-arrow {
+  color: #70b865;
+}
+
+.clickable-card-deck .card-landing-grid.landing-river .clickable-card-arrow {
+  color: #007d84;
+}
+
+.clickable-card-deck .card-landing-grid.landing-silver .clickable-card-arrow {
+  color: #9eabae;
+}
+
+.clickable-card-deck .card-landing-grid.landing-ash .clickable-card-arrow {
+  color: #403635;
+}
+
+.clickable-card-arrow {
+  color: inherit;
+  opacity: .25;
+  transition: opacity .3s;
 }
 
 .dropdown-menu {
@@ -14661,39 +15167,40 @@ a {
 }
 
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
-.nav.nav-pills.flex-column > li {
+.nav.nav-pills.flex-column > li, .nav.nav-pills.clickable-card-btn-container > li {
   margin: -1px 0 0;
   border: solid 1px #e9ecef;
 }
 
-.nav.nav-pills.flex-column > li a:hover,
-.nav.nav-pills.flex-column > li a:focus {
+.nav.nav-pills.flex-column > li a:hover, .nav.nav-pills.clickable-card-btn-container > li a:hover,
+.nav.nav-pills.flex-column > li a:focus,
+.nav.nav-pills.clickable-card-btn-container > li a:focus {
   background-color: #e9ecef;
 }
 
-.nav.nav-pills.flex-column > li ul > li {
+.nav.nav-pills.flex-column > li ul > li, .nav.nav-pills.clickable-card-btn-container > li ul > li {
   border: none;
 }
 
-.nav.nav-pills.flex-column > li ul > li a {
+.nav.nav-pills.flex-column > li ul > li a, .nav.nav-pills.clickable-card-btn-container > li ul > li a {
   padding-left: 25px;
   font-weight: 400;
   color: #001c48;
 }
 
-.nav.nav-pills.flex-column > li ul > li ul > li a {
+.nav.nav-pills.flex-column > li ul > li ul > li a, .nav.nav-pills.clickable-card-btn-container > li ul > li ul > li a {
   padding-left: 35px;
 }
 
-.nav.nav-pills.flex-column > li ul > li ul > li ul > li a {
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li a, .nav.nav-pills.clickable-card-btn-container > li ul > li ul > li ul > li a {
   padding-left: 45px;
 }
 
-.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li a {
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li a, .nav.nav-pills.clickable-card-btn-container > li ul > li ul > li ul > li ul > li a {
   padding-left: 55px;
 }
 
-.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li ul > li a {
+.nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li ul > li a, .nav.nav-pills.clickable-card-btn-container > li ul > li ul > li ul > li ul > li ul > li a {
   padding-left: 65px;
 }
 
