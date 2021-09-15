@@ -29,7 +29,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
 
 <div class="row">
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-arizona"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-arizona</code></p>
@@ -37,7 +37,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-award"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-award</code></p>
@@ -45,7 +45,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-cost"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-cost</code></p>
@@ -53,7 +53,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-facebook"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-facebook</code></p>
@@ -61,7 +61,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-financial-aid"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-financial-aid</code></p>
@@ -69,7 +69,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-grad-cap"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-grad-cap</code></p>
@@ -77,7 +77,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-instagram"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-instagram</code></p>
@@ -85,7 +85,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-linkedin"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-linkedin</code></p>
@@ -93,7 +93,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-majors-and-degrees"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-majors-and-degrees</code></p>
@@ -101,7 +101,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-map-marker"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-map-marker</code></p>
@@ -109,7 +109,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-pinterest"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-pinterest</code></p>
@@ -117,7 +117,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-scholarship"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-scholarship</code></p>
@@ -125,7 +125,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-sign-post"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-sign-post</code></p>
@@ -133,7 +133,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-spotify"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-spotify</code></p>
@@ -141,7 +141,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-spring-fling"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-spring-fling</code></p>
@@ -149,7 +149,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-tiktok"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-tiktok</code></p>
@@ -157,7 +157,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-twitter"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-twitter</code></p>
@@ -165,7 +165,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-wildcat"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-wildcat</code></p>
@@ -173,7 +173,7 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
     </div>
   </div>
   <div class="col-4 col-md-3 col-sm-1">
-    <div class="well text-center mb-4">
+    <div class="text-center mb-4">
       <p class="text-size-h2"><i class="az-icon-youtube"></i></p>
       <div class="small">
         <p><code class="text-blue">.az-icon-youtube</code></p>
