@@ -25,6 +25,11 @@ Include a reference to the Arizona Icons' CDN to your project in order to use th
 <link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 ```
 
+In general, developers should use the main branch version of the icons for development work, and then switch to a pinned version when development is done:
+
+- "Latest" is good for when you need to use icons that have been newly released, and you are following the az-icons project and know what has changed and how those changes will affect your site.
+- Pinned versions are good for any project that wants to be sure to _not_ update az-icons if you don't purposefully change it.
+
 [Refer to Arizona Icons GitHub repository](https://github.com/az-digital/az-icons) for more information and resources.
 
 <div class="row">
