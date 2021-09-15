@@ -2,7 +2,9 @@
 layout: docs
 title: Icons
 description: Guidance and suggestions for using icon libraries with Arizona Bootstrap.
-group: extend
+group: icons
+redirect_from: "/icons/"
+toc: true
 ---
 
 <div class="alert alert-warning" role="alert">
@@ -22,7 +24,7 @@ Quickstart, and Arizona Bootstrap.
 Include a reference to the Arizona Icons' CDN to your project in order to use the font icons:
 
 ```html
-<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css rel="stylesheet">
+<link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 ```
 
 [Refer to Arizona Icons GitHub repository](https://github.com/az-digital/az-icons) for more information and resources.
