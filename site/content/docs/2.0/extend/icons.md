@@ -7,7 +7,7 @@ group: extend
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 alert-heading">Heads Up!</p>
-  If you're using Arizona Bootstrap, Material Design Sharp icons will still need
+  If you're using Arizona Bootstrap, Arizona Icons and/or Material Design Sharp icons will still need
   to be added to your project if you would like to use them.
 </div>
 
