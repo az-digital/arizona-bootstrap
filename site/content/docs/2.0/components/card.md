@@ -727,33 +727,37 @@ Clickable cards leverage the [stretched link]({{< docsref "/utilities/stretched-
 
 Adding the clickable card style removes the card link in favor of a visual arrow indicator to make it more apparent that the entire card is clickable, rather than just the button/link text.
 
+<div class="alert alert-info">
+  <p class="my-0 py-2 h5 text-blue">The example below is filled with demo "library" content for the DRC to test with.</p>
+</div>
+
 {{< example >}}
 <div class="card-deck clickable-card-deck">
   <div class="card">
     <div class="card-body">
-      <h3>A Sample Card Title</h3>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h3>Main Library</h3>
+      <p class="card-text">The go-to place to study, create, collaborate and get things done. The Main Library is open almost 24/7, offering flexible spaces, friendly experts, a wide range of technology and in-depth research collections that encourage new ideas and help to build new connections.</p>
     </div>
     <div class="card-body clickable-card-btn-container">
-      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+      <a title="Visit the Main Library's Website" aria-label="Visit the Main Library's website" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h3>A Sample Card Title</h3>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h3>Health Sciences Library</h3>
+      <p class="card-text">The primary source of knowledge-based health information in Arizona. The Health Sciences Library provides access to the latest published research and gives scientists and healthcare providers tools to improve the quality of life for people everywhere.</p>
     </div>
     <div class="card-body clickable-card-btn-container">
-      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+      <a title="Visit Health Sciences library's website" aria-label="Visit Health Sciences library's website" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h3>A Sample Card Title</h3>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h3>Fine Arts Library</h3>
+      <p class="card-text">A north-campus haven for students and faculty, the Fine Arts Library houses an extensive music collection including scores, sheet music and vinyl LPs, as well as a theater collection of plays and films and architecture materials.</p>
     </div>
     <div class="card-body clickable-card-btn-container">
-      <a title="A sample card title" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
+      <a title="Visit the Fine Arts library's website" aria-label="Visit the Fine Arts library's website" href="#" class="clickable-card-arrow stretched-link"><span class="material-icons-sharp display-3">double_arrow</span></a>
     </div>
   </div>
 </div>
