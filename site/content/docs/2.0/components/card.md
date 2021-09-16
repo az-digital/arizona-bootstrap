@@ -467,21 +467,21 @@ Borderless cards are cards that have their border removed. You can use any of th
 
 {{< example >}}
 <div class="card card-borderless" style="max-width: 18rem;">
-  <div class="card-body" href="#">
+  <div class="card-body">
     <h5 class="card-title">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a class="card-link" href="#">Link to Content</a>
   </div>
 </div>
 <div class="card card-borderless" style="max-width: 18rem;">
-  <div class="card-body" href="#">
+  <div class="card-body">
     <h5 class="card-title text-midnight">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a class="card-link" href="#">Link to Content</a>
   </div>
 </div>
 <div class="card card-borderless bg-light" style="max-width: 18rem;">
-  <div class="card-body" href="#">
+  <div class="card-body">
     <h5 class="card-title text-midnight">Borderless Card Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a class="card-link" href="#">Link to Content</a>
