@@ -197,6 +197,8 @@ $spacers: map-merge(
     8: ($spacer * 6),
     9: ($spacer * 7),
     10:($spacer * 8),
+    20:($spacer * 16),
+    30:($spacer * 24),
     min: ($spacer * .0625)
   ),
   $spacers
