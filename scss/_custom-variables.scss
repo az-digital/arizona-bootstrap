@@ -149,6 +149,26 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+// >> Landing Grid Colors
+// Currated set of Brand colors available to Landing Grid cards
+$landing-colors: ();
+$landing-colors: map-merge(
+  (
+    "red": $red,
+    "bloom": $bloom,
+    "chili": $chili,
+    "blue": $blue,
+    "oasis": $oasis,
+    "azurite": $azurite,
+    "midnight": $midnight,
+    "leaf": $leaf,
+    "river": $river,
+    "silver": $silver,
+    "ash": $ash
+  ),
+  $landing-colors
+);
+
 $text-muted:                          $gray-700 !default;
 $nav-link-disabled-color:             $text-muted !default;
 $dropdown-link-disabled-color:        $text-muted !default;

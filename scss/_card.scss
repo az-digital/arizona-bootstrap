@@ -32,6 +32,7 @@
 
 
 // >> Clickable Card (Borderless & Landing Grid)
+// Deprecated as of 2021/09/08. Leaving for backwards compatibility
 .card-clickable {
   border: {
     top-width: 0;
@@ -60,12 +61,6 @@
 // >> Borderless Card
 .card-borderless {
   @extend .border-0;
-
-  &:hover {
-    .card-clickable-link {
-      text-decoration: underline;
-    }
-  }
 }
 
 // >> Landing Grid
@@ -107,5 +102,82 @@
   &.landing-silver {
     box-shadow: 3px 3px 0 0 rgba($silver, .5);
   }
+}
+
+
+// >> Clickable Card Deck
+.clickable-card-deck {
+  .card {
+    // stylelint-disable-next-line property-disallowed-list
+    transition: background-color .3s;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+
+      // All cards
+      .clickable-card-arrow {
+        color: inherit;
+        opacity: 1;
+      }
+
+      // Cards w/ background color
+      @each $color, $value in $colors {
+        &.bg-#{$color} {
+          background-color: darken($value, 7%);
+        }
+      }
+      @each $color, $value in $grays {
+        &.bg-gray-#{$color} {
+          background-color: darken($value, 7%);
+        }
+      }
+
+      // Landing grid cards
+      &.card-landing-grid {
+        box-shadow: 7px 7px 0 0 rgba($sky, .65);
+
+        // Re-define arrow color to prevent default link color on hover
+        .clickable-card-arrow {
+          color: $sky;
+        }
+        @each $color, $value in $landing-colors {
+          &.landing-#{$color} {
+            box-shadow: 7px 7px 0 0 rgba($value, .65);
+
+            // stylelint-disable-next-line selector-max-class
+            .clickable-card-arrow {
+              color: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-landing-grid {
+    // stylelint-disable-next-line property-disallowed-list
+    transition: box-shadow .3s;
+
+    .clickable-card-arrow {
+      color: $sky;
+    }
+    @each $color, $value in $landing-colors {
+      &.landing-#{$color} {
+        .clickable-card-arrow {
+          color: $value;
+        }
+      }
+    }
+  }
+}
+.clickable-card-btn-container {
+  @extend .d-flex, .flex-column, .justify-content-end, .align-items-end;
+}
+.clickable-card-arrow {
+  color: inherit;
+  opacity: .25;
+  // stylelint-disable-next-line property-disallowed-list
+  transition: opacity .3s;
 }
 
