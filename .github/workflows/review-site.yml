@@ -1,6 +1,8 @@
 name: Build & deploy review site
 on:
   pull_request:
+    paths-ignore:
+      - 'dist/**'
   push:
     paths-ignore:
       - 'dist/**'
