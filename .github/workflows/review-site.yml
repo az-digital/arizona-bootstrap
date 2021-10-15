@@ -68,9 +68,11 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
+          git restore package-lock.json
           git add dist
-          git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
-          git push
+          [ -n "$(git status --porcelain)" ] \
+            && git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}" \
+            && git push
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@e9d3185f7a72ecb1a71000a3f11be505e74e0081
         with:
