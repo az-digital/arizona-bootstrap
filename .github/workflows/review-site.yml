@@ -1,7 +1,11 @@
 name: Build & deploy review site
 on:
   pull_request:
+    paths-ignore:
+      - 'dist/**'
   push:
+    paths-ignore:
+      - 'dist/**'
     branches:
       - main
 
@@ -11,6 +15,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
         run: echo "AZ_TRIMMED_REF=${GITHUB_REF#refs/*/}" >> ${GITHUB_ENV}
@@ -58,6 +64,19 @@ jobs:
       - name: Build review site artifact
         run: |
           docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+      - name: Push back the updated deployable files to the repository (CSS, JS, and so on)
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          if [ -n "$(git status --porcelain package-lock.json)" ] ; then
+            git restore package-lock.json
+          fi
+          if [ -n "$(git status --porcelain dist)" ] ; then
+            git add dist
+            git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
+            git push
+          fi
+        shell: sh
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@e9d3185f7a72ecb1a71000a3f11be505e74e0081
         with:
