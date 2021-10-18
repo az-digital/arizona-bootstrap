@@ -28,6 +28,8 @@
     - title: Tables
     - title: Figures
 
+- title: Icons
+
 - title: Components
   pages:
     - title: Arizona Header
@@ -87,7 +89,6 @@
 - title: Extend
   pages:
     - title: Approach
-    - title: Icons
 
 - title: Migration
 

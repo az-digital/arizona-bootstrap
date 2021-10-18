@@ -1,11 +1,11 @@
-FROM node:14.17.0-buster-slim
+FROM node:14.17.6-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
 ENV PATH ${JAVA_HOME}/bin:${PATH}
 
-COPY --from=openjdk:11.0.11-9-jre-slim-buster "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.11-9-jre-slim-buster /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.12-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.12-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -36,7 +36,7 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.19.94'; \
+  && pip3 install 'awscli~=1.20.34'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
