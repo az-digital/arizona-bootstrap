@@ -2,6 +2,7 @@
 /_site/
 # Hugo folders
 /resources/
+/.hugo_build.lock
 
 # In Arizona Bootstrap the Hugo config is derived
 /config.yml

@@ -50,7 +50,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       <a class="nav-link" href="#">Link</a>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-expanded="false">
         Admissions
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
@@ -61,7 +61,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       </div>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
-      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">

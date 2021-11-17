@@ -1,11 +1,11 @@
-FROM node:14.17.6-bullseye-slim
+FROM node:16.13.0-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
 ENV PATH ${JAVA_HOME}/bin:${PATH}
 
-COPY --from=openjdk:11.0.12-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.12-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.13-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.13-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -22,6 +22,9 @@ ENV AZ_BOOTSTRAP_FROZEN_DIR ${AZ_BOOTSTRAP_FROZEN_DIR:-/azbuild/arizona-bootstra
 ARG AZ_BOOTSTRAP_SOURCE_DIR
 ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-src}
 
+# Silence warnings from the update-notifier npm package.
+ENV NO_UPDATE_NOTIFIER 1
+
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
 
 COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
@@ -36,9 +39,10 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.20.34'; \
+  && pip3 install 'awscli~=1.22.7'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
+  && npm config set cache='/tmp/.npm' \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;

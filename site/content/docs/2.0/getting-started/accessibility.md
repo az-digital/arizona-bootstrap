@@ -45,13 +45,13 @@ For visually hidden interactive controls, such as traditional "skip" links, `.sr
 
 ### Reduced Motion
 
-{{< ourname >}} includes support for the [`prefers-reduced-motion` media feature](https://drafts.csswg.org/mediaqueries-5#prefers-reduced-motion). In browsers/environments that allow the user to specify their preference for reduced motion, most CSS transition effects in {{< ourname >}} (for instance, when a modal dialog is opened or closed, or the sliding animation in carousels) will be disabled.
+{{< ourname >}} includes support for the [`prefers-reduced-motion` media feature](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion). In browsers/environments that allow the user to specify their preference for reduced motion, most CSS transition effects in Bootstrap (for instance, when a modal dialog is opened or closed, or the sliding animation in carousels) will be disabled, and meaningful animations (such as spinners) will be slowed down.
 
 ## Additional Resources
 
 - [IT Accessibility information from the Disability Resource Center](https://itaccessibility.arizona.edu/)
 - [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
-- [The A11Y Project](https://a11yproject.com/)
+- [The A11Y Project](https://www.a11yproject.com/)
 - [MDN accessibility documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [Tenon.io Accessibility Checker](https://tenon.io/)
 - [Colour Contrast Analyser (CCA)](https://developer.paciellogroup.com/resources/contrastanalyser/)

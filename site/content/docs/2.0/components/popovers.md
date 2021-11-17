@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the popover plugin:
 
-- Popovers rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper.js in order for popovers to work!
+- Popovers rely on the 3rd party library [Popper](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper in order for popovers to work!
 - Popovers require the [tooltip plugin]({{< docsref "/components/tooltips" >}}) as a dependency.
 - If you're building our JavaScript from source, it [requires `util.js`]({{< docsref "/getting-started/javascript#util" >}}).
 - Popovers are opt-in for performance reasons, so **you must initialize them yourself**.
@@ -21,6 +21,10 @@ Things to know when using the popover plugin:
 - When triggered from anchors that wrap across multiple lines, popovers will be centered between the anchors' overall width. Use `.text-nowrap` on your `<a>`s to avoid this behavior.
 - Popovers must be hidden before their corresponding elements have been removed from the DOM.
 - Popovers can be triggered thanks to an element inside a shadow DOM.
+
+{{< callout info >}}
+{{< partial "callout-info-sanitizer.md" >}}
+{{< /callout >}}
 
 {{< callout info >}}
 {{< partial "callout-info-prefersreducedmotion.md" >}}
@@ -130,9 +134,23 @@ For disabled popover triggers, you may also prefer `data-trigger="hover"` so tha
 
 ## Usage
 
-Enable popovers via JavaScript:
+EEnable popovers via JavaScript:
 
-```js$('#example').popover(options)```
+```js
+$('#example').popover(options)
+```
+
+{{< callout warning >}}
+##### GPU acceleration
+
+Popovers sometimes appear blurry on Windows 10 devices due to GPU acceleration and a modified system DPI. The workaround for this in v4 is to disable GPU acceleration as needed on your popovers.
+
+Suggested fix:
+
+```js
+Popper.Defaults.modifiers.computeStyle.gpuAcceleration = !(window.devicePixelRatio < 1.5 && /Win/.test(navigator.platform))
+```
+{{< /callout >}}
 
 {{< callout warning >}}
 ### Making Popovers Work for Keyboard and Assistive Technology Users
@@ -214,7 +232,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>selector</td>
       <td>string | false</td>
       <td>false</td>
-      <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="{{< param repo >}}/issues/4215">this</a> and <a href="https://codepen.io/Johann-S/pen/djJYPb">an informative example</a>.</td>
+      <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="{{< param repo >}}/issues/4215">this</a> and <a href="https://codepen.io/team/bootstrap/pen/qBNGbYK">an informative example</a>.</td>
     </tr>
     <tr>
       <td>template</td>
@@ -247,31 +265,40 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>offset</td>
       <td>number | string</td>
       <td>0</td>
-      <td>Offset of the popover relative to its target. For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">offset docs</a>.</td>
+      <td>Offset of the popover relative to its target. For more information refer to Popper's <a href="https://popper.js.org/docs/v1/#modifiers..offset.offset">offset docs</a>.</td>
     </tr>
     <tr>
       <td>fallbackPlacement</td>
       <td>string | array</td>
       <td>'flip'</td>
       <td>Allow to specify which position Popper will use on fallback. For more information refer to
-      Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.behavior">behavior docs</a></td>
+      Popper's <a href="https://popper.js.org/docs/v1/#modifiers..flip.behavior">behavior docs</a></td>
+    </tr>
+    <tr>
+      <td>customClass</td>
+      <td>string | function</td>
+      <td>''</td>
+      <td>
+        <p>Add classes to the popover when it is shown. Note that these classes will be added in addition to any classes specified in the template. To add multiple classes, separate them with spaces: <code>'a b'</code>.</p>
+        <p>You can also pass a function that should return a single string containing additional class names.</p>
+      </td>
     </tr>
     <tr>
       <td>boundary</td>
       <td>string | element</td>
       <td>'scrollParent'</td>
-      <td>Overflow constraint boundary of the popover. Accepts the values of <code>'viewport'</code>, <code>'window'</code>, <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.</td>
+      <td>Overflow constraint boundary of the popover. Accepts the values of <code>'viewport'</code>, <code>'window'</code>, <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper's <a href="https://popper.js.org/docs/v1/#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.</td>
     </tr>
     <tr>
       <td>sanitize</td>
       <td>boolean</td>
       <td>true</td>
-      <td>Enable or disable the sanitization. If activated <code>'template'</code>, <code>'content'</code> and <code>'title'</code> options will be sanitized.</td>
+      <td>Enable or disable the sanitization. If activated <code>'template'</code>, <code>'content'</code> and <code>'title'</code> options will be sanitized. See the <a href="{{< docsref "/getting-started/javascript#sanitizer" >}}">sanitizer section in our JavaScript documentation</a>.</td>
     </tr>
     <tr>
       <td>whiteList</td>
       <td>object</td>
-      <td><a href="{{< docsref `/getting-started/javascript#sanitizer` >}}">Default value</a></td>
+      <td><a href="{{< docsref "/getting-started/javascript#sanitizer" >}}">Default value</a></td>
       <td>Object which contains allowed attributes and tags</td>
     </tr>
     <tr>
@@ -280,11 +307,17 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>null</td>
       <td>Here you can supply your own sanitize function. This can be useful if you prefer to use a dedicated library to perform sanitization.</td>
     </tr>
+    <tr>
+      <td>popperConfig</td>
+      <td>null | object</td>
+      <td>null</td>
+      <td>To change Bootstrap's default Popper config, see <a href="https://popper.js.org/docs/v1/#Popper.Defaults">Popper's configuration</a></td>
+    </tr>
   </tbody>
 </table>
 
 {{< callout info >}}
-#### Data Attributes for Individual Popovers
+#### Data attributes for individual popovers
 
 Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.
 {{< /callout >}}
@@ -295,57 +328,73 @@ Options for individual popovers can alternatively be specified through the use o
 {{< partial "callout-danger-async-methods.md" >}}
 {{< /callout >}}
 
-## `$().popover(options)`
+#### `$().popover(options)`
 
 Initializes popovers for an element collection.
 
 #### `.popover('show')`
 
-Reveals an element's popover. **Returns to the caller before the popover has actually been shown** (i.e. before the `shown.bs.popover` event occurs). This is considered a "manual" triggering of the popover. Popovers whose both title and content are zero-length are never displayed.
+Reveals an element's popover. **Returns to the caller before the popover has actually been shown** (i.e. before the `shown.bs.popover` event occurs). This is considered a "manual" triggering of the popover. Popovers whose title and content are both zero-length are never displayed.
 
-```js$('#element').popover('show')```
+```js
+$('#element').popover('show')
+```
 
 #### `.popover('hide')`
 
 Hides an element's popover. **Returns to the caller before the popover has actually been hidden** (i.e. before the `hidden.bs.popover` event occurs). This is considered a "manual" triggering of the popover.
 
-```js$('#element').popover('hide')```
+```js
+$('#element').popover('hide')
+```
 
 #### `.popover('toggle')`
 
 Toggles an element's popover. **Returns to the caller before the popover has actually been shown or hidden** (i.e. before the `shown.bs.popover` or `hidden.bs.popover` event occurs). This is considered a "manual" triggering of the popover.
 
-```js$('#element').popover('toggle')```
+```js
+$('#element').popover('toggle')
+```
 
 #### `.popover('dispose')`
 
 Hides and destroys an element's popover. Popovers that use delegation (which are created using [the `selector` option](#options)) cannot be individually destroyed on descendant trigger elements.
 
-```js$('#element').popover('dispose')```
+```js
+$('#element').popover('dispose')
+```
 
 #### `.popover('enable')`
 
 Gives an element's popover the ability to be shown. **Popovers are enabled by default.**
 
-```js$('#element').popover('enable')```
+```js
+$('#element').popover('enable')
+```
 
 #### `.popover('disable')`
 
 Removes the ability for an element's popover to be shown. The popover will only be able to be shown if it is re-enabled.
 
-```js$('#element').popover('disable')```
+```js
+$('#element').popover('disable')
+```
 
 #### `.popover('toggleEnabled')`
 
 Toggles the ability for an element's popover to be shown or hidden.
 
-```js$('#element').popover('toggleEnabled')```
+```js
+$('#element').popover('toggleEnabled')
+```
 
 #### `.popover('update')`
 
 Updates the position of an element's popover.
 
-```js$('#element').popover('update')```
+```js
+$('#element').popover('update')
+```
 
 ### Events
 

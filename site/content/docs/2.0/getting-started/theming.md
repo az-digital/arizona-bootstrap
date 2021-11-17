@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Theming Bootstrap
-description: Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.
+description: Customize Arizona Bootstrap with our new built-in Sass variables for global style preferences for easy theming and component changes.
 group: getting-started
 toc: true
 ---
@@ -49,23 +49,27 @@ In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two
 // Custom.scss
 // Option A: Include all of Bootstrap
 
+// Include any default variable overrides here (though functions won't be available)
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Add custom code after this
+// Then add additional custom code here
 ```
 
 ```scss
 // Custom.scss
 // Option B: Include parts of Bootstrap
 
-// Required
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
-// Include custom variable default overrides here
-
-// Optional
+// 4. Include any optional Bootstrap components as you like
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
@@ -86,18 +90,17 @@ Variable overrides must come after our functions, variables, and mixins are impo
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
-// Required
 @import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
 
-// Your variable overrides
+// Default variable overrides
 $body-bg: #000;
 $body-color: #111;
 
-// Bootstrap and its default variables
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
-// Optional
+// Optional Bootstrap components here
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
@@ -211,7 +214,7 @@ In practice, you'd call the function and pass in two parameters: the name of the
 
 Additional functions could be added in the future or your own custom Sass to create level functions for additional Sass maps, or even a generic one if you wanted to be more verbose.
 
-### Color Contrast
+#### Color Contrast
 
 An additional function we include in Bootstrap is the color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
 
@@ -241,6 +244,48 @@ You can also specify a base color with our color map functions:
 }
 ```
 
+#### Escape SVG
+
+We use the `escape-svg` function to escape the `<`, `>` and `#` characters for SVG background images. These characters need to be escaped to properly render the background images in IE. When using the `escape-svg` function, data URIs must be quoted.
+
+#### Add and Subtract Functions
+
+We use the `add` and `subtract` functions to wrap the CSS `calc` function. The primary purpose of these functions is to avoid errors when a "unitless" `0` value is passed into a `calc` expression. Expressions like `calc(10px - 0)` will return an error in all browsers, despite being mathematically correct.
+
+Example where the calc is valid:
+
+```scss
+$border-radius: .25rem;
+$border-width: 1px;
+
+.element {
+  // Output calc(.25rem - 1px) is valid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output the same calc(.25rem - 1px) as above
+  border-radius: subtract($border-radius, $border-width);
+}
+```
+
+Example where the calc is invalid:
+
+```scss
+$border-radius: .25rem;
+$border-width: 0;
+
+.element {
+  // Output calc(.25rem - 0) is invalid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output .25rem
+  border-radius: subtract($border-radius, $border-width);
+}
+```
+
 ## Sass Options
 
 Customize Bootstrap 4 with our built-in custom variables file and easily toggle global CSS preferences with new `$enable-*` Sass variables. Override a variable's value and recompile with `npm run test` as needed.
@@ -262,7 +307,7 @@ You can find and customize these variables for key global options in Bootstrap's
 | `$enable-print-styles`                       | `true` (default) or `false`        | Enables styles for optimizing printing. |
 | `$enable-responsive-font-sizes`              | `true` or `false` (default)        | Enables [responsive font sizes]({{< docsref "/content/typography#responsive-font-sizes" >}}). |
 | `$enable-validation-icons`                   | `true` (default) or `false`        | Enables `background-image` icons within textual inputs and some custom forms for validation states. |
-| `$enable-deprecation-messages`               | `true` or `false` (default)        | Set to `true` to show warnings when using any of the deprecated mixins and functions that are planned to be removed in `v5`. |
+| `$enable-deprecation-messages`               | `true` (default) or `false`        | Set to `false` to hide warnings when using any of the deprecated mixins and functions that are planned to be removed in `v5`. |
 
 ## Color
 
@@ -303,7 +348,7 @@ Here's how you can use these in your Sass:
 In the future, we'll aim to provide Sass maps and variables for shades of each color as we've done with the grayscale colors below.
 {{< /callout >}}
 
-### Theme colors
+### Theme Colors
 
 We use a subset of all colors to create a smaller color palette for generating color schemes, also available as Sass variables and a Sass map in Bootstrap's `scss/_variables.scss` file.
 
@@ -311,7 +356,10 @@ We use a subset of all colors to create a smaller color palette for generating c
   {{< theme-colors.inline >}}
   {{- range (index $.Site.Data "theme-colors") }}
     <div class="col-md-4">
-      <div class="p-3 mb-3 swatch-{{ .name }}">${{ .name | title }}</div>
+      <div class="p-3 mb-3 text-monospace bg-{{ .name }} {{ if (or (eq .name "light") (eq .name "warning")) }}text-dark{{ else }}text-white{{ end }}">
+        <strong class="d-block">${{ .name }}</strong>
+        <small>{{ .hex }}</small>
+      </div>
     </div>
   {{ end -}}
   {{< /theme-colors.inline >}}
@@ -325,7 +373,10 @@ An expansive set of gray variables and a Sass map in `scss/_variables.scss` for 
   <div class="col-md-4">
     {{< theme-colors.inline >}}
     {{- range $.Site.Data.grays }}
-      <div class="p-3 swatch-{{ .name }}">{{ .name | title }}</div>
+      <div class="p-3 text-monospace swatch-{{ .name }}">
+        <strong class="d-block">$gray-{{ .name }}</strong>
+        <small>{{ .hex }}</small>
+      </div>
     {{ end -}}
   {{< /theme-colors.inline >}}
   </div>
@@ -432,7 +483,7 @@ a {
 
 ### Breakpoint Variables
 
-While we originally included breakpoints in our CSS variables (e.g., `--breakpoint-md`), **these are not supported in media queries**, but they can still be used _within_ rulesets in media queries. These breakpoint variables remain in the compiled CSS for backward compatibility given they can be utilized by JavaScript. [Learn more in the spec](https://www.w3.org/TR/css-variables-1#using-variables).
+While we originally included breakpoints in our CSS variables (e.g., `--breakpoint-md`), **these are not supported in media queries**, but they can still be used _within_ rulesets in media queries. These breakpoint variables remain in the compiled CSS for backward compatibility given they can be utilized by JavaScript. [Learn more in the spec](https://www.w3.org/TR/css-variables-1/#using-variables).
 
 Here's an example of **what's not supported:**
 

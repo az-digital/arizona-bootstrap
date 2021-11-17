@@ -192,7 +192,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 {{< example >}}
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <button class="btn btn-outline-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <button class="btn btn-outline-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Dropdown</button>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Action</a>
       <a class="dropdown-item" href="#">Another action</a>
@@ -207,7 +207,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 <div class="input-group">
   <input type="text" class="form-control" aria-label="Text input with dropdown button">
   <div class="input-group-append">
-    <button class="btn btn-outline-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <button class="btn btn-outline-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Dropdown</button>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Action</a>
       <a class="dropdown-item" href="#">Another action</a>
@@ -225,7 +225,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <button type="button" class="btn btn-outline-blue">Action</button>
-    <button type="button" class="btn btn-outline-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-outline-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
       <span class="sr-only">Toggle Dropdown</span>
     </button>
     <div class="dropdown-menu">
@@ -243,7 +243,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
   <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
   <div class="input-group-append">
     <button type="button" class="btn btn-outline-blue">Action</button>
-    <button type="button" class="btn btn-outline-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-outline-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
       <span class="sr-only">Toggle Dropdown</span>
     </button>
     <div class="dropdown-menu">
@@ -315,6 +315,10 @@ Input groups include support for custom selects and custom file inputs. Browser 
 
 ### Custom File Input
 
+{{< callout info >}}
+This example uses the [custom file browser]({{< docsref "/components/forms#file-browser" >}}) component, which relies on the separate [bs-custom-file-input](https://www.npmjs.com/package/bs-custom-file-input) plugin.
+{{< /callout >}}
+
 {{< example >}}
 <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -359,6 +363,15 @@ Input groups include support for custom selects and custom file inputs. Browser 
 
 ## Accessibility
 
-Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.
+Ensure that all form controls have an appropriate accessible name so that their purpose can be conveyed to users of assistive technologies. The simplest way to achieve this is to use a `<label>` element, or—in the case of buttons—to include sufficiently descriptive text as part of the `<button>...</button>` content.
 
-The exact technique to be used (`<label>` elements hidden using the `.sr-only` class, or use of the `aria-label` and `aria-labelledby` attributes, possibly in combination with `aria-describedby`) and what additional information will need to be conveyed will vary depending on the exact type of interface widget you're implementing. The examples in this section provide a few suggested, case-specific approaches.
+For situations where it's not possible to include a visible `<label>` or appropriate text content, there are alternative ways of still providing an accessible name, such as:
+
+- `<label>` elements hidden using the `.sr-only` class
+- Pointing to an existing element that can act as a label using `aria-labelledby`
+- Providing a `title` attribute
+- Explicitly setting the accessible name on an element using `aria-label`
+
+If none of these are present, assistive technologies may resort to using the `placeholder` attribute as a fallback for the accessible name on `<input>` and `<textarea>` elements. The examples in this section provide a few suggested, case-specific approaches.
+
+While using visually hidden content (`.sr-only`, `aria-label`, and even `placeholder` content, which disappears once a form field has content) will benefit assistive technology users, a lack of visible label text may still be problematic for certain users. Some form of visible label is generally the best approach, both for accessibility and usability.
