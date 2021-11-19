@@ -26,7 +26,7 @@ Skip the download with the UA Digital CDN to deliver cached version of {{< ourna
 <script src="{{< param "cdn.js" >}}" crossorigin="anonymous"></script>
 ```
 
-If you're using our compiled JavaScript, don't forget to include CDN versions of jQuery and Popper.js before it.
+If you're using our compiled JavaScript, don't forget to include CDN versions of jQuery and Popper before it.
 
 ```html
 <script src="{{< param "cdn.jquery" >}}" integrity="{{< param "cdn.jquery_hash" >}}" crossorigin="anonymous"></script>

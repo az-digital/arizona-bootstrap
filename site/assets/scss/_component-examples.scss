@@ -37,6 +37,15 @@
   border: 1px solid rgba($bd-purple, .15);
 }
 
+.bd-example-responsive-containers {
+  [class^="container"] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+}
+
 // Grid mixins
 .example-container {
   width: 800px;
@@ -73,51 +82,13 @@
 
 
 //
-// Container illustrations
-//
-
-.bd-example-container {
-  min-width: 16rem;
-  max-width: 25rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.bd-example-container-header {
-  height: 3rem;
-  margin-bottom: .5rem;
-  background-color: lighten($blue, 50%);
-  @include border-radius();
-}
-
-.bd-example-container-sidebar {
-  float: right;
-  width: 4rem;
-  height: 8rem;
-  background-color: lighten($blue, 25%);
-  @include border-radius();
-}
-
-.bd-example-container-body {
-  height: 8rem;
-  margin-right: 4.5rem;
-  background-color: lighten($bd-purple, 25%);
-  @include border-radius();
-}
-
-.bd-example-container-fluid {
-  max-width: none;
-}
-
-
-//
 // Docs examples
 //
 
 .bd-example {
   position: relative;
   padding: 1rem;
-  margin: 1rem (-$grid-gutter-width / 2) 0;
+  margin: 1rem (-$grid-gutter-width * .5) 0;
   border: solid $gray-100;
   border-width: .2rem 0 0;
   @include clearfix();
@@ -136,15 +107,6 @@
 
   + p {
     margin-top: 2rem;
-  }
-
-  .pos-f-t {
-    position: relative;
-    margin: -1rem;
-
-    @include media-breakpoint-up(sm) {
-      margin: -1.5rem;
-    }
   }
 
   .custom-file-input:lang(es) ~ .custom-file-label::after {
@@ -388,8 +350,8 @@
 }
 
 .bd-content .highlight {
-  margin-right: (-$grid-gutter-width / 2);
-  margin-left: (-$grid-gutter-width / 2);
+  margin-right: (-$grid-gutter-width * .5);
+  margin-left: (-$grid-gutter-width * .5);
 
   @include media-breakpoint-up(sm) {
     margin-right: 0;
@@ -400,8 +362,8 @@
 .highlight {
   pre {
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: .65rem;
+    margin-bottom: .65rem;
     background-color: transparent;
     border: 0;
   }

@@ -60,7 +60,7 @@ Learn more about this in our [`z-index` layout page]({{< docsref "/layout/overvi
 
 Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.
 
-This principle is our first-class JavaScript API is `data` attributes. You don't need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML. Read more about this in [our JavaScript overview page]({{< docsref "/getting-started/javascript#data-attributes" >}}).
+This principle is our first-class JavaScript API using `data` attributes. You don't need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML. Read more about this in [our JavaScript overview page]({{< docsref "/getting-started/javascript#data-attributes" >}}).
 
 Lastly, our styles build on the fundamental behaviors of common web elements. Whenever possible, we prefer to use what the browser provides. For example, you can put a `.btn` class on nearly any element, but most elements don't provide any semantic value or browser functionality. So instead, we use `<button>`s and `<a>`s.
 
@@ -75,3 +75,11 @@ Specifically regarding custom CSS, utilities can help combat increasing file siz
 ## Flexible HTML
 
 While not always possible, we strive to avoid being overly dogmatic in our HTML requirements for components. Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors (`>`). This gives you more flexibility in your implementation and helps keep our CSS simpler and less specific.
+
+## Code conventions
+
+[Code Guide](https://codeguide.co/) (from Bootstrap co-creator, @mdo) documents how we write our HTML and CSS across Bootstrap. It specifices guidelines for general formatting, common sense defaults, property and attribute orders, and more.
+
+We use [Stylelint](https://stylelint.io/) to enforce these standards and more in our Sass/CSS. [Our custom Stylelint config](https://github.com/twbs/stylelint-config-twbs-bootstrap) is open source and available for others to use and extend.
+
+We use [vnu-jar](https://www.npmjs.com/package/vnu-jar) to enforce standard and semantic HTML, as well as detecting common errors.

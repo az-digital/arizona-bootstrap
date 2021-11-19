@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the tooltip plugin:
 
-- Tooltips rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper.js in order for tooltips to work!
+- Tooltips rely on the 3rd party library [Popper](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper in order for tooltips to work!
 - If you're building our JavaScript from source, it [requires `util.js`]({{< docsref "/getting-started/javascript#util" >}}).
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
@@ -199,7 +199,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>selector</td>
       <td>string | false</td>
       <td>false</td>
-      <td>If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used to also apply tooltips to dynamically added DOM elements (<code>jQuery.on</code> support). See <a href="{{< param "repo" >}}/issues/4215">this</a> and <a href="https://codepen.io/Johann-S/pen/djJYPb">an informative example</a>.</td>
+      <td>If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used to also apply tooltips to dynamically added DOM elements (<code>jQuery.on</code> support). See <a href="{{< param repo >}}/issues/4215">this</a> and <a href="https://codepen.io/team/bootstrap/pen/qBNGbYK">an informative example</a>.</td>
     </tr>
     <tr>
       <td>template</td>
@@ -238,7 +238,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>
         <p>Offset of the tooltip relative to its target.</p>
         <p>When a function is used to determine the offset, it is called with an object containing the offset data as its first argument. The function must return an object with the same structure. The triggering element DOM node is passed as the second argument.</p>
-        <p>For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">offset docs</a>.</p>
+        <p>For more information refer to Popper's <a href="https://popper.js.org/docs/v1/#modifiers..offset.offset">offset docs</a>.</p>
       </td>
     </tr>
     <tr>
@@ -246,24 +246,33 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>string | array</td>
       <td>'flip'</td>
       <td>Allow to specify which position Popper will use on fallback. For more information refer to
-      Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.behavior">behavior docs</a></td>
+      Popper's <a href="https://popper.js.org/docs/v1/#modifiers..flip.behavior">behavior docs</a></td>
+    </tr>
+    <tr>
+      <td>customClass</td>
+      <td>string | function</td>
+      <td>''</td>
+      <td>
+        <p>Add classes to the tooltip when it is shown. Note that these classes will be added in addition to any classes specified in the template. To add multiple classes, separate them with spaces: <code>'a b'</code>.</p>
+        <p>You can also pass a function that should return a single string containing additional class names.</p>
+      </td>
     </tr>
     <tr>
       <td>boundary</td>
       <td>string | element</td>
       <td>'scrollParent'</td>
-      <td>Overflow constraint boundary of the tooltip. Accepts the values of <code>'viewport'</code>, <code>'window'</code>, <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.</td>
+      <td>Overflow constraint boundary of the tooltip. Accepts the values of <code>'viewport'</code>, <code>'window'</code>, <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper's <a href="https://popper.js.org/docs/v1/#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.</td>
     </tr>
     <tr>
       <td>sanitize</td>
       <td>boolean</td>
       <td>true</td>
-      <td>Enable or disable the sanitization. If activated <code>'template'</code> and <code>'title'</code> options will be sanitized.</td>
+      <td>Enable or disable the sanitization. If activated <code>'template'</code> and <code>'title'</code> options will be sanitized. See the <a href="{{< docsref "/getting-started/javascript#sanitizer" >}}">sanitizer section in our JavaScript documentation</a>.</td>
     </tr>
     <tr>
       <td>whiteList</td>
       <td>object</td>
-      <td><a href="{{< docsref `/getting-started/javascript#sanitizer` >}}">Default value</a></td>
+      <td><a href="{{< docsref "/getting-started/javascript#sanitizer" >}}">Default value</a></td>
       <td>Object which contains allowed attributes and tags</td>
     </tr>
     <tr>
@@ -271,6 +280,12 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>null | function</td>
       <td>null</td>
       <td>Here you can supply your own sanitize function. This can be useful if you prefer to use a dedicated library to perform sanitization.</td>
+    </tr>
+    <tr>
+      <td>popperConfig</td>
+      <td>null | object</td>
+      <td>null</td>
+      <td>To change Bootstrap's default Popper config, see <a href="https://popper.js.org/docs/v1/#Popper.Defaults">Popper's configuration</a></td>
     </tr>
   </tbody>
 </table>
@@ -295,49 +310,65 @@ Attaches a tooltip handler to an element collection.
 
 Reveals an element's tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed.
 
-```js$('#element').tooltip('show')```
+```js
+$('#element').tooltip('show')
+```
 
 #### `.tooltip('hide')`
 
 Hides an element's tooltip. **Returns to the caller before the tooltip has actually been hidden** (i.e. before the `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-```js$('#element').tooltip('hide')```
+```js
+$('#element').tooltip('hide')
+```
 
 #### `.tooltip('toggle')`
 
 Toggles an element's tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.bs.tooltip` or `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-```js$('#element').tooltip('toggle')```
+```js
+$('#element').tooltip('toggle')
+```
 
 #### `.tooltip('dispose')`
 
 Hides and destroys an element's tooltip. Tooltips that use delegation (which are created using [the `selector` option](#options)) cannot be individually destroyed on descendant trigger elements.
 
-```js$('#element').tooltip('dispose')```
+```js
+$('#element').tooltip('dispose')
+```
 
 #### `.tooltip('enable')`
 
 Gives an element's tooltip the ability to be shown. **Tooltips are enabled by default.**
 
-```js$('#element').tooltip('enable')```
+```js
+$('#element').tooltip('enable')
+```
 
 #### `.tooltip('disable')`
 
 Removes the ability for an element's tooltip to be shown. The tooltip will only be able to be shown if it is re-enabled.
 
-```js$('#element').tooltip('disable')```
+```js
+$('#element').tooltip('disable')
+```
 
 #### `.tooltip('toggleEnabled')`
 
 Toggles the ability for an element's tooltip to be shown or hidden.
 
-```js$('#element').tooltip('toggleEnabled')```
+```js
+$('#element').tooltip('toggleEnabled')
+```
 
 #### `.tooltip('update')`
 
 Updates the position of an element's tooltip.
 
-```js$('#element').tooltip('update')```
+```js
+$('#element').tooltip('update')
+```
 
 ### Events
 

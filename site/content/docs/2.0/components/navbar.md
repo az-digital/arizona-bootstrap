@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Navbar
-description: Documentation and examples for Bootstrap's powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.
+description: Documentation and examples for Bootstrap's powerful, responsive navigation header, the navbar. Includes support for branding, navigation, collapse plugin, and more.
 group: components
 toc: true
 ---
@@ -50,7 +50,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
           Dropdown
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -61,7 +61,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
 </nav>
@@ -71,7 +71,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -83,7 +83,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
           Dropdown
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -94,7 +94,7 @@ The use of a `button` element is recommended for the `.dropdown-toggle` in your 
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -117,7 +117,7 @@ Active states—with `.active`—to indicate the current page can be applied dir
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -131,7 +131,7 @@ Active states—with `.active`—to indicate the current page can be applied dir
         <a class="nav-link" href="#">Pricing</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
   </div>
@@ -144,26 +144,26 @@ And because we use classes for our navs, you can avoid the list-based approach e
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Features</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a class="nav-item nav-link disabled">Disabled</a>
     </div>
   </div>
 </nav>
 {{< /example >}}
 
-You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrapping element for positioning, so be sure to use separate and nested elements for `.nav-item` and `.nav-link` as shown below.
+You can also use dropdowns in your navbar. Dropdown menus require a wrapping element for positioning, so be sure to use separate and nested elements for `.nav-item` and `.nav-link` as shown below.
 
 {{< example >}}
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
@@ -177,7 +177,7 @@ You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrap
         <a class="nav-link" href="#">Pricing</a>
       </li>
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
           Dropdown link
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -204,7 +204,7 @@ Place various form controls and components within a navbar with `.form-inline`.
 </nav>
 {{< /example >}}
 
-Immediate children elements in `.navbar` use flex layout and will default to `justify-content: between`. Use additional [flex utilities]({{< docsref "/utilities/flex" >}}) as needed to adjust this behavior.
+Immediate child elements in `.navbar` use flex layout and will default to `justify-content: between`. Use additional [flex utilities]({{< docsref "/utilities/flex" >}}) as needed to adjust this behavior.
 
 {{< example >}}
 <nav class="navbar navbar-light">
@@ -260,7 +260,7 @@ Mix and match with other components and utilities as needed.
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Navbar w/ text</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="material-icons-sharp"> menu </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
@@ -284,7 +284,7 @@ Mix and match with other components and utilities as needed.
 
 ## Containers
 
-Although it's not required, you can wrap a navbar in a `.container` to center it on a page or add one within to only center the contents of a [fixed or static top navbar](#placement).
+Although it's not required, you can wrap a navbar in a `.container` to center it on a page. Or you can add a container inside the `.navbar` to only center the contents of a [fixed or static top navbar](#placement).
 
 {{< example >}}
 <div class="container">
@@ -308,7 +308,7 @@ When the container is within your navbar, its horizontal padding is removed at b
 
 Use our [position utilities]({{< docsref "/utilities/position" >}}) to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top (scrolls with the page until it reaches the top, then stays there). Fixed navbars use `position: fixed`, meaning they're pulled from the normal flow of the DOM and may require custom CSS (e.g., `padding-top` on the `<body>`) to prevent overlap with other elements.
 
-Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully supported in every browser](https://caniuse.com#feat=css-sticky)**.
+Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully supported in every browser](https://caniuse.com/css-sticky)**.
 
 {{< example >}}
 <nav class="navbar navbar-light">
@@ -334,12 +334,56 @@ Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully suppo
 </nav>
 {{< /example >}}
 
+## Scrolling
+
+Add `.navbar-nav-scroll` to a `.navbar-collapse` (or other navbar sub-component) to enable vertical scrolling within the toggleable contents of a collapsed navbar. By default, scrolling kicks in at `75vh` (or 75% of the viewport height), but you can override that with inline or custom styles. At larger viewports when the navbar is expanded, content will appear as it does in a default navbar.
+
+Please note that this behavior comes with a potential drawback of `overflow`—when setting `overflow-y: auto` (required to scroll the content here), `overflow-x` is the equivalent of `auto`, which will crop some horizontal content.
+
+Here's an example navbar using `.navbar-nav-scroll` with `style="max-height: 100px;"`, with some extra margin utilities for optimum spacing.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Navbar scroll</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="material-icons-sharp"> menu </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarScroll">
+    <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Link
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Link</a>
+      </li>
+    </ul>
+    <form class="d-flex">
+      <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-blue" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+{{< /example >}}
+
 ## Responsive Behaviors
 
 Navbars can utilize `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl}` classes to change when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.
 
 For navbars that never collapse, add the `.navbar-expand` class on the navbar. For navbars that always collapse, don't add any `.navbar-expand` class.
-
 
 ### Toggler
 
@@ -362,7 +406,7 @@ With no `.navbar-brand` shown in lowest breakpoint:
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -391,7 +435,7 @@ With a brand name shown on the left and toggler on the right:
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -420,7 +464,7 @@ With a toggler on the left and brand name on the right:
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -433,10 +477,10 @@ With a toggler on the left and brand name on the right:
 
 ### External Content
 
-Sometimes you want to use the collapse plugin to trigger hidden content elsewhere on the page. Because our plugin works on the `id` and `data-target` matching, that's easily done!
+Sometimes you want to use the collapse plugin to trigger a container element for content that structurally sits outside of the `.navbar` . Because our plugin works on the `id` and `data-target` matching, that's easily done!
 
 {{< example >}}
-<div class="pos-f-t">
+<div class="fixed-top">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h5 class="text-white h4">Collapsed content</h5>
@@ -450,3 +494,5 @@ Sometimes you want to use the collapse plugin to trigger hidden content elsewher
   </nav>
 </div>
 {{< /example >}}
+
+When you do this, we recommend including additional JavaScript to move the focus programmatically to the container when it is opened. Otherwise, keyboard users and users of assistive technologies will likely have a hard time finding the newly revealed content - particularly if the container that was opened comes *before* the toggler in the document's structure. We also recommend making sure that the toggler has the `aria-controls` attribute, pointing to the `id` of the content container. In theory, this allows assistive technology users to jump directly from the toggler to the container it controls–but support for this is currently quite patchy.

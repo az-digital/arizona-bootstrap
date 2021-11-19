@@ -6,7 +6,7 @@
 
     {{ highlight (printf ("npm install %s") .Site.Params.repo) "sh" "" }}
 
-    <hr class="half-rule">
+    <hr />
     <a class="btn btn-outline-blue" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Read installation docs</a>
   </div>
 
@@ -18,12 +18,12 @@
 <h5 class="bd-content-title">CSS only</h5>
 {{ highlight (printf (`<link rel="stylesheet" href="%s" crossorigin="anonymous">`) .Site.Params.cdn.css ) "html" "" }}
 
-<h5 class="bd-content-title">JS, Popper.js, and jQuery</h5>
+<h5 class="bd-content-title">JS, Popper, and jQuery</h5>
 {{ highlight (printf (`<script src="%s" integrity=%q crossorigin="anonymous"></script>
 <script src="%s" integrity=%q crossorigin="anonymous"></script>
 <script src="%s" crossorigin="anonymous"></script>
 `) .Site.Params.cdn.jquery (.Site.Params.cdn.jquery_hash | safeHTMLAttr) .Site.Params.cdn.popper (.Site.Params.cdn.popper_hash | safeHTMLAttr) .Site.Params.cdn.js) "html" "" }}
-    <hr class="half-rule">
+    <hr />
     <a class="btn btn-outline-blue" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/layout/overview`) | relURL -}}">Explore the docs</a>
   </div>
 
@@ -33,7 +33,7 @@
     <p>
       {{ .Site.Title }} is included in the Arizona Quickstart web content management system.
     </p>
-    <hr class="half-rule">
+    <hr />
     <a href="{{ .Site.Params.az_quickstart }}" class="btn btn-outline-blue">Try Arizona Quickstart</a>
   </div>
 </div>

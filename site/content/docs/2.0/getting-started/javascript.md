@@ -16,7 +16,7 @@ If you use a bundler (Webpack, Rollup...), you can use `/js/dist/*.js` files whi
 
 Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that **all plugins depend on jQuery** (this means jQuery must be included **before** the plugin files). [Consult our `package.json`]({{< param "repo" >}}/blob/v{{< param "current_version" >}}/package.json) to see which versions of jQuery are supported.
 
-Our dropdowns, popovers and tooltips also depend on [Popper.js](https://popper.js.org/).
+Our dropdowns, popovers and tooltips also depend on [Popper](https://popper.js.org/).
 
 ## Data Attributes
 
@@ -48,9 +48,9 @@ If you use special selectors, for example: `collapse:Example` be sure to escape 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality. This provides the ability to stop the execution of an action before it starts. Returning false from an event handler will also automatically call `preventDefault()`.
 
 ```js
-$('#myModal').on('show.bs.modal', function (e) {
+$('#myModal').on('show.bs.modal', function (event) {
   if (!data) {
-    return e.preventDefault() // stops modal from being shown
+    return event.preventDefault() // stops modal from being shown
   }
 })
 ```
@@ -80,7 +80,7 @@ All programmatic API methods are **asynchronous** and return to the caller once 
 In order to execute an action once the transition is complete, you can listen to the corresponding event.
 
 ```js
-$('#myCollapse').on('shown.bs.collapse', function (e) {
+$('#myCollapse').on('shown.bs.collapse', function (event) {
   // Action to execute once the collapsible area is expanded
 })
 ```
@@ -88,7 +88,7 @@ $('#myCollapse').on('shown.bs.collapse', function (e) {
 In addition a method call on a **transitioning component will be ignored**.
 
 ```js
-$('#myCarousel').on('slid.bs.carousel', function (e) {
+$('#myCarousel').on('slid.bs.carousel', function (event) {
   $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
 })
 

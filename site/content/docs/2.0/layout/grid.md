@@ -10,7 +10,7 @@ toc: true
 
 {{< ourname >}}'s grid system uses a series of containers, rows, and columns to layout and align content. It's built with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
 
-**New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox#flexbox-background) for background, terminology, guidelines, and code snippets.
+**New to or unfamiliar with flexbox?** [Read this CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background) for background, terminology, guidelines, and code snippets.
 
 {{< example class="bd-example-row" >}}
 <div class="container">
@@ -308,6 +308,81 @@ Here's an example of customizing the {{< ourname >}} grid at the large (`lg`) br
 </div>
 {{< /example >}}
 
+### Row columns
+
+Use the responsive `.row-cols-*` classes to quickly set the number of columns that best render your content and layout. Whereas normal `.col-*` classes apply to the individual columns (e.g., `.col-md-4`), the row columns classes are set on the parent `.row` as a shortcut.
+
+Use these row columns classes to quickly create basic grid layouts or to control your card layouts.
+
+{{< example class="bd-example-row" >}}
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example class="bd-example-row" >}}
+<div class="container">
+  <div class="row row-cols-3">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example class="bd-example-row" >}}
+<div class="container">
+  <div class="row row-cols-4">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example class="bd-example-row" >}}
+<div class="container">
+  <div class="row row-cols-4">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col-6">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+{{< /example >}}
+
+{{< example class="bd-example-row" >}}
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+    <div class="col">Column</div>
+  </div>
+</div>
+{{< /example >}}
+
+You can also use the accompanying Sass mixin, `row-cols()`:
+
+```scss
+.element {
+  // Three columns to start
+  @include row-cols(3);
+
+  // Five columns from medium breakpoint up
+  @include media-breakpoint-up(md) {
+    @include row-cols(5);
+  }
+}
+```
+
 ## Alignment
 
 Use flexbox alignment utilities to vertically and horizontally align columns. **Internet Explorer 10-11 do not support vertical alignment of flex items when the flex container has a `min-height` as shown below.** [See Flexbugs #3 for more details.](https://github.com/philipwalton/flexbugs#flexbug-3)
@@ -505,13 +580,13 @@ Use `.order-` classes for controlling the **visual order** of your content. Thes
 <div class="container">
   <div class="row">
     <div class="col">
-      First, but unordered
+      First in DOM, no order applied
     </div>
     <div class="col order-12">
-      Second, but last
+      Second in DOM, with a larger order
     </div>
     <div class="col order-1">
-      Third, but first
+      Third in DOM, with an order of 1
     </div>
   </div>
 </div>
@@ -523,13 +598,13 @@ There are also responsive `.order-first` and `.order-last` classes that change t
 <div class="container">
   <div class="row">
     <div class="col order-last">
-      First, but last
+      First in DOM, ordered last
     </div>
     <div class="col">
-      Second, but unordered
+      Second in DOM, unordered
     </div>
     <div class="col order-first">
-      Third, but first
+      Third in DOM, ordered first
     </div>
   </div>
 </div>

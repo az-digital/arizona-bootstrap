@@ -24,7 +24,7 @@ Lastly, if you're building our JavaScript from source, it [requires `util.js`]({
 
 Carousels don't automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content. While carousels support previous/next controls and indicators, they're not explicitly required. Add and customize as you see fit.
 
-**The `.active` class needs to be added to one of the slides** otherwise the carousel will not be visible. Also be sure to set a unique id on the `.carousel` for optional controls, especially if you're using multiple carousels on a single page. Control and indicator elements must have a `data-target` attribute (or `href` for links) that matches the id of the `.carousel` element.
+**The `.active` class needs to be added to one of the slides** otherwise the carousel will not be visible. Also be sure to set a unique `id` on the `.carousel` for optional controls, especially if you're using multiple carousels on a single page. Control and indicator elements must have a `data-target` attribute (or `href` for links) that matches the `id` of the `.carousel` element.
 
 ### Slides Only
 
@@ -48,7 +48,7 @@ Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-
 
 ### With Controls
 
-Adding in the previous and next controls:
+Adding in the previous and next controls. We recommend using `<button>` elements, but you can also use `<a>` elements with `role="button"`.
 
 {{< example >}}
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -63,14 +63,14 @@ Adding in the previous and next controls:
       {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </button>
 </div>
 {{< /example >}}
 
@@ -96,14 +96,14 @@ You can also add the indicators to the carousel, alongside the controls, too.
       {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </button>
 </div>
 {{< /example >}}
 
@@ -142,14 +142,14 @@ Add captions to your slides easily with the `.carousel-caption` element within a
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a>
+    </button>
   </div>
 </div>
 {{< /example >}}
@@ -171,14 +171,14 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
       {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </button>
 </div>
 {{< /example >}}
 
@@ -199,17 +199,44 @@ Add `data-interval=""` to a `.carousel-item` to change the amount of time to del
       {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleInterval" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </button>
 </div>
 {{< /example >}}
 
+### Disable touch swiping
+
+Carousels support swiping left/right on touchscreen devices to move between slides. This can be disabled using the `data-touch` attribute. The example below also does not include the `data-ride` attribute and has `data-interval="false"` so it doesn't autoplay.
+
+{{< example >}}
+<div id="carouselExampleControlsNoTouching" class="carousel slide" data-touch="false" data-interval="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#555" background="#777" text="First slide" >}}
+    </div>
+    <div class="carousel-item">
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#444" background="#666" text="Second slide" >}}
+    </div>
+    <div class="carousel-item">
+      {{< placeholder width="800" height="400" class="bd-placeholder-img-lg d-block w-100" color="#333" background="#555" text="Third slide" >}}
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleControlsNoTouching" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleControlsNoTouching" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
+{{< /example >}}
 
 ## Usage
 
@@ -245,7 +272,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
       <td>interval</td>
       <td>number</td>
       <td>5000</td>
-      <td>The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.</td>
+      <td>The amount of time to delay between automatically cycling an item. If <code>false</code>, carousel will not automatically cycle.</td>
     </tr>
     <tr>
       <td>keyboard</td>
@@ -256,15 +283,15 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
     <tr>
       <td>pause</td>
       <td>string | boolean</td>
-      <td>"hover"</td>
-      <td><p>If set to <code>"hover"</code>, pauses the cycling of the carousel on <code>mouseenter</code> and resumes the cycling of the carousel on <code>mouseleave</code>. If set to <code>false</code>, hovering over the carousel won't pause it.</p>
-      <p>On touch-enabled devices, when set to <code>"hover"</code>, cycling will pause on <code>touchend</code> (once the user finished interacting with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above mouse behavior.</p></td>
+      <td>'hover'</td>
+      <td><p>If set to <code>'hover'</code>, pauses the cycling of the carousel on <code>mouseenter</code> and resumes the cycling of the carousel on <code>mouseleave</code>. If set to <code>false</code>, hovering over the carousel won't pause it.</p>
+      <p>On touch-enabled devices, when set to <code>'hover'</code>, cycling will pause on <code>touchend</code> (once the user finished interacting with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above mouse behavior.</p></td>
     </tr>
     <tr>
       <td>ride</td>
       <td>string</td>
       <td>false</td>
-      <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.</td>
+      <td>Autoplays the carousel after the user manually cycles the first item. If set to <code>'carousel'</code>, autoplays the carousel on load.</td>
     </tr>
     <tr>
       <td>wrap</td>
@@ -320,6 +347,14 @@ Cycles to the next item. **Returns to the caller before the next item has been s
 #### `.carousel('dispose')`
 
 Destroys an element's carousel.
+
+#### `.carousel('nextWhenVisible')`
+
+Don't cycle the carousel to next when the page isn't visible or the carousel or its parent isn't visible. **Returns to the caller before the next item has been shown** (i.e. before the `slid.bs.carousel` event occurs).
+
+#### `.carousel('to')`
+
+Cycles the carousel to a particular frame (0 based, similar to an array). **Returns to the caller before the next item has been shown** (i.e. before the `slid.bs.carousel` event occurs).
 
 ### Events
 

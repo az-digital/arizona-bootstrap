@@ -135,7 +135,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
   <button type="button" class="btn btn-blue">2</button>
 
   <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="btnGroupDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
       Dropdown
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -167,7 +167,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     <button type="button" class="btn btn-blue">Button</button>
     <button type="button" class="btn btn-blue">Button</button>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop1" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
@@ -178,7 +178,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     <button type="button" class="btn btn-blue">Button</button>
     <button type="button" class="btn btn-blue">Button</button>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop2" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop2" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop2">
@@ -187,7 +187,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop3" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop3" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop3">
@@ -196,7 +196,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button id="btnGroupVerticalDrop4" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="btnGroupVerticalDrop4" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Dropdown
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop4">
@@ -221,7 +221,7 @@ Add the `.btn-group-block` class to your `.btn-group-vertical` to make all butto
 <div class="btn-group-vertical btn-group-block" role="group" aria-label="Block button group" style="max-width: 500px;">
   <button type="button" class="btn btn-red">Button</button>
   <div class="btn-group" role="group">
-    <button id="btnGroupVerticalDropBlock" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+    <button id="btnGroupVerticalDropBlock" type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDropBlock">
       <a class="dropdown-item" href="#">Dropdown link</a>
