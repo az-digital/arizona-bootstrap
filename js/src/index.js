@@ -1,17 +1,3 @@
-import Alert from '../../node_modules/bootstrap/js/src/alert.js'
-import Button from '../../node_modules/bootstrap/js/src/button.js'
-import Carousel from '../../node_modules/bootstrap/js/src/carousel.js'
-import Collapse from '../../node_modules/bootstrap/js/src/collapse.js'
-import Dropdown from '../../node_modules/bootstrap/js/src/dropdown.js'
-import Modal from '../../node_modules/bootstrap/js/src/modal.js'
-import Popover from '../../node_modules/bootstrap/js/src/popover.js'
-import Scrollspy from '../../node_modules/bootstrap/js/src/scrollspy.js'
-import Tab from '../../node_modules/bootstrap/js/src/tab.js'
-import Toast from '../../node_modules/bootstrap/js/src/toast.js'
-import Tooltip from '../../node_modules/bootstrap/js/src/tooltip.js'
-import Util from '../../node_modules/bootstrap/js/src/util.js'
-import Offcanvasmenu from './offcanvasmenu'
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.6.0): index.js
@@ -19,18 +5,16 @@ import Offcanvasmenu from './offcanvasmenu'
  * --------------------------------------------------------------------------
  */
 
-export {
-  Util,
-  Alert,
-  Button,
-  Carousel,
-  Collapse,
-  Dropdown,
-  Modal,
-  Popover,
-  Scrollspy,
-  Tab,
-  Toast,
-  Tooltip,
-  Offcanvasmenu
-}
+export { default as Alert } from '../../node_modules/bootstrap/js/src/alert.js'
+export { default as Button } from '../../node_modules/bootstrap/js/src/button.js'
+export { default as Carousel } from '../../node_modules/bootstrap/js/src/carousel.js'
+export { default as Collapse } from '../../node_modules/bootstrap/js/src/collapse.js'
+export { default as Dropdown } from '../../node_modules/bootstrap/js/src/dropdown.js'
+export { default as Modal } from '../../node_modules/bootstrap/js/src/modal.js'
+export { default as Popover } from '../../node_modules/bootstrap/js/src/popover.js'
+export { default as Scrollspy } from '../../node_modules/bootstrap/js/src/scrollspy.js'
+export { default as Tab } from '../../node_modules/bootstrap/js/src/tab.js'
+export { default as Toast } from '../../node_modules/bootstrap/js/src/toast.js'
+export { default as Tooltip } from '../../node_modules/bootstrap/js/src/tooltip.js'
+export { default as Util } from '../../node_modules/bootstrap/js/src/util.js'
+export { default as Offcanvasmenu } from './offcanvasmenu'
