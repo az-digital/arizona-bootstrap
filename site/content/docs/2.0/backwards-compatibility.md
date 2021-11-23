@@ -61,7 +61,7 @@ The classes `.btn-default` and `.btn-primary` available in UA Bootstrap have bee
 
 #### Hollow Buttons
 
-Hollow buttons now use the `.btn-outline-*` class. These buttons are included with backwards compatibility and can be extended using the [available outline classes]({{< docsref "/components/buttons#outline-buttons" >}}).
+Hollow buttons now use the `.btn-outline-*` class. These buttons are included with backwards compatibility and can be extended using the [available outline classes]({{< docsref "/components/buttons#outline-buttons" >}}). The `.btn-hollow` class (in practice identical to `.btn-hollow-default`) is not backwards compatible, needing replacement by `.btn-outline-red`.
 
 The class `.btn-hollow-reverse` is included with backwards compatibility and can be extended using the `.btn-outline-white` class.
 
