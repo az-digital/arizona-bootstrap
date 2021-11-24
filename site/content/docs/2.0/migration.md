@@ -98,7 +98,9 @@ New to Bootstrap 4 is the [Reboot]({{< docsref "/content/reboot" >}}), a new sty
 
 ### Buttons
 
-- Renamed `.btn-default` to `.btn-secondary`.
+- Replaced `.btn-default` by `.btn-red`, and `.btn-primary` by `.btn-blue`.
+- Replaced `.btn-hollow-*` by `.btn-outline-*` classes.
+- Dropped the `.btn-hollow` class (substitute `.btn-outline-red`).
 - Dropped the `.btn-xs` class entirely as `.btn-sm` is proportionally much smaller than v3's.
 - The [stateful button](http://uadigital.arizona.edu/ua-bootstrap/javascript#buttons-stateful) feature of the `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
   - Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in v4.
