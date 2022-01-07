@@ -3,6 +3,12 @@ title:                  "Arizona Bootstrap"
 baseURL:                "{{az_site_host}}{{az_site_base_url}}"
 enableInlineShortcodes: true
 
+security:
+  enableInlineShortcodes: true
+  funcs:
+    getenv:
+      - ^HUGO_
+
 markup:
   goldmark:
     renderer:
