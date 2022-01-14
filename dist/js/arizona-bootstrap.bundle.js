@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v2.0.13 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2021 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2022 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -7111,6 +7111,9 @@
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
     return Constructor;
   }
 
