@@ -34,7 +34,7 @@ jobs:
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_EPHEMERAL_IMAGE=${imagestem}${oldhash}" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_SOURCE_DIR=arizona-bootstrap-src" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-src" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Docker authentication
         run: |
@@ -63,7 +63,7 @@ jobs:
           echo "AZ_SITE_HOST=https://review.digital.arizona.edu" >> ${GITHUB_ENV}
       - name: Build review site artifact
         run: |
-          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v $(pwd):"/${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
+          docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
       - name: Push back the updated deployable files to the repository (CSS, JS, and so on)
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
