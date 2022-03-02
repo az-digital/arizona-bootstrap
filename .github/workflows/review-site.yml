@@ -26,7 +26,7 @@ jobs:
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
-          registry='docker.pkg.github.com'
+          registry='ghcr.io'
           imageprefix="${registry}/${GITHUB_REPOSITORY}/"
           imagename='az-nodejs-ephemeral'
           imagestem="${imageprefix}${imagename}:"
