@@ -103,10 +103,16 @@
   font-family: $font-family-headings;
   color: $dark-silver;
 }
+
 // >>> Sans
 .sans {
   font-family: $font-family-sans-serif;
   font-weight: 500;
+}
+
+// >>> Lead
+.lead {
+  font-weight: 400;
 }
 
 // >> Text Hyphenation.
