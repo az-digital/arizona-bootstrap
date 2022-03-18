@@ -1,4 +1,4 @@
-FROM node:16.14.0-bullseye-slim
+FROM node:16.14.2-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -39,13 +39,13 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.22.62'; \
+  && pip3 install 'awscli~=1.22.77'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
   && npm config set cache='/tmp/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.4.0 \
+  && npm install -g npm-check-updates@12.5.4 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
