@@ -6,7 +6,8 @@ jobs:
     name: Check code for linting errors
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository to workspace
+        uses: actions/checkout@v3
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}

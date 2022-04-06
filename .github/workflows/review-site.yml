@@ -14,9 +14,10 @@ jobs:
     name: Build & deploy review site
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+      - name: Checkout repository to workspace
+          uses: actions/checkout@v3
+          with:
+            ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
         run: echo "AZ_TRIMMED_REF=${GITHUB_REF#refs/*/}" >> ${GITHUB_ENV}
