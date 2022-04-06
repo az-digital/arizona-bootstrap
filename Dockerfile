@@ -39,13 +39,13 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.22.77'; \
+  && pip3 install 'awscli~=1.22.90'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
   && npm config set cache='/tmp/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.5.4 \
+  && npm install -g npm-check-updates@12.5.8 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
