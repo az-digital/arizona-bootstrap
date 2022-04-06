@@ -20,7 +20,7 @@ jobs:
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_EPHEMERAL_IMAGE=${imagestem}${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-src" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_FROZEN_DIR=/arizona-bootstrap-src" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Docker authentication
