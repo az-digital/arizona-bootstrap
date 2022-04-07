@@ -34,11 +34,7 @@ jobs:
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
         run: |
-          workingtitle=$(docker build -q . )
-          tempname="old${AZ_OLD_HASH}"
-          docker run --name "$tempname" "$workingtitle" true
-          docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
-          docker rm "$tempname"
+          workingtitle=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . )
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
           docker tag "$workingtitle" "$ephemeral"
