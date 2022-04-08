@@ -14,7 +14,7 @@
     "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
     "dist": "npm-run-all --aggregate-output --parallel css js",
     "docs": "npm-run-all docs-build docs-lint",
-    "docs-build": "hugo --cleanDestinationDir",
+    "docs-build": "hugo --verbose --cleanDestinationDir",
     "docs-compile": "npm run docs-build",
     "docs-develop": "npm-run-all docs-serve-config dist docs-serve-external",
     "docs-linkinator": "linkinator _site --recurse --skip \"^(?!http://localhost)\" --verbosity error",
