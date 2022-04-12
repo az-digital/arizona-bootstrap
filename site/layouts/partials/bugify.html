@@ -19,8 +19,6 @@
       <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/{{ $bug_id }}/">Edge issue #{{ $bug_id }}</a>
     {{- else if (eq $bug_cat "A11yUserVoice") -}}
       <a href="https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/{{ $bug_id }}">Microsoft A11y UserVoice idea #{{ $bug_id }}</a>
-    {{- else if (eq $bug_cat "UserVoice") -}}
-      <a href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/{{ $bug_id }}">Edge UserVoice idea #{{ $bug_id }}</a>
     {{- else if (eq $bug_cat "Mozilla") -}}
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id={{ $bug_id }}">Mozilla bug #{{ $bug_id }}</a>
     {{- else if (eq $bug_cat "Chromium") -}}

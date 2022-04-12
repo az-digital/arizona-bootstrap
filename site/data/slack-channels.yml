@@ -43,14 +43,14 @@
   description:
     - purpose: "For topics and questions concerning the migration of UA Quickstart from Drupal 7 to Drupal 8"
 
-- channel: "#uadigital-ci"
+- channel: "#azdigital-ci"
   description:
     - purpose: "For automated tasks and CI (continuous integration)"
 
-- channel: "#uadigital-docs"
+- channel: "#azdigital-docs"
   description:
     - purpose: "For topics concerning documentation for Arizona Digital and its products"
 
-- channel: "#uadigital-general"
+- channel: "#azdigital-general"
   description:
     - purpose: "For general discussion and side conversations"
