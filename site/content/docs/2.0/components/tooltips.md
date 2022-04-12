@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the tooltip plugin:
 
-- Tooltips rely on the 3rd party library [Popper](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper in order for tooltips to work!
+- Tooltips rely on the 3rd party library [Popper](https://popper.js.org/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before bootstrap.js or use `arizona-bootstrap.bundle.min.js` / `arizona-bootstrap.bundle.js` which contains Popper in order for tooltips to work!
 - If you're building our JavaScript from source, it [requires `util.js`]({{< docsref "/getting-started/javascript#util" >}}).
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
