@@ -111,7 +111,7 @@ For a list of some of the browser bugs that {{< ourname >}} has to grapple with,
 
 ## Internet Explorer
 
-Internet Explorer 10+ is supported; IE9 and down is not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE10, or require prefixed properties for full functionality. Visit [Can I use...](https://caniuse.com/) for details on browser support of CSS3 and HTML5 features. **If you require IE8-9 support, use [ua-bootstrap](http://uadigital.arizona.edu/ua-bootstrap/).**
+Internet Explorer 10+ is supported; IE9 and down is not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE10, or require prefixed properties for full functionality. Visit [Can I use...](https://caniuse.com/) for details on browser support of CSS3 and HTML5 features. **If you require IE8-9 support, use [ua-bootstrap](https://digital.arizona.edu/ua-bootstrap/).**
 
 ## Modals and Dropdowns on Mobile
 
