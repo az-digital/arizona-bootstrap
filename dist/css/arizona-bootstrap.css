@@ -18480,7 +18480,6 @@ have been deprecated in Bootstrap 4.
   color: #000;
 }
 
-/* stylelint-disable-next-line */
 @media (max-width: 575.98px) {
   .text-left-not-xs,
   .text-center-not-xs,
