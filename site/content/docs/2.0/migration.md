@@ -102,7 +102,7 @@ New to Bootstrap 4 is the [Reboot]({{< docsref "/content/reboot" >}}), a new sty
 - Replaced `.btn-hollow-*` by `.btn-outline-*` classes.
 - Dropped the `.btn-hollow` class (substitute `.btn-outline-red`).
 - Dropped the `.btn-xs` class entirely as `.btn-sm` is proportionally much smaller than v3's.
-- The [stateful button](http://uadigital.arizona.edu/ua-bootstrap/javascript#buttons-stateful) feature of the `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
+- The [stateful button](https://digital.arizona.edu/ua-bootstrap/javascript#buttons-stateful) feature of the `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
   - Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in v4.
 - Change buttons' `[disabled]` to `:disabled` as IE9+ supports `:disabled`. However `fieldset[disabled]` is still necessary because [native disabled fieldsets are still buggy in IE11](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset#Browser_compatibility).
 

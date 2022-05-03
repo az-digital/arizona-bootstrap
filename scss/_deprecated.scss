@@ -287,10 +287,12 @@ have been deprecated in Bootstrap 4.
 }
 
 // >>> List
-/* stylelint-disable-next-line */
+
+// stylelint-disable selector-no-qualifying-type
 ul.triangle {
   @extend .ul-triangles;
 }
+// stylelint-enable selector-no-qualifying-type
 
 // >>> Page Header
 .page-header {

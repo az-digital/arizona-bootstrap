@@ -14,7 +14,7 @@ toc: true
 
 All University of Arizona websites should **maintain a minimum of WCAG AA color contrast between text color and background color**.
 
-Below we have provided a table that includes all of the Arizona branded colors. Check the "Hide inaccessible color combinations" checkbox to only display the color combinations that meet the minimum of WCAG AA. The accessible color combinations have been determined by use of the [WebAIM Accessibility Tool](http://wave.webaim.org/report#/http://uadigital.arizona.edu/ua-bootstrap/colors.html).
+Below we have provided a table that includes all of the Arizona branded colors. Check the "Hide inaccessible color combinations" checkbox to only display the color combinations that meet the minimum of WCAG AA. The accessible color combinations have been determined by use of the [WebAIM Accessibility Tool](http://wave.webaim.org/report#/https://digital.arizona.edu/ua-bootstrap/colors.html).
 
 <label id="hide-inaccessible-label">
   <input type="checkbox" id="hide-inaccessible"> <strong>Hide inaccessible color combinations.</strong>
