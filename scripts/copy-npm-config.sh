@@ -61,10 +61,15 @@ ownership=$(stat --format='%u:%g' "${AZ_BOOTSTRAP_SOURCE_DIR}/package.json") \
 #------------------------------------------------------------------------------
 # Copy the setup.
 
-logmessage "Copying saved configuration from ${AZ_BOOTSTRAP_FROZEN_DIR} to ${AZ_BOOTSTRAP_SOURCE_DIR}"
-
-rsync --recursive --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \
-  || errorexit "rsync crashed with status ${?}"
+if [ "$AZ_BOOTSTRAP_FROZEN_DIR" = "$AZ_BOOTSTRAP_SOURCE_DIR" ] ; then
+  logmessage "Saved npm configuration specified as ${AZ_BOOTSTRAP_SOURCE_DIR}, so re-generating in place"
+  npm install \
+    || errorexit "npm install failed with status ${?}"
+else
+  logmessage "Copying saved configuration from ${AZ_BOOTSTRAP_FROZEN_DIR} to ${AZ_BOOTSTRAP_SOURCE_DIR}"
+  rsync --recursive --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \
+    || errorexit "rsync crashed with status ${?}"
+fi
 find "$AZ_BOOTSTRAP_SOURCE_DIR" -user root -exec chown "$ownership" {} \; \
   || errorexit "Failed to change ownership from root to ${ownership}"
 

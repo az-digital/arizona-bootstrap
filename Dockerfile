@@ -1,11 +1,11 @@
-FROM node:16.13.1-bullseye-slim
+FROM node:16.15.0-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
 ENV PATH ${JAVA_HOME}/bin:${PATH}
 
-COPY --from=openjdk:11.0.13-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.13-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.15-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.15-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -39,13 +39,13 @@ RUN apt-get update \
     python3-wheel \
     rsync \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.22.26'; \
+  && pip3 install 'awscli~=1.23.5'; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
 	ldconfig \
   && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
   && npm config set cache='/tmp/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.0.0 \
+  && npm install -g npm-check-updates@12.5.11 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
