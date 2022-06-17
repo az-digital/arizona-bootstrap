@@ -304,3 +304,8 @@ $table-hover-bg: rgba($table-head-bg, .5);
 $tooltip-arrow-color: $blue;
 $tooltip-bg: $blue;
 
+// >> Shadows
+// stylelint-disable css-lint-vars
+$box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
+$box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
+// stylelint-enable css-lint-vars
