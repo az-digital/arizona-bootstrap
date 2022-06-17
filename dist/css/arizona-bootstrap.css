@@ -7631,7 +7631,7 @@ button.modal-bg-dark:focus {
 
 .shadow-sm,
 .panel {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow {
