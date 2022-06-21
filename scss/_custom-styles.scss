@@ -22,6 +22,13 @@
   }
 }
 
+// >>> Background Gradient
+@each $color, $value in $colors {
+  .bg-gradient-#{$color} {
+    @include background-gradient($value);
+  }
+}
+
 // >>> Theme
 @each $color, $value in $theme-colors {
   .bg-#{$color} {
