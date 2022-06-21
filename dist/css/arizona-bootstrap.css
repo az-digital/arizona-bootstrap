@@ -13861,6 +13861,78 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #fff;
 }
 
+.bg-gradient-blue {
+  background-image: linear-gradient(180deg, transparent, #0c234b);
+}
+
+.bg-gradient-red {
+  background-image: linear-gradient(180deg, transparent, #ab0520);
+}
+
+.bg-gradient-white {
+  background-image: linear-gradient(180deg, transparent, #fff);
+}
+
+.bg-gradient-bloom {
+  background-image: linear-gradient(180deg, transparent, #ef4056);
+}
+
+.bg-gradient-chili {
+  background-image: linear-gradient(180deg, transparent, #8b0015);
+}
+
+.bg-gradient-sky {
+  background-image: linear-gradient(180deg, transparent, #81d3eb);
+}
+
+.bg-gradient-oasis {
+  background-image: linear-gradient(180deg, transparent, #378dbd);
+}
+
+.bg-gradient-azurite {
+  background-image: linear-gradient(180deg, transparent, #1e5288);
+}
+
+.bg-gradient-midnight {
+  background-image: linear-gradient(180deg, transparent, #001c48);
+}
+
+.bg-gradient-cool-gray {
+  background-image: linear-gradient(180deg, transparent, #e2e9eb);
+}
+
+.bg-gradient-warm-gray {
+  background-image: linear-gradient(180deg, transparent, #f4ede5);
+}
+
+.bg-gradient-leaf {
+  background-image: linear-gradient(180deg, transparent, #70b865);
+}
+
+.bg-gradient-river {
+  background-image: linear-gradient(180deg, transparent, #007d84);
+}
+
+.bg-gradient-silver {
+  background-image: linear-gradient(180deg, transparent, #9eabae);
+}
+
+.bg-gradient-mesa {
+  background-image: linear-gradient(180deg, transparent, #a95c42);
+}
+
+.bg-gradient-ash {
+  background-image: linear-gradient(180deg, transparent, #403635);
+}
+
+.bg-gradient-sage {
+  background-image: linear-gradient(180deg, transparent, #4a634e);
+}
+
+.bg-gradient-black {
+  background-image: linear-gradient(180deg, transparent, #000);
+}
+
 .bg-success, .panel-success .panel-heading, .card-success {
   color: #000;
   background-color: #70b865;
