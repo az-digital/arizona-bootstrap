@@ -106,7 +106,7 @@ $gradient-black: linear-gradient(180deg, transparent, $black);
 $colors-gradient: ();
 $colors-gradient: map-merge(
   (
-    "gradient-black":   $black,
+    "gradient-black": $gradient-black,
   ),
   $colors-gradient
 );
