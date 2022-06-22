@@ -49,8 +49,9 @@ RUN apt-get update \
 
 WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 
-RUN npm config set cache='/home/node/.npm' \
+RUN mkdir /home/node/.npm \
   && chown node:node /home/node/.npm \
+  && npm config set cache='/home/node/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
   && npm install -g npm-check-updates@14.0.1 \

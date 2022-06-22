@@ -4503,7 +4503,7 @@
   }
 
   function _extends() {
-    _extends = Object.assign || function (target) {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -4516,7 +4516,6 @@
 
       return target;
     };
-
     return _extends.apply(this, arguments);
   }
 
