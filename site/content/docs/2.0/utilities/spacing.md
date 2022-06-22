@@ -37,6 +37,7 @@ Where *size* is one of:
 * `1` - (by default) for classes that set the `margin` or `padding` to `$spacer * .25`
 * `2` - (by default) for classes that set the `margin` or `padding` to `$spacer * .5`
 * `3` - (by default) for classes that set the `margin` or `padding` to `$spacer`
+* `card` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.25`
 * `4` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
 * `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
 * `6` - (by default) for classes that set the `margin` or `padding` to `$spacer * 4`

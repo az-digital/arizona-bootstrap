@@ -100,6 +100,18 @@ $colors-transparent: map-merge(
 );
 
 
+// >> Gradient Colors
+$gradient-black: linear-gradient(180deg, transparent, $black);
+
+$colors-gradient: ();
+$colors-gradient: map-merge(
+  (
+    "gradient-black": $gradient-black,
+  ),
+  $colors-gradient
+);
+
+
 // >> Grayscale Colors
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -193,6 +205,7 @@ $spacers: map-merge(
     1: ($spacer * .25),
     2: ($spacer * .5),
     3: $spacer,
+    card: ($spacer * 1.25),
     4: ($spacer * 1.5),
     5: ($spacer * 3),
     6: ($spacer * 4),
