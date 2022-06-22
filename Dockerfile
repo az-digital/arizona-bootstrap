@@ -1,4 +1,4 @@
-FROM node:16.15.0-bullseye-slim
+FROM node:16.15.1-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -31,21 +31,31 @@ COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
+    ca-certificates \
+    curl \
     git \
     jq \
-    python3 \
-    python3-pip \
-    python3-setuptools \
-    python3-wheel \
+    openssl \
     rsync \
+    unzip \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.23.5'; \
+  && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
+  && unzip -d /tmp /tmp/awscliv2.zip \
+  && /tmp/aws/install \
+  && rm /tmp/awscliv2.zip \
+  && rm -Rf /tmp/aws ; \
   find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
-	ldconfig \
-  && cd "${AZ_BOOTSTRAP_FROZEN_DIR}" \
-  && npm config set cache='/tmp/.npm' \
+	ldconfig
+
+WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
+
+RUN mkdir /home/node/.npm \
+  && chown node:node /home/node/.npm \
+  && npm config set cache='/home/node/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.5.11 \
+  && npm install -g npm-check-updates@14.0.1 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
+
+WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
