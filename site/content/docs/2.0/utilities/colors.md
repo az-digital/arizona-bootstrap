@@ -86,6 +86,7 @@ Similar to the contextual text color classes, easily set the background of an el
 
 ## Background Gradient
 Use the `bg-gradient-*` class to apply a gradient background from a color on the bottom to transparent on the top.
+
 {{< example >}}
 <h3 class="bold p-card pt-8 bg-gradient-black text-white">.bg-gradient-black</h3>
 {{< /example >}}
