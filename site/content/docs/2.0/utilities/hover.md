@@ -1,0 +1,38 @@
+---
+layout: docs
+title: Hover
+description: Documentation and examples for common hover utilities to control hover effects.
+group: utilities
+toc: true
+---
+
+## Text Decoration
+
+Add a text underline on hover with the `.hover` class on the parent element and the `.hover-text-underline` class on the target child element.
+
+{{< example >}}
+<div class="card hover" style="width: 18rem;">
+  <div class="card-body">
+    <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>
+    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
+    <a class="stretched-link" href="#">This is a link</a>
+  </div>
+</div>
+{{< /example >}}
+
+## Image Zoom
+
+Add an image zoom-in effect on hover with the `.hover` class on the parent element and the `.hover-img-zoom-in` class on the target child image element.
+
+{{< example >}}
+<div class="card bg-warm-gray hover" style="width: 18rem;">
+  <div class="overflow-hidden">
+	<img class="hover-img-zoom-in card-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+  </div>
+  <div class="card-body">
+    <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>
+    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
+    <a class="stretched-link" href="#">This is a link</a>
+  </div>
+</div>
+{{< /example >}}

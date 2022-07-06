@@ -133,3 +133,5 @@ Remove a text decoration with a `.text-decoration-none` class.
 {{< example >}}
 <a href="#" class="text-decoration-none">Non-underlined link</a>
 {{< /example >}}
+
+Add text decoration on hover with [hover utility classes]({{< docsref "/utilities/hover#text-decoration" >}}).

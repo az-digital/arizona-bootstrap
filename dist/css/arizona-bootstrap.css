@@ -16358,6 +16358,18 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.hover:hover .hover-text-underline,
+.hover:focus .hover-text-underline {
+  text-decoration: underline;
+}
+
+.hover:hover img.hover-img-zoom-in,
+.hover:focus img.hover-img-zoom-in {
+  transition: ease .25s;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
 .callout {
   padding: 1.25rem;
   margin-top: 1.25rem;

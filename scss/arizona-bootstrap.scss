@@ -67,6 +67,7 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "navbar";
 @import "navbar-offcanvas";
 @import "background-wrapper";
+@import "hover";
 @import "callout";
 @import "table";
 @import "deprecated";
