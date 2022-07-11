@@ -504,7 +504,7 @@ Cards with the title on image style put the title of the card on top of the imag
   <div class="card-body">
     <p class="card-text">Some quick example text in the body of the card that is separate from the title.</p>
     <div class="mt-auto">
-      <a href="/home" class="btn btn-blue btn-block stretched-link">Card link example</a>
+      <a href="#" class="btn btn-red btn-block stretched-link">Card link example</a>
     </div>
   </div>
 </div>
