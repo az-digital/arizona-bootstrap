@@ -491,12 +491,12 @@ Borderless cards both remove the border and make the entire card clickable. You 
 
 ### Title on Image
 
-Cards with the title on image style put the title of the card on top of the image with a gradient background. You can use any of the available utility classes to style your card, style its text, make it clickable, etc.
+Cards with the title on image style put the title of the card on top of the image with a gradient background. You can use any of the available utility classes to style your card, style its text, make it clickable, and change hover effects.
 
 {{< example >}}
 <div class="card bg-white shadow hover" style="max-width: 18rem;">
   <div class="position-relative overflow-hidden">
-    {{< placeholder width="100%" height="270" class="bd-placeholder-img-lg card-img" text="Card image" >}}
+	  <img class="hover-img-zoom-in card-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
     <div class="card-img-overlay p-0 d-flex flex-column">
       <h3 class="h5 bold mt-auto card-title bg-gradient-black text-white mb-0 p-card pt-8 hover-text-underline">Card Title on Image</h3>
     </div>
