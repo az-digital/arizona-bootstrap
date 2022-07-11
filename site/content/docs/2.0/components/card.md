@@ -489,6 +489,27 @@ Borderless cards both remove the border and make the entire card clickable. You 
 </div>
 {{< /example >}}
 
+### Title on Image
+
+Cards with the title on image style put the title of the card on top of the image with a gradient background. You can use any of the available utility classes to style your card, style its text, make it clickable, etc.
+
+{{< example >}}
+<div class="card bg-white shadow hover" style="max-width: 18rem;">
+  <div class="position-relative overflow-hidden">
+    {{< placeholder width="100%" height="270" class="bd-placeholder-img-lg card-img" text="Card image" >}}
+    <div class="card-img-overlay p-0 d-flex flex-column">
+      <h3 class="h5 bold mt-auto card-title bg-gradient-black text-white mb-0 p-card pt-8 hover-text-underline">Card Title on Image</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Some quick example text in the body of the card that is separate from the title.</p>
+    <div class="mt-auto">
+      <a href="/home" class="btn btn-blue btn-block stretched-link">Card link example</a>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### Landing Grid
 
 The landing grid card adds a Brand colored box-shadow on the right and bottom sides of the card, while maintaining a border on the top and left sides. Landing grid cards are available in the following Brand colors:
