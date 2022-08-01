@@ -60,8 +60,8 @@ if [ -z "$AZ_VERSION" ] ; then
 fi
 
 if [ -z "$AZ_SHORT_VERSION" ] ; then
-  AZ_SHORT_VERSION=$(jq -r '.version_short' package.json)
-  [ -n "$AZ_SHORT_VERSION" ] \
+  AZ_SHORT_VERSION=$(jq -r '.config.version_short' package.json)
+  [ "$AZ_SHORT_VERSION" != 'null' ] \
     || errorexit "Couldn't find the short (documentation) version number"
 fi
 

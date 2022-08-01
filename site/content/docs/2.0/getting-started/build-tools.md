@@ -53,8 +53,8 @@ Start building sites …
   Cleaned          |   0  
 
 Built in 141 ms
-Watching for changes in /arizona-bootstrap-src/{dist,package.json,site}
-Watching for config changes in /arizona-bootstrap-src/config.yml
+Watching for changes in /arizona-bootstrap-source/{dist,package.json,site}
+Watching for config changes in /arizona-bootstrap-source/config.yml
 Environment: "development"
 Serving pages from memory
 Web Server is available at //localhost:9001/ (bind address 0.0.0.0)
@@ -69,13 +69,13 @@ If the image build succeeds, you can re-use it to run additional development ste
 The following command duplicates what happens in the container-building script, but lets you see the additional details that you might want to modify. In a command-line shell, make sure you're in the top-level directory of your local working Arizona Bootstrap copy (the one containing the `Dockerfile`), then enter a command like
 
 ```sh
-docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
+docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-source f855e50fb65e serve-review-site
 ```
 
 - The `-t` and `-i` flags are the usual additions for a container that will be at least semi-interactive.
 - `--rm` makes sure the container will not persist after it has stopped.
 - A web server will be running on port 9001 inside the container, showing the newly built review site using the documentation; the `-p 9001:9001` specifies that this will be reachable on the same port outside the container as well (you can change the number if you run into port conflicts).
-- `-v "$(pwd)":/arizona-bootstrap-src` sets up sharing of the current directory (`$(pwd)` is a shortcut notaton for this, but you can enter it some other way if necessary); inside the container this directory will appear as `/arizona-bootstrap-src`.
+- `-v "$(pwd)":/arizona-bootstrap-source` sets up sharing of the current directory (`$(pwd)` is a shortcut notaton for this, but you can enter it some other way if necessary); inside the container this directory will appear as `/arizona-bootstrap-source`.
 - `f855e50fb65e` is the image ID is in the case of the example, but as already noted you should substitute the ID from your own Docker image build for this.
 - `serve-review-site` is the command that runs inside the container, building the static documentation web site based on your local version of Arizona Bootstrap and starting a little web server to make it visible.
 
@@ -84,7 +84,7 @@ If everything works, you should see the message telling you the static web site 
 You can specify a prefix to include in all the URLs of the static site by setting an environment variable within the container. For example to include the prefix `/bootstrap/localwip` the command would be
 
 ```sh
-docker run -t -i --rm -e "AZ_SITE_BASE_URL=/bootstrap/localwip" -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src f855e50fb65e serve-review-site
+docker run -t -i --rm -e "AZ_SITE_BASE_URL=/bootstrap/localwip" -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-source f855e50fb65e serve-review-site
 ```
 
 There are a few more convenience commands to use with `docker run` in addition to `serve-review-site`

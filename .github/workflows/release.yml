@@ -26,7 +26,7 @@ jobs:
           echo "AZ_DOCKER_REGISTRY=${registry}" >> ${GITHUB_ENV}
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
-          echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-src" >> ${GITHUB_ENV}
+          echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
 
       - name: Set up Docker Buildx
@@ -41,7 +41,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"

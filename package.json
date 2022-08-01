@@ -1,7 +1,9 @@
 {
   "name": "arizona-bootstrap",
   "version": "2.0.16",
-  "version_short": "2.0",
+  "config": {
+    "version_short": "2.0"
+  },
   "description": "University of Arizona theme for Bootstrap.",
   "scripts": {
     "start": "npm-run-all --parallel watch docs-serve",
