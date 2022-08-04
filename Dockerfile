@@ -4,8 +4,8 @@ ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
 ENV PATH ${JAVA_HOME}/bin:${PATH}
 
-COPY --from=openjdk:11.0.15-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.15-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.16-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.16-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
