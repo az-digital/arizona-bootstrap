@@ -1,11 +1,11 @@
-FROM node:16.15.1-bullseye-slim
+FROM node:16.16.0-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
 ENV PATH ${JAVA_HOME}/bin:${PATH}
 
-COPY --from=openjdk:11.0.15-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.15-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
+COPY --from=openjdk:11.0.16-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
+COPY --from=openjdk:11.0.16-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -20,7 +20,7 @@ COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
 ARG AZ_BOOTSTRAP_FROZEN_DIR
 ENV AZ_BOOTSTRAP_FROZEN_DIR ${AZ_BOOTSTRAP_FROZEN_DIR:-/azbuild/arizona-bootstrap}
 ARG AZ_BOOTSTRAP_SOURCE_DIR
-ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-src}
+ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-source}
 
 # Silence warnings from the update-notifier npm package.
 ENV NO_UPDATE_NOTIFIER 1
@@ -39,6 +39,10 @@ RUN apt-get update \
     rsync \
     unzip \
   && rm -rf /var/lib/apt/lists/* \
+  && chmod 755 /root \
+  && touch /root/.npmrc \
+  && chmod 644 /root/.npmrc \
+  && npm install --location=global npm-check-updates@16.0.3 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
@@ -52,10 +56,10 @@ WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 RUN mkdir /home/node/.npm \
   && chown node:node /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
-  && chmod 755 /root \
-  && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@14.0.1 \
   && npm install \
-  && find node_modules -name '.DS_Store' -exec rm {} \;
+  && find node_modules -name '.DS_Store' -exec rm {} \; \ 
+  && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
+
+USER node:node
 
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR

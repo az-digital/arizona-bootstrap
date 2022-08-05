@@ -98,7 +98,7 @@ else
   logmessage "Making a throwaway container, ID ${workingtitle}, to extract the updated npm setup"
   docker run --name "$tempname" "$workingtitle" 'true' \
     || errorexit "Failed to run a container based on the image ${workingtitle}"
-  docker cp "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
+  docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
     || errorexit "Couldn't copy the saved npm setup to the actual source directory"
   docker rm "$tempname" \
     || errorexit "Failed to clean up the temporary container ${tempname}"
@@ -125,7 +125,7 @@ logmessage "The image ID is ${imageid} (you can use this to run your own Docker 
 #------------------------------------------------------------------------------
 # Spin up a local review site.
 
-docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-src "$imageid" npm run docs-develop \
+docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/arizona-bootstrap-source "$imageid" npm run docs-develop \
   || normalexit "Exited with status ${?}"
 
 normalexit "The web server hosting the review site in the Docker container stopped (status ${?})"
