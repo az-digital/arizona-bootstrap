@@ -31,7 +31,7 @@
 .btn-red {
   @include button-variant($chili);
   background-color: $chili;
-  @include hover() {
+  &:hover {
     color: $white;
     background-color: $red;
   }
@@ -43,7 +43,7 @@
 .btn-blue {
   @include button-variant($midnight);
   background-color: $blue;
-  @include hover() {
+  &:hover {
     color: $white;
     background-color: $azurite;
   }
@@ -135,4 +135,3 @@
     min-width: 100%;
   }
 }
-
