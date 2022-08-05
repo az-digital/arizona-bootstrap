@@ -125,13 +125,13 @@
     flex-grow: 1;
   }
 }
-// >> Block
-.btn-group-block {
-  @extend .btn-block;
-  .btn {
-    @extend .btn-block;
-  }
-  .dropdown-menu {
-    min-width: 100%;
-  }
-}
+// >> Block  -- .btn-block utility removed in TWBS 5
+// .btn-group-block {
+//   @extend .btn-block;
+//   .btn {
+//     @extend .btn-block;
+//   }
+//   .dropdown-menu {
+//     min-width: 100%;
+//   }
+// }
