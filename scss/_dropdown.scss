@@ -8,7 +8,8 @@
   color: $dropdown-link-color;
   text-decoration: none;
 
-  @include hover-focus() {
+  &:hover,
+  &:focus {
     color: $dropdown-link-hover-color;
     background-color: $dropdown-link-hover-bg;
   }
