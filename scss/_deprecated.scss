@@ -283,7 +283,7 @@ have been deprecated in Bootstrap 4.
 
 // >>> Fonts & Font Styles
 .bold {
-  @extend .font-weight-bold;
+  @extend .fw-bold;
 }
 
 // >>> List
