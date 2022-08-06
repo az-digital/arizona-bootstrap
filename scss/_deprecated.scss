@@ -57,10 +57,10 @@ have been deprecated in Bootstrap 4.
   @extend .card;
 }
 
-// >> Inputs
-.input-group-btn {
-  @extend .input-group-prepend;
-}
+// >> Inputs -- .input-group-prepend has been removed in TWBS 5
+// .input-group-btn {
+//   @extend .input-group-prepend;
+// }
 
 // >> Labels
 .label {
