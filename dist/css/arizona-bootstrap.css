@@ -20526,19 +20526,19 @@ have been deprecated in Bootstrap 4.
   background-color: #0c234b;
 }
 
-.bs-tooltip-top .popover-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .popover-arrow::before {
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .arrow::before {
   border-top-color: #0c234b;
 }
 
-.bs-tooltip-right .popover-arrow::before {
+.bs-tooltip-right .arrow::before {
   border-right-color: #0c234b;
 }
 
-.bs-tooltip-bottom .popover-arrow::before, .bs-tooltip-auto[data-popper-placement^=bottom] .popover-arrow::before {
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[data-popper-placement^=bottom] .arrow::before {
   border-bottom-color: #0c234b;
 }
 
-.bs-tooltip-left .popover-arrow::before {
+.bs-tooltip-left .arrow::before {
   border-left-color: #0c234b;
 }
 
