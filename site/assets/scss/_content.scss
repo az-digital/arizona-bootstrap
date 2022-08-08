@@ -42,7 +42,7 @@
       > tr {
         > th,
         > td {
-          padding: $table-cell-padding;
+          padding: $table-cell-padding-y $table-cell-padding-x;
           vertical-align: top;
           border: 1px solid $table-border-color;
 
