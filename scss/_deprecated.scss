@@ -318,18 +318,11 @@ ul.triangle {
 .text-right-not-lg {
   @extend .text-end;
 }
-.text-justify-not-xs,
-.text-justify-not-sm,
-.text-justify-not-md,
-.text-justify-not-lg {
-  @extend .text-justify;
-}
 
 @include media-breakpoint-only(xs) {
   .text-left-not-xs,
   .text-center-not-xs,
-  .text-right-not-xs,
-  .text-justify-not-xs {
+  .text-right-not-xs {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -337,8 +330,7 @@ ul.triangle {
 @include media-breakpoint-only(sm) {
   .text-left-not-sm,
   .text-center-not-sm,
-  .text-right-not-sm,
-  .text-justify-not-sm {
+  .text-right-not-sm {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -346,8 +338,7 @@ ul.triangle {
 @include media-breakpoint-only(md) {
   .text-left-not-md,
   .text-center-not-md,
-  .text-right-not-md,
-  .text-justify-not-md {
+  .text-right-not-md {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -355,8 +346,7 @@ ul.triangle {
 @include media-breakpoint-only(lg) {
   .text-left-not-lg,
   .text-center-not-lg,
-  .text-right-not-lg,
-  .text-justify-not-lg {
+  .text-right-not-lg {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
