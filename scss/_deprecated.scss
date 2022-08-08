@@ -196,10 +196,10 @@ have been deprecated in Bootstrap 4.
 
 // >> Pull Left/Right
 .pull-left {
-  @extend .float-left;
+  @extend .float-start;
 }
 .pull-right {
-  @extend .float-right;
+  @extend .float-end;
 }
 
 
