@@ -57,10 +57,10 @@ have been deprecated in Bootstrap 4.
   @extend .card;
 }
 
-// >> Inputs
-.input-group-btn {
-  @extend .input-group-prepend;
-}
+// >> Inputs -- .input-group-prepend has been removed in TWBS 5
+// .input-group-btn {
+//   @extend .input-group-prepend;
+// }
 
 // >> Labels
 .label {
@@ -196,10 +196,10 @@ have been deprecated in Bootstrap 4.
 
 // >> Pull Left/Right
 .pull-left {
-  @extend .float-left;
+  @extend .float-start;
 }
 .pull-right {
-  @extend .float-right;
+  @extend .float-end;
 }
 
 
@@ -283,7 +283,7 @@ have been deprecated in Bootstrap 4.
 
 // >>> Fonts & Font Styles
 .bold {
-  @extend .font-weight-bold;
+  @extend .fw-bold;
 }
 
 // >>> List
@@ -304,7 +304,7 @@ ul.triangle {
 .text-left-not-sm,
 .text-left-not-md,
 .text-left-not-lg {
-  @extend .text-left;
+  @extend .text-start;
 }
 .text-center-not-xs,
 .text-center-not-sm,
@@ -316,20 +316,13 @@ ul.triangle {
 .text-right-not-sm,
 .text-right-not-md,
 .text-right-not-lg {
-  @extend .text-right;
-}
-.text-justify-not-xs,
-.text-justify-not-sm,
-.text-justify-not-md,
-.text-justify-not-lg {
-  @extend .text-justify;
+  @extend .text-end;
 }
 
 @include media-breakpoint-only(xs) {
   .text-left-not-xs,
   .text-center-not-xs,
-  .text-right-not-xs,
-  .text-justify-not-xs {
+  .text-right-not-xs {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -337,8 +330,7 @@ ul.triangle {
 @include media-breakpoint-only(sm) {
   .text-left-not-sm,
   .text-center-not-sm,
-  .text-right-not-sm,
-  .text-justify-not-sm {
+  .text-right-not-sm {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -346,8 +338,7 @@ ul.triangle {
 @include media-breakpoint-only(md) {
   .text-left-not-md,
   .text-center-not-md,
-  .text-right-not-md,
-  .text-justify-not-md {
+  .text-right-not-md {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -355,8 +346,7 @@ ul.triangle {
 @include media-breakpoint-only(lg) {
   .text-left-not-lg,
   .text-center-not-lg,
-  .text-right-not-lg,
-  .text-justify-not-lg {
+  .text-right-not-lg {
     // stylelint-disable-next-line declaration-no-important
     text-align: inherit !important;
   }
@@ -387,4 +377,3 @@ ul.triangle {
 .margin-zero-bottom {
   @extend .mb-0;
 }
-

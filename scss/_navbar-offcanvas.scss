@@ -74,7 +74,7 @@
         height: 60px;
         padding-left: 20px;
       }
-      .input-group-append > button.btn-search {
+      button.btn-search {
         height: 60px;
         width: 60px;
         font-size: 24px;
@@ -265,7 +265,8 @@
         padding: $nav-link-padding-y $nav-link-padding-x;
         text-decoration: if($link-decoration == none, null, none);
 
-        @include hover-focus() {
+        &:hover,
+        &:focus {
           text-decoration: none;
         }
 
