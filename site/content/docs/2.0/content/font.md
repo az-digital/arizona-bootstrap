@@ -97,7 +97,7 @@ this unless you are trying to use a specific variant.
 <span class="label label-warning">Important</span>
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Bold
@@ -120,7 +120,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-bold-italic' data-font-name='Proxima Nova Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-bold-italic' data-font-name='Proxima Nova Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Bold Italic
@@ -143,7 +143,7 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova' data-font-name='Proxima Nova Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova' data-font-name='Proxima Nova Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Regular
@@ -166,7 +166,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-italic' data-font-name='Proxima Nova Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-italic' data-font-name='Proxima Nova Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Italic
@@ -189,7 +189,7 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-ec-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Extra Condensed Bold Italic
@@ -212,7 +212,7 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-bold' data-font-name='Proxima Nova Extra Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-ec-bold' data-font-name='Proxima Nova Extra Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Extra Condensed Bold
@@ -235,7 +235,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-ec-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Extra Condensed Italic
@@ -258,7 +258,7 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-ec' data-font-name='Proxima Nova Extra Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-ec' data-font-name='Proxima Nova Extra Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Extra Condensed Regular
@@ -281,7 +281,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-bold' data-font-name='Proxima Nova Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c-bold' data-font-name='Proxima Nova Condensed Bold' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Condensed Bold
@@ -304,7 +304,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-bold-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c-bold-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Condensed Bold Italic
@@ -327,7 +327,7 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c' data-font-name='Proxima Nova Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c' data-font-name='Proxima Nova Condensed Regular' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Condensed Regular
@@ -350,7 +350,7 @@ font-style: normal;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-right" data-font-class='proxima-nova-c-italic' data-font-name='Proxima Nova Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
+  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c-italic' data-font-name='Proxima Nova Condensed Italic' data-target='.bs-example-modal-lg' data-toggle='modal' type='button'>View Sample</button>
 </div>
 
 ### Proxima Nova Condensed Italic
@@ -432,7 +432,7 @@ p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Seg
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button data-dismiss="modal" type="button" class="btn float-right btn-light">
+        <button data-dismiss="modal" type="button" class="btn float-end btn-light">
           <span class="material-icons-sharp align-middle">close</span>
         </button>
         <h4 id="myModalLabel" class="modal-title my-0">FONT SAMPLE</h4>

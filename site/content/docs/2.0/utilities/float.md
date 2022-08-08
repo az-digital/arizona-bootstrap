@@ -15,8 +15,8 @@ These utility classes float an element to the left or right, or disable floating
 Toggle a float with a class:
 
 {{< example >}}
-<div class="float-left">Float left on all viewport sizes</div><br>
-<div class="float-right">Float right on all viewport sizes</div><br>
+<div class="float-start">Float left on all viewport sizes</div><br>
+<div class="float-end">Float right on all viewport sizes</div><br>
 <div class="float-none">Don't float on all viewport sizes</div>
 {{< /example >}}
 
@@ -26,10 +26,10 @@ Or by Sass mixin:
 
 ```scss
 .element {
-  @include float-left;
+  @include float-start;
 }
 .another-element {
-  @include float-right;
+  @include float-end;
 }
 .one-more {
   @include float-none;

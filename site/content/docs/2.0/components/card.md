@@ -272,7 +272,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   </div>
 </div>
 
-<div class="card text-right" style="width: 18rem;">
+<div class="card text-end" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -549,7 +549,7 @@ The landing grid card adds a Brand colored box-shadow on the right and bottom si
         <p class="mb-0">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
       </div>
     </div>
-    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">  
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">
       <a href="#">How to Apply</a>
     </div>
   </div>
@@ -574,7 +574,7 @@ The landing grid card adds a Brand colored box-shadow on the right and bottom si
         <p class="mb-0">You are a transfer student if you have attended other colleges/universities and have completed 12 or more units since graduating from high school. In this example, there is an external link class to demonstrate that option.</p>
       </div>
     </div>
-    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">  
+    <div class="card-body landing-btn-container d-flex flex-column justify-content-end align-items-start">
       <a href="#">How to Apply</a>
     </div>
   </div>
@@ -793,7 +793,7 @@ Cards can be organized into [Masonry](https://masonry.desandro.com/)-like column
   <div class="card">
     {{< placeholder width="100%" height="260" class="card-img" text="Card image" >}}
   </div>
-  <div class="card p-3 text-right">
+  <div class="card p-3 text-end">
     <blockquote class="blockquote mb-0">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       <footer class="blockquote-footer">

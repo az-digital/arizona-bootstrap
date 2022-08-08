@@ -17,9 +17,9 @@ Easily realign text to components with text alignment classes.
 For left, right, and center alignment, responsive classes are available that use the same viewport width breakpoints as the grid system.
 
 {{< example >}}
-<p class="text-left">Left aligned text on all viewport sizes.</p>
+<p class="text-start">Left aligned text on all viewport sizes.</p>
 <p class="text-center">Center aligned text on all viewport sizes.</p>
-<p class="text-right">Right aligned text on all viewport sizes.</p>
+<p class="text-end">Right aligned text on all viewport sizes.</p>
 
 <p class="text-sm-left">Left aligned text on viewports sized SM (small) or wider.</p>
 <p class="text-md-left">Left aligned text on viewports sized MD (medium) or wider.</p>
@@ -106,7 +106,7 @@ Quickly change the weight (boldness) of text or italicize text.
 <p class="font-italic">Italic text.</p>
 {{< /example >}}
 
-## Font Families 
+## Font Families
 
 ### Monospace
 

@@ -262,7 +262,7 @@ Button dropdowns work with buttons of all sizes, including default and split dro
         <a class="dropdown-item" href="#">Separated link</a>
       </div>
     </div><!-- /btn-group -->
-    <div class="btn-group ml-2">
+    <div class="btn-group ms-2">
       <button type="button" class="btn btn-lg btn-blue">Large split button</button>
       <button type="button" class="btn btn-lg btn-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
@@ -289,7 +289,7 @@ Button dropdowns work with buttons of all sizes, including default and split dro
         <a class="dropdown-item" href="#">Separated link</a>
       </div>
     </div><!-- /btn-group -->
-    <div class="btn-group ml-2">
+    <div class="btn-group ms-2">
       <button type="button" class="btn btn-sm btn-blue">Small split button</button>
       <button type="button" class="btn btn-sm btn-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
@@ -746,7 +746,7 @@ Use `data-offset` or `data-reference` to change the location of the dropdown.
 
 {{< example >}}
 <div class="d-flex">
-  <div class="dropdown mr-1">
+  <div class="dropdown me-1">
     <button type="button" class="btn btn-blue dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-expanded="false" data-offset="10,20">
       Offset
     </button>

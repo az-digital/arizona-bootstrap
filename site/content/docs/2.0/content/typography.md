@@ -205,7 +205,7 @@ Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the 
 
 ### Alignment
 
-Use text utilities as needed to change the alignment of your blockquote. You can also add the `.blockquote-reverse` in combination with `.text-right` to right-align your blockquote and shift its border to the right.
+Use text utilities as needed to change the alignment of your blockquote. You can also add the `.blockquote-reverse` in combination with `.text-end` to right-align your blockquote and shift its border to the right.
 
 {{< example >}}
 <blockquote class="blockquote text-center">
@@ -215,14 +215,14 @@ Use text utilities as needed to change the alignment of your blockquote. You can
 {{< /example >}}
 
 {{< example >}}
-<blockquote class="blockquote text-right">
+<blockquote class="blockquote text-end">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
 {{< /example >}}
 
 {{< example >}}
-<blockquote class="blockquote blockquote-reverse text-right">
+<blockquote class="blockquote blockquote-reverse text-end">
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
