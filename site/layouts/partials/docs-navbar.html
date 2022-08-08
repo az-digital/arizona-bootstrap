@@ -13,9 +13,9 @@
     </ul>
   </div>
 
-  <ul class="navbar-nav ml-md-auto">
+  <ul class="navbar-nav ms-md-auto">
     <li class="nav-item dropdown">
-      <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-item nav-link dropdown-toggle me-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         v{{ .Site.Params.docs_version }}
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
@@ -37,5 +37,5 @@
     </li>
   </ul>
 
-  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Download</a>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ms-md-3" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Download</a>
 </header>
