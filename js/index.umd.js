@@ -32,5 +32,5 @@ export default {
   Tab,
   Toast,
   Tooltip
- //  Offcanvasmenu
+//  Offcanvasmenu
 }
