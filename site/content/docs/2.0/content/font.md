@@ -47,7 +47,7 @@ project in Creative Cloud Typekit and use it in all of their web projects.
 - Faster page load if your site uses a smaller subset of font variants than what are included in the shared library.
 
 **Disadvantages**
-- You have to manage your own font in Typekit using a netid.
+- You have to manage your own font in Typekit using a NetID.
   - If the netid is tied to one person, it creates a single point of failure if
     that user leaves the University.
   - If the netid is a "test netid" you have to manage credentials, and sign it
