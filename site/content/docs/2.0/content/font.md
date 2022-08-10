@@ -50,7 +50,7 @@ project in Creative Cloud Typekit and use it in all of their web projects.
 - You have to manage your own font in Typekit using a NetID.
   - If the netid is tied to one person, it creates a single point of failure if
     that user leaves the University.
-  - If the netid is a "test netid" you have to manage credentials, and sign it
+  - If the NetID is a shared "test NetID" you have to manage credentials, and sign it
     up to use Adobe products.
 
 **Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test NetID](https://apps.iam.arizona.edu/).
