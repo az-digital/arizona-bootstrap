@@ -53,7 +53,7 @@ project in Creative Cloud Typekit and use it in all of their web projects.
   - If the netid is a "test netid" you have to manage credentials, and sign it
     up to use Adobe products.
 
-**Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test netid](https://apps.iam.arizona.edu/), which is shared with your department.
+**Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test NetID](https://apps.iam.arizona.edu/).
 **Note** Our license agreement with Adobe does not allow us to self-host font files.
 ## Global settings
 [Follow these instructions](#instructions) on how to add Proxima Nova to your
