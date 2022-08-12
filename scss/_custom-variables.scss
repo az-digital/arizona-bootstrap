@@ -229,8 +229,11 @@ $badge-pill-radius: .25rem;
 
 // >> Breadcrumbs
 $breadcrumb-color: $azurite;
-$breadcrumb-bg: $white;
+$breadcrumb-font-size: small;
 $breadcrumb-width: fit-content;
+$breadcrumb-padding-y: 2px;
+$breadcrumb-padding-x: 10px;
+$breadcrumb-margin-bottom: 5px;
 
 // >> Buttons
 $btn-font-weight: 500;

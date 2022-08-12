@@ -4756,7 +4756,7 @@ input.btn-group-block[type="button"],
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 2px 5px;
+  padding: 2px 10px;
   margin-bottom: 5px;
   font-size: small;
   list-style: none;
@@ -4764,7 +4764,7 @@ input.btn-group-block[type="button"],
 }
 
 ol.breadcrumb::before {
-  content: "\e88a" !important;
+  content: "" !important;
   font-family: 'Material Icons Sharp';
   margin-right: 5px;
 }
@@ -4778,7 +4778,7 @@ ol.breadcrumb::before {
   padding-right: 0.5rem;
   color: #1e5288;
   font-family: 'Material Icons Sharp';
-  content: "\e5cc" !important;
+  content: "" !important;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
