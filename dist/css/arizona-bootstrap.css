@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 /*
 * > COLORS
 */
@@ -11,23 +17,16 @@
 /*
 * > COMPONENTS
 */
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 .material-icons-sharp {
   font-size: inherit;
   line-height: inherit;
 }
 
 :root {
-  --blue: #0c234b;
   --red: #ab0520;
-  --white: #fff;
   --bloom: #ef4056;
   --chili: #8b0015;
+  --blue: #0c234b;
   --sky: #81d3eb;
   --oasis: #378dbd;
   --azurite: #1e5288;
@@ -40,6 +39,7 @@
   --mesa: #a95c42;
   --ash: #403635;
   --sage: #4a634e;
+  --white: #fff;
   --black: #000;
   --success: #70b865;
   --info: #81d3eb;
@@ -52,7 +52,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -75,7 +75,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -180,7 +180,7 @@ a {
 }
 
 a:hover {
-  color: #3f0009;
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -230,7 +230,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #495057;
+  color: #6c757d;
   text-align: left;
   caption-side: bottom;
 }
@@ -1872,16 +1872,16 @@ pre code {
 .table-active,
 .table-active > th,
 .table-active > td {
-  background-color: rgba(222, 226, 230, 0.5);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .table-hover .table-active:hover {
-  background-color: rgba(207, 213, 219, 0.5);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .table-hover .table-active:hover > td,
 .table-hover .table-active:hover > th {
-  background-color: rgba(207, 213, 219, 0.5);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .table .thead-dark th {
@@ -2009,9 +2009,9 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #1e56b9;
+  border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2169,7 +2169,7 @@ textarea.form-control {
 
 .form-check-input[disabled] ~ .form-check-label,
 .form-check-input:disabled ~ .form-check-label {
-  color: #495057;
+  color: #6c757d;
 }
 
 .form-check-label {
@@ -2197,7 +2197,7 @@ textarea.form-control {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #70b865;
+  color: #28a745;
 }
 
 .valid-tooltip {
@@ -2211,8 +2211,8 @@ textarea.form-control {
   margin-top: .1rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #212529;
-  background-color: rgba(112, 184, 101, 0.9);
+  color: #fff;
+  background-color: rgba(40, 167, 69, 0.9);
 }
 
 .form-row > .col > .valid-tooltip,
@@ -2228,17 +2228,17 @@ textarea.form-control {
 }
 
 .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: #70b865;
+  border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem) !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
-  border-color: #70b865;
-  box-shadow: 0 0 0 0.2rem rgba(112, 184, 101, 0.25);
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated select.form-control:valid, select.form-control.is-valid {
@@ -2252,18 +2252,18 @@ textarea.form-control {
 }
 
 .was-validated .custom-select:valid, .custom-select.is-valid {
-  border-color: #70b865;
+  border-color: #28a745;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
 }
 
 .was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {
-  border-color: #70b865;
-  box-shadow: 0 0 0 0.2rem rgba(112, 184, 101, 0.25);
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: #70b865;
+  color: #28a745;
 }
 
 .was-validated .form-check-input:valid ~ .valid-feedback,
@@ -2273,33 +2273,33 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
-  color: #70b865;
+  color: #28a745;
 }
 
 .was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
-  border-color: #70b865;
+  border-color: #28a745;
 }
 
 .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
-  border-color: #90c888;
-  background-color: #90c888;
+  border-color: #34ce57;
+  background-color: #34ce57;
 }
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(112, 184, 101, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #70b865;
+  border-color: #28a745;
 }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
-  border-color: #70b865;
+  border-color: #28a745;
 }
 
 .was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {
-  border-color: #70b865;
-  box-shadow: 0 0 0 0.2rem rgba(112, 184, 101, 0.25);
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .invalid-feedback {
@@ -2307,7 +2307,7 @@ textarea.form-control {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #a95c42;
+  color: #dc3545;
 }
 
 .invalid-tooltip {
@@ -2322,7 +2322,7 @@ textarea.form-control {
   font-size: 0.875rem;
   line-height: 1.5;
   color: #fff;
-  background-color: rgba(169, 92, 66, 0.9);
+  background-color: rgba(220, 53, 69, 0.9);
 }
 
 .form-row > .col > .invalid-tooltip,
@@ -2338,17 +2338,17 @@ textarea.form-control {
 }
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
-  border-color: #a95c42;
+  border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem) !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23a95c42' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
-  border-color: #a95c42;
-  box-shadow: 0 0 0 0.2rem rgba(169, 92, 66, 0.25);
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated select.form-control:invalid, select.form-control.is-invalid {
@@ -2362,18 +2362,18 @@ textarea.form-control {
 }
 
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
-  border-color: #a95c42;
+  border-color: #dc3545;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23a95c42' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;
 }
 
 .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
-  border-color: #a95c42;
-  box-shadow: 0 0 0 0.2rem rgba(169, 92, 66, 0.25);
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
-  color: #a95c42;
+  color: #dc3545;
 }
 
 .was-validated .form-check-input:invalid ~ .invalid-feedback,
@@ -2383,33 +2383,33 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {
-  color: #a95c42;
+  color: #dc3545;
 }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {
-  border-color: #a95c42;
+  border-color: #dc3545;
 }
 
 .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before {
-  border-color: #c0775e;
-  background-color: #c0775e;
+  border-color: #e4606d;
+  background-color: #e4606d;
 }
 
 .was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(169, 92, 66, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #a95c42;
+  border-color: #dc3545;
 }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
-  border-color: #a95c42;
+  border-color: #dc3545;
 }
 
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
-  border-color: #a95c42;
-  box-shadow: 0 0 0 0.2rem rgba(169, 92, 66, 0.25);
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .form-inline {
@@ -2519,7 +2519,7 @@ textarea.form-control {
 
 .btn:focus, .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .btn.disabled, .btn:disabled {
@@ -2956,7 +2956,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-  color: #3f0009;
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -3581,22 +3581,22 @@ input.btn-group-block[type="button"],
 
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #0c234b;
-  background-color: #0c234b;
+  border-color: #007bff;
+  background-color: #007bff;
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #1e56b9;
+  border-color: #80bdff;
 }
 
 .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
   color: #fff;
-  background-color: #2c6ddd;
-  border-color: #2c6ddd;
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
 }
 
 .custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {
@@ -3642,8 +3642,8 @@ input.btn-group-block[type="button"],
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #0c234b;
-  background-color: #0c234b;
+  border-color: #007bff;
+  background-color: #007bff;
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
@@ -3651,11 +3651,11 @@ input.btn-group-block[type="button"],
 }
 
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(12, 35, 75, 0.5);
+  background-color: rgba(0, 123, 255, 0.5);
 }
 
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
-  background-color: rgba(12, 35, 75, 0.5);
+  background-color: rgba(0, 123, 255, 0.5);
 }
 
 .custom-radio .custom-control-label::before {
@@ -3667,7 +3667,7 @@ input.btn-group-block[type="button"],
 }
 
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(12, 35, 75, 0.5);
+  background-color: rgba(0, 123, 255, 0.5);
 }
 
 .custom-switch {
@@ -3706,7 +3706,7 @@ input.btn-group-block[type="button"],
 }
 
 .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(12, 35, 75, 0.5);
+  background-color: rgba(0, 123, 255, 0.5);
 }
 
 .custom-select {
@@ -3728,9 +3728,9 @@ input.btn-group-block[type="button"],
 }
 
 .custom-select:focus {
-  border-color: #1e56b9;
+  border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-select:focus::-ms-value {
@@ -3793,8 +3793,8 @@ input.btn-group-block[type="button"],
 }
 
 .custom-file-input:focus ~ .custom-file-label {
-  border-color: #1e56b9;
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-file-input[disabled] ~ .custom-file-label,
@@ -3857,15 +3857,15 @@ input.btn-group-block[type="button"],
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -3876,7 +3876,7 @@ input.btn-group-block[type="button"],
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #0c234b;
+  background-color: #007bff;
   border: 0;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3892,7 +3892,7 @@ input.btn-group-block[type="button"],
 }
 
 .custom-range::-webkit-slider-thumb:active {
-  background-color: #2c6ddd;
+  background-color: #b3d7ff;
 }
 
 .custom-range::-webkit-slider-runnable-track {
@@ -3907,7 +3907,7 @@ input.btn-group-block[type="button"],
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #0c234b;
+  background-color: #007bff;
   border: 0;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3923,7 +3923,7 @@ input.btn-group-block[type="button"],
 }
 
 .custom-range::-moz-range-thumb:active {
-  background-color: #2c6ddd;
+  background-color: #b3d7ff;
 }
 
 .custom-range::-moz-range-track {
@@ -3941,7 +3941,7 @@ input.btn-group-block[type="button"],
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #0c234b;
+  background-color: #007bff;
   border: 0;
   -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3956,7 +3956,7 @@ input.btn-group-block[type="button"],
 }
 
 .custom-range::-ms-thumb:active {
-  background-color: #2c6ddd;
+  background-color: #b3d7ff;
 }
 
 .custom-range::-ms-track {
@@ -4032,7 +4032,7 @@ input.btn-group-block[type="button"],
 }
 
 .nav-link.disabled {
-  color: #495057;
+  color: #6c757d;
   pointer-events: none;
   cursor: default;
 }
@@ -4049,11 +4049,11 @@ input.btn-group-block[type="button"],
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   isolation: isolate;
-  border-color: #e9ecef #e9ecef #e9ecef;
+  border-color: #e9ecef #e9ecef #dee2e6;
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #495057;
+  color: #6c757d;
   background-color: transparent;
   border-color: transparent;
 }
@@ -4753,10 +4753,20 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px 5px;
+  margin-bottom: 5px;
+  font-size: small;
   list-style: none;
-  background-color: #fff;
+  background-color: #e9ecef;
+}
+
+ol.breadcrumb::before {
+  content: "" !important;
+  font-family: 'Material Icons Sharp';
+  margin-right: 5px;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4766,8 +4776,9 @@ input.btn-group-block[type="button"],
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #6c757d;
-  content: "/";
+  color: #1e5288;
+  font-family: 'Material Icons Sharp';
+  content: "" !important;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -4779,7 +4790,7 @@ input.btn-group-block[type="button"],
 }
 
 .breadcrumb-item.active {
-  color: #6c757d;
+  color: #1e5288;
 }
 
 .pagination {
@@ -4811,7 +4822,7 @@ input.btn-group-block[type="button"],
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(12, 35, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .page-item:first-child .page-link {
@@ -4821,8 +4832,8 @@ input.btn-group-block[type="button"],
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #0c234b;
-  border-color: #0c234b;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .page-item.disabled .page-link {
@@ -5139,7 +5150,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #0c234b;
+  background-color: #007bff;
   transition: width 0.6s ease;
 }
 
@@ -5222,8 +5233,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #0c234b;
-  border-color: #0c234b;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .list-group-item + .list-group-item {
@@ -5738,7 +5749,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5850,7 +5861,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7651,15 +7662,15 @@ button.modal-bg-dark:focus {
 
 .shadow-sm,
 .panel {
-  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .shadow-lg {
-  box-shadow: 0 0.75rem 3rem rgba(0, 0, 0, 0.175) !important;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
 .shadow-none {
@@ -7826,6 +7837,30 @@ button.modal-bg-dark:focus {
   margin-left: 1rem !important;
 }
 
+.m-card {
+  margin: 1.25rem !important;
+}
+
+.mt-card,
+.my-card {
+  margin-top: 1.25rem !important;
+}
+
+.mr-card,
+.mx-card {
+  margin-right: 1.25rem !important;
+}
+
+.mb-card,
+.my-card {
+  margin-bottom: 1.25rem !important;
+}
+
+.ml-card,
+.mx-card {
+  margin-left: 1.25rem !important;
+}
+
 .m-4 {
   margin: 1.5rem !important;
 }
@@ -7872,30 +7907,6 @@ button.modal-bg-dark:focus {
 .ml-5,
 .mx-5 {
   margin-left: 3rem !important;
-}
-
-.m-card {
-  margin: 1.25rem !important;
-}
-
-.mt-card,
-.my-card {
-  margin-top: 1.25rem !important;
-}
-
-.mr-card,
-.mx-card {
-  margin-right: 1.25rem !important;
-}
-
-.mb-card,
-.my-card {
-  margin-bottom: 1.25rem !important;
-}
-
-.ml-card,
-.mx-card {
-  margin-left: 1.25rem !important;
 }
 
 .m-6 {
@@ -8186,6 +8197,30 @@ button.modal-bg-dark:focus {
   padding-left: 1rem !important;
 }
 
+.p-card {
+  padding: 1.25rem !important;
+}
+
+.pt-card,
+.py-card {
+  padding-top: 1.25rem !important;
+}
+
+.pr-card,
+.px-card {
+  padding-right: 1.25rem !important;
+}
+
+.pb-card,
+.py-card {
+  padding-bottom: 1.25rem !important;
+}
+
+.pl-card,
+.px-card {
+  padding-left: 1.25rem !important;
+}
+
 .p-4 {
   padding: 1.5rem !important;
 }
@@ -8232,30 +8267,6 @@ button.modal-bg-dark:focus {
 .pl-5,
 .px-5 {
   padding-left: 3rem !important;
-}
-
-.p-card {
-  padding: 1.25rem !important;
-}
-
-.pt-card,
-.py-card {
-  padding-top: 1.25rem !important;
-}
-
-.pr-card,
-.px-card {
-  padding-right: 1.25rem !important;
-}
-
-.pb-card,
-.py-card {
-  padding-bottom: 1.25rem !important;
-}
-
-.pl-card,
-.px-card {
-  padding-left: 1.25rem !important;
 }
 
 .p-6 {
@@ -8522,6 +8533,30 @@ button.modal-bg-dark:focus {
   margin-left: -1rem !important;
 }
 
+.m-ncard {
+  margin: -1.25rem !important;
+}
+
+.mt-ncard,
+.my-ncard {
+  margin-top: -1.25rem !important;
+}
+
+.mr-ncard,
+.mx-ncard {
+  margin-right: -1.25rem !important;
+}
+
+.mb-ncard,
+.my-ncard {
+  margin-bottom: -1.25rem !important;
+}
+
+.ml-ncard,
+.mx-ncard {
+  margin-left: -1.25rem !important;
+}
+
 .m-n4 {
   margin: -1.5rem !important;
 }
@@ -8568,30 +8603,6 @@ button.modal-bg-dark:focus {
 .ml-n5,
 .mx-n5 {
   margin-left: -3rem !important;
-}
-
-.m-ncard {
-  margin: -1.25rem !important;
-}
-
-.mt-ncard,
-.my-ncard {
-  margin-top: -1.25rem !important;
-}
-
-.mr-ncard,
-.mx-ncard {
-  margin-right: -1.25rem !important;
-}
-
-.mb-ncard,
-.my-ncard {
-  margin-bottom: -1.25rem !important;
-}
-
-.ml-ncard,
-.mx-ncard {
-  margin-left: -1.25rem !important;
 }
 
 .m-n6 {
@@ -8887,6 +8898,25 @@ button.modal-bg-dark:focus {
   .mx-sm-3 {
     margin-left: 1rem !important;
   }
+  .m-sm-card {
+    margin: 1.25rem !important;
+  }
+  .mt-sm-card,
+  .my-sm-card {
+    margin-top: 1.25rem !important;
+  }
+  .mr-sm-card,
+  .mx-sm-card {
+    margin-right: 1.25rem !important;
+  }
+  .mb-sm-card,
+  .my-sm-card {
+    margin-bottom: 1.25rem !important;
+  }
+  .ml-sm-card,
+  .mx-sm-card {
+    margin-left: 1.25rem !important;
+  }
   .m-sm-4 {
     margin: 1.5rem !important;
   }
@@ -8924,25 +8954,6 @@ button.modal-bg-dark:focus {
   .ml-sm-5,
   .mx-sm-5 {
     margin-left: 3rem !important;
-  }
-  .m-sm-card {
-    margin: 1.25rem !important;
-  }
-  .mt-sm-card,
-  .my-sm-card {
-    margin-top: 1.25rem !important;
-  }
-  .mr-sm-card,
-  .mx-sm-card {
-    margin-right: 1.25rem !important;
-  }
-  .mb-sm-card,
-  .my-sm-card {
-    margin-bottom: 1.25rem !important;
-  }
-  .ml-sm-card,
-  .mx-sm-card {
-    margin-left: 1.25rem !important;
   }
   .m-sm-6 {
     margin: 4rem !important;
@@ -9172,6 +9183,25 @@ button.modal-bg-dark:focus {
   .px-sm-3 {
     padding-left: 1rem !important;
   }
+  .p-sm-card {
+    padding: 1.25rem !important;
+  }
+  .pt-sm-card,
+  .py-sm-card {
+    padding-top: 1.25rem !important;
+  }
+  .pr-sm-card,
+  .px-sm-card {
+    padding-right: 1.25rem !important;
+  }
+  .pb-sm-card,
+  .py-sm-card {
+    padding-bottom: 1.25rem !important;
+  }
+  .pl-sm-card,
+  .px-sm-card {
+    padding-left: 1.25rem !important;
+  }
   .p-sm-4 {
     padding: 1.5rem !important;
   }
@@ -9209,25 +9239,6 @@ button.modal-bg-dark:focus {
   .pl-sm-5,
   .px-sm-5 {
     padding-left: 3rem !important;
-  }
-  .p-sm-card {
-    padding: 1.25rem !important;
-  }
-  .pt-sm-card,
-  .py-sm-card {
-    padding-top: 1.25rem !important;
-  }
-  .pr-sm-card,
-  .px-sm-card {
-    padding-right: 1.25rem !important;
-  }
-  .pb-sm-card,
-  .py-sm-card {
-    padding-bottom: 1.25rem !important;
-  }
-  .pl-sm-card,
-  .px-sm-card {
-    padding-left: 1.25rem !important;
   }
   .p-sm-6 {
     padding: 4rem !important;
@@ -9438,6 +9449,25 @@ button.modal-bg-dark:focus {
   .mx-sm-n3 {
     margin-left: -1rem !important;
   }
+  .m-sm-ncard {
+    margin: -1.25rem !important;
+  }
+  .mt-sm-ncard,
+  .my-sm-ncard {
+    margin-top: -1.25rem !important;
+  }
+  .mr-sm-ncard,
+  .mx-sm-ncard {
+    margin-right: -1.25rem !important;
+  }
+  .mb-sm-ncard,
+  .my-sm-ncard {
+    margin-bottom: -1.25rem !important;
+  }
+  .ml-sm-ncard,
+  .mx-sm-ncard {
+    margin-left: -1.25rem !important;
+  }
   .m-sm-n4 {
     margin: -1.5rem !important;
   }
@@ -9475,25 +9505,6 @@ button.modal-bg-dark:focus {
   .ml-sm-n5,
   .mx-sm-n5 {
     margin-left: -3rem !important;
-  }
-  .m-sm-ncard {
-    margin: -1.25rem !important;
-  }
-  .mt-sm-ncard,
-  .my-sm-ncard {
-    margin-top: -1.25rem !important;
-  }
-  .mr-sm-ncard,
-  .mx-sm-ncard {
-    margin-right: -1.25rem !important;
-  }
-  .mb-sm-ncard,
-  .my-sm-ncard {
-    margin-bottom: -1.25rem !important;
-  }
-  .ml-sm-ncard,
-  .mx-sm-ncard {
-    margin-left: -1.25rem !important;
   }
   .m-sm-n6 {
     margin: -4rem !important;
@@ -9745,6 +9756,25 @@ button.modal-bg-dark:focus {
   .mx-md-3 {
     margin-left: 1rem !important;
   }
+  .m-md-card {
+    margin: 1.25rem !important;
+  }
+  .mt-md-card,
+  .my-md-card {
+    margin-top: 1.25rem !important;
+  }
+  .mr-md-card,
+  .mx-md-card {
+    margin-right: 1.25rem !important;
+  }
+  .mb-md-card,
+  .my-md-card {
+    margin-bottom: 1.25rem !important;
+  }
+  .ml-md-card,
+  .mx-md-card {
+    margin-left: 1.25rem !important;
+  }
   .m-md-4 {
     margin: 1.5rem !important;
   }
@@ -9782,25 +9812,6 @@ button.modal-bg-dark:focus {
   .ml-md-5,
   .mx-md-5 {
     margin-left: 3rem !important;
-  }
-  .m-md-card {
-    margin: 1.25rem !important;
-  }
-  .mt-md-card,
-  .my-md-card {
-    margin-top: 1.25rem !important;
-  }
-  .mr-md-card,
-  .mx-md-card {
-    margin-right: 1.25rem !important;
-  }
-  .mb-md-card,
-  .my-md-card {
-    margin-bottom: 1.25rem !important;
-  }
-  .ml-md-card,
-  .mx-md-card {
-    margin-left: 1.25rem !important;
   }
   .m-md-6 {
     margin: 4rem !important;
@@ -10030,6 +10041,25 @@ button.modal-bg-dark:focus {
   .px-md-3 {
     padding-left: 1rem !important;
   }
+  .p-md-card {
+    padding: 1.25rem !important;
+  }
+  .pt-md-card,
+  .py-md-card {
+    padding-top: 1.25rem !important;
+  }
+  .pr-md-card,
+  .px-md-card {
+    padding-right: 1.25rem !important;
+  }
+  .pb-md-card,
+  .py-md-card {
+    padding-bottom: 1.25rem !important;
+  }
+  .pl-md-card,
+  .px-md-card {
+    padding-left: 1.25rem !important;
+  }
   .p-md-4 {
     padding: 1.5rem !important;
   }
@@ -10067,25 +10097,6 @@ button.modal-bg-dark:focus {
   .pl-md-5,
   .px-md-5 {
     padding-left: 3rem !important;
-  }
-  .p-md-card {
-    padding: 1.25rem !important;
-  }
-  .pt-md-card,
-  .py-md-card {
-    padding-top: 1.25rem !important;
-  }
-  .pr-md-card,
-  .px-md-card {
-    padding-right: 1.25rem !important;
-  }
-  .pb-md-card,
-  .py-md-card {
-    padding-bottom: 1.25rem !important;
-  }
-  .pl-md-card,
-  .px-md-card {
-    padding-left: 1.25rem !important;
   }
   .p-md-6 {
     padding: 4rem !important;
@@ -10296,6 +10307,25 @@ button.modal-bg-dark:focus {
   .mx-md-n3 {
     margin-left: -1rem !important;
   }
+  .m-md-ncard {
+    margin: -1.25rem !important;
+  }
+  .mt-md-ncard,
+  .my-md-ncard {
+    margin-top: -1.25rem !important;
+  }
+  .mr-md-ncard,
+  .mx-md-ncard {
+    margin-right: -1.25rem !important;
+  }
+  .mb-md-ncard,
+  .my-md-ncard {
+    margin-bottom: -1.25rem !important;
+  }
+  .ml-md-ncard,
+  .mx-md-ncard {
+    margin-left: -1.25rem !important;
+  }
   .m-md-n4 {
     margin: -1.5rem !important;
   }
@@ -10333,25 +10363,6 @@ button.modal-bg-dark:focus {
   .ml-md-n5,
   .mx-md-n5 {
     margin-left: -3rem !important;
-  }
-  .m-md-ncard {
-    margin: -1.25rem !important;
-  }
-  .mt-md-ncard,
-  .my-md-ncard {
-    margin-top: -1.25rem !important;
-  }
-  .mr-md-ncard,
-  .mx-md-ncard {
-    margin-right: -1.25rem !important;
-  }
-  .mb-md-ncard,
-  .my-md-ncard {
-    margin-bottom: -1.25rem !important;
-  }
-  .ml-md-ncard,
-  .mx-md-ncard {
-    margin-left: -1.25rem !important;
   }
   .m-md-n6 {
     margin: -4rem !important;
@@ -10603,6 +10614,25 @@ button.modal-bg-dark:focus {
   .mx-lg-3 {
     margin-left: 1rem !important;
   }
+  .m-lg-card {
+    margin: 1.25rem !important;
+  }
+  .mt-lg-card,
+  .my-lg-card {
+    margin-top: 1.25rem !important;
+  }
+  .mr-lg-card,
+  .mx-lg-card {
+    margin-right: 1.25rem !important;
+  }
+  .mb-lg-card,
+  .my-lg-card {
+    margin-bottom: 1.25rem !important;
+  }
+  .ml-lg-card,
+  .mx-lg-card {
+    margin-left: 1.25rem !important;
+  }
   .m-lg-4 {
     margin: 1.5rem !important;
   }
@@ -10640,25 +10670,6 @@ button.modal-bg-dark:focus {
   .ml-lg-5,
   .mx-lg-5 {
     margin-left: 3rem !important;
-  }
-  .m-lg-card {
-    margin: 1.25rem !important;
-  }
-  .mt-lg-card,
-  .my-lg-card {
-    margin-top: 1.25rem !important;
-  }
-  .mr-lg-card,
-  .mx-lg-card {
-    margin-right: 1.25rem !important;
-  }
-  .mb-lg-card,
-  .my-lg-card {
-    margin-bottom: 1.25rem !important;
-  }
-  .ml-lg-card,
-  .mx-lg-card {
-    margin-left: 1.25rem !important;
   }
   .m-lg-6 {
     margin: 4rem !important;
@@ -10888,6 +10899,25 @@ button.modal-bg-dark:focus {
   .px-lg-3 {
     padding-left: 1rem !important;
   }
+  .p-lg-card {
+    padding: 1.25rem !important;
+  }
+  .pt-lg-card,
+  .py-lg-card {
+    padding-top: 1.25rem !important;
+  }
+  .pr-lg-card,
+  .px-lg-card {
+    padding-right: 1.25rem !important;
+  }
+  .pb-lg-card,
+  .py-lg-card {
+    padding-bottom: 1.25rem !important;
+  }
+  .pl-lg-card,
+  .px-lg-card {
+    padding-left: 1.25rem !important;
+  }
   .p-lg-4 {
     padding: 1.5rem !important;
   }
@@ -10925,25 +10955,6 @@ button.modal-bg-dark:focus {
   .pl-lg-5,
   .px-lg-5 {
     padding-left: 3rem !important;
-  }
-  .p-lg-card {
-    padding: 1.25rem !important;
-  }
-  .pt-lg-card,
-  .py-lg-card {
-    padding-top: 1.25rem !important;
-  }
-  .pr-lg-card,
-  .px-lg-card {
-    padding-right: 1.25rem !important;
-  }
-  .pb-lg-card,
-  .py-lg-card {
-    padding-bottom: 1.25rem !important;
-  }
-  .pl-lg-card,
-  .px-lg-card {
-    padding-left: 1.25rem !important;
   }
   .p-lg-6 {
     padding: 4rem !important;
@@ -11154,6 +11165,25 @@ button.modal-bg-dark:focus {
   .mx-lg-n3 {
     margin-left: -1rem !important;
   }
+  .m-lg-ncard {
+    margin: -1.25rem !important;
+  }
+  .mt-lg-ncard,
+  .my-lg-ncard {
+    margin-top: -1.25rem !important;
+  }
+  .mr-lg-ncard,
+  .mx-lg-ncard {
+    margin-right: -1.25rem !important;
+  }
+  .mb-lg-ncard,
+  .my-lg-ncard {
+    margin-bottom: -1.25rem !important;
+  }
+  .ml-lg-ncard,
+  .mx-lg-ncard {
+    margin-left: -1.25rem !important;
+  }
   .m-lg-n4 {
     margin: -1.5rem !important;
   }
@@ -11191,25 +11221,6 @@ button.modal-bg-dark:focus {
   .ml-lg-n5,
   .mx-lg-n5 {
     margin-left: -3rem !important;
-  }
-  .m-lg-ncard {
-    margin: -1.25rem !important;
-  }
-  .mt-lg-ncard,
-  .my-lg-ncard {
-    margin-top: -1.25rem !important;
-  }
-  .mr-lg-ncard,
-  .mx-lg-ncard {
-    margin-right: -1.25rem !important;
-  }
-  .mb-lg-ncard,
-  .my-lg-ncard {
-    margin-bottom: -1.25rem !important;
-  }
-  .ml-lg-ncard,
-  .mx-lg-ncard {
-    margin-left: -1.25rem !important;
   }
   .m-lg-n6 {
     margin: -4rem !important;
@@ -11461,6 +11472,25 @@ button.modal-bg-dark:focus {
   .mx-xl-3 {
     margin-left: 1rem !important;
   }
+  .m-xl-card {
+    margin: 1.25rem !important;
+  }
+  .mt-xl-card,
+  .my-xl-card {
+    margin-top: 1.25rem !important;
+  }
+  .mr-xl-card,
+  .mx-xl-card {
+    margin-right: 1.25rem !important;
+  }
+  .mb-xl-card,
+  .my-xl-card {
+    margin-bottom: 1.25rem !important;
+  }
+  .ml-xl-card,
+  .mx-xl-card {
+    margin-left: 1.25rem !important;
+  }
   .m-xl-4 {
     margin: 1.5rem !important;
   }
@@ -11498,25 +11528,6 @@ button.modal-bg-dark:focus {
   .ml-xl-5,
   .mx-xl-5 {
     margin-left: 3rem !important;
-  }
-  .m-xl-card {
-    margin: 1.25rem !important;
-  }
-  .mt-xl-card,
-  .my-xl-card {
-    margin-top: 1.25rem !important;
-  }
-  .mr-xl-card,
-  .mx-xl-card {
-    margin-right: 1.25rem !important;
-  }
-  .mb-xl-card,
-  .my-xl-card {
-    margin-bottom: 1.25rem !important;
-  }
-  .ml-xl-card,
-  .mx-xl-card {
-    margin-left: 1.25rem !important;
   }
   .m-xl-6 {
     margin: 4rem !important;
@@ -11746,6 +11757,25 @@ button.modal-bg-dark:focus {
   .px-xl-3 {
     padding-left: 1rem !important;
   }
+  .p-xl-card {
+    padding: 1.25rem !important;
+  }
+  .pt-xl-card,
+  .py-xl-card {
+    padding-top: 1.25rem !important;
+  }
+  .pr-xl-card,
+  .px-xl-card {
+    padding-right: 1.25rem !important;
+  }
+  .pb-xl-card,
+  .py-xl-card {
+    padding-bottom: 1.25rem !important;
+  }
+  .pl-xl-card,
+  .px-xl-card {
+    padding-left: 1.25rem !important;
+  }
   .p-xl-4 {
     padding: 1.5rem !important;
   }
@@ -11783,25 +11813,6 @@ button.modal-bg-dark:focus {
   .pl-xl-5,
   .px-xl-5 {
     padding-left: 3rem !important;
-  }
-  .p-xl-card {
-    padding: 1.25rem !important;
-  }
-  .pt-xl-card,
-  .py-xl-card {
-    padding-top: 1.25rem !important;
-  }
-  .pr-xl-card,
-  .px-xl-card {
-    padding-right: 1.25rem !important;
-  }
-  .pb-xl-card,
-  .py-xl-card {
-    padding-bottom: 1.25rem !important;
-  }
-  .pl-xl-card,
-  .px-xl-card {
-    padding-left: 1.25rem !important;
   }
   .p-xl-6 {
     padding: 4rem !important;
@@ -12012,6 +12023,25 @@ button.modal-bg-dark:focus {
   .mx-xl-n3 {
     margin-left: -1rem !important;
   }
+  .m-xl-ncard {
+    margin: -1.25rem !important;
+  }
+  .mt-xl-ncard,
+  .my-xl-ncard {
+    margin-top: -1.25rem !important;
+  }
+  .mr-xl-ncard,
+  .mx-xl-ncard {
+    margin-right: -1.25rem !important;
+  }
+  .mb-xl-ncard,
+  .my-xl-ncard {
+    margin-bottom: -1.25rem !important;
+  }
+  .ml-xl-ncard,
+  .mx-xl-ncard {
+    margin-left: -1.25rem !important;
+  }
   .m-xl-n4 {
     margin: -1.5rem !important;
   }
@@ -12049,25 +12079,6 @@ button.modal-bg-dark:focus {
   .ml-xl-n5,
   .mx-xl-n5 {
     margin-left: -3rem !important;
-  }
-  .m-xl-ncard {
-    margin: -1.25rem !important;
-  }
-  .mt-xl-ncard,
-  .my-xl-ncard {
-    margin-top: -1.25rem !important;
-  }
-  .mr-xl-ncard,
-  .mx-xl-ncard {
-    margin-right: -1.25rem !important;
-  }
-  .mb-xl-ncard,
-  .my-xl-ncard {
-    margin-bottom: -1.25rem !important;
-  }
-  .ml-xl-ncard,
-  .mx-xl-ncard {
-    margin-left: -1.25rem !important;
   }
   .m-xl-n6 {
     margin: -4rem !important;
@@ -12441,7 +12452,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #495057 !important;
+  color: #6c757d !important;
 }
 
 .text-black-50 {
@@ -12578,6 +12589,108 @@ a.text-dark:hover, a.text-dark:focus {
 /*
 * >> Background Color
 */
+.bg-red {
+  color: #fff;
+  background-color: #ab0520;
+}
+
+.bg-red h1,
+.bg-red h2,
+.bg-red h3,
+.bg-red h4,
+.bg-red h5,
+.bg-red h6,
+.bg-red .h1,
+.bg-red .text-size-h1,
+.bg-red .h2,
+.bg-red .text-size-h2,
+.bg-red .h3,
+.bg-red .text-size-h3,
+.bg-red .h4,
+.bg-red .text-size-h4,
+.bg-red .h5,
+.bg-red .text-size-h5,
+.bg-red .h6,
+.bg-red .text-size-h6 {
+  color: inherit;
+}
+
+.bg-red a:not(.btn) {
+  color: inherit;
+}
+
+.bg-red .ul-triangles li::before, .bg-red ul.triangle li::before {
+  border-left-color: #fff;
+}
+
+.bg-bloom {
+  color: #000;
+  background-color: #ef4056;
+}
+
+.bg-bloom h1,
+.bg-bloom h2,
+.bg-bloom h3,
+.bg-bloom h4,
+.bg-bloom h5,
+.bg-bloom h6,
+.bg-bloom .h1,
+.bg-bloom .text-size-h1,
+.bg-bloom .h2,
+.bg-bloom .text-size-h2,
+.bg-bloom .h3,
+.bg-bloom .text-size-h3,
+.bg-bloom .h4,
+.bg-bloom .text-size-h4,
+.bg-bloom .h5,
+.bg-bloom .text-size-h5,
+.bg-bloom .h6,
+.bg-bloom .text-size-h6 {
+  color: inherit;
+}
+
+.bg-bloom .ul-triangles li::before, .bg-bloom ul.triangle li::before {
+  border-left-color: #000;
+}
+
+.bg-bloom a:not(.btn) {
+  color: inherit;
+}
+
+.bg-chili {
+  color: #fff;
+  background-color: #8b0015;
+}
+
+.bg-chili h1,
+.bg-chili h2,
+.bg-chili h3,
+.bg-chili h4,
+.bg-chili h5,
+.bg-chili h6,
+.bg-chili .h1,
+.bg-chili .text-size-h1,
+.bg-chili .h2,
+.bg-chili .text-size-h2,
+.bg-chili .h3,
+.bg-chili .text-size-h3,
+.bg-chili .h4,
+.bg-chili .text-size-h4,
+.bg-chili .h5,
+.bg-chili .text-size-h5,
+.bg-chili .h6,
+.bg-chili .text-size-h6 {
+  color: inherit;
+}
+
+.bg-chili a:not(.btn) {
+  color: inherit;
+}
+
+.bg-chili .ul-triangles li::before, .bg-chili ul.triangle li::before {
+  border-left-color: #fff;
+}
+
 .bg-blue, .panel-primary .panel-heading, .bg-primary, .card-primary {
   color: #fff;
   background-color: #0c234b;
@@ -12660,190 +12773,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .bg-blue .ul-triangles li::before, .panel-primary .panel-heading .ul-triangles li::before, .bg-primary .ul-triangles li::before, .card-primary .ul-triangles li::before, .bg-blue ul.triangle li::before, .panel-primary .panel-heading ul.triangle li::before, .bg-primary ul.triangle li::before, .card-primary ul.triangle li::before {
-  border-left-color: #fff;
-}
-
-.bg-red {
-  color: #fff;
-  background-color: #ab0520;
-}
-
-.bg-red h1,
-.bg-red h2,
-.bg-red h3,
-.bg-red h4,
-.bg-red h5,
-.bg-red h6,
-.bg-red .h1,
-.bg-red .text-size-h1,
-.bg-red .h2,
-.bg-red .text-size-h2,
-.bg-red .h3,
-.bg-red .text-size-h3,
-.bg-red .h4,
-.bg-red .text-size-h4,
-.bg-red .h5,
-.bg-red .text-size-h5,
-.bg-red .h6,
-.bg-red .text-size-h6 {
-  color: inherit;
-}
-
-.bg-red a:not(.btn) {
-  color: inherit;
-}
-
-.bg-red .ul-triangles li::before, .bg-red ul.triangle li::before {
-  border-left-color: #fff;
-}
-
-.bg-white,
-.panel, .well.well-hollow, .modal-bg-dark .modal-content {
-  color: #000;
-  background-color: #fff;
-}
-
-.bg-white h1, .panel h1, .well.well-hollow h1, .modal-bg-dark .modal-content h1,
-.bg-white h2,
-.panel h2,
-.well.well-hollow h2,
-.modal-bg-dark .modal-content h2,
-.bg-white h3,
-.panel h3,
-.well.well-hollow h3,
-.modal-bg-dark .modal-content h3,
-.bg-white h4,
-.panel h4,
-.well.well-hollow h4,
-.modal-bg-dark .modal-content h4,
-.bg-white h5,
-.panel h5,
-.well.well-hollow h5,
-.modal-bg-dark .modal-content h5,
-.bg-white h6,
-.panel h6,
-.well.well-hollow h6,
-.modal-bg-dark .modal-content h6,
-.bg-white .h1,
-.panel .h1,
-.well.well-hollow .h1,
-.modal-bg-dark .modal-content .h1,
-.bg-white .text-size-h1,
-.panel .text-size-h1,
-.well.well-hollow .text-size-h1,
-.modal-bg-dark .modal-content .text-size-h1,
-.bg-white .h2,
-.panel .h2,
-.well.well-hollow .h2,
-.modal-bg-dark .modal-content .h2,
-.bg-white .text-size-h2,
-.panel .text-size-h2,
-.well.well-hollow .text-size-h2,
-.modal-bg-dark .modal-content .text-size-h2,
-.bg-white .h3,
-.panel .h3,
-.well.well-hollow .h3,
-.modal-bg-dark .modal-content .h3,
-.bg-white .text-size-h3,
-.panel .text-size-h3,
-.well.well-hollow .text-size-h3,
-.modal-bg-dark .modal-content .text-size-h3,
-.bg-white .h4,
-.panel .h4,
-.well.well-hollow .h4,
-.modal-bg-dark .modal-content .h4,
-.bg-white .text-size-h4,
-.panel .text-size-h4,
-.well.well-hollow .text-size-h4,
-.modal-bg-dark .modal-content .text-size-h4,
-.bg-white .h5,
-.panel .h5,
-.well.well-hollow .h5,
-.modal-bg-dark .modal-content .h5,
-.bg-white .text-size-h5,
-.panel .text-size-h5,
-.well.well-hollow .text-size-h5,
-.modal-bg-dark .modal-content .text-size-h5,
-.bg-white .h6,
-.panel .h6,
-.well.well-hollow .h6,
-.modal-bg-dark .modal-content .h6,
-.bg-white .text-size-h6,
-.panel .text-size-h6,
-.well.well-hollow .text-size-h6,
-.modal-bg-dark .modal-content .text-size-h6 {
-  color: inherit;
-}
-
-.bg-white .ul-triangles li::before, .panel .ul-triangles li::before, .well.well-hollow .ul-triangles li::before, .modal-bg-dark .modal-content .ul-triangles li::before, .bg-white ul.triangle li::before, .panel ul.triangle li::before, .well.well-hollow ul.triangle li::before, .modal-bg-dark .modal-content ul.triangle li::before {
-  border-left-color: #000;
-}
-
-.bg-bloom {
-  color: #000;
-  background-color: #ef4056;
-}
-
-.bg-bloom h1,
-.bg-bloom h2,
-.bg-bloom h3,
-.bg-bloom h4,
-.bg-bloom h5,
-.bg-bloom h6,
-.bg-bloom .h1,
-.bg-bloom .text-size-h1,
-.bg-bloom .h2,
-.bg-bloom .text-size-h2,
-.bg-bloom .h3,
-.bg-bloom .text-size-h3,
-.bg-bloom .h4,
-.bg-bloom .text-size-h4,
-.bg-bloom .h5,
-.bg-bloom .text-size-h5,
-.bg-bloom .h6,
-.bg-bloom .text-size-h6 {
-  color: inherit;
-}
-
-.bg-bloom .ul-triangles li::before, .bg-bloom ul.triangle li::before {
-  border-left-color: #000;
-}
-
-.bg-bloom a:not(.btn) {
-  color: inherit;
-}
-
-.bg-chili {
-  color: #fff;
-  background-color: #8b0015;
-}
-
-.bg-chili h1,
-.bg-chili h2,
-.bg-chili h3,
-.bg-chili h4,
-.bg-chili h5,
-.bg-chili h6,
-.bg-chili .h1,
-.bg-chili .text-size-h1,
-.bg-chili .h2,
-.bg-chili .text-size-h2,
-.bg-chili .h3,
-.bg-chili .text-size-h3,
-.bg-chili .h4,
-.bg-chili .text-size-h4,
-.bg-chili .h5,
-.bg-chili .text-size-h5,
-.bg-chili .h6,
-.bg-chili .text-size-h6 {
-  color: inherit;
-}
-
-.bg-chili a:not(.btn) {
-  color: inherit;
-}
-
-.bg-chili .ul-triangles li::before, .bg-chili ul.triangle li::before {
   border-left-color: #fff;
 }
 
@@ -13247,6 +13176,88 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #fff;
 }
 
+.bg-white,
+.panel, .well.well-hollow, .modal-bg-dark .modal-content {
+  color: #000;
+  background-color: #fff;
+}
+
+.bg-white h1, .panel h1, .well.well-hollow h1, .modal-bg-dark .modal-content h1,
+.bg-white h2,
+.panel h2,
+.well.well-hollow h2,
+.modal-bg-dark .modal-content h2,
+.bg-white h3,
+.panel h3,
+.well.well-hollow h3,
+.modal-bg-dark .modal-content h3,
+.bg-white h4,
+.panel h4,
+.well.well-hollow h4,
+.modal-bg-dark .modal-content h4,
+.bg-white h5,
+.panel h5,
+.well.well-hollow h5,
+.modal-bg-dark .modal-content h5,
+.bg-white h6,
+.panel h6,
+.well.well-hollow h6,
+.modal-bg-dark .modal-content h6,
+.bg-white .h1,
+.panel .h1,
+.well.well-hollow .h1,
+.modal-bg-dark .modal-content .h1,
+.bg-white .text-size-h1,
+.panel .text-size-h1,
+.well.well-hollow .text-size-h1,
+.modal-bg-dark .modal-content .text-size-h1,
+.bg-white .h2,
+.panel .h2,
+.well.well-hollow .h2,
+.modal-bg-dark .modal-content .h2,
+.bg-white .text-size-h2,
+.panel .text-size-h2,
+.well.well-hollow .text-size-h2,
+.modal-bg-dark .modal-content .text-size-h2,
+.bg-white .h3,
+.panel .h3,
+.well.well-hollow .h3,
+.modal-bg-dark .modal-content .h3,
+.bg-white .text-size-h3,
+.panel .text-size-h3,
+.well.well-hollow .text-size-h3,
+.modal-bg-dark .modal-content .text-size-h3,
+.bg-white .h4,
+.panel .h4,
+.well.well-hollow .h4,
+.modal-bg-dark .modal-content .h4,
+.bg-white .text-size-h4,
+.panel .text-size-h4,
+.well.well-hollow .text-size-h4,
+.modal-bg-dark .modal-content .text-size-h4,
+.bg-white .h5,
+.panel .h5,
+.well.well-hollow .h5,
+.modal-bg-dark .modal-content .h5,
+.bg-white .text-size-h5,
+.panel .text-size-h5,
+.well.well-hollow .text-size-h5,
+.modal-bg-dark .modal-content .text-size-h5,
+.bg-white .h6,
+.panel .h6,
+.well.well-hollow .h6,
+.modal-bg-dark .modal-content .h6,
+.bg-white .text-size-h6,
+.panel .text-size-h6,
+.well.well-hollow .text-size-h6,
+.modal-bg-dark .modal-content .text-size-h6 {
+  color: inherit;
+}
+
+.bg-white .ul-triangles li::before, .panel .ul-triangles li::before, .well.well-hollow .ul-triangles li::before, .modal-bg-dark .modal-content .ul-triangles li::before, .bg-white ul.triangle li::before, .panel ul.triangle li::before, .well.well-hollow ul.triangle li::before, .modal-bg-dark .modal-content ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-black {
   color: #fff;
   background-color: #000;
@@ -13278,40 +13289,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .bg-black .ul-triangles li::before, .bg-black ul.triangle li::before {
-  border-left-color: #fff;
-}
-
-.bg-transparent-blue {
-  color: #fff;
-  background-color: rgba(12, 35, 75, 0.8);
-}
-
-.bg-transparent-blue h1,
-.bg-transparent-blue h2,
-.bg-transparent-blue h3,
-.bg-transparent-blue h4,
-.bg-transparent-blue h5,
-.bg-transparent-blue h6,
-.bg-transparent-blue .h1,
-.bg-transparent-blue .text-size-h1,
-.bg-transparent-blue .h2,
-.bg-transparent-blue .text-size-h2,
-.bg-transparent-blue .h3,
-.bg-transparent-blue .text-size-h3,
-.bg-transparent-blue .h4,
-.bg-transparent-blue .text-size-h4,
-.bg-transparent-blue .h5,
-.bg-transparent-blue .text-size-h5,
-.bg-transparent-blue .h6,
-.bg-transparent-blue .text-size-h6 {
-  color: inherit;
-}
-
-.bg-transparent-blue a:not(.btn) {
-  color: inherit;
-}
-
-.bg-transparent-blue .ul-triangles li::before, .bg-transparent-blue ul.triangle li::before {
   border-left-color: #fff;
 }
 
@@ -13347,36 +13324,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .bg-transparent-red .ul-triangles li::before, .bg-transparent-red ul.triangle li::before {
   border-left-color: #fff;
-}
-
-.bg-transparent-white {
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.bg-transparent-white h1,
-.bg-transparent-white h2,
-.bg-transparent-white h3,
-.bg-transparent-white h4,
-.bg-transparent-white h5,
-.bg-transparent-white h6,
-.bg-transparent-white .h1,
-.bg-transparent-white .text-size-h1,
-.bg-transparent-white .h2,
-.bg-transparent-white .text-size-h2,
-.bg-transparent-white .h3,
-.bg-transparent-white .text-size-h3,
-.bg-transparent-white .h4,
-.bg-transparent-white .text-size-h4,
-.bg-transparent-white .h5,
-.bg-transparent-white .text-size-h5,
-.bg-transparent-white .h6,
-.bg-transparent-white .text-size-h6 {
-  color: inherit;
-}
-
-.bg-transparent-white .ul-triangles li::before, .bg-transparent-white ul.triangle li::before {
-  border-left-color: #000;
 }
 
 .bg-transparent-bloom {
@@ -13444,6 +13391,40 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .bg-transparent-chili .ul-triangles li::before, .bg-transparent-chili ul.triangle li::before {
+  border-left-color: #fff;
+}
+
+.bg-transparent-blue {
+  color: #fff;
+  background-color: rgba(12, 35, 75, 0.8);
+}
+
+.bg-transparent-blue h1,
+.bg-transparent-blue h2,
+.bg-transparent-blue h3,
+.bg-transparent-blue h4,
+.bg-transparent-blue h5,
+.bg-transparent-blue h6,
+.bg-transparent-blue .h1,
+.bg-transparent-blue .text-size-h1,
+.bg-transparent-blue .h2,
+.bg-transparent-blue .text-size-h2,
+.bg-transparent-blue .h3,
+.bg-transparent-blue .text-size-h3,
+.bg-transparent-blue .h4,
+.bg-transparent-blue .text-size-h4,
+.bg-transparent-blue .h5,
+.bg-transparent-blue .text-size-h5,
+.bg-transparent-blue .h6,
+.bg-transparent-blue .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-blue a:not(.btn) {
+  color: inherit;
+}
+
+.bg-transparent-blue .ul-triangles li::before, .bg-transparent-blue ul.triangle li::before {
   border-left-color: #fff;
 }
 
@@ -13847,6 +13828,36 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #fff;
 }
 
+.bg-transparent-white {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-transparent-white h1,
+.bg-transparent-white h2,
+.bg-transparent-white h3,
+.bg-transparent-white h4,
+.bg-transparent-white h5,
+.bg-transparent-white h6,
+.bg-transparent-white .h1,
+.bg-transparent-white .text-size-h1,
+.bg-transparent-white .h2,
+.bg-transparent-white .text-size-h2,
+.bg-transparent-white .h3,
+.bg-transparent-white .text-size-h3,
+.bg-transparent-white .h4,
+.bg-transparent-white .text-size-h4,
+.bg-transparent-white .h5,
+.bg-transparent-white .text-size-h5,
+.bg-transparent-white .h6,
+.bg-transparent-white .text-size-h6 {
+  color: inherit;
+}
+
+.bg-transparent-white .ul-triangles li::before, .bg-transparent-white ul.triangle li::before {
+  border-left-color: #000;
+}
+
 .bg-transparent-black {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
@@ -13881,16 +13892,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #fff;
 }
 
-.bg-gradient-blue {
-  background-image: linear-gradient(180deg, transparent, #0c234b);
-}
-
 .bg-gradient-red {
   background-image: linear-gradient(180deg, transparent, #ab0520);
-}
-
-.bg-gradient-white {
-  background-image: linear-gradient(180deg, transparent, #fff);
 }
 
 .bg-gradient-bloom {
@@ -13899,6 +13902,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .bg-gradient-chili {
   background-image: linear-gradient(180deg, transparent, #8b0015);
+}
+
+.bg-gradient-blue {
+  background-image: linear-gradient(180deg, transparent, #0c234b);
 }
 
 .bg-gradient-sky {
@@ -13947,6 +13954,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .bg-gradient-sage {
   background-image: linear-gradient(180deg, transparent, #4a634e);
+}
+
+.bg-gradient-white {
+  background-image: linear-gradient(180deg, transparent, #fff);
 }
 
 .bg-gradient-black {
@@ -14869,16 +14880,8 @@ a.text-dark:hover, a.text-dark:focus {
 /*
 * >> Text Color
 */
-.text-blue, .text-primary {
-  color: #0c234b !important;
-}
-
 .text-red {
   color: #ab0520 !important;
-}
-
-.text-white, .card-inverse {
-  color: #fff !important;
 }
 
 .text-bloom {
@@ -14887,6 +14890,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-chili {
   color: #8b0015 !important;
+}
+
+.text-blue, .text-primary {
+  color: #0c234b !important;
 }
 
 .text-sky {
@@ -14937,6 +14944,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: #4a634e !important;
 }
 
+.text-white, .card-inverse {
+  color: #fff !important;
+}
+
 .text-black {
   color: #000 !important;
 }
@@ -14972,16 +14983,8 @@ a.text-dark:hover, a.text-dark:focus {
 /*
 * >> Border Colors
 */
-.border-blue, .card-primary-outline {
-  border-color: #0c234b !important;
-}
-
 .border-red {
   border-color: #ab0520 !important;
-}
-
-.border-white {
-  border-color: #fff !important;
 }
 
 .border-bloom {
@@ -14990,6 +14993,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .border-chili {
   border-color: #8b0015 !important;
+}
+
+.border-blue, .card-primary-outline {
+  border-color: #0c234b !important;
 }
 
 .border-sky {
@@ -15040,6 +15047,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-color: #4a634e !important;
 }
 
+.border-white {
+  border-color: #fff !important;
+}
+
 .border-black {
   border-color: #000 !important;
 }
@@ -15051,12 +15062,12 @@ a.text-dark:hover, a.text-dark:focus {
 h2,
 .h1, .text-size-h1,
 .h2, .text-size-h2 {
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #49595e;
 }
 
 .sans {
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
 }
 
@@ -15281,7 +15292,7 @@ h4,
 h5,
 h6, .h3, .text-size-h3, .h4, .text-size-h4, .h5, .text-size-h5, .h6, .text-size-h6 {
   margin: 1.042em 0 0.667em;
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #49595e;
 }
 
@@ -15637,7 +15648,7 @@ a {
 .nav-pills .nav-link.disabled,
 .nav-tabs .nav-link.disabled,
 .nav-link.disabled {
-  color: #495057;
+  color: #6c757d;
 }
 
 .nav-pills .nav-link.active, .nav-pills .nav-link:active, .nav-pills .nav-link.is-active,
@@ -16121,7 +16132,7 @@ a {
     text-decoration: none;
   }
   .navbar-offcanvas .navbar-nav .nav-link.disabled {
-    color: #495057;
+    color: #6c757d;
     pointer-events: none;
     cursor: default;
   }
@@ -16258,34 +16269,10 @@ a {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.bg-trilines.bg-blue p, .panel-primary .bg-trilines.panel-heading p, .bg-trilines.bg-primary p, .bg-trilines.card-primary p,
-.bg-trilines.bg-blue li,
-.panel-primary .bg-trilines.panel-heading li,
-.bg-trilines.bg-primary li,
-.bg-trilines.card-primary li,
-.bg-trilines.bg-blue hr,
-.panel-primary .bg-trilines.panel-heading hr,
-.bg-trilines.bg-primary hr,
-.bg-trilines.card-primary hr {
-  background-color: rgba(12, 35, 75, 0.7);
-}
-
 .bg-trilines.bg-red p,
 .bg-trilines.bg-red li,
 .bg-trilines.bg-red hr {
   background-color: rgba(171, 5, 32, 0.7);
-}
-
-.bg-trilines.bg-white p, .bg-trilines.panel p, .bg-trilines.well.well-hollow p, .modal-bg-dark .bg-trilines.modal-content p,
-.bg-trilines.bg-white li,
-.bg-trilines.panel li,
-.bg-trilines.well.well-hollow li,
-.modal-bg-dark .bg-trilines.modal-content li,
-.bg-trilines.bg-white hr,
-.bg-trilines.panel hr,
-.bg-trilines.well.well-hollow hr,
-.modal-bg-dark .bg-trilines.modal-content hr {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .bg-trilines.bg-bloom p,
@@ -16298,6 +16285,18 @@ a {
 .bg-trilines.bg-chili li,
 .bg-trilines.bg-chili hr {
   background-color: rgba(139, 0, 21, 0.7);
+}
+
+.bg-trilines.bg-blue p, .panel-primary .bg-trilines.panel-heading p, .bg-trilines.bg-primary p, .bg-trilines.card-primary p,
+.bg-trilines.bg-blue li,
+.panel-primary .bg-trilines.panel-heading li,
+.bg-trilines.bg-primary li,
+.bg-trilines.card-primary li,
+.bg-trilines.bg-blue hr,
+.panel-primary .bg-trilines.panel-heading hr,
+.bg-trilines.bg-primary hr,
+.bg-trilines.card-primary hr {
+  background-color: rgba(12, 35, 75, 0.7);
 }
 
 .bg-trilines.bg-sky p,
@@ -16372,6 +16371,18 @@ a {
   background-color: rgba(74, 99, 78, 0.7);
 }
 
+.bg-trilines.bg-white p, .bg-trilines.panel p, .bg-trilines.well.well-hollow p, .modal-bg-dark .bg-trilines.modal-content p,
+.bg-trilines.bg-white li,
+.bg-trilines.panel li,
+.bg-trilines.well.well-hollow li,
+.modal-bg-dark .bg-trilines.modal-content li,
+.bg-trilines.bg-white hr,
+.bg-trilines.panel hr,
+.bg-trilines.well.well-hollow hr,
+.modal-bg-dark .bg-trilines.modal-content hr {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 .bg-trilines.bg-black p,
 .bg-trilines.bg-black li,
 .bg-trilines.bg-black hr {
@@ -16411,28 +16422,6 @@ a {
   margin-top: -.25rem;
 }
 
-.callout-blue {
-  border-left-color: #0c234b;
-}
-
-.callout-blue h2,
-.callout-blue h3,
-.callout-blue h4,
-.callout-blue h5,
-.callout-blue h6,
-.callout-blue .h2,
-.callout-blue .text-size-h2,
-.callout-blue .h3,
-.callout-blue .text-size-h3,
-.callout-blue .h4,
-.callout-blue .text-size-h4,
-.callout-blue .h5,
-.callout-blue .text-size-h5,
-.callout-blue .h6,
-.callout-blue .text-size-h6 {
-  color: #0c234b;
-}
-
 .callout-red {
   border-left-color: #ab0520;
 }
@@ -16453,28 +16442,6 @@ a {
 .callout-red .h6,
 .callout-red .text-size-h6 {
   color: #ab0520;
-}
-
-.callout-white {
-  border-left-color: #fff;
-}
-
-.callout-white h2,
-.callout-white h3,
-.callout-white h4,
-.callout-white h5,
-.callout-white h6,
-.callout-white .h2,
-.callout-white .text-size-h2,
-.callout-white .h3,
-.callout-white .text-size-h3,
-.callout-white .h4,
-.callout-white .text-size-h4,
-.callout-white .h5,
-.callout-white .text-size-h5,
-.callout-white .h6,
-.callout-white .text-size-h6 {
-  color: #fff;
 }
 
 .callout-bloom {
@@ -16519,6 +16486,28 @@ a {
 .callout-chili .h6,
 .callout-chili .text-size-h6 {
   color: #8b0015;
+}
+
+.callout-blue {
+  border-left-color: #0c234b;
+}
+
+.callout-blue h2,
+.callout-blue h3,
+.callout-blue h4,
+.callout-blue h5,
+.callout-blue h6,
+.callout-blue .h2,
+.callout-blue .text-size-h2,
+.callout-blue .h3,
+.callout-blue .text-size-h3,
+.callout-blue .h4,
+.callout-blue .text-size-h4,
+.callout-blue .h5,
+.callout-blue .text-size-h5,
+.callout-blue .h6,
+.callout-blue .text-size-h6 {
+  color: #0c234b;
 }
 
 .callout-sky {
@@ -16785,6 +16774,28 @@ a {
   color: #4a634e;
 }
 
+.callout-white {
+  border-left-color: #fff;
+}
+
+.callout-white h2,
+.callout-white h3,
+.callout-white h4,
+.callout-white h5,
+.callout-white h6,
+.callout-white .h2,
+.callout-white .text-size-h2,
+.callout-white .h3,
+.callout-white .text-size-h3,
+.callout-white .h4,
+.callout-white .text-size-h4,
+.callout-white .h5,
+.callout-white .text-size-h5,
+.callout-white .h6,
+.callout-white .text-size-h6 {
+  color: #fff;
+}
+
 .callout-black {
   border-left-color: #000;
 }
@@ -16882,152 +16893,6 @@ a {
   color: #49595e;
 }
 
-.callout-silver h1.text-blue, .callout-silver h1.text-primary,
-.callout-silver h2.text-blue,
-.callout-silver h2.text-primary,
-.callout-silver h3.text-blue,
-.callout-silver h3.text-primary,
-.callout-silver h4.text-blue,
-.callout-silver h4.text-primary,
-.callout-silver h5.text-blue,
-.callout-silver h5.text-primary,
-.callout-silver h6.text-blue,
-.callout-silver h6.text-primary,
-.callout-silver .h1.text-blue,
-.callout-silver .h1.text-primary,
-.callout-silver .text-primary.text-size-h1,
-.callout-silver .text-blue.text-size-h1,
-.callout-silver .h2.text-blue,
-.callout-silver .h2.text-primary,
-.callout-silver .text-primary.text-size-h2,
-.callout-silver .text-blue.text-size-h2,
-.callout-silver .h3.text-blue,
-.callout-silver .h3.text-primary,
-.callout-silver .text-primary.text-size-h3,
-.callout-silver .text-blue.text-size-h3,
-.callout-silver .h4.text-blue,
-.callout-silver .h4.text-primary,
-.callout-silver .text-primary.text-size-h4,
-.callout-silver .text-blue.text-size-h4,
-.callout-silver .h5.text-blue,
-.callout-silver .h5.text-primary,
-.callout-silver .text-primary.text-size-h5,
-.callout-silver .text-blue.text-size-h5,
-.callout-silver .h6.text-blue,
-.callout-silver .h6.text-primary,
-.callout-silver .text-primary.text-size-h6,
-.callout-silver .text-blue.text-size-h6,
-.callout-cool-gray h1.text-blue,
-.callout-cool-gray h1.text-primary,
-.callout-cool-gray h2.text-blue,
-.callout-cool-gray h2.text-primary,
-.callout-cool-gray h3.text-blue,
-.callout-cool-gray h3.text-primary,
-.callout-cool-gray h4.text-blue,
-.callout-cool-gray h4.text-primary,
-.callout-cool-gray h5.text-blue,
-.callout-cool-gray h5.text-primary,
-.callout-cool-gray h6.text-blue,
-.callout-cool-gray h6.text-primary,
-.callout-cool-gray .h1.text-blue,
-.callout-cool-gray .h1.text-primary,
-.callout-cool-gray .text-primary.text-size-h1,
-.callout-cool-gray .text-blue.text-size-h1,
-.callout-cool-gray .h2.text-blue,
-.callout-cool-gray .h2.text-primary,
-.callout-cool-gray .text-primary.text-size-h2,
-.callout-cool-gray .text-blue.text-size-h2,
-.callout-cool-gray .h3.text-blue,
-.callout-cool-gray .h3.text-primary,
-.callout-cool-gray .text-primary.text-size-h3,
-.callout-cool-gray .text-blue.text-size-h3,
-.callout-cool-gray .h4.text-blue,
-.callout-cool-gray .h4.text-primary,
-.callout-cool-gray .text-primary.text-size-h4,
-.callout-cool-gray .text-blue.text-size-h4,
-.callout-cool-gray .h5.text-blue,
-.callout-cool-gray .h5.text-primary,
-.callout-cool-gray .text-primary.text-size-h5,
-.callout-cool-gray .text-blue.text-size-h5,
-.callout-cool-gray .h6.text-blue,
-.callout-cool-gray .h6.text-primary,
-.callout-cool-gray .text-primary.text-size-h6,
-.callout-cool-gray .text-blue.text-size-h6,
-.callout-warm-gray h1.text-blue,
-.callout-warm-gray h1.text-primary,
-.callout-warm-gray h2.text-blue,
-.callout-warm-gray h2.text-primary,
-.callout-warm-gray h3.text-blue,
-.callout-warm-gray h3.text-primary,
-.callout-warm-gray h4.text-blue,
-.callout-warm-gray h4.text-primary,
-.callout-warm-gray h5.text-blue,
-.callout-warm-gray h5.text-primary,
-.callout-warm-gray h6.text-blue,
-.callout-warm-gray h6.text-primary,
-.callout-warm-gray .h1.text-blue,
-.callout-warm-gray .h1.text-primary,
-.callout-warm-gray .text-primary.text-size-h1,
-.callout-warm-gray .text-blue.text-size-h1,
-.callout-warm-gray .h2.text-blue,
-.callout-warm-gray .h2.text-primary,
-.callout-warm-gray .text-primary.text-size-h2,
-.callout-warm-gray .text-blue.text-size-h2,
-.callout-warm-gray .h3.text-blue,
-.callout-warm-gray .h3.text-primary,
-.callout-warm-gray .text-primary.text-size-h3,
-.callout-warm-gray .text-blue.text-size-h3,
-.callout-warm-gray .h4.text-blue,
-.callout-warm-gray .h4.text-primary,
-.callout-warm-gray .text-primary.text-size-h4,
-.callout-warm-gray .text-blue.text-size-h4,
-.callout-warm-gray .h5.text-blue,
-.callout-warm-gray .h5.text-primary,
-.callout-warm-gray .text-primary.text-size-h5,
-.callout-warm-gray .text-blue.text-size-h5,
-.callout-warm-gray .h6.text-blue,
-.callout-warm-gray .h6.text-primary,
-.callout-warm-gray .text-primary.text-size-h6,
-.callout-warm-gray .text-blue.text-size-h6,
-.callout-sky h1.text-blue,
-.callout-sky h1.text-primary,
-.callout-sky h2.text-blue,
-.callout-sky h2.text-primary,
-.callout-sky h3.text-blue,
-.callout-sky h3.text-primary,
-.callout-sky h4.text-blue,
-.callout-sky h4.text-primary,
-.callout-sky h5.text-blue,
-.callout-sky h5.text-primary,
-.callout-sky h6.text-blue,
-.callout-sky h6.text-primary,
-.callout-sky .h1.text-blue,
-.callout-sky .h1.text-primary,
-.callout-sky .text-primary.text-size-h1,
-.callout-sky .text-blue.text-size-h1,
-.callout-sky .h2.text-blue,
-.callout-sky .h2.text-primary,
-.callout-sky .text-primary.text-size-h2,
-.callout-sky .text-blue.text-size-h2,
-.callout-sky .h3.text-blue,
-.callout-sky .h3.text-primary,
-.callout-sky .text-primary.text-size-h3,
-.callout-sky .text-blue.text-size-h3,
-.callout-sky .h4.text-blue,
-.callout-sky .h4.text-primary,
-.callout-sky .text-primary.text-size-h4,
-.callout-sky .text-blue.text-size-h4,
-.callout-sky .h5.text-blue,
-.callout-sky .h5.text-primary,
-.callout-sky .text-primary.text-size-h5,
-.callout-sky .text-blue.text-size-h5,
-.callout-sky .h6.text-blue,
-.callout-sky .h6.text-primary,
-.callout-sky .text-primary.text-size-h6,
-.callout-sky .text-blue.text-size-h6 {
-  color: #0c234b;
-}
-
 .callout-silver h1.text-red,
 .callout-silver h2.text-red,
 .callout-silver h3.text-red,
@@ -17101,152 +16966,6 @@ a {
 .callout-sky .h6.text-red,
 .callout-sky .text-red.text-size-h6 {
   color: #ab0520;
-}
-
-.callout-silver h1.text-white, .callout-silver h1.card-inverse,
-.callout-silver h2.text-white,
-.callout-silver h2.card-inverse,
-.callout-silver h3.text-white,
-.callout-silver h3.card-inverse,
-.callout-silver h4.text-white,
-.callout-silver h4.card-inverse,
-.callout-silver h5.text-white,
-.callout-silver h5.card-inverse,
-.callout-silver h6.text-white,
-.callout-silver h6.card-inverse,
-.callout-silver .h1.text-white,
-.callout-silver .h1.card-inverse,
-.callout-silver .card-inverse.text-size-h1,
-.callout-silver .text-white.text-size-h1,
-.callout-silver .h2.text-white,
-.callout-silver .h2.card-inverse,
-.callout-silver .card-inverse.text-size-h2,
-.callout-silver .text-white.text-size-h2,
-.callout-silver .h3.text-white,
-.callout-silver .h3.card-inverse,
-.callout-silver .card-inverse.text-size-h3,
-.callout-silver .text-white.text-size-h3,
-.callout-silver .h4.text-white,
-.callout-silver .h4.card-inverse,
-.callout-silver .card-inverse.text-size-h4,
-.callout-silver .text-white.text-size-h4,
-.callout-silver .h5.text-white,
-.callout-silver .h5.card-inverse,
-.callout-silver .card-inverse.text-size-h5,
-.callout-silver .text-white.text-size-h5,
-.callout-silver .h6.text-white,
-.callout-silver .h6.card-inverse,
-.callout-silver .card-inverse.text-size-h6,
-.callout-silver .text-white.text-size-h6,
-.callout-cool-gray h1.text-white,
-.callout-cool-gray h1.card-inverse,
-.callout-cool-gray h2.text-white,
-.callout-cool-gray h2.card-inverse,
-.callout-cool-gray h3.text-white,
-.callout-cool-gray h3.card-inverse,
-.callout-cool-gray h4.text-white,
-.callout-cool-gray h4.card-inverse,
-.callout-cool-gray h5.text-white,
-.callout-cool-gray h5.card-inverse,
-.callout-cool-gray h6.text-white,
-.callout-cool-gray h6.card-inverse,
-.callout-cool-gray .h1.text-white,
-.callout-cool-gray .h1.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h1,
-.callout-cool-gray .text-white.text-size-h1,
-.callout-cool-gray .h2.text-white,
-.callout-cool-gray .h2.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h2,
-.callout-cool-gray .text-white.text-size-h2,
-.callout-cool-gray .h3.text-white,
-.callout-cool-gray .h3.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h3,
-.callout-cool-gray .text-white.text-size-h3,
-.callout-cool-gray .h4.text-white,
-.callout-cool-gray .h4.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h4,
-.callout-cool-gray .text-white.text-size-h4,
-.callout-cool-gray .h5.text-white,
-.callout-cool-gray .h5.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h5,
-.callout-cool-gray .text-white.text-size-h5,
-.callout-cool-gray .h6.text-white,
-.callout-cool-gray .h6.card-inverse,
-.callout-cool-gray .card-inverse.text-size-h6,
-.callout-cool-gray .text-white.text-size-h6,
-.callout-warm-gray h1.text-white,
-.callout-warm-gray h1.card-inverse,
-.callout-warm-gray h2.text-white,
-.callout-warm-gray h2.card-inverse,
-.callout-warm-gray h3.text-white,
-.callout-warm-gray h3.card-inverse,
-.callout-warm-gray h4.text-white,
-.callout-warm-gray h4.card-inverse,
-.callout-warm-gray h5.text-white,
-.callout-warm-gray h5.card-inverse,
-.callout-warm-gray h6.text-white,
-.callout-warm-gray h6.card-inverse,
-.callout-warm-gray .h1.text-white,
-.callout-warm-gray .h1.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h1,
-.callout-warm-gray .text-white.text-size-h1,
-.callout-warm-gray .h2.text-white,
-.callout-warm-gray .h2.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h2,
-.callout-warm-gray .text-white.text-size-h2,
-.callout-warm-gray .h3.text-white,
-.callout-warm-gray .h3.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h3,
-.callout-warm-gray .text-white.text-size-h3,
-.callout-warm-gray .h4.text-white,
-.callout-warm-gray .h4.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h4,
-.callout-warm-gray .text-white.text-size-h4,
-.callout-warm-gray .h5.text-white,
-.callout-warm-gray .h5.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h5,
-.callout-warm-gray .text-white.text-size-h5,
-.callout-warm-gray .h6.text-white,
-.callout-warm-gray .h6.card-inverse,
-.callout-warm-gray .card-inverse.text-size-h6,
-.callout-warm-gray .text-white.text-size-h6,
-.callout-sky h1.text-white,
-.callout-sky h1.card-inverse,
-.callout-sky h2.text-white,
-.callout-sky h2.card-inverse,
-.callout-sky h3.text-white,
-.callout-sky h3.card-inverse,
-.callout-sky h4.text-white,
-.callout-sky h4.card-inverse,
-.callout-sky h5.text-white,
-.callout-sky h5.card-inverse,
-.callout-sky h6.text-white,
-.callout-sky h6.card-inverse,
-.callout-sky .h1.text-white,
-.callout-sky .h1.card-inverse,
-.callout-sky .card-inverse.text-size-h1,
-.callout-sky .text-white.text-size-h1,
-.callout-sky .h2.text-white,
-.callout-sky .h2.card-inverse,
-.callout-sky .card-inverse.text-size-h2,
-.callout-sky .text-white.text-size-h2,
-.callout-sky .h3.text-white,
-.callout-sky .h3.card-inverse,
-.callout-sky .card-inverse.text-size-h3,
-.callout-sky .text-white.text-size-h3,
-.callout-sky .h4.text-white,
-.callout-sky .h4.card-inverse,
-.callout-sky .card-inverse.text-size-h4,
-.callout-sky .text-white.text-size-h4,
-.callout-sky .h5.text-white,
-.callout-sky .h5.card-inverse,
-.callout-sky .card-inverse.text-size-h5,
-.callout-sky .text-white.text-size-h5,
-.callout-sky .h6.text-white,
-.callout-sky .h6.card-inverse,
-.callout-sky .card-inverse.text-size-h6,
-.callout-sky .text-white.text-size-h6 {
-  color: #fff;
 }
 
 .callout-silver h1.text-bloom,
@@ -17397,6 +17116,152 @@ a {
 .callout-sky .h6.text-chili,
 .callout-sky .text-chili.text-size-h6 {
   color: #8b0015;
+}
+
+.callout-silver h1.text-blue, .callout-silver h1.text-primary,
+.callout-silver h2.text-blue,
+.callout-silver h2.text-primary,
+.callout-silver h3.text-blue,
+.callout-silver h3.text-primary,
+.callout-silver h4.text-blue,
+.callout-silver h4.text-primary,
+.callout-silver h5.text-blue,
+.callout-silver h5.text-primary,
+.callout-silver h6.text-blue,
+.callout-silver h6.text-primary,
+.callout-silver .h1.text-blue,
+.callout-silver .h1.text-primary,
+.callout-silver .text-primary.text-size-h1,
+.callout-silver .text-blue.text-size-h1,
+.callout-silver .h2.text-blue,
+.callout-silver .h2.text-primary,
+.callout-silver .text-primary.text-size-h2,
+.callout-silver .text-blue.text-size-h2,
+.callout-silver .h3.text-blue,
+.callout-silver .h3.text-primary,
+.callout-silver .text-primary.text-size-h3,
+.callout-silver .text-blue.text-size-h3,
+.callout-silver .h4.text-blue,
+.callout-silver .h4.text-primary,
+.callout-silver .text-primary.text-size-h4,
+.callout-silver .text-blue.text-size-h4,
+.callout-silver .h5.text-blue,
+.callout-silver .h5.text-primary,
+.callout-silver .text-primary.text-size-h5,
+.callout-silver .text-blue.text-size-h5,
+.callout-silver .h6.text-blue,
+.callout-silver .h6.text-primary,
+.callout-silver .text-primary.text-size-h6,
+.callout-silver .text-blue.text-size-h6,
+.callout-cool-gray h1.text-blue,
+.callout-cool-gray h1.text-primary,
+.callout-cool-gray h2.text-blue,
+.callout-cool-gray h2.text-primary,
+.callout-cool-gray h3.text-blue,
+.callout-cool-gray h3.text-primary,
+.callout-cool-gray h4.text-blue,
+.callout-cool-gray h4.text-primary,
+.callout-cool-gray h5.text-blue,
+.callout-cool-gray h5.text-primary,
+.callout-cool-gray h6.text-blue,
+.callout-cool-gray h6.text-primary,
+.callout-cool-gray .h1.text-blue,
+.callout-cool-gray .h1.text-primary,
+.callout-cool-gray .text-primary.text-size-h1,
+.callout-cool-gray .text-blue.text-size-h1,
+.callout-cool-gray .h2.text-blue,
+.callout-cool-gray .h2.text-primary,
+.callout-cool-gray .text-primary.text-size-h2,
+.callout-cool-gray .text-blue.text-size-h2,
+.callout-cool-gray .h3.text-blue,
+.callout-cool-gray .h3.text-primary,
+.callout-cool-gray .text-primary.text-size-h3,
+.callout-cool-gray .text-blue.text-size-h3,
+.callout-cool-gray .h4.text-blue,
+.callout-cool-gray .h4.text-primary,
+.callout-cool-gray .text-primary.text-size-h4,
+.callout-cool-gray .text-blue.text-size-h4,
+.callout-cool-gray .h5.text-blue,
+.callout-cool-gray .h5.text-primary,
+.callout-cool-gray .text-primary.text-size-h5,
+.callout-cool-gray .text-blue.text-size-h5,
+.callout-cool-gray .h6.text-blue,
+.callout-cool-gray .h6.text-primary,
+.callout-cool-gray .text-primary.text-size-h6,
+.callout-cool-gray .text-blue.text-size-h6,
+.callout-warm-gray h1.text-blue,
+.callout-warm-gray h1.text-primary,
+.callout-warm-gray h2.text-blue,
+.callout-warm-gray h2.text-primary,
+.callout-warm-gray h3.text-blue,
+.callout-warm-gray h3.text-primary,
+.callout-warm-gray h4.text-blue,
+.callout-warm-gray h4.text-primary,
+.callout-warm-gray h5.text-blue,
+.callout-warm-gray h5.text-primary,
+.callout-warm-gray h6.text-blue,
+.callout-warm-gray h6.text-primary,
+.callout-warm-gray .h1.text-blue,
+.callout-warm-gray .h1.text-primary,
+.callout-warm-gray .text-primary.text-size-h1,
+.callout-warm-gray .text-blue.text-size-h1,
+.callout-warm-gray .h2.text-blue,
+.callout-warm-gray .h2.text-primary,
+.callout-warm-gray .text-primary.text-size-h2,
+.callout-warm-gray .text-blue.text-size-h2,
+.callout-warm-gray .h3.text-blue,
+.callout-warm-gray .h3.text-primary,
+.callout-warm-gray .text-primary.text-size-h3,
+.callout-warm-gray .text-blue.text-size-h3,
+.callout-warm-gray .h4.text-blue,
+.callout-warm-gray .h4.text-primary,
+.callout-warm-gray .text-primary.text-size-h4,
+.callout-warm-gray .text-blue.text-size-h4,
+.callout-warm-gray .h5.text-blue,
+.callout-warm-gray .h5.text-primary,
+.callout-warm-gray .text-primary.text-size-h5,
+.callout-warm-gray .text-blue.text-size-h5,
+.callout-warm-gray .h6.text-blue,
+.callout-warm-gray .h6.text-primary,
+.callout-warm-gray .text-primary.text-size-h6,
+.callout-warm-gray .text-blue.text-size-h6,
+.callout-sky h1.text-blue,
+.callout-sky h1.text-primary,
+.callout-sky h2.text-blue,
+.callout-sky h2.text-primary,
+.callout-sky h3.text-blue,
+.callout-sky h3.text-primary,
+.callout-sky h4.text-blue,
+.callout-sky h4.text-primary,
+.callout-sky h5.text-blue,
+.callout-sky h5.text-primary,
+.callout-sky h6.text-blue,
+.callout-sky h6.text-primary,
+.callout-sky .h1.text-blue,
+.callout-sky .h1.text-primary,
+.callout-sky .text-primary.text-size-h1,
+.callout-sky .text-blue.text-size-h1,
+.callout-sky .h2.text-blue,
+.callout-sky .h2.text-primary,
+.callout-sky .text-primary.text-size-h2,
+.callout-sky .text-blue.text-size-h2,
+.callout-sky .h3.text-blue,
+.callout-sky .h3.text-primary,
+.callout-sky .text-primary.text-size-h3,
+.callout-sky .text-blue.text-size-h3,
+.callout-sky .h4.text-blue,
+.callout-sky .h4.text-primary,
+.callout-sky .text-primary.text-size-h4,
+.callout-sky .text-blue.text-size-h4,
+.callout-sky .h5.text-blue,
+.callout-sky .h5.text-primary,
+.callout-sky .text-primary.text-size-h5,
+.callout-sky .text-blue.text-size-h5,
+.callout-sky .h6.text-blue,
+.callout-sky .h6.text-primary,
+.callout-sky .text-primary.text-size-h6,
+.callout-sky .text-blue.text-size-h6 {
+  color: #0c234b;
 }
 
 .callout-silver h1.text-sky,
@@ -18299,6 +18164,152 @@ a {
   color: #4a634e;
 }
 
+.callout-silver h1.text-white, .callout-silver h1.card-inverse,
+.callout-silver h2.text-white,
+.callout-silver h2.card-inverse,
+.callout-silver h3.text-white,
+.callout-silver h3.card-inverse,
+.callout-silver h4.text-white,
+.callout-silver h4.card-inverse,
+.callout-silver h5.text-white,
+.callout-silver h5.card-inverse,
+.callout-silver h6.text-white,
+.callout-silver h6.card-inverse,
+.callout-silver .h1.text-white,
+.callout-silver .h1.card-inverse,
+.callout-silver .card-inverse.text-size-h1,
+.callout-silver .text-white.text-size-h1,
+.callout-silver .h2.text-white,
+.callout-silver .h2.card-inverse,
+.callout-silver .card-inverse.text-size-h2,
+.callout-silver .text-white.text-size-h2,
+.callout-silver .h3.text-white,
+.callout-silver .h3.card-inverse,
+.callout-silver .card-inverse.text-size-h3,
+.callout-silver .text-white.text-size-h3,
+.callout-silver .h4.text-white,
+.callout-silver .h4.card-inverse,
+.callout-silver .card-inverse.text-size-h4,
+.callout-silver .text-white.text-size-h4,
+.callout-silver .h5.text-white,
+.callout-silver .h5.card-inverse,
+.callout-silver .card-inverse.text-size-h5,
+.callout-silver .text-white.text-size-h5,
+.callout-silver .h6.text-white,
+.callout-silver .h6.card-inverse,
+.callout-silver .card-inverse.text-size-h6,
+.callout-silver .text-white.text-size-h6,
+.callout-cool-gray h1.text-white,
+.callout-cool-gray h1.card-inverse,
+.callout-cool-gray h2.text-white,
+.callout-cool-gray h2.card-inverse,
+.callout-cool-gray h3.text-white,
+.callout-cool-gray h3.card-inverse,
+.callout-cool-gray h4.text-white,
+.callout-cool-gray h4.card-inverse,
+.callout-cool-gray h5.text-white,
+.callout-cool-gray h5.card-inverse,
+.callout-cool-gray h6.text-white,
+.callout-cool-gray h6.card-inverse,
+.callout-cool-gray .h1.text-white,
+.callout-cool-gray .h1.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h1,
+.callout-cool-gray .text-white.text-size-h1,
+.callout-cool-gray .h2.text-white,
+.callout-cool-gray .h2.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h2,
+.callout-cool-gray .text-white.text-size-h2,
+.callout-cool-gray .h3.text-white,
+.callout-cool-gray .h3.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h3,
+.callout-cool-gray .text-white.text-size-h3,
+.callout-cool-gray .h4.text-white,
+.callout-cool-gray .h4.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h4,
+.callout-cool-gray .text-white.text-size-h4,
+.callout-cool-gray .h5.text-white,
+.callout-cool-gray .h5.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h5,
+.callout-cool-gray .text-white.text-size-h5,
+.callout-cool-gray .h6.text-white,
+.callout-cool-gray .h6.card-inverse,
+.callout-cool-gray .card-inverse.text-size-h6,
+.callout-cool-gray .text-white.text-size-h6,
+.callout-warm-gray h1.text-white,
+.callout-warm-gray h1.card-inverse,
+.callout-warm-gray h2.text-white,
+.callout-warm-gray h2.card-inverse,
+.callout-warm-gray h3.text-white,
+.callout-warm-gray h3.card-inverse,
+.callout-warm-gray h4.text-white,
+.callout-warm-gray h4.card-inverse,
+.callout-warm-gray h5.text-white,
+.callout-warm-gray h5.card-inverse,
+.callout-warm-gray h6.text-white,
+.callout-warm-gray h6.card-inverse,
+.callout-warm-gray .h1.text-white,
+.callout-warm-gray .h1.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h1,
+.callout-warm-gray .text-white.text-size-h1,
+.callout-warm-gray .h2.text-white,
+.callout-warm-gray .h2.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h2,
+.callout-warm-gray .text-white.text-size-h2,
+.callout-warm-gray .h3.text-white,
+.callout-warm-gray .h3.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h3,
+.callout-warm-gray .text-white.text-size-h3,
+.callout-warm-gray .h4.text-white,
+.callout-warm-gray .h4.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h4,
+.callout-warm-gray .text-white.text-size-h4,
+.callout-warm-gray .h5.text-white,
+.callout-warm-gray .h5.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h5,
+.callout-warm-gray .text-white.text-size-h5,
+.callout-warm-gray .h6.text-white,
+.callout-warm-gray .h6.card-inverse,
+.callout-warm-gray .card-inverse.text-size-h6,
+.callout-warm-gray .text-white.text-size-h6,
+.callout-sky h1.text-white,
+.callout-sky h1.card-inverse,
+.callout-sky h2.text-white,
+.callout-sky h2.card-inverse,
+.callout-sky h3.text-white,
+.callout-sky h3.card-inverse,
+.callout-sky h4.text-white,
+.callout-sky h4.card-inverse,
+.callout-sky h5.text-white,
+.callout-sky h5.card-inverse,
+.callout-sky h6.text-white,
+.callout-sky h6.card-inverse,
+.callout-sky .h1.text-white,
+.callout-sky .h1.card-inverse,
+.callout-sky .card-inverse.text-size-h1,
+.callout-sky .text-white.text-size-h1,
+.callout-sky .h2.text-white,
+.callout-sky .h2.card-inverse,
+.callout-sky .card-inverse.text-size-h2,
+.callout-sky .text-white.text-size-h2,
+.callout-sky .h3.text-white,
+.callout-sky .h3.card-inverse,
+.callout-sky .card-inverse.text-size-h3,
+.callout-sky .text-white.text-size-h3,
+.callout-sky .h4.text-white,
+.callout-sky .h4.card-inverse,
+.callout-sky .card-inverse.text-size-h4,
+.callout-sky .text-white.text-size-h4,
+.callout-sky .h5.text-white,
+.callout-sky .h5.card-inverse,
+.callout-sky .card-inverse.text-size-h5,
+.callout-sky .text-white.text-size-h5,
+.callout-sky .h6.text-white,
+.callout-sky .h6.card-inverse,
+.callout-sky .card-inverse.text-size-h6,
+.callout-sky .text-white.text-size-h6 {
+  color: #fff;
+}
+
 .callout-silver h1.text-black,
 .callout-silver h2.text-black,
 .callout-silver h3.text-black,
@@ -18921,7 +18932,7 @@ have been deprecated in Bootstrap 4.
 }
 
 .breadcrumb {
-  background-color: #fff;
+  background-color: #e9ecef;
 }
 
 .breadcrumb-item a {
