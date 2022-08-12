@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 /*
 * > COLORS
 */
@@ -11,12 +17,6 @@
 /*
 * > COMPONENTS
 */
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 .material-icons-sharp {
   font-size: inherit;
   line-height: inherit;
@@ -4753,20 +4753,10 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 2px 10px;
-  margin-bottom: 5px;
-  font-size: small;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
-}
-
-ol.breadcrumb::before {
-  content: "" !important;
-  font-family: 'Material Icons Sharp';
-  margin-right: 5px;
+  background-color: #fff;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4776,9 +4766,8 @@ ol.breadcrumb::before {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #1e5288;
-  font-family: 'Material Icons Sharp';
-  content: "" !important;
+  color: #6c757d;
+  content: "/";
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -4790,7 +4779,7 @@ ol.breadcrumb::before {
 }
 
 .breadcrumb-item.active {
-  color: #1e5288;
+  color: #6c757d;
 }
 
 .pagination {
@@ -18932,7 +18921,7 @@ have been deprecated in Bootstrap 4.
 }
 
 .breadcrumb {
-  background-color: #e9ecef;
+  background-color: #fff;
 }
 
 .breadcrumb-item a {
