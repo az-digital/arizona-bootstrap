@@ -16,7 +16,7 @@ $warm-gray: #f4ede5;
 $leaf: #70b865;
 $river: #007d84;
 $silver: #9eabae;
-$dark-silver: #49595e; // to be used for text only
+$dark-silver: #49595e;  // to be used for text only
 $mesa: #a95c42;
 $ash: #403635;
 $sage: #4a634e;
@@ -24,26 +24,29 @@ $white: #fff;
 $black: #000;
 
 $colors: ();
-$colors: map-merge(("red": $red,
-    "bloom": $bloom,
-    "chili": $chili,
-    "blue": $blue,
-    "sky": $sky,
-    "oasis": $oasis,
-    "azurite": $azurite,
-    "midnight": $midnight,
-    "cool-gray": $cool-gray,
-    "warm-gray": $warm-gray,
-    "leaf": $leaf,
-    "river": $river,
-    "silver": $silver,
-    "mesa": $mesa,
-    "ash": $ash,
-    "sage": $sage,
-    "white": $white,
-    "black": $black,
+$colors: map-merge(
+  (
+    "red":   $red,
+    "bloom":   $bloom,
+    "chili":   $chili,
+    "blue":    $blue,
+    "sky":     $sky,
+    "oasis":   $oasis,
+    "azurite":     $azurite,
+    "midnight":    $midnight,
+    "cool-gray":   $cool-gray,
+    "warm-gray":   $warm-gray,
+    "leaf":    $leaf,
+    "river":   $river,
+    "silver":  $silver,
+    "mesa":    $mesa,
+    "ash":     $ash,
+    "sage":    $sage,
+    "white":    $white,
+    "black":    $black,
   ),
-  $colors);
+  $colors
+);
 
 
 // >> Transparent Brand Colors
@@ -72,35 +75,41 @@ $transparent-white: rgba($white, .8);
 $transparent-black: rgba($black, .8);
 
 $colors-transparent: ();
-$colors-transparent: map-merge(("transparent-red": $transparent-red,
-    "transparent-bloom": $transparent-bloom,
-    "transparent-chili": $transparent-chili,
-    "transparent-blue": $transparent-blue,
-    "transparent-sky": $transparent-sky,
-    "transparent-oasis": $transparent-oasis,
-    "transparent-azurite": $transparent-azurite,
-    "transparent-midnight": $transparent-midnight,
-    "transparent-cool-gray": $transparent-cool-gray,
-    "transparent-warm-gray": $transparent-warm-gray,
-    "transparent-leaf": $transparent-leaf,
-    "transparent-river": $transparent-river,
-    "transparent-silver": $transparent-silver,
-    "transparent-mesa": $transparent-mesa,
-    "transparent-ash": $transparent-ash,
-    "transparent-sage": $transparent-sage,
-    "transparent-white": $transparent-white,
-    "transparent-black": $transparent-black,
+$colors-transparent: map-merge(
+  (
+    "transparent-red":   $transparent-red,
+    "transparent-bloom":   $transparent-bloom,
+    "transparent-chili":   $transparent-chili,
+    "transparent-blue":    $transparent-blue,
+    "transparent-sky":     $transparent-sky,
+    "transparent-oasis":   $transparent-oasis,
+    "transparent-azurite":     $transparent-azurite,
+    "transparent-midnight":    $transparent-midnight,
+    "transparent-cool-gray":   $transparent-cool-gray,
+    "transparent-warm-gray":   $transparent-warm-gray,
+    "transparent-leaf":    $transparent-leaf,
+    "transparent-river":   $transparent-river,
+    "transparent-silver":  $transparent-silver,
+    "transparent-mesa":    $transparent-mesa,
+    "transparent-ash":     $transparent-ash,
+    "transparent-sage":    $transparent-sage,
+    "transparent-white":    $transparent-white,
+    "transparent-black":    $transparent-black,
   ),
-  $colors-transparent);
+  $colors-transparent
+);
 
 
 // >> Gradient Colors
 $gradient-black: linear-gradient(180deg, transparent, $black);
 
 $colors-gradient: ();
-$colors-gradient: map-merge(("gradient-black": $gradient-black,
+$colors-gradient: map-merge(
+  (
+    "gradient-black": $gradient-black,
   ),
-  $colors-gradient);
+  $colors-gradient
+);
 
 
 // >> Grayscale Colors
@@ -115,7 +124,9 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 
 $grays: ();
-$grays: map-merge(("100": $gray-100,
+$grays: map-merge(
+  (
+    "100": $gray-100,
     "200": $gray-200,
     "300": $gray-300,
     "400": $gray-400,
@@ -123,8 +134,10 @@ $grays: map-merge(("100": $gray-100,
     "600": $gray-600,
     "700": $gray-700,
     "800": $gray-800,
-    "900": $gray-900),
-  $grays);
+    "900": $gray-900
+  ),
+  $grays
+);
 
 
 // >> Theme Colors
@@ -136,17 +149,21 @@ $light: $gray-300;
 $dark: $gray-800;
 
 $theme-colors: ();
-$theme-colors: map-merge(("success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark),
-  $theme-colors);
+$theme-colors: map-merge(
+  (
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
 
-$text-muted: $gray-700 !default;
-$nav-link-disabled-color: $text-muted !default;
-$dropdown-link-disabled-color: $text-muted !default;
+$text-muted:                          $gray-700 !default;
+$nav-link-disabled-color:             $text-muted !default;
+$dropdown-link-disabled-color:        $text-muted !default;
 
 //
 // Options
@@ -162,21 +179,8 @@ $enable-rounded: if($enable-rounded, false, false);
 */
 $font-size-base: 1rem;
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: proxima-nova,
-calibri,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-"Noto Sans",
-sans-serif,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol",
-"Noto Color Emoji" !default;
-$font-family-headings: $font-family-sans-serif;
+$font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-headings:   $font-family-sans-serif;
 // $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // $font-family-base:       $font-family-sans-serif !default;
 
@@ -195,7 +199,9 @@ $lead-font-weight: 400;
 */
 $spacer: 1rem !default;
 $spacers: () !default;
-$spacers: map-merge((0: 0,
+$spacers: map-merge(
+  (
+    0: 0,
     1: ($spacer * .25),
     2: ($spacer * .5),
     3: $spacer,
@@ -209,8 +215,10 @@ $spacers: map-merge((0: 0,
     10:($spacer * 8),
     20:($spacer * 16),
     30:($spacer * 24),
-    min: ($spacer * .0625)),
-  $spacers);
+    min: ($spacer * .0625)
+  ),
+  $spacers
+);
 
 /*
 * > COMPONENTS
@@ -315,7 +323,7 @@ $tooltip-bg: $blue;
 
 // >> Shadows
 // fusv-disable
-$box-shadow: 0 .25rem 1rem rgba($black, .15) !default;
-$box-shadow-sm: 0 .1rem .25rem rgba($black, .075) !default;
-$box-shadow-lg: 0 .75rem 3rem rgba($black, .175) !default;
+$box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
+$box-shadow-sm:             0 .1rem .25rem rgba($black, .075) !default;
+$box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 // fusv-enable
