@@ -1,4 +1,3 @@
-
 // Required Bootstrap imports.
 @import "custom-variables";
 /*!
@@ -7,10 +6,8 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
-@import "variable-overrides";
 @import "../node_modules/bootstrap/scss/mixins";
 
 // Remove unwanted colors.
@@ -19,7 +16,6 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 
 // Optional asset overrides.
 @import "custom-asset-overrides";
-
 // Optional Bootstrap imports.
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
@@ -59,7 +55,6 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 // Arizona Bootstrap imports.
 @import "mixins";
 @import "custom-styles";
-
 // @import "alert";
 @import "typography";
 @import "badge";
