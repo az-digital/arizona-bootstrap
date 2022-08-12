@@ -1,3 +1,5 @@
+@import "custom-variables";
+
 // Required Bootstrap imports.
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -7,7 +9,6 @@
  */
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
-@import "custom-variables";
 @import "variable-overrides";
 @import "../node_modules/bootstrap/scss/mixins";
 
