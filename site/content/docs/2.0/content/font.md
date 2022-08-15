@@ -37,7 +37,7 @@ For ease of integration into web projects around campus, the Arizona Digital
 team manages a Typekit webfont project that can be referenced by your site.
 
 #### Notes to consider when using the centrally managed webfont project.
-Our license with Typekit allows anyone with a netid to create their own webfont
+Our license with Typekit allows anyone with a NetID to create their own webfont
 project in Creative Cloud Typekit and use it in all of their web projects.
 
 ### Managing your own project
@@ -48,12 +48,12 @@ project in Creative Cloud Typekit and use it in all of their web projects.
 
 **Disadvantages**
 - You have to manage your own font in Typekit using a NetID.
-  - If the netid is tied to one person, it creates a single point of failure if
+  - If the NetID is tied to one person, it creates a single point of failure if
     that user leaves the University.
   - If the NetID is a shared "test NetID" you have to manage credentials, and sign it
     up to use Adobe products.
 
-**Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test NetID](https://apps.iam.arizona.edu/).
+**Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test NetID](https://apps.iam.arizona.edu/), which is shared with your department.
 **Note** Our license agreement with Adobe does not allow us to self-host font files.
 ## Global settings
 [Follow these instructions](#instructions) on how to add Proxima Nova to your
