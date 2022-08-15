@@ -4753,19 +4753,10 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 2px 10px;
-  margin-bottom: 5px;
-  font-size: small;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   list-style: none;
   background-color: #e9ecef;
-}
-
-ol.breadcrumb-item::before {
-  font-family: 'Material Icons Sharp';
-  content: '\e88a';
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4776,8 +4767,7 @@ ol.breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
   color: #6c757d;
-  font-family: 'Material Icons Sharp';
-  content: '\e5cc';
+  content: "/";
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -4789,7 +4779,7 @@ ol.breadcrumb-item::before {
 }
 
 .breadcrumb-item.active {
-  color: #1e5288;
+  color: #6c757d;
 }
 
 .pagination {
