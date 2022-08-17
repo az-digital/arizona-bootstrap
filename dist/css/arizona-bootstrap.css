@@ -4753,15 +4753,10 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 2px 10px;
   margin-bottom: 5px;
   font-size: small;
   list-style: none;
-  background-color: #e9ecef;
-  color: #1e5288;
 }
 
 ol.breadcrumb::before {
@@ -18934,6 +18929,18 @@ have been deprecated in Bootstrap 4.
 
 .breadcrumb {
   background-color: #e9ecef;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: small;
+}
+
+.breadcrumb::before {
+  float: left;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  font-family: 'Material Icons Sharp';
+  content: '\e5cc';
 }
 
 .breadcrumb-item a {

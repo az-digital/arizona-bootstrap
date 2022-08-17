@@ -228,13 +228,14 @@ $spacers: map-merge(
 $badge-pill-radius: .25rem;
 
 // >> Breadcrumbs
+$breadcrumb-bg: $gray-200;
+$breadcrumb-color: $azurite;
 $breadcrumb-font-size: small;
 $breadcrumb-width: fit-content;
 $breadcrumb-padding-y: 2px;
 $breadcrumb-padding-x: 10px;
 $breadcrumb-margin-bottom: 5px;
-$breadcrumb-color: $azurite;
-$breadcrumb-bg: $gray-200;
+
 
 // >> Buttons
 $btn-font-weight: 500;
