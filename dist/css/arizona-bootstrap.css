@@ -18940,8 +18940,8 @@ have been deprecated in Bootstrap 4.
   float: left;
   padding-right: 0.5rem;
   font-family: "Material Icons Sharp";
-  content: "\e5cc";
   color: #6c757d;
+  content: "\e5cc";
 }
 
 .breadcrumb-item a {
