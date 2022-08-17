@@ -4757,12 +4757,7 @@ input.btn-group-block[type="button"],
   margin-bottom: 1rem;
   font-size: small;
   list-style: none;
-}
-
-ol.breadcrumb::before {
-  font-family: 'Material Icons Sharp';
-  content: '\e88a';
-  padding-right: 5px;
+  background-color: #e9ecef;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4772,9 +4767,8 @@ ol.breadcrumb::before {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #1e5288;
-  font-family: 'Material Icons Sharp';
-  content: '\e5cc';
+  color: #6c757d;
+  content: "/";
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -4786,7 +4780,7 @@ ol.breadcrumb::before {
 }
 
 .breadcrumb-item.active {
-  color: #1e5288;
+  color: #6c757d;
 }
 
 .pagination {
