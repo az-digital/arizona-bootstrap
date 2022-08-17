@@ -5,17 +5,18 @@
 // > BREADCRUMB
 //
 .breadcrumb {
-  background-color: $breadcrumb-bg;
+
   width: $breadcrumb-width;
   font-size: $breadcrumb-font-size;
+  background-color: $breadcrumb-bg;
 
 
   &::before {
     float: left; // Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
     color: $breadcrumb-divider-color;
-    font-family: 'Material Icons Sharp';
-    content: '\e5cc';
+    font-family: "Material Icons Sharp";
+    content: "\e5cc";
   }
 }
 // >> Breadcrumb Items
