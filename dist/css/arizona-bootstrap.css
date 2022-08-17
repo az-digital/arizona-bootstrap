@@ -4753,8 +4753,8 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 2px 10px;
-  margin-bottom: 5px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   font-size: small;
   list-style: none;
 }
