@@ -14,9 +14,9 @@
   &::before {
     float: left; // Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
-    color: $breadcrumb-divider-color;
     font-family: "Material Icons Sharp";
     content: "\e5cc";
+    color: $breadcrumb-divider-color;
   }
 }
 // >> Breadcrumb Items
