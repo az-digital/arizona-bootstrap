@@ -4755,9 +4755,12 @@ input.btn-group-block[type="button"],
   flex-wrap: wrap;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  font-size: small;
   list-style: none;
-  background-color: #e9ecef;
+}
+
+ol.breadcrumb::before {
+  font-family: 'Material Icons Sharp';
+  content: '\e88a';
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -4767,8 +4770,8 @@ input.btn-group-block[type="button"],
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #6c757d;
-  content: "/";
+  font-family: 'Material Icons Sharp';
+  content: '\e5cc';
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -4777,10 +4780,6 @@ input.btn-group-block[type="button"],
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: none;
-}
-
-.breadcrumb-item.active {
-  color: #6c757d;
 }
 
 .pagination {
@@ -18919,14 +18918,6 @@ have been deprecated in Bootstrap 4.
   .text-justify-not-lg {
     text-align: inherit !important;
   }
-}
-
-.breadcrumb {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: small;
-  background-color: #e9ecef;
 }
 
 .breadcrumb::before {
