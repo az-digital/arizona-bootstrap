@@ -4760,7 +4760,7 @@ input.btn-group-block[type="button"],
 
 ol.breadcrumb::before {
   font-family: 'Material Icons Sharp';
-  content: '\e88a';
+  content: '\e587';
 }
 
 .breadcrumb-item + .breadcrumb-item {
