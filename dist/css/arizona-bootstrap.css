@@ -4756,15 +4756,7 @@ input.btn-group-block[type="button"],
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-<<<<<<< HEAD
-}
-
-ol.breadcrumb::before {
-  font-family: 'Material Icons Sharp';
-  content: '\e587';
-=======
   background-color: #e9ecef;
->>>>>>> 28ab4274e480df4d261631a2055523b93baf1af4
 }
 
 .breadcrumb-item + .breadcrumb-item {
