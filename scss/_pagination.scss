@@ -15,10 +15,10 @@
     // That's the home icon
   }
 }
-
 // >> Breadcrumb Items
 .breadcrumb-item {
   padding-left: $breadcrumb-item-padding;
+  right: $breadcrumb-item-padding;
 
   a {
     padding: 1px 0;
@@ -41,6 +41,7 @@
     }
   }
 }
+
 
 //
 // > PAGINATION
