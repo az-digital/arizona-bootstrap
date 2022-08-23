@@ -33,10 +33,12 @@
       float: right; // Suppress inline spacings and underlining of the separator
       padding-right: $breadcrumb-item-padding;
       padding-left: $breadcrumb-item-padding;
+       // stylelint-disable-next-line
       color: $breadcrumb-divider-color;
-      font-family: 'Material Icons Sharp';
-      content: '\e5cc';
-      }
+      // stylelint-disable-next-line
+      font-family: "Material Icons Sharp";
+      content: "\e5cc";
+    }
   }
 }
 
