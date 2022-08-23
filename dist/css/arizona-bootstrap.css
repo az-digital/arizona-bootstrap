@@ -4760,7 +4760,6 @@ input.btn-group-block[type="button"],
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -18939,9 +18938,9 @@ have been deprecated in Bootstrap 4.
   float: right;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+  font-family: "Material Icons Sharp";
   color: #6c757d;
-  font-family: 'Material Icons Sharp';
-  content: '\e5cc';
+  content: "\e5cc";
 }
 
 .page-link {

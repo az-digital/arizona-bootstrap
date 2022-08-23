@@ -18,7 +18,6 @@
 // >> Breadcrumb Items
 .breadcrumb-item {
   padding-left: $breadcrumb-item-padding;
-  right: $breadcrumb-item-padding;
 
   a {
     padding: 1px 0;
@@ -34,9 +33,8 @@
       padding-right: $breadcrumb-item-padding;
       padding-left: $breadcrumb-item-padding;
       // stylelint-disable-next-line
-      color: $breadcrumb-divider-color;
-      // stylelint-disable-next-line
       font-family: "Material Icons Sharp";
+      color: $breadcrumb-divider-color;
       content: "\e5cc";
     }
   }
