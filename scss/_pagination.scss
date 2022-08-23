@@ -5,23 +5,21 @@
 // > BREADCRUMB
 //
 .breadcrumb {
-
-  //width: $breadcrumb-width;
-  //font-size: $breadcrumb-font-size;
-  //background-color: $breadcrumb-bg;
-
-
   &::before {
     float: left; // Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
     // stylelint-disable-next-line
     font-family: "Material Icons Sharp";
     color: $breadcrumb-divider-color;
-    content: "\e5cc";
+    content: "\e88a";
+    // That's the home icon
   }
 }
+
 // >> Breadcrumb Items
 .breadcrumb-item {
+  padding-left: $breadcrumb-item-padding;
+
   a {
     padding: 1px 0;
     color: $breadcrumb-color;
@@ -30,9 +28,17 @@
       text-decoration: none;
       border-bottom: 2px solid $azurite;
     }
+
+    &::after {
+      float: right; // Suppress inline spacings and underlining of the separator
+      padding-right: $breadcrumb-item-padding;
+      padding-left: $breadcrumb-item-padding;
+      color: $breadcrumb-divider-color;
+      font-family: 'Material Icons Sharp';
+      content: '\e5cc';
+      }
   }
 }
-
 
 //
 // > PAGINATION
