@@ -5,9 +5,10 @@
 /*
 * >> Background Color
 */
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
   float: left;
-  padding-right: 0.5rem;
+  padding-right: .5rem;
+  // stylelint-disable-next-line
   font-family: "Material Icons Sharp";
   color: $breadcrumb-divider-color;
   content: "chevron_right";
