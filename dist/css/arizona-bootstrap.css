@@ -18917,7 +18917,7 @@ have been deprecated in Bootstrap 4.
   padding-right: 0.5rem;
   font-family: "Material Icons Sharp";
   color: #6c757d;
-  content: "\e88a";
+  content: "home";
 }
 
 .breadcrumb-item {
@@ -18940,7 +18940,7 @@ have been deprecated in Bootstrap 4.
   padding-left: 0.5rem;
   font-family: "Material Icons Sharp";
   color: #6c757d;
-  content: "\e5cc";
+  content: "chevron_right";
 }
 
 .page-link {

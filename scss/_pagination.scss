@@ -11,7 +11,7 @@
     // stylelint-disable-next-line
     font-family: "Material Icons Sharp";
     color: $breadcrumb-divider-color;
-    content: "\e88a";
+    content: "home";
     // That's the home icon
   }
 }
@@ -35,7 +35,7 @@
       // stylelint-disable-next-line
       font-family: "Material Icons Sharp";
       color: $breadcrumb-divider-color;
-      content: "\e5cc";
+      content: "chevron_right";
     }
   }
 }
