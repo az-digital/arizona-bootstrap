@@ -29,16 +29,6 @@
       text-decoration: none;
       border-bottom: 2px solid $azurite;
     }
-
-    &::after {
-      float: right; // Suppress inline spacings and underlining of the separator
-      padding-right: $breadcrumb-item-padding;
-      padding-left: $breadcrumb-item-padding;
-      // stylelint-disable-next-line
-      font-family: "Material Icons Sharp";
-      color: $breadcrumb-divider-color;
-      content: "chevron_right";
-    }
   }
 }
 

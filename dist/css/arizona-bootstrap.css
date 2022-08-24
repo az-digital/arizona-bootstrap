@@ -4756,18 +4756,10 @@ input.btn-group-block[type="button"],
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
 }
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left;
-  padding-right: 0.5rem;
-  color: #6c757d;
-  content: "/";
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -12578,6 +12570,14 @@ a.text-dark:hover, a.text-dark:focus {
 /*
 * >> Background Color
 */
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Icons Sharp";
+  color: #6c757d;
+  content: "chevron_right";
+}
+
 .bg-blue, .panel-primary .panel-heading, .bg-primary, .card-primary {
   color: #fff;
   background-color: #0c234b;
@@ -18920,6 +18920,10 @@ have been deprecated in Bootstrap 4.
   }
 }
 
+.breadcrumb {
+  background-color: #fff;
+}
+
 .breadcrumb::before {
   float: left;
   padding-right: 0.5rem;
@@ -18940,15 +18944,6 @@ have been deprecated in Bootstrap 4.
 .breadcrumb-item a:hover {
   text-decoration: none;
   border-bottom: 2px solid #1e5288;
-}
-
-.breadcrumb-item a::after {
-  float: right;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  font-family: "Material Icons Sharp";
-  color: #6c757d;
-  content: "chevron_right";
 }
 
 .page-link {
