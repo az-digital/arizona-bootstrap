@@ -8,7 +8,6 @@
   list-style: none;
   background-color: $breadcrumb-bg;
   @include border-radius($breadcrumb-border-radius);
-  
   &::before {
     float: left; // Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
@@ -40,5 +39,4 @@
     color: $breadcrumb-divider-color;
     content: "chevron_right";
   }
-
 }
