@@ -18921,7 +18921,7 @@ have been deprecated in Bootstrap 4.
 }
 
 .breadcrumb {
-  background-color: #fff;
+  background-color: white;
 }
 
 .breadcrumb::before {
