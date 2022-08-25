@@ -15369,6 +15369,47 @@ a {
   border-radius: 0.25rem;
 }
 
+.breadcrumb {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #fff;
+}
+
+.breadcrumb::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Icons Sharp";
+  color: #6c757d;
+  content: "home";
+}
+
+.breadcrumb a {
+  padding: 1px 0;
+  color: #1e5288;
+}
+
+.breadcrumb a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #1e5288;
+}
+
++ .breadcrumb-item {
+  padding-left: 0.5rem;
+}
+
++ .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Icons Sharp";
+  color: #6c757d;
+  content: "chevron_right";
+}
+
 .btn {
   font-weight: 500;
   text-transform: uppercase;
@@ -18926,32 +18967,6 @@ have been deprecated in Bootstrap 4.
   .text-justify-not-lg {
     text-align: inherit !important;
   }
-}
-
-.breadcrumb {
-  background-color: #fff;
-}
-
-.breadcrumb::before {
-  float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Icons Sharp";
-  color: #6c757d;
-  content: "home";
-}
-
-.breadcrumb-item {
-  padding-left: 0.5rem;
-}
-
-.breadcrumb-item a {
-  padding: 1px 0;
-  color: #1e5288;
-}
-
-.breadcrumb-item a:hover {
-  text-decoration: none;
-  border-bottom: 2px solid #1e5288;
 }
 
 .page-link {

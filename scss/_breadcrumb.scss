@@ -1,0 +1,40 @@
+// Overrides for Breadcrumbs
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  margin-bottom: $breadcrumb-margin-bottom;
+  @include font-size($breadcrumb-font-size);
+  list-style: none;
+  background-color: $breadcrumb-bg;
+  @include border-radius($breadcrumb-border-radius);
+  &::before {
+    float: left; // Suppress inline spacings and underlining of the separator
+    padding-right: $breadcrumb-item-padding;
+    // stylelint-disable-next-line
+    font-family: "Material Icons Sharp";
+    color: $breadcrumb-divider-color;
+    content: "home"; // That's the home icon
+  }
+  a {
+    padding: 1px 0;
+    color: $breadcrumb-color;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 2px solid $azurite;
+    }
+  }
+}
+
++ .breadcrumb-item {
+  padding-left: $breadcrumb-item-padding;
+  &::before {
+    float: left;// Suppress inline spacings and underlining of the separator
+    padding-right: $breadcrumb-item-padding;
+    // stylelint-disable-next-line
+    font-family: "Material Icons Sharp";
+    color: $breadcrumb-divider-color;
+    content: "chevron_right";
+  }
+}
