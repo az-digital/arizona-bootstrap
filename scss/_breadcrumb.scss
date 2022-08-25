@@ -8,6 +8,7 @@
   list-style: none;
   background-color: $breadcrumb-bg;
   @include border-radius($breadcrumb-border-radius);
+  
   &::before {
     float: left; // Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
@@ -16,6 +17,7 @@
     color: $breadcrumb-divider-color;
     content: "home"; // That's the home icon
   }
+
   a {
     padding: 1px 0;
     color: $breadcrumb-color;
@@ -29,6 +31,7 @@
 
 + .breadcrumb-item {
   padding-left: $breadcrumb-item-padding;
+
   &::before {
     float: left;// Suppress inline spacings and underlining of the separator
     padding-right: $breadcrumb-item-padding;
@@ -37,4 +40,5 @@
     color: $breadcrumb-divider-color;
     content: "chevron_right";
   }
+
 }
