@@ -6,9 +6,21 @@
 //
 .breadcrumb {
   background-color: $breadcrumb-bg;
+
+  &::before {
+    float: left; // Suppress inline spacings and underlining of the separator
+    padding-right: $breadcrumb-item-padding;
+    // stylelint-disable-next-line
+    font-family: "Material Icons Sharp";
+    color: $breadcrumb-divider-color;
+    content: "home";
+    // That's the home icon
+  }
 }
 // >> Breadcrumb Items
 .breadcrumb-item {
+  padding-left: $breadcrumb-item-padding;
+
   a {
     padding: 1px 0;
     color: $breadcrumb-color;
