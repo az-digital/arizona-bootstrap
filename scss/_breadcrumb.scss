@@ -14,7 +14,7 @@
     // stylelint-disable-next-line
     font-family: "Material Icons Sharp";
     color: $breadcrumb-divider-color;
-    content: "home"; // That's the home icon
+    content: "home";
   }
 
   a {
@@ -28,15 +28,11 @@
   }
 }
 
-+ .breadcrumb-item {
-  padding-left: $breadcrumb-item-padding;
-
-  &::before {
-    float: left;// Suppress inline spacings and underlining of the separator
-    padding-right: $breadcrumb-item-padding;
-    // stylelint-disable-next-line
-    font-family: "Material Icons Sharp";
-    color: $breadcrumb-divider-color;
-    content: "chevron_right";
-  }
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: .5rem;
+  // stylelint-disable-next-line
+  font-family: "Material Icons Sharp";
+  color: $breadcrumb-divider-color;
+  content: "chevron_right";
 }
