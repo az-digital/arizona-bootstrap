@@ -12575,6 +12575,9 @@ a.text-dark:hover, a.text-dark:focus {
 /*
 * > COLOR CLASSES
 */
+/*
+* >> Background Color
+*/
 .bg-blue, .panel-primary .panel-heading, .bg-primary, .card-primary {
   color: #fff;
   background-color: #0c234b;
