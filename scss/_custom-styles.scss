@@ -2,6 +2,10 @@
 * > COLOR CLASSES
 */
 
+/*
+* >> Background Color
+*/
+
 // >>> Brand
 @each $color, $value in $colors {
   .bg-#{$color} {
