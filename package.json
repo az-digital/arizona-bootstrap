@@ -81,7 +81,7 @@
     "find-unused-sass-variables": "^4.0.4",
     "glob": "^8.0.3",
     "hugo-bin": "^0.89.0",
-    "jquery": "3.5.1",
+    "jquery": "3.6.1",
     "linkinator": "4.0.2",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.19",
