@@ -36,29 +36,25 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 For ease of integration into web projects around campus, the Arizona Digital
 team manages a Typekit webfont project that can be referenced by your site.
 
-Using shared standard assets is inherently faster in the Arizona.edu environment, and any deviation to using shared standard assets should be considered
-carefully by researching traffic-flow between institutional web properties, and
-not solely initial page-load times on one site.  All sites that
-link to an arizona.edu subdomain, typically share users with the parent domain,
-and other subdomains. Modern web browsers cache assets based on the address it
-is downloaded from, so if all subdomains share the same asset, the end-user's
-browser will access a cached copy without downloading it again across those
-subdomains.
-
 #### Notes to consider when using the centrally managed webfont project.
-Our license with Typekit allows anyone with a netid to create their own webfont
+Our license with Typekit allows anyone with a NetID to create their own webfont
 project in Creative Cloud Typekit and use it in all of their web projects.
 
 ### Managing your own project
 
 **Advantages**
 - You can tailor your font project to only include the fonts that your web site or app uses, minimizing the number of assets an end-user has to download.
-- Faster page load for users that have never visited other Arizona.edu websites that include the centrally managed font.
+- Faster page load if your site uses a smaller subset of font variants than what are included in the shared library.
 
 **Disadvantages**
-- Slower page load for users that have visited other Arizona.edu websites that include the centrally managed font.
-- You have to manage your own font in Typekit using a netid that is tied to one person, creating a single point of failure if that user leaves the university.
+- You have to manage your own font in Typekit using a NetID.
+  - If the NetID is tied to one person, it creates a single point of failure if
+    that user leaves the University.
+  - If the NetID is a shared "test NetID" you have to manage credentials, and sign it
+    up to use Adobe products.
 
+**Note** If you choose to manage your own web font project, it is strongly recommended that you go through the effort to use a [test NetID](https://apps.iam.arizona.edu/), which is shared with your department.
+**Note** Our license agreement with Adobe does not allow us to self-host font files.
 ## Global settings
 [Follow these instructions](#instructions) on how to add Proxima Nova to your
 website.
