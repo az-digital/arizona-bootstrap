@@ -15764,7 +15764,7 @@ a {
 }
 
 .nav-tabs.nav-tabs-lg .nav-link {
-  text-transform: uppercase;
+  text-transform: none;
   background-color: #fff;
   border-width: 0;
 }
@@ -15818,7 +15818,7 @@ a {
 
 .navbar-nav .nav-link {
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
   background-color: inherit;
   border: none;
 }
@@ -15977,7 +15977,7 @@ a {
 }
 
 .navbar-offcanvas .nav-item-parent .nav-link {
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .navbar-offcanvas .nav-item.active {
