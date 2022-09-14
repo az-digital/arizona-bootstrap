@@ -57,7 +57,7 @@
       // Red text is okay on these colors, so if it's not one of these colors need to change the text color
       a:not(.btn),
       a:not(.nav-link) {
-          color: inherit;
+       color: inherit;
       }
     }
   }
