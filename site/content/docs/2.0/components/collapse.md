@@ -6,6 +6,11 @@ group: components
 toc: true
 ---
 
+<div class="alert alert-warning" role="alert">
+  <p class="h4 alert-heading mt-0">Heads Up!</p>
+  This feature in Arizona Bootstrap depends on Material Design Sharp icons which will still need to be added to your project if you would like to use them.
+</div>
+
 ## How it Works
 
 The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the `height` from its current value to `0`. Given how CSS handles animations, you cannot use `padding` on a `.collapse` element. Instead, use the class as an independent wrapping element.
