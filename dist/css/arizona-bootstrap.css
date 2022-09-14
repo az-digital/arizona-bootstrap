@@ -12655,7 +12655,11 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-blue a , .panel-primary .panel-heading a , .bg-primary a , .card-primary a {
+.bg-blue a:not(.btn), .panel-primary .panel-heading a:not(.btn), .bg-primary a:not(.btn), .card-primary a:not(.btn),
+.bg-blue a:not(.nav-link),
+.panel-primary .panel-heading a:not(.nav-link),
+.bg-primary a:not(.nav-link),
+.card-primary a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12689,7 +12693,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-red a {
+.bg-red a:not(.btn),
+.bg-red a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12809,7 +12814,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-bloom a {
+.bg-bloom a:not(.btn),
+.bg-bloom a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12839,7 +12845,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-chili a {
+.bg-chili a:not(.btn),
+.bg-chili a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12877,7 +12884,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-sky a {
+.bg-sky a:not(.btn),
+.bg-sky a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12911,7 +12919,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-oasis a {
+.bg-oasis a:not(.btn),
+.bg-oasis a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12941,7 +12950,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-azurite a {
+.bg-azurite a:not(.btn),
+.bg-azurite a:not(.nav-link) {
   color: inherit;
 }
 
@@ -12975,7 +12985,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-midnight a {
+.bg-midnight a:not(.btn),
+.bg-midnight a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13073,7 +13084,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-leaf a {
+.bg-leaf a:not(.btn),
+.bg-leaf a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13103,7 +13115,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-river a {
+.bg-river a:not(.btn),
+.bg-river a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13141,7 +13154,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-silver a {
+.bg-silver a:not(.btn),
+.bg-silver a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13171,7 +13185,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-mesa a {
+.bg-mesa a:not(.btn),
+.bg-mesa a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13205,7 +13220,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-ash a {
+.bg-ash a:not(.btn),
+.bg-ash a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13239,7 +13255,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-sage a {
+.bg-sage a:not(.btn),
+.bg-sage a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13273,7 +13290,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-black a {
+.bg-black a:not(.btn),
+.bg-black a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13307,7 +13325,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-blue a {
+.bg-transparent-blue a:not(.btn),
+.bg-transparent-blue a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13341,7 +13360,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-red a {
+.bg-transparent-red a:not(.btn),
+.bg-transparent-red a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13409,7 +13429,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-bloom a {
+.bg-transparent-bloom a:not(.btn),
+.bg-transparent-bloom a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13439,7 +13460,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-chili a {
+.bg-transparent-chili a:not(.btn),
+.bg-transparent-chili a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13477,7 +13499,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-sky a {
+.bg-transparent-sky a:not(.btn),
+.bg-transparent-sky a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13511,7 +13534,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-oasis a {
+.bg-transparent-oasis a:not(.btn),
+.bg-transparent-oasis a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13541,7 +13565,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-azurite a {
+.bg-transparent-azurite a:not(.btn),
+.bg-transparent-azurite a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13575,7 +13600,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-midnight a {
+.bg-transparent-midnight a:not(.btn),
+.bg-transparent-midnight a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13673,7 +13699,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-leaf a {
+.bg-transparent-leaf a:not(.btn),
+.bg-transparent-leaf a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13703,7 +13730,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-river a {
+.bg-transparent-river a:not(.btn),
+.bg-transparent-river a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13741,7 +13769,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-silver a {
+.bg-transparent-silver a:not(.btn),
+.bg-transparent-silver a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13771,7 +13800,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-mesa a {
+.bg-transparent-mesa a:not(.btn),
+.bg-transparent-mesa a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13805,7 +13835,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-ash a {
+.bg-transparent-ash a:not(.btn),
+.bg-transparent-ash a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13839,7 +13870,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-sage a {
+.bg-transparent-sage a:not(.btn),
+.bg-transparent-sage a:not(.nav-link) {
   color: inherit;
 }
 
@@ -13873,7 +13905,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-black a {
+.bg-transparent-black a:not(.btn),
+.bg-transparent-black a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14017,7 +14050,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-success a , .panel-success .panel-heading a , .card-success a {
+.bg-success a:not(.btn), .panel-success .panel-heading a:not(.btn), .card-success a:not(.btn),
+.bg-success a:not(.nav-link),
+.panel-success .panel-heading a:not(.nav-link),
+.card-success a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14085,7 +14121,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-info a , .panel-info .panel-heading a , .card-info a {
+.bg-info a:not(.btn), .panel-info .panel-heading a:not(.btn), .card-info a:not(.btn),
+.bg-info a:not(.nav-link),
+.panel-info .panel-heading a:not(.nav-link),
+.card-info a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14153,7 +14192,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-warning a , .panel-warning .panel-heading a , .card-warning a {
+.bg-warning a:not(.btn), .panel-warning .panel-heading a:not(.btn), .card-warning a:not(.btn),
+.bg-warning a:not(.nav-link),
+.panel-warning .panel-heading a:not(.nav-link),
+.card-warning a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14217,7 +14259,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-danger a , .panel-danger .panel-heading a , .card-danger a {
+.bg-danger a:not(.btn), .panel-danger .panel-heading a:not(.btn), .card-danger a:not(.btn),
+.bg-danger a:not(.nav-link),
+.panel-danger .panel-heading a:not(.nav-link),
+.card-danger a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14384,7 +14429,11 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-dark a , .callout-dark a , .card-inverse a , .modal-bg-dark a {
+.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn),
+.bg-dark a:not(.nav-link),
+.callout-dark a:not(.nav-link),
+.card-inverse a:not(.nav-link),
+.modal-bg-dark a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14585,7 +14634,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-600 a {
+.bg-gray-600 a:not(.btn),
+.bg-gray-600 a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14619,7 +14669,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-700 a {
+.bg-gray-700 a:not(.btn),
+.bg-gray-700 a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14653,7 +14704,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-800 a {
+.bg-gray-800 a:not(.btn),
+.bg-gray-800 a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14687,7 +14739,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-900 a {
+.bg-gray-900 a:not(.btn),
+.bg-gray-900 a:not(.nav-link) {
   color: inherit;
 }
 
@@ -14854,7 +14907,11 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-dark a , .callout-dark a , .card-inverse a , .modal-bg-dark a {
+.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn),
+.bg-dark a:not(.nav-link),
+.callout-dark a:not(.nav-link),
+.card-inverse a:not(.nav-link),
+.modal-bg-dark a:not(.nav-link) {
   color: inherit;
 }
 
