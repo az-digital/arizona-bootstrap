@@ -1,26 +1,4 @@
-// Overrides for Pagination, Breadcrumbs
-
-
-//
-// > BREADCRUMB
-//
-.breadcrumb {
-  background-color: $breadcrumb-bg;
-}
-// >> Breadcrumb Items
-.breadcrumb-item {
-  a {
-    padding: 1px 0;
-    color: $breadcrumb-color;
-
-    &:hover {
-      text-decoration: none;
-      border-bottom: 2px solid $azurite;
-    }
-  }
-}
-
-
+// Overrides for Pagination
 //
 // > PAGINATION
 //

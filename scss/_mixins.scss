@@ -55,7 +55,8 @@
 
     @if $bg-color != $white and $bg-color != $warm-gray and $bg-color != $cool-gray and $bg-color != $gray-100 and $bg-color != $gray-200 and $bg-color != $gray-300 and $bg-color != $gray-400 and $bg-color != $gray-500 {
       // Red text is okay on these colors, so if it's not one of these colors need to change the text color
-      a:not(.btn,.nav-link) {
+      a:not(.btn),
+      a:not(.nav-link) {
         color: inherit;
       }
     }
@@ -77,7 +78,8 @@
     .h6 {
       color: inherit;
     }
-    a:not(.btn,.nav-link) {
+    a:not(.btn),
+    a:not(.nav-link) {
       color: inherit;
     }
     .ul-triangles li::before {
