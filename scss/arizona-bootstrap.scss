@@ -60,6 +60,7 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 // @import "alert";
 @import "typography";
 @import "badge";
+@import "breadcrumb";
 @import "button";
 @import "card";
 @import "dropdown";

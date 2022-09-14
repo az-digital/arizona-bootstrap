@@ -1,0 +1,16 @@
+{{- /*
+  Usage: `placeholder args`
+
+  args can be one of the following:
+    class: One of info (default), danger, warning, success, light or dark.
+    heading: Used in the alert `heading` tag.
+
+*/ -}}
+
+{{- $class := .Get "class" | default "info" -}}
+{{- $heading := .Get "heading" -}}
+
+<div class="alert alert-{{ $class }}">
+  <h4 class="alert-heading">{{ $heading }}</h4>
+  {{ .Inner | markdownify }}
+</div>
