@@ -8,24 +8,23 @@
   list-style: none;
   background-color: $breadcrumb-bg;
   @include border-radius($breadcrumb-border-radius);
-  &::before {
-    float: left; // Suppress inline spacings and underlining of the separator
-    padding-right: $breadcrumb-item-padding;
-    // stylelint-disable-next-line
-    font-family: "Material Icons Sharp";
-    color: $breadcrumb-divider-color;
-    content: "home";
-  }
-
   a {
     padding: 1px 0;
     color: $breadcrumb-color;
-
     &:hover {
       text-decoration: none;
       border-bottom: 2px solid $azurite;
     }
   }
+}
+
+.breadcrumb-item-home::before {
+  float: left; // Suppress inline spacings and underlining of the separator
+  padding-right: $breadcrumb-item-padding;
+  // stylelint-disable-next-line
+  font-family: "Material Icons Sharp";
+  color: $breadcrumb-divider-color;
+  content: "home";
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
