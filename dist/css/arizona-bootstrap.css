@@ -12809,7 +12809,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-bloom a:not(.btn) {
+.bg-bloom a {
   color: inherit;
 }
 
@@ -12877,7 +12877,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-sky a:not(.btn) {
+.bg-sky a {
   color: inherit;
 }
 
@@ -12911,7 +12911,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-oasis a:not(.btn) {
+.bg-oasis a {
   color: inherit;
 }
 
@@ -13073,7 +13073,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-leaf a:not(.btn) {
+.bg-leaf a {
   color: inherit;
 }
 
@@ -13141,7 +13141,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-silver a:not(.btn) {
+.bg-silver a {
   color: inherit;
 }
 
@@ -13409,7 +13409,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-bloom a:not(.btn) {
+.bg-transparent-bloom a {
   color: inherit;
 }
 
@@ -13477,7 +13477,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-sky a:not(.btn) {
+.bg-transparent-sky a {
   color: inherit;
 }
 
@@ -13511,7 +13511,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-oasis a:not(.btn) {
+.bg-transparent-oasis a {
   color: inherit;
 }
 
@@ -13673,7 +13673,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-leaf a:not(.btn) {
+.bg-transparent-leaf a {
   color: inherit;
 }
 
@@ -13741,7 +13741,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-silver a:not(.btn) {
+.bg-transparent-silver a {
   color: inherit;
 }
 
@@ -14017,7 +14017,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-success a:not(.btn), .panel-success .panel-heading a:not(.btn), .card-success a:not(.btn) {
+.bg-success a , .panel-success .panel-heading a , .card-success a {
   color: inherit;
 }
 
@@ -14085,7 +14085,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-info a:not(.btn), .panel-info .panel-heading a:not(.btn), .card-info a:not(.btn) {
+.bg-info a , .panel-info .panel-heading a , .card-info a {
   color: inherit;
 }
 
@@ -14153,7 +14153,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-warning a:not(.btn), .panel-warning .panel-heading a:not(.btn), .card-warning a:not(.btn) {
+.bg-warning a , .panel-warning .panel-heading a , .card-warning a {
   color: inherit;
 }
 
