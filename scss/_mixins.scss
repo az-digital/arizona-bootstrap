@@ -77,7 +77,7 @@
     .h6 {
       color: inherit;
     }
-    a:not(.btn) {
+    a:not(.btn, .nav-link) {
       color: inherit;
     }
     .ul-triangles li::before {
