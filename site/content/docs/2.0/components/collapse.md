@@ -6,9 +6,9 @@ group: components
 toc: true
 ---
 
-{{< callout warning >}}
-{{< partial "callout-warning-material-design.md" >}}
-{{< /callout >}}
+{{< alert class="warning" heading="Heads Up!" >}}
+{{< partial "alert-warning-material-design.md" >}}
+{{< /alert >}}
 
 ## How it Works
 

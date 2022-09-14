@@ -5,9 +5,9 @@ description: Indicate the current page's location within a navigational hierarch
 group: components
 ---
 
-{{< callout warning >}}
-{{< partial "callout-warning-material-design.md" >}}
-{{< /callout >}}
+{{< alert class="warning" heading="Heads Up!" >}}
+{{< partial "alert-warning-material-design.md" >}}
+{{< /alert >}}
 
 ## Example
 
