@@ -15372,14 +15372,6 @@ a {
   background-color: #fff;
 }
 
-.breadcrumb::before {
-  float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Icons Sharp";
-  color: #6c757d;
-  content: "home";
-}
-
 .breadcrumb a {
   padding: 1px 0;
   color: #1e5288;
@@ -15388,6 +15380,14 @@ a {
 .breadcrumb a:hover {
   text-decoration: none;
   border-bottom: 2px solid #1e5288;
+}
+
+.breadcrumb-item-home::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Icons Sharp";
+  color: #6c757d;
+  content: "home";
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
