@@ -7,7 +7,8 @@ group: components
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 alert-heading mt-0">Heads Up!</p>
-  This feature in Arizona Bootstrap depends on Material Design Sharp icons which will still need to be added to your project if you would like to use them.
+  <p>This feature in Arizona Bootstrap depends on Material Design Sharp icons which will still need to be added to your project if you would like to use them.</p>
+  <p>[Implement Material Icons]({{< docsref "/icons/#material-icons-implementation" >}})</p>
 </div>
 
 ## Example
