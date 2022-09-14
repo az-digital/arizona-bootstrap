@@ -5,11 +5,9 @@ description: Indicate the current page's location within a navigational hierarch
 group: components
 ---
 
-<div class="alert alert-warning" role="alert">
-  <h2 class="h4 alert-heading mt-2">Heads Up!</h2>
-  <p>This feature in Arizona Bootstrap depends on Material Design Sharp icons which will still need to be added to your project if you would like to use them.</p>
-  [Implement Material Icons]({{< docsref "/icons/#material-icons-implementation" >}})
-</div>
+{{< alert class="warning" heading="Heads Up!" >}}
+{{< partial "alert-warning-material-design.md" >}}
+{{< /alert >}}
 
 ## Example
 
