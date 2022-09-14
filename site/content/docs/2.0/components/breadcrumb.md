@@ -5,7 +5,7 @@ description: Indicate the current page's location within a navigational hierarch
 group: components
 ---
 
-{{< callout info >}}
+{{< callout warning >}}
 {{< partial "callout-warning-material-design.md" >}}
 {{< /callout >}}
 

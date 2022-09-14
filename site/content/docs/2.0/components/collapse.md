@@ -6,7 +6,7 @@ group: components
 toc: true
 ---
 
-{{< callout info >}}
+{{< callout warning >}}
 {{< partial "callout-warning-material-design.md" >}}
 {{< /callout >}}
 
