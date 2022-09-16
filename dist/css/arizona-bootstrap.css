@@ -12655,7 +12655,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-blue a:not(.btn), .panel-primary .panel-heading a:not(.btn), .bg-primary a:not(.btn), .card-primary a:not(.btn) {
+.bg-blue a:not(.btn):not(.nav-link), .panel-primary .panel-heading a:not(.btn):not(.nav-link), .bg-primary a:not(.btn):not(.nav-link), .card-primary a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12689,7 +12689,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-red a:not(.btn) {
+.bg-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12809,7 +12809,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-bloom a:not(.btn) {
+.bg-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12839,7 +12839,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-chili a:not(.btn) {
+.bg-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12877,7 +12877,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-sky a:not(.btn) {
+.bg-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12911,7 +12911,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-oasis a:not(.btn) {
+.bg-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12941,7 +12941,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-azurite a:not(.btn) {
+.bg-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -12975,7 +12975,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-midnight a:not(.btn) {
+.bg-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13073,7 +13073,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-leaf a:not(.btn) {
+.bg-leaf a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13103,7 +13103,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-river a:not(.btn) {
+.bg-river a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13141,7 +13141,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-silver a:not(.btn) {
+.bg-silver a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13171,7 +13171,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-mesa a:not(.btn) {
+.bg-mesa a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13205,7 +13205,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-ash a:not(.btn) {
+.bg-ash a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13239,7 +13239,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-sage a:not(.btn) {
+.bg-sage a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13273,7 +13273,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-black a:not(.btn) {
+.bg-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13307,7 +13307,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-blue a:not(.btn) {
+.bg-transparent-blue a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13341,7 +13341,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-red a:not(.btn) {
+.bg-transparent-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13409,7 +13409,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-bloom a:not(.btn) {
+.bg-transparent-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13439,7 +13439,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-chili a:not(.btn) {
+.bg-transparent-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13477,7 +13477,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-sky a:not(.btn) {
+.bg-transparent-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13511,7 +13511,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-oasis a:not(.btn) {
+.bg-transparent-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13541,7 +13541,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-azurite a:not(.btn) {
+.bg-transparent-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13575,7 +13575,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-midnight a:not(.btn) {
+.bg-transparent-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13673,7 +13673,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-leaf a:not(.btn) {
+.bg-transparent-leaf a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13703,7 +13703,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-river a:not(.btn) {
+.bg-transparent-river a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13741,7 +13741,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-transparent-silver a:not(.btn) {
+.bg-transparent-silver a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13771,7 +13771,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-mesa a:not(.btn) {
+.bg-transparent-mesa a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13805,7 +13805,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-ash a:not(.btn) {
+.bg-transparent-ash a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13839,7 +13839,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-sage a:not(.btn) {
+.bg-transparent-sage a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -13873,7 +13873,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-transparent-black a:not(.btn) {
+.bg-transparent-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14017,7 +14017,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-success a:not(.btn), .panel-success .panel-heading a:not(.btn), .card-success a:not(.btn) {
+.bg-success a:not(.btn):not(.nav-link), .panel-success .panel-heading a:not(.btn):not(.nav-link), .card-success a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14085,7 +14085,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-info a:not(.btn), .panel-info .panel-heading a:not(.btn), .card-info a:not(.btn) {
+.bg-info a:not(.btn):not(.nav-link), .panel-info .panel-heading a:not(.btn):not(.nav-link), .card-info a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14153,7 +14153,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-left-color: #000;
 }
 
-.bg-warning a:not(.btn), .panel-warning .panel-heading a:not(.btn), .card-warning a:not(.btn) {
+.bg-warning a:not(.btn):not(.nav-link), .panel-warning .panel-heading a:not(.btn):not(.nav-link), .card-warning a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14217,7 +14217,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-danger a:not(.btn), .panel-danger .panel-heading a:not(.btn), .card-danger a:not(.btn) {
+.bg-danger a:not(.btn):not(.nav-link), .panel-danger .panel-heading a:not(.btn):not(.nav-link), .card-danger a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14384,7 +14384,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn) {
+.bg-dark a:not(.btn):not(.nav-link), .callout-dark a:not(.btn):not(.nav-link), .card-inverse a:not(.btn):not(.nav-link), .modal-bg-dark a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14585,7 +14585,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-600 a:not(.btn) {
+.bg-gray-600 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14619,7 +14619,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-700 a:not(.btn) {
+.bg-gray-700 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14653,7 +14653,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-800 a:not(.btn) {
+.bg-gray-800 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14687,7 +14687,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-gray-900 a:not(.btn) {
+.bg-gray-900 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
@@ -14854,7 +14854,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: inherit;
 }
 
-.bg-dark a:not(.btn), .callout-dark a:not(.btn), .card-inverse a:not(.btn), .modal-bg-dark a:not(.btn) {
+.bg-dark a:not(.btn):not(.nav-link), .callout-dark a:not(.btn):not(.nav-link), .card-inverse a:not(.btn):not(.nav-link), .modal-bg-dark a:not(.btn):not(.nav-link) {
   color: inherit;
 }
 
