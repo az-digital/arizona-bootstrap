@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
 
       - name: Set variables for Docker images
         run: |
