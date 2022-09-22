@@ -123,9 +123,6 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          if [ -n "$(git status --porcelain package-lock.json)" ] ; then
-            git restore package-lock.json
-          fi
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
