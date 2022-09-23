@@ -10,10 +10,10 @@
   @include border-radius($breadcrumb-border-radius);
   a {
     padding: 1px 0;
+    font-weight: 500;
     color: $breadcrumb-color;
     &:hover {
-      text-decoration: none;
-      border-bottom: 2px solid $azurite;
+      color: $midnight;
     }
   }
 }
