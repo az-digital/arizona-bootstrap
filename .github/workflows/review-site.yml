@@ -123,9 +123,15 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
+          echo 'Initial Git state . . . . . .'
+          git status
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add dist
+            echo 'Staging CSS and JS . . . . . .'
+            git status
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
+            echo 'After commit . . . . . .'
+            git status
             git push --force origin "HEAD:${AZ_TRIMMED_REF}"
           fi
         shell: sh
