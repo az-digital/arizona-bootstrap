@@ -80,13 +80,13 @@ jobs:
 
       - name: Save new SHA to file
         run: |
-          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > variables.json
+          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
 
       - name: Upload variables
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          name: artifact
-          path: variables.json
+          name: variables-json-artifact
+          path: ${{ runner.temp }}/variables.json
 
   dispatch:
     needs: release
@@ -99,13 +99,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
-          name: artifact
+          name: variables-json-artifact
+          path: ${{ runner.temp }}
 
       - name: Update environment variables
         run: |
-          echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
+          variablesfile=${{ runner.temp }}/variables.json
+          echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
