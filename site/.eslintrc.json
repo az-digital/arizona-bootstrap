@@ -55,6 +55,7 @@
     "unicorn/prefer-dom-node-dataset": "off",
     "unicorn/prefer-includes": "off",
     "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": "off",
     "unicorn/prefer-number-properties": "off",
     "unicorn/prefer-prototype-methods": "off",
     "unicorn/prefer-query-selector": "off",

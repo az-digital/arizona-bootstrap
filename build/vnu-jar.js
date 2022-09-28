@@ -9,7 +9,7 @@
 
 'use strict'
 
-const { execFile, spawn } = require('child_process')
+const { execFile, spawn } = require('node:child_process')
 const vnu = require('vnu-jar')
 
 execFile('java', ['-version'], (error, stdout, stderr) => {
@@ -27,9 +27,6 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     // Firefox's non-standard autocomplete behavior - see https://bugzilla.mozilla.org/show_bug.cgi?id=654072
     'Attribute “autocomplete” is only allowed when the input type is.*',
     'Attribute “autocomplete” not allowed on element “button” at this point.',
-    // IE11 doesn't recognise <main> / give the element an implicit "main" landmark.
-    // Explicit role="main" is redundant for other modern browsers, but still valid.
-    'The “main” role is unnecessary for element “main”.',
     // Per https://www.w3.org/TR/html-aria/#docconformance having "aria-disabled" on a link is
     // NOT RECOMMENDED, but it's still valid - we explain in the docs that it's not ideal,
     // and offer more robust alternatives, but also need to show a less-than-ideal example
