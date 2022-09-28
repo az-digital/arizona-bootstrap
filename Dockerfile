@@ -1,4 +1,4 @@
-FROM node:16.17.0-bullseye-slim
+FROM node:16.17.1-bullseye-slim
 
 ENV LANG C.UTF-8
 
@@ -38,7 +38,7 @@ RUN apt-get update \
   && chmod 755 /root \
   && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install --location=global npm-check-updates@16.1.3 \
+  && npm install --location=global npm-check-updates@16.3.3 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
