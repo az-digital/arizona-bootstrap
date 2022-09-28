@@ -15374,12 +15374,12 @@ a {
 
 .breadcrumb a {
   padding: 1px 0;
+  font-weight: 500;
   color: #1e5288;
 }
 
 .breadcrumb a:hover {
-  text-decoration: none;
-  border-bottom: 2px solid #1e5288;
+  color: #001c48;
 }
 
 .breadcrumb-item-home::before {
