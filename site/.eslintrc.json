@@ -59,6 +59,7 @@
     "unicorn/prefer-number-properties": "off",
     "unicorn/prefer-prototype-methods": "off",
     "unicorn/prefer-query-selector": "off",
-    "unicorn/prevent-abbreviations": "off"
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-top-level-await": "off"
   }
 }
