@@ -155,7 +155,7 @@ In general, developers should use the main branch version of the icons for devel
 
 ## Material Icons Implementation
 
-Include the Material Icons' stylesheet to your project in order to use the font icons. [Refer to Material Icons docs](https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web) for more information.
+Include the Material Icons' stylesheet in your project in order to use the font icons. [Refer to Material Icons docs](https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web) for more information.
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
