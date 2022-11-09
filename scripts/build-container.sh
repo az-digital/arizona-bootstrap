@@ -90,7 +90,7 @@ if echo "$tagsearch" | grep -q "$oldhash" ; then
   lockhash="$oldhash"
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
-  imagenewid=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
+  imagenewid=$(docker build -q --build-arg ${AZ_BOOTSTRAP_FROZEN_DIR} . ) \
     || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
   workingtitle=$(echo "$imagenewid" | head -1 | sed -e 's/^.*sha256:\([0-9a-f]\{12\}\).*$/\1/' ) \
     || errorexit "Couldn't extract a short image ID from ${imagenewid}"
