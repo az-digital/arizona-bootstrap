@@ -113,7 +113,7 @@ jobs:
       - name: Build variables
         run: |
           echo "AZ_REVIEW_BASEURL=/arizona-bootstrap/${AZ_TRIMMED_REF}" >> ${GITHUB_ENV}
-          echo "AZ_SITE_HOST=https://review.digital.arizona.edu" >> ${GITHUB_ENV}
+          echo "AZ_SITE_HOST=https://arizona-digital-test-trackleft.s3.amazonaws.com" >> ${GITHUB_ENV}
       - name: Build review site artifact
         run: |
           sudo touch config.yml
