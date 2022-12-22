@@ -108,6 +108,7 @@ jobs:
         run: |
           variablesfile=${{ runner.temp }}/variables.json
           echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
+          echo "BRANCH_NAME=${GITHUB_REF##*/} >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
@@ -115,4 +116,4 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": ${GITHUB_REF##*/}}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}"}'
