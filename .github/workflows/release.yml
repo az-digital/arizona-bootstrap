@@ -93,9 +93,8 @@ jobs:
     strategy:
       matrix:
         repo:
-          - az-digital/arizona-bootstrap
-          - az-digital/arizona-bootstrap-packagist
-          - az-digital/digital.arizona.edu
+          - trackleft/arizona-bootstrap
+          - trackleft/digital.arizona.edu
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
