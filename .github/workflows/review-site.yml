@@ -1,4 +1,5 @@
 name: Build & deploy review site
+run-name: Build & deploy review site 
 on:
   pull_request:
     paths-ignore:
