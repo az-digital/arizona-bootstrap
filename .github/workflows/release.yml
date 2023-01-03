@@ -93,9 +93,8 @@ jobs:
     strategy:
       matrix:
         repo:
-          - az-digital/arizona-bootstrap
-          - az-digital/arizona-bootstrap-packagist
-          - az-digital/digital.arizona.edu
+          - trackleft/arizona-bootstrap
+          - trackleft/digital.arizona.edu
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
@@ -115,4 +114,4 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${GITHUB_REF##*/}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}"}'
