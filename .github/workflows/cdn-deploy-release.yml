@@ -1,4 +1,5 @@
 name: Build & deploy CDN assets
+run-name: Build & deploy CDN assets for `${{ github.event.client_payload.version }}` release.
 on:
   repository_dispatch:
     types: az_bootstrap_release
