@@ -1,10 +1,10 @@
-name: Build & deploy CDN assets (main)
-run-name: Build & deploy CDN assets for `main` branch update.
+name: Build & deploy CDN assets (HEAD)
+run-name: Build & deploy CDN assets for `${{ github.ref_name }}` branch update.
 on:
   push:
     branches:
       - main
-
+      - 2.x
 jobs:
   deploy:
     name: Build & deploy CDN assets
@@ -23,6 +23,6 @@ jobs:
 
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
-          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/main/
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/main/*
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${{ github.ref_name }}/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${{ github.ref_name }}/*
 
