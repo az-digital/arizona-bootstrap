@@ -1,4 +1,4 @@
-name: Build & deploy CDN assets (`main`)
+name: Build & deploy CDN assets (main)
 run-name: Build & deploy CDN assets for `main` branch update.
 on:
   push:
