@@ -2,7 +2,7 @@
   "name": "arizona-bootstrap",
   "version": "5.0.0-alpha",
   "config": {
-    "version_short": "2.0"
+    "version_short": "5.0"
   },
   "description": "University of Arizona theme for Bootstrap.",
   "scripts": {
