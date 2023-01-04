@@ -1,0 +1,13 @@
+name: Trigger CDN deploy on specific branch release
+run-name: Triggering CDN deploy on ${{ github.event.client_payload.branch }} branch release
+on:
+  repository_dispatch:
+    types: az_bootstrap_release
+jobs:
+  cdn-deploy:
+    uses: "az-digital/digital.arizona.edu/.github/workflows/cdn-deploy-release.yml@main"
+    secrets: inherit
+    with:
+      sha: ${{ github.event.client_payload.sha }}
+      ref: ${{ github.event.client_payload.ref }}
+      version: ${{ github.event.client_payload.version }}
