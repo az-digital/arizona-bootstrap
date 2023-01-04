@@ -9,6 +9,9 @@ security:
     getenv:
       - ^HUGO_
 
+sitemap:
+  filename: arizona-bootstrap-2-sitemap.xml
+
 markup:
   goldmark:
     renderer:
