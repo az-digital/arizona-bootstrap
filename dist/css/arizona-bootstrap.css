@@ -525,7 +525,7 @@ progress {
 }
 @media (min-width: 1200px) {
   .display-2 {
-    font-size: 4.5rem;
+  font-size: 4.5rem;
   }
 }
 
@@ -546,8 +546,8 @@ progress {
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
-  .display-4 {
-    font-size: 3.5rem;
+.display-4 {
+  font-size: 3.5rem;
   }
 }
 
@@ -4902,8 +4902,8 @@ textarea.form-control-lg {
     flex-flow: row wrap;
   }
   .card-group > .card, .card-group > .well,
-.card-group > .panel,
-.card-group > .thumbnail {
+  .card-group > .panel,
+  .card-group > .thumbnail {
     -ms-flex: 1 0 0%;
     flex: 1 0 0%;
     margin-bottom: 0;
@@ -4913,14 +4913,14 @@ textarea.form-control-lg {
 .card-group > .thumbnail + .card, .card-group > .card + .well, .card-group > .well + .well,
 .card-group > .panel + .well,
 .card-group > .thumbnail + .well,
-.card-group > .card + .panel,
-.card-group > .well + .panel,
-.card-group > .panel + .panel,
-.card-group > .thumbnail + .panel,
-.card-group > .card + .thumbnail,
-.card-group > .well + .thumbnail,
-.card-group > .panel + .thumbnail,
-.card-group > .thumbnail + .thumbnail {
+  .card-group > .card + .panel,
+  .card-group > .well + .panel,
+  .card-group > .panel + .panel,
+  .card-group > .thumbnail + .panel,
+  .card-group > .card + .thumbnail,
+  .card-group > .well + .thumbnail,
+  .card-group > .panel + .thumbnail,
+  .card-group > .thumbnail + .thumbnail {
     margin-left: 0;
     border-left: 0;
   }
@@ -5886,7 +5886,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 992px) {
   .modal-lg,
-.modal-xl {
+  .modal-xl {
     --bs-modal-width: 800px;
   }
 }
@@ -6345,7 +6345,7 @@ textarea.form-control-lg {
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,
-.carousel-control-next {
+  .carousel-control-next {
     transition: none;
   }
 }
@@ -6540,7 +6540,7 @@ textarea.form-control-lg {
 
 @media (prefers-reduced-motion: reduce) {
   .spinner-border,
-.spinner-grow {
+  .spinner-grow {
     --bs-spinner-animation-speed: 1.5s;
   }
 }
@@ -17800,8 +17800,8 @@ a {
     background-color: #f8f9fa;
   }
   .navbar-offcanvas .nav-item.show .dropdown-toggle,
-.navbar-offcanvas .nav-item.show .dropdown-toggle:hover,
-.navbar-offcanvas .nav-item.show .dropdown-toggle:focus {
+  .navbar-offcanvas .nav-item.show .dropdown-toggle:hover,
+  .navbar-offcanvas .nav-item.show .dropdown-toggle:focus {
     background-color: #f8f9fa;
     color: rgba(0, 0, 0, 0.9);
   }
@@ -20476,28 +20476,28 @@ have been deprecated in Bootstrap 4.
 
 @media (max-width: 575.98px) {
   .text-left-not-xs,
-.text-center-not-xs,
+  .text-center-not-xs,
 .text-right-not-xs {
     text-align: inherit !important;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .text-left-not-sm,
-.text-center-not-sm,
+  .text-center-not-sm,
 .text-right-not-sm {
     text-align: inherit !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .text-left-not-md,
-.text-center-not-md,
+  .text-center-not-md,
 .text-right-not-md {
     text-align: inherit !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .text-left-not-lg,
-.text-center-not-lg,
+  .text-center-not-lg,
 .text-right-not-lg {
     text-align: inherit !important;
   }

@@ -19,12 +19,13 @@
         v{{ .Site.Params.docs_version }}
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="{{ `/` | relURL}}">Latest (2.0.x)</a>
+        <a class="dropdown-item text-white" href="{{ `/` | relURL }}">Arizona Bootstrap 5.0.x</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap (legacy)</a>
+        <h6 class="dropdown-header">Previous releases</h6>
+        <a class="dropdown-item active text-white" href="/docs/2.0/getting-started/introduction/">Arizona Bootstrap 2.0.x <span class="material-icons-sharp">check</span></a>
+        <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap 1.x </a>
       </div>
     </li>
-
     <li class="nav-item">
       <a class="nav-link p-2" href="{{ .Site.Params.repo }}" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github fa-1x text-azurite"></i>

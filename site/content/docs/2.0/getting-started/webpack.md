@@ -6,7 +6,7 @@ group: getting-started
 toc: true
 ---
 
-## Installing {{< ourname >}}
+## Installing {{% ourname %}}
 
 [Install arizona-bootstrap]({{< docsref "/getting-started/download#npm" >}}) as a Node.js module using npm.
 

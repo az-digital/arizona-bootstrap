@@ -66,7 +66,8 @@ jobs:
       - name: Checkout repository to workspace
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          fetch-depth: 20
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
         run: echo "AZ_TRIMMED_REF=${GITHUB_REF#refs/*/}" >> ${GITHUB_ENV}
@@ -112,7 +113,7 @@ jobs:
       - name: Build variables
         run: |
           echo "AZ_REVIEW_BASEURL=/arizona-bootstrap/${AZ_TRIMMED_REF}" >> ${GITHUB_ENV}
-          echo "AZ_SITE_HOST=https://review.digital.arizona.edu" >> ${GITHUB_ENV}
+          echo "AZ_SITE_HOST=https://arizona-digital-test-trackleft.s3.amazonaws.com" >> ${GITHUB_ENV}
       - name: Build review site artifact
         run: |
           sudo touch config.yml
@@ -123,9 +124,6 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          if [ -n "$(git status --porcelain package-lock.json)" ] ; then
-            git restore package-lock.json
-          fi
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
