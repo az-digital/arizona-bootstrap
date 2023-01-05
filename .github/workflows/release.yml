@@ -4,7 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: The version to tag and release
+        type: choice
+        description: The version type to tag and release with
+        options:
+        - patch
+        - minor
+        - major
+        - prepatch
+        - preminor
+        - premajor
+        - prerelease
         required: true
 
 jobs:
