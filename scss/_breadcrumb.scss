@@ -20,7 +20,6 @@
 
 .breadcrumb-item-home::before {
   float: left; // Suppress inline spacings and underlining of the separator
-  padding-right: $breadcrumb-item-padding;
   // stylelint-disable-next-line
   font-family: "Material Icons Sharp";
   color: $breadcrumb-divider-color;
