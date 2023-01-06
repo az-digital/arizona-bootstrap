@@ -1,8 +1,7 @@
 {
     "concurrency": 100,
-    "config": "string",
     "recurse": true,
-    "skip": "\"^(?!http://localhost)\"",
+    "skip": "\"^(?!http://localhost)\"|| /\/docs\/2.0\//",
     "format": "json",
     "silent": true,
     "verbosity": "error",
