@@ -251,10 +251,6 @@ Since the offcanvas panel is conceptually a modal dialog, be sure to add `aria-l
 
 As part of Bootstrap's evolving CSS variables approach, offcanvas now uses local CSS variables on `.offcanvas` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
 
-### Sass variables
-
-{{< scss-docs name="offcanvas-variables" file="scss/_variables.scss" >}}
-
 ## Usage
 
 The offcanvas plugin utilizes a few classes and attributes to handle the heavy lifting:
