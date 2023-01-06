@@ -1,19 +1,10 @@
 name: Create Release
-run-name: Create `${{ inputs.version }}` release `${{ github.env.AZ_RELEASE_VERSION_VERSION }}` from `${{ github.ref_name }}` branch
+run-name: Create `${{ inputs.version }}` release from `${{ github.ref_name }}` branch
 on:
   workflow_dispatch:
     inputs:
       version:
-        type: choice
-        description: The version type to tag and release with
-        options:
-        - patch
-        - minor
-        - major
-        - prepatch
-        - preminor
-        - premajor
-        - prerelease
+        description: The version to tag and release
         required: true
 
 jobs:
@@ -61,9 +52,8 @@ jobs:
 
       - name: Build variables
         run: |
-          version=$(node -p 'require("./package.json").version')
-          echo "AZ_VERSION=$version" >> ${GITHUB_ENV}
-          echo "AZ_RELEASE_VERSION_VERSION=v$version" >> ${GITHUB_ENV}
+          echo "AZ_VERSION=${{ github.event.inputs.version }}" >> ${GITHUB_ENV}
+
       - name: Update version
         run: |
           sudo touch config.yml
@@ -73,7 +63,7 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
           git add dist package.json package-lock.json
-          git commit -m '${ AZ_RELEASE_VERSION_VERSION }'
+          git commit -m '${{ github.event.inputs.version }}'
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
 
