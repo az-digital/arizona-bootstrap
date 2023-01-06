@@ -35,3 +35,11 @@
   color: $breadcrumb-divider-color;
   content: "chevron_right";
 }
+
+// Remove margins/padding on Breadcrumbs for larger displays
+@include media-breakpoint-up(lg) {
+  .breadcdrumb {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
