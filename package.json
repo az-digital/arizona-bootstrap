@@ -19,7 +19,7 @@
     "docs-build": "hugo --verbose --cleanDestinationDir",
     "docs-compile": "npm run docs-build",
     "docs-develop": "npm-run-all docs-serve-config dist docs-serve-external",
-    "docs-linkinator": "linkinator _site --recurse --skip \"^(?!http://localhost)\" --verbosity error",
+    "docs-linkinator": "linkinator _site",
     "docs-vnu": "node build/vnu-jar.js",
     "docs-lint": "npm-run-all --aggregate-output --parallel docs-vnu docs-linkinator",
     "docs-serve": "hugo server --port 9001 --disableFastRender",
