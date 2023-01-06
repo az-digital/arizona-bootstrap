@@ -102,6 +102,9 @@ action.
 
 ## Triggering a Minor Release
 
-Same as a patch release, except you must change the minor verson number folder at
-`/site/content/docs/5.x` and the `version_short` config within package.json
+Same as a patch release, except you must change the minor verson number folder at:
+- `/site/content/docs/5.x`
+- `/site/static/docs/5.x`
+
+Once the folder name has been changed, update the `version_short` config within package.json
 prior to making the release.
