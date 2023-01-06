@@ -4753,8 +4753,8 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0 0;
+  margin-bottom: 0;
   list-style: none;
   background-color: #fff;
 }
@@ -15366,8 +15366,8 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0 0;
+  margin-bottom: 0;
   list-style: none;
   background-color: #fff;
 }
