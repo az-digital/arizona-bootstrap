@@ -4753,8 +4753,8 @@ input.btn-group-block[type="button"],
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0 0;
-  margin-bottom: 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   list-style: none;
   background-color: #fff;
 }
@@ -15366,8 +15366,8 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0 0;
-  margin-bottom: 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   list-style: none;
   background-color: #fff;
 }
@@ -15396,6 +15396,13 @@ a {
   font-family: "Material Icons Sharp";
   color: #6c757d;
   content: "chevron_right";
+}
+
+@media (min-width: 992px) {
+  .breadcdrumb {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .btn {
