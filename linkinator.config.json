@@ -1,18 +1,5 @@
 {
-    "concurrency": 100,
     "recurse": true,
     "skip": "\"^(?!http://localhost)\"|| /\/docs\/2.0\//",
-    "format": "json",
-    "silent": true,
-    "verbosity": "error",
-    "timeout": 0,
-    "markdown": true,
-    "serverRoot": "./",
-    "directoryListing": true,
-    "retry": true,
-    "retryErrors": true,
-    "retryErrorsCount": 3,
-    "retryErrorsJitter": 5,
-    "urlRewriteSearch": "/pattern/",
-    "urlRewriteReplace": "replacement"
+    "verbosity": "error"
 }
