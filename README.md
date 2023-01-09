@@ -22,8 +22,9 @@ The CDN is updated automatically during the following scenarios:
 
 The URL structure for the CDN is as follows:
 ```
-https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset type>/<filename>.
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset type>/<filename>
 ```
+
 #### The `<version bucket>` parameter can be any of the following
 - `main` Deprecated
 - `2.x` Development version of Arizona Bootstrap 2
