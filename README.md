@@ -58,7 +58,6 @@ All code merged into the `main` branch will update `5.x` bucket.
 ### Pull request is merged into `2.x` branch
 All code merged into the `2.x` branch will update the `2.x` bucket.
 
-
 #### The `<asset type>` parameter can be any of the following
 - `css`
 - `js`
