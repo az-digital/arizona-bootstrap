@@ -20,11 +20,11 @@ The CDN is updated automatically during the following scenarios:
 - A pull request is merged into the `2.x` branch of this repository
 - A new release is created on the `main` or `2.x` branch.
 
-The folder structure for the CDN is as follows:
+The URL structure for the CDN is as follows:
 
-https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version>/<asset type>/<filename>
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/`<version bucket>`/`<asset type>`/`<filename>`.
 
-#### The `<version>` parameter can be any of the following
+#### The `<version bucket>` parameter can be any of the following
 - `main` Deprecated
 - `2.x` Development version of Arizona Bootstrap 2
 - `5.x` Development version of Arizona Bootstrap 5
@@ -56,6 +56,20 @@ All code merged into the `main` branch will update `5.x` bucket.
 
 ### Pull request is merged into `2.x` branch
 All code merged into the `2.x` branch will update the `2.x` bucket.
+
+
+#### The `<asset type>` parameter can be any of the following
+- `css`
+- `js`
+
+#### The `<filename>` parameter is the specific file you are attempting to use.
+
+**Examples**:
+- `arizona-bootstrap.min.css`
+- `arizona-bootstrap.css`
+
+See the [docs](https://digital.arizona.edu/arizona-bootstrap) for more
+information about the recommended version for your projects.
 
 ## Contributing
 
