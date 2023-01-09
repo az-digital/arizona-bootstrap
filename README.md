@@ -32,24 +32,24 @@ https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset ty
 - A release version number, Example: `2.0.19` See [the release
 page](https://github.com/az-digital/arizona-bootstrap/releases) for a full list
 of possible options. Remove the `v` from the version number.
-- `latest-2x` The latest stable version of Arizona Bootstrap 2
-- `latest-5x` The latest stable version of Arizona Bootstrap 5
+- `latest-2.x` The latest stable version of Arizona Bootstrap 2
+- `latest-5.x` The latest stable version of Arizona Bootstrap 5
 - `latest` Deprecated
 
 **NOTE: `main` is deprecated and will no longer be updated as of `v2.0.20` - to
 use the latest development version of the `2.x` branch use `2.x`**
 
 **NOTE: `latest` is deprecated and will no longer be updated as of `v2.0.20` -
-to use the latest stable version of the `2.x` branch use `latest-2x`**
+to use the latest stable version of the `2.x` branch use `latest-2.x`**
 
 ### Release is tagged on the `main` branch
 All tagged releases on the `main` branch will:
-- Update `latest-5x` bucket
+- Update `latest-5.x` bucket
 - Create a new bucket for the version that was released. Example: `5.0.0`
 
 ### Release is tagged on the `2.x` branch
 All tagged releases on the `2.x` branch will:
-- Update `latest-2x` bucket
+- Update `latest-2.x` bucket
 - Create a new bucket for the version that was released. Example: `2.0.20`
 
 ### Pull request is merged into `main` branch
