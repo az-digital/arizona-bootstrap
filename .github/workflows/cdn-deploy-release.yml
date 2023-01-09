@@ -1,4 +1,5 @@
 name: Build & deploy CDN assets
+run-name: Build & deploy CDN assets for `${{ github.event.client_payload.version }}` release.
 on:
   repository_dispatch:
     types: az_bootstrap_release
@@ -26,7 +27,14 @@ jobs:
           aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/${{ github.event.client_payload.version }}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/${{ github.event.client_payload.version }}/*
 
-      - name: Update 'latest' CDN assets to S3 + CloudFront
+      - name: Update 'latest-2.x' CDN assets to S3 + CloudFront
+        if: ${{ github.event.client_payload.branch == '2.x' }}
         run: |
-          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest/
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest/*
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest-2.x/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest-2.x/*
+
+      - name: Update 'latest-5.x' CDN assets to S3 + CloudFront
+        if: ${{ github.event.client_payload.branch == 'main' }}
+        run: |
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/latest-5.x/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/latest-5.x/*
