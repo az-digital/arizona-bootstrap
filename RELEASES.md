@@ -84,6 +84,24 @@ The following types of changes are allowed for minor releases in addition to tho
 ### Major Releases (X.y.z)
 Incompatible changes to the CSS and JavaScript (for example, moving to Bootstrap v5).
 
+**NOTE: https://cdn.digital.arizona.edu/lib/arizona-bootstrap/main is
+deprecated and will no longer be updated as of `v2.0.20` - to use the
+latest development version of the `2.x` branch use
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.x**
+
+**NOTE: https://cdn.digital.arizona.edu/lib/arizona-bootstrap/latest is
+deprecated and will no longer be updated as of `v2.0.20` - to use the
+latest stable version of the `2.x` branch use
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/latest-2x**
+### Merges into `main` branch
+All code merged into the `main` branch will update
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.x
+
+### Merges into `2.x` branch
+All code merged into the `2.x` branch will update
+https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.x
+
+
 ## Triggering a Release
 An Arizona Digital developer with appropriate access rights in the main Arizona
 Bootstrap repository triggers a release by manually running the `Create Release`
