@@ -106,5 +106,4 @@ Same as a patch release, except you must change the minor verson number folder a
 - `/site/content/docs/5.x`
 - `/site/static/docs/5.x`
 
-Once the folder name has been changed, update the `version_short` config within package.json
-prior to making the release.
+Once the folder name has been changed, update the `version_short` config within package.json prior to making the release.
