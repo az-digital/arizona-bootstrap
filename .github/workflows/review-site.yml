@@ -8,6 +8,7 @@ on:
       - 'dist/**'
     branches:
       - main
+      - 2.x
 
 jobs:
   lint-code:
@@ -45,7 +46,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
@@ -103,7 +104,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
