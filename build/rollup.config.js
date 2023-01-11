@@ -33,7 +33,7 @@ if (BUNDLE) {
 module.exports = {
   input: path.resolve(__dirname, '../js/src/index.js'),
   output: {
-    banner,
+    banner: banner(),
     file: path.resolve(__dirname, `../dist/js/${fileDest}`),
     format: 'umd',
     globals,
