@@ -84,7 +84,7 @@ The following types of changes are allowed for minor releases in addition to tho
 ### Major Releases (X.y.z)
 Incompatible changes to the CSS and JavaScript (for example, moving to Bootstrap v5).
 
-## Triggering a Patch Release
+## Triggering a Release
 An Arizona Digital developer with appropriate access rights in the main Arizona
 Bootstrap repository triggers a release by manually running the `Create Release`
 GitHub Action (currently at
@@ -92,19 +92,5 @@ GitHub Action (currently at
 omitting the “v” prefix when specifying the version number, and can generate the
 text to insert in the release notes with a command-line Git command of the form
 ```
-git log v5.2.15..HEAD --pretty='format:- %s'
+git log v2.0.15..HEAD --pretty='format:- %s'
 ```
-
-## Triggering a Release for Version 2.x
-
-Same as a patch release, but you must switch to the `2.x` branch when running the
-action.
-
-## Triggering a Minor Release
-
-Same as a patch release, except you must change the minor verson number folder at:
-- `/site/content/docs/5.x`
-- `/site/static/docs/5.x`
-
-Once the folder name has been changed, update the `version_short` config within package.json
-prior to making the release.
