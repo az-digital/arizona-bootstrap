@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
 
       - name: Set variables for Docker images
         run: |
@@ -55,6 +55,9 @@ jobs:
 
       - name: Update version
         run: |
+          sudo touch config.yml
+          sudo find . -path "./.git" -prune -o -exec chown 1000:1000 {} \;
+          sudo chown 1000:1000 .
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
@@ -77,13 +80,13 @@ jobs:
 
       - name: Save new SHA to file
         run: |
-          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > variables.json
+          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
 
       - name: Upload variables
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          name: artifact
-          path: variables.json
+          name: variables-json-artifact
+          path: ${{ runner.temp }}/variables.json
 
   dispatch:
     needs: release
@@ -96,13 +99,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
-          name: artifact
+          name: variables-json-artifact
+          path: ${{ runner.temp }}
 
       - name: Update environment variables
         run: |
-          echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
+          variablesfile=${{ runner.temp }}/variables.json
+          echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59

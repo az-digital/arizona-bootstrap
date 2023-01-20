@@ -1,6 +1,6 @@
 /*!
-  * Arizona Bootstrap v2.0.16 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2022 The Arizona Board of Regents on behalf of The University of Arizona
+  * Arizona Bootstrap v5.1.2 (https://github.com/az-digital/arizona-bootstrap)
+  * Copyright 2023 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -11,7 +11,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/index.js
+   * Bootstrap (v5.2.3): util/index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -325,7 +325,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): dom/event-handler.js
+   * Bootstrap (v5.2.3): dom/event-handler.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -642,7 +642,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): dom/data.js
+   * Bootstrap (v5.2.3): dom/data.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -698,7 +698,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): dom/manipulator.js
+   * Bootstrap (v5.2.3): dom/manipulator.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -768,7 +768,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/config.js
+   * Bootstrap (v5.2.3): util/config.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -830,7 +830,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): base-component.js
+   * Bootstrap (v5.2.3): base-component.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -839,7 +839,7 @@
    * Constants
    */
 
-  const VERSION = '5.2.0';
+  const VERSION = '5.2.3';
 
   /**
    * Class definition
@@ -909,7 +909,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/component-functions.js
+   * Bootstrap (v5.2.3): util/component-functions.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -937,7 +937,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): alert.js
+   * Bootstrap (v5.2.3): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1018,7 +1018,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): button.js
+   * Bootstrap (v5.2.3): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1085,7 +1085,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): dom/selector-engine.js
+   * Bootstrap (v5.2.3): dom/selector-engine.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1165,7 +1165,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/swipe.js
+   * Bootstrap (v5.2.3): util/swipe.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1306,7 +1306,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): carousel.js
+   * Bootstrap (v5.2.3): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1765,7 +1765,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): collapse.js
+   * Bootstrap (v5.2.3): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2213,38 +2213,57 @@
   var min = Math.min;
   var round = Math.round;
 
-  function getBoundingClientRect(element, includeScale) {
+  function getUAString() {
+    var uaData = navigator.userAgentData;
+
+    if (uaData != null && uaData.brands) {
+      return uaData.brands.map(function (item) {
+        return item.brand + "/" + item.version;
+      }).join(' ');
+    }
+
+    return navigator.userAgent;
+  }
+
+  function isLayoutViewport() {
+    return !/^((?!chrome|android).)*safari/i.test(getUAString());
+  }
+
+  function getBoundingClientRect(element, includeScale, isFixedStrategy) {
     if (includeScale === void 0) {
       includeScale = false;
     }
 
-    var rect = element.getBoundingClientRect();
+    if (isFixedStrategy === void 0) {
+      isFixedStrategy = false;
+    }
+
+    var clientRect = element.getBoundingClientRect();
     var scaleX = 1;
     var scaleY = 1;
 
-    if (isHTMLElement(element) && includeScale) {
-      var offsetHeight = element.offsetHeight;
-      var offsetWidth = element.offsetWidth; // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
-      // Fallback to 1 in case both values are `0`
-
-      if (offsetWidth > 0) {
-        scaleX = round(rect.width) / offsetWidth || 1;
-      }
-
-      if (offsetHeight > 0) {
-        scaleY = round(rect.height) / offsetHeight || 1;
-      }
+    if (includeScale && isHTMLElement(element)) {
+      scaleX = element.offsetWidth > 0 ? round(clientRect.width) / element.offsetWidth || 1 : 1;
+      scaleY = element.offsetHeight > 0 ? round(clientRect.height) / element.offsetHeight || 1 : 1;
     }
 
+    var _ref = isElement(element) ? getWindow(element) : window,
+        visualViewport = _ref.visualViewport;
+
+    var addVisualOffsets = !isLayoutViewport() && isFixedStrategy;
+    var x = (clientRect.left + (addVisualOffsets && visualViewport ? visualViewport.offsetLeft : 0)) / scaleX;
+    var y = (clientRect.top + (addVisualOffsets && visualViewport ? visualViewport.offsetTop : 0)) / scaleY;
+    var width = clientRect.width / scaleX;
+    var height = clientRect.height / scaleY;
     return {
-      width: rect.width / scaleX,
-      height: rect.height / scaleY,
-      top: rect.top / scaleY,
-      right: rect.right / scaleX,
-      bottom: rect.bottom / scaleY,
-      left: rect.left / scaleX,
-      x: rect.left / scaleX,
-      y: rect.top / scaleY
+      width: width,
+      height: height,
+      top: y,
+      right: x + width,
+      bottom: y + height,
+      left: x,
+      x: x,
+      y: y
     };
   }
 
@@ -2339,8 +2358,8 @@
 
 
   function getContainingBlock(element) {
-    var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') !== -1;
-    var isIE = navigator.userAgent.indexOf('Trident') !== -1;
+    var isFirefox = /firefox/i.test(getUAString());
+    var isIE = /Trident/i.test(getUAString());
 
     if (isIE && isHTMLElement(element)) {
       // In IE 9, 10 and 11 fixed elements containing block is always established by the viewport
@@ -2761,31 +2780,21 @@
     return getBoundingClientRect(getDocumentElement(element)).left + getWindowScroll(element).scrollLeft;
   }
 
-  function getViewportRect(element) {
+  function getViewportRect(element, strategy) {
     var win = getWindow(element);
     var html = getDocumentElement(element);
     var visualViewport = win.visualViewport;
     var width = html.clientWidth;
     var height = html.clientHeight;
     var x = 0;
-    var y = 0; // NB: This isn't supported on iOS <= 12. If the keyboard is open, the popper
-    // can be obscured underneath it.
-    // Also, `html.clientHeight` adds the bottom bar height in Safari iOS, even
-    // if it isn't open, so if this isn't available, the popper will be detected
-    // to overflow the bottom of the screen too early.
+    var y = 0;
 
     if (visualViewport) {
       width = visualViewport.width;
-      height = visualViewport.height; // Uses Layout Viewport (like Chrome; Safari does not currently)
-      // In Chrome, it returns a value very close to 0 (+/-) but contains rounding
-      // errors due to floating point numbers, so we need to check precision.
-      // Safari returns a number <= 0, usually < -1 when pinch-zoomed
-      // Feature detection fails in mobile emulation mode in Chrome.
-      // Math.abs(win.innerWidth / visualViewport.scale - visualViewport.width) <
-      // 0.001
-      // Fallback here: "Not Safari" userAgent
+      height = visualViewport.height;
+      var layoutViewport = isLayoutViewport();
 
-      if (!/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+      if (layoutViewport || !layoutViewport && strategy === 'fixed') {
         x = visualViewport.offsetLeft;
         y = visualViewport.offsetTop;
       }
@@ -2879,8 +2888,8 @@
     });
   }
 
-  function getInnerBoundingClientRect(element) {
-    var rect = getBoundingClientRect(element);
+  function getInnerBoundingClientRect(element, strategy) {
+    var rect = getBoundingClientRect(element, false, strategy === 'fixed');
     rect.top = rect.top + element.clientTop;
     rect.left = rect.left + element.clientLeft;
     rect.bottom = rect.top + element.clientHeight;
@@ -2892,8 +2901,8 @@
     return rect;
   }
 
-  function getClientRectFromMixedType(element, clippingParent) {
-    return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+  function getClientRectFromMixedType(element, clippingParent, strategy) {
+    return clippingParent === viewport ? rectToClientRect(getViewportRect(element, strategy)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent, strategy) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
   } // A "clipping parent" is an overflowable container with the characteristic of
   // clipping (or hiding) overflowing elements with a position different from
   // `initial`
@@ -2916,18 +2925,18 @@
   // clipping parents
 
 
-  function getClippingRect(element, boundary, rootBoundary) {
+  function getClippingRect(element, boundary, rootBoundary, strategy) {
     var mainClippingParents = boundary === 'clippingParents' ? getClippingParents(element) : [].concat(boundary);
     var clippingParents = [].concat(mainClippingParents, [rootBoundary]);
     var firstClippingParent = clippingParents[0];
     var clippingRect = clippingParents.reduce(function (accRect, clippingParent) {
-      var rect = getClientRectFromMixedType(element, clippingParent);
+      var rect = getClientRectFromMixedType(element, clippingParent, strategy);
       accRect.top = max(rect.top, accRect.top);
       accRect.right = min(rect.right, accRect.right);
       accRect.bottom = min(rect.bottom, accRect.bottom);
       accRect.left = max(rect.left, accRect.left);
       return accRect;
-    }, getClientRectFromMixedType(element, firstClippingParent));
+    }, getClientRectFromMixedType(element, firstClippingParent, strategy));
     clippingRect.width = clippingRect.right - clippingRect.left;
     clippingRect.height = clippingRect.bottom - clippingRect.top;
     clippingRect.x = clippingRect.left;
@@ -3008,6 +3017,8 @@
     var _options = options,
         _options$placement = _options.placement,
         placement = _options$placement === void 0 ? state.placement : _options$placement,
+        _options$strategy = _options.strategy,
+        strategy = _options$strategy === void 0 ? state.strategy : _options$strategy,
         _options$boundary = _options.boundary,
         boundary = _options$boundary === void 0 ? clippingParents : _options$boundary,
         _options$rootBoundary = _options.rootBoundary,
@@ -3022,7 +3033,7 @@
     var altContext = elementContext === popper ? reference : popper;
     var popperRect = state.rects.popper;
     var element = state.elements[altBoundary ? altContext : elementContext];
-    var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
+    var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary, strategy);
     var referenceClientRect = getBoundingClientRect(state.elements.reference);
     var popperOffsets = computeOffsets({
       reference: referenceClientRect,
@@ -3536,7 +3547,7 @@
     var isOffsetParentAnElement = isHTMLElement(offsetParent);
     var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);
     var documentElement = getDocumentElement(offsetParent);
-    var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled);
+    var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled, isFixed);
     var scroll = {
       scrollLeft: 0,
       scrollTop: 0
@@ -3890,7 +3901,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): dropdown.js
+   * Bootstrap (v5.2.3): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3969,7 +3980,10 @@
 
       this._popper = null;
       this._parent = this._element.parentNode; // dropdown wrapper
-      this._menu = SelectorEngine.findOne(SELECTOR_MENU, this._parent);
+      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.2/forms/input-group/
+      this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] ||
+        SelectorEngine.prev(this._element, SELECTOR_MENU)[0] ||
+        SelectorEngine.findOne(SELECTOR_MENU, this._parent);
       this._inNavbar = this._detectNavbar();
     }
 
@@ -4279,7 +4293,13 @@
 
       event.preventDefault();
 
-      const getToggleButton = SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode);
+      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.2/forms/input-group/
+      const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ?
+        this :
+        (SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0] ||
+          SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$3)[0] ||
+          SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode));
+
       const instance = Dropdown.getOrCreateInstance(getToggleButton);
 
       if (isUpOrDownEvent) {
@@ -4318,7 +4338,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/scrollBar.js
+   * Bootstrap (v5.2.3): util/scrollBar.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4427,7 +4447,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/backdrop.js
+   * Bootstrap (v5.2.3): util/backdrop.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4571,7 +4591,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/focustrap.js
+   * Bootstrap (v5.2.3): util/focustrap.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4681,7 +4701,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): modal.js
+   * Bootstrap (v5.2.3): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4702,6 +4722,7 @@
   const EVENT_SHOW$4 = `show${EVENT_KEY$4}`;
   const EVENT_SHOWN$4 = `shown${EVENT_KEY$4}`;
   const EVENT_RESIZE$1 = `resize${EVENT_KEY$4}`;
+  const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$4}`;
   const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$4}`;
   const EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$4}`;
   const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$2}`;
@@ -4894,18 +4915,21 @@
       });
 
       EventHandler.on(this._element, EVENT_MOUSEDOWN_DISMISS, event => {
-        if (event.target !== event.currentTarget) { // click is inside modal-dialog
-          return
-        }
+        // a bad trick to segregate clicks that may start inside dialog but end outside, and avoid listen to scrollbar clicks
+        EventHandler.one(this._element, EVENT_CLICK_DISMISS, event2 => {
+          if (this._element !== event.target || this._element !== event2.target) {
+            return
+          }
 
-        if (this._config.backdrop === 'static') {
-          this._triggerBackdropTransition();
-          return
-        }
+          if (this._config.backdrop === 'static') {
+            this._triggerBackdropTransition();
+            return
+          }
 
-        if (this._config.backdrop) {
-          this.hide();
-        }
+          if (this._config.backdrop) {
+            this.hide();
+          }
+        });
       });
     }
 
@@ -5044,7 +5068,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): offcanvas.js
+   * Bootstrap (v5.2.3): offcanvas.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5312,7 +5336,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/sanitizer.js
+   * Bootstrap (v5.2.3): util/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5431,7 +5455,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): util/template-factory.js
+   * Bootstrap (v5.2.3): util/template-factory.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5585,7 +5609,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): tooltip.js
+   * Bootstrap (v5.2.3): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5688,7 +5712,7 @@
       // Private
       this._isEnabled = true;
       this._timeout = 0;
-      this._isHovered = false;
+      this._isHovered = null;
       this._activeTrigger = {};
       this._popper = null;
       this._templateFactory = null;
@@ -5698,6 +5722,10 @@
       this.tip = null;
 
       this._setListeners();
+
+      if (!this._config.selector) {
+        this._fixTitle();
+      }
     }
 
     // Getters
@@ -5726,25 +5754,12 @@
       this._isEnabled = !this._isEnabled;
     }
 
-    toggle(event) {
+    toggle() {
       if (!this._isEnabled) {
         return
       }
 
-      if (event) {
-        const context = this._initializeOnDelegatedTarget(event);
-
-        context._activeTrigger.click = !context._activeTrigger.click;
-
-        if (context._isWithActiveTrigger()) {
-          context._enter();
-        } else {
-          context._leave();
-        }
-
-        return
-      }
-
+      this._activeTrigger.click = !this._activeTrigger.click;
       if (this._isShown()) {
         this._leave();
         return
@@ -5758,8 +5773,8 @@
 
       EventHandler.off(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
 
-      if (this.tip) {
-        this.tip.remove();
+      if (this._element.getAttribute('data-bs-original-title')) {
+        this._element.setAttribute('title', this._element.getAttribute('data-bs-original-title'));
       }
 
       this._disposePopper();
@@ -5784,10 +5799,7 @@
       }
 
       // todo v6 remove this OR make it optional
-      if (this.tip) {
-        this.tip.remove();
-        this.tip = null;
-      }
+      this._disposePopper();
 
       const tip = this._getTipElement();
 
@@ -5800,11 +5812,7 @@
         EventHandler.trigger(this._element, this.constructor.eventName(EVENT_INSERTED));
       }
 
-      if (this._popper) {
-        this._popper.update();
-      } else {
-        this._popper = this._createPopper(tip);
-      }
+      this._popper = this._createPopper(tip);
 
       tip.classList.add(CLASS_NAME_SHOW$2);
 
@@ -5819,14 +5827,13 @@
       }
 
       const complete = () => {
-        const previousHoverState = this._isHovered;
-
-        this._isHovered = false;
         EventHandler.trigger(this._element, this.constructor.eventName(EVENT_SHOWN$2));
 
-        if (previousHoverState) {
+        if (this._isHovered === false) {
           this._leave();
         }
+
+        this._isHovered = false;
       };
 
       this._queueCallback(complete, this.tip, this._isAnimated());
@@ -5856,7 +5863,7 @@
       this._activeTrigger[TRIGGER_CLICK] = false;
       this._activeTrigger[TRIGGER_FOCUS] = false;
       this._activeTrigger[TRIGGER_HOVER] = false;
-      this._isHovered = false;
+      this._isHovered = null; // it is a trick to support manual triggering
 
       const complete = () => {
         if (this._isWithActiveTrigger()) {
@@ -5864,13 +5871,11 @@
         }
 
         if (!this._isHovered) {
-          tip.remove();
+          this._disposePopper();
         }
 
         this._element.removeAttribute('aria-describedby');
         EventHandler.trigger(this._element, this.constructor.eventName(EVENT_HIDDEN$2));
-
-        this._disposePopper();
       };
 
       this._queueCallback(complete, this.tip, this._isAnimated());
@@ -5949,7 +5954,7 @@
     }
 
     _getTitle() {
-      return this._resolvePossibleFunction(this._config.title) || this._config.originalTitle
+      return this._resolvePossibleFunction(this._config.title) || this._element.getAttribute('data-bs-original-title')
     }
 
     // Private
@@ -6043,7 +6048,10 @@
 
       for (const trigger of triggers) {
         if (trigger === 'click') {
-          EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, event => this.toggle(event));
+          EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, event => {
+            const context = this._initializeOnDelegatedTarget(event);
+            context.toggle();
+          });
         } else if (trigger !== TRIGGER_MANUAL) {
           const eventIn = trigger === TRIGGER_HOVER ?
             this.constructor.eventName(EVENT_MOUSEENTER) :
@@ -6074,20 +6082,10 @@
       };
 
       EventHandler.on(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
-
-      if (this._config.selector) {
-        this._config = {
-          ...this._config,
-          trigger: 'manual',
-          selector: ''
-        };
-      } else {
-        this._fixTitle();
-      }
     }
 
     _fixTitle() {
-      const title = this._config.originalTitle;
+      const title = this._element.getAttribute('title');
 
       if (!title) {
         return
@@ -6097,6 +6095,7 @@
         this._element.setAttribute('aria-label', title);
       }
 
+      this._element.setAttribute('data-bs-original-title', title); // DO NOT USE IT. Is only for backwards compatibility
       this._element.removeAttribute('title');
     }
 
@@ -6167,7 +6166,6 @@
         };
       }
 
-      config.originalTitle = this._element.getAttribute('title') || '';
       if (typeof config.title === 'number') {
         config.title = config.title.toString();
       }
@@ -6188,6 +6186,9 @@
         }
       }
 
+      config.selector = false;
+      config.trigger = 'manual';
+
       // In the future can be replaced with:
       // const keysWithDifferentValues = Object.entries(this._config).filter(entry => this.constructor.Default[entry[0]] !== this._config[entry[0]])
       // `Object.fromEntries(keysWithDifferentValues)`
@@ -6198,6 +6199,11 @@
       if (this._popper) {
         this._popper.destroy();
         this._popper = null;
+      }
+
+      if (this.tip) {
+        this.tip.remove();
+        this.tip = null;
       }
     }
 
@@ -6227,7 +6233,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): popover.js
+   * Bootstrap (v5.2.3): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6320,7 +6326,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): scrollspy.js
+   * Bootstrap (v5.2.3): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6355,14 +6361,16 @@
     offset: null, // TODO: v6 @deprecated, keep it for backwards compatibility reasons
     rootMargin: '0px 0px -25%',
     smoothScroll: false,
-    target: null
+    target: null,
+    threshold: [0.1, 0.5, 1]
   };
 
   const DefaultType$1 = {
     offset: '(number|null)', // TODO v6 @deprecated, keep it for backwards compatibility reasons
     rootMargin: 'string',
     smoothScroll: 'boolean',
-    target: 'element'
+    target: 'element',
+    threshold: 'array'
   };
 
   /**
@@ -6425,6 +6433,13 @@
       // TODO: on v6 target should be given explicitly & remove the {target: 'ss-target'} case
       config.target = getElement(config.target) || document.body;
 
+      // TODO: v6 Only for backwards compatibility reasons. Use rootMargin only
+      config.rootMargin = config.offset ? `${config.offset}px 0px -30%` : config.rootMargin;
+
+      if (typeof config.threshold === 'string') {
+        config.threshold = config.threshold.split(',').map(value => Number.parseFloat(value));
+      }
+
       return config
     }
 
@@ -6456,8 +6471,8 @@
     _getNewObserver() {
       const options = {
         root: this._rootElement,
-        threshold: [0.1, 0.5, 1],
-        rootMargin: this._getRootMargin()
+        threshold: this._config.threshold,
+        rootMargin: this._config.rootMargin
       };
 
       return new IntersectionObserver(entries => this._observerCallback(entries), options)
@@ -6500,11 +6515,6 @@
           activate(entry);
         }
       }
-    }
-
-    // TODO: v6 Only for backwards compatibility reasons. Use rootMargin only
-    _getRootMargin() {
-      return this._config.offset ? `${this._config.offset}px 0px -30%` : this._config.rootMargin
     }
 
     _initializeTargetsAndObservables() {
@@ -6604,7 +6614,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): tab.js
+   * Bootstrap (v5.2.3): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6637,7 +6647,6 @@
 
   const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
   const SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
-  const SELECTOR_DROPDOWN_ITEM = '.dropdown-item';
   const NOT_SELECTOR_DROPDOWN_TOGGLE = ':not(.dropdown-toggle)';
 
   const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
@@ -6714,7 +6723,6 @@
           return
         }
 
-        element.focus();
         element.removeAttribute('tabindex');
         element.setAttribute('aria-selected', true);
         this._toggleDropDown(element, true);
@@ -6762,6 +6770,7 @@
       const nextActiveElement = getNextActiveElement(this._getChildren().filter(element => !isDisabled(element)), event.target, isNext, true);
 
       if (nextActiveElement) {
+        nextActiveElement.focus({ preventScroll: true });
         Tab.getOrCreateInstance(nextActiveElement).show();
       }
     }
@@ -6831,7 +6840,6 @@
 
       toggle(SELECTOR_DROPDOWN_TOGGLE, CLASS_NAME_ACTIVE);
       toggle(SELECTOR_DROPDOWN_MENU, CLASS_NAME_SHOW$1);
-      toggle(SELECTOR_DROPDOWN_ITEM, CLASS_NAME_ACTIVE);
       outerElem.setAttribute('aria-expanded', open);
     }
 
@@ -6905,7 +6913,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.2.0): toast.js
+   * Bootstrap (v5.2.3): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -7053,13 +7061,16 @@
     _onInteraction(event, isInteracting) {
       switch (event.type) {
         case 'mouseover':
-        case 'mouseout':
+        case 'mouseout': {
           this._hasMouseInteraction = isInteracting;
           break
+        }
+
         case 'focusin':
-        case 'focusout':
+        case 'focusout': {
           this._hasKeyboardInteraction = isInteracting;
           break
+        }
       }
 
       if (isInteracting) {
@@ -7121,6 +7132,7 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
+  // import Offcanvasmenu from './src/offcanvasmenu'
 
   const index_umd = {
     Alert: Alert,
@@ -7134,8 +7146,8 @@
     ScrollSpy: ScrollSpy,
     Tab: Tab,
     Toast: Toast,
-    Tooltip: Tooltip //  Offcanvasmenu
-
+    Tooltip: Tooltip
+    //  Offcanvasmenu
   };
 
   return index_umd;

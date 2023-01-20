@@ -6,7 +6,6 @@ Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quick
 
 A team of web-focused volunteers known as Arizona Digital meets weekly to build and test products like Arizona Bootstrap and Arizona Quickstart. Contributions are what keep Arizona Bootstrap moving and improving, and are in everyone's best interest.
 
-<!-- URL doesn't exists yet -->
 [Explore Arizona Bootstrap Docs](https://digital.arizona.edu/arizona-bootstrap/)
 
 ## Contributing
@@ -17,6 +16,13 @@ Please refer to the [Contributing doc](./CONTRIBUTING.md).
 
 Arizona Bootstrap is built off of Bootstrap 4, and UA Bootstrap is built off of Bootstrap 3.
 
-<!-- URLs doesn't exist yet -->
 - [Learn about migrating from Bootstrap 3 to Bootstrap 4](https://digital.arizona.edu/arizona-bootstrap/docs/0.0/migration/)
 - [Learn about backwards compatibility between UA Bootstrap and Arizona Bootstrap](https://digital.arizona.edu/arizona-bootstrap/docs/0.0/backwards-compatibility/)
+
+## Testing Tools
+
+<a href="https://www.browserstack.com/">
+  <img src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack" width="192" height="42">
+</a>
+
+This project is tested with BrowserStack.

@@ -6,7 +6,7 @@ group: getting-started
 toc: true
 ---
 
-## Precompiled {{< ourname >}}
+## Precompiled {{% ourname %}}
 
 Once downloaded, unzip the compressed folder and you'll see something like this:
 
@@ -92,7 +92,7 @@ Similarly, we have options for including some or all of our compiled JavaScript.
   </tbody>
 </table>
 
-## {{< ourname >}} Source Code
+## {{% ourname %}} Source Code
 
 The {{< ourname >}} source code download includes the precompiled CSS and JavaScript assets, along with source Sass, JavaScript, and documentation. More specifically, it includes the following and more:
 
