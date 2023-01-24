@@ -1,11 +1,6 @@
-FROM node:16.16.0-bullseye-slim
+FROM --platform=linux/amd64 node:16.19.0-bullseye-slim
 
 ENV LANG C.UTF-8
-ENV JAVA_HOME /usr/local/openjdk-11
-ENV PATH ${JAVA_HOME}/bin:${PATH}
-
-COPY --from=openjdk:11.0.16-jre-slim-bullseye "$JAVA_HOME" "$JAVA_HOME"
-COPY --from=openjdk:11.0.16-jre-slim-bullseye /etc/ca-certificates/update.d/docker-openjdk /etc/ca-certificates/update.d/docker-openjdk
 
 COPY scripts/build-cdn-assets.sh /usr/local/bin/build-cdn-assets
 COPY scripts/build-review-site.sh /usr/local/bin/build-review-site
@@ -35,6 +30,7 @@ RUN apt-get update \
     curl \
     git \
     jq \
+    openjdk-11-jre-headless \
     openssl \
     rsync \
     unzip \
@@ -42,14 +38,12 @@ RUN apt-get update \
   && chmod 755 /root \
   && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install --location=global npm-check-updates@16.0.3 \
+  && npm install --location=global npm-check-updates@16.6.2 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
   && rm /tmp/awscliv2.zip \
-  && rm -Rf /tmp/aws ; \
-  find "${JAVA_HOME}/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; \
-	ldconfig
+  && rm -Rf /tmp/aws
 
 WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 

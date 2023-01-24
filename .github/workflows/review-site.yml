@@ -8,6 +8,7 @@ on:
       - 'dist/**'
     branches:
       - main
+      - 2.x
 
 jobs:
   lint-code:
@@ -45,7 +46,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
@@ -66,7 +67,8 @@ jobs:
       - name: Checkout repository to workspace
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.AZ_BOOTSTRAP_DEPLOY_KEY }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          fetch-depth: 20
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
         run: echo "AZ_TRIMMED_REF=${GITHUB_REF#refs/*/}" >> ${GITHUB_ENV}
@@ -102,7 +104,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
@@ -123,9 +125,6 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          if [ -n "$(git status --porcelain package-lock.json)" ] ; then
-            git restore package-lock.json
-          fi
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"

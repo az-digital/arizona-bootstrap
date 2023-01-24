@@ -9,14 +9,14 @@
 
 'use strict'
 
-const path = require('path')
+const path = require('node:path')
 const rollup = require('rollup')
 const globby = require('globby')
 const { babel } = require('@rollup/plugin-babel')
 const banner = require('./banner.js')
 
 const sourcePath = path.resolve(__dirname, '../js/src/').replace(/\\/g, '/')
-const jsFiles = globby.sync(sourcePath + '/**/*.js')
+const jsFiles = globby.sync(`${sourcePath}/**/*.js`)
 
 // Array which holds the resolved plugins
 const resolvedPlugins = []
