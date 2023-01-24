@@ -52,7 +52,7 @@ https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset ty
 page](https://github.com/az-digital/arizona-bootstrap/releases) for a full list
 of possible options. Remove the `v` from the version number.
 - `latest-2.x` The latest tagged version of Arizona Bootstrap 2
-- `latest-5.x` The latest stable version of Arizona Bootstrap 5
+- `latest-5.x` The latest tagged version of Arizona Bootstrap 5
 - `latest` Deprecated
 
 **NOTE: `main` is deprecated and will no longer be updated as of `v2.0.20` - to
