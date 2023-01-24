@@ -51,7 +51,7 @@ https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset ty
 - A release version number, Example: `2.0.19` See [the release
 page](https://github.com/az-digital/arizona-bootstrap/releases) for a full list
 of possible options. Remove the `v` from the version number.
-- `latest-2.x` The latest stable version of Arizona Bootstrap 2
+- `latest-2.x` The latest tagged version of Arizona Bootstrap 2
 - `latest-5.x` The latest stable version of Arizona Bootstrap 5
 - `latest` Deprecated
 
