@@ -67,7 +67,6 @@ jobs:
           git commit -m '${{ github.event.inputs.version }}'
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
-          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
 
       - name: Create Release
         id: create_release
@@ -111,6 +110,7 @@ jobs:
         run: |
           variablesfile=${{ runner.temp }}/variables.json
           echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
+          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
