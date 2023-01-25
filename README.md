@@ -45,7 +45,7 @@ https://cdn.digital.arizona.edu/lib/arizona-bootstrap/<version bucket>/<asset ty
 ```
 
 #### The `<version bucket>` parameter can be any of the following
-- `main` Deprecated
+- `main` Deprecated as of `2.0.20`
 - `2.x` Development version of Arizona Bootstrap 2
 - `5.x` Development version of Arizona Bootstrap 5
 - A release version number, Example: `2.0.19` See [the release
