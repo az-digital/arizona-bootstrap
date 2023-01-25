@@ -73,7 +73,7 @@ All tagged releases on the `2.x` branch will:
 - Create a new bucket for the version that was released. Example: `2.0.20`
 
 ### Pull request is merged into `main` branch
-All code merged into the `main` branch will update `5.x` bucket.
+All code merged into the `main` branch will update the `5.x` bucket.
 
 ### Pull request is merged into `2.x` branch
 All code merged into the `2.x` branch will update the `2.x` bucket.
