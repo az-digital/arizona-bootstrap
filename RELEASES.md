@@ -82,7 +82,8 @@ The following types of changes are allowed for minor releases in addition to tho
   - Major changes to CI configuration (such as GitHub actions)
 
 ### Major Releases (X.y.z)
-Incompatible changes to the CSS and JavaScript (for example, moving to Bootstrap v5).
+Incompatible changes to the CSS and JavaScript (for example, moving to Bootstrap
+v5).
 
 ## Triggering a Release
 An Arizona Digital developer with appropriate access rights in the main Arizona

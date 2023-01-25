@@ -1,0 +1,33 @@
+name: Build & deploy CDN assets (HEAD)
+run-name: Build & deploy CDN assets for `${{ github.ref_name }}` branch update.
+on:
+  push:
+    branches:
+      - main
+      - 2.x
+jobs:
+  deploy:
+    name: Build & deploy CDN assets
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e9d3185f7a72ecb1a71000a3f11be505e74e0081
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Deploy 2.x CDN assets to S3 + CloudFront
+        if: ${{ github.ref_name  == '2.x' }}
+        run: |
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/2.x/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/2.x/*
+      - name: Deploy 5.x CDN assets to S3 + CloudFront
+        if: ${{ github.ref_name  == 'main' }}
+        run: |
+          aws s3 sync --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/arizona-bootstrap/5.x/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/arizona-bootstrap/5.x/*
