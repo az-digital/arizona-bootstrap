@@ -60,7 +60,7 @@ of possible options. Remove the `v` from the version number.
 use the latest development version of the `2.x` branch use `2.x`**
 
 **NOTE: `latest` is deprecated and will no longer be updated as of `v2.0.20` -
-to use the latest stable version of the `2.x` branch use `latest-2.x`**
+to use the latest tagged version of the `2.x` branch use `latest-2.x`**
 
 ### Release is tagged on the `main` branch
 All tagged releases on the `main` branch will:
