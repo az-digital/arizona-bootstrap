@@ -53,7 +53,8 @@ page](https://github.com/az-digital/arizona-bootstrap/releases) for a full list
 of possible options. Remove the `v` from the version number.
 - `latest-2.x` The latest tagged version of Arizona Bootstrap 2
 - `latest-5.x` The latest tagged version of Arizona Bootstrap 5
-- `latest` Deprecated
+- `latest` Deprecated as of `2.0.20`
+
 
 **NOTE: `main` is deprecated and will no longer be updated as of `v2.0.20` - to
 use the latest development version of the `2.x` branch use `2.x`**
