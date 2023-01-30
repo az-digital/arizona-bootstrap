@@ -1,4 +1,5 @@
 name: Create Release
+run-name: Create `${{ inputs.version }}` release from `${{ github.ref_name }}` branch
 on:
   workflow_dispatch:
     inputs:
@@ -41,7 +42,7 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . 
+          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
@@ -108,6 +109,7 @@ jobs:
         run: |
           variablesfile=${{ runner.temp }}/variables.json
           echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
+          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
@@ -115,4 +117,4 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}"}'

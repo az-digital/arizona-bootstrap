@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v2.0.18 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.0.0-alpha1 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2023 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -9,8 +9,7 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["arizona-bootstrap"] = factory(global.Popper));
 })(this, (function (Popper) { 'use strict';
 
-  function _interopNamespace(e) {
-    if (e && e.__esModule) return e;
+  function _interopNamespaceDefault(e) {
     const n = Object.create(null, { [Symbol.toStringTag]: { value: 'Module' } });
     if (e) {
       for (const k in e) {
@@ -27,7 +26,7 @@
     return Object.freeze(n);
   }
 
-  const Popper__namespace = /*#__PURE__*/_interopNamespace(Popper);
+  const Popper__namespace = /*#__PURE__*/_interopNamespaceDefault(Popper);
 
   /**
    * --------------------------------------------------------------------------
