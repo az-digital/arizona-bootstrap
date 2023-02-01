@@ -5,3 +5,21 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
+    labels:
+      - "ci"
