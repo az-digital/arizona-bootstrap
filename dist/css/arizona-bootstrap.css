@@ -4755,10 +4755,7 @@ input.btn-group-block[type="button"],
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 0.75rem 1rem;
-/* Removing for issue #662
-* margin-bottom: 1rem;
-*/
-    list-style: none;
+  list-style: none;
   background-color: #fff;
 }
 
