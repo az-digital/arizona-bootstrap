@@ -1,9 +1,10 @@
+
+
 // Overrides for Breadcrumbs
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   padding: $breadcrumb-padding-y $breadcrumb-padding-x;
-  margin-bottom: $breadcrumb-margin-bottom;
   @include font-size($breadcrumb-font-size);
   list-style: none;
   background-color: $breadcrumb-bg;
@@ -17,7 +18,6 @@
     }
   }
 }
-
 .breadcrumb-item-home::before {
   float: left; // Suppress inline spacings and underlining of the separator
   padding-right: $breadcrumb-item-padding;
