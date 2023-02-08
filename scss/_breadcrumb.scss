@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  margin-bottom: $breadcrumb-margin-bottom;
   @include font-size($breadcrumb-font-size);
   list-style: none;
   background-color: $breadcrumb-bg;
@@ -16,6 +17,7 @@
     }
   }
 }
+
 .breadcrumb-item-home::before {
   float: left; // Suppress inline spacings and underlining of the separator
   padding-right: $breadcrumb-item-padding;
@@ -37,8 +39,6 @@
 // Remove margins/padding on Breadcrumbs for larger displays
 @include media-breakpoint-up(lg) {
   .breadcrumb {
-    padding: 0;
-    margin-top: 0;
     margin-bottom: 0;
   }
 }
