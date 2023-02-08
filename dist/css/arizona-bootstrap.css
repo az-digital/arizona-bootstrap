@@ -15367,6 +15367,7 @@ a {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
   list-style: none;
   background-color: #fff;
 }
@@ -15399,8 +15400,6 @@ a {
 
 @media (min-width: 992px) {
   .breadcrumb {
-    padding: 0;
-    margin-top: 0;
     margin-bottom: 0;
   }
 }
