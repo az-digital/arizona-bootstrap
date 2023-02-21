@@ -5,6 +5,11 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "2.x"
+    reviewers:
+      - "az-digital/developers"
+    ignore:
+      - dependency-name: "bootstrap"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
     labels:
       - "ci"
@@ -15,6 +20,8 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "main"
+    reviewers:
+      - "az-digital/developers"
     open-pull-requests-limit: 10
     labels:
       - "ci"
@@ -23,6 +30,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
@@ -34,5 +43,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
     labels:
       - "ci"
