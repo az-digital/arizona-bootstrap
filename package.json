@@ -91,7 +91,7 @@
     "rollup": "^3.9.1",
     "stylelint": "^14.16.1",
     "stylelint-config-twbs-bootstrap": "^7.0.0",
-    "terser": "5.16.0",
+    "terser": "5.16.4",
     "vnu-jar": "22.9.29"
   },
   "files": [
