@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:16.19.0-bullseye-slim
+FROM --platform=linux/amd64 node:16.20.0-bullseye-slim
 
 ENV LANG C.UTF-8
 
