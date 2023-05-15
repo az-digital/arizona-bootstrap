@@ -87,7 +87,7 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
-    "rollup": "^3.18.0",
+    "rollup": "^3.21.7",
     "stylelint": "^14.16.1",
     "stylelint-config-twbs-bootstrap": "^7.0.0",
     "terser": "5.16.0",
