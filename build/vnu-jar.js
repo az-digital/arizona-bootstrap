@@ -31,6 +31,7 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     // Explicit role="main" is redundant for other modern browsers, but still valid.
     'The “main” role is unnecessary for element “main”.',
     'Self-closing tag syntax in text/html documents is widely discouraged;.*',
+    'Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.',
     // Per https://www.w3.org/TR/html-aria/#docconformance having "aria-disabled" on a link is
     // NOT RECOMMENDED, but it's still valid - we explain in the docs that it's not ideal,
     // and offer more robust alternatives, but also need to show a less-than-ideal example
