@@ -75,7 +75,7 @@
     "unicorn/prefer-reflect-apply": "off",
     "unicorn/prefer-set-has": "off",
     "unicorn/prefer-spread": "off",
-    "unicorn/prefer-string-replace-all": "off",    
+    "unicorn/prefer-string-replace-all": "off",
     "unicorn/prefer-top-level-await": "off",
     "unicorn/prevent-abbreviations": "off"
   },
@@ -115,7 +115,7 @@
         "prefer-destructuring": "off",
         "prefer-template": "off",
         "strict": "error",
-        "unicorn/prefer-node-protocol": "off"    
+        "unicorn/prefer-node-protocol": "off"
       }
     }
   ]
