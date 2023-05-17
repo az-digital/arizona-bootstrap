@@ -5,7 +5,7 @@
 /.hugo_build.lock
 
 # In Arizona Bootstrap the Hugo config is derived
-/config.yml
+/hugo.yml
 
 # Numerous always-ignore extensions
 *.diff
