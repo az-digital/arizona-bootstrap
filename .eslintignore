@@ -4,4 +4,4 @@
 /_site/
 /js/coverage/
 /site/static/sw.js
-/site/layouts/
+/site/layouts/partials/
