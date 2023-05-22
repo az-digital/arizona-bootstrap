@@ -45,8 +45,8 @@ fi
 #------------------------------------------------------------------------------
 # Initial settings and sanity check
 
-hugo_config_template='config_template.yml'
-hugo_config='config.yml'
+hugo_config_template='hugo_template.yml'
+hugo_config='hugo.yml'
 [ -r "$hugo_config_template" ] \
   || errorexit "Couldn't read the Hugo configuration template file"
 
