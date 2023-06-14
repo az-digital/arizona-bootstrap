@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:16.20.0-bullseye-slim
+FROM --platform=linux/amd64 node:18.16.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
@@ -30,7 +30,7 @@ RUN apt-get update \
     curl \
     git \
     jq \
-    openjdk-11-jre-headless \
+    openjdk-17-jre-headless \
     openssl \
     rsync \
     unzip \
