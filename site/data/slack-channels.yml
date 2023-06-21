@@ -51,6 +51,6 @@
   description:
     - purpose: "For topics concerning documentation for Arizona Digital and its products"
 
-- channel: "#azdigital-general"
+- channel: "#azdigital-support"
   description:
-    - purpose: "For general discussion and side conversations"
+    - purpose: "For Arizona Digital product support"
