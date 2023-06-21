@@ -16,11 +16,11 @@
     - purpose: "For topics concerning Drupal security and security releases/concerns"
     - purpose: "For automated Drupal.org security notifications"
 
-- channel: "#friday-meetings"
+- channel: "#azdigital-meetings"
   description:
-    - purpose: "Main source of communication for Arizona Digital"
-    - purpose: "For general discussions, questions, and topics concerning Arizona Digital"
+    - purpose: "Main source of communication for Arizona Digital about meetings and events"
     - purpose: "For topics and information concerning Friday and Wednesday meetings"
+    - purpose: "For posting meeting notes and agendas"
 
 - channel: "#ua-bootstrap"
   description:
