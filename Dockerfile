@@ -26,8 +26,6 @@ COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    ca-certificates \
-    curl \
     git \
     jq \
     openjdk-17-jre-headless \
