@@ -31,7 +31,7 @@
 .btn-red {
   @include button-variant($chili);
   background-color: $chili;
-  @include hover() {
+  &:hover {
     color: $white;
     background-color: $red;
   }
@@ -43,7 +43,7 @@
 .btn-blue {
   @include button-variant($midnight);
   background-color: $blue;
-  @include hover() {
+  &:hover {
     color: $white;
     background-color: $azurite;
   }
@@ -125,14 +125,13 @@
     flex-grow: 1;
   }
 }
-// >> Block
-.btn-group-block {
-  @extend .btn-block;
-  .btn {
-    @extend .btn-block;
-  }
-  .dropdown-menu {
-    min-width: 100%;
-  }
-}
-
+// >> Block  -- .btn-block utility removed in TWBS 5
+// .btn-group-block {
+//   @extend .btn-block;
+//   .btn {
+//     @extend .btn-block;
+//   }
+//   .dropdown-menu {
+//     min-width: 100%;
+//   }
+// }
