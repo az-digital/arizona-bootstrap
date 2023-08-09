@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:16.19.0-bullseye-slim
+FROM --platform=linux/amd64 node:18.17.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
@@ -26,19 +26,17 @@ COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    ca-certificates \
+    ca-certificates-java \
     curl \
     git \
     jq \
-    openjdk-11-jre-headless \
-    openssl \
     rsync \
     unzip \
   && rm -rf /var/lib/apt/lists/* \
   && chmod 755 /root \
   && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install --location=global npm-check-updates@16.6.2 \
+  && npm install --location=global npm-check-updates@16.10.17 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
