@@ -70,6 +70,7 @@
     "@babel/preset-env": "^7.22.9",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-replace": "^5.0.2", 
     "autoprefixer": "^10.4.14",
     "babel-plugin-istanbul": "^6.1.1",
     "bootstrap": "^5.3.1",
