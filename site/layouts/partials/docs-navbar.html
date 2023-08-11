@@ -13,14 +13,14 @@
     </ul>
   </div>
 
-  <ul class="navbar-nav ml-md-auto">
+  <ul class="navbar-nav ms-md-auto">
     <li class="nav-item dropdown">
-      <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-item nav-link dropdown-toggle me-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         v{{ .Site.Params.docs_version }}
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
         <a class="dropdown-item text-white" href="{{ `/` | relURL }}">Latest</a>
-        <a class="dropdown-item active text-white" href="/docs/2.0/getting-started/introduction/">Arizona Bootstrap 2.0.x <span class="material-icons-sharp">check</span></a>
+        <a class="dropdown-item active text-white" href="https://digital.arizona.edu/arizona-bootstrap/docs/2.0/getting-started/introduction/">Arizona Bootstrap 2.0.x <span class="material-icons-sharp">check</span></a>
         <div class="dropdown-divider"></div>
         <h6 class="dropdown-header text-cool-gray">Previous releases</h6>
         <a class="dropdown-item" href="https://digital.arizona.edu/ua-bootstrap">UA Bootstrap 1.x </a>
@@ -38,5 +38,5 @@
     </li>
   </ul>
 
-  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Download</a>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ms-md-3" href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download`) | relURL -}}">Download</a>
 </header>
