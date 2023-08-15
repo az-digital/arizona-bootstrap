@@ -5,13 +5,18 @@
  * --------------------------------------------------------------------------
  */
 
-import $ from 'jquery'
-import Util from '../../node_modules/bootstrap/js/src/util.js'
+import BaseComponent from '../../node_modules/bootstrap/js/src/base-component.js'
+import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
+import SelectorEngine from '../../node_modules/bootstrap/js/src/dom/selector-engine.js'
+import Backdrop from '../../node_modules/bootstrap/js/src/util/backdrop.js'
+import {
+  defineJQueryPlugin,
+  getElement,
+  reflow
+} from '../../node_modules/bootstrap/js/src/util/index.js'
 
 /**
- * ------------------------------------------------------------------------
  * Constants
- * ------------------------------------------------------------------------
  */
 
 const NAME = 'offcanvasmenu'
@@ -19,70 +24,63 @@ const AZ_VERSION = 'v0.0.4'
 const DATA_KEY = 'az.offcanvasmenu'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
-
-const Default = {
-  toggle: true,
-  parent: ''
-}
-
-const DefaultType = {
-  toggle: 'boolean',
-  parent: '(string|element)'
-}
 
 const EVENT_OPEN = `open${EVENT_KEY}`
 const EVENT_OPENED = `opened${EVENT_KEY}`
 const EVENT_CLOSE = `close${EVENT_KEY}`
 const EVENT_CLOSED = `closed${EVENT_KEY}`
-const DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
+const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
 
 const CLASS_NAME_OPEN = 'open'
-const CLASS_NAME_CLOSE = 'offcanvas-toggle'
+const CLASS_NAME_CLOSE = 'offcanvasmenu-toggle'
 const CLASS_NAME_CLOSING = 'closing'
 const CLASS_NAME_CLOSED = 'closed'
+const CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_CLOSE} .${CLASS_NAME_CLOSE}`
 
-const CLASS_NAME_FREEZE = 'offcanvas-toggle-body-freeze'
-const CLASS_NAME_BACKDROP = 'menu-backdrop'
-const CLASS_NAME_SHOW = 'show'
+const CLASS_NAME_FREEZE = 'offcanvasmenu-toggle-body-freeze'
+const CLASS_NAME_BACKDROP = 'offcanvasmenu-backdrop'
 
 const SELECTOR_ACTIVES = '.open, .closing'
-const SELECTOR_DATA_TOGGLE = '[data-toggle="offcanvas"]'
+const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="offcanvasmenu"]'
+
+const Default = {
+  toggle: true,
+  parent: null
+}
+
+const DefaultType = {
+  toggle: 'boolean',
+  parent: '(null|element)'
+}
 
 /**
- * ------------------------------------------------------------------------
- * Class Definition
- * ------------------------------------------------------------------------
+ * Class definition
  */
 
-class Offcanvasmenu {
+class Offcanvasmenu extends BaseComponent {
   constructor(element, config) {
+    super(element, config)
+
     this._isTransitioning = false
-    this._element = element
-    this._config = this._getConfig(config)
-    this._backdrop = null
-    this._triggerArray = [].slice.call(document.querySelectorAll(
-      `[data-toggle="offcanvas"][href="#${element.id}"],` +
-      `[data-toggle="offcanvas"][data-target="#${element.id}"]`
-    ))
+    this._triggerArray = []
+    this._backdrop = this._initializeBackDrop()
 
-    const toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE))
-    for (let i = 0, len = toggleList.length; i < len; i++) {
-      const elem = toggleList[i]
-      const selector = Util.getSelectorFromElement(elem)
-      const filterElement = [].slice.call(document.querySelectorAll(selector))
-        .filter(foundElem => foundElem === element)
+    const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE)
 
-      if (selector !== null && filterElement.length > 0) {
-        this._selector = selector
+    for (const elem of toggleList) {
+      const selector = SelectorEngine.getSelectorFromElement(elem)
+      const filterElement = SelectorEngine.find(selector)
+        .filter(foundElement => foundElement === this._element)
+
+      if (selector !== null && filterElement.length) {
         this._triggerArray.push(elem)
       }
     }
 
-    this._parent = this._config.parent ? this._getParent() : null
+    this._initializeChildren()
 
     if (!this._config.parent) {
-      this._addAriaAndOffcanvasmenuClass(this._element, this._triggerArray)
+      this._addAriaAndClosedClass(this._triggerArray, this._isOpen())
     }
 
     if (this._config.toggle) {
@@ -100,158 +98,110 @@ class Offcanvasmenu {
     return Default
   }
 
+  static get DefaultType() {
+    return DefaultType
+  }
+
+  static get NAME() {
+    return NAME
+  }
+
   // Public
+
   toggle() {
-    if ($(this._element).hasClass(CLASS_NAME_OPEN)) {
+    if (this._isOpen()) {
       this.close()
     } else {
       this.open()
     }
   }
 
-  _removeBackdrop() {
-    if (this._backdrop) {
-      $(this._backdrop).remove()
-      this._backdrop = null
-    }
-  }
-
   open() {
-    if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_OPEN)) {
+    if (this._isTransitioning || this._isOpen()) {
       return
     }
 
-    let actives
-    let activesData
+    let activeChildren = []
 
-    if (this._parent) {
-      actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES))
-        .filter(elem => {
-          if (typeof this._config.parent === 'string') {
-            return elem.getAttribute('data-parent') === this._config.parent
-          }
-
-          return elem.classList.contains(CLASS_NAME_CLOSE)
-        })
-
-      if (actives.length === 0) {
-        actives = null
-      }
+    // find active children
+    if (this._config.parent) {
+      activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES)
+        .filter(element => element !== this._element)
+        .map(element => Offcanvasmenu.getOrCreateInstance(element, { toggle: false }))
     }
 
-    if (actives) {
-      activesData = $(actives).not(this._selector).data(DATA_KEY)
-      if (activesData && activesData._isTransitioning) {
-        return
-      }
-    }
-
-    const startEvent = $.Event(EVENT_OPEN)
-    $(this._element).trigger(startEvent)
-    if (startEvent.isDefaultPrevented()) {
+    if (activeChildren.length && activeChildren[0]._isTransitioning) {
       return
     }
 
-    if (actives) {
-      Offcanvasmenu._jQueryInterface.call($(actives).not(this._selector), 'close')
-      if (!activesData) {
-        $(actives).data(DATA_KEY, null)
-      }
+    const startEvent = EventHandler.trigger(this._element, EVENT_OPEN)
+    if (startEvent.defaultPrevented) {
+      return
     }
 
-    this._backdrop = document.createElement('div')
-    this._backdrop.className = CLASS_NAME_BACKDROP
-    this._backdrop.setAttribute('data-toggle', 'offcanvas')
-    this._backdrop.setAttribute('aria-controls', this._config.target)
-    this._backdrop.setAttribute('data-target', this._config.target)
-    this._backdrop.setAttribute('aria-expanded', 'true')
-    $(this._backdrop).appendTo(document.body)
-    this._backdrop.classList.add(CLASS_NAME_SHOW)
-
-    $(this._element)
-      .removeClass(CLASS_NAME_CLOSE)
-      .addClass(CLASS_NAME_CLOSING)
-
-    if (this._triggerArray.length) {
-      $(this._triggerArray)
-        .removeClass(CLASS_NAME_CLOSED)
-        .attr('aria-expanded', true)
+    for (const activeInstance of activeChildren) {
+      activeInstance.close()
     }
 
-    this.setTransitioning(true)
+    this._backdrop.show()
+
+    this._element.classList.remove(CLASS_NAME_CLOSE)
+    this._element.classList.add(CLASS_NAME_CLOSING)
+
+    this._addAriaAndClosedClass(this._triggerArray, true)
+    this._isTransitioning = true
 
     const complete = () => {
-      $(this._element)
-        .removeClass(CLASS_NAME_CLOSING)
-        .addClass(`${CLASS_NAME_CLOSE} ${CLASS_NAME_OPEN}`)
+      this._isTransitioning = false
 
-      this.setTransitioning(false)
+      this._element.classList.remove(CLASS_NAME_CLOSING)
+      this._element.classList.add(CLASS_NAME_CLOSE, CLASS_NAME_OPEN)
 
       document.body.classList.add(CLASS_NAME_FREEZE)
 
-      $(this._element).trigger(EVENT_OPENED)
+      EventHandler.trigger(this._element, EVENT_OPENED)
     }
 
-    const transitionDuration = Util.getTransitionDurationFromElement(this._element)
-
-    $(this._element)
-      .one(Util.TRANSITION_END, complete)
-      .emulateTransitionEnd(transitionDuration)
+    this._queueCallback(complete, this._element)
   }
 
   close() {
-    if (this._isTransitioning ||
-        !$(this._element).hasClass(CLASS_NAME_OPEN)) {
+    if (this._isTransitioning || !this._isOpen()) {
       return
     }
 
-    const startEvent = $.Event(EVENT_CLOSE)
-    $(this._element).trigger(startEvent)
-    if (startEvent.isDefaultPrevented()) {
+    const startEvent = EventHandler.trigger(this._element, EVENT_CLOSE)
+    if (startEvent.defaultPrevented) {
       return
     }
 
-    Util.reflow(this._element)
+    reflow(this._element)
 
-    $(this._element)
-      .addClass(CLASS_NAME_CLOSING)
-      .removeClass(`${CLASS_NAME_CLOSE} ${CLASS_NAME_OPEN}`)
+    this._element.classList.add(CLASS_NAME_CLOSING)
+    this._element.classList.remove(CLASS_NAME_CLOSE, CLASS_NAME_OPEN)
 
-    const triggerArrayLength = this._triggerArray.length
-    if (triggerArrayLength > 0) {
-      for (let i = 0; i < triggerArrayLength; i++) {
-        const trigger = this._triggerArray[i]
-        const selector = Util.getSelectorFromElement(trigger)
+    for (const trigger of this._triggerArray) {
+      const element = SelectorEngine.getElementFromSelector(trigger)
 
-        if (selector !== null) {
-          const $elem = $([].slice.call(document.querySelectorAll(selector)))
-          if (!$elem.hasClass(CLASS_NAME_OPEN)) {
-            $(trigger).addClass(CLASS_NAME_CLOSED)
-              .attr('aria-expanded', false)
-          }
-        }
+      if (element && !this._isOpen(element)) {
+        this._addAriaAndClosedClass([trigger], false)
       }
     }
 
-    this.setTransitioning(true)
+    this._isTransitioning = true
 
     const complete = () => {
-      this.setTransitioning(false)
-      this._removeBackdrop()
+      this._isTransitioning = false
+      this._backdrop.hide()
 
       document.body.classList.remove(CLASS_NAME_FREEZE)
 
-      $(this._element)
-        .removeClass(CLASS_NAME_CLOSING)
-        .addClass(CLASS_NAME_CLOSE)
-        .trigger(EVENT_CLOSED)
+      this._element.classList.remove(CLASS_NAME_CLOSING)
+      this._element.classList.add(CLASS_NAME_CLOSE)
+      EventHandler.trigger(this._element, EVENT_CLOSED)
     }
 
-    const transitionDuration = Util.getTransitionDurationFromElement(this._element)
-
-    $(this._element)
-      .one(Util.TRANSITION_END, complete)
-      .emulateTransitionEnd(transitionDuration)
+    this._queueCallback(complete, this._element)
   }
 
   setTransitioning(isTransitioning) {
@@ -259,89 +209,71 @@ class Offcanvasmenu {
   }
 
   dispose() {
-    $.removeData(this._element, DATA_KEY)
-
-    this._config = null
-    this._parent = null
-    this._element = null
-    this._triggerArray = null
-    this._isTransitioning = null
+    this._backdrop.dispose()
+    super.dispose()
   }
 
   // Private
 
-  _getConfig(config) {
-    config = {
-      ...Default,
-      ...config
-    }
+  _isOpen(element = this._element) {
+    return element.classList.contains(CLASS_NAME_OPEN)
+  }
+
+  _initializeBackDrop() {
+    return new Backdrop({
+      className: CLASS_NAME_BACKDROP
+    })
+  }
+
+  _configAfterMerge(config) {
     config.toggle = Boolean(config.toggle) // Coerce string values
-    Util.typeCheckConfig(NAME, config, DefaultType)
+    config.parent = getElement(config.parent)
     return config
   }
 
-  _getParent() {
-    let parent
-
-    if (Util.isElement(this._config.parent)) {
-      parent = this._config.parent
-
-      // It's a jQuery object
-      if (typeof this._config.parent.jquery !== 'undefined') {
-        parent = this._config.parent[0]
-      }
-    } else {
-      parent = document.querySelector(this._config.parent)
+  _initializeChildren() {
+    if (!this._config.parent) {
+      return
     }
 
-    const selector = `[data-toggle="offcanvas"][data-parent="${this._config.parent}"]`
-    const children = [].slice.call(parent.querySelectorAll(selector))
+    const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE)
 
-    $(children).each((i, element) => {
-      this._addAriaAndOffcanvasmenuClass(
-        Offcanvasmenu._getTargetFromElement(element),
-        [element]
-      )
-    })
+    for (const element of children) {
+      const selected = SelectorEngine.getElementFromSelector(element)
 
-    return parent
+      if (selected) {
+        this._addAriaAndClosedClass([element], this._isOpen(selected))
+      }
+    }
   }
 
-  _addAriaAndOffcanvasmenuClass(element, triggerArray) {
-    const isOpen = $(element).hasClass(CLASS_NAME_OPEN)
+  _getFirstLevelChildren(selector) {
+    const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent)
+    // remove children if greater depth
+    return SelectorEngine.find(selector, this._config.parent).filter(element => !children.includes(element))
+  }
 
-    if (triggerArray.length) {
-      $(triggerArray)
-        .toggleClass(CLASS_NAME_CLOSED, !isOpen)
-        .attr('aria-expanded', isOpen)
+  _addAriaAndClosedClass(triggerArray, isOpen) {
+    if (!triggerArray.length) {
+      return
+    }
+
+    for (const element of triggerArray) {
+      element.classList.toggle(CLASS_NAME_CLOSED, !isOpen)
+      element.setAttribute('aria-expanded', isOpen)
     }
   }
 
   // Static
 
-  static _getTargetFromElement(element) {
-    const selector = Util.getSelectorFromElement(element)
-    return selector ? document.querySelector(selector) : null
-  }
+  static jQueryInterface(config) {
+    const _config = {}
+    if (typeof config === 'string' && /open|close/.test(config)) {
+      _config.toggle = false
+    }
 
-  static _jQueryInterface(config) {
     return this.each(function () {
-      const $this = $(this)
-      let data = $this.data(DATA_KEY)
-      const _config = {
-        ...Default,
-        ...$this.data(),
-        ...typeof config === 'object' && config ? config : {}
-      }
-
-      if (!data && _config.toggle && typeof config === 'string' && /open|close/.test(config)) {
-        _config.toggle = false
-      }
-
-      if (!data) {
-        data = new Offcanvasmenu(this, _config)
-        $this.data(DATA_KEY, data)
-      }
+      const data = Offcanvasmenu.getOrCreateInstance(this, _config)
 
       if (typeof config === 'string') {
         if (typeof data[config] === 'undefined') {
@@ -355,9 +287,7 @@ class Offcanvasmenu {
 }
 
 /**
- * ------------------------------------------------------------------------
  * Viewport conditional dropdown menu override for offcanvas menu.
- * ------------------------------------------------------------------------
  */
 
 let VIEWPORT_WIDTH = false
@@ -369,59 +299,43 @@ function getViewportWidth() {
   VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth
 }
 
-$('.dropdown.keep-open .dropdown-toggle').on('click', function (event) {
-  getViewportWidth()
-  if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
-    if ($(this).attr('aria-expanded') === 'true') {
-      $(this).parent().removeClass('show')
-      $(this).attr('aria-expanded', false)
-    } else {
-      $(this).parent().addClass('show')
-      $(this).attr('aria-expanded', true)
-    }
+for (const element of SelectorEngine.find('.dropdown.keep-open .dropdown-toggle')) {
+  EventHandler.on(element, 'click', event => {
+    getViewportWidth()
+    if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+      if (event.target.hasAttribute('arria-expanded')) {
+        event.target.parentElement.classList.remove('show')
+        event.target.setAttribute('aria-expanded', false)
+      } else {
+        event.target.parentElement.classList.add('show')
+        event.target.setAttribute('aria-expanded', true)
+      }
 
-    $(this).next('.dropdown-menu').toggle()
-    event.stopPropagation()
-  }
-})
+      event.target.nextElementSibling.matches('.dropdown-menu').toggle()
+      event.stopPropagation()
+    }
+  })
+}
 
 /**
- * ------------------------------------------------------------------------
- * Data Api implementation
- * ------------------------------------------------------------------------
+ * Data API implementation
  */
 
-$(document).on(DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-  // preventDefault only for <a> elements (which change the URL) not inside the
-  // offcanvas element
-  if (event.currentTarget.tagName === 'A') {
+EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+  if (event.target.tagName === 'A' || (event.delegateTarget && event.delegateTarget.tagName === 'A')) {
     event.preventDefault()
   }
 
-  const $trigger = $(this)
-  const selector = Util.getSelectorFromElement(this)
-  const selectors = [].slice.call(document.querySelectorAll(selector))
-
-  $(selectors).each(function () {
-    const $target = $(this)
-    const data = $target.data(DATA_KEY)
-    const config = data ? 'toggle' : $trigger.data()
-    Offcanvasmenu._jQueryInterface.call($target, config)
-  })
+  for (const element of SelectorEngine.getMultipleElementsFromSelector(this)) {
+    Offcanvasmenu.getOrCreateInstance(element, { toggle: false }).toggle()
+  }
 })
 
 /**
- * ------------------------------------------------------------------------
  * jQuery
- * ------------------------------------------------------------------------
  */
 
-$.fn[NAME] = Offcanvasmenu._jQueryInterface
-$.fn[NAME].Constructor = Offcanvasmenu
-$.fn[NAME].noConflict = () => {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Offcanvasmenu._jQueryInterface
-}
+defineJQueryPlugin(Offcanvasmenu)
 
 export default Offcanvasmenu
-
