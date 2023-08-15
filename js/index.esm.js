@@ -17,4 +17,4 @@ export { default as Scrollspy } from '../node_modules/bootstrap/js/src/scrollspy
 export { default as Tab } from '../node_modules/bootstrap/js/src/tab.js'
 export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
-// export { default as Offcanvasmenu } from './src/offcanvasmenu'
+export { default as Offcanvasmenu } from './src/offcanvasmenu'
