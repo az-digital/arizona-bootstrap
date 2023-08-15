@@ -1038,12 +1038,12 @@ const enableDismissTrigger = (component, method = 'hide') => {
  * Constants
  */
 
-const NAME$f = 'alert';
-const DATA_KEY$a = 'bs.alert';
-const EVENT_KEY$b = `.${DATA_KEY$a}`;
+const NAME$g = 'alert';
+const DATA_KEY$b = 'bs.alert';
+const EVENT_KEY$c = `.${DATA_KEY$b}`;
 
-const EVENT_CLOSE = `close${EVENT_KEY$b}`;
-const EVENT_CLOSED = `closed${EVENT_KEY$b}`;
+const EVENT_CLOSE$1 = `close${EVENT_KEY$c}`;
+const EVENT_CLOSED$1 = `closed${EVENT_KEY$c}`;
 const CLASS_NAME_FADE$5 = 'fade';
 const CLASS_NAME_SHOW$8 = 'show';
 
@@ -1054,12 +1054,12 @@ const CLASS_NAME_SHOW$8 = 'show';
 class Alert extends BaseComponent {
   // Getters
   static get NAME() {
-    return NAME$f
+    return NAME$g
   }
 
   // Public
   close() {
-    const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE);
+    const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE$1);
 
     if (closeEvent.defaultPrevented) {
       return
@@ -1074,7 +1074,7 @@ class Alert extends BaseComponent {
   // Private
   _destroyElement() {
     this._element.remove();
-    EventHandler.trigger(this._element, EVENT_CLOSED);
+    EventHandler.trigger(this._element, EVENT_CLOSED$1);
     this.dispose();
   }
 
@@ -1120,14 +1120,14 @@ defineJQueryPlugin(Alert);
  * Constants
  */
 
-const NAME$e = 'button';
-const DATA_KEY$9 = 'bs.button';
-const EVENT_KEY$a = `.${DATA_KEY$9}`;
-const DATA_API_KEY$6 = '.data-api';
+const NAME$f = 'button';
+const DATA_KEY$a = 'bs.button';
+const EVENT_KEY$b = `.${DATA_KEY$a}`;
+const DATA_API_KEY$7 = '.data-api';
 
 const CLASS_NAME_ACTIVE$3 = 'active';
-const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
-const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
+const SELECTOR_DATA_TOGGLE$6 = '[data-bs-toggle="button"]';
+const EVENT_CLICK_DATA_API$7 = `click${EVENT_KEY$b}${DATA_API_KEY$7}`;
 
 /**
  * Class definition
@@ -1136,7 +1136,7 @@ const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
 class Button extends BaseComponent {
   // Getters
   static get NAME() {
-    return NAME$e
+    return NAME$f
   }
 
   // Public
@@ -1161,10 +1161,10 @@ class Button extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event => {
+EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DATA_TOGGLE$6, event => {
   event.preventDefault();
 
-  const button = event.target.closest(SELECTOR_DATA_TOGGLE$5);
+  const button = event.target.closest(SELECTOR_DATA_TOGGLE$6);
   const data = Button.getOrCreateInstance(button);
 
   data.toggle();
@@ -1188,25 +1188,25 @@ defineJQueryPlugin(Button);
  * Constants
  */
 
-const NAME$d = 'swipe';
-const EVENT_KEY$9 = '.bs.swipe';
-const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$9}`;
-const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$9}`;
-const EVENT_TOUCHEND = `touchend${EVENT_KEY$9}`;
-const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$9}`;
-const EVENT_POINTERUP = `pointerup${EVENT_KEY$9}`;
+const NAME$e = 'swipe';
+const EVENT_KEY$a = '.bs.swipe';
+const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
+const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
+const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
+const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
+const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
 const POINTER_TYPE_TOUCH = 'touch';
 const POINTER_TYPE_PEN = 'pen';
 const CLASS_NAME_POINTER_EVENT = 'pointer-event';
 const SWIPE_THRESHOLD = 40;
 
-const Default$c = {
+const Default$d = {
   endCallback: null,
   leftCallback: null,
   rightCallback: null
 };
 
-const DefaultType$c = {
+const DefaultType$d = {
   endCallback: '(function|null)',
   leftCallback: '(function|null)',
   rightCallback: '(function|null)'
@@ -1233,20 +1233,20 @@ class Swipe extends Config {
 
   // Getters
   static get Default() {
-    return Default$c
+    return Default$d
   }
 
   static get DefaultType() {
-    return DefaultType$c
+    return DefaultType$d
   }
 
   static get NAME() {
-    return NAME$d
+    return NAME$e
   }
 
   // Public
   dispose() {
-    EventHandler.off(this._element, EVENT_KEY$9);
+    EventHandler.off(this._element, EVENT_KEY$a);
   }
 
   // Private
@@ -1330,10 +1330,10 @@ class Swipe extends Config {
  * Constants
  */
 
-const NAME$c = 'carousel';
-const DATA_KEY$8 = 'bs.carousel';
-const EVENT_KEY$8 = `.${DATA_KEY$8}`;
-const DATA_API_KEY$5 = '.data-api';
+const NAME$d = 'carousel';
+const DATA_KEY$9 = 'bs.carousel';
+const EVENT_KEY$9 = `.${DATA_KEY$9}`;
+const DATA_API_KEY$6 = '.data-api';
 
 const ARROW_LEFT_KEY$1 = 'ArrowLeft';
 const ARROW_RIGHT_KEY$1 = 'ArrowRight';
@@ -1344,14 +1344,14 @@ const ORDER_PREV = 'prev';
 const DIRECTION_LEFT = 'left';
 const DIRECTION_RIGHT = 'right';
 
-const EVENT_SLIDE = `slide${EVENT_KEY$8}`;
-const EVENT_SLID = `slid${EVENT_KEY$8}`;
-const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$8}`;
-const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$8}`;
-const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$8}`;
-const EVENT_DRAG_START = `dragstart${EVENT_KEY$8}`;
-const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$8}${DATA_API_KEY$5}`;
-const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
+const EVENT_SLIDE = `slide${EVENT_KEY$9}`;
+const EVENT_SLID = `slid${EVENT_KEY$9}`;
+const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$9}`;
+const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$9}`;
+const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$9}`;
+const EVENT_DRAG_START = `dragstart${EVENT_KEY$9}`;
+const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$9}${DATA_API_KEY$6}`;
+const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$9}${DATA_API_KEY$6}`;
 
 const CLASS_NAME_CAROUSEL = 'carousel';
 const CLASS_NAME_ACTIVE$2 = 'active';
@@ -1374,7 +1374,7 @@ const KEY_TO_DIRECTION = {
   [ARROW_RIGHT_KEY$1]: DIRECTION_LEFT
 };
 
-const Default$b = {
+const Default$c = {
   interval: 5000,
   keyboard: true,
   pause: 'hover',
@@ -1383,7 +1383,7 @@ const Default$b = {
   wrap: true
 };
 
-const DefaultType$b = {
+const DefaultType$c = {
   interval: '(number|boolean)', // TODO:v6 remove boolean support
   keyboard: 'boolean',
   pause: '(string|boolean)',
@@ -1416,15 +1416,15 @@ class Carousel extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$b
+    return Default$c
   }
 
   static get DefaultType() {
-    return DefaultType$b
+    return DefaultType$c
   }
 
   static get NAME() {
-    return NAME$c
+    return NAME$d
   }
 
   // Public
@@ -1736,7 +1736,7 @@ class Carousel extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_SLIDE, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
@@ -1790,36 +1790,36 @@ defineJQueryPlugin(Carousel);
  * Constants
  */
 
-const NAME$b = 'collapse';
-const DATA_KEY$7 = 'bs.collapse';
-const EVENT_KEY$7 = `.${DATA_KEY$7}`;
-const DATA_API_KEY$4 = '.data-api';
+const NAME$c = 'collapse';
+const DATA_KEY$8 = 'bs.collapse';
+const EVENT_KEY$8 = `.${DATA_KEY$8}`;
+const DATA_API_KEY$5 = '.data-api';
 
-const EVENT_SHOW$6 = `show${EVENT_KEY$7}`;
-const EVENT_SHOWN$6 = `shown${EVENT_KEY$7}`;
-const EVENT_HIDE$6 = `hide${EVENT_KEY$7}`;
-const EVENT_HIDDEN$6 = `hidden${EVENT_KEY$7}`;
-const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$7}${DATA_API_KEY$4}`;
+const EVENT_SHOW$6 = `show${EVENT_KEY$8}`;
+const EVENT_SHOWN$6 = `shown${EVENT_KEY$8}`;
+const EVENT_HIDE$6 = `hide${EVENT_KEY$8}`;
+const EVENT_HIDDEN$6 = `hidden${EVENT_KEY$8}`;
+const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
 
 const CLASS_NAME_SHOW$7 = 'show';
 const CLASS_NAME_COLLAPSE = 'collapse';
 const CLASS_NAME_COLLAPSING = 'collapsing';
 const CLASS_NAME_COLLAPSED = 'collapsed';
-const CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`;
+const CLASS_NAME_DEEPER_CHILDREN$1 = `:scope .${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`;
 const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
 
 const WIDTH = 'width';
 const HEIGHT = 'height';
 
-const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
-const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="collapse"]';
+const SELECTOR_ACTIVES$1 = '.collapse.show, .collapse.collapsing';
+const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="collapse"]';
 
-const Default$a = {
+const Default$b = {
   parent: null,
   toggle: true
 };
 
-const DefaultType$a = {
+const DefaultType$b = {
   parent: '(null|element)',
   toggle: 'boolean'
 };
@@ -1835,7 +1835,7 @@ class Collapse extends BaseComponent {
     this._isTransitioning = false;
     this._triggerArray = [];
 
-    const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
+    const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$5);
 
     for (const elem of toggleList) {
       const selector = SelectorEngine.getSelectorFromElement(elem);
@@ -1860,15 +1860,15 @@ class Collapse extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$a
+    return Default$b
   }
 
   static get DefaultType() {
-    return DefaultType$a
+    return DefaultType$b
   }
 
   static get NAME() {
-    return NAME$b
+    return NAME$c
   }
 
   // Public
@@ -1889,7 +1889,7 @@ class Collapse extends BaseComponent {
 
     // find active children
     if (this._config.parent) {
-      activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES)
+      activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES$1)
         .filter(element => element !== this._element)
         .map(element => Collapse.getOrCreateInstance(element, { toggle: false }));
     }
@@ -1996,7 +1996,7 @@ class Collapse extends BaseComponent {
       return
     }
 
-    const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE$4);
+    const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE$5);
 
     for (const element of children) {
       const selected = SelectorEngine.getElementFromSelector(element);
@@ -2008,7 +2008,7 @@ class Collapse extends BaseComponent {
   }
 
   _getFirstLevelChildren(selector) {
-    const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
+    const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN$1, this._config.parent);
     // remove children if greater depth
     return SelectorEngine.find(selector, this._config.parent).filter(element => !children.includes(element))
   }
@@ -2049,7 +2049,7 @@ class Collapse extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$5, function (event) {
   // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
   if (event.target.tagName === 'A' || (event.delegateTarget && event.delegateTarget.tagName === 'A')) {
     event.preventDefault();
@@ -2078,10 +2078,10 @@ defineJQueryPlugin(Collapse);
  * Constants
  */
 
-const NAME$a = 'dropdown';
-const DATA_KEY$6 = 'bs.dropdown';
-const EVENT_KEY$6 = `.${DATA_KEY$6}`;
-const DATA_API_KEY$3 = '.data-api';
+const NAME$b = 'dropdown';
+const DATA_KEY$7 = 'bs.dropdown';
+const EVENT_KEY$7 = `.${DATA_KEY$7}`;
+const DATA_API_KEY$4 = '.data-api';
 
 const ESCAPE_KEY$2 = 'Escape';
 const TAB_KEY$1 = 'Tab';
@@ -2089,13 +2089,13 @@ const ARROW_UP_KEY$1 = 'ArrowUp';
 const ARROW_DOWN_KEY$1 = 'ArrowDown';
 const RIGHT_MOUSE_BUTTON = 2; // MouseEvent.button value for the secondary button, usually the right button
 
-const EVENT_HIDE$5 = `hide${EVENT_KEY$6}`;
-const EVENT_HIDDEN$5 = `hidden${EVENT_KEY$6}`;
-const EVENT_SHOW$5 = `show${EVENT_KEY$6}`;
-const EVENT_SHOWN$5 = `shown${EVENT_KEY$6}`;
-const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$6}${DATA_API_KEY$3}`;
-const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$6}${DATA_API_KEY$3}`;
-const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$6}${DATA_API_KEY$3}`;
+const EVENT_HIDE$5 = `hide${EVENT_KEY$7}`;
+const EVENT_HIDDEN$5 = `hidden${EVENT_KEY$7}`;
+const EVENT_SHOW$5 = `show${EVENT_KEY$7}`;
+const EVENT_SHOWN$5 = `shown${EVENT_KEY$7}`;
+const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$7}${DATA_API_KEY$4}`;
+const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$7}${DATA_API_KEY$4}`;
+const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$7}${DATA_API_KEY$4}`;
 
 const CLASS_NAME_SHOW$6 = 'show';
 const CLASS_NAME_DROPUP = 'dropup';
@@ -2104,8 +2104,8 @@ const CLASS_NAME_DROPSTART = 'dropstart';
 const CLASS_NAME_DROPUP_CENTER = 'dropup-center';
 const CLASS_NAME_DROPDOWN_CENTER = 'dropdown-center';
 
-const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
-const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$3}.${CLASS_NAME_SHOW$6}`;
+const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
+const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$4}.${CLASS_NAME_SHOW$6}`;
 const SELECTOR_MENU = '.dropdown-menu';
 const SELECTOR_NAVBAR = '.navbar';
 const SELECTOR_NAVBAR_NAV = '.navbar-nav';
@@ -2120,7 +2120,7 @@ const PLACEMENT_LEFT = isRTL() ? 'right-start' : 'left-start';
 const PLACEMENT_TOPCENTER = 'top';
 const PLACEMENT_BOTTOMCENTER = 'bottom';
 
-const Default$9 = {
+const Default$a = {
   autoClose: true,
   boundary: 'clippingParents',
   display: 'dynamic',
@@ -2129,7 +2129,7 @@ const Default$9 = {
   reference: 'toggle'
 };
 
-const DefaultType$9 = {
+const DefaultType$a = {
   autoClose: '(boolean|string)',
   boundary: '(string|element)',
   display: 'string',
@@ -2157,15 +2157,15 @@ class Dropdown extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$9
+    return Default$a
   }
 
   static get DefaultType() {
-    return DefaultType$9
+    return DefaultType$a
   }
 
   static get NAME() {
-    return NAME$a
+    return NAME$b
   }
 
   // Public
@@ -2268,7 +2268,7 @@ class Dropdown extends BaseComponent {
       typeof config.reference.getBoundingClientRect !== 'function'
     ) {
       // Popper virtual elements require a getBoundingClientRect method
-      throw new TypeError(`${NAME$a.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`)
+      throw new TypeError(`${NAME$b.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`)
     }
 
     return config
@@ -2462,11 +2462,11 @@ class Dropdown extends BaseComponent {
     event.preventDefault();
 
     // TODO: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
-    const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ?
+    const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$4) ?
       this :
-      (SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0] ||
-        SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$3)[0] ||
-        SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode));
+      (SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$4)[0] ||
+        SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$4)[0] ||
+        SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$4, event.delegateTarget.parentNode));
 
     const instance = Dropdown.getOrCreateInstance(getToggleButton);
 
@@ -2489,11 +2489,11 @@ class Dropdown extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$3, Dropdown.dataApiKeydownHandler);
+EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$4, Dropdown.dataApiKeydownHandler);
 EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown.dataApiKeydownHandler);
-EventHandler.on(document, EVENT_CLICK_DATA_API$3, Dropdown.clearMenus);
+EventHandler.on(document, EVENT_CLICK_DATA_API$4, Dropdown.clearMenus);
 EventHandler.on(document, EVENT_KEYUP_DATA_API, Dropdown.clearMenus);
-EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
   event.preventDefault();
   Dropdown.getOrCreateInstance(this).toggle();
 });
@@ -2516,12 +2516,12 @@ defineJQueryPlugin(Dropdown);
  * Constants
  */
 
-const NAME$9 = 'backdrop';
+const NAME$a = 'backdrop';
 const CLASS_NAME_FADE$4 = 'fade';
 const CLASS_NAME_SHOW$5 = 'show';
-const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$9}`;
+const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$a}`;
 
-const Default$8 = {
+const Default$9 = {
   className: 'modal-backdrop',
   clickCallback: null,
   isAnimated: false,
@@ -2529,7 +2529,7 @@ const Default$8 = {
   rootElement: 'body' // give the choice to place backdrop under different elements
 };
 
-const DefaultType$8 = {
+const DefaultType$9 = {
   className: 'string',
   clickCallback: '(function|null)',
   isAnimated: 'boolean',
@@ -2551,15 +2551,15 @@ class Backdrop extends Config {
 
   // Getters
   static get Default() {
-    return Default$8
+    return Default$9
   }
 
   static get DefaultType() {
-    return DefaultType$8
+    return DefaultType$9
   }
 
   static get NAME() {
-    return NAME$9
+    return NAME$a
   }
 
   // Public
@@ -2661,22 +2661,22 @@ class Backdrop extends Config {
  * Constants
  */
 
-const NAME$8 = 'focustrap';
-const DATA_KEY$5 = 'bs.focustrap';
-const EVENT_KEY$5 = `.${DATA_KEY$5}`;
-const EVENT_FOCUSIN$2 = `focusin${EVENT_KEY$5}`;
-const EVENT_KEYDOWN_TAB = `keydown.tab${EVENT_KEY$5}`;
+const NAME$9 = 'focustrap';
+const DATA_KEY$6 = 'bs.focustrap';
+const EVENT_KEY$6 = `.${DATA_KEY$6}`;
+const EVENT_FOCUSIN$2 = `focusin${EVENT_KEY$6}`;
+const EVENT_KEYDOWN_TAB = `keydown.tab${EVENT_KEY$6}`;
 
 const TAB_KEY = 'Tab';
 const TAB_NAV_FORWARD = 'forward';
 const TAB_NAV_BACKWARD = 'backward';
 
-const Default$7 = {
+const Default$8 = {
   autofocus: true,
   trapElement: null // The element to trap focus inside of
 };
 
-const DefaultType$7 = {
+const DefaultType$8 = {
   autofocus: 'boolean',
   trapElement: 'element'
 };
@@ -2695,15 +2695,15 @@ class FocusTrap extends Config {
 
   // Getters
   static get Default() {
-    return Default$7
+    return Default$8
   }
 
   static get DefaultType() {
-    return DefaultType$7
+    return DefaultType$8
   }
 
   static get NAME() {
-    return NAME$8
+    return NAME$9
   }
 
   // Public
@@ -2716,7 +2716,7 @@ class FocusTrap extends Config {
       this._config.trapElement.focus();
     }
 
-    EventHandler.off(document, EVENT_KEY$5); // guard against infinite focus loop
+    EventHandler.off(document, EVENT_KEY$6); // guard against infinite focus loop
     EventHandler.on(document, EVENT_FOCUSIN$2, event => this._handleFocusin(event));
     EventHandler.on(document, EVENT_KEYDOWN_TAB, event => this._handleKeydown(event));
 
@@ -2729,7 +2729,7 @@ class FocusTrap extends Config {
     }
 
     this._isActive = false;
-    EventHandler.off(document, EVENT_KEY$5);
+    EventHandler.off(document, EVENT_KEY$6);
   }
 
   // Private
@@ -2882,24 +2882,24 @@ class ScrollBarHelper {
  * Constants
  */
 
-const NAME$7 = 'modal';
-const DATA_KEY$4 = 'bs.modal';
-const EVENT_KEY$4 = `.${DATA_KEY$4}`;
-const DATA_API_KEY$2 = '.data-api';
+const NAME$8 = 'modal';
+const DATA_KEY$5 = 'bs.modal';
+const EVENT_KEY$5 = `.${DATA_KEY$5}`;
+const DATA_API_KEY$3 = '.data-api';
 const ESCAPE_KEY$1 = 'Escape';
 
-const EVENT_HIDE$4 = `hide${EVENT_KEY$4}`;
-const EVENT_HIDE_PREVENTED$1 = `hidePrevented${EVENT_KEY$4}`;
-const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$4}`;
-const EVENT_SHOW$4 = `show${EVENT_KEY$4}`;
-const EVENT_SHOWN$4 = `shown${EVENT_KEY$4}`;
-const EVENT_RESIZE$1 = `resize${EVENT_KEY$4}`;
-const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$4}`;
-const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$4}`;
-const EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$4}`;
-const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$2}`;
+const EVENT_HIDE$4 = `hide${EVENT_KEY$5}`;
+const EVENT_HIDE_PREVENTED$1 = `hidePrevented${EVENT_KEY$5}`;
+const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$5}`;
+const EVENT_SHOW$4 = `show${EVENT_KEY$5}`;
+const EVENT_SHOWN$4 = `shown${EVENT_KEY$5}`;
+const EVENT_RESIZE$1 = `resize${EVENT_KEY$5}`;
+const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$5}`;
+const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$5}`;
+const EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$5}`;
+const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$5}${DATA_API_KEY$3}`;
 
-const CLASS_NAME_OPEN = 'modal-open';
+const CLASS_NAME_OPEN$1 = 'modal-open';
 const CLASS_NAME_FADE$3 = 'fade';
 const CLASS_NAME_SHOW$4 = 'show';
 const CLASS_NAME_STATIC = 'modal-static';
@@ -2907,15 +2907,15 @@ const CLASS_NAME_STATIC = 'modal-static';
 const OPEN_SELECTOR$1 = '.modal.show';
 const SELECTOR_DIALOG = '.modal-dialog';
 const SELECTOR_MODAL_BODY = '.modal-body';
-const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
+const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="modal"]';
 
-const Default$6 = {
+const Default$7 = {
   backdrop: true,
   focus: true,
   keyboard: true
 };
 
-const DefaultType$6 = {
+const DefaultType$7 = {
   backdrop: '(boolean|string)',
   focus: 'boolean',
   keyboard: 'boolean'
@@ -2941,15 +2941,15 @@ class Modal extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$6
+    return Default$7
   }
 
   static get DefaultType() {
-    return DefaultType$6
+    return DefaultType$7
   }
 
   static get NAME() {
-    return NAME$7
+    return NAME$8
   }
 
   // Public
@@ -2975,7 +2975,7 @@ class Modal extends BaseComponent {
 
     this._scrollBar.hide();
 
-    document.body.classList.add(CLASS_NAME_OPEN);
+    document.body.classList.add(CLASS_NAME_OPEN$1);
 
     this._adjustDialog();
 
@@ -3003,8 +3003,8 @@ class Modal extends BaseComponent {
   }
 
   dispose() {
-    EventHandler.off(window, EVENT_KEY$4);
-    EventHandler.off(this._dialog, EVENT_KEY$4);
+    EventHandler.off(window, EVENT_KEY$5);
+    EventHandler.off(this._dialog, EVENT_KEY$5);
 
     this._backdrop.dispose();
     this._focustrap.deactivate();
@@ -3112,7 +3112,7 @@ class Modal extends BaseComponent {
     this._isTransitioning = false;
 
     this._backdrop.hide(() => {
-      document.body.classList.remove(CLASS_NAME_OPEN);
+      document.body.classList.remove(CLASS_NAME_OPEN$1);
       this._resetAdjustments();
       this._scrollBar.reset();
       EventHandler.trigger(this._element, EVENT_HIDDEN$4);
@@ -3198,7 +3198,7 @@ class Modal extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (['A', 'AREA'].includes(this.tagName)) {
@@ -3249,37 +3249,37 @@ defineJQueryPlugin(Modal);
  * Constants
  */
 
-const NAME$6 = 'offcanvas';
-const DATA_KEY$3 = 'bs.offcanvas';
-const EVENT_KEY$3 = `.${DATA_KEY$3}`;
-const DATA_API_KEY$1 = '.data-api';
-const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$3}${DATA_API_KEY$1}`;
+const NAME$7 = 'offcanvas';
+const DATA_KEY$4 = 'bs.offcanvas';
+const EVENT_KEY$4 = `.${DATA_KEY$4}`;
+const DATA_API_KEY$2 = '.data-api';
+const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$4}${DATA_API_KEY$2}`;
 const ESCAPE_KEY = 'Escape';
 
 const CLASS_NAME_SHOW$3 = 'show';
 const CLASS_NAME_SHOWING$1 = 'showing';
 const CLASS_NAME_HIDING = 'hiding';
-const CLASS_NAME_BACKDROP = 'offcanvas-backdrop';
+const CLASS_NAME_BACKDROP$1 = 'offcanvas-backdrop';
 const OPEN_SELECTOR = '.offcanvas.show';
 
-const EVENT_SHOW$3 = `show${EVENT_KEY$3}`;
-const EVENT_SHOWN$3 = `shown${EVENT_KEY$3}`;
-const EVENT_HIDE$3 = `hide${EVENT_KEY$3}`;
-const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$3}`;
-const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$3}`;
-const EVENT_RESIZE = `resize${EVENT_KEY$3}`;
-const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$3}${DATA_API_KEY$1}`;
-const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$3}`;
+const EVENT_SHOW$3 = `show${EVENT_KEY$4}`;
+const EVENT_SHOWN$3 = `shown${EVENT_KEY$4}`;
+const EVENT_HIDE$3 = `hide${EVENT_KEY$4}`;
+const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$4}`;
+const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$4}`;
+const EVENT_RESIZE = `resize${EVENT_KEY$4}`;
+const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$2}`;
+const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$4}`;
 
-const SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="offcanvas"]';
+const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="offcanvas"]';
 
-const Default$5 = {
+const Default$6 = {
   backdrop: true,
   keyboard: true,
   scroll: false
 };
 
-const DefaultType$5 = {
+const DefaultType$6 = {
   backdrop: '(boolean|string)',
   keyboard: 'boolean',
   scroll: 'boolean'
@@ -3301,15 +3301,15 @@ class Offcanvas extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$5
+    return Default$6
   }
 
   static get DefaultType() {
-    return DefaultType$5
+    return DefaultType$6
   }
 
   static get NAME() {
-    return NAME$6
+    return NAME$7
   }
 
   // Public
@@ -3405,7 +3405,7 @@ class Offcanvas extends BaseComponent {
     const isVisible = Boolean(this._config.backdrop);
 
     return new Backdrop({
-      className: CLASS_NAME_BACKDROP,
+      className: CLASS_NAME_BACKDROP$1,
       isVisible,
       isAnimated: true,
       rootElement: this._element.parentNode,
@@ -3456,7 +3456,7 @@ class Offcanvas extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (['A', 'AREA'].includes(this.tagName)) {
@@ -3633,9 +3633,9 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
  * Constants
  */
 
-const NAME$5 = 'TemplateFactory';
+const NAME$6 = 'TemplateFactory';
 
-const Default$4 = {
+const Default$5 = {
   allowList: DefaultAllowlist,
   content: {}, // { selector : text ,  selector2 : text2 , }
   extraClass: '',
@@ -3645,7 +3645,7 @@ const Default$4 = {
   template: '<div></div>'
 };
 
-const DefaultType$4 = {
+const DefaultType$5 = {
   allowList: 'object',
   content: 'object',
   extraClass: '(string|function)',
@@ -3672,15 +3672,15 @@ class TemplateFactory extends Config {
 
   // Getters
   static get Default() {
-    return Default$4
+    return Default$5
   }
 
   static get DefaultType() {
-    return DefaultType$4
+    return DefaultType$5
   }
 
   static get NAME() {
-    return NAME$5
+    return NAME$6
   }
 
   // Public
@@ -3788,7 +3788,7 @@ class TemplateFactory extends Config {
  * Constants
  */
 
-const NAME$4 = 'tooltip';
+const NAME$5 = 'tooltip';
 const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
 
 const CLASS_NAME_FADE$2 = 'fade';
@@ -3824,7 +3824,7 @@ const AttachmentMap = {
   LEFT: isRTL() ? 'right' : 'left'
 };
 
-const Default$3 = {
+const Default$4 = {
   allowList: DefaultAllowlist,
   animation: true,
   boundary: 'clippingParents',
@@ -3847,7 +3847,7 @@ const Default$3 = {
   trigger: 'hover focus'
 };
 
-const DefaultType$3 = {
+const DefaultType$4 = {
   allowList: 'object',
   animation: 'boolean',
   boundary: '(string|element)',
@@ -3900,15 +3900,15 @@ class Tooltip extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$3
+    return Default$4
   }
 
   static get DefaultType() {
-    return DefaultType$3
+    return DefaultType$4
   }
 
   static get NAME() {
-    return NAME$4
+    return NAME$5
   }
 
   // Public
@@ -4411,12 +4411,12 @@ defineJQueryPlugin(Tooltip);
  * Constants
  */
 
-const NAME$3 = 'popover';
+const NAME$4 = 'popover';
 
 const SELECTOR_TITLE = '.popover-header';
 const SELECTOR_CONTENT = '.popover-body';
 
-const Default$2 = {
+const Default$3 = {
   ...Tooltip.Default,
   content: '',
   offset: [0, 8],
@@ -4429,7 +4429,7 @@ const Default$2 = {
   trigger: 'click'
 };
 
-const DefaultType$2 = {
+const DefaultType$3 = {
   ...Tooltip.DefaultType,
   content: '(null|string|element|function)'
 };
@@ -4441,15 +4441,15 @@ const DefaultType$2 = {
 class Popover extends Tooltip {
   // Getters
   static get Default() {
-    return Default$2
+    return Default$3
   }
 
   static get DefaultType() {
-    return DefaultType$2
+    return DefaultType$3
   }
 
   static get NAME() {
-    return NAME$3
+    return NAME$4
   }
 
   // Overrides
@@ -4505,14 +4505,14 @@ defineJQueryPlugin(Popover);
  * Constants
  */
 
-const NAME$2 = 'scrollspy';
-const DATA_KEY$2 = 'bs.scrollspy';
-const EVENT_KEY$2 = `.${DATA_KEY$2}`;
-const DATA_API_KEY = '.data-api';
+const NAME$3 = 'scrollspy';
+const DATA_KEY$3 = 'bs.scrollspy';
+const EVENT_KEY$3 = `.${DATA_KEY$3}`;
+const DATA_API_KEY$1 = '.data-api';
 
-const EVENT_ACTIVATE = `activate${EVENT_KEY$2}`;
-const EVENT_CLICK = `click${EVENT_KEY$2}`;
-const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}${DATA_API_KEY}`;
+const EVENT_ACTIVATE = `activate${EVENT_KEY$3}`;
+const EVENT_CLICK = `click${EVENT_KEY$3}`;
+const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$3}${DATA_API_KEY$1}`;
 
 const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
 const CLASS_NAME_ACTIVE$1 = 'active';
@@ -4527,7 +4527,7 @@ const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SE
 const SELECTOR_DROPDOWN = '.dropdown';
 const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
 
-const Default$1 = {
+const Default$2 = {
   offset: null, // TODO: v6 @deprecated, keep it for backwards compatibility reasons
   rootMargin: '0px 0px -25%',
   smoothScroll: false,
@@ -4535,7 +4535,7 @@ const Default$1 = {
   threshold: [0.1, 0.5, 1]
 };
 
-const DefaultType$1 = {
+const DefaultType$2 = {
   offset: '(number|null)', // TODO v6 @deprecated, keep it for backwards compatibility reasons
   rootMargin: 'string',
   smoothScroll: 'boolean',
@@ -4566,15 +4566,15 @@ class ScrollSpy extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default$1
+    return Default$2
   }
 
   static get DefaultType() {
-    return DefaultType$1
+    return DefaultType$2
   }
 
   static get NAME() {
-    return NAME$2
+    return NAME$3
   }
 
   // Public
@@ -4794,17 +4794,17 @@ defineJQueryPlugin(ScrollSpy);
  * Constants
  */
 
-const NAME$1 = 'tab';
-const DATA_KEY$1 = 'bs.tab';
-const EVENT_KEY$1 = `.${DATA_KEY$1}`;
+const NAME$2 = 'tab';
+const DATA_KEY$2 = 'bs.tab';
+const EVENT_KEY$2 = `.${DATA_KEY$2}`;
 
-const EVENT_HIDE$1 = `hide${EVENT_KEY$1}`;
-const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$1}`;
-const EVENT_SHOW$1 = `show${EVENT_KEY$1}`;
-const EVENT_SHOWN$1 = `shown${EVENT_KEY$1}`;
-const EVENT_CLICK_DATA_API = `click${EVENT_KEY$1}`;
-const EVENT_KEYDOWN = `keydown${EVENT_KEY$1}`;
-const EVENT_LOAD_DATA_API = `load${EVENT_KEY$1}`;
+const EVENT_HIDE$1 = `hide${EVENT_KEY$2}`;
+const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$2}`;
+const EVENT_SHOW$1 = `show${EVENT_KEY$2}`;
+const EVENT_SHOWN$1 = `shown${EVENT_KEY$2}`;
+const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$2}`;
+const EVENT_KEYDOWN = `keydown${EVENT_KEY$2}`;
+const EVENT_LOAD_DATA_API = `load${EVENT_KEY$2}`;
 
 const ARROW_LEFT_KEY = 'ArrowLeft';
 const ARROW_RIGHT_KEY = 'ArrowRight';
@@ -4825,8 +4825,8 @@ const NOT_SELECTOR_DROPDOWN_TOGGLE = ':not(.dropdown-toggle)';
 const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
 const SELECTOR_OUTER = '.nav-item, .list-group-item';
 const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
-const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'; // TODO: could only be `tab` in v6
-const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
+const SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'; // TODO: could only be `tab` in v6
+const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE$1}`;
 
 const SELECTOR_DATA_TOGGLE_ACTIVE = `.${CLASS_NAME_ACTIVE}[data-bs-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="list"]`;
 
@@ -4853,7 +4853,7 @@ class Tab extends BaseComponent {
 
   // Getters
   static get NAME() {
-    return NAME$1
+    return NAME$2
   }
 
   // Public
@@ -5066,7 +5066,7 @@ class Tab extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
   if (['A', 'AREA'].includes(this.tagName)) {
     event.preventDefault();
   }
@@ -5104,31 +5104,31 @@ defineJQueryPlugin(Tab);
  * Constants
  */
 
-const NAME = 'toast';
-const DATA_KEY = 'bs.toast';
-const EVENT_KEY = `.${DATA_KEY}`;
+const NAME$1 = 'toast';
+const DATA_KEY$1 = 'bs.toast';
+const EVENT_KEY$1 = `.${DATA_KEY$1}`;
 
-const EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`;
-const EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`;
-const EVENT_FOCUSIN = `focusin${EVENT_KEY}`;
-const EVENT_FOCUSOUT = `focusout${EVENT_KEY}`;
-const EVENT_HIDE = `hide${EVENT_KEY}`;
-const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
-const EVENT_SHOW = `show${EVENT_KEY}`;
-const EVENT_SHOWN = `shown${EVENT_KEY}`;
+const EVENT_MOUSEOVER = `mouseover${EVENT_KEY$1}`;
+const EVENT_MOUSEOUT = `mouseout${EVENT_KEY$1}`;
+const EVENT_FOCUSIN = `focusin${EVENT_KEY$1}`;
+const EVENT_FOCUSOUT = `focusout${EVENT_KEY$1}`;
+const EVENT_HIDE = `hide${EVENT_KEY$1}`;
+const EVENT_HIDDEN = `hidden${EVENT_KEY$1}`;
+const EVENT_SHOW = `show${EVENT_KEY$1}`;
+const EVENT_SHOWN = `shown${EVENT_KEY$1}`;
 
 const CLASS_NAME_FADE = 'fade';
 const CLASS_NAME_HIDE = 'hide'; // @deprecated - kept here only for backwards compatibility
 const CLASS_NAME_SHOW = 'show';
 const CLASS_NAME_SHOWING = 'showing';
 
-const DefaultType = {
+const DefaultType$1 = {
   animation: 'boolean',
   autohide: 'boolean',
   delay: 'number'
 };
 
-const Default = {
+const Default$1 = {
   animation: true,
   autohide: true,
   delay: 5000
@@ -5150,15 +5150,15 @@ class Toast extends BaseComponent {
 
   // Getters
   static get Default() {
-    return Default
+    return Default$1
   }
 
   static get DefaultType() {
-    return DefaultType
+    return DefaultType$1
   }
 
   static get NAME() {
-    return NAME
+    return NAME$1
   }
 
   // Public
@@ -5308,5 +5308,375 @@ enableDismissTrigger(Toast);
 
 defineJQueryPlugin(Toast);
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy as Scrollspy, Tab, Toast, Tooltip };
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  _setPrototypeOf(subClass, superClass);
+}
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+  return _setPrototypeOf(o, p);
+}
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+  if (it) return (it = it.call(o)).next.bind(it);
+  if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+    if (it) o = it;
+    var i = 0;
+    return function () {
+      if (i >= o.length) return {
+        done: true
+      };
+      return {
+        done: false,
+        value: o[i++]
+      };
+    };
+  }
+  throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _toPrimitive(input, hint) {
+  if (typeof input !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (typeof res !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+  return typeof key === "symbol" ? key : String(key);
+}
+
+/**
+ * Constants
+ */
+
+var NAME = 'offcanvasmenu';
+var AZ_VERSION = 'v0.0.4';
+var DATA_KEY = 'az.offcanvasmenu';
+var EVENT_KEY = "." + DATA_KEY;
+var DATA_API_KEY = '.data-api';
+var EVENT_OPEN = "open" + EVENT_KEY;
+var EVENT_OPENED = "opened" + EVENT_KEY;
+var EVENT_CLOSE = "close" + EVENT_KEY;
+var EVENT_CLOSED = "closed" + EVENT_KEY;
+var EVENT_CLICK_DATA_API = "click" + EVENT_KEY + DATA_API_KEY;
+var CLASS_NAME_OPEN = 'open';
+var CLASS_NAME_CLOSE = 'offcanvasmenu-toggle';
+var CLASS_NAME_CLOSING = 'closing';
+var CLASS_NAME_CLOSED = 'closed';
+var CLASS_NAME_DEEPER_CHILDREN = ":scope ." + CLASS_NAME_CLOSE + " ." + CLASS_NAME_CLOSE;
+var CLASS_NAME_FREEZE = 'offcanvasmenu-toggle-body-freeze';
+var CLASS_NAME_BACKDROP = 'offcanvasmenu-backdrop';
+var SELECTOR_ACTIVES = '.open, .closing';
+var SELECTOR_DATA_TOGGLE = '[data-bs-toggle="offcanvasmenu"]';
+var Default = {
+  toggle: true,
+  parent: null
+};
+var DefaultType = {
+  toggle: 'boolean',
+  parent: '(null|element)'
+};
+
+/**
+ * Class definition
+ */
+var Offcanvasmenu = /*#__PURE__*/function (_BaseComponent) {
+  _inheritsLoose(Offcanvasmenu, _BaseComponent);
+  function Offcanvasmenu(element, config) {
+    var _this;
+    _this = _BaseComponent.call(this, element, config) || this;
+    _this._isTransitioning = false;
+    _this._triggerArray = [];
+    _this._backdrop = _this._initializeBackDrop();
+    var toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE);
+    for (var _iterator = _createForOfIteratorHelperLoose(toggleList), _step; !(_step = _iterator()).done;) {
+      var elem = _step.value;
+      var selector = SelectorEngine.getSelectorFromElement(elem);
+      var filterElement = SelectorEngine.find(selector).filter(function (foundElement) {
+        return foundElement === _this._element;
+      });
+      if (selector !== null && filterElement.length) {
+        _this._triggerArray.push(elem);
+      }
+    }
+    _this._initializeChildren();
+    if (!_this._config.parent) {
+      _this._addAriaAndClosedClass(_this._triggerArray, _this._isOpen());
+    }
+    if (_this._config.toggle) {
+      _this.toggle();
+    }
+    return _this;
+  }
+
+  // Getters
+  var _proto = Offcanvasmenu.prototype;
+  // Public
+  _proto.toggle = function toggle() {
+    if (this._isOpen()) {
+      this.close();
+    } else {
+      this.open();
+    }
+  };
+  _proto.open = function open() {
+    var _this2 = this;
+    if (this._isTransitioning || this._isOpen()) {
+      return;
+    }
+    var activeChildren = [];
+
+    // find active children
+    if (this._config.parent) {
+      activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES).filter(function (element) {
+        return element !== _this2._element;
+      }).map(function (element) {
+        return Offcanvasmenu.getOrCreateInstance(element, {
+          toggle: false
+        });
+      });
+    }
+    if (activeChildren.length && activeChildren[0]._isTransitioning) {
+      return;
+    }
+    var startEvent = EventHandler.trigger(this._element, EVENT_OPEN);
+    if (startEvent.defaultPrevented) {
+      return;
+    }
+    for (var _iterator2 = _createForOfIteratorHelperLoose(activeChildren), _step2; !(_step2 = _iterator2()).done;) {
+      var activeInstance = _step2.value;
+      activeInstance.close();
+    }
+    this._backdrop.show();
+    this._element.classList.remove(CLASS_NAME_CLOSE);
+    this._element.classList.add(CLASS_NAME_CLOSING);
+    this._addAriaAndClosedClass(this._triggerArray, true);
+    this._isTransitioning = true;
+    var complete = function complete() {
+      _this2._isTransitioning = false;
+      _this2._element.classList.remove(CLASS_NAME_CLOSING);
+      _this2._element.classList.add(CLASS_NAME_CLOSE, CLASS_NAME_OPEN);
+      document.body.classList.add(CLASS_NAME_FREEZE);
+      EventHandler.trigger(_this2._element, EVENT_OPENED);
+    };
+    this._queueCallback(complete, this._element);
+  };
+  _proto.close = function close() {
+    var _this3 = this;
+    if (this._isTransitioning || !this._isOpen()) {
+      return;
+    }
+    var startEvent = EventHandler.trigger(this._element, EVENT_CLOSE);
+    if (startEvent.defaultPrevented) {
+      return;
+    }
+    reflow(this._element);
+    this._element.classList.add(CLASS_NAME_CLOSING);
+    this._element.classList.remove(CLASS_NAME_CLOSE, CLASS_NAME_OPEN);
+    for (var _iterator3 = _createForOfIteratorHelperLoose(this._triggerArray), _step3; !(_step3 = _iterator3()).done;) {
+      var trigger = _step3.value;
+      var element = SelectorEngine.getElementFromSelector(trigger);
+      if (element && !this._isOpen(element)) {
+        this._addAriaAndClosedClass([trigger], false);
+      }
+    }
+    this._isTransitioning = true;
+    var complete = function complete() {
+      _this3._isTransitioning = false;
+      _this3._backdrop.hide();
+      document.body.classList.remove(CLASS_NAME_FREEZE);
+      _this3._element.classList.remove(CLASS_NAME_CLOSING);
+      _this3._element.classList.add(CLASS_NAME_CLOSE);
+      EventHandler.trigger(_this3._element, EVENT_CLOSED);
+    };
+    this._queueCallback(complete, this._element);
+  };
+  _proto.setTransitioning = function setTransitioning(isTransitioning) {
+    this._isTransitioning = isTransitioning;
+  };
+  _proto.dispose = function dispose() {
+    this._backdrop.dispose();
+    _BaseComponent.prototype.dispose.call(this);
+  }
+
+  // Private
+  ;
+  _proto._isOpen = function _isOpen(element) {
+    if (element === void 0) {
+      element = this._element;
+    }
+    return element.classList.contains(CLASS_NAME_OPEN);
+  };
+  _proto._initializeBackDrop = function _initializeBackDrop() {
+    return new Backdrop({
+      className: CLASS_NAME_BACKDROP
+    });
+  };
+  _proto._configAfterMerge = function _configAfterMerge(config) {
+    config.toggle = Boolean(config.toggle); // Coerce string values
+    config.parent = getElement(config.parent);
+    return config;
+  };
+  _proto._initializeChildren = function _initializeChildren() {
+    if (!this._config.parent) {
+      return;
+    }
+    var children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE);
+    for (var _iterator4 = _createForOfIteratorHelperLoose(children), _step4; !(_step4 = _iterator4()).done;) {
+      var element = _step4.value;
+      var selected = SelectorEngine.getElementFromSelector(element);
+      if (selected) {
+        this._addAriaAndClosedClass([element], this._isOpen(selected));
+      }
+    }
+  };
+  _proto._getFirstLevelChildren = function _getFirstLevelChildren(selector) {
+    var children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
+    // remove children if greater depth
+    return SelectorEngine.find(selector, this._config.parent).filter(function (element) {
+      return !children.includes(element);
+    });
+  };
+  _proto._addAriaAndClosedClass = function _addAriaAndClosedClass(triggerArray, isOpen) {
+    if (!triggerArray.length) {
+      return;
+    }
+    for (var _iterator5 = _createForOfIteratorHelperLoose(triggerArray), _step5; !(_step5 = _iterator5()).done;) {
+      var element = _step5.value;
+      element.classList.toggle(CLASS_NAME_CLOSED, !isOpen);
+      element.setAttribute('aria-expanded', isOpen);
+    }
+  }
+
+  // Static
+  ;
+  Offcanvasmenu.jQueryInterface = function jQueryInterface(config) {
+    var _config = {};
+    if (typeof config === 'string' && /open|close/.test(config)) {
+      _config.toggle = false;
+    }
+    return this.each(function () {
+      var data = Offcanvasmenu.getOrCreateInstance(this, _config);
+      if (typeof config === 'string') {
+        if (typeof data[config] === 'undefined') {
+          throw new TypeError("No method named \"" + config + "\"");
+        }
+        data[config]();
+      }
+    });
+  };
+  _createClass(Offcanvasmenu, null, [{
+    key: "AZ_VERSION",
+    get: function get() {
+      return AZ_VERSION;
+    }
+  }, {
+    key: "Default",
+    get: function get() {
+      return Default;
+    }
+  }, {
+    key: "DefaultType",
+    get: function get() {
+      return DefaultType;
+    }
+  }, {
+    key: "NAME",
+    get: function get() {
+      return NAME;
+    }
+  }]);
+  return Offcanvasmenu;
+}(BaseComponent);
+/**
+ * Viewport conditional dropdown menu override for offcanvas menu.
+ */
+var VIEWPORT_WIDTH = false;
+var XS_BREAKPOINT_MAX = 767;
+
+// @TODO Use CSS breakpoint info, rather than seemingly arbitrary window width.
+// Get the viewportWidth value.
+function getViewportWidth() {
+  VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth;
+}
+for (var _iterator6 = _createForOfIteratorHelperLoose(SelectorEngine.find('.dropdown.keep-open .dropdown-toggle')), _step6; !(_step6 = _iterator6()).done;) {
+  var element = _step6.value;
+  EventHandler.on(element, 'click', function (event) {
+    getViewportWidth();
+    if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
+      if (event.target.hasAttribute('arria-expanded')) {
+        event.target.parentElement.classList.remove('show');
+        event.target.setAttribute('aria-expanded', false);
+      } else {
+        event.target.parentElement.classList.add('show');
+        event.target.setAttribute('aria-expanded', true);
+      }
+      event.target.nextElementSibling.matches('.dropdown-menu').toggle();
+      event.stopPropagation();
+    }
+  });
+}
+
+/**
+ * Data API implementation
+ */
+
+EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+  if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
+    event.preventDefault();
+  }
+  for (var _iterator7 = _createForOfIteratorHelperLoose(SelectorEngine.getMultipleElementsFromSelector(this)), _step7; !(_step7 = _iterator7()).done;) {
+    var element = _step7.value;
+    Offcanvasmenu.getOrCreateInstance(element, {
+      toggle: false
+    }).toggle();
+  }
+});
+
+/**
+ * jQuery
+ */
+
+defineJQueryPlugin(Offcanvasmenu);
+
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy as Scrollspy, Tab, Toast, Tooltip };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map
