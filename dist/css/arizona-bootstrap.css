@@ -19198,11 +19198,11 @@ a {
   background-color: #e9ecef;
 }
 
-.offcanvas-toggle {
+.offcanvasmenu-toggle {
   display: none;
 }
 
-.offcanvas-toggle-body-freeze {
+.offcanvasmenu-toggle-body-freeze {
   overflow-y: hidden;
 }
 
@@ -19223,7 +19223,7 @@ a {
     opacity: 0.75;
   }
 }
-.menu-backdrop {
+.offcanvasmenu-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -19234,7 +19234,7 @@ a {
   opacity: 0.75;
 }
 
-.menu-backdrop.show {
+.offcanvasmenu-backdrop.show {
   cursor: pointer;
   -webkit-animation: 0.3s linear fadein;
   animation: 0.3s linear fadein;
@@ -19534,7 +19534,7 @@ a {
     margin-left: 0.225em;
     display: inline-table;
   }
-  .menu-backdrop {
+  .offcanvasmenu-backdrop {
     display: none;
   }
 }
