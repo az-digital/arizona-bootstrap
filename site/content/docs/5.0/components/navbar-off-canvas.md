@@ -42,7 +42,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       </div>
     </form>
   </div>
-  <ul class="navbar-nav flex-lg-row pb-5">
+  <ul class="navbar-nav flex-lg-row">
     <li class="nav-item nav-item-parent active">
       <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
     </li>
