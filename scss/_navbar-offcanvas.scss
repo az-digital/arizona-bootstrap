@@ -3,6 +3,7 @@
   display: none;
 }
 .offcanvas-toggle-body-freeze {
+  position: fixed;
   overflow-y: hidden;
 }
 @keyframes fadein {
