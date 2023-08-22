@@ -4,6 +4,7 @@
 }
 .offcanvas-toggle-body-freeze {
   overflow-y: hidden;
+  position: fixed;
 }
 @keyframes fadein {
   from {
