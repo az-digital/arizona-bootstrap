@@ -34,13 +34,13 @@
   top: 0;
   right: 0;
   z-index: 2000;
-  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   width: 325px;
   max-width: 90%;
   height: 100vh;
   max-height: 100vh;
+  padding-bottom: 3rem;
   overflow-y: hidden;
   background-color: $navbar-offcanvas-bg;
   border: none;
