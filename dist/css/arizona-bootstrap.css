@@ -15870,8 +15870,7 @@ a {
 }
 
 .offcanvas-toggle-body-freeze {
-  position: fixed;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 @-webkit-keyframes fadein {
