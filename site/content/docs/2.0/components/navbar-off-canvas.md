@@ -51,24 +51,44 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
       <button class="nav-link dropdown-toggle" id="navbarDropdown4" data-toggle="dropdown" data-display="static" aria-expanded="false">
-        Admissions
+        First top-level dropdown
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown4">
-        <a class="dropdown-item" href="#">Admissions Overview</a>
-        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Item 1</a>
+        <a class="dropdown-item" href="#">Item 2</a>
+        <a class="dropdown-item" href="#">Item 3</a>
+        <a class="dropdown-item" href="#">Item 4</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Item 5</a>
+        <a class="dropdown-item" href="#">Item 6</a>
       </div>
     </li>
     <li class="nav-item nav-item-parent dropdown keep-open">
       <button class="nav-link dropdown-toggle" id="navbarDropdown5" data-toggle="dropdown" data-display="static" aria-expanded="false">
-        Dropdown
+        Second top-level dropdown
       </button>
       <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown5">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Item 1</a>
+        <a class="dropdown-item" href="#">Item 2</a>
+        <a class="dropdown-item" href="#">Item 3</a>
+        <a class="dropdown-item" href="#">Item 4</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Item 5</a>
+        <a class="dropdown-item" href="#">Item 6</a>
+      </div>
+    </li>
+    <li class="nav-item nav-item-parent dropdown keep-open">
+      <button class="nav-link dropdown-toggle" id="navbarDropdown6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+        Third top-level dropdown
+      </button>
+      <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown6">
+        <a class="dropdown-item" href="#">Item 1</a>
+        <a class="dropdown-item" href="#">Item 2</a>
+        <a class="dropdown-item" href="#">Item 3</a>
+        <a class="dropdown-item" href="#">Item 4</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Item 5</a>
+        <a class="dropdown-item" href="#">Item 6</a>
       </div>
     </li>
     <li class="nav-item nav-item-parent">
