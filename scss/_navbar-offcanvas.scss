@@ -3,8 +3,7 @@
   display: none;
 }
 .offcanvas-toggle-body-freeze {
-  position: fixed;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 @keyframes fadein {
   from {
@@ -39,8 +38,8 @@
   flex-direction: column;
   width: 325px;
   max-width: 90%;
-  height: 100dvh;
-  max-height: 100dvh;
+  height: 100svh;
+  max-height: 100svh;
   overflow-y: hidden;
   background-color: $navbar-offcanvas-bg;
   border: none;
