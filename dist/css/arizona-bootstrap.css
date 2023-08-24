@@ -18511,7 +18511,7 @@ h2,
 
 .btn-redbar .icon-text {
   display: block;
-  margin: -5px;
+  margin: -5px 0;
   font-size: 10px;
   line-height: 10px;
 }
