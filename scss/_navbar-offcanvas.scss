@@ -3,7 +3,7 @@
   display: none;
 }
 .offcanvas-toggle-body-freeze {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 @keyframes fadein {
   from {
@@ -39,7 +39,9 @@
   width: 325px;
   max-width: 90%;
   height: 100vh;
+  height: 100svh;
   max-height: 100vh;
+  max-height: 100svh;
   overflow-y: hidden;
   background-color: $navbar-offcanvas-bg;
   border: none;
