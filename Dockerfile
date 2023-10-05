@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:18.17.1-bookworm-slim
+FROM --platform=linux/amd64 node:18.18.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
