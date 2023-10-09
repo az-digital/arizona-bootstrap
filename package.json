@@ -82,7 +82,7 @@
     "eslint-plugin-unicorn": "^48.0.1",
     "find-unused-sass-variables": "^5.0.0",
     "globby": "^11.1.0",
-    "hugo-bin": "^0.113.0",
+    "hugo-bin": "^0.115.0",
     "jquery": "3.7.1",
     "linkinator": "5.0.2",
     "nodemon": "^3.0.1",
