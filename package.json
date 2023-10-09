@@ -73,7 +73,7 @@
     "@rollup/plugin-replace": "^5.0.2", 
     "autoprefixer": "^10.4.15",
     "babel-plugin-istanbul": "^6.1.1",
-    "bootstrap": "^5.3.1",
+    "bootstrap": "^5.3.2",
     "clean-css-cli": "^5.6.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.49.0",
@@ -82,7 +82,7 @@
     "eslint-plugin-unicorn": "^48.0.1",
     "find-unused-sass-variables": "^5.0.0",
     "globby": "^11.1.0",
-    "hugo-bin": "^0.113.0",
+    "hugo-bin": "^0.115.0",
     "jquery": "3.7.1",
     "linkinator": "5.0.2",
     "nodemon": "^3.0.1",
@@ -94,7 +94,7 @@
     "sass": "^1.64.2",
     "stylelint": "^15.10.2",
     "stylelint-config-twbs-bootstrap": "^11.0.1",
-    "terser": "^5.19.4",
+    "terser": "^5.20.0",
     "vnu-jar": "23.4.11"
   },
   "files": [
