@@ -19748,7 +19748,7 @@ a {
 }
 
 .callout-red {
-  border-left-color: #ab0520;
+  border-color: #ab0520;
 }
 .callout-red h2,
 .callout-red h3,
@@ -19769,7 +19769,7 @@ a {
 }
 
 .callout-bloom {
-  border-left-color: #ef4056;
+  border-color: #ef4056;
 }
 .callout-bloom h2,
 .callout-bloom h3,
@@ -19790,7 +19790,7 @@ a {
 }
 
 .callout-chili {
-  border-left-color: #8b0015;
+  border-color: #8b0015;
 }
 .callout-chili h2,
 .callout-chili h3,
@@ -19811,7 +19811,7 @@ a {
 }
 
 .callout-blue {
-  border-left-color: #0c234b;
+  border-color: #0c234b;
 }
 .callout-blue h2,
 .callout-blue h3,
@@ -19832,7 +19832,7 @@ a {
 }
 
 .callout-sky {
-  border-left-color: #81d3eb;
+  border-color: #81d3eb;
 }
 .callout-sky h2,
 .callout-sky h3,
@@ -19853,7 +19853,7 @@ a {
 }
 
 .callout-oasis {
-  border-left-color: #378dbd;
+  border-color: #378dbd;
 }
 .callout-oasis h2,
 .callout-oasis h3,
@@ -19874,7 +19874,7 @@ a {
 }
 
 .callout-azurite {
-  border-left-color: #1e5288;
+  border-color: #1e5288;
 }
 .callout-azurite h2,
 .callout-azurite h3,
@@ -19895,7 +19895,7 @@ a {
 }
 
 .callout-midnight {
-  border-left-color: #001c48;
+  border-color: #001c48;
 }
 .callout-midnight h2,
 .callout-midnight h3,
@@ -19916,7 +19916,7 @@ a {
 }
 
 .callout-cool-gray {
-  border-left-color: #e2e9eb;
+  border-color: #e2e9eb;
 }
 .callout-cool-gray h2,
 .callout-cool-gray h3,
@@ -19937,7 +19937,7 @@ a {
 }
 
 .callout-warm-gray {
-  border-left-color: #f4ede5;
+  border-color: #f4ede5;
 }
 .callout-warm-gray h2,
 .callout-warm-gray h3,
@@ -19958,7 +19958,7 @@ a {
 }
 
 .callout-leaf {
-  border-left-color: #70b865;
+  border-color: #70b865;
 }
 .callout-leaf h2,
 .callout-leaf h3,
@@ -19979,7 +19979,7 @@ a {
 }
 
 .callout-river {
-  border-left-color: #007d84;
+  border-color: #007d84;
 }
 .callout-river h2,
 .callout-river h3,
@@ -20000,7 +20000,7 @@ a {
 }
 
 .callout-silver {
-  border-left-color: #9eabae;
+  border-color: #9eabae;
 }
 .callout-silver h2,
 .callout-silver h3,
@@ -20021,7 +20021,7 @@ a {
 }
 
 .callout-mesa {
-  border-left-color: #a95c42;
+  border-color: #a95c42;
 }
 .callout-mesa h2,
 .callout-mesa h3,
@@ -20042,7 +20042,7 @@ a {
 }
 
 .callout-ash {
-  border-left-color: #403635;
+  border-color: #403635;
 }
 .callout-ash h2,
 .callout-ash h3,
@@ -20063,7 +20063,7 @@ a {
 }
 
 .callout-sage {
-  border-left-color: #4a634e;
+  border-color: #4a634e;
 }
 .callout-sage h2,
 .callout-sage h3,
@@ -20084,7 +20084,7 @@ a {
 }
 
 .callout-white {
-  border-left-color: #fff;
+  border-color: #fff;
 }
 .callout-white h2,
 .callout-white h3,
@@ -20105,7 +20105,7 @@ a {
 }
 
 .callout-black {
-  border-left-color: #000;
+  border-color: #000;
 }
 .callout-black h2,
 .callout-black h3,

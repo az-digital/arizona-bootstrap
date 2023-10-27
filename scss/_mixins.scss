@@ -140,7 +140,7 @@
  * > CALLOUTS
  */
 @mixin callout-variant($color) {
-  border-left-color: $color;
+  border-color: $color;
 
   h2,
   h3,
