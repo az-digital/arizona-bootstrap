@@ -30,7 +30,7 @@
 
 // Variations
 @mixin bs-callout-variant($color) {
-  border-left-color: $color;
+  border-color: $color;
 
   h4 { color: $color; }
 }
