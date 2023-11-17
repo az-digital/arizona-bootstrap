@@ -27,6 +27,8 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     // Firefox's non-standard autocomplete behavior - see https://bugzilla.mozilla.org/show_bug.cgi?id=654072
     'Attribute “autocomplete” is only allowed when the input type is.*',
     'Attribute “autocomplete” not allowed on element “button” at this point.',
+    // Explicit role="main" is redundant for other modern browsers, but still valid.
+    'The “main” role is unnecessary for element “main”.',
     'Self-closing tag syntax in text/html documents is widely discouraged;.*',
     'Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.',
     // Per https://www.w3.org/TR/html-aria/#docconformance having "aria-disabled" on a link is
