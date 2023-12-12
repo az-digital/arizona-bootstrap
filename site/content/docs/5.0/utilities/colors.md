@@ -8,7 +8,7 @@ toc: true
 
 ## Overview
 
-{{< ourname >}} offers two "types" or colors: Brand colors and contextual (theme) colors. Brand colors are a collection of Arizona Branded colors offered by the <a href="https://brand.arizona.edu/ua-color-palette" target="_blank">Brand website</a>. Contextual colors are a smaller selection of Brand colors that are used to convey meaning and contextual information (e.g., success, warning, dager).
+{{< ourname >}} offers two "types" or colors: Brand colors and contextual (theme) colors. Brand colors are a collection of Arizona Branded colors offered by the <a href="https://marcom.arizona.edu/brand-guidelines/colors" target="_blank">Brand website</a>. Contextual colors are a smaller selection of Brand colors that are used to convey meaning and contextual information (e.g., success, warning, dager).
 
 When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim Color Contrast Checker</a> to verify your color contrast. Or, for your convenience, {{< ourname >}} also provides a [helpful tool]({{< docsref "/getting-started/color-contrast" >}}) to determine which Brand text colors have sufficient color contrast on other Brand background colors.
 
