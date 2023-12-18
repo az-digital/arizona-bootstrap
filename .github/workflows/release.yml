@@ -84,7 +84,7 @@ jobs:
           echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
 
       - name: Upload variables
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}/variables.json
