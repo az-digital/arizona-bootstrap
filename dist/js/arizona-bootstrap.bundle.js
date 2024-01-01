@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v2.0.25 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2023 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -4143,8 +4143,6 @@
   Popper.placements = placements;
   Popper.Defaults = Defaults;
 
-  var Popper$1 = Popper;
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v4.6.2): dropdown.js
@@ -4284,7 +4282,7 @@
       // Totally disable Popper for Dropdowns in Navbar
       if (!this._inNavbar && usePopper) {
         // Check for Popper dependency
-        if (typeof Popper$1 === 'undefined') {
+        if (typeof Popper === 'undefined') {
           throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)')
         }
 
@@ -4308,7 +4306,7 @@
           $(parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
-        this._popper = new Popper$1(referenceElement, this._menu, this._getPopperConfig());
+        this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
       }
 
       // If this is a touch-enabled device we add extra
@@ -5511,7 +5509,7 @@
 
   class Tooltip {
     constructor(element, config) {
-      if (typeof Popper$1 === 'undefined') {
+      if (typeof Popper === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)')
       }
 
@@ -5679,7 +5677,7 @@
 
         $(this.element).trigger(this.constructor.Event.INSERTED);
 
-        this._popper = new Popper$1(this.element, tip, this._getPopperConfig(attachment));
+        this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
 
         $(tip).addClass(CLASS_NAME_SHOW$4);
         $(tip).addClass(this.config.customClass);
