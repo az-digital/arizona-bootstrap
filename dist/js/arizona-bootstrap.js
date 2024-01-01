@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v2.0.25 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2023 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
