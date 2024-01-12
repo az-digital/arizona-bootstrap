@@ -30,6 +30,7 @@ RUN apt-get update \
     curl \
     git \
     jq \
+    openjdk-17-jre-headless \
     rsync \
     unzip \
   && rm -rf /var/lib/apt/lists/* \
