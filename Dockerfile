@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:18.19.0-bookworm-slim
+FROM --platform=linux/amd64 node:20.11.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
@@ -30,13 +30,14 @@ RUN apt-get update \
     curl \
     git \
     jq \
+    openjdk-17-jre-headless \
     rsync \
     unzip \
   && rm -rf /var/lib/apt/lists/* \
   && chmod 755 /root \
   && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install --location=global npm-check-updates@16.14.6 \
+  && npm install --location=global npm-check-updates@16.14.12 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
