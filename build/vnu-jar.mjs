@@ -2,21 +2,21 @@
 
 /*!
  * Script to run vnu-jar if Java is available.
- * Copyright 2017-2022 The Bootstrap Authors
- * Copyright 2017-2022 Twitter, Inc.
+ * Copyright 2017-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-'use strict'
-
-const { execFile, spawn } = require('node:child_process')
-const vnu = require('vnu-jar')
+import { execFile, spawn } from 'node:child_process'
+import vnu from 'vnu-jar'
 
 execFile('java', ['-version'], (error, stdout, stderr) => {
   if (error) {
-    console.error('Skipping vnu-jar test; Java is missing.')
+    console.error('Skipping vnu-jar test; Java is probably missing.')
+    console.error(error)
     return
   }
+
+  console.log('Running vnu-jar validation...')
 
   const is32bitJava = !/64-Bit/.test(stderr)
 
@@ -27,7 +27,6 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     // Firefox's non-standard autocomplete behavior - see https://bugzilla.mozilla.org/show_bug.cgi?id=654072
     'Attribute “autocomplete” is only allowed when the input type is.*',
     'Attribute “autocomplete” not allowed on element “button” at this point.',
-    // IE11 doesn't recognise <main> / give the element an implicit "main" landmark.
     // Explicit role="main" is redundant for other modern browsers, but still valid.
     'The “main” role is unnecessary for element “main”.',
     'Self-closing tag syntax in text/html documents is widely discouraged;.*',
@@ -53,6 +52,8 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
   if (is32bitJava) {
     args.splice(0, 0, '-Xss512k')
   }
+
+  console.log(`command used: java ${args.join(' ')}`)
 
   return spawn('java', args, {
     shell: true,

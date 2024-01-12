@@ -89,11 +89,11 @@
         "node": true
       },
       "parserOptions": {
-        "sourceType": "script"
+        "sourceType": "module"
       },
       "rules": {
         "no-console": "off",
-        "strict": "error"
+        "unicorn/prefer-top-level-await": "off"
       }
     },
     {
