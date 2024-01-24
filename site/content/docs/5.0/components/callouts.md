@@ -15,7 +15,7 @@ Callouts are similar to alerts, in that they call attention to a small portion o
 
 {{< example >}}
 {{< callout.inline >}}
-{{ range (index $.Site.Data.theme-colors) }}
+{{ range (index .Site.Data "theme-colors") }}
 <div class="callout callout-{{ .name }}{{ if eq .name "white" }} bg-dark{{ end }}">
   <p class="h4">{{ .name | title }} Callout</p>
   <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
