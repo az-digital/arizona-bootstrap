@@ -16456,400 +16456,136 @@ a {
   margin-top: -.25rem;
 }
 
-.callout-blue {
-  border-color: #0c234b;
-}
-
-.callout-blue h2,
-.callout-blue h3,
-.callout-blue h4,
-.callout-blue h5,
-.callout-blue h6,
-.callout-blue .h2,
-.callout-blue .text-size-h2,
-.callout-blue .h3,
-.callout-blue .text-size-h3,
-.callout-blue .h4,
-.callout-blue .text-size-h4,
-.callout-blue .h5,
-.callout-blue .text-size-h5,
-.callout-blue .h6,
-.callout-blue .text-size-h6 {
-  color: #0c234b;
-}
-
-.callout-red {
-  border-color: #ab0520;
-}
-
-.callout-red h2,
-.callout-red h3,
-.callout-red h4,
-.callout-red h5,
-.callout-red h6,
-.callout-red .h2,
-.callout-red .text-size-h2,
-.callout-red .h3,
-.callout-red .text-size-h3,
-.callout-red .h4,
-.callout-red .text-size-h4,
-.callout-red .h5,
-.callout-red .text-size-h5,
-.callout-red .h6,
-.callout-red .text-size-h6 {
-  color: #ab0520;
-}
-
-.callout-white {
-  border-color: #fff;
-}
-
-.callout-white h2,
-.callout-white h3,
-.callout-white h4,
-.callout-white h5,
-.callout-white h6,
-.callout-white .h2,
-.callout-white .text-size-h2,
-.callout-white .h3,
-.callout-white .text-size-h3,
-.callout-white .h4,
-.callout-white .text-size-h4,
-.callout-white .h5,
-.callout-white .text-size-h5,
-.callout-white .h6,
-.callout-white .text-size-h6 {
-  color: #fff;
-}
-
-.callout-bloom {
-  border-color: #ef4056;
-}
-
-.callout-bloom h2,
-.callout-bloom h3,
-.callout-bloom h4,
-.callout-bloom h5,
-.callout-bloom h6,
-.callout-bloom .h2,
-.callout-bloom .text-size-h2,
-.callout-bloom .h3,
-.callout-bloom .text-size-h3,
-.callout-bloom .h4,
-.callout-bloom .text-size-h4,
-.callout-bloom .h5,
-.callout-bloom .text-size-h5,
-.callout-bloom .h6,
-.callout-bloom .text-size-h6 {
-  color: #ef4056;
-}
-
-.callout-chili {
-  border-color: #8b0015;
-}
-
-.callout-chili h2,
-.callout-chili h3,
-.callout-chili h4,
-.callout-chili h5,
-.callout-chili h6,
-.callout-chili .h2,
-.callout-chili .text-size-h2,
-.callout-chili .h3,
-.callout-chili .text-size-h3,
-.callout-chili .h4,
-.callout-chili .text-size-h4,
-.callout-chili .h5,
-.callout-chili .text-size-h5,
-.callout-chili .h6,
-.callout-chili .text-size-h6 {
-  color: #8b0015;
-}
-
-.callout-sky {
-  border-color: #81d3eb;
-}
-
-.callout-sky h2,
-.callout-sky h3,
-.callout-sky h4,
-.callout-sky h5,
-.callout-sky h6,
-.callout-sky .h2,
-.callout-sky .text-size-h2,
-.callout-sky .h3,
-.callout-sky .text-size-h3,
-.callout-sky .h4,
-.callout-sky .text-size-h4,
-.callout-sky .h5,
-.callout-sky .text-size-h5,
-.callout-sky .h6,
-.callout-sky .text-size-h6 {
-  color: #81d3eb;
-}
-
-.callout-oasis {
-  border-color: #378dbd;
-}
-
-.callout-oasis h2,
-.callout-oasis h3,
-.callout-oasis h4,
-.callout-oasis h5,
-.callout-oasis h6,
-.callout-oasis .h2,
-.callout-oasis .text-size-h2,
-.callout-oasis .h3,
-.callout-oasis .text-size-h3,
-.callout-oasis .h4,
-.callout-oasis .text-size-h4,
-.callout-oasis .h5,
-.callout-oasis .text-size-h5,
-.callout-oasis .h6,
-.callout-oasis .text-size-h6 {
-  color: #378dbd;
-}
-
-.callout-azurite {
-  border-color: #1e5288;
-}
-
-.callout-azurite h2,
-.callout-azurite h3,
-.callout-azurite h4,
-.callout-azurite h5,
-.callout-azurite h6,
-.callout-azurite .h2,
-.callout-azurite .text-size-h2,
-.callout-azurite .h3,
-.callout-azurite .text-size-h3,
-.callout-azurite .h4,
-.callout-azurite .text-size-h4,
-.callout-azurite .h5,
-.callout-azurite .text-size-h5,
-.callout-azurite .h6,
-.callout-azurite .text-size-h6 {
-  color: #1e5288;
-}
-
-.callout-midnight {
-  border-color: #001c48;
-}
-
-.callout-midnight h2,
-.callout-midnight h3,
-.callout-midnight h4,
-.callout-midnight h5,
-.callout-midnight h6,
-.callout-midnight .h2,
-.callout-midnight .text-size-h2,
-.callout-midnight .h3,
-.callout-midnight .text-size-h3,
-.callout-midnight .h4,
-.callout-midnight .text-size-h4,
-.callout-midnight .h5,
-.callout-midnight .text-size-h5,
-.callout-midnight .h6,
-.callout-midnight .text-size-h6 {
-  color: #001c48;
-}
-
-.callout-cool-gray {
-  border-color: #e2e9eb;
-}
-
-.callout-cool-gray h2,
-.callout-cool-gray h3,
-.callout-cool-gray h4,
-.callout-cool-gray h5,
-.callout-cool-gray h6,
-.callout-cool-gray .h2,
-.callout-cool-gray .text-size-h2,
-.callout-cool-gray .h3,
-.callout-cool-gray .text-size-h3,
-.callout-cool-gray .h4,
-.callout-cool-gray .text-size-h4,
-.callout-cool-gray .h5,
-.callout-cool-gray .text-size-h5,
-.callout-cool-gray .h6,
-.callout-cool-gray .text-size-h6 {
-  color: #e2e9eb;
-}
-
-.callout-warm-gray {
-  border-color: #f4ede5;
-}
-
-.callout-warm-gray h2,
-.callout-warm-gray h3,
-.callout-warm-gray h4,
-.callout-warm-gray h5,
-.callout-warm-gray h6,
-.callout-warm-gray .h2,
-.callout-warm-gray .text-size-h2,
-.callout-warm-gray .h3,
-.callout-warm-gray .text-size-h3,
-.callout-warm-gray .h4,
-.callout-warm-gray .text-size-h4,
-.callout-warm-gray .h5,
-.callout-warm-gray .text-size-h5,
-.callout-warm-gray .h6,
-.callout-warm-gray .text-size-h6 {
-  color: #f4ede5;
-}
-
-.callout-leaf {
+.callout-success {
   border-color: #70b865;
 }
 
-.callout-leaf h2,
-.callout-leaf h3,
-.callout-leaf h4,
-.callout-leaf h5,
-.callout-leaf h6,
-.callout-leaf .h2,
-.callout-leaf .text-size-h2,
-.callout-leaf .h3,
-.callout-leaf .text-size-h3,
-.callout-leaf .h4,
-.callout-leaf .text-size-h4,
-.callout-leaf .h5,
-.callout-leaf .text-size-h5,
-.callout-leaf .h6,
-.callout-leaf .text-size-h6 {
+.callout-success h2,
+.callout-success h3,
+.callout-success h4,
+.callout-success h5,
+.callout-success h6,
+.callout-success .h2,
+.callout-success .text-size-h2,
+.callout-success .h3,
+.callout-success .text-size-h3,
+.callout-success .h4,
+.callout-success .text-size-h4,
+.callout-success .h5,
+.callout-success .text-size-h5,
+.callout-success .h6,
+.callout-success .text-size-h6 {
   color: #70b865;
 }
 
-.callout-river {
-  border-color: #007d84;
+.callout-info {
+  border-color: #81d3eb;
 }
 
-.callout-river h2,
-.callout-river h3,
-.callout-river h4,
-.callout-river h5,
-.callout-river h6,
-.callout-river .h2,
-.callout-river .text-size-h2,
-.callout-river .h3,
-.callout-river .text-size-h3,
-.callout-river .h4,
-.callout-river .text-size-h4,
-.callout-river .h5,
-.callout-river .text-size-h5,
-.callout-river .h6,
-.callout-river .text-size-h6 {
-  color: #007d84;
+.callout-info h2,
+.callout-info h3,
+.callout-info h4,
+.callout-info h5,
+.callout-info h6,
+.callout-info .h2,
+.callout-info .text-size-h2,
+.callout-info .h3,
+.callout-info .text-size-h3,
+.callout-info .h4,
+.callout-info .text-size-h4,
+.callout-info .h5,
+.callout-info .text-size-h5,
+.callout-info .h6,
+.callout-info .text-size-h6 {
+  color: #81d3eb;
 }
 
-.callout-silver {
-  border-color: #9eabae;
+.callout-warning {
+  border-color: #f19e1f;
 }
 
-.callout-silver h2,
-.callout-silver h3,
-.callout-silver h4,
-.callout-silver h5,
-.callout-silver h6,
-.callout-silver .h2,
-.callout-silver .text-size-h2,
-.callout-silver .h3,
-.callout-silver .text-size-h3,
-.callout-silver .h4,
-.callout-silver .text-size-h4,
-.callout-silver .h5,
-.callout-silver .text-size-h5,
-.callout-silver .h6,
-.callout-silver .text-size-h6 {
-  color: #9eabae;
+.callout-warning h2,
+.callout-warning h3,
+.callout-warning h4,
+.callout-warning h5,
+.callout-warning h6,
+.callout-warning .h2,
+.callout-warning .text-size-h2,
+.callout-warning .h3,
+.callout-warning .text-size-h3,
+.callout-warning .h4,
+.callout-warning .text-size-h4,
+.callout-warning .h5,
+.callout-warning .text-size-h5,
+.callout-warning .h6,
+.callout-warning .text-size-h6 {
+  color: #f19e1f;
 }
 
-.callout-mesa {
+.callout-danger {
   border-color: #a95c42;
 }
 
-.callout-mesa h2,
-.callout-mesa h3,
-.callout-mesa h4,
-.callout-mesa h5,
-.callout-mesa h6,
-.callout-mesa .h2,
-.callout-mesa .text-size-h2,
-.callout-mesa .h3,
-.callout-mesa .text-size-h3,
-.callout-mesa .h4,
-.callout-mesa .text-size-h4,
-.callout-mesa .h5,
-.callout-mesa .text-size-h5,
-.callout-mesa .h6,
-.callout-mesa .text-size-h6 {
+.callout-danger h2,
+.callout-danger h3,
+.callout-danger h4,
+.callout-danger h5,
+.callout-danger h6,
+.callout-danger .h2,
+.callout-danger .text-size-h2,
+.callout-danger .h3,
+.callout-danger .text-size-h3,
+.callout-danger .h4,
+.callout-danger .text-size-h4,
+.callout-danger .h5,
+.callout-danger .text-size-h5,
+.callout-danger .h6,
+.callout-danger .text-size-h6 {
   color: #a95c42;
 }
 
-.callout-ash {
-  border-color: #403635;
+.callout-light {
+  border-color: #dee2e6;
 }
 
-.callout-ash h2,
-.callout-ash h3,
-.callout-ash h4,
-.callout-ash h5,
-.callout-ash h6,
-.callout-ash .h2,
-.callout-ash .text-size-h2,
-.callout-ash .h3,
-.callout-ash .text-size-h3,
-.callout-ash .h4,
-.callout-ash .text-size-h4,
-.callout-ash .h5,
-.callout-ash .text-size-h5,
-.callout-ash .h6,
-.callout-ash .text-size-h6 {
-  color: #403635;
+.callout-light h2,
+.callout-light h3,
+.callout-light h4,
+.callout-light h5,
+.callout-light h6,
+.callout-light .h2,
+.callout-light .text-size-h2,
+.callout-light .h3,
+.callout-light .text-size-h3,
+.callout-light .h4,
+.callout-light .text-size-h4,
+.callout-light .h5,
+.callout-light .text-size-h5,
+.callout-light .h6,
+.callout-light .text-size-h6 {
+  color: #dee2e6;
 }
 
-.callout-sage {
-  border-color: #4a634e;
+.callout-dark {
+  border-color: #343a40;
 }
 
-.callout-sage h2,
-.callout-sage h3,
-.callout-sage h4,
-.callout-sage h5,
-.callout-sage h6,
-.callout-sage .h2,
-.callout-sage .text-size-h2,
-.callout-sage .h3,
-.callout-sage .text-size-h3,
-.callout-sage .h4,
-.callout-sage .text-size-h4,
-.callout-sage .h5,
-.callout-sage .text-size-h5,
-.callout-sage .h6,
-.callout-sage .text-size-h6 {
-  color: #4a634e;
-}
-
-.callout-black {
-  border-color: #000;
-}
-
-.callout-black h2,
-.callout-black h3,
-.callout-black h4,
-.callout-black h5,
-.callout-black h6,
-.callout-black .h2,
-.callout-black .text-size-h2,
-.callout-black .h3,
-.callout-black .text-size-h3,
-.callout-black .h4,
-.callout-black .text-size-h4,
-.callout-black .h5,
-.callout-black .text-size-h5,
-.callout-black .h6,
-.callout-black .text-size-h6 {
-  color: #000;
+.callout-dark h2,
+.callout-dark h3,
+.callout-dark h4,
+.callout-dark h5,
+.callout-dark h6,
+.callout-dark .h2,
+.callout-dark .text-size-h2,
+.callout-dark .h3,
+.callout-dark .text-size-h3,
+.callout-dark .h4,
+.callout-dark .text-size-h4,
+.callout-dark .h5,
+.callout-dark .text-size-h5,
+.callout-dark .h6,
+.callout-dark .text-size-h6 {
+  color: #343a40;
 }
 
 .callout-silver h1,
