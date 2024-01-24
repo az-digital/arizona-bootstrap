@@ -25,7 +25,7 @@
   }
 }
 
-@each $color, $value in $colors {
+@each $color, $value in $theme-colors {
   .callout-#{$color} {
     @include callout-variant($value);
   }
