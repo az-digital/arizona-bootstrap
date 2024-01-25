@@ -25,21 +25,25 @@
   }
 }
 
+@each $color, $value in $colors {
+  .callout-#{$color} {
+    @include callout-variant($value);
+  }
+}
+
 @each $color, $value in $theme-colors {
   .callout-#{$color} {
     @include callout-variant($value);
   }
 }
 
-.callout-dark {
-  @extend .bg-dark;
-}
-
 // ensure color contrast
 .callout-silver,
 .callout-cool-gray,
 .callout-warm-gray,
-.callout-sky {
+.callout-sky,
+.callout-info,
+.callout-light {
   h1,
   h2,
   h3,
