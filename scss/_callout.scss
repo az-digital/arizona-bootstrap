@@ -31,15 +31,22 @@
   }
 }
 
-.callout-dark {
-  @extend .bg-dark;
+@each $color, $value in $theme-colors {
+  .callout-#{$color} {
+    @include callout-variant($value);
+  }
 }
 
 // ensure color contrast
 .callout-silver,
 .callout-cool-gray,
 .callout-warm-gray,
-.callout-sky {
+.callout-leaf,
+.callout-sky,
+.callout-info,
+.callout-light,
+.callout-success,
+.callout-warning {
   h1,
   h2,
   h3,
