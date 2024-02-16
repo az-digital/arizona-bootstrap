@@ -141,6 +141,12 @@ In general, developers should use the main branch version of the icons for devel
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
+      <p class="text-size-h2 mb-2"><i class="az-icon-x-twitter"></i></p>
+      <p class="small"><code class="text-blue">.az-icon-x-twitter</code></p>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-sm-1 col-lg-3">
+    <div class="text-center mb-4">
       <p class="text-size-h2 mb-2"><i class="az-icon-wildcat"></i></p>
       <p class="small"><code class="text-blue">.az-icon-wildcat</code></p>
     </div>
