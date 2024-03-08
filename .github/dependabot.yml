@@ -14,6 +14,11 @@ updates:
     labels:
       - "ci"
       - "2.0.x only"
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
 
   - package-ecosystem: "npm"
     directory: "/"
@@ -25,6 +30,11 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - "ci"
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
 
   - package-ecosystem: "docker"
     directory: "/"
