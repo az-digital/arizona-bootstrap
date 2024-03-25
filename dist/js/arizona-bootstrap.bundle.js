@@ -7117,7 +7117,7 @@
   }
   function _toPropertyKey(t) {
     var i = _toPrimitive(t, "string");
-    return "symbol" == typeof i ? i : String(i);
+    return "symbol" == typeof i ? i : i + "";
   }
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -7400,7 +7400,7 @@
         }
       });
     };
-    _createClass(Offcanvasmenu, null, [{
+    return _createClass(Offcanvasmenu, null, [{
       key: "AZ_VERSION",
       get: function get() {
         return AZ_VERSION;
@@ -7411,7 +7411,6 @@
         return Default;
       }
     }]);
-    return Offcanvasmenu;
   }();
   /**
    * ------------------------------------------------------------------------
