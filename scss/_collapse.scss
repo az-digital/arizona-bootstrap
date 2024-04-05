@@ -21,7 +21,7 @@
     .btn {
       display: block;
       width: 100%;
-      padding: .75rem 1.25rem;
+      padding: .75rem 2.25rem .75rem 1.25rem;
       color: $dark-silver;
       text-align: left;
       text-transform: none;
@@ -29,13 +29,23 @@
       &::after {
         position: absolute;
         top: 2px;
-        right: 20px;
+        right: 10px;
         display: inline-block;
         // stylelint-disable-next-line
         font-family: "Material Icons Sharp";
         font-size: 2em;
         font-variant-ligatures: no-common-ligatures;
         content: "expand_more";
+      }
+
+    }
+
+    @include media-breakpoint-up(sm) {
+      .btn {
+        padding-right: 3rem;
+        &::after {
+          right: 20px;
+        }
       }
 
     }
