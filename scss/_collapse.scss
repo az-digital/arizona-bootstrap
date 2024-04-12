@@ -1,6 +1,6 @@
 // Overrides & custom for the Collapse component
 
-// make entire accordion header clickable for accessibility and UX
+// Make entire accordion header clickable for accessibility and UX
 .accordion {
   .card-header {
     padding: 0;
@@ -19,36 +19,27 @@
     }
 
     .btn {
-      display: block;
+      display: flex;
       width: 100%;
-      padding: .75rem 2.25rem .75rem 1.25rem;
+      padding: .75rem 1.25rem;
       color: $dark-silver;
       text-align: left;
       text-transform: none;
+      justify-content: space-between;
+      align-items: center;
 
       &::after {
-        position: absolute;
-        top: 2px;
-        right: 10px;
-        display: inline-block;
         // stylelint-disable-next-line
         font-family: "Material Icons Sharp";
         font-size: 2em;
         font-variant-ligatures: no-common-ligatures;
         content: "expand_more";
+        margin-left: 1rem;
+        line-height: 1rem;
       }
 
     }
 
-    @include media-breakpoint-up(sm) {
-      .btn {
-        padding-right: 3rem;
-        &::after {
-          right: 20px;
-        }
-      }
-
-    }
     .btn[aria-expanded="true"] {
       &::after {
         content: "expand_less";
