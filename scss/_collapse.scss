@@ -20,22 +20,22 @@
 
     .btn {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 100%;
       padding: .75rem 1.25rem;
       color: $dark-silver;
       text-align: left;
       text-transform: none;
-      justify-content: space-between;
-      align-items: center;
 
       &::after {
+        margin-left: 1rem;
         // stylelint-disable-next-line
         font-family: "Material Icons Sharp";
         font-size: 2em;
         font-variant-ligatures: no-common-ligatures;
-        content: "expand_more";
-        margin-left: 1rem;
         line-height: 1rem;
+        content: "expand_more";
       }
 
     }
