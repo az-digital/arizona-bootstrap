@@ -21578,6 +21578,10 @@ have been deprecated in Bootstrap 4.
   content: "expand_less";
 }
 
+.accordion .card-header .btn-link {
+  color: #49595e;
+}
+
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.8);
 }

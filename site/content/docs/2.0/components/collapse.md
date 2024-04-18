@@ -81,8 +81,8 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
 <div class="accordion" id="ex1_accordionExample">
   <div class="card">
     <div class="card-header" id="ex1_headingOne">
-      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ex1_collapseOne" aria-expanded="true" aria-controls="ex1_collapseOne">
-        Collapsible Group Item #1
+      <button class="btn" type="button" data-toggle="collapse" data-target="#ex1_collapseOne" aria-expanded="true" aria-controls="ex1_collapseOne">
+        <span class="btn-link">Collapsible Group Item #1</span>
       </button>
     </div>
     <div id="ex1_collapseOne" class="collapse show" aria-labelledby="ex1_headingOne" data-parent="#ex1_accordionExample">
@@ -93,8 +93,8 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
   </div>
   <div class="card">
     <div class="card-header" id="ex1_headingTwo">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseTwo" aria-expanded="false" aria-controls="ex1_collapseTwo">
-        Collapsible Group Item #2
+      <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseTwo" aria-expanded="false" aria-controls="ex1_collapseTwo">
+        <span class="btn-link">Collapsible Group Item #2</span>
       </button>
     </div>
     <div id="ex1_collapseTwo" class="collapse" aria-labelledby="ex1_headingTwo" data-parent="#ex1_accordionExample">
@@ -105,8 +105,8 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
   </div>
   <div class="card">
     <div class="card-header" id="ex1_headingThree">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseThree" aria-expanded="false" aria-controls="ex1_collapseThree">
-        Collapsible Group Item #3
+      <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseThree" aria-expanded="false" aria-controls="ex1_collapseThree">
+        <span class="btn-link">Collapsible Group Item #3</span>
       </button>
     </div>
     <div id="ex1_collapseThree" class="collapse" aria-labelledby="ex1_headingThree" data-parent="#ex1_accordionExample">
@@ -125,8 +125,8 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingOne">
       <h3 class="my-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ex2_collapseOne" aria-expanded="true" aria-controls="ex2_collapseOne">
-          Collapsible Group Item #1
+        <button class="btn" type="button" data-toggle="collapse" data-target="#ex2_collapseOne" aria-expanded="true" aria-controls="ex2_collapseOne">
+          <span class="btn-link">Collapsible Group Item #1</span>
         </button>
       </h3>
     </div>
@@ -139,8 +139,8 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingTwo">
       <h3 class="my-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseTwo" aria-expanded="false" aria-controls="ex2_collapseTwo">
-          Collapsible Group Item #2
+        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseTwo" aria-expanded="false" aria-controls="ex2_collapseTwo">
+          <span class="btn-link">Collapsible Group Item #2</span>
         </button>
       </h3>
     </div>
@@ -153,8 +153,8 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingThree">
       <h3 class="my-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseThree" aria-expanded="false" aria-controls="ex2_collapseThree">
-          Collapsible Group Item #3
+        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseThree" aria-expanded="false" aria-controls="ex2_collapseThree">
+          <span class="btn-link">Collapsible Group Item #3</span>
         </button>
       </h3>
     </div>
