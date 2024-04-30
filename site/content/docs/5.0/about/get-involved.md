@@ -17,7 +17,7 @@ If you want to get involved, you can:
   <li>Submit pull requests on GitHub</li>
 </ul>
 
-Questions, bug reports or suggestions can also be emailed to [uadigital@email.arizona.edu](mailto:uadigital@email.arizona.edu) or (preferably!) reported on Slack.
+Questions, bug reports or suggestions can also be emailed to [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or (preferably!) reported on Slack.
 
 ## Join Our Meetings
 
