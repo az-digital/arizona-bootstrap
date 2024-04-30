@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v2.0.25 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v2.0.26 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -4503,7 +4503,7 @@
   }
   function _toPropertyKey(t) {
     var i = _toPrimitive(t, "string");
-    return "symbol" == typeof i ? i : String(i);
+    return "symbol" == typeof i ? i : i + "";
   }
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -4786,7 +4786,7 @@
         }
       });
     };
-    _createClass(Offcanvasmenu, null, [{
+    return _createClass(Offcanvasmenu, null, [{
       key: "AZ_VERSION",
       get: function get() {
         return AZ_VERSION;
@@ -4797,7 +4797,6 @@
         return Default;
       }
     }]);
-    return Offcanvasmenu;
   }();
   /**
    * ------------------------------------------------------------------------

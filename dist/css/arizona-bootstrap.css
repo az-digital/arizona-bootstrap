@@ -21553,7 +21553,7 @@ have been deprecated in Bootstrap 4.
 .accordion .card-header .btn {
   display: block;
   width: 100%;
-  padding: .75rem 1.25rem;
+  padding: .75rem 2.25rem .75rem 1.25rem;
   color: #49595e;
   text-align: left;
   text-transform: none;
@@ -21562,13 +21562,22 @@ have been deprecated in Bootstrap 4.
 .accordion .card-header .btn::after {
   position: absolute;
   top: 2px;
-  right: 20px;
+  right: 10px;
   display: inline-block;
   font-family: "Material Icons Sharp";
   font-size: 2em;
   -webkit-font-variant-ligatures: no-common-ligatures;
   font-variant-ligatures: no-common-ligatures;
   content: "expand_more";
+}
+
+@media (min-width: 576px) {
+  .accordion .card-header .btn {
+    padding-right: 3rem;
+  }
+  .accordion .card-header .btn::after {
+    right: 20px;
+  }
 }
 
 .accordion .card-header .btn[aria-expanded="true"]::after {
