@@ -88,21 +88,25 @@ For file inputs, swap the `.form-control` for `.form-control-file`.
 Set heights using classes like `.form-control-lg` and `.form-control-sm`.
 
 {{< example >}}
-<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-<input class="form-control" type="text" placeholder="Default input">
-<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+<form>
+  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+  <input class="form-control" type="text" placeholder="Default input">
+  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+</form>
 {{< /example >}}
 
 {{< example >}}
-<select class="form-control form-control-lg">
-  <option>Large select</option>
-</select>
-<select class="form-control">
-  <option>Default select</option>
-</select>
-<select class="form-control form-control-sm">
-  <option>Small select</option>
-</select>
+<form>
+  <select class="form-control form-control-lg">
+    <option>Large select</option>
+  </select>
+  <select class="form-control">
+    <option>Default select</option>
+  </select>
+  <select class="form-control form-control-sm">
+    <option>Small select</option>
+  </select>
+</form>
 {{< /example >}}
 
 ### Readonly
@@ -174,39 +178,43 @@ Checkboxes and radio buttons support HTML-based form validation and provide conc
 By default, any number of checkboxes and radios that are immediate sibling will be vertically stacked and appropriately spaced with `.form-check`.
 
 {{< example >}}
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
-    Default checkbox
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-  <label class="form-check-label" for="defaultCheck2">
-    Disabled checkbox
-  </label>
-</div>
+<form>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      Default checkbox
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+    <label class="form-check-label" for="defaultCheck2">
+      Disabled checkbox
+    </label>
+  </div>
+</form>
 {{< /example >}}
 
 {{< example >}}
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Default radio
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Second default radio
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-  <label class="form-check-label" for="exampleRadios3">
-    Disabled radio
-  </label>
-</div>
+<form>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      Default radio
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+    <label class="form-check-label" for="exampleRadios2">
+      Second default radio
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+    <label class="form-check-label" for="exampleRadios3">
+      Disabled radio
+    </label>
+  </div>
+</form>
 {{< /example >}}
 
 ### Inline
@@ -214,33 +222,37 @@ By default, any number of checkboxes and radios that are immediate sibling will 
 Group checkboxes or radios on the same horizontal row by adding `.form-check-inline` to any `.form-check`.
 
 {{< example >}}
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="form-check-label" for="inlineCheckbox2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-</div>
+<form>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+  </div>
+</form>
 {{< /example >}}
 
 {{< example >}}
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-  <label class="form-check-label" for="inlineRadio1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-  <label class="form-check-label" for="inlineRadio2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-</div>
+<form>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">2</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+  </div>
+</form>
 {{< /example >}}
 
 ### Without Labels
@@ -248,12 +260,14 @@ Group checkboxes or radios on the same horizontal row by adding `.form-check-inl
 Add `.position-static` to inputs within `.form-check` that don't have any label text. Remember to still provide some form of accessible name for assistive technologies (for instance, using `aria-label`).
 
 {{< example >}}
-<div class="form-check">
-  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-</div>
-<div class="form-check">
-  <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-</div>
+<form>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+  </div>
+</form>
 {{< /example >}}
 
 ## Layout
@@ -639,11 +653,13 @@ Help text should be explicitly associated with the form control it relates to us
 Help text below inputs can be styled with `.form-text`. This class includes `display: block` and adds some top margin for easy spacing from the inputs above.
 
 {{< example >}}
-<label for="inputPassword5">Password</label>
-<input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-<small id="passwordHelpBlock" class="form-text text-muted">
-  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-</small>
+<form>
+  <label for="inputPassword5">Password</label>
+  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+  <small id="passwordHelpBlock" class="form-text text-muted">
+    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+  </small>
+</form>
 {{< /example >}}
 
 Inline text can use any typical inline HTML element (be it a `<small>`, `<span>`, or something else) with nothing more than a utility class.
@@ -1128,20 +1144,24 @@ In the checked states, we use **base64 embedded SVG icons** from [Open Iconic](h
 #### Checkboxes
 
 {{< example >}}
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheck1">
-  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-</div>
+<form>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+  </div>
+</form>
 {{< /example >}}
 
 Custom checkboxes can also utilize the `:indeterminate` pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).
 
-<div class="bd-example bd-example-indeterminate">
-  <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customCheck2">
-    <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+<form>
+  <div class="bd-example bd-example-indeterminate">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="customCheck2">
+      <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+    </div>
   </div>
-</div>
+</form>
 
 If you're using jQuery, something like this should suffice:
 
@@ -1152,27 +1172,31 @@ $('.your-checkbox').prop('indeterminate', true)
 #### Radios
 
 {{< example >}}
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-</div>
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-</div>
+<form>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+  </div>
+</form>
 {{< /example >}}
 
 #### Inline
 
 {{< example >}}
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
-</div>
+<form>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+  </div>
+</form>
 {{< /example >}}
 
 #### Disabled
@@ -1180,15 +1204,18 @@ $('.your-checkbox').prop('indeterminate', true)
 Custom checkboxes and radios can also be disabled. Add the `disabled` boolean attribute to the `<input>` and the custom indicator and label description will be automatically styled.
 
 {{< example >}}
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheckDisabled1" disabled>
-  <label class="custom-control-label" for="customCheckDisabled1">Check this custom checkbox</label>
-</div>
+<form>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheckDisabled1" disabled>
+    <label class="custom-control-label" for="customCheckDisabled1">Check this custom checkbox</label>
+  </div>
 
-<div class="custom-control custom-radio">
-  <input type="radio" name="radioDisabled" id="customRadioDisabled2" class="custom-control-input" disabled>
-  <label class="custom-control-label" for="customRadioDisabled2">Toggle this custom radio</label>
-</div>
+  <div class="custom-control custom-radio">
+    <input type="radio" name="radioDisabled" id="customRadioDisabled2" class="custom-control-input" disabled>
+    <label class="custom-control-label" for="customRadioDisabled2">Toggle this custom radio</label>
+  </div>
+</form>
+
 {{< /example >}}
 
 ### Switches
@@ -1196,14 +1223,16 @@ Custom checkboxes and radios can also be disabled. Add the `disabled` boolean at
 A switch has the markup of a custom checkbox but uses the `.custom-switch` class to render a toggle switch. Switches also support the `disabled` attribute.
 
 {{< example >}}
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-  <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-</div>
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-  <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
-</div>
+<form>
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+  </div>
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+    <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+  </div>
+</form>
 {{< /example >}}
 
 ### Select Menu
@@ -1264,22 +1293,28 @@ As is the `size` attribute:
 Create custom `<input type="range">` controls with `.custom-range`. The track (the background) and thumb (the value) are both styled to appear the same across browsers. As only IE and Firefox support "filling" their track from the left or right of the thumb as a means to visually indicate progress, we do not currently support it.
 
 {{< example >}}
-<label for="customRange1">Example range</label>
-<input type="range" class="custom-range" id="customRange1">
+<form>
+  <label for="customRange1">Example range</label>
+  <input type="range" class="custom-range" id="customRange1">
+</form>
 {{< /example >}}
 
 Range inputs have implicit values for `min` and `max`—`0` and `100`, respectively. You may specify new values for those using the `min` and `max` attributes.
 
 {{< example >}}
-<label for="customRange2">Example range</label>
-<input type="range" class="custom-range" min="0" max="5" id="customRange2">
+<form>
+  <label for="customRange2">Example range</label>
+  <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+</form>
 {{< /example >}}
 
 By default, range inputs "snap" to integer values. To change this, you can specify a `step` value. In the example below, we double the number of steps by using `step="0.5"`.
 
 {{< example >}}
-<label for="customRange3">Example range</label>
-<input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
+<form>
+  <label for="customRange3">Example range</label>
+  <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
+</form>
 {{< /example >}}
 
 ### File Browser
@@ -1291,10 +1326,12 @@ The recommended plugin to animate custom file input: [bs-custom-file-input](http
 The file input is the most gnarly of the bunch and requires additional JavaScript if you'd like to hook them up with functional *Choose file...* and selected file name text.
 
 {{< example >}}
-<div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFile">
-  <label class="custom-file-label" for="customFile">Choose file</label>
-</div>
+<form>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+  </div>
+</form>
 {{< /example >}}
 
 We hide the default file `<input>` via `opacity` and instead style the `<label>`. The button is generated and positioned with `::after`. Lastly, we declare a `width` and `height` on the `<input>` for proper spacing for surrounding content.
@@ -1313,10 +1350,12 @@ $custom-file-text: (
 Here's `lang(es)` in action on the custom file input for a Spanish translation:
 
 {{< example >}}
-<div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-</div>
+<form>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+  </div>
+</form>
 {{< /example >}}
 
 You'll need to set the language of your document (or subtree thereof) correctly in order for the correct text to be shown. This can be done using [the `lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) on the `<html>` element or the [`Content-Language` HTTP header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.12), among other methods.
@@ -1326,8 +1365,10 @@ You'll need to set the language of your document (or subtree thereof) correctly 
 Bootstrap also provides a way to translate the "Browse" text in HTML with the `data-browse` attribute which can be added to the custom input label (example in Dutch):
 
 {{< example >}}
-<div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFileLangHTML">
-  <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Voeg je document toe</label>
-</div>
+<form>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFileLangHTML">
+    <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Voeg je document toe</label>
+  </div>
+</form>
 {{< /example >}}
