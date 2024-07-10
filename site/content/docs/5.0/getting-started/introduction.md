@@ -82,7 +82,7 @@ Be sure to have your pages set up with the latest design and development standar
         </div>
       </div>
     </div>
-    <main role="main">
+    <main>
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -98,7 +98,7 @@ Be sure to have your pages set up with the latest design and development standar
         <div class="row">
           <div class="col-12">
             <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button>
-            <hr />
+            <hr>
             <small class="text-black">The University of Arizona</small>
           </div>
         </div>
@@ -144,7 +144,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
         </div>
       </div>
     </div>
-    <main role="main" class="flex-shrink-0">
+    <main class="flex-shrink-0">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -160,7 +160,7 @@ If you want your footer to remain at the bottom of the page even when you don't 
         <div class="row">
           <div class="col-12">
             <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button> | <button class="btn btn-link">Link</button>
-            <hr />
+            <hr>
             <small class="text-black">The University of Arizona</small>
           </div>
         </div>
