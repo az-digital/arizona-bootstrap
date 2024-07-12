@@ -109,8 +109,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova-bold">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -132,8 +132,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-bold-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -155,8 +155,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova">
  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
- <span>abcdefghijklmnopqrstuvwxyz</span> <br />
- <span>0123456789</span> <br />
+ <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+ <span>0123456789</span> <br>
  <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -178,8 +178,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -201,8 +201,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-ec-bold-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -224,8 +224,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova-ec-bold">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -247,8 +247,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-ec-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -270,8 +270,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova-ec">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -293,8 +293,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova-c-bold">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -316,8 +316,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-c-bold-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -339,8 +339,8 @@ font-style: normal;
 {{< example >}}
 <div class="proxima-nova-c">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -362,8 +362,8 @@ font-style: italic;
 {{< example >}}
 <div class="proxima-nova-c-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br />
-  <span>0123456789</span> <br />
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
   <span>!@#$%^&</span>
 </div>
 {{< /example >}}
@@ -440,7 +440,7 @@ p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Seg
             <form id="bigcontrol" name="bigcontrol"><button id="abcView" name="abcView" type="button" style="margin-right:15px; margin-bottom:15px;" class="btn btn-outline-light js-abcButton-trigger">ABC</button>
               <p><strong>Or try your own text:</strong></p>
               <div class="input-group">
-                <input maxlength="120" name="customSampleText" size="62" type="text" value="Bear Down, Arizona. Bear Down, red and blue." class="form-control"/>
+                <input maxlength="120" name="customSampleText" size="62" type="text" value="Bear Down, Arizona. Bear Down, red and blue." class="form-control">
                 <div class="input-group-btn"><button id="customSampleBtn" name="customSampleBtn" type="button" class="btn btn-info js-custom-sample-trigger">Go</button></div>
               </div>
             </form>
