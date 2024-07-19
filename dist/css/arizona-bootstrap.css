@@ -18746,6 +18746,7 @@ a {
 }
 .btn {
   font-weight: 500;
+  text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.04em;
   white-space: normal;
