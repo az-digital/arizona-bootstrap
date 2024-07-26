@@ -18746,7 +18746,6 @@ a {
 }
 .btn {
   font-weight: 500;
-  text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.04em;
   white-space: normal;
@@ -24852,17 +24851,6 @@ have been deprecated in Bootstrap 4.
 
 #hide-inaccessible-label {
   cursor: pointer;
-}
-
-form label:not(.form-check-label) {
-  font-size: 18px;
-  font-weight: 700;
-}
-form .custom-checkbox label,
-form .custom-radio label,
-form .custom-switch label {
-  font-size: initial;
-  font-weight: initial;
 }
 
 /*# sourceMappingURL=arizona-bootstrap.css.map */
