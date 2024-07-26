@@ -24853,4 +24853,15 @@ have been deprecated in Bootstrap 4.
   cursor: pointer;
 }
 
+form label:not(.form-check-label) {
+  font-size: 18px;
+  font-weight: 700;
+}
+form .custom-checkbox label,
+form .custom-radio label,
+form .custom-switch label {
+  font-size: initial;
+  font-weight: initial;
+}
+
 /*# sourceMappingURL=arizona-bootstrap.css.map */
