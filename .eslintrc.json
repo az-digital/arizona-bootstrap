@@ -14,6 +14,35 @@
       "error",
       "never"
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always"
+      }
+    ],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-absolute-path": "error",
+    "import/no-amd": "error",
+    "import/no-cycle": [
+      "error",
+      {
+        "ignoreExternal": true
+      }
+    ],
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-named-as-default": "error",
+    "import/no-named-as-default-member": "error",
+    "import/no-named-default": "error",
+    "import/no-self-import": "error",
+    "import/no-unassigned-import": [
+      "error"
+    ],
+    "import/no-useless-path-segments": "error",
+    "import/order": "error",
     "indent": [
       "error",
       2,
@@ -22,9 +51,14 @@
         "SwitchCase": 1
       }
     ],
+    "logical-assignment-operators": "off",
     "max-params": [
       "warn",
       5
+    ],
+    "multiline-ternary": [
+      "error",
+      "always-multiline"
     ],
     "new-cap": [
       "error",
@@ -33,7 +67,6 @@
       }
     ],
     "no-console": "error",
-    "no-mixed-operators": "off",
     "no-negated-condition": "off",
     "object-curly-spacing": [
       "error",
@@ -43,40 +76,31 @@
       "error",
       "after"
     ],
+    "prefer-object-has-own": "off",
     "prefer-template": "error",
     "semi": [
       "error",
       "never"
     ],
-    "unicorn/consistent-function-scoping": "off",
+    "strict": "error",
     "unicorn/explicit-length-check": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/no-anonymous-default-export": "off",
     "unicorn/no-array-callback-reference": "off",
-    "unicorn/no-array-for-each": "off",
     "unicorn/no-array-method-this-argument": "off",
-    "unicorn/no-for-loop": "off",
     "unicorn/no-null": "off",
     "unicorn/no-typeof-undefined": "off",
     "unicorn/no-unused-properties": "error",
-    "unicorn/no-useless-undefined": "off",
     "unicorn/numeric-separators-style": "off",
-    "unicorn/prefer-array-find": "off",
     "unicorn/prefer-array-flat": "off",
     "unicorn/prefer-at": "off",
-    "unicorn/prefer-dom-node-append": "off",
     "unicorn/prefer-dom-node-dataset": "off",
-    "unicorn/prefer-dom-node-remove": "off",
-    "unicorn/prefer-includes": "off",
-    "unicorn/prefer-math-trunc": "off",
     "unicorn/prefer-module": "off",
-    "unicorn/prefer-number-properties": "off",
-    "unicorn/prefer-optional-catch-binding": "off",
-    "unicorn/prefer-prototype-methods": "off",
     "unicorn/prefer-query-selector": "off",
-    "unicorn/prefer-reflect-apply": "off",
-    "unicorn/prefer-set-has": "off",
     "unicorn/prefer-spread": "off",
-    "unicorn/prefer-string-replace-all": "off", 
-    "unicorn/prefer-top-level-await": "off",
+    "unicorn/prefer-string-raw": "off",
+    "unicorn/prefer-string-replace-all": "off",
+    "unicorn/prefer-structured-clone": "off",
     "unicorn/prevent-abbreviations": "off"
   },
   "overrides": [
@@ -98,23 +122,112 @@
     },
     {
       "files": [
+        "js/**"
+      ],
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    },
+    {
+      "files": [
+        "js/tests/*.js",
+        "js/tests/integration/rollup*.js"
+      ],
+      "env": {
+        "node": true
+      },
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    },
+    {
+      "files": [
+        "js/tests/unit/**"
+      ],
+      "env": {
+        "jasmine": true
+      },
+      "rules": {
+        "no-console": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/no-useless-undefined": "off",
+        "unicorn/prefer-add-event-listener": "off"
+      }
+    },
+    {
+      "files": [
+        "js/tests/visual/**"
+      ],
+      "plugins": [
+        "html"
+      ],
+      "settings": {
+        "html/html-extensions": [
+          ".html"
+        ]
+      },
+      "rules": {
+        "no-console": "off",
+        "no-new": "off",
+        "unicorn/no-array-for-each": "off"
+      }
+    },
+    {
+      "files": [
+        "scss/tests/**"
+      ],
+      "env": {
+        "node": true
+      },
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    },
+    {
+      "files": [
         "site/**"
       ],
       "env": {
-        "es6": false,
-        "jquery": true
+        "browser": true,
+        "node": false
       },
       "parserOptions": {
-        "ecmaVersion": 5,
-        "sourceType": "script"
+        "sourceType": "script",
+        "ecmaVersion": 2019
       },
       "rules": {
-        "no-var": "off",
-        "object-shorthand": "off",
-        "prefer-arrow-callback": "off",
-        "prefer-destructuring": "off",
-        "prefer-template": "off",
-        "strict": "error",
+        "no-new": "off",
+        "unicorn/no-array-for-each": "off"
+      }
+    },
+    {
+      "files": [
+        "site/assets/js/**"
+      ],
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020
+      }
+    },
+    {
+      "files": [
+        "**/*.md"
+      ],
+      "plugins": [
+        "markdown"
+      ],
+      "processor": "markdown/markdown"
+    },
+    {
+      "files": [
+        "**/*.md/*.js",
+        "**/*.md/*.mjs"
+      ],
+      "extends": "plugin:markdown/recommended-legacy",
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
         "unicorn/prefer-node-protocol": "off"
       }
     }
