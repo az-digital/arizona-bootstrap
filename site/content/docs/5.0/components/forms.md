@@ -419,8 +419,8 @@ At times, you maybe need to use margin or padding utilities to create that perfe
       </div>
     </div>
   </fieldset>
-  <div class="form-group row">
-    <div class="col-sm-2">Checkbox</div>
+  <fieldset class="form-group row">
+    <legend class="col-form-label col-sm-2 float-sm-left pt-0">Checkbox</legend>
     <div class="col-sm-10">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -429,7 +429,7 @@ At times, you maybe need to use margin or padding utilities to create that perfe
         </label>
       </div>
     </div>
-  </div>
+  </fieldset>
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-red">Sign in</button>
