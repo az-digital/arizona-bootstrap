@@ -2679,6 +2679,8 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .col-form-label {
@@ -2686,6 +2688,7 @@ progress {
   padding-bottom: calc(0.375rem + var(--bs-border-width));
   margin-bottom: 0;
   font-size: inherit;
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -24853,15 +24856,16 @@ have been deprecated in Bootstrap 4.
   cursor: pointer;
 }
 
-form label:not(.form-check-label) {
-  font-size: 18px;
-  font-weight: 700;
+.col-form-label {
+  font-size: 1.125rem;
 }
-form .custom-checkbox label,
-form .custom-radio label,
-form .custom-switch label {
-  font-size: initial;
-  font-weight: initial;
+
+.col-form-label-lg {
+  font-size: 1.25rem;
+}
+
+.col-form-label-sm {
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=arizona-bootstrap.css.map */

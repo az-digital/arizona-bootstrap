@@ -1,15 +1,11 @@
-form {
-  legend.col-form-label,
-  label:not(.form-check-label) {
-    font-size: 1.125rem;
-    font-weight: 700;
-  }
-  .custom-checkbox,
-  .custom-radio,
-  .custom-switch {
-    label {
-      font-size: initial;
-      font-weight: initial;
-    }
-  }
+.col-form-label {
+  @include font-size($form-label-font-size);
+}
+
+.col-form-label-lg {
+  @include font-size($input-font-size-lg);
+}
+
+.col-form-label-sm {
+  @include font-size($input-font-size-sm);
 }
