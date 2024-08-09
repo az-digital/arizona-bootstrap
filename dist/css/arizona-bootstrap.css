@@ -21653,4 +21653,17 @@ have been deprecated in Bootstrap 4.
 #hide-inaccessible-label {
   cursor: pointer;
 }
+
+.col-form-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.col-form-label-lg {
+  font-size: 1.25rem;
+}
+
+.col-form-label-sm {
+  font-size: 0.875rem;
+}
 /*# sourceMappingURL=arizona-bootstrap.css.map */

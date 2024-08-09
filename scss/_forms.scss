@@ -1,0 +1,12 @@
+.col-form-label {
+  @include font-size($form-label-font-size);
+  font-weight: $form-label-font-weight;
+}
+
+.col-form-label-lg {
+  @include font-size($input-font-size-lg);
+}
+
+.col-form-label-sm {
+  @include font-size($input-font-size-sm);
+}
