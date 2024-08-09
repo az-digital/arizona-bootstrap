@@ -2679,6 +2679,8 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .col-form-label {
@@ -2686,6 +2688,7 @@ progress {
   padding-bottom: calc(0.375rem + var(--bs-border-width));
   margin-bottom: 0;
   font-size: inherit;
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -24851,6 +24854,18 @@ have been deprecated in Bootstrap 4.
 
 #hide-inaccessible-label {
   cursor: pointer;
+}
+
+.col-form-label {
+  font-size: 1.125rem;
+}
+
+.col-form-label-lg {
+  font-size: 1.25rem;
+}
+
+.col-form-label-sm {
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=arizona-bootstrap.css.map */
