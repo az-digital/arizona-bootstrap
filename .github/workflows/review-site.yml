@@ -35,7 +35,7 @@ jobs:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ AZ_DOCKER_REGISTRY }}
+          registry: $AZ_DOCKER_REGISTRY
           username: ${{ github.actor }}
           password: ${{ secrets.AZ_DOCKER_REGISTRY_TOKEN }}
       - name: Search for Docker image
