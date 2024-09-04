@@ -49,10 +49,10 @@ jobs:
           workingtitle=$(docker build -q . )
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
-          docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
+          docker cp -a "${tempname}:${{ env.AZ_BOOTSTRAP_FROZEN_DIR }}/." .
           docker rm "$tempname"
           lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
-          ephemeral="${AZ_IMAGE_STEM}${lockhash}"
+          ephemeral="${{ env.AZ_IMAGE_STEM }}${lockhash}"
           docker tag "$workingtitle" "$ephemeral"
           docker push "$ephemeral"
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
@@ -61,7 +61,7 @@ jobs:
           sudo touch config.yml
           sudo find . -path "./.git" -prune -o -exec chown 1000:1000 {} \;
           sudo chown 1000:1000 .
-          docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
+          docker run --rm -v $(pwd):"${{ env.AZ_BOOTSTRAP_SOURCE_DIR }}" "${{ env.AZ_EPHEMERAL_IMAGE }}" lint
   review-site:
     name: Build & deploy review site
     needs: lint-code
