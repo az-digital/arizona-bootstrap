@@ -90,12 +90,11 @@ if echo "$tagsearch" | grep -q "$oldhash" ; then
   lockhash="$oldhash"
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
-  imagenewid=$(docker build -q --build-arg AZ_BOOTSTRAP_FROZEN_DIR . ) \
+  workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
+  docker buildx build --load  --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR . \
     || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
-  workingtitle=$(echo "$imagenewid" | head -1 | sed -e 's/^.*sha256:\([0-9a-f]\{12\}\).*$/\1/' ) \
-    || errorexit "Couldn't extract a short image ID from ${imagenewid}"
   tempname="old${oldhash}"
-  logmessage "Making a throwaway container, ID ${workingtitle}, to extract the updated npm setup"
+  logmessage "Making a throwaway container, named ${tempname}, to extract the updated npm setup"
   docker run --name "$tempname" "$workingtitle" 'true' \
     || errorexit "Failed to run a container based on the image ${workingtitle}"
   docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." . \
@@ -120,6 +119,8 @@ imagelsout=$(docker image ls "$ephemeral" | grep "$lockhash")
 imageid=$(echo "$imagelsout" | awk '{ print $3 }')
 [ -n "$imageid" ] \
   || errorexit  "Couldn't extract the Docker image ID code"
+docker tag "$imageid" "${AZ_EPHEMERALIMAGENAME}:latest" \
+  || errorexit "Failed to make a convenience tag of '${AZ_EPHEMERALIMAGENAME}:latest' for the image ID ${imageid}"
 logmessage "The image ID is ${imageid} (you can use this to run your own Docker containers with the same configuration)"
 
 #------------------------------------------------------------------------------

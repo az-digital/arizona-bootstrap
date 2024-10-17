@@ -3,5 +3,6 @@
 **/vendor/
 /_site/
 /js/coverage/
+/site/assets/js/ie-emulation-modes-warning.js
 /site/static/sw.js
 /site/layouts/partials/
