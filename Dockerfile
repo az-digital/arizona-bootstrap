@@ -50,7 +50,7 @@ RUN mkdir /home/node/.npm \
   && chown node:node /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
   && npm install --foreground-scripts=true --loglevel=verbose \
-  && find node_modules -name '.DS_Store' -exec rm {} \; \ 
+  && find node_modules -name '.DS_Store' -exec rm {} \; \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
 
 USER node:node
