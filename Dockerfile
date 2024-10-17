@@ -1,4 +1,4 @@
-FROM node:20.17.0-bookworm-slim
+FROM node:20.18.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
@@ -47,10 +47,10 @@ RUN apt-get update \
 WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 
 RUN mkdir /home/node/.npm \
-  && chown node:node /home/node/.npm
-RUN npm config set cache='/home/node/.npm' \
-  && npm install --foreground-scripts=true --loglevel=verbose
-RUN find node_modules -name '.DS_Store' -exec rm {} \; \ 
+  && chown node:node /home/node/.npm \
+  && npm config set cache='/home/node/.npm' \
+  && npm install --foreground-scripts=true --loglevel=verbose \
+  && find node_modules -name '.DS_Store' -exec rm {} \; \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
 
 USER node:node
