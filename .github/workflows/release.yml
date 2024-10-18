@@ -6,14 +6,17 @@ on:
       version:
         description: The version to tag and release
         required: true
+env:
+  AZ_EPHEMERALIMAGENAME: ${{ vars.AZ_EPHEMERALIMAGENAME }}
 
 jobs:
   release:
     name: Create Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           ref: 2.x
@@ -21,26 +24,27 @@ jobs:
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
-          registry='ghcr.io'
-          imageprefix="${registry}/${GITHUB_REPOSITORY}/"
-          imagename='az-nodejs-ephemeral'
-          imagestem="${imageprefix}${imagename}:"
-          echo "AZ_DOCKER_REGISTRY=${registry}" >> ${GITHUB_ENV}
+          imageprefix=${{ vars.AZ_DOCKER_REGISTRY }}"/${GITHUB_REPOSITORY}/"
+          imagestem="${imageprefix}${AZ_EPHEMERALIMAGENAME}:"
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Docker authentication
-        run: |
-          docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ vars.AZ_DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Unconditionally rebuild and save the Docker image
         run: |
-          workingtitle=$(docker build -q . )
+          workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
+          docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR . \
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
           docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
@@ -86,7 +90,7 @@ jobs:
           echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
 
       - name: Upload variables
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}/variables.json
@@ -102,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}
@@ -114,7 +118,7 @@ jobs:
           echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
 
       - name: Notify dependencies
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
