@@ -120,8 +120,8 @@
   display: flex;
 
   .btn {
-    flex-basis: 0;
     flex-grow: 1;
+    flex-basis: 0;
   }
 }
 // >> Block  -- .btn-block utility removed in TWBS 5
