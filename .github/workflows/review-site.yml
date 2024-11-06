@@ -17,6 +17,7 @@ jobs:
     name: Check code for linting errors
     runs-on: ubuntu-latest
     permissions:
+      checks: write
       contents: write
       packages: write
     steps:
@@ -70,6 +71,7 @@ jobs:
     needs: lint-code
     runs-on: ubuntu-latest
     permissions:
+      checks: write
       contents: write
       packages: write
       pull-requests: write
