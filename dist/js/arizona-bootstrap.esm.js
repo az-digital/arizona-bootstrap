@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v5.0.0-alpha1 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
