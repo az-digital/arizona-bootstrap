@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v2.0.27 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -2162,7 +2162,7 @@
       boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
     } else {
       // Handle other cases based on DOM element used as boundaries
-      var boundariesNode = void 0;
+      var boundariesNode = undefined;
       if (boundariesElement === 'scrollParent') {
         boundariesNode = getScrollParent(getParentNode(reference));
         if (boundariesNode.nodeName === 'BODY') {
@@ -2848,8 +2848,8 @@
     // If we position a popper on top of a reference element, we can set
     // `x` to `top` to make the popper grow towards its top instead of
     // its bottom.
-    var left = void 0,
-        top = void 0;
+    var left = undefined,
+        top = undefined;
     if (sideA === 'bottom') {
       // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
       // and not the bottom of the html element
@@ -3233,7 +3233,7 @@
     }
 
     if (unit.indexOf('%') === 0) {
-      var element = void 0;
+      var element = undefined;
       switch (unit) {
         case '%p':
           element = popperOffsets;
@@ -3248,7 +3248,7 @@
       return rect[measurement] / 100 * value;
     } else if (unit === 'vh' || unit === 'vw') {
       // if is a vh or vw, we calculate the size based on the viewport
-      var size = void 0;
+      var size = undefined;
       if (unit === 'vh') {
         size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       } else {
@@ -3358,7 +3358,7 @@
 
     var basePlacement = placement.split('-')[0];
 
-    var offsets = void 0;
+    var offsets = undefined;
     if (isNumeric(+offset)) {
       offsets = [+offset, 0];
     } else {
@@ -7108,12 +7108,12 @@
   function _defineProperties(e, r) {
     for (var t = 0; t < r.length; t++) {
       var o = r[t];
-      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
+      o.enumerable = o.enumerable || false, o.configurable = true, "value" in o && (o.writable = true), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
   function _createClass(e, r, t) {
-    return t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
-      writable: !1
+    return _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: false
     }), e;
   }
   function _extends() {
@@ -7128,7 +7128,7 @@
   function _toPrimitive(t, r) {
     if ("object" != typeof t || !t) return t;
     var e = t[Symbol.toPrimitive];
-    if (void 0 !== e) {
+    if (undefined !== e) {
       var i = e.call(t, r);
       if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
