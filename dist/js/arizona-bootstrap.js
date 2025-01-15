@@ -1,6 +1,6 @@
 /*!
   * Arizona Bootstrap v2.0.27 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2024 The Arizona Board of Regents on behalf of The University of Arizona
+  * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -4494,12 +4494,12 @@
   function _defineProperties(e, r) {
     for (var t = 0; t < r.length; t++) {
       var o = r[t];
-      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
+      o.enumerable = o.enumerable || false, o.configurable = true, "value" in o && (o.writable = true), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
   function _createClass(e, r, t) {
-    return t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
-      writable: !1
+    return _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: false
     }), e;
   }
   function _extends() {
@@ -4514,7 +4514,7 @@
   function _toPrimitive(t, r) {
     if ("object" != typeof t || !t) return t;
     var e = t[Symbol.toPrimitive];
-    if (void 0 !== e) {
+    if (undefined !== e) {
       var i = e.call(t, r);
       if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
