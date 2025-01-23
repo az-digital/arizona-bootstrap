@@ -38,3 +38,14 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
   </div>
 </div>
 {{< /example >}}
+
+## Background Color
+{{< example >}}
+<div class="card hover hover-bg-cool-gray" style="width: 18rem;">
+  <div class="card-body">
+    <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>
+    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
+    <a class="stretched-link" href="#">This is a link</a>
+  </div>
+</div>
+{{< /example>}}
