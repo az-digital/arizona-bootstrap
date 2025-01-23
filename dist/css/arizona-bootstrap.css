@@ -19682,6 +19682,10 @@ a {
   transform: scale(1.03);
 }
 
+.hover-bg-cool-gray {
+  background-color: #e2e9eb;
+}
+
 .callout {
   padding: 1.25rem;
   margin-top: 1.25rem;
