@@ -4498,7 +4498,7 @@
     }
   }
   function _createClass(e, r, t) {
-    return _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    return t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
       writable: false
     }), e;
   }
