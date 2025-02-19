@@ -2162,7 +2162,7 @@
       boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
     } else {
       // Handle other cases based on DOM element used as boundaries
-      var boundariesNode = undefined;
+      var boundariesNode = void 0;
       if (boundariesElement === 'scrollParent') {
         boundariesNode = getScrollParent(getParentNode(reference));
         if (boundariesNode.nodeName === 'BODY') {
@@ -2848,8 +2848,8 @@
     // If we position a popper on top of a reference element, we can set
     // `x` to `top` to make the popper grow towards its top instead of
     // its bottom.
-    var left = undefined,
-        top = undefined;
+    var left = void 0,
+        top = void 0;
     if (sideA === 'bottom') {
       // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
       // and not the bottom of the html element
@@ -3233,7 +3233,7 @@
     }
 
     if (unit.indexOf('%') === 0) {
-      var element = undefined;
+      var element = void 0;
       switch (unit) {
         case '%p':
           element = popperOffsets;
@@ -3248,7 +3248,7 @@
       return rect[measurement] / 100 * value;
     } else if (unit === 'vh' || unit === 'vw') {
       // if is a vh or vw, we calculate the size based on the viewport
-      var size = undefined;
+      var size = void 0;
       if (unit === 'vh') {
         size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       } else {
@@ -3358,7 +3358,7 @@
 
     var basePlacement = placement.split('-')[0];
 
-    var offsets = undefined;
+    var offsets = void 0;
     if (isNumeric(+offset)) {
       offsets = [+offset, 0];
     } else {
@@ -7112,7 +7112,7 @@
     }
   }
   function _createClass(e, r, t) {
-    return _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    return t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
       writable: false
     }), e;
   }
@@ -7128,7 +7128,7 @@
   function _toPrimitive(t, r) {
     if ("object" != typeof t || !t) return t;
     var e = t[Symbol.toPrimitive];
-    if (undefined !== e) {
+    if (void 0 !== e) {
       var i = e.call(t, r);
       if ("object" != typeof i) return i;
       throw new TypeError("@@toPrimitive must return a primitive value.");
