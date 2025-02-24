@@ -20,7 +20,7 @@ A better alternative for those using this type of frameworks is to use a framewo
 
 - React: [React Bootstrap](https://react-bootstrap.github.io/)
   {{< callout >}}
-  **Try it yourself!** Download the source code and working demo for using Bootstrap with React, Next.js, and React Bootstrap from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/react-nextjs). You can also [open the example in StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/react-nextjs?file=src%2Fpages%2Findex.tsx).
+  **Try it yourself!** Download the source code and working demo for using Bootstrap with React, Next.js, and React Bootstrap from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/react-nextjs).
   {{< /callout >}}
 - Vue: [BootstrapVue](https://bootstrap-vue.org/) (Bootstrap 4)
 - Vue 3: [BootstrapVueNext](https://bootstrap-vue-next.github.io/bootstrap-vue-next/) (Bootstrap 5, currently in alpha)
@@ -29,7 +29,7 @@ A better alternative for those using this type of frameworks is to use a framewo
 ## Using Bootstrap as a module
 
 {{< callout >}}
-**Try it yourself!** Download the source code and working demo for using Bootstrap as an ES module from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/sass-js-esm). You can also [open the example in StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/sass-js-esm?file=index.html).
+**Try it yourself!** Download the source code and working demo for using Bootstrap as an ES module from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/sass-js-esm).
 {{< /callout >}}
 
 We provide a version of Bootstrap built as `ESM` (`bootstrap.esm.js` and `bootstrap.esm.min.js`) which allows you to use Bootstrap as a module in the browser, if your [targeted browsers support it](https://caniuse.com/es6-module).

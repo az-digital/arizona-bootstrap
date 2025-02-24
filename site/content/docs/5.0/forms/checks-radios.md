@@ -36,7 +36,7 @@ Our checks use custom Bootstrap icons to indicate checked or indeterminate state
 
 Checkboxes can utilize the `:indeterminate` pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).
 
-{{< example class="bd-example-indeterminate" stackblitz_add_js="true" >}}
+{{< example class="bd-example-indeterminate" >}}
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="checkIndeterminate">
   <label class="form-check-label" for="checkIndeterminate">
@@ -49,7 +49,7 @@ Checkboxes can utilize the `:indeterminate` pseudo class when manually set via J
 
 Add the `disabled` attribute and the associated `<label>`s are automatically styled to match with a lighter color to help indicate the input's state.
 
-{{< example class="bd-example-indeterminate" stackblitz_add_js="true" >}}
+{{< example class="bd-example-indeterminate" >}}
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="checkIndeterminateDisabled" disabled>
   <label class="form-check-label" for="checkIndeterminateDisabled">

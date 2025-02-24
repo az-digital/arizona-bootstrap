@@ -45,7 +45,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 Hover over the links below to see tooltips:
 
-{{< example class="tooltip-demo" stackblitz_add_js="true" >}}
+{{< example class="tooltip-demo" >}}
 <p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> site or project.</p>
 {{< /example >}}
 
@@ -62,7 +62,7 @@ You can customize the appearance of tooltips using [CSS variables](#variables). 
 {{< scss-docs name="custom-tooltip" file="site/assets/scss/_component-examples.scss" >}}
 
 
-{{< example class="tooltip-demo" stackblitz_add_js="true" >}}
+{{< example class="tooltip-demo" >}}
 <button type="button" class="btn btn-secondary"
         data-bs-toggle="tooltip" data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
@@ -177,7 +177,7 @@ The required markup for a tooltip is only a `data` attribute and `title` on the 
 
 Elements with the `disabled` attribute aren't interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you'll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`.
 
-{{< example class="tooltip-demo" stackblitz_add_js="true" >}}
+{{< example class="tooltip-demo" >}}
 <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
   <button class="btn btn-primary" type="button" disabled>Disabled button</button>
 </span>

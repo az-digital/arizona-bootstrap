@@ -1,6 +1,6 @@
 // NOTICE!!! Initially embedded in our docs this JavaScript
 // file contains elements that can help you create reproducible
-// use cases in StackBlitz for instance.
+// use cases in  for instance.
 // In a real project please adapt this content to your needs.
 // ++++++++++++++++++++++++++++++++++++++++++
 
@@ -17,7 +17,7 @@ export default () => {
   // --------
   // Tooltips
   // --------
-  // Instantiate all tooltips in a docs or StackBlitz
+  // Instantiate all tooltips in a docs
   document.querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach(tooltip => {
       new bootstrap.Tooltip(tooltip)
@@ -26,7 +26,7 @@ export default () => {
   // --------
   // Popovers
   // --------
-  // Instantiate all popovers in docs or StackBlitz
+  // Instantiate all popovers in docs
   document.querySelectorAll('[data-bs-toggle="popover"]')
     .forEach(popover => {
       new bootstrap.Popover(popover)
@@ -35,7 +35,7 @@ export default () => {
   // -------------------------------
   // Toasts
   // -------------------------------
-  // Used by 'Placement' example in docs or StackBlitz
+  // Used by 'Placement' example in docs
   const toastPlacement = document.getElementById('toastPlacement')
   if (toastPlacement) {
     document.getElementById('selectToastPlacement').addEventListener('change', function () {
@@ -73,7 +73,7 @@ export default () => {
   // -------------------------------
   // Alerts
   // -------------------------------
-  // Used in 'Show live alert' example in docs or StackBlitz
+  // Used in 'Show live alert' example in docs
 
   // js-docs-start live-alert
   const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
@@ -100,7 +100,7 @@ export default () => {
   // --------
   // Carousels
   // --------
-  // Instantiate all non-autoplaying carousels in docs or StackBlitz
+  // Instantiate all non-autoplaying carousels in docs
   document.querySelectorAll('.carousel:not([data-bs-ride="carousel"])')
     .forEach(carousel => {
       bootstrap.Carousel.getOrCreateInstance(carousel)
@@ -109,7 +109,7 @@ export default () => {
   // -------------------------------
   // Checks & Radios
   // -------------------------------
-  // Indeterminate checkbox example in docs and StackBlitz
+  // Indeterminate checkbox example in docs
   document.querySelectorAll('.bd-example-indeterminate [type="checkbox"]')
     .forEach(checkbox => {
       if (checkbox.id.includes('Indeterminate')) {
@@ -131,7 +131,7 @@ export default () => {
   // -------------------------------
   // Modal
   // -------------------------------
-  // Modal 'Varying modal content' example in docs and StackBlitz
+  // Modal 'Varying modal content' example in docs
   // js-docs-start varying-modal-content
   const exampleModal = document.getElementById('exampleModal')
   if (exampleModal) {

@@ -31,7 +31,7 @@ Alerts are available for any length of text, as well as an optional close button
 
 Click the button below to show an alert (hidden with inline styles to start), then dismiss (and destroy) it with the built-in close button.
 
-{{< example stackblitz_add_js="true" >}}
+{{< example >}}
 <div id="liveAlertPlaceholder"></div>
 <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
 {{< /example >}}

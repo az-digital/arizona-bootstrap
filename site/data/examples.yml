@@ -1,6 +1,6 @@
 - category: Starters
   external: true
-  description: "Functional examples of using Bootstrap in common JS frameworks like Webpack, Parcel, Vite, and more you can edit in StackBlitz."
+  description: "Functional examples of using Bootstrap in common JS frameworks."
   examples:
     - name: CDN starter
       description: "Instantly include Bootstrap's compiled CSS and JavaScript via the jsDelivr CDN."
