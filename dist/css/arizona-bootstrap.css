@@ -24744,48 +24744,6 @@ have been deprecated in Bootstrap 4.
   font-size: 1rem;
 }
 
-.accordion .card-header {
-  padding: 0;
-}
-.accordion .card-header h2, .accordion .card-header .text-size-h2,
-.accordion .card-header h3,
-.accordion .card-header .text-size-h3,
-.accordion .card-header h4,
-.accordion .card-header .text-size-h4,
-.accordion .card-header h5,
-.accordion .card-header .text-size-h5,
-.accordion .card-header h6,
-.accordion .card-header .text-size-h6,
-.accordion .card-header .h2,
-.accordion .card-header .h3,
-.accordion .card-header .h4,
-.accordion .card-header .h5,
-.accordion .card-header .h6 {
-  padding: 0;
-}
-.accordion .card-header .btn {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1.25rem;
-  color: #49595e;
-  text-align: left;
-  text-transform: none;
-}
-.accordion .card-header .btn::after {
-  position: absolute;
-  top: 2px;
-  right: 20px;
-  display: inline-block;
-  font-family: "Material Icons Sharp";
-  font-size: 2em;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  font-variant-ligatures: no-common-ligatures;
-  content: "expand_more";
-}
-.accordion .card-header .btn[aria-expanded=true]::after {
-  content: "expand_less";
-}
-
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.8);
 }
