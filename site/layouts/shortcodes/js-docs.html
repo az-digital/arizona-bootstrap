@@ -3,21 +3,28 @@
 
   Prints everything between `// js-docs-start "name"` and `// js-docs-end "name"`
   comments in the docs.
+
+  Optional parameters:
+    * jsroot: Parent directory for JS files - default `node_modules/bootstrap`
 */ -}}
 
 {{- $name := .Get "name" -}}
 {{- $file := .Get "file" -}}
+{{- $jsroot := .Get "jsroot" | default "node_modules/bootstrap" -}}
+{{- $filepath := path.Join $jsroot $file -}}
 
 {{- /* If any parameters are missing, print an error and exit */ -}}
 {{- if or (not $name) (not $file) -}}
   {{- errorf "%s: %q: Missing required parameters! Got: name=%q file=%q!" .Position .Name $name $file -}}
+{{- else if not (fileExists $filepath) -}}
+  {{- errorf "%s: %q: When searching for name=%q could not read path=%q!" .Position .Name $name $filepath -}}
 {{- else -}}
   {{- $capture_start := printf "// js-docs-start %s\n" $name -}}
   {{- $capture_end := printf "// js-docs-end %s\n" $name -}}
   {{- $regex := printf `%s((?:.|\n)*)%s` $capture_start $capture_end -}}
   {{- $regex_nested := printf `// js-docs-.*\n` -}}
 
-  {{- $match := findRE $regex (readFile $file) -}}
+  {{- $match := findRE $regex (readFile $filepath) -}}
   {{- $match = index $match 0 -}}
 
   {{- if not $match -}}

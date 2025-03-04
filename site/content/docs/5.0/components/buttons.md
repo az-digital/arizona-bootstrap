@@ -247,7 +247,7 @@ Here's an example of building a custom `.btn-*` modifier class as we do for the 
   <button type="button" class="btn btn-bd-primary">Custom button</button>
 </div>
 
-{{< scss-docs name="btn-css-vars-example" file="site/assets/scss/_buttons.scss" >}}
+{{< scss-docs name="btn-css-vars-example" file="scss/_buttons.scss" scssroot="site/assets" >}}
 
 ### Sass variables
 

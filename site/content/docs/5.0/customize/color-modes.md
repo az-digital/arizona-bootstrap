@@ -149,7 +149,7 @@ While the primary use case for color modes is light and dark mode, custom color 
 
 For example, you can create a "blue theme" with the selector `data-bs-theme="blue"`. In your custom Sass or CSS file, add the new selector and override any global or component CSS variables as needed. If you're using Sass, you can also use Sass's functions within your CSS variable overrides.
 
-{{< scss-docs name="custom-color-mode" file="site/assets/scss/_content.scss" >}}
+{{< scss-docs name="custom-color-mode" file="scss/_content.scss" scssroot="site/assets" >}}
 
 <div class="bd-example text-body bg-body" data-bs-theme="blue">
   <div class="h4">Example blue theme</div>

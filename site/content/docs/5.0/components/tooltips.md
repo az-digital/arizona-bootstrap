@@ -59,7 +59,7 @@ Hover over the links below to see tooltips:
 
 You can customize the appearance of tooltips using [CSS variables](#variables). We set a custom class with `data-bs-custom-class="custom-tooltip"` to scope our custom appearance and use it to override a local CSS variable.
 
-{{< scss-docs name="custom-tooltip" file="site/assets/scss/_component-examples.scss" >}}
+{{< scss-docs name="custom-tooltip" file="scss/_component-examples.scss" scssroot="site/assets" >}}
 
 
 {{< example class="tooltip-demo" >}}

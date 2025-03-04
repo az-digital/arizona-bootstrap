@@ -481,7 +481,7 @@ Below is a live demo followed by example HTML and JavaScript. For more informati
 </div>
 {{< /example >}}
 
-{{< js-docs name="varying-modal-content" file="site/assets/js/partials/snippets.js" >}}
+{{< js-docs name="varying-modal-content" file="js/partials/snippets.js" jsroot="site/assets" >}}
 
 ### Toggle between modals
 

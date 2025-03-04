@@ -97,7 +97,7 @@ const popover = new bootstrap.Popover('.example-popover', {
 
 You can customize the appearance of popovers using [CSS variables](#variables). We set a custom class with `data-bs-custom-class="custom-popover"` to scope our custom appearance and use it to override some of the local CSS variables.
 
-{{< scss-docs name="custom-popovers" file="site/assets/scss/_component-examples.scss" >}}
+{{< scss-docs name="custom-popovers" file="scss/_component-examples.scss" scssroot="site/assets" >}}
 
 {{< example class="custom-popover-demo" >}}
 <button type="button" class="btn btn-secondary"

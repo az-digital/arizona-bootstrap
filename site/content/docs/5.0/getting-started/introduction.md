@@ -4,7 +4,7 @@ title: Get started with Bootstrap
 description: Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 group: getting-started
 aliases:
-  - "/docs/5.3/getting-started/"
+  - "/docs/5.0/getting-started/"
   - "/docs/getting-started/"
   - "/getting-started/"
 toc: true
@@ -141,16 +141,3 @@ Learn more about [box model and sizing at CSS Tricks](https://css-tricks.com/box
 ### Reboot
 
 For improved cross-browser rendering, we use [Reboot]({{< docsref "/content/reboot" >}}) to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
-
-## Community
-
-Stay up-to-date on the development of Bootstrap and reach out to the community with these helpful resources.
-
-- Read and subscribe to [The Official Bootstrap Blog]({{< param blog >}}).
-- Ask questions and explore [our GitHub Discussions](https://github.com/twbs/bootstrap/discussions).
-- Discuss, ask questions, and more on [the community Discord](https://discord.gg/bZUvakRU3M) or [Bootstrap subreddit](https://www.reddit.com/r/bootstrap/).
-- Chat with fellow Bootstrappers in IRC. On the `irc.libera.chat` server, in the `#bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`bootstrap-5`](https://stackoverflow.com/questions/tagged/bootstrap-5)).
-- Developers should use the keyword `bootstrap` on packages that modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/search?q=keywords:bootstrap) or similar delivery mechanisms for maximum discoverability.
-
-You can also follow [@getbootstrap on Twitter](https://twitter.com/{{< param twitter >}}) for the latest gossip and awesome music videos.
