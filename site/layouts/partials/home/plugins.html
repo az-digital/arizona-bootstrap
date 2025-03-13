@@ -8,7 +8,7 @@
       Add toggleable hidden elements, modals and offcanvas menus, popovers and tooltips, and so much more—all without jQuery. Bootstrap's JavaScript is HTML-first, meaning most plugins are added with <code>data</code> attributes in your HTML. Need more control? Include individual plugins programmatically.
     </p>
     <p class="d-flex lead fw-normal mb-md-0">
-      <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/javascript/" class="icon-link icon-link-hover fw-semibold">
+      <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/javascript/` ) | relURL -}}" class="icon-link icon-link-hover fw-semibold">
         Learn more about Bootstrap JavaScript
         <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
       </a>
@@ -42,7 +42,7 @@
   </ul>
 </div>
 `) "html" "" }}
-      <p>Learn more about <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/javascript/#using-bootstrap-as-a-module">our JavaScript as modules</a> and <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/javascript/#programmatic-api">using the programmatic API</a>.</p>
+      <p>Learn more about <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/javascript/#using-bootstrap-as-a-module` ) | relURL -}}">our JavaScript as modules</a> and <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/javascript/#programmatic-api` ) | relURL -}}">using the programmatic API</a>.</p>
     </div>
     <div class="col-lg-6 mb-3">
       <h3 class="fw-semibold">Comprehensive set of plugins</h3>

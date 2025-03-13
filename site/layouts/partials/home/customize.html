@@ -7,7 +7,7 @@
     Bootstrap utilizes Sass for a modular and customizable architecture. Import only the components you need, enable global options like gradients and shadows, and write your own CSS with our variables, maps, functions, and mixins.
   </p>
   <p class="d-flex lead fw-normal">
-    <a href="/docs/{{ .Site.Params.docs_version }}/customize/overview/" class="icon-link icon-link-hover fw-semibold">
+    <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/customize/overview/` ) | relURL -}}" class="icon-link icon-link-hover fw-semibold">
       Learn more about customizing
       <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
     </a>
@@ -26,7 +26,7 @@ $prefix: "mo-";
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 `) "scss" "" }}
-    <p>Learn more about our <a href="/docs/{{ .Site.Params.docs_version }}/customize/options/">global Sass options</a>.</p>
+    <p>Learn more about our <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/customize/options/` ) | relURL -}}">global Sass options</a>.</p>
   </div>
   <div class="col-lg-6">
     <h3>Include what you need</h3>
@@ -54,6 +54,6 @@ $prefix: "mo-";
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/utilities/api";
 `) "scss" "" }}
-    <p>Learn more about <a href="/docs/{{ .Site.Params.docs_version }}/customize/sass/">using Bootstrap with Sass</a>.</p>
+    <p>Learn more about <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/customize/sass/` ) | relURL -}}">using Bootstrap with Sass</a>.</p>
   </div>
 </section>

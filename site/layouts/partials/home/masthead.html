@@ -20,7 +20,7 @@
         <div class="d-inline-block v-align-middle fs-5">
           {{ highlight (printf ("npm i bootstrap@%s") .Site.Params.current_version) "sh" "" }}
         </div>
-        <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" class="btn btn-lg bd-btn-lg btn-bd-primary d-flex align-items-center justify-content-center fw-semibold">
+        <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/introduction/` ) | relURL -}}" class="btn btn-lg bd-btn-lg btn-bd-primary d-flex align-items-center justify-content-center fw-semibold">
           <svg class="bi me-2" aria-hidden="true"><use xlink:href="#book-half"></use></svg>
           Read the docs
         </a>
@@ -28,7 +28,7 @@
       <p class="text-body-secondary mb-0">
         Currently <strong>v{{ .Site.Params.current_version }}</strong>
         <span class="px-1">&middot;</span>
-        <a href="/docs/{{ .Site.Params.docs_version }}/getting-started/download/" class="link-secondary">Download</a>
+        <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download/` ) | relURL -}}" class="link-secondary">Download</a>
         <span class="px-1">&middot;</span>
         <a href="/docs/versions/" class="link-secondary text-nowrap">All releases</a>
       </p>
