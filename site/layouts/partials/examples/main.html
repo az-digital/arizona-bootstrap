@@ -36,7 +36,7 @@
             {{ $imageBasePath := urls.JoinPath "docs" $.Site.Params.docs_version "assets/img/examples" | relURL -}}
             {{- $imgPath := urls.JoinPath $imageBasePath (printf "%s.png" $exampleNameUrlized) -}}
             {{- $imgPath2x := urls.JoinPath $imageBasePath (printf "%s@2x.png" $exampleNameUrlized) -}}
-            {{- with (imageConfig (path.Join "/site/static" $imgPath)) -}}
+            {{- with (imageConfig (path.Join "site/static" $imgPath | relURL)) -}}
             <img class="img-thumbnail mb-3"
                  srcset="{{ $imgPath }}, {{ $imgPath2x }} 2x"
                  src="{{ $imgPath }}"
