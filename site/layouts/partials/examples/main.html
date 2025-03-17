@@ -34,13 +34,14 @@
           {{- $exampleUrl := urls.JoinPath "docs" $.Site.Params.docs_version "/examples" $exampleNameUrlized "/" | relURL }}
           <a class="d-block link-offset-1" href="{{ $exampleUrl }}"{{ if in $example.name "RTL" }} hreflang="ar"{{ end }}>
             {{ $imageBasePath := urls.JoinPath "/docs" $.Site.Params.docs_version "assets/img/examples" -}}
-            {{ $imageBaseUrl := urls.JoinPath "docs" $.Site.Params.docs_version "assets/img/examples" -}}
-            {{- $imgPath := urls.JoinPath $imageBaseUrl (printf "%s.png" $exampleNameUrlized) | relURL -}}
-            {{- $imgPath2x := urls.JoinPath $imageBaseUrl (printf "%s@2x.png" $exampleNameUrlized) | relURL -}}
+            {{- $imgPath := urls.JoinPath $imageBasePath (printf "%s.png" $exampleNameUrlized) -}}
+            {{- $imageBaseUrl := urls.JoinPath "docs" $.Site.Params.docs_version "assets/img/examples" -}}
+            {{- $imgUrl := urls.JoinPath $imageBaseUrl (printf "%s.png" $exampleNameUrlized) | relURL -}}
+            {{- $imgUrl2x := urls.JoinPath $imageBaseUrl (printf "%s@2x.png" $exampleNameUrlized) | relURL -}}
             {{- with (imageConfig (path.Join "/site/static" $imgPath)) -}}
             <img class="img-thumbnail mb-3"
-                 srcset="{{ $imgPath }}, {{ $imgPath2x }} 2x"
-                 src="{{ $imgPath }}"
+                 srcset="{{ $imgUrl }}, {{ $imgUrl2x }} 2x"
+                 src="{{ $imgUrl }}"
                  alt=""
                  width="{{ .Width }}"
                  height="{{ .Height }}"

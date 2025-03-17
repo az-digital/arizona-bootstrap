@@ -9,13 +9,14 @@
 {{- $baseUrl := path.Join "docs" .context.Site.Params.docs_version (path.Dir .imgPath) -}}
 {{- $basename := path.BaseName .imgPath -}}
 {{- $ext := path.Ext .imgPath -}}
-{{- $imgPath := path.Join $baseUrl (printf "%s%s" $basename $ext) | relURL -}}
-{{- $imgPath2x := path.Join $baseUrl (printf "%s@2x%s" $basename $ext) | relURL -}}
+{{- $imgPath := path.Join $basePath (printf "%s%s" $basename $ext) -}}
+{{- $imgUrl := path.Join $baseUrl (printf "%s%s" $basename $ext) | relURL -}}
+{{- $imgUrl2x := path.Join $baseUrl (printf "%s@2x%s" $basename $ext) | relURL -}}
 
 {{- with (imageConfig (path.Join "/site/static" $imgPath)) }}
 <img class="{{ delimit $classes " " }}"
-     srcset="{{ $imgPath }}, {{ $imgPath2x }} 2x"
-     src="{{ $imgPath }}"
+     srcset="{{ $imgUrl }}, {{ $imgUrl2x }} 2x"
+     src="{{ $imgUrl }}"
      alt="{{ $.alt }}"{{ if eq $lazy true }}
      loading="lazy"{{ end }}
      width="{{ .Width }}"
