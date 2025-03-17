@@ -1,27 +1,29 @@
 <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
 <link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
-{{ printf "<!-- %s core CSS -->" .Site.Title | safeHTML }}
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
-{{ if eq hugo.Environment "production" -}}
+{{ if hugo.IsProduction -}}
+{{ if eq .Page.Params.direction "rtl" -}}
+<link href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/css/arizona-bootstrap.rtl.min.css`) | relURL -}}" rel="stylesheet">
+{{- else -}}
 <link href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/css/arizona-bootstrap.min.css`) | relURL -}}" rel="stylesheet">
+{{- end -}}
+{{- else if eq .Page.Params.direction "rtl" -}}
+<link href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/css/arizona-bootstrap.rtl.css`) | relURL -}}" rel="stylesheet">
 {{- else -}}
 <link href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/css/arizona-bootstrap.css`) | relURL -}}" rel="stylesheet">
 {{- end }}
 
-{{ if (or (eq .Page.Layout "docs") (eq .Page.Layout "about")) -}}
-{{ "<!-- Documentation extras -->" | safeHTML }}
-{{- end -}}
-
 {{- if (ne .Page.Layout "examples") }}
-{{- $targetDocsCssPath := printf "/docs/%s/assets/css/docs.css" .Site.Params.docs_version -}}
-{{- $sassOptions := dict "targetPath" $targetDocsCssPath "outputStyle" "expanded" "precision" 6 -}}
+{{- $sassOptions := dict "outputStyle" "expanded" "precision" 6 -}}
 {{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
 
-{{ if eq hugo.Environment "production" -}}
+{{- $targetDocsCssPath := path.Join "docs" .Site.Params.docs_version "assets/css/docs.css" | relURL -}}
+
+{{ if hugo.IsProduction -}}
   {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
 {{- end -}}
 
-{{- $style := resources.Get "scss/docs.scss" | toCSS $sassOptions | postCSS $postcssOptions }}
+{{- $docsCss := resources.Get "scss/docs.scss" | toCSS (merge (dict "targetPath" $targetDocsCssPath) $sassOptions) | postCSS $postcssOptions -}}
 
-<link href="{{ $style.Permalink | relURL }}" rel="stylesheet">
+<link href="{{ $docsCss.RelPermalink }}" rel="stylesheet">
 {{- end }}

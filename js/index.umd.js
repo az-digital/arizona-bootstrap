@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.2.0): index.umd.js
+ * Bootstrap index.umd.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17,7 +17,6 @@ import ScrollSpy from '../node_modules/bootstrap/js/src/scrollspy.js'
 import Tab from '../node_modules/bootstrap/js/src/tab.js'
 import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
-// import Offcanvasmenu from './src/offcanvasmenu'
 
 export default {
   Alert,
@@ -32,5 +31,4 @@ export default {
   Tab,
   Toast,
   Tooltip
-//  Offcanvasmenu
 }

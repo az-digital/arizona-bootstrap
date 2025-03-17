@@ -6,14 +6,14 @@ group: content
 toc: true
 ---
 
-## Global Settings
+## Global settings
 
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]({{< docsref "/utilities/text" >}}).
 
 - Use a [native font stack]({{< docsref "/content/reboot#native-font-stack" >}}) that selects the best `font-family` for each OS and device.
-- For a more inclusive and accessible type scale, we assume the browser default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
+- For a more inclusive and accessible type scale, we use the browser's default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
 - Use the `$font-family-base`, `$font-size-base`, and `$line-height-base` attributes as our typographic base applied to the `<body>`.
-- Set the global link color via `$link-color` and apply link underlines only on `:hover`.
+- Set the global link color via `$link-color`.
 - Use `$body-bg` to set a `background-color` on the `<body>` (`#fff` by default).
 
 These styles can be found within `_reboot.scss`, and the global variables are defined in `_variables.scss`. Make sure to set `$font-size-base` in `rem`.
@@ -22,105 +22,59 @@ These styles can be found within `_reboot.scss`, and the global variables are de
 
 All HTML headings, `<h1>` through `<h6>`, are available.
 
-<table>
-  <thead>
-    <tr>
-      <th>Heading</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        {{< markdown >}}`<h1></h1>`{{< /markdown >}}
-      </td>
-      <td><h1>Page Title</h1></td>
-    </tr>
-    <tr>
-      <td>
-        {{< markdown >}}`<h2></h2>`{{< /markdown >}}
-      </td>
-      <td><h2>Section Heading</h2></td>
-    </tr>
-    <tr>
-      <td>
-        {{< markdown >}}`<h3></h3>`{{< /markdown >}}
-      </td>
-      <td><h3>Subsection Heading</h3></td>
-    </tr>
-    <tr>
-      <td>
-        {{< markdown >}}`<h4></h4>`{{< /markdown >}}
-      </td>
-      <td><h4>Subsection Heading</h4></td>
-    </tr>
-    <tr>
-      <td>
-        {{< markdown >}}`<h5></h5>`{{< /markdown >}}
-      </td>
-      <td><h5>Subsection Heading</h5></td>
-    </tr>
-    <tr>
-      <td>
-        {{< markdown >}}`<h6></h6>`{{< /markdown >}}
-      </td>
-      <td><h6>Subsection Heading</h6></td>
-    </tr>
-  </tbody>
-</table>
+{{< bs-table >}}
+| Heading | Example |
+| --- | --- |
+| `<h1></h1>` | <span class="h1">h1. Bootstrap heading</span> |
+| `<h2></h2>` | <span class="h2">h2. Bootstrap heading</span> |
+| `<h3></h3>` | <span class="h3">h3. Bootstrap heading</span> |
+| `<h4></h4>` | <span class="h4">h4. Bootstrap heading</span> |
+| `<h5></h5>` | <span class="h5">h5. Bootstrap heading</span> |
+| `<h6></h6>` | <span class="h6">h6. Bootstrap heading</span> |
+{{< /bs-table >}}
 
 ```html
-<h1>Page Title</h1>
-<h2>Section Heading</h2>
-<h3>Subsection Heading</h3>
-<h4>Subsection Heading</h4>
-<h5>Subsection Heading</h5>
-<h6>Subsection Heading</h6>
+<h1>h1. Bootstrap heading</h1>
+<h2>h2. Bootstrap heading</h2>
+<h3>h3. Bootstrap heading</h3>
+<h4>h4. Bootstrap heading</h4>
+<h5>h5. Bootstrap heading</h5>
+<h6>h6. Bootstrap heading</h6>
 ```
 
-`.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element. Combine these classes with margin classes to modify their margins (e.g., `m-0` to remove margins).
+`.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
 
 {{< example >}}
-<p class="h1">Heading 1 Style</p>
-<p class="h2">Heading 2 Style</p>
-<p class="h3">Heading 3 Style</p>
-<p class="h4">Heading 4 Style</p>
-<p class="h5">Heading 5 Style</p>
-<p class="h6">Heading 6 Style</p>
+<p class="h1">h1. Bootstrap heading</p>
+<p class="h2">h2. Bootstrap heading</p>
+<p class="h3">h3. Bootstrap heading</p>
+<p class="h4">h4. Bootstrap heading</p>
+<p class="h5">h5. Bootstrap heading</p>
+<p class="h6">h6. Bootstrap heading</p>
 {{< /example >}}
 
-### Customizing Headings
+### Customizing headings
 
-Use any of the available [utility classes]({{< docsref "/utilities/text" >}}) to customize your heading text by changing its color, size, style, transformation, etc.
+Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.
 
 {{< example >}}
 <h3>
   Fancy display heading
-  <small class="text-muted">With faded secondary text</small>
+  <small class="text-body-secondary">With faded secondary text</small>
 </h3>
 {{< /example >}}
 
-## Display Headings
+## Display headings
 
-Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style. Keep in mind these headings are not responsive by default, but it's possible to enable [responsive font sizes](#responsive-font-sizes).
+Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
 
-<div class="bd-example bd-example-type">
-  <table class="table">
-    <tbody>
-      <tr>
-        <td><span class="display-1">Display 1</span></td>
-      </tr>
-      <tr>
-      <td><span class="display-2">Display 2</span></td>
-      </tr>
-      <tr>
-      <td><span class="display-3">Display 3</span></td>
-      </tr>
-      <tr>
-      <td><span class="display-4">Display 4</span></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="bd-example">
+  <div class="display-1 pb-3 mb-3 border-bottom">Display 1</div>
+  <div class="display-2 pb-3 mb-3 border-bottom">Display 2</div>
+  <div class="display-3 pb-3 mb-3 border-bottom">Display 3</div>
+  <div class="display-4 pb-3 mb-3 border-bottom">Display 4</div>
+  <div class="display-5 pb-3 mb-3 border-bottom">Display 5</div>
+  <div class="display-6">Display 6</div>
 </div>
 
 ```html
@@ -128,7 +82,15 @@ Traditional heading elements are designed to work best in the meat of your page 
 <h1 class="display-2">Display 2</h1>
 <h1 class="display-3">Display 3</h1>
 <h1 class="display-4">Display 4</h1>
+<h1 class="display-5">Display 5</h1>
+<h1 class="display-6">Display 6</h1>
 ```
+
+Display headings are configured via the `$display-font-sizes` Sass map and two variables, `$display-font-weight` and `$display-line-height`.
+
+Display headings are customizable via two variables, `$display-font-family` and `$display-font-style`.
+
+{{< scss-docs name="display-headings" file="scss/_variables.scss" >}}
 
 ## Lead
 
@@ -136,11 +98,11 @@ Make a paragraph stand out by adding `.lead`.
 
 {{< example >}}
 <p class="lead">
-  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+  This is a lead paragraph. It stands out from regular paragraphs.
 </p>
 {{< /example >}}
 
-## Inline Text Elements
+## Inline text elements
 
 Styling for common inline HTML5 elements.
 
@@ -149,27 +111,31 @@ Styling for common inline HTML5 elements.
 <p><del>This line of text is meant to be treated as deleted text.</del></p>
 <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
 <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-<p><u>This line of text will render as underlined</u></p>
+<p><u>This line of text will render as underlined.</u></p>
 <p><small>This line of text is meant to be treated as fine print.</small></p>
 <p><strong>This line rendered as bold text.</strong></p>
 <p><em>This line rendered as italicized text.</em></p>
 {{< /example >}}
 
-`.mark` and `.small` classes are also available to apply the same styles as `<mark>` and `<small>` while avoiding any unwanted semantic implications that the tags would bring.
+Beware that those tags should be used for semantic purpose:
 
-While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance while `<i>` is mostly for voice, technical terms, etc.
+- `<mark>` represents text which is marked or highlighted for reference or notation purposes.
+- `<small>` represents side-comments and small print, like copyright and legal text.
+- `<s>` represents element that are no longer relevant or no longer accurate.
+- `<u>` represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.
 
-## Links
+If you want to style your text, you should use the following classes instead:
 
-Default links include a red text color and an underline. You can change a link's default styling by adding additional classes to it (e.g., `.btn`, `.btn-red`, etc.). Links inside navbars, breadcrumbs, and other components receive their own default styling.
+- `.mark` will apply the same styles as `<mark>`.
+- `.small` will apply the same styles as `<small>`.
+- `.text-decoration-underline` will apply the same styles as `<u>`.
+- `.text-decoration-line-through` will apply the same styles as `<s>`.
 
-{{< example >}}
-<a href="#">Default Link</a>
-{{< /example >}}
+While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance, while `<i>` is mostly for voice, technical terms, etc.
 
-## Text Utilities
+## Text utilities
 
-Change text alignment, transform, style, weight, and color with our [text utilities]({{< docsref "/utilities/text" >}}) and [color utilities]({{< docsref "/utilities/colors" >}}).
+Change text alignment, transform, style, weight, line-height, decoration and color with our [text utilities]({{< docsref "/utilities/text" >}}) and [color utilities]({{< docsref "/utilities/colors" >}}).
 
 ## Abbreviations
 
@@ -184,94 +150,56 @@ Add `.initialism` to an abbreviation for a slightly smaller font-size.
 
 ## Blockquotes
 
-For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.
+For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any HTML as the quote.
 
 {{< example >}}
 <blockquote class="blockquote">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <p>A well-known quote, contained in a blockquote element.</p>
 </blockquote>
 {{< /example >}}
 
-### Naming a Source
+### Naming a source
 
-Add a `<footer class="blockquote-footer">` for identifying the source. Wrap the name of the source work in `<cite>`.
+The HTML spec requires that blockquote attribution be placed outside the `<blockquote>`. When providing attribution, wrap your `<blockquote>` in a `<figure>` and use a `<figcaption>` or a block level element (e.g., `<p>`) with the `.blockquote-footer` class. Be sure to wrap the name of the source work in `<cite>` as well.
 
 {{< example >}}
-<blockquote class="blockquote">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
+<figure>
+  <blockquote class="blockquote">
+    <p>A well-known quote, contained in a blockquote element.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
 {{< /example >}}
 
 ### Alignment
 
-Use text utilities as needed to change the alignment of your blockquote. You can also add the `.blockquote-reverse` in combination with `.text-end` to right-align your blockquote and shift its border to the right.
+Use text utilities as needed to change the alignment of your blockquote.
 
 {{< example >}}
-<blockquote class="blockquote text-center">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p>A well-known quote, contained in a blockquote element.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
 {{< /example >}}
 
 {{< example >}}
-<blockquote class="blockquote text-end">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
-{{< /example >}}
-
-{{< example >}}
-<blockquote class="blockquote blockquote-reverse text-end">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
+<figure class="text-end">
+  <blockquote class="blockquote">
+    <p>A well-known quote, contained in a blockquote element.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
 {{< /example >}}
 
 ## Lists
-
-### Ordered
-
-Ordered lists are good for content that requires sequential or hierarchical ordering.
-
-{{< example >}}
-<ol>
-  <li>First, Lorem ipsum dolor sit amet</li>
-  <li>Second, Consectetur adipiscing elit</li>
-  <li>Third, Integer molestie lorem at massa</li>
-  <li>Fourth, Facilisis in pretium nisl aliquet</li>
-  <li>Last, Nulla volutpat aliquam velit</li>
-</ol>
-{{< /example >}}
-
-### Unordered
-
-Unordered lists are good for generic content that doesn't have any sort of sequantial order.
-
-{{< example >}}
-<ul>
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit</li>
-</ul>
-{{< /example >}}
-
-### Triangles
-
-Add the `.ul-triangles` class to your **unordered list** to replace the default bullets with triangles. Triangle list items function the same as an unordered list.
-
-{{< example >}}
-<ul class="ul-triangles">
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit</li>
-</ul>
-{{< /example >}}
-
 
 ### Unstyled
 
@@ -279,21 +207,18 @@ Remove the default `list-style` and left margin on list items (immediate childre
 
 {{< example >}}
 <ul class="list-unstyled">
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit
+  <li>This is a list.</li>
+  <li>It appears completely unstyled.</li>
+  <li>Structurally, it's still a list.</li>
+  <li>However, this style only applies to immediate child elements.</li>
+  <li>Nested lists:
     <ul>
-      <li>Phasellus iaculis neque</li>
-      <li>Purus sodales ultricies</li>
-      <li>Vestibulum laoreet porttitor sem</li>
-      <li>Ac tristique libero volutpat at</li>
+      <li>are unaffected by this style</li>
+      <li>will still show a bullet</li>
+      <li>and have appropriate left margin</li>
     </ul>
   </li>
-  <li>Faucibus porta lacus fringilla vel</li>
-  <li>Aenean sit amet erat nunc</li>
-  <li>Eget porttitor lorem</li>
+  <li>This may still come in handy in some situations.</li>
 </ul>
 {{< /example >}}
 
@@ -303,13 +228,13 @@ Remove a list's bullets and apply some light `margin` with a combination of two 
 
 {{< example >}}
 <ul class="list-inline">
-  <li class="list-inline-item">Lorem ipsum</li>
-  <li class="list-inline-item">Phasellus iaculis</li>
-  <li class="list-inline-item">Nulla volutpat</li>
+  <li class="list-inline-item">This is a list item.</li>
+  <li class="list-inline-item">And another one.</li>
+  <li class="list-inline-item">But they're displayed inline.</li>
 </ul>
 {{< /example >}}
 
-### Description List Alignment
+### Description list alignment
 
 Align terms and descriptions horizontally by using our grid system's predefined classes (or semantic mixins). For longer terms, you can optionally add a `.text-truncate` class to truncate the text with an ellipsis.
 
@@ -318,30 +243,44 @@ Align terms and descriptions horizontally by using our grid system's predefined 
   <dt class="col-sm-3">Description lists</dt>
   <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
 
-  <dt class="col-sm-3">Euismod</dt>
+  <dt class="col-sm-3">Term</dt>
   <dd class="col-sm-9">
-    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
-    <p>Donec id elit non mi porta gravida at eget metus.</p>
+    <p>Definition for the term.</p>
+    <p>And some more placeholder definition text.</p>
   </dd>
 
-  <dt class="col-sm-3">Malesuada porta</dt>
-  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+  <dt class="col-sm-3">Another term</dt>
+  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
 
   <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+  <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
 
   <dt class="col-sm-3">Nesting</dt>
   <dd class="col-sm-9">
     <dl class="row">
       <dt class="col-sm-4">Nested definition list</dt>
-      <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
     </dl>
   </dd>
 </dl>
 {{< /example >}}
 
-## Responsive Font Sizes
+## Responsive font sizes
 
-Bootstrap v4.3 ships with the option to enable responsive font sizes, allowing text to scale more naturally across device and viewport sizes. <abbr title="Responsive font sizes">RFS</abbr> can be enabled by changing the `$enable-responsive-font-sizes` Sass variable to `true` and recompiling Bootstrap.
+In Bootstrap 5, we've enabled responsive font sizes by default, allowing text to scale more naturally across device and viewport sizes. Have a look at the [RFS page]({{< docsref "/getting-started/rfs" >}}) to find out how this works.
 
-To support <abbr title="Responsive font sizes">RFS</abbr>, we use a Sass mixin to replace our normal `font-size` properties. Responsive font sizes will be compiled into `calc()` functions with a mix of `rem` and viewport units to enable the responsive scaling behavior. More about <abbr title="Responsive font sizes">RFS</abbr> and its configuration can be found on its [GitHub repository](https://github.com/twbs/rfs).
+## CSS
+
+### Sass variables
+
+Headings have some dedicated variables for sizing and spacing.
+
+{{< scss-docs name="headings-variables" file="scss/_variables.scss" >}}
+
+Miscellaneous typography elements covered here and in [Reboot]({{< docsref "/content/reboot" >}}) also have dedicated variables.
+
+{{< scss-docs name="type-variables" file="scss/_variables.scss" >}}
+
+### Sass mixins
+
+There are no dedicated mixins for typography, but Bootstrap does use [Responsive Font Sizing (RFS)]({{< docsref "/getting-started/rfs" >}}).

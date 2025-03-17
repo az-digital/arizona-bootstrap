@@ -107,7 +107,7 @@ We occasionally use media queries that go in the other direction (the given scre
 ```
 
 {{< callout info >}}
-{{< partial "callout-info-mediaqueries-breakpoints.md" >}}
+{{< partial "callouts/info-mediaqueries-breakpoints.md" >}}
 {{< /callout >}}
 
 Once again, these media queries are also available via Sass mixins:

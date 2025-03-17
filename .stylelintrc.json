@@ -42,12 +42,6 @@
       }
     },
     {
-      "files": "scss/*.scss",
-      "rules": {
-        "scss/dollar-variable-default": null,
-      }
-    },
-    {
       "files": "site/**/*.scss",
       "rules": {
         "scss/dollar-variable-default": null

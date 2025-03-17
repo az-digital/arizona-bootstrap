@@ -6,7 +6,7 @@
 @mixin alert-variant($background) {
   @include text-color-contrast($background);
   background-color: $background;
-  border: none;
+  border: 0;
 
   .alert-link {
     color: $alert-text-color;

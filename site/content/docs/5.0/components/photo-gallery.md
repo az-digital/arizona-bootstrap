@@ -18,32 +18,32 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
 				<a href="#myGallery" data-slide-to="0">
 		            <picture class="card-img img-responsive">
-		             	<source srcset="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
-		              	<img class="photo-gallery-grid-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror" title="">
+		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
+		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror" title="">
 		        	</picture>
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
 				<a href="#myGallery" data-slide-to="1">
 		            <picture class="card-img img-responsive">
-		             	<source srcset="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
-		              	<img class="photo-gallery-grid-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
+		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
 		        	</picture>
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
 				<a href="#myGallery" data-slide-to="2">
 		            <picture class="card-img img-responsive">
-		             	<source srcset="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
-		              	<img class="photo-gallery-grid-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown" title="">
+		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
+		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown" title="">
 		        	</picture>
 		        </a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
 				<a href="#myGallery" data-slide-to="3">
 		            <picture class="card-img img-responsive">
-		             	<source srcset="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
-		              	<img class="photo-gallery-grid-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles" title="">
+		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
+		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles" title="">
 		        	</picture>
 		        </a>
 			</div>
@@ -57,7 +57,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 				<div class="carousel-inner az-gallery-inner">
 					<div class="carousel-item az-gallery-item active">
 						<div class="carousel-image">
-							<img src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="d-block az-gallery-img" alt="A hand holding a little mirror">
 						</div>
 						<div class="carousel-caption az-gallery-caption d-block">
 				        	<h5 class="text-sky">First slide label</h5>
@@ -66,7 +66,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 					</div>
 					<div class="carousel-item az-gallery-item">
 						<div class="carousel-image">
-							<img src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="d-block az-gallery-img" alt="University of Arizona Spring Fling">
+							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="d-block az-gallery-img" alt="University of Arizona Spring Fling">
 						</div>
 						<div class="carousel-caption az-gallery-caption d-block">
 				        	<h5 class="text-sky">Second slide label</h5>
@@ -75,7 +75,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 					</div>
 					<div class="carousel-item az-gallery-item">
 						<div class="carousel-image">
-							<img src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="d-block az-gallery-img" alt="University graduate on stage wearing cap and gown">
+							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="d-block az-gallery-img" alt="University graduate on stage wearing cap and gown">
 						</div>
 						<div class="carousel-caption az-gallery-caption d-block">
 				        	<h5 class="text-sky">Third slide label</h5>
@@ -84,7 +84,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 					</div>
 					<div class="carousel-item az-gallery-item">
 						<div class="carousel-image">
-							<img src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="d-block az-gallery-img" alt="Ceiling tiles">
+							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="d-block az-gallery-img" alt="Ceiling tiles">
 						</div>
 						<div class="carousel-caption az-gallery-caption d-block">
 				        	<h5 class="text-sky">Fourth slide label</h5>

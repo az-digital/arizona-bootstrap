@@ -68,6 +68,7 @@
     ],
     "no-console": "error",
     "no-negated-condition": "off",
+    "no-warning-comments": "off",
     "object-curly-spacing": [
       "error",
       "always"

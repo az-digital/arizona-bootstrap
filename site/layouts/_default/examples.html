@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="en"{{ with .Page.Params.html_class }} class="{{ . }}"{{ end }}>
+<html {{ if eq .Page.Params.direction "rtl" }}lang="ar" dir="rtl"{{ else }}lang="en"{{ end }}{{ with .Page.Params.html_class }} class="{{ . }}"{{ end }} data-bs-theme="auto">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="{{ .Site.Params.authors }}">
     <meta name="generator" content="Hugo {{ hugo.Version }}">
-    <title>{{ .Page.Title | markdownify }} · {{ .Site.Title | markdownify }}</title>
+    <title>{{ .Page.Title | markdownify }} · {{ .Site.Title | markdownify }} v{{ .Site.Params.docs_version }}</title>
 
     <link rel="canonical" href="{{ .Permalink }}">
 
     {{ with .Params.robots -}}
     <meta name="robots" content="{{ . }}">
     {{- end }}
+
+    {{- $colorModeJS := urls.JoinPath "docs" $.Site.Params.docs_version "assets/js/color-modes.js" | relURL -}}
+    <script src="{{ $colorModeJS }}"></script>
 
     {{ partial "stylesheet" . }}
     {{ partial "favicons" . }}
@@ -23,7 +26,6 @@
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
-        -ms-user-select: none;
         user-select: none;
       }
 
@@ -32,29 +34,98 @@
           font-size: 3.5rem;
         }
       }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
     </style>
 
-    {{ range .Page.Params.extra_css }}
+    {{ range .Page.Params.extra_css -}}
     {{ "<!-- Custom styles for this template -->" | safeHTML }}
     <link href="{{ . }}" rel="stylesheet">
     {{- end }}
   </head>
   <body{{ with .Page.Params.body_class }} class="{{ . }}"{{ end }}>
+    {{ partial "examples/icons" . }}
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      {{ partial "theme-toggler" . }}
+    </div>
+
     {{ .Content }}
 
-    {{ if ne .Page.Params.include_js false -}}
-      <script src="{{ .Site.Params.cdn.jquery }}" {{ printf "integrity=%q" .Site.Params.cdn.jquery_hash | safeHTMLAttr }} crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/assets/js/vendor/jquery.slim.min.js` ) | relURL -}}"><\/script>')</script>
-
-      {{- if eq hugo.Environment "production" -}}
-        <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}"></script>
-      {{- else -}}
-        <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js` ) | relURL -}}"></script>
-      {{- end }}
-
-      {{ range .Page.Params.extra_js }}
-      <script src="{{ . }}"></script>
-      {{- end }}
+    {{- if hugo.IsProduction -}}
+      <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}" {{ printf "integrity=%q" .Site.Params.cdn.js_bundle_hash | safeHTMLAttr }}></script>
+    {{- else -}}
+      <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js` ) | relURL -}}"></script>
     {{- end }}
+
+    {{ range .Page.Params.extra_js -}}
+      <script{{ with .async }} async{{ end }}{{ with .defer }} defer{{ end }} src="{{ .src }}"{{ with .integrity }} {{ printf "integrity=%q" . | safeHTMLAttr }} crossorigin="anonymous"{{ end }}></script>
+    {{- end -}}
   </body>
 </html>

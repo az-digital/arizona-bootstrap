@@ -29,7 +29,7 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
 {{< example >}}
 <div class="card bg-warm-gray hover" style="width: 18rem;">
   <div class="overflow-hidden">
-    <img class="hover-img-zoom-in card-img" src="{{< docsref `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+    <img class="hover-img-zoom-in card-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">
     <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>

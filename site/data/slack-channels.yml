@@ -39,10 +39,6 @@
   description:
     - purpose: "For automated pull request updates concerning the ua_quickstart repo"
 
-- channel: "#ua-quickstart-d8"
-  description:
-    - purpose: "For topics and questions concerning the migration of UA Quickstart from Drupal 7 to Drupal 8"
-
 - channel: "#azdigital-ci"
   description:
     - purpose: "For automated tasks and CI (continuous integration)"

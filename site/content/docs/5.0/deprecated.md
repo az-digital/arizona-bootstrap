@@ -274,9 +274,9 @@ The syntax for column offsets has changed in {{< ourname >}}. Previously, you wo
 The syntax for pulling content to the left/right has changed to `.float-left` and `.float-right`.
 
 <div class="bd-example">
-  <img class="pull-left me-3" width="350" alt="Example image 1" src="{{< docsref `/assets/img/img_placeholders/gallery-img-2.jpg` >}}">
+  <img class="pull-left me-3" width="350" alt="Example image 1" src="{{< docsrefazold `/assets/img/img_placeholders/gallery-img-2.jpg` >}}">
   <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit scelerisque in dictum non consectetur a erat nam. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Dui nunc mattis enim ut tellus elementum sagittis vitae. Id donec ultrices tincidunt arcu non sodales. Enim diam vulputate ut pharetra sit. Amet consectetur adipiscing elit ut aliquam purus sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan. Purus semper eget duis at tellus at urna. A condimentum vitae sapien pellentesque. Cras adipiscing enim eu turpis egestas. Consequat semper viverra nam libero justo laoreet sit amet. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Id venenatis a condimentum vitae. Ultricies integer quis auctor elit sed vulputate mi sit amet.</p>
-  <img class="pull-right ms-3" width="350" alt="Example image 1" src="{{< docsref `/assets/img/img_placeholders/gallery-img-2.jpg` >}}">
+  <img class="pull-right ms-3" width="350" alt="Example image 1" src="{{< docsrefazold `/assets/img/img_placeholders/gallery-img-2.jpg` >}}">
   <p class="lead">Turpis cursus in hac habitasse platea dictumst quisque. Tellus cras adipiscing enim eu. Lectus sit amet est placerat in egestas. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Sed euismod nisi porta lorem. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Convallis posuere morbi leo urna molestie at elementum. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Vulputate dignissim suspendisse in est ante in nibh mauris.</p>
 </div>
 

@@ -3,38 +3,38 @@
 //
 
 .bd-callout {
+  --#{$prefix}link-color-rgb: var(--bd-callout-link);
+  --#{$prefix}code-color: var(--bd-callout-code-color);
+
   padding: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  border: 1px solid #eee;
-  border-left-width: .25rem;
-  @include border-radius();
+  color: var(--bd-callout-color, inherit);
+  background-color: var(--bd-callout-bg, var(--bs-gray-100));
+  border-left: .25rem solid var(--bd-callout-border, var(--bs-gray-300));
 
   h4 {
-    margin-top: 0;
     margin-bottom: .25rem;
   }
 
-  p:last-child {
+  > :last-child {
     margin-bottom: 0;
-  }
-
-  code {
-    @include border-radius();
   }
 
   + .bd-callout {
     margin-top: -.25rem;
   }
+
+  .highlight {
+    background-color: rgba($black, .05);
+  }
 }
 
 // Variations
-@mixin bs-callout-variant($color) {
-  border-color: $color;
-
-  h4 { color: $color; }
+@each $variant in $bd-callout-variants {
+  .bd-callout-#{$variant} {
+    --bd-callout-color: var(--bs-#{$variant}-text-emphasis);
+    --bd-callout-bg: var(--bs-#{$variant}-bg-subtle);
+    --bd-callout-border: var(--bs-#{$variant}-border-subtle);
+  }
 }
-
-.bd-callout-info { @include bs-callout-variant($bd-info); }
-.bd-callout-warning { @include bs-callout-variant($bd-warning); }
-.bd-callout-danger { @include bs-callout-variant($bd-danger); }

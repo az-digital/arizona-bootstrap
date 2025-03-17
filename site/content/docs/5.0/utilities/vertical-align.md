@@ -9,6 +9,8 @@ Change the alignment of elements with the [`vertical-alignment`](https://develop
 
 Choose from `.align-baseline`, `.align-top`, `.align-middle`, `.align-bottom`, `.align-text-bottom`, and `.align-text-top` as needed.
 
+To vertically center non-inline content (like `<div>`s and more), use our [flex box utilities]({{< docsref "/utilities/flex#align-items" >}}).
+
 With inline elements:
 
 {{< example >}}
@@ -36,3 +38,11 @@ With table cells:
   </tbody>
 </table>
 {{< /example >}}
+
+## CSS
+
+### Sass utilities API
+
+Vertical align utilities are declared in our utilities API in `scss/_utilities.scss`. [Learn how to use the utilities API.]({{< docsref "/utilities/api#using-the-api" >}})
+
+{{< scss-docs name="utils-vertical-align" file="scss/_utilities.scss" >}}
