@@ -51,7 +51,7 @@
       <div class="row g-3">
         {{- range $plugin := .Site.Data.plugins -}}
           {{- /* TODO we should use urls.JoinPath here too, but the links include `#` which gets escaped */ -}}
-          {{- $href := printf "/docs/%s/%s" $.Site.Params.docs_version $plugin.link }}
+          {{- $href := printf "docs/%s/%s" $.Site.Params.docs_version $plugin.link | relURL }}
           <div class="col-sm-6 mb-2">
             <a class="d-block pe-lg-4 text-decoration-none lh-sm" href="{{ $href }}">
               <h4 class="mb-0 fs-5 fw-semibold">{{ $plugin.name }}</h4>
