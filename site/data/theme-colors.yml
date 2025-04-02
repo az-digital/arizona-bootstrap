@@ -4,9 +4,13 @@
   hex: "#a95c42"
 - name: warning
   hex: "#f19e1f"
+  contrast_color: dark
 - name: info
   hex: "#81d3eb"
+  contrast_color: dark
 - name: light
   hex: "#dee2e6"
+  contrast_color: dark
 - name: dark
   hex: "#343a40"
+  contrast_color: white
