@@ -805,7 +805,7 @@ class Config {
  * Constants
  */
 
-const VERSION = '5.3.4';
+const VERSION = '5.3.5';
 
 /**
  * Class definition
