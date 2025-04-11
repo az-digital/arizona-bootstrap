@@ -1,23 +1,38 @@
 # Arizona Bootstrap
 
-Build responsive, mobile-first projects on the web with the University of Arizona's theme for Bootstrap 4.
+Build responsive, mobile-first projects on the web with the University of Arizona's customized Bootstrap.
 
-Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
 
 A team of web-focused volunteers known as Arizona Digital meets weekly to build and test products like Arizona Bootstrap and Arizona Quickstart. Contributions are what keep Arizona Bootstrap moving and improving, and are in everyone's best interest.
-
-[Explore Arizona Bootstrap Docs](https://digital.arizona.edu/arizona-bootstrap/)
 
 ## Contributing
 
 Please refer to the [Contributing doc](./CONTRIBUTING.md).
 
-## Arizona Bootstrap vs. UA Bootstrap
+## Versions, Documentation and Review
 
-Arizona Bootstrap is built off of Bootstrap 4, and UA Bootstrap is built off of Bootstrap 3.
+Arizona Bootstrap is a customization of the [Bootstrap](https://getbootstrap.com/) frontend toolkit,
+organized as two different versions.
 
-- [Learn about migrating from Bootstrap 3 to Bootstrap 4](https://digital.arizona.edu/arizona-bootstrap/docs/0.0/migration/)
-- [Learn about backwards compatibility between UA Bootstrap and Arizona Bootstrap](https://digital.arizona.edu/arizona-bootstrap/docs/0.0/backwards-compatibility/)
+### Arizona Bootstrap 5
+
+The version under active development is based on [upstream Bootstrap v5](https://github.com/twbs/bootstrap/tree/main)
+
+- The code is on the [main](https://github.com/az-digital/arizona-bootstrap/tree/main) branch in the repository.
+- A review site showing the latest build (generally more recent than any release) is at <https://review.digital.arizona.edu/arizona-bootstrap/main/>
+
+The documentation for Arizona Bootstrap 5 was initially a minimally modified copy of what applied to Arizona Bootstrap 2, with some of the information incorrect and many of the examples broken. As a temporary measure, there is a variation of the Arizona Bootstrap v5 code that includes documentation originally derived from upstream Bootstrap v5, being modified to reflect the Arizona Bootstrap changes.
+
+- The code is on the [v5-docs](https://github.com/az-digital/arizona-bootstrap/tree/v5-docs) branch in the repository.
+- A review site showing the latest build is at <https://review.digital.arizona.edu/arizona-bootstrap/v5-docs/>
+
+### Arizona Bootstrap 2
+
+A version of Arizona Bootstrap supporting many currently active uses is based on [upstream Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev) (the numbering of Arizona Bootstrap versions changed, so this is version 2, and there is no Arizona Bootstrap 4)
+
+- The code is on the [2.x](https://github.com/az-digital/arizona-bootstrap/tree/2.x) branch in the repository.
+- A review site with fully functional documentation is at <https://review.digital.arizona.edu/arizona-bootstrap/2.x/>
 
 ## Testing Tools
 
