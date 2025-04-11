@@ -8,6 +8,7 @@ on:
       - 'dist/**'
     branches:
       - main
+      - v5-docs
       - 2.x
 env:
   AZ_SITE_HOST: ${{ vars.AZ_SITE_HOST }}
