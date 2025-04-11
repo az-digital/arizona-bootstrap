@@ -40,6 +40,21 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    target-branch: "2.x"
+    reviewers:
+      - "az-digital/developers"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
     reviewers:
       - "az-digital/developers"
     ignore:
@@ -53,6 +68,17 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    target-branch: "2.x"
+    reviewers:
+      - "az-digital/developers"
+    labels:
+      - "ci"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
     reviewers:
       - "az-digital/developers"
     labels:
