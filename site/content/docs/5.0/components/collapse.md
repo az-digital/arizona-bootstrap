@@ -26,15 +26,15 @@ Click the buttons below to show and hide another element via class changes:
 - `.collapsing` is applied during transitions
 - `.collapse.show` shows content
 
-Generally, we recommend using a button with the `data-target` attribute. While not recommended from a semantic point of view, you can also use a link with the `href` attribute (and a `role="button"`). In both cases, the `data-toggle="collapse"` is required.
+Generally, we recommend using a button with the `data-bs-target` attribute. While not recommended from a semantic point of view, you can also use a link with the `href` attribute (and a `role="button"`). In both cases, the `data-bs-toggle="collapse"` is required.
 
 {{< example >}}
 <p>
-  <a class="btn btn-red" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn btn-red" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Link with href
   </a>
-  <button class="btn btn-red" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
+  <button class="btn btn-red" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
   </button>
 </p>
 <div class="collapse" id="collapseExample">
@@ -46,14 +46,14 @@ Generally, we recommend using a button with the `data-target` attribute. While n
 
 ## Multiple Targets
 
-A `<button>` or `<a>` can show and hide multiple elements by referencing them with a JQuery selector in its `href` or `data-target` attribute.
-Multiple `<button>` or `<a>` can show and hide an element if they each reference it with their `href` or `data-target` attribute
+A `<button>` or `<a>` can show and hide multiple elements by referencing them with a JQuery selector in its `href` or `data-bs-target` attribute.
+Multiple `<button>` or `<a>` can show and hide an element if they each reference it with their `href` or `data-bs-target` attribute
 
 {{< example >}}
 <p>
-  <a class="btn btn-red" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-  <button class="btn btn-red" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-  <button class="btn btn-red" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+  <a class="btn btn-red" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+  <button class="btn btn-red" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+  <button class="btn btn-red" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
 </p>
 <div class="row">
   <div class="col">
@@ -81,11 +81,11 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
 <div class="accordion" id="ex1_accordionExample">
   <div class="card">
     <div class="card-header" id="ex1_headingOne">
-      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ex1_collapseOne" aria-expanded="true" aria-controls="ex1_collapseOne">
+      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#ex1_collapseOne" aria-expanded="true" aria-controls="ex1_collapseOne">
         Collapsible Group Item #1
       </button>
     </div>
-    <div id="ex1_collapseOne" class="collapse show" aria-labelledby="ex1_headingOne" data-parent="#ex1_accordionExample">
+    <div id="ex1_collapseOne" class="collapse show" aria-labelledby="ex1_headingOne" data-bs-parent="#ex1_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
@@ -93,11 +93,11 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
   </div>
   <div class="card">
     <div class="card-header" id="ex1_headingTwo">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseTwo" aria-expanded="false" aria-controls="ex1_collapseTwo">
+      <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1_collapseTwo" aria-expanded="false" aria-controls="ex1_collapseTwo">
         Collapsible Group Item #2
       </button>
     </div>
-    <div id="ex1_collapseTwo" class="collapse" aria-labelledby="ex1_headingTwo" data-parent="#ex1_accordionExample">
+    <div id="ex1_collapseTwo" class="collapse" aria-labelledby="ex1_headingTwo" data-bs-parent="#ex1_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
@@ -105,11 +105,11 @@ Using the [card]({{< docsref "/components/card" >}}) component, you can extend t
   </div>
   <div class="card">
     <div class="card-header" id="ex1_headingThree">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex1_collapseThree" aria-expanded="false" aria-controls="ex1_collapseThree">
+      <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1_collapseThree" aria-expanded="false" aria-controls="ex1_collapseThree">
         Collapsible Group Item #3
       </button>
     </div>
-    <div id="ex1_collapseThree" class="collapse" aria-labelledby="ex1_headingThree" data-parent="#ex1_accordionExample">
+    <div id="ex1_collapseThree" class="collapse" aria-labelledby="ex1_headingThree" data-bs-parent="#ex1_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
@@ -125,12 +125,12 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingOne">
       <h3 class="my-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ex2_collapseOne" aria-expanded="true" aria-controls="ex2_collapseOne">
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#ex2_collapseOne" aria-expanded="true" aria-controls="ex2_collapseOne">
           Collapsible Group Item #1
         </button>
       </h3>
     </div>
-    <div id="ex2_collapseOne" class="collapse show" aria-labelledby="ex2_headingOne" data-parent="#ex2_accordionExample">
+    <div id="ex2_collapseOne" class="collapse show" aria-labelledby="ex2_headingOne" data-bs-parent="#ex2_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
@@ -139,12 +139,12 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingTwo">
       <h3 class="my-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseTwo" aria-expanded="false" aria-controls="ex2_collapseTwo">
+        <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex2_collapseTwo" aria-expanded="false" aria-controls="ex2_collapseTwo">
           Collapsible Group Item #2
         </button>
       </h3>
     </div>
-    <div id="ex2_collapseTwo" class="collapse" aria-labelledby="ex2_headingTwo" data-parent="#ex2_accordionExample">
+    <div id="ex2_collapseTwo" class="collapse" aria-labelledby="ex2_headingTwo" data-bs-parent="#ex2_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
@@ -153,25 +153,25 @@ Depending on your use case, you might want to include a heading tag (`.h2`, `.h3
   <div class="card">
     <div class="card-header" id="ex2_headingThree">
       <h3 class="my-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ex2_collapseThree" aria-expanded="false" aria-controls="ex2_collapseThree">
+        <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex2_collapseThree" aria-expanded="false" aria-controls="ex2_collapseThree">
           Collapsible Group Item #3
         </button>
       </h3>
     </div>
-    <div id="ex2_collapseThree" class="collapse" aria-labelledby="ex2_headingThree" data-parent="#ex2_accordionExample">
+    <div id="ex2_collapseThree" class="collapse" aria-labelledby="ex2_headingThree" data-bs-parent="#ex2_accordionExample">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
   </div>
 </div>
-{{< /example >}} 
+{{< /example >}}
 
 ## Accessibility
 
 Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsible element). If the control element's HTML element is not a button (e.g., an `<a>` or `<div>`), the attribute `role="button"` should be added to the element.
 
-If your control element is targeting a single collapsible element – i.e. the `data-target` attribute is pointing to an `id` selector – you should add the `aria-controls` attribute to the control element, containing the `id` of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.
+If your control element is targeting a single collapsible element – i.e. the `data-bs-target` attribute is pointing to an `id` selector – you should add the `aria-controls` attribute to the control element, containing the `id` of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.
 
 Note that Bootstrap's current implementation does not cover the various keyboard interactions described in the [WAI-ARIA Authoring Practices 1.1 accordion pattern](https://www.w3.org/TR/wai-aria-practices-1.1#accordion) - you will need to include these yourself with custom JavaScript.
 
@@ -187,9 +187,9 @@ These classes can be found in `_transitions.scss`.
 
 ### Via Data Attributes
 
-Just add `data-toggle="collapse"` and a `data-target` to the element to automatically assign control of one or more collapsible elements. The `data-target` attribute accepts a CSS selector to apply the collapse to. Be sure to add the class `collapse` to the collapsible element. If you'd like it to default open, add the additional class `show`.
+Just add `data-bs-toggle="collapse"` and a `data-bs-target` to the element to automatically assign control of one or more collapsible elements. The `data-bs-target` attribute accepts a CSS selector to apply the collapse to. Be sure to add the class `collapse` to the collapsible element. If you'd like it to default open, add the additional class `show`.
 
-To add accordion-like group management to a collapsible area, add the data attribute `data-parent="#selector"`. Refer to the demo to see this in action.
+To add accordion-like group management to a collapsible area, add the data attribute `data-bs-parent="#selector"`. Refer to the demo to see this in action.
 
 ### Via JavaScript
 
@@ -201,7 +201,7 @@ $('.collapse').collapse()
 
 ### Options
 
-Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-`, as in `data-parent=""`.
+Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-bs-`, as in `data-bs-parent=""`.
 
 <table class="table table-bordered table-striped">
   <thead>

@@ -17,7 +17,7 @@ import ScrollSpy from '../node_modules/bootstrap/js/src/scrollspy.js'
 import Tab from '../node_modules/bootstrap/js/src/tab.js'
 import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
-// import Offcanvasmenu from './src/offcanvasmenu'
+import Offcanvasmenu from './src/offcanvasmenu'
 
 export default {
   Alert,
@@ -31,6 +31,6 @@ export default {
   ScrollSpy,
   Tab,
   Toast,
-  Tooltip
-//  Offcanvasmenu
+  Tooltip,
+  Offcanvasmenu
 }
