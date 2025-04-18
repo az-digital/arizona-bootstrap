@@ -303,7 +303,7 @@ for (const element of SelectorEngine.find('.dropdown.keep-open .dropdown-toggle'
   EventHandler.on(element, 'click', event => {
     getViewportWidth()
     if (VIEWPORT_WIDTH < XS_BREAKPOINT_MAX) {
-      if (event.target.hasAttribute('arria-expanded')) {
+      if (event.target.hasAttribute('aria-expanded')) {
         event.target.parentElement.classList.remove('show')
         event.target.setAttribute('aria-expanded', false)
       } else {
@@ -311,7 +311,11 @@ for (const element of SelectorEngine.find('.dropdown.keep-open .dropdown-toggle'
         event.target.setAttribute('aria-expanded', true)
       }
 
-      event.target.nextElementSibling.matches('.dropdown-menu').toggle()
+      const menu = event.target.nextElementSibling
+      if (menu && menu.matches('.dropdown-menu')) {
+        menu.classList.toggle('show')
+      }
+
       event.stopPropagation()
     }
   })
