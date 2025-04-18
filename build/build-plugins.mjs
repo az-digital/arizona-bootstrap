@@ -17,7 +17,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const sourcePath = path.resolve(__dirname, '../js/src/').replace(/\\/g, '/')
-const jsFiles = await globby(`${sourcePath}/**/*.js`)
+const bsSourcePath = path.resolve(__dirname, '../node_modules/bootstrap/js/src/').replace(/\\/g, '/')
+const jsFiles = await globby([`${sourcePath}/**/*.js`, `${bsSourcePath}/**/*.js`])
 
 // Array which holds the resolved plugins
 const resolvedPlugins = []
@@ -54,7 +55,7 @@ const build = async plugin => {
     ],
     external(source) {
       // Pattern to identify local files
-      const pattern = /^(\.{1,2})\//
+      const pattern = /^(\.\.\/\.\.\/node_modules\/bootstrap\/)|((\.{1,2})\/)/
 
       // It's not a local file, e.g a Node.js package
       if (!pattern.test(source)) {
@@ -62,12 +63,14 @@ const build = async plugin => {
         return true
       }
 
+      const mungedsource = source.replace(pattern, '')
+
       const usedPlugin = resolvedPlugins.find(plugin => {
-        return plugin.src.includes(source.replace(pattern, ''))
+        return plugin.src.includes(mungedsource)
       })
 
       if (!usedPlugin) {
-        throw new Error(`Source ${source} is not mapped!`)
+        throw new Error(`Source ${plugin.src} <- ${mungedsource} is not mapped!`)
       }
 
       // We can change `Index` with `UtilIndex` etc if we use
