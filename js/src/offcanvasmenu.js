@@ -310,12 +310,10 @@ for (const element of SelectorEngine.find('.dropdown.keep-open .dropdown-toggle'
         event.target.parentElement.classList.add('show')
         event.target.setAttribute('aria-expanded', true)
       }
-
       const menu = event.target.nextElementSibling
       if (menu && menu.matches('.dropdown-menu')) {
         menu.classList.toggle('show')
       }
-
       event.stopPropagation()
     }
   })
