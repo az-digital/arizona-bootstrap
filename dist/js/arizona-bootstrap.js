@@ -5335,10 +5335,12 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap index.umd.js
+   * Bootstrap (v5.2.0): index.umd.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
+
+  // import Offcanvasmenu from './src/offcanvasmenu'
 
   const index_umd = {
     Alert: Alert,
@@ -5353,6 +5355,7 @@
     Tab: Tab,
     Toast: Toast,
     Tooltip: Tooltip
+    //  Offcanvasmenu
   };
 
   return index_umd;
