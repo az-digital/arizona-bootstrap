@@ -220,7 +220,7 @@ class Offcanvasmenu extends BaseComponent {
   }
 
   _initializeBackDrop() {
-    return new Backdrop({
+    return Backdrop({
       className: CLASS_NAME_BACKDROP
     })
   }

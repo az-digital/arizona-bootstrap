@@ -5536,7 +5536,7 @@ var Offcanvasmenu = /*#__PURE__*/function (_BaseComponent) {
     return element.classList.contains(CLASS_NAME_OPEN);
   };
   _proto._initializeBackDrop = function _initializeBackDrop() {
-    return new Backdrop({
+    return Backdrop({
       className: CLASS_NAME_BACKDROP
     });
   };
