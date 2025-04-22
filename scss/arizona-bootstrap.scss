@@ -84,7 +84,7 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 // @import "jumbotron";
 @import "tooltip";
 @import "popover";
-@import "collapse";
+// @import "collapse";
 @import "carousel";
 @import "photo-gallery";
 @import "color-contrast";
