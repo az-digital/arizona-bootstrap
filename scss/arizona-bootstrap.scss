@@ -20,6 +20,59 @@
 $colors: map-remove($colors, "indigo", "purple", "pink", "orange", "yellow", "green", "teal", "cyan", "gray", "gray-dark");
 $theme-colors: map-remove($theme-colors, "primary", "secondary");
 
+// Set up text and background colors.
+$text-colors: map-merge($colors,
+  (
+    dark-silver: $dark-silver
+  ));
+$background-colors: map-merge($colors, $theme-colors);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $text-colors
+          ),
+        ),
+      ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+// Override "info" text color.
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            info: $azurite
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
 // Optional asset overrides.
 @import "custom-asset-overrides";
 
