@@ -83,7 +83,7 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "pagination";
 @import "tooltip";
 @import "popover";
-@import "collapse";
+// @import "collapse";
 @import "carousel";
 @import "photo-gallery";
 @import "color-contrast";
