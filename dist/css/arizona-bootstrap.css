@@ -3580,17 +3580,17 @@ textarea.form-control-lg {
 }
 
 .btn {
-  --bs-btn-padding-x: 0.75rem;
-  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-padding-x: 20px;
+  --bs-btn-padding-y: 8px;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 1rem;
-  --bs-btn-font-weight: 500;
+  --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
-  --bs-btn-border-width: 2px;
+  --bs-btn-border-width: var(--bs-border-width);
   --bs-btn-border-color: transparent;
-  --bs-btn-border-radius: var(--bs-border-radius);
+  --bs-btn-border-radius: 3rem;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   --bs-btn-disabled-opacity: 0.65;
@@ -4294,11 +4294,11 @@ textarea.form-control-lg {
 
 .btn-group > :not(.btn-check:first-child) + .btn,
 .btn-group > .btn-group:not(:first-child) {
-  margin-left: calc(-1 * 2px);
+  margin-left: calc(-1 * var(--bs-border-width));
 }
 .dropdown-toggle-split {
-  padding-right: 0.5625rem;
-  padding-left: 0.5625rem;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .dropdown-toggle-split::after, .dropup .dropdown-toggle-split::after, .dropend .dropdown-toggle-split::after {
   margin-left: 0;
@@ -4331,7 +4331,7 @@ textarea.form-control-lg {
 }
 .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
-  margin-top: calc(-1 * 2px);
+  margin-top: calc(-1 * var(--bs-border-width));
 }
 .nav {
   --bs-nav-link-padding-x: 1rem;
@@ -4484,7 +4484,7 @@ textarea.form-control-lg {
   --bs-navbar-toggler-font-size: 1.25rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
-  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+  --bs-navbar-toggler-border-radius: 3rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
   position: relative;
@@ -17956,133 +17956,6 @@ a {
     margin-bottom: 0;
   }
 }
-.btn {
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  white-space: normal;
-  border-width: 2px;
-}
-
-.btn-success {
-  color: #001c48;
-}
-
-.btn-info {
-  color: #001c48;
-}
-
-.btn-warning {
-  color: #000;
-}
-
-.btn-danger {
-  color: #fff;
-}
-
-.btn-light {
-  color: #001c48;
-}
-
-.btn-dark {
-  color: #fff;
-}
-
-.btn-link {
-  color: #8b0015;
-}
-
-.btn-red {
-  color: #fff;
-  background-color: #8b0015;
-}
-.btn-red:hover {
-  color: #fff;
-  background-color: #ab0520;
-}
-.btn-red.active, .btn-red:active {
-  background-color: #a50019;
-}
-
-.btn-blue {
-  color: #fff;
-  background-color: #0c234b;
-}
-.btn-blue:hover {
-  color: #fff;
-  background-color: #1e5288;
-}
-.btn-blue.active, .btn-blue:active {
-  background-color: #133877;
-}
-
-.btn-outline-red {
-  color: #8b0015;
-  border-color: #8b0015;
-}
-.btn-outline-red:hover {
-  color: #fff;
-  background-color: #8b0015;
-}
-
-.btn-outline-blue {
-  color: #0c234b;
-  border-color: #0c234b;
-}
-.btn-outline-blue:hover {
-  color: #fff;
-  background-color: #0c234b;
-}
-
-.btn-outline-white {
-  color: #fff;
-  border-color: #fff;
-}
-.btn-outline-white:hover {
-  color: #343a40;
-  background-color: #fff;
-}
-
-.btn-success:hover,
-.btn-info:hover,
-.btn-outline-info:hover {
-  color: #001c48;
-}
-
-.btn-warning:hover {
-  color: #000;
-}
-
-.btn-outline-info {
-  color: #1e5288;
-}
-
-.btn-outline-warning {
-  color: #403635;
-}
-.btn-outline-warning:hover {
-  color: #000;
-}
-
-.btn-outline-light {
-  color: #403635;
-}
-
-.btn-arrow::after {
-  content: " »";
-}
-
-.btn-group-justified {
-  display: -ms-flexbox;
-  display: flex;
-}
-.btn-group-justified .btn {
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
 .card .card-header {
   background-color: #e9ecef;
 }
