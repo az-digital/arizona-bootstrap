@@ -81,7 +81,6 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "table";
 @import "deprecated";
 @import "pagination";
-// @import "jumbotron";
 @import "tooltip";
 @import "popover";
 @import "collapse";
