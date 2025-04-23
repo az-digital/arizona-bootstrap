@@ -225,8 +225,10 @@ $spacers: map-merge(
 */
 
 // >> Accordion
+// fusv-disable
 $accordion-button-bg: $gray-200;
 $accordion-button-active-bg: $gray-200;
+// fusv-enable
 
 // >> Badges
 $badge-pill-radius: .25rem;
