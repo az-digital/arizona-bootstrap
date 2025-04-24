@@ -5587,5 +5587,5 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Offcanvasmenu);
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy as Scrollspy, Tab, Toast, Tooltip };
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map

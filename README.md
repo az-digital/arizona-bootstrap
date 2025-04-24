@@ -22,11 +22,6 @@ The version under active development is based on [upstream Bootstrap v5](https:/
 - The code is on the [main](https://github.com/az-digital/arizona-bootstrap/tree/main) branch in the repository.
 - A review site showing the latest build (generally more recent than any release) is at <https://review.digital.arizona.edu/arizona-bootstrap/main/>
 
-The documentation for Arizona Bootstrap 5 was initially a minimally modified copy of what applied to Arizona Bootstrap 2, with some of the information incorrect and many of the examples broken. As a temporary measure, there is a variation of the Arizona Bootstrap v5 code that includes documentation originally derived from upstream Bootstrap v5, being modified to reflect the Arizona Bootstrap changes.
-
-- The code is on the [v5-docs](https://github.com/az-digital/arizona-bootstrap/tree/v5-docs) branch in the repository.
-- A review site showing the latest build is at <https://review.digital.arizona.edu/arizona-bootstrap/v5-docs/>
-
 ### Arizona Bootstrap 2
 
 A version of Arizona Bootstrap supporting many currently active uses is based on [upstream Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev) (the numbering of Arizona Bootstrap versions changed, so this is version 2, and there is no Arizona Bootstrap 4)
