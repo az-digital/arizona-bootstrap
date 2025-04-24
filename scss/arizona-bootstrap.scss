@@ -1,29 +1,23 @@
-@import "custom-variables";
-
-// Required Bootstrap imports.
-
-/*!
- * Bootstrap v5.2.0 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-// TWBS Configuration
+// Upstream Bootstrap functions before anything else.
 @import "../node_modules/bootstrap/scss/functions";
+
+// Arizona Bootstrap overrides to default upstream Bootstrap variables.
+@import "override/_variables";
+
+// Required upstream Bootstrap variable imports.
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
+
+// Arizona Bootstrap default map overrides.
+@import "override/_maps";
+
+// Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/utilities";
-
-// Remove unwanted colors.
-$colors: map-remove($colors, "indigo", "purple", "pink", "orange", "yellow", "green", "teal", "cyan", "gray", "gray-dark");
-$theme-colors: map-remove($theme-colors, "primary", "secondary");
-
-// Optional asset overrides.
-@import "custom-asset-overrides";
-
-// TWBS Layout & components
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
@@ -55,17 +49,14 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "../node_modules/bootstrap/scss/spinners";
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/placeholders";
-
-// TWBS Helpers
 @import "../node_modules/bootstrap/scss/helpers";
 
-// TWBS Utilities
+// Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // Arizona Bootstrap imports.
 @import "mixins";
 @import "custom-styles";
-// @import "alert";
 @import "typography";
 @import "badge";
 @import "breadcrumb";
@@ -81,7 +72,6 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary");
 @import "table";
 @import "deprecated";
 @import "pagination";
-// @import "jumbotron";
 @import "tooltip";
 @import "popover";
 @import "collapse";
