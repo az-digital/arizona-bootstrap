@@ -3,6 +3,32 @@
 */
 
 // >> Brand Colors
+
+// >>> Upstream Bootstrap grayscale
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// fusv-disable
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+// fusv-enable
+
 $red: #ab0520;
 $bloom: #ef4056;
 $chili: #8b0015;
@@ -52,6 +78,7 @@ $colors: map-merge(
 * > FONTS
 */
 // stylelint-disable value-keyword-case
+$font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-headings:   $font-family-sans-serif;
 // stylelint-enable value-keyword-case
 

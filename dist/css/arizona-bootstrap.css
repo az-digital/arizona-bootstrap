@@ -5,23 +5,32 @@
 /*
 * > FONTS
 */
+.material-icons-sharp {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/*
+* > COMPONENTS
+*/
+/*
+* > COLORS
+*/
+/*
+* > COMPONENTS
+*/
+/*
+* > COLORS
+*/
+/*
+* > FONTS
+*/
 /*
 * > SPACING
 */
 /*
 * > COMPONENTS
 */
-/*!
- * Bootstrap v5.2.0 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-.material-icons-sharp {
-  font-size: inherit;
-  line-height: inherit;
-}
-
 :root,
 [data-bs-theme=light] {
   --bs-red: #ab0520;
@@ -4339,7 +4348,7 @@ textarea.form-control-lg {
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: #1e5288;
   --bs-nav-link-hover-color: #001c48;
-  --bs-nav-link-disabled-color: #495057;
+  --bs-nav-link-disabled-color: var(--bs-secondary-color);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -18198,7 +18207,7 @@ a {
 .nav-pills .nav-link.disabled,
 .nav-tabs .nav-link.disabled,
 .nav-link.disabled {
-  color: #495057;
+  color: var(--bs-secondary-color);
 }
 .nav-pills .nav-link.active, .nav-pills .nav-link:active, .nav-pills .nav-link.is-active,
 .nav-tabs .nav-link.active,
@@ -18636,7 +18645,7 @@ a {
     text-decoration: none;
   }
   .navbar-offcanvas .navbar-nav .nav-link.disabled {
-    color: #495057;
+    color: var(--bs-secondary-color);
     pointer-events: none;
     cursor: default;
   }

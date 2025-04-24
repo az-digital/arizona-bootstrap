@@ -1,15 +1,19 @@
 // Upstream Bootstrap functions before anything else.
 @import "../node_modules/bootstrap/scss/functions";
 
+// Arizona Bootstrap custom variables.
+@import "custom/variables";
+@import "legacy/variables";
+
 // Arizona Bootstrap overrides to default upstream Bootstrap variables.
-@import "override/_variables";
+@import "override/variables";
 
 // Required upstream Bootstrap variable imports.
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
 // Arizona Bootstrap default map overrides.
-@import "override/_maps";
+@import "override/maps";
 
 // Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
@@ -18,7 +22,6 @@
 
 // Optional upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/utilities";
-@import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
