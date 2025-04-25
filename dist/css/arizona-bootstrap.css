@@ -3588,7 +3588,7 @@ textarea.form-control-lg {
   --bs-btn-line-height: 1.5;
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
-  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-width: 2px;
   --bs-btn-border-color: transparent;
   --bs-btn-border-radius: 3rem;
   --bs-btn-hover-border-color: transparent;
@@ -4294,7 +4294,7 @@ textarea.form-control-lg {
 
 .btn-group > :not(.btn-check:first-child) + .btn,
 .btn-group > .btn-group:not(:first-child) {
-  margin-left: calc(-1 * var(--bs-border-width));
+  margin-left: calc(-1 * 2px);
 }
 .dropdown-toggle-split {
   padding-right: 15px;
@@ -4331,7 +4331,7 @@ textarea.form-control-lg {
 }
 .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
-  margin-top: calc(-1 * var(--bs-border-width));
+  margin-top: calc(-1 * 2px);
 }
 .nav {
   --bs-nav-link-padding-x: 1rem;
@@ -17956,6 +17956,10 @@ a {
     margin-bottom: 0;
   }
 }
+button {
+  border-radius: 3rem;
+}
+
 .card .card-header {
   background-color: #e9ecef;
 }
