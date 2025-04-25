@@ -1,0 +1,6 @@
+// this is being set to 0 in reboot
+// see node_modules/bootstrap/scss/_reboot.scss:392
+button {
+  // stylelint-disable-next-line property-disallowed-list
+  border-radius: $btn-border-radius;
+}
