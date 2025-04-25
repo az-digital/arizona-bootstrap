@@ -1,0 +1,150 @@
+/*
+* > COLORS
+*/
+
+// >> Theme Colors
+$success: $leaf;
+$info: $sky;
+$warning: #f19e1f; // to be used for warnings only
+$danger: $mesa;
+$light: $gray-300;
+$dark: $gray-800;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+//
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded: true;
+// With another instance of the horrible workaround for fusv false positives.
+$enable-rounded: if($enable-rounded, false, false);
+
+/*
+* > FONTS
+*/
+$font-size-base: 1rem;
+
+$link-color: $chili;
+
+// fusv-disable
+$lead-font-weight: 400;
+// fusv-enable
+
+/*
+* > SPACING
+*/
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    card: ($spacer * 1.25),
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 4),
+    7: ($spacer * 5),
+    8: ($spacer * 6),
+    9: ($spacer * 7),
+    10:($spacer * 8),
+    20:($spacer * 16),
+    30:($spacer * 24),
+    min: ($spacer * .0625)
+  ),
+  $spacers
+);
+
+/*
+* > COMPONENTS
+*/
+
+// >> Breadcrumbs
+$breadcrumb-bg: $white;
+
+// >> Buttons
+// fusv-disable
+$btn-font-weight: 500;
+$btn-border-width: 2px;
+// fusv-enable
+
+// >> Cards
+$card-cap-bg: $gray-200;
+
+// >> Dropdowns
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $azurite;
+$dropdown-link-active-bg: $white;
+$dropdown-link-active-color: $blue;
+$dropdown-link-disabled-color: $gray-600;
+
+// >> Forms
+// fusv-disable
+$form-label-font-size: 1.125rem;
+$form-label-font-weight: 700;
+// fusv-enable
+
+// >> Navs
+$nav-link-color: $azurite;
+$nav-link-hover-color: $midnight;
+$nav-link-active-color: $midnight;
+$nav-link-active-bg: $gray-200;
+
+$nav-tabs-border-color: $gray-200;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
+$nav-tabs-link-bg: $gray-200;
+$nav-tabs-link-active-bg: $white;
+
+$nav-tabs-lg-link-padding: 1.25em 1.75em;
+
+$nav-pills-link-active-color: $midnight;
+$nav-pills-link-active-bg: $gray-200;
+
+// >> Navbar
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-x: 1rem;
+
+$navbar-light-border-color: $gray-200;
+$navbar-light-border-width: 1px 0;
+$navbar-light-link-color: $azurite;
+$navbar-light-link-active-color: $midnight;
+$navbar-light-link-active-bg: $gray-200;
+$navbar-light-link-hover-bg: $gray-100;
+
+// >> Pagination
+// fusv-disable
+$pagination-color: $breadcrumb-color;
+$pagination-hover-color: $midnight;
+// fusv-enable
+
+// >> Popovers
+// fusv-disable
+$popover-font-size: $font-size-base;
+// fusv-enable
+
+// >> Tooltips
+// fusv-disable
+$tooltip-bg: $blue;
+// fusv-enable
+
+// >> Shadows
+// fusv-disable
+$box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
+$box-shadow-sm:             0 .1rem .25rem rgba($black, .075) !default;
+$box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
+// fusv-enable
