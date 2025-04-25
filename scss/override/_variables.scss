@@ -38,9 +38,6 @@ $enable-rounded: if($enable-rounded, false, false);
 * > FONTS
 */
 $font-size-base: 1rem;
-// stylelint-disable value-keyword-case
-$font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-// stylelint-enable value-keyword-case
 
 $link-color: $chili;
 
