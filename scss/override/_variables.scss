@@ -23,8 +23,6 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$text-muted:                          $gray-700 !default;
-
 //
 // Options
 //
@@ -79,8 +77,10 @@ $spacers: map-merge(
 $breadcrumb-bg: $white;
 
 // >> Buttons
+// fusv-disable
 $btn-font-weight: 500;
 $btn-border-width: 2px;
+// fusv-enable
 
 // >> Cards
 $card-cap-bg: $gray-200;
@@ -127,14 +127,20 @@ $navbar-light-link-active-bg: $gray-200;
 $navbar-light-link-hover-bg: $gray-100;
 
 // >> Pagination
+// fusv-disable
 $pagination-color: $breadcrumb-color;
 $pagination-hover-color: $midnight;
+// fusv-enable
 
 // >> Popovers
+// fusv-disable
 $popover-font-size: $font-size-base;
+// fusv-enable
 
 // >> Tooltips
+// fusv-disable
 $tooltip-bg: $blue;
+// fusv-enable
 
 // >> Shadows
 // fusv-disable
