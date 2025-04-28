@@ -6,11 +6,7 @@ group: components
 toc: true
 ---
 
-{{< alert class="warning" heading="Heads Up!" >}}
-{{< partial "alert-warning-material-design.md" >}}
-{{< /alert >}}
-
-## How it Works
+## How it works
 
 The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the `height` from its current value to `0`. Given how CSS handles animations, you cannot use `padding` on a `.collapse` element. Instead, use the class as an independent wrapping element.
 
@@ -39,12 +35,12 @@ Generally, we recommend using a button with the `data-bs-target` attribute. Whil
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
   </div>
 </div>
 {{< /example >}}
 
-## Multiple Targets
+## Multiple targets
 
 A `<button>` or `<a>` can show and hide multiple elements by referencing them with a JQuery selector in its `href` or `data-bs-target` attribute.
 Multiple `<button>` or `<a>` can show and hide an element if they each reference it with their `href` or `data-bs-target` attribute
@@ -59,7 +55,7 @@ Multiple `<button>` or `<a>` can show and hide an element if they each reference
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
       </div>
     </div>
   </div>
@@ -173,7 +169,19 @@ Be sure to add `aria-expanded` to the control element. This attribute explicitly
 
 If your control element is targeting a single collapsible element – i.e. the `data-bs-target` attribute is pointing to an `id` selector – you should add the `aria-controls` attribute to the control element, containing the `id` of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.
 
-Note that Bootstrap's current implementation does not cover the various keyboard interactions described in the [WAI-ARIA Authoring Practices 1.1 accordion pattern](https://www.w3.org/TR/wai-aria-practices-1.1#accordion) - you will need to include these yourself with custom JavaScript.
+Note that Bootstrap's current implementation does not cover the various *optional* keyboard interactions described in the [WAI-ARIA Authoring Practices 1.1 accordion pattern](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion) - you will need to include these yourself with custom JavaScript.
+
+## Sass
+
+### Variables
+
+< scss-docs name="collapse-transition" file="scss/_variables.scss" >
+
+### Classes
+
+Collapse transition classes can be found in `scss/_transitions.scss` as these are shared across multiple components (collapse and accordion).
+
+< scss-docs name="collapse-classes" file="scss/_transitions.scss" >
 
 ## Usage
 
@@ -185,7 +193,7 @@ The collapse plugin utilizes a few classes to handle the heavy lifting:
 
 These classes can be found in `_transitions.scss`.
 
-### Via Data Attributes
+### Via data attributes
 
 Just add `data-bs-toggle="collapse"` and a `data-bs-target` to the element to automatically assign control of one or more collapsible elements. The `data-bs-target` attribute accepts a CSS selector to apply the collapse to. Be sure to add the class `collapse` to the collapsible element. If you'd like it to default open, add the additional class `show`.
 
@@ -196,14 +204,17 @@ To add accordion-like group management to a collapsible area, add the data attri
 Enable manually with:
 
 ```js
-$('.collapse').collapse()
+var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+var collapseList = collapseElementList.map(function (collapseEl) {
+  return new bootstrap.Collapse(collapseEl)
+})
 ```
 
 ### Options
 
 Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-bs-`, as in `data-bs-parent=""`.
 
-<table class="table table-bordered table-striped">
+<table class="table">
   <thead>
     <tr>
       <th style="width: 100px;">Name</th>
@@ -214,15 +225,15 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </thead>
   <tbody>
     <tr>
-      <td>parent</td>
+      <td><code>parent</code></td>
       <td>selector | jQuery object | DOM element </td>
-      <td>false</td>
+      <td><code>false</code></td>
       <td>If parent is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the <code>card</code> class). The attribute has to be set on the target collapsible area.</td>
     </tr>
     <tr>
-      <td>toggle</td>
+      <td><code>toggle</code></td>
       <td>boolean</td>
-      <td>true</td>
+      <td><code>true</code></td>
       <td>Toggles the collapsible element on invocation</td>
     </tr>
   </tbody>
@@ -234,65 +245,82 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 {{< partial "callout-danger-async-methods.md" >}}
 {{< /callout >}}
 
-#### `.collapse(options)`
-
 Activates your content as a collapsible element. Accepts an optional options `object`.
 
+You can create a collapse instance with the constructor, for example:
+
 ```js
-$('#myCollapsible').collapse({
+var myCollapse = document.getElementById('myCollapse')
+var bsCollapse = new bootstrap.Collapse(myCollapse, {
   toggle: false
 })
 ```
 
-#### `.collapse('toggle')`
-
-Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden** (i.e. before the `shown.bs.collapse` or `hidden.bs.collapse` event occurs).
-
-#### `.collapse('show')`
-
-Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (i.e. before the `shown.bs.collapse` event occurs).
-
-#### `.collapse('hide')`
-
-Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (i.e. before the `hidden.bs.collapse` event occurs).
-
-#### `.collapse('dispose')`
-
-Destroys an element's collapse.
-
-### Events
-
-Bootstrap's collapse class exposes a few events for hooking into collapse functionality.
-
-<table class="table table-bordered table-striped">
+<table class="table">
   <thead>
     <tr>
-      <th style="width: 150px;">Event Type</th>
+      <th>Method</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>show.bs.collapse</td>
+      <td><code>toggle</code></td>
+      <td>Toggles a collapsible element to shown or hidden. <strong>Returns to the caller before the collapsible element has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.collapse</code> or <code>hidden.bs.collapse</code> event occurs).</td>
+    </tr>
+    <tr>
+      <td><code>show</code></td>
+      <td>Shows a collapsible element. <strong>Returns to the caller before the collapsible element has actually been shown</strong> (e.g., before the <code>shown.bs.collapse</code> event occurs). </td>
+    </tr>
+    <tr>
+      <td><code>hide</code></td>
+      <td>Hides a collapsible element. <strong>Returns to the caller before the collapsible element has actually been hidden</strong> (e.g., before the <code>hidden.bs.collapse</code> event occurs).</td>
+    </tr>
+    <tr>
+      <td><code>dispose</code></td>
+      <td>Destroys an element's collapse. (Removes stored data on the DOM element)</td>
+    </tr>
+    <tr>
+      <td><code>getInstance</code></td>
+      <td>Static method which allows you to get the collapse instance associated with a DOM element.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Events
+
+Bootstrap's collapse class exposes a few events for hooking into collapse functionality.
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="width: 150px;">Event type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>show.bs.collapse</code></td>
       <td>This event fires immediately when the <code>show</code> instance method is called.</td>
     </tr>
     <tr>
-      <td>shown.bs.collapse</td>
+      <td><code>shown.bs.collapse</code></td>
       <td>This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete).</td>
     </tr>
     <tr>
-      <td>hide.bs.collapse</td>
+      <td><code>hide.bs.collapse</code></td>
       <td>This event is fired immediately when the <code>hide</code> method has been called.</td>
     </tr>
     <tr>
-      <td>hidden.bs.collapse</td>
+      <td><code>hidden.bs.collapse</code></td>
       <td>This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete).</td>
     </tr>
   </tbody>
 </table>
 
 ```js
-$('#myCollapsible').on('hidden.bs.collapse', function () {
+var myCollapsible = document.getElementById('myCollapsible')
+myCollapsible.addEventListener('hidden.bs.collapse', function () {
   // do something...
 })
 ```
