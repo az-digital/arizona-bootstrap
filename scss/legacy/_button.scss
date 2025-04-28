@@ -26,7 +26,7 @@
   }
   &.active,
   &:active {
-    background-color: lighten($chili, 5%);
+    background-color: tint-color($chili, 10%);
   }
 }
 .btn-blue {
@@ -38,7 +38,7 @@
   }
   &.active,
   &:active {
-    background-color: lighten($blue, 10%);
+    background-color: tint-color($blue, 20%);
   }
 }
 .btn-outline-red {
