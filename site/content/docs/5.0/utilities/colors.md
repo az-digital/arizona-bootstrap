@@ -58,7 +58,7 @@ Similar to the contextual text color classes, easily set the background of an el
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "colors") }}
-<div class="p-3 mb-2 bg-{{ .name }}">.bg-{{ .name }}</div>
+<div class="p-3 mb-2 text-bg-{{ .name }}">.bg-{{ .name }}</div>
 {{ end }}
 {{< /colors.inline >}}
 {{< /example >}}
