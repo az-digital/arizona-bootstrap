@@ -45,8 +45,8 @@ Add on the `border-thick` utility class to any border utility to set `border-wid
 
 ## Border Color
 
-### Bootstrap-Classed
-Change border colors using bootstrap classes built on Arizona theme colors.
+### Contextual (Theme)
+Change border colors to convey meaning and contextual information (e.g., success, warning, danger)
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
@@ -56,8 +56,8 @@ Change border colors using bootstrap classes built on Arizona theme colors.
 {{< /border.inline >}}
 {{< /example >}}
 
-### Arizona Colors
-Change border colors using <a href="https://marcom.arizona.edu/brand-guidelines/colors">University of Arizona colors</a>.
+### Brand
+Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Arizona-branded colors</a>.
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}

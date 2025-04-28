@@ -10,7 +10,7 @@
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    @include background-opacity($value, var(--bs-bg-opacity, 1));
   }
 }
 
