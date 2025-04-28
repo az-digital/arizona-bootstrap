@@ -4,7 +4,6 @@
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
-import BaseComponent$1 from 'bootstrap/js/src/base-component.js';
 
 /**
  * --------------------------------------------------------------------------
@@ -5355,7 +5354,7 @@ var DefaultType = {
  * Class definition
  */
 
-class Offcanvasmenu extends BaseComponent$1 {
+class Offcanvasmenu extends BaseComponent {
   constructor(element, config) {
     super(element, config);
     this._isTransitioning = false;
