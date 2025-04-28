@@ -1,0 +1,98 @@
+/*
+* > COLORS
+*/
+
+// >> Transparent Brand Colors
+$transparent-red: rgba($red, .8);
+$transparent-bloom: rgba($bloom, .8);
+$transparent-chili: rgba($chili, .8);
+
+$transparent-blue: rgba($blue, .8);
+$transparent-sky: rgba($sky, .8);
+$transparent-oasis: rgba($oasis, .8);
+$transparent-azurite: rgba($azurite, .8);
+$transparent-midnight: rgba($midnight, .8);
+
+$transparent-cool-gray: rgba($cool-gray, .8);
+$transparent-warm-gray: rgba($warm-gray, .8);
+
+$transparent-leaf: rgba($leaf, .8);
+$transparent-river: rgba($river, .8);
+$transparent-silver: rgba($silver, .8);
+$transparent-mesa: rgba($mesa, .8);
+
+$transparent-ash: rgba($ash, .8);
+$transparent-sage: rgba($sage, .8);
+
+$transparent-white: rgba($white, .8);
+$transparent-black: rgba($black, .8);
+
+$colors-transparent: ();
+$colors-transparent: map-merge(
+  (
+    "transparent-red":   $transparent-red,
+    "transparent-bloom":   $transparent-bloom,
+    "transparent-chili":   $transparent-chili,
+    "transparent-blue":    $transparent-blue,
+    "transparent-sky":     $transparent-sky,
+    "transparent-oasis":   $transparent-oasis,
+    "transparent-azurite":     $transparent-azurite,
+    "transparent-midnight":    $transparent-midnight,
+    "transparent-cool-gray":   $transparent-cool-gray,
+    "transparent-warm-gray":   $transparent-warm-gray,
+    "transparent-leaf":    $transparent-leaf,
+    "transparent-river":   $transparent-river,
+    "transparent-silver":  $transparent-silver,
+    "transparent-mesa":    $transparent-mesa,
+    "transparent-ash":     $transparent-ash,
+    "transparent-sage":    $transparent-sage,
+    "transparent-white":    $transparent-white,
+    "transparent-black":    $transparent-black,
+  ),
+  $colors-transparent
+);
+
+
+// >> Gradient Colors
+$gradient-black: linear-gradient(180deg, transparent, $black);
+
+$colors-gradient: ();
+$colors-gradient: map-merge(
+  (
+    "gradient-black": $gradient-black,
+  ),
+  $colors-gradient
+);
+
+
+/*
+* > COMPONENTS
+*/
+
+// >> Badges
+$badge-pill-radius: .25rem;
+
+// >> Breadcrumbs
+$breadcrumb-color: $azurite;
+
+// >> Cards
+$card-cap-bg-darken: rgba($black, .075);
+
+// >> Dropdowns
+$dropdown-bg-color: $blue;
+
+// >> Navs
+$nav-link-active-color: $midnight;
+$nav-link-active-bg: $gray-200;
+
+$nav-tabs-link-bg: $gray-200;
+$nav-tabs-lg-link-padding: 1.25em 1.75em;
+
+// >> Tables
+$table-head-color: $gray-800;
+$table-head-bg: $gray-300;
+$table-accent-bg: rgba($table-head-bg, .4);
+$table-hover-bg: rgba($table-head-bg, .5);
+
+// >> Tooltips
+$tooltip-arrow-color: $blue;

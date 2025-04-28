@@ -22,12 +22,24 @@
 //
 // Happy Bootstrapping!
 
-// Load Arizona Bootstrap overrides
-@import "../../../scss/custom-variables";
+// Upstream Bootstrap functions before anything else.
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// Arizona Bootstrap custom variables.
+@import "../../../scss/custom/variables";
+@import "../../../scss/legacy/variables";
+
+// Arizona Bootstrap overrides to default upstream Bootstrap variables.
+@import "../../../scss/override/variables";
+
+// Required upstream Bootstrap variable imports.
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+
+// Arizona Bootstrap default map overrides.
+@import "../../../scss/override/maps";
 
 // Load Bootstrap variables and mixins
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 
 // fusv-disable

@@ -4,16 +4,6 @@
 // > BUTTONS
 //
 
-// >> Base
-.btn {
-  font-weight: $btn-font-weight;
-  text: {
-    decoration: none;
-  }
-  letter-spacing: .04em;
-  white-space: normal;
-  border-width: $btn-border-width;
-}
 
 // >> Variants
 @each $color, $value in $theme-colors {
@@ -103,14 +93,6 @@
   color: $ash;
 }
 
-// >> Arrow Buttons
-.btn-arrow {
-  &::after {
-    content: "\00a0»";
-  }
-}
-
-
 //
 // > BUTTON GROUP
 //
@@ -124,13 +106,3 @@
     flex-basis: 0;
   }
 }
-// >> Block  -- .btn-block utility removed in TWBS 5
-// .btn-group-block {
-//   @extend .btn-block;
-//   .btn {
-//     @extend .btn-block;
-//   }
-//   .dropdown-menu {
-//     min-width: 100%;
-//   }
-// }

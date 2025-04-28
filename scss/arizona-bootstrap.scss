@@ -1,32 +1,27 @@
-@import "custom-variables";
-
-// Required Bootstrap imports.
-
-/*!
- * Bootstrap v5.2.0 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-// TWBS Configuration
+// Upstream Bootstrap functions before anything else.
 @import "../node_modules/bootstrap/scss/functions";
+
+// Arizona Bootstrap custom variables.
+@import "custom/variables";
+@import "legacy/variables";
+
+// Arizona Bootstrap overrides to default upstream Bootstrap variables.
+@import "override/variables";
+
+// Required upstream Bootstrap variable imports.
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
-// See https://getbootstrap.com/docs/5.3/customize/sass/#remove-from-map
-// Remove unwanted colors.
-$colors: map-remove($colors, "indigo", "purple", "pink", "orange", "yellow", "green", "teal", "cyan", "gray", "gray-dark") !default;
-$theme-colors: map-remove($theme-colors, "primary", "secondary") !default;
+// Arizona Bootstrap default map overrides.
+@import "override/maps";
 
+// Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/utilities";
-
-// Optional asset overrides.
-@import "custom-asset-overrides";
-
-// TWBS Layout & components
 @import "../node_modules/bootstrap/scss/root";
+
+// Optional upstream Bootstrap imports.
+@import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
@@ -57,36 +52,36 @@ $theme-colors: map-remove($theme-colors, "primary", "secondary") !default;
 @import "../node_modules/bootstrap/scss/spinners";
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/placeholders";
-
-// TWBS Helpers
 @import "../node_modules/bootstrap/scss/helpers";
 
-// TWBS Utilities
+// Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // Arizona Bootstrap imports.
-@import "mixins";
-@import "custom-styles";
-// @import "alert";
-@import "typography";
-@import "badge";
-@import "breadcrumb";
-@import "button";
-@import "card";
-@import "dropdown";
-@import "nav";
-@import "navbar";
-@import "navbar-offcanvas";
-@import "background-wrapper";
-@import "hover";
-@import "callout";
-@import "table";
-@import "deprecated";
-@import "pagination";
-@import "tooltip";
-@import "popover";
-@import "collapse";
-@import "carousel";
-@import "photo-gallery";
-@import "color-contrast";
-@import "forms";
+@import "legacy/mixins";
+@import "custom/styles";
+@import "override/typography";
+@import "custom/typography";
+@import "legacy/custom-asset-overrides";
+@import "legacy/badge";
+@import "override/breadcrumb";
+@import "legacy/button";
+@import "custom/button";
+@import "legacy/card";
+@import "custom/card";
+@import "override/dropdown";
+@import "override/nav";
+@import "override/navbar";
+@import "custom/navbar-offcanvas";
+@import "custom/background-wrapper";
+@import "legacy/background-wrapper";
+@import "custom/hover";
+@import "legacy/callout";
+@import "legacy/table";
+@import "legacy/deprecated";
+@import "legacy/tooltip";
+@import "legacy/collapse";
+@import "override/carousel";
+@import "custom/photo-gallery";
+@import "legacy/color-contrast";
+@import "override/forms";
