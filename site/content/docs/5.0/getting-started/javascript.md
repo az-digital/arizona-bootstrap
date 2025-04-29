@@ -235,7 +235,7 @@ Tooltips and Popovers use our built-in sanitizer to sanitize options which accep
 
 The default `allowList` value is the following:
 
-{{< js-docs name="allow-list" file="sanitizer.js" jsroot="js/src/util" >}}
+{{< js-docs name="allow-list" file="sanitizer.js" jsroot="node_modules/bootstrap/js/src/util" >}}
 
 If you want to add new values to this default `allowList` you can do the following:
 
