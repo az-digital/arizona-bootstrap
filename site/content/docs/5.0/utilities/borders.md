@@ -45,7 +45,8 @@ Add on the `border-thick` utility class to any border utility to set `border-wid
 
 ## Border Color
 
-Change the border color using utilities built on our theme colors.
+### Contextual (Theme)
+Change border colors to convey meaning and contextual information (e.g., success, warning, danger)
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
@@ -53,7 +54,19 @@ Change the border color using utilities built on our theme colors.
 <span class="border border-{{ .name }}"></span>
 {{- end -}}
 {{< /border.inline >}}
-<span class="border border-white"></span>
+{{< /example >}}
+
+### Brand
+Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Arizona-branded colors</a>.
+
+{{< example class="bd-example-border-utils" >}}
+{{< border.inline >}}
+{{- range (index $.Site.Data "colors") }}
+{{- if or (eq .name "red") (eq .name "blue") (eq .name "white") (eq .name "warm-gray") (eq .name "cool-gray")  (eq .name "cool-gray")  (eq .name "midnight")  (eq .name "azurite")  (eq .name "oasis")  (eq .name "chili") }}
+<span class="border border-{{ .name }}"></span>
+{{- end -}}
+{{- end -}}
+{{< /border.inline >}}
 {{< /example >}}
 
 ## Border-radius

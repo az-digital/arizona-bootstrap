@@ -8,15 +8,15 @@
 
 // >>> Brand
 @each $color, $value in $colors {
-  .bg-#{$color} {
+  .text-bg-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    @include background-opacity($value, var(--bs-bg-opacity, 1));
   }
 }
 
 // >>> Brand Transparent
 @each $color, $value in $colors {
-  .bg-transparent-#{$color} {
+  .text-bg-transparent-#{$color} {
     @include text-color-contrast($value);
     @include background-transparent($value);
   }
@@ -24,14 +24,21 @@
 
 // >>> Background Gradient
 @each $color, $value in $colors {
+  .text-bg-gradient-#{$color} {
+    @include text-color-contrast($value);
+    @include background-gradient($value);
+  }
+}
+@each $color, $value in $colors {
   .bg-gradient-#{$color} {
+    color: $black;
     @include background-gradient($value);
   }
 }
 
 // >>> Theme
 @each $color, $value in $theme-colors {
-  .bg-#{$color} {
+  .text-bg-#{$color} {
     @include text-color-contrast($value);
     background-color: $value;
   }
@@ -39,19 +46,19 @@
 
 // >>> Grays
 @each $color, $value in $grays {
-  .bg-gray-#{$color} {
+  .text-bg-gray-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    @include background-opacity($value, var(--bs-bg-opacity, 1));
   }
 }
 
-.bg-light {
+.text-bg-light {
   @include text-color-contrast($light);
-  background-color: $light;
+  @include background-opacity($light, var(--bs-bg-opacity, 1));
 }
-.bg-dark {
+.text-bg-dark {
   @include text-color-contrast($dark);
-  background-color: $dark;
+  @include background-opacity($dark, var(--bs-bg-opacity, 1));
 
   .btn-close {
     color: $white;
@@ -63,42 +70,6 @@
 * >> Text Color
 */
 
-// >>> Brand
-@each $color, $value in $colors {
-  .text-#{$color} {
-    // stylelint-disable-next-line declaration-no-important
-    color: $value !important;
-  }
-}
-
-// >>> Theme
-@each $color, $value in $theme-colors {
-  .text-#{$color} {
-    // check for color contrast
-    @if $value == $sky {
-      // stylelint-disable-next-line declaration-no-important
-      color: $azurite !important;
-    }
-    @else {
-      // stylelint-disable-next-line declaration-no-important
-      color: $value !important;
-    }
-  }
-}
-.text-dark-silver {
-  // stylelint-disable-next-line declaration-no-important
-  color: $dark-silver !important;
-}
-
-/*
-* >> Border Colors
-*/
-@each $color, $value in $colors {
-  .border-#{$color} {
-    // stylelint-disable-next-line declaration-no-important
-    border-color: $value !important;
-  }
-}
 
 /*
 * > TYPOGRAPHY
