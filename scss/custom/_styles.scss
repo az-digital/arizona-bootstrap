@@ -25,6 +25,13 @@
 // >>> Background Gradient
 @each $color, $value in $colors {
   .text-bg-gradient-#{$color} {
+    @include text-color-contrast($value);
+    @include background-gradient($value);
+  }
+}
+@each $color, $value in $colors {
+  .bg-gradient-#{$color} {
+    color: $black;
     @include background-gradient($value);
   }
 }
@@ -39,19 +46,19 @@
 
 // >>> Grays
 @each $color, $value in $grays {
-  .text-bg-gray-#{$color} {
+  .text-bg-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    @include background-opacity($value, var(--bs-bg-opacity, 1));
   }
 }
 
 .text-bg-light {
   @include text-color-contrast($light);
-  background-color: $light;
+  @include background-opacity($light, var(--bs-bg-opacity, 1));
 }
 .text-bg-dark {
   @include text-color-contrast($dark);
-  background-color: $dark;
+  @include background-opacity($dark, var(--bs-bg-opacity, 1));
 
   .btn-close {
     color: $white;

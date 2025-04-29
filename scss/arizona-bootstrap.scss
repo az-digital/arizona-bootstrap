@@ -54,11 +54,20 @@
 @import "../node_modules/bootstrap/scss/placeholders";
 @import "../node_modules/bootstrap/scss/helpers";
 
+@function hex-to-rgba($map, $opacity: 1) {
+  $rgba: ();
+  @each $key, $value in $map {
+    $rgba: map-merge($rgba, ($key: rgba($value, $opacity)));
+  }
+  @return $rgba;
+}
+
 $text-colors: map-merge($colors,
   (
     dark-silver: $dark-silver
   ));
-$background-colors: map-merge($theme-colors, $colors);
+$border-colors: map-merge($theme-colors, $colors);
+$background-colors : hex-to-rgba(map-merge($border-colors, $grays), var(--bs-bg-opacity));
 
 $utilities: map-merge(
   $utilities,
@@ -92,7 +101,7 @@ $utilities: map-merge(
 
           map-get(map-get($utilities, "border-color"), "values"),
           (
-            $background-colors
+            $border-colors
           ),
         ),
       ),
