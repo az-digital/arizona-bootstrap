@@ -23,15 +23,6 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-//
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
-
-$enable-rounded: true;
-// With another instance of the horrible workaround for fusv false positives.
-$enable-rounded: if($enable-rounded, false, false);
-
 /*
 * > FONTS
 */
@@ -72,6 +63,12 @@ $spacers: map-merge(
 /*
 * > COMPONENTS
 */
+
+// >> Accordion
+// fusv-disable
+$accordion-button-bg: $gray-200;
+$accordion-button-active-bg: $gray-200;
+// fusv-enable
 
 // >> Breadcrumbs
 $breadcrumb-bg: $white;

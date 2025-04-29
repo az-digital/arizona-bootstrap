@@ -1,0 +1,6 @@
+// This style override is needed because we have set a top margin
+// on h2s globally in override/_typography.scss. TWBS does not set a margin
+// on headings so this is not needed for clean TWBS5.
+.accordion-header {
+  margin: 0;
+}
