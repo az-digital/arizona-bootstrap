@@ -20,7 +20,7 @@
  * > BACKGROUND COLORS
  */
 @mixin background-opacity($color, $opacity) {
-  background-color: rgba($color, $opacity) !important;
+  background-color: rgba($color, $opacity);
 }
 
 // >> Transparent Backgrounds

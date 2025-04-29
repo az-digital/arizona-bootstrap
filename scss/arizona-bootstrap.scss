@@ -54,19 +54,21 @@
 @import "../node_modules/bootstrap/scss/placeholders";
 @import "../node_modules/bootstrap/scss/helpers";
 
-$text-colors: map-merge($colors,
+$text-colors: map-merge(
+  $colors,
   (
     dark-silver: $dark-silver
-  ));
+  )
+);
 
 $border-colors: map-merge($theme-colors, $colors);
 
 // add "gray-" prefix to $grays for utilities api
 $bg-grays: ();
 @each $key, $value in $grays {
-  $bg-grays: map-merge($bg-grays, ('gray-' + $key: $value));
+  $bg-grays: map-merge($bg-grays, ("gray-" + $key: $value));
 }
-$background-colors : map-merge($border-colors, $bg-grays);
+$background-colors: map-merge($border-colors, $bg-grays);
 
 // Convert hex colors to rgba with opacity.
 @function hex-to-rgba($map, $opacity: 1) {
@@ -106,7 +108,6 @@ $utilities: map-merge(
       map-get($utilities, "border-color"),
       (
         values: map-merge(
-
           map-get(map-get($utilities, "border-color"), "values"),
           (
             hex-to-rgba($border-colors, var(--bs-border-opacity))
