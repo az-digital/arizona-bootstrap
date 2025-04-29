@@ -128,7 +128,7 @@ $utilities: map-merge(
         values: map-merge(
           map-get(map-get($utilities, "color"), "values"),
           (
-            info: $azurite
+            info: rgba($azurite, var(--bs-text-opacity))
           ),
         ),
       ),
