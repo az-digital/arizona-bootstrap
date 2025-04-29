@@ -17889,7 +17889,10 @@ textarea.form-control-lg {
 /*
 * > TYPOGRAPHY
 */
-.heading-style {
+.heading-style, h1,
+.h1,
+h2,
+.h2 {
   font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #49595e;
 }
@@ -18076,6 +18079,59 @@ textarea.form-control-lg {
 }
 
 /*
+* > BLOCKQUOTE
+*/
+.blockquote {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-color: #0c234b;
+  border-style: solid;
+  border-width: 0 0 0 5px;
+}
+.blockquote.blockquote-reverse {
+  border-width: 0 5px 0 0;
+}
+
+/*
+* > BODY
+*/
+body {
+  color: #403635;
+}
+
+/*
+* > HEADINGS
+*/
+h1,
+.h1,
+h2,
+.h2 {
+  margin: 1.042em 0 0.667em;
+}
+
+h3,
+.h3,
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  margin: 1.042em 0 0.667em;
+  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #49595e;
+}
+
+/*
+* > LINKS
+*/
+a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/*
 * > LINKS
 */
 .mailto {
@@ -18090,6 +18146,10 @@ textarea.form-control-lg {
 .material-icons-sharp {
   font-size: inherit;
   line-height: inherit;
+}
+
+.accordion-header {
+  margin: 0;
 }
 
 .badge-success {
