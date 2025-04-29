@@ -46,7 +46,7 @@
 
 // >>> Grays
 @each $color, $value in $grays {
-  .text-bg-#{$color} {
+  .text-bg-gray-#{$color} {
     @include text-color-contrast($value);
     @include background-opacity($value, var(--bs-bg-opacity, 1));
   }
@@ -70,16 +70,6 @@
 * >> Text Color
 */
 
-
-/*
-* >> Border Colors
-*/
-@each $color, $value in $colors {
-  .border-#{$color} {
-    // stylelint-disable-next-line declaration-no-important
-    border-color: $value !important;
-  }
-}
 
 /*
 * > TYPOGRAPHY

@@ -54,6 +54,21 @@
 @import "../node_modules/bootstrap/scss/placeholders";
 @import "../node_modules/bootstrap/scss/helpers";
 
+$text-colors: map-merge($colors,
+  (
+    dark-silver: $dark-silver
+  ));
+
+$border-colors: map-merge($theme-colors, $colors);
+
+// add "gray-" prefix to $grays for utilities api
+$bg-grays: ();
+@each $key, $value in $grays {
+  $bg-grays: map-merge($bg-grays, ('gray-' + $key: $value));
+}
+$background-colors : map-merge($border-colors, $bg-grays);
+
+// Convert hex colors to rgba with opacity.
 @function hex-to-rgba($map, $opacity: 1) {
   $rgba: ();
   @each $key, $value in $map {
@@ -61,13 +76,6 @@
   }
   @return $rgba;
 }
-
-$text-colors: map-merge($colors,
-  (
-    dark-silver: $dark-silver
-  ));
-$border-colors: map-merge($theme-colors, $colors);
-$background-colors : hex-to-rgba(map-merge($border-colors, $grays), var(--bs-bg-opacity));
 
 $utilities: map-merge(
   $utilities,
@@ -78,7 +86,7 @@ $utilities: map-merge(
         values: map-merge(
           map-get(map-get($utilities, "color"), "values"),
           (
-            $text-colors
+            hex-to-rgba($text-colors, var(--bs-text-opacity))
           ),
         ),
       ),
@@ -89,7 +97,7 @@ $utilities: map-merge(
         values: map-merge(
           map-get(map-get($utilities, "background-color"), "values"),
           (
-            $background-colors
+            hex-to-rgba($background-colors, var(--bs-bg-opacity))
           ),
         ),
       ),
@@ -101,7 +109,7 @@ $utilities: map-merge(
 
           map-get(map-get($utilities, "border-color"), "values"),
           (
-            $border-colors
+            hex-to-rgba($border-colors, var(--bs-border-opacity))
           ),
         ),
       ),
