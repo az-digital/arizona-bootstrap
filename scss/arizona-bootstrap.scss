@@ -60,9 +60,10 @@
 // Arizona Bootstrap imports.
 @import "legacy/mixins";
 @import "custom/styles";
-// @import "override/typography";
+@import "override/typography";
 @import "custom/typography";
 @import "legacy/custom-asset-overrides";
+@import "override/accordion";
 @import "legacy/badge";
 @import "override/breadcrumb";
 @import "legacy/button";
