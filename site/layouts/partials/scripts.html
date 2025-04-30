@@ -1,21 +1,36 @@
-<script src="{{ .Site.Params.cdn.jquery }}" {{ printf "integrity=%q" .Site.Params.cdn.jquery_hash | safeHTMLAttr }} crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/assets/js/vendor/jquery.slim.min.js`) | relURL -}}"><\/script>')</script>
-
-{{ if eq hugo.Environment "production" -}}
-  <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js`) | relURL -}}" crossorigin="anonymous"></script>
+{{ if hugo.IsProduction -}}
+  <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}" {{ printf "integrity=%q" .Site.Params.cdn.js_bundle_hash | safeHTMLAttr }}></script>
 {{ else -}}
-  <script src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js`) | relURL -}}"></script>
+  <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js` ) | relURL -}}"></script>
 {{- end }}
 
-{{- $vendor := resources.Match "js/vendor/*.js" -}}
-{{- $js := resources.Match "js/*.js" -}}
-{{- $targetDocsJSPath := printf "/docs/%s/assets/js/docs.js" .Site.Params.docs_version -}}
-{{- $docsJs := append $js $vendor | resources.Concat $targetDocsJSPath -}}
+{{- $esbuildOptions := dict "target" "es2019" -}}
+{{- $targetDocsJSPath := path.Join "docs" .Site.Params.docs_version | relURL -}}
 
-{{- if eq hugo.Environment "production" -}}
-  {{- $docsJs = $docsJs | resources.Minify -}}
+{{- if hugo.IsProduction -}}
+  {{- $esbuildOptions = merge $esbuildOptions (dict "minify" "true") -}}
 {{- end }}
 
-<script src="https://kit.fontawesome.com/8a092dcf6a.js"></script>
+{{- $applicationJs := resources.Get "js/application.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/application.js") }}
+<script defer src="{{ $applicationJs.RelPermalink }}"></script>
 
-<script src="{{ $docsJs.Permalink | relURL }}"></script>
+{{- if (ne .Page.Layout "examples") -}}
+{{- $esbuildParams := dict
+  "apiKey" .Site.Params.algolia.apiKey
+  "appId" .Site.Params.algolia.appId
+  "indexName" .Site.Params.algolia.indexName
+-}}
+{{- $esbuildOptions = merge $esbuildOptions (dict "params" $esbuildParams) -}}
+{{- end -}}
+
+{{ if eq .Page.Layout "docs" -}}
+{{- /* Disable minify options for snippets.js so that the file's readable on StackBlitz */ -}}
+{{- $snippetsFile := resources.Get "js/snippets.js" | js.Build (merge $esbuildOptions (dict "minify" "false")) -}}
+{{- $esbuildParams := dict
+  "cssCdn" .Site.Params.cdn.css
+  "jsBundleCdn" .Site.Params.cdn.js_bundle
+  "docsVersion" .Site.Params.docs_version
+  "jsSnippetFile" $snippetsFile.Content
+-}}
+{{- $esbuildOptions = merge $esbuildOptions (dict "params" $esbuildParams) -}}
+{{- end -}}

@@ -1,27 +1,31 @@
-<main class="bd-masthead py-5" id="content">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-9 text-center text-md-start">
-        <h1 class="bd-title mb-3">{{- .Site.Title -}}</h1>
-        <p class="lead">
-          Build responsive, mobile-first projects on the web with the University of Arizona's theme for Bootstrap.
-        </p>
-        <p class="lead mb-4">
-          Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
-        </p>
-        <p class="lead mb-4">A team of web-focused volunteers known as Arizona Digital meets weekly to build and test products like Arizona Bootstrap and Arizona Quickstart. Contributions are what keep {{ .Site.Title }} moving and improving, and are in everyone's best interest.</p>
-        <div class="row mx-n2">
-          <div class="col-md px-2">
-            <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/introduction`) | relURL -}}" class="btn btn-lg btn-red w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Get started</a>
-          </div>
-          <div class="col-md px-2">
-            <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/about/get-involved`) | relURL -}}" class="btn btn-lg btn-blue w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Contribute', 'Get Involved');">Contribute</a>
-          </div>
+<div class="bd-masthead mb-3" id="content">
+  <div class="container-xxl bd-gutter">
+    <div class="col-md-8 mx-auto text-center">
+      {{ partial "responsive-img" (dict "context" .
+        "imgPath" "/assets/brand/bootstrap-logo-shadow.png"
+        "alt" "Bootstrap"
+        "classes" "d-none d-sm-block mb-3"
+        "lazyload" false) }}
+      <h1 class="mb-3 fw-semibold lh-1">Build fast, responsive sites with&nbsp;Bootstrap</h1>
+      <p class="lead mb-4">
+        Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
+      </p>
+      <div class="d-flex flex-column flex-lg-row align-items-md-stretch justify-content-md-center gap-3 mb-4">
+        <div class="d-inline-block v-align-middle fs-5">
+          {{ highlight (printf ("npm i bootstrap@%s") .Site.Params.current_version) "sh" "" }}
         </div>
-        <p class="text-muted mb-0">
-          Currently v{{ .Site.Params.current_version }}
-        </p>
+        <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/introduction/` ) | relURL -}}" class="btn btn-lg bd-btn-lg btn-bd-primary d-flex align-items-center justify-content-center fw-semibold">
+          <svg class="bi me-2" aria-hidden="true"><use xlink:href="#book-half"></use></svg>
+          Read the docs
+        </a>
       </div>
+      <p class="text-body-secondary mb-0">
+        Currently <strong>v{{ .Site.Params.current_version }}</strong>
+        <span class="px-1">&middot;</span>
+        <a href="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/getting-started/download/` ) | relURL -}}" class="link-secondary">Download</a>
+        <span class="px-1">&middot;</span>
+        <a href="/docs/versions/" class="link-secondary text-nowrap">All releases</a>
+      </p>
     </div>
   </div>
-</main>
+</div>

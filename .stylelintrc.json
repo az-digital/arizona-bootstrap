@@ -25,12 +25,7 @@
           "border-bottom-left-radius",
           "transition"
         ],
-        "scss/dollar-variable-default": [
-          true,
-          {
-            "ignore": "local"
-          }
-        ],
+        "scss/dollar-variable-default": null,
         "scss/selector-no-union-class-name": true
       }
     },
@@ -39,12 +34,6 @@
       "rules": {
         "scss/dollar-variable-default": null,
         "declaration-no-important": null
-      }
-    },
-    {
-      "files": "scss/*.scss",
-      "rules": {
-        "scss/dollar-variable-default": null,
       }
     },
     {
