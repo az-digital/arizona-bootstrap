@@ -6,22 +6,26 @@
 * > FONTS
 */
 /*
+* > COMPONENTS
+*/
+/*
+* > COLORS
+*/
+/*
+* > COMPONENTS
+*/
+/*
+* > COLORS
+*/
+/*
+* > FONTS
+*/
+/*
 * > SPACING
 */
 /*
 * > COMPONENTS
 */
-/*!
- * Bootstrap v5.2.0 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-.material-icons-sharp {
-  font-size: inherit;
-  line-height: inherit;
-}
-
 :root,
 [data-bs-theme=light] {
   --bs-red: #ab0520;
@@ -4339,7 +4343,7 @@ textarea.form-control-lg {
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: #1e5288;
   --bs-nav-link-hover-color: #001c48;
-  --bs-nav-link-disabled-color: #495057;
+  --bs-nav-link-disabled-color: var(--bs-secondary-color);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -17848,6 +17852,9 @@ a {
   text-decoration: underline;
 }
 
+/*
+* > LINKS
+*/
 .mailto {
   display: inline-block;
   max-width: 100%;
@@ -17855,6 +17862,11 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: top;
+}
+
+.material-icons-sharp {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .badge-success {
@@ -17956,6 +17968,134 @@ a {
     margin-bottom: 0;
   }
 }
+.btn-success {
+  color: #001c48;
+}
+
+.btn-info {
+  color: #001c48;
+}
+
+.btn-warning {
+  color: #000;
+}
+
+.btn-danger {
+  color: #fff;
+}
+
+.btn-light {
+  color: #001c48;
+}
+
+.btn-dark {
+  color: #fff;
+}
+
+.btn-link {
+  color: #8b0015;
+}
+
+.btn-red {
+  color: #fff;
+  background-color: #8b0015;
+}
+.btn-red:hover {
+  color: #fff;
+  background-color: #ab0520;
+}
+.btn-red.active, .btn-red:active {
+  background-color: #a50019;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #0c234b;
+}
+.btn-blue:hover {
+  color: #fff;
+  background-color: #1e5288;
+}
+.btn-blue.active, .btn-blue:active {
+  background-color: #133877;
+}
+
+.btn-outline-red {
+  color: #8b0015;
+  border-color: #8b0015;
+}
+.btn-outline-red:hover {
+  color: #fff;
+  background-color: #8b0015;
+}
+
+.btn-outline-blue {
+  color: #0c234b;
+  border-color: #0c234b;
+}
+.btn-outline-blue:hover {
+  color: #fff;
+  background-color: #0c234b;
+}
+
+.btn-outline-white {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-outline-white:hover {
+  color: #343a40;
+  background-color: #fff;
+}
+
+.btn-success:hover,
+.btn-info:hover,
+.btn-outline-info:hover {
+  color: #001c48;
+}
+
+.btn-warning:hover {
+  color: #000;
+}
+
+.btn-outline-info {
+  color: #1e5288;
+}
+
+.btn-outline-warning {
+  color: #403635;
+}
+.btn-outline-warning:hover {
+  color: #000;
+}
+
+.btn-outline-light {
+  color: #403635;
+}
+
+.btn-group-justified {
+  display: -ms-flexbox;
+  display: flex;
+}
+.btn-group-justified .btn {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.btn-arrow::after {
+  content: " »";
+}
+
+.btn-group-justified {
+  display: -ms-flexbox;
+  display: flex;
+}
+.btn-group-justified .btn {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
 button {
   border-radius: 3rem;
 }
@@ -18075,7 +18215,7 @@ button {
 .nav-pills .nav-link.disabled,
 .nav-tabs .nav-link.disabled,
 .nav-link.disabled {
-  color: #495057;
+  color: var(--bs-secondary-color);
 }
 .nav-pills .nav-link.active, .nav-pills .nav-link:active, .nav-pills .nav-link.is-active,
 .nav-tabs .nav-link.active,
@@ -18513,7 +18653,7 @@ button {
     text-decoration: none;
   }
   .navbar-offcanvas .navbar-nav .nav-link.disabled {
-    color: #495057;
+    color: var(--bs-secondary-color);
     pointer-events: none;
     cursor: default;
   }
@@ -21921,17 +22061,6 @@ from Arizona Bootstrap 2 (Bootstrap 4) to Arizona Bootstrap 5 (Bootstrap 5).
 This is to avoid breaking changes; sites should not use these classes as they
 have been deprecated.
 */
-.page-link {
-  color: #1e5288;
-}
-.page-link:hover {
-  color: #001c48;
-}
-
-.tooltip-inner {
-  background-color: #0c234b;
-}
-
 .bs-tooltip-top .arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .arrow::before {
   border-top-color: #0c234b;
 }
@@ -21946,10 +22075,6 @@ have been deprecated.
 
 .bs-tooltip-left .arrow::before {
   border-left-color: #0c234b;
-}
-
-.popover {
-  font-size: 1rem;
 }
 
 .accordion .card-header {
@@ -22062,14 +22187,6 @@ have been deprecated.
 
 .col-form-label {
   font-size: 1.125rem;
-}
-
-.col-form-label-lg {
-  font-size: 1.25rem;
-}
-
-.col-form-label-sm {
-  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=arizona-bootstrap.css.map */
