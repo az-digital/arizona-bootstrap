@@ -16063,6 +16063,21 @@ textarea.form-control-lg {
  * > CALLOUTS
  */
 /*
+* > BODY
+*/
+body {
+  color: #403635;
+}
+
+/*
+* > LINKS
+*/
+a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/*
 * > COLOR CLASSES
 */
 /*
@@ -17610,14 +17625,6 @@ textarea.form-control-lg {
 /*
 * > TYPOGRAPHY
 */
-.heading-style, h1,
-.h1,
-h2,
-.h2 {
-  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: #49595e;
-}
-
 .sans {
   font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
@@ -17802,23 +17809,25 @@ h2,
 /*
 * > BLOCKQUOTE
 */
-.blockquote {
+figure:has(blockquote) {
   font-size: 1.25rem;
-  padding: 0.75rem 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+figure:has(blockquote) > :first-child {
+  padding-top: 0.75rem;
+}
+
+figure:has(blockquote) > :last-child {
+  padding-bottom: 0.75rem;
+}
+
+.blockquote, .blockquote-footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-color: #0c234b;
   border-style: solid;
   border-width: 0 0 0 5px;
-}
-.blockquote.blockquote-reverse {
-  border-width: 0 5px 0 0;
-}
-
-/*
-* > BODY
-*/
-body {
-  color: #403635;
 }
 
 /*
@@ -17827,29 +17836,18 @@ body {
 h1,
 .h1,
 h2,
-.h2 {
-  margin: 1.042em 0 0.667em;
-}
-
 h3,
-.h3,
 h4,
 h5,
 h6,
+.h2,
+.h3,
 .h4,
 .h5,
 .h6 {
   margin: 1.042em 0 0.667em;
   font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #49595e;
-}
-
-/*
-* > LINKS
-*/
-a {
-  font-weight: 700;
-  text-decoration: underline;
 }
 
 /*
