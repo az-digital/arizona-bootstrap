@@ -23,15 +23,6 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-//
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
-
-$enable-rounded: true;
-// With another instance of the horrible workaround for fusv false positives.
-$enable-rounded: if($enable-rounded, false, false);
-
 /*
 * > FONTS
 */
@@ -77,9 +68,12 @@ $spacers: map-merge(
 $breadcrumb-bg: $white;
 
 // >> Buttons
-// fusv-disable
 $btn-font-weight: 500;
 $btn-border-width: 2px;
+// fusv-disable
+$btn-padding-y: .5rem;
+$btn-padding-x: 1.25rem;
+$btn-border-radius: 3rem;
 // fusv-enable
 
 // >> Cards
