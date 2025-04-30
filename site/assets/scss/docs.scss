@@ -1,7 +1,6 @@
 /*!
  * Bootstrap Docs (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
+ * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
@@ -43,22 +42,30 @@
 // Load Bootstrap variables and mixins
 @import "../../../node_modules/bootstrap/scss/mixins";
 
+// fusv-disable
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+// fusv-enable
+@import "../../../node_modules/bootstrap/scss/grid";
+
 // Load docs components
 @import "variables";
-@import "nav";
+@import "navbar";
 @import "masthead";
 @import "content";
 @import "skippy";
 @import "sidebar";
+@import "layout";
 @import "toc";
 @import "footer";
 @import "component-examples";
 @import "buttons";
 @import "callouts";
-@import "browser-bugs";
+@import "brand";
 @import "colors";
 @import "clipboard-js";
 @import "placeholder-img";
+@import "scrolling";
 
 // Load Arizona Bootstrap docs overrides
 @import "custom-docs";
@@ -66,4 +73,3 @@
 // Load docs dependencies
 @import "syntax";
 @import "anchor";
-
