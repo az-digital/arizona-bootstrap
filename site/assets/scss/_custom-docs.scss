@@ -22,34 +22,10 @@
 // > NAV
 //
 // >> Navbar
-.bd-navbar {
-  background-color: $white;
-  border-bottom: 1px solid $gray-200;
-
-  .navbar-nav {
-    align-items: stretch;
-    align-self: stretch;
-
-    .nav-item {
-      display: flex;
-    }
-    .nav-link {
-      display: flex;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      font-weight: 700;
-      color: $azurite;
-      text-decoration: none;
-
-      &.active,
-      &:active,
-      &:hover {
-        color: $midnight;
-        background-color: $gray-200;
-      }
-    }
-  }
+.bd-navbar::after {
+  background-image: linear-gradient(var(--bs-chili), var(--bs-chili) 95%);
 }
+
 // >> Sidebar
 .bd-toc-item {
   &.active {

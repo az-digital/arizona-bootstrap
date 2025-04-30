@@ -4,9 +4,9 @@
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('bootstrap/js/src/base-component.js'), require('../../node_modules/bootstrap/js/src/dom/event-handler.js'), require('../../node_modules/bootstrap/js/src/dom/selector-engine.js'), require('../../node_modules/bootstrap/js/src/util/backdrop.js'), require('../../node_modules/bootstrap/js/src/util/index.js')) :
-  typeof define === 'function' && define.amd ? define(['bootstrap/js/src/base-component.js', '../../node_modules/bootstrap/js/src/dom/event-handler', '../../node_modules/bootstrap/js/src/dom/selector-engine', '../../node_modules/bootstrap/js/src/util/backdrop', '../../node_modules/bootstrap/js/src/util/index'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Offcanvasmenu = factory(global["bootstrap/js/src/base-component"].js, global.EventHandler, global.SelectorEngine, global.Backdrop, global.Index));
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../../node_modules/bootstrap/js/src/base-component.js'), require('../../node_modules/bootstrap/js/src/dom/event-handler.js'), require('../../node_modules/bootstrap/js/src/dom/selector-engine.js'), require('../../node_modules/bootstrap/js/src/util/backdrop.js'), require('../../node_modules/bootstrap/js/src/util/index.js')) :
+  typeof define === 'function' && define.amd ? define(['../../node_modules/bootstrap/js/src/base-component', '../../node_modules/bootstrap/js/src/dom/event-handler', '../../node_modules/bootstrap/js/src/dom/selector-engine', '../../node_modules/bootstrap/js/src/util/backdrop', '../../node_modules/bootstrap/js/src/util/index'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Offcanvasmenu = factory(global.BaseComponent, global.EventHandler, global.SelectorEngine, global.Backdrop, global.Index));
 })(this, (function (BaseComponent, EventHandler, SelectorEngine, Backdrop, index_js) { 'use strict';
 
   function _arrayLikeToArray(r, a) {

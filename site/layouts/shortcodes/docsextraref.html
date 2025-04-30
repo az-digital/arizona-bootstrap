@@ -1,0 +1,2 @@
+{{- $elementToReference := path.Join "docs" $.Site.Params.docs_version (.Get 0) -}}
+{{- $elementToReference | relURL -}}

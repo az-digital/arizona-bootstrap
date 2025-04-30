@@ -42,7 +42,7 @@
   max-height: 100vh;
   overflow-y: hidden;
   background-color: $navbar-offcanvas-bg;
-  border: none;
+  border: 0;
   /* stylelint-disable */
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
@@ -67,7 +67,7 @@
     .form-control {
       height: auto;
       margin: 0;
-      border: none;
+      border: 0;
     }
     .input-group {
       input.form-control {
@@ -150,7 +150,7 @@
     padding: 0;
     margin: 0;
     background-color: $navbar-offcanvas-bg-expanded;
-    border: none;
+    border: 0;
 
     .dropdown-item {
       padding: $navbar-offcanvas-dropdown-link-padding;
@@ -167,7 +167,7 @@
       font-size: 1rem;
       vertical-align: unset;
       content: "\e145";
-      border: none;
+      border: 0;
       margin-left: 20px;
       font-family: 'Material Icons Sharp';
     }
@@ -316,7 +316,7 @@
       padding: $dropdown-padding-y 0;
       margin: $dropdown-spacer 0 0; // override default ul
       background-color: $dropdown-bg-color;
-      border: none;
+      border: 0;
       border: $dropdown-border-width solid $dropdown-border-color;
       @include border-radius($dropdown-border-radius);
       @include box-shadow($dropdown-box-shadow);

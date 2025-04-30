@@ -5,7 +5,7 @@
  * --------------------------------------------------------------------------
  */
 
-import BaseComponent from 'bootstrap/js/src/base-component.js'
+import BaseComponent from '../../node_modules/bootstrap/js/src/base-component.js'
 import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
 import SelectorEngine from '../../node_modules/bootstrap/js/src/dom/selector-engine.js'
 import Backdrop from '../../node_modules/bootstrap/js/src/util/backdrop.js'

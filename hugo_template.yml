@@ -21,6 +21,9 @@ markup:
     startLevel:         2
     endLevel:           6
 
+build:
+  noJSConfigInAssets:   true
+
 buildDrafts:            true
 buildFuture:            true
 
@@ -56,22 +59,33 @@ params:
   social_logo_path:     "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
 
   current_version:      "{{az_version}}"
+  current_ruby_version: "{{az_version}}"
   docs_version:         "{{az_short_version}}"
+  rfs_version:          "v10.0.0"
   github_org:           "https://github.com/az-digital"
   repo:                 "https://github.com/az-digital/arizona-bootstrap"
+  icons:                "https://icons.getbootstrap.com/"
   slack:                "https://quickstart.arizona.edu/join-us-on-slack"
   azdigital:            "https://digital.arizona.edu"
   az_quickstart:        "https://github.com/az-digital/az_quickstart"
 
   download:
     source:             "https://github.com/az-digital/arizona-bootstrap/archive/v{{az_version}}.zip"
+    dist:               "V5_AUDIT_dist"
+    dist_examples:      "V5_AUDIT_dist_examples"
 
   cdn:
     # See https://www.srihash.org for info on how to generate the hashes
     css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.min.css"
+    css_hash:         "V5_AUDIT_css_hash"
+    css_rtl:          "V5_AUDIT_css_rtl"
+    css_rtl_hash:     "V5_AUDIT_css_rtl_hash"
     js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.min.js"
+    js_hash:          "V5_AUDIT_js_hash"
     js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.bundle.min.js"
+    js_bundle_hash:   "V5_AUDIT_js_bundle_hash"
     jquery:           "https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.slim.min.js"
     jquery_hash:      "sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr"
     popper:           "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     popper_hash:      "sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    popper_esm:       "V5_AUDIT_popper_esm"
