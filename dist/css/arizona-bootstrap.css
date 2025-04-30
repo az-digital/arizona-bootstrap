@@ -17822,9 +17822,10 @@ figure:has(blockquote) > :last-child {
   padding-bottom: 0.75rem;
 }
 
-.blockquote, .blockquote-footer {
-  padding-left: 1.5rem;
+.blockquote,
+.blockquote-footer {
   padding-right: 1.5rem;
+  padding-left: 1.5rem;
   border-color: #0c234b;
   border-style: solid;
   border-width: 0 0 0 5px;
