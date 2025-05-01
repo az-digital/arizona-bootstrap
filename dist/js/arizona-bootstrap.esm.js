@@ -4,7 +4,6 @@
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
-import BaseComponent$1 from 'bootstrap/js/src/base-component.js';
 
 /**
  * --------------------------------------------------------------------------
@@ -5355,7 +5354,7 @@ var DefaultType = {
  * Class definition
  */
 
-class Offcanvasmenu extends BaseComponent$1 {
+class Offcanvasmenu extends BaseComponent {
   constructor(element, config) {
     super(element, config);
     this._isTransitioning = false;
@@ -5587,5 +5586,5 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Offcanvasmenu);
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy as Scrollspy, Tab, Toast, Tooltip };
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map

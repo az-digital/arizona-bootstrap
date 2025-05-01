@@ -3,6 +3,7 @@ import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { babel } from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 import banner from './banner.mjs'
 
@@ -41,7 +42,8 @@ if (BUNDLE) {
       'process.env.NODE_ENV': '"production"',
       preventAssignment: true
     }),
-    nodeResolve()
+    nodeResolve(),
+    commonjs()
   )
 }
 
