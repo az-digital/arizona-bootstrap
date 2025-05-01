@@ -36,16 +36,18 @@ $enable-rounded: if($enable-rounded, false, false);
 * > FONTS
 */
 $font-size-base: 1rem;
-$body-color: $ash;
-$link-color: $chili;
 // fusv-disable
+$body-color: $ash;
 $lead-font-weight: 400;
 // fusv-enable
+$link-color: $chili;
 
 /*
 * > HEADINGS
 */
+// fusv-disable
 $headings-font-family: $font-family-sans-serif;
+// fusv-enable
 
 /*
 * > SPACING
