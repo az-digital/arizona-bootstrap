@@ -141,7 +141,7 @@ const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Co
 
 Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-bs-`, as in `data-bs-parent=""`.
 
-<table class="table table-bordered table-striped">
+<table class="table">
   <thead>
     <tr>
       <th style="width: 100px;">Name</th>
@@ -152,15 +152,15 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </thead>
   <tbody>
     <tr>
-      <td>parent</td>
+      <td><code>parent</code></td>
       <td>selector | jQuery object | DOM element </td>
-      <td>false</td>
+      <td><code>false</code></td>
       <td>If parent is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the <code>card</code> class). The attribute has to be set on the target collapsible area.</td>
     </tr>
     <tr>
-      <td>toggle</td>
+      <td><code>toggle</code></td>
       <td>boolean</td>
-      <td>true</td>
+      <td><code>true</code></td>
       <td>Toggles the collapsible element on invocation</td>
     </tr>
   </tbody>
