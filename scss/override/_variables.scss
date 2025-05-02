@@ -27,11 +27,10 @@ $theme-colors: map-merge(
 * > FONTS
 */
 $font-size-base: 1rem;
+$link-color: $chili;
 // fusv-disable
-$body-color: $ash;
 $lead-font-weight: 400;
 // fusv-enable
-$link-color: $chili;
 
 /*
 * > HEADINGS
