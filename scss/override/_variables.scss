@@ -64,6 +64,12 @@ $spacers: map-merge(
 * > COMPONENTS
 */
 
+// >> Accordion
+// fusv-disable
+$accordion-button-bg: $gray-200;
+$accordion-button-active-bg: $gray-200;
+// fusv-enable
+
 // >> Breadcrumbs
 $breadcrumb-bg: $white;
 
