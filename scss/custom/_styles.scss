@@ -100,51 +100,6 @@
   }
 }
 
-/*
-* > TYPOGRAPHY
-*/
-
-// >> Font
-// >>> Heading Style
-.heading-style {
-  font-family: $font-family-headings;
-  color: $dark-silver;
-}
-
-// >>> Sans
-.sans {
-  font-family: $font-family-sans-serif;
-  font-weight: 500;
-}
-
-// >> Text Hyphenation.
-.text-hyphen {
-  hyphens: auto;
-}
-
-// >> Lists
-.ul-triangles {
-  overflow: hidden;
-
-  li {
-    position: relative;
-    padding-left: 0;
-    list-style: none;
-
-    &::before {
-      position: absolute;
-      top: 8px;
-      left: -.8em;
-      width: 0;
-      height: 0;
-      content: "";
-      border-top: 4px solid transparent;
-      border-right: 0;
-      border-bottom: 4px solid transparent;
-      border-left: 4px solid $blue;
-    }
-  }
-}
 
 // >> Arizona wordmark header.
 
