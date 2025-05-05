@@ -201,6 +201,22 @@ Use text utilities as needed to change the alignment of your blockquote.
 
 ## Lists
 
+### Triangles
+
+**(Custom Arizona Bootstrap Class)**
+
+Add the `.ul-triangles` class to your **unordered list** to replace the default bullets with triangles. Triangle list items function the same as an unordered list.
+
+{{< example >}}
+<ul class="ul-triangles">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+</ul>
+{{< /example >}}
+
 ### Unstyled
 
 Remove the default `list-style` and left margin on list items (immediate children only). **This only applies to immediate children list items**, meaning you will need to add the class for any nested lists as well.
