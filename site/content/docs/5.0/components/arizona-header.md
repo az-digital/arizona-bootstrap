@@ -20,11 +20,11 @@ The header is to be used on all subdomains of arizona.edu.
 Extending the header with nav and search buttons is supported as shown below. This can save space on your site, especially for mobile devices.
 
 {{< example >}}
-<header class="bg-red arizona-header" id="header_arizona" role="banner">
+<header class="bg-red arizona-header" id="header_arizona">
   <div class="container">
     <div class="row">
       <a class="arizona-logo" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high" />
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
       </a>
     </div>
   </div>
