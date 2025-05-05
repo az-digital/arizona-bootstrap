@@ -37,17 +37,16 @@ Or remove borders:
 ## Border Color
 
 {{< callout info >}}
-Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes, however, any `.border-*-subtle` utility will. This will be resolved in v6.
+Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in v6.
 {{< /callout >}}
 
 ### Contextual (Theme)
-Change border colors to convey meaning and contextual information (e.g., success, warning, danger)
+Change border colors to convey meaning and contextual information (e.g., success, warning, danger).
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
 <span class="border border-{{ .name }}"></span>
-<span class="border border-{{ .name }}-subtle"></span>
 {{- end -}}
 {{< /border.inline >}}
 {{< /example >}}
