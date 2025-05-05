@@ -146,7 +146,7 @@
   }
 }
 
-// >> Arizona wordmark header.
+// >> Arizona header
 
 .arizona-header {
   position: relative;
@@ -169,7 +169,6 @@
   }
 }
 .arizona-logo {
-  display: inline-block;
   float: left;
   max-width: 80%;
 }
@@ -195,13 +194,13 @@
   width: 60px;
   height: 50px;
   padding: 0;
-  color: #fff;
-  background-color: #ab0520;
-  border: 2px solid #ab0520;
+  color: $white;
+  background-color: $red;
+  border: 2px solid $red;
   &:focus,
   &.focus {
-    background-color: #8b0015;
-    border: 2px solid #8b0015;
+    background-color: $chili;
+    border: 2px solid $chili;
     outline: 0;
     box-shadow: none;
   }
