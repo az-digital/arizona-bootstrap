@@ -145,6 +145,7 @@ $utilities: map-merge(
 @import "override/typography";
 @import "custom/typography";
 @import "legacy/custom-asset-overrides";
+@import "override/accordion";
 @import "legacy/badge";
 @import "override/breadcrumb";
 @import "legacy/button";
@@ -162,7 +163,6 @@ $utilities: map-merge(
 @import "legacy/table";
 @import "legacy/deprecated";
 @import "legacy/tooltip";
-@import "legacy/collapse";
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "legacy/color-contrast";
