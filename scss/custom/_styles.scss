@@ -10,7 +10,9 @@
 @each $color, $value in $colors {
   .bg-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    & {
+      background-color: $value;
+    }
   }
 }
 
@@ -33,7 +35,9 @@
 @each $color, $value in $theme-colors {
   .bg-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    & {
+      background-color: $value;
+    }
   }
 }
 
@@ -41,17 +45,23 @@
 @each $color, $value in $grays {
   .bg-gray-#{$color} {
     @include text-color-contrast($value);
-    background-color: $value;
+    & {
+      background-color: $value;
+    }
   }
 }
 
 .bg-light {
   @include text-color-contrast($light);
-  background-color: $light;
+  & {
+    background-color: $light;
+  }
 }
 .bg-dark {
   @include text-color-contrast($dark);
-  background-color: $dark;
+  & {
+    background-color: $dark;
+  }
 
   .btn-close {
     color: $white;
