@@ -12,9 +12,6 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
-// Arizona Bootstrap default map overrides.
-@import "override/maps";
-
 // Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";

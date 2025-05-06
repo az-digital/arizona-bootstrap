@@ -74,15 +74,6 @@ $colors: map-merge(
   $colors
 );
 
-$colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb, "$value") !default;
-
-:root,
-[data-bs-theme="light"] {
-  @each $color, $value in $colors-rgb {
-    --bs-#{$color}-rgb: #{$value};
-  }
-}
-
 /*
 * > FONTS
 */

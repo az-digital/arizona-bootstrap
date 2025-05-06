@@ -1,6 +1,21 @@
-// Utilities API Overrides
+/*
+* > Utilities API Overrides
+*/
+
+// generate rgb CSS custom properties for all colors
+$colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb, "$value");
+
+:root,
+[data-bs-theme="light"] {
+  @each $color, $value in $colors-rgb {
+    --#{$prefix}#{$color}-rgb: #{$value};
+  }
+}
+
+// text colors
 $text-colors: map-loop($colors-rgb, rgba-css-var, "$key", "text");
 
+// background colors
 $background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-var, "$key", "bg");
 
 $bg-grays: ();
@@ -9,6 +24,7 @@ $bg-grays: ();
 }
 $background-colors: map-merge($background-colors, $bg-grays);
 
+// border colors
 $border-colors: map-loop(map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa"), rgba-css-var, "$key", "border");
 
 $utilities: map-merge(
@@ -67,3 +83,4 @@ $utilities: map-merge(
     ),
   )
 );
+

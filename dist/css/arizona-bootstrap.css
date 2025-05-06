@@ -2,29 +2,6 @@
 /*
 * > COLORS
 */
-:root,
-[data-bs-theme=light] {
-  --bs-red-rgb: 171, 5, 32;
-  --bs-bloom-rgb: 239, 64, 86;
-  --bs-chili-rgb: 139, 0, 21;
-  --bs-blue-rgb: 12, 35, 75;
-  --bs-sky-rgb: 129, 211, 235;
-  --bs-oasis-rgb: 55, 141, 189;
-  --bs-azurite-rgb: 30, 82, 136;
-  --bs-midnight-rgb: 0, 28, 72;
-  --bs-cool-gray-rgb: 226, 233, 235;
-  --bs-warm-gray-rgb: 244, 237, 229;
-  --bs-leaf-rgb: 112, 184, 101;
-  --bs-river-rgb: 0, 125, 132;
-  --bs-silver-rgb: 158, 171, 174;
-  --bs-mesa-rgb: 169, 92, 66;
-  --bs-ash-rgb: 64, 54, 53;
-  --bs-sage-rgb: 74, 99, 78;
-  --bs-white-rgb: 255, 255, 255;
-  --bs-black-rgb: 0, 0, 0;
-  --bs-dark-silver-rgb: 73, 89, 94;
-}
-
 /*
 * > FONTS
 */
@@ -8004,6 +7981,32 @@ textarea.form-control-lg {
   min-height: 1em;
   background-color: currentcolor;
   opacity: 0.25;
+}
+
+/*
+* > Utilities API Overrides
+*/
+:root,
+[data-bs-theme=light] {
+  --bs-red-rgb: 171, 5, 32;
+  --bs-bloom-rgb: 239, 64, 86;
+  --bs-chili-rgb: 139, 0, 21;
+  --bs-blue-rgb: 12, 35, 75;
+  --bs-sky-rgb: 129, 211, 235;
+  --bs-oasis-rgb: 55, 141, 189;
+  --bs-azurite-rgb: 30, 82, 136;
+  --bs-midnight-rgb: 0, 28, 72;
+  --bs-cool-gray-rgb: 226, 233, 235;
+  --bs-warm-gray-rgb: 244, 237, 229;
+  --bs-leaf-rgb: 112, 184, 101;
+  --bs-river-rgb: 0, 125, 132;
+  --bs-silver-rgb: 158, 171, 174;
+  --bs-mesa-rgb: 169, 92, 66;
+  --bs-ash-rgb: 64, 54, 53;
+  --bs-sage-rgb: 74, 99, 78;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-dark-silver-rgb: 73, 89, 94;
 }
 
 .align-baseline {
