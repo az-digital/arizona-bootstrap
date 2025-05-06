@@ -34,23 +34,34 @@ Or remove borders:
 <span class="border border-start-0"></span>
 {{< /example >}}
 
-## Color
+## Border Color
 
 {{< callout info >}}
-Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes, however, any `.border-*-subtle` utility will. This will be resolved in v6.
+Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in v6.
 {{< /callout >}}
 
-Change the border color using utilities built on our theme colors.
+### Contextual (Theme)
+Change border colors to convey meaning and contextual information (e.g., success, warning, danger).
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
 <span class="border border-{{ .name }}"></span>
-<span class="border border-{{ .name }}-subtle"></span>
 {{- end -}}
 {{< /border.inline >}}
-<span class="border border-black"></span>
-<span class="border border-white"></span>
+{{< /example >}}
+
+### Brand
+Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Arizona-branded colors</a>.
+
+{{< example class="bd-example-border-utils" >}}
+{{< border.inline >}}
+{{- range (index $.Site.Data "colors") }}
+{{- if or (eq .name "red") (eq .name "blue") (eq .name "white") (eq .name "warm-gray") (eq .name "cool-gray")  (eq .name "cool-gray")  (eq .name "midnight")  (eq .name "azurite")  (eq .name "oasis")  (eq .name "chili") }}
+<span class="border border-{{ .name }}"></span>
+{{- end -}}
+{{- end -}}
+{{< /border.inline >}}
 {{< /example >}}
 
 Or modify the default `border-color` of a component:
