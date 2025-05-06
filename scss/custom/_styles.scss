@@ -9,18 +9,16 @@
 // >>> Brand
 @each $color, $value in $colors {
   .bg-#{$color} {
+    background-color: $value;
     @include text-color-contrast($value);
-    & {
-      background-color: $value;
-    }
   }
 }
 
 // >>> Brand Transparent
 @each $color, $value in $colors {
   .bg-transparent-#{$color} {
-    @include text-color-contrast($value);
     @include background-transparent($value);
+    @include text-color-contrast($value);
   }
 }
 
@@ -34,34 +32,26 @@
 // >>> Theme
 @each $color, $value in $theme-colors {
   .bg-#{$color} {
+    background-color: $value;
     @include text-color-contrast($value);
-    & {
-      background-color: $value;
-    }
   }
 }
 
 // >>> Grays
 @each $color, $value in $grays {
   .bg-gray-#{$color} {
+    background-color: $value;
     @include text-color-contrast($value);
-    & {
-      background-color: $value;
-    }
   }
 }
 
 .bg-light {
+  background-color: $light;
   @include text-color-contrast($light);
-  & {
-    background-color: $light;
-  }
 }
 .bg-dark {
+  background-color: $dark;
   @include text-color-contrast($dark);
-  & {
-    background-color: $dark;
-  }
 
   .btn-close {
     color: $white;
