@@ -1,3 +1,7 @@
+- name: red
+  hex: "#ab0520"
+- name: blue
+  hex: "#0c234b"
 - name: success
   hex: "#70b865"
 - name: danger
