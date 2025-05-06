@@ -1,0 +1,86 @@
+/*
+* > Utilities API Overrides
+*/
+
+// generate rgb CSS custom properties for all colors
+$colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb, "$value");
+
+:root,
+[data-bs-theme="light"] {
+  @each $color, $value in $colors-rgb {
+    --#{$prefix}#{$color}-rgb: #{$value};
+  }
+}
+
+// text colors
+$text-colors: map-loop($colors-rgb, rgba-css-var, "$key", "text");
+
+// background colors
+$background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-var, "$key", "bg");
+
+$bg-grays: ();
+@each $key, $value in $grays {
+  $bg-grays: map-merge($bg-grays, ("gray-" + $key: $value));
+}
+$background-colors: map-merge($background-colors, $bg-grays);
+
+// border colors
+$border-colors: map-loop(map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa"), rgba-css-var, "$key", "border");
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $text-colors
+          ),
+        ),
+      ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $background-colors
+          ),
+        ),
+      ),
+    ),
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "border-color"), "values"),
+          (
+            $border-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+// override "info" text color
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            info: rgba(var(--bs-azurite-rgb), var(--bs-text-opacity))
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
