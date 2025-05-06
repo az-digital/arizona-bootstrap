@@ -2,24 +2,59 @@
 // > BUTTONS
 //
 
+// hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
+.btn-red {
+  @include button-variant($chili);
+  background-color: $chili;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+  &.active,
+  &:active {
+    background-color: tint-color($chili, 10%);
+  }
+}
+.btn-blue {
+  @include button-variant($midnight);
+  background-color: $blue;
+  &:hover {
+    color: $white;
+    background-color: $azurite;
+  }
+  &.active,
+  &:active {
+    background-color: tint-color($blue, 20%);
+  }
+}
+.btn-outline-red {
+  color: $chili;
+  border-color: $chili;
+  &:hover {
+    color: $white;
+    background-color: $chili;
+  }
+}
+.btn-outline-blue {
+  color: $blue;
+  border-color: $blue;
+  &:hover {
+    color: $white;
+    background-color: $blue;
+  }
+}
+.btn-outline-white {
+  color: $white;
+  border-color: $white;
+  &:hover {
+    color: $gray-800;
+    background-color: $white;
+  }
+}
+
 // >> Arrow Buttons
 .btn-arrow {
   &::after {
     content: "\00a0»";
-  }
-}
-
-
-//
-// > BUTTON GROUP
-//
-
-// >> Justified
-.btn-group-justified {
-  display: flex;
-
-  .btn {
-    flex-grow: 1;
-    flex-basis: 0;
   }
 }

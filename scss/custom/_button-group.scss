@@ -1,0 +1,13 @@
+//
+// > BUTTON GROUP
+//
+
+// >> Justified
+.btn-group-justified {
+  display: flex;
+
+  .btn {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+}
