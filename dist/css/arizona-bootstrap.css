@@ -21584,12 +21584,6 @@ h6,
   background-color: rgba(222, 226, 230, 0.5);
 }
 
-/*
-The following styles are intended for backwards-compatibility for sites moving
-from Arizona Bootstrap 2 (Bootstrap 4) to Arizona Bootstrap 5 (Bootstrap 5).
-This is to avoid breaking changes; sites should not use these classes as they
-have been deprecated.
-*/
 .bs-tooltip-top .arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .arrow::before {
   border-top-color: #0c234b;
 }
