@@ -46,6 +46,7 @@
   icon_color: gray
   pages:
     - title: Reboot
+    - title: Font
     - title: Typography
     - title: Images
     - title: Tables
