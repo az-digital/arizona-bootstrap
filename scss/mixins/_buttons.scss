@@ -1,0 +1,29 @@
+/*
+ * > BUTTONS
+ */
+
+// >> Regular
+@mixin button-variant($background) {
+  // check for inaccessible color contrast
+  $button-text-color: $white;
+
+  @if $background == $sky or $background == $leaf or $background == $light {
+    $button-text-color: $midnight;
+  }
+  @else if $background == $warning {
+    $button-text-color: $black;
+  }
+
+  color: $button-text-color;
+}
+
+// >> Outline
+@mixin button-outline-variant($color) {
+  color: $color;
+  border-color: $color;
+
+  &:hover {
+    background-color: $color;
+    border-color: $color;
+  }
+}
