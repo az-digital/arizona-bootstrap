@@ -1,11 +1,32 @@
 /*
-* > LINKS
+* > Custom Typography classes
 */
-.mailto {
-  display: inline-block;
-  max-width: 100%;
+
+// >> Text Hyphenation
+.text-hyphen {
+  hyphens: auto;
+}
+
+// >> Lists
+.ul-triangles {
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: top;
+
+  li {
+    position: relative;
+    padding-left: 0;
+    list-style: none;
+
+    &::before {
+      position: absolute;
+      top: 8px;
+      left: -.8em;
+      width: 0;
+      height: 0;
+      content: "";
+      border-top: 4px solid transparent;
+      border-right: 0;
+      border-bottom: 4px solid transparent;
+      border-left: 4px solid $blue;
+    }
+  }
 }
