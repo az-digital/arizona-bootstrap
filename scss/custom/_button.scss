@@ -2,6 +2,7 @@
 // > BUTTONS
 //
 
+
 // hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
   @include button-variant($chili);
@@ -14,7 +15,14 @@
   &:active {
     background-color: tint-color($chili, 10%);
   }
+  &.disabled,
+  &:disabled {
+    color: $white;
+    background-color: $chili;
+    border-color: $chili;
+  }
 }
+
 .btn-blue {
   @include button-variant($midnight);
   background-color: $blue;
@@ -26,7 +34,14 @@
   &:active {
     background-color: tint-color($blue, 20%);
   }
+  &.disabled,
+  &:disabled {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+  }
 }
+
 .btn-outline-red {
   color: $chili;
   border-color: $chili;
@@ -34,13 +49,24 @@
     color: $white;
     background-color: $chili;
   }
+  &.disabled,
+  &:disabled {
+    color: $chili;
+    border-color: $chili;
+  }
 }
+
 .btn-outline-blue {
   color: $blue;
   border-color: $blue;
   &:hover {
     color: $white;
     background-color: $blue;
+  }
+  &.disabled,
+  &:disabled {
+    color: $blue;
+    border-color: $blue;
   }
 }
 .btn-outline-white {
