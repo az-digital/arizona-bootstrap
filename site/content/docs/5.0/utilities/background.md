@@ -15,22 +15,35 @@ toc: true
 Similar to the contextual text color classes, set the background of an element to any contextual class. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` [color utilities]({{< docsref "/utilities/colors" >}}).
 
 {{< callout info >}}
-Background utilities like `.bg-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes, however, any `.bg-*-subtle` utility will. This will be resolved in v6.
+Background utilities like `.bg-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in upstream Bootstrap v6.0.0.
 {{< /callout >}}
 
+### Brand
+{{< example >}}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="p-3 mb-2 bg-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }} {{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
+{{- end -}}
+{{< /colors.inline >}}
+{{< /example >}}
+
+### Contextual (Theme)
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
 <div class="p-3 mb-2 bg-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
-<div class="p-3 mb-2 bg-{{ .name }}-subtle text-{{ .name }}-emphasis">.bg-{{ .name }}-subtle</div>
 {{- end -}}
 {{< /colors.inline >}}
-<div class="p-3 mb-2 bg-body-secondary">.bg-body-secondary</div>
-<div class="p-3 mb-2 bg-body-tertiary">.bg-body-tertiary</div>
-<div class="p-3 mb-2 bg-body text-body">.bg-body</div>
-<div class="p-3 mb-2 bg-black text-white">.bg-black</div>
-<div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
-<div class="p-3 mb-2 bg-transparent text-body">.bg-transparent</div>
+<div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+{{< /example >}}
+
+### Grayscale
+{{< example >}}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "grays") }}
+<div class="p-3 mb-2 bg-gray-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
+{{- end -}}
+{{< /colors.inline >}}
 {{< /example >}}
 
 ## Background gradient
