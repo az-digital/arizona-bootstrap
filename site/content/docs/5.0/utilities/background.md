@@ -22,13 +22,9 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "colors") }}
-{{- if and (ne .name "black") (ne .name "white") }}
 <div class="p-3 mb-2 bg-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }} {{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
 {{- end -}}
-{{- end -}}
 {{< /colors.inline >}}
-<div class="p-3 mb-2 bg-black text-white">.bg-black</div>
-<div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
 {{< /example >}}
 
 ### Contextual (Theme)

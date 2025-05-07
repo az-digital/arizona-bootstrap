@@ -34,5 +34,6 @@
   hex: "#4a634e"
 - name: white
   hex: "#fff"
+  contrast_color: dark
 - name: black
   hex: "#000"

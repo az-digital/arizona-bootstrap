@@ -31,6 +31,7 @@ When using these colors, it is important to maintain sufficient color contrast b
 <p class="text-{{ .name }}{{- if or (eq .name "cool-gray") (eq .name "warm-gray") (eq .name "silver")  (eq .name "white") }} bg-dark{{ end }}">.text-{{ .name }}</p>
 {{- end -}}
 {{< /colors.inline >}}
+<p class="text-dark-silver">.text-dark-silver</p>
 {{< /example >}}
 
 ### Contextual (Theme)
