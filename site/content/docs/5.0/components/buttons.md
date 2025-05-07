@@ -203,11 +203,7 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
 </p>
 {{< /example >}}
 
-< scss-docs name="btn-size-mixin" file="scss/mixins/_buttons.scss" >
-
-### Loops
-
-Button variants (for regular and outline buttons) use their respective mixins with our `$theme-colors` map to generate the modifier classes in `scss/_buttons.scss`.
+### Methods
 
 You can create a button instance with the button constructor, for example:
 
