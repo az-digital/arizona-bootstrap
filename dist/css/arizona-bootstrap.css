@@ -16651,7 +16651,7 @@ a {
 * > COLOR CLASSES
 */
 /*
-* >> Background Color
+* >> Color and Background Helpers
 */
 .text-bg-red {
   color: #fff !important;
@@ -17116,9 +17116,6 @@ a {
   color: #fff;
 }
 
-/*
-* >> Text Color
-*/
 .arizona-header {
   position: relative;
 }
