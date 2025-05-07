@@ -1,10 +1,11 @@
 ---
 layout: docs
 title: University of Arizona header
-description: (Custom Arizona Bootstrap Component)<br>Add the university wordmark header to a site.
+description: Add the university wordmark header to a site.<br><span class="badge text-bg-light fs-6 mt-3 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Component</span>
 group: components
 toc: true
 ---
+
 
 ## Wordmark header
 
@@ -29,11 +30,11 @@ Extending the header with nav and search buttons is supported as shown below. Th
     </div>
   </div>
   <div class="redbar-buttons d-lg-none">
-    <button data-toggle="offcanvas" type="button" data-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar" id="jsAzSearch">
+    <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar" id="jsAzSearch">
       <span aria-hidden="true" class="icon material-icons-sharp"> search </span>
       <span class="icon-text"> search </span>
     </button>
-    <button data-toggle="offcanvas" type="button" data-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar">
+    <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar">
       <span aria-hidden="true" class="icon material-icons-sharp"> menu </span>
       <span class="icon-text"> menu </span>
     </button>
@@ -44,7 +45,7 @@ Extending the header with nav and search buttons is supported as shown below. Th
             <span aria-hidden="true" class="material-icons-sharp">home</span>
             <span>Home</span>
           </a>
-          <button data-toggle="offcanvas" data-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
+          <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
             <span aria-hidden="true" class="material-icons-sharp mx-auto">close</span>
             <span class="mx-auto">Close</span>
           </button>
