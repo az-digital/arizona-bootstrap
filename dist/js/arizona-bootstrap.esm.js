@@ -805,7 +805,7 @@ class Config {
  * Constants
  */
 
-const VERSION = '5.3.6';
+const VERSION = '5.3.5';
 
 /**
  * Class definition
@@ -836,7 +836,6 @@ class BaseComponent extends Config {
     }
   }
 
-  // Private
   _queueCallback(callback, element, isAnimated = true) {
     executeAfterTransition(callback, element, isAnimated);
   }
@@ -1977,11 +1976,11 @@ class Collapse extends BaseComponent {
     this._queueCallback(complete, this._element, true);
   }
 
-  // Private
   _isShown(element = this._element) {
     return element.classList.contains(CLASS_NAME_SHOW$7)
   }
 
+  // Private
   _configAfterMerge(config) {
     config.toggle = Boolean(config.toggle); // Coerce string values
     config.parent = getElement(config.parent);
@@ -2260,9 +2259,6 @@ class Dropdown extends BaseComponent {
     this._element.setAttribute('aria-expanded', 'false');
     Manipulator.removeDataAttribute(this._menu, 'popper');
     EventHandler.trigger(this._element, EVENT_HIDDEN$5, relatedTarget);
-
-    // Explicitly return focus to the trigger element
-    this._element.focus();
   }
 
   _getConfig(config) {
@@ -5231,6 +5227,7 @@ class Toast extends BaseComponent {
   }
 
   // Private
+
   _maybeScheduleHide() {
     if (!this._config.autohide) {
       return

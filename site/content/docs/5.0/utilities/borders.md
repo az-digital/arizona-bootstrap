@@ -37,7 +37,7 @@ Or remove borders:
 ## Border Color
 
 {{< callout info >}}
-Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in v6.
+Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in upstream Bootstrap v6.0.0.
 {{< /callout >}}
 
 ### Contextual (Theme)

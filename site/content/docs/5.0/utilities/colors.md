@@ -27,7 +27,7 @@ When using these colors, it is important to maintain sufficient color contrast b
 
 {{< example >}}
 {{< colors.inline >}}
-{{- range (index $.Site.Data "colors") -}}
+{{- range (index $.Site.Data "colors") }}
 <p class="text-{{ .name }}{{- if or (eq .name "cool-gray") (eq .name "warm-gray") (eq .name "silver")  (eq .name "white") }} bg-dark{{ end }}">.text-{{ .name }}</p>
 {{- end -}}
 {{< /colors.inline >}}
