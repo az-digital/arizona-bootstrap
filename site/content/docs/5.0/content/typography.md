@@ -25,12 +25,12 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 {{< bs-table >}}
 | Heading | Example |
 | --- | --- |
-| `<h1></h1>` | <span class="h1">h1. Bootstrap heading</span> |
-| `<h2></h2>` | <span class="h2">h2. Bootstrap heading</span> |
-| `<h3></h3>` | <span class="h3">h3. Bootstrap heading</span> |
-| `<h4></h4>` | <span class="h4">h4. Bootstrap heading</span> |
-| `<h5></h5>` | <span class="h5">h5. Bootstrap heading</span> |
-| `<h6></h6>` | <span class="h6">h6. Bootstrap heading</span> |
+| `<h1></h1>` | <span class="h1 d-inline-block">h1. Bootstrap heading</span> |
+| `<h2></h2>` | <span class="h2 d-inline-block">h2. Bootstrap heading</span> |
+| `<h3></h3>` | <span class="h3 d-inline-block">h3. Bootstrap heading</span> |
+| `<h4></h4>` | <span class="h4 d-inline-block">h4. Bootstrap heading</span> |
+| `<h5></h5>` | <span class="h5 d-inline-block">h5. Bootstrap heading</span> |
+| `<h6></h6>` | <span class="h6 d-inline-block">h6. Bootstrap heading</span> |
 {{< /bs-table >}}
 
 ```html
@@ -200,6 +200,22 @@ Use text utilities as needed to change the alignment of your blockquote.
 {{< /example >}}
 
 ## Lists
+
+### Triangles
+
+**(Custom Arizona Bootstrap Class)**
+
+Add the `.ul-triangles` class to your **unordered list** to replace the default bullets with triangles. Triangle list items function the same as an unordered list.
+
+{{< example >}}
+<ul class="ul-triangles">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+</ul>
+{{< /example >}}
 
 ### Unstyled
 

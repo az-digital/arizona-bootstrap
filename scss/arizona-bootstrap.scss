@@ -12,9 +12,6 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
-// Arizona Bootstrap default map overrides.
-@import "override/maps";
-
 // Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
@@ -55,13 +52,15 @@
 @import "../node_modules/bootstrap/scss/helpers";
 
 // Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "override/utilities";
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // Arizona Bootstrap imports.
 @import "legacy/mixins";
+@import "override/reboot";
 @import "custom/styles";
-@import "override/typography";
 @import "custom/typography";
+@import "override/typography";
 @import "legacy/custom-asset-overrides";
 @import "override/accordion";
 @import "deprecated/accordion";

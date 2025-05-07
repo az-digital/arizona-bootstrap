@@ -56,6 +56,20 @@ Prevent long strings of text from breaking your components' layout by using `.te
 Note that [breaking words isn't possible in Arabic](https://rtlstyling.com/posts/rtl-styling#3.-line-break), which is the most used RTL language. Therefore `.text-break` is removed from our RTL compiled CSS.
 {{< /callout >}}
 
+## Hyphenate word
+
+**(Custom Arizona Bootstrap Class)**
+
+Allow long strings of text to break to the next line with a hyphen automatically placed at the break point by using `.text-hyphen` to set `hyphens: auto`. This should only be applied as a span on a single word that may be longer than the column width at some screen sizes. Do not use on paragraphs or longer spans of text.
+
+{{< example >}}
+<div class="card col-2">
+  <div class="card-body">
+    <p>Very long words are examples of <span class="text-hyphen">incomprehensibilities</span>.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ## Text transform
 
 Transform text in components with our text capitalization classes: `text-lowercase`, `text-uppercase` or `text-capitalize`.

@@ -26,11 +26,28 @@ Arizona Bootstrap 2 contained utility classes that are no longer supported/maint
 
 ## Removed Utility Classes
 
-Components and utility classes that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in {{< ourname >}}.
+Utility classes that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in {{< ourname >}}.
+
+### Blockquote Reverse
+
+The `.blockquote-reverse` class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.
+
+### Heading-Style
+
+The `.heading-style` class has been removed from Arizona Bootstrap 5. The Bootstrap `.h1` - `.h6` styles should be used instead.
+
+### Mailto
+
+The `.mailto` class, which is placed directly on the `<a>` link tag, has been removed in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Truncation]({{< docsref "/helpers/text-truncation/" >}}) for more details.
+
+### Sans
+
+The legacy `.sans` class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.
 
 
 ## Removed Components
 
+Components that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in {{< ourname >}}.
 
 
 ## Removed JavaScript
