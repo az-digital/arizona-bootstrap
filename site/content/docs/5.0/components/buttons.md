@@ -72,6 +72,32 @@ In need of a button, but not the hefty background colors they bring? Replace the
 Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
 {{< /callout >}}
 
+For outline buttons on a **dark background color**, use the `.btn-outline-white`.
+<span class="badge text-bg-light fs-6 mt-3 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Style</span>
+<div class="bd-example">
+  <div class="d-inline-block w-25 bg-dark p-3">
+    <button type="button" class="btn btn-outline-white">White</button>
+  </div>
+  <div class="d-inline-block w-25 bg-red p-3">
+    <button type="button" class="btn btn-outline-white">White</button>
+  </div>
+  <div class="d-inline-block w-25 bg-blue p-3">
+    <button type="button" class="btn btn-outline-white">White</button>
+  </div>
+</div>
+
+```html
+<div class="bg-dark p-3">
+  <button type="button" class="btn btn-outline-white">White</button>
+</div>
+<div class="bg-red p-3">
+  <button type="button" class="btn btn-outline-white">White</button>
+</div>
+<div class="bg-blue p-3">
+  <button type="button" class="btn btn-outline-white">White</button>
+</div>
+```
+
 ## Sizes
 
 Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes.
