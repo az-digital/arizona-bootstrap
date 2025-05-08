@@ -11,9 +11,12 @@
     color: $white;
     background-color: $red;
   }
+  &:focus,
   &.active,
   &:active {
-    background-color: tint-color($chili, 10%);
+    color: $white;
+    background-color: lighten($chili, 5%);
+    border-color: lighten($chili, 5%);
   }
   &.disabled,
   &:disabled {
