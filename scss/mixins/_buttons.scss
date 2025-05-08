@@ -3,7 +3,7 @@
  */
 
 // >> Regular
-@mixin button-variant($background) {
+@mixin az-button-variant($background) {
   // check for inaccessible color contrast
   $button-text-color: $white;
 

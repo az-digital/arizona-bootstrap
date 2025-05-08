@@ -5,29 +5,21 @@
 
 // hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
-  @include button-variant($chili);
-  background-color: $chili;
-  &:hover {
-    color: $white;
-    background-color: $red;
-  }
-  &:focus,
-  &.active,
-  &:active {
-    color: $white;
-    background-color: $red;
-    border-color: $red;
-  }
-  &.disabled,
-  &:disabled {
-    color: $white;
-    background-color: $chili;
-    border-color: $chili;
-  }
+  @include button-variant(
+    $background: $chili,
+    $border: $chili,
+    $color: $white,
+    $hover-background: $red,
+    $hover-border: $red,
+    $hover-color: $white,
+    $active-background: $red,
+    $active-border: $red,
+    $active-color: $white
+  );
 }
 
 .btn-blue {
-  @include button-variant($midnight);
+  @include az-button-variant($midnight);
   background-color: $blue;
   &:hover {
     color: $white;

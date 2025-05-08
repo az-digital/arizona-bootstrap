@@ -17539,22 +17539,20 @@ h6,
 }
 
 .btn-red {
-  color: #fff;
-  background-color: #8b0015;
-}
-.btn-red:hover {
-  color: #fff;
-  background-color: #ab0520;
-}
-.btn-red:focus, .btn-red.active, .btn-red:active {
-  color: #fff;
-  background-color: #ab0520;
-  border-color: #ab0520;
-}
-.btn-red.disabled, .btn-red:disabled {
-  color: #fff;
-  background-color: #8b0015;
-  border-color: #8b0015;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #8b0015;
+  --bs-btn-border-color: #8b0015;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ab0520;
+  --bs-btn-hover-border-color: #ab0520;
+  --bs-btn-focus-shadow-rgb: 156, 38, 56;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #ab0520;
+  --bs-btn-active-border-color: #ab0520;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #8b0015;
+  --bs-btn-disabled-border-color: #8b0015;
 }
 
 .btn-blue {

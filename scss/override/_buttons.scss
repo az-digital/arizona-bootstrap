@@ -7,7 +7,7 @@
 // >> Variants
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    @include button-variant($value);
+    @include az-button-variant($value);
   }
 }
 .btn-link {
