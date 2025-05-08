@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arizona Bootstrap Dark Mode Demo</title>
+    <link href="../../dist/css/arizona-bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="arizona-header bg-red">
+      <a class="arizona-logo" href="https://www.arizona.edu" title="The University of Arizona">
+        <img class="arizona-line-logo" alt="The University of Arizona" src="https://www.arizona.edu/sites/default/files/UA_horiz_rgb_webheader.svg">
+      </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Arizona Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Components
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Cards</a></li>
+                <li><a class="dropdown-item" href="#">Buttons</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Typography</a></li>
+              </ul>
+            </li>
+          </ul>
+          <button id="theme-toggle" class="btn btn-outline-primary">Toggle Light/Dark Mode</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Arizona Bootstrap Dark Mode</h1>
+          <p class="lead">This page demonstrates Arizona Bootstrap components in dark mode.</p>
+          
+          <h2>Typography</h2>
+          <p>Arizona Bootstrap maintains proper contrast for text in dark mode while preserving brand identity.</p>
+          
+          <h3>Heading Level 3</h3>
+          <h4>Heading Level 4</h4>
+          <h5>Heading Level 5</h5>
+          <h6>Heading Level 6</h6>
+          
+          <hr class="my-4">
+          
+          <h2>Lists</h2>
+          <ul class="ul-triangles">
+            <li>Triangle list item one</li>
+            <li>Triangle list item two</li>
+            <li>Triangle list item three with longer text to demonstrate wrapping behavior</li>
+          </ul>
+          
+          <h2>Blockquotes</h2>
+          <figure>
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-header">
+              Card Header
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Button Examples</h5>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Primary</button>
+                <button class="btn btn-secondary" type="button">Secondary</button>
+                <button class="btn btn-success" type="button">Success</button>
+                <button class="btn btn-danger" type="button">Danger</button>
+                <button class="btn btn-warning" type="button">Warning</button>
+                <button class="btn btn-info" type="button">Info</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-12">
+          <h2>Background Wrappers</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h3>Light Background</h3>
+            <p>This is content in a light background wrapper.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 mb-3 bg-primary text-white rounded">
+            <h3>Primary Background</h3>
+            <p>This is content in a primary background wrapper.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 mb-3 bg-secondary text-white rounded">
+            <h3>Secondary Background</h3>
+            <p>This is content in a secondary background wrapper.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-12">
+          <h2>Form Elements</h2>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Arizona Bootstrap</h5>
+            <p>Build responsive, mobile-first projects on the web with the University of Arizona's customized Bootstrap.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; Arizona Board of Regents on behalf of the University of Arizona</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/js/arizona-bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        const html = document.documentElement;
+        if (html.getAttribute('data-bs-theme') === 'dark') {
+          html.setAttribute('data-bs-theme', 'light');
+          this.textContent = 'Switch to Dark Mode';
+        } else {
+          html.setAttribute('data-bs-theme', 'dark');
+          this.textContent = 'Switch to Light Mode';
+        }
+      });
+    </script>
+  </body>
+</html>
