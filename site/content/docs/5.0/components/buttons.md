@@ -72,8 +72,9 @@ In need of a button, but not the hefty background colors they bring? Replace the
 Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
 {{< /callout >}}
 
+<span class="badge text-bg-light fs-6 mt-3 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
 For outline buttons on a **dark background color**, use the `.btn-outline-white`.
-<span class="badge text-bg-light fs-6 mt-3 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Style</span>
+
 <div class="bd-example">
   <div class="d-inline-block w-25 bg-dark p-3">
     <button type="button" class="btn btn-outline-white">White</button>
@@ -119,6 +120,32 @@ You can even roll your own custom sizing with CSS variables:
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
   Custom button
 </button>
+{{< /example >}}
+
+## Arrow Buttons
+
+<span class="badge text-bg-light fs-6 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+Add an arrow to any button style by adding the `.btn-arrow` class.
+
+{{< example >}}
+<button type="button" class="btn btn-lg btn-red btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-blue btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-info btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-outline-success btn-arrow">Large Arrow Button</button>
+{{< /example >}}
+
+{{< example >}}
+<button type="button" class="btn btn-red btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-blue btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-info btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-outline-success btn-arrow">Regular Arrow Button</button>
+{{< /example >}}
+
+{{< example >}}
+<button type="button" class="btn btn-sm btn-red btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-blue btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-info btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-outline-success btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
 ## Disabled state
