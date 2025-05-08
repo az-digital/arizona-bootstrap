@@ -169,17 +169,19 @@
 
     <script src="../../dist/js/arizona-bootstrap.bundle.min.js"></script>
     <script>
-      'use strict';
-      document.getElementById('theme-toggle').addEventListener('click', function () {
-        const html = document.documentElement
-        if (html.getAttribute('data-bs-theme') === 'dark') {
-          html.setAttribute('data-bs-theme', 'light')
-          this.textContent = 'Switch to Dark Mode'
-        } else {
-          html.setAttribute('data-bs-theme', 'dark')
-          this.textContent = 'Switch to Light Mode'
-        }
-      })
+      (function () {
+        'use strict'
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+          const html = document.documentElement
+          if (html.getAttribute('data-bs-theme') === 'dark') {
+            html.setAttribute('data-bs-theme', 'light')
+            this.textContent = 'Switch to Dark Mode'
+          } else {
+            html.setAttribute('data-bs-theme', 'dark')
+            this.textContent = 'Switch to Light Mode'
+          }
+        })
+      })()
     </script>
   </body>
 </html>
