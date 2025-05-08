@@ -109,11 +109,11 @@ In this case `warning` and `danger` are almost the same color. In which case, we
 ### Option 3: Change callout styling to have a background, like in upstream bootstrap:
 
 <span class="fs-5">like this:</span>
-
+<div>
 {{< callout warning>}}
 **Note:** Trellis Event Organizers must ensure that Events intended to be imported are Published, have a status of active on the Basic Info tab, and are set to "Broadcast to all Platforms" on the Promotion tab. If an event is imported without the proper settings, it will not display consistently on the webpage.
 {{< /callout >}}
-
+</div>
 <span class="fs-5">as compared to what it looks like now:</span>
 
 <div class="callout border-warning"><h3 class="text-warning mt-0">Note</h3><p><span>Trellis Event Organizers must ensure that Events intended to be imported are Published, have a status of active on the Basic Info tab, and are set to "Broadcast to all Platforms" on the Promotion tab. If an event is imported without the proper settings, it will not display consistently on the webpage.</span></p></div>
