@@ -3,7 +3,9 @@ layout: docs
 title: Icons
 description: Guidance and suggestions for using icon libraries with Arizona Bootstrap.
 group: icons
-redirect_from: "/icons/"
+redirect_from:
+  - "/icons/"
+  - "/docs/5.0/icons/"
 toc: true
 ---
 
