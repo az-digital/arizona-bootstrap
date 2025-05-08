@@ -11,7 +11,9 @@
     color: var(--#{$prefix}body-color) !important;
   }
   
-  .bg-gray-100, .bg-gray-200, .bg-gray-300 {
+  .bg-gray-100,
+  .bg-gray-200,
+  .bg-gray-300 {
     background-color: rgba(255, 255, 255, 0.05) !important;
     color: var(--#{$prefix}body-color) !important;
   }
@@ -24,7 +26,11 @@
   }
   
   // Adjust background wrapper borders
-  .border-top, .border-bottom, .border-start, .border-end, .border {
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end,
+  .border {
     border-color: var(--#{$prefix}border-color) !important;
   }
 }

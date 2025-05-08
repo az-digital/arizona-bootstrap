@@ -3,18 +3,18 @@
 
 @include color-mode(dark) {
   // Base colors
-  --#{$prefix}body-bg: #{darken(desaturate($midnight, 80%), 15%)}; // Very dark with subtle midnight tint
+  --#{$prefix}body-bg: #0a0c14; // Very dark with subtle midnight tint
   --#{$prefix}body-color: #{$white};
   
   // Surface elements - slightly lighter with more midnight influence
-  --#{$prefix}card-bg: #{lighten($midnight, 5%)};
-  --#{$prefix}dropdown-bg: #{lighten($midnight, 5%)};
-  --#{$prefix}modal-content-bg: #{lighten($midnight, 5%)};
-  --#{$prefix}toast-background-color: #{lighten($midnight, 5%)};
-  --#{$prefix}popover-bg: #{lighten($midnight, 5%)};
+  --#{$prefix}card-bg: #0e1a2b;
+  --#{$prefix}dropdown-bg: #0e1a2b;
+  --#{$prefix}modal-content-bg: #0e1a2b;
+  --#{$prefix}toast-background-color: #0e1a2b;
+  --#{$prefix}popover-bg: #0e1a2b;
   
   // Borders - subtle separation
-  --#{$prefix}border-color: #{lighten($midnight, 10%)};
+  --#{$prefix}border-color: #1a2a42;
   
   // Typography
   --#{$prefix}heading-color: #{$sky}; // Lighter blue for headings in dark mode
@@ -22,16 +22,16 @@
   --#{$prefix}list-triangle-color: #{$sky};
   
   // Interactive elements
-  --#{$prefix}link-color: #{lighten($azurite, 25%)};
-  --#{$prefix}link-hover-color: #{lighten($azurite, 35%)};
+  --#{$prefix}link-color: #6a9ac9;
+  --#{$prefix}link-hover-color: #8fb3d9;
   
   // Form elements
-  --#{$prefix}input-bg: #{lighten($midnight, 8%)};
+  --#{$prefix}input-bg: #122139;
   --#{$prefix}input-color: #{$white};
-  --#{$prefix}input-border-color: #{lighten($midnight, 15%)};
+  --#{$prefix}input-border-color: #1e3251;
   
   // Buttons
-  --#{$prefix}btn-active-bg: #{lighten($midnight, 15%)};
+  --#{$prefix}btn-active-bg: #1e3251;
   
   // Navbar
   --#{$prefix}navbar-dark-color: #{$white};
@@ -40,17 +40,17 @@
   
   // Tables
   --#{$prefix}table-color: #{$white};
-  --#{$prefix}table-striped-bg: #{rgba($white, .05)};
-  --#{$prefix}table-hover-bg: #{rgba($white, .075)};
+  --#{$prefix}table-striped-bg: rgba(255, 255, 255, 0.05);
+  --#{$prefix}table-hover-bg: rgba(255, 255, 255, 0.075);
   
   // Accordion
-  --#{$prefix}accordion-button-bg: #{lighten($midnight, 10%)};
-  --#{$prefix}accordion-button-active-bg: #{lighten($midnight, 15%)};
+  --#{$prefix}accordion-button-bg: #1a2a42;
+  --#{$prefix}accordion-button-active-bg: #1e3251;
   
   // Cards
-  --#{$prefix}card-cap-bg: #{lighten($midnight, 10%)};
+  --#{$prefix}card-cap-bg: #1a2a42;
   
   // Dropdown
-  --#{$prefix}dropdown-link-hover-bg: #{lighten($midnight, 15%)};
-  --#{$prefix}dropdown-link-active-bg: #{lighten($midnight, 20%)};
+  --#{$prefix}dropdown-link-hover-bg: #1e3251;
+  --#{$prefix}dropdown-link-active-bg: #243c61;
 }

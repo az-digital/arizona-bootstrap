@@ -16,13 +16,13 @@
       
       &.active {
         // Adjust active background for better visibility
-        background-color: lighten($navbar-offcanvas-link-active-bg, 5%);
+        background-color: #2a5d94; // Manually adjusted color instead of lighten()
       }
     }
     
     .dropdown-menu {
       // Adjust dropdown background for better visibility
-      background-color: lighten($navbar-offcanvas-bg-expanded, 5%);
+      background-color: #2a5d94; // Manually adjusted color instead of lighten()
     }
   }
   
@@ -34,7 +34,8 @@
     .navbar-nav .nav-link {
       color: var(--#{$prefix}body-color);
       
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: var(--#{$prefix}link-color);
       }
       
