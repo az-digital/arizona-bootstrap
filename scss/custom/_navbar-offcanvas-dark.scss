@@ -3,45 +3,45 @@
 @include color-mode(dark) {
   // Keep the offcanvas menu background as Arizona Blue in both modes
   // but adjust other elements for better visibility in dark mode
-  
+
   .navbar-offcanvas {
     // Keep the background color consistent
     background-color: $navbar-offcanvas-bg;
-    
+
     .nav-item {
       .nav-link {
         // Keep text color white for contrast
         color: $navbar-offcanvas-link-color;
       }
-      
+
       &.active {
         // Adjust active background for better visibility
         background-color: #2a5d94; // Manually adjusted color instead of lighten()
       }
     }
-    
+
     .dropdown-menu {
       // Adjust dropdown background for better visibility
       background-color: #2a5d94; // Manually adjusted color instead of lighten()
     }
   }
-  
+
   // For the standard navbar in dark mode
   .navbar-light {
     background-color: var(--#{$prefix}card-bg);
     border-color: var(--#{$prefix}border-color);
-    
+
     .navbar-nav .nav-link {
       color: var(--#{$prefix}body-color);
-      
+
       &:hover,
       &:focus {
         color: var(--#{$prefix}link-color);
       }
-      
+
       &.active {
         color: var(--#{$prefix}link-color);
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, .1);
       }
     }
   }

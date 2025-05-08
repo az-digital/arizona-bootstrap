@@ -4,29 +4,29 @@
   .card {
     background-color: var(--#{$prefix}card-bg);
     border-color: var(--#{$prefix}border-color);
-    
+
     .card-header,
     .card-footer {
       background-color: var(--#{$prefix}card-cap-bg);
       border-color: var(--#{$prefix}border-color);
     }
-    
+
     .card-title {
       color: var(--#{$prefix}heading-color);
     }
-    
+
     .card-subtitle {
       color: var(--#{$prefix}body-color);
-      opacity: 0.8;
+      opacity: .8;
     }
-    
+
     .card-text {
       color: var(--#{$prefix}body-color);
     }
-    
+
     .card-link {
       color: var(--#{$prefix}link-color);
-      
+
       &:hover {
         color: var(--#{$prefix}link-hover-color);
       }
