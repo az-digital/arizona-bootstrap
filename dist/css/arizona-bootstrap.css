@@ -3944,14 +3944,14 @@ textarea.form-control-lg {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
-  --bs-btn-border-radius: var(--bs-border-radius-lg);
+  --bs-btn-border-radius: 3rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;
-  --bs-btn-border-radius: var(--bs-border-radius-sm);
+  --bs-btn-border-radius: 3rem;
 }
 
 .fade {
@@ -17546,8 +17546,10 @@ h6,
   color: #fff;
   background-color: #ab0520;
 }
-.btn-red.active, .btn-red:active {
-  background-color: #971a2c;
+.btn-red:focus, .btn-red.active, .btn-red:active {
+  color: #fff;
+  background-color: #a50019;
+  border-color: #a50019;
 }
 .btn-red.disabled, .btn-red:disabled {
   color: #fff;
