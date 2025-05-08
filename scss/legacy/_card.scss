@@ -3,12 +3,14 @@
 // >> Card Header
 .card {
   .card-header {
+    color: color-contrast($card-cap-bg) if($enable-important-utilities, !important, null);
     background-color: $card-cap-bg;
   }
 }
 
 .card[class*=" bg-"] {
   .card-header {
+    color: color-contrast($card-cap-bg-darken) if($enable-important-utilities, !important, null);
     background-color: $card-cap-bg-darken;
   }
 }
