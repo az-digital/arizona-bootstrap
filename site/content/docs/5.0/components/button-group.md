@@ -159,6 +159,25 @@ Instead of applying button sizing classes to every button in a group, just add `
 </div>
 {{< /example >}}
 
+## Justified
+
+<span class="badge text-bg-light fs-6 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+Add the `.btn-group-justified` class to your `.btn-group` to make each button in the group the same size and span the full-width of its containing `div`. The buttons will remain the same size, regardless of the amount of text in each button.
+
+{{< example >}}
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+  <button type="button" class="btn btn-red">Left Button with More Text</button>
+  <button type="button" class="btn btn-blue">Middle</button>
+  <button type="button" class="btn btn-info">Right Button</button>
+</div>
+{{< /example >}}
+
+```html
+<div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
+<div class="btn-group" role="group" aria-label="...">...</div>
+<div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
+```
+
 ## Nesting
 
 Place a `.btn-group` within another `.btn-group` when you want dropdown menus mixed with a series of buttons.
