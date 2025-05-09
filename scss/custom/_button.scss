@@ -2,7 +2,6 @@
 // > BUTTONS
 //
 
-
 // hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
   @include button-variant(
@@ -19,58 +18,39 @@
 }
 
 .btn-blue {
-  @include az-button-variant($midnight);
-  background-color: $blue;
-  &:hover {
-    color: $white;
-    background-color: $azurite;
-  }
-  &.active,
-  &:active {
-    background-color: tint-color($blue, 20%);
-  }
-  &.disabled,
-  &:disabled {
-    color: $white;
-    background-color: $blue;
-    border-color: $blue;
-  }
+  @include button-variant(
+    $background: $blue,
+    $border: $blue,
+    $color: $white,
+    $hover-background: $azurite,
+    $hover-border: $azurite,
+    $hover-color: $white,
+    $active-background: tint-color($blue, 20%),
+    $active-border: tint-color($blue, 20%),
+    $active-color: $white
+  );
 }
 
 .btn-outline-red {
-  color: $chili;
-  border-color: $chili;
-  &:hover {
-    color: $white;
-    background-color: $chili;
-  }
-  &.disabled,
-  &:disabled {
-    color: $chili;
-    border-color: $chili;
-  }
+  @include button-outline-variant(
+    $color: $chili,
+    $color-hover: $white,
+  );
 }
 
 .btn-outline-blue {
-  color: $blue;
-  border-color: $blue;
-  &:hover {
-    color: $white;
-    background-color: $blue;
-  }
-  &.disabled,
-  &:disabled {
-    color: $blue;
-    border-color: $blue;
-  }
+  @include button-outline-variant(
+    $color: $blue,
+    $color-hover: $white
+  );
 }
+
 .btn-outline-white {
-  color: $white;
-  border-color: $white;
-  &:hover {
-    color: $gray-800;
-    background-color: $white;
-  }
+  @include button-outline-variant(
+    $color: $white,
+    $color-hover: $gray-800,
+    $active-background: $white,
+  );
 }
 
 // >> Arrow Buttons
