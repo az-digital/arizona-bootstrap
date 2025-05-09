@@ -79,6 +79,12 @@
   display: none;
 }
 
+.bd-toc nav a:hover,
+.bd-toc nav .active {
+  color: $midnight;
+  border-left-color: $midnight;
+}
+
 // >> Off Canvas Navbar example
 
 .navbar-offcanvas {
