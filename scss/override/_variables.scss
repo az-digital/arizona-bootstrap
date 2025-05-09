@@ -102,10 +102,11 @@ $form-label-font-weight: 700;
 // fusv-enable
 
 // >> Navs
+// fusv-disable
 $nav-link-font-weight: 700;
 $nav-link-color: $azurite;
 $nav-link-hover-color: $midnight;
-$nav-link-disabled-color: $dark-silver;  // check on this
+$nav-link-disabled-color: $dark-silver;  // @todo double-check on this
 
 $nav-tabs-link-active-color: $midnight;
 $nav-tabs-link-active-bg: $white;
@@ -114,6 +115,7 @@ $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-colo
 
 $nav-pills-link-active-color: $midnight;
 $nav-pills-link-active-bg: $gray-200;
+// fusv-enable
 
 // >> Navbar
 $navbar-padding-y: 0;
