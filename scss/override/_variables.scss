@@ -102,20 +102,20 @@ $form-label-font-weight: 700;
 // fusv-enable
 
 // >> Navs
+// fusv-disable
+$nav-link-font-weight: 700;
 $nav-link-color: $azurite;
 $nav-link-hover-color: $midnight;
-$nav-link-active-color: $midnight;
-$nav-link-active-bg: $gray-200;
+$nav-link-disabled-color: $dark-silver;  // @todo double-check on this
 
+$nav-tabs-link-active-color: $midnight;
+$nav-tabs-link-active-bg: $white;
 $nav-tabs-border-color: $gray-200;
 $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
-$nav-tabs-link-bg: $gray-200;
-$nav-tabs-link-active-bg: $white;
-
-$nav-tabs-lg-link-padding: 1.25em 1.75em;
 
 $nav-pills-link-active-color: $midnight;
 $nav-pills-link-active-bg: $gray-200;
+// fusv-enable
 
 // >> Navbar
 $navbar-padding-y: 0;
