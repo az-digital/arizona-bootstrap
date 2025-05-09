@@ -81,6 +81,7 @@
 
 .bd-toc nav a {
   &:hover,
+  // stylelint-disable-next-line selector-no-qualifying-type
   &.active {
     color: $midnight;
     border-left-color: $midnight;
