@@ -1,0 +1,61 @@
+//
+// > BUTTONS
+//
+
+// hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
+.btn-red {
+  @include button-variant(
+    $background: $chili,
+    $border: $chili,
+    $color: $white,
+    $hover-background: $red,
+    $hover-border: $red,
+    $hover-color: $white,
+    $active-background: $red,
+    $active-border: $red,
+    $active-color: $white
+  );
+}
+
+.btn-blue {
+  @include button-variant(
+    $background: $blue,
+    $border: $blue,
+    $color: $white,
+    $hover-background: $azurite,
+    $hover-border: $azurite,
+    $hover-color: $white,
+    $active-background: tint-color($blue, 20%),
+    $active-border: tint-color($blue, 20%),
+    $active-color: $white
+  );
+}
+
+.btn-outline-red {
+  @include button-outline-variant(
+    $color: $chili,
+    $color-hover: $white,
+  );
+}
+
+.btn-outline-blue {
+  @include button-outline-variant(
+    $color: $blue,
+    $color-hover: $white
+  );
+}
+
+.btn-outline-white {
+  @include button-outline-variant(
+    $color: $white,
+    $color-hover: $gray-800,
+    $active-background: $white,
+  );
+}
+
+// >> Arrow Buttons
+.btn-arrow {
+  &::after {
+    content: "\00a0»";
+  }
+}
