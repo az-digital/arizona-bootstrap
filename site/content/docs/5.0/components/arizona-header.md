@@ -27,11 +27,11 @@ supported as shown below.
   </div>
   <div class="redbar-buttons d-lg-none">
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
-      <span class="icon material-icons-sharp"> search </span>
+      <span class="icon material-icons-round"> search </span>
       <span class="icon-text"> search </span>
     </button>
     <button data-toggle="offcanvas" type="button" data-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-redbar">
-      <span class="icon material-icons-sharp"> menu </span>
+      <span class="icon material-icons-round"> menu </span>
       <span class="icon-text"> menu </span>
     </button>
   </div>
