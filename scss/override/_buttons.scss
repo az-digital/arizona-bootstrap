@@ -1,0 +1,41 @@
+// Overrides for the Button and Button Group components
+
+//
+// > BUTTONS
+//
+
+// >> Variants
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include az-button-variant($value);
+  }
+}
+.btn-link {
+  color: $link-color;
+}
+
+// >> Variant Accessibility
+.btn-success,
+.btn-info,
+.btn-outline-info {
+  &:hover {
+    color: $midnight;
+  }
+}
+.btn-warning {
+  &:hover {
+    color: $black;
+  }
+}
+.btn-outline-info {
+  color: $azurite;
+}
+.btn-outline-warning {
+  color: $ash;
+  &:hover {
+    color: $black;
+  }
+}
+.btn-outline-light {
+  color: $ash;
+}
