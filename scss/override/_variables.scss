@@ -106,15 +106,17 @@ $form-label-font-weight: 700;
 $nav-link-font-weight: 700;
 $nav-link-color: $azurite;
 $nav-link-hover-color: $midnight;
-$nav-link-disabled-color: $dark-silver;  // @todo double-check on this
+$nav-link-disabled-color: $dark-silver;
 
+$nav-tabs-border-color: $gray-200;
 $nav-tabs-link-active-color: $midnight;
 $nav-tabs-link-active-bg: $white;
-$nav-tabs-border-color: $gray-200;
 $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
 
 $nav-pills-link-active-color: $midnight;
 $nav-pills-link-active-bg: $gray-200;
+
+$nav-underline-link-active-color: $midnight;
 // fusv-enable
 
 // >> Navbar

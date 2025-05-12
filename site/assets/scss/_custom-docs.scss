@@ -79,11 +79,15 @@
   display: none;
 }
 
-.bd-toc nav a:hover,
-.bd-toc nav .active {
-  color: $midnight;
-  border-left-color: $midnight;
+// stylelint-disable selector-no-qualifying-type
+.bd-toc nav a {
+  &:hover,
+  &.active {
+    color: $midnight;
+    border-left-color: $midnight;
+  }
 }
+// stylelint-enable selector-no-qualifying-type
 
 // >> Off Canvas Navbar example
 
@@ -326,4 +330,9 @@
 
 .pn strong {
   font-weight: 700;
+}
+
+// >> Utility Links
+.bd-example > .nav-utility {
+  margin-bottom: revert;
 }

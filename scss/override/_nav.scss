@@ -2,23 +2,30 @@
 
 .nav-link {
   &.active,
-  &:active,
-  &.is-active {
+  &:active {
     color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-active-bg;
+    background-color: $nav-tabs-link-bg;
+    /* stylelint-disable-next-line property-disallowed-list */
+    border-radius: $nav-pills-border-radius;
   }
 }
 
 .nav-tabs {
-  .nav-item {
-    + .nav-item {
-      margin-left: .5rem;
-    }
+  > *:nth-child(n+2) {
+    margin-left: .5rem;
   }
+
   .nav-link {
     background-color: $nav-tabs-link-bg;
 
-    &.disabled {
+    &.active,
+    &:active {
+      /* stylelint-disable-next-line property-disallowed-list */
+      border-radius: revert;
+    }
+
+    &.disabled,
+    &:disabled {
       background-color: initial;
     }
   }
@@ -27,18 +34,25 @@
     flex-direction: column;
     border-bottom-width: 0;
 
-    .nav-item {
-      + .nav-item {
-        margin-left: 0;
-      }
+    > *:nth-child(n+2) {
+      margin-left: 0;
     }
-  }
 
-  &.nav-underline {
-    &.active,
-    &:active,
-    &.is-active {
-      background-color: $nav-tabs-link-active-bg;
+    .nav-link {
+      border-color: transparent;
+
+      &.active,
+      &:active {
+        background-color: $nav-tabs-link-bg;
+        /* stylelint-disable property-disallowed-list */
+        border-bottom-right-radius: var(--bs-nav-tabs-border-radius);
+        border-bottom-left-radius: var(--bs-nav-tabs-border-radius);
+        /* stylelint-enable property-disallowed-list */
+      }
+
+      &:not(.active) {
+        background-color: revert;
+      }
     }
   }
 }
@@ -49,21 +63,48 @@
       flex-direction: row;
       border-bottom-width: 1px;
 
-      .nav-item {
-        + .nav-item {
-          margin-left: .5rem;
-        }
+      > *:nth-child(n+2) {
+        margin-left: .5rem;
       }
 
       .nav-link {
         padding: $nav-tabs-lg-link-padding;
-        border: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+        &:not(.active),
+        &:not(.disabled) {
+          background-color: $nav-tabs-link-bg;
+          border: $nav-tabs-border-width solid $nav-tabs-border-color;
+        }
+
+        &.active,
+        &:active {
+          background-color: revert;
+          border-color: $nav-tabs-link-active-border-color;
+          /* stylelint-disable property-disallowed-list */
+          border-bottom-right-radius: initial;
+          border-bottom-left-radius: initial;
+          /* stylelint-enable property-disallowed-list */
+        }
+
+        &.disabled {
+          background-color: revert;
+          border-color: transparent;
+        }
       }
     }
   }
 }
 
-/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+.nav.nav-underline .nav-link {
+  &.active,
+  &:active {
+    background-color: $nav-tabs-link-active-bg;
+    /* stylelint-disable-next-line property-disallowed-list */
+    border-radius: revert;
+  }
+}
+
+/* stylelint-disable selector-max-class, selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
   border: solid 1px $nav-tabs-border-color;
@@ -95,26 +136,31 @@
       }
     }
   }
+
+  .nav-link {
+    &.active,
+    &:active {
+      /* stylelint-disable-next-line property-disallowed-list */
+      border-radius: 0;
+    }
+  }
 }
-/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+/* stylelint-enable selector-max-class, selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 
 .nav.nav-utility {
-  margin: $nav-utility-margin;
+  margin: 1rem 0 1.5rem;
   .nav-item {
-    padding: $nav-utility-item-padding;
+    padding: 0 .6rem;
   }
   .nav-link {
     padding: 0;
-    font: {
-      size: $nav-utility-link-font-size;
-      weight: $nav-utility-link-font-weight;
-    }
-    color: $nav-utility-link-color;
-    border-bottom: $nav-utility-link-border-width solid transparent;
+    font-weight: 500;
+    color: $dark-silver;
+    border-bottom: 2px solid transparent;
 
     &:hover,
     &:focus {
-      border-bottom: $nav-utility-link-border-width solid $nav-utility-link-border-hover-color;
+      border-bottom-color: $dark-silver;
     }
   }
 }
