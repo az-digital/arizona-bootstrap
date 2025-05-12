@@ -6,6 +6,10 @@ group: components
 toc: true
 ---
 
+{{< alert class="warning" heading="Heads Up!" >}}
+{{< partial "alert-warning-material-design.md" >}}
+{{< /alert >}}
+
 ## Example
 
 Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our utilities to add additional styles as desired.
