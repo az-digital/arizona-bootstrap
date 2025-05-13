@@ -17754,7 +17754,7 @@ h6,
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link:active {
   /* stylelint-disable-next-line property-disallowed-list */
-  border-radius: revert;
+  border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
 }
 .nav-tabs .nav-link.disabled, .nav-tabs .nav-link:disabled {
   background-color: initial;

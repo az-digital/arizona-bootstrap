@@ -21,7 +21,7 @@
     &.active,
     &:active {
       /* stylelint-disable-next-line property-disallowed-list */
-      border-radius: revert;
+      border-radius: $nav-tabs-border-radius $nav-tabs-border-radius 0 0;
     }
 
     &.disabled,
