@@ -17745,6 +17745,9 @@ h6,
   /* stylelint-disable-next-line property-disallowed-list */
   border-radius: var(--bs-border-radius);
 }
+.nav-link.dropdown-toggle::after {
+  vertical-align: middle;
+}
 
 .nav-tabs > *:nth-child(n+2) {
   margin-left: 0.5rem;
@@ -17773,8 +17776,8 @@ h6,
 .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
   background-color: #e9ecef;
   /* stylelint-disable property-disallowed-list */
-  border-bottom-right-radius: var(--bs-nav-tabs-border-radius);
-  border-bottom-left-radius: var(--bs-nav-tabs-border-radius);
+  border-bottom-right-radius: var(--bs-border-radius);
+  border-bottom-left-radius: var(--bs-border-radius);
   /* stylelint-enable property-disallowed-list */
 }
 .nav-tabs.nav-tabs-lg .nav-link:not(.active) {
@@ -17816,10 +17819,20 @@ h6,
   border-radius: revert;
 }
 
-/* stylelint-disable selector-max-class, selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
   border: solid 1px #e9ecef;
+  /* stylelint-disable property-disallowed-list */
+  /* stylelint-enable property-disallowed-list */
+}
+.nav.nav-pills.flex-column > li:first-child {
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+.nav.nav-pills.flex-column > li:last-child {
+  border-bottom-right-radius: var(--bs-border-radius);
+  border-bottom-left-radius: var(--bs-border-radius);
 }
 .nav.nav-pills.flex-column > li ul > li {
   border: 0;
@@ -17840,12 +17853,15 @@ h6,
 .nav.nav-pills.flex-column > li ul > li ul > li ul > li ul > li ul > li a {
   padding-left: 65px;
 }
-.nav.nav-pills.flex-column > li .nav-link.active, .nav.nav-pills.flex-column > li .nav-link:active {
+.nav.nav-pills.flex-column > li .nav-link {
   /* stylelint-disable-next-line property-disallowed-list */
   border-radius: 0;
 }
+.nav.nav-pills.flex-column > li .nav-link:hover, .nav.nav-pills.flex-column > li .nav-link:focus {
+  background-color: #e9ecef;
+}
 
-/* stylelint-enable selector-max-class, selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-utility {
   margin: 1rem 0 1.5rem;
 }
