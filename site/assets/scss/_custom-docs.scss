@@ -81,6 +81,8 @@
 
 // stylelint-disable selector-no-qualifying-type
 .bd-toc nav a {
+  font-weight: revert;
+
   &:hover,
   &.active {
     color: $midnight;
