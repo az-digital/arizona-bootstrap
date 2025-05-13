@@ -5,8 +5,7 @@
   &:active {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-bg;
-    /* stylelint-disable-next-line property-disallowed-list */
-    border-radius: $nav-pills-border-radius;
+    @include border-radius($nav-pills-border-radius);
   }
 
   &.dropdown-toggle::after {
@@ -24,8 +23,7 @@
 
     &.active,
     &:active {
-      /* stylelint-disable-next-line property-disallowed-list */
-      border-radius: $nav-tabs-border-radius $nav-tabs-border-radius 0 0;
+      @include border-radius($nav-tabs-border-radius $nav-tabs-border-radius 0 0);
     }
 
     &.disabled,
@@ -48,10 +46,8 @@
       &.active,
       &:active {
         background-color: $nav-tabs-link-bg;
-        /* stylelint-disable property-disallowed-list */
-        border-bottom-right-radius: $nav-tabs-border-radius;
-        border-bottom-left-radius: $nav-tabs-border-radius;
-        /* stylelint-enable property-disallowed-list */
+        @include border-bottom-start-radius($nav-tabs-border-radius);
+        @include border-bottom-end-radius($nav-tabs-border-radius);
       }
 
       &:not(.active) {
@@ -84,10 +80,8 @@
         &:active {
           background-color: revert;
           border-color: $nav-tabs-link-active-border-color;
-          /* stylelint-disable property-disallowed-list */
-          border-bottom-right-radius: initial;
-          border-bottom-left-radius: initial;
-          /* stylelint-enable property-disallowed-list */
+          @include border-bottom-start-radius(initial);
+          @include border-bottom-end-radius(initial);
         }
 
         &.disabled {
@@ -103,8 +97,7 @@
   &.active,
   &:active {
     background-color: $nav-tabs-link-active-bg;
-    /* stylelint-disable-next-line property-disallowed-list */
-    border-radius: revert;
+    @include border-radius(revert);
   }
 }
 
@@ -113,16 +106,14 @@
   margin: -1px 0 0;
   border: solid 1px $nav-tabs-border-color;
 
-  /* stylelint-disable property-disallowed-list */
   &:first-child {
-    border-top-left-radius: $nav-pills-border-radius;
-    border-top-right-radius: $nav-pills-border-radius;
+    @include border-top-start-radius($nav-pills-border-radius);
+    @include border-top-end-radius($nav-pills-border-radius);
   }
   &:last-child {
-    border-bottom-right-radius: $nav-pills-border-radius;
-    border-bottom-left-radius: $nav-pills-border-radius;
+    @include border-bottom-start-radius($nav-pills-border-radius);
+    @include border-bottom-end-radius($nav-pills-border-radius);
   }
-  /* stylelint-enable property-disallowed-list */
 
   ul > li {
     border: 0;
@@ -153,8 +144,7 @@
   }
 
   .nav-link {
-    /* stylelint-disable-next-line property-disallowed-list */
-    border-radius: 0;
+    @include border-radius(0);
 
     &:hover,
     &:focus {
