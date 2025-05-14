@@ -63,7 +63,7 @@ Arizona Bootstrap 2 used the card component to extend the default collapse behav
 </div>
 {{< /example >}}
 
-In Arizona Bootstrap 5, the [accordion component](/docs/5.0/components/accordion/) is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.
+In Arizona Bootstrap 5, the [accordion component](../components/accordion/) is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.
 
 
 ## Backwards Compatible Utilities
