@@ -1,6 +1,31 @@
 // Overrides specific to the docs
 
 //
+// > Custom Arizona Bootstrap Badge
+//
+.badge-az-custom {
+  padding-top: .5625rem;
+  padding-right: .75rem;
+  padding-bottom: .5625rem;
+  font-size: 1rem;
+  color: $black;
+  background-color: $light;
+
+  &::before {
+    margin-right: .5rem;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword, declaration-no-important */
+    font-family: az-icons !important;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    content: "\e911";
+  }
+}
+
+//
 // > MISC
 //
 .highlight pre {
