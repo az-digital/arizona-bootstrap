@@ -109,7 +109,7 @@ You can replace the text within the `.navbar-brand` with an `<img>`.
 <nav class="navbar bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="{{<docsextraref "/assets/brand/bootstrap-logo.svg" >}}" alt="Bootstrap" width="30" height="24">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-black-background-thick.svg" >}}" alt="Bootstrap" width="37" height="37">
     </a>
   </div>
 </nav>
@@ -117,14 +117,14 @@ You can replace the text within the `.navbar-brand` with an `<img>`.
 
 #### Image and text
 
-You can also make use of some additional utilities to add an image and text at the same time. Note the addition of `.d-inline-block` and `.align-text-top` on the `<img>`.
+You can also make use of some additional utilities to add an image and text at the same time. Note the addition of `.d-inline-block` and `.align-text-center` on the `<img>`.
 
 {{< example >}}
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="{{<docsextraref "/assets/brand/bootstrap-logo.svg" >}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-black-background-thick.svg" >}}" alt="Logo" width="37" height="37" class="d-inline-block align-text-center">
+      Arizona Bootstrap
     </a>
   </div>
 </nav>
