@@ -35,8 +35,7 @@
 .callout-silver,
 .callout-cool-gray,
 .callout-warm-gray,
-.callout-leaf,
-.callout-sky {
+.callout-leaf {
   h1,
   h2,
   h3,
@@ -64,3 +63,21 @@
     }
   }
 }
+
+.callout-sky {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: $blue;
+  }
+}
+
