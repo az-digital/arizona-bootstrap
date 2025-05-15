@@ -8,7 +8,7 @@
       .cls-1-black-bg, .cls-2-black-bg {
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-width: 100px;
+        stroke-width: 60px;
       }
 
       .cls-2-black-bg {
