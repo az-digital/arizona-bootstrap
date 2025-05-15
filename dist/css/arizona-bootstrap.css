@@ -58,40 +58,40 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-success: #70b865;
-  --bs-info: #81d3eb;
-  --bs-warning: #f19e1f;
-  --bs-danger: #a95c42;
-  --bs-light: #dee2e6;
-  --bs-dark: #343a40;
-  --bs-success-rgb: 112, 184, 101;
-  --bs-info-rgb: 129, 211, 235;
-  --bs-warning-rgb: 241, 158, 31;
-  --bs-danger-rgb: 169, 92, 66;
-  --bs-light-rgb: 222, 226, 230;
-  --bs-dark-rgb: 52, 58, 64;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #ab0520;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-danger-rgb: 171, 5, 32;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
   --bs-primary-text-emphasis: #050e1e;
   --bs-secondary-text-emphasis: #2b2f32;
-  --bs-success-text-emphasis: #2d4a28;
-  --bs-info-text-emphasis: #34545e;
-  --bs-warning-text-emphasis: #603f0c;
-  --bs-danger-text-emphasis: #44251a;
+  --bs-success-text-emphasis: #0a3622;
+  --bs-info-text-emphasis: #055160;
+  --bs-warning-text-emphasis: #664d03;
+  --bs-danger-text-emphasis: #44020d;
   --bs-light-text-emphasis: #495057;
   --bs-dark-text-emphasis: #495057;
   --bs-primary-bg-subtle: #ced3db;
   --bs-secondary-bg-subtle: #e2e3e5;
-  --bs-success-bg-subtle: #e2f1e0;
-  --bs-info-bg-subtle: #e6f6fb;
-  --bs-warning-bg-subtle: #fcecd2;
-  --bs-danger-bg-subtle: #eeded9;
+  --bs-success-bg-subtle: #d1e7dd;
+  --bs-info-bg-subtle: #cff4fc;
+  --bs-warning-bg-subtle: #fff3cd;
+  --bs-danger-bg-subtle: #eecdd2;
   --bs-light-bg-subtle: #fcfcfd;
   --bs-dark-bg-subtle: #ced4da;
   --bs-primary-border-subtle: #9ea7b7;
   --bs-secondary-border-subtle: #c4c8cb;
-  --bs-success-border-subtle: #c6e3c1;
-  --bs-info-border-subtle: #cdedf7;
-  --bs-warning-border-subtle: #f9d8a5;
-  --bs-danger-border-subtle: #ddbeb3;
+  --bs-success-border-subtle: #a3cfbb;
+  --bs-info-border-subtle: #9eeaf9;
+  --bs-warning-border-subtle: #ffe69c;
+  --bs-danger-border-subtle: #dd9ba6;
   --bs-light-border-subtle: #e9ecef;
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
@@ -144,10 +144,10 @@
   --bs-focus-ring-width: 0.25rem;
   --bs-focus-ring-opacity: 0.25;
   --bs-focus-ring-color: rgba(12, 35, 75, 0.25);
-  --bs-form-valid-color: #70b865;
-  --bs-form-valid-border-color: #70b865;
-  --bs-form-invalid-color: #a95c42;
-  --bs-form-invalid-border-color: #a95c42;
+  --bs-form-valid-color: #198754;
+  --bs-form-valid-border-color: #198754;
+  --bs-form-invalid-color: #ab0520;
+  --bs-form-invalid-border-color: #ab0520;
 }
 
 [data-bs-theme=dark] {
@@ -168,26 +168,26 @@
   --bs-tertiary-bg-rgb: 43, 48, 53;
   --bs-primary-text-emphasis: #6d7b93;
   --bs-secondary-text-emphasis: #a7acb1;
-  --bs-success-text-emphasis: #a9d4a3;
-  --bs-info-text-emphasis: #b3e5f3;
-  --bs-warning-text-emphasis: #f7c579;
-  --bs-danger-text-emphasis: #cb9d8e;
+  --bs-success-text-emphasis: #75b798;
+  --bs-info-text-emphasis: #6edff6;
+  --bs-warning-text-emphasis: #ffda6a;
+  --bs-danger-text-emphasis: #cd6979;
   --bs-light-text-emphasis: #f8f9fa;
   --bs-dark-text-emphasis: #dee2e6;
   --bs-primary-bg-subtle: #02070f;
   --bs-secondary-bg-subtle: #161719;
-  --bs-success-bg-subtle: #162514;
-  --bs-info-bg-subtle: #1a2a2f;
-  --bs-warning-bg-subtle: #302006;
-  --bs-danger-bg-subtle: #22120d;
+  --bs-success-bg-subtle: #051b11;
+  --bs-info-bg-subtle: #032830;
+  --bs-warning-bg-subtle: #332701;
+  --bs-danger-bg-subtle: #220106;
   --bs-light-bg-subtle: #343a40;
   --bs-dark-bg-subtle: #1a1d20;
   --bs-primary-border-subtle: #07152d;
   --bs-secondary-border-subtle: #41464b;
-  --bs-success-border-subtle: #436e3d;
-  --bs-info-border-subtle: #4d7f8d;
-  --bs-warning-border-subtle: #915f13;
-  --bs-danger-border-subtle: #653728;
+  --bs-success-border-subtle: #0f5132;
+  --bs-info-border-subtle: #087990;
+  --bs-warning-border-subtle: #997404;
+  --bs-danger-border-subtle: #670313;
   --bs-light-border-subtle: #495057;
   --bs-dark-border-subtle: #343a40;
   --bs-heading-color: inherit;
@@ -2570,13 +2570,13 @@ progress {
 
 .table-success {
   --bs-table-color: #000;
-  --bs-table-bg: #e2f1e0;
-  --bs-table-border-color: #b5c1b3;
-  --bs-table-striped-bg: #d7e5d5;
+  --bs-table-bg: #d1e7dd;
+  --bs-table-border-color: #a7b9b1;
+  --bs-table-striped-bg: #c7dbd2;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbd9ca;
+  --bs-table-active-bg: #bcd0c7;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1dfcf;
+  --bs-table-hover-bg: #c1d6cc;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2584,13 +2584,13 @@ progress {
 
 .table-info {
   --bs-table-color: #000;
-  --bs-table-bg: #e6f6fb;
-  --bs-table-border-color: #b8c5c9;
-  --bs-table-striped-bg: #dbeaee;
+  --bs-table-bg: #cff4fc;
+  --bs-table-border-color: #a6c3ca;
+  --bs-table-striped-bg: #c5e8ef;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cfdde2;
+  --bs-table-active-bg: #badce3;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d5e4e8;
+  --bs-table-hover-bg: #bfe2e9;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2598,13 +2598,13 @@ progress {
 
 .table-warning {
   --bs-table-color: #000;
-  --bs-table-bg: #fcecd2;
-  --bs-table-border-color: #cabda8;
-  --bs-table-striped-bg: #efe0c8;
+  --bs-table-bg: #fff3cd;
+  --bs-table-border-color: #ccc2a4;
+  --bs-table-striped-bg: #f2e7c3;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #e3d4bd;
+  --bs-table-active-bg: #e6dbb9;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e9dac2;
+  --bs-table-hover-bg: #ece1be;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2612,13 +2612,13 @@ progress {
 
 .table-danger {
   --bs-table-color: #000;
-  --bs-table-bg: #eeded9;
-  --bs-table-border-color: #beb2ae;
-  --bs-table-striped-bg: #e2d3ce;
+  --bs-table-bg: #eecdd2;
+  --bs-table-border-color: #bea4a8;
+  --bs-table-striped-bg: #e2c3c8;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #d6c8c3;
+  --bs-table-active-bg: #d6b9bd;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #dccdc9;
+  --bs-table-hover-bg: #dcbec2;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2626,13 +2626,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #dee2e6;
-  --bs-table-border-color: #b2b5b8;
-  --bs-table-striped-bg: #d3d7db;
+  --bs-table-bg: #f8f9fa;
+  --bs-table-border-color: #c6c7c8;
+  --bs-table-striped-bg: #ecedee;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #c8cbcf;
+  --bs-table-active-bg: #dfe0e1;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #cdd1d5;
+  --bs-table-hover-bg: #e5e6e7;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2640,13 +2640,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #343a40;
-  --bs-table-border-color: #5d6166;
-  --bs-table-striped-bg: #3e444a;
+  --bs-table-bg: #212529;
+  --bs-table-border-color: #4d5154;
+  --bs-table-striped-bg: #2c3034;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #484e53;
+  --bs-table-active-bg: #373b3e;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #43494e;
+  --bs-table-hover-bg: #323539;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3484,7 +3484,7 @@ textarea.form-control-lg {
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: var(--bs-form-valid-border-color);
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3503,7 +3503,7 @@ textarea.form-control-lg {
   border-color: var(--bs-form-valid-border-color);
 }
 .was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"] {
-  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
   padding-right: 4.125rem;
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3574,7 +3574,7 @@ textarea.form-control-lg {
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: var(--bs-form-invalid-border-color);
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a95c42'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ab0520'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ab0520' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3593,7 +3593,7 @@ textarea.form-control-lg {
   border-color: var(--bs-form-invalid-border-color);
 }
 .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
-  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a95c42'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e");
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ab0520'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ab0520' stroke='none'/%3e%3c/svg%3e");
   padding-right: 4.125rem;
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3715,206 +3715,206 @@ textarea.form-control-lg {
 }
 
 .btn-success {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #70b865;
-  --bs-btn-border-color: #70b865;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #85c37c;
-  --bs-btn-hover-border-color: #7ebf74;
-  --bs-btn-focus-shadow-rgb: 95, 156, 86;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #8dc684;
-  --bs-btn-active-border-color: #7ebf74;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #198754;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #157347;
+  --bs-btn-hover-border-color: #146c43;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #146c43;
+  --bs-btn-active-border-color: #13653f;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #70b865;
-  --bs-btn-disabled-border-color: #70b865;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
 }
 
 .btn-info {
   --bs-btn-color: #000;
-  --bs-btn-bg: #81d3eb;
-  --bs-btn-border-color: #81d3eb;
+  --bs-btn-bg: #0dcaf0;
+  --bs-btn-border-color: #0dcaf0;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #94daee;
-  --bs-btn-hover-border-color: #8ed7ed;
-  --bs-btn-focus-shadow-rgb: 110, 179, 200;
+  --bs-btn-hover-bg: #31d2f2;
+  --bs-btn-hover-border-color: #25cff2;
+  --bs-btn-focus-shadow-rgb: 11, 172, 204;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #9adcef;
-  --bs-btn-active-border-color: #8ed7ed;
+  --bs-btn-active-bg: #3dd5f3;
+  --bs-btn-active-border-color: #25cff2;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #81d3eb;
-  --bs-btn-disabled-border-color: #81d3eb;
+  --bs-btn-disabled-bg: #0dcaf0;
+  --bs-btn-disabled-border-color: #0dcaf0;
 }
 
 .btn-warning {
   --bs-btn-color: #000;
-  --bs-btn-bg: #f19e1f;
-  --bs-btn-border-color: #f19e1f;
+  --bs-btn-bg: #ffc107;
+  --bs-btn-border-color: #ffc107;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f3ad41;
-  --bs-btn-hover-border-color: #f2a835;
-  --bs-btn-focus-shadow-rgb: 205, 134, 26;
+  --bs-btn-hover-bg: #ffca2c;
+  --bs-btn-hover-border-color: #ffc720;
+  --bs-btn-focus-shadow-rgb: 217, 164, 6;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #f4b14c;
-  --bs-btn-active-border-color: #f2a835;
+  --bs-btn-active-bg: #ffcd39;
+  --bs-btn-active-border-color: #ffc720;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #f19e1f;
-  --bs-btn-disabled-border-color: #f19e1f;
+  --bs-btn-disabled-bg: #ffc107;
+  --bs-btn-disabled-border-color: #ffc107;
 }
 
 .btn-danger {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #a95c42;
-  --bs-btn-border-color: #a95c42;
+  --bs-btn-bg: #ab0520;
+  --bs-btn-border-color: #ab0520;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #904e38;
-  --bs-btn-hover-border-color: #874a35;
-  --bs-btn-focus-shadow-rgb: 182, 116, 94;
+  --bs-btn-hover-bg: #91041b;
+  --bs-btn-hover-border-color: #89041a;
+  --bs-btn-focus-shadow-rgb: 184, 43, 65;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #874a35;
-  --bs-btn-active-border-color: #7f4532;
+  --bs-btn-active-bg: #89041a;
+  --bs-btn-active-border-color: #800418;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #a95c42;
-  --bs-btn-disabled-border-color: #a95c42;
+  --bs-btn-disabled-bg: #ab0520;
+  --bs-btn-disabled-border-color: #ab0520;
 }
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #dee2e6;
-  --bs-btn-border-color: #dee2e6;
+  --bs-btn-bg: #f8f9fa;
+  --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #bdc0c4;
-  --bs-btn-hover-border-color: #b2b5b8;
-  --bs-btn-focus-shadow-rgb: 189, 192, 196;
+  --bs-btn-hover-bg: #d3d4d5;
+  --bs-btn-hover-border-color: #c6c7c8;
+  --bs-btn-focus-shadow-rgb: 211, 212, 213;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #b2b5b8;
-  --bs-btn-active-border-color: #a7aaad;
+  --bs-btn-active-bg: #c6c7c8;
+  --bs-btn-active-border-color: #babbbc;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #dee2e6;
-  --bs-btn-disabled-border-color: #dee2e6;
+  --bs-btn-disabled-bg: #f8f9fa;
+  --bs-btn-disabled-border-color: #f8f9fa;
 }
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #343a40;
-  --bs-btn-border-color: #343a40;
+  --bs-btn-bg: #212529;
+  --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #52585d;
-  --bs-btn-hover-border-color: #484e53;
-  --bs-btn-focus-shadow-rgb: 82, 88, 93;
+  --bs-btn-hover-bg: #424649;
+  --bs-btn-hover-border-color: #373b3e;
+  --bs-btn-focus-shadow-rgb: 66, 70, 73;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #5d6166;
-  --bs-btn-active-border-color: #484e53;
+  --bs-btn-active-bg: #4d5154;
+  --bs-btn-active-border-color: #373b3e;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #343a40;
-  --bs-btn-disabled-border-color: #343a40;
+  --bs-btn-disabled-bg: #212529;
+  --bs-btn-disabled-border-color: #212529;
 }
 
 .btn-outline-success {
-  --bs-btn-color: #70b865;
-  --bs-btn-border-color: #70b865;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #70b865;
-  --bs-btn-hover-border-color: #70b865;
-  --bs-btn-focus-shadow-rgb: 112, 184, 101;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #70b865;
-  --bs-btn-active-border-color: #70b865;
+  --bs-btn-color: #198754;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #198754;
+  --bs-btn-hover-border-color: #198754;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #198754;
+  --bs-btn-active-border-color: #198754;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #70b865;
+  --bs-btn-disabled-color: #198754;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #70b865;
+  --bs-btn-disabled-border-color: #198754;
   --bs-gradient: none;
 }
 
 .btn-outline-info {
-  --bs-btn-color: #81d3eb;
-  --bs-btn-border-color: #81d3eb;
+  --bs-btn-color: #0dcaf0;
+  --bs-btn-border-color: #0dcaf0;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #81d3eb;
-  --bs-btn-hover-border-color: #81d3eb;
-  --bs-btn-focus-shadow-rgb: 129, 211, 235;
+  --bs-btn-hover-bg: #0dcaf0;
+  --bs-btn-hover-border-color: #0dcaf0;
+  --bs-btn-focus-shadow-rgb: 13, 202, 240;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #81d3eb;
-  --bs-btn-active-border-color: #81d3eb;
+  --bs-btn-active-bg: #0dcaf0;
+  --bs-btn-active-border-color: #0dcaf0;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #81d3eb;
+  --bs-btn-disabled-color: #0dcaf0;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #81d3eb;
+  --bs-btn-disabled-border-color: #0dcaf0;
   --bs-gradient: none;
 }
 
 .btn-outline-warning {
-  --bs-btn-color: #f19e1f;
-  --bs-btn-border-color: #f19e1f;
+  --bs-btn-color: #ffc107;
+  --bs-btn-border-color: #ffc107;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f19e1f;
-  --bs-btn-hover-border-color: #f19e1f;
-  --bs-btn-focus-shadow-rgb: 241, 158, 31;
+  --bs-btn-hover-bg: #ffc107;
+  --bs-btn-hover-border-color: #ffc107;
+  --bs-btn-focus-shadow-rgb: 255, 193, 7;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #f19e1f;
-  --bs-btn-active-border-color: #f19e1f;
+  --bs-btn-active-bg: #ffc107;
+  --bs-btn-active-border-color: #ffc107;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #f19e1f;
+  --bs-btn-disabled-color: #ffc107;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #f19e1f;
+  --bs-btn-disabled-border-color: #ffc107;
   --bs-gradient: none;
 }
 
 .btn-outline-danger {
-  --bs-btn-color: #a95c42;
-  --bs-btn-border-color: #a95c42;
+  --bs-btn-color: #ab0520;
+  --bs-btn-border-color: #ab0520;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #a95c42;
-  --bs-btn-hover-border-color: #a95c42;
-  --bs-btn-focus-shadow-rgb: 169, 92, 66;
+  --bs-btn-hover-bg: #ab0520;
+  --bs-btn-hover-border-color: #ab0520;
+  --bs-btn-focus-shadow-rgb: 171, 5, 32;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #a95c42;
-  --bs-btn-active-border-color: #a95c42;
+  --bs-btn-active-bg: #ab0520;
+  --bs-btn-active-border-color: #ab0520;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #a95c42;
+  --bs-btn-disabled-color: #ab0520;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #a95c42;
+  --bs-btn-disabled-border-color: #ab0520;
   --bs-gradient: none;
 }
 
 .btn-outline-light {
-  --bs-btn-color: #dee2e6;
-  --bs-btn-border-color: #dee2e6;
+  --bs-btn-color: #f8f9fa;
+  --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #dee2e6;
-  --bs-btn-hover-border-color: #dee2e6;
-  --bs-btn-focus-shadow-rgb: 222, 226, 230;
+  --bs-btn-hover-bg: #f8f9fa;
+  --bs-btn-hover-border-color: #f8f9fa;
+  --bs-btn-focus-shadow-rgb: 248, 249, 250;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #dee2e6;
-  --bs-btn-active-border-color: #dee2e6;
+  --bs-btn-active-bg: #f8f9fa;
+  --bs-btn-active-border-color: #f8f9fa;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #dee2e6;
+  --bs-btn-disabled-color: #f8f9fa;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #dee2e6;
+  --bs-btn-disabled-border-color: #f8f9fa;
   --bs-gradient: none;
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #343a40;
-  --bs-btn-border-color: #343a40;
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #343a40;
-  --bs-btn-hover-border-color: #343a40;
-  --bs-btn-focus-shadow-rgb: 52, 58, 64;
+  --bs-btn-hover-bg: #212529;
+  --bs-btn-hover-border-color: #212529;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #343a40;
-  --bs-btn-active-border-color: #343a40;
+  --bs-btn-active-bg: #212529;
+  --bs-btn-active-border-color: #212529;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #343a40;
+  --bs-btn-disabled-color: #212529;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #343a40;
+  --bs-btn-disabled-border-color: #212529;
   --bs-gradient: none;
 }
 
@@ -7644,7 +7644,7 @@ textarea.form-control-lg {
 }
 
 .text-bg-success {
-  color: #000 !important;
+  color: #fff !important;
   background-color: RGBA(var(--bs-success-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 
@@ -7679,9 +7679,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-success-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-success:hover, .link-success:focus {
-  color: RGBA(141, 198, 132, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(141, 198, 132, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(141, 198, 132, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(20, 108, 67, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(20, 108, 67, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(20, 108, 67, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-info {
@@ -7690,9 +7690,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-info-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-info:hover, .link-info:focus {
-  color: RGBA(154, 220, 239, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(154, 220, 239, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(154, 220, 239, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(61, 213, 243, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(61, 213, 243, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(61, 213, 243, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-warning {
@@ -7701,9 +7701,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-warning-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-warning:hover, .link-warning:focus {
-  color: RGBA(244, 177, 76, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(244, 177, 76, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(244, 177, 76, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(255, 205, 57, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(255, 205, 57, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(255, 205, 57, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-danger {
@@ -7712,9 +7712,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-danger-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-danger:hover, .link-danger:focus {
-  color: RGBA(135, 74, 53, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(135, 74, 53, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(135, 74, 53, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(137, 4, 26, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(137, 4, 26, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(137, 4, 26, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-light {
@@ -7723,9 +7723,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(229, 232, 235, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(229, 232, 235, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(229, 232, 235, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(249, 250, 251, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(249, 250, 251, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(249, 250, 251, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -7734,9 +7734,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(42, 46, 51, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(42, 46, 51, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(42, 46, 51, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(26, 30, 33, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(26, 30, 33, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(26, 30, 33, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -8204,28 +8204,40 @@ textarea.form-control-lg {
   box-shadow: none !important;
 }
 
-.focus-ring-success {
-  --bs-focus-ring-color: rgba(var(--bs-success-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-red {
+  --bs-focus-ring-color: rgba(var(--bs-red-rgb), var(--bs-focus-ring-opacity));
 }
 
-.focus-ring-info {
-  --bs-focus-ring-color: rgba(var(--bs-info-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-chili {
+  --bs-focus-ring-color: rgba(var(--bs-chili-rgb), var(--bs-focus-ring-opacity));
 }
 
-.focus-ring-warning {
-  --bs-focus-ring-color: rgba(var(--bs-warning-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-blue {
+  --bs-focus-ring-color: rgba(var(--bs-blue-rgb), var(--bs-focus-ring-opacity));
 }
 
-.focus-ring-danger {
-  --bs-focus-ring-color: rgba(var(--bs-danger-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-oasis {
+  --bs-focus-ring-color: rgba(var(--bs-oasis-rgb), var(--bs-focus-ring-opacity));
 }
 
-.focus-ring-light {
-  --bs-focus-ring-color: rgba(var(--bs-light-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-azurite {
+  --bs-focus-ring-color: rgba(var(--bs-azurite-rgb), var(--bs-focus-ring-opacity));
 }
 
-.focus-ring-dark {
-  --bs-focus-ring-color: rgba(var(--bs-dark-rgb), var(--bs-focus-ring-opacity));
+.focus-ring-midnight {
+  --bs-focus-ring-color: rgba(var(--bs-midnight-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-cool-gray {
+  --bs-focus-ring-color: rgba(var(--bs-cool-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-warm-gray {
+  --bs-focus-ring-color: rgba(var(--bs-warm-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-white {
+  --bs-focus-ring-color: rgba(var(--bs-white-rgb), var(--bs-focus-ring-opacity));
 }
 
 .position-static {
@@ -8430,21 +8442,6 @@ textarea.form-control-lg {
 .border-warm-gray {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-warm-gray-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-silver {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-silver-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-ash {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-ash-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-sage {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-sage-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-primary-subtle {
@@ -17383,33 +17380,33 @@ h6,
 }
 
 .badge-success {
-  color: #001c48;
-  background-color: #70b865;
+  color: #fff;
+  background-color: #198754;
 }
 
 .badge-info {
-  color: #001c48;
-  background-color: #81d3eb;
+  color: #fff;
+  background-color: #0dcaf0;
 }
 
 .badge-warning {
   color: #000;
-  background-color: #f19e1f;
+  background-color: #ffc107;
 }
 
 .badge-danger {
   color: #fff;
-  background-color: #a95c42;
+  background-color: #ab0520;
 }
 
 .badge-light {
   color: #001c48;
-  background-color: #dee2e6;
+  background-color: #f8f9fa;
 }
 
 .badge-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #212529;
 }
 
 .badge-red {
@@ -17485,11 +17482,11 @@ h6,
  * > BUTTONS
  */
 .btn-success {
-  color: #001c48;
+  color: #fff;
 }
 
 .btn-info {
-  color: #001c48;
+  color: #fff;
 }
 
 .btn-warning {
@@ -17655,14 +17652,6 @@ h6,
 .card[class*=" bg-"] .card-header {
   color: #fff !important;
   background-color: rgba(0, 0, 0, 0.075);
-}
-
-.bg-success .card-header {
-  color: #001c48;
-}
-
-.bg-info .card-header {
-  color: #001c48;
 }
 
 .card-clickable {
@@ -18743,102 +18732,6 @@ h6,
   color: #000;
 }
 
-.callout-success {
-  border-color: #70b865;
-}
-.callout-success h2,
-.callout-success h3,
-.callout-success h4,
-.callout-success h5,
-.callout-success h6,
-.callout-success .h2,
-.callout-success .h3,
-.callout-success .h4,
-.callout-success .h5,
-.callout-success .h6 {
-  color: #70b865;
-}
-
-.callout-info {
-  border-color: #81d3eb;
-}
-.callout-info h2,
-.callout-info h3,
-.callout-info h4,
-.callout-info h5,
-.callout-info h6,
-.callout-info .h2,
-.callout-info .h3,
-.callout-info .h4,
-.callout-info .h5,
-.callout-info .h6 {
-  color: #81d3eb;
-}
-
-.callout-warning {
-  border-color: #f19e1f;
-}
-.callout-warning h2,
-.callout-warning h3,
-.callout-warning h4,
-.callout-warning h5,
-.callout-warning h6,
-.callout-warning .h2,
-.callout-warning .h3,
-.callout-warning .h4,
-.callout-warning .h5,
-.callout-warning .h6 {
-  color: #f19e1f;
-}
-
-.callout-danger {
-  border-color: #a95c42;
-}
-.callout-danger h2,
-.callout-danger h3,
-.callout-danger h4,
-.callout-danger h5,
-.callout-danger h6,
-.callout-danger .h2,
-.callout-danger .h3,
-.callout-danger .h4,
-.callout-danger .h5,
-.callout-danger .h6 {
-  color: #a95c42;
-}
-
-.callout-light {
-  border-color: #dee2e6;
-}
-.callout-light h2,
-.callout-light h3,
-.callout-light h4,
-.callout-light h5,
-.callout-light h6,
-.callout-light .h2,
-.callout-light .h3,
-.callout-light .h4,
-.callout-light .h5,
-.callout-light .h6 {
-  color: #dee2e6;
-}
-
-.callout-dark {
-  border-color: #343a40;
-}
-.callout-dark h2,
-.callout-dark h3,
-.callout-dark h4,
-.callout-dark h5,
-.callout-dark h6,
-.callout-dark .h2,
-.callout-dark .h3,
-.callout-dark .h4,
-.callout-dark .h5,
-.callout-dark .h6 {
-  color: #343a40;
-}
-
 .callout-silver h1,
 .callout-silver h2,
 .callout-silver h3,
@@ -18898,55 +18791,7 @@ h6,
 .callout-sky .h3,
 .callout-sky .h4,
 .callout-sky .h5,
-.callout-sky .h6,
-.callout-info h1,
-.callout-info h2,
-.callout-info h3,
-.callout-info h4,
-.callout-info h5,
-.callout-info h6,
-.callout-info .h1,
-.callout-info .h2,
-.callout-info .h3,
-.callout-info .h4,
-.callout-info .h5,
-.callout-info .h6,
-.callout-light h1,
-.callout-light h2,
-.callout-light h3,
-.callout-light h4,
-.callout-light h5,
-.callout-light h6,
-.callout-light .h1,
-.callout-light .h2,
-.callout-light .h3,
-.callout-light .h4,
-.callout-light .h5,
-.callout-light .h6,
-.callout-success h1,
-.callout-success h2,
-.callout-success h3,
-.callout-success h4,
-.callout-success h5,
-.callout-success h6,
-.callout-success .h1,
-.callout-success .h2,
-.callout-success .h3,
-.callout-success .h4,
-.callout-success .h5,
-.callout-success .h6,
-.callout-warning h1,
-.callout-warning h2,
-.callout-warning h3,
-.callout-warning h4,
-.callout-warning h5,
-.callout-warning h6,
-.callout-warning .h1,
-.callout-warning .h2,
-.callout-warning .h3,
-.callout-warning .h4,
-.callout-warning .h5,
-.callout-warning .h6 {
+.callout-sky .h6 {
   color: #49595e;
 }
 .callout-silver h1.text-red,
@@ -19008,55 +18853,7 @@ h6,
 .callout-sky .h3.text-red,
 .callout-sky .h4.text-red,
 .callout-sky .h5.text-red,
-.callout-sky .h6.text-red,
-.callout-info h1.text-red,
-.callout-info h2.text-red,
-.callout-info h3.text-red,
-.callout-info h4.text-red,
-.callout-info h5.text-red,
-.callout-info h6.text-red,
-.callout-info .h1.text-red,
-.callout-info .h2.text-red,
-.callout-info .h3.text-red,
-.callout-info .h4.text-red,
-.callout-info .h5.text-red,
-.callout-info .h6.text-red,
-.callout-light h1.text-red,
-.callout-light h2.text-red,
-.callout-light h3.text-red,
-.callout-light h4.text-red,
-.callout-light h5.text-red,
-.callout-light h6.text-red,
-.callout-light .h1.text-red,
-.callout-light .h2.text-red,
-.callout-light .h3.text-red,
-.callout-light .h4.text-red,
-.callout-light .h5.text-red,
-.callout-light .h6.text-red,
-.callout-success h1.text-red,
-.callout-success h2.text-red,
-.callout-success h3.text-red,
-.callout-success h4.text-red,
-.callout-success h5.text-red,
-.callout-success h6.text-red,
-.callout-success .h1.text-red,
-.callout-success .h2.text-red,
-.callout-success .h3.text-red,
-.callout-success .h4.text-red,
-.callout-success .h5.text-red,
-.callout-success .h6.text-red,
-.callout-warning h1.text-red,
-.callout-warning h2.text-red,
-.callout-warning h3.text-red,
-.callout-warning h4.text-red,
-.callout-warning h5.text-red,
-.callout-warning h6.text-red,
-.callout-warning .h1.text-red,
-.callout-warning .h2.text-red,
-.callout-warning .h3.text-red,
-.callout-warning .h4.text-red,
-.callout-warning .h5.text-red,
-.callout-warning .h6.text-red {
+.callout-sky .h6.text-red {
   color: #ab0520;
 }
 .callout-silver h1.text-bloom,
@@ -19118,55 +18915,7 @@ h6,
 .callout-sky .h3.text-bloom,
 .callout-sky .h4.text-bloom,
 .callout-sky .h5.text-bloom,
-.callout-sky .h6.text-bloom,
-.callout-info h1.text-bloom,
-.callout-info h2.text-bloom,
-.callout-info h3.text-bloom,
-.callout-info h4.text-bloom,
-.callout-info h5.text-bloom,
-.callout-info h6.text-bloom,
-.callout-info .h1.text-bloom,
-.callout-info .h2.text-bloom,
-.callout-info .h3.text-bloom,
-.callout-info .h4.text-bloom,
-.callout-info .h5.text-bloom,
-.callout-info .h6.text-bloom,
-.callout-light h1.text-bloom,
-.callout-light h2.text-bloom,
-.callout-light h3.text-bloom,
-.callout-light h4.text-bloom,
-.callout-light h5.text-bloom,
-.callout-light h6.text-bloom,
-.callout-light .h1.text-bloom,
-.callout-light .h2.text-bloom,
-.callout-light .h3.text-bloom,
-.callout-light .h4.text-bloom,
-.callout-light .h5.text-bloom,
-.callout-light .h6.text-bloom,
-.callout-success h1.text-bloom,
-.callout-success h2.text-bloom,
-.callout-success h3.text-bloom,
-.callout-success h4.text-bloom,
-.callout-success h5.text-bloom,
-.callout-success h6.text-bloom,
-.callout-success .h1.text-bloom,
-.callout-success .h2.text-bloom,
-.callout-success .h3.text-bloom,
-.callout-success .h4.text-bloom,
-.callout-success .h5.text-bloom,
-.callout-success .h6.text-bloom,
-.callout-warning h1.text-bloom,
-.callout-warning h2.text-bloom,
-.callout-warning h3.text-bloom,
-.callout-warning h4.text-bloom,
-.callout-warning h5.text-bloom,
-.callout-warning h6.text-bloom,
-.callout-warning .h1.text-bloom,
-.callout-warning .h2.text-bloom,
-.callout-warning .h3.text-bloom,
-.callout-warning .h4.text-bloom,
-.callout-warning .h5.text-bloom,
-.callout-warning .h6.text-bloom {
+.callout-sky .h6.text-bloom {
   color: #ef4056;
 }
 .callout-silver h1.text-chili,
@@ -19228,55 +18977,7 @@ h6,
 .callout-sky .h3.text-chili,
 .callout-sky .h4.text-chili,
 .callout-sky .h5.text-chili,
-.callout-sky .h6.text-chili,
-.callout-info h1.text-chili,
-.callout-info h2.text-chili,
-.callout-info h3.text-chili,
-.callout-info h4.text-chili,
-.callout-info h5.text-chili,
-.callout-info h6.text-chili,
-.callout-info .h1.text-chili,
-.callout-info .h2.text-chili,
-.callout-info .h3.text-chili,
-.callout-info .h4.text-chili,
-.callout-info .h5.text-chili,
-.callout-info .h6.text-chili,
-.callout-light h1.text-chili,
-.callout-light h2.text-chili,
-.callout-light h3.text-chili,
-.callout-light h4.text-chili,
-.callout-light h5.text-chili,
-.callout-light h6.text-chili,
-.callout-light .h1.text-chili,
-.callout-light .h2.text-chili,
-.callout-light .h3.text-chili,
-.callout-light .h4.text-chili,
-.callout-light .h5.text-chili,
-.callout-light .h6.text-chili,
-.callout-success h1.text-chili,
-.callout-success h2.text-chili,
-.callout-success h3.text-chili,
-.callout-success h4.text-chili,
-.callout-success h5.text-chili,
-.callout-success h6.text-chili,
-.callout-success .h1.text-chili,
-.callout-success .h2.text-chili,
-.callout-success .h3.text-chili,
-.callout-success .h4.text-chili,
-.callout-success .h5.text-chili,
-.callout-success .h6.text-chili,
-.callout-warning h1.text-chili,
-.callout-warning h2.text-chili,
-.callout-warning h3.text-chili,
-.callout-warning h4.text-chili,
-.callout-warning h5.text-chili,
-.callout-warning h6.text-chili,
-.callout-warning .h1.text-chili,
-.callout-warning .h2.text-chili,
-.callout-warning .h3.text-chili,
-.callout-warning .h4.text-chili,
-.callout-warning .h5.text-chili,
-.callout-warning .h6.text-chili {
+.callout-sky .h6.text-chili {
   color: #8b0015;
 }
 .callout-silver h1.text-blue,
@@ -19338,55 +19039,7 @@ h6,
 .callout-sky .h3.text-blue,
 .callout-sky .h4.text-blue,
 .callout-sky .h5.text-blue,
-.callout-sky .h6.text-blue,
-.callout-info h1.text-blue,
-.callout-info h2.text-blue,
-.callout-info h3.text-blue,
-.callout-info h4.text-blue,
-.callout-info h5.text-blue,
-.callout-info h6.text-blue,
-.callout-info .h1.text-blue,
-.callout-info .h2.text-blue,
-.callout-info .h3.text-blue,
-.callout-info .h4.text-blue,
-.callout-info .h5.text-blue,
-.callout-info .h6.text-blue,
-.callout-light h1.text-blue,
-.callout-light h2.text-blue,
-.callout-light h3.text-blue,
-.callout-light h4.text-blue,
-.callout-light h5.text-blue,
-.callout-light h6.text-blue,
-.callout-light .h1.text-blue,
-.callout-light .h2.text-blue,
-.callout-light .h3.text-blue,
-.callout-light .h4.text-blue,
-.callout-light .h5.text-blue,
-.callout-light .h6.text-blue,
-.callout-success h1.text-blue,
-.callout-success h2.text-blue,
-.callout-success h3.text-blue,
-.callout-success h4.text-blue,
-.callout-success h5.text-blue,
-.callout-success h6.text-blue,
-.callout-success .h1.text-blue,
-.callout-success .h2.text-blue,
-.callout-success .h3.text-blue,
-.callout-success .h4.text-blue,
-.callout-success .h5.text-blue,
-.callout-success .h6.text-blue,
-.callout-warning h1.text-blue,
-.callout-warning h2.text-blue,
-.callout-warning h3.text-blue,
-.callout-warning h4.text-blue,
-.callout-warning h5.text-blue,
-.callout-warning h6.text-blue,
-.callout-warning .h1.text-blue,
-.callout-warning .h2.text-blue,
-.callout-warning .h3.text-blue,
-.callout-warning .h4.text-blue,
-.callout-warning .h5.text-blue,
-.callout-warning .h6.text-blue {
+.callout-sky .h6.text-blue {
   color: #0c234b;
 }
 .callout-silver h1.text-sky,
@@ -19448,55 +19101,7 @@ h6,
 .callout-sky .h3.text-sky,
 .callout-sky .h4.text-sky,
 .callout-sky .h5.text-sky,
-.callout-sky .h6.text-sky,
-.callout-info h1.text-sky,
-.callout-info h2.text-sky,
-.callout-info h3.text-sky,
-.callout-info h4.text-sky,
-.callout-info h5.text-sky,
-.callout-info h6.text-sky,
-.callout-info .h1.text-sky,
-.callout-info .h2.text-sky,
-.callout-info .h3.text-sky,
-.callout-info .h4.text-sky,
-.callout-info .h5.text-sky,
-.callout-info .h6.text-sky,
-.callout-light h1.text-sky,
-.callout-light h2.text-sky,
-.callout-light h3.text-sky,
-.callout-light h4.text-sky,
-.callout-light h5.text-sky,
-.callout-light h6.text-sky,
-.callout-light .h1.text-sky,
-.callout-light .h2.text-sky,
-.callout-light .h3.text-sky,
-.callout-light .h4.text-sky,
-.callout-light .h5.text-sky,
-.callout-light .h6.text-sky,
-.callout-success h1.text-sky,
-.callout-success h2.text-sky,
-.callout-success h3.text-sky,
-.callout-success h4.text-sky,
-.callout-success h5.text-sky,
-.callout-success h6.text-sky,
-.callout-success .h1.text-sky,
-.callout-success .h2.text-sky,
-.callout-success .h3.text-sky,
-.callout-success .h4.text-sky,
-.callout-success .h5.text-sky,
-.callout-success .h6.text-sky,
-.callout-warning h1.text-sky,
-.callout-warning h2.text-sky,
-.callout-warning h3.text-sky,
-.callout-warning h4.text-sky,
-.callout-warning h5.text-sky,
-.callout-warning h6.text-sky,
-.callout-warning .h1.text-sky,
-.callout-warning .h2.text-sky,
-.callout-warning .h3.text-sky,
-.callout-warning .h4.text-sky,
-.callout-warning .h5.text-sky,
-.callout-warning .h6.text-sky {
+.callout-sky .h6.text-sky {
   color: #81d3eb;
 }
 .callout-silver h1.text-oasis,
@@ -19558,55 +19163,7 @@ h6,
 .callout-sky .h3.text-oasis,
 .callout-sky .h4.text-oasis,
 .callout-sky .h5.text-oasis,
-.callout-sky .h6.text-oasis,
-.callout-info h1.text-oasis,
-.callout-info h2.text-oasis,
-.callout-info h3.text-oasis,
-.callout-info h4.text-oasis,
-.callout-info h5.text-oasis,
-.callout-info h6.text-oasis,
-.callout-info .h1.text-oasis,
-.callout-info .h2.text-oasis,
-.callout-info .h3.text-oasis,
-.callout-info .h4.text-oasis,
-.callout-info .h5.text-oasis,
-.callout-info .h6.text-oasis,
-.callout-light h1.text-oasis,
-.callout-light h2.text-oasis,
-.callout-light h3.text-oasis,
-.callout-light h4.text-oasis,
-.callout-light h5.text-oasis,
-.callout-light h6.text-oasis,
-.callout-light .h1.text-oasis,
-.callout-light .h2.text-oasis,
-.callout-light .h3.text-oasis,
-.callout-light .h4.text-oasis,
-.callout-light .h5.text-oasis,
-.callout-light .h6.text-oasis,
-.callout-success h1.text-oasis,
-.callout-success h2.text-oasis,
-.callout-success h3.text-oasis,
-.callout-success h4.text-oasis,
-.callout-success h5.text-oasis,
-.callout-success h6.text-oasis,
-.callout-success .h1.text-oasis,
-.callout-success .h2.text-oasis,
-.callout-success .h3.text-oasis,
-.callout-success .h4.text-oasis,
-.callout-success .h5.text-oasis,
-.callout-success .h6.text-oasis,
-.callout-warning h1.text-oasis,
-.callout-warning h2.text-oasis,
-.callout-warning h3.text-oasis,
-.callout-warning h4.text-oasis,
-.callout-warning h5.text-oasis,
-.callout-warning h6.text-oasis,
-.callout-warning .h1.text-oasis,
-.callout-warning .h2.text-oasis,
-.callout-warning .h3.text-oasis,
-.callout-warning .h4.text-oasis,
-.callout-warning .h5.text-oasis,
-.callout-warning .h6.text-oasis {
+.callout-sky .h6.text-oasis {
   color: #378dbd;
 }
 .callout-silver h1.text-azurite,
@@ -19668,55 +19225,7 @@ h6,
 .callout-sky .h3.text-azurite,
 .callout-sky .h4.text-azurite,
 .callout-sky .h5.text-azurite,
-.callout-sky .h6.text-azurite,
-.callout-info h1.text-azurite,
-.callout-info h2.text-azurite,
-.callout-info h3.text-azurite,
-.callout-info h4.text-azurite,
-.callout-info h5.text-azurite,
-.callout-info h6.text-azurite,
-.callout-info .h1.text-azurite,
-.callout-info .h2.text-azurite,
-.callout-info .h3.text-azurite,
-.callout-info .h4.text-azurite,
-.callout-info .h5.text-azurite,
-.callout-info .h6.text-azurite,
-.callout-light h1.text-azurite,
-.callout-light h2.text-azurite,
-.callout-light h3.text-azurite,
-.callout-light h4.text-azurite,
-.callout-light h5.text-azurite,
-.callout-light h6.text-azurite,
-.callout-light .h1.text-azurite,
-.callout-light .h2.text-azurite,
-.callout-light .h3.text-azurite,
-.callout-light .h4.text-azurite,
-.callout-light .h5.text-azurite,
-.callout-light .h6.text-azurite,
-.callout-success h1.text-azurite,
-.callout-success h2.text-azurite,
-.callout-success h3.text-azurite,
-.callout-success h4.text-azurite,
-.callout-success h5.text-azurite,
-.callout-success h6.text-azurite,
-.callout-success .h1.text-azurite,
-.callout-success .h2.text-azurite,
-.callout-success .h3.text-azurite,
-.callout-success .h4.text-azurite,
-.callout-success .h5.text-azurite,
-.callout-success .h6.text-azurite,
-.callout-warning h1.text-azurite,
-.callout-warning h2.text-azurite,
-.callout-warning h3.text-azurite,
-.callout-warning h4.text-azurite,
-.callout-warning h5.text-azurite,
-.callout-warning h6.text-azurite,
-.callout-warning .h1.text-azurite,
-.callout-warning .h2.text-azurite,
-.callout-warning .h3.text-azurite,
-.callout-warning .h4.text-azurite,
-.callout-warning .h5.text-azurite,
-.callout-warning .h6.text-azurite {
+.callout-sky .h6.text-azurite {
   color: #1e5288;
 }
 .callout-silver h1.text-midnight,
@@ -19778,55 +19287,7 @@ h6,
 .callout-sky .h3.text-midnight,
 .callout-sky .h4.text-midnight,
 .callout-sky .h5.text-midnight,
-.callout-sky .h6.text-midnight,
-.callout-info h1.text-midnight,
-.callout-info h2.text-midnight,
-.callout-info h3.text-midnight,
-.callout-info h4.text-midnight,
-.callout-info h5.text-midnight,
-.callout-info h6.text-midnight,
-.callout-info .h1.text-midnight,
-.callout-info .h2.text-midnight,
-.callout-info .h3.text-midnight,
-.callout-info .h4.text-midnight,
-.callout-info .h5.text-midnight,
-.callout-info .h6.text-midnight,
-.callout-light h1.text-midnight,
-.callout-light h2.text-midnight,
-.callout-light h3.text-midnight,
-.callout-light h4.text-midnight,
-.callout-light h5.text-midnight,
-.callout-light h6.text-midnight,
-.callout-light .h1.text-midnight,
-.callout-light .h2.text-midnight,
-.callout-light .h3.text-midnight,
-.callout-light .h4.text-midnight,
-.callout-light .h5.text-midnight,
-.callout-light .h6.text-midnight,
-.callout-success h1.text-midnight,
-.callout-success h2.text-midnight,
-.callout-success h3.text-midnight,
-.callout-success h4.text-midnight,
-.callout-success h5.text-midnight,
-.callout-success h6.text-midnight,
-.callout-success .h1.text-midnight,
-.callout-success .h2.text-midnight,
-.callout-success .h3.text-midnight,
-.callout-success .h4.text-midnight,
-.callout-success .h5.text-midnight,
-.callout-success .h6.text-midnight,
-.callout-warning h1.text-midnight,
-.callout-warning h2.text-midnight,
-.callout-warning h3.text-midnight,
-.callout-warning h4.text-midnight,
-.callout-warning h5.text-midnight,
-.callout-warning h6.text-midnight,
-.callout-warning .h1.text-midnight,
-.callout-warning .h2.text-midnight,
-.callout-warning .h3.text-midnight,
-.callout-warning .h4.text-midnight,
-.callout-warning .h5.text-midnight,
-.callout-warning .h6.text-midnight {
+.callout-sky .h6.text-midnight {
   color: #001c48;
 }
 .callout-silver h1.text-cool-gray,
@@ -19888,55 +19349,7 @@ h6,
 .callout-sky .h3.text-cool-gray,
 .callout-sky .h4.text-cool-gray,
 .callout-sky .h5.text-cool-gray,
-.callout-sky .h6.text-cool-gray,
-.callout-info h1.text-cool-gray,
-.callout-info h2.text-cool-gray,
-.callout-info h3.text-cool-gray,
-.callout-info h4.text-cool-gray,
-.callout-info h5.text-cool-gray,
-.callout-info h6.text-cool-gray,
-.callout-info .h1.text-cool-gray,
-.callout-info .h2.text-cool-gray,
-.callout-info .h3.text-cool-gray,
-.callout-info .h4.text-cool-gray,
-.callout-info .h5.text-cool-gray,
-.callout-info .h6.text-cool-gray,
-.callout-light h1.text-cool-gray,
-.callout-light h2.text-cool-gray,
-.callout-light h3.text-cool-gray,
-.callout-light h4.text-cool-gray,
-.callout-light h5.text-cool-gray,
-.callout-light h6.text-cool-gray,
-.callout-light .h1.text-cool-gray,
-.callout-light .h2.text-cool-gray,
-.callout-light .h3.text-cool-gray,
-.callout-light .h4.text-cool-gray,
-.callout-light .h5.text-cool-gray,
-.callout-light .h6.text-cool-gray,
-.callout-success h1.text-cool-gray,
-.callout-success h2.text-cool-gray,
-.callout-success h3.text-cool-gray,
-.callout-success h4.text-cool-gray,
-.callout-success h5.text-cool-gray,
-.callout-success h6.text-cool-gray,
-.callout-success .h1.text-cool-gray,
-.callout-success .h2.text-cool-gray,
-.callout-success .h3.text-cool-gray,
-.callout-success .h4.text-cool-gray,
-.callout-success .h5.text-cool-gray,
-.callout-success .h6.text-cool-gray,
-.callout-warning h1.text-cool-gray,
-.callout-warning h2.text-cool-gray,
-.callout-warning h3.text-cool-gray,
-.callout-warning h4.text-cool-gray,
-.callout-warning h5.text-cool-gray,
-.callout-warning h6.text-cool-gray,
-.callout-warning .h1.text-cool-gray,
-.callout-warning .h2.text-cool-gray,
-.callout-warning .h3.text-cool-gray,
-.callout-warning .h4.text-cool-gray,
-.callout-warning .h5.text-cool-gray,
-.callout-warning .h6.text-cool-gray {
+.callout-sky .h6.text-cool-gray {
   color: #e2e9eb;
 }
 .callout-silver h1.text-warm-gray,
@@ -19998,55 +19411,7 @@ h6,
 .callout-sky .h3.text-warm-gray,
 .callout-sky .h4.text-warm-gray,
 .callout-sky .h5.text-warm-gray,
-.callout-sky .h6.text-warm-gray,
-.callout-info h1.text-warm-gray,
-.callout-info h2.text-warm-gray,
-.callout-info h3.text-warm-gray,
-.callout-info h4.text-warm-gray,
-.callout-info h5.text-warm-gray,
-.callout-info h6.text-warm-gray,
-.callout-info .h1.text-warm-gray,
-.callout-info .h2.text-warm-gray,
-.callout-info .h3.text-warm-gray,
-.callout-info .h4.text-warm-gray,
-.callout-info .h5.text-warm-gray,
-.callout-info .h6.text-warm-gray,
-.callout-light h1.text-warm-gray,
-.callout-light h2.text-warm-gray,
-.callout-light h3.text-warm-gray,
-.callout-light h4.text-warm-gray,
-.callout-light h5.text-warm-gray,
-.callout-light h6.text-warm-gray,
-.callout-light .h1.text-warm-gray,
-.callout-light .h2.text-warm-gray,
-.callout-light .h3.text-warm-gray,
-.callout-light .h4.text-warm-gray,
-.callout-light .h5.text-warm-gray,
-.callout-light .h6.text-warm-gray,
-.callout-success h1.text-warm-gray,
-.callout-success h2.text-warm-gray,
-.callout-success h3.text-warm-gray,
-.callout-success h4.text-warm-gray,
-.callout-success h5.text-warm-gray,
-.callout-success h6.text-warm-gray,
-.callout-success .h1.text-warm-gray,
-.callout-success .h2.text-warm-gray,
-.callout-success .h3.text-warm-gray,
-.callout-success .h4.text-warm-gray,
-.callout-success .h5.text-warm-gray,
-.callout-success .h6.text-warm-gray,
-.callout-warning h1.text-warm-gray,
-.callout-warning h2.text-warm-gray,
-.callout-warning h3.text-warm-gray,
-.callout-warning h4.text-warm-gray,
-.callout-warning h5.text-warm-gray,
-.callout-warning h6.text-warm-gray,
-.callout-warning .h1.text-warm-gray,
-.callout-warning .h2.text-warm-gray,
-.callout-warning .h3.text-warm-gray,
-.callout-warning .h4.text-warm-gray,
-.callout-warning .h5.text-warm-gray,
-.callout-warning .h6.text-warm-gray {
+.callout-sky .h6.text-warm-gray {
   color: #f4ede5;
 }
 .callout-silver h1.text-leaf,
@@ -20108,55 +19473,7 @@ h6,
 .callout-sky .h3.text-leaf,
 .callout-sky .h4.text-leaf,
 .callout-sky .h5.text-leaf,
-.callout-sky .h6.text-leaf,
-.callout-info h1.text-leaf,
-.callout-info h2.text-leaf,
-.callout-info h3.text-leaf,
-.callout-info h4.text-leaf,
-.callout-info h5.text-leaf,
-.callout-info h6.text-leaf,
-.callout-info .h1.text-leaf,
-.callout-info .h2.text-leaf,
-.callout-info .h3.text-leaf,
-.callout-info .h4.text-leaf,
-.callout-info .h5.text-leaf,
-.callout-info .h6.text-leaf,
-.callout-light h1.text-leaf,
-.callout-light h2.text-leaf,
-.callout-light h3.text-leaf,
-.callout-light h4.text-leaf,
-.callout-light h5.text-leaf,
-.callout-light h6.text-leaf,
-.callout-light .h1.text-leaf,
-.callout-light .h2.text-leaf,
-.callout-light .h3.text-leaf,
-.callout-light .h4.text-leaf,
-.callout-light .h5.text-leaf,
-.callout-light .h6.text-leaf,
-.callout-success h1.text-leaf,
-.callout-success h2.text-leaf,
-.callout-success h3.text-leaf,
-.callout-success h4.text-leaf,
-.callout-success h5.text-leaf,
-.callout-success h6.text-leaf,
-.callout-success .h1.text-leaf,
-.callout-success .h2.text-leaf,
-.callout-success .h3.text-leaf,
-.callout-success .h4.text-leaf,
-.callout-success .h5.text-leaf,
-.callout-success .h6.text-leaf,
-.callout-warning h1.text-leaf,
-.callout-warning h2.text-leaf,
-.callout-warning h3.text-leaf,
-.callout-warning h4.text-leaf,
-.callout-warning h5.text-leaf,
-.callout-warning h6.text-leaf,
-.callout-warning .h1.text-leaf,
-.callout-warning .h2.text-leaf,
-.callout-warning .h3.text-leaf,
-.callout-warning .h4.text-leaf,
-.callout-warning .h5.text-leaf,
-.callout-warning .h6.text-leaf {
+.callout-sky .h6.text-leaf {
   color: #70b865;
 }
 .callout-silver h1.text-river,
@@ -20218,55 +19535,7 @@ h6,
 .callout-sky .h3.text-river,
 .callout-sky .h4.text-river,
 .callout-sky .h5.text-river,
-.callout-sky .h6.text-river,
-.callout-info h1.text-river,
-.callout-info h2.text-river,
-.callout-info h3.text-river,
-.callout-info h4.text-river,
-.callout-info h5.text-river,
-.callout-info h6.text-river,
-.callout-info .h1.text-river,
-.callout-info .h2.text-river,
-.callout-info .h3.text-river,
-.callout-info .h4.text-river,
-.callout-info .h5.text-river,
-.callout-info .h6.text-river,
-.callout-light h1.text-river,
-.callout-light h2.text-river,
-.callout-light h3.text-river,
-.callout-light h4.text-river,
-.callout-light h5.text-river,
-.callout-light h6.text-river,
-.callout-light .h1.text-river,
-.callout-light .h2.text-river,
-.callout-light .h3.text-river,
-.callout-light .h4.text-river,
-.callout-light .h5.text-river,
-.callout-light .h6.text-river,
-.callout-success h1.text-river,
-.callout-success h2.text-river,
-.callout-success h3.text-river,
-.callout-success h4.text-river,
-.callout-success h5.text-river,
-.callout-success h6.text-river,
-.callout-success .h1.text-river,
-.callout-success .h2.text-river,
-.callout-success .h3.text-river,
-.callout-success .h4.text-river,
-.callout-success .h5.text-river,
-.callout-success .h6.text-river,
-.callout-warning h1.text-river,
-.callout-warning h2.text-river,
-.callout-warning h3.text-river,
-.callout-warning h4.text-river,
-.callout-warning h5.text-river,
-.callout-warning h6.text-river,
-.callout-warning .h1.text-river,
-.callout-warning .h2.text-river,
-.callout-warning .h3.text-river,
-.callout-warning .h4.text-river,
-.callout-warning .h5.text-river,
-.callout-warning .h6.text-river {
+.callout-sky .h6.text-river {
   color: #007d84;
 }
 .callout-silver h1.text-silver,
@@ -20328,55 +19597,7 @@ h6,
 .callout-sky .h3.text-silver,
 .callout-sky .h4.text-silver,
 .callout-sky .h5.text-silver,
-.callout-sky .h6.text-silver,
-.callout-info h1.text-silver,
-.callout-info h2.text-silver,
-.callout-info h3.text-silver,
-.callout-info h4.text-silver,
-.callout-info h5.text-silver,
-.callout-info h6.text-silver,
-.callout-info .h1.text-silver,
-.callout-info .h2.text-silver,
-.callout-info .h3.text-silver,
-.callout-info .h4.text-silver,
-.callout-info .h5.text-silver,
-.callout-info .h6.text-silver,
-.callout-light h1.text-silver,
-.callout-light h2.text-silver,
-.callout-light h3.text-silver,
-.callout-light h4.text-silver,
-.callout-light h5.text-silver,
-.callout-light h6.text-silver,
-.callout-light .h1.text-silver,
-.callout-light .h2.text-silver,
-.callout-light .h3.text-silver,
-.callout-light .h4.text-silver,
-.callout-light .h5.text-silver,
-.callout-light .h6.text-silver,
-.callout-success h1.text-silver,
-.callout-success h2.text-silver,
-.callout-success h3.text-silver,
-.callout-success h4.text-silver,
-.callout-success h5.text-silver,
-.callout-success h6.text-silver,
-.callout-success .h1.text-silver,
-.callout-success .h2.text-silver,
-.callout-success .h3.text-silver,
-.callout-success .h4.text-silver,
-.callout-success .h5.text-silver,
-.callout-success .h6.text-silver,
-.callout-warning h1.text-silver,
-.callout-warning h2.text-silver,
-.callout-warning h3.text-silver,
-.callout-warning h4.text-silver,
-.callout-warning h5.text-silver,
-.callout-warning h6.text-silver,
-.callout-warning .h1.text-silver,
-.callout-warning .h2.text-silver,
-.callout-warning .h3.text-silver,
-.callout-warning .h4.text-silver,
-.callout-warning .h5.text-silver,
-.callout-warning .h6.text-silver {
+.callout-sky .h6.text-silver {
   color: #9eabae;
 }
 .callout-silver h1.text-mesa,
@@ -20438,55 +19659,7 @@ h6,
 .callout-sky .h3.text-mesa,
 .callout-sky .h4.text-mesa,
 .callout-sky .h5.text-mesa,
-.callout-sky .h6.text-mesa,
-.callout-info h1.text-mesa,
-.callout-info h2.text-mesa,
-.callout-info h3.text-mesa,
-.callout-info h4.text-mesa,
-.callout-info h5.text-mesa,
-.callout-info h6.text-mesa,
-.callout-info .h1.text-mesa,
-.callout-info .h2.text-mesa,
-.callout-info .h3.text-mesa,
-.callout-info .h4.text-mesa,
-.callout-info .h5.text-mesa,
-.callout-info .h6.text-mesa,
-.callout-light h1.text-mesa,
-.callout-light h2.text-mesa,
-.callout-light h3.text-mesa,
-.callout-light h4.text-mesa,
-.callout-light h5.text-mesa,
-.callout-light h6.text-mesa,
-.callout-light .h1.text-mesa,
-.callout-light .h2.text-mesa,
-.callout-light .h3.text-mesa,
-.callout-light .h4.text-mesa,
-.callout-light .h5.text-mesa,
-.callout-light .h6.text-mesa,
-.callout-success h1.text-mesa,
-.callout-success h2.text-mesa,
-.callout-success h3.text-mesa,
-.callout-success h4.text-mesa,
-.callout-success h5.text-mesa,
-.callout-success h6.text-mesa,
-.callout-success .h1.text-mesa,
-.callout-success .h2.text-mesa,
-.callout-success .h3.text-mesa,
-.callout-success .h4.text-mesa,
-.callout-success .h5.text-mesa,
-.callout-success .h6.text-mesa,
-.callout-warning h1.text-mesa,
-.callout-warning h2.text-mesa,
-.callout-warning h3.text-mesa,
-.callout-warning h4.text-mesa,
-.callout-warning h5.text-mesa,
-.callout-warning h6.text-mesa,
-.callout-warning .h1.text-mesa,
-.callout-warning .h2.text-mesa,
-.callout-warning .h3.text-mesa,
-.callout-warning .h4.text-mesa,
-.callout-warning .h5.text-mesa,
-.callout-warning .h6.text-mesa {
+.callout-sky .h6.text-mesa {
   color: #a95c42;
 }
 .callout-silver h1.text-ash,
@@ -20548,55 +19721,7 @@ h6,
 .callout-sky .h3.text-ash,
 .callout-sky .h4.text-ash,
 .callout-sky .h5.text-ash,
-.callout-sky .h6.text-ash,
-.callout-info h1.text-ash,
-.callout-info h2.text-ash,
-.callout-info h3.text-ash,
-.callout-info h4.text-ash,
-.callout-info h5.text-ash,
-.callout-info h6.text-ash,
-.callout-info .h1.text-ash,
-.callout-info .h2.text-ash,
-.callout-info .h3.text-ash,
-.callout-info .h4.text-ash,
-.callout-info .h5.text-ash,
-.callout-info .h6.text-ash,
-.callout-light h1.text-ash,
-.callout-light h2.text-ash,
-.callout-light h3.text-ash,
-.callout-light h4.text-ash,
-.callout-light h5.text-ash,
-.callout-light h6.text-ash,
-.callout-light .h1.text-ash,
-.callout-light .h2.text-ash,
-.callout-light .h3.text-ash,
-.callout-light .h4.text-ash,
-.callout-light .h5.text-ash,
-.callout-light .h6.text-ash,
-.callout-success h1.text-ash,
-.callout-success h2.text-ash,
-.callout-success h3.text-ash,
-.callout-success h4.text-ash,
-.callout-success h5.text-ash,
-.callout-success h6.text-ash,
-.callout-success .h1.text-ash,
-.callout-success .h2.text-ash,
-.callout-success .h3.text-ash,
-.callout-success .h4.text-ash,
-.callout-success .h5.text-ash,
-.callout-success .h6.text-ash,
-.callout-warning h1.text-ash,
-.callout-warning h2.text-ash,
-.callout-warning h3.text-ash,
-.callout-warning h4.text-ash,
-.callout-warning h5.text-ash,
-.callout-warning h6.text-ash,
-.callout-warning .h1.text-ash,
-.callout-warning .h2.text-ash,
-.callout-warning .h3.text-ash,
-.callout-warning .h4.text-ash,
-.callout-warning .h5.text-ash,
-.callout-warning .h6.text-ash {
+.callout-sky .h6.text-ash {
   color: #403635;
 }
 .callout-silver h1.text-sage,
@@ -20658,55 +19783,7 @@ h6,
 .callout-sky .h3.text-sage,
 .callout-sky .h4.text-sage,
 .callout-sky .h5.text-sage,
-.callout-sky .h6.text-sage,
-.callout-info h1.text-sage,
-.callout-info h2.text-sage,
-.callout-info h3.text-sage,
-.callout-info h4.text-sage,
-.callout-info h5.text-sage,
-.callout-info h6.text-sage,
-.callout-info .h1.text-sage,
-.callout-info .h2.text-sage,
-.callout-info .h3.text-sage,
-.callout-info .h4.text-sage,
-.callout-info .h5.text-sage,
-.callout-info .h6.text-sage,
-.callout-light h1.text-sage,
-.callout-light h2.text-sage,
-.callout-light h3.text-sage,
-.callout-light h4.text-sage,
-.callout-light h5.text-sage,
-.callout-light h6.text-sage,
-.callout-light .h1.text-sage,
-.callout-light .h2.text-sage,
-.callout-light .h3.text-sage,
-.callout-light .h4.text-sage,
-.callout-light .h5.text-sage,
-.callout-light .h6.text-sage,
-.callout-success h1.text-sage,
-.callout-success h2.text-sage,
-.callout-success h3.text-sage,
-.callout-success h4.text-sage,
-.callout-success h5.text-sage,
-.callout-success h6.text-sage,
-.callout-success .h1.text-sage,
-.callout-success .h2.text-sage,
-.callout-success .h3.text-sage,
-.callout-success .h4.text-sage,
-.callout-success .h5.text-sage,
-.callout-success .h6.text-sage,
-.callout-warning h1.text-sage,
-.callout-warning h2.text-sage,
-.callout-warning h3.text-sage,
-.callout-warning h4.text-sage,
-.callout-warning h5.text-sage,
-.callout-warning h6.text-sage,
-.callout-warning .h1.text-sage,
-.callout-warning .h2.text-sage,
-.callout-warning .h3.text-sage,
-.callout-warning .h4.text-sage,
-.callout-warning .h5.text-sage,
-.callout-warning .h6.text-sage {
+.callout-sky .h6.text-sage {
   color: #4a634e;
 }
 .callout-silver h1.text-white,
@@ -20768,55 +19845,7 @@ h6,
 .callout-sky .h3.text-white,
 .callout-sky .h4.text-white,
 .callout-sky .h5.text-white,
-.callout-sky .h6.text-white,
-.callout-info h1.text-white,
-.callout-info h2.text-white,
-.callout-info h3.text-white,
-.callout-info h4.text-white,
-.callout-info h5.text-white,
-.callout-info h6.text-white,
-.callout-info .h1.text-white,
-.callout-info .h2.text-white,
-.callout-info .h3.text-white,
-.callout-info .h4.text-white,
-.callout-info .h5.text-white,
-.callout-info .h6.text-white,
-.callout-light h1.text-white,
-.callout-light h2.text-white,
-.callout-light h3.text-white,
-.callout-light h4.text-white,
-.callout-light h5.text-white,
-.callout-light h6.text-white,
-.callout-light .h1.text-white,
-.callout-light .h2.text-white,
-.callout-light .h3.text-white,
-.callout-light .h4.text-white,
-.callout-light .h5.text-white,
-.callout-light .h6.text-white,
-.callout-success h1.text-white,
-.callout-success h2.text-white,
-.callout-success h3.text-white,
-.callout-success h4.text-white,
-.callout-success h5.text-white,
-.callout-success h6.text-white,
-.callout-success .h1.text-white,
-.callout-success .h2.text-white,
-.callout-success .h3.text-white,
-.callout-success .h4.text-white,
-.callout-success .h5.text-white,
-.callout-success .h6.text-white,
-.callout-warning h1.text-white,
-.callout-warning h2.text-white,
-.callout-warning h3.text-white,
-.callout-warning h4.text-white,
-.callout-warning h5.text-white,
-.callout-warning h6.text-white,
-.callout-warning .h1.text-white,
-.callout-warning .h2.text-white,
-.callout-warning .h3.text-white,
-.callout-warning .h4.text-white,
-.callout-warning .h5.text-white,
-.callout-warning .h6.text-white {
+.callout-sky .h6.text-white {
   color: #fff;
 }
 .callout-silver h1.text-black,
@@ -20878,55 +19907,7 @@ h6,
 .callout-sky .h3.text-black,
 .callout-sky .h4.text-black,
 .callout-sky .h5.text-black,
-.callout-sky .h6.text-black,
-.callout-info h1.text-black,
-.callout-info h2.text-black,
-.callout-info h3.text-black,
-.callout-info h4.text-black,
-.callout-info h5.text-black,
-.callout-info h6.text-black,
-.callout-info .h1.text-black,
-.callout-info .h2.text-black,
-.callout-info .h3.text-black,
-.callout-info .h4.text-black,
-.callout-info .h5.text-black,
-.callout-info .h6.text-black,
-.callout-light h1.text-black,
-.callout-light h2.text-black,
-.callout-light h3.text-black,
-.callout-light h4.text-black,
-.callout-light h5.text-black,
-.callout-light h6.text-black,
-.callout-light .h1.text-black,
-.callout-light .h2.text-black,
-.callout-light .h3.text-black,
-.callout-light .h4.text-black,
-.callout-light .h5.text-black,
-.callout-light .h6.text-black,
-.callout-success h1.text-black,
-.callout-success h2.text-black,
-.callout-success h3.text-black,
-.callout-success h4.text-black,
-.callout-success h5.text-black,
-.callout-success h6.text-black,
-.callout-success .h1.text-black,
-.callout-success .h2.text-black,
-.callout-success .h3.text-black,
-.callout-success .h4.text-black,
-.callout-success .h5.text-black,
-.callout-success .h6.text-black,
-.callout-warning h1.text-black,
-.callout-warning h2.text-black,
-.callout-warning h3.text-black,
-.callout-warning h4.text-black,
-.callout-warning h5.text-black,
-.callout-warning h6.text-black,
-.callout-warning .h1.text-black,
-.callout-warning .h2.text-black,
-.callout-warning .h3.text-black,
-.callout-warning .h4.text-black,
-.callout-warning .h5.text-black,
-.callout-warning .h6.text-black {
+.callout-sky .h6.text-black {
   color: #000;
 }
 .callout-silver h1.text-success,
@@ -20988,56 +19969,8 @@ h6,
 .callout-sky .h3.text-success,
 .callout-sky .h4.text-success,
 .callout-sky .h5.text-success,
-.callout-sky .h6.text-success,
-.callout-info h1.text-success,
-.callout-info h2.text-success,
-.callout-info h3.text-success,
-.callout-info h4.text-success,
-.callout-info h5.text-success,
-.callout-info h6.text-success,
-.callout-info .h1.text-success,
-.callout-info .h2.text-success,
-.callout-info .h3.text-success,
-.callout-info .h4.text-success,
-.callout-info .h5.text-success,
-.callout-info .h6.text-success,
-.callout-light h1.text-success,
-.callout-light h2.text-success,
-.callout-light h3.text-success,
-.callout-light h4.text-success,
-.callout-light h5.text-success,
-.callout-light h6.text-success,
-.callout-light .h1.text-success,
-.callout-light .h2.text-success,
-.callout-light .h3.text-success,
-.callout-light .h4.text-success,
-.callout-light .h5.text-success,
-.callout-light .h6.text-success,
-.callout-success h1.text-success,
-.callout-success h2.text-success,
-.callout-success h3.text-success,
-.callout-success h4.text-success,
-.callout-success h5.text-success,
-.callout-success h6.text-success,
-.callout-success .h1.text-success,
-.callout-success .h2.text-success,
-.callout-success .h3.text-success,
-.callout-success .h4.text-success,
-.callout-success .h5.text-success,
-.callout-success .h6.text-success,
-.callout-warning h1.text-success,
-.callout-warning h2.text-success,
-.callout-warning h3.text-success,
-.callout-warning h4.text-success,
-.callout-warning h5.text-success,
-.callout-warning h6.text-success,
-.callout-warning .h1.text-success,
-.callout-warning .h2.text-success,
-.callout-warning .h3.text-success,
-.callout-warning .h4.text-success,
-.callout-warning .h5.text-success,
-.callout-warning .h6.text-success {
-  color: #70b865;
+.callout-sky .h6.text-success {
+  color: #198754;
 }
 .callout-silver h1.text-info,
 .callout-silver h2.text-info,
@@ -21098,56 +20031,8 @@ h6,
 .callout-sky .h3.text-info,
 .callout-sky .h4.text-info,
 .callout-sky .h5.text-info,
-.callout-sky .h6.text-info,
-.callout-info h1.text-info,
-.callout-info h2.text-info,
-.callout-info h3.text-info,
-.callout-info h4.text-info,
-.callout-info h5.text-info,
-.callout-info h6.text-info,
-.callout-info .h1.text-info,
-.callout-info .h2.text-info,
-.callout-info .h3.text-info,
-.callout-info .h4.text-info,
-.callout-info .h5.text-info,
-.callout-info .h6.text-info,
-.callout-light h1.text-info,
-.callout-light h2.text-info,
-.callout-light h3.text-info,
-.callout-light h4.text-info,
-.callout-light h5.text-info,
-.callout-light h6.text-info,
-.callout-light .h1.text-info,
-.callout-light .h2.text-info,
-.callout-light .h3.text-info,
-.callout-light .h4.text-info,
-.callout-light .h5.text-info,
-.callout-light .h6.text-info,
-.callout-success h1.text-info,
-.callout-success h2.text-info,
-.callout-success h3.text-info,
-.callout-success h4.text-info,
-.callout-success h5.text-info,
-.callout-success h6.text-info,
-.callout-success .h1.text-info,
-.callout-success .h2.text-info,
-.callout-success .h3.text-info,
-.callout-success .h4.text-info,
-.callout-success .h5.text-info,
-.callout-success .h6.text-info,
-.callout-warning h1.text-info,
-.callout-warning h2.text-info,
-.callout-warning h3.text-info,
-.callout-warning h4.text-info,
-.callout-warning h5.text-info,
-.callout-warning h6.text-info,
-.callout-warning .h1.text-info,
-.callout-warning .h2.text-info,
-.callout-warning .h3.text-info,
-.callout-warning .h4.text-info,
-.callout-warning .h5.text-info,
-.callout-warning .h6.text-info {
-  color: #81d3eb;
+.callout-sky .h6.text-info {
+  color: #0dcaf0;
 }
 .callout-silver h1.text-warning,
 .callout-silver h2.text-warning,
@@ -21208,56 +20093,8 @@ h6,
 .callout-sky .h3.text-warning,
 .callout-sky .h4.text-warning,
 .callout-sky .h5.text-warning,
-.callout-sky .h6.text-warning,
-.callout-info h1.text-warning,
-.callout-info h2.text-warning,
-.callout-info h3.text-warning,
-.callout-info h4.text-warning,
-.callout-info h5.text-warning,
-.callout-info h6.text-warning,
-.callout-info .h1.text-warning,
-.callout-info .h2.text-warning,
-.callout-info .h3.text-warning,
-.callout-info .h4.text-warning,
-.callout-info .h5.text-warning,
-.callout-info .h6.text-warning,
-.callout-light h1.text-warning,
-.callout-light h2.text-warning,
-.callout-light h3.text-warning,
-.callout-light h4.text-warning,
-.callout-light h5.text-warning,
-.callout-light h6.text-warning,
-.callout-light .h1.text-warning,
-.callout-light .h2.text-warning,
-.callout-light .h3.text-warning,
-.callout-light .h4.text-warning,
-.callout-light .h5.text-warning,
-.callout-light .h6.text-warning,
-.callout-success h1.text-warning,
-.callout-success h2.text-warning,
-.callout-success h3.text-warning,
-.callout-success h4.text-warning,
-.callout-success h5.text-warning,
-.callout-success h6.text-warning,
-.callout-success .h1.text-warning,
-.callout-success .h2.text-warning,
-.callout-success .h3.text-warning,
-.callout-success .h4.text-warning,
-.callout-success .h5.text-warning,
-.callout-success .h6.text-warning,
-.callout-warning h1.text-warning,
-.callout-warning h2.text-warning,
-.callout-warning h3.text-warning,
-.callout-warning h4.text-warning,
-.callout-warning h5.text-warning,
-.callout-warning h6.text-warning,
-.callout-warning .h1.text-warning,
-.callout-warning .h2.text-warning,
-.callout-warning .h3.text-warning,
-.callout-warning .h4.text-warning,
-.callout-warning .h5.text-warning,
-.callout-warning .h6.text-warning {
-  color: #f19e1f;
+.callout-sky .h6.text-warning {
+  color: #ffc107;
 }
 .callout-silver h1.text-danger,
 .callout-silver h2.text-danger,
@@ -21318,56 +20155,8 @@ h6,
 .callout-sky .h3.text-danger,
 .callout-sky .h4.text-danger,
 .callout-sky .h5.text-danger,
-.callout-sky .h6.text-danger,
-.callout-info h1.text-danger,
-.callout-info h2.text-danger,
-.callout-info h3.text-danger,
-.callout-info h4.text-danger,
-.callout-info h5.text-danger,
-.callout-info h6.text-danger,
-.callout-info .h1.text-danger,
-.callout-info .h2.text-danger,
-.callout-info .h3.text-danger,
-.callout-info .h4.text-danger,
-.callout-info .h5.text-danger,
-.callout-info .h6.text-danger,
-.callout-light h1.text-danger,
-.callout-light h2.text-danger,
-.callout-light h3.text-danger,
-.callout-light h4.text-danger,
-.callout-light h5.text-danger,
-.callout-light h6.text-danger,
-.callout-light .h1.text-danger,
-.callout-light .h2.text-danger,
-.callout-light .h3.text-danger,
-.callout-light .h4.text-danger,
-.callout-light .h5.text-danger,
-.callout-light .h6.text-danger,
-.callout-success h1.text-danger,
-.callout-success h2.text-danger,
-.callout-success h3.text-danger,
-.callout-success h4.text-danger,
-.callout-success h5.text-danger,
-.callout-success h6.text-danger,
-.callout-success .h1.text-danger,
-.callout-success .h2.text-danger,
-.callout-success .h3.text-danger,
-.callout-success .h4.text-danger,
-.callout-success .h5.text-danger,
-.callout-success .h6.text-danger,
-.callout-warning h1.text-danger,
-.callout-warning h2.text-danger,
-.callout-warning h3.text-danger,
-.callout-warning h4.text-danger,
-.callout-warning h5.text-danger,
-.callout-warning h6.text-danger,
-.callout-warning .h1.text-danger,
-.callout-warning .h2.text-danger,
-.callout-warning .h3.text-danger,
-.callout-warning .h4.text-danger,
-.callout-warning .h5.text-danger,
-.callout-warning .h6.text-danger {
-  color: #a95c42;
+.callout-sky .h6.text-danger {
+  color: #ab0520;
 }
 .callout-silver h1.text-light,
 .callout-silver h2.text-light,
@@ -21428,56 +20217,8 @@ h6,
 .callout-sky .h3.text-light,
 .callout-sky .h4.text-light,
 .callout-sky .h5.text-light,
-.callout-sky .h6.text-light,
-.callout-info h1.text-light,
-.callout-info h2.text-light,
-.callout-info h3.text-light,
-.callout-info h4.text-light,
-.callout-info h5.text-light,
-.callout-info h6.text-light,
-.callout-info .h1.text-light,
-.callout-info .h2.text-light,
-.callout-info .h3.text-light,
-.callout-info .h4.text-light,
-.callout-info .h5.text-light,
-.callout-info .h6.text-light,
-.callout-light h1.text-light,
-.callout-light h2.text-light,
-.callout-light h3.text-light,
-.callout-light h4.text-light,
-.callout-light h5.text-light,
-.callout-light h6.text-light,
-.callout-light .h1.text-light,
-.callout-light .h2.text-light,
-.callout-light .h3.text-light,
-.callout-light .h4.text-light,
-.callout-light .h5.text-light,
-.callout-light .h6.text-light,
-.callout-success h1.text-light,
-.callout-success h2.text-light,
-.callout-success h3.text-light,
-.callout-success h4.text-light,
-.callout-success h5.text-light,
-.callout-success h6.text-light,
-.callout-success .h1.text-light,
-.callout-success .h2.text-light,
-.callout-success .h3.text-light,
-.callout-success .h4.text-light,
-.callout-success .h5.text-light,
-.callout-success .h6.text-light,
-.callout-warning h1.text-light,
-.callout-warning h2.text-light,
-.callout-warning h3.text-light,
-.callout-warning h4.text-light,
-.callout-warning h5.text-light,
-.callout-warning h6.text-light,
-.callout-warning .h1.text-light,
-.callout-warning .h2.text-light,
-.callout-warning .h3.text-light,
-.callout-warning .h4.text-light,
-.callout-warning .h5.text-light,
-.callout-warning .h6.text-light {
-  color: #dee2e6;
+.callout-sky .h6.text-light {
+  color: #f8f9fa;
 }
 .callout-silver h1.text-dark,
 .callout-silver h2.text-dark,
@@ -21538,56 +20279,8 @@ h6,
 .callout-sky .h3.text-dark,
 .callout-sky .h4.text-dark,
 .callout-sky .h5.text-dark,
-.callout-sky .h6.text-dark,
-.callout-info h1.text-dark,
-.callout-info h2.text-dark,
-.callout-info h3.text-dark,
-.callout-info h4.text-dark,
-.callout-info h5.text-dark,
-.callout-info h6.text-dark,
-.callout-info .h1.text-dark,
-.callout-info .h2.text-dark,
-.callout-info .h3.text-dark,
-.callout-info .h4.text-dark,
-.callout-info .h5.text-dark,
-.callout-info .h6.text-dark,
-.callout-light h1.text-dark,
-.callout-light h2.text-dark,
-.callout-light h3.text-dark,
-.callout-light h4.text-dark,
-.callout-light h5.text-dark,
-.callout-light h6.text-dark,
-.callout-light .h1.text-dark,
-.callout-light .h2.text-dark,
-.callout-light .h3.text-dark,
-.callout-light .h4.text-dark,
-.callout-light .h5.text-dark,
-.callout-light .h6.text-dark,
-.callout-success h1.text-dark,
-.callout-success h2.text-dark,
-.callout-success h3.text-dark,
-.callout-success h4.text-dark,
-.callout-success h5.text-dark,
-.callout-success h6.text-dark,
-.callout-success .h1.text-dark,
-.callout-success .h2.text-dark,
-.callout-success .h3.text-dark,
-.callout-success .h4.text-dark,
-.callout-success .h5.text-dark,
-.callout-success .h6.text-dark,
-.callout-warning h1.text-dark,
-.callout-warning h2.text-dark,
-.callout-warning h3.text-dark,
-.callout-warning h4.text-dark,
-.callout-warning h5.text-dark,
-.callout-warning h6.text-dark,
-.callout-warning .h1.text-dark,
-.callout-warning .h2.text-dark,
-.callout-warning .h3.text-dark,
-.callout-warning .h4.text-dark,
-.callout-warning .h5.text-dark,
-.callout-warning .h6.text-dark {
-  color: #343a40;
+.callout-sky .h6.text-dark {
+  color: #212529;
 }
 
 .table .thead-light th {

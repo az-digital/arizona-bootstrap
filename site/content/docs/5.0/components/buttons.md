@@ -21,18 +21,11 @@ If you are using the `.btn` class on its own, remember to at least define some e
 {{< /callout >}}
 
 ## Variants
-
-Bootstrap includes several button variants, each serving its own semantic purpose, with a few extras thrown in for more control.
-
 {{< example >}}
 {{< buttons.inline >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
-{{- range (index $.Site.Data "theme-colors") }}
-<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
-{{- end -}}
 {{< /buttons.inline >}}
-
 <button type="button" class="btn btn-link">Link</button>
 {{< /example >}}
 
@@ -66,9 +59,6 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {{< buttons.inline >}}
 <button type="button" class="btn btn-outline-red">Red</button>
 <button type="button" class="btn btn-outline-blue">Blue</button>
-{{- range (index $.Site.Data "theme-colors") }}
-<button type="button" class="btn btn-outline-{{ .name }}">{{ .name | title }}</button>
-{{- end -}}
 {{< /buttons.inline >}}
 {{< /example >}}
 
@@ -134,22 +124,19 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 {{< example >}}
 <button type="button" class="btn btn-lg btn-red btn-arrow">Large Arrow Button</button>
 <button type="button" class="btn btn-lg btn-blue btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-info btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-outline-success btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-outline-red btn-arrow">Large Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-red btn-arrow">Regular Arrow Button</button>
 <button type="button" class="btn btn-blue btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-info btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-outline-success btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-outline-red btn-arrow">Regular Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-sm btn-red btn-arrow">Small Arrow Button</button>
 <button type="button" class="btn btn-sm btn-blue btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-info btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-outline-success btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-outline-red btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
 ## Disabled state
