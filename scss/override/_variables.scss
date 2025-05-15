@@ -2,26 +2,8 @@
 * > COLORS
 */
 
-// >> Theme Colors
-$success: $leaf;
-$info: $sky;
-$warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
-$light: $gray-300;
-$dark: $gray-800;
-
-$theme-colors: ();
-$theme-colors: map-merge(
-  (
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
-  ),
-  $theme-colors
-);
+// >> Theme Colors Override
+$danger: #dc3545;
 
 /*
 * > FONTS
