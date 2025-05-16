@@ -17257,7 +17257,7 @@ a {
 .figure-caption {
   padding-top: 0.5em;
   padding-bottom: 0.9375em;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
 }
 
 /*
@@ -17288,7 +17288,7 @@ a {
   border-top: 4px solid transparent;
   border-right: 0;
   border-bottom: 4px solid transparent;
-  border-left: 4px solid #0c234b;
+  border-left: 4px solid var(--bs-list-triangle-color, #0c234b);
 }
 
 /*
@@ -17311,7 +17311,7 @@ figure:has(blockquote) > :last-child {
 .blockquote-footer {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
-  border-color: #0c234b;
+  border-color: var(--bs-blockquote-border-color, #0c234b);
   border-style: solid;
   border-width: 0 0 0 5px;
 }
@@ -17332,7 +17332,7 @@ h6,
 .h5,
 .h6 {
   margin: 1.042em 0 0.667em;
-  color: #0c234b;
+  color: var(--bs-heading-color, #0c234b);
 }
 
 .material-icons-sharp {
@@ -17725,6 +17725,32 @@ h6,
 }
 .card-landing-grid.landing-silver {
   box-shadow: 3px 3px 0 0 rgba(158, 171, 174, 0.5);
+}
+
+[data-bs-theme=dark] .card {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+}
+[data-bs-theme=dark] .card .card-header,
+[data-bs-theme=dark] .card .card-footer {
+  background-color: var(--bs-card-cap-bg);
+  border-color: var(--bs-border-color);
+}
+[data-bs-theme=dark] .card .card-title {
+  color: var(--bs-heading-color);
+}
+[data-bs-theme=dark] .card .card-subtitle {
+  color: var(--bs-body-color);
+  opacity: 0.8;
+}
+[data-bs-theme=dark] .card .card-text {
+  color: var(--bs-body-color);
+}
+[data-bs-theme=dark] .card .card-link {
+  color: var(--bs-link-color);
+}
+[data-bs-theme=dark] .card .card-link:hover {
+  color: var(--bs-link-hover-color);
 }
 
 .dropdown-menu {
@@ -18260,9 +18286,61 @@ h6,
     display: none;
   }
 }
+[data-bs-theme=dark] .navbar-offcanvas {
+  background-color: #0c234b;
+}
+[data-bs-theme=dark] .navbar-offcanvas .nav-item .nav-link {
+  color: #fff;
+}
+[data-bs-theme=dark] .navbar-offcanvas .nav-item.active {
+  background-color: #2a5d94;
+}
+[data-bs-theme=dark] .navbar-offcanvas .dropdown-menu {
+  background-color: #2a5d94;
+}
+[data-bs-theme=dark] .navbar-light {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+}
+[data-bs-theme=dark] .navbar-light .navbar-nav .nav-link {
+  color: var(--bs-body-color);
+}
+[data-bs-theme=dark] .navbar-light .navbar-nav .nav-link:hover, [data-bs-theme=dark] .navbar-light .navbar-nav .nav-link:focus {
+  color: var(--bs-link-color);
+}
+[data-bs-theme=dark] .navbar-light .navbar-nav .nav-link.active {
+  color: var(--bs-link-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .background-wrapper {
   width: 100%;
   padding: 3rem 0;
+}
+
+[data-bs-theme=dark] .bg-white {
+  color: var(--bs-body-color);
+  background-color: var(--bs-card-bg);
+}
+[data-bs-theme=dark] .bg-light {
+  color: var(--bs-body-color);
+  background-color: var(--bs-card-bg);
+}
+[data-bs-theme=dark] .bg-gray-100,
+[data-bs-theme=dark] .bg-gray-200,
+[data-bs-theme=dark] .bg-gray-300 {
+  color: var(--bs-body-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+[data-bs-theme=dark] [class*=bg-].text-dark {
+  color: var(--bs-body-color);
+}
+[data-bs-theme=dark] .border-top,
+[data-bs-theme=dark] .border-bottom,
+[data-bs-theme=dark] .border-start,
+[data-bs-theme=dark] .border-end,
+[data-bs-theme=dark] .border {
+  border-color: var(--bs-border-color);
 }
 
 .bg-triangles-top-left {
@@ -21691,6 +21769,37 @@ h6,
 
 .col-form-label {
   font-size: 1.125rem;
+}
+
+[data-bs-theme=dark] {
+  --bs-body-bg: #0a0c14;
+  --bs-body-color: #fff;
+  --bs-card-bg: #0e1a2b;
+  --bs-dropdown-bg: #0e1a2b;
+  --bs-modal-content-bg: #0e1a2b;
+  --bs-toast-background-color: #0e1a2b;
+  --bs-popover-bg: #0e1a2b;
+  --bs-border-color: #1a2a42;
+  --bs-heading-color: #81d3eb;
+  --bs-blockquote-border-color: #81d3eb;
+  --bs-list-triangle-color: #81d3eb;
+  --bs-link-color: #6a9ac9;
+  --bs-link-hover-color: #8fb3d9;
+  --bs-input-bg: #122139;
+  --bs-input-color: #fff;
+  --bs-input-border-color: #1e3251;
+  --bs-btn-active-bg: #1e3251;
+  --bs-navbar-dark-color: #fff;
+  --bs-navbar-dark-hover-color: #81d3eb;
+  --bs-navbar-dark-active-color: #81d3eb;
+  --bs-table-color: #fff;
+  --bs-table-striped-bg: rgba(255, 255, 255, .05);
+  --bs-table-hover-bg: rgba(255, 255, 255, .075);
+  --bs-accordion-button-bg: #1a2a42;
+  --bs-accordion-button-active-bg: #1e3251;
+  --bs-card-cap-bg: #1a2a42;
+  --bs-dropdown-link-hover-bg: #1e3251;
+  --bs-dropdown-link-active-bg: #243c61;
 }
 
 /*# sourceMappingURL=arizona-bootstrap.css.map */
