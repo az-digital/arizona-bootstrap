@@ -148,7 +148,7 @@ Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabb
 
 ### Large Tabs
 
-<span class="badge text-bg-light fs-6 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
 Take that same HTML and add `.nav-tabs-lg` to create larger tabs which become vertical on smaller screens.
 
@@ -192,7 +192,7 @@ Take that same HTML, but use `.nav-pills` instead:
 
 ### Vertical Pills
 
-<span class="badge text-bg-light fs-6 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Styling</span>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
 Pills can be stacked with nested items, too. Just add `.flex-column`.
 
@@ -229,7 +229,7 @@ Pills can be stacked with nested items, too. Just add `.flex-column`.
 
 ### Utility Links
 
-<span class="badge text-bg-light fs-6 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Styling</span>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
 Take that same HTML, but use `.nav-utility` instead to provide a more muted appearance. 
 

@@ -66,7 +66,8 @@ In need of a button, but not the hefty background colors they bring? Replace the
 Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
 {{< /callout >}}
 
-<span class="badge text-bg-light fs-6 mt-3 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
+
 For outline buttons on a **dark background color**, use the `.btn-outline-white`.
 
 <div class="bd-example">
@@ -118,7 +119,8 @@ You can even roll your own custom sizing with CSS variables:
 
 ## Arrow Buttons
 
-<span class="badge text-bg-light fs-6 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
 Add an arrow to any button style by adding the `.btn-arrow` class.
 
 {{< example >}}

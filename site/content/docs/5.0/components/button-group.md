@@ -161,7 +161,8 @@ Instead of applying button sizing classes to every button in a group, just add `
 
 ## Justified
 
-<span class="badge text-bg-light fs-6 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
 Add the `.btn-group-justified` class to your `.btn-group` to make each button in the group the same size and span the full-width of its containing `div`. The buttons will remain the same size, regardless of the amount of text in each button.
 
 {{< example >}}
