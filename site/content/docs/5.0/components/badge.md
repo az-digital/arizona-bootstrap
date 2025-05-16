@@ -26,8 +26,8 @@ Badges scale to match the size of the immediate parent element by using relative
 Badges can be used as part of links or buttons to provide a counter.
 
 {{< example >}}
-<button type="button" class="btn btn-primary">
-  Notifications <span class="badge text-bg-secondary">4</span>
+<button type="button" class="btn btn-red">
+  Notifications <span class="badge text-bg-blue">4</span>
 </button>
 {{< /example >}}
 
@@ -40,9 +40,9 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 Use utilities to modify a `.badge` and position it in the corner of a link or button.
 
 {{< example >}}
-<button type="button" class="btn btn-primary position-relative">
+<button type="button" class="btn btn-red position-relative">
   Inbox
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-midnight">
     99+
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -52,9 +52,9 @@ Use utilities to modify a `.badge` and position it in the corner of a link or bu
 You can also replace the `.badge` class with a few more utilities without a count for a more generic indicator.
 
 {{< example >}}
-<button type="button" class="btn btn-primary position-relative">
+<button type="button" class="btn btn-red position-relative">
   Profile
-  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-midnight border border-light rounded-circle">
     <span class="visually-hidden">New alerts</span>
   </span>
 </button>
