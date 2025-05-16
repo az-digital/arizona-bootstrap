@@ -51,8 +51,8 @@ Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Ar
 {{< /border.inline >}}
 {{< /example >}}
 
-### Contextual (Theme)
-Change border colors to convey meaning and contextual information (e.g., success, warning, danger).
+### Contextual (Bootstrap)
+Use upstream Bootstrap's colors to convey meaning and contextual information (e.g., success, warning, danger).
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}

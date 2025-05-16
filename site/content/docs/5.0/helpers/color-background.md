@@ -25,7 +25,7 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< /text-bg.inline >}}
 {{< /example >}}
 
-### Contextual (Theme)
+### Contextual (Bootstrap)
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}

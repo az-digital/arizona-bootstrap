@@ -106,7 +106,6 @@ You can change the `width` through grid column classes, width utilities, or inli
 By default, the `placeholder` uses `currentColor`. This can be overridden with a custom color or utility class.
 
 {{< example >}}
-<span class="placeholder col-12"></span>
 {{< placeholders.inline >}}
 {{- range (index $.Site.Data "primary-colors") }}
 <span class="placeholder col-12 bg-{{ .name }}"></span>
