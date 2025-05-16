@@ -25,7 +25,9 @@ $bg-grays: ();
 $background-colors: map-merge($background-colors, $bg-grays);
 
 // border colors
-$border-colors: map-loop(map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa"), rgba-css-var, "$key", "border");
+$primary-colors: map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa", "silver", "ash", "sage", "black");
+$border-colors: map-loop($primary-colors, rgba-css-var, "$key", "border");
+$focus-ring-colors: map-loop($primary-colors, rgba-css-var, "$key", "focus-ring");
 
 $utilities: map-merge(
   $utilities,
@@ -61,6 +63,12 @@ $utilities: map-merge(
             $border-colors
           ),
         ),
+      ),
+    ),
+    "focus-ring": map-merge(
+      map-get($utilities, "focus-ring"),
+      (
+        values: $focus-ring-colors
       ),
     ),
   )
