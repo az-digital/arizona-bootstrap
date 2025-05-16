@@ -25,7 +25,7 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< /text-bg.inline >}}
 {{< /example >}}
 
-### Contextual (Theme)
+### Contextual (Bootstrap)
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
@@ -43,9 +43,9 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 Use them in place of combined `.text-*` and `.bg-*` classes, like on [badges]({{< docsref "/components/badge#background-colors" >}}):
 
 {{< example >}}
-<span class="badge text-bg-success">Success</span>
-<span class="badge text-bg-info">Info</span>
-<span class="badge text-bg-red">Alert</span>
+<span class="badge text-bg-leaf">Leaf</span>
+<span class="badge text-bg-sky">Sky</span>
+<span class="badge text-bg-mesa">Mesa</span>
 {{< /example >}}
 
 Or on [cards]({{< docsref "/components/card#background-and-color" >}}):
