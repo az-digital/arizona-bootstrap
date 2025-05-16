@@ -1,0 +1,51 @@
+// Deprecated styling for navs
+
+// Deprecated custom class: .nav-tabs-lg
+.nav-tabs.nav-tabs-lg {
+  flex-direction: column;
+  border-bottom-width: 0;
+  > *:nth-child(n+2) {
+    margin-left: 0;
+  }
+  .nav-link {
+    border-color: transparent;
+    &.active,
+    &:active {
+      background-color: $nav-tabs-link-bg;
+      @include border-bottom-start-radius($nav-tabs-border-radius);
+      @include border-bottom-end-radius($nav-tabs-border-radius);
+    }
+    &:not(.active) {
+      background-color: revert;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .nav-tabs.nav-tabs-lg {
+    flex-direction: row;
+    border-bottom-width: 1px;
+    > *:nth-child(n+2) {
+      margin-left: .5rem;
+    }
+    .nav-link {
+      padding: $nav-tabs-lg-link-padding;
+      &:not(.active),
+      &:not(.disabled) {
+        background-color: $nav-tabs-link-bg;
+        border: $nav-tabs-border-width solid $nav-tabs-border-color;
+      }
+      &.active,
+      &:active {
+        background-color: revert;
+        border-color: $nav-tabs-link-active-border-color;
+        @include border-bottom-start-radius(initial);
+        @include border-bottom-end-radius(initial);
+      }
+      &.disabled {
+        background-color: revert;
+        border-color: transparent;
+      }
+    }
+  }
+}
