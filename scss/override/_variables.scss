@@ -82,6 +82,11 @@ $breadcrumb-bg: $white;
 // fusv-disable
 $btn-font-weight: 500;
 $btn-border-width: 2px;
+$btn-padding-y: .5rem;
+$btn-padding-x: 1.25rem;
+$btn-border-radius: 3rem;
+$btn-border-radius-sm: 3rem;
+$btn-border-radius-lg: 3rem;
 // fusv-enable
 
 // >> Cards
@@ -102,20 +107,22 @@ $form-label-font-weight: 700;
 // fusv-enable
 
 // >> Navs
+// fusv-disable
+$nav-link-font-weight: 700;
 $nav-link-color: $azurite;
 $nav-link-hover-color: $midnight;
-$nav-link-active-color: $midnight;
-$nav-link-active-bg: $gray-200;
+$nav-link-disabled-color: $dark-silver;
 
 $nav-tabs-border-color: $gray-200;
-$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
-$nav-tabs-link-bg: $gray-200;
+$nav-tabs-link-active-color: $midnight;
 $nav-tabs-link-active-bg: $white;
-
-$nav-tabs-lg-link-padding: 1.25em 1.75em;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
 
 $nav-pills-link-active-color: $midnight;
 $nav-pills-link-active-bg: $gray-200;
+
+$nav-underline-link-active-color: $midnight;
+// fusv-enable
 
 // >> Navbar
 $navbar-padding-y: 0;

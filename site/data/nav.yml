@@ -33,8 +33,8 @@
 - title: Components
   pages:
     - title: Accordion
-    - title: Arizona Header
     - title: Alerts
+    - title: Arizona header
     - title: Background Wrappers
     - title: Badge
     - title: Breadcrumb
@@ -52,8 +52,8 @@
     - title: List Group
     - title: Media Object
     - title: Modal
-    - title: Navs
     - title: Navbar
+    - title: Navs & tabs
     - title: Navbar Off Canvas
     - title: Pagination
     - title: Photo Gallery

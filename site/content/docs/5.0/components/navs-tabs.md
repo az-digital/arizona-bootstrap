@@ -146,6 +146,29 @@ Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabb
 </ul>
 {{< /example >}}
 
+### Large Tabs
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Take that same HTML and add `.nav-tabs-lg` to create larger tabs which become vertical on smaller screens.
+
+{{< example >}}
+<ul class="nav nav-tabs nav-tabs-lg">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
 ### Pills
 
 Take that same HTML, but use `.nav-pills` instead:
@@ -163,6 +186,63 @@ Take that same HTML, but use `.nav-pills` instead:
   </li>
   <li class="nav-item">
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
+### Vertical Pills
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Pills can be stacked with nested items, too. Just add `.flex-column`.
+
+{{< example >}}
+<ul class="nav nav-pills flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link with sub-items</a>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sub-item</a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
+### Utility Links
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Take that same HTML, but use `.nav-utility` instead to provide a more muted appearance. 
+
+{{< example >}}
+<ul class="nav nav-utility">
+  <li class="nav-item">
+    <a href="#" class="nav-link">Link</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Longer Link</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">Much Longer Utility Link</a>
   </li>
 </ul>
 {{< /example >}}
