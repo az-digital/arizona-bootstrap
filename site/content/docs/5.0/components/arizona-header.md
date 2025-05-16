@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: University of Arizona header
-description: Add the university wordmark header to a site.<br><span class="badge text-bg-light fs-6 mt-3 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Component</span>
+description: Add the university wordmark header to a site.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
 toc: true
 ---
