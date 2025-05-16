@@ -29,6 +29,9 @@ $grays: (
 );
 // fusv-enable
 
+// danger uses upstream Bootstrap red, which gets replaced by Arizona red. To prevent upstream danger from also being set to Arizona red,  we set it here
+$danger: #dc3545 !default;
+
 $red: #ab0520;
 $bloom: #ef4056;
 $chili: #8b0015;
