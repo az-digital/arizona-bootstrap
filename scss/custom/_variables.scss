@@ -27,10 +27,8 @@ $grays: (
   "800": $gray-800,
   "900": $gray-900
 );
+$danger: #dc3545; // $danger is set to $red in the default Bootstrap theme. We override $red in the next line. But we want to keep $danger's original default value.
 // fusv-enable
-
-// danger uses upstream Bootstrap red, which gets replaced by Arizona red. To prevent upstream danger from also being set to Arizona red,  we set it here
-$danger: #dc3545 !default;
 
 $red: #ab0520;
 $bloom: #ef4056;
