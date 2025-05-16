@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }}{{ with .class }} class="{{ . }}"{{ end }} viewBox="0 0 3798.1 3798.1" role="img">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3798.1 3798.1">
   <defs>
     <style>
       .cls-1-white-bg {
@@ -9,7 +10,7 @@
       .cls-1-white-bg, .cls-2-white-bg {
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-width: 100px;
+        stroke-width: 60px;
       }
 
       .cls-2-white-bg {
