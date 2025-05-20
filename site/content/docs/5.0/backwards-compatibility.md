@@ -71,6 +71,15 @@ In Arizona Bootstrap 5, the [accordion component](../components/accordion/) is n
 Arizona Bootstrap 2 contained utility classes that are no longer supported/maintained in {{< ourname >}}, but can be replicated by utilizing a combination of classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.
 
 
+## Deprecated Utilities
+
+The following utilities are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
+
+### Hover Utilities
+
+The custom `.hover`, `.hover-text-underline`, and `.hover-img-zoom-in` are now deprecated. For underlining links on hover, see [link hover variants](../utilities/link/#hover-variants) and [card styles](../components/card/#card-styles) as possible replacements. There is no replacement for `.hover-img-zoom-in`.
+
+
 ## Removed Utility Classes
 
 Utility classes that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in {{< ourname >}}.
