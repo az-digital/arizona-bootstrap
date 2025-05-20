@@ -19,7 +19,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
-          ref: 2.x
 
       - name: Set variables for Docker images
         run: |
