@@ -13,6 +13,8 @@ toc: true
 
 Although backwards compatibility is included for some components and utilities available in Arizona Bootstrap 2, it is highly recommended that you utilize the new classes available in {{< ourname >}}. They are simply included here to lessen the burden on site builders for migrating from Drupal sites using Arizona Bootstrap 2 to sites using {{< ourname >}}. All items that are included with backwards compatibility are built by extending the classes and styles available in {{< ourname >}}. Any items that were marked as "deprecated" in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the [Removed Utilities]({{< docsref "/deprecated#removed-utility-classes" >}}) and [Removed Components]({{< docsref "/deprecated#removed-components" >}}) sections.
 
+For information on changes made in upstream Bootstrap 5, see the [Migration page](../migration").
+
 
 ## Backwards Compatible Components
 
