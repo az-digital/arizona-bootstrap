@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Callouts
-description: Call attention to a snippet of content to make users aware of something important.
+description: Call attention to a snippet of content to make users aware of something important.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
 redirect_from:
   - "/components/"
