@@ -72,7 +72,7 @@ As of v5.1.0, `background-color` utilities are generated with Sass using CSS var
 Consider our default `.bg-success` utility.
 
 ```css
-.bg-oasis {
+.bg-success {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
 }

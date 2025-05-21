@@ -8,6 +8,7 @@ redirect_from:
   - "/docs/4.3/components/"
 toc: true
 ---
+
 ## Examples
 
 Callouts are similar to alerts, in that they call attention to a small portion of content that needs to stand out against the rest of the content. They are useful for pointing out important information or notices. Callouts can be combined with any of the available [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) or [theme colors]({{< docsref "/utilities/colors#theme-1" >}}).
