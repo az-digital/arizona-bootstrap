@@ -75,23 +75,8 @@
 }
 
 .callout-sky,
-.callout-oasis {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
-    color: $blue;
-  }
-}
-
+.callout-oasis,
+.callout-leaf,
 .callout-bloom {
   h1,
   h2,
@@ -105,6 +90,6 @@
   .h4,
   .h5,
   .h6 {
-    color: $chili;
+    color: var(--bs-body-color);
   }
 }
