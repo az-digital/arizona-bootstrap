@@ -141,7 +141,7 @@ jobs:
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add -f dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
-            git push --force origin "HEAD:${AZ_TRIMMED_REF}"
+            git push origin "HEAD:${AZ_TRIMMED_REF}"
           fi
         shell: sh
       - name: Configure AWS credentials
