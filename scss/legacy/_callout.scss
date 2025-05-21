@@ -31,11 +31,22 @@
   }
 }
 
+@each $color, $value in $theme-colors {
+  .callout-#{$color} {
+    @include callout-variant($value);
+  }
+}
+
 // ensure color contrast
 .callout-silver,
 .callout-cool-gray,
 .callout-warm-gray,
-.callout-leaf {
+.callout-leaf,
+.callout-sky,
+.callout-info,
+.callout-light,
+.callout-success,
+.callout-warning {
   h1,
   h2,
   h3,
@@ -61,23 +72,6 @@
         color: $value;
       }
     }
-  }
-}
-
-.callout-sky {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
-    color: $blue;
   }
 }
 

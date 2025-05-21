@@ -68,10 +68,9 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 
 {{< example >}}
 {{< badge.inline >}}
-{{- range (index $.Site.Data "primary-colors") }}
+{{- range (index $.Site.Data "theme-colors") }}
 <span class="badge text-bg-{{ .name }}">{{ .name | title }}</span>{{- end -}}
 {{< /badge.inline >}}
-<span class="badge text-bg-sky">Sky</span>
 {{< /example >}}
 
 {{< callout info >}}
@@ -84,10 +83,9 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 
 {{< example >}}
 {{< badge.inline >}}
-{{- range (index $.Site.Data "primary-colors") }}
+{{- range (index $.Site.Data "theme-colors") }}
 <span class="badge rounded-pill text-bg-{{ .name }}">{{ .name | title }}</span>{{- end -}}
 {{< /badge.inline >}}
-<span class="badge text-bg-sky">Sky</span>
 {{< /example >}}
 
 ## CSS

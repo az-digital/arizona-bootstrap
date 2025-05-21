@@ -54,11 +54,11 @@ Customize the focus ring Sass variables to modify all usage of the focus ring st
 
 ### Sass utilities API
 
-In addition to `.focus-ring`, we have several `.focus-ring-*` utilities to modify the helper class defaults. Note that cool gray, warm gray, white and midnight variants may not be visible on all background colors given current color mode support.
+In addition to `.focus-ring`, we have several `.focus-ring-*` utilities to modify the helper class defaults. Modify the color with any of our [theme colors]({{< docsref "/customize/color#theme-colors" >}}). Note that the light and dark variants may not be visible on all background colors given current color mode support.
 
 {{< example >}}
 {{< focus-ring.inline >}}
-{{- range (index $.Site.Data "primary-colors") }}
+{{- range (index $.Site.Data "theme-colors") }}
 <p><a href="#" class="d-inline-flex focus-ring focus-ring-{{ .name }} py-1 px-2 text-decoration-none border rounded-2">{{ title .name }} focus</a></p>
 {{- end -}}
 {{< /focus-ring.inline >}}
