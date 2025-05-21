@@ -11,7 +11,7 @@ toc: true
 
 ## Brand
 
-Callouts call attention to a small portion of content that needs to stand out against the rest of the page. They can be used with [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) or [theme colors]({{< docsref "/utilities/colors#theme-1" >}}).
+Callouts call attention to a small portion of content that needs to stand out against the rest of the page. They can be used with [brand colors]({{< docsref "/customize/color#all-colors" >}}) or [theme colors]({{< docsref "/customize/color#theme-colors" >}}).
 
 {{< example >}}
 {{< callout.inline >}}
