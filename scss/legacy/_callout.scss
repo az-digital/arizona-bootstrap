@@ -42,7 +42,6 @@
 .callout-cool-gray,
 .callout-warm-gray,
 .callout-leaf,
-.callout-sky,
 .callout-info,
 .callout-light,
 .callout-success,
@@ -72,5 +71,25 @@
         color: $value;
       }
     }
+  }
+}
+
+.callout-sky,
+.callout-oasis,
+.callout-leaf,
+.callout-bloom {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: var(--bs-body-color);
   }
 }

@@ -423,7 +423,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 
 {{< example >}}
 {{< card.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
+{{- range (index $.Site.Data "pnc-colors") }}
 <div class="card text-bg-{{ .name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
@@ -445,7 +445,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 
 {{< example >}}
 {{< card.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
+{{- range (index $.Site.Data "pnc-colors") }}
 <div class="card border-{{ .name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body{{ if not .contrast_color }} text-{{ .name }}{{ end }}">
@@ -462,13 +462,13 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success">Header</div>
-  <div class="card-body text-success">
-    <h5 class="card-title">Success card title</h5>
+<div class="card border-azurite mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-azurite">Header</div>
+  <div class="card-body text-azurite">
+    <h5 class="card-title">Azurite card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div class="card-footer bg-transparent border-success">Footer</div>
+  <div class="card-footer bg-transparent border-azurite">Footer</div>
 </div>
 {{< /example >}}
 

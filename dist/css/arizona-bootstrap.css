@@ -8228,6 +8228,42 @@ textarea.form-control-lg {
   --bs-focus-ring-color: rgba(var(--bs-dark-rgb), var(--bs-focus-ring-opacity));
 }
 
+.focus-ring-red {
+  --bs-focus-ring-color: rgba(var(--bs-red-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-chili {
+  --bs-focus-ring-color: rgba(var(--bs-chili-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-blue {
+  --bs-focus-ring-color: rgba(var(--bs-blue-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-oasis {
+  --bs-focus-ring-color: rgba(var(--bs-oasis-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-azurite {
+  --bs-focus-ring-color: rgba(var(--bs-azurite-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-midnight {
+  --bs-focus-ring-color: rgba(var(--bs-midnight-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-cool-gray {
+  --bs-focus-ring-color: rgba(var(--bs-cool-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-warm-gray {
+  --bs-focus-ring-color: rgba(var(--bs-warm-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-white {
+  --bs-focus-ring-color: rgba(var(--bs-white-rgb), var(--bs-focus-ring-opacity));
+}
+
 .position-static {
   position: static !important;
 }
@@ -8430,21 +8466,6 @@ textarea.form-control-lg {
 .border-warm-gray {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-warm-gray-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-silver {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-silver-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-ash {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-ash-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-sage {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-sage-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-primary-subtle {
@@ -17335,11 +17356,6 @@ h6,
   color: var(--bs-heading-color, #0c234b);
 }
 
-.material-icons-sharp {
-  font-size: inherit;
-  line-height: inherit;
-}
-
 .accordion-header {
   margin: 0;
 }
@@ -17372,7 +17388,7 @@ h6,
   top: 2px;
   right: 20px;
   display: inline-block;
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Round";
   font-size: 2em;
   -webkit-font-variant-ligatures: no-common-ligatures;
   font-variant-ligatures: no-common-ligatures;
@@ -17461,7 +17477,7 @@ h6,
 .breadcrumb-item-home::before {
   float: left;
   padding-right: 0.5rem;
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Round";
   color: var(--bs-secondary-color);
   content: "home";
 }
@@ -17469,7 +17485,7 @@ h6,
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Round";
   color: var(--bs-secondary-color);
   content: "chevron_right";
 }
@@ -17795,53 +17811,7 @@ h6,
 .nav-tabs .nav-link.disabled, .nav-tabs .nav-link:disabled {
   background-color: initial;
 }
-.nav-tabs.nav-tabs-lg {
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-bottom-width: 0;
-}
-.nav-tabs.nav-tabs-lg > *:nth-child(n+2) {
-  margin-left: 0;
-}
-.nav-tabs.nav-tabs-lg .nav-link {
-  border-color: transparent;
-}
-.nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
-  background-color: #e9ecef;
-  border-bottom-left-radius: var(--bs-border-radius);
-  border-bottom-right-radius: var(--bs-border-radius);
-}
-.nav-tabs.nav-tabs-lg .nav-link:not(.active) {
-  background-color: revert;
-}
 
-@media (min-width: 992px) {
-  .nav-tabs.nav-tabs-lg {
-    -ms-flex-direction: row;
-    flex-direction: row;
-    border-bottom-width: 1px;
-  }
-  .nav-tabs.nav-tabs-lg > *:nth-child(n+2) {
-    margin-left: 0.5rem;
-  }
-  .nav-tabs.nav-tabs-lg .nav-link {
-    padding: 1.25em 1.75em;
-  }
-  .nav-tabs.nav-tabs-lg .nav-link:not(.active), .nav-tabs.nav-tabs-lg .nav-link:not(.disabled) {
-    background-color: #e9ecef;
-    border: var(--bs-border-width) solid #e9ecef;
-  }
-  .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
-    background-color: revert;
-    border-color: #e9ecef #e9ecef #fff;
-    border-bottom-left-radius: initial;
-    border-bottom-right-radius: initial;
-  }
-  .nav-tabs.nav-tabs-lg .nav-link.disabled {
-    background-color: revert;
-    border-color: transparent;
-  }
-}
 .nav.nav-underline .nav-link.active, .nav.nav-underline .nav-link:active {
   background-color: #fff;
   border-radius: revert;
@@ -17903,6 +17873,53 @@ h6,
   border-bottom-color: #49595e;
 }
 
+.nav-tabs.nav-tabs-lg {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-bottom-width: 0;
+}
+.nav-tabs.nav-tabs-lg > *:nth-child(n+2) {
+  margin-left: 0;
+}
+.nav-tabs.nav-tabs-lg .nav-link {
+  border-color: transparent;
+}
+.nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
+  background-color: #e9ecef;
+  border-bottom-left-radius: var(--bs-border-radius);
+  border-bottom-right-radius: var(--bs-border-radius);
+}
+.nav-tabs.nav-tabs-lg .nav-link:not(.active) {
+  background-color: revert;
+}
+
+@media (min-width: 992px) {
+  .nav-tabs.nav-tabs-lg {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    border-bottom-width: 1px;
+  }
+  .nav-tabs.nav-tabs-lg > *:nth-child(n+2) {
+    margin-left: 0.5rem;
+  }
+  .nav-tabs.nav-tabs-lg .nav-link {
+    padding: 1.25em 1.75em;
+  }
+  .nav-tabs.nav-tabs-lg .nav-link:not(.active), .nav-tabs.nav-tabs-lg .nav-link:not(.disabled) {
+    background-color: #e9ecef;
+    border: var(--bs-border-width) solid #e9ecef;
+  }
+  .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
+    background-color: revert;
+    border-color: #e9ecef #e9ecef #fff;
+    border-bottom-left-radius: initial;
+    border-bottom-right-radius: initial;
+  }
+  .nav-tabs.nav-tabs-lg .nav-link.disabled {
+    background-color: revert;
+    border-color: transparent;
+  }
+}
 .navbar {
   padding: 0;
 }
@@ -18110,7 +18127,7 @@ h6,
   content: "\e145";
   border: 0;
   margin-left: 20px;
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Round";
 }
 .navbar-offcanvas .dropdown-divider {
   margin: 0;
@@ -18132,7 +18149,7 @@ h6,
 .btn-menu:hover {
   background-color: #8b0015;
 }
-.btn-menu span.material-icons-sharp {
+.btn-menu span.material-icons-round {
   display: block;
   font-size: 24px;
   line-height: 24px;
@@ -18145,7 +18162,7 @@ h6,
   padding: 0;
   font-size: 10px;
 }
-.btn-menu-offcanvas-nav span.material-icons-sharp {
+.btn-menu-offcanvas-nav span.material-icons-round {
   display: block;
   font-size: 24px;
   line-height: 24px;
@@ -18965,18 +18982,6 @@ h6,
 .callout-leaf .h4,
 .callout-leaf .h5,
 .callout-leaf .h6,
-.callout-sky h1,
-.callout-sky h2,
-.callout-sky h3,
-.callout-sky h4,
-.callout-sky h5,
-.callout-sky h6,
-.callout-sky .h1,
-.callout-sky .h2,
-.callout-sky .h3,
-.callout-sky .h4,
-.callout-sky .h5,
-.callout-sky .h6,
 .callout-info h1,
 .callout-info h2,
 .callout-info h3,
@@ -19075,18 +19080,6 @@ h6,
 .callout-leaf .h4.text-red,
 .callout-leaf .h5.text-red,
 .callout-leaf .h6.text-red,
-.callout-sky h1.text-red,
-.callout-sky h2.text-red,
-.callout-sky h3.text-red,
-.callout-sky h4.text-red,
-.callout-sky h5.text-red,
-.callout-sky h6.text-red,
-.callout-sky .h1.text-red,
-.callout-sky .h2.text-red,
-.callout-sky .h3.text-red,
-.callout-sky .h4.text-red,
-.callout-sky .h5.text-red,
-.callout-sky .h6.text-red,
 .callout-info h1.text-red,
 .callout-info h2.text-red,
 .callout-info h3.text-red,
@@ -19185,18 +19178,6 @@ h6,
 .callout-leaf .h4.text-bloom,
 .callout-leaf .h5.text-bloom,
 .callout-leaf .h6.text-bloom,
-.callout-sky h1.text-bloom,
-.callout-sky h2.text-bloom,
-.callout-sky h3.text-bloom,
-.callout-sky h4.text-bloom,
-.callout-sky h5.text-bloom,
-.callout-sky h6.text-bloom,
-.callout-sky .h1.text-bloom,
-.callout-sky .h2.text-bloom,
-.callout-sky .h3.text-bloom,
-.callout-sky .h4.text-bloom,
-.callout-sky .h5.text-bloom,
-.callout-sky .h6.text-bloom,
 .callout-info h1.text-bloom,
 .callout-info h2.text-bloom,
 .callout-info h3.text-bloom,
@@ -19295,18 +19276,6 @@ h6,
 .callout-leaf .h4.text-chili,
 .callout-leaf .h5.text-chili,
 .callout-leaf .h6.text-chili,
-.callout-sky h1.text-chili,
-.callout-sky h2.text-chili,
-.callout-sky h3.text-chili,
-.callout-sky h4.text-chili,
-.callout-sky h5.text-chili,
-.callout-sky h6.text-chili,
-.callout-sky .h1.text-chili,
-.callout-sky .h2.text-chili,
-.callout-sky .h3.text-chili,
-.callout-sky .h4.text-chili,
-.callout-sky .h5.text-chili,
-.callout-sky .h6.text-chili,
 .callout-info h1.text-chili,
 .callout-info h2.text-chili,
 .callout-info h3.text-chili,
@@ -19405,18 +19374,6 @@ h6,
 .callout-leaf .h4.text-blue,
 .callout-leaf .h5.text-blue,
 .callout-leaf .h6.text-blue,
-.callout-sky h1.text-blue,
-.callout-sky h2.text-blue,
-.callout-sky h3.text-blue,
-.callout-sky h4.text-blue,
-.callout-sky h5.text-blue,
-.callout-sky h6.text-blue,
-.callout-sky .h1.text-blue,
-.callout-sky .h2.text-blue,
-.callout-sky .h3.text-blue,
-.callout-sky .h4.text-blue,
-.callout-sky .h5.text-blue,
-.callout-sky .h6.text-blue,
 .callout-info h1.text-blue,
 .callout-info h2.text-blue,
 .callout-info h3.text-blue,
@@ -19515,18 +19472,6 @@ h6,
 .callout-leaf .h4.text-sky,
 .callout-leaf .h5.text-sky,
 .callout-leaf .h6.text-sky,
-.callout-sky h1.text-sky,
-.callout-sky h2.text-sky,
-.callout-sky h3.text-sky,
-.callout-sky h4.text-sky,
-.callout-sky h5.text-sky,
-.callout-sky h6.text-sky,
-.callout-sky .h1.text-sky,
-.callout-sky .h2.text-sky,
-.callout-sky .h3.text-sky,
-.callout-sky .h4.text-sky,
-.callout-sky .h5.text-sky,
-.callout-sky .h6.text-sky,
 .callout-info h1.text-sky,
 .callout-info h2.text-sky,
 .callout-info h3.text-sky,
@@ -19625,18 +19570,6 @@ h6,
 .callout-leaf .h4.text-oasis,
 .callout-leaf .h5.text-oasis,
 .callout-leaf .h6.text-oasis,
-.callout-sky h1.text-oasis,
-.callout-sky h2.text-oasis,
-.callout-sky h3.text-oasis,
-.callout-sky h4.text-oasis,
-.callout-sky h5.text-oasis,
-.callout-sky h6.text-oasis,
-.callout-sky .h1.text-oasis,
-.callout-sky .h2.text-oasis,
-.callout-sky .h3.text-oasis,
-.callout-sky .h4.text-oasis,
-.callout-sky .h5.text-oasis,
-.callout-sky .h6.text-oasis,
 .callout-info h1.text-oasis,
 .callout-info h2.text-oasis,
 .callout-info h3.text-oasis,
@@ -19735,18 +19668,6 @@ h6,
 .callout-leaf .h4.text-azurite,
 .callout-leaf .h5.text-azurite,
 .callout-leaf .h6.text-azurite,
-.callout-sky h1.text-azurite,
-.callout-sky h2.text-azurite,
-.callout-sky h3.text-azurite,
-.callout-sky h4.text-azurite,
-.callout-sky h5.text-azurite,
-.callout-sky h6.text-azurite,
-.callout-sky .h1.text-azurite,
-.callout-sky .h2.text-azurite,
-.callout-sky .h3.text-azurite,
-.callout-sky .h4.text-azurite,
-.callout-sky .h5.text-azurite,
-.callout-sky .h6.text-azurite,
 .callout-info h1.text-azurite,
 .callout-info h2.text-azurite,
 .callout-info h3.text-azurite,
@@ -19845,18 +19766,6 @@ h6,
 .callout-leaf .h4.text-midnight,
 .callout-leaf .h5.text-midnight,
 .callout-leaf .h6.text-midnight,
-.callout-sky h1.text-midnight,
-.callout-sky h2.text-midnight,
-.callout-sky h3.text-midnight,
-.callout-sky h4.text-midnight,
-.callout-sky h5.text-midnight,
-.callout-sky h6.text-midnight,
-.callout-sky .h1.text-midnight,
-.callout-sky .h2.text-midnight,
-.callout-sky .h3.text-midnight,
-.callout-sky .h4.text-midnight,
-.callout-sky .h5.text-midnight,
-.callout-sky .h6.text-midnight,
 .callout-info h1.text-midnight,
 .callout-info h2.text-midnight,
 .callout-info h3.text-midnight,
@@ -19955,18 +19864,6 @@ h6,
 .callout-leaf .h4.text-cool-gray,
 .callout-leaf .h5.text-cool-gray,
 .callout-leaf .h6.text-cool-gray,
-.callout-sky h1.text-cool-gray,
-.callout-sky h2.text-cool-gray,
-.callout-sky h3.text-cool-gray,
-.callout-sky h4.text-cool-gray,
-.callout-sky h5.text-cool-gray,
-.callout-sky h6.text-cool-gray,
-.callout-sky .h1.text-cool-gray,
-.callout-sky .h2.text-cool-gray,
-.callout-sky .h3.text-cool-gray,
-.callout-sky .h4.text-cool-gray,
-.callout-sky .h5.text-cool-gray,
-.callout-sky .h6.text-cool-gray,
 .callout-info h1.text-cool-gray,
 .callout-info h2.text-cool-gray,
 .callout-info h3.text-cool-gray,
@@ -20065,18 +19962,6 @@ h6,
 .callout-leaf .h4.text-warm-gray,
 .callout-leaf .h5.text-warm-gray,
 .callout-leaf .h6.text-warm-gray,
-.callout-sky h1.text-warm-gray,
-.callout-sky h2.text-warm-gray,
-.callout-sky h3.text-warm-gray,
-.callout-sky h4.text-warm-gray,
-.callout-sky h5.text-warm-gray,
-.callout-sky h6.text-warm-gray,
-.callout-sky .h1.text-warm-gray,
-.callout-sky .h2.text-warm-gray,
-.callout-sky .h3.text-warm-gray,
-.callout-sky .h4.text-warm-gray,
-.callout-sky .h5.text-warm-gray,
-.callout-sky .h6.text-warm-gray,
 .callout-info h1.text-warm-gray,
 .callout-info h2.text-warm-gray,
 .callout-info h3.text-warm-gray,
@@ -20175,18 +20060,6 @@ h6,
 .callout-leaf .h4.text-leaf,
 .callout-leaf .h5.text-leaf,
 .callout-leaf .h6.text-leaf,
-.callout-sky h1.text-leaf,
-.callout-sky h2.text-leaf,
-.callout-sky h3.text-leaf,
-.callout-sky h4.text-leaf,
-.callout-sky h5.text-leaf,
-.callout-sky h6.text-leaf,
-.callout-sky .h1.text-leaf,
-.callout-sky .h2.text-leaf,
-.callout-sky .h3.text-leaf,
-.callout-sky .h4.text-leaf,
-.callout-sky .h5.text-leaf,
-.callout-sky .h6.text-leaf,
 .callout-info h1.text-leaf,
 .callout-info h2.text-leaf,
 .callout-info h3.text-leaf,
@@ -20285,18 +20158,6 @@ h6,
 .callout-leaf .h4.text-river,
 .callout-leaf .h5.text-river,
 .callout-leaf .h6.text-river,
-.callout-sky h1.text-river,
-.callout-sky h2.text-river,
-.callout-sky h3.text-river,
-.callout-sky h4.text-river,
-.callout-sky h5.text-river,
-.callout-sky h6.text-river,
-.callout-sky .h1.text-river,
-.callout-sky .h2.text-river,
-.callout-sky .h3.text-river,
-.callout-sky .h4.text-river,
-.callout-sky .h5.text-river,
-.callout-sky .h6.text-river,
 .callout-info h1.text-river,
 .callout-info h2.text-river,
 .callout-info h3.text-river,
@@ -20395,18 +20256,6 @@ h6,
 .callout-leaf .h4.text-silver,
 .callout-leaf .h5.text-silver,
 .callout-leaf .h6.text-silver,
-.callout-sky h1.text-silver,
-.callout-sky h2.text-silver,
-.callout-sky h3.text-silver,
-.callout-sky h4.text-silver,
-.callout-sky h5.text-silver,
-.callout-sky h6.text-silver,
-.callout-sky .h1.text-silver,
-.callout-sky .h2.text-silver,
-.callout-sky .h3.text-silver,
-.callout-sky .h4.text-silver,
-.callout-sky .h5.text-silver,
-.callout-sky .h6.text-silver,
 .callout-info h1.text-silver,
 .callout-info h2.text-silver,
 .callout-info h3.text-silver,
@@ -20505,18 +20354,6 @@ h6,
 .callout-leaf .h4.text-mesa,
 .callout-leaf .h5.text-mesa,
 .callout-leaf .h6.text-mesa,
-.callout-sky h1.text-mesa,
-.callout-sky h2.text-mesa,
-.callout-sky h3.text-mesa,
-.callout-sky h4.text-mesa,
-.callout-sky h5.text-mesa,
-.callout-sky h6.text-mesa,
-.callout-sky .h1.text-mesa,
-.callout-sky .h2.text-mesa,
-.callout-sky .h3.text-mesa,
-.callout-sky .h4.text-mesa,
-.callout-sky .h5.text-mesa,
-.callout-sky .h6.text-mesa,
 .callout-info h1.text-mesa,
 .callout-info h2.text-mesa,
 .callout-info h3.text-mesa,
@@ -20615,18 +20452,6 @@ h6,
 .callout-leaf .h4.text-ash,
 .callout-leaf .h5.text-ash,
 .callout-leaf .h6.text-ash,
-.callout-sky h1.text-ash,
-.callout-sky h2.text-ash,
-.callout-sky h3.text-ash,
-.callout-sky h4.text-ash,
-.callout-sky h5.text-ash,
-.callout-sky h6.text-ash,
-.callout-sky .h1.text-ash,
-.callout-sky .h2.text-ash,
-.callout-sky .h3.text-ash,
-.callout-sky .h4.text-ash,
-.callout-sky .h5.text-ash,
-.callout-sky .h6.text-ash,
 .callout-info h1.text-ash,
 .callout-info h2.text-ash,
 .callout-info h3.text-ash,
@@ -20725,18 +20550,6 @@ h6,
 .callout-leaf .h4.text-sage,
 .callout-leaf .h5.text-sage,
 .callout-leaf .h6.text-sage,
-.callout-sky h1.text-sage,
-.callout-sky h2.text-sage,
-.callout-sky h3.text-sage,
-.callout-sky h4.text-sage,
-.callout-sky h5.text-sage,
-.callout-sky h6.text-sage,
-.callout-sky .h1.text-sage,
-.callout-sky .h2.text-sage,
-.callout-sky .h3.text-sage,
-.callout-sky .h4.text-sage,
-.callout-sky .h5.text-sage,
-.callout-sky .h6.text-sage,
 .callout-info h1.text-sage,
 .callout-info h2.text-sage,
 .callout-info h3.text-sage,
@@ -20835,18 +20648,6 @@ h6,
 .callout-leaf .h4.text-white,
 .callout-leaf .h5.text-white,
 .callout-leaf .h6.text-white,
-.callout-sky h1.text-white,
-.callout-sky h2.text-white,
-.callout-sky h3.text-white,
-.callout-sky h4.text-white,
-.callout-sky h5.text-white,
-.callout-sky h6.text-white,
-.callout-sky .h1.text-white,
-.callout-sky .h2.text-white,
-.callout-sky .h3.text-white,
-.callout-sky .h4.text-white,
-.callout-sky .h5.text-white,
-.callout-sky .h6.text-white,
 .callout-info h1.text-white,
 .callout-info h2.text-white,
 .callout-info h3.text-white,
@@ -20945,18 +20746,6 @@ h6,
 .callout-leaf .h4.text-black,
 .callout-leaf .h5.text-black,
 .callout-leaf .h6.text-black,
-.callout-sky h1.text-black,
-.callout-sky h2.text-black,
-.callout-sky h3.text-black,
-.callout-sky h4.text-black,
-.callout-sky h5.text-black,
-.callout-sky h6.text-black,
-.callout-sky .h1.text-black,
-.callout-sky .h2.text-black,
-.callout-sky .h3.text-black,
-.callout-sky .h4.text-black,
-.callout-sky .h5.text-black,
-.callout-sky .h6.text-black,
 .callout-info h1.text-black,
 .callout-info h2.text-black,
 .callout-info h3.text-black,
@@ -21055,18 +20844,6 @@ h6,
 .callout-leaf .h4.text-success,
 .callout-leaf .h5.text-success,
 .callout-leaf .h6.text-success,
-.callout-sky h1.text-success,
-.callout-sky h2.text-success,
-.callout-sky h3.text-success,
-.callout-sky h4.text-success,
-.callout-sky h5.text-success,
-.callout-sky h6.text-success,
-.callout-sky .h1.text-success,
-.callout-sky .h2.text-success,
-.callout-sky .h3.text-success,
-.callout-sky .h4.text-success,
-.callout-sky .h5.text-success,
-.callout-sky .h6.text-success,
 .callout-info h1.text-success,
 .callout-info h2.text-success,
 .callout-info h3.text-success,
@@ -21165,18 +20942,6 @@ h6,
 .callout-leaf .h4.text-info,
 .callout-leaf .h5.text-info,
 .callout-leaf .h6.text-info,
-.callout-sky h1.text-info,
-.callout-sky h2.text-info,
-.callout-sky h3.text-info,
-.callout-sky h4.text-info,
-.callout-sky h5.text-info,
-.callout-sky h6.text-info,
-.callout-sky .h1.text-info,
-.callout-sky .h2.text-info,
-.callout-sky .h3.text-info,
-.callout-sky .h4.text-info,
-.callout-sky .h5.text-info,
-.callout-sky .h6.text-info,
 .callout-info h1.text-info,
 .callout-info h2.text-info,
 .callout-info h3.text-info,
@@ -21275,18 +21040,6 @@ h6,
 .callout-leaf .h4.text-warning,
 .callout-leaf .h5.text-warning,
 .callout-leaf .h6.text-warning,
-.callout-sky h1.text-warning,
-.callout-sky h2.text-warning,
-.callout-sky h3.text-warning,
-.callout-sky h4.text-warning,
-.callout-sky h5.text-warning,
-.callout-sky h6.text-warning,
-.callout-sky .h1.text-warning,
-.callout-sky .h2.text-warning,
-.callout-sky .h3.text-warning,
-.callout-sky .h4.text-warning,
-.callout-sky .h5.text-warning,
-.callout-sky .h6.text-warning,
 .callout-info h1.text-warning,
 .callout-info h2.text-warning,
 .callout-info h3.text-warning,
@@ -21385,18 +21138,6 @@ h6,
 .callout-leaf .h4.text-danger,
 .callout-leaf .h5.text-danger,
 .callout-leaf .h6.text-danger,
-.callout-sky h1.text-danger,
-.callout-sky h2.text-danger,
-.callout-sky h3.text-danger,
-.callout-sky h4.text-danger,
-.callout-sky h5.text-danger,
-.callout-sky h6.text-danger,
-.callout-sky .h1.text-danger,
-.callout-sky .h2.text-danger,
-.callout-sky .h3.text-danger,
-.callout-sky .h4.text-danger,
-.callout-sky .h5.text-danger,
-.callout-sky .h6.text-danger,
 .callout-info h1.text-danger,
 .callout-info h2.text-danger,
 .callout-info h3.text-danger,
@@ -21495,18 +21236,6 @@ h6,
 .callout-leaf .h4.text-light,
 .callout-leaf .h5.text-light,
 .callout-leaf .h6.text-light,
-.callout-sky h1.text-light,
-.callout-sky h2.text-light,
-.callout-sky h3.text-light,
-.callout-sky h4.text-light,
-.callout-sky h5.text-light,
-.callout-sky h6.text-light,
-.callout-sky .h1.text-light,
-.callout-sky .h2.text-light,
-.callout-sky .h3.text-light,
-.callout-sky .h4.text-light,
-.callout-sky .h5.text-light,
-.callout-sky .h6.text-light,
 .callout-info h1.text-light,
 .callout-info h2.text-light,
 .callout-info h3.text-light,
@@ -21605,18 +21334,6 @@ h6,
 .callout-leaf .h4.text-dark,
 .callout-leaf .h5.text-dark,
 .callout-leaf .h6.text-dark,
-.callout-sky h1.text-dark,
-.callout-sky h2.text-dark,
-.callout-sky h3.text-dark,
-.callout-sky h4.text-dark,
-.callout-sky h5.text-dark,
-.callout-sky h6.text-dark,
-.callout-sky .h1.text-dark,
-.callout-sky .h2.text-dark,
-.callout-sky .h3.text-dark,
-.callout-sky .h4.text-dark,
-.callout-sky .h5.text-dark,
-.callout-sky .h6.text-dark,
 .callout-info h1.text-dark,
 .callout-info h2.text-dark,
 .callout-info h3.text-dark,
@@ -21666,6 +21383,57 @@ h6,
 .callout-warning .h5.text-dark,
 .callout-warning .h6.text-dark {
   color: #343a40;
+}
+
+.callout-sky h1,
+.callout-sky h2,
+.callout-sky h3,
+.callout-sky h4,
+.callout-sky h5,
+.callout-sky h6,
+.callout-sky .h1,
+.callout-sky .h2,
+.callout-sky .h3,
+.callout-sky .h4,
+.callout-sky .h5,
+.callout-sky .h6,
+.callout-oasis h1,
+.callout-oasis h2,
+.callout-oasis h3,
+.callout-oasis h4,
+.callout-oasis h5,
+.callout-oasis h6,
+.callout-oasis .h1,
+.callout-oasis .h2,
+.callout-oasis .h3,
+.callout-oasis .h4,
+.callout-oasis .h5,
+.callout-oasis .h6,
+.callout-leaf h1,
+.callout-leaf h2,
+.callout-leaf h3,
+.callout-leaf h4,
+.callout-leaf h5,
+.callout-leaf h6,
+.callout-leaf .h1,
+.callout-leaf .h2,
+.callout-leaf .h3,
+.callout-leaf .h4,
+.callout-leaf .h5,
+.callout-leaf .h6,
+.callout-bloom h1,
+.callout-bloom h2,
+.callout-bloom h3,
+.callout-bloom h4,
+.callout-bloom h5,
+.callout-bloom h6,
+.callout-bloom .h1,
+.callout-bloom .h2,
+.callout-bloom .h3,
+.callout-bloom .h4,
+.callout-bloom .h5,
+.callout-bloom .h6 {
+  color: var(--bs-body-color);
 }
 
 .table .thead-light th {
