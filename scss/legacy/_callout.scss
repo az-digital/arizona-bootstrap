@@ -31,22 +31,11 @@
   }
 }
 
-@each $color, $value in $theme-colors {
-  .callout-#{$color} {
-    @include callout-variant($value);
-  }
-}
-
 // ensure color contrast
 .callout-silver,
 .callout-cool-gray,
 .callout-warm-gray,
-.callout-leaf,
-.callout-sky,
-.callout-info,
-.callout-light,
-.callout-success,
-.callout-warning {
+.callout-leaf {
   h1,
   h2,
   h3,
@@ -72,5 +61,60 @@
         color: $value;
       }
     }
+  }
+}
+
+.callout-sky {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: $blue;
+  }
+}
+
+// Upstream Callout Style for Contextual Variants
+.bs-callout {
+  --#{$prefix}link-color-rgb: #{to-rgb($blue-600)};
+  --#{$prefix}code-color: #{$pink-600};
+
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--bs-callout-color, inherit);
+  background-color: var(--bs-callout-bg, var(--bs-gray-100));
+  border-left: .25rem solid var(--bs-callout-border, var(--bs-gray-300));
+
+  h4 {
+    margin-bottom: .25rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  + .bs-callout {
+    margin-top: -.25rem;
+  }
+
+  .highlight {
+    background-color: rgba($black, .05);
+  }
+}
+
+$contextual-callout-colors: map-remove($theme-colors, 'light', 'dark');
+@each $color, $value in $contextual-callout-colors {
+  .bs-callout-#{$color} {
+    --bs-callout-color: var(--bs-#{$color}-text-emphasis);
+    --bs-callout-bg: var(--bs-#{$color}-bg-subtle);
+    --bs-callout-border: var(--bs-#{$color}-border-subtle);
   }
 }

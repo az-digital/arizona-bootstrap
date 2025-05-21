@@ -96,6 +96,7 @@ The legacy `.sans` class has been removed from Arizona Bootstrap 5, which alread
 
 Components that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in {{< ourname >}}.
 
+All callouts based on `$theme-colors` have been removed (`callout-info`, `callout-warning`, `callout-danger`, `callout-success`, `callout-light`, `callout-dark`) in favor of upstream bootstrap's `bd-callout` docs class, which is brought over to Arizona bootstrap using `bs-callout`. All `callout-*`s based on brand colors still work.
 
 ## Removed JavaScript
 
