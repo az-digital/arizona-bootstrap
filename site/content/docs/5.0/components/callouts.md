@@ -11,7 +11,7 @@ toc: true
 
 ## Brand
 
-Callouts call attention to a small portion of content that needs to stand out against the rest of the content. These use [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) and a different style from upstream Bootstrap's. Use these if you want a piece of content to stand out, but still coordinate with the style and color of the rest of your page.
+Callouts call attention to a small portion of content. These use [brand colors]({{< docsref "/utilities/colors#brand-1" >}}), which is useful when you want the callout to stand out against the rest of the page but still coordinate with the page's style and color.
 
 {{< example >}}
 {{< callout.inline >}}
@@ -27,7 +27,7 @@ Callouts call attention to a small portion of content that needs to stand out ag
 
 ## Contextual (Theme)
 
-Contextual callouts are styled in the same way as upstream Bootstrap's `bd-callout` docs class.
+Contextual callouts are styled to match upstream Bootstrap's `bd-callout` docs class.
 
 {{< example >}}
 {{< callout.inline >}}
