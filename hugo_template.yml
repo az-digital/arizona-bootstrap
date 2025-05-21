@@ -64,7 +64,7 @@ params:
   rfs_version:          "v10.0.0"
   github_org:           "https://github.com/az-digital"
   repo:                 "https://github.com/az-digital/arizona-bootstrap"
-  icons:                "{{az_site_base_url}}/docs/5.0/icons/"
+  icons:                "https://icons.getbootstrap.com/"
   slack:                "https://quickstart.arizona.edu/join-us-on-slack"
   azdigital:            "https://digital.arizona.edu"
   az_quickstart:        "https://github.com/az-digital/az_quickstart"

@@ -1,6 +1,3 @@
-# Ignore dist files
-/dist/
-
 # Ignore docs files
 /_site/
 # Hugo folders

@@ -146,6 +146,29 @@ Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabb
 </ul>
 {{< /example >}}
 
+### Large Tabs
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Take that same HTML and add `.nav-tabs-lg` to create larger tabs which become vertical on smaller screens.
+
+{{< example >}}
+<ul class="nav nav-tabs nav-tabs-lg">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
+{{< /example >}}
+
 ### Pills
 
 Take that same HTML, but use `.nav-pills` instead:

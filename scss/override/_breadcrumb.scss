@@ -22,7 +22,7 @@
   float: left; // Suppress inline spacings and underlining of the separator
   padding-right: $breadcrumb-item-padding-x;
   // stylelint-disable-next-line
-  font-family: "Material Icons Round";
+  font-family: "Material Icons Sharp";
   color: $breadcrumb-divider-color;
   content: "home";
 }
@@ -31,7 +31,7 @@
   float: left;
   padding-right: .5rem;
   // stylelint-disable-next-line
-  font-family: "Material Icons Round";
+  font-family: "Material Icons Sharp";
   color: $breadcrumb-divider-color;
   content: "chevron_right";
 }
