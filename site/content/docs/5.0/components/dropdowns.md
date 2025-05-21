@@ -61,7 +61,7 @@ The best part is you can do this with any button variant, too:
 
 <div class="bd-example">
   <div class="btn-group">
-    <button type="button" class="btn btn-red dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Primary</button>
+    <button type="button" class="btn btn-red dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Red</button>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Action</a></li>
       <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -71,7 +71,7 @@ The best part is you can do this with any button variant, too:
     </ul>
   </div><!-- /btn-group -->
   <div class="btn-group">
-    <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Secondary</button>
+    <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Blue</button>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Action</a></li>
       <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -83,10 +83,10 @@ The best part is you can do this with any button variant, too:
 </div>
 
 ```html
-<!-- Example single danger button -->
+<!-- Example single red button -->
 <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Danger
+  <button type="button" class="btn btn-red dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Red
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -106,7 +106,7 @@ We use this extra class to reduce the horizontal `padding` on either side of the
 
 <div class="bd-example">
   <div class="btn-group">
-    <button type="button" class="btn btn-red">Primary</button>
+    <button type="button" class="btn btn-red">Red</button>
     <button type="button" class="btn btn-red dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
@@ -119,7 +119,7 @@ We use this extra class to reduce the horizontal `padding` on either side of the
     </ul>
   </div><!-- /btn-group -->
   <div class="btn-group">
-    <button type="button" class="btn btn-blue">Secondary</button>
+    <button type="button" class="btn btn-blue">Blue</button>
     <button type="button" class="btn btn-blue dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
@@ -134,10 +134,10 @@ We use this extra class to reduce the horizontal `padding` on either side of the
 </div>
 
 ```html
-<!-- Example split danger button -->
+<!-- Example split red button -->
 <div class="btn-group">
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-red">Red</button>
+  <button type="button" class="btn btn-red dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="visually-hidden">Toggle Dropdown</span>
   </button>
   <ul class="dropdown-menu">
