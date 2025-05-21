@@ -17743,21 +17743,6 @@ h6,
   box-shadow: 3px 3px 0 0 rgba(158, 171, 174, 0.5);
 }
 
-.card-body h1,
-.card-body h2,
-.card-body h3,
-.card-body h4,
-.card-body h5,
-.card-body h6,
-.card-body .h1,
-.card-body .h2,
-.card-body .h3,
-.card-body .h4,
-.card-body .h5,
-.card-body .h6 {
-  margin-top: 0;
-}
-
 .dropdown-menu {
   color: #e2e9eb;
   background-color: #0c234b;
