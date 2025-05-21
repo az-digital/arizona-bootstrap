@@ -40,26 +40,24 @@ Or remove borders:
 Border utilities like `.border-*` that generated from our original `$theme-colors` Sass map don't yet respond to color modes. This will be resolved in upstream Bootstrap v6.0.0.
 {{< /callout >}}
 
-### Contextual (Theme)
-Change border colors to convey meaning and contextual information (e.g., success, warning, danger).
-
-{{< example class="bd-example-border-utils" >}}
-{{< border.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<span class="border border-{{ .name }}"></span>
-{{- end -}}
-{{< /border.inline >}}
-{{< /example >}}
-
 ### Brand
 Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Arizona-branded colors</a>.
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
-{{- range (index $.Site.Data "colors") }}
-{{- if or (eq .name "red") (eq .name "blue") (eq .name "white") (eq .name "warm-gray") (eq .name "cool-gray")  (eq .name "cool-gray")  (eq .name "midnight")  (eq .name "azurite")  (eq .name "oasis")  (eq .name "chili") }}
+{{- range (index $.Site.Data "pnc-colors") }}
 <span class="border border-{{ .name }}"></span>
 {{- end -}}
+{{< /border.inline >}}
+{{< /example >}}
+
+### Contextual (Theme)
+Use upstream Bootstrap's colors to convey meaning and contextual information (e.g., success, warning, danger).
+
+{{< example class="bd-example-border-utils" >}}
+{{< border.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<span class="border border-{{ .name }}"></span>
 {{- end -}}
 {{< /border.inline >}}
 {{< /example >}}
