@@ -9,22 +9,31 @@ redirect_from:
 toc: true
 ---
 
-## Examples
+## Brand
 
-Callouts are similar to alerts, in that they call attention to a small portion of content that needs to stand out against the rest of the content. They are useful for pointing out important information or notices. Callouts can be combined with any of the available [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) or [theme colors]({{< docsref "/utilities/colors#theme-1" >}}).
+Callouts call attention to a small portion of content that needs to stand out against the rest of the content. These use [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) and a different style from upstream Bootstrap's. Use these if you want a piece of content to stand out, but still coordinate with the style and color of the rest of your page.
 
 {{< example >}}
 {{< callout.inline >}}
 {{ range (index $.Site.Data.colors) }}
-<div class="callout callout-{{ .name }}{{ if eq .name "white" }} bg-dark{{ end }}">
+<div class="callout callout-{{ .name }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
   <p class="h4">{{ .name | title }} Callout</p>
   <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
 </div>
 {{ end }}
-{{ range (index $.Site.Data "theme-colors") }}
-<div class="callout callout-{{ .name }}">
-  <p class="h4">{{ .name | title }} Callout</p>
-  <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
+{{< /callout.inline >}}
+{{< /example >}}
+
+
+## Contextual (Theme)
+
+Contextual callouts are styled in the same way as upstream Bootstrap's `bd-callout` docs class.
+
+{{< example >}}
+{{< callout.inline >}}
+{{ range where (index $.Site.Data "theme-colors") "name" "not in" (slice "light" "dark") }}
+<div class="bs-callout bs-callout-{{ .name }}">
+  <strong>{{ .name | title }} Callout</strong> A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.
 </div>
 {{ end }}
 {{< /callout.inline >}}
