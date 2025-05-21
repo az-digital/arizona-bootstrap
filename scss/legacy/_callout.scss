@@ -110,7 +110,7 @@
   }
 }
 
-$contextual-callout-colors: map-remove($theme-colors, 'light', 'dark');
+$contextual-callout-colors: map-remove($theme-colors, "light", "dark");
 @each $color, $value in $contextual-callout-colors {
   .bs-callout-#{$color} {
     --bs-callout-color: var(--bs-#{$color}-text-emphasis);
