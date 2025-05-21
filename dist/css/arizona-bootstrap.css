@@ -8228,6 +8228,42 @@ textarea.form-control-lg {
   --bs-focus-ring-color: rgba(var(--bs-dark-rgb), var(--bs-focus-ring-opacity));
 }
 
+.focus-ring-red {
+  --bs-focus-ring-color: rgba(var(--bs-red-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-chili {
+  --bs-focus-ring-color: rgba(var(--bs-chili-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-blue {
+  --bs-focus-ring-color: rgba(var(--bs-blue-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-oasis {
+  --bs-focus-ring-color: rgba(var(--bs-oasis-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-azurite {
+  --bs-focus-ring-color: rgba(var(--bs-azurite-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-midnight {
+  --bs-focus-ring-color: rgba(var(--bs-midnight-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-cool-gray {
+  --bs-focus-ring-color: rgba(var(--bs-cool-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-warm-gray {
+  --bs-focus-ring-color: rgba(var(--bs-warm-gray-rgb), var(--bs-focus-ring-opacity));
+}
+
+.focus-ring-white {
+  --bs-focus-ring-color: rgba(var(--bs-white-rgb), var(--bs-focus-ring-opacity));
+}
+
 .position-static {
   position: static !important;
 }
@@ -8430,21 +8466,6 @@ textarea.form-control-lg {
 .border-warm-gray {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-warm-gray-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-silver {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-silver-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-ash {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-ash-rgb), var(--bs-border-opacity)) !important;
-}
-
-.border-sage {
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-sage-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-primary-subtle {
@@ -17725,6 +17746,21 @@ h6,
 }
 .card-landing-grid.landing-silver {
   box-shadow: 3px 3px 0 0 rgba(158, 171, 174, 0.5);
+}
+
+.card-body h1,
+.card-body h2,
+.card-body h3,
+.card-body h4,
+.card-body h5,
+.card-body h6,
+.card-body .h1,
+.card-body .h2,
+.card-body .h3,
+.card-body .h4,
+.card-body .h5,
+.card-body .h6 {
+  margin-top: 0;
 }
 
 .dropdown-menu {
