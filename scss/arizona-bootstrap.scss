@@ -56,13 +56,14 @@
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // Arizona Bootstrap imports.
+@import "deprecated/accordion";
+@import "deprecated/nav";
 @import "legacy/mixins";
 @import "override/reboot";
 @import "custom/styles";
 @import "custom/typography";
 @import "override/typography";
 @import "override/accordion";
-@import "deprecated/accordion";
 @import "legacy/badge";
 @import "override/breadcrumb";
 @import "mixins/buttons";
@@ -74,7 +75,6 @@
 @import "custom/card";
 @import "override/dropdown";
 @import "override/nav";
-@import "deprecated/nav";
 @import "override/navbar";
 @import "custom/navbar-offcanvas";
 @import "custom/background-wrapper";
