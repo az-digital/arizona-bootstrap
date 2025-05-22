@@ -9,20 +9,28 @@ redirect_from:
 toc: true
 ---
 
-## Examples
+## Brand
 
-Callouts are similar to alerts, in that they call attention to a small portion of content that needs to stand out against the rest of the content. They are useful for pointing out important information or notices. Callouts can be combined with any of the available [brand colors]({{< docsref "/utilities/colors#brand-1" >}}) or [theme colors]({{< docsref "/utilities/colors#theme-1" >}}).
+Callouts call attention to a small portion of content that needs to stand out against the rest of the page. They can be used with [brand colors]({{< docsref "/customize/color#all-colors" >}}) or [theme colors]({{< docsref "/customize/color#theme-colors" >}}).
 
 {{< example >}}
 {{< callout.inline >}}
 {{ range (index $.Site.Data.colors) }}
-<div class="callout callout-{{ .name }}{{ if eq .name "white" }} bg-dark{{ end }}">
+<div class="callout callout-{{ .name }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
   <p class="h4">{{ .name | title }} Callout</p>
   <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
 </div>
 {{ end }}
-{{ range (index $.Site.Data "theme-colors") }}
-<div class="callout callout-{{ .name }}">
+{{< /callout.inline >}}
+{{< /example >}}
+
+
+## Contextual (Theme)
+
+{{< example >}}
+{{< callout.inline >}}
+{{ range index $.Site.Data "theme-colors" }}
+<div class="callout callout-{{ .name }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
   <p class="h4">{{ .name | title }} Callout</p>
   <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
 </div>
