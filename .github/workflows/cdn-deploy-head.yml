@@ -2,6 +2,8 @@ name: Build & deploy CDN assets (HEAD)
 run-name: Build & deploy CDN assets for `${{ github.ref_name }}` branch update.
 on:
   push:
+    paths:
+      - 'dist/**'
     branches:
       - main
       - 2.x
