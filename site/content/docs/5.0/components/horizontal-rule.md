@@ -8,7 +8,7 @@ toc: true
 
 ## About
 
-A **horizontal rule** is a component useful for separating content or adding a simmple accent to your content.
+A **horizontal rule** is a component useful for separating content or adding a simple accent to your content.
 
 ## Example
 
