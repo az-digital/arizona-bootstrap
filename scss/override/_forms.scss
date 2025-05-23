@@ -1,3 +1,25 @@
+// Overrides for forms
+
+//
+// > Horizontal form labels
+//
+
 .col-form-label {
   @include font-size($form-label-font-size);
+}
+.col-form-label-lg {
+  @include font-size($input-font-size-lg);
+}
+.col-form-label-sm {
+  @include font-size($input-font-size-sm);
+}
+
+//
+// > Input groups
+//
+
+.input-group .btn {
+  padding: $input-group-addon-padding-y $input-group-addon-padding-x;
+  border-width: $input-border-width;
+  @include border-radius($input-border-radius);
 }
