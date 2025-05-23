@@ -94,11 +94,11 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 				</div>
 				<a class="carousel-control-prev" href="#myGallery" role="button" data-bs-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
+				    <span class="visually-hidden">Previous</span>
 				</a>
 				<a class="carousel-control-next" href="#myGallery" role="button" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
 				</a>
 			</div>
 		</div>
