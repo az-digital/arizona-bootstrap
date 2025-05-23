@@ -23491,4 +23491,18 @@ h6,
   font-size: 1.125rem;
 }
 
+.col-form-label-lg {
+  font-size: 1.25rem;
+}
+
+.col-form-label-sm {
+  font-size: 0.875rem;
+}
+
+.input-group .btn {
+  padding: 0.375rem 0.75rem;
+  border-width: var(--bs-border-width);
+  border-radius: var(--bs-border-radius);
+}
+
 /*# sourceMappingURL=arizona-bootstrap.css.map */
