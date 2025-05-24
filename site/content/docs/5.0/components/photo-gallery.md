@@ -15,32 +15,32 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 <div class="bd-example">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="0">
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
+				<a href="#myGallery" data-bs-slide-to="0">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror" title="">
 		        	</picture>
 		        </a>
 			</div>
-			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="1">
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
+				<a href="#myGallery" data-bs-slide-to="1">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
 		        	</picture>
 		        </a>
 			</div>
-			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="2">
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
+				<a href="#myGallery" data-bs-slide-to="2">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown" title="">
 		        	</picture>
 		        </a>
 			</div>
-			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-toggle="modal" data-target="#myGalleryModal">
-				<a href="#myGallery" data-slide-to="3">
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
+				<a href="#myGallery" data-bs-slide-to="3">
 		            <picture class="card-img img-responsive">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles" title="">
@@ -50,10 +50,8 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		</div>
 		<!-- Modal -->
 		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog">
-			<div id="myGallery" class="carousel az-gallery slide" data-ride="carousel" data-interval="false">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		         	<span aria-hidden="true">&times;</span>
-		        </button>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			<div id="myGallery" class="carousel az-gallery slide">
 				<div class="carousel-inner az-gallery-inner">
 					<div class="carousel-item az-gallery-item active">
 						<div class="carousel-image">
@@ -92,14 +90,15 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 				        </div>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#myGallery" role="button" data-slide="prev">
+				<a class="carousel-control-prev" href="#myGallery" role="button" data-bs-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
+				    <span class="visually-hidden">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#myGallery" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
+				<a class="carousel-control-next" href="#myGallery" role="button" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
 				</a>
+				<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
 			</div>
 		</div>
 	</div>
