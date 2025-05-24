@@ -97,7 +97,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 				    <span class="visually-hidden">Next</span>
 				</a>
-				<button type="button" class="btn-close" aria-label="Close"></button>
+				<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
 			</div>
 		</div>
 	</div>
