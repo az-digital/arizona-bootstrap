@@ -50,6 +50,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		</div>
 		<!-- Modal -->
 		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog">
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			<div id="myGallery" class="carousel az-gallery slide">
 				<div class="carousel-inner az-gallery-inner">
 					<div class="carousel-item az-gallery-item active">
