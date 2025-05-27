@@ -83,7 +83,8 @@
 @import "custom/background-wrapper";
 @import "legacy/background-wrapper";
 @import "custom/hover";
-@import "legacy/callout";
+@import "mixins/callouts";
+@import "custom/callouts";
 @import "legacy/table";
 @import "legacy/tooltip";
 @import "override/carousel";
