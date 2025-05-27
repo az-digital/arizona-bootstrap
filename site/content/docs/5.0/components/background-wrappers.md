@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Background Wrappers
-description: Make your content span the full-width of the screen, and add an optional background color or background pattern.
+description: Make your content span the full-width of the screen, and add an optional background color or background pattern.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
 redirect_from:
   - "/components/"

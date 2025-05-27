@@ -15,6 +15,8 @@ Although backwards compatibility is included for some components and utilities a
 
 All items that are included with backwards compatibility are built by extending the classes and styles available in Arizona Bootstrap 5. Any items that were marked as "deprecated" in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the [Removed Utility Classes](#removed-utility-classes) and [Removed Components](#removed-components) sections.
 
+For information on changes made in upstream Bootstrap 5, see the [Migration page](../migration").
+
 
 ## Backwards Compatible Components
 
