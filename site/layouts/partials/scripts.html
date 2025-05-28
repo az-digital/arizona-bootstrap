@@ -12,7 +12,7 @@
 {{- end }}
 
 {{- $applicationJs := resources.Get "js/application.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/application.js") }}
-<script defer src="{{ $applicationJs.RelPermalink }}"></script>
+<script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/assets/js/application.js` ) | relURL -}}"></script>
 
 {{- if (ne .Page.Layout "examples") -}}
 {{- $esbuildParams := dict
