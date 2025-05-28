@@ -5,14 +5,14 @@
 {{- end }}
 
 {{- $esbuildOptions := dict "target" "es2019" -}}
-{{- $targetDocsJSPath := path.Join "docs" .Site.Params.docs_version | relURL -}}
+{{- $targetDocsJSPath := path.Join "docs" .Site.Params.docs_version -}}
 
 {{- if hugo.IsProduction -}}
   {{- $esbuildOptions = merge $esbuildOptions (dict "minify" "true") -}}
 {{- end }}
 
 {{- $applicationJs := resources.Get "js/application.js" | js.Build $esbuildOptions | resources.Copy (path.Join $targetDocsJSPath "/assets/js/application.js") }}
-<script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/assets/js/application.js` ) | relURL -}}"></script>
+<script defer src="{{ $applicationJs.RelPermalink }}"></script>
 
 {{- if (ne .Page.Layout "examples") -}}
 {{- $esbuildParams := dict
