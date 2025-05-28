@@ -19,7 +19,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
-          ref: 2.x
 
       - name: Set variables for Docker images
         run: |
@@ -44,7 +43,7 @@ jobs:
       - name: Unconditionally rebuild and save the Docker image
         run: |
           workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
-          docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR . \
+          docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
           docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
@@ -67,7 +66,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
           docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
-          git add dist package.json package-lock.json
+          git add -f dist package.json package-lock.json
           git commit -m '${{ github.event.inputs.version }}'
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Photo Gallery
-description: Bootstrap's photo gallery provides a convenient way to display a colletion of images.
+description: Bootstrap's photo gallery provides a convenient way to display a collection of images.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
 toc: true
 ---

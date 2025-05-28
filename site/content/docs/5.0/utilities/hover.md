@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Hover
-description: Documentation and examples for common hover utilities to control hover effects.
+description: Documentation and examples for common hover utilities to control hover effects.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Utility</span>
 group: utilities
 toc: true
 ---
@@ -13,7 +13,7 @@ Add a text underline on hover with the `.hover` class on the parent element and 
 {{< example >}}
 <div class="card hover" style="width: 18rem;">
   <div class="card-body">
-    <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>
+    <h2 class="card-title mt-0 h4 hover-text-underline">This is a card title</h2>
     <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
     <a class="stretched-link" href="#">This is a link</a>
   </div>
@@ -27,12 +27,12 @@ Add an image zoom-in effect on hover with the `.hover` class on the parent eleme
 In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
 
 {{< example >}}
-<div class="card bg-warm-gray hover" style="width: 18rem;">
+<div class="card text-bg-warm-gray hover" style="width: 18rem;">
   <div class="overflow-hidden">
-    <img class="hover-img-zoom-in card-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+    <img class="card-img-top hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">
-    <h2 class="hover-text-underline card-title mt-0 h4">This is a card title</h2>
+    <h2 class="card-title mt-0 h4 hover-text-underline">This is a card title</h2>
     <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
     <a class="stretched-link" href="#">This is a link</a>
   </div>

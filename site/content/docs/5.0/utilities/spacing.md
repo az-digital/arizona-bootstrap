@@ -37,15 +37,26 @@ Where *sides* is one of:
 
 Where *size* is one of:
 
-- `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`
-- `1` - (by default) for classes that set the `margin` or `padding` to `$spacer * .25`
-- `2` - (by default) for classes that set the `margin` or `padding` to `$spacer * .5`
-- `3` - (by default) for classes that set the `margin` or `padding` to `$spacer`
-- `4` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
-- `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
-- `auto` - for classes that set the `margin` to auto
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
-(You can add more sizes by adding entries to the `$spacers` Sass map variable.)
+* `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`
+* `min` - (by default) for classes that set the `margin` or `padding` to `$spacer * .0625`
+* `1` - (by default) for classes that set the `margin` or `padding` to `$spacer * .25`
+* `2` - (by default) for classes that set the `margin` or `padding` to `$spacer * .5`
+* `3` - (by default) for classes that set the `margin` or `padding` to `$spacer`
+* `card` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.25`
+* `4` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
+* `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
+* `6` - (by default) for classes that set the `margin` or `padding` to `$spacer * 4`
+* `7` - (by default) for classes that set the `margin` or `padding` to `$spacer * 5`
+* `8` - (by default) for classes that set the `margin` or `padding` to `$spacer * 6`
+* `9` - (by default) for classes that set the `margin` or `padding` to `$spacer * 7`
+* `10` - (by default) for classes that set the `margin` or `padding` to `$spacer * 8`
+* `20` - (by default) for classes that set the `margin` or `padding` to `$spacer * 16`
+* `30` - (by default) for classes that set the `margin` or `padding` to `$spacer * 24`
+* `auto` - for classes that set the `margin` to auto
+
+Arizona Bootstrap has added more sizes to those provided by upstream Bootstrap.
 
 ### Examples
 
@@ -75,7 +86,7 @@ Here are some representative examples of these classes:
 Additionally, Bootstrap also includes an `.mx-auto` class for horizontally centering fixed-width block level content—that is, content that has `display: block` and a `width` set—by setting the horizontal margins to `auto`.
 
 <div class="bd-example">
-  <div class="mx-auto p-2" style="width: 200px; background-color: rgba(var(--bd-violet-rgb),.15); border: rgba(var(--bd-violet-rgb),.3) solid 1px;">
+  <div class="mx-auto p-2" style="width: 200px; background-color: var(--bs-info-bg-subtle); border: var(--bs-info-border-subtle) solid 1px;">
     Centered element
   </div>
 </div>
@@ -88,7 +99,9 @@ Additionally, Bootstrap also includes an `.mx-auto` class for horizontally cente
 
 ## Negative margin
 
-In CSS, `margin` properties can utilize negative values (`padding` cannot). These negative margins are **disabled by default**, but can be enabled in Sass by setting `$enable-negative-margins: true`.
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+In CSS, `margin` properties can utilize negative values (`padding` cannot). These negative margins are **enabled** in Arizona Bootstrap by setting the Bootstrap variable `$enable-negative-margins` to `true`. (In upstream Bootstrap, this variable is set to `false` by default.)
 
 The syntax is nearly the same as the default, positive margin utilities, but with the addition of `n` before the requested size. Here's an example class that's the opposite of `.mt-1`:
 
