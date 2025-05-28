@@ -111,7 +111,7 @@ Components that were marked as deprecated in Arizona Bootstrap 2 have been compl
 
 ### Callout Variants
 
-For our custom callout component, the following callout variants have been removed:
+For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
  - `.callout-leaf`
  - `.callout-river`
  - `.callout-silver`
