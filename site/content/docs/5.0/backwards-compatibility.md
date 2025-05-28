@@ -109,6 +109,10 @@ The legacy `.sans` class has been removed from Arizona Bootstrap 5, which alread
 
 Components that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in Arizona Bootstrap 5.
 
+### Callout Info, Light, and Dark
+
+From the custom callout component, `.callout-info` has been removed from Arizona Bootstrap 5: you may use `.callout-sky` instead. The `.callout-light` and `.callout-dark` classes have been removed as well.
+
 
 ## Removed JavaScript
 
