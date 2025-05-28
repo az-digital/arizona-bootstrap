@@ -1,18 +1,16 @@
 - name: success
-  hex: "#0d6efd"
-  contrast_color: white
+  hex: "#70b865"
 - name: danger
-  hex: "#dc3545"
-  contrast_color: white
+  hex: "#a95c42"
 - name: warning
-  hex: "#ffc107"
+  hex: "#f19e1f"
   contrast_color: dark
 - name: info
-  hex: "#0dcaf0"
+  hex: "#81d3eb"
   contrast_color: dark
 - name: light
-  hex: "#f8f9fa"
+  hex: "#dee2e6"
   contrast_color: dark
 - name: dark
-  hex: "#212529"
+  hex: "#343a40"
   contrast_color: white
