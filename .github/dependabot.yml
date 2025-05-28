@@ -3,23 +3,71 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    target-branch: "2.x"
+    ignore:
+      - dependency-name: "bootstrap"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
+    labels:
+      - "ci"
+      - "2.0.x only"
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
+
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers:
-      - "az-digital/developers"
+    target-branch: "2.x"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
     labels:
       - "ci"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every week
       interval: "weekly"
-    reviewers:
-      - "az-digital/developers"
+    target-branch: "2.x"
+    labels:
+      - "ci"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
     labels:
       - "ci"
