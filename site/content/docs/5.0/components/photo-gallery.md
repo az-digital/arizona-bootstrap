@@ -17,7 +17,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
 				<a href="#myGallery" data-bs-slide-to="0">
-		            <picture class="card-img img-responsive">
+		            <picture class="card-img img-fluid">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror" title="">
 		        	</picture>
@@ -25,7 +25,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
 				<a href="#myGallery" data-bs-slide-to="1">
-		            <picture class="card-img img-responsive">
+		            <picture class="card-img img-fluid">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
 		        	</picture>
@@ -33,7 +33,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
 				<a href="#myGallery" data-bs-slide-to="2">
-		            <picture class="card-img img-responsive">
+		            <picture class="card-img img-fluid">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown" title="">
 		        	</picture>
@@ -41,7 +41,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
 				<a href="#myGallery" data-bs-slide-to="3">
-		            <picture class="card-img img-responsive">
+		            <picture class="card-img img-fluid">
 		             	<source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
 		              	<img class="photo-gallery-grid-img" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles" title="">
 		        	</picture>
