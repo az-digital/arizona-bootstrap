@@ -49,57 +49,65 @@ The Photo Gallery component displays a collection of images in a grid layout. In
 			</div>
 		</div>
 		<!-- Modal -->
-		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" role="dialog">
-			<div id="myGallery" class="carousel az-gallery slide">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-		         	<span aria-hidden="true">&times;</span>
-		        </button>
-				<div class="carousel-inner az-gallery-inner">
-					<div class="carousel-item az-gallery-item active">
-						<div class="carousel-image">
-							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="d-block az-gallery-img" alt="A hand holding a little mirror">
-						</div>
-						<div class="carousel-caption az-gallery-caption d-block">
-				        	<h5 class="text-sky">First slide label</h5>
-				        	<p>A hand holding a little mirror</p>
-				        </div>
+		<div id="myGalleryModal" class="modal bg-transparent-black az-gallery-modal" tabindex="-1" aria-hidden="true">
+  			<div class="modal-dialog">
+    			<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
-					<div class="carousel-item az-gallery-item">
-						<div class="carousel-image">
-							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="d-block az-gallery-img" alt="University of Arizona Spring Fling">
+					<div class="modal-body">
+						<div id="myGallery" class="carousel az-gallery slide">
+							<div class="carousel-inner az-gallery-inner">
+								<div class="carousel-item az-gallery-item active">
+									<div class="carousel-image">
+										<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="d-block az-gallery-img" alt="A hand holding a little mirror">
+									</div>
+									<div class="carousel-caption az-gallery-caption d-block">
+										<h5 class="text-sky">First slide label</h5>
+										<p>A hand holding a little mirror</p>
+									</div>
+								</div>
+								<div class="carousel-item az-gallery-item">
+									<div class="carousel-image">
+										<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="d-block az-gallery-img" alt="University of Arizona Spring Fling">
+									</div>
+									<div class="carousel-caption az-gallery-caption d-block">
+										<h5 class="text-sky">Second slide label</h5>
+										<p>University of Arizona Spring Fling</p>
+									</div>
+								</div>
+								<div class="carousel-item az-gallery-item">
+									<div class="carousel-image">
+										<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="d-block az-gallery-img" alt="University graduate on stage wearing cap and gown">
+									</div>
+									<div class="carousel-caption az-gallery-caption d-block">
+										<h5 class="text-sky">Third slide label</h5>
+										<p>University graduate on stage wearing cap and gown</p>
+									</div>
+								</div>
+								<div class="carousel-item az-gallery-item">
+									<div class="carousel-image">
+										<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="d-block az-gallery-img" alt="Ceiling tiles">
+									</div>
+									<div class="carousel-caption az-gallery-caption d-block">
+										<h5 class="text-sky">Fourth slide label</h5>
+										<p>Ceiling tiles</p>
+									</div>
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#myGallery" role="button" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#myGallery" role="button" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</a>
 						</div>
-						<div class="carousel-caption az-gallery-caption d-block">
-				        	<h5 class="text-sky">Second slide label</h5>
-				        	<p>University of Arizona Spring Fling</p>
-				        </div>
-					</div>
-					<div class="carousel-item az-gallery-item">
-						<div class="carousel-image">
-							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="d-block az-gallery-img" alt="University graduate on stage wearing cap and gown">
-						</div>
-						<div class="carousel-caption az-gallery-caption d-block">
-				        	<h5 class="text-sky">Third slide label</h5>
-				        	<p>University graduate on stage wearing cap and gown</p>
-				        </div>
-					</div>
-					<div class="carousel-item az-gallery-item">
-						<div class="carousel-image">
-							<img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="d-block az-gallery-img" alt="Ceiling tiles">
-						</div>
-						<div class="carousel-caption az-gallery-caption d-block">
-				        	<h5 class="text-sky">Fourth slide label</h5>
-				        	<p>Ceiling tiles</p>
-				        </div>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#myGallery" role="button" data-bs-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="visually-hidden">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#myGallery" role="button" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="visually-hidden">Next</span>
-				</a>
 			</div>
 		</div>
 	</div>
