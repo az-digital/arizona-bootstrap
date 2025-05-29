@@ -44,7 +44,7 @@ export default () => {
    */
   function snippetButtonTooltip(selector, title) {
     document.querySelectorAll(selector).forEach(btn => {
-      bootstrap.Tooltip.getOrCreateInstance(btn, { title })
+      arizona-bootstrap.Tooltip.getOrCreateInstance(btn, { title })
     })
   }
 
@@ -57,7 +57,7 @@ export default () => {
 
   clipboard.on('success', event => {
     const iconFirstChild = event.trigger.querySelector('.bi').firstElementChild
-    const tooltipBtn = bootstrap.Tooltip.getInstance(event.trigger)
+    const tooltipBtn = arizona-bootstrap.Tooltip.getInstance(event.trigger)
     const namespace = 'http://www.w3.org/1999/xlink'
     const originalXhref = iconFirstChild.getAttributeNS(namespace, 'href')
     const originalTitle = event.trigger.title
@@ -83,7 +83,7 @@ export default () => {
   clipboard.on('error', event => {
     const modifierKey = /mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-'
     const fallbackMsg = `Press ${modifierKey}C to copy`
-    const tooltipBtn = bootstrap.Tooltip.getInstance(event.trigger)
+    const tooltipBtn = arizona-bootstrap.Tooltip.getInstance(event.trigger)
 
     tooltipBtn.setContent({ '.tooltip-inner': fallbackMsg })
     event.trigger.addEventListener('hidden.bs.tooltip', () => {
