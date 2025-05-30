@@ -108,4 +108,4 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}", "make_latest": "${{ github.event.inputs.make_latest }}", "pre_release": "${{ github.event.inputs.pre_release }}"}'
