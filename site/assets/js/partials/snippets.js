@@ -20,7 +20,7 @@ export default () => {
   // Instantiate all tooltips in a docs
   document.querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach(tooltip => {
-      new bootstrap.Tooltip(tooltip)
+      new arizonaBootstrap.Tooltip(tooltip)
     })
 
   // --------
@@ -29,7 +29,7 @@ export default () => {
   // Instantiate all popovers in docs
   document.querySelectorAll('[data-bs-toggle="popover"]')
     .forEach(popover => {
-      new bootstrap.Popover(popover)
+      new arizonaBootstrap.Popover(popover)
     })
 
   // -------------------------------
@@ -50,7 +50,7 @@ export default () => {
   // Instantiate all toasts in docs pages only
   document.querySelectorAll('.bd-example .toast')
     .forEach(toastNode => {
-      const toast = new bootstrap.Toast(toastNode, {
+      const toast = new arizonaBootstrap.Toast(toastNode, {
         autohide: false
       })
 
@@ -63,9 +63,9 @@ export default () => {
   const toastLiveExample = document.getElementById('liveToast')
 
   if (toastTrigger) {
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    const toastArizonaBootstrap = arizonaBootstrap.Toast.getOrCreateInstance(toastLiveExample)
     toastTrigger.addEventListener('click', () => {
-      toastBootstrap.show()
+      toastArizonaBootstrap.show()
     })
   }
   // js-docs-end live-toast
@@ -103,7 +103,7 @@ export default () => {
   // Instantiate all non-autoplaying carousels in docs
   document.querySelectorAll('.carousel:not([data-bs-ride="carousel"])')
     .forEach(carousel => {
-      bootstrap.Carousel.getOrCreateInstance(carousel)
+      arizonaBootstrap.Carousel.getOrCreateInstance(carousel)
     })
 
   // -------------------------------
