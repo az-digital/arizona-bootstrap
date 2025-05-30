@@ -6,10 +6,12 @@
   icon_color: indigo
   pages:
     - title: Introduction
+    - title: Color contrast
     - title: Download
     - title: Contents
     - title: Browsers & devices
     - title: JavaScript
+    - title: Build tools
     - title: Accessibility
     - title: RFS
     - title: RTL
@@ -48,6 +50,7 @@
     - title: Reboot
     - title: Font
     - title: Typography
+    - title: Code
     - title: Images
     - title: Tables
     - title: Figures
@@ -73,6 +76,7 @@
     - title: Accordion
     - title: Alerts
     - title: Arizona header
+    - title: Background wrappers
     - title: Badge
     - title: Breadcrumb
     - title: Buttons
@@ -83,6 +87,7 @@
     - title: Close button
     - title: Collapse
     - title: Dropdowns
+    - title: Horizontal rule
     - title: List group
     - title: Modal
     - title: Navbar
@@ -90,6 +95,7 @@
     - title: Offcanvas
     - title: Pagination
     - title: Placeholders
+    - title: Photo gallery
     - title: Popovers
     - title: Progress
     - title: Scrollspy
@@ -122,9 +128,11 @@
     - title: Background
     - title: Borders
     - title: Colors
+    - title: Column split
     - title: Display
     - title: Flex
     - title: Float
+    - title: Hover
     - title: Interactions
     - title: Link
     - title: Object fit

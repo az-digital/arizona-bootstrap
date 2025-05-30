@@ -28,6 +28,7 @@
 //
 // > MISC
 //
+// >> Highlighted preformatted text
 .highlight pre {
   padding-bottom: 1em;
 }
@@ -137,14 +138,21 @@
   background-color: $river;
 }
 
-.bd-example-row .row > .col,
-.bd-example-row .row > [class^="col-"] {
-  background-color: $gray-200;
-  border-color: $gray-400;
+// >> Background and border colors for grid items
+.bd-example-row [class^="col"],
+.bd-example-cols [class^="col"] > *,
+.bd-example-cssgrid [class*="grid"] > * {
+  background-color: var(--bs-info-bg-subtle);
+  border-color: var(--bs-info-border-subtle);
 }
 
 .bd-example-row-flex-cols .row {
-  background-color: rgba($bloom, .1);
+  background-color: var(--bs-info-bg-subtle);
+}
+
+.bd-example-flex div:not(.vr) {
+  background-color: var(--bs-info-bg-subtle);
+  border-color: var(--bs-info-border-subtle);
 }
 
 .btn-bd-red,

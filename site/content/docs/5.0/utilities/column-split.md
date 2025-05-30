@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Column split
-description: Allow content to be split evenly between 2, 3, or 4 columns within one single column of a grid.
+description: Allow content to be split evenly between 2, 3, or 4 columns within a single column of a grid.<br><span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Utility</span>
 group: utilities
 toc: true
 ---

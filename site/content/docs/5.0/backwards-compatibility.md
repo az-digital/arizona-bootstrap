@@ -15,6 +15,8 @@ Although backwards compatibility is included for some components and utilities a
 
 All items that are included with backwards compatibility are built by extending the classes and styles available in Arizona Bootstrap 5. Any items that were marked as "deprecated" in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the [Removed Utility Classes](#removed-utility-classes) and [Removed Components](#removed-components) sections.
 
+For information on changes made in upstream Bootstrap 5, see the [Migration page](../migration").
+
 
 ## Backwards Compatible Components
 
@@ -82,9 +84,9 @@ The following components are deprecated in Arizona Bootstrap 5 and will be remov
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
 
-## Removed Utility Classes
+## Removed Utilities
 
-Utility classes that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in Arizona Bootstrap 5.
+The following utilities have been removed in Arizona Bootstrap 5.
 
 ### Blockquote Reverse
 
@@ -105,12 +107,24 @@ The legacy `.sans` class has been removed from Arizona Bootstrap 5, which alread
 
 ## Removed Components
 
-Components that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in Arizona Bootstrap 5.
+The following components have been removed in Arizona Bootstrap 5.
 
+### Callout Variants
+
+For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
+ - `.callout-leaf`
+ - `.callout-river`
+ - `.callout-silver`
+ - `.callout-mesa`
+ - `.callout-info`
+ - `.callout-light`
+ - `.callout-dark`
+
+Similar callout variants exist for many of those removed: for example, as a replacement for `.callout-info`, you may use `.callout-sky` instead.
 
 ## Removed JavaScript
 
-Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in {{< ourname >}}. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
+Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
 
 ## Icons
 
