@@ -6,7 +6,7 @@ on:
       version:
         description: The version to tag and release
         required: true
-      pre_release:
+      prerelease:
         description: Is this a pre-release?
         required: false
         default: false
@@ -90,7 +90,7 @@ jobs:
           name: "v${{ github.event.inputs.version }}"
           draft: false
           make_latest: ${{ github.event.inputs.make_latest }}
-          prerelease: ${{ github.event.inputs.pre_release }}
+          prerelease: ${{ github.event.inputs.prerelease }}
 
   dispatch:
     needs: release
@@ -108,4 +108,4 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}", "make_latest": "${{ github.event.inputs.make_latest }}", "pre_release": "${{ github.event.inputs.pre_release }}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}", "make_latest": "${{ github.event.inputs.make_latest }}", "prerelease": "${{ github.event.inputs.prerelease }}"}'
