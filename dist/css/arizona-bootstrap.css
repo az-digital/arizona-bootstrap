@@ -20933,4 +20933,35 @@ h6,
   border-radius: var(--bs-border-radius);
 }
 
+[data-bs-theme=dark] {
+  --bs-body-bg: #0a0c14;
+  --bs-body-color: #fff;
+  --bs-card-bg: #0e1a2b;
+  --bs-dropdown-bg: #0e1a2b;
+  --bs-modal-content-bg: #0e1a2b;
+  --bs-toast-background-color: #0e1a2b;
+  --bs-popover-bg: #0e1a2b;
+  --bs-border-color: #1a2a42;
+  --bs-heading-color: #81d3eb;
+  --bs-blockquote-border-color: #81d3eb;
+  --bs-list-triangle-color: #81d3eb;
+  --bs-link-color: #6a9ac9;
+  --bs-link-hover-color: #8fb3d9;
+  --bs-input-bg: #122139;
+  --bs-input-color: #fff;
+  --bs-input-border-color: #1e3251;
+  --bs-btn-active-bg: #1e3251;
+  --bs-navbar-dark-color: #fff;
+  --bs-navbar-dark-hover-color: #81d3eb;
+  --bs-navbar-dark-active-color: #81d3eb;
+  --bs-table-color: #fff;
+  --bs-table-striped-bg: rgba(255, 255, 255, .05);
+  --bs-table-hover-bg: rgba(255, 255, 255, .075);
+  --bs-accordion-button-bg: #1a2a42;
+  --bs-accordion-button-active-bg: #1e3251;
+  --bs-card-cap-bg: #1a2a42;
+  --bs-dropdown-link-hover-bg: #1e3251;
+  --bs-dropdown-link-active-bg: #243c61;
+}
+
 /*# sourceMappingURL=arizona-bootstrap.css.map */
