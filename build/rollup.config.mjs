@@ -61,7 +61,7 @@ const rollupConfig = {
 }
 
 if (!ESM) {
-  rollupConfig.output.name = 'arizona-bootstrap'
+  rollupConfig.output.name = 'arizonaBootstrap'
 }
 
 export default rollupConfig

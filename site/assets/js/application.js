@@ -11,10 +11,8 @@
 
 /* eslint-disable import/no-unresolved */
 import sidebarScroll from 'js/partials/sidebar.js'
-import codeExamples from 'js/partials/code-examples.js'
 import snippets from 'js/partials/snippets.js'
 /* eslint-enable import/no-unresolved */
 
 sidebarScroll()
-codeExamples()
 snippets()
