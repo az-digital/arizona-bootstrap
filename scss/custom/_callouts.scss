@@ -36,7 +36,7 @@
 }
 
 // Do not create callouts for the "light" and "dark" theme colors.
-@each $color, $value in map-remove($theme-colors, "info", "light", "dark") {
+@each $color, $value in map-remove($theme-colors, "light", "dark") {
   .callout-#{$color} {
     @include callout-variant($color, $value);
   }

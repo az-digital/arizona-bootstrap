@@ -9,9 +9,9 @@ redirect_from:
 toc: true
 ---
 
-## Brand
-
 Callouts call attention to a small portion of content that needs to stand out against the rest of the page. They can be used with [brand colors]({{< docsref "/customize/color#all-colors" >}}) or [theme colors]({{< docsref "/customize/color#theme-colors" >}}).
+
+## Brand
 
 {{< example >}}
 {{< callout.inline >}}
@@ -25,12 +25,17 @@ Callouts call attention to a small portion of content that needs to stand out ag
 {{< /callout.inline >}}
 {{< /example >}}
 
-
 ## Contextual (Theme)
+
+
+<div class="callout callout-azurite">
+  <p><strong>Note:</strong> Although an "info" callout is included below, callouts of any brand color may be used for informational purposes (like this azurite callout).</p>
+</div>
+
 
 {{< example >}}
 {{< callout.inline >}}
-{{ $excluded := slice "info" "light" "dark" }}
+{{ $excluded := slice "light" "dark" }}
 {{ $siteThemeColors := index $.Site.Data "theme-colors" }}
 {{- range $color := where $siteThemeColors "name" "not in" $excluded -}}
   <div class="callout callout-{{ $color.name }}">
