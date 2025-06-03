@@ -19,6 +19,9 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< /callout >}}
 
 ### Brand
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "colors") }}
@@ -38,15 +41,44 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< /example >}}
 
 ### Grayscale
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "grays") }}
-<div class="p-3 mb-2 bg-gray-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
+<div class="p-3 mb-2 bg-gray-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-gray-{{ .name }}</div>
+{{- end -}}
+{{< /colors.inline >}}
+{{< /example >}}
+
+### Transparent
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="p-3 mb-2 bg-transparent-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-transparent-{{ .name }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 {{< /example >}}
 
 ## Background gradient
+
+### Brand Background Colors
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< colors.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="p-3 mb-2 bg-gradient-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-gradient-{{ .name }}</div>
+{{- end -}}
+{{< /colors.inline >}}
+{{< /example >}}
+
+### Upstream Bootstrap Gradient Class
 
 By adding a `.bg-gradient` class, a linear gradient is added as background image to the backgrounds. This gradient starts with a semi-transparent white which fades out to the bottom.
 
