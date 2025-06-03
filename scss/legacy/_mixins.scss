@@ -102,23 +102,3 @@
   color: $badge-text-color;
   background-color: $background;
 }
-
-/*
- * > CALLOUTS
- */
-@mixin callout-variant($color) {
-  border-color: $color;
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
-    color: $color;
-  }
-}

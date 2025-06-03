@@ -1,0 +1,35 @@
+// Mixins for callouts
+
+@use "sass:list";
+@use "sass:map";
+
+@mixin callout-variant($color, $value) {
+  border-color: $value;
+
+  $callout-heading-color: $value;
+  $inaccessible-brand-callouts: "bloom", "sky", "oasis", "cool-gray", "warm-gray";
+
+  // Set the heading color variable to the body color for all theme color callouts.
+  @if map.has-key($theme-colors, $color) {
+    $callout-heading-color: var(--bs-body-color);
+  }
+
+  // Set the heading color if the callout color is not inaccessible.
+  @if not list.index($inaccessible-brand-callouts, $color) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      color: $callout-heading-color;
+    }
+  }
+
+}
