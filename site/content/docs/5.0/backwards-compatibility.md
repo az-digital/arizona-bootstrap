@@ -79,7 +79,16 @@ Arizona Bootstrap 2 contained utility classes that are no longer supported/maint
 
 The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
 
-### Large Tabs
+### Card Classes
+
+These custom Arizona Bootstrap classes are now deprecated:
+
+ - `.card-borderless`: This class can be replaced with `.border-0`.
+ - `.card-clickable` and `.card-clickable-link`: These classes can be replaced with styling using the standard [Stretched Link helper]({{< docsref "/helpers/stretched-link/" >}}) along with our custom [Hover utilities]({{< docsref "/utilities/hover/" >}}). See the [examples on the Card page]({{< docsref "/components/card/#borderless-and-clickable-cards" >}}).
+ - `.card-landing-grid` and `.landing-$color`: The "landing grid" card style from Arizona Bootstrap 2 has been deprecated and should no longer be used.
+
+
+### Nav Tabs Large
 
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
