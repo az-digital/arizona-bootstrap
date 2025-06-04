@@ -25,6 +25,9 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     permissions: write-all
+    outputs:
+      release_sha: ${{ steps.tag.outputs.release_sha }}
+      branch_name: ${{ steps.tag.outputs.branch_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -66,6 +69,7 @@ jobs:
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
 
       - name: Update version and create tag
+        id: tag
         run: |
           sudo touch config.yml
           sudo find . -path "./.git" -prune -o -exec chown 1000:1000 {} \;
@@ -78,8 +82,8 @@ jobs:
           git push
           git tag "v${{ github.event.inputs.version }}"
           git push origin "v${{ github.event.inputs.version }}"
-          echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
-          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
+          echo "release_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "branch_name=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Create Release
         id: create_release
@@ -103,6 +107,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify dependencies
+        env:
+          RELEASE_SHA: ${{needs.release.outputs.release_sha}}
+          BRANCH_NAME: ${{needs.release.outputs.branch_name}}
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
