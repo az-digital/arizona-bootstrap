@@ -125,11 +125,9 @@ For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), th
  - `.callout-river`
  - `.callout-silver`
  - `.callout-mesa`
- - `.callout-info`
  - `.callout-light`
  - `.callout-dark`
 
-Similar callout variants exist for many of those removed: for example, as a replacement for `.callout-info`, you may use `.callout-sky` instead.
 
 ## Removed JavaScript
 

@@ -20702,6 +20702,24 @@ h6,
   color: var(--bs-body-color);
 }
 
+.callout-info {
+  border-color: #81d3eb;
+}
+.callout-info h1,
+.callout-info h2,
+.callout-info h3,
+.callout-info h4,
+.callout-info h5,
+.callout-info h6,
+.callout-info .h1,
+.callout-info .h2,
+.callout-info .h3,
+.callout-info .h4,
+.callout-info .h5,
+.callout-info .h6 {
+  color: var(--bs-body-color);
+}
+
 .callout-warning {
   border-color: #f19e1f;
 }
