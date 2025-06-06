@@ -20,7 +20,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
         <a role="button" data-bs-target="#myGallery" data-bs-slide-to="0">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror" title="">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror">
           </picture>
         </a>
       </div>
@@ -28,29 +28,29 @@ The Photo Gallery component displays a collection of images in a grid layout. In
         <a role="button" data-bs-target="#myGallery" data-bs-slide-to="1">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling">
           </picture>
         </a>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
-        <a role="button" href="#myGallery" data-bs-slide-to="2">
+        <a role="button" data-bs-target="#myGallery" data-bs-slide-to="2">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown" title="">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
           </picture>
         </a>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#myGalleryModal">
-        <a role="button" href="#myGallery" data-bs-slide-to="3">
+        <a role="button" data-bs-target="#myGallery" data-bs-slide-to="3">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles" title="">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
           </picture>
         </a>
       </div>
     </div>
     <!-- Modal -->
-    <div id="myGalleryModal" class="modal fade az-gallery-modal" tabindex="-1" aria-label="Photo Gallery Modal" aria-hidden="true">
+    <div id="myGalleryModal" class="modal fade az-gallery-modal" tabindex="-1" role="dialog" aria-label="Photo Gallery Modal" aria-hidden="true">
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content text-bg-transparent-black">
           <div class="modal-header border-0">
