@@ -90,7 +90,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <h5 class="text-sky mt-0">Third slide label</h5>
-                      <p class="mb-0">University graduate on stage wearing cap and gown</p>
+                      <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
                     </div>
                   </div>
                 </div>
