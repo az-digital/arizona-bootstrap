@@ -1,7 +1,7 @@
 // Overrides for the Carousel component
 
 .carousel-caption {
-  background-color: $transparent-black;
+  @extend .bg-transparent-black;
 }
 .carousel-item {
   position: relative;

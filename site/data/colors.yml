@@ -2,30 +2,35 @@
   hex: "#ab0520"
 - name: bloom
   hex: "#ef4056"
+  contrast_color: black
 - name: chili
   hex: "#8b0015"
 - name: blue
   hex: "#0c234b"
 - name: sky
   hex: "#81d3eb"
+  contrast_color: black
 - name: oasis
   hex: "#378dbd"
+  contrast_color: black
 - name: azurite
   hex: "#1e5288"
 - name: midnight
   hex: "#001c48"
 - name: cool-gray
   hex: "#e2e9eb"
-  contrast_color: dark
+  contrast_color: black
 - name: warm-gray
   hex: "#f4ede5"
-  contrast_color: dark
+  contrast_color: black
 - name: leaf
   hex: "#70b865"
+  contrast_color: black
 - name: river
   hex: "#007d84"
 - name: silver
   hex: "#9eabae"
+  contrast_color: black
 - name: mesa
   hex: "#a95c42"
 - name: ash
@@ -34,6 +39,6 @@
   hex: "#4a634e"
 - name: white
   hex: "#fff"
-  contrast_color: dark
+  contrast_color: black
 - name: black
   hex: "#000"
