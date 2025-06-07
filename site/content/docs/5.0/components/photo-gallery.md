@@ -60,7 +60,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
             <div id="myGallery" class="carousel slide az-gallery">
               <div class="carousel-inner h-100">
                 <div class="carousel-item az-gallery-item active">
-                  <div class="d-flex flex-column h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
@@ -69,7 +69,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
                   </div>
                 </div>
                 <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
@@ -82,7 +82,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
                   </div>
                 </div>
                 <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
@@ -95,7 +95,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
                   </div>
                 </div>
                 <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
