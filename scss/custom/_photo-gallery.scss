@@ -11,10 +11,6 @@
   opacity: 1;
 }
 
-.az-gallery-item {
-  height: 100%;
-}
-
 .az-gallery-image {
   min-height: 0;
 }
@@ -26,4 +22,10 @@
   padding: .75rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+@include media-breakpoint-up(md) {
+  .az-gallery-image {
+    height: 100%;
+  }
 }
