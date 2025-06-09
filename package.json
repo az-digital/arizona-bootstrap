@@ -87,7 +87,7 @@
     "eslint-plugin-unicorn": "^55.0.0",
     "find-unused-sass-variables": "^6.1.0",
     "globby": "^14.0.2",
-    "hugo-bin": "^0.144.6",
+    "hugo-bin": "^0.144.8",
     "jquery": "3.7.1",
     "linkinator": "6.1.2",
     "nodemon": "^3.1.9",
@@ -95,12 +95,12 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.5.2",
     "postcss-cli": "^11.0.1",
-    "rollup": "^4.41.1",
+    "rollup": "^4.42.0",
     "sass": "1.78.0",
     "shelljs": "^0.10.0",
     "stylelint": "^16.18.0",
     "stylelint-config-twbs-bootstrap": "^16.0.0",
-    "terser": "^5.40.0",
+    "terser": "^5.41.0",
     "vnu-jar": "24.10.17"
   },
   "files": [
