@@ -1,5 +1,9 @@
 // Hover utility
 
+.hover .hover-text-underline {
+  text-decoration: none;
+}
+
 .hover:hover,
 .hover:focus {
   .hover-text-underline {
