@@ -1,22 +1,6 @@
 // Overrides to Mixins
 
 /*
- * > ALERTS
- */
-@mixin alert-variant($background) {
-  @include text-color-contrast($background);
-  background-color: $background;
-  border: 0;
-
-  .alert-link {
-    color: $alert-text-color;
-  }
-  hr {
-    border-top-color: $alert-text-color;
-  }
-}
-
-/*
  * > BACKGROUND COLORS
  */
 
