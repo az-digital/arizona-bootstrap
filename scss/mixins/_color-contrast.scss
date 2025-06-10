@@ -2,7 +2,7 @@
 
 @use "sass:list";
 
-@mixin az-color-contrast($bg-color) {
+@mixin az-color-contrast($bg-color-name) {
 
   h1,
   h2,
@@ -19,18 +19,19 @@
     color: inherit;
   }
 
-  $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "info", "light", "gray-100", "gray-200", "gray-300", "gray-400", "gray-500";
-  $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "gray-100", "gray-200", "gray-300", "gray-400", "gray-500";
+  // Gray colors in these variables do not have the gray- prefix to match the $grays sass map.
+  $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "info", "light", "100", "200", "300", "400", "500";
+  $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "100", "200", "300", "400", "500";
 
   // Change the link color if red links should not be used with the background color.
-  @if not list.index($light-background-colors-with-red-links, $bg-color) {
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
     a:not(.btn):not(.nav-link) {
       color: inherit;
     }
   }
 
   // Change the color of the custom triangle marker for list items.
-  @if list.index($light-background-colors, $bg-color) {
+  @if list.index($light-background-colors, $bg-color-name) {
     .ul-triangles li::before {
       border-left-color: $black;
     }
