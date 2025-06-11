@@ -18,10 +18,13 @@
 .az-gallery-caption {
   position: static;
   width: 100%;
-  max-width: 850px;
   padding: .75rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.az-gallery-modal .az-gallery-caption {
+  max-width: 850px;
 }
 
 @include media-breakpoint-up(md) {
