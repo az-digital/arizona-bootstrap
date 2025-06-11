@@ -20,7 +20,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
 <div class="card" style="width: 18rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
-    <h5 class="card-title mt-0">Card title</h5>
+    <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
@@ -466,7 +466,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 {{< example >}}
 <div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 18rem;">
   <div class="card-body d-flex flex-column">
-    <h3 class="card-title mt-0 mb-3 text-left h5 fw-bold">Simple Borderless Card</h3>
+    <h3 class="card-title mb-3 text-left h5 fw-bold">Simple Borderless Card</h3>
     <div class="card-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
@@ -477,7 +477,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 </div>
 <div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 18rem;">
   <div class="card-body d-flex flex-column">
-    <h3 class="card-title mt-0 mb-3 text-left h5 fw-bold hover-text-underline">Clickable Borderless Card</h3>
+    <h3 class="card-title mb-3 text-left h5 fw-bold hover-text-underline">Clickable Borderless Card</h3>
     <div class="card-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
@@ -491,7 +491,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
-    <h3 class="card-title mt-0 mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
+    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
     <div class="card-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>

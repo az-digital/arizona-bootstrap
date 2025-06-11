@@ -4,6 +4,11 @@
 
 // >> Card header and footer
 
+// Remove top margin from card title
+.card-title {
+  margin-top: 0;
+}
+
 // Set default background color
 .card:not([class*=" text-bg-"]) > {
   .card-header,
