@@ -20,7 +20,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
         <a role="button" data-bs-target="#myGallery" data-bs-slide-to="0">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="A hand holding a little mirror">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
           </picture>
         </a>
       </div>
@@ -28,7 +28,7 @@ The Photo Gallery component displays a collection of images in a grid layout. In
         <a role="button" data-bs-target="#myGallery" data-bs-slide-to="1">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="University of Arizona Spring Fling">
+            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
           </picture>
         </a>
       </div>
@@ -59,30 +59,30 @@ The Photo Gallery component displays a collection of images in a grid layout. In
           <div class="modal-body">
             <div id="myGallery" class="carousel slide az-gallery">
               <div class="carousel-inner h-100">
-                <div class="carousel-item az-gallery-item active">
-                  <div class="d-flex flex-column h-100">
+                <div class="carousel-item az-gallery-item h-100 active">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
-                        <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+                        <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
-                        <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+                        <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <h5 class="text-sky mt-0">Second slide label</h5>
-                      <p class="mb-0">University of Arizona Spring Fling</p>
+                      <p class="mb-0">A hand holding a little mirror</p>
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
@@ -90,12 +90,12 @@ The Photo Gallery component displays a collection of images in a grid layout. In
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <h5 class="text-sky mt-0">Third slide label</h5>
-                      <p class="mb-0">University graduate on stage wearing cap and gown</p>
+                      <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item">
-                  <div class="d-flex flex-column h-100">
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <div class="h-100">
                         <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
