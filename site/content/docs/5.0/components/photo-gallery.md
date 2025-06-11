@@ -37,7 +37,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
                 </div>
               </div>
               <div class="carousel-caption az-gallery-caption">
-                <h3 class="text-sky mt-0 h5">Second slide label</h5>
+                <h3 class="text-sky mt-0 h5">Second slide label</h3>
                 <p class="mb-0">A hand holding a little mirror</p>
               </div>
             </div>
@@ -50,7 +50,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
                 </div>
               </div>
               <div class="carousel-caption az-gallery-caption">
-                <h3 class="text-sky mt-0 h5">Third slide label</h5>
+                <h3 class="text-sky mt-0 h5">Third slide label</h3>
                 <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
                 </div>
               </div>
               <div class="carousel-caption az-gallery-caption">
-                <h3 class="text-sky mt-0 h5">Fourth slide label</h5>
+                <h3 class="text-sky mt-0 h5">Fourth slide label</h3>
                 <p class="mb-0">Ceiling tiles<br>This caption is multiple lines.<br>The image size should adjust automatically.</p>
               </div>
             </div>
@@ -151,7 +151,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Second slide label</h5>
+                      <h2 class="text-sky mt-0 h5">Second slide label</h2>
                       <p class="mb-0">A hand holding a little mirror</p>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Third slide label</h5>
+                      <h2 class="text-sky mt-0 h5">Third slide label</h2>
                       <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Fourth slide label</h5>
+                      <h2 class="text-sky mt-0 h5">Fourth slide label</h2>
                       <p class="mb-0">Ceiling tiles<br>This caption is multiple lines.<br>The image size should adjust automatically.</p>
                     </div>
                   </div>
