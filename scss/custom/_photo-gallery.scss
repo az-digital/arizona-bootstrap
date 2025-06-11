@@ -11,23 +11,12 @@
   opacity: 1;
 }
 
-.az-gallery-item {
-  height: 100%;
-}
-
-.az-gallery-item > .d-flex {
-  justify-content: center;
-}
-
 .az-gallery-image {
   min-height: 0;
 }
 
 .az-gallery-caption {
-  position: absolute;
-  right: unset;
-  bottom: 0;
-  left: unset;
+  position: static;
   width: 100%;
   max-width: 850px;
   padding: .75rem;
@@ -36,11 +25,7 @@
 }
 
 @include media-breakpoint-up(md) {
-  .az-gallery-item > .d-flex {
-    justify-content: start;
-  }
-
-  .az-gallery-caption {
-    position: static;
+  .az-gallery-image {
+    height: 100%;
   }
 }
