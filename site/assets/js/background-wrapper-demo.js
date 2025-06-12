@@ -1,84 +1,70 @@
-(function ($) {
-  'use strict'
+/*
+ * JavaScript for the live demo on the Background Wrappers component page.
+ */
 
-  // BACKGROUND COLOR
-  $('.btn-background-wrapper-demo').click(function () {
-    // store background color class
-    var backgroundColor = $(this).data('bgcolor')
-    var backgroundColorClass = 'bg-' + backgroundColor
+'use strict';
+
+// Background Color
+document.querySelectorAll('.btn-background-wrapper-demo').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const backgroundColor = btn.dataset.bgcolor;
+    const backgroundColorClass = `text-bg-${backgroundColor}`;
+    const wrapper = document.getElementById('background-wrapper-live-demo');
 
     // remove background color if button already active
-    if ($(this).hasClass('demo-active')) {
-      $(this).removeClass('demo-active')
-      $('#background-wrapper-live-demo').removeClass(backgroundColorClass)
-    // else, apply new background color
+    if (btn.classList.contains('demo-active')) {
+      btn.classList.remove('demo-active');
+      wrapper.classList.remove(backgroundColorClass);
     } else {
       // get information about current classes applied
-      var wrapperClassList = $('#background-wrapper-live-demo').attr('class').split(' ')
-      var classesToRemove = []
-
-      // find background color class; only push .bg-{color} and not .bg-triangles-*
-      var i
-      for (i = 0; i < wrapperClassList.length; i++) {
-        if (wrapperClassList[i].indexOf('bg-triangles') < 0 && wrapperClassList[i] !== 'background-wrapper' && wrapperClassList[i] !== 'bg-trilines') {
-          classesToRemove.push(wrapperClassList[i])
-        }
-      }
+      const wrapperClassList = wrapper.className.split(' ');
+      const classesToRemove = wrapperClassList.filter(cls =>
+        cls !== 'background-wrapper' &&
+        cls !== 'bg-trilines' &&
+        !cls.startsWith('bg-triangles')
+      );
 
       // toggle the active button
-      $('.btn-background-wrapper-demo').removeClass('demo-active')
-      $(this).addClass('demo-active')
+      document.querySelectorAll('.btn-background-wrapper-demo').forEach(b => b.classList.remove('demo-active'));
+      btn.classList.add('demo-active');
 
       // remove any existing background color class
-      if (classesToRemove.length > 0) {
-        for (i = 0; i < classesToRemove.length; i++) {
-          $('#background-wrapper-live-demo').removeClass(classesToRemove[i])
-        }
-      }
+      classesToRemove.forEach(cls => wrapper.classList.remove(cls));
 
       // apply new background color
-      $('#background-wrapper-live-demo').addClass(backgroundColorClass)
+      wrapper.classList.add(backgroundColorClass);
     }
-  })
+  });
+});
 
-  // BACKGROUND TRIANGLES
-  $('.btn-triangle-background-demo').click(function () {
-    // store triangle class
-    var trianglePattern = $(this).data('triangles')
-    var backgroundPatternClass = 'bg-' + trianglePattern
+// Background Patterns
+document.querySelectorAll('.btn-triangle-background-demo').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const trianglePattern = btn.dataset.triangles;
+    const backgroundPatternClass = `bg-${trianglePattern}`;
+    const wrapper = document.getElementById('background-wrapper-live-demo');
 
     // remove background pattern if button already active
-    if ($(this).hasClass('demo-active')) {
-      $(this).removeClass('demo-active')
-      $('#background-wrapper-live-demo').removeClass(backgroundPatternClass)
-    // else, apply new background pattern
+    if (btn.classList.contains('demo-active')) {
+      btn.classList.remove('demo-active');
+      wrapper.classList.remove(backgroundPatternClass);
     } else {
       // get information about current classes applied
-      var wrapperClassList = $('#background-wrapper-live-demo').attr('class').split(' ')
-      var classesToRemove = []
-
-      // find background pattern class; only push .bg-triangles-* and not .bg-{color}
-      var i
-      for (i = 0; i < wrapperClassList.length; i++) {
-        if ((wrapperClassList[i].indexOf('bg-triangles') >= 0 || wrapperClassList[i] === 'bg-trilines') && wrapperClassList[i] !== 'background-wrapper') {
-          classesToRemove.push(wrapperClassList[i])
-        }
-      }
+      const wrapperClassList = wrapper.className.split(' ');
+      const classesToRemove = wrapperClassList.filter(cls =>
+        cls !== 'background-wrapper' &&
+        (cls.startsWith('bg-triangles') || cls === 'bg-trilines')
+      );
 
       // toggle the active button
-      $('.btn-triangle-background-demo').removeClass('demo-active')
-      $(this).addClass('demo-active')
+      document.querySelectorAll('.btn-triangle-background-demo').forEach(b => b.classList.remove('demo-active'));
+      btn.classList.add('demo-active');
 
       // remove any existing background triangle classes
-      if (classesToRemove.length > 0) {
-        for (i = 0; i < classesToRemove.length; i++) {
-          $('#background-wrapper-live-demo').removeClass(classesToRemove[i])
-        }
-      }
+      classesToRemove.forEach(cls => wrapper.classList.remove(cls));
 
       // apply new background triangle class
-      $('#background-wrapper-live-demo').addClass(backgroundPatternClass)
+      wrapper.classList.add(backgroundPatternClass);
     }
-  })
-})(jQuery)
-
+  });
+});
