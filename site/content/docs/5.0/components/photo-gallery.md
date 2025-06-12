@@ -91,7 +91,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
 <div class="bd-example">
   <div class="container az-gallery-container">
     <div class="row">
-      <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="0">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
@@ -99,7 +99,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
           </picture>
         </a>
       </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="1">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
@@ -107,7 +107,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
           </picture>
         </a>
       </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="2">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
@@ -115,7 +115,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
           </picture>
         </a>
       </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 px-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="3">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
