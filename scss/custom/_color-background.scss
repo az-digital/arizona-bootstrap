@@ -1,0 +1,39 @@
+//
+// > Custom Color and Background helper classes
+//
+
+// >>> Brand
+@each $color, $value in $colors {
+  .text-bg-#{$color} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+  }
+}
+
+// >>> Grays
+@each $color, $value in $grays {
+  .text-bg-gray-#{$color} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    background-color: $value if($enable-important-utilities, !important, null);
+  }
+}
+
+// >>> Transparent
+@each $color, $value in $colors {
+  .text-bg-transparent-#{$color} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    @include background-transparent($value);
+  }
+}
+
+// >>> Gradient
+@each $color, $value in $colors {
+  .text-bg-gradient-#{$color} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    @include background-gradient($value);
+  }
+}
+
+.text-bg-dark .btn-close {
+  color: $white;
+}
