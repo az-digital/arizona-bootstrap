@@ -4,8 +4,8 @@
   @include border-radius();
 
   .az-gallery-caption {
-    background-color: unset;
     color: revert;
+    background-color: unset;
   }
 }
 
