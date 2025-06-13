@@ -2,9 +2,9 @@
  * JavaScript for the live demo on the Background Wrappers component page.
  */
 
-'use strict';
+(() => {
+  'use strict';
 
-export default () => {
   // Background Color
   document.querySelectorAll('.btn-background-wrapper-demo').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -69,4 +69,4 @@ export default () => {
       }
     });
   });
-}
+})();

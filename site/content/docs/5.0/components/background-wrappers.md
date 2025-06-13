@@ -53,3 +53,5 @@ Click on the background color options below to see a live preview of what the ba
 </div>
 {{< /example >}}
 
+<!-- Include JavaScript for Background Wrapper demo -->
+<script defer src="{{< docsrefazold `/assets/js/background-wrapper-demo.js` >}}"></script>
