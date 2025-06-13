@@ -1,8 +1,22 @@
 // Photo Gallery custom component
 
+.az-gallery-container:not(:has(.az-gallery-modal)) {
+  @include border-radius();
+
+  .az-gallery-caption {
+    background-color: unset;
+    color: revert;
+  }
+}
+
 .az-gallery {
   width: 100%;
   height: 100%;
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: drop-shadow(0 0 2px rgb(0, 0, 0)) drop-shadow(0 0 1px rgb(0, 0, 0));
+  }
 }
 
 .az-gallery-modal .btn-close {
