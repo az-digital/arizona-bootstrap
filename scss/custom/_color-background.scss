@@ -2,35 +2,46 @@
 // > Custom Color and Background helper classes
 //
 
-// >>> Brand
+// >> Brand
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    @include az-color-contrast($color);
   }
 }
 
-// >>> Grays
+// >> Theme Colors (only adds the custom color contrast mixin)
+@each $color, $value in $theme-colors {
+  .text-bg-#{$color} {
+    @include az-color-contrast($color);
+  }
+}
+
+// >> Grays
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     background-color: $value if($enable-important-utilities, !important, null);
+    @include az-color-contrast($color);
   }
 }
 
-// >>> Transparent
+// >> Brand Transparent
 @each $color, $value in $colors {
   .text-bg-transparent-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     @include background-transparent($value);
+    @include az-color-contrast($color);
   }
 }
 
-// >>> Gradient
+// >> Brand Gradient
 @each $color, $value in $colors {
   .text-bg-gradient-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     @include background-gradient($value);
+    @include az-color-contrast($color);
   }
 }
 
