@@ -1,19 +1,5 @@
 // Overrides to Mixins
 
-/*
- * > BACKGROUND COLORS
- */
-
-// >> Transparent Backgrounds
-@mixin background-transparent($bg-color) {
-  background-color: rgba($bg-color, .8);
-}
-
-// >> Gradient Backgrounds
-@mixin background-gradient($bg-color) {
-  background-image: linear-gradient(180deg, transparent, $bg-color);
-}
-
 // >> Text Color Contrast Check
 @mixin text-color-contrast($bg-color) {
   @if $bg-color == $bloom or $bg-color == $white or $bg-color == $sky or $bg-color == $oasis or $bg-color == $cool-gray or $bg-color == $warm-gray or $bg-color == $silver or $bg-color == $leaf or $bg-color == $warning or $bg-color == $light or $bg-color == $gray-100 or $bg-color == $gray-200 or $bg-color == $gray-300 or $bg-color == $gray-400 or $bg-color == $gray-500 {

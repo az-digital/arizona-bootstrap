@@ -17,6 +17,9 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< /callout >}}
 
 ### Brand
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "colors") }}
@@ -37,6 +40,42 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< callout info >}}
 {{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
+
+### Grayscale
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "grays") }}
+<div class="text-bg-gray-{{ .name }} p-3">.gray-{{ .name | title }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
+### Transparent
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="text-bg-transparent-{{ .name }} p-3">.text-bg-transparent-{{ .name }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
+### Gradient
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="text-bg-gradient-{{ .name }} p-3">.text-bg-gradient-{{ .name }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
 
 ## With components
 
