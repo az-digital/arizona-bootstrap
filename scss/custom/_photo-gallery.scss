@@ -1,8 +1,6 @@
 // Photo Gallery custom component
 
-.az-gallery-container:not(:has(.az-gallery-modal)) {
-  @include border-radius();
-
+.az-gallery-slider-full {
   .az-gallery-caption {
     color: revert;
     background-color: unset;
@@ -44,5 +42,15 @@
 @include media-breakpoint-up(md) {
   .az-gallery-image {
     height: 100%;
+  }
+}
+
+/* Temporary (?) styling for Slider Crop option */
+.az-gallery-slider-crop {
+  .az-gallery-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }

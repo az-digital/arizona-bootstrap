@@ -8,7 +8,7 @@ toc: true
 
 ## About
 
-The custom Photo Gallery component uses Bootstrap carousel and modal components to allow users to browse a collection of images. The Photo Gallery has two display options: Grid and Slider.
+The custom Photo Gallery component uses Bootstrap [carousel]({{< docsref "/components/carousel" >}}) and [modal]({{< docsref "/components/modal" >}}) components to allow users to browse a collection of images. The Photo Gallery has two display options: Grid and Slider.
 
 ## Grid
 
@@ -78,8 +78,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Second slide label</h2>
-                      <p class="mb-0">A hand holding a little mirror</p>
+                      <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
                     </div>
                   </div>
                 </div>
@@ -91,8 +90,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Third slide label</h2>
-                      <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
+                      <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
                     </div>
                   </div>
                 </div>
@@ -104,8 +102,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       </div>
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <h2 class="text-sky mt-0 h5">Fourth slide label</h2>
-                      <p class="mb-0">Ceiling tiles<br>This caption is multiple lines.<br>The image size should adjust automatically.</p>
+                      <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image size should adjust automatically.</p>
                     </div>
                   </div>
                 </div>
@@ -129,12 +126,16 @@ With the Grid display, all images in the gallery are presented in a grid layout.
 
 ## Slider
 
-With the Slider display, a carousel allows users to scroll through the gallery of images. In the example below, note that the inner border with rounded corners is part of the component styling.
+With the Slider display, a carousel allows users to scroll through the gallery of images. In the examples below, note that the inner border with rounded corners is part of the component styling.
+
+### Full Image Style
+
+Slider Photo Galleries using the "full image style" make use of the [object fit utilities]({{< docsref "/utilities/object-fit" >}}) to ensure that each image is shown in its entirety, without cropping or being covered by any caption text.
 
 {{< example >}}
-<div class="az-gallery-container border p-2">
+<div class="az-gallery-container border rounded p-2">
   <div class="ratio ratio-4x3">
-    <div id="sliderGallery" class="carousel slide az-gallery">
+    <div id="sliderGallery" class="carousel slide az-gallery az-gallery-slider-full">
       <div class="carousel-inner h-100">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
@@ -153,8 +154,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
               </div>
             </div>
             <div class="carousel-caption az-gallery-caption">
-              <h3 class="h5 mt-0">Second slide label</h3>
-              <p class="mb-0">A hand holding a little mirror</p>
+              <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
             </div>
           </div>
         </div>
@@ -166,8 +166,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
               </div>
             </div>
             <div class="carousel-caption az-gallery-caption">
-              <h3 class="h5 mt-0">Third slide label</h3>
-              <p class="mb-0">University graduate on stage<br>wearing cap and gown</p>
+              <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
             </div>
           </div>
         </div>
@@ -179,8 +178,7 @@ With the Slider display, a carousel allows users to scroll through the gallery o
               </div>
             </div>
             <div class="carousel-caption az-gallery-caption">
-              <h3 class="h5 mt-0">Fourth slide label</h3>
-              <p class="mb-0">Ceiling tiles<br>This caption is multiple lines.<br>The image size should adjust automatically.</p>
+              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
             </div>
           </div>
         </div>
@@ -190,6 +188,138 @@ With the Slider display, a carousel allows users to scroll through the gallery o
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+The aspect ratio of the Slider Photo Gallery can be changed by simply setting a different `ratio-*` class (see the [ratio helper classes]({{< docsref "/helpers/ratio" >}})). The photo gallery example uses the `ratio-4x3`. The photo gallery below uses the `ratio-16x9` class.
+
+<div class="az-gallery-container border rounded p-2">
+  <div class="ratio ratio-16x9">
+    <div id="sliderGallery16x9" class="carousel slide az-gallery az-gallery-slider-full">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item az-gallery-item h-100 active">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+### Crop Image Style
+
+As an alternative, the "crop image style" uses the `object-fit-cover` class to have the images fill the gallery container, with cropping as needed either horizontally or vertically. This style also allows caption text to overlay the image.
+
+{{< example >}}
+<div class="az-gallery-container border rounded p-2">
+  <div class="ratio ratio-4x3">
+    <div id="sliderGalleryCrop" class="carousel slide az-gallery az-gallery-slider-crop">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item az-gallery-item h-100 active">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University of Arizona Spring Fling">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="A hand holding a little mirror">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University graduate on stage wearing cap and gown">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item az-gallery-item h-100">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <div class="carousel-image az-gallery-image">
+              <div class="h-100">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University of Arizona Spring Fling">
+              </div>
+            </div>
+            <div class="carousel-caption az-gallery-caption">
+              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image size is not affected by the caption size.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
