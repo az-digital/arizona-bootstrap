@@ -21620,12 +21620,12 @@ h6,
   background-blend-mode: multiply;
 }
 
-.bg-red.bg-triangles-top-left {
+.text-bg-red.bg-triangles-top-left {
   background-image: url("img/triangles-top-left-red.svg");
   background-blend-mode: initial;
 }
 
-.bg-blue.bg-triangles-top-left {
+.text-bg-blue.bg-triangles-top-left {
   background-image: url("img/triangles-top-left-blue.svg");
   background-blend-mode: initial;
 }
@@ -21638,12 +21638,12 @@ h6,
   background-blend-mode: multiply;
 }
 
-.bg-red.bg-triangles-top-right {
+.text-bg-red.bg-triangles-top-right {
   background-image: url("img/triangles-top-right-red.svg");
   background-blend-mode: initial;
 }
 
-.bg-blue.bg-triangles-top-right {
+.text-bg-blue.bg-triangles-top-right {
   background-image: url("img/triangles-top-right-blue.svg");
   background-blend-mode: initial;
 }
@@ -21651,17 +21651,17 @@ h6,
 .bg-triangles-centered {
   background-image: url("img/triangles-centered.svg");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center center;
   background-size: auto;
   background-blend-mode: multiply;
 }
 
-.bg-red.bg-triangles-centered {
+.text-bg-red.bg-triangles-centered {
   background-image: url("img/triangles-centered-red.svg");
   background-blend-mode: initial;
 }
 
-.bg-blue.bg-triangles-centered {
+.text-bg-blue.bg-triangles-centered {
   background-image: url("img/triangles-centered-blue.svg");
   background-blend-mode: initial;
 }
@@ -21678,94 +21678,94 @@ h6,
 .bg-trilines hr {
   background-color: rgba(255, 255, 255, 0.7);
 }
-.bg-trilines.bg-red p,
-.bg-trilines.bg-red li,
-.bg-trilines.bg-red hr {
+.bg-trilines.text-bg-red p,
+.bg-trilines.text-bg-red li,
+.bg-trilines.text-bg-red hr {
   background-color: rgba(171, 5, 32, 0.7);
 }
-.bg-trilines.bg-bloom p,
-.bg-trilines.bg-bloom li,
-.bg-trilines.bg-bloom hr {
+.bg-trilines.text-bg-bloom p,
+.bg-trilines.text-bg-bloom li,
+.bg-trilines.text-bg-bloom hr {
   background-color: rgba(239, 64, 86, 0.7);
 }
-.bg-trilines.bg-chili p,
-.bg-trilines.bg-chili li,
-.bg-trilines.bg-chili hr {
+.bg-trilines.text-bg-chili p,
+.bg-trilines.text-bg-chili li,
+.bg-trilines.text-bg-chili hr {
   background-color: rgba(139, 0, 21, 0.7);
 }
-.bg-trilines.bg-blue p,
-.bg-trilines.bg-blue li,
-.bg-trilines.bg-blue hr {
+.bg-trilines.text-bg-blue p,
+.bg-trilines.text-bg-blue li,
+.bg-trilines.text-bg-blue hr {
   background-color: rgba(12, 35, 75, 0.7);
 }
-.bg-trilines.bg-sky p,
-.bg-trilines.bg-sky li,
-.bg-trilines.bg-sky hr {
+.bg-trilines.text-bg-sky p,
+.bg-trilines.text-bg-sky li,
+.bg-trilines.text-bg-sky hr {
   background-color: rgba(129, 211, 235, 0.7);
 }
-.bg-trilines.bg-oasis p,
-.bg-trilines.bg-oasis li,
-.bg-trilines.bg-oasis hr {
+.bg-trilines.text-bg-oasis p,
+.bg-trilines.text-bg-oasis li,
+.bg-trilines.text-bg-oasis hr {
   background-color: rgba(55, 141, 189, 0.7);
 }
-.bg-trilines.bg-azurite p,
-.bg-trilines.bg-azurite li,
-.bg-trilines.bg-azurite hr {
+.bg-trilines.text-bg-azurite p,
+.bg-trilines.text-bg-azurite li,
+.bg-trilines.text-bg-azurite hr {
   background-color: rgba(30, 82, 136, 0.7);
 }
-.bg-trilines.bg-midnight p,
-.bg-trilines.bg-midnight li,
-.bg-trilines.bg-midnight hr {
+.bg-trilines.text-bg-midnight p,
+.bg-trilines.text-bg-midnight li,
+.bg-trilines.text-bg-midnight hr {
   background-color: rgba(0, 28, 72, 0.7);
 }
-.bg-trilines.bg-cool-gray p,
-.bg-trilines.bg-cool-gray li,
-.bg-trilines.bg-cool-gray hr {
+.bg-trilines.text-bg-cool-gray p,
+.bg-trilines.text-bg-cool-gray li,
+.bg-trilines.text-bg-cool-gray hr {
   background-color: rgba(226, 233, 235, 0.7);
 }
-.bg-trilines.bg-warm-gray p,
-.bg-trilines.bg-warm-gray li,
-.bg-trilines.bg-warm-gray hr {
+.bg-trilines.text-bg-warm-gray p,
+.bg-trilines.text-bg-warm-gray li,
+.bg-trilines.text-bg-warm-gray hr {
   background-color: rgba(244, 237, 229, 0.7);
 }
-.bg-trilines.bg-leaf p,
-.bg-trilines.bg-leaf li,
-.bg-trilines.bg-leaf hr {
+.bg-trilines.text-bg-leaf p,
+.bg-trilines.text-bg-leaf li,
+.bg-trilines.text-bg-leaf hr {
   background-color: rgba(112, 184, 101, 0.7);
 }
-.bg-trilines.bg-river p,
-.bg-trilines.bg-river li,
-.bg-trilines.bg-river hr {
+.bg-trilines.text-bg-river p,
+.bg-trilines.text-bg-river li,
+.bg-trilines.text-bg-river hr {
   background-color: rgba(0, 125, 132, 0.7);
 }
-.bg-trilines.bg-silver p,
-.bg-trilines.bg-silver li,
-.bg-trilines.bg-silver hr {
+.bg-trilines.text-bg-silver p,
+.bg-trilines.text-bg-silver li,
+.bg-trilines.text-bg-silver hr {
   background-color: rgba(158, 171, 174, 0.7);
 }
-.bg-trilines.bg-mesa p,
-.bg-trilines.bg-mesa li,
-.bg-trilines.bg-mesa hr {
+.bg-trilines.text-bg-mesa p,
+.bg-trilines.text-bg-mesa li,
+.bg-trilines.text-bg-mesa hr {
   background-color: rgba(169, 92, 66, 0.7);
 }
-.bg-trilines.bg-ash p,
-.bg-trilines.bg-ash li,
-.bg-trilines.bg-ash hr {
+.bg-trilines.text-bg-ash p,
+.bg-trilines.text-bg-ash li,
+.bg-trilines.text-bg-ash hr {
   background-color: rgba(64, 54, 53, 0.7);
 }
-.bg-trilines.bg-sage p,
-.bg-trilines.bg-sage li,
-.bg-trilines.bg-sage hr {
+.bg-trilines.text-bg-sage p,
+.bg-trilines.text-bg-sage li,
+.bg-trilines.text-bg-sage hr {
   background-color: rgba(74, 99, 78, 0.7);
 }
-.bg-trilines.bg-white p,
-.bg-trilines.bg-white li,
-.bg-trilines.bg-white hr {
+.bg-trilines.text-bg-white p,
+.bg-trilines.text-bg-white li,
+.bg-trilines.text-bg-white hr {
   background-color: rgba(255, 255, 255, 0.7);
 }
-.bg-trilines.bg-black p,
-.bg-trilines.bg-black li,
-.bg-trilines.bg-black hr {
+.bg-trilines.text-bg-black p,
+.bg-trilines.text-bg-black li,
+.bg-trilines.text-bg-black hr {
   background-color: rgba(0, 0, 0, 0.7);
 }
 

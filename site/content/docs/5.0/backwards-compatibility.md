@@ -122,6 +122,10 @@ The legacy `.sans` class has been removed from Arizona Bootstrap 5, which alread
 
 The following components have been removed in Arizona Bootstrap 5.
 
+### Background Wrapper Patterns
+
+The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.
+
 ### Callout Variants
 
 For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
