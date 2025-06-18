@@ -10,12 +10,14 @@ toc: true
 
 Add a text underline on hover with the `.hover` class on the parent element and the `.hover-text-underline` class on the target child element.
 
+When the element with the `.hover` class does **not** have an active hover state, the `.hover-text-underline` class will remove any existing underline (such as the [underline applied to links]({{< docsref "/content/reboot#links" >}}) by default).
+
 {{< example >}}
 <div class="card hover" style="width: 18rem;">
   <div class="card-body">
     <h2 class="card-title mt-0 h4 hover-text-underline">This is a card title</h2>
-    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
-    <a class="stretched-link" href="#">This is a link</a>
+    <p>This card's title and link should have an underline applied when it receives hover or focus anywhere on the card.</p>
+    <a class="stretched-link hover-text-underline" href="#">This is a link</a>
   </div>
 </div>
 {{< /example >}}
