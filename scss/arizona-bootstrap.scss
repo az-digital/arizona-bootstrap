@@ -60,23 +60,28 @@
 
 // Arizona Bootstrap imports.
 @import "deprecated/accordion";
+@import "deprecated/card";
 @import "deprecated/nav";
 @import "legacy/mixins";
+@import "mixins/background";
+@import "mixins/buttons";
+@import "mixins/callouts";
+@import "mixins/az-color-contrast";
 @import "override/reboot";
 @import "custom/styles";
 @import "custom/typography";
 @import "override/typography";
 @import "override/accordion";
+@import "custom/background";
 @import "legacy/badge";
 @import "override/breadcrumb";
-@import "mixins/buttons";
 @import "override/buttons";
 @import "custom/buttons";
 @import "override/button-group";
 @import "custom/button-group";
-@import "legacy/card";
 @import "custom/card";
 @import "custom/card-dark";
+@import "custom/color-background";
 @import "override/dropdown";
 @import "override/nav";
 @import "override/navbar";
@@ -86,7 +91,6 @@
 @import "custom/background-wrapper-dark";
 @import "legacy/background-wrapper";
 @import "custom/hover";
-@import "mixins/callouts";
 @import "custom/callouts";
 @import "legacy/table";
 @import "legacy/tooltip";
