@@ -33,6 +33,13 @@
   padding-bottom: 1em;
 }
 
+// >> Background image class for the Background utilities page and Color and Background helpers page
+.az-bootstrap-bg-image {
+  background-image: url("/docs/5.0/assets/img/photo-gallery-demo/gallery-img-1.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
 //
 // > NAV
 //

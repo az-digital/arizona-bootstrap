@@ -59,8 +59,11 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 
 {{< example >}}
 {{< text-bg.inline >}}
-{{- range (index $.Site.Data "colors") }}
-<div class="text-bg-transparent-{{ .name }} p-3">.text-bg-transparent-{{ .name }} with contrasting color</div>
+{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+{{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
+<div class="az-bootstrap-bg-image">
+  <div class="text-bg-transparent-{{ $color.name }} p-3">.text-bg-transparent-{{ $color.name }} with contrasting color</div>
+</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
@@ -71,8 +74,9 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 
 {{< example >}}
 {{< text-bg.inline >}}
-{{- range (index $.Site.Data "colors") }}
-<div class="text-bg-gradient-{{ .name }} p-3">.text-bg-gradient-{{ .name }} with contrasting color</div>
+{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+{{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
+<div class="text-bg-gradient-{{ $color.name }} p-3">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
