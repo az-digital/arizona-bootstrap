@@ -19205,63 +19205,31 @@ h6,
   background-image: linear-gradient(180deg, transparent, #000);
 }
 
-.badge-success {
+.badge.text-bg-light {
   color: #001c48;
-  background-color: #70b865;
 }
 
-.badge-info {
-  color: #001c48;
-  background-color: #81d3eb;
+/* stylelint-disable declaration-no-important */
+.badge.badge-link:hover,
+.badge.badge-link:focus {
+  text-decoration: none;
+}
+.badge.badge-link:hover.text-bg-chili,
+.badge.badge-link:focus.text-bg-chili {
+  color: #fff !important;
+  background-color: #ab0520 !important;
+}
+.badge.badge-link:hover.text-bg-midnight,
+.badge.badge-link:focus.text-bg-midnight {
+  color: #fff !important;
+  background-color: #1e5288 !important;
+}
+.badge.badge-link:hover.text-bg-light,
+.badge.badge-link:focus.text-bg-light {
+  background-color: #e9ecef !important;
 }
 
-.badge-warning {
-  color: #000;
-  background-color: #f19e1f;
-}
-
-.badge-danger {
-  color: #fff;
-  background-color: #a95c42;
-}
-
-.badge-light {
-  color: #001c48;
-  background-color: #dee2e6;
-}
-
-.badge-dark {
-  color: #fff;
-  background-color: #343a40;
-}
-
-.badge-red {
-  color: #fff;
-  background-color: #8b0015;
-}
-.badge-red.badge-link:hover {
-  color: #fff;
-  background-color: #ab0520;
-}
-
-.badge-blue {
-  color: #fff;
-  background-color: #0c234b;
-}
-.badge-blue.badge-link:hover {
-  color: #fff;
-  background-color: #1e5288;
-}
-
-.btn .badge-light {
-  color: #001c48;
-  background-color: #e2e9eb;
-}
-
-.badge-pill {
-  border-radius: 0.25rem;
-}
-
+/* stylelint-enable declaration-no-important */
 .breadcrumb {
   display: -ms-flexbox;
   display: flex;
@@ -19496,315 +19464,1659 @@ h6,
   color: #fff !important;
   background-color: RGBA(var(--bs-red-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-red h1,
+.text-bg-red h2,
+.text-bg-red h3,
+.text-bg-red h4,
+.text-bg-red h5,
+.text-bg-red h6,
+.text-bg-red .h1,
+.text-bg-red .h2,
+.text-bg-red .h3,
+.text-bg-red .h4,
+.text-bg-red .h5,
+.text-bg-red .h6 {
+  color: inherit;
+}
+.text-bg-red a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-red .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-bloom {
   color: #000 !important;
   background-color: RGBA(var(--bs-bloom-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-bloom h1,
+.text-bg-bloom h2,
+.text-bg-bloom h3,
+.text-bg-bloom h4,
+.text-bg-bloom h5,
+.text-bg-bloom h6,
+.text-bg-bloom .h1,
+.text-bg-bloom .h2,
+.text-bg-bloom .h3,
+.text-bg-bloom .h4,
+.text-bg-bloom .h5,
+.text-bg-bloom .h6 {
+  color: inherit;
+}
+.text-bg-bloom a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-bloom .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-chili {
   color: #fff !important;
   background-color: RGBA(var(--bs-chili-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-chili h1,
+.text-bg-chili h2,
+.text-bg-chili h3,
+.text-bg-chili h4,
+.text-bg-chili h5,
+.text-bg-chili h6,
+.text-bg-chili .h1,
+.text-bg-chili .h2,
+.text-bg-chili .h3,
+.text-bg-chili .h4,
+.text-bg-chili .h5,
+.text-bg-chili .h6 {
+  color: inherit;
+}
+.text-bg-chili a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-chili .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-blue {
   color: #fff !important;
   background-color: RGBA(var(--bs-blue-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-blue h1,
+.text-bg-blue h2,
+.text-bg-blue h3,
+.text-bg-blue h4,
+.text-bg-blue h5,
+.text-bg-blue h6,
+.text-bg-blue .h1,
+.text-bg-blue .h2,
+.text-bg-blue .h3,
+.text-bg-blue .h4,
+.text-bg-blue .h5,
+.text-bg-blue .h6 {
+  color: inherit;
+}
+.text-bg-blue a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-blue .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-sky {
   color: #000 !important;
   background-color: RGBA(var(--bs-sky-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-sky h1,
+.text-bg-sky h2,
+.text-bg-sky h3,
+.text-bg-sky h4,
+.text-bg-sky h5,
+.text-bg-sky h6,
+.text-bg-sky .h1,
+.text-bg-sky .h2,
+.text-bg-sky .h3,
+.text-bg-sky .h4,
+.text-bg-sky .h5,
+.text-bg-sky .h6 {
+  color: inherit;
+}
+.text-bg-sky a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-sky .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-oasis {
   color: #000 !important;
   background-color: RGBA(var(--bs-oasis-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-oasis h1,
+.text-bg-oasis h2,
+.text-bg-oasis h3,
+.text-bg-oasis h4,
+.text-bg-oasis h5,
+.text-bg-oasis h6,
+.text-bg-oasis .h1,
+.text-bg-oasis .h2,
+.text-bg-oasis .h3,
+.text-bg-oasis .h4,
+.text-bg-oasis .h5,
+.text-bg-oasis .h6 {
+  color: inherit;
+}
+.text-bg-oasis a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-oasis .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-azurite {
   color: #fff !important;
   background-color: RGBA(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-azurite h1,
+.text-bg-azurite h2,
+.text-bg-azurite h3,
+.text-bg-azurite h4,
+.text-bg-azurite h5,
+.text-bg-azurite h6,
+.text-bg-azurite .h1,
+.text-bg-azurite .h2,
+.text-bg-azurite .h3,
+.text-bg-azurite .h4,
+.text-bg-azurite .h5,
+.text-bg-azurite .h6 {
+  color: inherit;
+}
+.text-bg-azurite a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-azurite .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-midnight {
   color: #fff !important;
   background-color: RGBA(var(--bs-midnight-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-midnight h1,
+.text-bg-midnight h2,
+.text-bg-midnight h3,
+.text-bg-midnight h4,
+.text-bg-midnight h5,
+.text-bg-midnight h6,
+.text-bg-midnight .h1,
+.text-bg-midnight .h2,
+.text-bg-midnight .h3,
+.text-bg-midnight .h4,
+.text-bg-midnight .h5,
+.text-bg-midnight .h6 {
+  color: inherit;
+}
+.text-bg-midnight a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-midnight .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-cool-gray {
   color: #000 !important;
   background-color: RGBA(var(--bs-cool-gray-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-cool-gray h1,
+.text-bg-cool-gray h2,
+.text-bg-cool-gray h3,
+.text-bg-cool-gray h4,
+.text-bg-cool-gray h5,
+.text-bg-cool-gray h6,
+.text-bg-cool-gray .h1,
+.text-bg-cool-gray .h2,
+.text-bg-cool-gray .h3,
+.text-bg-cool-gray .h4,
+.text-bg-cool-gray .h5,
+.text-bg-cool-gray .h6 {
+  color: inherit;
+}
+.text-bg-cool-gray .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-warm-gray {
   color: #000 !important;
   background-color: RGBA(var(--bs-warm-gray-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-warm-gray h1,
+.text-bg-warm-gray h2,
+.text-bg-warm-gray h3,
+.text-bg-warm-gray h4,
+.text-bg-warm-gray h5,
+.text-bg-warm-gray h6,
+.text-bg-warm-gray .h1,
+.text-bg-warm-gray .h2,
+.text-bg-warm-gray .h3,
+.text-bg-warm-gray .h4,
+.text-bg-warm-gray .h5,
+.text-bg-warm-gray .h6 {
+  color: inherit;
+}
+.text-bg-warm-gray .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-leaf {
   color: #000 !important;
   background-color: RGBA(var(--bs-leaf-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-leaf h1,
+.text-bg-leaf h2,
+.text-bg-leaf h3,
+.text-bg-leaf h4,
+.text-bg-leaf h5,
+.text-bg-leaf h6,
+.text-bg-leaf .h1,
+.text-bg-leaf .h2,
+.text-bg-leaf .h3,
+.text-bg-leaf .h4,
+.text-bg-leaf .h5,
+.text-bg-leaf .h6 {
+  color: inherit;
+}
+.text-bg-leaf a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-leaf .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-river {
   color: #fff !important;
   background-color: RGBA(var(--bs-river-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-river h1,
+.text-bg-river h2,
+.text-bg-river h3,
+.text-bg-river h4,
+.text-bg-river h5,
+.text-bg-river h6,
+.text-bg-river .h1,
+.text-bg-river .h2,
+.text-bg-river .h3,
+.text-bg-river .h4,
+.text-bg-river .h5,
+.text-bg-river .h6 {
+  color: inherit;
+}
+.text-bg-river a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-river .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-silver {
   color: #000 !important;
   background-color: RGBA(var(--bs-silver-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-silver h1,
+.text-bg-silver h2,
+.text-bg-silver h3,
+.text-bg-silver h4,
+.text-bg-silver h5,
+.text-bg-silver h6,
+.text-bg-silver .h1,
+.text-bg-silver .h2,
+.text-bg-silver .h3,
+.text-bg-silver .h4,
+.text-bg-silver .h5,
+.text-bg-silver .h6 {
+  color: inherit;
+}
+.text-bg-silver a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-silver .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-mesa {
   color: #fff !important;
   background-color: RGBA(var(--bs-mesa-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-mesa h1,
+.text-bg-mesa h2,
+.text-bg-mesa h3,
+.text-bg-mesa h4,
+.text-bg-mesa h5,
+.text-bg-mesa h6,
+.text-bg-mesa .h1,
+.text-bg-mesa .h2,
+.text-bg-mesa .h3,
+.text-bg-mesa .h4,
+.text-bg-mesa .h5,
+.text-bg-mesa .h6 {
+  color: inherit;
+}
+.text-bg-mesa a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-mesa .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-ash {
   color: #fff !important;
   background-color: RGBA(var(--bs-ash-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-ash h1,
+.text-bg-ash h2,
+.text-bg-ash h3,
+.text-bg-ash h4,
+.text-bg-ash h5,
+.text-bg-ash h6,
+.text-bg-ash .h1,
+.text-bg-ash .h2,
+.text-bg-ash .h3,
+.text-bg-ash .h4,
+.text-bg-ash .h5,
+.text-bg-ash .h6 {
+  color: inherit;
+}
+.text-bg-ash a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-ash .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-sage {
   color: #fff !important;
   background-color: RGBA(var(--bs-sage-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-sage h1,
+.text-bg-sage h2,
+.text-bg-sage h3,
+.text-bg-sage h4,
+.text-bg-sage h5,
+.text-bg-sage h6,
+.text-bg-sage .h1,
+.text-bg-sage .h2,
+.text-bg-sage .h3,
+.text-bg-sage .h4,
+.text-bg-sage .h5,
+.text-bg-sage .h6 {
+  color: inherit;
+}
+.text-bg-sage a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-sage .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-white {
   color: #000 !important;
   background-color: RGBA(var(--bs-white-rgb), var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-white h1,
+.text-bg-white h2,
+.text-bg-white h3,
+.text-bg-white h4,
+.text-bg-white h5,
+.text-bg-white h6,
+.text-bg-white .h1,
+.text-bg-white .h2,
+.text-bg-white .h3,
+.text-bg-white .h4,
+.text-bg-white .h5,
+.text-bg-white .h6 {
+  color: inherit;
+}
+.text-bg-white .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-black {
   color: #fff !important;
   background-color: RGBA(var(--bs-black-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+.text-bg-black h1,
+.text-bg-black h2,
+.text-bg-black h3,
+.text-bg-black h4,
+.text-bg-black h5,
+.text-bg-black h6,
+.text-bg-black .h1,
+.text-bg-black .h2,
+.text-bg-black .h3,
+.text-bg-black .h4,
+.text-bg-black .h5,
+.text-bg-black .h6 {
+  color: inherit;
+}
+.text-bg-black a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-black .ul-triangles li::before {
+  border-left-color: #fff;
+}
+
+.text-bg-success h1,
+.text-bg-success h2,
+.text-bg-success h3,
+.text-bg-success h4,
+.text-bg-success h5,
+.text-bg-success h6,
+.text-bg-success .h1,
+.text-bg-success .h2,
+.text-bg-success .h3,
+.text-bg-success .h4,
+.text-bg-success .h5,
+.text-bg-success .h6 {
+  color: inherit;
+}
+.text-bg-success a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-success .ul-triangles li::before {
+  border-left-color: #fff;
+}
+
+.text-bg-info h1,
+.text-bg-info h2,
+.text-bg-info h3,
+.text-bg-info h4,
+.text-bg-info h5,
+.text-bg-info h6,
+.text-bg-info .h1,
+.text-bg-info .h2,
+.text-bg-info .h3,
+.text-bg-info .h4,
+.text-bg-info .h5,
+.text-bg-info .h6 {
+  color: inherit;
+}
+.text-bg-info a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-info .ul-triangles li::before {
+  border-left-color: #000;
+}
+
+.text-bg-warning h1,
+.text-bg-warning h2,
+.text-bg-warning h3,
+.text-bg-warning h4,
+.text-bg-warning h5,
+.text-bg-warning h6,
+.text-bg-warning .h1,
+.text-bg-warning .h2,
+.text-bg-warning .h3,
+.text-bg-warning .h4,
+.text-bg-warning .h5,
+.text-bg-warning .h6 {
+  color: inherit;
+}
+.text-bg-warning a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-warning .ul-triangles li::before {
+  border-left-color: #000;
+}
+
+.text-bg-danger h1,
+.text-bg-danger h2,
+.text-bg-danger h3,
+.text-bg-danger h4,
+.text-bg-danger h5,
+.text-bg-danger h6,
+.text-bg-danger .h1,
+.text-bg-danger .h2,
+.text-bg-danger .h3,
+.text-bg-danger .h4,
+.text-bg-danger .h5,
+.text-bg-danger .h6 {
+  color: inherit;
+}
+.text-bg-danger a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-danger .ul-triangles li::before {
+  border-left-color: #fff;
+}
+
+.text-bg-light h1,
+.text-bg-light h2,
+.text-bg-light h3,
+.text-bg-light h4,
+.text-bg-light h5,
+.text-bg-light h6,
+.text-bg-light .h1,
+.text-bg-light .h2,
+.text-bg-light .h3,
+.text-bg-light .h4,
+.text-bg-light .h5,
+.text-bg-light .h6 {
+  color: inherit;
+}
+.text-bg-light a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-light .ul-triangles li::before {
+  border-left-color: #000;
+}
+
+.text-bg-dark h1,
+.text-bg-dark h2,
+.text-bg-dark h3,
+.text-bg-dark h4,
+.text-bg-dark h5,
+.text-bg-dark h6,
+.text-bg-dark .h1,
+.text-bg-dark .h2,
+.text-bg-dark .h3,
+.text-bg-dark .h4,
+.text-bg-dark .h5,
+.text-bg-dark .h6 {
+  color: inherit;
+}
+.text-bg-dark a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-dark .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gray-100 {
   color: #000 !important;
   background-color: #f8f9fa !important;
 }
+.text-bg-gray-100 h1,
+.text-bg-gray-100 h2,
+.text-bg-gray-100 h3,
+.text-bg-gray-100 h4,
+.text-bg-gray-100 h5,
+.text-bg-gray-100 h6,
+.text-bg-gray-100 .h1,
+.text-bg-gray-100 .h2,
+.text-bg-gray-100 .h3,
+.text-bg-gray-100 .h4,
+.text-bg-gray-100 .h5,
+.text-bg-gray-100 .h6 {
+  color: inherit;
+}
+.text-bg-gray-100 .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gray-200 {
   color: #000 !important;
   background-color: #e9ecef !important;
+}
+.text-bg-gray-200 h1,
+.text-bg-gray-200 h2,
+.text-bg-gray-200 h3,
+.text-bg-gray-200 h4,
+.text-bg-gray-200 h5,
+.text-bg-gray-200 h6,
+.text-bg-gray-200 .h1,
+.text-bg-gray-200 .h2,
+.text-bg-gray-200 .h3,
+.text-bg-gray-200 .h4,
+.text-bg-gray-200 .h5,
+.text-bg-gray-200 .h6 {
+  color: inherit;
+}
+.text-bg-gray-200 .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gray-300 {
   color: #000 !important;
   background-color: #dee2e6 !important;
 }
+.text-bg-gray-300 h1,
+.text-bg-gray-300 h2,
+.text-bg-gray-300 h3,
+.text-bg-gray-300 h4,
+.text-bg-gray-300 h5,
+.text-bg-gray-300 h6,
+.text-bg-gray-300 .h1,
+.text-bg-gray-300 .h2,
+.text-bg-gray-300 .h3,
+.text-bg-gray-300 .h4,
+.text-bg-gray-300 .h5,
+.text-bg-gray-300 .h6 {
+  color: inherit;
+}
+.text-bg-gray-300 .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gray-400 {
   color: #000 !important;
   background-color: #ced4da !important;
+}
+.text-bg-gray-400 h1,
+.text-bg-gray-400 h2,
+.text-bg-gray-400 h3,
+.text-bg-gray-400 h4,
+.text-bg-gray-400 h5,
+.text-bg-gray-400 h6,
+.text-bg-gray-400 .h1,
+.text-bg-gray-400 .h2,
+.text-bg-gray-400 .h3,
+.text-bg-gray-400 .h4,
+.text-bg-gray-400 .h5,
+.text-bg-gray-400 .h6 {
+  color: inherit;
+}
+.text-bg-gray-400 .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gray-500 {
   color: #000 !important;
   background-color: #adb5bd !important;
 }
+.text-bg-gray-500 h1,
+.text-bg-gray-500 h2,
+.text-bg-gray-500 h3,
+.text-bg-gray-500 h4,
+.text-bg-gray-500 h5,
+.text-bg-gray-500 h6,
+.text-bg-gray-500 .h1,
+.text-bg-gray-500 .h2,
+.text-bg-gray-500 .h3,
+.text-bg-gray-500 .h4,
+.text-bg-gray-500 .h5,
+.text-bg-gray-500 .h6 {
+  color: inherit;
+}
+.text-bg-gray-500 .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gray-600 {
   color: #fff !important;
   background-color: #6c757d !important;
+}
+.text-bg-gray-600 h1,
+.text-bg-gray-600 h2,
+.text-bg-gray-600 h3,
+.text-bg-gray-600 h4,
+.text-bg-gray-600 h5,
+.text-bg-gray-600 h6,
+.text-bg-gray-600 .h1,
+.text-bg-gray-600 .h2,
+.text-bg-gray-600 .h3,
+.text-bg-gray-600 .h4,
+.text-bg-gray-600 .h5,
+.text-bg-gray-600 .h6 {
+  color: inherit;
+}
+.text-bg-gray-600 a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gray-600 .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gray-700 {
   color: #fff !important;
   background-color: #495057 !important;
 }
+.text-bg-gray-700 h1,
+.text-bg-gray-700 h2,
+.text-bg-gray-700 h3,
+.text-bg-gray-700 h4,
+.text-bg-gray-700 h5,
+.text-bg-gray-700 h6,
+.text-bg-gray-700 .h1,
+.text-bg-gray-700 .h2,
+.text-bg-gray-700 .h3,
+.text-bg-gray-700 .h4,
+.text-bg-gray-700 .h5,
+.text-bg-gray-700 .h6 {
+  color: inherit;
+}
+.text-bg-gray-700 a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gray-700 .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gray-800 {
   color: #fff !important;
   background-color: #343a40 !important;
+}
+.text-bg-gray-800 h1,
+.text-bg-gray-800 h2,
+.text-bg-gray-800 h3,
+.text-bg-gray-800 h4,
+.text-bg-gray-800 h5,
+.text-bg-gray-800 h6,
+.text-bg-gray-800 .h1,
+.text-bg-gray-800 .h2,
+.text-bg-gray-800 .h3,
+.text-bg-gray-800 .h4,
+.text-bg-gray-800 .h5,
+.text-bg-gray-800 .h6 {
+  color: inherit;
+}
+.text-bg-gray-800 a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gray-800 .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gray-900 {
   color: #fff !important;
   background-color: #212529 !important;
 }
+.text-bg-gray-900 h1,
+.text-bg-gray-900 h2,
+.text-bg-gray-900 h3,
+.text-bg-gray-900 h4,
+.text-bg-gray-900 h5,
+.text-bg-gray-900 h6,
+.text-bg-gray-900 .h1,
+.text-bg-gray-900 .h2,
+.text-bg-gray-900 .h3,
+.text-bg-gray-900 .h4,
+.text-bg-gray-900 .h5,
+.text-bg-gray-900 .h6 {
+  color: inherit;
+}
+.text-bg-gray-900 a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gray-900 .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-red {
   color: #fff !important;
   background-color: rgba(171, 5, 32, 0.8);
+}
+.text-bg-transparent-red h1,
+.text-bg-transparent-red h2,
+.text-bg-transparent-red h3,
+.text-bg-transparent-red h4,
+.text-bg-transparent-red h5,
+.text-bg-transparent-red h6,
+.text-bg-transparent-red .h1,
+.text-bg-transparent-red .h2,
+.text-bg-transparent-red .h3,
+.text-bg-transparent-red .h4,
+.text-bg-transparent-red .h5,
+.text-bg-transparent-red .h6 {
+  color: inherit;
+}
+.text-bg-transparent-red a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-red .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-transparent-bloom {
   color: #000 !important;
   background-color: rgba(239, 64, 86, 0.8);
 }
+.text-bg-transparent-bloom h1,
+.text-bg-transparent-bloom h2,
+.text-bg-transparent-bloom h3,
+.text-bg-transparent-bloom h4,
+.text-bg-transparent-bloom h5,
+.text-bg-transparent-bloom h6,
+.text-bg-transparent-bloom .h1,
+.text-bg-transparent-bloom .h2,
+.text-bg-transparent-bloom .h3,
+.text-bg-transparent-bloom .h4,
+.text-bg-transparent-bloom .h5,
+.text-bg-transparent-bloom .h6 {
+  color: inherit;
+}
+.text-bg-transparent-bloom a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-bloom .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-transparent-chili {
   color: #fff !important;
   background-color: rgba(139, 0, 21, 0.8);
+}
+.text-bg-transparent-chili h1,
+.text-bg-transparent-chili h2,
+.text-bg-transparent-chili h3,
+.text-bg-transparent-chili h4,
+.text-bg-transparent-chili h5,
+.text-bg-transparent-chili h6,
+.text-bg-transparent-chili .h1,
+.text-bg-transparent-chili .h2,
+.text-bg-transparent-chili .h3,
+.text-bg-transparent-chili .h4,
+.text-bg-transparent-chili .h5,
+.text-bg-transparent-chili .h6 {
+  color: inherit;
+}
+.text-bg-transparent-chili a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-chili .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-transparent-blue {
   color: #fff !important;
   background-color: rgba(12, 35, 75, 0.8);
 }
+.text-bg-transparent-blue h1,
+.text-bg-transparent-blue h2,
+.text-bg-transparent-blue h3,
+.text-bg-transparent-blue h4,
+.text-bg-transparent-blue h5,
+.text-bg-transparent-blue h6,
+.text-bg-transparent-blue .h1,
+.text-bg-transparent-blue .h2,
+.text-bg-transparent-blue .h3,
+.text-bg-transparent-blue .h4,
+.text-bg-transparent-blue .h5,
+.text-bg-transparent-blue .h6 {
+  color: inherit;
+}
+.text-bg-transparent-blue a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-blue .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-sky {
   color: #000 !important;
   background-color: rgba(129, 211, 235, 0.8);
+}
+.text-bg-transparent-sky h1,
+.text-bg-transparent-sky h2,
+.text-bg-transparent-sky h3,
+.text-bg-transparent-sky h4,
+.text-bg-transparent-sky h5,
+.text-bg-transparent-sky h6,
+.text-bg-transparent-sky .h1,
+.text-bg-transparent-sky .h2,
+.text-bg-transparent-sky .h3,
+.text-bg-transparent-sky .h4,
+.text-bg-transparent-sky .h5,
+.text-bg-transparent-sky .h6 {
+  color: inherit;
+}
+.text-bg-transparent-sky a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-sky .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-transparent-oasis {
   color: #000 !important;
   background-color: rgba(55, 141, 189, 0.8);
 }
+.text-bg-transparent-oasis h1,
+.text-bg-transparent-oasis h2,
+.text-bg-transparent-oasis h3,
+.text-bg-transparent-oasis h4,
+.text-bg-transparent-oasis h5,
+.text-bg-transparent-oasis h6,
+.text-bg-transparent-oasis .h1,
+.text-bg-transparent-oasis .h2,
+.text-bg-transparent-oasis .h3,
+.text-bg-transparent-oasis .h4,
+.text-bg-transparent-oasis .h5,
+.text-bg-transparent-oasis .h6 {
+  color: inherit;
+}
+.text-bg-transparent-oasis a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-oasis .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-transparent-azurite {
   color: #fff !important;
   background-color: rgba(30, 82, 136, 0.8);
+}
+.text-bg-transparent-azurite h1,
+.text-bg-transparent-azurite h2,
+.text-bg-transparent-azurite h3,
+.text-bg-transparent-azurite h4,
+.text-bg-transparent-azurite h5,
+.text-bg-transparent-azurite h6,
+.text-bg-transparent-azurite .h1,
+.text-bg-transparent-azurite .h2,
+.text-bg-transparent-azurite .h3,
+.text-bg-transparent-azurite .h4,
+.text-bg-transparent-azurite .h5,
+.text-bg-transparent-azurite .h6 {
+  color: inherit;
+}
+.text-bg-transparent-azurite a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-azurite .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-transparent-midnight {
   color: #fff !important;
   background-color: rgba(0, 28, 72, 0.8);
 }
+.text-bg-transparent-midnight h1,
+.text-bg-transparent-midnight h2,
+.text-bg-transparent-midnight h3,
+.text-bg-transparent-midnight h4,
+.text-bg-transparent-midnight h5,
+.text-bg-transparent-midnight h6,
+.text-bg-transparent-midnight .h1,
+.text-bg-transparent-midnight .h2,
+.text-bg-transparent-midnight .h3,
+.text-bg-transparent-midnight .h4,
+.text-bg-transparent-midnight .h5,
+.text-bg-transparent-midnight .h6 {
+  color: inherit;
+}
+.text-bg-transparent-midnight a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-midnight .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-cool-gray {
   color: #000 !important;
   background-color: rgba(226, 233, 235, 0.8);
+}
+.text-bg-transparent-cool-gray h1,
+.text-bg-transparent-cool-gray h2,
+.text-bg-transparent-cool-gray h3,
+.text-bg-transparent-cool-gray h4,
+.text-bg-transparent-cool-gray h5,
+.text-bg-transparent-cool-gray h6,
+.text-bg-transparent-cool-gray .h1,
+.text-bg-transparent-cool-gray .h2,
+.text-bg-transparent-cool-gray .h3,
+.text-bg-transparent-cool-gray .h4,
+.text-bg-transparent-cool-gray .h5,
+.text-bg-transparent-cool-gray .h6 {
+  color: inherit;
+}
+.text-bg-transparent-cool-gray .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-transparent-warm-gray {
   color: #000 !important;
   background-color: rgba(244, 237, 229, 0.8);
 }
+.text-bg-transparent-warm-gray h1,
+.text-bg-transparent-warm-gray h2,
+.text-bg-transparent-warm-gray h3,
+.text-bg-transparent-warm-gray h4,
+.text-bg-transparent-warm-gray h5,
+.text-bg-transparent-warm-gray h6,
+.text-bg-transparent-warm-gray .h1,
+.text-bg-transparent-warm-gray .h2,
+.text-bg-transparent-warm-gray .h3,
+.text-bg-transparent-warm-gray .h4,
+.text-bg-transparent-warm-gray .h5,
+.text-bg-transparent-warm-gray .h6 {
+  color: inherit;
+}
+.text-bg-transparent-warm-gray .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-transparent-leaf {
   color: #000 !important;
   background-color: rgba(112, 184, 101, 0.8);
+}
+.text-bg-transparent-leaf h1,
+.text-bg-transparent-leaf h2,
+.text-bg-transparent-leaf h3,
+.text-bg-transparent-leaf h4,
+.text-bg-transparent-leaf h5,
+.text-bg-transparent-leaf h6,
+.text-bg-transparent-leaf .h1,
+.text-bg-transparent-leaf .h2,
+.text-bg-transparent-leaf .h3,
+.text-bg-transparent-leaf .h4,
+.text-bg-transparent-leaf .h5,
+.text-bg-transparent-leaf .h6 {
+  color: inherit;
+}
+.text-bg-transparent-leaf a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-leaf .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-transparent-river {
   color: #fff !important;
   background-color: rgba(0, 125, 132, 0.8);
 }
+.text-bg-transparent-river h1,
+.text-bg-transparent-river h2,
+.text-bg-transparent-river h3,
+.text-bg-transparent-river h4,
+.text-bg-transparent-river h5,
+.text-bg-transparent-river h6,
+.text-bg-transparent-river .h1,
+.text-bg-transparent-river .h2,
+.text-bg-transparent-river .h3,
+.text-bg-transparent-river .h4,
+.text-bg-transparent-river .h5,
+.text-bg-transparent-river .h6 {
+  color: inherit;
+}
+.text-bg-transparent-river a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-river .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-silver {
   color: #000 !important;
   background-color: rgba(158, 171, 174, 0.8);
+}
+.text-bg-transparent-silver h1,
+.text-bg-transparent-silver h2,
+.text-bg-transparent-silver h3,
+.text-bg-transparent-silver h4,
+.text-bg-transparent-silver h5,
+.text-bg-transparent-silver h6,
+.text-bg-transparent-silver .h1,
+.text-bg-transparent-silver .h2,
+.text-bg-transparent-silver .h3,
+.text-bg-transparent-silver .h4,
+.text-bg-transparent-silver .h5,
+.text-bg-transparent-silver .h6 {
+  color: inherit;
+}
+.text-bg-transparent-silver a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-silver .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-transparent-mesa {
   color: #fff !important;
   background-color: rgba(169, 92, 66, 0.8);
 }
+.text-bg-transparent-mesa h1,
+.text-bg-transparent-mesa h2,
+.text-bg-transparent-mesa h3,
+.text-bg-transparent-mesa h4,
+.text-bg-transparent-mesa h5,
+.text-bg-transparent-mesa h6,
+.text-bg-transparent-mesa .h1,
+.text-bg-transparent-mesa .h2,
+.text-bg-transparent-mesa .h3,
+.text-bg-transparent-mesa .h4,
+.text-bg-transparent-mesa .h5,
+.text-bg-transparent-mesa .h6 {
+  color: inherit;
+}
+.text-bg-transparent-mesa a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-mesa .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-ash {
   color: #fff !important;
   background-color: rgba(64, 54, 53, 0.8);
+}
+.text-bg-transparent-ash h1,
+.text-bg-transparent-ash h2,
+.text-bg-transparent-ash h3,
+.text-bg-transparent-ash h4,
+.text-bg-transparent-ash h5,
+.text-bg-transparent-ash h6,
+.text-bg-transparent-ash .h1,
+.text-bg-transparent-ash .h2,
+.text-bg-transparent-ash .h3,
+.text-bg-transparent-ash .h4,
+.text-bg-transparent-ash .h5,
+.text-bg-transparent-ash .h6 {
+  color: inherit;
+}
+.text-bg-transparent-ash a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-ash .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-transparent-sage {
   color: #fff !important;
   background-color: rgba(74, 99, 78, 0.8);
 }
+.text-bg-transparent-sage h1,
+.text-bg-transparent-sage h2,
+.text-bg-transparent-sage h3,
+.text-bg-transparent-sage h4,
+.text-bg-transparent-sage h5,
+.text-bg-transparent-sage h6,
+.text-bg-transparent-sage .h1,
+.text-bg-transparent-sage .h2,
+.text-bg-transparent-sage .h3,
+.text-bg-transparent-sage .h4,
+.text-bg-transparent-sage .h5,
+.text-bg-transparent-sage .h6 {
+  color: inherit;
+}
+.text-bg-transparent-sage a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-sage .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-transparent-white {
   color: #000 !important;
   background-color: rgba(255, 255, 255, 0.8);
+}
+.text-bg-transparent-white h1,
+.text-bg-transparent-white h2,
+.text-bg-transparent-white h3,
+.text-bg-transparent-white h4,
+.text-bg-transparent-white h5,
+.text-bg-transparent-white h6,
+.text-bg-transparent-white .h1,
+.text-bg-transparent-white .h2,
+.text-bg-transparent-white .h3,
+.text-bg-transparent-white .h4,
+.text-bg-transparent-white .h5,
+.text-bg-transparent-white .h6 {
+  color: inherit;
+}
+.text-bg-transparent-white .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-transparent-black {
   color: #fff !important;
   background-color: rgba(0, 0, 0, 0.8);
 }
+.text-bg-transparent-black h1,
+.text-bg-transparent-black h2,
+.text-bg-transparent-black h3,
+.text-bg-transparent-black h4,
+.text-bg-transparent-black h5,
+.text-bg-transparent-black h6,
+.text-bg-transparent-black .h1,
+.text-bg-transparent-black .h2,
+.text-bg-transparent-black .h3,
+.text-bg-transparent-black .h4,
+.text-bg-transparent-black .h5,
+.text-bg-transparent-black .h6 {
+  color: inherit;
+}
+.text-bg-transparent-black a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-transparent-black .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-red {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #ab0520);
+}
+.text-bg-gradient-red h1,
+.text-bg-gradient-red h2,
+.text-bg-gradient-red h3,
+.text-bg-gradient-red h4,
+.text-bg-gradient-red h5,
+.text-bg-gradient-red h6,
+.text-bg-gradient-red .h1,
+.text-bg-gradient-red .h2,
+.text-bg-gradient-red .h3,
+.text-bg-gradient-red .h4,
+.text-bg-gradient-red .h5,
+.text-bg-gradient-red .h6 {
+  color: inherit;
+}
+.text-bg-gradient-red a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-red .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gradient-bloom {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #ef4056);
 }
+.text-bg-gradient-bloom h1,
+.text-bg-gradient-bloom h2,
+.text-bg-gradient-bloom h3,
+.text-bg-gradient-bloom h4,
+.text-bg-gradient-bloom h5,
+.text-bg-gradient-bloom h6,
+.text-bg-gradient-bloom .h1,
+.text-bg-gradient-bloom .h2,
+.text-bg-gradient-bloom .h3,
+.text-bg-gradient-bloom .h4,
+.text-bg-gradient-bloom .h5,
+.text-bg-gradient-bloom .h6 {
+  color: inherit;
+}
+.text-bg-gradient-bloom a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-bloom .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gradient-chili {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #8b0015);
+}
+.text-bg-gradient-chili h1,
+.text-bg-gradient-chili h2,
+.text-bg-gradient-chili h3,
+.text-bg-gradient-chili h4,
+.text-bg-gradient-chili h5,
+.text-bg-gradient-chili h6,
+.text-bg-gradient-chili .h1,
+.text-bg-gradient-chili .h2,
+.text-bg-gradient-chili .h3,
+.text-bg-gradient-chili .h4,
+.text-bg-gradient-chili .h5,
+.text-bg-gradient-chili .h6 {
+  color: inherit;
+}
+.text-bg-gradient-chili a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-chili .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gradient-blue {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #0c234b);
 }
+.text-bg-gradient-blue h1,
+.text-bg-gradient-blue h2,
+.text-bg-gradient-blue h3,
+.text-bg-gradient-blue h4,
+.text-bg-gradient-blue h5,
+.text-bg-gradient-blue h6,
+.text-bg-gradient-blue .h1,
+.text-bg-gradient-blue .h2,
+.text-bg-gradient-blue .h3,
+.text-bg-gradient-blue .h4,
+.text-bg-gradient-blue .h5,
+.text-bg-gradient-blue .h6 {
+  color: inherit;
+}
+.text-bg-gradient-blue a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-blue .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-sky {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #81d3eb);
+}
+.text-bg-gradient-sky h1,
+.text-bg-gradient-sky h2,
+.text-bg-gradient-sky h3,
+.text-bg-gradient-sky h4,
+.text-bg-gradient-sky h5,
+.text-bg-gradient-sky h6,
+.text-bg-gradient-sky .h1,
+.text-bg-gradient-sky .h2,
+.text-bg-gradient-sky .h3,
+.text-bg-gradient-sky .h4,
+.text-bg-gradient-sky .h5,
+.text-bg-gradient-sky .h6 {
+  color: inherit;
+}
+.text-bg-gradient-sky a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-sky .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gradient-oasis {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #378dbd);
 }
+.text-bg-gradient-oasis h1,
+.text-bg-gradient-oasis h2,
+.text-bg-gradient-oasis h3,
+.text-bg-gradient-oasis h4,
+.text-bg-gradient-oasis h5,
+.text-bg-gradient-oasis h6,
+.text-bg-gradient-oasis .h1,
+.text-bg-gradient-oasis .h2,
+.text-bg-gradient-oasis .h3,
+.text-bg-gradient-oasis .h4,
+.text-bg-gradient-oasis .h5,
+.text-bg-gradient-oasis .h6 {
+  color: inherit;
+}
+.text-bg-gradient-oasis a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-oasis .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gradient-azurite {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #1e5288);
+}
+.text-bg-gradient-azurite h1,
+.text-bg-gradient-azurite h2,
+.text-bg-gradient-azurite h3,
+.text-bg-gradient-azurite h4,
+.text-bg-gradient-azurite h5,
+.text-bg-gradient-azurite h6,
+.text-bg-gradient-azurite .h1,
+.text-bg-gradient-azurite .h2,
+.text-bg-gradient-azurite .h3,
+.text-bg-gradient-azurite .h4,
+.text-bg-gradient-azurite .h5,
+.text-bg-gradient-azurite .h6 {
+  color: inherit;
+}
+.text-bg-gradient-azurite a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-azurite .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gradient-midnight {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #001c48);
 }
+.text-bg-gradient-midnight h1,
+.text-bg-gradient-midnight h2,
+.text-bg-gradient-midnight h3,
+.text-bg-gradient-midnight h4,
+.text-bg-gradient-midnight h5,
+.text-bg-gradient-midnight h6,
+.text-bg-gradient-midnight .h1,
+.text-bg-gradient-midnight .h2,
+.text-bg-gradient-midnight .h3,
+.text-bg-gradient-midnight .h4,
+.text-bg-gradient-midnight .h5,
+.text-bg-gradient-midnight .h6 {
+  color: inherit;
+}
+.text-bg-gradient-midnight a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-midnight .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-cool-gray {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #e2e9eb);
+}
+.text-bg-gradient-cool-gray h1,
+.text-bg-gradient-cool-gray h2,
+.text-bg-gradient-cool-gray h3,
+.text-bg-gradient-cool-gray h4,
+.text-bg-gradient-cool-gray h5,
+.text-bg-gradient-cool-gray h6,
+.text-bg-gradient-cool-gray .h1,
+.text-bg-gradient-cool-gray .h2,
+.text-bg-gradient-cool-gray .h3,
+.text-bg-gradient-cool-gray .h4,
+.text-bg-gradient-cool-gray .h5,
+.text-bg-gradient-cool-gray .h6 {
+  color: inherit;
+}
+.text-bg-gradient-cool-gray .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gradient-warm-gray {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #f4ede5);
 }
+.text-bg-gradient-warm-gray h1,
+.text-bg-gradient-warm-gray h2,
+.text-bg-gradient-warm-gray h3,
+.text-bg-gradient-warm-gray h4,
+.text-bg-gradient-warm-gray h5,
+.text-bg-gradient-warm-gray h6,
+.text-bg-gradient-warm-gray .h1,
+.text-bg-gradient-warm-gray .h2,
+.text-bg-gradient-warm-gray .h3,
+.text-bg-gradient-warm-gray .h4,
+.text-bg-gradient-warm-gray .h5,
+.text-bg-gradient-warm-gray .h6 {
+  color: inherit;
+}
+.text-bg-gradient-warm-gray .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gradient-leaf {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #70b865);
+}
+.text-bg-gradient-leaf h1,
+.text-bg-gradient-leaf h2,
+.text-bg-gradient-leaf h3,
+.text-bg-gradient-leaf h4,
+.text-bg-gradient-leaf h5,
+.text-bg-gradient-leaf h6,
+.text-bg-gradient-leaf .h1,
+.text-bg-gradient-leaf .h2,
+.text-bg-gradient-leaf .h3,
+.text-bg-gradient-leaf .h4,
+.text-bg-gradient-leaf .h5,
+.text-bg-gradient-leaf .h6 {
+  color: inherit;
+}
+.text-bg-gradient-leaf a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-leaf .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gradient-river {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #007d84);
 }
+.text-bg-gradient-river h1,
+.text-bg-gradient-river h2,
+.text-bg-gradient-river h3,
+.text-bg-gradient-river h4,
+.text-bg-gradient-river h5,
+.text-bg-gradient-river h6,
+.text-bg-gradient-river .h1,
+.text-bg-gradient-river .h2,
+.text-bg-gradient-river .h3,
+.text-bg-gradient-river .h4,
+.text-bg-gradient-river .h5,
+.text-bg-gradient-river .h6 {
+  color: inherit;
+}
+.text-bg-gradient-river a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-river .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-silver {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #9eabae);
+}
+.text-bg-gradient-silver h1,
+.text-bg-gradient-silver h2,
+.text-bg-gradient-silver h3,
+.text-bg-gradient-silver h4,
+.text-bg-gradient-silver h5,
+.text-bg-gradient-silver h6,
+.text-bg-gradient-silver .h1,
+.text-bg-gradient-silver .h2,
+.text-bg-gradient-silver .h3,
+.text-bg-gradient-silver .h4,
+.text-bg-gradient-silver .h5,
+.text-bg-gradient-silver .h6 {
+  color: inherit;
+}
+.text-bg-gradient-silver a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-silver .ul-triangles li::before {
+  border-left-color: #000;
 }
 
 .text-bg-gradient-mesa {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #a95c42);
 }
+.text-bg-gradient-mesa h1,
+.text-bg-gradient-mesa h2,
+.text-bg-gradient-mesa h3,
+.text-bg-gradient-mesa h4,
+.text-bg-gradient-mesa h5,
+.text-bg-gradient-mesa h6,
+.text-bg-gradient-mesa .h1,
+.text-bg-gradient-mesa .h2,
+.text-bg-gradient-mesa .h3,
+.text-bg-gradient-mesa .h4,
+.text-bg-gradient-mesa .h5,
+.text-bg-gradient-mesa .h6 {
+  color: inherit;
+}
+.text-bg-gradient-mesa a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-mesa .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-ash {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #403635);
+}
+.text-bg-gradient-ash h1,
+.text-bg-gradient-ash h2,
+.text-bg-gradient-ash h3,
+.text-bg-gradient-ash h4,
+.text-bg-gradient-ash h5,
+.text-bg-gradient-ash h6,
+.text-bg-gradient-ash .h1,
+.text-bg-gradient-ash .h2,
+.text-bg-gradient-ash .h3,
+.text-bg-gradient-ash .h4,
+.text-bg-gradient-ash .h5,
+.text-bg-gradient-ash .h6 {
+  color: inherit;
+}
+.text-bg-gradient-ash a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-ash .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-gradient-sage {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #4a634e);
 }
+.text-bg-gradient-sage h1,
+.text-bg-gradient-sage h2,
+.text-bg-gradient-sage h3,
+.text-bg-gradient-sage h4,
+.text-bg-gradient-sage h5,
+.text-bg-gradient-sage h6,
+.text-bg-gradient-sage .h1,
+.text-bg-gradient-sage .h2,
+.text-bg-gradient-sage .h3,
+.text-bg-gradient-sage .h4,
+.text-bg-gradient-sage .h5,
+.text-bg-gradient-sage .h6 {
+  color: inherit;
+}
+.text-bg-gradient-sage a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-sage .ul-triangles li::before {
+  border-left-color: #fff;
+}
 
 .text-bg-gradient-white {
   color: #000 !important;
   background-image: linear-gradient(180deg, transparent, #fff);
 }
+.text-bg-gradient-white h1,
+.text-bg-gradient-white h2,
+.text-bg-gradient-white h3,
+.text-bg-gradient-white h4,
+.text-bg-gradient-white h5,
+.text-bg-gradient-white h6,
+.text-bg-gradient-white .h1,
+.text-bg-gradient-white .h2,
+.text-bg-gradient-white .h3,
+.text-bg-gradient-white .h4,
+.text-bg-gradient-white .h5,
+.text-bg-gradient-white .h6 {
+  color: inherit;
+}
+.text-bg-gradient-white .ul-triangles li::before {
+  border-left-color: #000;
+}
 
 .text-bg-gradient-black {
   color: #fff !important;
   background-image: linear-gradient(180deg, transparent, #000);
+}
+.text-bg-gradient-black h1,
+.text-bg-gradient-black h2,
+.text-bg-gradient-black h3,
+.text-bg-gradient-black h4,
+.text-bg-gradient-black h5,
+.text-bg-gradient-black h6,
+.text-bg-gradient-black .h1,
+.text-bg-gradient-black .h2,
+.text-bg-gradient-black .h3,
+.text-bg-gradient-black .h4,
+.text-bg-gradient-black .h5,
+.text-bg-gradient-black .h6 {
+  color: inherit;
+}
+.text-bg-gradient-black a:not(.btn):not(.nav-link) {
+  color: inherit;
+}
+.text-bg-gradient-black .ul-triangles li::before {
+  border-left-color: #fff;
 }
 
 .text-bg-dark .btn-close {
