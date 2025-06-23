@@ -12,10 +12,10 @@
   hex: "#001c48"
 - name: cool-gray
   hex: "#e2e9eb"
-  contrast_color: dark
+  contrast_color: black
 - name: warm-gray
   hex: "#f4ede5"
-  contrast_color: dark
+  contrast_color: black
 - name: white
   hex: "#ffffff"
-  contrast_color: dark
+  contrast_color: black

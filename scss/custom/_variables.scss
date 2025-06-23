@@ -49,29 +49,25 @@ $sage: #4a634e;
 $white: #fff;
 $black: #000;
 
-$colors: ();
-$colors: map-merge(
-  (
-    "red":   $red,
-    "bloom":   $bloom,
-    "chili":   $chili,
-    "blue":    $blue,
-    "sky":     $sky,
-    "oasis":   $oasis,
-    "azurite":     $azurite,
-    "midnight":    $midnight,
-    "cool-gray":   $cool-gray,
-    "warm-gray":   $warm-gray,
-    "leaf":    $leaf,
-    "river":   $river,
-    "silver":  $silver,
-    "mesa":    $mesa,
-    "ash":     $ash,
-    "sage":    $sage,
-    "white":    $white,
-    "black":    $black,
-  ),
-  $colors
+$colors: (
+  "red": $red,
+  "bloom": $bloom,
+  "chili": $chili,
+  "blue":  $blue,
+  "sky": $sky,
+  "oasis": $oasis,
+  "azurite": $azurite,
+  "midnight": $midnight,
+  "cool-gray": $cool-gray,
+  "warm-gray": $warm-gray,
+  "leaf": $leaf,
+  "river": $river,
+  "silver": $silver,
+  "mesa": $mesa,
+  "ash": $ash,
+  "sage": $sage,
+  "white": $white,
+  "black": $black
 );
 
 /*

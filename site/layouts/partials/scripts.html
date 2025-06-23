@@ -5,7 +5,7 @@
 {{- end }}
 
 {{- $esbuildOptions := dict "target" "es2019" -}}
-{{- $targetDocsJSPath := path.Join "docs" .Site.Params.docs_version | relURL -}}
+{{- $targetDocsJSPath := path.Join "docs" .Site.Params.docs_version -}}
 
 {{- if hugo.IsProduction -}}
   {{- $esbuildOptions = merge $esbuildOptions (dict "minify" "true") -}}

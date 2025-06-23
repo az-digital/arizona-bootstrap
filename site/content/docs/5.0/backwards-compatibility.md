@@ -79,14 +79,23 @@ Arizona Bootstrap 2 contained utility classes that are no longer supported/maint
 
 The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
 
-### Large Tabs
+### Card Classes
+
+These custom Arizona Bootstrap classes are now deprecated:
+
+ - `.card-borderless`: This class can be replaced with `.border-0`.
+ - `.card-clickable` and `.card-clickable-link`: These classes can be replaced with styling using the standard [Stretched Link helper]({{< docsref "/helpers/stretched-link/" >}}) along with our custom [Hover utilities]({{< docsref "/utilities/hover/" >}}). See the [examples on the Card page]({{< docsref "/components/card/#borderless-and-clickable-cards" >}}).
+ - `.card-landing-grid` and `.landing-$color`: The "landing grid" card style from Arizona Bootstrap 2 has been deprecated and should no longer be used.
+
+
+### Nav Tabs Large
 
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
 
-## Removed Utility Classes
+## Removed Utilities
 
-Utility classes that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in Arizona Bootstrap 5.
+The following utilities have been removed in Arizona Bootstrap 5.
 
 ### Blockquote Reverse
 
@@ -107,12 +116,26 @@ The legacy `.sans` class has been removed from Arizona Bootstrap 5, which alread
 
 ## Removed Components
 
-Components that were marked as deprecated in Arizona Bootstrap 2 have been completely removed in Arizona Bootstrap 5.
+The following components have been removed in Arizona Bootstrap 5.
+
+### Background Wrapper Patterns
+
+The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.
+
+### Callout Variants
+
+For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
+ - `.callout-leaf`
+ - `.callout-river`
+ - `.callout-silver`
+ - `.callout-mesa`
+ - `.callout-light`
+ - `.callout-dark`
 
 
 ## Removed JavaScript
 
-Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in {{< ourname >}}. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
+Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
 
 ## Icons
 

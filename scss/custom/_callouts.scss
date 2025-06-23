@@ -1,0 +1,43 @@
+/*
+* > Callout custom component
+*/
+
+.callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  @include border-radius();
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: .25rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    @include border-radius();
+  }
+
+  + .callout {
+    margin-top: -.25rem;
+  }
+}
+
+// Do not create callouts for the "leaf", "river", "silver", and "mesa" brand colors.
+@each $color, $value in map-remove($colors, "leaf", "river", "silver", "mesa") {
+  .callout-#{$color} {
+    @include callout-variant($color, $value);
+  }
+}
+
+// Do not create callouts for the "light" and "dark" theme colors.
+@each $color, $value in map-remove($theme-colors, "light", "dark") {
+  .callout-#{$color} {
+    @include callout-variant($color, $value);
+  }
+}
