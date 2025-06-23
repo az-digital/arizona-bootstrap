@@ -77,7 +77,9 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< colors.inline >}}
 {{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="p-3 mb-2 bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }}">.bg-gradient-{{ $color.name }}</div>
+<div class="az-bootstrap-bg-image">
+  <div class="p-3 mb-2 bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }}">.bg-gradient-{{ $color.name }}</div>
+</div>
 {{- end -}}
 {{< /colors.inline >}}
 {{< /example >}}

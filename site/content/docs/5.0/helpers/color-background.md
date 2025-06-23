@@ -76,7 +76,9 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< text-bg.inline >}}
 {{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="text-bg-gradient-{{ $color.name }} p-3">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
+<div class="az-bootstrap-bg-image">
+  <div class="text-bg-gradient-{{ $color.name }} p-3">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
+</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
