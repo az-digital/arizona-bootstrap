@@ -658,7 +658,7 @@ Sometimes you want to use the collapse plugin to trigger a container element for
 <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
   <div class="bg-dark p-4">
     <h5 class="text-body-emphasis h4">Collapsed content</h5>
-    <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+    <span class="text-body-blue">Toggleable via the navbar brand.</span>
   </div>
 </div>
 <nav class="navbar navbar-dark bg-dark">

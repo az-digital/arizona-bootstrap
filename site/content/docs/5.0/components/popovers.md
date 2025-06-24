@@ -59,16 +59,16 @@ We use JavaScript similar to the snippet above to render the following live popo
 Four options are available: top, right, bottom, and left. Directions are mirrored when using Bootstrap in RTL. Set `data-bs-placement` to change the direction.
 
 {{< example >}}
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+<button type="button" class="btn btn-blue" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
   Popover on top
 </button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+<button type="button" class="btn btn-blue" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
   Popover on right
 </button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+<button type="button" class="btn btn-blue" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
   Popover on bottom
 </button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+<button type="button" class="btn btn-blue" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
   Popover on left
 </button>
 {{< /example >}}
@@ -100,7 +100,7 @@ You can customize the appearance of popovers using [CSS variables](#variables). 
 {{< scss-docs name="custom-popovers" file="scss/_component-examples.scss" scssroot="site/assets" >}}
 
 {{< example class="custom-popover-demo" >}}
-<button type="button" class="btn btn-secondary"
+<button type="button" class="btn btn-blue"
         data-bs-toggle="popover" data-bs-placement="right"
         data-bs-custom-class="custom-popover"
         data-bs-title="Custom popover"
@@ -135,7 +135,7 @@ For disabled popover triggers, you may also prefer `data-bs-trigger="hover focus
 
 {{< example >}}
 <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
-  <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+  <button class="btn btn-red" type="button" disabled>Disabled button</button>
 </span>
 {{< /example >}}
 

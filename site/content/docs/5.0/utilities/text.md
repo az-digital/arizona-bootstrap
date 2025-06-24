@@ -31,7 +31,7 @@ Note that we don't provide utility classes for justified text. While, aesthetica
 Wrap text with a `.text-wrap` class.
 
 {{< example >}}
-<div class="badge text-bg-primary text-wrap" style="width: 6rem;">
+<div class="badge text-bg-red text-wrap" style="width: 6rem;">
   This text should wrap.
 </div>
 {{< /example >}}
@@ -137,7 +137,7 @@ Change a selection to our monospace font stack with `.font-monospace`.
 Reset a text or link's color with `.text-reset`, so that it inherits the color from its parent.
 
 {{< example >}}
-<p class="text-body-secondary">
+<p class="text-body-blue">
   Secondary body text with a <a href="#" class="text-reset">reset link</a>.
 </p>
 {{< /example >}}

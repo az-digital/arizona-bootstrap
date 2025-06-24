@@ -117,21 +117,21 @@ These work great with custom content as well.
       <div class="fw-bold">Subheading</div>
       Content for list item
     </div>
-    <span class="badge text-bg-primary rounded-pill">14</span>
+    <span class="badge text-bg-red rounded-pill">14</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
       <div class="fw-bold">Subheading</div>
       Content for list item
     </div>
-    <span class="badge text-bg-primary rounded-pill">14</span>
+    <span class="badge text-bg-red rounded-pill">14</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
       <div class="fw-bold">Subheading</div>
       Content for list item
     </div>
-    <span class="badge text-bg-primary rounded-pill">14</span>
+    <span class="badge text-bg-red rounded-pill">14</span>
   </li>
 </ol>
 {{< /example >}}
@@ -200,15 +200,15 @@ Add badges to any list group item to show unread counts, activity, and more with
 <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     A list item
-    <span class="badge text-bg-primary rounded-pill">14</span>
+    <span class="badge text-bg-red rounded-pill">14</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     A second list item
-    <span class="badge text-bg-primary rounded-pill">2</span>
+    <span class="badge text-bg-red rounded-pill">2</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     A third list item
-    <span class="badge text-bg-primary rounded-pill">1</span>
+    <span class="badge text-bg-red rounded-pill">1</span>
   </li>
 </ul>
 {{< /example >}}
@@ -230,18 +230,18 @@ Add nearly any HTML within, even for linked list groups like the one below, with
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
-      <small class="text-body-secondary">3 days ago</small>
+      <small class="text-body-blue">3 days ago</small>
     </div>
     <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-body-secondary">And some muted small print.</small>
+    <small class="text-body-blue">And some muted small print.</small>
   </a>
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">List group item heading</h5>
-      <small class="text-body-secondary">3 days ago</small>
+      <small class="text-body-blue">3 days ago</small>
     </div>
     <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-body-secondary">And some muted small print.</small>
+    <small class="text-body-blue">And some muted small print.</small>
   </a>
 </div>
 {{< /example >}}
