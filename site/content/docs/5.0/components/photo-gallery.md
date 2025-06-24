@@ -60,10 +60,6 @@ With the Grid display, all images in the gallery are presented in a grid layout.
           </div>
           <div class="modal-body">
             <div id="gridGallery" class="carousel slide az-gallery az-gallery-grid">
-              <button class="carousel-control-prev" type="button" data-bs-target="#gridGallery" data-bs-slide="prev">
-                <span class="material-icons-round text-white display-5" aria-hidden="true">arrow_back_ios</span>
-                <span class="visually-hidden">Previous</span>
-              </button>
               <div class="carousel-inner h-100">
                 <div class="carousel-item az-gallery-item h-100 active">
                   <div class="d-flex flex-column h-100 justify-content-center">
@@ -103,6 +99,10 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                   </div>
                 </div>
               </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#gridGallery" data-bs-slide="prev">
+                <span class="material-icons-round text-white display-5" aria-hidden="true">arrow_back_ios</span>
+                <span class="visually-hidden">Previous</span>
+              </button>
               <button class="carousel-control-next" type="button" data-bs-target="#gridGallery" data-bs-slide="next">
                 <span class="material-icons-round text-white display-5" aria-hidden="true">arrow_forward_ios</span>
                 <span class="visually-hidden">Next</span>
@@ -128,10 +128,6 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
 <div class="az-gallery-container">
   <div class="ratio ratio-4x3">
     <div id="sliderGallery" class="carousel slide az-gallery az-gallery-slider-full">
-      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
-        <span class="visually-hidden">Previous</span>
-      </button>
       <div class="carousel-inner h-100">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
@@ -171,6 +167,10 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery" data-bs-slide="prev">
+        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="visually-hidden">Previous</span>
+      </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery" data-bs-slide="next">
         <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
@@ -185,10 +185,6 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
 <div class="az-gallery-container">
   <div class="ratio ratio-16x9">
     <div id="sliderGallery16x9" class="carousel slide az-gallery az-gallery-slider-full">
-      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
-        <span class="visually-hidden">Previous</span>
-      </button>
       <div class="carousel-inner h-100">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
@@ -228,6 +224,10 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
+        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="visually-hidden">Previous</span>
+      </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
         <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
@@ -244,10 +244,6 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
 <div class="az-gallery-container">
   <div class="ratio ratio-4x3">
     <div id="sliderGalleryCrop" class="carousel slide az-gallery az-gallery-slider-crop">
-      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
-        <span class="visually-hidden">Previous</span>
-      </button>
       <div class="carousel-inner h-100">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
@@ -287,6 +283,10 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="prev">
+        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="visually-hidden">Previous</span>
+      </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="next">
         <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>

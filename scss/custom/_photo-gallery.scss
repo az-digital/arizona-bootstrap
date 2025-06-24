@@ -1,12 +1,5 @@
 // Photo Gallery custom component
 
-.az-gallery-slider-full {
-  .az-gallery-caption {
-    color: revert;
-    background-color: unset;
-  }
-}
-
 .az-gallery {
   display: flex;
   width: 100%;
@@ -20,17 +13,16 @@
   }
 
   .carousel-control-prev {
+    order: 0;
     padding-right: .25rem;
   }
+  .carousel-inner {
+    order: 1;
+  }
   .carousel-control-next {
+    order: 2;
     padding-left: .25rem;
   }
-}
-
-.az-gallery-modal .btn-close {
-  padding: .5rem 1rem;
-  font-size: 1.5rem;
-  opacity: 1;
 }
 
 .az-gallery-image {
@@ -45,28 +37,39 @@
   margin-left: auto;
 }
 
-.az-gallery-modal .az-gallery-caption {
-  max-width: 850px;
+.az-gallery-slider-full .az-gallery-caption {
+  color: revert;
+  background-color: unset;
 }
 
-.az-gallery-modal .modal-body {
-  padding-top: 0;
+.az-gallery-slider-crop .az-gallery-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.az-gallery-slider-crop {
+.az-gallery-modal {
+  .btn-close {
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+  .modal-body {
+    padding-top: 0;
+  }
   .az-gallery-caption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    max-width: 850px;
   }
 }
 
 @include media-breakpoint-up(md) {
-  .carousel-control-prev {
-    padding-left: .25rem;
-  }
-  .carousel-control-next {
-    padding-right: .25rem;
+  .az-gallery {
+    .carousel-control-prev {
+      padding-left: .25rem;
+    }
+    .carousel-control-next {
+      padding-right: .25rem;
+    }
   }
 }
