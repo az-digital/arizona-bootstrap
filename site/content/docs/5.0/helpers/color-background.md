@@ -58,14 +58,14 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 {{< example >}}
-{{< text-bg.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+<div class="position-relative overflow-hidden">
+  <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
+{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="az-bootstrap-bg-image">
-  <div class="text-bg-transparent-{{ $color.name }} p-3">.text-bg-transparent-{{ $color.name }} with contrasting color</div>
-</div>
+  <div class="text-bg-transparent-{{ $color.name }} p-3 position-relative">.text-bg-transparent-{{ $color.name }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
+</div>
 {{< /example >}}
 
 ### Gradient
@@ -73,14 +73,14 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 {{< example >}}
-{{< text-bg.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+<div class="position-relative overflow-hidden">
+  <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
+{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="az-bootstrap-bg-image">
-  <div class="text-bg-gradient-{{ $color.name }} p-3">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
-</div>
+  <div class="text-bg-gradient-{{ $color.name }} p-3 position-relative">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
+</div>
 {{< /example >}}
 
 ## With headings and links

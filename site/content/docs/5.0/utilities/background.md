@@ -57,14 +57,14 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 {{< example >}}
-{{< colors.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+<div class="position-relative overflow-hidden">
+  <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
+{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="az-bootstrap-bg-image">
-  <div class="p-3 mb-2 bg-transparent-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }}">.bg-transparent-{{ $color.name }}</div>
-</div>
+  <div class="bg-transparent-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-transparent-{{ $color.name }}</div>
 {{- end -}}
 {{< /colors.inline >}}
+</div>
 {{< /example >}}
 
 ## Background gradient
@@ -74,14 +74,14 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 {{< example >}}
-{{< colors.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" }}
+<div class="position-relative overflow-hidden">
+  <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
+{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<div class="az-bootstrap-bg-image">
-  <div class="p-3 mb-2 bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }}">.bg-gradient-{{ $color.name }}</div>
-</div>
+  <div class="bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-gradient-{{ $color.name }}</div>
 {{- end -}}
 {{< /colors.inline >}}
+</div>
 {{< /example >}}
 
 ### Upstream Bootstrap Gradient Class
