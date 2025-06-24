@@ -423,7 +423,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 
 {{< example >}}
 {{< card.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
+{{- range (index $.Site.Data "pnc-colors") }}
 <div class="card text-bg-{{ .name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
@@ -445,7 +445,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 
 {{< example >}}
 {{< card.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
+{{- range (index $.Site.Data "pnc-colors") }}
 <div class="card border-{{ .name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body{{ if not .contrast_color }} text-{{ .name }}{{ end }}">
@@ -457,18 +457,88 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 {{< /card.inline >}}
 {{< /example >}}
 
+### Borderless and Clickable Cards
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling.
+
+{{< example >}}
+<div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 18rem;">
+  <div class="card-body d-flex flex-column">
+    <h3 class="card-title mb-3 text-left h5 fw-bold">Simple Borderless Card</h3>
+    <div class="card-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="btn btn-blue d-block w-100">Button link</a>
+    </div>
+  </div>
+</div>
+<div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 18rem;">
+  <div class="card-body d-flex flex-column">
+    <h3 class="card-title mb-3 text-left h5 fw-bold hover-text-underline">Clickable Borderless Card</h3>
+    <div class="card-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="d-block w-100 stretched-link">Text link</a>
+    </div>
+  </div>
+</div>
+<div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
+  <div class="position-relative overflow-hidden">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
+  </div>
+  <div class="card-body d-flex flex-column">
+    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
+    <div class="card-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="btn btn-outline-white d-block w-100 stretched-link">Button link</a>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+### Title on Image
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility.
+
+{{< example >}}
+<div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
+  <div class="position-relative overflow-hidden">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
+    <div class="card-img-overlay p-0 d-flex flex-column">
+      <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+    </div>
+  </div>
+  <div class="card-body d-flex flex-column">
+    <div class="card-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="btn btn-red d-block w-100 stretched-link">Button link</a>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### Mixins utilities
 
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success">Header</div>
-  <div class="card-body text-success">
-    <h5 class="card-title">Success card title</h5>
+<div class="card border-azurite mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-azurite">Header</div>
+  <div class="card-body text-azurite">
+    <h5 class="card-title">Azurite card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div class="card-footer bg-transparent border-success">Footer</div>
+  <div class="card-footer bg-transparent border-azurite">Footer</div>
 </div>
 {{< /example >}}
 

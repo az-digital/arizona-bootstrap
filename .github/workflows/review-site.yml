@@ -79,7 +79,7 @@ jobs:
       - name: Checkout repository to workspace
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           fetch-depth: 20
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
@@ -134,13 +134,14 @@ jobs:
           sudo chown 1000:1000 .
           docker run --rm -e "AZ_SITE_BASE_URL=${AZ_REVIEW_BASEURL}" -e "AZ_SITE_HOST=${AZ_SITE_HOST}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" expose-review-site
       - name: Push back the updated deployable files to the repository (CSS, JS, and so on)
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
           if [ -n "$(git status --porcelain dist)" ] ; then
-            git add dist
+            git add -f dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
-            git push --force origin "HEAD:${AZ_TRIMMED_REF}"
+            git push origin "HEAD:${AZ_TRIMMED_REF}"
           fi
         shell: sh
       - name: Configure AWS credentials

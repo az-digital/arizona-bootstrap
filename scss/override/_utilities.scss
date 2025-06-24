@@ -24,8 +24,14 @@ $bg-grays: ();
 }
 $background-colors: map-merge($background-colors, $bg-grays);
 
+// primary, neutral, complimentary colors
+$pnc-colors: map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa", "silver", "ash", "sage", "black");
+
 // border colors
-$border-colors: map-loop(map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa"), rgba-css-var, "$key", "border");
+$border-colors: map-loop($pnc-colors, rgba-css-var, "$key", "border");
+
+// focus ring colors
+$focus-ring-colors: map-loop($pnc-colors, rgba-css-var, "$key", "focus-ring");
 
 $utilities: map-merge(
   $utilities,
@@ -59,6 +65,17 @@ $utilities: map-merge(
           map-get(map-get($utilities, "border-color"), "values"),
           (
             $border-colors
+          ),
+        ),
+      ),
+    ),
+    "focus-ring": map-merge(
+      map-get($utilities, "focus-ring"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "focus-ring"), "values"),
+          (
+            $focus-ring-colors
           ),
         ),
       ),

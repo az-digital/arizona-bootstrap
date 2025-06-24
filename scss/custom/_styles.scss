@@ -1,59 +1,6 @@
-/*
-* > COLOR CLASSES
-*/
-
-/*
-* >> Color and Background Helpers
-*/
-
-// >>> Brand
-@each $color, $value in $colors {
-  .text-bg-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
-  }
-}
-
-// >>> Brand Transparent
-@each $color, $value in $colors {
-  .text-bg-transparent-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    @include background-transparent($value);
-  }
-}
-@each $color, $value in $colors {
-  .bg-transparent-#{$color} {
-    @include background-transparent($value);
-  }
-}
-
-// >>> Background Gradient
-@each $color, $value in $colors {
-  .text-bg-gradient-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    @include background-gradient($value);
-  }
-}
-@each $color, $value in $colors {
-  .bg-gradient-#{$color} {
-    @include background-gradient($value);
-  }
-}
-
-// >>> Grays
-@each $color, $value in $grays {
-  .text-bg-gray-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: $value if($enable-important-utilities, !important, null);
-  }
-}
-
-.text-bg-dark {
-  .btn-close {
-    color: $white;
-  }
-}
-
+//
+// > Additional custom styles
+//
 
 // >> Arizona header
 

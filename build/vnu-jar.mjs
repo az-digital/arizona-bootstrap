@@ -23,7 +23,6 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
   // vnu-jar accepts multiple ignores joined with a `|`.
   // Also note that the ignores are string regular expressions.
   const ignores = [
-    '.*V5_AUDIT.*',
     // "autocomplete" is included in <button> and checkboxes and radio <input>s due to
     // Firefox's non-standard autocomplete behavior - see https://bugzilla.mozilla.org/show_bug.cgi?id=654072
     'Attribute “autocomplete” is only allowed when the input type is.*',

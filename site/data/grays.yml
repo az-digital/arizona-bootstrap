@@ -1,18 +1,18 @@
 - name: 100
   hex: "#f8f9fa"
-  contrast_color: dark
+  contrast_color: black
 - name: 200
   hex: "#e9ecef"
-  contrast_color: dark
+  contrast_color: black
 - name: 300
   hex: "#dee2e6"
-  contrast_color: dark
+  contrast_color: black
 - name: 400
   hex: "#ced4da"
-  contrast_color: dark
+  contrast_color: black
 - name: 500
   hex: "#adb5bd"
-  contrast_color: dark
+  contrast_color: black
 - name: 600
   hex: "#868e96"
 - name: 700

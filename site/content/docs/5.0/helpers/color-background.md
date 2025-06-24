@@ -17,6 +17,9 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< /callout >}}
 
 ### Brand
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "colors") }}
@@ -38,14 +41,74 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
+### Grayscale
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "grays") }}
+<div class="text-bg-gray-{{ .name }} p-3">.gray-{{ .name | title }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
+### Transparent
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="text-bg-transparent-{{ .name }} p-3">.text-bg-transparent-{{ .name }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
+### Gradient
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="text-bg-gradient-{{ .name }} p-3">.text-bg-gradient-{{ .name }} with contrasting color</div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
+## With headings and links
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Arizona Bootstrap includes additional styling to ensure that headings and links within elements styled by a `.text-bg-*` class have an accessible and brand-appropriate text color as well.
+
+{{< example >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "colors") }}
+<div class="text-bg-{{ .name }} p-3"><h3 class="h6 my-0">{{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "theme-colors") }}
+<div class="text-bg-{{ .name }} p-3"><h3 class="h6 my-0">{{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< text-bg.inline >}}
+{{- range (index $.Site.Data "grays") }}
+<div class="text-bg-gray-{{ .name }} p-3"><h3 class="h6 my-0">Gray {{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+{{- end -}}
+{{< /text-bg.inline >}}
+{{< /example >}}
+
 ## With components
 
 Use them in place of combined `.text-*` and `.bg-*` classes, like on [badges]({{< docsref "/components/badge#background-colors" >}}):
 
 {{< example >}}
-<span class="badge text-bg-success">Success</span>
-<span class="badge text-bg-info">Info</span>
-<span class="badge text-bg-red">Alert</span>
+<span class="badge text-bg-leaf">Leaf</span>
+<span class="badge text-bg-sky">Sky</span>
+<span class="badge text-bg-mesa">Mesa</span>
 {{< /example >}}
 
 Or on [cards]({{< docsref "/components/card#background-and-color" >}}):

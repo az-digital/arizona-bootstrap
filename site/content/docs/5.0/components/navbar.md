@@ -109,7 +109,7 @@ You can replace the text within the `.navbar-brand` with an `<img>`.
 <nav class="navbar bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-black-background-thick.svg" >}}" alt="Bootstrap" width="37" height="37">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-colored-background.svg" >}}" alt="Arizona Bootstrap" width="37" height="37">
     </a>
   </div>
 </nav>
@@ -123,7 +123,7 @@ You can also make use of some additional utilities to add an image and text at t
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-black-background-thick.svg" >}}" alt="Logo" width="37" height="37" class="d-inline-block align-text-center">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-colored-background.svg" >}}" alt="Logo" width="37" height="37" class="d-inline-block align-text-center">
       Arizona Bootstrap
     </a>
   </div>

@@ -21,18 +21,11 @@ If you are using the `.btn` class on its own, remember to at least define some e
 {{< /callout >}}
 
 ## Variants
-
-Bootstrap includes several button variants, each serving its own semantic purpose, with a few extras thrown in for more control.
-
 {{< example >}}
 {{< buttons.inline >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
-{{- range (index $.Site.Data "theme-colors") }}
-<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
-{{- end -}}
 {{< /buttons.inline >}}
-
 <button type="button" class="btn btn-link">Link</button>
 {{< /example >}}
 
@@ -66,9 +59,6 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {{< buttons.inline >}}
 <button type="button" class="btn btn-outline-red">Red</button>
 <button type="button" class="btn btn-outline-blue">Blue</button>
-{{- range (index $.Site.Data "theme-colors") }}
-<button type="button" class="btn btn-outline-{{ .name }}">{{ .name | title }}</button>
-{{- end -}}
 {{< /buttons.inline >}}
 {{< /example >}}
 
@@ -76,7 +66,8 @@ In need of a button, but not the hefty background colors they bring? Replace the
 Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
 {{< /callout >}}
 
-<span class="badge text-bg-light fs-6 mt-3 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
+
 For outline buttons on a **dark background color**, use the `.btn-outline-white`.
 
 <div class="bd-example">
@@ -128,28 +119,26 @@ You can even roll your own custom sizing with CSS variables:
 
 ## Arrow Buttons
 
-<span class="badge text-bg-light fs-6 mb-2 py-2"><span class="az-icon-wildcat fs-6 me-1 align-text-bottom"></span> Custom Arizona Bootstrap Class</span><br>
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
 Add an arrow to any button style by adding the `.btn-arrow` class.
 
 {{< example >}}
 <button type="button" class="btn btn-lg btn-red btn-arrow">Large Arrow Button</button>
 <button type="button" class="btn btn-lg btn-blue btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-info btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-outline-success btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-outline-red btn-arrow">Large Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-red btn-arrow">Regular Arrow Button</button>
 <button type="button" class="btn btn-blue btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-info btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-outline-success btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-outline-red btn-arrow">Regular Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-sm btn-red btn-arrow">Small Arrow Button</button>
 <button type="button" class="btn btn-sm btn-blue btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-info btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-outline-success btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-outline-red btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
 ## Disabled state
