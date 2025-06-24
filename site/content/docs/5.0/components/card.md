@@ -488,7 +488,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 </div>
 <div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
   <div class="position-relative overflow-hidden">
-    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
     <h3 class="card-title mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
@@ -511,7 +511,7 @@ Cards with the title on image style put the title of the card on top of the imag
 {{< example >}}
 <div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
   <div class="position-relative overflow-hidden">
-    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
       <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
