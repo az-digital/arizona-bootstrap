@@ -66,6 +66,7 @@
 @import "mixins/background";
 @import "mixins/buttons";
 @import "mixins/callouts";
+@import "mixins/az-color-contrast";
 @import "override/reboot";
 @import "custom/styles";
 @import "custom/typography";
@@ -85,7 +86,6 @@
 @import "override/navbar";
 @import "custom/navbar-offcanvas";
 @import "custom/background-wrapper";
-@import "legacy/background-wrapper";
 @import "custom/hover";
 @import "custom/callouts";
 @import "legacy/table";
