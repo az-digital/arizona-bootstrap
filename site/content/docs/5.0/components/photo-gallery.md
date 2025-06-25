@@ -98,17 +98,18 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
-                      <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+                      <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
+                      <cite class="small">Image credits can be included below the caption text.</cite>
                     </div>
                   </div>
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#gridGallery" data-bs-slide="prev">
-                <span class="material-icons-round text-white display-5" aria-hidden="true">arrow_back_ios</span>
+                <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#gridGallery" data-bs-slide="next">
-                <span class="material-icons-round text-white display-5" aria-hidden="true">arrow_forward_ios</span>
+                <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -166,17 +167,18 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
             </div>
             <div class="carousel-caption az-gallery-caption">
-              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
+              <cite class="small">Image credits can be included below the caption text.</cite>
             </div>
           </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery" data-bs-slide="next">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
+        <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
@@ -224,17 +226,18 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
                 <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
               </div>
               <div class="carousel-caption az-gallery-caption">
-                <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+                <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
+                <cite class="small">Image credits can be included below the caption text.</cite>
               </div>
             </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
-          <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+          <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
-          <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
+          <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -284,17 +287,18 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University of Arizona Spring Fling">
             </div>
             <div class="carousel-caption az-gallery-caption">
-              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With the Crop Image Style, the caption<br>covers the bottom of the image.</p>
+              <cite class="small">Image credits can be included below the caption text.</cite>
             </div>
           </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="next">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
+        <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>

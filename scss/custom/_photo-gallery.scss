@@ -25,6 +25,18 @@
   }
 }
 
+.az-gallery-slider-full,
+.az-gallery-slider-crop {
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: $blue;
+
+    &:hover {
+      color: $azurite;
+    }
+  }
+}
+
 .az-gallery-image {
   min-height: 0;
 }
@@ -50,16 +62,23 @@
 }
 
 .az-gallery-modal {
+  .az-gallery-caption {
+    max-width: 850px;
+  }
   .btn-close {
     padding: .5rem 1rem;
     font-size: 1.5rem;
     opacity: 1;
   }
+  .btn-close,
+  .carousel-control-prev,
+  .carousel-control-next {
+    &:hover {
+      opacity: .8;
+    }
+  }
   .modal-body {
     padding-top: 0;
-  }
-  .az-gallery-caption {
-    max-width: 850px;
   }
 }
 
