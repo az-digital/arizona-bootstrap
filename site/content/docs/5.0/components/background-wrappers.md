@@ -19,7 +19,7 @@ Click on the background color options below to see a live preview of what the ba
   {{< wrapperdemo.inline >}}
   {{ range (index $.Site.Data "colors") }}
   <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-3">
-    <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn d-block w-100 px-2 btn-background-wrapper-demo text-bg-{{ .name }}">{{ .name | title }}</button>
+    <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn d-block w-100 px-2 btn-background-wrapper-demo {{ if eq .name "chili" }}btn-red{{ else if eq .name "blue" }}btn-blue{{ else }}text-bg-{{ .name }}{{ end }}">{{ .name | title }}</button>
   </div>
   {{ end }}
   {{< /wrapperdemo.inline >}}
