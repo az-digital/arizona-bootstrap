@@ -10,6 +10,10 @@ toc: true
 
 The custom Photo Gallery component uses Bootstrap [carousel]({{< docsref "/components/carousel" >}}) and [modal]({{< docsref "/components/modal" >}}) components to allow users to browse a collection of images. The Photo Gallery has two display options: Grid and Slider.
 
+{{< callout warning >}}
+**Heads up!** The Photo Gallery CSS and markup has changed due to breaking changes with carousels and modals in Bootstrap 5, along with styling updates for Arizona Bootstrap 5. Implementations of the Photo Gallery should be updated to use the new markup as shown in the examples below.
+{{< /callout >}}
+
 ## Grid
 
 With the Grid display, all images in the gallery are presented in a grid layout. Each image can be clicked on to open a modal and view a large version of the full image. The carousel in the modal allows users to scroll through the entire gallery. Images are displayed without cropping and captions will not cover any part of the image, just like the <a href="#full-image-style">Slider Full Image Style</a> below.
@@ -182,56 +186,58 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
 
 The aspect ratio of the Slider Photo Gallery can be changed by simply setting a different `ratio-*` class (see the [ratio helper classes]({{< docsref "/helpers/ratio" >}})). The photo gallery example above uses the `ratio-4x3` class. The photo gallery below uses the `ratio-16x9` class instead.
 
-<div class="az-gallery-container">
-  <div class="ratio ratio-16x9">
-    <div id="sliderGallery16x9" class="carousel slide az-gallery az-gallery-slider-full">
-      <div class="carousel-inner h-100">
-        <div class="carousel-item az-gallery-item h-100 active">
-          <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+<div class="bd-example-snippet bd-example">
+  <div class="az-gallery-container">
+    <div class="ratio ratio-16x9">
+      <div id="sliderGallery16x9" class="carousel slide az-gallery az-gallery-slider-full">
+        <div class="carousel-inner h-100">
+          <div class="carousel-item az-gallery-item h-100 active">
+            <div class="d-flex flex-column h-100 justify-content-center">
+              <div class="carousel-image az-gallery-image">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item az-gallery-item h-100">
+            <div class="d-flex flex-column h-100 justify-content-center">
+              <div class="carousel-image az-gallery-image">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+              </div>
+              <div class="carousel-caption az-gallery-caption">
+                <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item az-gallery-item h-100">
+            <div class="d-flex flex-column h-100 justify-content-center">
+              <div class="carousel-image az-gallery-image">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+              </div>
+              <div class="carousel-caption az-gallery-caption">
+                <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item az-gallery-item h-100">
+            <div class="d-flex flex-column h-100 justify-content-center">
+              <div class="carousel-image az-gallery-image">
+                <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              </div>
+              <div class="carousel-caption az-gallery-caption">
+                <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
-          <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
-            </div>
-            <div class="carousel-caption az-gallery-caption">
-              <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item az-gallery-item h-100">
-          <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
-            </div>
-            <div class="carousel-caption az-gallery-caption">
-              <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item az-gallery-item h-100">
-          <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
-            </div>
-            <div class="carousel-caption az-gallery-caption">
-              <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>This caption is multiple lines.<br>The image shrinks vertically as needed.</p>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
+          <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
+          <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_back_ios</span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
-        <span class="material-icons-round text-blue display-5" aria-hidden="true">arrow_forward_ios</span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
 </div>
