@@ -17,4 +17,12 @@ export { default as ScrollSpy } from '../node_modules/bootstrap/js/src/scrollspy
 export { default as Tab } from '../node_modules/bootstrap/js/src/tab.js'
 export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
+export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as Offcanvasmenu } from './src/offcanvasmenu.js'
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+/* global fixModalAriaHidden */
+fixModalAriaHidden()

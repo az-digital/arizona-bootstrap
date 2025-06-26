@@ -17,6 +17,7 @@ import ScrollSpy from '../node_modules/bootstrap/js/src/scrollspy.js'
 import Tab from '../node_modules/bootstrap/js/src/tab.js'
 import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
+import fixModalAriaHidden from './src/modal.js'
 import Offcanvasmenu from './src/offcanvasmenu.js'
 
 export default {
@@ -32,5 +33,12 @@ export default {
   Tab,
   Toast,
   Tooltip,
+  fixModalAriaHidden,
   Offcanvasmenu
 }
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+fixModalAriaHidden()
