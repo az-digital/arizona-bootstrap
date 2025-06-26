@@ -8,7 +8,7 @@ toc: true
 
 ## Examples
 
-Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units. As of v5, badges no longer have focus or hover styles for links.
+Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units. As of v5, badges no longer have focus or hover styles for links. (See the <a href="#badge-links">Badge links</a> section below for custom backwards-compatible classes.)
 
 ### Headings
 
@@ -27,7 +27,7 @@ Badges can be used as part of links or buttons to provide a counter.
 
 {{< example >}}
 <button type="button" class="btn btn-red">
-  Notifications <span class="badge text-bg-blue">4</span>
+  Notifications <span class="badge text-bg-light">4</span>
 </button>
 {{< /example >}}
 
@@ -87,7 +87,19 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 {{- range (index $.Site.Data "pnc-colors") }}
 <span class="badge rounded-pill text-bg-{{ .name }}">{{ .name | title }}</span>{{- end -}}
 {{< /badge.inline >}}
-<span class="badge text-bg-sky">Sky</span>
+<span class="badge rounded-pill text-bg-sky">Sky</span>
+{{< /example >}}
+
+## Badge links
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Use the custom `.badge-link` class on an `<a>` element with the Chili, Midnight, or Light [`.text-bg-{color}` helper classes]({{< docsref "helpers/color-background" >}}) to provide _actionable_ badges with hover and focus states.
+
+{{< example >}}
+<a href="#" class="badge badge-link text-bg-chili">Chili</a>
+<a href="#" class="badge badge-link text-bg-midnight">Midnight</a>
+<a href="#" class="badge badge-link text-bg-light">Light</a>
 {{< /example >}}
 
 ## CSS
