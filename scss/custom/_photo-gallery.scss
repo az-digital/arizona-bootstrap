@@ -1,14 +1,40 @@
 // Photo Gallery custom component
 
 .az-gallery {
+  display: flex;
   width: 100%;
   height: 100%;
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: initial;
+    width: unset;
+    opacity: 1;
+  }
+
+  .carousel-control-prev {
+    order: 0;
+    padding-right: .25rem;
+  }
+  .carousel-inner {
+    order: 1;
+  }
+  .carousel-control-next {
+    order: 2;
+    padding-left: .25rem;
+  }
 }
 
-.az-gallery-modal .btn-close {
-  padding: .5rem 1rem;
-  font-size: 1.5rem;
-  opacity: 1;
+.az-gallery-slider-full,
+.az-gallery-slider-crop {
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: $blue;
+
+    &:hover {
+      color: $azurite;
+    }
+  }
 }
 
 .az-gallery-image {
@@ -18,14 +44,51 @@
 .az-gallery-caption {
   position: static;
   width: 100%;
-  max-width: 850px;
   padding: .75rem;
   margin-right: auto;
   margin-left: auto;
 }
 
+.az-gallery-slider-full .az-gallery-caption {
+  color: revert;
+  background-color: unset;
+}
+
+.az-gallery-slider-crop .az-gallery-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.az-gallery-modal {
+  .az-gallery-caption {
+    max-width: 850px;
+  }
+  .btn-close {
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+  .btn-close,
+  .carousel-control-prev,
+  .carousel-control-next {
+    &:hover {
+      opacity: .8;
+    }
+  }
+  .modal-body {
+    padding-top: 0;
+  }
+}
+
 @include media-breakpoint-up(md) {
-  .az-gallery-image {
-    height: 100%;
+  .az-gallery {
+    .carousel-control-prev {
+      padding-left: .25rem;
+    }
+    .carousel-control-next {
+      padding-right: .25rem;
+    }
   }
 }
