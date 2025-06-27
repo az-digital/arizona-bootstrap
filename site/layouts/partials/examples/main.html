@@ -22,7 +22,7 @@
                 {{ $example.name }}
               </a>
             </h3>
-            <p class="text-body-blue">{{ $example.description }}</p>
+            <p class="text-body-secondary">{{ $example.description }}</p>
             <p>
               {{- $indexPath := default "index.html" $example.indexPath -}}
             </p>
@@ -51,7 +51,7 @@
               {{ $example.name }}
             </h3>
           </a>
-          <p class="text-body-blue">{{ $example.description }}</p>
+          <p class="text-body-secondary">{{ $example.description }}</p>
         </article>
       {{- end }}
     {{ if (eq (add $i 1) $len) }}</div>{{ end -}}
