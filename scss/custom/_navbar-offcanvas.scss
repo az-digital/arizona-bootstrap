@@ -315,7 +315,7 @@
     .dropdown-menu {
       padding: $dropdown-padding-y 0;
       margin: $dropdown-spacer 0 0; // override default ul
-      background-color: $dropdown-bg-color;
+      background-color: $dropdown-bg;
       border: 0;
       border: $dropdown-border-width solid $dropdown-border-color;
       @include border-radius($dropdown-border-radius);

@@ -85,12 +85,18 @@ $btn-border-radius-lg: 3rem;
 // fusv-enable
 
 // >> Dropdowns
+// fusv-disable
+$dropdown-color: $cool-gray;
+$dropdown-bg: $blue;
+$dropdown-divider-bg: $white;
 $dropdown-link-color: $white;
 $dropdown-link-hover-color: $white;
 $dropdown-link-hover-bg: $azurite;
-$dropdown-link-active-bg: $white;
 $dropdown-link-active-color: $blue;
+$dropdown-link-active-bg: $white;
 $dropdown-link-disabled-color: $gray-600;
+$dropdown-header-color: $white;
+// fusv-enable
 
 // >> Forms
 // fusv-disable
