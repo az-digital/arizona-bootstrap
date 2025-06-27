@@ -22,7 +22,7 @@ In the example below, we take a typical card component and recreate it with plac
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
 
@@ -39,7 +39,7 @@ In the example below, we take a typical card component and recreate it with plac
       <span class="placeholder col-6"></span>
       <span class="placeholder col-8"></span>
     </p>
-    <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+    <a class="btn btn-red disabled placeholder col-6" aria-disabled="true"></a>
   </div>
 </div>
 </div>
@@ -51,7 +51,7 @@ In the example below, we take a typical card component and recreate it with plac
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-red">Go somewhere</a>
   </div>
 </div>
 
@@ -68,7 +68,7 @@ In the example below, we take a typical card component and recreate it with plac
       <span class="placeholder col-6"></span>
       <span class="placeholder col-8"></span>
     </p>
-    <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+    <a class="btn btn-red disabled placeholder col-6" aria-disabled="true"></a>
   </div>
 </div>
 ```
@@ -84,7 +84,7 @@ We apply additional styling to `.btn`s via `::before` to ensure the `height` is 
   <span class="placeholder col-6"></span>
 </p>
 
-<a class="btn btn-primary disabled placeholder col-4" aria-disabled="true"></a>
+<a class="btn btn-red disabled placeholder col-4" aria-disabled="true"></a>
 {{< /example >}}
 
 {{< callout info >}}

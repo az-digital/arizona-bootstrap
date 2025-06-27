@@ -47,7 +47,7 @@ Here's a quick example to demonstrate Bootstrap's form styles. Keep reading for 
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-red">Submit</button>
 </form>
 {{< /example >}}
 
@@ -85,7 +85,7 @@ However, if your form also includes custom button-like elements such as `<a clas
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-red">Submit</button>
   </fieldset>
 </form>
 {{< /example >}}

@@ -148,7 +148,7 @@
     --bs-dropdown-link-active-bg: #{$blue-700};
   }
 
-  .btn-secondary {
+  .btn-blue {
     --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
     --bs-btn-border-color: #{rgba($white, .25)};
     --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
