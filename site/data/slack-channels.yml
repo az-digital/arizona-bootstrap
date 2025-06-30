@@ -4,23 +4,45 @@
 
 - channel: "#arizona-bootstrap"
   description:
-    - purpose: "For topics and questions concerning Arizona Bootstrap (Bootstrap 4)"
+    - purpose: "For topics and questions concerning Arizona Bootstrap"
+  primary: true
 
 - channel: "#arizona-bootstrap-builds"
   description:
-      - purpose: "For topics concerning the arizona-bootstrap build process on GitHub"
-      - purpose: "For automated GitHub updates concerning the arizona-bootstrap repo"
+    - purpose: "For automated pull request updates concerning the arizona-bootstrap repo"
 
-- channel: "#drupal-security"
+- channel: "#azdigital-ci"
   description:
-    - purpose: "For topics concerning Drupal security and security releases/concerns"
-    - purpose: "For automated Drupal.org security notifications"
+    - purpose: "For automated tasks and CI (continuous integration)"
+
+- channel: "#azdigital-docs"
+  description:
+    - purpose: "For topics concerning documentation for Arizona Digital and its products"
+
+- channel: "#azdigital-frontend"
+  description:
+    - purpose: "AZ Digital front-end development projects (JavaScript, components, etc.)"
 
 - channel: "#azdigital-meetings"
   description:
-    - purpose: "Main source of communication for Arizona Digital about meetings and events"
-    - purpose: "For topics and information concerning Friday and Wednesday meetings"
-    - purpose: "For posting meeting notes and agendas"
+    - purpose: "Main source of communication about Arizona Digital meetings and events"
+    - purpose: "For topics, meeting notes, and agendas related to Wednesday and Friday meetings"
+  primary: true
+
+- channel: "#azdigital-quickstart"
+  description:
+    - purpose: "Automated GitHub notifications for Quickstart issues and pull requests"
+  primary: true
+
+- channel: "#azdigital-support"
+  description:
+    - purpose: "For questions and support related to Arizona Digital products"
+  primary: true
+
+- channel: "#drupal-security"
+  description:
+    - purpose: "For topics concerning Drupal security and security releases"
+    - purpose: "For automated Drupal.org security notifications"
 
 - channel: "#ua-bootstrap"
   description:
@@ -38,15 +60,3 @@
 - channel: "#ua-quickstart-builds"
   description:
     - purpose: "For automated pull request updates concerning the ua_quickstart repo"
-
-- channel: "#azdigital-ci"
-  description:
-    - purpose: "For automated tasks and CI (continuous integration)"
-
-- channel: "#azdigital-docs"
-  description:
-    - purpose: "For topics concerning documentation for Arizona Digital and its products"
-
-- channel: "#azdigital-support"
-  description:
-    - purpose: "For Arizona Digital product support"
