@@ -309,10 +309,10 @@ Different variants of `.btn`, such as the various outlined styles, are supported
 
 {{< example >}}
 <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
-<label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
+<label class="btn btn-outline-red" for="btn-check-outlined">Single toggle</label><br>
 
 <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-<label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
+<label class="btn btn-outline-blue" for="btn-check-2-outlined">Checked</label><br>
 
 <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
 <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>
