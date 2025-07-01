@@ -270,7 +270,7 @@ Various buttons are supported as part of these navbar forms, too. This is also a
 <nav class="navbar bg-body-tertiary">
   <form class="container-fluid justify-content-start">
     <button class="btn btn-outline-success me-2" type="button">Main button</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+    <button class="btn btn-sm btn-outline-blue" type="button">Smaller button</button>
   </form>
 </nav>
 {{< /example >}}
