@@ -106,7 +106,7 @@ More complex layouts can also be created with the grid system.
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-red">Sign in</button>
   </div>
 </form>
 {{< /example >}}
@@ -164,7 +164,7 @@ At times, you maybe need to use margin or padding utilities to create that perfe
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-red">Sign in</button>
 </form>
 {{< /example >}}
 
@@ -246,7 +246,7 @@ The example below uses a flexbox utility to vertically center the contents and c
     </div>
   </div>
   <div class="col-auto">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-red">Submit</button>
   </div>
 </form>
 {{< /example >}}
@@ -284,7 +284,7 @@ You can then remix that once again with size-specific column classes.
     </div>
   </div>
   <div class="col-auto">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-red">Submit</button>
   </div>
 </form>
 {{< /example >}}
@@ -323,7 +323,7 @@ Use the `.row-cols-*` classes to create responsive horizontal layouts. By adding
   </div>
 
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-red">Submit</button>
   </div>
 </form>
 {{< /example >}}
