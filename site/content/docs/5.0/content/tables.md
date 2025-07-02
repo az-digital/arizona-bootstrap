@@ -246,7 +246,7 @@ Add `.table-bordered` for borders on all sides of the table and cells.
 
 [Border color utilities]({{< docsref "/utilities/borders#border-color" >}}) can be added to change colors:
 
-{{< table class="table table-bordered border-primary" >}}
+{{< table class="table table-bordered border-red" >}}
 
 ### Tables without borders
 

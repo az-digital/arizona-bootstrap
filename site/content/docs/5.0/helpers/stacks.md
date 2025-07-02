@@ -65,8 +65,8 @@ Use `.vstack` to stack buttons and other elements:
 
 {{< example >}}
 <div class="vstack gap-2 col-md-5 mx-auto">
-  <button type="button" class="btn btn-secondary">Save changes</button>
-  <button type="button" class="btn btn-outline-secondary">Cancel</button>
+  <button type="button" class="btn btn-blue">Save changes</button>
+  <button type="button" class="btn btn-outline-blue">Cancel</button>
 </div>
 {{< /example >}}
 
@@ -75,7 +75,7 @@ Create an inline form with `.hstack`:
 {{< example >}}
 <div class="hstack gap-3">
   <input class="form-control me-auto" type="text" placeholder="Add your item here..." aria-label="Add your item here...">
-  <button type="button" class="btn btn-secondary">Submit</button>
+  <button type="button" class="btn btn-blue">Submit</button>
   <div class="vr"></div>
   <button type="button" class="btn btn-outline-danger">Reset</button>
 </div>
