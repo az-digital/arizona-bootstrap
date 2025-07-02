@@ -21708,14 +21708,43 @@ h6,
 }
 
 .az-gallery {
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
 }
-
-.az-gallery-modal .btn-close {
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+.az-gallery .carousel-control-prev,
+.az-gallery .carousel-control-next {
+  position: initial;
+  width: unset;
   opacity: 1;
+}
+.az-gallery .carousel-control-prev {
+  -ms-flex-order: 0;
+  order: 0;
+  padding-right: 0.25rem;
+}
+.az-gallery .carousel-inner {
+  -ms-flex-order: 1;
+  order: 1;
+}
+.az-gallery .carousel-control-next {
+  -ms-flex-order: 2;
+  order: 2;
+  padding-left: 0.25rem;
+}
+
+.az-gallery-slider-full .carousel-control-prev,
+.az-gallery-slider-full .carousel-control-next,
+.az-gallery-slider-crop .carousel-control-prev,
+.az-gallery-slider-crop .carousel-control-next {
+  color: #0c234b;
+}
+.az-gallery-slider-full .carousel-control-prev:hover,
+.az-gallery-slider-full .carousel-control-next:hover,
+.az-gallery-slider-crop .carousel-control-prev:hover,
+.az-gallery-slider-crop .carousel-control-next:hover {
+  color: #1e5288;
 }
 
 .az-gallery-image {
@@ -21725,15 +21754,46 @@ h6,
 .az-gallery-caption {
   position: static;
   width: 100%;
-  max-width: 850px;
   padding: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
 
+.az-gallery-slider-full .az-gallery-caption {
+  color: revert;
+  background-color: unset;
+}
+
+.az-gallery-slider-crop .az-gallery-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.az-gallery-modal .az-gallery-caption {
+  max-width: 850px;
+}
+.az-gallery-modal .btn-close {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+.az-gallery-modal .btn-close:hover,
+.az-gallery-modal .carousel-control-prev:hover,
+.az-gallery-modal .carousel-control-next:hover {
+  opacity: 0.8;
+}
+.az-gallery-modal .modal-body {
+  padding-top: 0;
+}
+
 @media (min-width: 768px) {
-  .az-gallery-image {
-    height: 100%;
+  .az-gallery .carousel-control-prev {
+    padding-left: 0.25rem;
+  }
+  .az-gallery .carousel-control-next {
+    padding-right: 0.25rem;
   }
 }
 #hide-inaccessible-label {
