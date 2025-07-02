@@ -10,11 +10,11 @@ aliases:
 
 ## Team
 
-{{< ourname >}} is maintained by the [Arizona Digital team](https://github.com/orgs/az-digital/people) on GitHub. We're always looking to grow this team and would love to hear from you if you're excited about CSS at scale, writing and maintaining vanilla JavaScript plugins, and improving build tooling processes for front-end code.
+{{< ourname >}} is maintained by the Arizona Digital team on GitHub. We're always looking to grow this team and would love to hear from you if you're excited about CSS at scale, writing and maintaining vanilla JavaScript plugins, and improving build tooling processes for front-end code.
 
 ## History
 
-UA Bootstrap was originally created by the [UA Digital team](https://bitbucket.org/uadigital/profile/members) in late 2014. UA Bootstrap (based on Bootstrap version 3) was replaced by Arizona Bootstrap 2 (based on Bootstrap version 4) in 2020.
+UA Bootstrap was originally created by the UA Digital team in late 2014. UA Bootstrap (based on Bootstrap version 3) was replaced by Arizona Bootstrap 2 (based on Bootstrap version 4) in 2020.
 
 Arizona Bootstrap 5 (based on Bootstrap version 5) was released in July 2025.
 
