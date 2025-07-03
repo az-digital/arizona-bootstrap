@@ -3,6 +3,8 @@
 */
 
 // >> Theme Colors
+$primary: $red;
+$secondary: $blue;
 $success: $leaf;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
@@ -11,6 +13,8 @@ $light: $gray-300;
 $dark: $gray-800;
 
 $theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
   "success": $success,
   "info": $info,
   "warning": $warning,
