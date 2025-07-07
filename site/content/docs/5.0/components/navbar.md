@@ -270,7 +270,7 @@ Various buttons are supported as part of these navbar forms, too. This is also a
 <nav class="navbar bg-body-tertiary">
   <form class="container-fluid justify-content-start">
     <button class="btn btn-outline-success me-2" type="button">Main button</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+    <button class="btn btn-sm btn-outline-blue" type="button">Smaller button</button>
   </form>
 </nav>
 {{< /example >}}
@@ -354,13 +354,13 @@ Navbar themes are easier than ever thanks to Bootstrap's combination of Sass and
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+          <button class="btn btn-outline-white" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-red" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -383,7 +383,7 @@ Navbar themes are easier than ever thanks to Bootstrap's combination of Sass and
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+          <button class="btn btn-outline-white" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -412,7 +412,7 @@ Navbar themes are easier than ever thanks to Bootstrap's combination of Sass and
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Search</button>
+          <button class="btn btn-outline-blue" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -424,7 +424,7 @@ Navbar themes are easier than ever thanks to Bootstrap's combination of Sass and
   <!-- Navbar content -->
 </nav>
 
-<nav class="navbar bg-primary" data-bs-theme="dark">
+<nav class="navbar bg-red" data-bs-theme="dark">
   <!-- Navbar content -->
 </nav>
 

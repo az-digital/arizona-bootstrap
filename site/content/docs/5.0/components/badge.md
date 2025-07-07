@@ -42,7 +42,7 @@ Use utilities to modify a `.badge` and position it in the corner of a link or bu
 {{< example >}}
 <button type="button" class="btn btn-red position-relative">
   Inbox
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-midnight">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-midnight">
     99+
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -54,7 +54,7 @@ You can also replace the `.badge` class with a few more utilities without a coun
 {{< example >}}
 <button type="button" class="btn btn-red position-relative">
   Profile
-  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-midnight border border-light rounded-circle">
+  <span class="position-absolute top-0 start-100 translate-middle p-2 text-bg-midnight border border-light rounded-circle">
     <span class="visually-hidden">New alerts</span>
   </span>
 </button>
