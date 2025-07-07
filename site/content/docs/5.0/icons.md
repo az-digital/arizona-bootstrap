@@ -163,10 +163,10 @@ In general, developers should use the main branch version of the icons for devel
 
 ## Material Symbols Implementation
 
-Include the Material Symbols' stylesheet in your project in order to use the font icons. [Refer to Material Symbols docs](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) for more information.
+Include the Material Symbols' stylesheet in your project in order to use the font icons. [Refer to Material Symbols docs](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) for more information. Be sure to select the filled style icons.
 
 ```html
-<link href="https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
 ```
 
 
