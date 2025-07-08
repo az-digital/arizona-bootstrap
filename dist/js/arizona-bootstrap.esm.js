@@ -5315,8 +5315,30 @@ defineJQueryPlugin(Toast);
 
 /**
  * --------------------------------------------------------------------------
+ * Arizona Bootstrap: modal.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+function fixModalAriaHidden$1() {
+  var modals = document.querySelectorAll('.modal');
+  for (var modal of modals) {
+    modal.addEventListener('hide.bs.modal', () => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    });
+  }
+}
+
+/**
+ * --------------------------------------------------------------------------
  * Arizona Bootstrap: offcanvasmenu.js
- * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -5589,5 +5611,20 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Offcanvasmenu);
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip };
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap index.esm.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+
+/**
+ * Temporary fix for blocked aria-hidden attribute on modals.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+ */
+/* global fixModalAriaHidden */
+fixModalAriaHidden();
+
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip, fixModalAriaHidden$1 as fixModalAriaHidden };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map

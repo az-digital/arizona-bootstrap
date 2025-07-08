@@ -40,9 +40,9 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 Use utilities to modify a `.badge` and position it in the corner of a link or button.
 
 {{< example >}}
-<button type="button" class="btn btn-blue position-relative">
+<button type="button" class="btn btn-red position-relative">
   Inbox
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-red">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-midnight">
     99+
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -52,9 +52,9 @@ Use utilities to modify a `.badge` and position it in the corner of a link or bu
 You can also replace the `.badge` class with a few more utilities without a count for a more generic indicator.
 
 {{< example >}}
-<button type="button" class="btn btn-blue position-relative">
+<button type="button" class="btn btn-red position-relative">
   Profile
-  <span class="position-absolute top-0 start-100 translate-middle p-2 text-bg-red border border-light rounded-circle">
+  <span class="position-absolute top-0 start-100 translate-middle p-2 text-bg-midnight border border-light rounded-circle">
     <span class="visually-hidden">New alerts</span>
   </span>
 </button>

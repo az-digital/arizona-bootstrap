@@ -86,7 +86,7 @@ With dependencies installed and our project folder ready for us to start coding,
      <body>
        <div class="container py-4 px-3 mx-auto">
          <h1>Hello, Bootstrap and Parcel!</h1>
-         <button class="btn btn-primary">Primary button</button>
+         <button class="btn btn-red">Red button</button>
        </div>
      </body>
    </html>
