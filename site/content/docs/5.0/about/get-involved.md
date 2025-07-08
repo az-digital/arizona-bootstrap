@@ -84,7 +84,7 @@ Please feel free to post questions, bug reports, and suggestions to the **#azdig
 
 Arizona Digital hosts weekly meetings on Wednesdays and Fridays. All meetings are held on Zoom.
 
-On Wednesdays, we meet in the morning for an hour to review pull requests from our [projects in GitHub](https://github.com/orgs/az-digital/projects). In the afternoon, we host an open-ended workshop for topics we generally set in advance. On Friday mornings, we meet for two hours to announce updates from the week, review issues and pull requests, and discuss topics related to Arizona Digital development.
+On Wednesdays, we meet in the morning for an hour to review pull requests from our [projects in GitHub](https://github.com/orgs/az-digital/projects?query=is%3Aopen%3Ftype%3Dnew&query=is%3Aopen+sort%3Atitle-asc). In the afternoon, we host an open-ended workshop for topics we generally set in advance. On Friday mornings, we meet for two hours to announce updates from the week, review issues and pull requests, and discuss topics related to Arizona Digital development.
 
 For the schedule and Zoom link for our meetings, please join our **#azdigital-meetings** channel and view the channel topic at the top.
 
