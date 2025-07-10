@@ -20772,7 +20772,7 @@ h6,
   color: #fff;
 }
 
-.nav-link.active, .nav-link:active {
+.nav-link.active, .nav-link:active, .nav-link.is-active {
   color: #001c48;
   background-color: #e9ecef;
   border-radius: var(--bs-border-radius);
@@ -20787,14 +20787,14 @@ h6,
 .nav-tabs .nav-link {
   background-color: #e9ecef;
 }
-.nav-tabs .nav-link.active, .nav-tabs .nav-link:active {
+.nav-tabs .nav-link.active, .nav-tabs .nav-link:active, .nav-tabs .nav-link.is-active {
   border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
 }
 .nav-tabs .nav-link.disabled, .nav-tabs .nav-link:disabled {
   background-color: initial;
 }
 
-.nav.nav-underline .nav-link.active, .nav.nav-underline .nav-link:active {
+.nav.nav-underline .nav-link.active, .nav.nav-underline .nav-link:active, .nav.nav-underline .nav-link.is-active {
   background-color: #fff;
   border-radius: revert;
 }
