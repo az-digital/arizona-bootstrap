@@ -11,45 +11,24 @@
   }
 }
 
-// Overriding "primary" buttons to be AZ Red
+// Overriding btn-primary to mirror custom .btn-red
 .btn-primary {
-  @include button-variant(
-    $red,
-    $red,
-    $hover-background: $chili,
-    $hover-border: $chili,
-    $active-background: $red,
-    $active-border: $red
-  );
+  @extend .btn-red;
 }
 
+// Overriding .btn-secondary to mirror custom .btn-blue
 .btn-secondary {
-  @include button-variant(
-    $blue,
-    $blue,
-    $hover-background: $azurite,
-    $hover-border: $azurite,
-    $active-background: tint-color($blue, 20%),
-    $active-border: tint-color($blue, 20%)
-  );
+  @extend .btn-blue;
 }
 
+// Overriding .btn-outline-primary to mirror custom .btn-outline-red
 .btn-outline-primary {
-  @include button-outline-variant(
-    $color: $red,
-    $color-hover: $white,
-    $active-background: $chili,
-    $active-border: $chili
-  );
+  @extend .btn-outline-red;
 }
 
+// Overriding .btn-outline-secondary to mirror custom .btn-outline-blue
 .btn-outline-secondary {
-  @include button-outline-variant(
-    $color: $blue,
-    $color-hover: $white,
-    $active-background: $azurite,
-    $active-border: $azurite
-  );
+  @extend .btn-outline-blue;
 }
 
 .btn-link {
