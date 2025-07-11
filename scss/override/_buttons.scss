@@ -45,9 +45,7 @@
 .btn-outline-primary {
   @include button-outline-variant(
     $color: $red,
-    $color-hover: $white,
-    $active-background: $chili,
-    $active-border: $chili
+    $color-hover: $white
   );
 }
 
@@ -55,9 +53,7 @@
 .btn-outline-secondary {
   @include button-outline-variant(
     $color: $blue,
-    $color-hover: $white,
-    $active-background: $azurite,
-    $active-border: $azurite
+    $color-hover: $white
   );
 }
 
