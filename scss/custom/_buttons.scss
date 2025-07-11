@@ -23,8 +23,7 @@
   @include button-outline-variant(
     $color: $white,
     $color-hover: $gray-800,
-    $active-background: $white,
-    $active-border: $white
+    $active-background: $white
   );
 }
 
