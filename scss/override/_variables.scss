@@ -2,34 +2,6 @@
 * > COLORS
 */
 
-// scss-docs-start color-variables
-$red: #ab0520;
-$blue: #0c234b;
-// scss-docs-end color-variables
-
-// scss-docs-start colors-map
-$colors: (
-  "red": $red,
-  "bloom": $bloom,
-  "chili": $chili,
-  "blue":  $blue,
-  "sky": $sky,
-  "oasis": $oasis,
-  "azurite": $azurite,
-  "midnight": $midnight,
-  "cool-gray": $cool-gray,
-  "warm-gray": $warm-gray,
-  "leaf": $leaf,
-  "river": $river,
-  "silver": $silver,
-  "mesa": $mesa,
-  "ash": $ash,
-  "sage": $sage,
-  "white": $white,
-  "black": $black
-);
-// scss-docs-end colors-map
-
 // >> Theme Colors
 // scss-docs-start theme-color-variables
 $primary: $red;
