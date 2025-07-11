@@ -1,3 +1,9 @@
+- name: primary
+  hex: "#ab0520"
+  contrast_color: black
+- name: secondary
+  hex: "#0c234b"
+  contrast_color: black;
 - name: success
   hex: "#70b865"
   contrast_color: black
