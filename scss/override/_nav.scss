@@ -2,7 +2,8 @@
 
 .nav-link {
   &.active,
-  &:active {
+  &:active,
+  &.is-active {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-bg;
     @include border-radius($nav-pills-border-radius);
@@ -22,7 +23,8 @@
     background-color: $nav-tabs-link-bg;
 
     &.active,
-    &:active {
+    &:active,
+    &.is-active {
       @include border-radius($nav-tabs-border-radius $nav-tabs-border-radius 0 0);
     }
 
@@ -35,7 +37,8 @@
 
 .nav.nav-underline .nav-link {
   &.active,
-  &:active {
+  &:active,
+  &.is-active {
     background-color: $nav-tabs-link-active-bg;
     @include border-radius(revert);
   }
@@ -49,10 +52,12 @@
   &:first-child {
     @include border-top-start-radius($nav-pills-border-radius);
     @include border-top-end-radius($nav-pills-border-radius);
+    overflow-x: hidden;
   }
   &:last-child {
     @include border-bottom-start-radius($nav-pills-border-radius);
     @include border-bottom-end-radius($nav-pills-border-radius);
+    overflow-x: hidden;
   }
 
   ul > li {
