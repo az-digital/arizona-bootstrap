@@ -1,2 +1,0 @@
-// Remove primary and secondary colors from the $theme-colors map.
-$theme-colors: map-remove($theme-colors, "primary", "secondary");
