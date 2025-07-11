@@ -5,11 +5,11 @@
 // hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
   @include button-variant(
-    $background: $chili,
-    $border: $chili,
+    $background: $red,
+    $border: $red,
     $color: $white,
-    $hover-background: $red,
-    $hover-border: $red,
+    $hover-background: $chili,
+    $hover-border: $chili,
     $hover-color: $white,
     $active-background: $red,
     $active-border: $red,
@@ -33,15 +33,19 @@
 
 .btn-outline-red {
   @include button-outline-variant(
-    $color: $chili,
+    $color: $red,
     $color-hover: $white,
+    $active-background: $chili,
+    $active-border: $chili
   );
 }
 
 .btn-outline-blue {
   @include button-outline-variant(
     $color: $blue,
-    $color-hover: $white
+    $color-hover: $white,
+    $active-background: $azurite,
+    $active-border: $azurite
   );
 }
 
@@ -50,6 +54,7 @@
     $color: $white,
     $color-hover: $gray-800,
     $active-background: $white,
+    $active-border: $white
   );
 }
 
