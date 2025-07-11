@@ -8,35 +8,31 @@
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
-// $gray-400: #ced4da;
+$gray-400: #ced4da;
 $gray-500: #adb5bd;
 $gray-600: #6c757d;
-// $gray-700: #567a9e;
+$gray-700: #567a9e;
 $gray-800: #343a40;
-// $gray-900: #212529;
-
-// $az-red: #ab0520;
-// $az-blue: #0c234b;
-// $az-chili: #8b0015;
-// $az-azurite: #1e5288;
+$gray-900: #212529;
 
 // fusv-disable
-// $grays: (
-//   "100": $gray-100,
-//   "200": $gray-200,
-//   "300": $gray-300,
-//   "400": $gray-400,
-//   "500": $gray-500,
-//   "600": $gray-600,
-//   "700": $gray-700,
-//   "800": $gray-800,
-//   "900": $gray-900
-// );
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
 // fusv-enable
 
-$blue: #0c234b; // move to overrides/variables
+$red: #ab0520;
 $bloom: #ef4056;
 $chili: #8b0015;
+$blue: #0c234b;
 $sky: #81d3eb;
 $oasis: #378dbd;
 $azurite: #1e5288;
@@ -50,8 +46,8 @@ $dark-silver: #49595e;  // to be used for text only
 $mesa: #a95c42;
 $ash: #403635;
 $sage: #4a634e;
-$white: #fff; // move to overrides/variables
-$black: #000; // move to overrides/variables
+$white: #fff;
+$black: #000;
 
 // fusv-disable
 $bloom-100: tint-color($bloom, 80%) !default;
