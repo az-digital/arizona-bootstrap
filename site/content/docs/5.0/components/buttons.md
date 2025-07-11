@@ -23,8 +23,6 @@ If you are using the `.btn` class on its own, remember to at least define some e
 ## Variants
 {{< example >}}
 {{< buttons.inline >}}
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
 {{< /buttons.inline >}}
@@ -59,8 +57,6 @@ In need of a button, but not the hefty background colors they bring? Replace the
 
 {{< example >}}
 {{< buttons.inline >}}
-<button type="button" class="btn btn-outline-primary">Primary</button>
-<button type="button" class="btn btn-outline-secondary">Secondary</button>
 <button type="button" class="btn btn-outline-red">Red</button>
 <button type="button" class="btn btn-outline-blue">Blue</button>
 {{< /buttons.inline >}}
