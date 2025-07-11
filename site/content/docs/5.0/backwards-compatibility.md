@@ -143,7 +143,7 @@ Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals
 
 ## Tables
 
-Arizona Bootstrap 5 includes a custom set of [Table variants]({{< docsref "content/tables/#variants" >}}). From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included. Note that in Bootstrap 5, `.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes.
+Arizona Bootstrap 5 includes a custom set of [table variants]({{< docsref "content/tables/#variants" >}}). From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included. Note that in Bootstrap 5, [`.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes]({{< docsref "migration/#content-reboot-etc" >}}).
 
 ## Icons
 
