@@ -52,10 +52,12 @@
   &:first-child {
     @include border-top-start-radius($nav-pills-border-radius);
     @include border-top-end-radius($nav-pills-border-radius);
+    overflow-x: hidden;
   }
   &:last-child {
     @include border-bottom-start-radius($nav-pills-border-radius);
     @include border-bottom-end-radius($nav-pills-border-radius);
+    overflow-x: hidden;
   }
 
   ul > li {
