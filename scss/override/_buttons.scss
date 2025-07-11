@@ -13,22 +13,52 @@
 
 // Overriding btn-primary to mirror custom .btn-red
 .btn-primary {
-  @extend .btn-red;
+  @include button-variant(
+    $background: $red,
+    $border: $red,
+    $color: $white,
+    $hover-background: $chili,
+    $hover-border: $chili,
+    $hover-color: $white,
+    $active-background: $red,
+    $active-border: $red,
+    $active-color: $white
+  );
 }
 
 // Overriding .btn-secondary to mirror custom .btn-blue
 .btn-secondary {
-  @extend .btn-blue;
+  @include button-variant(
+    $background: $blue,
+    $border: $blue,
+    $color: $white,
+    $hover-background: $azurite,
+    $hover-border: $azurite,
+    $hover-color: $white,
+    $active-background: tint-color($blue, 20%),
+    $active-border: tint-color($blue, 20%),
+    $active-color: $white
+  );
 }
 
 // Overriding .btn-outline-primary to mirror custom .btn-outline-red
 .btn-outline-primary {
-  @extend .btn-outline-red;
+  @include button-outline-variant(
+    $color: $red,
+    $color-hover: $white,
+    $active-background: $chili,
+    $active-border: $chili
+  );
 }
 
 // Overriding .btn-outline-secondary to mirror custom .btn-outline-blue
 .btn-outline-secondary {
-  @extend .btn-outline-blue;
+  @include button-outline-variant(
+    $color: $blue,
+    $color-hover: $white,
+    $active-background: $azurite,
+    $active-border: $azurite
+  );
 }
 
 .btn-link {
