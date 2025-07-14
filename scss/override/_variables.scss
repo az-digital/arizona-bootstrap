@@ -61,6 +61,20 @@ $enable-negative-margins: true;
 // fusv-enable
 
 /*
+* > TABLES
+*/
+// fusv-disable
+$table-variants: map-merge(
+  map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black"),
+  map-remove($theme-colors, "success", "danger", "warning", "info")
+);
+$table-striped-bg-factor: .09;
+$table-striped-bg: rgba($gray-300, .35);
+$table-hover-bg-factor: .18;
+$table-hover-bg: rgba($gray-300, .6);
+// fusv-enable
+
+/*
 * > COMPONENTS
 */
 
