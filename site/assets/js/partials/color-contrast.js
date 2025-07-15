@@ -1,10 +1,10 @@
-var toggleAccessibleBoxElem = document.getElementById("hide-inaccessible");
+var toggleHideInaccessibleBox = document.getElementById("hide-inaccessible");
 var inaccessibleElems = document.getElementsByClassName("inaccessible");
 
-if(toggleAccessibleBoxElem !== null) {
-  toggleAccessibleBoxElem.addEventListener("change", (event) => {
+if(toggleHideInaccessibleBox !== null) {
+  toggleHideInaccessibleBox.addEventListener("change", (event) => {
     for(i = 0; i < inaccessibleElems.length; i++) {
-      if(toggleAccessibleBoxElem.checked) {
+      if(toggleHideInaccessibleBox.checked) {
         inaccessibleElems[i].style.display = "none";
       }
       else {
