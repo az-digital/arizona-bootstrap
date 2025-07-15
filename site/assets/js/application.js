@@ -12,7 +12,9 @@
 /* eslint-disable import/no-unresolved */
 import sidebarScroll from 'js/partials/sidebar.js'
 import snippets from 'js/partials/snippets.js'
+import colorContrast from 'js/partials/color-contrast.js'
 /* eslint-enable import/no-unresolved */
 
 sidebarScroll()
 snippets()
+colorContrast()
