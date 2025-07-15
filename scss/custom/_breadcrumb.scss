@@ -6,12 +6,3 @@
   color: $breadcrumb-divider-color;
   content: "home";
 }
-
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left;
-  padding-right: .5rem;
-  // stylelint-disable-next-line
-  font-family: "Material Symbols Rounded";
-  color: $breadcrumb-divider-color;
-  content: "chevron_right";
-}
