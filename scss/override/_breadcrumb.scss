@@ -1,13 +1,5 @@
 // Overrides for Breadcrumbs
 .breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  padding: $breadcrumb-padding-y $breadcrumb-padding-x;
-  margin-bottom: $breadcrumb-margin-bottom;
-  @include font-size($breadcrumb-font-size);
-  list-style: none;
-  background-color: $breadcrumb-bg;
-  @include border-radius($breadcrumb-border-radius);
   a {
     padding: 1px 0;
     font-weight: 500;
