@@ -6,9 +6,11 @@ if(toggleHideInaccessibleBox !== null) {
     for(i = 0; i < inaccessibleElems.length; i++) {
       if(toggleHideInaccessibleBox.checked) {
         inaccessibleElems[i].style.display = "none";
+        inaccessibleElems[i].parentElement.style.opacity = 0;
       }
       else {
         inaccessibleElems[i].style.display = "block";
+        inaccessibleElems[i].parentElement.style.opacity = 1;
       }
     }
   });
