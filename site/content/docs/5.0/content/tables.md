@@ -16,7 +16,11 @@ Using the most basic table markup, here's how `.table`-based tables look in Boot
 
 ## Variants
 
-Use contextual classes to color tables, table rows or individual cells.
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+Use contextual classes to color tables, table rows, or individual cells. The example below only demonstrates the use of contextual classes on table rows.
+
+Arizona Bootstrap includes table variants for many brand colors as well as the "light" and "dark" theme colors.
 
 {{< callout info >}}
 **Heads up!** Because of the more complicated CSS used to generate our table variants, they most likely won't see color mode adaptive styling until v6.
@@ -37,39 +41,44 @@ Use contextual classes to color tables, table rows or individual cells.
         <td>Cell</td>
         <td>Cell</td>
       </tr>
-      {{< table.inline >}}
-      {{- range (index $.Site.Data "theme-colors") }}
-        <tr class="table-{{ .name }}">
-          <th scope="row">{{ .name | title }}</th>
+      {{< table-brand-colors.inline >}}
+      {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+      {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
+        <tr class="table-{{ $color.name }}">
+          <th scope="row">{{ $color.name | title }}</th>
           <td>Cell</td>
           <td>Cell</td>
         </tr>
       {{- end -}}
-      {{< /table.inline >}}
+      {{< /table-brand-colors.inline >}}
+      {{< table-theme-colors.inline >}}
+      {{- $siteThemeColors := index $.Site.Data "theme-colors" -}}
+      {{- $excluded := slice "success" "danger" "warning" "info" -}}
+      {{- range $color := where $siteThemeColors "name" "not in" $excluded }}
+        <tr class="table-{{ $color.name }}">
+          <th scope="row">{{ $color.name | title }}</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      {{- end -}}
+      {{< /table-theme-colors.inline >}}
     </tbody>
   </table>
 </div>
 
 {{< highlight html >}}
-<!-- On tables -->{{< table.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<table class="table-{{ .name }}">...</table>
+<!-- On rows -->{{< table-brand-colors.inline >}}
+{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+{{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
+<tr class="table-{{ $color.name }}">...</tr>
 {{- end -}}
-{{< /table.inline >}}
-
-<!-- On rows -->{{< table.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<tr class="table-{{ .name }}">...</tr>
+{{< /table-brand-colors.inline >}}{{< table-theme-colors.inline >}}
+{{- $siteThemeColors := index $.Site.Data "theme-colors" -}}
+{{- $excluded := slice "success" "danger" "warning" "info" -}}
+{{- range $color := where $siteThemeColors "name" "not in" $excluded }}
+<tr class="table-{{ $color.name }}">...</tr>
 {{- end -}}
-{{< /table.inline >}}
-
-<!-- On cells (`td` or `th`) -->
-<tr>{{< table.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-  <td class="table-{{ .name }}">...</td>
-{{- end -}}
-{{< /table.inline >}}
-</tr>
+{{< /table-theme-colors.inline >}}
 {{< /highlight >}}
 
 {{< callout info >}}

@@ -12,9 +12,6 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
-// Arizona Bootstrap override to maps.
-@import "override/maps";
-
 // Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
@@ -87,7 +84,6 @@
 @import "custom/background-wrapper";
 @import "custom/hover";
 @import "custom/callouts";
-@import "legacy/table";
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "legacy/color-contrast";
