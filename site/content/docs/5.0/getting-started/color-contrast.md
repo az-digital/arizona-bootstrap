@@ -5,7 +5,7 @@ description: A brief overview of Arizona Bootstrap's brand colors and color cont
 group: getting-started
 toc: true
 extra_js:
-  - src: "/docs/5.0/assets/js/toggle-visible.js"
+  - src: "docs/5.0/assets/js/toggle-visible.js"
     async: true
 ---
 
