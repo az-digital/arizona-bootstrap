@@ -5,9 +5,6 @@
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-// Note that this file is not published; we only include it in scripts.html
-// for StackBlitz to work
-
 /* eslint-disable import/no-unresolved */
 import snippets from 'js/partials/snippets.js'
 /* eslint-enable import/no-unresolved */
