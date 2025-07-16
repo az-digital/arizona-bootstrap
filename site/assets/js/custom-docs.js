@@ -1,4 +1,4 @@
-(function ($) {
+(() => {
   'use strict'
 
   // COLOR CONTRAST TABLE
@@ -60,5 +60,5 @@
   function customSample() {
     updateSample(document.bigcontrol.customSampleText.value)
   }
-})(jQuery)
+})()
 
