@@ -13,11 +13,11 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
 {{< example >}}
 <div class="d-lg-none d-flex justify-content-end">
   <button data-bs-toggle="offcanvasmenu" type="button" data-bs-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
-    <span class="material-icons-round">search</span>
+    <span class="material-symbols-rounded">search</span>
     <span>Search</span>
   </button>
   <button data-bs-toggle="offcanvasmenu" type="button" data-bs-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-red btn-menu">
-    <span class="material-icons-round">menu</span>
+    <span class="material-symbols-rounded">menu</span>
     <span>Menu</span>
   </button>
 </div>
@@ -25,11 +25,11 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
   <div class="navbar-offcanvas-header">
     <div class="bg-chili d-flex justify-content-between align-items-center">
       <a href="/" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-        <span class="material-icons-round">home</span>
+        <span class="material-symbols-rounded">home</span>
         <span>Home</span>
       </a>
       <button id="navbarOffcanvasDemoClose" data-bs-toggle="offcanvasmenu" data-bs-target="#navbarOffcanvasDemo" aria-controls="navbarOffcanvasDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-        <span class="material-icons-round mx-auto">close</span>
+        <span class="material-symbols-rounded mx-auto">close</span>
         <span class="mx-auto">Close</span>
       </button>
     </div>
@@ -37,7 +37,7 @@ Adding the `.navbar-offcanvas` class to your `<nav>` will incorporate an off-can
       <div class="input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn btn-search" type="submit"><span class="material-icons-round">search</span></button>
+          <button class="btn btn-search" type="submit"><span class="material-symbols-rounded">search</span></button>
         </div>
       </div>
     </form>

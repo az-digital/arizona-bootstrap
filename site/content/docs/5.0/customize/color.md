@@ -395,7 +395,7 @@ Be sure to monitor contrast ratios as you customize colors. As shown below, we'v
 <div class="row font-monospace">
   {{< theme-colors.inline >}}
   {{- range $color := $.Site.Data.colors }}
-    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark"))) }}
+    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark")) (not (eq $color.name "black"))) }}
     <div class="col-md-4 mb-3">
       <div class="p-3 mb-2 position-relative swatch-{{ $color.name }}">
         <strong class="d-block">${{ $color.name }}</strong>

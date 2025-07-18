@@ -9,9 +9,6 @@
 * > COMPONENTS
 */
 /*
-* > COMPONENTS
-*/
-/*
 * > COLORS
 */
 /*
@@ -5542,12 +5539,12 @@ textarea.form-control-lg {
 }
 
 .breadcrumb {
-  --bs-breadcrumb-padding-x: 0;
-  --bs-breadcrumb-padding-y: 0;
+  --bs-breadcrumb-padding-x: 1rem;
+  --bs-breadcrumb-padding-y: 0.75rem;
   --bs-breadcrumb-margin-bottom: 1rem;
   --bs-breadcrumb-bg: #fff;
   --bs-breadcrumb-border-radius: ;
-  --bs-breadcrumb-divider-color: var(--bs-secondary-color);
+  --bs-breadcrumb-divider-color: #6c757d;
   --bs-breadcrumb-item-padding-x: 0.5rem;
   --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
   display: -ms-flexbox;
@@ -19460,16 +19457,6 @@ h6,
 }
 
 /* stylelint-enable declaration-no-important */
-.breadcrumb {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 0 0;
-  margin-bottom: 1rem;
-  list-style: none;
-  background-color: #fff;
-}
 .breadcrumb a {
   padding: 1px 0;
   font-weight: 500;
@@ -19479,29 +19466,27 @@ h6,
   color: #001c48;
 }
 
-.breadcrumb-item-home::before {
-  float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Icons Round";
-  color: var(--bs-secondary-color);
-  content: "home";
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Icons Round";
-  color: var(--bs-secondary-color);
-  content: "chevron_right";
-}
-
 @media (min-width: 992px) {
   .breadcrumb {
-    padding: 0;
-    margin-top: 0;
     margin-bottom: 0;
   }
 }
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Symbols Rounded";
+  color: #6c757d;
+  content: "chevron_right";
+}
+
+.breadcrumb-item-home::before {
+  float: left;
+  padding-right: 0.5rem;
+  font-family: "Material Symbols Rounded";
+  color: #6c757d;
+  content: "home";
+}
+
 .btn-primary, .btn-red {
   color: #fff;
 }
@@ -21398,7 +21383,7 @@ h6,
   content: "\e145";
   border: 0;
   margin-left: 20px;
-  font-family: "Material Icons Round";
+  font-family: "Material Symbols Rounded";
 }
 .navbar-offcanvas .dropdown-divider {
   margin: 0;
@@ -21420,7 +21405,7 @@ h6,
 .btn-menu:hover {
   background-color: #8b0015;
 }
-.btn-menu span.material-icons-round {
+.btn-menu span.material-symbols-rounded {
   display: block;
   font-size: 24px;
   line-height: 24px;
@@ -21433,7 +21418,7 @@ h6,
   padding: 0;
   font-size: 10px;
 }
-.btn-menu-offcanvas-nav span.material-icons-round {
+.btn-menu-offcanvas-nav span.material-symbols-rounded {
   display: block;
   font-size: 24px;
   line-height: 24px;

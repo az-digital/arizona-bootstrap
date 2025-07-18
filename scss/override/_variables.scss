@@ -92,7 +92,12 @@ $accordion-button-active-bg: $gray-200;
 // fusv-enable
 
 // >> Breadcrumbs
+// fusv-disable
 $breadcrumb-bg: $white;
+$breadcrumb-padding-x: 1rem;
+$breadcrumb-padding-y: .75rem;
+// fusv-enable
+$breadcrumb-divider-color: $gray-600;
 
 // >> Buttons
 // fusv-disable
