@@ -105,5 +105,5 @@ Arizona Bootstrap 5 includes a custom set of [table variants]({{< docsref "conte
 ## Icons
 
 [Google Material Icons (Sharp)](https://fonts.google.com/icons?icon.style=Sharp&icon.set=Material+Icons) are deprecated in Arizona Bootstrap 5. Site owners are encouraged to review
-the [updated documentation](../icons/) around importing and using the approved [Google Material Icons (Round)](https://fonts.google.com/icons?icon.style=Filled&icon.set=Material+Icons) in Arizona
+the [updated documentation](../icons/) around importing and using the approved [Material Symbols (Rounded)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) in Arizona
 Bootstrap 5.

@@ -105,11 +105,11 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#gridGallery" data-bs-slide="prev">
-                <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
+                <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_back_ios</span>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#gridGallery" data-bs-slide="next">
-                <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
+                <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_forward_ios</span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -174,11 +174,11 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery" data-bs-slide="prev">
-        <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_back_ios</span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery" data-bs-slide="next">
-        <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
+        <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
@@ -233,11 +233,11 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="prev">
-          <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
+          <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_back_ios</span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#sliderGallery16x9" data-bs-slide="next">
-          <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
+          <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_forward_ios</span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -294,11 +294,11 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="prev">
-        <span class="material-icons-round display-5" aria-hidden="true">arrow_back_ios</span>
+        <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_back_ios</span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderGalleryCrop" data-bs-slide="next">
-        <span class="material-icons-round display-5" aria-hidden="true">arrow_forward_ios</span>
+        <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_forward_ios</span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
