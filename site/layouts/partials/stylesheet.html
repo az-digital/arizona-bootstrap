@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
 <link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
 {{ if hugo.IsProduction -}}
@@ -17,7 +17,7 @@
 {{- $sassOptions := dict "outputStyle" "expanded" "precision" 6 -}}
 {{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
 
-{{- $targetDocsCssPath := path.Join "docs" .Site.Params.docs_version "assets/css/docs.css" | relURL -}}
+{{- $targetDocsCssPath := path.Join "docs" .Site.Params.docs_version "assets/css/docs.css" -}}
 
 {{ if hugo.IsProduction -}}
   {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}

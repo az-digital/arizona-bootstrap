@@ -382,7 +382,7 @@ We use a subset of all colors to create a smaller color palette for generating c
 
 All these colors are available as a Sass map, `$theme-colors`.
 
-{{< scss-docs name="theme-colors-map" file="scss/_variables.scss" >}}
+{{< scss-docs name="theme-colors-map" file="override/_variables.scss" scssroot="scss" >}}
 
 Check out [our Sass maps and loops docs]({{< docsref "/customize/sass#maps-and-loops" >}}) for how to modify these colors.
 
@@ -395,7 +395,7 @@ Be sure to monitor contrast ratios as you customize colors. As shown below, we'v
 <div class="row font-monospace">
   {{< theme-colors.inline >}}
   {{- range $color := $.Site.Data.colors }}
-    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark"))) }}
+    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark")) (not (eq $color.name "black"))) }}
     <div class="col-md-4 mb-3">
       <div class="p-3 mb-2 position-relative swatch-{{ $color.name }}">
         <strong class="d-block">${{ $color.name }}</strong>
@@ -449,7 +449,7 @@ Bootstrap's source Sass files include three maps to help you quickly and easily 
 
 Within `scss/_variables.scss`, you'll find Bootstrap's color variables and Sass map. Here's an example of the `$colors` Sass map:
 
-{{< scss-docs name="colors-map" file="scss/_variables.scss" >}}
+{{< scss-docs name="colors-map" file="custom/_variables.scss" scssroot="scss" >}}
 
 Add, remove, or modify values within the map to update how they're used in many other components. Unfortunately at this time, not _every_ component utilizes this Sass map. Future updates will strive to improve upon this. Until then, plan on making use of the `${color}` variables and this Sass map.
 

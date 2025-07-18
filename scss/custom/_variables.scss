@@ -49,6 +49,317 @@ $sage: #4a634e;
 $white: #fff;
 $black: #000;
 
+// fusv-disable
+$bloom-100: tint-color($bloom, 80%) !default;
+$bloom-200: tint-color($bloom, 60%) !default;
+$bloom-300: tint-color($bloom, 40%) !default;
+$bloom-400: tint-color($bloom, 20%) !default;
+$bloom-500: $bloom !default;
+$bloom-600: shade-color($bloom, 20%) !default;
+$bloom-700: shade-color($bloom, 40%) !default;
+$bloom-800: shade-color($bloom, 60%) !default;
+$bloom-900: shade-color($bloom, 80%) !default;
+
+$blooms: (
+  "bloom-100": $bloom-100,
+  "bloom-200": $bloom-200,
+  "bloom-300": $bloom-300,
+  "bloom-400": $bloom-400,
+  "bloom-500": $bloom-500,
+  "bloom-600": $bloom-600,
+  "bloom-700": $bloom-700,
+  "bloom-800": $bloom-800,
+  "bloom-900": $bloom-900
+) !default;
+
+$chili-100: tint-color($chili, 80%) !default;
+$chili-200: tint-color($chili, 60%) !default;
+$chili-300: tint-color($chili, 40%) !default;
+$chili-400: tint-color($chili, 20%) !default;
+$chili-500: $chili !default;
+$chili-600: shade-color($chili, 20%) !default;
+$chili-700: shade-color($chili, 40%) !default;
+$chili-800: shade-color($chili, 60%) !default;
+$chili-900: shade-color($chili, 80%) !default;
+
+$chilis: (
+  "chili-100": $chili-100,
+  "chili-200": $chili-200,
+  "chili-300": $chili-300,
+  "chili-400": $chili-400,
+  "chili-500": $chili-500,
+  "chili-600": $chili-600,
+  "chili-700": $chili-700,
+  "chili-800": $chili-800,
+  "chili-900": $chili-900
+) !default;
+
+$sky-100: tint-color($sky, 80%) !default;
+$sky-200: tint-color($sky, 60%) !default;
+$sky-300: tint-color($sky, 40%) !default;
+$sky-400: tint-color($sky, 20%) !default;
+$sky-500: $sky !default;
+$sky-600: shade-color($sky, 20%) !default;
+$sky-700: shade-color($sky, 40%) !default;
+$sky-800: shade-color($sky, 60%) !default;
+$sky-900: shade-color($sky, 80%) !default;
+
+$skys: (
+  "sky-100": $sky-100,
+  "sky-200": $sky-200,
+  "sky-300": $sky-300,
+  "sky-400": $sky-400,
+  "sky-500": $sky-500,
+  "sky-600": $sky-600,
+  "sky-700": $sky-700,
+  "sky-800": $sky-800,
+  "sky-900": $sky-900
+) !default;
+
+$oasis-100: tint-color($oasis, 80%) !default;
+$oasis-200: tint-color($oasis, 60%) !default;
+$oasis-300: tint-color($oasis, 40%) !default;
+$oasis-400: tint-color($oasis, 20%) !default;
+$oasis-500: $oasis !default;
+$oasis-600: shade-color($oasis, 20%) !default;
+$oasis-700: shade-color($oasis, 40%) !default;
+$oasis-800: shade-color($oasis, 60%) !default;
+$oasis-900: shade-color($oasis, 80%) !default;
+
+$oases: (
+  "oasis-100": $oasis-100,
+  "oasis-200": $oasis-200,
+  "oasis-300": $oasis-300,
+  "oasis-400": $oasis-400,
+  "oasis-500": $oasis-500,
+  "oasis-600": $oasis-600,
+  "oasis-700": $oasis-700,
+  "oasis-800": $oasis-800,
+  "oasis-900": $oasis-900
+) !default;
+
+$azurite-100: tint-color($azurite, 80%) !default;
+$azurite-200: tint-color($azurite, 60%) !default;
+$azurite-300: tint-color($azurite, 40%) !default;
+$azurite-400: tint-color($azurite, 20%) !default;
+$azurite-500: $azurite !default;
+$azurite-600: shade-color($azurite, 20%) !default;
+$azurite-700: shade-color($azurite, 40%) !default;
+$azurite-800: shade-color($azurite, 60%) !default;
+$azurite-900: shade-color($azurite, 80%) !default;
+
+$azurites: (
+  "azurite-100": $azurite-100,
+  "azurite-200": $azurite-200,
+  "azurite-300": $azurite-300,
+  "azurite-400": $azurite-400,
+  "azurite-500": $azurite-500,
+  "azurite-600": $azurite-600,
+  "azurite-700": $azurite-700,
+  "azurite-800": $azurite-800,
+  "azurite-900": $azurite-900
+) !default;
+
+$midnight-100: tint-color($midnight, 80%) !default;
+$midnight-200: tint-color($midnight, 60%) !default;
+$midnight-300: tint-color($midnight, 40%) !default;
+$midnight-400: tint-color($midnight, 20%) !default;
+$midnight-500: $midnight !default;
+$midnight-600: shade-color($midnight, 20%) !default;
+$midnight-700: shade-color($midnight, 40%) !default;
+$midnight-800: shade-color($midnight, 60%) !default;
+$midnight-900: shade-color($midnight, 80%) !default;
+
+$midnights: (
+  "midnight-100": $midnight-100,
+  "midnight-200": $midnight-200,
+  "midnight-300": $midnight-300,
+  "midnight-400": $midnight-400,
+  "midnight-500": $midnight-500,
+  "midnight-600": $midnight-600,
+  "midnight-700": $midnight-700,
+  "midnight-800": $midnight-800,
+  "midnight-900": $midnight-900
+) !default;
+
+$cool-gray-100: tint-color($cool-gray, 80%) !default;
+$cool-gray-200: tint-color($cool-gray, 60%) !default;
+$cool-gray-300: tint-color($cool-gray, 40%) !default;
+$cool-gray-400: tint-color($cool-gray, 20%) !default;
+$cool-gray-500: $cool-gray !default;
+$cool-gray-600: shade-color($cool-gray, 20%) !default;
+$cool-gray-700: shade-color($cool-gray, 40%) !default;
+$cool-gray-800: shade-color($cool-gray, 60%) !default;
+$cool-gray-900: shade-color($cool-gray, 80%) !default;
+
+$cool-grays: (
+  "cool-gray-100": $cool-gray-100,
+  "cool-gray-200": $cool-gray-200,
+  "cool-gray-300": $cool-gray-300,
+  "cool-gray-400": $cool-gray-400,
+  "cool-gray-500": $cool-gray-500,
+  "cool-gray-600": $cool-gray-600,
+  "cool-gray-700": $cool-gray-700,
+  "cool-gray-800": $cool-gray-800,
+  "cool-gray-900": $cool-gray-900
+) !default;
+
+$warm-gray-100: tint-color($warm-gray, 80%) !default;
+$warm-gray-200: tint-color($warm-gray, 60%) !default;
+$warm-gray-300: tint-color($warm-gray, 40%) !default;
+$warm-gray-400: tint-color($warm-gray, 20%) !default;
+$warm-gray-500: $warm-gray !default;
+$warm-gray-600: shade-color($warm-gray, 20%) !default;
+$warm-gray-700: shade-color($warm-gray, 40%) !default;
+$warm-gray-800: shade-color($warm-gray, 60%) !default;
+$warm-gray-900: shade-color($warm-gray, 80%) !default;
+
+$warm-grays: (
+  "warm-gray-100": $warm-gray-100,
+  "warm-gray-200": $warm-gray-200,
+  "warm-gray-300": $warm-gray-300,
+  "warm-gray-400": $warm-gray-400,
+  "warm-gray-500": $warm-gray-500,
+  "warm-gray-600": $warm-gray-600,
+  "warm-gray-700": $warm-gray-700,
+  "warm-gray-800": $warm-gray-800,
+  "warm-gray-900": $warm-gray-900
+) !default;
+
+$leaf-100: tint-color($leaf, 80%) !default;
+$leaf-200: tint-color($leaf, 60%) !default;
+$leaf-300: tint-color($leaf, 40%) !default;
+$leaf-400: tint-color($leaf, 20%) !default;
+$leaf-500: $leaf !default;
+$leaf-600: shade-color($leaf, 20%) !default;
+$leaf-700: shade-color($leaf, 40%) !default;
+$leaf-800: shade-color($leaf, 60%) !default;
+$leaf-900: shade-color($leaf, 80%) !default;
+
+$leafs: (
+  "leaf-100": $leaf-100,
+  "leaf-200": $leaf-200,
+  "leaf-300": $leaf-300,
+  "leaf-400": $leaf-400,
+  "leaf-500": $leaf-500,
+  "leaf-600": $leaf-600,
+  "leaf-700": $leaf-700,
+  "leaf-800": $leaf-800,
+  "leaf-900": $leaf-900
+) !default;
+
+$river-100: tint-color($river, 80%) !default;
+$river-200: tint-color($river, 60%) !default;
+$river-300: tint-color($river, 40%) !default;
+$river-400: tint-color($river, 20%) !default;
+$river-500: $river !default;
+$river-600: shade-color($river, 20%) !default;
+$river-700: shade-color($river, 40%) !default;
+$river-800: shade-color($river, 60%) !default;
+$river-900: shade-color($river, 80%) !default;
+
+$rivers: (
+  "river-100": $river-100,
+  "river-200": $river-200,
+  "river-300": $river-300,
+  "river-400": $river-400,
+  "river-500": $river-500,
+  "river-600": $river-600,
+  "river-700": $river-700,
+  "river-800": $river-800,
+  "river-900": $river-900
+) !default;
+
+$silver-100: tint-color($silver, 80%) !default;
+$silver-200: tint-color($silver, 60%) !default;
+$silver-300: tint-color($silver, 40%) !default;
+$silver-400: tint-color($silver, 20%) !default;
+$silver-500: $silver !default;
+$silver-600: shade-color($silver, 20%) !default;
+$silver-700: shade-color($silver, 40%) !default;
+$silver-800: shade-color($silver, 60%) !default;
+$silver-900: shade-color($silver, 80%) !default;
+
+$silvers: (
+  "silver-100": $silver-100,
+  "silver-200": $silver-200,
+  "silver-300": $silver-300,
+  "silver-400": $silver-400,
+  "silver-500": $silver-500,
+  "silver-600": $silver-600,
+  "silver-700": $silver-700,
+  "silver-800": $silver-800,
+  "silver-900": $silver-900
+) !default;
+
+$mesa-100: tint-color($mesa, 80%) !default;
+$mesa-200: tint-color($mesa, 60%) !default;
+$mesa-300: tint-color($mesa, 40%) !default;
+$mesa-400: tint-color($mesa, 20%) !default;
+$mesa-500: $mesa !default;
+$mesa-600: shade-color($mesa, 20%) !default;
+$mesa-700: shade-color($mesa, 40%) !default;
+$mesa-800: shade-color($mesa, 60%) !default;
+$mesa-900: shade-color($mesa, 80%) !default;
+
+$mesas: (
+  "mesa-100": $mesa-100,
+  "mesa-200": $mesa-200,
+  "mesa-300": $mesa-300,
+  "mesa-400": $mesa-400,
+  "mesa-500": $mesa-500,
+  "mesa-600": $mesa-600,
+  "mesa-700": $mesa-700,
+  "mesa-800": $mesa-800,
+  "mesa-900": $mesa-900
+) !default;
+
+$ash-100: tint-color($ash, 80%) !default;
+$ash-200: tint-color($ash, 60%) !default;
+$ash-300: tint-color($ash, 40%) !default;
+$ash-400: tint-color($ash, 20%) !default;
+$ash-500: $ash !default;
+$ash-600: shade-color($ash, 20%) !default;
+$ash-700: shade-color($ash, 40%) !default;
+$ash-800: shade-color($ash, 60%) !default;
+$ash-900: shade-color($ash, 80%) !default;
+
+$ashes: (
+  "ash-100": $ash-100,
+  "ash-200": $ash-200,
+  "ash-300": $ash-300,
+  "ash-400": $ash-400,
+  "ash-500": $ash-500,
+  "ash-600": $ash-600,
+  "ash-700": $ash-700,
+  "ash-800": $ash-800,
+  "ash-900": $ash-900
+) !default;
+
+$sage-100: tint-color($sage, 80%) !default;
+$sage-200: tint-color($sage, 60%) !default;
+$sage-300: tint-color($sage, 40%) !default;
+$sage-400: tint-color($sage, 20%) !default;
+$sage-500: $sage !default;
+$sage-600: shade-color($sage, 20%) !default;
+$sage-700: shade-color($sage, 40%) !default;
+$sage-800: shade-color($sage, 60%) !default;
+$sage-900: shade-color($sage, 80%) !default;
+
+$sages: (
+  "sage-100": $sage-100,
+  "sage-200": $sage-200,
+  "sage-300": $sage-300,
+  "sage-400": $sage-400,
+  "sage-500": $sage-500,
+  "sage-600": $sage-600,
+  "sage-700": $sage-700,
+  "sage-800": $sage-800,
+  "sage-900": $sage-900
+) !default;
+// fusv-enable
+
+// scss-docs-start colors-map
 $colors: (
   "red": $red,
   "bloom": $bloom,
@@ -69,6 +380,7 @@ $colors: (
   "white": $white,
   "black": $black
 );
+// scss-docs-end colors-map
 
 /*
 * > FONTS
@@ -82,6 +394,10 @@ $heading-margins: 1.042em 0 .667em;
 /*
 * > COMPONENTS
 */
+
+// >> Breadcrumbs
+$breadcrumb-color: $azurite;
+$breadcrumb-hover-color: $midnight;
 
 // >> Navs
 $nav-tabs-link-bg: $gray-200;

@@ -146,9 +146,9 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.
 
 {{< example >}}
-<button type="button" class="btn btn-red" disabled>Primary button</button>
+<button type="button" class="btn btn-red" disabled>Red button</button>
 <button type="button" class="btn btn-blue" disabled>Button</button>
-<button type="button" class="btn btn-outline-red" disabled>Primary button</button>
+<button type="button" class="btn btn-outline-red" disabled>Red button</button>
 <button type="button" class="btn btn-outline-blue" disabled>Button</button>
 {{< /example >}}
 

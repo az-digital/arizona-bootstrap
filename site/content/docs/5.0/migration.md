@@ -378,7 +378,7 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.getbootstrap.co
 ### Documentation changes
 
 - Redesigned homepage, docs layout, and footer.
-- Added [new Parcel guide]({{< docsref "/getting-started/parcel" >}}).
+- Added new Parcel guide.
 - Added [new Customize section]({{< docsref "/customize/overview" >}}), replacing [v4's Theming page](https://getbootstrap.com/docs/4.6/getting-started/theming/), with new details on Sass, global configuration options, color schemes, CSS variables, and more.
 - Reorganized all form documentation into [new Forms section]({{< docsref "/forms/overview" >}}), breaking apart the content into more focused pages.
 - Similarly, updated [the Layout section]({{< docsref "/layout/breakpoints" >}}), to flesh out grid content more clearly.

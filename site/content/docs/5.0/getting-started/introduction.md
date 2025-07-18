@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Get started with Bootstrap
-description: Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
+title: Get started with Arizona Bootstrap
+description: Arizona Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 group: getting-started
 aliases:
   - "/docs/5.0/getting-started/"
@@ -12,7 +12,7 @@ toc: true
 
 ## Quick start
 
-Get started by including Bootstrap's production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this [Bootstrap CodePen demo](https://codepen.io/team/bootstrap/pen/qBamdLj).
+Get started by including Arizona Bootstrap's production-ready CSS and JavaScript via CDN without the need for any build steps.
 
 <br>
 
@@ -24,7 +24,7 @@ Get started by including Bootstrap's production-ready CSS and JavaScript via CDN
      <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>Bootstrap demo</title>
+       <title>Arizona Bootstrap demo</title>
      </head>
      <body>
        <h1>Hello, world!</h1>
@@ -32,7 +32,7 @@ Get started by including Bootstrap's production-ready CSS and JavaScript via CDN
    </html>
    ```
 
-2. **Include Bootstrap's CSS and JS.** Place the `<link>` tag in the `<head>` for our CSS, and the `<script>` tag for our JavaScript bundle (including Popper for positioning dropdowns, popovers, and tooltips) before the closing `</body>`. Learn more about our [CDN links](#cdn-links).
+2. **Include Arizona Bootstrap's CSS and JS.** Place the `<link>` tag in the `<head>` for our CSS, and the `<script>` tag for our JavaScript bundle (including Popper for positioning dropdowns, popovers, and tooltips) before the closing `</body>`. Learn more about our [CDN links](#cdn-links).
 
    ```html
    <!doctype html>
@@ -40,7 +40,7 @@ Get started by including Bootstrap's production-ready CSS and JavaScript via CDN
      <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>Bootstrap demo</title>
+       <title>Arizona Bootstrap demo</title>
        <link href="{{< param "cdn.css" >}}" rel="stylesheet" integrity="{{< param "cdn.css_hash" >}}" crossorigin="anonymous">
      </head>
      <body>
@@ -57,7 +57,7 @@ Get started by including Bootstrap's production-ready CSS and JavaScript via CDN
    <script src="{{< param "cdn.js" >}}" integrity="{{< param "cdn.js_hash" >}}" crossorigin="anonymous"></script>
    ```
 
-3. **Hello, world!** Open the page in your browser of choice to see your Bootstrapped page. Now you can start building with Bootstrap by creating your own [layout]({{< docsref "/layout/grid" >}}), adding dozens of [components]({{< docsref "/components/buttons" >}}), and utilizing [our official examples]({{< docsref "/examples" >}}).
+3. **Hello, world!** Open the page in your browser of choice to see your Arizona Bootstrapped page. Now you can start building with Arizona Bootstrap by creating your own [layout]({{< docsref "/layout/grid" >}}), adding dozens of [components]({{< docsref "/components/buttons" >}}), and utilizing [our official examples]({{< docsref "/examples" >}}).
 
 ## CDN links
 
@@ -75,9 +75,9 @@ You can also use the CDN to fetch any of our [additional builds listed in the Co
 ## Next steps
 
 - Read a bit more about some [important global environment settings](#important-globals) that Bootstrap utilizes.
-- Read about what's included in Bootstrap in our [contents section]({{< docsref "/getting-started/contents/" >}}) and the list of [components that require JavaScript](#js-components) below.
-- Need a little more power? Consider building with Bootstrap by [including the source files via package manager]({{< docsref "/getting-started/download#package-managers" >}}).
-- Looking to use Bootstrap as a module with `<script type="module">`? Please refer to our [using Bootstrap as a module]({{< docsref "/getting-started/javascript#using-bootstrap-as-a-module" >}}) section.
+- Read about what's included in Arizona Bootstrap in our [contents section]({{< docsref "/getting-started/contents/" >}}) and the list of [components that require JavaScript](#js-components) below.
+- Need a little more power? Consider building with Arizona Bootstrap by [including the source files via package manager]({{< docsref "/getting-started/download#package-managers" >}}).
+- Looking to use Arizona Bootstrap as a module with `<script type="module">`? Please refer to our [using Bootstrap as a module]({{< docsref "/getting-started/javascript#using-bootstrap-as-a-module" >}}) section.
 
 ## JS components
 
@@ -93,17 +93,18 @@ Curious which components explicitly require our JavaScript and Popper? If you're
 - Navbar for extending our Collapse and Offcanvas plugins to implement responsive behaviors
 - Navs with the Tab plugin for toggling content panes
 - Offcanvases for displaying, positioning, and scroll behavior
+- Photo galleries for displaying, positioning, and scroll behavior <span class="badge badge-az-custom py-1 px-2 ms-1"><small>Custom Arizona Bootstrap Component</small></span>
 - Scrollspy for scroll behavior and navigation updates
 - Toasts for displaying and dismissing
 - Tooltips and popovers for displaying and positioning (also requires [Popper](https://popper.js.org/docs/v2/))
 
 ## Important globals
 
-Bootstrap employs a handful of important global styles and settings, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
+Arizona Bootstrap employs a handful of important global styles and settings, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
 
 ### HTML5 doctype
 
-Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some funky and incomplete styling.
+Arizona Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some funky and incomplete styling.
 
 ```html
 <!doctype html>
@@ -114,7 +115,7 @@ Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some fun
 
 ### Viewport meta
 
-Bootstrap is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
+Arizona Bootstrap is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">

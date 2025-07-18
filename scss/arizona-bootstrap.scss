@@ -3,7 +3,6 @@
 
 // Arizona Bootstrap custom variables.
 @import "custom/variables";
-@import "legacy/variables";
 
 // Arizona Bootstrap overrides to default upstream Bootstrap variables.
 @import "override/variables";
@@ -11,9 +10,6 @@
 // Required upstream Bootstrap variable imports.
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
-
-// Arizona Bootstrap override to maps.
-@import "override/maps";
 
 // Remainder of required upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/maps";
@@ -62,7 +58,6 @@
 @import "deprecated/accordion";
 @import "deprecated/card";
 @import "deprecated/nav";
-@import "legacy/mixins";
 @import "mixins/background";
 @import "mixins/buttons";
 @import "mixins/callouts";
@@ -73,8 +68,10 @@
 @import "override/typography";
 @import "override/accordion";
 @import "custom/background";
-@import "legacy/badge";
+@import "override/badge";
+@import "custom/badge";
 @import "override/breadcrumb";
+@import "custom/breadcrumb";
 @import "override/buttons";
 @import "custom/buttons";
 @import "override/button-group";
@@ -82,18 +79,14 @@
 @import "custom/card";
 @import "custom/card-dark";
 @import "custom/color-background";
-@import "override/dropdown";
 @import "override/nav";
 @import "override/navbar";
 @import "custom/navbar-offcanvas";
 @import "custom/navbar-offcanvas-dark";
 @import "custom/background-wrapper";
 @import "custom/background-wrapper-dark";
-@import "legacy/background-wrapper";
-@import "custom/hover";
+\@import "custom/hover";
 @import "custom/callouts";
-@import "legacy/table";
-@import "legacy/tooltip";
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "legacy/color-contrast";

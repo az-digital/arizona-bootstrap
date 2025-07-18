@@ -64,11 +64,11 @@ Click the button below to show a toast (positioned with our utilities in the low
 </div>
 
 <div class="bd-example">
-  <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+  <button type="button" class="btn btn-red" id="liveToastBtn">Show live toast</button>
 </div>
 
 ```html
-<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+<button type="button" class="btn btn-red" id="liveToastBtn">Show live toast</button>
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -161,8 +161,8 @@ Alternatively, you can also add additional controls and components to toasts.
   <div class="toast-body">
     Hello, world! This is a toast message.
     <div class="mt-2 pt-2 border-top">
-      <button type="button" class="btn btn-primary btn-sm">Take action</button>
-      <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+      <button type="button" class="btn btn-red btn-sm">Take action</button>
+      <button type="button" class="btn btn-blue btn-sm" data-bs-dismiss="toast">Close</button>
     </div>
   </div>
 </div>
@@ -170,10 +170,10 @@ Alternatively, you can also add additional controls and components to toasts.
 
 ### Color schemes
 
-Building on the above example, you can create different toast color schemes with our [color]({{< docsref "/utilities/colors" >}}) and [background]({{< docsref "/utilities/background" >}}) utilities. Here we've added `.text-bg-primary` to the `.toast`, and then added `.btn-close-white` to our close button. For a crisp edge, we remove the default border with `.border-0`.
+Building on the above example, you can create different toast color schemes with our [color]({{< docsref "/utilities/colors" >}}) and [background]({{< docsref "/utilities/background" >}}) utilities. Here we've added `.text-bg-red` to the `.toast`, and then added `.btn-close-white` to our close button. For a crisp edge, we remove the default border with `.border-0`.
 
 {{< example >}}
-<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast align-items-center text-bg-red border-0" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
     <div class="toast-body">
       Hello, world! This is a toast message.
