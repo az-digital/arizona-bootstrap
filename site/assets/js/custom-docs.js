@@ -1,4 +1,4 @@
-(function ($) {
+(() => {
   'use strict'
 
   var specimenButtons = document.querySelectorAll('.js-specimen-modal-trigger');
@@ -49,5 +49,5 @@
   function customSample() {
     updateSample(document.bigcontrol.customSampleText.value)
   }
-})(jQuery)
+})()
 
