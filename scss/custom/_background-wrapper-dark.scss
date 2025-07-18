@@ -1,0 +1,37 @@
+// Dark mode specific overrides for background wrappers
+
+@include color-mode(dark) {
+  // Background wrappers
+  .bg-white {
+    color: var(--#{$prefix}body-color);
+    background-color: var(--#{$prefix}card-bg);
+  }
+
+  .bg-light {
+    color: var(--#{$prefix}body-color);
+    background-color: var(--#{$prefix}card-bg);
+  }
+
+  .bg-gray-100,
+  .bg-gray-200,
+  .bg-gray-300 {
+    color: var(--#{$prefix}body-color);
+    background-color: rgba(255, 255, 255, .05);
+  }
+
+  // Ensure proper contrast for text on background wrappers
+  [class*="bg-"] {
+    &.text-dark {
+      color: var(--#{$prefix}body-color);
+    }
+  }
+
+  // Adjust background wrapper borders
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end,
+  .border {
+    border-color: var(--#{$prefix}border-color);
+  }
+}
