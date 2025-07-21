@@ -11,7 +11,6 @@
     - title: Contents
     - title: Browsers & devices
     - title: JavaScript
-    - title: Build tools
     - title: Accessibility
     - title: RFS
     - title: Contribute
@@ -151,15 +150,13 @@
   icon_color: blue
   pages:
     - title: Approach
-    - title: Icons
 
 - title: About
   icon: globe2
   icon_color: indigo
   pages:
     - title: Overview
-    - title: Team
-    - title: Brand
+    - title: Get Involved
     - title: License
 
 - title: Migration

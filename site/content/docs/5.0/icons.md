@@ -11,7 +11,7 @@ toc: true
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 alert-heading">Heads Up!</p>
-  If you're using Arizona Bootstrap, Arizona Icons and/or Material Design Rounded icons will still need
+  If you're using Arizona Bootstrap, Arizona Icons and/or Material Symbols (Rounded) icons will still need
   to be added to your project if you would like to use them.
 </div>
 
@@ -19,7 +19,7 @@ These icons have been approved to use within Arizona web assets like Arizona
 Quickstart, and Arizona Bootstrap.
 
 - [Arizona Icons](https://github.com/az-digital/az-icons) (Arizona branded icons)
-- [Google Material Icons (Rounded)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Icons)
+- [Material Symbols (Rounded)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3)
 
 ## Arizona Icons Implementation
 
@@ -161,21 +161,21 @@ In general, developers should use the main branch version of the icons for devel
   </div>
 </div>
 
-## Material Icons Implementation
+## Material Symbols Implementation
 
-Include the Material Icons' stylesheet in your project in order to use the font icons. [Refer to Material Icons docs](https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web) for more information.
+Include the Material Symbols' stylesheet in your project in order to use the font icons. [Refer to Material Symbols docs](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) for more information. Be sure to select the filled style icons.
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
 ```
 
 
-Google's Material Icons can be implemented just like text, in that they can combined with any utility class available to text.
+Google's Material Symbols can be implemented just like text, in that they can combined with any utility class available to text.
 
-Your `span` should include the `.material-icons-round` class along with any utility classes you want to include. The text inside the `span` should be the ID/name of the icon you want to use. [Browse the font icon library (rounded style)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Icons) to find the ID of your desired icon.
+Your `span` should include the `.material-symbols-rounded` class along with any utility classes you want to include. The text inside the `span` should be the ID/name of the icon you want to use. [Browse the font icon library (rounded style)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) to find the ID of your desired icon.
 
 {{< example >}}
-<span class="material-icons-round text-sky display-4">accessible_forward</span>
-<span class="material-icons-round text-azurite display-3">accessible_forward</span>
-<span class="material-icons-round text-blue display-1">accessible_forward</span>
+<span class="material-symbols-rounded text-sky display-4">accessible_forward</span>
+<span class="material-symbols-rounded text-azurite display-3">accessible_forward</span>
+<span class="material-symbols-rounded text-blue display-1">accessible_forward</span>
 {{< /example >}}

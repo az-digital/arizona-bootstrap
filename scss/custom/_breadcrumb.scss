@@ -1,0 +1,8 @@
+.breadcrumb-item-home::before {
+  float: left; // Suppress inline spacings and underlining of the separator
+  padding-right: $breadcrumb-item-padding-x;
+  // stylelint-disable-next-line
+  font-family: "Material Symbols Rounded";
+  color: $breadcrumb-divider-color;
+  content: "home";
+}

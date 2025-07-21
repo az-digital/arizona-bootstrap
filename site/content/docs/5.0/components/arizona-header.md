@@ -31,22 +31,22 @@ Extending the header with nav and search buttons is supported as shown below. Th
   </div>
   <div class="redbar-buttons d-lg-none">
     <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar" id="jsAzSearch">
-      <span aria-hidden="true" class="icon material-icons-sharp"> search </span>
+      <span aria-hidden="true" class="icon material-symbols-rounded"> search </span>
       <span class="icon-text"> search </span>
     </button>
     <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar">
-      <span aria-hidden="true" class="icon material-icons-sharp"> menu </span>
+      <span aria-hidden="true" class="icon material-symbols-rounded"> menu </span>
       <span class="icon-text"> menu </span>
     </button>
     <nav class="navbar-offcanvas mw-100 w-100 bg-white d-flex d-lg-none" id="azMobileNavDemo">
       <div class="navbar-offcanvas-header mb-2">
         <div class="bg-chili d-flex justify-content-between align-items-center">
           <a href="/" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-            <span aria-hidden="true" class="material-icons-sharp">home</span>
+            <span aria-hidden="true" class="material-symbols-rounded">home</span>
             <span>Home</span>
           </a>
           <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-            <span aria-hidden="true" class="material-icons-sharp mx-auto">close</span>
+            <span aria-hidden="true" class="material-symbols-rounded mx-auto">close</span>
             <span class="mx-auto">Close</span>
           </button>
         </div>
