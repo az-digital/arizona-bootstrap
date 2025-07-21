@@ -127,7 +127,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100 active">
+                <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
