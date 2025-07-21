@@ -14,6 +14,25 @@ Images in Bootstrap are made responsive with `.img-fluid`. This applies `max-wid
 {{< placeholder width="100%" height="250" class="bd-placeholder-img-lg img-fluid" text="Responsive image" >}}
 {{< /example >}}
 
+## Rounded corners
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Arizona Bootstrap rounds image corners by default using upstream Bootstrap's [border-radius() mixin]({{< docsref "/utilities/borders/#sass-mixins" >}}).
+
+{{< example >}}
+<img class="img-fluid" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+{{< /example >}}
+
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
+
+Use the custom `.az-img-sharp` class to prevent the default rounded corners from being applied to an image. (Adding the `rounded-0` class also works, as an override of the default border-radius styling.) The default rounded corners are also prevented from being applied to images with a card image class (`.card-img`, `.card-img-top`, or `.card-img-bottom`).
+
+{{< example >}}
+<img class="img-fluid az-img-sharp" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+{{< /example >}}
+
+
 ## Image thumbnails
 
 In addition to our [border-radius utilities]({{< docsref "/utilities/borders" >}}), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
