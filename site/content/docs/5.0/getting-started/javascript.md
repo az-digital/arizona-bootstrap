@@ -1,50 +1,36 @@
 ---
 layout: docs
 title: JavaScript
-description: Bring Bootstrap to life with our optional JavaScript plugins. Learn about each plugin, our data and programmatic API options, and more.
+description: Bring Arizona Bootstrap to life with our optional JavaScript plugins. Learn about each plugin, our data and programmatic API options, and more.
 group: getting-started
 toc: true
 ---
 
 ## Individual or compiled
 
-Plugins can be included individually (using Bootstrap's individual `js/dist/*.js`), or all at once using `bootstrap.js` or the minified `bootstrap.min.js` (don't include both).
+Plugins can be included individually (using Arizona Bootstrap's individual `js/dist/*.js`), or all at once using `arizona-bootstrap.js` or the minified `arizona-bootstrap.min.js` (don't include both).
 
 If you use a bundler (Webpack, Parcel, Vite...), you can use `/js/dist/*.js` files which are UMD ready.
 
 ## Usage with JavaScript frameworks
 
-While the Bootstrap CSS can be used with any framework, **the Bootstrap JavaScript is not fully compatible with JavaScript frameworks like React, Vue, and Angular** which assume full knowledge of the DOM. Both Bootstrap and the framework may attempt to mutate the same DOM element, resulting in bugs like dropdowns that are stuck in the "open" position.
+While the Arizona Bootstrap CSS can be used with any framework, **the Arizona Bootstrap JavaScript is not fully compatible with JavaScript frameworks like React, Vue, and Angular** which assume full knowledge of the DOM. Both Arizona Bootstrap and the framework may attempt to mutate the same DOM element, resulting in bugs like dropdowns that are stuck in the "open" position.
 
-A better alternative for those using this type of frameworks is to use a framework-specific package **instead of** the Bootstrap JavaScript. Here are some of the most popular options:
+## Using Arizona Bootstrap as a module
 
-- React: [React Bootstrap](https://react-bootstrap.github.io/)
-  {{< callout >}}
-  **Try it yourself!** Download the source code and working demo for using Bootstrap with React, Next.js, and React Bootstrap from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/react-nextjs).
-  {{< /callout >}}
-- Vue: [BootstrapVue](https://bootstrap-vue.org/) (Bootstrap 4)
-- Vue 3: [BootstrapVueNext](https://bootstrap-vue-next.github.io/bootstrap-vue-next/) (Bootstrap 5, currently in alpha)
-- Angular: [ng-bootstrap](https://ng-bootstrap.github.io/) or [ngx-bootstrap](https://valor-software.com/ngx-bootstrap)
-
-## Using Bootstrap as a module
-
-{{< callout >}}
-**Try it yourself!** Download the source code and working demo for using Bootstrap as an ES module from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/sass-js-esm).
-{{< /callout >}}
-
-We provide a version of Bootstrap built as `ESM` (`bootstrap.esm.js` and `bootstrap.esm.min.js`) which allows you to use Bootstrap as a module in the browser, if your [targeted browsers support it](https://caniuse.com/es6-module).
+We provide a version of Arizona Bootstrap built as `ESM` (`bootstrap.esm.js` and `bootstrap.esm.min.js`) which allows you to use Arizona Bootstrap as a module in the browser, if your [targeted browsers support it](https://caniuse.com/es6-module).
 
 <!-- eslint-skip -->
 ```html
 <script type="module">
-  import { Toast } from 'bootstrap.esm.min.js'
+  import { Toast } from 'arizona-bootstrap.esm.min.js'
 
   Array.from(document.querySelectorAll('.toast'))
     .forEach(toastNode => new Toast(toastNode))
 </script>
 ```
 
-Compared to JS bundlers, using ESM in the browser requires you to use the full path and filename instead of the module name. [Read more about JS modules in the browser.](https://v8.dev/features/modules#specifiers) That's why we use `'bootstrap.esm.min.js'` instead of `'bootstrap'` above. However, this is further complicated by our Popper dependency, which imports Popper into our JavaScript like so:
+Compared to JS bundlers, using ESM in the browser requires you to use the full path and filename instead of the module name. [Read more about JS modules in the browser.](https://v8.dev/features/modules#specifiers) That's why we use `'arizona-bootstrap.esm.min.js'` instead of `'arizona-bootstrap'` above. However, this is further complicated by our Popper dependency, which imports Popper into our JavaScript like so:
 
 <!-- eslint-skip -->
 ```js
@@ -57,7 +43,7 @@ If you try this as-is, you'll see an error in the console like the following:
 Uncaught TypeError: Failed to resolve module specifier "@popperjs/core". Relative references must start with either "/", "./", or "../".
 ```
 
-To fix this, you can use an `importmap` to resolve the arbitrary module names to complete paths. If your [targeted browsers](https://caniuse.com/?search=importmap) do not support `importmap`, you'll need to use the [es-module-shims](https://github.com/guybedford/es-module-shims) project. Here's how it works for Bootstrap and Popper:
+To fix this, you can use an `importmap` to resolve the arbitrary module names to complete paths. If your [targeted browsers](https://caniuse.com/?search=importmap) do not support `importmap`, you'll need to use the [es-module-shims](https://github.com/guybedford/es-module-shims) project. Here's how it works for Arizona Bootstrap and Popper:
 
 <!-- eslint-skip -->
 ```html
@@ -78,14 +64,14 @@ To fix this, you can use an `importmap` to resolve the arbitrary module names to
     {
       "imports": {
         "@popperjs/core": "{{< param "cdn.popper_esm" >}}",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@{{< param "current_version" >}}/dist/js/arizona-bootstrap.esm.min.js"
+        "arizona-bootstrap": "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{< param "current_version" >}}/js/arizona-bootstrap.esm.min.js"
       }
     }
     </script>
     <script type="module">
-      import * as bootstrap from 'bootstrap'
+      import * as arizonaBootstrap from 'arizona-bootstrap'
 
-      new bootstrap.Popover(document.getElementById('popoverButton'))
+      new arizonaBootstrap.Popover(document.getElementById('popoverButton'))
     </script>
   </body>
 </html>
@@ -99,7 +85,7 @@ Our dropdowns, popovers, and tooltips also depend on [Popper](https://popper.js.
 
 ## Data attributes
 
-Nearly all Bootstrap plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to **only use one set of data attributes on a single element** (e.g., you cannot trigger a tooltip and modal from the same button.)
+Nearly all Arizona Bootstrap plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to **only use one set of data attributes on a single element** (e.g., you cannot trigger a tooltip and modal from the same button.)
 
 {{< markdown >}}
 {{< partial "js-data-attributes.md" >}}
@@ -111,7 +97,7 @@ We use the native `querySelector` and `querySelectorAll` methods to query DOM el
 
 ## Events
 
-Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
+Arizona Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality. This provides the ability to stop the execution of an action before it starts. Returning false from an event handler will also automatically call `preventDefault()`.
 
@@ -129,16 +115,16 @@ All constructors accept an optional options object or nothing (which initiates a
 
 ```js
 const myModalEl = document.querySelector('#myModal')
-const modal = new bootstrap.Modal(myModalEl) // initialized with defaults
+const modal = new arizonaBootstrap.Modal(myModalEl) // initialized with defaults
 
 const configObject = { keyboard: false }
-const modal1 = new bootstrap.Modal(myModalEl, configObject) // initialized with no keyboard
+const modal1 = new arizonaBootstrap.Modal(myModalEl, configObject) // initialized with no keyboard
 ```
 
 If you'd like to get a particular plugin instance, each plugin exposes a `getInstance` method. For example, to retrieve an instance directly from an element:
 
 ```js
-bootstrap.Popover.getInstance(myPopoverEl)
+arizonaBootstrap.Popover.getInstance(myPopoverEl)
 ```
 
 This method will return `null` if an instance is not initiated over the requested element.
@@ -146,7 +132,7 @@ This method will return `null` if an instance is not initiated over the requeste
 Alternatively, `getOrCreateInstance` can be used to get the instance associated with a DOM element, or create a new one in case it wasn't initialized.
 
 ```js
-bootstrap.Popover.getOrCreateInstance(myPopoverEl, configObject)
+arizonaBootstrap.Popover.getOrCreateInstance(myPopoverEl, configObject)
 ```
 
 In case an instance wasn't initialized, it may accept and use an optional configuration object as second argument.
@@ -156,10 +142,10 @@ In case an instance wasn't initialized, it may accept and use an optional config
 In addition to the `getInstance` and `getOrCreateInstance` methods, all plugin constructors can accept a DOM element or a valid [CSS selector](#selectors) as the first argument. Plugin elements are found with the `querySelector` method since our plugins only support a single element.
 
 ```js
-const modal = new bootstrap.Modal('#myModal')
-const dropdown = new bootstrap.Dropdown('[data-bs-toggle="dropdown"]')
-const offcanvas = bootstrap.Offcanvas.getInstance('#myOffcanvas')
-const alert = bootstrap.Alert.getOrCreateInstance('#myAlert')
+const modal = new arizonaBootstrap.Modal('#myModal')
+const dropdown = new arizonaBootstrap.Dropdown('[data-bs-toggle="dropdown"]')
+const offcanvas = arizonaBootstrap.Offcanvas.getInstance('#myOffcanvas')
+const alert = arizonaBootstrap.Alert.getOrCreateInstance('#myAlert')
 ```
 
 ### Asynchronous functions and transitions
@@ -178,7 +164,7 @@ In addition, a method call on a **transitioning component will be ignored**.
 
 ```js
 const myCarouselEl = document.querySelector('#myCarousel')
-const carousel = bootstrap.Carousel.getInstance(myCarouselEl) // Retrieve a Carousel instance
+const carousel = arizonaBootstrap.Carousel.getInstance(myCarouselEl) // Retrieve a Carousel instance
 
 myCarouselEl.addEventListener('slid.bs.carousel', event => {
   carousel.to('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
@@ -207,12 +193,12 @@ You can change the default settings for a plugin by modifying the plugin's `Cons
 
 ```js
 // changes default for the modal plugin's `keyboard` option to false
-bootstrap.Modal.Default.keyboard = false
+arizonaBootstrap.Modal.Default.keyboard = false
 ```
 
 ## Methods and properties
 
-Every Bootstrap plugin exposes the following methods and static properties.
+Every Arizona Bootstrap plugin exposes the following methods and static properties.
 
 {{< bs-table "table" >}}
 | Method | Description |
@@ -225,8 +211,8 @@ Every Bootstrap plugin exposes the following methods and static properties.
 {{< bs-table "table" >}}
 | Static property | Description |
 | --- | --- |
-| `NAME` | Returns the plugin name. (Example: `bootstrap.Tooltip.NAME`) |
-| `VERSION` | The version of each of Bootstrap's plugins can be accessed via the `VERSION` property of the plugin's constructor (Example: `bootstrap.Tooltip.VERSION`) |
+| `NAME` | Returns the plugin name. (Example: `arizonaBootstrap.Tooltip.NAME`) |
+| `VERSION` | The version of each of Arizona Bootstrap's plugins can be accessed via the `VERSION` property of the plugin's constructor (Example: `arizonaBootstrap.Tooltip.VERSION`) |
 {{< /bs-table >}}
 
 ## Sanitizer
@@ -240,7 +226,7 @@ The default `allowList` value is the following:
 If you want to add new values to this default `allowList` you can do the following:
 
 ```js
-const myDefaultAllowList = bootstrap.Tooltip.Default.allowList
+const myDefaultAllowList = arizonaBootstrap.Tooltip.Default.allowList
 
 // To allow table elements
 myDefaultAllowList.table = []
@@ -258,7 +244,7 @@ If you want to bypass our sanitizer because you prefer to use a dedicated librar
 
 ```js
 const yourTooltipEl = document.querySelector('#yourTooltip')
-const tooltip = new bootstrap.Tooltip(yourTooltipEl, {
+const tooltip = new arizonaBootstrap.Tooltip(yourTooltipEl, {
   sanitizeFn(content) {
     return DOMPurify.sanitize(content)
   }
@@ -267,7 +253,7 @@ const tooltip = new bootstrap.Tooltip(yourTooltipEl, {
 
 ## Optionally using jQuery
 
-**You don't need jQuery in Bootstrap 5**, but it's still possible to use our components with jQuery. If Bootstrap detects `jQuery` in the `window` object, it'll add all of our components in jQuery's plugin system. This allows you to do the following:
+**You don't need jQuery in Arizona Bootstrap 5**, but it's still possible to use our components with jQuery. If Arizona Bootstrap detects `jQuery` in the `window` object, it'll add all of our components in jQuery's plugin system. This allows you to do the following:
 
 ```js
 // to enable tooltips with the default configuration
@@ -287,18 +273,18 @@ The same goes for our other components.
 
 ### No conflict
 
-Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the plugin you wish to revert the value of.
+Sometimes it is necessary to use Arizona Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the plugin you wish to revert the value of.
 
 ```js
-const bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton // give $().bootstrapBtn the Bootstrap functionality
+const arizonaBootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.arizonaBootstrapBtn = arizonaBootstrapButton // give $().arizonaBootstrapBtn the Arizona Bootstrap functionality
 ```
 
-Bootstrap does not officially support third-party JavaScript libraries like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
+Arizona Bootstrap does not officially support third-party JavaScript libraries like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
 
 ### jQuery events
 
-Bootstrap will detect jQuery if `jQuery` is present in the `window` object and there is no `data-bs-no-jquery` attribute set on `<body>`. If jQuery is found, Bootstrap will emit events thanks to jQuery's event system. So if you want to listen to Bootstrap's events, you'll have to use the jQuery methods (`.on`, `.one`) instead of `addEventListener`.
+Arizona Bootstrap will detect jQuery if `jQuery` is present in the `window` object and there is no `data-bs-no-jquery` attribute set on `<body>`. If jQuery is found, Arizona Bootstrap will emit events thanks to jQuery's event system. So if you want to listen to Arizona Bootstrap's events, you'll have to use the jQuery methods (`.on`, `.one`) instead of `addEventListener`.
 
 ```js
 $('#myTab a').on('shown.bs.tab', () => {
@@ -308,4 +294,4 @@ $('#myTab a').on('shown.bs.tab', () => {
 
 ## Disabled JavaScript
 
-Bootstrap's plugins have no special fallback when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
+Arizona Bootstrap's plugins have no special fallback when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.

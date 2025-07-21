@@ -7,7 +7,13 @@ updates:
     target-branch: "2.x"
     ignore:
       - dependency-name: "bootstrap"
-        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint"
+      - dependency-name: "eslint-config-xo"
+      - dependency-name: "eslint-plugin-unicorn"
+      - dependency-name: "jquery"
+      - dependency-name: "linkinator"
+      - dependency-name: "sass"
+      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     labels:
       - "ci"
@@ -23,6 +29,15 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "main"
+    ignore:
+      - dependency-name: "bootstrap"
+      - dependency-name: "eslint"
+      - dependency-name: "eslint-config-xo"
+      - dependency-name: "eslint-plugin-unicorn"
+      - dependency-name: "jquery"
+      - dependency-name: "linkinator"
+      - dependency-name: "sass"
+      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     labels:
       - "ci"

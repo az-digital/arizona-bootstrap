@@ -98,8 +98,12 @@ For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), th
 
 Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
 
+## Tables
+
+Arizona Bootstrap 5 includes a custom set of [table variants]({{< docsref "content/tables/#variants" >}}). From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included. Note that in Bootstrap 5, [`.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes]({{< docsref "migration/#content-reboot-etc" >}}).
+
 ## Icons
 
 [Google Material Icons (Sharp)](https://fonts.google.com/icons?icon.style=Sharp&icon.set=Material+Icons) are deprecated in Arizona Bootstrap 5. Site owners are encouraged to review
-the [updated documentation](../icons/) around importing and using the approved [Google Material Icons (Round)](https://fonts.google.com/icons?icon.style=Filled&icon.set=Material+Icons) in Arizona
+the [updated documentation](../icons/) around importing and using the approved [Material Symbols (Rounded)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) in Arizona
 Bootstrap 5.
