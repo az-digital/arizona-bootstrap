@@ -1,45 +1,36 @@
 (() => {
   'use strict'
 
-  var specimenButtons = document.querySelectorAll('.js-specimen-modal-trigger');
-  [].forEach.call(specimenButtons, function (specimenButton) {
+  const specimenButtons = document.querySelectorAll('.js-specimen-modal-trigger')
+  Array.prototype.forEach.call(specimenButtons, specimenButton => {
     specimenButton.addEventListener('click', specimenChangeFont)
   })
-  var abcButtons = document.querySelectorAll('.js-abcButton-trigger');
-  [].forEach.call(abcButtons, function (abcButton) {
+  const abcButtons = document.querySelectorAll('.js-abcButton-trigger')
+  Array.prototype.forEach.call(abcButtons, abcButton => {
     abcButton.addEventListener('click', abcSample)
   })
-  var customSampleButtons = document.querySelectorAll('.js-custom-sample-trigger');
-  [].forEach.call(customSampleButtons, function (customSampleButton) {
+  const customSampleButtons = document.querySelectorAll('.js-custom-sample-trigger')
+  Array.prototype.forEach.call(customSampleButtons, customSampleButton => {
     customSampleButton.addEventListener('click', customSample)
   })
 
   function specimenChangeFont() {
-    var fontClass = this.getAttribute('data-font-class')
-    var fontName = this.getAttribute('data-font-name')
-    var specimenModalFont = document.getElementById('js-specimen-modal-font')
-    specimenModalFont.className = 'table-striped ' + fontClass
-    var specimenModalFontName = document.getElementById('js-change-font-name')
+    const { fontClass, fontName } = this.dataset
+    const specimenModalFont = document.querySelector('#js-specimen-modal-font')
+    specimenModalFont.className = `table-striped ${fontClass}`
+    const specimenModalFontName = document.querySelector('#js-change-font-name')
     specimenModalFontName.textContent = fontName
   }
 
-  var mySampleIds = ['big1', 'big2', 'big3', 'big4', 'big5', 'big6', 'big7']
-
   function updateSample(myText) {
-    var i
-    var sample
-    for (i in mySampleIds) {
-      if (mySampleIds[i]) {
-        sample = document.getElementById(mySampleIds[i])
+    const mySampleIds = ['#big1', '#big2', '#big3', '#big4', '#big5', '#big6', '#big7']
+    mySampleIds.forEach(sampleId => {
+      const sample = document.querySelector(sampleId)
+      if (sample) {
         sample.textContent = myText
         sample.firstChild.nodeValue = myText
       }
-    }
-
-    var pattern = new RegExp(unescape('%79%65%6C%6C%6F%77'))
-    if (pattern.test(myText)) {
-      document.getElementsByTagName('h2')[0].style.backgroundColor = '#ffde00'
-    }
+    })
   }
 
   function abcSample() {
