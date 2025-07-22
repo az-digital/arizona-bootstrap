@@ -482,7 +482,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="d-block w-100 stretched-link">Text link</a>
+      <a href="#top" class="stretched-link">Text link</a>
     </div>
   </div>
 </div>
@@ -491,7 +491,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
-    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
+    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold hover-text-underline">Clickable Borderless Card With Image</h3>
     <div class="card-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
