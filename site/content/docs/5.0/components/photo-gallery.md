@@ -92,14 +92,14 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100 active">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
@@ -109,7 +109,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
@@ -119,7 +119,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="Ceiling tiles">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="Ceiling tiles">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
@@ -130,7 +130,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Fifth slide caption<br>University of Arizona Spring Fling</p>
@@ -140,7 +140,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Sixth slide caption<br>A hand holding a little mirror</p>
@@ -150,7 +150,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Seventh slide caption<br>University graduate on stage wearing cap and gown</p>
@@ -307,7 +307,7 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
 <div class="az-gallery-container">
   <div class="ratio ratio-4x3">
     <div id="sliderGalleryCrop" class="carousel slide az-gallery az-gallery-slider-crop">
-      <div class="carousel-inner h-100">
+      <div class="carousel-inner h-100 rounded">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image h-100">
