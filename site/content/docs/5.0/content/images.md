@@ -18,18 +18,16 @@ Images in Bootstrap are made responsive with `.img-fluid`. This applies `max-wid
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Arizona Bootstrap rounds image corners by default using upstream Bootstrap's [border-radius() mixin]({{< docsref "/utilities/borders/#sass-mixins" >}}).
+Arizona Bootstrap rounds image corners by default using upstream Bootstrap's [border-radius() mixin]({{< docsref "/utilities/borders/#sass-mixins" >}}). The default rounded corners are not applied to images with a [card image class]({{< docsref "/components/card/#images-1" >}}) (`.card-img`, `.card-img-top`, or `.card-img-bottom`).
 
 {{< example >}}
 <img class="img-fluid" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
-<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
-
-Use the custom `.az-img-sharp` class to prevent the default rounded corners from being applied to an image. (Adding the `rounded-0` class also works, as an override of the default border-radius styling.) The default rounded corners are also prevented from being applied to images with a card image class (`.card-img`, `.card-img-top`, or `.card-img-bottom`).
+Use `.rounded-0` from the [border radius utilities]({{< docsref "/utilities/borders/#sizes" >}}) to override the default rounded corners and restore sharp corners on an image.
 
 {{< example >}}
-<img class="img-fluid az-img-sharp" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+<img class="img-fluid rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
 
