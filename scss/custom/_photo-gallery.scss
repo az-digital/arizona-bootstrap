@@ -42,18 +42,16 @@
   }
 }
 
+.az-gallery-image {
+  min-height: 0;
+}
+
 .az-gallery-caption {
   position: static;
   width: 100%;
   padding: .75rem;
   margin-right: auto;
   margin-left: auto;
-}
-
-.az-gallery-grid, .az-gallery-slider-full {
-  .az-gallery-image {
-    min-height: 0;
-  }
 }
 
 .az-gallery-slider-full .az-gallery-caption {
@@ -63,8 +61,8 @@
 
 .az-gallery-slider-crop {
   .az-gallery-image {
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
   .az-gallery-caption {
