@@ -42,10 +42,6 @@
   }
 }
 
-.az-gallery-image {
-  min-height: 0;
-}
-
 .az-gallery-caption {
   position: static;
   width: 100%;
@@ -54,16 +50,29 @@
   margin-left: auto;
 }
 
+.az-gallery-grid, .az-gallery-slider-full {
+  .az-gallery-image {
+    min-height: 0;
+  }
+}
+
 .az-gallery-slider-full .az-gallery-caption {
   color: revert;
   background-color: unset;
 }
 
-.az-gallery-slider-crop .az-gallery-caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.az-gallery-slider-crop {
+  .az-gallery-image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .az-gallery-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .az-gallery-modal {
