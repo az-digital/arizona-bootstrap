@@ -22,35 +22,59 @@ With the Grid display, all images in the gallery are presented in a grid layout.
 <div class="bd-example">
   <div class="container az-gallery-container">
     <div class="row">
-      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="0">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
           </picture>
         </a>
       </div>
-      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="1">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
           </picture>
         </a>
       </div>
-      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="2">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
           </picture>
         </a>
       </div>
-      <div class="col-6 col-md-4 col-lg-3 px-min pb-min pb-lg-0" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="3">
           <picture class="card-img img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
-            <img class="mw-100" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
+          </picture>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+        <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="4">
+          <picture class="card-img img-fluid">
+            <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+          </picture>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+        <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="5">
+          <picture class="card-img img-fluid">
+            <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
+          </picture>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
+        <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="6">
+          <picture class="card-img img-fluid">
+            <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
+            <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
           </picture>
         </a>
       </div>
@@ -68,14 +92,14 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100 active">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
                     </div>
                   </div>
                 </div>
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
@@ -85,7 +109,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
@@ -95,11 +119,41 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <div class="carousel-item az-gallery-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
-                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="Ceiling tiles">
                     </div>
                     <div class="carousel-caption az-gallery-caption">
                       <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
                       <cite class="small">Image credits can be included below the caption text.</cite>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
+                    <div class="carousel-image az-gallery-image">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
+                    </div>
+                    <div class="carousel-caption az-gallery-caption">
+                      <p class="mb-0">Fifth slide caption<br>University of Arizona Spring Fling</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
+                    <div class="carousel-image az-gallery-image">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
+                    </div>
+                    <div class="carousel-caption az-gallery-caption">
+                      <p class="mb-0">Sixth slide caption<br>A hand holding a little mirror</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item az-gallery-item h-100">
+                  <div class="d-flex flex-column h-100 justify-content-center">
+                    <div class="carousel-image az-gallery-image">
+                      <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
+                    </div>
+                    <div class="carousel-caption az-gallery-caption">
+                      <p class="mb-0">Seventh slide caption<br>University graduate on stage wearing cap and gown</p>
                     </div>
                   </div>
                 </div>
@@ -253,7 +307,7 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
 <div class="az-gallery-container">
   <div class="ratio ratio-4x3">
     <div id="sliderGalleryCrop" class="carousel slide az-gallery az-gallery-slider-crop">
-      <div class="carousel-inner h-100">
+      <div class="carousel-inner h-100 rounded">
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image h-100">
