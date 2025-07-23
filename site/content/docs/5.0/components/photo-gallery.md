@@ -191,14 +191,14 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
         <div class="carousel-item az-gallery-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 img-fluid" alt="University of Arizona Spring Fling">
             </div>
           </div>
         </div>
         <div class="carousel-item az-gallery-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
+              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 img-fluid" alt="A hand holding a little mirror">
             </div>
             <div class="carousel-caption az-gallery-caption">
               <p class="mb-0">Second slide caption<br>A hand holding a little mirror</p>
@@ -208,7 +208,7 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
         <div class="carousel-item az-gallery-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
+              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 img-fluid" alt="University graduate on stage wearing cap and gown">
             </div>
             <div class="carousel-caption az-gallery-caption">
               <p class="mb-0">Third slide caption<br>University graduate on stage<br>wearing cap and gown</p>
@@ -218,7 +218,7 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
         <div class="carousel-item az-gallery-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
-              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
+              <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 img-fluid" alt="University of Arizona Spring Fling">
             </div>
             <div class="carousel-caption az-gallery-caption">
               <p class="mb-0">Fourth slide caption<br>Ceiling tiles<br>With a larger caption, the image is resized<br>as needed to fill the remaining space.</p>
