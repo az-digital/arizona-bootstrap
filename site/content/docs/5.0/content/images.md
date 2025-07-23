@@ -11,7 +11,7 @@ toc: true
 Images in Bootstrap are made responsive with `.img-fluid`. This applies `max-width: 100%;` and `height: auto;` to the image so that it scales with the parent width.
 
 {{< example >}}
-{{< placeholder width="100%" height="250" class="bd-placeholder-img-lg img-fluid" text="Responsive image" >}}
+<img class="img-fluid" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
 ## Rounded corners
@@ -36,7 +36,7 @@ Use `.rounded-0` from the [border radius utilities]({{< docsref "/utilities/bord
 In addition to our [border-radius utilities]({{< docsref "/utilities/borders" >}}), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
 
 {{< example >}}
-{{< placeholder width="200" height="200" class="img-thumbnail" title="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera" >}}
+<img class="img-thumbnail" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
 ## Aligning images
@@ -44,18 +44,18 @@ In addition to our [border-radius utilities]({{< docsref "/utilities/borders" >}
 Align images with the [helper float classes]({{< docsref "/utilities/float" >}}) or [text alignment classes]({{< docsref "/utilities/text#text-alignment" >}}). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{< docsref "/utilities/spacing#horizontal-centering" >}}).
 
 {{< example >}}
-{{< placeholder width="200" height="200" class="rounded float-start" >}}
-{{< placeholder width="200" height="200" class="rounded float-end" >}}
+<img width="200" height="200" class="float-start" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
+<img width="200" height="200" class="float-end" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
 
 {{< example >}}
-{{< placeholder width="200" height="200" class="rounded mx-auto d-block" >}}
+<img width="200" height="200" class="mx-auto d-block" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
 {{< /example >}}
 
 {{< example >}}
 <div class="text-center">
-  {{< placeholder width="200" height="200" class="rounded" >}}
+  <img width="200" height="200" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
 </div>
 {{< /example >}}
 
