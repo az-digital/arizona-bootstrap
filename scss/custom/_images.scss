@@ -1,0 +1,7 @@
+//
+// > Custom Images styling
+//
+
+img:not(.card-img, .card-img-top, .card-img-bottom) {
+  @include border-radius();
+}

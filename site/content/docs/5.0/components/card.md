@@ -482,16 +482,16 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="d-block w-100 stretched-link">Text link</a>
+      <a href="#top" class="stretched-link">Text link</a>
     </div>
   </div>
 </div>
 <div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
-  <div class="position-relative overflow-hidden">
+  <div class="rounded-top position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
-    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold">Clickable Borderless Card With Image</h3>
+    <h3 class="card-title mb-3 text-left text-reset h5 fw-bold hover-text-underline">Clickable Borderless Card With Image</h3>
     <div class="card-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
@@ -510,7 +510,7 @@ Cards with the title on image style put the title of the card on top of the imag
 
 {{< example >}}
 <div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
-  <div class="position-relative overflow-hidden">
+  <div class="rounded-top position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
       <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>

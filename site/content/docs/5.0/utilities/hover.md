@@ -13,9 +13,13 @@ Add a text underline on hover with the `.hover` class on the parent element and 
 {{< example >}}
 <div class="card hover" style="width: 18rem;">
   <div class="card-body">
-    <h2 class="card-title mt-0 h4 hover-text-underline">This is a card title</h2>
-    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
-    <a class="stretched-link" href="#">This is a link</a>
+    <h3 class="card-title mb-3 h5 fw-bold hover-text-underline">Card with Hover Underline</h3>
+    <div class="card-text">
+      <p>This card's title should have an underline applied when the card receives hover or focus.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="stretched-link">This is a link</a>
+    </div>
   </div>
 </div>
 {{< /example >}}
@@ -27,14 +31,18 @@ Add an image zoom-in effect on hover with the `.hover` class on the parent eleme
 In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
 
 {{< example >}}
-<div class="card text-bg-warm-gray hover" style="width: 18rem;">
-  <div class="overflow-hidden">
-    <img class="card-img-top hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
+<div class="card hover" style="width: 18rem;">
+  <div class="rounded-top position-relative overflow-hidden">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">
-    <h2 class="card-title mt-0 h4 hover-text-underline">This is a card title</h2>
-    <p>This card's title should have an underline applied when it receives hover or focus anywhere on the card.</p>
-    <a class="stretched-link" href="#">This is a link</a>
+    <h3 class="card-title mb-3 h5 fw-bold">Card with Image Zoom</h3>
+    <div class="card-text">
+      <p>This card's image should zoom in when the card receives hover or focus.</p>
+    </div>
+    <div class="mt-auto">
+      <a href="#top" class="stretched-link">This is a link</a>
+    </div>
   </div>
 </div>
 {{< /example >}}
