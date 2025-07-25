@@ -3,8 +3,10 @@ layout: docs
 title: Font
 description: The Proxima Nova font suite is available for official use by University of Arizona employees through a license with Adobe.
 group: content
-redirect_from: "/docs/4.3/content/"
 toc: true
+extra_js:
+  - src: "docs/5.0/assets/js/font-sample.js"
+    async: true
 ---
 
 <div class="alert alert-warning" role="alert">
