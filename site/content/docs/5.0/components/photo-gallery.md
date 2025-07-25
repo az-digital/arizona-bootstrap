@@ -89,14 +89,14 @@ With the Grid display, all images in the gallery are presented in a grid layout.
           <div class="modal-body">
             <div id="gridGallery" class="carousel slide az-gallery az-gallery-grid">
               <div class="carousel-inner h-100">
-                <div class="carousel-item az-gallery-item h-100 active">
+                <div class="carousel-item h-100 active">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
@@ -106,7 +106,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
@@ -116,7 +116,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="Ceiling tiles">
@@ -127,7 +127,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University of Arizona Spring Fling">
@@ -137,7 +137,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="A hand holding a little mirror">
@@ -147,7 +147,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                     </div>
                   </div>
                 </div>
-                <div class="carousel-item az-gallery-item h-100">
+                <div class="carousel-item h-100">
                   <div class="d-flex flex-column h-100 justify-content-center">
                     <div class="carousel-image az-gallery-image">
                       <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain rounded-0" alt="University graduate on stage wearing cap and gown">
@@ -188,14 +188,14 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
   <div class="ratio ratio-4x3">
     <div id="sliderGallery" class="carousel slide az-gallery az-gallery-slider-full">
       <div class="carousel-inner h-100">
-        <div class="carousel-item az-gallery-item h-100 active">
+        <div class="carousel-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
@@ -205,7 +205,7 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
@@ -215,7 +215,7 @@ Slider Photo Galleries using the "full image style" make use of the [object fit 
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
             <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
@@ -247,14 +247,14 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
     <div class="ratio ratio-16x9">
       <div id="sliderGallery16x9" class="carousel slide az-gallery az-gallery-slider-full">
         <div class="carousel-inner h-100">
-          <div class="carousel-item az-gallery-item h-100 active">
+          <div class="carousel-item h-100 active">
             <div class="d-flex flex-column h-100 justify-content-center">
               <div class="carousel-image az-gallery-image">
                 <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
               </div>
             </div>
           </div>
-          <div class="carousel-item az-gallery-item h-100">
+          <div class="carousel-item h-100">
             <div class="d-flex flex-column h-100 justify-content-center">
               <div class="carousel-image az-gallery-image">
                 <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="A hand holding a little mirror">
@@ -264,7 +264,7 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
               </div>
             </div>
           </div>
-          <div class="carousel-item az-gallery-item h-100">
+          <div class="carousel-item h-100">
             <div class="d-flex flex-column h-100 justify-content-center">
               <div class="carousel-image az-gallery-image">
                 <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University graduate on stage wearing cap and gown">
@@ -274,7 +274,7 @@ The aspect ratio of the Slider Photo Gallery can be changed by simply setting a 
               </div>
             </div>
           </div>
-          <div class="carousel-item az-gallery-item h-100">
+          <div class="carousel-item h-100">
             <div class="d-flex flex-column h-100 justify-content-center">
               <div class="carousel-image az-gallery-image">
                 <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-contain" alt="University of Arizona Spring Fling">
@@ -308,16 +308,16 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
   <div class="ratio ratio-4x3">
     <div id="sliderGalleryCrop" class="carousel slide az-gallery az-gallery-slider-crop">
       <div class="carousel-inner h-100 rounded">
-        <div class="carousel-item az-gallery-item h-100 active">
+        <div class="carousel-item h-100 active">
           <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image h-100">
+            <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University of Arizona Spring Fling">
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image h-100">
+            <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="A hand holding a little mirror">
             </div>
             <div class="carousel-caption az-gallery-caption">
@@ -325,9 +325,9 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image h-100">
+            <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University graduate on stage wearing cap and gown">
             </div>
             <div class="carousel-caption az-gallery-caption">
@@ -335,9 +335,9 @@ As an alternative Slider style, the "crop image style" uses the `object-fit-cove
             </div>
           </div>
         </div>
-        <div class="carousel-item az-gallery-item h-100">
+        <div class="carousel-item h-100">
           <div class="d-flex flex-column h-100 justify-content-center">
-            <div class="carousel-image az-gallery-image h-100">
+            <div class="carousel-image az-gallery-image">
               <img src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" class="h-100 w-100 object-fit-cover" alt="University of Arizona Spring Fling">
             </div>
             <div class="carousel-caption az-gallery-caption">
