@@ -3,5 +3,5 @@
 //
 
 .list-group-item.active {
-  @include az-color-contrast($list-group-bg);
+  @include az-color-contrast($list-group-active-bg);
 }
