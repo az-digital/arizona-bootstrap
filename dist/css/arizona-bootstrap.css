@@ -22117,6 +22117,10 @@ h6,
   background-color: unset;
 }
 
+.az-gallery-slider-crop .az-gallery-image {
+  width: 100%;
+  height: 100%;
+}
 .az-gallery-slider-crop .az-gallery-caption {
   position: absolute;
   right: 0;
