@@ -24,13 +24,10 @@
 {{- end -}}
 
 {{ if eq .Page.Layout "docs" -}}
-{{- /* Disable minify options for snippets.js so that the file's readable on StackBlitz */ -}}
-{{- $snippetsFile := resources.Get "js/snippets.js" | js.Build (merge $esbuildOptions (dict "minify" "false")) -}}
 {{- $esbuildParams := dict
   "cssCdn" .Site.Params.cdn.css
   "jsBundleCdn" .Site.Params.cdn.js_bundle
   "docsVersion" .Site.Params.docs_version
-  "jsSnippetFile" $snippetsFile.Content
 -}}
 {{- $esbuildOptions = merge $esbuildOptions (dict "params" $esbuildParams) -}}
 {{- end -}}
