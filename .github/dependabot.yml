@@ -36,7 +36,6 @@ updates:
       - dependency-name: "eslint-plugin-unicorn"
       - dependency-name: "jquery"
       - dependency-name: "linkinator"
-      - dependency-name: "sass"
       - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     labels:
