@@ -6,14 +6,25 @@ on:
       version:
         description: The version to tag and release
         required: true
-env:
-  AZ_EPHEMERALIMAGENAME: ${{ vars.AZ_EPHEMERALIMAGENAME }}
+      prerelease:
+        description: Is this a pre-release?
+        required: false
+        default: false
+        type: boolean
+      make_latest:
+        description: Should this be made the latest release?
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
     permissions: write-all
+    outputs:
+      release_sha: ${{ steps.update_version.outputs.release_sha }}
+      branch_name: ${{ steps.update_version.outputs.branch_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,8 +34,8 @@ jobs:
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
-          imageprefix=${{ vars.AZ_DOCKER_REGISTRY }}"/${GITHUB_REPOSITORY}/"
-          imagestem="${imageprefix}${AZ_EPHEMERALIMAGENAME}:"
+          imageprefix="${{ vars.AZ_DOCKER_REGISTRY }}/${GITHUB_REPOSITORY}/"
+          imagestem="${imageprefix}${{ vars.AZ_EPHEMERALIMAGENAME }}:"
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
@@ -42,7 +53,7 @@ jobs:
 
       - name: Unconditionally rebuild and save the Docker image
         run: |
-          workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
+          workingtitle="${{ vars.AZ_EPHEMERALIMAGENAME }}:working"
           docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
@@ -54,72 +65,48 @@ jobs:
           docker push "$ephemeral"
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
 
-      - name: Build variables
-        run: |
-          echo "AZ_VERSION=${{ github.event.inputs.version }}" >> ${GITHUB_ENV}
-
-      - name: Update version
+      - name: Update version and create tag
+        id: update_version
         run: |
           sudo touch config.yml
           sudo find . -path "./.git" -prune -o -exec chown 1000:1000 {} \;
           sudo chown 1000:1000 .
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global user.name "${GITHUB_ACTOR}"
-          docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
+          docker run --rm -e "AZ_RELEASE_VERSION=${{ github.event.inputs.version }}" -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
           git add -f dist package.json package-lock.json
           git commit -m '${{ github.event.inputs.version }}'
           git push
-          echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
-          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
+          git tag "v${{ github.event.inputs.version }}"
+          git push origin "v${{ github.event.inputs.version }}"
+          echo "release_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "branch_name=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
-          commitish: "${{ env.RELEASE_SHA }}"
-          tag_name: "v${{ env.AZ_VERSION }}"
-          release_name: "v${{ env.AZ_VERSION }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: "v${{ github.event.inputs.version }}"
+          name: "v${{ github.event.inputs.version }}"
           draft: false
-          prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
-
-      - name: Save new SHA to file
-        run: |
-          echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
-
-      - name: Upload variables
-        uses: actions/upload-artifact@v4
-        with:
-          name: variables-json-artifact
-          path: ${{ runner.temp }}/variables.json
+          make_latest: ${{ github.event.inputs.make_latest }}
+          prerelease: ${{ github.event.inputs.prerelease }}
 
   dispatch:
     needs: release
     strategy:
       matrix:
-        repo:
-          - az-digital/arizona-bootstrap
-          - az-digital/arizona-bootstrap-packagist
-          - az-digital/digital.arizona.edu
+        repo: ${{ fromJSON(vars.AZ_DISPATCH_TO) }}
     runs-on: ubuntu-latest
+    env:
+      RELEASE_SHA: ${{ needs.release.outputs.release_sha }}
+      BRANCH_NAME: ${{ needs.release.outputs.branch_name }}
     steps:
-      - name: Download variables
-        uses: actions/download-artifact@v4
-        with:
-          name: variables-json-artifact
-          path: ${{ runner.temp }}
-
-      - name: Update environment variables
-        run: |
-          variablesfile=${{ runner.temp }}/variables.json
-          echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
-          echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
-
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_bootstrap_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}", "branch": "${{env.BRANCH_NAME}}", "make_latest": "${{ github.event.inputs.make_latest }}", "prerelease": "${{ github.event.inputs.prerelease }}"}'
