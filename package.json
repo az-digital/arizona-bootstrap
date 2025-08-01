@@ -78,7 +78,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unicorn": "^56.0.1",
     "find-unused-sass-variables": "^6.1.0",
-    "glob": "^11.0.2",
+    "glob": "^11.0.3",
     "hugo-bin": "^0.145.2",
     "jquery": "3.7.1",
     "linkinator": "6.1.4",
