@@ -35,6 +35,11 @@
       color: $azurite;
     }
   }
+
+  .az-gallery-image {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .az-gallery-image {
@@ -54,11 +59,18 @@
   background-color: unset;
 }
 
-.az-gallery-slider-crop .az-gallery-caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.az-gallery-slider-crop {
+  .az-gallery-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .az-gallery-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .az-gallery-modal {

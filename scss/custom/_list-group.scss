@@ -1,0 +1,7 @@
+//
+// > Custom styling for the list group component
+//
+
+.list-group-item.active {
+  @include az-color-contrast($list-group-active-bg);
+}
