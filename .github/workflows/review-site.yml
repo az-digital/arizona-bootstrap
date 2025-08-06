@@ -79,7 +79,7 @@ jobs:
       - name: Checkout repository to workspace
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           fetch-depth: 20
       - name: Find the push source branch name
         if: ${{ github.event_name != 'pull_request' }}
@@ -136,8 +136,8 @@ jobs:
       - name: Push back the updated deployable files to the repository (CSS, JS, and so on)
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
           if [ -n "$(git status --porcelain dist)" ] ; then
             git add -f dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
