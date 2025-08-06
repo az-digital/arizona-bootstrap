@@ -19271,15 +19271,18 @@ img:not(.card-img, .card-img-top, .card-img-bottom) {
   hyphens: auto;
 }
 
-.ul-triangles {
+.ul-triangles,
+.az-list-triangles {
   overflow: hidden;
 }
-.ul-triangles li {
+.ul-triangles li,
+.az-list-triangles li {
   position: relative;
   padding-left: 0;
   list-style: none;
 }
-.ul-triangles li::before {
+.ul-triangles li::before,
+.az-list-triangles li::before {
   position: absolute;
   top: 8px;
   left: -0.8em;
@@ -19711,7 +19714,8 @@ h6,
 .text-bg-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-red .ul-triangles li::before {
+.text-bg-red .ul-triangles li::before,
+.text-bg-red .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -19736,7 +19740,8 @@ h6,
 .text-bg-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-bloom .ul-triangles li::before {
+.text-bg-bloom .ul-triangles li::before,
+.text-bg-bloom .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19761,7 +19766,8 @@ h6,
 .text-bg-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-chili .ul-triangles li::before {
+.text-bg-chili .ul-triangles li::before,
+.text-bg-chili .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -19786,7 +19792,8 @@ h6,
 .text-bg-blue a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-blue .ul-triangles li::before {
+.text-bg-blue .ul-triangles li::before,
+.text-bg-blue .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -19811,7 +19818,8 @@ h6,
 .text-bg-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-sky .ul-triangles li::before {
+.text-bg-sky .ul-triangles li::before,
+.text-bg-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19836,7 +19844,8 @@ h6,
 .text-bg-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-oasis .ul-triangles li::before {
+.text-bg-oasis .ul-triangles li::before,
+.text-bg-oasis .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19861,7 +19870,8 @@ h6,
 .text-bg-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-azurite .ul-triangles li::before {
+.text-bg-azurite .ul-triangles li::before,
+.text-bg-azurite .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -19886,7 +19896,8 @@ h6,
 .text-bg-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-midnight .ul-triangles li::before {
+.text-bg-midnight .ul-triangles li::before,
+.text-bg-midnight .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -19908,7 +19919,8 @@ h6,
 .text-bg-cool-gray .h6 {
   color: inherit;
 }
-.text-bg-cool-gray .ul-triangles li::before {
+.text-bg-cool-gray .ul-triangles li::before,
+.text-bg-cool-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19930,7 +19942,8 @@ h6,
 .text-bg-warm-gray .h6 {
   color: inherit;
 }
-.text-bg-warm-gray .ul-triangles li::before {
+.text-bg-warm-gray .ul-triangles li::before,
+.text-bg-warm-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19955,7 +19968,8 @@ h6,
 .text-bg-leaf a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-leaf .ul-triangles li::before {
+.text-bg-leaf .ul-triangles li::before,
+.text-bg-leaf .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -19980,7 +19994,8 @@ h6,
 .text-bg-river a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-river .ul-triangles li::before {
+.text-bg-river .ul-triangles li::before,
+.text-bg-river .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20005,7 +20020,8 @@ h6,
 .text-bg-silver a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-silver .ul-triangles li::before {
+.text-bg-silver .ul-triangles li::before,
+.text-bg-silver .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20030,7 +20046,8 @@ h6,
 .text-bg-mesa a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-mesa .ul-triangles li::before {
+.text-bg-mesa .ul-triangles li::before,
+.text-bg-mesa .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20055,7 +20072,8 @@ h6,
 .text-bg-ash a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-ash .ul-triangles li::before {
+.text-bg-ash .ul-triangles li::before,
+.text-bg-ash .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20080,7 +20098,8 @@ h6,
 .text-bg-sage a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-sage .ul-triangles li::before {
+.text-bg-sage .ul-triangles li::before,
+.text-bg-sage .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20102,7 +20121,8 @@ h6,
 .text-bg-white .h6 {
   color: inherit;
 }
-.text-bg-white .ul-triangles li::before {
+.text-bg-white .ul-triangles li::before,
+.text-bg-white .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20127,7 +20147,8 @@ h6,
 .text-bg-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-black .ul-triangles li::before {
+.text-bg-black .ul-triangles li::before,
+.text-bg-black .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20148,7 +20169,8 @@ h6,
 .text-bg-primary a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-primary .ul-triangles li::before {
+.text-bg-primary .ul-triangles li::before,
+.text-bg-primary .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20169,7 +20191,8 @@ h6,
 .text-bg-secondary a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-secondary .ul-triangles li::before {
+.text-bg-secondary .ul-triangles li::before,
+.text-bg-secondary .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20190,7 +20213,8 @@ h6,
 .text-bg-success a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-success .ul-triangles li::before {
+.text-bg-success .ul-triangles li::before,
+.text-bg-success .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20211,7 +20235,8 @@ h6,
 .text-bg-info a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-info .ul-triangles li::before {
+.text-bg-info .ul-triangles li::before,
+.text-bg-info .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20232,7 +20257,8 @@ h6,
 .text-bg-warning a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-warning .ul-triangles li::before {
+.text-bg-warning .ul-triangles li::before,
+.text-bg-warning .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20253,7 +20279,8 @@ h6,
 .text-bg-danger a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-danger .ul-triangles li::before {
+.text-bg-danger .ul-triangles li::before,
+.text-bg-danger .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20274,7 +20301,8 @@ h6,
 .text-bg-light a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-light .ul-triangles li::before {
+.text-bg-light .ul-triangles li::before,
+.text-bg-light .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20295,7 +20323,8 @@ h6,
 .text-bg-dark a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-dark .ul-triangles li::before {
+.text-bg-dark .ul-triangles li::before,
+.text-bg-dark .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20317,7 +20346,8 @@ h6,
 .text-bg-gray-100 .h6 {
   color: inherit;
 }
-.text-bg-gray-100 .ul-triangles li::before {
+.text-bg-gray-100 .ul-triangles li::before,
+.text-bg-gray-100 .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20339,7 +20369,8 @@ h6,
 .text-bg-gray-200 .h6 {
   color: inherit;
 }
-.text-bg-gray-200 .ul-triangles li::before {
+.text-bg-gray-200 .ul-triangles li::before,
+.text-bg-gray-200 .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20361,7 +20392,8 @@ h6,
 .text-bg-gray-300 .h6 {
   color: inherit;
 }
-.text-bg-gray-300 .ul-triangles li::before {
+.text-bg-gray-300 .ul-triangles li::before,
+.text-bg-gray-300 .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20383,7 +20415,8 @@ h6,
 .text-bg-gray-400 .h6 {
   color: inherit;
 }
-.text-bg-gray-400 .ul-triangles li::before {
+.text-bg-gray-400 .ul-triangles li::before,
+.text-bg-gray-400 .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20405,7 +20438,8 @@ h6,
 .text-bg-gray-500 .h6 {
   color: inherit;
 }
-.text-bg-gray-500 .ul-triangles li::before {
+.text-bg-gray-500 .ul-triangles li::before,
+.text-bg-gray-500 .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20430,7 +20464,8 @@ h6,
 .text-bg-gray-600 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gray-600 .ul-triangles li::before {
+.text-bg-gray-600 .ul-triangles li::before,
+.text-bg-gray-600 .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20455,7 +20490,8 @@ h6,
 .text-bg-gray-700 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gray-700 .ul-triangles li::before {
+.text-bg-gray-700 .ul-triangles li::before,
+.text-bg-gray-700 .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20480,7 +20516,8 @@ h6,
 .text-bg-gray-800 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gray-800 .ul-triangles li::before {
+.text-bg-gray-800 .ul-triangles li::before,
+.text-bg-gray-800 .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20505,7 +20542,8 @@ h6,
 .text-bg-gray-900 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gray-900 .ul-triangles li::before {
+.text-bg-gray-900 .ul-triangles li::before,
+.text-bg-gray-900 .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20530,7 +20568,8 @@ h6,
 .text-bg-transparent-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-red .ul-triangles li::before {
+.text-bg-transparent-red .ul-triangles li::before,
+.text-bg-transparent-red .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20555,7 +20594,8 @@ h6,
 .text-bg-transparent-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-bloom .ul-triangles li::before {
+.text-bg-transparent-bloom .ul-triangles li::before,
+.text-bg-transparent-bloom .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20580,7 +20620,8 @@ h6,
 .text-bg-transparent-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-chili .ul-triangles li::before {
+.text-bg-transparent-chili .ul-triangles li::before,
+.text-bg-transparent-chili .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20605,7 +20646,8 @@ h6,
 .text-bg-transparent-blue a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-blue .ul-triangles li::before {
+.text-bg-transparent-blue .ul-triangles li::before,
+.text-bg-transparent-blue .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20630,7 +20672,8 @@ h6,
 .text-bg-transparent-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-sky .ul-triangles li::before {
+.text-bg-transparent-sky .ul-triangles li::before,
+.text-bg-transparent-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20655,7 +20698,8 @@ h6,
 .text-bg-transparent-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-oasis .ul-triangles li::before {
+.text-bg-transparent-oasis .ul-triangles li::before,
+.text-bg-transparent-oasis .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20680,7 +20724,8 @@ h6,
 .text-bg-transparent-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-azurite .ul-triangles li::before {
+.text-bg-transparent-azurite .ul-triangles li::before,
+.text-bg-transparent-azurite .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20705,7 +20750,8 @@ h6,
 .text-bg-transparent-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-midnight .ul-triangles li::before {
+.text-bg-transparent-midnight .ul-triangles li::before,
+.text-bg-transparent-midnight .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20727,7 +20773,8 @@ h6,
 .text-bg-transparent-cool-gray .h6 {
   color: inherit;
 }
-.text-bg-transparent-cool-gray .ul-triangles li::before {
+.text-bg-transparent-cool-gray .ul-triangles li::before,
+.text-bg-transparent-cool-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20749,7 +20796,8 @@ h6,
 .text-bg-transparent-warm-gray .h6 {
   color: inherit;
 }
-.text-bg-transparent-warm-gray .ul-triangles li::before {
+.text-bg-transparent-warm-gray .ul-triangles li::before,
+.text-bg-transparent-warm-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20771,7 +20819,8 @@ h6,
 .text-bg-transparent-white .h6 {
   color: inherit;
 }
-.text-bg-transparent-white .ul-triangles li::before {
+.text-bg-transparent-white .ul-triangles li::before,
+.text-bg-transparent-white .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20796,7 +20845,8 @@ h6,
 .text-bg-transparent-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-transparent-black .ul-triangles li::before {
+.text-bg-transparent-black .ul-triangles li::before,
+.text-bg-transparent-black .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20821,7 +20871,8 @@ h6,
 .text-bg-gradient-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-red .ul-triangles li::before {
+.text-bg-gradient-red .ul-triangles li::before,
+.text-bg-gradient-red .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20846,7 +20897,8 @@ h6,
 .text-bg-gradient-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-bloom .ul-triangles li::before {
+.text-bg-gradient-bloom .ul-triangles li::before,
+.text-bg-gradient-bloom .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20871,7 +20923,8 @@ h6,
 .text-bg-gradient-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-chili .ul-triangles li::before {
+.text-bg-gradient-chili .ul-triangles li::before,
+.text-bg-gradient-chili .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20896,7 +20949,8 @@ h6,
 .text-bg-gradient-blue a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-blue .ul-triangles li::before {
+.text-bg-gradient-blue .ul-triangles li::before,
+.text-bg-gradient-blue .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20921,7 +20975,8 @@ h6,
 .text-bg-gradient-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-sky .ul-triangles li::before {
+.text-bg-gradient-sky .ul-triangles li::before,
+.text-bg-gradient-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20946,7 +21001,8 @@ h6,
 .text-bg-gradient-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-oasis .ul-triangles li::before {
+.text-bg-gradient-oasis .ul-triangles li::before,
+.text-bg-gradient-oasis .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -20971,7 +21027,8 @@ h6,
 .text-bg-gradient-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-azurite .ul-triangles li::before {
+.text-bg-gradient-azurite .ul-triangles li::before,
+.text-bg-gradient-azurite .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -20996,7 +21053,8 @@ h6,
 .text-bg-gradient-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-midnight .ul-triangles li::before {
+.text-bg-gradient-midnight .ul-triangles li::before,
+.text-bg-gradient-midnight .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -21018,7 +21076,8 @@ h6,
 .text-bg-gradient-cool-gray .h6 {
   color: inherit;
 }
-.text-bg-gradient-cool-gray .ul-triangles li::before {
+.text-bg-gradient-cool-gray .ul-triangles li::before,
+.text-bg-gradient-cool-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -21040,7 +21099,8 @@ h6,
 .text-bg-gradient-warm-gray .h6 {
   color: inherit;
 }
-.text-bg-gradient-warm-gray .ul-triangles li::before {
+.text-bg-gradient-warm-gray .ul-triangles li::before,
+.text-bg-gradient-warm-gray .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -21062,7 +21122,8 @@ h6,
 .text-bg-gradient-white .h6 {
   color: inherit;
 }
-.text-bg-gradient-white .ul-triangles li::before {
+.text-bg-gradient-white .ul-triangles li::before,
+.text-bg-gradient-white .az-list-triangles li::before {
   border-left-color: #000;
 }
 
@@ -21087,7 +21148,8 @@ h6,
 .text-bg-gradient-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.text-bg-gradient-black .ul-triangles li::before {
+.text-bg-gradient-black .ul-triangles li::before,
+.text-bg-gradient-black .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
@@ -21112,7 +21174,8 @@ h6,
 .list-group-item.active a:not(.btn):not(.nav-link) {
   color: inherit;
 }
-.list-group-item.active .ul-triangles li::before {
+.list-group-item.active .ul-triangles li::before,
+.list-group-item.active .az-list-triangles li::before {
   border-left-color: #fff;
 }
 
