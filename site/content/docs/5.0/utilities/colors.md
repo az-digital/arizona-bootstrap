@@ -29,7 +29,7 @@ When using these colors, it is important to maintain sufficient color contrast b
 
 ### Contextual
 
-When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim Color Contrast Checker</a> to verify your color contrast.
+When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a> to verify your color contrast.
 
 {{< example >}}
 <p class="text-body">.text-body</p>
