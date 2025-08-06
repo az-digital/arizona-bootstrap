@@ -62,6 +62,10 @@ The following utilities have been removed in Arizona Bootstrap 5.
 
 The `.blockquote-reverse` class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.
 
+### Bold custom class
+
+The `.bold` Arizona Bootstrap class was [deprecated in Arizona Bootstrap 2](https://digital.arizona.edu/arizona-bootstrap/docs/2.0/backwards-compatibility/#fonts--font-styles) and has been removed from Arizona Bootstrap 5. Use `.fw-bold` from the [font-weight classes]({{< docsref "/utilities/text/#font-weight-and-italics" >}}) instead.
+
 ### Heading-Style
 
 The `.heading-style` class has been removed from Arizona Bootstrap 5. The Bootstrap `.h1` - `.h6` styles should be used instead.
