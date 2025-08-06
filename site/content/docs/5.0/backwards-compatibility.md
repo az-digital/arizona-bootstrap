@@ -54,6 +54,11 @@ These custom Arizona Bootstrap classes are now deprecated:
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
 
+### Text Muted
+
+The `.text-muted` class has been replaced by the `.text-body-secondary` class.
+
+
 ## Removed Utilities
 
 The following utilities have been removed in Arizona Bootstrap 5.

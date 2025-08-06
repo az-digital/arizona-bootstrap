@@ -27,6 +27,18 @@ When using these colors, it is important to maintain sufficient color contrast b
 <p class="text-dark-silver">.text-dark-silver</p>
 {{< /example >}}
 
+### Contextual
+
+When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim Color Contrast Checker</a> to verify your color contrast.
+
+{{< example >}}
+<p class="text-body">.text-body</p>
+<p class="text-body-emphasis">.text-body-emphasis</p>
+<p class="text-body-secondary">.text-body-secondary</p>
+<p class="text-body-tertiary">.text-body-tertiary</p>
+{{< /example >}}
+
+
 ## Further information from upstream Bootstrap
 
 ### Opacity
