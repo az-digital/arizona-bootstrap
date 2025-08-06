@@ -19,7 +19,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 sh.config.fatal = true
 
-const configFile = path.join(__dirname, '../hugo.yml')
+const configFile = path.join(__dirname, '../hugo_template.yml')
 
 // Array of objects which holds the files to generate SRI hashes for.
 // `file` is the path from the root folder
