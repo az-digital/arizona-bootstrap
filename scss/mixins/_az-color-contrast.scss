@@ -32,12 +32,14 @@
 
   // Change the color of the custom triangle marker for list items.
   @if list.index($light-background-colors, $bg-color-name) {
-    .ul-triangles li::before {
+    .ul-triangles li::before,
+    .az-list-triangles li::before {
       border-left-color: $black;
     }
   }
   @else {
-    .ul-triangles li::before {
+    .ul-triangles li::before,
+    .az-list-triangles li::before {
       border-left-color: $white;
     }
   }

@@ -54,6 +54,11 @@ These custom Arizona Bootstrap classes are now deprecated:
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
 
+### UL Triangles
+
+The `.ul-triangles` custom Arizona Bootstrap class has been deprecated and replaced by `.az-list-triangles`.
+
+
 ## Removed Utilities
 
 The following utilities have been removed in Arizona Bootstrap 5.
