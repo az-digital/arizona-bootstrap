@@ -16,7 +16,7 @@ Colorize text with color utilities. If you want to colorize links, you can use t
 
 ### Brand
 
-When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim Color Contrast Checker</a> to verify your color contrast. Or, for your convenience, {{< ourname >}} also provides a [helpful tool]({{< docsref "/getting-started/color-contrast" >}}) to determine which brand text colors have sufficient color contrast on other brand background colors.
+When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a> to verify your color contrast. Or, for your convenience, {{< ourname >}} also provides a [helpful tool]({{< docsref "/getting-started/color-contrast" >}}) to determine which brand text colors have sufficient color contrast on other brand background colors.
 
 {{< example >}}
 {{< colors.inline >}}
@@ -26,6 +26,18 @@ When using these colors, it is important to maintain sufficient color contrast b
 {{< /colors.inline >}}
 <p class="text-dark-silver">.text-dark-silver</p>
 {{< /example >}}
+
+### Contextual
+
+When using these colors, it is important to maintain sufficient color contrast between your text color and background color. You can utilize the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a> to verify your color contrast.
+
+{{< example >}}
+<p class="text-body">.text-body</p>
+<p class="text-body-emphasis">.text-body-emphasis</p>
+<p class="text-body-secondary">.text-body-secondary</p>
+<p class="text-body-tertiary">.text-body-tertiary</p>
+{{< /example >}}
+
 
 ## Further information from upstream Bootstrap
 
