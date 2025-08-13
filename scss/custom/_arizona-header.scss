@@ -1,0 +1,65 @@
+//
+// > Arizona Header custom component
+//
+
+@media screen and (max-width: 992px) {
+  .arizona-header > .container {
+    padding-right:0;
+
+    > .row {
+      margin-right: 0;
+    }
+  }
+}
+
+.arizona-logo {
+  min-height: 50px;
+}
+/* @todo Decide if this class is needed. */
+.block-a-line-logo {
+  width: auto;
+  height: 36px;
+  margin: 5px 20px 0 10px;
+}
+.arizona-line-logo {
+  width: 211px;
+  height: 16px;
+  margin: 0 0 0 10px;
+}
+@include media-breakpoint-up(sm) {
+  .arizona-line-logo {
+    width: 266.41px;
+    height: 19.8px;
+  }
+}
+/* @todo Decide if this class is needed. */
+.arizona-header-buttons {
+  /*
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  max-height: 50px;
+  */
+}
+.btn-arizona-header {
+  width: 60px;
+  height: 50px;
+  padding: 0;
+  color: $white;
+  background-color: $red;
+  border: 2px solid $red;
+
+  > .icon {
+    margin: -5px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+  
+  > .icon-text {
+    display: block;
+    margin: -5px 0;
+    font-size: 10px;
+    line-height: 10px;
+  }
+}

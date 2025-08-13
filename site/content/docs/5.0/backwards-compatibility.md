@@ -102,6 +102,11 @@ For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), th
  - `.callout-light`
  - `.callout-dark`
 
+ ### Navbar Off Canvas
+
+The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see [Offcanvas navbar]({{< docsref "/examples/offcanvas-navbar/" >}}).
+
+
 
 ## Removed JavaScript
 
