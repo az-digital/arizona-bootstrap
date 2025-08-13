@@ -37,7 +37,7 @@ Extending the header with nav and search buttons is supported as shown below. Th
           <span class="icon-text"> Menu </span>
         </button>
         <!-- Offcanvas mobile navigation -->
-        <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavDemo" aria-label="Mobile navigation">
+        <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavDemo">
           <div class="offcanvas-header sticky-top p-0 m-0 text-bg-red d-flex justify-content-end align-items-center">
             <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-offcanvas-header d-flex flex-column justify-content-center text-white px-3 py-1">
               <span aria-hidden="true" class="icon material-symbols-rounded mx-auto">close</span>
