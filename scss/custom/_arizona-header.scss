@@ -4,7 +4,7 @@
 
 @media screen and (max-width: 992px) {
   .arizona-header > .container {
-    padding-right:0;
+    padding-right: 0;
 
     > .row {
       margin-right: 0;
@@ -15,6 +15,7 @@
 .arizona-logo {
   min-height: 50px;
 }
+
 /* @todo Decide if this class is needed. */
 .block-a-line-logo {
   width: auto;
@@ -32,6 +33,7 @@
     height: 19.8px;
   }
 }
+
 /* @todo Decide if this class is needed. */
 .arizona-header-buttons {
   /*
@@ -55,7 +57,7 @@
     font-size: 24px;
     line-height: 24px;
   }
-  
+
   > .icon-text {
     display: block;
     margin: -5px 0;

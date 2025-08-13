@@ -1,23 +1,23 @@
 // Overrides for the Navbar component
 
 .navbar {
+  justify-content: space-between;
   border-top: 1px solid $navbar-light-border-color;
   border-bottom: 1px solid $navbar-light-border-color;
-  justify-content: space-between;
 }
 
 .navbar-nav {
   --#{$prefix}nav-link-color: #{$nav-link-color};
 
   .nav-link {
-    font-weight: 600;
     padding-top: $navbar-nav-link-padding-y;
     padding-bottom: $navbar-nav-link-padding-y;
+    font-weight: 600;
 
     &:hover {
       color: $nav-link-hover-color;
       background-color: $gray-100;
-      border-radius: 0;
+      @include border-radius(0);
     }
     &.active,
     &.is-active,
@@ -25,7 +25,7 @@
     &.show {
       color: $nav-tabs-link-active-color;
       background-color: $nav-tabs-link-bg;
-      border-radius: 0;
+      @include border-radius(0);
     }
   }
 
