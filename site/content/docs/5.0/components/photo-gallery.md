@@ -24,7 +24,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
     <div class="row">
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="0">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
           </picture>
@@ -32,7 +32,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="1">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
           </picture>
@@ -40,7 +40,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="2">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
           </picture>
@@ -48,7 +48,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="3">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
           </picture>
@@ -56,7 +56,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="4">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
           </picture>
@@ -64,7 +64,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="5">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-2.jpg` >}}" alt="A hand holding a little mirror">
           </picture>
@@ -72,7 +72,7 @@ With the Grid display, all images in the gallery are presented in a grid layout.
       </div>
       <div class="col-6 col-md-4 col-lg-3 p-min" data-bs-toggle="modal" data-bs-target="#gridGalleryModal">
         <a role="button" data-bs-target="#gridGallery" data-bs-slide-to="6">
-          <picture class="card-img img-fluid">
+          <picture class="img-fluid">
             <source srcset="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3-thumb.jpg` >}} 1x">
             <img class="mw-100 rounded-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-3.jpg` >}}" alt="University graduate on stage wearing cap and gown">
           </picture>
