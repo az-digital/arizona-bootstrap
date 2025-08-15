@@ -12,24 +12,22 @@
   .nav-link {
     padding-top: $navbar-nav-link-padding-y;
     padding-bottom: $navbar-nav-link-padding-y;
+    @include border-radius(0);
 
     &:not(.active) {
       font-weight: 600;
     }
 
     &:hover {
-      color: $nav-link-hover-color;
       background-color: $gray-100;
-      @include border-radius(0);
     }
 
     &.active,
     &.is-active,
     &:active,
     &.show {
-      color: $nav-tabs-link-active-color;
+      color: $navbar-light-active-color;
       background-color: $nav-tabs-link-bg;
-      @include border-radius(0);
     }
   }
 
