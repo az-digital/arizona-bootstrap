@@ -12,13 +12,17 @@
   .nav-link {
     padding-top: $navbar-nav-link-padding-y;
     padding-bottom: $navbar-nav-link-padding-y;
-    font-weight: 600;
+
+    &:not(.active) {
+      font-weight: 600;
+    }
 
     &:hover {
       color: $nav-link-hover-color;
       background-color: $gray-100;
       @include border-radius(0);
     }
+
     &.active,
     &.is-active,
     &:active,

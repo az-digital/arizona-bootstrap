@@ -2,6 +2,12 @@
 // > Arizona Header custom component
 //
 
+.arizona-header > .container > .row {
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
 @media screen and (max-width: 992px) {
   .arizona-header > .container {
     padding-right: 0;
@@ -13,7 +19,10 @@
 }
 
 .arizona-logo {
+  display: flex;
+  align-items: center;
   min-height: 50px;
+  padding-right: 0;
 }
 
 /* @todo Decide if this class is needed. */
@@ -45,22 +54,16 @@
   */
 }
 .btn-arizona-header {
-  width: 60px;
-  height: 50px;
-  padding: 0;
-  color: $white;
-  background-color: $red;
-  border: 2px solid $red;
-
-  > .icon {
-    margin: -5px;
-    font-size: 24px;
-    line-height: 24px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 60px;
+  padding: .25rem 0;
+  @extend .text-white;
 
   > .icon-text {
-    display: block;
-    margin: -5px 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
     font-size: 10px;
     line-height: 10px;
   }
