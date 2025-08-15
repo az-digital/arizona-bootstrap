@@ -56,6 +56,7 @@
 
 // Arizona Bootstrap imports.
 @import "deprecated/accordion";
+@import "deprecated/arizona-header";
 @import "deprecated/card";
 @import "deprecated/nav";
 @import "mixins/background";
@@ -68,6 +69,7 @@
 @import "custom/typography";
 @import "override/typography";
 @import "override/accordion";
+@import "custom/arizona-header";
 @import "custom/background";
 @import "override/badge";
 @import "custom/badge";
@@ -82,7 +84,6 @@
 @import "custom/list-group";
 @import "override/nav";
 @import "override/navbar";
-@import "custom/navbar-offcanvas";
 @import "custom/background-wrapper";
 @import "custom/hover";
 @import "custom/callouts";

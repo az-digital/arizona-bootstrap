@@ -21,37 +21,36 @@ The header is to be used on all subdomains of arizona.edu.
 Extending the header with nav and search buttons is supported as shown below. This can save space on your site, especially for mobile devices.
 
 {{< example >}}
-<header class="bg-red arizona-header" id="header_arizona">
+<header class="arizona-header text-bg-red" id="header_arizona">
   <div class="container">
     <div class="row">
-      <a class="arizona-logo" href="https://www.arizona.edu" title="The University of Arizona homepage">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
         <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
       </a>
-    </div>
-  </div>
-  <div class="redbar-buttons d-lg-none">
-    <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar" id="jsAzSearch">
-      <span aria-hidden="true" class="icon material-symbols-rounded"> search </span>
-      <span class="icon-text"> search </span>
-    </button>
-    <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-redbar">
-      <span aria-hidden="true" class="icon material-symbols-rounded"> menu </span>
-      <span class="icon-text"> menu </span>
-    </button>
-    <nav class="navbar-offcanvas mw-100 w-100 bg-white d-flex d-lg-none" id="azMobileNavDemo">
-      <div class="navbar-offcanvas-header mb-2">
-        <div class="bg-chili d-flex justify-content-between align-items-center">
-          <a href="/" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-            <span aria-hidden="true" class="material-symbols-rounded">home</span>
-            <span>Home</span>
-          </a>
-          <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-menu-offcanvas-nav btn-red d-flex flex-column justify-content-center navbar-offcanvas-home">
-            <span aria-hidden="true" class="material-symbols-rounded mx-auto">close</span>
-            <span class="mx-auto">Close</span>
-          </button>
+      <div class="arizona-header-buttons d-lg-none d-flex col-auto px-0">
+        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header" id="jsAzSearch">
+          <span aria-hidden="true" class="icon material-symbols-rounded">search</span>
+          <span class="icon-text">Search</span>
+        </button>
+        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header">
+          <span aria-hidden="true" class="icon material-symbols-rounded">menu</span>
+          <span class="icon-text">Menu</span>
+        </button>
+        <!-- Offcanvas mobile navigation -->
+        <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavDemo">
+          <div class="offcanvas-header sticky-top p-0 mb-2 text-bg-red d-flex justify-content-between align-items-center">
+            <a href="#" class="btn btn-arizona-header">
+              <span aria-hidden="true" class="icon material-symbols-rounded">home</span>
+              <span class="icon-text">Home</span>
+            </a>
+            <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header">
+              <span aria-hidden="true" class="icon material-symbols-rounded">close</span>
+              <span class="icon-text">Close</span>
+            </button>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
 </header>
 {{< /example >}}
