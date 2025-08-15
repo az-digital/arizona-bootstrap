@@ -40,6 +40,15 @@ The following components are deprecated in Arizona Bootstrap 5 and will be remov
 
 Arizona Bootstrap 2 used the card component to extend the default collapse behavior and create an accordion. To properly achieve the accordion style, a custom class `.accordion` was also needed as a wrapper. In Arizona Bootstrap 5, the [accordion component](../components/accordion/) is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.
 
+### Arizona Header Classes
+
+These custom Arizona Bootstrap classes are now deprecated:
+
+- `.redbar-buttons`: This class has been replaced with `.arizona-header-buttons`.
+- `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
+
+For both of these classes, the original styling has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
+
 ### Card Classes
 
 These custom Arizona Bootstrap classes are now deprecated:
