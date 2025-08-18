@@ -43,7 +43,9 @@
     .nav-link {
       &:hover {
         color: $white;
+        background-color: initial;
       }
+
       &:active,
       &.active,
       &.is-active,
