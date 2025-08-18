@@ -57,6 +57,8 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
+These text background classes set the text color by default. Other background classes that do not set the text color are found on the [Background color utilities page]({{< docsref "/utilities/background" >}}). This includes `bg-transparent`.
+
 {{< example >}}
 <div class="position-relative overflow-hidden">
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
