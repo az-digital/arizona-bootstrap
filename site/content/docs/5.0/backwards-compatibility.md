@@ -42,12 +42,12 @@ Arizona Bootstrap 2 used the card component to extend the default collapse behav
 
 ### Arizona Header Classes
 
-These custom Arizona Bootstrap classes are now deprecated:
+These custom Arizona Bootstrap classes for the Arizona Header are now deprecated:
 
-- `.redbar-buttons`: This class has been replaced with `.arizona-header-buttons`.
+- `.redbar-buttons`: This class has no replacement (the element now uses standard Arizona Bootstrap classes instead).
 - `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
 
-For both of these classes, the original styling has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
+For both of these deprecated classes, the original CSS has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
 
 ### Card Classes
 
