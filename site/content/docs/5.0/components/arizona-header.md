@@ -34,29 +34,29 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 The Arizona Header can be extended with off-canvas search and navigation for mobile devices, as shown in the example below.
 
 {{< example >}}
-<header class="arizona-header text-bg-red" id="header_arizona">
+<div class="arizona-header text-bg-red" id="header_arizona_example">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
         <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
       </a>
       <div class="d-lg-none d-flex col-auto px-0">
-        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header" id="jsAzSearch">
+        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavExample" aria-controls="azMobileNavExample" class="btn btn-arizona-header" id="jsAzSearch">
           <span aria-hidden="true" class="icon material-symbols-rounded">search</span>
           <span class="icon-text">Search</span>
         </button>
-        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header">
+        <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavExample" aria-controls="azMobileNavExample" class="btn btn-arizona-header">
           <span aria-hidden="true" class="icon material-symbols-rounded">menu</span>
           <span class="icon-text">Menu</span>
         </button>
         <!-- Offcanvas mobile navigation -->
-        <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavDemo">
+        <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavExample">
           <div class="offcanvas-header sticky-top p-0 mb-2 text-bg-red d-flex justify-content-between align-items-center">
             <a href="#" class="btn btn-arizona-header">
               <span aria-hidden="true" class="icon material-symbols-rounded">home</span>
               <span class="icon-text">Home</span>
             </a>
-            <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavDemo" aria-controls="azMobileNavDemo" class="btn btn-arizona-header">
+            <button data-bs-toggle="offcanvas" data-bs-target="#azMobileNavExample" aria-controls="azMobileNavExample" class="btn btn-arizona-header">
               <span aria-hidden="true" class="icon material-symbols-rounded">close</span>
               <span class="icon-text">Close</span>
             </button>
@@ -65,5 +65,5 @@ The Arizona Header can be extended with off-canvas search and navigation for mob
       </div>
     </div>
   </div>
-</header>
+</div>
 {{< /example >}}
