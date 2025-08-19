@@ -169,6 +169,10 @@ $navbar-light-link-hover-bg: $gray-100;
 // fusv-disable
 $pagination-color: $breadcrumb-color;
 $pagination-hover-color: $midnight;
+$pagination-active-bg: $blue;
+$pagination-active-border-color: $blue;
+$pagination-focus-color: $blue;
+$focus-ring-box-shadow: 0 0 0 .25rem rgba($blue, .25);
 // fusv-enable
 
 // >> Popovers
