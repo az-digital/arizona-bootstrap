@@ -5584,12 +5584,12 @@ textarea.form-control-lg {
   --bs-pagination-hover-color: #001c48;
   --bs-pagination-hover-bg: var(--bs-tertiary-bg);
   --bs-pagination-hover-border-color: var(--bs-border-color);
-  --bs-pagination-focus-color: var(--bs-link-hover-color);
+  --bs-pagination-focus-color: #0c234b;
   --bs-pagination-focus-bg: var(--bs-secondary-bg);
-  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(12, 35, 75, 0.25);
   --bs-pagination-active-color: #fff;
-  --bs-pagination-active-bg: #ab0520;
-  --bs-pagination-active-border-color: #ab0520;
+  --bs-pagination-active-bg: #0c234b;
+  --bs-pagination-active-border-color: #0c234b;
   --bs-pagination-disabled-color: var(--bs-secondary-color);
   --bs-pagination-disabled-bg: var(--bs-secondary-bg);
   --bs-pagination-disabled-border-color: var(--bs-border-color);
