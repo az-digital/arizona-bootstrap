@@ -43,7 +43,7 @@ Arizona Bootstrap 2 used the card component to extend the default collapse behav
 ### Arizona Header Classes
 
 These custom Arizona Bootstrap classes for the Arizona Header are now deprecated:
-
+- `.block-a-line-logo`: This class has no replacement. Instead, the `.arizona-line-logo` class should be used with the appropriate logo image.
 - `.redbar-buttons`: This class has no replacement (the element now uses standard Arizona Bootstrap classes instead).
 - `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
 
