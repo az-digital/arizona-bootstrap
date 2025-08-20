@@ -40,6 +40,15 @@ The following components are deprecated in Arizona Bootstrap 5 and will be remov
 
 Arizona Bootstrap 2 used the card component to extend the default collapse behavior and create an accordion. To properly achieve the accordion style, a custom class `.accordion` was also needed as a wrapper. In Arizona Bootstrap 5, the [accordion component](../components/accordion/) is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.
 
+### Arizona Header Classes
+
+These custom Arizona Bootstrap classes for the Arizona Header are now deprecated:
+- `.block-a-line-logo`: This class has no replacement. Instead, the `.arizona-line-logo` class should be used with the appropriate logo image.
+- `.redbar-buttons`: This class has no replacement (the element now uses standard Arizona Bootstrap classes instead).
+- `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
+
+For both of these deprecated classes, the original CSS has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
+
 ### Card Classes
 
 These custom Arizona Bootstrap classes are now deprecated:
@@ -101,6 +110,11 @@ For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), th
  - `.callout-mesa`
  - `.callout-light`
  - `.callout-dark`
+
+ ### Navbar Off Canvas
+
+The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see [Offcanvas navbar]({{< docsref "/examples/offcanvas-navbar/" >}}).
+
 
 
 ## Removed JavaScript

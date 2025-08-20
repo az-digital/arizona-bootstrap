@@ -1,0 +1,48 @@
+// Deprecated styling for the custom Arizona Header component
+
+// Deprecated custom class: .block-a-line-logo
+.block-a-line-logo {
+  width: auto;
+  height: 36px;
+  margin: 5px 20px 0 10px;
+}
+
+// Deprecated custom class: .redbar-buttons
+.redbar-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  max-height: 50px;
+}
+
+// Deprecated custom class: .btn-redbar
+.btn-redbar {
+  width: 60px;
+  height: 50px;
+  padding: 0;
+  color: $white;
+  background-color: $red;
+  border: 2px solid $red;
+
+  &:focus,
+  &.focus {
+    background-color: $chili;
+    border: 2px solid $chili;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .icon {
+    margin: -5px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .icon-text {
+    display: block;
+    margin: -5px 0;
+    font-size: 10px;
+    line-height: 10px;
+  }
+}

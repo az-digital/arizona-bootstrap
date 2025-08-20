@@ -2,66 +2,6 @@
 // > Additional custom styles
 //
 
-// >> Arizona header
-
-.arizona-header {
-  position: relative;
-}
-.block-a-line-logo {
-  width: auto;
-  height: 36px;
-  margin: 5px 20px 0 10px;
-}
-.arizona-line-logo {
-  width: 211px;
-  height: 16px;
-  margin: 17px 20px 17px 10px;
-}
-@include media-breakpoint-up(sm) {
-  .arizona-line-logo {
-    width: 266.41px;
-    height: 19.8px;
-    margin: 15.11px 20px 15.1px 10px;
-  }
-}
-.arizona-logo {
-  float: left;
-  max-width: 80%;
-}
-.redbar-buttons {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 50px;
-  max-height: 50px;
-}
-.btn-redbar .icon-text {
-  display: block;
-  margin: -5px 0;
-  font-size: 10px;
-  line-height: 10px;
-}
-.btn-redbar .icon {
-  margin: -5px;
-  font-size: 24px;
-  line-height: 24px;
-}
-.btn.btn-redbar {
-  width: 60px;
-  height: 50px;
-  padding: 0;
-  color: $white;
-  background-color: $red;
-  border: 2px solid $red;
-  &:focus,
-  &.focus {
-    background-color: $chili;
-    border: 2px solid $chili;
-    outline: 0;
-    box-shadow: none;
-  }
-}
-
 // >> Column split utility.
 
 [class*="split-"] {

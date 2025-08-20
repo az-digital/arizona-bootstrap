@@ -1,52 +1,62 @@
 // Overrides for the Navbar component
 
-// >> .navbar
 .navbar {
-  padding: $navbar-padding-y $navbar-padding-x;
+  justify-content: space-between;
+  border-top: 1px solid $navbar-light-border-color;
+  border-bottom: 1px solid $navbar-light-border-color;
 }
 
-// >> .navbar-nav
-.navbar-nav .nav-link {
-  font-weight: $navbar-nav-link-font-weight;
-  text-transform: none;
-  background-color: inherit;
-  border: 0;
-}
+.navbar-nav {
+  --#{$prefix}nav-link-color: #{$nav-link-color};
 
-.navbar-nav .nav-link,
-.navbar-brand {
-  padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
-}
+  .nav-link {
+    padding-top: $navbar-nav-link-padding-y;
+    padding-bottom: $navbar-nav-link-padding-y;
+    @include border-radius(0);
 
-.navbar-nav-scroll {
-  display: flex;
-  align-self: stretch;
-}
-
-.navbar-light {
-  border-color: $navbar-light-border-color;
-  border-style: solid;
-  border-width: $navbar-light-border-width;
-
-  .nav-item {
-    .nav-link {
-      color: $navbar-light-link-color;
-
-      &:hover {
-        color: $navbar-light-link-active-color;
-      }
+    &:not(.active) {
+      font-weight: 600;
     }
 
     &:hover {
-      color: $navbar-light-link-active-color;
-      background-color: $navbar-light-link-hover-bg;
+      background-color: $gray-100;
     }
 
     &.active,
-    &:active {
-      .nav-link {
-        color: $navbar-light-link-active-color;
-        background-color: $navbar-light-link-active-bg;
+    &.is-active,
+    &:active,
+    &.show {
+      color: $navbar-light-active-color;
+      background-color: $nav-tabs-link-bg;
+    }
+  }
+
+  .dropdown-toggle::after {
+    margin-left: .125rem;
+  }
+}
+
+.navbar-toggler {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+@include color-mode(dark) {
+  .navbar-nav {
+    --#{$prefix}nav-link-color: #{$gray-100};
+
+    .nav-link {
+      &:hover {
+        color: $white;
+        background-color: initial;
+      }
+
+      &:active,
+      &.active,
+      &.is-active,
+      &.show {
+        color: $white;
+        background-color: $gray-900;
       }
     }
   }

@@ -37,8 +37,23 @@
 // > NAV
 //
 // >> Navbar
-.bd-navbar::after {
-  background-image: linear-gradient(var(--bs-chili), var(--bs-chili) 95%);
+.bd-navbar {
+  border-top: none;
+  border-bottom: none;
+  --#{$prefix}nav-link-color: var(--#{$prefix}navbar-color);
+
+  &::after {
+    background-image: linear-gradient(var(--bs-chili), var(--bs-chili) 95%);
+  }
+}
+
+.bd-navbar-nav .nav-link {
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    background-color: initial;
+  }
 }
 
 // >> Sidebar
@@ -117,14 +132,6 @@
 }
 // stylelint-enable selector-no-qualifying-type
 
-// >> Off Canvas Navbar example
-
-.navbar-offcanvas {
-  &.open {
-    transform: translateX(0); /* Account for horizontal padding on navbar */
-  }
-}
-
 //
 // > LAYOUT
 //
@@ -175,6 +182,13 @@
 //
 // > COMPONENTS
 //
+
+// >> Arizona Header
+.arizona-header .sticky-top {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
 
 // >> Background Wrappers
 .btn-background-wrapper-demo,
