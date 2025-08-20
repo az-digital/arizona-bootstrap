@@ -41,4 +41,8 @@ h6,
 .h6 {
   margin: $heading-margins;
   color: $blue;
+
+  @include color-mode(dark) {
+    color: $white;
+  }
 }
