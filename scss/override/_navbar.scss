@@ -36,6 +36,11 @@
   }
 }
 
+.navbar-toggler {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
 @include color-mode(dark) {
   .navbar-nav {
     --#{$prefix}nav-link-color: #{$gray-100};
