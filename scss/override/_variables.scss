@@ -25,6 +25,11 @@ $theme-colors: (
 );
 // scss-docs-end theme-colors-map
 
+// > Dark mode
+// fusv-disable
+$enable-dark-mode: false;
+// fusv-enable
+
 /*
 * > FONTS
 */
