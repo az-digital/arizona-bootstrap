@@ -15,6 +15,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <p class="h4 alert-heading mt-0">Heads Up!</p>
   <p class="mb-0">The wordmark logo without a Block "A" header should only be used when near a Block "A" logo. Typically, the Block "A" logo is included as part of the site branding just below the Arizona Header.</p>
 </div>
+<p>Normally, the Arizona Header element is fixed to the top of the browser window on mobile devices. However, for this documentation site, this behavior has been overridden to prevent the example elements from disappearing behind the existing Arizona Bootstrap navbar above.</p>
 
 {{< example >}}
 <div class="arizona-header text-bg-red" id="header_arizona">
