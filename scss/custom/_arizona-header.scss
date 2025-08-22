@@ -9,6 +9,17 @@
 }
 
 @media screen and (max-width: 992px) {
+  .arizona-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 50px;
+  }
+  .arizona-logo {
+    flex-shrink: 1;
+  }
   .arizona-header > .container {
     padding-right: 0;
 
@@ -25,13 +36,14 @@
   padding-right: 0;
 }
 .arizona-line-logo {
-  width: 211px;
+  width: 100%;
   height: 16px;
   margin: 0 0 0 10px;
+  max-width: 211px;
 }
 @include media-breakpoint-up(sm) {
   .arizona-line-logo {
-    width: 266.41px;
+    max-width: 266.41px;
     height: 19.8px;
   }
 }
@@ -41,7 +53,7 @@
   flex-direction: column;
   justify-content: center;
   min-width: 60px;
-  padding: .25rem 0;
+  padding: 4px 0;
   @extend .text-white;
 
   > .icon-text {
