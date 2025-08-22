@@ -40,6 +40,7 @@
   max-width: 211px;
   height: 16px;
   margin: 0 0 0 10px;
+  @include border-radius(0);
 }
 @include media-breakpoint-up(sm) {
   .arizona-line-logo {
