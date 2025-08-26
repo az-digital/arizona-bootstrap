@@ -22,23 +22,6 @@ Disabled close buttons change their `opacity`. We've also applied `pointer-event
 <button type="button" class="btn-close" disabled aria-label="Close"></button>
 {{< /example >}}
 
-## Dark variant
-
-{{< deprecated-in "5.3.0" >}}
-
-{{< callout warning >}}
-**Heads up!** As of v5.3.0, the `.btn-close-white` class is deprecated. Instead, use `data-bs-theme="dark"` to change the color mode of the close button.
-{{< /callout >}}
-
-Add `data-bs-theme="dark"` to the `.btn-close`, or to its parent element, to invert the close button. This uses the `filter` property to invert the `background-image` without overriding its value.
-
-{{< example class="bg-dark" >}}
-<div data-bs-theme="dark">
-  <button type="button" class="btn-close" aria-label="Close"></button>
-  <button type="button" class="btn-close" disabled aria-label="Close"></button>
-</div>
-{{< /example >}}
-
 ## CSS
 
 ### Variables
