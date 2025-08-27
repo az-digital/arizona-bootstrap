@@ -828,7 +828,7 @@
    * Constants
    */
 
-  const VERSION = '5.3.7';
+  const VERSION = '5.3.8';
 
   /**
    * Class definition
@@ -2283,9 +2283,6 @@
       this._element.setAttribute('aria-expanded', 'false');
       Manipulator.removeDataAttribute(this._menu, 'popper');
       EventHandler.trigger(this._element, EVENT_HIDDEN$5, relatedTarget);
-
-      // Explicitly return focus to the trigger element
-      this._element.focus();
     }
 
     _getConfig(config) {
