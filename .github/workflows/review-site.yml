@@ -22,7 +22,7 @@ jobs:
       packages: write
     steps:
       - name: Checkout repository to workspace
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
@@ -77,7 +77,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout repository to workspace
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           fetch-depth: 20
