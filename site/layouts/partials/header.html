@@ -15,8 +15,10 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
-{{- $colorModeJS := urls.JoinPath "docs" $.Site.Params.docs_version "assets/js/color-modes.js" | relURL -}}
-<script src="{{ $colorModeJS }}"></script>
+{{- if .Site.Params.enable_color_mode_toggler -}}
+	{{- $colorModeJS := urls.JoinPath "docs" $.Site.Params.docs_version "assets/js/color-modes.js" | relURL -}}
+	<script src="{{ $colorModeJS }}"></script>
+{{- end -}}
 
 {{ partial "stylesheet" . }}
 {{ partial "favicons" . }}
