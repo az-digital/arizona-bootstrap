@@ -58,6 +58,14 @@ params:
   social_image_path:    "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social.png"
   social_logo_path:     "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
 
+  # Docs color mode controls
+  # color_mode controls the initial/root data-bs-theme applied in templates.
+  # Valid values include: "light" | "dark" | "auto" (if toggler is enabled).
+  color_mode:           "light"
+  # enable_color_mode_toggler gates inclusion of the color-modes.js and the UI button.
+  # When false, the site stays in the color_mode above.
+  enable_color_mode_toggler: false
+
   current_version:      "{{az_version}}"
   current_ruby_version: "{{az_version}}"
   docs_version:         "{{az_short_version}}"
