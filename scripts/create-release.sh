@@ -55,7 +55,7 @@ copy-npm-config
 cd "$AZ_BOOTSTRAP_SOURCE_DIR" \
   || errorexit "Can't change to the ${AZ_BOOTSTRAP_SOURCE_DIR} directory holding the files for the release"
 
-npm version --unsafe-perm --no-git-tag-version ${AZ_RELEASE_VERSION} \
+npm version --no-git-tag-version ${AZ_RELEASE_VERSION} \
   || errorexit "Failed to bump the version number to ${AZ_RELEASE_VERSION}"
 
 normalexit "Copied saved versions of package.json and package-lock.json, bumped the version to ${AZ_RELEASE_VERSION}"
