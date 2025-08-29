@@ -192,6 +192,11 @@
   margin-right: 0;
   margin-left: 0;
 }
+@media screen and (max-width: 992px) {
+  body {
+    margin-top: unset;
+  }
+}
 
 // >> Background Wrappers
 .btn-background-wrapper-demo,
