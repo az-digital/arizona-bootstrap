@@ -9,6 +9,9 @@
 }
 
 @media screen and (max-width: 992px) {
+  body {
+    margin-top: 50px;
+  }
   .arizona-header {
     position: fixed;
     top: 0;
