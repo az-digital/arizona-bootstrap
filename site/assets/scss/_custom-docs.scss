@@ -192,6 +192,15 @@
   margin-right: 0;
   margin-left: 0;
 }
+@media screen and (max-width: 992px) {
+  body {
+    margin-top: unset;
+  }
+  :target {
+    /* Restore upstream Bootstrap default. */
+    scroll-margin-top: 80px;
+  }
+}
 
 // >> Background Wrappers
 .btn-background-wrapper-demo,

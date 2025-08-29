@@ -9,6 +9,9 @@
 }
 
 @media screen and (max-width: 992px) {
+  body {
+    margin-top: 50px;
+  }
   .arizona-header {
     position: fixed;
     top: 0;
@@ -26,6 +29,9 @@
     > .row {
       margin-right: 0;
     }
+  }
+  :target {
+    scroll-margin-top: 58px;
   }
 }
 
