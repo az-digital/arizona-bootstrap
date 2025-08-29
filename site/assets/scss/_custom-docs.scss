@@ -196,6 +196,9 @@
   body {
     margin-top: unset;
   }
+  :target {
+    scroll-margin-top: revert;
+  }
 }
 
 // >> Background Wrappers
