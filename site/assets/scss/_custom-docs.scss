@@ -197,7 +197,8 @@
     margin-top: unset;
   }
   :target {
-    scroll-margin-top: revert;
+    /* Restore upstream Bootstrap default. */
+    scroll-margin-top: 80px;
   }
 }
 
