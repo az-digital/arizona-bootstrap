@@ -184,22 +184,24 @@
 //
 
 // >> Arizona Header
-.arizona-header {
+.arizona-header.az-fixed-header-on-mobile {
   position: static;
 }
+@media screen and (max-width: 992px) {
+  body:has(.az-fixed-header-on-mobile) {
+    padding-top: unset;
+
+    /* Restore upstream Bootstrap default. */
+    :target {
+      scroll-margin-top: 80px;
+    }
+  }
+}
+/* For the mobile navigation example. */
 .arizona-header .sticky-top {
   margin-top: 0;
   margin-right: 0;
   margin-left: 0;
-}
-@media screen and (max-width: 992px) {
-  body {
-    margin-top: unset;
-  }
-  :target {
-    /* Restore upstream Bootstrap default. */
-    scroll-margin-top: 80px;
-  }
 }
 
 // >> Background Wrappers
