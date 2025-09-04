@@ -221,7 +221,8 @@ You can also use dropdowns in your navbar. Dropdown menus require a wrapping ele
   </div>
 </nav>
 {{< /example >}}
-
+  
+<p></p>
 <p><span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span></p>
 
 Arizona Bootstrap overrides some styling for dropdowns in navbars to ensure that link text wraps if needed and dropdown carets are positioned correctly.
@@ -259,14 +260,6 @@ Arizona Bootstrap overrides some styling for dropdowns in navbars to ensure that
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             A third dropdown link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            A fourth dropdown link
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
