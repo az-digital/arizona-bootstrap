@@ -87,7 +87,7 @@ In most cases, the Arizona Header element is intended to be fixed to the top of 
 **Note:** For this documentation site, this fixed-position behavior has been overridden to prevent the example Arizona Headers from disappearing behind the existing Arizona Bootstrap navbar above.
 
 {{< example >}}
-<div class="arizona-header bg-red"  id="header_arizona_example_2">
+<div class="arizona-header bg-red" id="header_arizona_example_2">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
