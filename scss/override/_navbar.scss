@@ -30,6 +30,13 @@
       background-color: $nav-tabs-link-bg;
     }
   }
+
+  .dropdown-toggle {
+    white-space: normal;
+    display: flex;
+    text-align: left;
+    align-items: center;
+  }
 }
 
 .navbar-toggler {
