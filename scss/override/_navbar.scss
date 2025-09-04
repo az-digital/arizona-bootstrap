@@ -10,6 +10,9 @@
   --#{$prefix}nav-link-color: #{$nav-link-color};
 
   .nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
     padding-top: $navbar-nav-link-padding-y;
     padding-bottom: $navbar-nav-link-padding-y;
     @include border-radius(0);
