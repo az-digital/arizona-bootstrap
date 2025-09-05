@@ -15,10 +15,8 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <p class="h4 alert-heading mt-0">Heads Up!</p>
   <p class="mb-0">The wordmark logo without a Block "A" header should only be used when near a Block "A" logo. Typically, the Block "A" logo is included as part of the site branding just below the Arizona Header.</p>
 </div>
-<p>Normally, the Arizona Header element is fixed to the top of the browser window on mobile devices. However, for this documentation site, this behavior has been overridden to prevent the example elements from disappearing behind the existing Arizona Bootstrap navbar above.</p>
 
-{{< example >}}
-<div class="arizona-header text-bg-red" id="header_arizona">
+<div class="arizona-header bg-red">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -27,7 +25,19 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
     </div>
   </div>
 </div>
-{{< /example >}}
+<p></p>
+
+```html
+<div class="arizona-header az-fixed-header-on-mobile bg-red" id="header_arizona">
+  <div class="container">
+    <div class="row">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+      </a>
+    </div>
+  </div>
+</div>
+```
 
 
 ## Extending the header
@@ -35,7 +45,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 The Arizona Header can be extended with off-canvas search and navigation for mobile devices, as shown in the example below.
 
 {{< example >}}
-<div class="arizona-header text-bg-red" id="header_arizona_example">
+<div class="arizona-header az-fixed-header-on-mobile bg-red" id="header_arizona_example_1">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -64,6 +74,25 @@ The Arizona Header can be extended with off-canvas search and navigation for mob
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+
+## Disable fixed position on mobile devices
+
+In most cases, the Arizona Header element is intended to be fixed to the top of the browser window on mobile devices. This behavior is added by the `.az-fixed-header-on-mobile` class. This class can be omitted if a site does not include off-canvas navigation or other elements in the mobile display of the Arizona Header.
+
+**Note:** For this documentation site, this fixed-position behavior has been overridden to prevent the example Arizona Headers from disappearing behind the existing Arizona Bootstrap navbar above.
+
+{{< example >}}
+<div class="arizona-header bg-red" id="header_arizona_example_2">
+  <div class="container">
+    <div class="row">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+      </a>
     </div>
   </div>
 </div>
