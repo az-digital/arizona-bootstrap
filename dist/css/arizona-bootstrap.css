@@ -19067,13 +19067,6 @@ textarea.form-control-lg {
 /*
  * > BUTTONS
  */
-/*
-* > LINKS
-*/
-a {
-  font-weight: 700;
-}
-
 [class*=split-] {
   display: block;
 }
