@@ -4,18 +4,28 @@
 
 .arizona-header > .container > .row {
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   min-height: 50px;
 }
 
 @media screen and (max-width: 992px) {
+  body:has(.az-fixed-header-on-mobile) {
+    padding-top: 50px;
+
+    :target {
+      scroll-margin-top: 58px;
+    }
+  }
   .arizona-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 100;
     height: 50px;
+
+    &.az-fixed-header-on-mobile {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+    }
   }
   .arizona-logo {
     flex-shrink: 1;
@@ -34,6 +44,7 @@
   align-items: center;
   min-height: 50px;
   padding-right: 0;
+  margin-right: auto;
 }
 .arizona-line-logo {
   width: 100%;
