@@ -4,7 +4,7 @@
 
 .arizona-header > .container > .row {
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   min-height: 50px;
 }
 
@@ -44,6 +44,7 @@
   align-items: center;
   min-height: 50px;
   padding-right: 0;
+  margin-right: auto;
 }
 .arizona-line-logo {
   width: 100%;
