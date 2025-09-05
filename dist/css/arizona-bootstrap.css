@@ -19246,8 +19246,8 @@ h6,
 .arizona-header > .container > .row {
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: end;
+  justify-content: end;
   min-height: 50px;
 }
 
@@ -19286,6 +19286,7 @@ h6,
   align-items: center;
   min-height: 50px;
   padding-right: 0;
+  margin-right: auto;
 }
 
 .arizona-line-logo {
