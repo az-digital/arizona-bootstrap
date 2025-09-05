@@ -19252,13 +19252,21 @@ h6,
 }
 
 @media screen and (max-width: 992px) {
+  body:has(.az-fixed-header-on-mobile) {
+    padding-top: 50px;
+  }
+  body:has(.az-fixed-header-on-mobile) :target {
+    scroll-margin-top: 58px;
+  }
   .arizona-header {
+    height: 50px;
+  }
+  .arizona-header.az-fixed-header-on-mobile {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 100;
-    height: 50px;
   }
   .arizona-logo {
     -ms-flex-negative: 1;
