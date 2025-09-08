@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v5.0.0-alpha4 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.0.0-beta1 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -828,7 +828,7 @@
    * Constants
    */
 
-  const VERSION = '5.3.7';
+  const VERSION = '5.3.8';
 
   /**
    * Class definition
@@ -2283,9 +2283,6 @@
       this._element.setAttribute('aria-expanded', 'false');
       Manipulator.removeDataAttribute(this._menu, 'popper');
       EventHandler.trigger(this._element, EVENT_HIDDEN$5, relatedTarget);
-
-      // Explicitly return focus to the trigger element
-      this._element.focus();
     }
 
     _getConfig(config) {

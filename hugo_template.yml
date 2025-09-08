@@ -58,6 +58,14 @@ params:
   social_image_path:    "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social.png"
   social_logo_path:     "{{az_site_host}}{{az_site_base_url}}/docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png"
 
+  # Docs color mode controls
+  # color_mode controls the initial/root data-bs-theme applied in templates.
+  # Valid values include: "light" | "dark" | "auto" (if toggler is enabled).
+  color_mode:           "light"
+  # enable_color_mode_toggler gates inclusion of the color-modes.js and the UI button.
+  # When false, the site stays in the color_mode above.
+  enable_color_mode_toggler: false
+
   current_version:      "{{az_version}}"
   current_ruby_version: "{{az_version}}"
   docs_version:         "{{az_short_version}}"
@@ -76,11 +84,11 @@ params:
   cdn:
     # See https://www.srihash.org for info on how to generate the hashes
     css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.min.css"
-    css_hash:         "our_css_hash_here"
+    css_hash:         "sha384-o78fK9PEe9DwmhQ2PJ7ARBZ72xvabK9E3qRKlDWmqj8owxv/Dkt6I/FX5yz5Dc7a"
     js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.min.js"
-    js_hash:          "our_js_hash_here"
+    js_hash:          "sha384-I78t+30W1dkffFfUAyIq4+naXFVl0wsEOZnnriuixJaeQFrMA7gHqGqq0ZUia5NG"
     js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.bundle.min.js"
-    js_bundle_hash:   "our_js_bundle_hash_here"
+    js_bundle_hash:   "sha384-vbXVj+FUAs66UPu/h/9vhX7myN5luvBXXXUdhZOIk6aBue1AdiKtAoMgdeiw5ZR4"
     jquery:           "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"
     jquery_hash:      "sha384-5AkRS45j4ukf+JbWAfHL8P4onPA9p0KwwP7pUdjSQA3ss9edbJUJc/XcYAiheSSz"
     popper:           "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

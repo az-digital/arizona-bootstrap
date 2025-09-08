@@ -47,12 +47,22 @@
   }
 }
 
-.bd-navbar-nav .nav-link {
-  &:focus,
-  &:hover,
-  &:active,
-  &.active {
-    background-color: initial;
+.bd-navbar-nav {
+  .nav-item {
+    &:hover,
+    &:has(> .nav-link.active),
+    &:has(> .nav-link:active) {
+      background-color: initial;
+    }
+  }
+
+  .nav-link {
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      background-color: initial;
+    }
   }
 }
 
@@ -184,9 +194,21 @@
 //
 
 // >> Arizona Header
-.arizona-header {
+.arizona-header.az-fixed-header-on-mobile {
   position: static;
 }
+@media screen and (max-width: 992px) {
+  body:has(.az-fixed-header-on-mobile) {
+    padding-top: unset;
+
+    /* Restore upstream Bootstrap default. */
+    :target {
+      scroll-margin-top: 80px;
+    }
+  }
+}
+
+/* For the mobile navigation example. */
 .arizona-header .sticky-top {
   margin-top: 0;
   margin-right: 0;
