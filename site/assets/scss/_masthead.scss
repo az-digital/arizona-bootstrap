@@ -112,9 +112,7 @@
 }
 
 a:focus-visible {
-  padding: 0 3px;
-  // stylelint-disable-next-line
-  border-radius: 2px;
+  @include border-radius(2px);
   outline: 0;
-  box-shadow: 0 0 0 2px $white, 0 0 0 4px $red;
+  box-shadow: 0 0 0 2px $red;
 }

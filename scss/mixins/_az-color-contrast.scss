@@ -30,6 +30,13 @@
     }
   }
 
+  // Change the focus-visible color if red outline should not be used with the background color.
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
+    a:not(.nav-link):focus-visible {
+      box-shadow: 0 0 0 2px;
+    }
+  }
+
   // Change the color of the custom triangle marker for list items.
   @if list.index($light-background-colors, $bg-color-name) {
     .ul-triangles li::before,
