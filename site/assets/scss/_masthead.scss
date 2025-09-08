@@ -112,10 +112,8 @@
 }
 
 a:focus-visible {
-  outline: none;
-  box-shadow:
-      0 0 0 2px #FFF,
-      0 0 0 4px #AB0520;
+  outline: 0;
   border-radius: 2px;
   padding: 0 3px;
+  box-shadow: 0 0 0 2px $white, 0 0 0 4px $red;
 }
