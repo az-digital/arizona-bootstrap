@@ -94,10 +94,10 @@
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "rollup": "^4.50.0",
+    "rollup": "^4.50.1",
     "sass": "1.78.0",
     "shelljs": "^0.10.0",
-    "stylelint": "^16.23.1",
+    "stylelint": "^16.24.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "terser": "^5.44.0",
     "vnu-jar": "24.10.17"
