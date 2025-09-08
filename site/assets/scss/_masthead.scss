@@ -110,3 +110,12 @@
     }
   }
 }
+
+a:focus-visible {
+  outline: none;
+  box-shadow:
+      0 0 0 2px #FFF,
+      0 0 0 4px #AB0520;
+  border-radius: 2px;
+  padding: 0 3px;
+}
