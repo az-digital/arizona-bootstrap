@@ -121,13 +121,13 @@
     {{ .Content }}
 
     {{- if hugo.IsProduction -}}
-      <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}" {{ printf "integrity=%q" .Site.Params.cdn.js_bundle_hash | safeHTMLAttr }}></script>
+      <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}"></script>
     {{- else -}}
       <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js` ) | relURL -}}"></script>
     {{- end }}
 
     {{ range .Page.Params.extra_js -}}
-      <script{{ with .async }} async{{ end }}{{ with .defer }} defer{{ end }} src="{{ .src | relURL }}"{{ with .integrity }} {{ printf "integrity=%q" . | safeHTMLAttr }} crossorigin="anonymous"{{ end }}></script>
+      <script{{ with .async }} async{{ end }}{{ with .defer }} defer{{ end }} src="{{ .src | relURL -}}"></script>
     {{- end -}}
   </body>
 </html>

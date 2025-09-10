@@ -1,5 +1,5 @@
 {{ if hugo.IsProduction -}}
-  <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}" {{ printf "integrity=%q" .Site.Params.cdn.js_bundle_hash | safeHTMLAttr }}></script>
+  <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.min.js` ) | relURL -}}"></script>
 {{ else -}}
   <script defer src="{{- (printf `docs/%s%s` $.Site.Params.docs_version `/dist/js/arizona-bootstrap.bundle.js` ) | relURL -}}"></script>
 {{- end }}
