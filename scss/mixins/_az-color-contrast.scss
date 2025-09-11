@@ -40,16 +40,15 @@
   @if list.index($light-background-colors, $bg-color-name) {
     a.btn:focus-visible,
     button.btn:focus-visible {
-      box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, .5);
+      box-shadow: 0 0 0 .25rem rgba(0, 0, 0, .5);
     }
   }
   @if list.index($light-background-colors-with-red-links, $bg-color-name) {
     a.btn:focus-visible,
     button.btn:focus-visible {
-      box-shadow: 0 0 0 0.25rem rgba(184, 43, 65, .5);
+      box-shadow: 0 0 0 .25rem rgba(184, 43, 65, .5);
     }
   }
-
 
   // Change the color of the custom triangle marker for list items.
   @if list.index($light-background-colors, $bg-color-name) {
