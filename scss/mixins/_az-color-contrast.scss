@@ -22,6 +22,7 @@
   // Gray colors in these variables do not have the gray- prefix to match the $grays sass map.
   $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "success", "info", "light", "100", "200", "300", "400", "500";
   $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "100", "200", "300", "400", "500";
+  $dark-background-colors: "red", "chili", "blue", "azurite", "midnight", "river", "mesa", "ash", "sage", "black", "primary", "secondary", "danger", "dark", "600", "700", "800", "900";
 
   // Change the link color if red links should not be used with the background color.
   @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
@@ -37,20 +38,14 @@
       box-shadow: 0 0 0 2px;
     }
   }
-  @if list.index($light-background-colors, $bg-color-name) {
-    a,
-    button {
-      .btn:focus-visible {
-        box-shadow: 0 0 0 .25rem rgba(0, 0, 0, .5);
-      }
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
+    .btn:focus-visible {
+      box-shadow: 0 0 0 .25rem rgba(0, 0, 0, .5);
     }
   }
-  @if list.index($light-background-colors-with-red-links, $bg-color-name) {
-    a,
-    button {
-      .btn:focus-visible {
-        box-shadow: 0 0 0 .25rem rgba(184, 43, 65, .5);
-      }
+  @if list.index($dark-background-colors, $bg-color-name) {
+    .btn:focus-visible {
+      box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .75);
     }
   }
 
