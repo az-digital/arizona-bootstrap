@@ -118,7 +118,9 @@ button:not(.btn):focus-visible {
   box-shadow: 0 0 0 2px $red;
 }
 
-a.btn:focus-visible,
-button.btn:focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, .75);
+a,
+button {
+  .btn:focus-visible {
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .75);
+  }
 }
