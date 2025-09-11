@@ -8,13 +8,21 @@
 .badge.badge-link:focus {
   text-decoration: none;
 
+  &.text-bg-red {
+    color: $white !important;
+    background-color: $chili !important;
+  }
   &.text-bg-chili {
     color: $white !important;
     background-color: $red !important;
   }
+  &.text-bg-blue,
   &.text-bg-midnight {
     color: $white !important;
     background-color: $azurite !important;
+  }
+  &.text-bg-sky {
+    background-color: #55c4e4 !important;
   }
   &.text-bg-light {
     background-color: $gray-200 !important;

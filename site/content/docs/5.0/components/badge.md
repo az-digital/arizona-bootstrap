@@ -94,11 +94,14 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
-Use the custom `.badge-link` class on an `<a>` element with the Chili, Midnight, or Light [`.text-bg-{color}` helper classes]({{< docsref "helpers/color-background" >}}) to provide _actionable_ badges with hover and focus states.
+Use the custom `.badge-link` class on an `<a>` element with the `.text-bg-{color}` helper classes below to provide _actionable_ badges with hover and focus states.
 
 {{< example >}}
-<a href="#" class="badge badge-link text-bg-chili">Chili</a>
-<a href="#" class="badge badge-link text-bg-midnight">Midnight</a>
+{{< badge.inline >}}
+{{- range (index $.Site.Data "pnc-colors") }}
+<a href="#" class="badge badge-link text-bg-{{ .name }}">{{ .name | title }}</a>{{- end -}}
+{{< /badge.inline >}}
+<a href="#" class="badge badge-link text-bg-sky">Sky</a>
 <a href="#" class="badge badge-link text-bg-light">Light</a>
 {{< /example >}}
 
