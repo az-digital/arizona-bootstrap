@@ -21795,6 +21795,10 @@ h6,
   width: unset;
   opacity: 1;
 }
+.az-gallery .carousel-control-prev:focus-visible > .material-symbols-rounded,
+.az-gallery .carousel-control-next:focus-visible > .material-symbols-rounded {
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+}
 .az-gallery .carousel-control-prev {
   -ms-flex-order: 0;
   order: 0;
@@ -21808,6 +21812,12 @@ h6,
   -ms-flex-order: 2;
   order: 2;
   padding-left: 0.25rem;
+}
+
+.az-gallery-grid-btn {
+  padding: 2px;
+  background: none;
+  border: 0;
 }
 
 .az-gallery-slider-full .carousel-control-prev,
