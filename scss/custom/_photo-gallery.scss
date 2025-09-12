@@ -10,6 +10,10 @@
     position: initial;
     width: unset;
     opacity: 1;
+
+    &:focus-visible > .material-symbols-rounded {
+      box-shadow: $btn-focus-box-shadow;
+    }
   }
 
   .carousel-control-prev {
@@ -23,6 +27,12 @@
     order: 2;
     padding-left: .25rem;
   }
+}
+
+.az-gallery-grid-btn {
+  padding: 2px;
+  background: none;
+  border: 0;
 }
 
 .az-gallery-slider-full,
