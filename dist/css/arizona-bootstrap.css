@@ -19432,7 +19432,7 @@ h6,
 }
 .badge.badge-link:hover.text-bg-light,
 .badge.badge-link:focus.text-bg-light {
-  background-color: #e9ecef !important;
+  background-color: #c1c9d0 !important;
 }
 
 /* stylelint-enable declaration-no-important */
