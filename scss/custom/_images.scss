@@ -5,3 +5,11 @@
 img:not(.card-img, .card-img-top, .card-img-bottom) {
   @include border-radius();
 }
+
+// >> Figure caption
+
+.figure-caption {
+  padding-top: .5em;
+  padding-bottom: .9375em;
+  border-bottom: 1px solid $gray-200;
+}

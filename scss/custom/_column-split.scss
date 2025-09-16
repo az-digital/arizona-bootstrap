@@ -1,8 +1,6 @@
 //
-// > Additional custom styles
+// > Column Split custom utility
 //
-
-// >> Column split utility.
 
 [class*="split-"] {
   display: block;
@@ -48,19 +46,4 @@
   .split-lg-4-col {
     column-count: 4;
   }
-}
-
-// >> Border thick utility.
-
-.border-thick {
-  // stylelint-disable-next-line declaration-no-important
-  border-width: .25rem !important;
-}
-
-// >> Figure caption.
-
-.figure-caption {
-  padding-top: .5em;
-  padding-bottom: .9375em;
-  border-bottom: 1px solid $gray-200;
 }
