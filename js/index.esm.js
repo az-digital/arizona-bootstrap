@@ -19,7 +19,6 @@ export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
 export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
-export { default as Offcanvasmenu } from './src/offcanvasmenu.js'
 
 /**
  * Temporary fix for blocked aria-hidden attribute on modals.

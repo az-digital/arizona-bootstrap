@@ -19,7 +19,6 @@ import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
-import Offcanvasmenu from './src/offcanvasmenu.js'
 
 export default {
   Alert,
@@ -35,8 +34,7 @@ export default {
   Toast,
   Tooltip,
   fixModalAriaHidden,
-  photoGalleryGridSlideToImage,
-  Offcanvasmenu
+  photoGalleryGridSlideToImage
 }
 
 /**
