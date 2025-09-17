@@ -89,7 +89,7 @@
 .btn-outline-light {
   color: $ash;
 }
-button:not(.btn):not(.carousel-control-next):not(.carousel-control-prev):not(.az-gallery-grid-btn):focus-visible {
+button:not(.btn):not(.carousel-control-next):not(.carousel-control-prev):not(.az-gallery-grid-btn):not(.dropdown-item):focus-visible {
   @include border-radius(2px);
   outline: 0;
   box-shadow: 0 0 0 2px $red;
@@ -113,5 +113,16 @@ button {
         box-shadow: 0 0 0 2px $white;
       }
     }
+  }
+}
+.dropdown-item:focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: inset 0 0 0 2px $white;
+}
+.dropdown-menu {
+  input:focus-visible,
+  button:focus-visible {
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .75);
   }
 }
