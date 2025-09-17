@@ -89,3 +89,27 @@
 .btn-outline-light {
   color: $ash;
 }
+button:not(.btn):not(.carousel-control-next):not(.carousel-control-prev):not(.az-gallery-grid-btn):focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: 0 0 0 2px $red;
+}
+.btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(184, 43, 65, .5);
+}
+.az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 
+    0 0 0 2px rgba(184, 43, 65, .5), 
+    inset 0 0 0 2px rgba(184, 43, 65, .5);
+}
+button.carousel-control-prev:focus-visible,
+button.carousel-control-next:focus-visible {
+  outline: 0;
+  box-shadow: none;
+  span.material-symbols-rounded {
+    @include border-radius(2px);
+    box-shadow: 0 0 0 2px $white !important;
+  }
+}
