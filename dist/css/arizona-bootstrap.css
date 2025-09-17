@@ -19307,6 +19307,7 @@ h6,
   justify-content: center;
   min-width: 60px;
   padding: 4px 0;
+  border-radius: 0;
 }
 .btn-arizona-header > .icon-text {
   margin-top: 2px;
