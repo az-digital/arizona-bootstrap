@@ -49,9 +49,7 @@
     }
     .az-gallery-grid-btn:focus-visible {
       outline: 0;
-      box-shadow:
-        0 0 0 2px rgba(255, 255, 255, .75),
-        inset 0 0 0 2px rgba(255, 255, 255, .75);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, .75), inset 0 0 0 2px rgba(255, 255, 255, .75);
     }
   }
 
