@@ -2,19 +2,27 @@
 // > Custom styling for the Badge component
 //
 
-// Include custom .badge-link styles for chili, midnight, and light badges.
+// Include custom hover styles for .badge-link badges.
 /* stylelint-disable declaration-no-important */
 .badge.badge-link:hover,
 .badge.badge-link:focus {
   text-decoration: none;
 
+  &.text-bg-red {
+    color: $white !important;
+    background-color: $chili !important;
+  }
   &.text-bg-chili {
     color: $white !important;
     background-color: $red !important;
   }
+  &.text-bg-blue,
   &.text-bg-midnight {
     color: $white !important;
     background-color: $azurite !important;
+  }
+  &.text-bg-sky {
+    background-color: #55c4e4 !important;
   }
   &.text-bg-light {
     background-color: #c1c9d0 !important;
