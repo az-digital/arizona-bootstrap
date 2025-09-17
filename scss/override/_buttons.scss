@@ -89,7 +89,7 @@
 .btn-outline-light {
   color: $ash;
 }
-button:not(.btn):not(.carousel-control-next):not(.carousel-control-prev):not(.az-gallery-grid-btn):not(.dropdown-item):focus-visible {
+button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .dropdown-item):focus-visible {
   @include border-radius(2px);
   outline: 0;
   box-shadow: 0 0 0 2px $red;
