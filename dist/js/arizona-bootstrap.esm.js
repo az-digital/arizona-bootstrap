@@ -5334,6 +5334,32 @@ function fixModalAriaHidden$1() {
 
 /**
  * --------------------------------------------------------------------------
+ * Arizona Bootstrap: photogallery.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+/**
+ * Fix slide-to functionality of photo gallery grid thumbnail buttons.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
+ */
+function photoGalleryGridSlideToImage$1() {
+  var gridButtons = document.querySelectorAll('.az-gallery-grid-btn');
+  var _loop = function _loop() {
+    var slideToEl = gridButton.querySelector('[data-bs-slide-to]');
+    if (slideToEl) {
+      gridButton.addEventListener('click', () => {
+        slideToEl.click();
+      });
+    }
+  };
+  for (var gridButton of gridButtons) {
+    _loop();
+  }
+}
+
+/**
+ * --------------------------------------------------------------------------
  * Arizona Bootstrap: offcanvasmenu.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
@@ -5623,5 +5649,12 @@ defineJQueryPlugin(Offcanvasmenu);
 /* global fixModalAriaHidden */
 fixModalAriaHidden();
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip, fixModalAriaHidden$1 as fixModalAriaHidden };
+/**
+ * Fix slide-to functionality of photo gallery grid thumbnail buttons.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
+ */
+/* global photoGalleryGridSlideToImage */
+photoGalleryGridSlideToImage();
+
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Offcanvasmenu, Popover, ScrollSpy, Tab, Toast, Tooltip, fixModalAriaHidden$1 as fixModalAriaHidden, photoGalleryGridSlideToImage$1 as photoGalleryGridSlideToImage };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map

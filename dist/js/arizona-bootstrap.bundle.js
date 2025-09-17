@@ -7175,6 +7175,32 @@
 
   /**
    * --------------------------------------------------------------------------
+   * Arizona Bootstrap: photogallery.js
+   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  /**
+   * Fix slide-to functionality of photo gallery grid thumbnail buttons.
+   * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
+   */
+  function photoGalleryGridSlideToImage() {
+    var gridButtons = document.querySelectorAll('.az-gallery-grid-btn');
+    var _loop = function _loop() {
+      var slideToEl = gridButton.querySelector('[data-bs-slide-to]');
+      if (slideToEl) {
+        gridButton.addEventListener('click', () => {
+          slideToEl.click();
+        });
+      }
+    };
+    for (var gridButton of gridButtons) {
+      _loop();
+    }
+  }
+
+  /**
+   * --------------------------------------------------------------------------
    * Arizona Bootstrap: offcanvasmenu.js
    * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
@@ -7470,6 +7496,7 @@
     Toast,
     Tooltip,
     fixModalAriaHidden,
+    photoGalleryGridSlideToImage,
     Offcanvasmenu
   };
 
@@ -7478,6 +7505,12 @@
    * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
    */
   fixModalAriaHidden();
+
+  /**
+   * Fix slide-to functionality of photo gallery grid thumbnail buttons.
+   * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
+   */
+  photoGalleryGridSlideToImage();
 
   return index_umd;
 
