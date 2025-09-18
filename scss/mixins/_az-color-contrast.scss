@@ -32,7 +32,7 @@
   }
 
   // Change the focus-visible color if red outline should not be used with the background color.
-  @if not list.index($light-background-colors-with-red-links, $bg-color-name, $alert-color-name) {
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
     a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
     button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn):focus-visible {
       box-shadow: 0 0 $focus-ring-blur 2px;
