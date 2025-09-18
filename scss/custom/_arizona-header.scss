@@ -7,6 +7,11 @@
   justify-content: end;
   min-height: 50px;
 }
+.arizona-logo:focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: inset 0 0 $focus-ring-blur 3px $white;
+}
 
 @media screen and (max-width: 992px) {
   body:has(.az-fixed-header-on-mobile) {
