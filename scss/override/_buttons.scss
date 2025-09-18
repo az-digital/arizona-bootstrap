@@ -64,12 +64,6 @@
   }
 }
 
-// Overriding focus styles to be on brand
-.btn {
-  $focus-ring-opacity: .5 !default;
-}
-
-
 // >> Variant Accessibility
 .btn-success,
 .btn-info,
@@ -95,15 +89,10 @@
 .btn-outline-light {
   color: $ash;
 }
-// button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .dropdown-item):focus-visible {
-//   @include border-radius(2px);
-//   outline: 0;
-//   box-shadow: 0 0 0 2px $red;
-// }
 .dropdown-item:focus-visible {
   @include border-radius(2px);
   outline: 0;
-  box-shadow: inset 0 0 0 2px $white;
+  box-shadow: inset 0 0 $focus-ring-blur 2px $white;
 }
 .dropdown-menu {
   input:focus-visible,

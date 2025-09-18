@@ -195,3 +195,8 @@ $box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
 $box-shadow-sm:             0 .1rem .25rem rgba($black, .075) !default;
 $box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 // fusv-enable
+
+// >> Focus
+// fusv-disable
+$focus-ring-opacity: .5 !default;
+// fusv-enable
