@@ -1,12 +1,12 @@
 /*!
-  * Arizona Bootstrap modal.js v5.0.0-beta2 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap photogallery.js v5.0.0-beta2 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Modal = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Photogallery = factory());
 })(this, (function () { 'use strict';
 
   function _arrayLikeToArray(r, a) {
@@ -41,28 +41,32 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Arizona Bootstrap: modal.js
+   * Arizona Bootstrap: photogallery.js
    * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
   /**
-   * Temporary fix for blocked aria-hidden attribute on modals.
-   * See https://github.com/az-digital/arizona-bootstrap/issues/1602.
+   * Fix slide-to functionality of photo gallery grid thumbnail buttons.
+   * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
    */
-  function fixModalAriaHidden() {
-    var modals = document.querySelectorAll('.modal');
-    for (var _iterator = _createForOfIteratorHelperLoose(modals), _step; !(_step = _iterator()).done;) {
-      var modal = _step.value;
-      modal.addEventListener('hide.bs.modal', function () {
-        if (document.activeElement instanceof HTMLElement) {
-          document.activeElement.blur();
-        }
-      });
+  function photoGalleryGridSlideToImage() {
+    var gridButtons = document.querySelectorAll('.az-gallery-grid-btn');
+    var _loop = function _loop() {
+      var gridButton = _step.value;
+      var slideToEl = gridButton.querySelector('[data-bs-slide-to]');
+      if (slideToEl) {
+        gridButton.addEventListener('click', function () {
+          slideToEl.click();
+        });
+      }
+    };
+    for (var _iterator = _createForOfIteratorHelperLoose(gridButtons), _step; !(_step = _iterator()).done;) {
+      _loop();
     }
   }
 
-  return fixModalAriaHidden;
+  return photoGalleryGridSlideToImage;
 
 }));
-//# sourceMappingURL=modal.js.map
+//# sourceMappingURL=photogallery.js.map
