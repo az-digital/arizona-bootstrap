@@ -8,7 +8,6 @@
   min-height: 50px;
 }
 .arizona-logo:focus-visible,
-.offcanvas-header > .btn-arizona-header:focus-visible,
 .btn-arizona-header:focus-visible {
   @include border-radius(2px);
   border: 0;
