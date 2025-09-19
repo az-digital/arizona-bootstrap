@@ -83,13 +83,13 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
 </div>
 
 ```html
-<div class="bg-dark p-3">
+<div class="text-bg-red p-3">
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
-<div class="bg-red p-3">
+<div class="text-bg-blue p-3">
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
-<div class="bg-blue p-3">
+<div class="text-bg-dark p-3">
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
 ```
