@@ -81,4 +81,12 @@
     font-size: 10px;
     line-height: 10px;
   }
+
+  &:focus-visible {
+    @include border-radius(2px);
+    outline: 0;
+    box-shadow: inset 0 0 $focus-ring-blur 3px $white;
+  }
 }
+
+
