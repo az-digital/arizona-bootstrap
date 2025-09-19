@@ -74,6 +74,7 @@
   align-items: center;
   justify-content: center;
   min-width: 60px;
+  min-height: 50px;
   padding: 4px 0;
   @include border-radius(0);
   @extend .text-white;
