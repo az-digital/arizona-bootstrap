@@ -6,3 +6,10 @@
 .carousel-item {
   position: relative;
 }
+.carousel-control-prev:focus-visible > .carousel-control-prev-icon,
+.carousel-control-next:focus-visible > .carousel-control-next-icon,
+.carousel-indicators > button:focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: 0 0 $focus-ring-blur 2px $red, 0 0 $focus-ring-blur 4px $white;
+}

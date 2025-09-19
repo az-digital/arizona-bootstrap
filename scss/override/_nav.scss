@@ -117,3 +117,9 @@
     }
   }
 }
+
+.nav-link:focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: $focus-ring-box-shadow;
+}

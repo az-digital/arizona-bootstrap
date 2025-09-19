@@ -42,3 +42,12 @@ h6,
   margin: $heading-margins;
   color: $blue;
 }
+
+/*
+* > LINKS
+*/
+a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+  @include border-radius(2px);
+  outline: 0;
+  box-shadow: 0 0 $focus-ring-blur 2px $red;
+}

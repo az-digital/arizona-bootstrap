@@ -12,7 +12,8 @@
     opacity: 1;
 
     &:focus-visible > .material-symbols-rounded {
-      box-shadow: $btn-focus-box-shadow;
+      @include border-radius(2px);
+      box-shadow: $focus-ring-box-shadow;
     }
   }
 
@@ -33,6 +34,11 @@
   padding: 2px;
   background: none;
   border: 0;
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 $focus-ring-blur 2px $focus-ring-color, inset 0 0 $focus-ring-blur 2px $focus-ring-color;
+  }
 }
 
 .az-gallery-slider-full,
@@ -98,6 +104,12 @@
   .carousel-control-next {
     &:hover {
       opacity: .8;
+    }
+    &:focus-visible {
+      .material-symbols-rounded {
+        @include border-radius(2px);
+        box-shadow: 0 0 $focus-ring-blur 2px $white;
+      }
     }
   }
   .modal-body {

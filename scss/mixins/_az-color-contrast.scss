@@ -20,13 +20,36 @@
   }
 
   // Gray colors in these variables do not have the gray- prefix to match the $grays sass map.
-  $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "info", "light", "100", "200", "300", "400", "500";
+  $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "success", "info", "light", "100", "200", "300", "400", "500";
   $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "100", "200", "300", "400", "500";
+  $dark-background-colors: "red", "chili", "blue", "azurite", "midnight", "river", "mesa", "ash", "sage", "black", "primary", "secondary", "danger", "dark", "600", "700", "800", "900";
 
   // Change the link color if red links should not be used with the background color.
   @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
     a:not(.btn):not(.nav-link) {
       color: inherit;
+    }
+  }
+
+  // Change the focus-visible color if red outline should not be used with the background color.
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
+    a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+    button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur 2px;
+    }
+  }
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
+    .btn:not(.btn-arizona-header):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur $focus-ring-width rgba($black, .5);
+    }
+  }
+  @if list.index($dark-background-colors, $bg-color-name) {
+    .btn:not(.btn-arizona-header):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur $focus-ring-width rgba($white, .75);
+    }
+    .az-gallery-grid-btn:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 $focus-ring-blur 2px rgba($white, .75), inset 0 0 $focus-ring-blur 2px rgba($white, .75);
     }
   }
 
