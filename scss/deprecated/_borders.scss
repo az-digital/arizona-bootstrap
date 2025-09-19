@@ -1,0 +1,7 @@
+// Deprecated styling for borders
+
+// Deprecated custom class: .border-thick
+.border-thick {
+  // stylelint-disable-next-line declaration-no-important
+  border-width: .25rem !important;
+}

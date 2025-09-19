@@ -27,11 +27,6 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Chili, Midnight, and Light color and background helpers.
 
 
-## Backwards Compatible Utilities
-
-Arizona Bootstrap 2 contained utility classes that are no longer supported/maintained in {{< ourname >}}, but can be replicated by utilizing a combination of classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.
-
-
 ## Deprecated Components
 
 The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
@@ -57,15 +52,45 @@ These custom Arizona Bootstrap classes are now deprecated:
  - `.card-clickable` and `.card-clickable-link`: These classes can be replaced with styling using the standard [Stretched Link helper]({{< docsref "/helpers/stretched-link/" >}}) along with our custom [Hover utilities]({{< docsref "/utilities/hover/" >}}). See the [examples on the Card page]({{< docsref "/components/card/#borderless-and-clickable-cards" >}}).
  - `.card-landing-grid` and `.landing-$color`: The "landing grid" card style from Arizona Bootstrap 2 has been deprecated and should no longer be used.
 
-
 ### Nav Tabs Large
 
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
-
 ### UL Triangles
 
 The `.ul-triangles` custom Arizona Bootstrap class has been deprecated and replaced by `.az-list-triangles`.
+
+
+## Deprecated Utilities
+
+The following utilities are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
+
+### Border Thick
+
+The `.border-thick` custom Arizona Bootstrap class has been deprecated. The `.border-4` class from the new [border width]({{< docsref "/utilities/borders/#width" >}}) utilities can be used as a direct replacement.
+
+
+## Removed Components
+
+The following components have been removed in Arizona Bootstrap 5.
+
+### Background Wrapper Patterns
+
+The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.
+
+### Callout Variants
+
+For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
+ - `.callout-leaf`
+ - `.callout-river`
+ - `.callout-silver`
+ - `.callout-mesa`
+ - `.callout-light`
+ - `.callout-dark`
+
+### Navbar Off Canvas
+
+The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see [Offcanvas navbar]({{< docsref "/examples/offcanvas-navbar/" >}}).
 
 
 ## Removed Utilities
@@ -91,29 +116,6 @@ The `.mailto` class, which is placed directly on the `<a>` link tag, has been re
 ### Sans
 
 The legacy `.sans` class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.
-
-
-## Removed Components
-
-The following components have been removed in Arizona Bootstrap 5.
-
-### Background Wrapper Patterns
-
-The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.
-
-### Callout Variants
-
-For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
- - `.callout-leaf`
- - `.callout-river`
- - `.callout-silver`
- - `.callout-mesa`
- - `.callout-light`
- - `.callout-dark`
-
- ### Navbar Off Canvas
-
-The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see [Offcanvas navbar]({{< docsref "/examples/offcanvas-navbar/" >}}).
 
 
 ## Removed JavaScript
