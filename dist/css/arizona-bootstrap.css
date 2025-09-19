@@ -143,8 +143,8 @@
   --bs-box-shadow-lg: 0 0.75rem 3rem rgba(0, 0, 0, 0.175);
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   --bs-focus-ring-width: 0.25rem;
-  --bs-focus-ring-opacity: 0.25;
-  --bs-focus-ring-color: rgba(171, 5, 32, 0.25);
+  --bs-focus-ring-opacity: 0.5;
+  --bs-focus-ring-color: rgba(171, 5, 32, 0.5);
   --bs-form-valid-color: #70b865;
   --bs-form-valid-border-color: #70b865;
   --bs-form-invalid-color: #a95c42;
@@ -2787,7 +2787,7 @@ progress {
   background-color: var(--bs-body-bg);
   border-color: #d58290;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 85px;
@@ -2991,7 +2991,7 @@ textarea.form-control-lg {
 .form-select:focus {
   border-color: #d58290;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
@@ -3077,7 +3077,7 @@ textarea.form-control-lg {
 .form-check-input:focus {
   border-color: #d58290;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .form-check-input:checked {
   background-color: #ab0520;
@@ -3168,10 +3168,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -3517,7 +3517,7 @@ textarea.form-control-lg {
 }
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
   border-color: var(--bs-form-valid-border-color);
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.5);
 }
 
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
@@ -3536,7 +3536,7 @@ textarea.form-control-lg {
 }
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
   border-color: var(--bs-form-valid-border-color);
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.5);
 }
 
 .was-validated .form-control-color:valid, .form-control-color.is-valid {
@@ -3550,7 +3550,7 @@ textarea.form-control-lg {
   background-color: var(--bs-form-valid-color);
 }
 .was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.5);
 }
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
   color: var(--bs-form-valid-color);
@@ -3607,7 +3607,7 @@ textarea.form-control-lg {
 }
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
   border-color: var(--bs-form-invalid-border-color);
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.5);
 }
 
 .was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
@@ -3626,7 +3626,7 @@ textarea.form-control-lg {
 }
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
   border-color: var(--bs-form-invalid-border-color);
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.5);
 }
 
 .was-validated .form-control-color:invalid, .form-control-color.is-invalid {
@@ -3640,7 +3640,7 @@ textarea.form-control-lg {
   background-color: var(--bs-form-invalid-color);
 }
 .was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.5);
 }
 .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
   color: var(--bs-form-invalid-color);
@@ -4548,7 +4548,7 @@ textarea.form-control-lg {
 }
 .nav-link:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .nav-link.disabled, .nav-link:disabled {
   color: var(--bs-nav-link-disabled-color);
@@ -5351,7 +5351,7 @@ textarea.form-control-lg {
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2344020d' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
   --bs-accordion-active-color: var(--bs-accordion-btn-color);
@@ -6151,7 +6151,7 @@ textarea.form-control-lg {
   --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414'/%3e%3c/svg%3e");
   --bs-btn-close-opacity: 0.5;
   --bs-btn-close-hover-opacity: 0.75;
-  --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
   --bs-btn-close-focus-opacity: 1;
   --bs-btn-close-disabled-opacity: 0.25;
   box-sizing: content-box;
@@ -19159,6 +19159,15 @@ h6,
   color: #0c234b;
 }
 
+/*
+* > LINKS
+*/
+a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 2px #ab0520;
+}
+
 .accordion-header {
   margin: 0;
 }
@@ -19169,6 +19178,14 @@ h6,
   -ms-flex-pack: end;
   justify-content: end;
   min-height: 50px;
+}
+
+.arizona-logo:focus-visible,
+.btn-arizona-header:focus-visible {
+  border-radius: 2px;
+  border: 0;
+  outline: 0;
+  box-shadow: inset 0 0 0 2px #fff;
 }
 
 @media screen and (max-width: 992px) {
@@ -19233,6 +19250,7 @@ h6,
   -ms-flex-pack: center;
   justify-content: center;
   min-width: 60px;
+  min-height: 50px;
   padding: 4px 0;
   border-radius: 0;
 }
@@ -19568,6 +19586,17 @@ h6,
   flex-basis: 0;
 }
 
+.dropdown-item:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.dropdown-menu input:focus-visible,
+.dropdown-menu button:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+
 .card-title {
   margin-top: 0;
 }
@@ -19614,6 +19643,20 @@ h6,
 .text-bg-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-red a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-red .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-red .ul-triangles li::before,
 .text-bg-red .az-list-triangles li::before {
   border-left-color: #fff;
@@ -19639,6 +19682,13 @@ h6,
 }
 .text-bg-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-bloom .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-bloom .ul-triangles li::before,
 .text-bg-bloom .az-list-triangles li::before {
@@ -19666,6 +19716,20 @@ h6,
 .text-bg-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-chili a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-chili .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-chili .ul-triangles li::before,
 .text-bg-chili .az-list-triangles li::before {
   border-left-color: #fff;
@@ -19691,6 +19755,20 @@ h6,
 }
 .text-bg-blue a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-blue a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-blue .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-blue .ul-triangles li::before,
 .text-bg-blue .az-list-triangles li::before {
@@ -19718,6 +19796,13 @@ h6,
 .text-bg-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-sky a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-sky .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-sky .ul-triangles li::before,
 .text-bg-sky .az-list-triangles li::before {
   border-left-color: #000;
@@ -19743,6 +19828,13 @@ h6,
 }
 .text-bg-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-oasis a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-oasis .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-oasis .ul-triangles li::before,
 .text-bg-oasis .az-list-triangles li::before {
@@ -19770,6 +19862,20 @@ h6,
 .text-bg-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-azurite a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-azurite .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-azurite .ul-triangles li::before,
 .text-bg-azurite .az-list-triangles li::before {
   border-left-color: #fff;
@@ -19795,6 +19901,20 @@ h6,
 }
 .text-bg-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-midnight a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-midnight .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-midnight .ul-triangles li::before,
 .text-bg-midnight .az-list-triangles li::before {
@@ -19868,6 +19988,13 @@ h6,
 .text-bg-leaf a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-leaf a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-leaf button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-leaf .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-leaf .ul-triangles li::before,
 .text-bg-leaf .az-list-triangles li::before {
   border-left-color: #000;
@@ -19893,6 +20020,20 @@ h6,
 }
 .text-bg-river a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-river a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-river button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-river .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-river .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-river .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-river .ul-triangles li::before,
 .text-bg-river .az-list-triangles li::before {
@@ -19920,6 +20061,13 @@ h6,
 .text-bg-silver a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-silver a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-silver button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-silver .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-silver .ul-triangles li::before,
 .text-bg-silver .az-list-triangles li::before {
   border-left-color: #000;
@@ -19945,6 +20093,20 @@ h6,
 }
 .text-bg-mesa a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-mesa a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-mesa button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-mesa .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-mesa .ul-triangles li::before,
 .text-bg-mesa .az-list-triangles li::before {
@@ -19972,6 +20134,20 @@ h6,
 .text-bg-ash a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-ash a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-ash button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-ash .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-ash .ul-triangles li::before,
 .text-bg-ash .az-list-triangles li::before {
   border-left-color: #fff;
@@ -19997,6 +20173,20 @@ h6,
 }
 .text-bg-sage a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-sage a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-sage button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-sage .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-sage .ul-triangles li::before,
 .text-bg-sage .az-list-triangles li::before {
@@ -20047,6 +20237,20 @@ h6,
 .text-bg-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-black a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-black .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-black .ul-triangles li::before,
 .text-bg-black .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20068,6 +20272,20 @@ h6,
 }
 .text-bg-primary a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-primary a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-primary button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-primary .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-primary .ul-triangles li::before,
 .text-bg-primary .az-list-triangles li::before {
@@ -20091,6 +20309,20 @@ h6,
 .text-bg-secondary a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-secondary a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-secondary button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-secondary .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-secondary .ul-triangles li::before,
 .text-bg-secondary .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20113,9 +20345,16 @@ h6,
 .text-bg-success a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-success a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-success button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-success .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-success .ul-triangles li::before,
 .text-bg-success .az-list-triangles li::before {
-  border-left-color: #fff;
+  border-left-color: #000;
 }
 
 .text-bg-info h1,
@@ -20134,6 +20373,13 @@ h6,
 }
 .text-bg-info a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-info a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-info button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-info .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-info .ul-triangles li::before,
 .text-bg-info .az-list-triangles li::before {
@@ -20157,6 +20403,13 @@ h6,
 .text-bg-warning a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-warning a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-warning button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-warning .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-warning .ul-triangles li::before,
 .text-bg-warning .az-list-triangles li::before {
   border-left-color: #000;
@@ -20178,6 +20431,20 @@ h6,
 }
 .text-bg-danger a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-danger a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-danger button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-danger .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-danger .ul-triangles li::before,
 .text-bg-danger .az-list-triangles li::before {
@@ -20201,6 +20468,13 @@ h6,
 .text-bg-light a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-light a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-light button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-light .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-light .ul-triangles li::before,
 .text-bg-light .az-list-triangles li::before {
   border-left-color: #000;
@@ -20222,6 +20496,20 @@ h6,
 }
 .text-bg-dark a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-dark a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-dark button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-dark .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-dark .ul-triangles li::before,
 .text-bg-dark .az-list-triangles li::before {
@@ -20364,6 +20652,20 @@ h6,
 .text-bg-gray-600 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gray-600 a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gray-600 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gray-600 .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-gray-600 .ul-triangles li::before,
 .text-bg-gray-600 .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20389,6 +20691,20 @@ h6,
 }
 .text-bg-gray-700 a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gray-700 a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gray-700 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gray-700 .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gray-700 .ul-triangles li::before,
 .text-bg-gray-700 .az-list-triangles li::before {
@@ -20416,6 +20732,20 @@ h6,
 .text-bg-gray-800 a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gray-800 a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gray-800 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gray-800 .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-gray-800 .ul-triangles li::before,
 .text-bg-gray-800 .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20441,6 +20771,20 @@ h6,
 }
 .text-bg-gray-900 a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gray-900 a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gray-900 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gray-900 .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gray-900 .ul-triangles li::before,
 .text-bg-gray-900 .az-list-triangles li::before {
@@ -20468,6 +20812,20 @@ h6,
 .text-bg-transparent-red a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-transparent-red a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-red .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-transparent-red .ul-triangles li::before,
 .text-bg-transparent-red .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20493,6 +20851,13 @@ h6,
 }
 .text-bg-transparent-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-transparent-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-bloom .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-transparent-bloom .ul-triangles li::before,
 .text-bg-transparent-bloom .az-list-triangles li::before {
@@ -20520,6 +20885,20 @@ h6,
 .text-bg-transparent-chili a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-transparent-chili a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-chili .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-transparent-chili .ul-triangles li::before,
 .text-bg-transparent-chili .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20545,6 +20924,20 @@ h6,
 }
 .text-bg-transparent-blue a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-transparent-blue a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-blue .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-transparent-blue .ul-triangles li::before,
 .text-bg-transparent-blue .az-list-triangles li::before {
@@ -20572,6 +20965,13 @@ h6,
 .text-bg-transparent-sky a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-transparent-sky a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-sky .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-transparent-sky .ul-triangles li::before,
 .text-bg-transparent-sky .az-list-triangles li::before {
   border-left-color: #000;
@@ -20597,6 +20997,13 @@ h6,
 }
 .text-bg-transparent-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-transparent-oasis a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-oasis .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-transparent-oasis .ul-triangles li::before,
 .text-bg-transparent-oasis .az-list-triangles li::before {
@@ -20624,6 +21031,20 @@ h6,
 .text-bg-transparent-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-transparent-azurite a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-azurite .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-transparent-azurite .ul-triangles li::before,
 .text-bg-transparent-azurite .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20649,6 +21070,20 @@ h6,
 }
 .text-bg-transparent-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-transparent-midnight a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-midnight .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-transparent-midnight .ul-triangles li::before,
 .text-bg-transparent-midnight .az-list-triangles li::before {
@@ -20745,6 +21180,20 @@ h6,
 .text-bg-transparent-black a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-transparent-black a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-transparent-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-transparent-black .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-transparent-black .ul-triangles li::before,
 .text-bg-transparent-black .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20770,6 +21219,20 @@ h6,
 }
 .text-bg-gradient-red a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gradient-red a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-red .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gradient-red .ul-triangles li::before,
 .text-bg-gradient-red .az-list-triangles li::before {
@@ -20797,6 +21260,13 @@ h6,
 .text-bg-gradient-bloom a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gradient-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-bloom .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-gradient-bloom .ul-triangles li::before,
 .text-bg-gradient-bloom .az-list-triangles li::before {
   border-left-color: #000;
@@ -20822,6 +21292,20 @@ h6,
 }
 .text-bg-gradient-chili a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gradient-chili a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-chili .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gradient-chili .ul-triangles li::before,
 .text-bg-gradient-chili .az-list-triangles li::before {
@@ -20849,6 +21333,20 @@ h6,
 .text-bg-gradient-blue a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gradient-blue a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-blue .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-gradient-blue .ul-triangles li::before,
 .text-bg-gradient-blue .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20874,6 +21372,13 @@ h6,
 }
 .text-bg-gradient-sky a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gradient-sky a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-sky .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-gradient-sky .ul-triangles li::before,
 .text-bg-gradient-sky .az-list-triangles li::before {
@@ -20901,6 +21406,13 @@ h6,
 .text-bg-gradient-oasis a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gradient-oasis a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-oasis .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .text-bg-gradient-oasis .ul-triangles li::before,
 .text-bg-gradient-oasis .az-list-triangles li::before {
   border-left-color: #000;
@@ -20927,6 +21439,20 @@ h6,
 .text-bg-gradient-azurite a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.text-bg-gradient-azurite a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-azurite .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
 .text-bg-gradient-azurite .ul-triangles li::before,
 .text-bg-gradient-azurite .az-list-triangles li::before {
   border-left-color: #fff;
@@ -20952,6 +21478,20 @@ h6,
 }
 .text-bg-gradient-midnight a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gradient-midnight a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-midnight .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gradient-midnight .ul-triangles li::before,
 .text-bg-gradient-midnight .az-list-triangles li::before {
@@ -21047,6 +21587,20 @@ h6,
 }
 .text-bg-gradient-black a:not(.btn):not(.nav-link) {
   color: inherit;
+}
+.text-bg-gradient-black a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.text-bg-gradient-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+.text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
+}
+.text-bg-gradient-black .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gradient-black .ul-triangles li::before,
 .text-bg-gradient-black .az-list-triangles li::before {
@@ -21147,6 +21701,13 @@ h6,
 .list-group-item.active a:not(.btn):not(.nav-link) {
   color: inherit;
 }
+.list-group-item.active a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+.list-group-item.active button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 2px;
+}
+.list-group-item.active .btn:not(.btn-arizona-header):focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
 .list-group-item.active .ul-triangles li::before,
 .list-group-item.active .az-list-triangles li::before {
   border-left-color: #fff;
@@ -21236,6 +21797,12 @@ h6,
 }
 .nav.nav-utility .nav-link:hover, .nav.nav-utility .nav-link:focus {
   border-bottom-color: #49595e;
+}
+
+.nav-link:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 
 .navbar {
@@ -21784,6 +22351,14 @@ h6,
   position: relative;
 }
 
+.carousel-control-prev:focus-visible > .carousel-control-prev-icon,
+.carousel-control-next:focus-visible > .carousel-control-next-icon,
+.carousel-indicators > button:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 2px #ab0520, 0 0 0 4px #fff;
+}
+
 .az-gallery {
   display: -ms-flexbox;
   display: flex;
@@ -21798,7 +22373,8 @@ h6,
 }
 .az-gallery .carousel-control-prev:focus-visible > .material-symbols-rounded,
 .az-gallery .carousel-control-next:focus-visible > .material-symbols-rounded {
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .az-gallery .carousel-control-prev {
   -ms-flex-order: 0;
@@ -21819,6 +22395,10 @@ h6,
   padding: 2px;
   background: none;
   border: 0;
+}
+.az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(171, 5, 32, 0.5), inset 0 0 0 2px rgba(171, 5, 32, 0.5);
 }
 
 .az-gallery-slider-full .carousel-control-prev,
@@ -21881,6 +22461,12 @@ h6,
 .az-gallery-modal .carousel-control-prev:hover,
 .az-gallery-modal .carousel-control-next:hover {
   opacity: 0.8;
+}
+.az-gallery-modal .btn-close:focus-visible .material-symbols-rounded,
+.az-gallery-modal .carousel-control-prev:focus-visible .material-symbols-rounded,
+.az-gallery-modal .carousel-control-next:focus-visible .material-symbols-rounded {
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #fff;
 }
 .az-gallery-modal .modal-body {
   padding-top: 0;
