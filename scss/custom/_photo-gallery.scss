@@ -28,6 +28,9 @@
     order: 2;
     padding-left: .25rem;
   }
+  .carousel-indicators {
+    margin-bottom: 0;
+  }
 }
 
 .az-gallery-grid-btn {
@@ -65,7 +68,8 @@
 .az-gallery-caption {
   position: static;
   width: 100%;
-  padding: .75rem;
+  padding-top: .75rem;
+  padding-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
