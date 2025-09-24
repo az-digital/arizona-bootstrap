@@ -166,6 +166,15 @@ With the Grid display, all images in the gallery are presented in a grid layout.
                 <span class="material-symbols-rounded display-5" aria-hidden="true">arrow_forward_ios</span>
                 <span class="visually-hidden">Next</span>
               </button>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#gridGallery" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              </div>
             </div>
           </div>
         </div>
