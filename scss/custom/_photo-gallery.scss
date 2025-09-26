@@ -61,6 +61,18 @@
   }
 }
 
+.az-gallery-slider-full {
+  .carousel-indicators {
+    button {
+      background-color: $blue;
+      &:focus-visible {
+        @include border-radius(2px);
+        box-shadow: $focus-ring-box-shadow;
+      }
+    }
+  }
+}
+
 .az-gallery-image {
   min-height: 0;
 }
