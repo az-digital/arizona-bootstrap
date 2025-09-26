@@ -128,6 +128,15 @@
       }
     }
   }
+  .carousel-indicators {
+    button {
+      // background-color: $blue;
+      &:focus-visible {
+        @include border-radius(2px);
+        box-shadow: 0 0 $focus-ring-blur 2px $white;
+      }
+    }
+  }
   .modal-body {
     padding-top: 0;
   }
