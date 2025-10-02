@@ -1,0 +1,7 @@
+// Deprecated styling for typography
+
+// Deprecated custom classes: .triangle, .ul-triangles
+.triangle,
+.ul-triangles {
+  @extend .az-list-triangles;
+}
