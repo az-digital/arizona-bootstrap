@@ -26,9 +26,12 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 
 Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Chili, Midnight, and Light color and background helpers.
 
-### Text Primary
+### Primary Color Change
 
-The `.text-primary` class has been maintained in Arizona Bootstrap 5, but its color has changed from Arizona Blue to Arizona Red. It is recommended to use `.text-red` or `.text-blue` instead.
+In Arizona Bootstrap 2, classes using the "primary" color were styled with Arizona Blue. In Arizona Bootstrap 5, "primary" now corresponds with Arizona Red and "secondary" (unused in Arizona Bootstrap 2) corresponds with Arizona Blue. Below are examples of replacements which can be made to update existing content while maintaining the same Arizona Blue color:
+ - `.bg-primary`: Replace with `.text-bg-blue`.
+ - `.btn-primary`: Replace with `.btn-blue`.
+ - `.text-primary`: Replace with `.text-blue`.
 
 
 ## Deprecated Components
