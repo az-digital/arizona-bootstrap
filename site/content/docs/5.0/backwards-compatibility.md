@@ -227,7 +227,7 @@ The Offcanvasmenu JavaScript module included in Arizona Bootstrap 2 has been rem
 
 Arizona Bootstrap 5 includes a custom set of [table variants]({{< docsref "content/tables/#variants" >}}). From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included.
 
-**Note:** In Bootstrap 5, [`.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes]({{< docsref "migration/#content-reboot-etc" >}}). Also, the default `.table` class now sets a background color for the element: it did not do so in Arizona Bootstrap 2. For tables placed on a background that isn't white, site owners can add the appropriate `.table-*` color variant class to the `.table` element.
+**Note:** In Bootstrap 5, [`.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes]({{< docsref "migration/#content-reboot-etc" >}}). Also, the default `.table` class now sets a white background color for its nested elements: it did not do so in Arizona Bootstrap 2. For tables placed on a background that isn't white, site owners can add the appropriate `.table-*` color variant class to the `.table` element.
 
 
 ## Icons
