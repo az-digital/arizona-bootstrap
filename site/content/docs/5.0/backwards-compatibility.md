@@ -60,10 +60,6 @@ These custom Arizona Bootstrap classes are now deprecated:
 
 The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
 
-### Triangle List Classes
-
-The `.triangle` and `.ul-triangles` custom Arizona Bootstrap classes have been deprecated and replaced by `.az-list-triangles`.
-
 
 ## Deprecated Utilities
 
@@ -72,6 +68,10 @@ The following utilities are deprecated in Arizona Bootstrap 5 and will be remove
 ### Border Thick
 
 The `.border-thick` custom Arizona Bootstrap class has been deprecated. The `.border-4` class from the new [border width]({{< docsref "/utilities/borders/#width" >}}) utilities can be used as a direct replacement.
+
+### UL Triangles
+
+The `.ul-triangles` custom Arizona Bootstrap class has been deprecated and replaced by `.az-list-triangles`.
 
 
 ## Removed Components
@@ -195,6 +195,10 @@ The custom Arizona Bootstrap `.margin-align-*` classes were deprecated in Arizon
  - `margin-align-top` &rarr; `align-text-bottom`
  - `margin-align-middle` &rarr; `align-middle`
  - `margin-align-bottom` &rarr; `align-text-top`
+
+### Triangle List Class
+
+The `.triangle` class for styling list bullets was deprecated in Arizona Bootstrap 2 and has been replaced with `.az-list-triangles` in Arizona Bootstrap 5.
 
 ### Sans
 
