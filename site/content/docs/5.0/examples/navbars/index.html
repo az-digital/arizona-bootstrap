@@ -450,21 +450,24 @@ extra_css:
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Programs</a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="programsMenu">
                   <li><a class="dropdown-item" href="#">Overview</a></li>
                   <li><a class="dropdown-item" href="#">Find the Right Program</a></li>
                   <li><a class="dropdown-item" href="#">Undergraduate</a></li>
                   <li class="dropdown-submenu">
-                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#" aria-expanded="false" role="button">MBA Programs</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Full-Time MBA - Tucson</a></li>
-                      <li><a class="dropdown-item" href="#">Evening MBA - Tucson</a></li>
-                      <li><a class="dropdown-item" href="#">Executive MBA - Tucson</a></li>
-                      <li><a class="dropdown-item" href="#">Online MBA</a></li>
-                      <li><a class="dropdown-item" href="#">Careers</a></li>
-                      <li><a class="dropdown-item" href="#">MBA Dual Degrees</a></li>
-                      <li><a class="dropdown-item" href="#">Admissions</a></li>
-                      <li><a class="dropdown-item" href="#">Alumni</a></li>
+                    <a class="dropdown-item dropdown-toggle d-flex justify-content-between align-items-center"
+                      href="#submenu-mba" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="submenu-mba">
+                      MBA Programs
+                    </a>
+                    <ul id="submenu-mba" class="collapse list-unstyled m-0 p-0" data-bs-parent="#programsMenu" role="group" aria-label="MBA Programs submenu">
+                      <li><a class="dropdown-item ps-4" href="#">Full-Time MBA - Tucson</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Evening MBA - Tucson</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Executive MBA - Tucson</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Online MBA</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Careers</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">MBA Dual Degrees</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Admissions</a></li>
+                      <li><a class="dropdown-item ps-4" href="#">Alumni</a></li>
                     </ul>
                   </li>
                   <li><a class="dropdown-item" href="#">Master's Degreee Programs</a></li>
