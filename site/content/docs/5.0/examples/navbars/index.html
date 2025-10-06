@@ -446,15 +446,27 @@ extra_css:
           <div class="collapse navbar-collapse" id="navbarsExample12">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Why Eller</a>
+                <a class="nav-link" aria-current="page" href="#">Why Eller</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Programs</a>
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Programs</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Overview</a></li>
                   <li><a class="dropdown-item" href="#">Find the Right Program</a></li>
                   <li><a class="dropdown-item" href="#">Undergraduate</a></li>
-                  <li><a class="dropdown-item" href="#">MBA Programs</a></li>
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#" aria-expanded="false" role="button">MBA Programs</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Full-Time MBA - Tucson</a></li>
+                      <li><a class="dropdown-item" href="#">Evening MBA - Tucson</a></li>
+                      <li><a class="dropdown-item" href="#">Executive MBA - Tucson</a></li>
+                      <li><a class="dropdown-item" href="#">Online MBA</a></li>
+                      <li><a class="dropdown-item" href="#">Careers</a></li>
+                      <li><a class="dropdown-item" href="#">MBA Dual Degrees</a></li>
+                      <li><a class="dropdown-item" href="#">Admissions</a></li>
+                      <li><a class="dropdown-item" href="#">Alumni</a></li>
+                    </ul>
+                  </li>
                   <li><a class="dropdown-item" href="#">Master's Degreee Programs</a></li>
                   <li><a class="dropdown-item" href="#">Doctoral</a></li>
                   <li><a class="dropdown-item" href="#">Executive Education</a></li>
@@ -502,5 +514,8 @@ extra_css:
         </div>
       </div>
     </div>
+
+
+
   </div>
 </main>
