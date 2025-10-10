@@ -19091,18 +19091,15 @@ img:not(.card-img, .card-img-top, .card-img-bottom) {
   hyphens: auto;
 }
 
-.ul-triangles,
-.az-list-triangles {
+.az-list-triangles, .ul-triangles {
   overflow: hidden;
 }
-.ul-triangles li,
-.az-list-triangles li {
+.az-list-triangles li, .ul-triangles li {
   position: relative;
   padding-left: 0;
   list-style: none;
 }
-.ul-triangles li::before,
-.az-list-triangles li::before {
+.az-list-triangles li::before, .ul-triangles li::before {
   position: absolute;
   top: 8px;
   left: -0.8em;
