@@ -22387,6 +22387,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   order: 2;
   padding-left: 0.25rem;
 }
+.az-gallery .carousel-indicators {
+  margin-bottom: 0;
+}
 
 .az-gallery-grid-btn {
   padding: 2px;
@@ -22416,6 +22419,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin-left: auto;
 }
 
+.az-gallery-slider-full .carousel-indicators {
+  -webkit-filter: drop-shadow(0 0 0.5px rgb(0, 0, 0)) drop-shadow(0 0 0.5px rgb(0, 0, 0));
+  filter: drop-shadow(0 0 0.5px rgb(0, 0, 0)) drop-shadow(0 0 0.5px rgb(0, 0, 0));
+}
+
 .az-gallery-image {
   min-height: 0;
 }
@@ -22423,7 +22431,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .az-gallery-caption {
   position: static;
   width: 100%;
-  padding: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -22462,6 +22471,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .az-gallery-modal .btn-close:focus-visible .material-symbols-rounded,
 .az-gallery-modal .carousel-control-prev:focus-visible .material-symbols-rounded,
 .az-gallery-modal .carousel-control-next:focus-visible .material-symbols-rounded {
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #fff;
+}
+.az-gallery-modal .carousel-indicators button:focus-visible {
   border-radius: 2px;
   box-shadow: 0 0 0 2px #fff;
 }
