@@ -1,12 +1,41 @@
 .navbar-az {
+  /* Use Material Symbols for dropdown toggles */
+  .navbar-nav {
+    .nav-item {
+      .dropdown.btn-group {
+        border-radius: 0;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    .dropdown-toggle-split::after,
+    .dropdown-toggle::after {
+      border: none;
+      vertical-align: 0;
+      font-family: 'Material Symbols Rounded';
+      content: 'expand_circle_down';
+      font-size: 1.25rem;
+      margin-left: 0.25rem;
+      transition: transform 0.2s ease-in-out;
+      /* Material Symbols settings */
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+  }
 
   .nav-link {
+    /* Prevent nav links from wrapping */
+    white-space: nowrap;
+
     &.active,
     &.is-active,
     &:active,
     &.show,
     &:hover {
-      // color: $navbar-light-active-color;
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-decoration-color: $red;
