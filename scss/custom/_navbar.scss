@@ -1,5 +1,19 @@
 .navbar-az {
-  
+
+  .nav-link {
+    &.active,
+    &.is-active,
+    &:active,
+    &.show,
+    &:hover {
+      // color: $navbar-light-active-color;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: $red;
+      text-underline-offset: 4px;
+    }
+  }
+
   /* Inline, in-flow submenu that inherits dropdown colors from the parent .dropdown-menu */
   .dropdown-submenu > .collapse {
     position: static;     /* ensure normal flow */

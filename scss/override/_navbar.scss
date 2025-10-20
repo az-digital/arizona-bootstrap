@@ -9,27 +9,23 @@
 .navbar-nav {
   --#{$prefix}nav-link-color: #{$nav-link-color};
 
-  // .nav-item {
-  //   // &:hover {
-  //   //   background-color: $gray-100;
-  //   // }
+  .nav-item {
+    &:hover {
+      background-color: $gray-100;
+    }
 
-  //   &:has(> .nav-link.active),
-  //   &:has(> .nav-link.is-active),
-  //   &:has(> .nav-link:active),
-  //   &:has(> .nav-link.show),
-  //   &:hover {
-  //     text-decoration: underline;
-  //     text-decoration-color: $red;
-  //     text-underline-offset: 4px;
-  //     text-decoration-thickness: 2px;
-  //   }
-  // }
+    &:has(> .nav-link.active),
+    &:has(> .nav-link.is-active),
+    &:has(> .nav-link:active),
+    &:has(> .nav-link.show) {
+      background-color: $nav-tabs-link-bg;
+    }
+  }
 
   .nav-link {
     padding-top: $navbar-nav-link-padding-y;
     padding-bottom: $navbar-nav-link-padding-y;
-    // @include border-radius(0);
+    @include border-radius(0);
 
     &:not(.active) {
       font-weight: 600;
@@ -38,13 +34,8 @@
     &.active,
     &.is-active,
     &:active,
-    &.show,
-    &:hover {
-      // color: $navbar-light-active-color;
-      text-decoration: underline;
-      text-decoration-color: $red;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 2px;
+    &.show {
+      color: $navbar-light-active-color;
     }
   }
 
