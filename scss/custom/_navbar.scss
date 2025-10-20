@@ -1,0 +1,13 @@
+.navbar-az {
+  
+  /* Inline, in-flow submenu that inherits dropdown colors from the parent .dropdown-menu */
+  .dropdown-submenu > .collapse {
+    position: static;     /* ensure normal flow */
+    padding: .25rem 0;    /* match dropdown vertical rhythm */
+  }
+
+  /* Rotate caret on open (works with .dropdown-toggle) */
+  .dropdown-submenu > .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+}
