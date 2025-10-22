@@ -33,6 +33,24 @@
     border: 0;
   }
 
+  .dropdown-menu {
+    --az-dropdown-bg: #fff;
+    background-color: var(--az-dropdown-bg);
+  }
+
+  .dropdown-item {
+    --az-azurite: #1e5288;
+    --dropdown-link-color: var(--az-azurite);
+    --dropdown-link-hover-bg: #fff;
+    color: var(--dropdown-link-color);
+  }
+
+  .dropdown-item:hover {
+    --az-gray-500: #adb5bd;
+    --dropdown-link-hover-bg: var(--az-gray-500);
+    background-color: var(--dropdown-link-hover-bg);
+  }
+
   .nav-link {
     /* Prevent nav links from wrapping */
     white-space: nowrap;
