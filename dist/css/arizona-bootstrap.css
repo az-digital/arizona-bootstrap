@@ -21900,7 +21900,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-triangles-centered {
   background-image: url("img/triangles-centered.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center bottom;
   background-size: auto;
   background-blend-mode: multiply;
 }
