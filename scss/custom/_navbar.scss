@@ -1,7 +1,9 @@
 .navbar-az {
+  .btn-group {
+    @include border-radius(0);
+  }
   .nav-item {
-    .btn,
-    .btn-group {
+    .btn {
       @include border-radius(0);
     }
     &:hover {
