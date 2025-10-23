@@ -34,8 +34,9 @@
   }
 
   .dropdown-menu {
-    --az-dropdown-bg: #fff;
-    background-color: var(--az-dropdown-bg);
+    --bs-dropdown-padding-y: 0;
+    --bs-dropdown-bg: #fff;
+    --bs-dropdown-border-radius: 0;
   }
 
   .dropdown-item {
@@ -46,7 +47,7 @@
   }
 
   .dropdown-item:hover {
-    --az-gray-500: #adb5bd;
+    --az-gray-500: #ced4da;
     --dropdown-link-hover-bg: var(--az-gray-500);
     background-color: var(--dropdown-link-hover-bg);
   }
