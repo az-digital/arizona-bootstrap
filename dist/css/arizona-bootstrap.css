@@ -8635,6 +8635,11 @@ textarea.form-control-lg {
   border-color: rgba(var(--bs-warm-gray-rgb), var(--bs-border-opacity)) !important;
 }
 
+.border-bloom {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-bloom-rgb), var(--bs-border-opacity)) !important;
+}
+
 .border-primary-subtle {
   border-color: var(--bs-primary-border-subtle) !important;
 }
