@@ -186,9 +186,14 @@ Pills can be stacked with nested items, too. Just add `.flex-column`.
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="#">Active sub-item</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sub-item</a>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Third-level item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Third-level item</a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Sub-item</a>
