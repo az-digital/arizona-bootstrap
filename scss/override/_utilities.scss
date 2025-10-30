@@ -28,7 +28,7 @@ $background-colors: map-merge($background-colors, $bg-grays);
 $pnc-colors: map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa", "silver", "ash", "sage", "black");
 
 // border colors
-$border-colors: map-loop($pnc-colors, rgba-css-var, "$key", "border");
+$border-colors: map-loop(map-merge($pnc-colors, ("bloom": $bloom)), rgba-css-var, "$key", "border");
 
 // focus ring colors
 $focus-ring-colors: map-loop($pnc-colors, rgba-css-var, "$key", "focus-ring");
