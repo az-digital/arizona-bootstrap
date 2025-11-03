@@ -35,6 +35,11 @@
     .dropdown-toggle-split[aria-expanded="true"] {
       border: 0;
     }
+
+    .dropdown-menu {
+      --bs-dropdown-border-width: 0;
+      box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
+    }
   }
 
   // secondary navigation level
