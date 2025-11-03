@@ -2,6 +2,8 @@
   .btn-group {
     @include border-radius(0);
   }
+
+  // primary navigation level
   .nav-item {
     .btn {
       @include border-radius(0);
@@ -9,30 +11,65 @@
     &:hover {
       background-color: transparent;
     }
+
+    /* Primary navigation split dropdown toggle */
+    .dropdown-toggle-split::after {
+      margin-left: .25rem;
+      font-family: "Material Symbols Rounded", sans-serif;
+      font-size: 1.25rem;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      color: $azurite;
+      vertical-align: 0;
+      content: "expand_circle_down";
+      border: 0;
+    }
+
+    /* Primary navigation split dropdown toggled */
+    .dropdown-toggle-split:active::after,
+    .dropdown-toggle-split:hover::after,
+    .dropdown-toggle-split[aria-expanded="true"]::after {
+      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      color: $red;
+    }
+    .dropdown-toggle-split:active,
+    .dropdown-toggle-split[aria-expanded="true"] {
+      border: 0;
+    }
   }
 
-  /* Primary navigation split dropdown toggle */
-  .dropdown-toggle-split::after {
-    margin-left: .25rem;
-    font-family: "Material Symbols Rounded", sans-serif;
-    font-size: 1.25rem;
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-    color: $azurite;
-    vertical-align: 0;
-    content: "expand_circle_down";
-    border: 0;
+  // secondary navigation level
+  .nav-item .nav-item {
+    // border-width: 1px 0;
+    // border-style: solid;
+    // border-color: $cool-gray;
+    border-bottom: 1px solid $cool-gray;
+
+    /* Secondary navigation split dropdown toggle */
+    .dropdown-toggle-split {
+      border-left: 1px solid $cool-gray;
+    }
+    .dropdown-toggle-split::after {
+      margin-left: .25rem;
+      font-family: "Material Symbols Rounded", sans-serif;
+      font-size: 1.25rem;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      color: $azurite;
+      vertical-align: 0;
+      content: "add";
+      border: 0;
+    }
+
+    .dropdown-toggle-split[aria-expanded="true"] {
+      background-color: $cool-gray;
+    }
+    .dropdown-toggle-split[aria-expanded="true"]::after {
+      content: "remove";
+    }
   }
 
-  /* Primary navigation split dropdown toggled */
-  .dropdown-toggle-split:active::after,
-  .dropdown-toggle-split:hover::after,
-  .dropdown-toggle-split[aria-expanded="true"]::after {
-    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-    color: $red;
-  }
-  .dropdown-toggle-split:active,
-  .dropdown-toggle-split[aria-expanded="true"] {
-    border: 0;
+  // tertiary navigation level
+  .nav-item .nav-item .nav-item {
+    background-color: $cool-gray;
   }
 
   .dropdown-menu {
