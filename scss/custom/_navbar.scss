@@ -6,6 +6,9 @@
   // primary navigation level
   .nav-item {
     // border-right: 1px solid $cool-gray;
+    &:has(> .nav-link:active) {
+      background-color: unset;
+    }
 
     .btn {
       @include border-radius(0);
@@ -33,6 +36,7 @@
         text-decoration-thickness: 2px;
         text-decoration-color: $red;
         text-underline-offset: 4px;
+        background-color: unset;
       }
       border-left: 1px solid $cool-gray;
       --bs-nav-link-padding-y: 0;
@@ -47,7 +51,7 @@
 
     /* Primary navigation split dropdown toggle */
     .dropdown-toggle-split {
-      padding-right: 0;
+      padding-right: .5rem;
       padding-left: 0;
       --bs-btn-border-width: 0;
     }
