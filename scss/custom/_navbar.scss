@@ -1,12 +1,11 @@
 .navbar-az {
-
-
   .btn-group {
     @include border-radius(0);
   }
 
   // primary navigation level
   .nav-item {
+    // border-right: 1px solid $cool-gray;
 
     .btn {
       @include border-radius(0);
@@ -20,6 +19,29 @@
       padding-left: 0;
     }
 
+    .nav-link {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+
+      /* Prevent nav links from wrapping */
+      white-space: nowrap;
+
+      &.active,
+      &.is-active,
+      &:active,
+      &.show,
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: $red;
+        text-underline-offset: 4px;
+      }
+      border-left: 2px solid $cool-gray;
+      --bs-nav-link-padding-y: 0;
+    }
+
     /* Primary navigation split dropdown toggle */
     .dropdown-toggle-split {
       padding-right: 0;
@@ -28,7 +50,7 @@
     }
     .dropdown-toggle-split::after {
       font-family: "Material Symbols Rounded", sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.75rem;
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       color: $azurite;
       vertical-align: 0;
@@ -106,22 +128,6 @@
     --az-gray-500: #ced4da;
     --dropdown-link-hover-bg: var(--az-gray-500);
     background-color: var(--dropdown-link-hover-bg);
-  }
-
-  .nav-link {
-    /* Prevent nav links from wrapping */
-    white-space: nowrap;
-
-    &.active,
-    &.is-active,
-    &:active,
-    &.show,
-    &:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-decoration-color: $red;
-      text-underline-offset: 4px;
-    }
   }
 
   /* Inline, in-flow submenu that inherits dropdown colors from the parent .dropdown-menu */
