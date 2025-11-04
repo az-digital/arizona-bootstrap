@@ -14,11 +14,6 @@
       background-color: transparent;
     }
 
-    &:first-child > .nav-link,
-    .btn-group > .nav-link:first-child {
-      padding-left: 0;
-    }
-
     .nav-link {
       padding-top: 0;
       padding-bottom: 0;
@@ -38,8 +33,15 @@
         text-decoration-color: $red;
         text-underline-offset: 4px;
       }
-      border-left: 2px solid $cool-gray;
+      border-left: 1px solid $cool-gray;
       --bs-nav-link-padding-y: 0;
+    }
+
+    // First primary nav link
+    &:first-child > .nav-link,
+    .btn-group > .nav-link:first-child {
+      padding-left: 0;
+      border-left: 0;
     }
 
     /* Primary navigation split dropdown toggle */
