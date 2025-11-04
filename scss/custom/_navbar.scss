@@ -1,10 +1,13 @@
 .navbar-az {
+
+
   .btn-group {
     @include border-radius(0);
   }
 
   // primary navigation level
   .nav-item {
+
     .btn {
       @include border-radius(0);
     }
@@ -12,9 +15,18 @@
       background-color: transparent;
     }
 
+    &:first-child > .nav-link,
+    .btn-group > .nav-link:first-child {
+      padding-left: 0;
+    }
+
     /* Primary navigation split dropdown toggle */
+    .dropdown-toggle-split {
+      padding-right: 0;
+      padding-left: 0;
+      --bs-btn-border-width: 0;
+    }
     .dropdown-toggle-split::after {
-      margin-left: .25rem;
       font-family: "Material Symbols Rounded", sans-serif;
       font-size: 1.25rem;
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
