@@ -45,7 +45,7 @@
     // First primary nav link
     &:first-child > .nav-link,
     .btn-group > .nav-link:first-child {
-      padding-left: 0;
+      // padding-left: 0;
       border-left: 0;
     }
 
@@ -87,17 +87,15 @@
 
   // secondary navigation level
   .nav-item .nav-item {
-    // border-width: 1px 0;
-    // border-style: solid;
-    // border-color: $cool-gray;
     border-bottom: 1px solid $cool-gray;
 
     /* Secondary navigation split dropdown toggle */
     .dropdown-toggle-split {
+      padding-left: .5rem;
       border-left: 1px solid $cool-gray;
     }
     .dropdown-toggle-split::after {
-      margin-left: .25rem;
+      // margin-left: .25rem;
       font-family: "Material Symbols Rounded", sans-serif;
       font-size: 1.25rem;
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
@@ -107,12 +105,45 @@
       border: 0;
     }
 
+    .dropdown-toggle-split:hover {
+      background-color: $cool-gray;
+    }
+
     .dropdown-toggle-split[aria-expanded="true"] {
       background-color: $cool-gray;
     }
     .dropdown-toggle-split[aria-expanded="true"]::after {
       content: "remove";
     }
+
+    > .nav-link {
+      padding-top: .625rem;
+      padding-bottom: .625rem;
+      padding-left: var(--bs-navbar-nav-link-padding-x);
+      margin-top: 0;
+      margin-bottom: 0;
+      border-left: unset;
+      --bs-navbar-nav-link-padding-x: 1rem;
+    }
+
+    .nav-link:hover {
+      text-decoration: unset;
+      text-decoration-thickness: unset;
+      text-decoration-color: unset;
+      text-underline-offset: unset;
+      background-color: $cool-gray;
+    }
+  }
+
+  /* Links inside a .btn-group within dropdown menus (shallower selector to satisfy stylelint) */
+  .dropdown-menu .btn-group > .nav-link {
+    padding-top: .625rem;
+    padding-bottom: .625rem;
+    padding-left: var(--bs-navbar-nav-link-padding-x);
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: unset;
+    --bs-navbar-nav-link-padding-x: 1rem;
   }
 
   // tertiary navigation level
