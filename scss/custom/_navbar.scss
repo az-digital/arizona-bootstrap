@@ -96,8 +96,22 @@
     --bs-dropdown-border-radius: 0;
     --bs-dropdown-link-color: #{$azurite};
 
+    // > li {
+    //   display: flex;
+    //   align-items: center;
+    // }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
     .dropdown-toggle-split {
+      padding-top: 7px; // is this robust? or a rounding error?
+      padding-bottom: 7px;
       padding-left: .5rem;
+      margin-inline-start: auto; // pushes to the far right
       border-bottom: 1px solid $cool-gray;
       border-left: 1px solid $cool-gray;
     }
@@ -124,6 +138,8 @@
   }
 
   .dropdown-item {
+    flex: 1 1 auto;
+    min-width: 0; // allows text truncation if needed
     padding-top: .625rem;
     padding-bottom: .625rem;
     padding-left: var(--bs-navbar-nav-link-padding-x);
@@ -144,43 +160,15 @@
     background-color: $cool-gray;
   }
 
-  // Need to refactor below this line
-
-  /* Links inside a .btn-group within dropdown menus (shallower selector to satisfy stylelint) */
-  .dropdown-menu .btn-group > .nav-link {
-    padding-top: .625rem;
-    padding-bottom: .625rem;
-    padding-left: var(--bs-navbar-nav-link-padding-x);
-    margin-top: 0;
-    margin-bottom: 0;
-    border-left: unset;
-    --bs-navbar-nav-link-padding-x: 1rem;
-  }
-
-  .collapse {
+  // Tertiary navigation level
+  .dropdown-menu .collapse,
+  .dropdown-menu .collapsing {
     padding: 0;
     margin: 0;
     list-style: none;
-    --bs-collapse-transition-duration: 0s;
-  }
-  .collapsing {
-    transition: none;
-    height: auto;
-  }
-
-  /* stylelint-disable selector-max-class, selector-max-compound-selectors */
-  // tertiary navigation level
-  .dropdown-menu .collapse,
-  .dropdown-menu .collapsing,
-  .dropdown-menu .collapse.show,
-  .dropdown-menu .collapse li,
-  .dropdown-menu .collapsing li,
-  .dropdown-menu .collapse.show li,
-  .nav-item .nav-item .nav-item {
     background-color: $cool-gray;
 
-    a,
-    .nav-link {
+    a {
       display: block;
       padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
       font-size: var(--bs-nav-link-font-size);
@@ -189,7 +177,6 @@
       text-decoration: none;
       background: none;
       border: 0;
-      // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
       padding-top: .625rem;
       padding-bottom: .625rem;
       padding-left: var(--bs-navbar-nav-link-padding-x);
@@ -210,9 +197,12 @@
         text-decoration-color: $blue;
         text-underline-offset: 4px;
       }
-      // border-left: 1px solid $cool-gray;
-      // --bs-nav-link-padding-y: 0;
     }
   }
-  /* stylelint-enable selector-max-class, selector-max-compound-selectors */
+  .dropdown-menu .collapsing {
+    height: auto;
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-property: none;
+  }
 }
