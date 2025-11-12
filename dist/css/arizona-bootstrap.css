@@ -8635,6 +8635,11 @@ textarea.form-control-lg {
   border-color: rgba(var(--bs-warm-gray-rgb), var(--bs-border-opacity)) !important;
 }
 
+.border-bloom {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-bloom-rgb), var(--bs-border-opacity)) !important;
+}
+
 .border-primary-subtle {
   border-color: var(--bs-primary-border-subtle) !important;
 }
@@ -19091,18 +19096,15 @@ img:not(.card-img, .card-img-top, .card-img-bottom) {
   hyphens: auto;
 }
 
-.ul-triangles,
-.az-list-triangles {
+.az-list-triangles, .ul-triangles {
   overflow: hidden;
 }
-.ul-triangles li,
-.az-list-triangles li {
+.az-list-triangles li, .ul-triangles li {
   position: relative;
   padding-left: 0;
   list-style: none;
 }
-.ul-triangles li::before,
-.az-list-triangles li::before {
+.az-list-triangles li::before, .ul-triangles li::before {
   position: absolute;
   top: 8px;
   left: -0.8em;
@@ -21741,20 +21743,21 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-radius: revert;
 }
 
-/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
-.nav.nav-pills.flex-column > li {
-  margin: -1px 0 0;
-  border: solid 1px #e9ecef;
-}
-.nav.nav-pills.flex-column > li:first-child {
+.nav.nav-pills > .nav-item:not(.nav-item .nav-item):first-child {
   border-top-left-radius: var(--bs-border-radius);
   border-top-right-radius: var(--bs-border-radius);
   overflow-x: hidden;
 }
-.nav.nav-pills.flex-column > li:last-child {
+.nav.nav-pills > .nav-item:not(.nav-item .nav-item):last-child {
   border-bottom-left-radius: var(--bs-border-radius);
   border-bottom-right-radius: var(--bs-border-radius);
   overflow-x: hidden;
+}
+
+/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+.nav.nav-pills.flex-column > li {
+  margin: -1px 0 0;
+  border: solid 1px #e9ecef;
 }
 .nav.nav-pills.flex-column > li ul > li {
   border: 0;
@@ -21903,7 +21906,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-triangles-centered {
   background-image: url("img/triangles-centered.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center bottom;
   background-size: auto;
   background-blend-mode: multiply;
 }
@@ -22390,6 +22393,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   order: 2;
   padding-left: 0.25rem;
 }
+.az-gallery .carousel-indicators {
+  margin-bottom: 0;
+}
 
 .az-gallery-grid-btn {
   padding: 2px;
@@ -22419,6 +22425,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin-left: auto;
 }
 
+.az-gallery-slider-full .carousel-indicators {
+  -webkit-filter: drop-shadow(0 0 0.5px rgb(0, 0, 0)) drop-shadow(0 0 0.5px rgb(0, 0, 0));
+  filter: drop-shadow(0 0 0.5px rgb(0, 0, 0)) drop-shadow(0 0 0.5px rgb(0, 0, 0));
+}
+
 .az-gallery-image {
   min-height: 0;
 }
@@ -22426,7 +22437,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .az-gallery-caption {
   position: static;
   width: 100%;
-  padding: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -22465,6 +22477,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .az-gallery-modal .btn-close:focus-visible .material-symbols-rounded,
 .az-gallery-modal .carousel-control-prev:focus-visible .material-symbols-rounded,
 .az-gallery-modal .carousel-control-next:focus-visible .material-symbols-rounded {
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #fff;
+}
+.az-gallery-modal .carousel-indicators button:focus-visible {
   border-radius: 2px;
   box-shadow: 0 0 0 2px #fff;
 }

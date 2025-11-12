@@ -28,6 +28,9 @@
     order: 2;
     padding-left: .25rem;
   }
+  .carousel-indicators {
+    margin-bottom: 0;
+  }
 }
 
 .az-gallery-grid-btn {
@@ -58,6 +61,12 @@
   }
 }
 
+.az-gallery-slider-full {
+  .carousel-indicators {
+    filter: drop-shadow(0 0 .5px rgb(0, 0, 0)) drop-shadow(0 0 .5px rgb(0, 0, 0));
+  }
+}
+
 .az-gallery-image {
   min-height: 0;
 }
@@ -65,7 +74,8 @@
 .az-gallery-caption {
   position: static;
   width: 100%;
-  padding: .75rem;
+  padding-top: .75rem;
+  padding-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -107,6 +117,14 @@
     }
     &:focus-visible {
       .material-symbols-rounded {
+        @include border-radius(2px);
+        box-shadow: 0 0 $focus-ring-blur 2px $white;
+      }
+    }
+  }
+  .carousel-indicators {
+    button {
+      &:focus-visible {
         @include border-radius(2px);
         box-shadow: 0 0 $focus-ring-blur 2px $white;
       }

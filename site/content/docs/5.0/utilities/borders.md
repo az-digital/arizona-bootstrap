@@ -45,7 +45,7 @@ Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Ar
 
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
-{{- range (index $.Site.Data "pnc-colors") }}
+{{- range (index $.Site.Data "border-colors") }}
 <span class="border border-{{ .name }}"></span>
 {{- end -}}
 {{< /border.inline >}}
