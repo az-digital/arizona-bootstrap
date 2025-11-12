@@ -87,29 +87,32 @@
 
   // Secondary navigation level
   .dropdown-menu {
-    border-top: 2px solid $blue;
-    --bs-dropdown-border-width: 0;
-    box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
-    --bs-dropdown-spacer: 0;
     --bs-dropdown-padding-y: 0;
+    --bs-dropdown-spacer: 0;
     --bs-dropdown-bg: #fff;
+    --bs-dropdown-border-color: #{$blue};
     --bs-dropdown-border-radius: 0;
+    --bs-dropdown-border-width: 0;
     --bs-dropdown-link-color: #{$azurite};
-
-    // > li {
-    //   display: flex;
-    //   align-items: center;
-    // }
+    --bs-dropdown-link-hover-color: #{$blue};
+    --bs-dropdown-link-hover-bg: #{$cool-gray};
+    --bs-dropdown-item-padding-x: 1rem;
+    --bs-dropdown-item-padding-y: .625rem;
+    border-top: 2px solid var(--bs-dropdown-border-color);
+    box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
     .btn-group {
       display: flex;
-      align-items: center;
+      // align-items: center;
       width: 100%;
+      .btn {
+        margin-left: 0;
+      }
     }
 
     .dropdown-toggle-split {
-      padding-top: 7px; // is this robust? or a rounding error?
-      padding-bottom: 7px;
+      // padding-top: 7px; // is this robust? or a rounding error?
+      // padding-bottom: 7px;
       padding-left: .5rem;
       margin-inline-start: auto; // pushes to the far right
       border-bottom: 1px solid $cool-gray;
@@ -125,13 +128,11 @@
       border: 0;
     }
 
-    .dropdown-toggle-split:hover {
-      background-color: $cool-gray;
-    }
-
+    .dropdown-toggle-split:hover,
     .dropdown-toggle-split[aria-expanded="true"] {
       background-color: $cool-gray;
     }
+
     .dropdown-toggle-split[aria-expanded="true"]::after {
       content: "remove";
     }
@@ -140,24 +141,9 @@
   .dropdown-item {
     flex: 1 1 auto;
     min-width: 0; // allows text truncation if needed
-    padding-top: .625rem;
-    padding-bottom: .625rem;
-    padding-left: var(--bs-navbar-nav-link-padding-x);
-    margin-top: 0;
-    margin-bottom: 0;
     font-weight: 600;
     border-bottom: 1px solid $cool-gray;
     border-left: unset;
-    --bs-navbar-nav-link-padding-x: 1rem;
-  }
-
-  .dropdown-item:hover {
-    color: $blue;
-    text-decoration: unset;
-    text-decoration-thickness: unset;
-    text-decoration-color: unset;
-    text-underline-offset: unset;
-    background-color: $cool-gray;
   }
 
   // Tertiary navigation level
@@ -168,24 +154,19 @@
     list-style: none;
     background-color: $cool-gray;
 
+
     a {
       display: block;
-      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-      font-size: var(--bs-nav-link-font-size);
-      font-weight: var(--bs-nav-link-font-weight);
-      color: var(--bs-nav-link-color);
-      text-decoration: none;
-      background: none;
-      border: 0;
       padding-top: .625rem;
       padding-bottom: .625rem;
       padding-left: var(--bs-navbar-nav-link-padding-x);
-      margin-top: 0;
-      margin-bottom: 0;
+      font-weight: var(--bs-nav-link-font-weight);
+      color: var(--bs-nav-link-color);
+      text-decoration: none;
       border-bottom: 1px solid $cool-gray;
-      border-left: unset;
       --bs-navbar-nav-link-padding-x: 1rem;
 
+      /* stylelint-disable selector-no-qualifying-type */
       &.active,
       &.is-active,
       &:active,
@@ -197,6 +178,7 @@
         text-decoration-color: $blue;
         text-underline-offset: 4px;
       }
+      /* stylelint-enable selector-no-qualifying-type */
     }
   }
   .dropdown-menu .collapsing {
