@@ -12,6 +12,7 @@
 
     // Unsets background colors provided by override/navbar
     .nav-item {
+      min-height: 50px;
       &:hover {
         background-color: unset;
       }
@@ -105,7 +106,7 @@
 
     .btn-group {
       display: flex;
-      // align-items: center;
+      align-items: center;
       width: 100%;
       .btn {
         margin-left: 0;
@@ -115,6 +116,7 @@
     .dropdown-toggle-split {
       // padding-top: 7px; // is this robust? or a rounding error?
       // padding-bottom: 7px;
+      min-height: 50px;
       padding-left: .5rem;
       margin-inline-start: auto; // pushes to the far right
       border-bottom: 1px solid $cool-gray;
@@ -141,9 +143,12 @@
   }
 
   .dropdown-item {
+    display: flex;
     flex: 1 1 auto;
+    align-items: center;
     min-width: 0; // allows text truncation if needed
-    font-weight: 600;
+    min-height: 50px;
+    font-weight: 500;
     border-bottom: 1px solid $cool-gray;
     border-left: unset;
   }
@@ -162,7 +167,7 @@
       padding-top: .625rem;
       padding-bottom: .625rem;
       padding-left: var(--bs-navbar-nav-link-padding-x);
-      font-weight: var(--bs-nav-link-font-weight);
+      font-weight: 500;
       color: var(--bs-nav-link-color);
       text-decoration: none;
       border-bottom: 1px solid $cool-gray;
