@@ -1,4 +1,6 @@
 .navbar-az {
+  font-family: proxima-nova-condensed, var(--bs-body-font-family);
+
   // Sharpen all nested buttons
   .btn {
     --bs-btn-border-radius: 0;
