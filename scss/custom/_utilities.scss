@@ -2,7 +2,7 @@
 * > Utilities API Customizations
 */
 
-// add "lh-normal" line-height utility
+// add "lh-az-normal" line-height utility
 $utilities: map-merge(
   $utilities,
   (
@@ -12,7 +12,7 @@ $utilities: map-merge(
         values: map-merge(
           map-get(map-get($utilities, "line-height"), "values"),
           (
-            normal: normal
+            az-normal: normal
           ),
         ),
       ),
