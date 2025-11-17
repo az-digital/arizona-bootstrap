@@ -64,6 +64,12 @@
     padding-right: .5rem;
     padding-left: 0;
     --bs-btn-border-width: 0;
+
+    &:focus-visible {
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: $focus-ring-box-shadow;
+    }
   }
 
   .dropdown-toggle-split::after {
