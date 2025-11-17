@@ -403,7 +403,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
             <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
-            <li><a class="dropdown-item disabled" href="#" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown btn-group">
@@ -426,7 +426,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
                 <li><a href="#">Tertiary Navigation</a></li>
               </ul>
             </li>
-            <li><a class="dropdown-item disabled" href="#" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
             <li>
               <div class="btn-group">
                 <a class="dropdown-item" href="#">Secondary Navigation - Children Disabled</a>
@@ -436,7 +436,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
               </div>
               <ul id="tertiaryMenu2" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
                 <li><a href="#">Tertiary Navigation</a></li>
-                <li><a class="disabled" href="#" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
+                <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
                 <li><a href="#">Tertiary Navigation</a></li>
               </ul>
             </li>

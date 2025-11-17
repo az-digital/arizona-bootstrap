@@ -191,6 +191,11 @@
         text-decoration-color: $blue;
         text-underline-offset: 4px;
       }
+      &.disabled,
+      &[aria-disabled="true"] {
+        color: var(--bs-dropdown-link-disabled-color);
+        pointer-events: none;
+      }
       /* stylelint-enable selector-no-qualifying-type */
     }
   }
