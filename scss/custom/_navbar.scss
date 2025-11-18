@@ -1,3 +1,9 @@
+// AZ Navbar
+//
+// A navbar variation that provides styling for split dropdown buttons at the
+// primary and secondary navigation levels. Also provides styles for a third level
+// of navigation via a collapsible submenu.
+
 .navbar-az {
   --az-navbar-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
   --az-navbar-font-color: #{$azurite};
@@ -13,10 +19,12 @@
     --bs-btn-border-radius: 0;
   }
 
+  .navbar {
+    --bs-navbar-nav-link-padding-x: .5rem;
+  }
+
   // Primary navigation level
   .navbar-nav {
-    --bs-navbar-nav-link-padding-x: .5rem;
-
     // Unsets background colors provided by override/navbar
     .nav-item {
       min-height: 50px;
@@ -125,6 +133,7 @@
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
+    // Button group layout for dropdown toggle at second level
     .btn-group {
       display: flex;
       align-items: center;
@@ -141,6 +150,8 @@
       border-bottom: 1px solid var(--az-navbar-border-color);
       border-left: 1px solid var(--az-navbar-border-color);
     }
+
+    // Plus icon when collapsed
     .dropdown-toggle-split::after {
       font-family: "Material Symbols Rounded", sans-serif;
       font-size: 1.25rem;
@@ -156,6 +167,7 @@
       background-color: $cool-gray;
     }
 
+    // Subtract icon when expanded
     .dropdown-toggle-split[aria-expanded="true"]::after {
       content: "remove";
     }
@@ -184,12 +196,11 @@
       display: block;
       padding-top: .625rem;
       padding-bottom: .625rem;
-      padding-left: var(--bs-navbar-nav-link-padding-x);
+      padding-left: 1.5rem;
       font-weight: 500;
-      color: var(--bs-nav-link-color);
+      color: var(--az-navbar-font-color);
       text-decoration: none;
       border-bottom: 1px solid var(--az-navbar-border-color);
-      --bs-navbar-nav-link-padding-x: 1rem;
 
       /* stylelint-disable selector-no-qualifying-type */
       &.active,
@@ -197,10 +208,10 @@
       &:active,
       &.show,
       &:hover {
-        color: var(--bs-nav-link-hover-color);
+        color: var(--az-navbar-font-hover-color);
         text-decoration: underline;
         text-decoration-thickness: 2px;
-        text-decoration-color: var(--bs-nav-link-hover-color);
+        text-decoration-color: var(--az-navbar-font-hover-color);
         text-underline-offset: 4px;
       }
       &.disabled,
