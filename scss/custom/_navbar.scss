@@ -15,8 +15,9 @@
   font-family: var(--az-navbar-font-family);
 
   // Sharpen all nested buttons
-  .btn {
-    --bs-btn-border-radius: 0;
+  .btn,
+  .btn-group {
+    @include border-radius(0);
   }
 
   .navbar {
@@ -25,10 +26,13 @@
 
   // Primary navigation level
   .navbar-nav {
+    min-height: 50px;
     .nav-item {
       display: flex;
       align-items: center;
-      min-height: 50px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-left: 1px solid var(--az-navbar-border-color);
 
       // Unsets background colors provided by override/navbar
       &:hover {
@@ -44,23 +48,17 @@
     }
   }
 
-  // First primary nav link should have no left border
-  /* stylelint-disable selector-max-class, selector-max-compound-selectors */
-  .navbar-nav > .nav-item:first-child > .nav-link,
-  .navbar-nav > .nav-item:first-child > .btn-group > .nav-link:first-child {
+  // First primary nav item should have no left border
+  .navbar-nav > .nav-item:first-child,
+  .navbar-nav > .nav-item:first-child > .btn-group {
     padding-inline-start: 0;
     border-left: 0;
   }
-  /* stylelint-enable selector-max-class, selector-max-compound-selectors */
 
   .nav-link {
     // Transfer spacing from padding to margin so left border is drawn correctly
     padding-top: 0;
     padding-bottom: 0;
-    margin-top: $navbar-nav-link-padding-y;
-    margin-bottom: $navbar-nav-link-padding-y;
-
-    border-left: 1px solid var(--az-navbar-border-color);
 
     &.active,
     &.is-active,
@@ -77,7 +75,9 @@
 
   /* Primary navigation split dropdown toggle */
   .dropdown-toggle-split {
+    padding-top: 0;
     padding-right: .5rem;
+    padding-bottom: 0;
     padding-left: 0;
     --bs-btn-border-width: 0;
 
