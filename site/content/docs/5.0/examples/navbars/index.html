@@ -6,7 +6,8 @@ extra_css:
 ---
 
 <main>
-<nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+  <!--
+  <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Never expand</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -334,7 +335,7 @@ extra_css:
       </div>
     </div>
   </nav>
-
+-->
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
       <div class="container-fluid">
@@ -542,23 +543,35 @@ extra_css:
                   <li><a href="#">Tertiary Navigation</a></li>
                 </ul>
               </li>
-
-              <!--<li class="nav-item">
-                <div class="btn-group">
-                  <a class="nav-link" type="page" href="#">Secondary Navigation Item</a>
-                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse"  href="#tertiaryMenu3" data-bs-auto-close="outside" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                </div>
-                <ul id="tertiaryMenu3" class="collapse list-unstyled m-0 p-0" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="#">Navigation Item</a></li>
-                </ul>
-              </li>-->
+            </ul>
+          </li>
+          <!-- For testing a "full" navbar-az -->
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Primary Navigation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Longer Primary Navigation</a>
+          </li>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="#">Exceedingly Long Primary Navigation</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="#">Primary Navigation</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
             </ul>
           </li>
         </ul>

@@ -25,9 +25,12 @@
 
   // Primary navigation level
   .navbar-nav {
-    // Unsets background colors provided by override/navbar
     .nav-item {
+      display: flex;
+      align-items: center;
       min-height: 50px;
+
+      // Unsets background colors provided by override/navbar
       &:hover {
         background-color: unset;
       }
@@ -57,8 +60,6 @@
     margin-top: $navbar-nav-link-padding-y;
     margin-bottom: $navbar-nav-link-padding-y;
 
-    /* Prevent nav links from wrapping */
-    white-space: nowrap;
     border-left: 1px solid var(--az-navbar-border-color);
 
     &.active,
