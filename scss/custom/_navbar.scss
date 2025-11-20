@@ -131,6 +131,7 @@
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
     --bs-dropdown-item-padding-x: 1rem;
     --bs-dropdown-item-padding-y: .625rem;
+    margin-top: 1rem;
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
