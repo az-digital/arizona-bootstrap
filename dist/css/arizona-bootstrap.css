@@ -8162,6 +8162,9 @@ textarea.form-control-lg {
   --bs-dark-silver-rgb: 73, 89, 94;
 }
 
+/*
+* > Utilities API Customizations
+*/
 .align-baseline {
   vertical-align: baseline !important;
 }
@@ -10629,6 +10632,10 @@ textarea.form-control-lg {
 
 .lh-lg {
   line-height: 2 !important;
+}
+
+.lh-az-normal {
+  line-height: normal !important;
 }
 
 .text-start {
