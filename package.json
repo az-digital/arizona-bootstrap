@@ -90,7 +90,7 @@
     "hugo-bin": "^0.149.2",
     "jquery": "3.7.1",
     "js-yaml": "^4.1.1",
-    "linkinator": "6.1.2",
+    "linkinator": "^7.5.0",
     "nodemon": "^3.1.10",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
