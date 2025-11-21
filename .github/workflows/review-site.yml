@@ -14,7 +14,7 @@ env:
   AZ_EPHEMERALIMAGENAME: ${{ vars.AZ_EPHEMERALIMAGENAME }}
 jobs:
   lint-code:
-    name: Check code for linting errors
+    name: Check code for linting errors and validate docs
     runs-on: ubuntu-latest
     permissions:
       checks: write
@@ -65,7 +65,7 @@ jobs:
           sudo touch config.yml
           sudo find . -path "./.git" -prune -o -exec chown 1000:1000 {} \;
           sudo chown 1000:1000 .
-          docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
+          docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" test
   review-site:
     name: Build & deploy review site
     needs: lint-code
