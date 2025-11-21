@@ -52,6 +52,7 @@
 
 // Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "override/utilities";
+@import "custom/utilities";
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // Arizona Bootstrap imports.

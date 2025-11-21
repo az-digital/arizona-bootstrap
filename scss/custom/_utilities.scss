@@ -1,0 +1,21 @@
+/*
+* > Utilities API Customizations
+*/
+
+// add "lh-az-normal" line-height utility
+$utilities: map-merge(
+  $utilities,
+  (
+    "line-height": map-merge(
+      map-get($utilities, "line-height"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "line-height"), "values"),
+          (
+            az-normal: normal
+          ),
+        ),
+      ),
+    ),
+  )
+);

@@ -117,11 +117,16 @@ Quickly change the `font-weight` or `font-style` of text with these utilities. `
 
 Change the line height with `.lh-*` utilities.
 
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Arizona Bootstrap includes an additional `.lh-*` variant called `.lh-az-normal`. Use it to easily reset line-height to the browser default.
+
 {{< example >}}
 <p class="lh-1">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
 <p class="lh-sm">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
 <p class="lh-base">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
 <p class="lh-lg">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+<p class="lh-az-normal">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
 {{< /example >}}
 
 ## Monospace
