@@ -29,26 +29,21 @@ extra_css:
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu" id="secondaryMenu1">
-              <li><a class="dropdown-item active" href="{{< ref "secondary" >}}">Secondary Navigation - No Children</a></li>
               <li>
                 <div class="btn-group">
-                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - Children</a>
+                  <a class="dropdown-item active" href="{{< ref "secondary" >}}">Secondary Navigation - Children</a>
                   <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu1" data-bs-auto-close="outside" aria-controls="tertiaryMenu1" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                   </button>
                 </div>
                 <ul id="tertiaryMenu1" class="collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 1">
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
                 </ul>
               </li>
-
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - No Children</a></li>
               <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
-
               <li>
                 <div class="btn-group">
                   <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - Children Disabled</a>
@@ -57,46 +52,9 @@ extra_css:
                   </button>
                 </div>
                 <ul id="tertiaryMenu2" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
                   <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
                   <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <div class="btn-group">
-                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a>
-                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu3" data-bs-auto-close="outside" aria-controls="tertiaryMenu3" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                </div>
-                <ul id="tertiaryMenu3" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 3">
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <div class="btn-group">
-                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a>
-                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu4" data-bs-auto-close="outside" aria-controls="tertiaryMenu4" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                </div>
-                <ul id="tertiaryMenu4" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 4">
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
-                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
                 </ul>
               </li>
             </ul>
