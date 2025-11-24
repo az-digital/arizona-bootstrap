@@ -98,6 +98,8 @@
       description: "Single navbar example with a bottom navbar along with some additional content."
     - name: Offcanvas navbar
       description: "Turn your expandable navbar into a sliding offcanvas menu (doesn't use our offcanvas component)."
+    - name: Navbar AZ
+      description: "Provides styling for split dropdown buttons at the primary and secondary navigation levels and support for a third level of navigation via a collapsible submenu."
 
 - category: RTL
   description: "See Bootstrap's RTL version in action with these modified Custom Components examples."
