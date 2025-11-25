@@ -27,6 +27,15 @@
   // Primary navigation level
   .navbar-nav {
     min-height: 50px;
+
+    .nav-link {
+      &.active,
+      &:active,
+      &.is-active {
+        font-weight: 600;
+      }
+    }
+
     .nav-item {
       display: flex;
       align-items: center;
@@ -184,6 +193,12 @@
     font-weight: 500;
     border-bottom: 1px solid var(--az-navbar-border-color);
     border-left: unset;
+
+    &.active,
+    &.is-active,
+    &:active {
+      font-weight: 700;
+    }
   }
 
   // Tertiary navigation level
