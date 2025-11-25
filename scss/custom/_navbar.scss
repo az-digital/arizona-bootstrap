@@ -237,7 +237,11 @@
       /* stylelint-disable selector-no-qualifying-type */
       &.active,
       &.is-active,
-      &:active,
+      &:active {
+        font-weight: 700;
+        color: var(--az-navbar-font-hover-color);
+      }
+
       &.show,
       &:hover {
         color: var(--az-navbar-font-hover-color);
