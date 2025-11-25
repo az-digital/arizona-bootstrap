@@ -134,7 +134,6 @@
     --bs-dropdown-spacer: 0;
     --bs-dropdown-bg: #fff;
     --bs-dropdown-border-color: #{$azurite};
-    --bs-dropdown-border-radius: 0;
     --bs-dropdown-border-width: 0;
     --bs-dropdown-link-color: var(--az-navbar-font-color);
     --bs-dropdown-link-hover-color: #{$nav-link-hover-color};
@@ -143,6 +142,7 @@
     --bs-dropdown-item-padding-x: 1rem;
     --bs-dropdown-item-padding-y: .625rem;
     margin-top: 1rem;
+    overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
