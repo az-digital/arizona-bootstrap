@@ -11,6 +11,7 @@
   --az-navbar-font-disabled-color: #{$dark-silver};
   --az-navbar-border-color: #{$cool-gray};
   --az-navbar-accent-color: #{$red};
+  --bs-navbar-nav-link-padding-x: .625rem;
 
   font-family: var(--az-navbar-font-family);
 
@@ -18,10 +19,6 @@
   .btn,
   .btn-group {
     @include border-radius(0);
-  }
-
-  .navbar {
-    --bs-navbar-nav-link-padding-x: .5rem;
   }
 
   // Primary navigation level
@@ -39,8 +36,8 @@
     .nav-item {
       display: flex;
       align-items: center;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: .75rem;
+      margin-bottom: .75rem;
       border-left: 1px solid var(--az-navbar-border-color);
 
       // Unsets background colors provided by override/navbar
@@ -82,10 +79,15 @@
     }
   }
 
+  // Reduce spacing between the nav-link and the split toggle button
+  .btn-group:has(.dropdown-toggle-split) > .nav-link {
+    padding-right: .3125rem;
+  }
+
   /* Primary navigation split dropdown toggle */
   .dropdown-toggle-split {
     padding-top: 0;
-    padding-right: .5rem;
+    padding-right: .625rem;
     padding-bottom: 0;
     padding-left: 0;
     --bs-btn-border-width: 0;
@@ -101,6 +103,7 @@
     font-family: "Material Symbols Rounded", sans-serif;
     font-size: 1.55rem; // Increased slightly from 1.5 so that top of icon is not clipped on hover
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    line-height: 1;
     color: var(--az-navbar-font-color);
     vertical-align: 0;
     content: "expand_circle_down";
