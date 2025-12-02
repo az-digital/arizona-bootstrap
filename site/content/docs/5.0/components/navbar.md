@@ -376,6 +376,8 @@ Mix and match with other components and utilities as needed.
 
 ## AZ Navbar
 
+<p class="mt-4"><span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span></p>
+
 Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styling and gain support for a third level of navigation.
 
 {{< example >}}
@@ -395,11 +397,10 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
-        <li class="nav-item dropdown btn-group">
-          <a class="nav-link" href="#">Dropdown</a>
-          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-          </button>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Single Dropdown
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
             <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
@@ -407,7 +408,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
           </ul>
         </li>
         <li class="nav-item dropdown btn-group">
-          <a class="nav-link" href="#">Deep Dropdown</a>
+          <a class="nav-link" href="#">Split Dropdown</a>
           <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
