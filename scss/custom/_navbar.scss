@@ -7,7 +7,8 @@
 .navbar-az {
   --az-navbar-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
   --az-navbar-font-color: #{$azurite};
-  --az-navbar-font-hover-color: #{$midnight};
+  --az-navbar-font-hover-color: #{$blue};
+  --az-navbar-font-active-color: #{$blue};
   --az-navbar-font-disabled-color: #{$dark-silver};
   --az-navbar-border-color: #{$cool-gray};
   --az-navbar-accent-color: #{$red};
@@ -18,6 +19,7 @@
 
   // Primary navigation level
   .navbar-nav {
+    --bs-nav-link-hover-color: var(--az-navbar-font-hover-color);
     min-height: 50px;
   }
 
@@ -52,12 +54,7 @@
     // No vertical padding so left border is drawn correctly
     padding: 0 var(--bs-navbar-nav-link-padding-x);
 
-    &.active,
-    &:active,
-    &.is-active {
-      font-weight: 600;
-    }
-
+    // Both hover and active states have an underline
     &.active,
     &.is-active,
     &:active,
@@ -65,9 +62,22 @@
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
-      text-decoration-color: var(--az-navbar-accent-color);
       text-underline-offset: 4px;
       background-color: unset;
+    }
+
+    // On active, font color is blue and underline is red
+    &.active,
+    &.is-active,
+    &:active {
+      font-weight: 600; // potentially remove this
+      color: var(--az-navbar-font-active-color);
+      text-decoration-color: var(--az-navbar-accent-color);
+    }
+
+    // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
+    &:hover {
+      text-decoration-color: var(--az-navbar-font-hover-color);
     }
   }
 
