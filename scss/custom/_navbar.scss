@@ -270,18 +270,31 @@
       text-decoration: none;
       border-bottom: 1px solid var(--az-navbar-border-color);
 
-      /* stylelint-disable selector-no-qualifying-type */
+      // Both hover and active states have an underline
       &.active,
       &.is-active,
       &:active,
       &.show,
       &:hover {
-        color: var(--az-navbar-font-hover-color);
         text-decoration: underline;
         text-decoration-thickness: 2px;
-        text-decoration-color: var(--az-navbar-font-hover-color);
         text-underline-offset: 4px;
+        background-color: unset;
       }
+
+      // On active, font color is blue and underline is red
+      &.active,
+      &.is-active,
+      &:active {
+        color: var(--az-navbar-font-active-color);
+        text-decoration-color: var(--az-navbar-accent-color);
+      }
+
+      // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
+      &:hover {
+        text-decoration-color: var(--az-navbar-font-hover-color);
+      }
+
       &.disabled,
       &[aria-disabled="true"] {
         color: var(--az-navbar-font-disabled-color);
