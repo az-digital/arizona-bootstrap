@@ -140,6 +140,7 @@
   // Dropdown button icon is a red outline when when a second or third level nav item
   // is active in its menu subtree.
   .btn-group:has(.dropdown-item.active) > .dropdown-toggle,
+  .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
   .btn-group:has(.collapse .active) > .dropdown-toggle {
     &::after {
       font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
@@ -196,6 +197,17 @@
       vertical-align: 0;
       content: "add";
       border: 0;
+    }
+
+    // Dropdown button icon is a red outline when when a second or third level nav item
+    // is active in its menu subtree.
+    .btn-group:has(.dropdown-item.active) > .dropdown-toggle,
+    .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
+    .btn-group:has(.collapse .active) > .dropdown-toggle {
+      &::after {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        color: var(--az-navbar-font-color);
+      }
     }
 
     // Dropdown button should remain blue when the navigation item at its level is active (i.e. the
