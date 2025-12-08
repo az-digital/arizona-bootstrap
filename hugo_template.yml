@@ -84,11 +84,11 @@ params:
   cdn:
     # See https://www.srihash.org for info on how to generate the hashes
     css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.min.css"
-    css_hash:         "sha384-ApP2fps49LykTiqbiRU45K9oqlzj+6sV/fvA95vBXDvX5Cp/VJDK/Ic/sbiAitC2"
+    css_hash:         "sha384-iYOnr8Hj0RXIhl/BxCC0Toy2XNBcLWttSBmzLk4a/Qg6Dxcrnsg0DnVNycNVbG/x"
     js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.min.js"
-    js_hash:          "sha384-xJsfMLqwL1jzd+zd5CAL3gMHecLFBthOP5Q6Ya5v/PvG4pnokr8XedZLgmoiTS0J"
+    js_hash:          "sha384-N/wL3UPyx+QgvQLS/w53Ml7hnSVu3lsC7PErhPGL8SECzTZGZX3vhPkURlJaD+dA"
     js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.bundle.min.js"
-    js_bundle_hash:   "sha384-sRagVU6/z87nR4eHA5SZkXYknWc9u39cFmFl3va5k6osltnhugO9WSul1NlmvgMf"
+    js_bundle_hash:   "sha384-OBOg++3/nl/Ky+ydb9oG52l4F4Mf6YSFGTF3qjeidp3L+BOb48+L4TPJXEolcvxG"
     jquery:           "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"
     jquery_hash:      "sha384-5AkRS45j4ukf+JbWAfHL8P4onPA9p0KwwP7pUdjSQA3ss9edbJUJc/XcYAiheSSz"
     popper:           "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
