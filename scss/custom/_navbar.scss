@@ -1,0 +1,339 @@
+// AZ Navbar
+//
+// A navbar variation that provides styling for split dropdown buttons at the
+// primary and secondary navigation levels. Also provides styles for a third level
+// of navigation via a collapsible submenu.
+
+.navbar-az {
+  --az-navbar-font-weight: 600; // semibold
+  --az-navbar-font-size: 18px;
+  --az-navbar-line-height: 22px;
+  --az-navbar-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
+  --az-navbar-font: normal normal var(--az-navbar-font-weight) var(--az-navbar-font-size) / var(--az-navbar-line-height) var(--az-navbar-font-family);
+  --az-navbar-font-color: #{$azurite};
+  --az-navbar-font-hover-color: #{$blue};
+  --az-navbar-font-active-color: #{$blue};
+  --az-navbar-font-disabled-color: #{$dark-silver};
+  --az-navbar-border-color: #{$cool-gray};
+  --az-navbar-accent-color: #{$red};
+  --az-navbar-min-height: 60px;
+  --az-navbar-nav-item-margin-y: 1.25rem;
+  --bs-navbar-color: #{$azurite};
+  --bs-navbar-hover-color: #{$blue};
+  --bs-navbar-disabled-color: #{$dark-silver};
+  --bs-navbar-active-color: #{$blue};
+  --bs-navbar-nav-link-padding-x: .75rem;
+
+  font: var(--az-navbar-font);
+
+  // Primary navigation level
+  .navbar-nav {
+    --bs-nav-link-font-weight: var(--az-navbar-font-weight);
+    --bs-nav-link-hover-color: var(--az-navbar-font-hover-color);
+    min-height: var(--az-navbar-min-height);
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-top: var(--az-navbar-nav-item-margin-y);
+    margin-bottom: var(--az-navbar-nav-item-margin-y);
+    line-height: var(--az-navbar-line-height);
+    border-left: 1px solid var(--az-navbar-border-color);
+    @include border-radius(0);
+
+    // Unsets background colors provided by override/navbar
+    &:hover {
+      background-color: unset;
+    }
+
+    &:has(> .nav-link.active),
+    &:has(> .nav-link.is-active),
+    &:has(> .nav-link:active),
+    &:has(> .nav-link.show) {
+      background-color: unset;
+    }
+
+    // First primary nav item should have no left border
+    &:first-child {
+      padding-inline-start: 0;
+      border-left: 0;
+    }
+  }
+
+  .nav-link {
+    // No vertical padding so left border is drawn correctly
+    padding: 0 var(--bs-navbar-nav-link-padding-x);
+
+    // Both hover and active states have an underline
+    &.active,
+    &.is-active,
+    &:active,
+    &.show,
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      background-color: unset;
+    }
+
+    // On active, font color is blue and underline is red
+    &.active,
+    &.is-active,
+    &:active {
+      color: var(--az-navbar-font-active-color);
+      text-decoration-color: var(--az-navbar-accent-color);
+    }
+
+    // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
+    &:hover {
+      text-decoration-color: var(--az-navbar-font-hover-color);
+    }
+  }
+
+  // Reduce spacing between the nav-link and the split toggle button
+  .btn-group:has(.dropdown-toggle-split) > .nav-link {
+    padding-right: .3125rem;
+  }
+
+  .dropdown-toggle {
+    @include border-radius(0);
+    &::after {
+      display: inline-block; // This prevents the parent's underline from drawing through the icon
+      margin-bottom: 0; // Remove Bootstrap's default bottom margin on the single dropdown's icon
+      font-family: "Material Symbols Rounded", sans-serif;
+      font-size: 1.55rem; // Increased slightly from 1.5 so that top of icon is not clipped on hover
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-weight: 300; // Needed to prevent inheritance of parent's font weight - otherwise redundant
+      line-height: 1;
+      color: var(--az-navbar-font-color);
+      vertical-align: 0;
+      content: "expand_circle_down";
+      border: 0;
+    }
+  }
+
+  /* Primary navigation split dropdown toggle */
+  .dropdown-toggle-split {
+    padding-top: 0;
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-bottom: 0;
+    padding-left: 0;
+    --bs-btn-border-width: 0;
+
+    &:focus-visible {
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: $focus-ring-box-shadow;
+    }
+  }
+
+  // Position the icon for single dropdowns to prevent underline and overlap issues
+  :not(.btn-group) > .dropdown-toggle {
+    position: relative; // Create a positioning context for the ::after element
+    padding-right: 2.3125rem; // Add space on the right for the icon (32+5px)
+
+    &::after {
+      position: absolute; // Take the icon out of the document flow
+      top: 50%; // Center it vertically
+      right: .625rem; // Position the icon from the right edge
+      transform: translateY(-50%); // Fine-tune vertical centering
+    }
+  }
+
+  // Dropdown button icon is a red outline when when a second or third level nav item
+  // is active in its menu subtree.
+  .dropdown:has(.dropdown-item.active) > .dropdown-toggle,
+  .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
+  .dropdown:has(.collapse .active) > .dropdown-toggle {
+    &::after {
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+    }
+  }
+
+  // Dropdown icon should be filled when hovering, regardless of active children
+  .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover,
+  .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
+  .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
+    &::after {
+      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+    }
+  }
+
+  // Dropdown button has a red fill on hover or when expanded
+  .dropdown-toggle:hover,
+  .btn-group:has(.active) > .dropdown-toggle-split:hover,
+  .dropdown-toggle[aria-expanded="true"],
+  .btn-group:has(.active) > .dropdown-toggle-split[aria-expanded="true"],
+  .nav-link.dropdown-toggle:hover,
+  .nav-link.dropdown-toggle[aria-expanded="true"] {
+    &::after {
+      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+      text-decoration: none; // Prevent underline from being inherited
+    }
+  }
+
+  // Secondary navigation level
+  .dropdown-menu {
+    --bs-dropdown-padding-y: 0;
+    --bs-dropdown-spacer: 0;
+    --bs-dropdown-font-size: var(--az-navbar-font-size);
+    --bs-dropdown-bg: #fff;
+    --bs-dropdown-border-color: #{$azurite};
+    --bs-dropdown-border-width: 0;
+    --bs-dropdown-link-color: var(--az-navbar-font-color);
+    --bs-dropdown-link-hover-color: var(--az-navbar-font-hover-color);
+    --bs-dropdown-link-hover-bg: var(--az-navbar-border-color);
+    --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
+    --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
+    --bs-dropdown-item-padding-x: 1.25rem;
+    --bs-dropdown-item-padding-y: .75rem;
+    margin-top: var(--az-navbar-nav-item-margin-y);
+    overflow: hidden;
+    border-top: 2px solid var(--bs-dropdown-border-color);
+    box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
+
+    .dropdown-toggle-split {
+      padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
+      margin-inline-start: auto; // pushes to the far right
+      border-left: 1px solid var(--az-navbar-border-color);
+    }
+
+    // Plus icon when collapsed
+    .dropdown-toggle-split::after {
+      font-family: "Material Symbols Rounded", sans-serif;
+      font-size: 1.25rem;
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-font-color);
+      vertical-align: 0;
+      content: "add";
+      border: 0;
+    }
+
+    // Dropdown button icon is a red outline when when a second or third level nav item
+    // is active in its menu subtree.
+    .btn-group:has(.dropdown-item.active) > .dropdown-toggle,
+    .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
+    .btn-group:has(.collapse .active) > .dropdown-toggle {
+      &::after {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        color: var(--az-navbar-font-color);
+      }
+    }
+
+    // Dropdown button should remain blue when the navigation item at its level is active (i.e. the
+    // active navigation is itself rather than a child)
+    .btn-group:has(.dropdown-item.active) > .dropdown-toggle-split {
+      &::after {
+        color: var(--az-navbar-font-color);
+      }
+    }
+
+    // Style the toggle when a sibling .collapse menu has an active item
+    li:has(.collapse .active) .dropdown-toggle-split {
+      background-color: $cool-gray;
+    }
+
+    .dropdown-toggle-split:hover,
+    .dropdown-toggle-split[aria-expanded="true"] {
+      background-color: $cool-gray;
+    }
+
+    // Subtract icon when expanded
+    .dropdown-toggle-split[aria-expanded="true"]::after {
+      content: "remove";
+    }
+
+    // Button group layout for dropdown toggle at second level
+    .btn-group {
+      display: flex;
+      @include border-radius(0);
+      .btn {
+        margin-left: 0;
+      }
+    }
+
+    li {
+      border-bottom: 1px solid var(--az-navbar-border-color);
+    }
+  }
+
+  .dropdown-item {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0; // allows text truncation if needed
+    font-weight: var(--az-navbar-font-weight);
+    border-left: unset;
+
+    &.active,
+    &.is-active {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--az-navbar-accent-color);
+      text-underline-offset: 4px;
+    }
+  }
+
+  // Tertiary navigation level
+  .dropdown-menu .collapse,
+  .dropdown-menu .collapsing {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: $cool-gray;
+
+    a {
+      display: block;
+      padding-top: var(--bs-dropdown-item-padding-y);
+      padding-bottom: var(--bs-dropdown-item-padding-y);
+      padding-left: 1.875rem;
+      font-weight: var(--az-navbar-font-weight);
+      color: var(--az-navbar-font-color);
+      text-decoration: none;
+      border-bottom: 1px solid var(--az-navbar-border-color);
+
+      /* stylelint-disable selector-no-qualifying-type */
+      // Both hover and active states have an underline
+      &.active,
+      &.is-active,
+      &:active,
+      &.show,
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+        background-color: unset;
+      }
+
+      // On active, font color is blue and underline is red
+      &.active,
+      &.is-active,
+      &:active {
+        color: var(--az-navbar-font-active-color);
+        text-decoration-color: var(--az-navbar-accent-color);
+      }
+
+      // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
+      &:hover {
+        text-decoration-color: var(--az-navbar-font-hover-color);
+      }
+
+      &.disabled,
+      &[aria-disabled="true"] {
+        color: var(--az-navbar-font-disabled-color);
+        pointer-events: none;
+      }
+      /* stylelint-enable selector-no-qualifying-type */
+    }
+  }
+  .dropdown-menu .collapsing {
+    height: auto;
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-property: none;
+  }
+}

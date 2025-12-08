@@ -6,6 +6,7 @@ extra_css:
 ---
 
 <main>
+
   <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Never expand</a>
@@ -434,6 +435,119 @@ extra_css:
       </div>
     </nav>
 
+    <!-- AZ Navbar -->
+    <nav class="navbar navbar-az navbar-expand" aria-label="Fourteenth navbar example">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample12" aria-controls="navbarsExample12" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample12">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="#">Dropdown</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="#">Deep Dropdown</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" id="secondaryMenu1">
+              <li><a class="dropdown-item" href="#">Secondary Navigation - No Children</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="#">Secondary Navigation - Children</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu1" data-bs-auto-close="outside" aria-controls="tertiaryMenu1" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu1" class="collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 1">
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+
+              <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="#">Secondary Navigation - Children Disabled</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu2" data-bs-auto-close="outside" aria-controls="tertiaryMenu2" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu2" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="#">Secondary Navigation</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu3" data-bs-auto-close="outside" aria-controls="tertiaryMenu3" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu3" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 3">
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="#">Secondary Navigation</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu4" data-bs-auto-close="outside" aria-controls="tertiaryMenu4" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu4" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 4">
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                  <li><a href="#">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div>
       <div class="bg-body-tertiaryp-5 rounded">
         <div class="col-sm-8 mx-auto">
