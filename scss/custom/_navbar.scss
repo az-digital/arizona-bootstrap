@@ -7,19 +7,23 @@
 .navbar-az {
   --az-navbar-font-weight: 600; // semibold
   --az-navbar-font-size: 18px;
-  --az-navbar-font: normal normal var(--az-navbar-font-weight) var(--az-navbar-font-size) / 22px proxima-nova-condensed, #{$font-family-sans-serif};
+  --az-navbar-line-height: 22px;
+  --az-navbar-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
+  --az-navbar-font: normal normal var(--az-navbar-font-weight) var(--az-navbar-font-size) / var(--az-navbar-line-height) var(--az-navbar-font-family);
   --az-navbar-font-color: #{$azurite};
   --az-navbar-font-hover-color: #{$blue};
   --az-navbar-font-active-color: #{$blue};
   --az-navbar-font-disabled-color: #{$dark-silver};
   --az-navbar-border-color: #{$cool-gray};
   --az-navbar-accent-color: #{$red};
-  --az-navbar-nav-item-margin-y: .75rem;
+  --az-navbar-min-height: 60px;
+  // --az-navbar-nav-item-margin-y: calc((var(--az-navbar-min-height) - var(--az-navbar-line-height)) / 2); // 19
+  --az-navbar-nav-item-margin-y: 1.25rem;
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
   --bs-navbar-active-color: #{$blue};
-  --bs-navbar-nav-link-padding-x: .625rem;
+  --bs-navbar-nav-link-padding-x: .75rem;
 
   font: var(--az-navbar-font);
 
@@ -27,7 +31,7 @@
   .navbar-nav {
     --bs-nav-link-font-weight: var(--az-navbar-font-weight);
     --bs-nav-link-hover-color: var(--az-navbar-font-hover-color);
-    min-height: 50px;
+    min-height: var(--az-navbar-min-height);
   }
 
   .nav-item {
@@ -35,6 +39,7 @@
     align-items: center;
     margin-top: var(--az-navbar-nav-item-margin-y);
     margin-bottom: var(--az-navbar-nav-item-margin-y);
+    line-height: var(--az-navbar-line-height);
     border-left: 1px solid var(--az-navbar-border-color);
     @include border-radius(0);
 
@@ -112,7 +117,7 @@
   /* Primary navigation split dropdown toggle */
   .dropdown-toggle-split {
     padding-top: 0;
-    padding-right: .625rem;
+    padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-bottom: 0;
     padding-left: 0;
     --bs-btn-border-width: 0;
@@ -139,9 +144,9 @@
 
   // Dropdown button icon is a red outline when when a second or third level nav item
   // is active in its menu subtree.
-  .btn-group:has(.dropdown-item.active) > .dropdown-toggle,
-  .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
-  .btn-group:has(.collapse .active) > .dropdown-toggle {
+  .dropdown:has(.dropdown-item.active) > .dropdown-toggle,
+  .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
+  .dropdown:has(.collapse .active) > .dropdown-toggle {
     &::after {
       font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
       color: var(--az-navbar-accent-color);
@@ -175,8 +180,8 @@
     --bs-dropdown-link-hover-bg: var(--az-navbar-border-color);
     --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
-    --bs-dropdown-item-padding-x: 1rem;
-    --bs-dropdown-item-padding-y: .625rem;
+    --bs-dropdown-item-padding-x: 1.25rem;
+    --bs-dropdown-item-padding-y: .75rem;
     margin-top: var(--az-navbar-nav-item-margin-y);
     overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
@@ -274,9 +279,9 @@
 
     a {
       display: block;
-      padding-top: .625rem;
-      padding-bottom: .625rem;
-      padding-left: 1.5rem;
+      padding-top: var(--bs-dropdown-item-padding-y);
+      padding-bottom: var(--bs-dropdown-item-padding-y);
+      padding-left: 1.875rem;
       font-weight: var(--az-navbar-font-weight);
       color: var(--az-navbar-font-color);
       text-decoration: none;
