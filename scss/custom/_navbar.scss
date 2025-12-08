@@ -153,10 +153,20 @@
     }
   }
 
+  // Dropdown icon should be filled when hovering, regardless of active children
+  .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover,
+  .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
+  .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
+    &::after {
+      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+    }
+  }
+
   // Dropdown button has a red fill on hover or when expanded
-  .dropdown-toggle-split:hover,
+  .dropdown-toggle:hover,
   .btn-group:has(.active) > .dropdown-toggle-split:hover,
-  .dropdown-toggle-split[aria-expanded="true"],
+  .dropdown-toggle[aria-expanded="true"],
   .btn-group:has(.active) > .dropdown-toggle-split[aria-expanded="true"],
   .nav-link.dropdown-toggle:hover,
   .nav-link.dropdown-toggle[aria-expanded="true"] {
