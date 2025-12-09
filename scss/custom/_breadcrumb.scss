@@ -3,6 +3,7 @@
   padding-right: $breadcrumb-item-padding-x;
   // stylelint-disable-next-line
   font-family: "Material Symbols Rounded";
+  font-variation-settings: "FILL" 1, "wght" 400;
   color: $breadcrumb-divider-color;
   content: "home";
 }
