@@ -22125,6 +22125,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .navbar-az .dropdown-menu .collapse a:hover,
 .navbar-az .dropdown-menu .collapsing a:hover {
+  color: var(--az-navbar-font-hover-color);
   -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
   text-decoration-color: var(--az-navbar-font-hover-color);
 }
