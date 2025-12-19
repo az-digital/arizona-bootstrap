@@ -317,8 +317,8 @@
         text-decoration-color: var(--az-navbar-accent-color);
       }
 
-      // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
       &:hover {
+        color: var(--az-navbar-font-hover-color);
         text-decoration-color: var(--az-navbar-font-hover-color);
       }
 
