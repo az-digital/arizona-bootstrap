@@ -10,6 +10,10 @@
   }
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Material Symbols Rounded", monospace;
+}
+
 // Remove margins/padding on Breadcrumbs for larger displays
 @include media-breakpoint-up(lg) {
   .breadcrumb {
