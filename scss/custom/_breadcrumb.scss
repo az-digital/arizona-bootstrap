@@ -2,6 +2,7 @@
   float: left; // Suppress inline spacings and underlining of the separator
   padding-right: $breadcrumb-item-padding-x;
   font-family: "Material Symbols Rounded", monospace;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: $breadcrumb-divider-color;
   // Material Symbols Rounded: Home
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:home
