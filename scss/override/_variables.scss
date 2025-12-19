@@ -104,6 +104,10 @@ $breadcrumb-padding-x: 1rem;
 $breadcrumb-padding-y: .75rem;
 // fusv-enable
 $breadcrumb-divider-color: $gray-600;
+$az-breadcrumb-divider-svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' width='1em' height='1em'><g transform='translate(0,160)'><path fill='#{$breadcrumb-divider-color}' d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></g></svg>";
+// fusv-disable
+$breadcrumb-divider: url("data:image/svg+xml,#{escape-svg($az-breadcrumb-divider-svg)}");
+// fusv-enable
 
 // >> Buttons
 // fusv-disable
