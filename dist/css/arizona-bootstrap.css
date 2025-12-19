@@ -19417,6 +19417,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   float: left;
   padding-right: 0.5rem;
   font-family: "Material Symbols Rounded";
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: #6c757d;
   content: "home";
 }
