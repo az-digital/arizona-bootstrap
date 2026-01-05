@@ -187,13 +187,27 @@
   }
 
   // Keyboard accessibility: keep menu open while focus is inside the dropdown
-  .nav-item:focus-within > .dropdown-menu {
+  // Keyboard accessibility
+  // Single dropdown: focus the link toggle opens the menu
+  .nav-link.dropdown-toggle:focus ~ .dropdown-menu {
+    display: block;
+  }
+
+  // Split dropdown: only the split toggle opens on focus
+  .nav-item .dropdown-toggle-split:focus ~ .dropdown-menu {
+    display: block;
+  }
+
+  // Keep menu open while keyboard focus is inside the submenu
+  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-menu {
     display: block;
   }
 
   // Keep the primary toggle icon solid red when submenu is open via keyboard focus
-  .nav-item:focus-within > .dropdown-toggle::after,
-  .nav-item:focus-within > .dropdown-toggle-split::after {
+  .nav-item .nav-link.dropdown-toggle:focus::after,
+  .nav-item .dropdown-toggle-split:focus::after,
+  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
+  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
     font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
     color: var(--az-navbar-accent-color);
   }
@@ -201,7 +215,12 @@
   // Touch-safe hover open: limit to devices that support hover
   @media (hover: hover) {
     // Single dropdown: hover the link toggle opens the menu
-    .nav-item .dropdown-toggle:hover ~ .dropdown-menu {
+    .nav-link.dropdown-toggle:hover ~ .dropdown-menu {
+      display: block;
+    }
+
+    // Split dropdown: only the split toggle hovers open
+    .nav-item .dropdown-toggle-split:hover ~ .dropdown-menu {
       display: block;
     }
 
