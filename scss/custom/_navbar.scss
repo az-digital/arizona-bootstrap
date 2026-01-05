@@ -115,6 +115,7 @@
 
   /* Primary navigation split dropdown toggle */
   .dropdown-toggle-split {
+    position: relative; // Create positioning context for hover-bridge pseudo element
     padding-top: 0;
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-bottom: 0;
@@ -174,10 +175,73 @@
       color: var(--az-navbar-accent-color);
       text-decoration: none; // Prevent underline from being inherited
     }
+
+    ~ .dropdown-menu {
+      display: block;
+    }
+  }
+
+  // Positioning context only for AZ Navbar dropdowns
+  .nav-item.dropdown {
+    position: relative;
+  }
+
+  // Keyboard accessibility: keep menu open while focus is inside the dropdown
+  .nav-item.dropdown:focus-within > .dropdown-menu {
+    display: block;
+  }
+
+  // Keep the primary toggle icon solid red when submenu is open via keyboard focus
+  .nav-item.dropdown:focus-within > .nav-link.dropdown-toggle::after,
+  .nav-item.dropdown:focus-within > .dropdown-toggle-split::after {
+    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+    color: var(--az-navbar-accent-color);
+  }
+
+  // Touch-safe hover open: limit to devices that support hover
+  @media (hover: hover) {
+    // Single dropdown: hover the link toggle opens the menu
+    .nav-item.dropdown .nav-link.dropdown-toggle:hover ~ .dropdown-menu {
+      display: block;
+    }
+
+    // Split dropdown: only the split toggle hovers open
+    .nav-item.dropdown .dropdown-toggle-split:hover ~ .dropdown-menu {
+      display: block;
+    }
+
+    // Keep menu open when hovering the menu itself
+    .nav-item.dropdown .dropdown-menu:hover {
+      display: block;
+    }
+
+    // Keep the primary toggle icon solid red while hovering the submenu
+    .nav-item.dropdown:has(> .dropdown-menu:hover) > .nav-link.dropdown-toggle::after,
+    .nav-item.dropdown:has(> .dropdown-menu:hover) > .dropdown-toggle-split::after {
+      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+    }
+
+    // Hover bridge: extend the toggle's hit area down to the menu gap
+    // Prevents flicker when moving cursor from toggle to menu
+    .nav-item.dropdown .dropdown-toggle-split::before,
+    :not(.btn-group) > .dropdown-toggle::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(-1 * var(--az-navbar-nav-item-margin-y));
+      height: var(--az-navbar-nav-item-margin-y);
+      background: transparent;
+    }
   }
 
   // Secondary navigation level
   .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
     --bs-dropdown-padding-y: 0;
     --bs-dropdown-spacer: 0;
     --bs-dropdown-font-size: var(--az-navbar-font-size);
