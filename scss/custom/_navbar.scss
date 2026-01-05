@@ -265,6 +265,7 @@
     --bs-dropdown-link-hover-color: var(--az-navbar-font-hover-color);
     --bs-dropdown-link-hover-bg: var(--az-navbar-border-color);
     --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
+    // --bs-dropdown-link-active-bg: var(--az-navbar-border-color);
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
     --bs-dropdown-item-padding-x: 1.25rem;
     --bs-dropdown-item-padding-y: .75rem;
@@ -352,6 +353,10 @@
       text-decoration-thickness: 2px;
       text-decoration-color: var(--az-navbar-accent-color);
       text-underline-offset: 4px;
+    }
+
+    &:focus {
+      background-color: var(--az-navbar-border-color);
     }
   }
 
