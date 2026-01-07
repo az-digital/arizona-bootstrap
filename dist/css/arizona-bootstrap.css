@@ -22085,6 +22085,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   text-decoration-color: var(--az-navbar-accent-color);
   text-underline-offset: 4px;
 }
+.navbar-az .dropdown-item:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
+  text-decoration-color: var(--az-navbar-font-hover-color);
+  text-underline-offset: 4px;
+}
 .navbar-az .dropdown-menu .collapse,
 .navbar-az .dropdown-menu .collapsing {
   padding: 0;
