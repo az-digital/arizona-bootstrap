@@ -243,7 +243,7 @@
       top: 100%;
       right: 0;
       left: 0;
-      height: var(--az-navbar-nav-item-margin-y);
+      height: calc(var(--az-navbar-nav-item-margin-y) + 2px); /* stylelint-disable-line function-disallowed-list */
       content: "";
       background: transparent;
     }
