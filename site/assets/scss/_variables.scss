@@ -12,9 +12,7 @@ $bd-callout-variants: info, warning, danger !default;
   --bd-purple: #{$bd-purple};
   --bd-violet: #{$bd-violet};
   --bd-accent: #{$bd-accent};
-  // stylelint-disable-next-line scss/dollar-variable-no-missing-interpolation
   --bd-violet-rgb: #{to-rgb($bd-violet)};
-  // stylelint-disable-next-line scss/dollar-variable-no-missing-interpolation
   --bd-accent-rgb: #{to-rgb($bd-accent)};
   --bd-pink-rgb: #{to-rgb($pink-500)};
   --bd-teal-rgb: #{to-rgb($teal-500)};
@@ -27,11 +25,9 @@ $bd-callout-variants: info, warning, danger !default;
 }
 
 @include color-mode(dark, true) {
-  // stylelint-disable-next-line scss/dollar-variable-no-missing-interpolation
   --bd-violet: #{mix($bd-violet, $white, 75%)};
   --bd-violet-bg: #{$bd-violet};
   --bd-toc-color: var(--#{$prefix}emphasis-color);
-  // stylelint-disable-next-line scss/dollar-variable-no-missing-interpolation
   --bd-sidebar-link-bg: rgba(#{to-rgb(mix($bd-violet, $black, 75%))}, .5);
   --bd-callout-link: #{to-rgb($blue-300)};
   --bd-callout-code-color: #{$pink-300};
