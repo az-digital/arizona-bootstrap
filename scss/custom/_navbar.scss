@@ -276,6 +276,13 @@
       text-decoration-color: var(--az-navbar-accent-color);
       text-underline-offset: 4px;
     }
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--az-navbar-font-hover-color);
+      text-underline-offset: 4px;
+    }
   }
 
   // Tertiary navigation level
