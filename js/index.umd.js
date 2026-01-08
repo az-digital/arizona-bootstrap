@@ -19,7 +19,7 @@ import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
-import enableAzNavbarHoverDropdowns from './src/navbar-az-hover-dropdown.js'
+import enableAzNavbarHoverDropdowns from './src/navbar.js'
 
 export default {
   Alert,
