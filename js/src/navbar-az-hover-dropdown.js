@@ -6,6 +6,12 @@
  */
 
 import Dropdown from '../../node_modules/bootstrap/js/src/dropdown.js'
+import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
+
+const HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)'
+const HIDE_DELAY_MS = 300
+
+const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
 
 function getPrimaryDropdownTrigger(dropdownElement) {
   const splitToggle = dropdownElement.querySelector(':scope > .dropdown-toggle.dropdown-toggle-split')
@@ -42,8 +48,88 @@ function closeOtherDropdowns(navbar, currentDropdownElement) {
   }
 }
 
+class NavbarHoverDropdown extends Dropdown {
+  constructor(element, dropdownElement, navbar, config) {
+    super(element, config)
+
+    this._dropdownElement = dropdownElement
+    this._navbar = navbar
+    this._hideTimer = null
+
+    if (supportsPointerHover()) {
+      this._addHoverListeners()
+    }
+  }
+
+  dispose() {
+    this._removeHoverListeners()
+    super.dispose()
+  }
+
+  _addHoverListeners() {
+    if (!this._dropdownElement) {
+      return
+    }
+
+    this._boundOnEnter = () => this._handleHoverEnter()
+    this._boundOnLeave = () => this._handleHoverLeave()
+    this._boundMenuEnter = () => this._cancelScheduledHide()
+    this._boundMenuLeave = () => this._handleHoverLeave()
+
+    EventHandler.on(this._element, 'mouseenter', this._boundOnEnter)
+    EventHandler.on(this._element, 'mouseleave', this._boundOnLeave)
+    EventHandler.on(this._dropdownElement, 'mouseleave', this._boundOnLeave)
+
+    if (this._menu) {
+      EventHandler.on(this._menu, 'mouseenter', this._boundMenuEnter)
+      EventHandler.on(this._menu, 'mouseleave', this._boundMenuLeave)
+    }
+  }
+
+  _removeHoverListeners() {
+    if (!this._dropdownElement || !supportsPointerHover()) {
+      return
+    }
+
+    EventHandler.off(this._element, 'mouseenter', this._boundOnEnter)
+    EventHandler.off(this._element, 'mouseleave', this._boundOnLeave)
+    EventHandler.off(this._dropdownElement, 'mouseleave', this._boundOnLeave)
+
+    if (this._menu) {
+      EventHandler.off(this._menu, 'mouseenter', this._boundMenuEnter)
+      EventHandler.off(this._menu, 'mouseleave', this._boundMenuLeave)
+    }
+  }
+
+  _handleHoverEnter() {
+    this._cancelScheduledHide()
+    if (this._navbar && this._dropdownElement) {
+      closeOtherDropdowns(this._navbar, this._dropdownElement)
+    }
+    this.show()
+  }
+
+  _handleHoverLeave() {
+    this._scheduleHide()
+  }
+
+  _scheduleHide() {
+    this._cancelScheduledHide()
+    this._hideTimer = window.setTimeout(() => {
+      this.hide()
+    }, HIDE_DELAY_MS)
+  }
+
+  _cancelScheduledHide() {
+    if (this._hideTimer) {
+      window.clearTimeout(this._hideTimer)
+      this._hideTimer = null
+    }
+  }
+}
+
 function enableAzNavbarHoverDropdowns() {
-  if (typeof document === 'undefined') {
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
     return
   }
 
@@ -52,33 +138,8 @@ function enableAzNavbarHoverDropdowns() {
     return
   }
 
-  // Only apply hover behavior if device supports hover and fine pointer
-  const canHover = window.matchMedia?.('(hover: hover) and (pointer: fine)')?.matches ?? false
-  if (!canHover) {
+  if (!supportsPointerHover()) {
     return
-  }
-
-  const hideDelayMs = 300
-  const hideTimers = new WeakMap()
-
-  const cancelHide = dropdownElement => {
-    const timer = hideTimers.get(dropdownElement)
-    if (timer) {
-      clearTimeout(timer)
-    }
-
-    hideTimers.delete(dropdownElement)
-  }
-
-  const scheduleHide = (dropdownElement, instance) => {
-    cancelHide(dropdownElement)
-
-    const timer = setTimeout(() => {
-      // Force hide without checking for focus, as hover preference dictates closing on leave
-      instance.hide()
-    }, hideDelayMs)
-
-    hideTimers.set(dropdownElement, timer)
   }
 
   for (const navbar of navbars) {
@@ -94,35 +155,16 @@ function enableAzNavbarHoverDropdowns() {
         continue
       }
 
-      const menuElement = dropdownElement.querySelector(':scope > .dropdown-menu')
-      const instance = Dropdown.getOrCreateInstance(triggerElement)
-
-      const show = () => {
-        cancelHide(dropdownElement)
-        closeOtherDropdowns(navbar, dropdownElement)
-        instance.show()
+      const existingInstance = Dropdown.getInstance(triggerElement)
+      if (existingInstance && !(existingInstance instanceof NavbarHoverDropdown)) {
+        existingInstance.dispose()
       }
 
-      // Trigger hover events
-      triggerElement.addEventListener('mouseenter', show)
-      triggerElement.addEventListener('mouseleave', () => {
-        scheduleHide(dropdownElement, instance)
-      })
-
-      // Menu hover events (keep open while hovering menu)
-      if (menuElement) {
-        menuElement.addEventListener('mouseenter', () => {
-          cancelHide(dropdownElement)
-        })
-        menuElement.addEventListener('mouseleave', () => {
-          scheduleHide(dropdownElement, instance)
-        })
+      if (existingInstance instanceof NavbarHoverDropdown) {
+        continue
       }
 
-      // Container catch-all (optional but safe)
-      dropdownElement.addEventListener('mouseleave', () => {
-        scheduleHide(dropdownElement, instance)
-      })
+      new NavbarHoverDropdown(triggerElement, dropdownElement, navbar)
     }
   }
 }
