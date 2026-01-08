@@ -197,19 +197,6 @@
       font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
       color: var(--az-navbar-accent-color);
     }
-
-    // Hover bridge: extend the toggle's hit area down to the menu gap
-    // Prevents flicker when moving cursor from toggle to menu
-    // .nav-item.dropdown .dropdown-toggle-split::before,
-    // :not(.btn-group) > .dropdown-toggle::before {
-    //   position: absolute;
-    //   top: 100%;
-    //   right: 0;
-    //   left: 0;
-    //   height: calc(var(--az-navbar-nav-item-margin-y) + 2px); /* stylelint-disable-line function-disallowed-list */
-    //   content: "";
-    //   background: transparent;
-    // }
   }
 
   // Secondary navigation level
