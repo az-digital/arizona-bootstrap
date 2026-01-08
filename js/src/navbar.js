@@ -56,6 +56,8 @@ class NavbarHoverDropdown extends Dropdown {
     this._navbar = navbar
     this._hideTimer = null
     this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
+    this._hoverTriggered = false
+    this._suppressNextBlur = false
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -76,9 +78,13 @@ class NavbarHoverDropdown extends Dropdown {
     this._boundOnLeave = () => this._handleHoverLeave()
     this._boundMenuEnter = () => this._cancelScheduledHide()
     this._boundMenuLeave = () => this._handleHoverLeave()
+    this._boundOnFocus = event => this._handleFocus(event)
+    this._boundOnBlur = event => this._handleBlur(event)
 
     EventHandler.on(this._element, 'mouseenter', this._boundOnEnter)
     EventHandler.on(this._element, 'mouseleave', this._boundOnLeave)
+    EventHandler.on(this._element, 'focus', this._boundOnFocus)
+    EventHandler.on(this._element, 'blur', this._boundOnBlur)
     EventHandler.on(this._dropdownElement, 'mouseleave', this._boundOnLeave)
 
     if (this._menu) {
@@ -94,6 +100,8 @@ class NavbarHoverDropdown extends Dropdown {
 
     EventHandler.off(this._element, 'mouseenter', this._boundOnEnter)
     EventHandler.off(this._element, 'mouseleave', this._boundOnLeave)
+    EventHandler.off(this._element, 'focus', this._boundOnFocus)
+    EventHandler.off(this._element, 'blur', this._boundOnBlur)
     EventHandler.off(this._dropdownElement, 'mouseleave', this._boundOnLeave)
 
     if (this._menu) {
@@ -104,15 +112,39 @@ class NavbarHoverDropdown extends Dropdown {
 
   _handleHoverEnter() {
     this._cancelScheduledHide()
+    this._hoverTriggered = true
 
     if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
     }
 
     this.show()
+    this._removePointerFocus()
   }
 
   _handleHoverLeave() {
+    this._scheduleHide()
+  }
+
+  _handleFocus(event) {
+    if (event.relatedTarget && this._menu?.contains(event.relatedTarget)) {
+      return
+    }
+
+    this._cancelScheduledHide()
+    this.show()
+  }
+
+  _handleBlur(event) {
+    if (this._suppressNextBlur) {
+      this._suppressNextBlur = false
+      return
+    }
+
+    if (event.relatedTarget && this._menu?.contains(event.relatedTarget)) {
+      return
+    }
+
     this._scheduleHide()
   }
 
@@ -128,6 +160,19 @@ class NavbarHoverDropdown extends Dropdown {
       window.clearTimeout(this._hideTimer)
       this._hideTimer = null
     }
+  }
+
+  _removePointerFocus() {
+    if (!this._hoverTriggered) {
+      return
+    }
+
+    if (document.activeElement === this._element) {
+      this._suppressNextBlur = true
+      this._element.blur()
+    }
+
+    this._hoverTriggered = false
   }
 }
 
