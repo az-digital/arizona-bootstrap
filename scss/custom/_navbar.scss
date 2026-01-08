@@ -115,7 +115,6 @@
 
   /* Primary navigation split dropdown toggle */
   .dropdown-toggle-split {
-    position: relative; // Create positioning context for hover-bridge pseudo element
     padding-top: 0;
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-bottom: 0;
@@ -177,10 +176,6 @@
     }
   }
 
-  // Positioning context only for AZ Navbar dropdowns
-  .nav-item.dropdown {
-    position: relative;
-  }
 
   // Keep the primary toggle icon solid red when submenu is open via keyboard focus
   .nav-item .nav-link.dropdown-toggle:focus::after,
@@ -201,10 +196,6 @@
 
   // Secondary navigation level
   .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
     --bs-dropdown-padding-y: 0;
     --bs-dropdown-spacer: 0;
     --bs-dropdown-font-size: var(--az-navbar-font-size);
