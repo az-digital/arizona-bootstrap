@@ -103,9 +103,11 @@ class NavbarHoverDropdown extends Dropdown {
 
   _handleHoverEnter() {
     this._cancelScheduledHide()
+
     if (this._navbar && this._dropdownElement) {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
     }
+
     this.show()
   }
 
@@ -164,9 +166,13 @@ function enableAzNavbarHoverDropdowns() {
         continue
       }
 
-      new NavbarHoverDropdown(triggerElement, dropdownElement, navbar)
+      createNavbarHoverDropdown(triggerElement, dropdownElement, navbar)
     }
   }
+}
+
+function createNavbarHoverDropdown(triggerElement, dropdownElement, navbar) {
+  return new NavbarHoverDropdown(triggerElement, dropdownElement, navbar)
 }
 
 export { enableAzNavbarHoverDropdowns as default }
