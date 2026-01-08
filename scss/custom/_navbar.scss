@@ -175,32 +175,11 @@
       color: var(--az-navbar-accent-color);
       text-decoration: none; // Prevent underline from being inherited
     }
-
-    ~ .dropdown-menu {
-      display: block;
-    }
   }
 
   // Positioning context only for AZ Navbar dropdowns
   .nav-item.dropdown {
     position: relative;
-  }
-
-  // Keyboard accessibility: keep menu open while focus is inside the dropdown
-  // Keyboard accessibility
-  // Single dropdown: focus the link toggle opens the menu
-  .nav-link.dropdown-toggle:focus ~ .dropdown-menu {
-    display: block;
-  }
-
-  // Split dropdown: only the split toggle opens on focus
-  .nav-item .dropdown-toggle-split:focus ~ .dropdown-menu {
-    display: block;
-  }
-
-  // Keep menu open while keyboard focus is inside the submenu
-  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-menu {
-    display: block;
   }
 
   // Keep the primary toggle icon solid red when submenu is open via keyboard focus
@@ -212,24 +191,8 @@
     color: var(--az-navbar-accent-color);
   }
 
-  // Touch-safe hover open: limit to devices that support hover
+  // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
   @media (hover: hover) {
-    // Single dropdown: hover the link toggle opens the menu
-    .nav-link.dropdown-toggle:hover ~ .dropdown-menu {
-      display: block;
-    }
-
-    // Split dropdown: only the split toggle hovers open
-    .nav-item .dropdown-toggle-split:hover ~ .dropdown-menu {
-      display: block;
-    }
-
-    // Keep menu open when hovering the menu itself
-    .nav-item .dropdown-menu:hover {
-      display: block;
-    }
-
-    // Keep the primary toggle icon solid red while hovering the submenu
     .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
       font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
       color: var(--az-navbar-accent-color);
@@ -237,16 +200,16 @@
 
     // Hover bridge: extend the toggle's hit area down to the menu gap
     // Prevents flicker when moving cursor from toggle to menu
-    .nav-item.dropdown .dropdown-toggle-split::before,
-    :not(.btn-group) > .dropdown-toggle::before {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
-      height: calc(var(--az-navbar-nav-item-margin-y) + 2px); /* stylelint-disable-line function-disallowed-list */
-      content: "";
-      background: transparent;
-    }
+    // .nav-item.dropdown .dropdown-toggle-split::before,
+    // :not(.btn-group) > .dropdown-toggle::before {
+    //   position: absolute;
+    //   top: 100%;
+    //   right: 0;
+    //   left: 0;
+    //   height: calc(var(--az-navbar-nav-item-margin-y) + 2px); /* stylelint-disable-line function-disallowed-list */
+    //   content: "";
+    //   background: transparent;
+    // }
   }
 
   // Secondary navigation level

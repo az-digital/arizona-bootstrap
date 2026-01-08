@@ -55,6 +55,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._dropdownElement = dropdownElement
     this._navbar = navbar
     this._hideTimer = null
+    this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -104,7 +105,7 @@ class NavbarHoverDropdown extends Dropdown {
   _handleHoverEnter() {
     this._cancelScheduledHide()
 
-    if (this._navbar && this._dropdownElement) {
+    if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
     }
 
@@ -145,6 +146,14 @@ function enableAzNavbarHoverDropdowns() {
   }
 
   for (const navbar of navbars) {
+    EventHandler.on(navbar, 'mouseleave', () => {
+      const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
+
+      for (const trigger of openTriggers) {
+        Dropdown.getInstance(trigger)?.hide()
+      }
+    })
+
     const dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown')
 
     for (const dropdownElement of dropdowns) {
