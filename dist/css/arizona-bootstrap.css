@@ -19408,18 +19408,18 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  font-family: "Material Symbols Rounded";
+  font-family: "Material Symbols Rounded", monospace;
   color: #6c757d;
-  content: "chevron_right";
+  content: "\e5cc";
 }
 
 .breadcrumb-item-home::before {
   float: left;
   padding-right: 0.5rem;
-  font-family: "Material Symbols Rounded";
+  font-family: "Material Symbols Rounded", monospace;
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: #6c757d;
-  content: "home";
+  content: "\e88a";
 }
 
 .btn-primary, .btn-red {
@@ -22083,6 +22083,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   text-decoration-thickness: 2px;
   -webkit-text-decoration-color: var(--az-navbar-accent-color);
   text-decoration-color: var(--az-navbar-accent-color);
+  text-underline-offset: 4px;
+}
+.navbar-az .dropdown-item:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
+  text-decoration-color: var(--az-navbar-font-hover-color);
   text-underline-offset: 4px;
 }
 .navbar-az .dropdown-menu .collapse,
