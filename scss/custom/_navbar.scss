@@ -181,6 +181,24 @@
     }
   }
 
+
+  // Keep the primary toggle icon solid red when submenu is open via keyboard focus
+  .nav-item .nav-link.dropdown-toggle:focus::after,
+  .nav-item .dropdown-toggle-split:focus::after,
+  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
+  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
+    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+    color: var(--az-navbar-accent-color);
+  }
+
+  // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
+  @media (hover: hover) {
+    .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
+      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+      color: var(--az-navbar-accent-color);
+    }
+  }
+
   // Secondary navigation level
   .dropdown-menu {
     --bs-dropdown-padding-y: 0;
@@ -279,6 +297,17 @@
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-decoration-color: var(--az-navbar-accent-color);
+      text-underline-offset: 4px;
+    }
+
+    &:focus {
+      background-color: var(--az-navbar-border-color);
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--az-navbar-font-hover-color);
       text-underline-offset: 4px;
     }
   }

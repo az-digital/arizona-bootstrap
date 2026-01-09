@@ -10,19 +10,13 @@
   }
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Material Symbols Rounded", monospace;
+}
+
 // Remove margins/padding on Breadcrumbs for larger displays
 @include media-breakpoint-up(lg) {
   .breadcrumb {
     margin-bottom: 0;
   }
-}
-
-
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left; // Suppress inline spacings and underlining of the separator
-  padding-right: $breadcrumb-item-padding-x;
-  // stylelint-disable-next-line
-  font-family: "Material Symbols Rounded";
-  color: $breadcrumb-divider-color;
-  content: "chevron_right";
 }
