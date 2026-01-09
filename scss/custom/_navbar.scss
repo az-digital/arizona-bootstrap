@@ -111,7 +111,7 @@
       vertical-align: 0;
       content: "\e313";
       border: 1px solid var(--az-navbar-font-color);
-      border-radius: 50%;
+      @include border-radius(50%);
     }
   }
 
