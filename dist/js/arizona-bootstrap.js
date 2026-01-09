@@ -5383,6 +5383,198 @@
 
   /**
    * --------------------------------------------------------------------------
+   * Arizona Bootstrap: navbar-hover-dropdown.js
+   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)';
+  var HIDE_DELAY_MS = 300;
+  var supportsPointerHover = () => {
+    var _window$matchMedia, _window;
+    return typeof window !== 'undefined' && ((_window$matchMedia = (_window = window).matchMedia) === null || _window$matchMedia === void 0 || (_window$matchMedia = _window$matchMedia.call(_window, HOVER_MEDIA_QUERY)) === null || _window$matchMedia === void 0 ? void 0 : _window$matchMedia.matches) === true;
+  };
+  function getPrimaryDropdownTrigger(dropdownElement) {
+    var splitToggle = dropdownElement.querySelector(':scope > .dropdown-toggle.dropdown-toggle-split');
+    if (splitToggle instanceof HTMLElement) {
+      return splitToggle;
+    }
+    var toggle = dropdownElement.querySelector(':scope > .dropdown-toggle');
+    if (toggle instanceof HTMLElement) {
+      return toggle;
+    }
+    return null;
+  }
+  function closeOtherDropdowns(navbar, currentDropdownElement) {
+    var openDropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown.show');
+    for (var openDropdown of openDropdowns) {
+      if (openDropdown === currentDropdownElement) {
+        continue;
+      }
+      if (!(openDropdown instanceof HTMLElement)) {
+        continue;
+      }
+      var trigger = getPrimaryDropdownTrigger(openDropdown);
+      if (!trigger) {
+        continue;
+      }
+      var instance = Dropdown.getInstance(trigger);
+      instance === null || instance === void 0 || instance.hide();
+    }
+  }
+  class NavbarHoverDropdown extends Dropdown {
+    constructor(element, dropdownElement, navbar, config) {
+      super(element, config);
+      this._dropdownElement = dropdownElement;
+      this._navbar = navbar;
+      this._hideTimer = null;
+      this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown');
+      this._hoverTriggered = false;
+      this._suppressNextBlur = false;
+      if (supportsPointerHover()) {
+        this._addHoverListeners();
+      }
+    }
+    dispose() {
+      this._removeHoverListeners();
+      super.dispose();
+    }
+    _addHoverListeners() {
+      if (!this._dropdownElement) {
+        return;
+      }
+      this._boundOnEnter = () => this._handleHoverEnter();
+      this._boundOnLeave = () => this._handleHoverLeave();
+      this._boundMenuEnter = () => this._cancelScheduledHide();
+      this._boundMenuLeave = () => this._handleHoverLeave();
+      this._boundOnFocus = event => this._handleFocus(event);
+      this._boundOnBlur = event => this._handleBlur(event);
+      EventHandler.on(this._element, 'mouseenter', this._boundOnEnter);
+      EventHandler.on(this._element, 'mouseleave', this._boundOnLeave);
+      EventHandler.on(this._element, 'focus', this._boundOnFocus);
+      EventHandler.on(this._element, 'blur', this._boundOnBlur);
+      EventHandler.on(this._dropdownElement, 'mouseleave', this._boundOnLeave);
+      if (this._menu) {
+        EventHandler.on(this._menu, 'mouseenter', this._boundMenuEnter);
+        EventHandler.on(this._menu, 'mouseleave', this._boundMenuLeave);
+      }
+    }
+    _removeHoverListeners() {
+      if (!this._dropdownElement || !supportsPointerHover()) {
+        return;
+      }
+      EventHandler.off(this._element, 'mouseenter', this._boundOnEnter);
+      EventHandler.off(this._element, 'mouseleave', this._boundOnLeave);
+      EventHandler.off(this._element, 'focus', this._boundOnFocus);
+      EventHandler.off(this._element, 'blur', this._boundOnBlur);
+      EventHandler.off(this._dropdownElement, 'mouseleave', this._boundOnLeave);
+      if (this._menu) {
+        EventHandler.off(this._menu, 'mouseenter', this._boundMenuEnter);
+        EventHandler.off(this._menu, 'mouseleave', this._boundMenuLeave);
+      }
+    }
+    _handleHoverEnter() {
+      this._cancelScheduledHide();
+      this._hoverTriggered = true;
+      if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
+        closeOtherDropdowns(this._navbar, this._dropdownElement);
+      }
+      this.show();
+      this._removePointerFocus();
+    }
+    _handleHoverLeave() {
+      this._scheduleHide();
+    }
+    _handleFocus(event) {
+      var _this$_menu;
+      if (event.relatedTarget && (_this$_menu = this._menu) !== null && _this$_menu !== void 0 && _this$_menu.contains(event.relatedTarget)) {
+        return;
+      }
+      this._cancelScheduledHide();
+      this.show();
+    }
+    _handleBlur(event) {
+      var _this$_menu2;
+      if (this._suppressNextBlur) {
+        this._suppressNextBlur = false;
+        return;
+      }
+      if (event.relatedTarget && (_this$_menu2 = this._menu) !== null && _this$_menu2 !== void 0 && _this$_menu2.contains(event.relatedTarget)) {
+        return;
+      }
+      this._scheduleHide();
+    }
+    _scheduleHide() {
+      this._cancelScheduledHide();
+      this._hideTimer = window.setTimeout(() => {
+        this.hide();
+      }, HIDE_DELAY_MS);
+    }
+    _cancelScheduledHide() {
+      if (this._hideTimer) {
+        window.clearTimeout(this._hideTimer);
+        this._hideTimer = null;
+      }
+    }
+    _removePointerFocus() {
+      if (!this._hoverTriggered) {
+        return;
+      }
+      if (document.activeElement === this._element) {
+        this._suppressNextBlur = true;
+        this._element.blur();
+      }
+      this._hoverTriggered = false;
+    }
+  }
+  function enableAzNavbarHoverDropdowns() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+    var navbars = document.querySelectorAll('.navbar-az');
+    if (!navbars.length) {
+      return;
+    }
+    if (!supportsPointerHover()) {
+      return;
+    }
+    var _loop = function _loop(navbar) {
+      EventHandler.on(navbar, 'mouseleave', () => {
+        var openTriggers = navbar.querySelectorAll('.dropdown-toggle.show');
+        for (var trigger of openTriggers) {
+          var _Dropdown$getInstance;
+          (_Dropdown$getInstance = Dropdown.getInstance(trigger)) === null || _Dropdown$getInstance === void 0 || _Dropdown$getInstance.hide();
+        }
+      });
+      var dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown');
+      for (var dropdownElement of dropdowns) {
+        if (!(dropdownElement instanceof HTMLElement)) {
+          continue;
+        }
+        var triggerElement = getPrimaryDropdownTrigger(dropdownElement);
+        if (!triggerElement) {
+          continue;
+        }
+        var existingInstance = Dropdown.getInstance(triggerElement);
+        if (existingInstance && !(existingInstance instanceof NavbarHoverDropdown)) {
+          existingInstance.dispose();
+        }
+        if (existingInstance instanceof NavbarHoverDropdown) {
+          continue;
+        }
+        createNavbarHoverDropdown(triggerElement, dropdownElement, navbar);
+      }
+    };
+    for (var navbar of navbars) {
+      _loop(navbar);
+    }
+  }
+  function createNavbarHoverDropdown(triggerElement, dropdownElement, navbar) {
+    return new NavbarHoverDropdown(triggerElement, dropdownElement, navbar);
+  }
+
+  /**
+   * --------------------------------------------------------------------------
    * Bootstrap index.umd.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
@@ -5402,7 +5594,8 @@
     Toast,
     Tooltip,
     fixModalAriaHidden,
-    photoGalleryGridSlideToImage
+    photoGalleryGridSlideToImage,
+    enableAzNavbarHoverDropdowns
   };
 
   /**
@@ -5416,6 +5609,11 @@
    * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
    */
   photoGalleryGridSlideToImage();
+
+  /**
+   * Enable hover-driven dropdowns on AZ Navbar.
+   */
+  enableAzNavbarHoverDropdowns();
 
   return index_umd;
 

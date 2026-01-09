@@ -5498,7 +5498,7 @@ textarea.form-control-lg {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: var(--bs-breadcrumb-divider-color);
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  content: var(--bs-breadcrumb-divider, "\e5cc") /* rtl: var(--bs-breadcrumb-divider, "\e5cc") */;
 }
 .breadcrumb-item.active {
   color: var(--bs-breadcrumb-item-active-color);
@@ -19400,19 +19400,15 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   color: #001c48;
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Material Symbols Rounded", monospace;
+}
+
 @media (min-width: 992px) {
   .breadcrumb {
     margin-bottom: 0;
   }
 }
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Symbols Rounded", monospace;
-  color: #6c757d;
-  content: "\e5cc";
-}
-
 .breadcrumb-item-home::before {
   float: left;
   padding-right: 0.5rem;
@@ -22002,6 +21998,19 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   color: var(--az-navbar-accent-color);
   text-decoration: none;
 }
+.navbar-az .nav-item .nav-link.dropdown-toggle:focus::after,
+.navbar-az .nav-item .dropdown-toggle-split:focus::after,
+.navbar-az .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
+.navbar-az .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
+  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+  color: var(--az-navbar-accent-color);
+}
+@media (hover: hover) {
+  .navbar-az .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
+    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+    color: var(--az-navbar-accent-color);
+  }
+}
 .navbar-az .dropdown-menu {
   --bs-dropdown-padding-y: 0;
   --bs-dropdown-spacer: 0;
@@ -22084,6 +22093,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   -webkit-text-decoration-color: var(--az-navbar-accent-color);
   text-decoration-color: var(--az-navbar-accent-color);
   text-underline-offset: 4px;
+}
+.navbar-az .dropdown-item:focus {
+  background-color: var(--az-navbar-border-color);
 }
 .navbar-az .dropdown-item:hover {
   text-decoration: underline;
