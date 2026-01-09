@@ -10,19 +10,13 @@
   }
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Material Symbols Rounded", monospace;
+}
+
 // Remove margins/padding on Breadcrumbs for larger displays
 @include media-breakpoint-up(lg) {
   .breadcrumb {
     margin-bottom: 0;
   }
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  float: left; // Suppress inline spacings and underlining of the separator
-  padding-right: $breadcrumb-item-padding-x;
-  font-family: "Material Symbols Rounded", monospace;
-  color: $breadcrumb-divider-color;
-  // Material Symbols Rounded: Chevron Right
-  // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right
-  content: "\e5cc";
 }

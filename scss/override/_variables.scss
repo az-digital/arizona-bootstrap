@@ -104,6 +104,11 @@ $breadcrumb-padding-x: 1rem;
 $breadcrumb-padding-y: .75rem;
 // fusv-enable
 $breadcrumb-divider-color: $gray-600;
+// fusv-disable
+// Material Symbols Rounded: Chevron Right
+// https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right
+$breadcrumb-divider: "\e5cc";
+// fusv-enable
 
 // >> Buttons
 // fusv-disable
