@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar.js
+ * Arizona Bootstrap: navbar-hover-dropdown.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
