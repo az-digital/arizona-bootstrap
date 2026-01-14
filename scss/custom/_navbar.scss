@@ -227,7 +227,8 @@
       font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
       color: var(--az-navbar-font-color);
       vertical-align: 0;
-      content: "add";
+      // Material Symbols "Add" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:add:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=add
+      content: "\e145";
       background-image: none;
       border: 0;
     }
@@ -262,7 +263,8 @@
 
     // Subtract icon when expanded
     .dropdown-toggle-split[aria-expanded="true"]::after {
-      content: "remove";
+      // Material Symbols "Remove" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:remove:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=remove
+      content: "\e15b";
     }
 
     // Button group layout for dropdown toggle at second level
