@@ -207,13 +207,16 @@
     --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
     --bs-dropdown-item-padding-x: 1.25rem;
-    --bs-dropdown-item-padding-y: .75rem;
+    --bs-dropdown-item-padding-y: .6875rem;
     margin-top: var(--az-navbar-nav-item-margin-y);
     overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
     .dropdown-toggle-split {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
@@ -222,11 +225,17 @@
     // Plus icon when collapsed
     .dropdown-toggle-split::after,
     .dropdown-toggle-split:focus::after {
+      display: block;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      margin: 0;
       font-family: "Material Symbols Rounded", sans-serif;
-      font-size: 1.25rem;
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-size: 1.5rem;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      font-weight: 400;
+      line-height: 1.5rem;
       color: var(--az-navbar-font-color);
-      vertical-align: 0;
+      text-align: center;
       // Material Symbols "Add" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:add:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=add
       content: "\e145";
       background-image: none;
