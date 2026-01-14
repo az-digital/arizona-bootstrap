@@ -93,7 +93,7 @@
     &:focus-visible {
       @include border-radius(2px);
       outline: 0;
-      box-shadow: 0 0 0 .25rem rgba(171, 5, 32, .5);
+      box-shadow: 0 0 0 .25rem rgba($red, .5);
     }
   }
 
@@ -228,7 +228,7 @@
       &:focus-visible {
         @include border-radius(2px);
         outline: 0;
-        box-shadow: inset 0 0 0 .25rem rgba(171, 5, 32, .5);
+        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
       }
 
       &:focus::after {
@@ -318,7 +318,7 @@
     &:focus-visible {
       @include border-radius(2px);
       outline: 0;
-      box-shadow: inset 0 0 0 .25rem rgba(171, 5, 32, .5);
+      box-shadow: inset 0 0 0 .25rem rgba($red, .5);
     }
 
     &:hover {
@@ -382,7 +382,7 @@
       &:focus-visible {
         @include border-radius(2px);
         outline: 0;
-        box-shadow: inset 0 0 0 .25rem rgba(171, 5, 32, .5);
+        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
       }
       /* stylelint-enable selector-no-qualifying-type */
     }
