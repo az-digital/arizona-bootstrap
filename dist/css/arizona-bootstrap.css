@@ -21934,6 +21934,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
   text-decoration-color: var(--az-navbar-font-hover-color);
 }
+.navbar-az .nav-link:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+}
 .navbar-az .btn-group:has(.dropdown-toggle-split) > .nav-link {
   padding-right: 0.3125rem;
 }
@@ -22037,6 +22042,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin-inline-start: auto;
   border-left: 1px solid var(--az-navbar-border-color);
 }
+.navbar-az .dropdown-menu .dropdown-toggle-split:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+}
+.navbar-az .dropdown-menu .dropdown-toggle-split:focus::after {
+  color: var(--az-navbar-font-color);
+}
 .navbar-az .dropdown-menu .dropdown-toggle-split::after {
   font-family: "Material Symbols Rounded", sans-serif;
   font-size: 1.25rem;
@@ -22097,6 +22110,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-item:focus {
   background-color: var(--az-navbar-border-color);
 }
+.navbar-az .dropdown-item:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+}
 .navbar-az .dropdown-item:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -22154,6 +22172,12 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .collapsing a[aria-disabled=true] {
   color: var(--az-navbar-font-disabled-color);
   pointer-events: none;
+}
+.navbar-az .dropdown-menu .collapse a:focus-visible,
+.navbar-az .dropdown-menu .collapsing a:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
 }
 .navbar-az .dropdown-menu .collapsing {
   height: auto;

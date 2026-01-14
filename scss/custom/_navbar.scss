@@ -89,6 +89,12 @@
     &:hover {
       text-decoration-color: var(--az-navbar-font-hover-color);
     }
+
+    &:focus-visible {
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: 0 0 0 .25rem rgba($red, .5);
+    }
   }
 
   // Reduce spacing between the nav-link and the split toggle button
@@ -220,6 +226,16 @@
       padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
+
+      &:focus-visible {
+        @include border-radius(2px);
+        outline: 0;
+        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
+      }
+
+      &:focus::after {
+        color: var(--az-navbar-font-color);
+      }
     }
 
     // Plus icon when collapsed
@@ -310,6 +326,12 @@
       background-color: var(--az-navbar-border-color);
     }
 
+    &:focus-visible {
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: inset 0 0 0 .25rem rgba($red, .5);
+    }
+
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
@@ -366,6 +388,12 @@
       &[aria-disabled="true"] {
         color: var(--az-navbar-font-disabled-color);
         pointer-events: none;
+      }
+
+      &:focus-visible {
+        @include border-radius(2px);
+        outline: 0;
+        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
       }
       /* stylelint-enable selector-no-qualifying-type */
     }
