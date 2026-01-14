@@ -100,15 +100,19 @@
     @include border-radius(0);
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
+      inline-size: 1.55rem; // Matches previous font-size for consistent layout
+      width: 1.55rem; // Physical fallback for older browsers
+      block-size: 1.55rem;
+      height: 1.55rem;
       margin-bottom: 0; // Remove Bootstrap's default bottom margin on the single dropdown's icon
-      font-family: "Material Symbols Rounded", sans-serif;
-      font-size: 1.55rem; // Increased slightly from 1.5 so that top of icon is not clipped on hover
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      font-weight: 300; // Needed to prevent inheritance of parent's font weight - otherwise redundant
       line-height: 1;
       color: var(--az-navbar-font-color);
       vertical-align: 0;
-      content: "expand_circle_down";
+      content: "";
+      background-image: url("img/expand_circle_down_24dp_1E5288_FILL0_wght400_GRAD0_opsz24.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
       border: 0;
     }
   }
@@ -147,8 +151,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
   .dropdown:has(.collapse .active) > .dropdown-toggle {
     &::after {
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: url("img/expand_circle_down_24dp_AB0520_FILL0_wght400_GRAD0_opsz24.svg");
     }
   }
 
@@ -157,8 +160,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
   .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
     &::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
     }
   }
 
@@ -170,9 +172,8 @@
   .nav-link.dropdown-toggle:hover,
   .nav-link.dropdown-toggle[aria-expanded="true"] {
     &::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
       text-decoration: none; // Prevent underline from being inherited
+      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
     }
   }
 
@@ -182,15 +183,13 @@
   .nav-item .dropdown-toggle-split:focus::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
-    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-    color: var(--az-navbar-accent-color);
+    background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
   }
 
   // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
   @media (hover: hover) {
     .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
     }
   }
 
@@ -228,6 +227,7 @@
       color: var(--az-navbar-font-color);
       vertical-align: 0;
       content: "add";
+      background-image: none;
       border: 0;
     }
 
@@ -237,8 +237,7 @@
     .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
     .btn-group:has(.collapse .active) > .dropdown-toggle {
       &::after {
-        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-        color: var(--az-navbar-font-color);
+        background-image: none;
       }
     }
 
