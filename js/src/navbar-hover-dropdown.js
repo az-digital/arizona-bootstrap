@@ -44,6 +44,11 @@ function closeOtherDropdowns(navbar, currentDropdownElement) {
     }
 
     const instance = Dropdown.getInstance(trigger)
+
+    if (instance?.isClickOpen?.()) {
+      continue
+    }
+
     instance?.hide()
   }
 }
@@ -58,6 +63,9 @@ class NavbarHoverDropdown extends Dropdown {
     this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
     this._hoverTriggered = false
     this._suppressNextBlur = false
+    this._hoverOpen = false
+    this._clickOpen = false
+    this._pendingClick = false
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -80,11 +88,13 @@ class NavbarHoverDropdown extends Dropdown {
     this._boundMenuLeave = () => this._handleHoverLeave()
     this._boundOnFocus = event => this._handleFocus(event)
     this._boundOnBlur = event => this._handleBlur(event)
+    this._boundOnClick = () => this._handleClick()
 
     EventHandler.on(this._element, 'mouseenter', this._boundOnEnter)
     EventHandler.on(this._element, 'mouseleave', this._boundOnLeave)
     EventHandler.on(this._element, 'focus', this._boundOnFocus)
     EventHandler.on(this._element, 'blur', this._boundOnBlur)
+    EventHandler.on(this._element, 'click', this._boundOnClick)
     EventHandler.on(this._dropdownElement, 'mouseleave', this._boundOnLeave)
 
     if (this._menu) {
@@ -102,6 +112,7 @@ class NavbarHoverDropdown extends Dropdown {
     EventHandler.off(this._element, 'mouseleave', this._boundOnLeave)
     EventHandler.off(this._element, 'focus', this._boundOnFocus)
     EventHandler.off(this._element, 'blur', this._boundOnBlur)
+    EventHandler.off(this._element, 'click', this._boundOnClick)
     EventHandler.off(this._dropdownElement, 'mouseleave', this._boundOnLeave)
 
     if (this._menu) {
@@ -113,6 +124,7 @@ class NavbarHoverDropdown extends Dropdown {
   _handleHoverEnter() {
     this._cancelScheduledHide()
     this._hoverTriggered = true
+    this._hoverOpen = true
 
     if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
@@ -123,7 +135,7 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   _handleHoverLeave() {
-    this._scheduleHide()
+    this._scheduleHide({ source: 'hover' })
   }
 
   _handleFocus(event) {
@@ -132,6 +144,7 @@ class NavbarHoverDropdown extends Dropdown {
     }
 
     this._cancelScheduledHide()
+    this._hoverOpen = false
     this.show()
   }
 
@@ -148,8 +161,22 @@ class NavbarHoverDropdown extends Dropdown {
     this._scheduleHide()
   }
 
-  _scheduleHide() {
+  _handleClick() {
+    this._pendingClick = true
     this._cancelScheduledHide()
+  }
+
+  _scheduleHide({ source } = {}) {
+    this._cancelScheduledHide()
+
+    if (this._clickOpen) {
+      return
+    }
+
+    if (source === 'hover' && !this._hoverOpen) {
+      return
+    }
+
     this._hideTimer = window.setTimeout(() => {
       this.hide()
     }, HIDE_DELAY_MS)
@@ -160,6 +187,48 @@ class NavbarHoverDropdown extends Dropdown {
       window.clearTimeout(this._hideTimer)
       this._hideTimer = null
     }
+  }
+
+  toggle() {
+    if (this._pendingClick) {
+      this._pendingClick = false
+
+      if (this._isShown()) {
+        if (this._hoverOpen && !this._clickOpen) {
+          this._clickOpen = true
+          this._hoverOpen = false
+          this._cancelScheduledHide()
+          return
+        }
+
+        this._hoverOpen = false
+        super.hide()
+        this._clickOpen = this._isShown()
+        return
+      }
+
+      this._hoverOpen = false
+      this._cancelScheduledHide()
+      super.show()
+      this._clickOpen = this._isShown()
+      return
+    }
+
+    return super.toggle()
+  }
+
+  hide() {
+    this._hoverOpen = false
+    this._clickOpen = false
+    this._cancelScheduledHide()
+    return super.hide()
+  }
+
+  _completeHide(relatedTarget) {
+    this._hoverOpen = false
+    this._clickOpen = false
+    this._cancelScheduledHide()
+    super._completeHide(relatedTarget)
   }
 
   _removePointerFocus() {
@@ -173,6 +242,10 @@ class NavbarHoverDropdown extends Dropdown {
     }
 
     this._hoverTriggered = false
+  }
+
+  isClickOpen() {
+    return this._clickOpen
   }
 }
 
@@ -195,7 +268,13 @@ function enableAzNavbarHoverDropdowns() {
       const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
 
       for (const trigger of openTriggers) {
-        Dropdown.getInstance(trigger)?.hide()
+        const instance = Dropdown.getInstance(trigger)
+
+        if (instance instanceof NavbarHoverDropdown && instance.isClickOpen()) {
+          continue
+        }
+
+        instance?.hide()
       }
     })
 
