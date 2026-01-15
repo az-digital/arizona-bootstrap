@@ -66,6 +66,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._hoverOpen = false
     this._clickOpen = false
     this._pendingClick = false
+    this._wasHoverOpened = false
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -88,7 +89,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._boundMenuLeave = () => this._handleHoverLeave()
     this._boundOnFocus = event => this._handleFocus(event)
     this._boundOnBlur = event => this._handleBlur(event)
-    this._boundOnClick = () => this._handleClick()
+    this._boundOnClick = event => this._handleClick(event)
 
     EventHandler.on(this._element, 'mouseenter', this._boundOnEnter)
     EventHandler.on(this._element, 'mouseleave', this._boundOnLeave)
@@ -125,6 +126,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._cancelScheduledHide()
     this._hoverTriggered = true
     this._hoverOpen = true
+    this._wasHoverOpened = true
 
     if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
@@ -144,7 +146,13 @@ class NavbarHoverDropdown extends Dropdown {
     }
 
     this._cancelScheduledHide()
+
+    if (this._isShown()) {
+      return
+    }
+
     this._hoverOpen = false
+    this._wasHoverOpened = false
     this.show()
   }
 
@@ -161,9 +169,13 @@ class NavbarHoverDropdown extends Dropdown {
     this._scheduleHide()
   }
 
-  _handleClick() {
+  _handleClick(event) {
+    event.preventDefault()
+    event.stopPropagation()
+
     this._pendingClick = true
     this._cancelScheduledHide()
+    this.toggle()
   }
 
   _scheduleHide({ source } = {}) {
@@ -194,20 +206,23 @@ class NavbarHoverDropdown extends Dropdown {
       this._pendingClick = false
 
       if (this._isShown()) {
-        if (this._hoverOpen && !this._clickOpen) {
+        if (this._wasHoverOpened && !this._clickOpen) {
           this._clickOpen = true
           this._hoverOpen = false
+          this._wasHoverOpened = false
           this._cancelScheduledHide()
           return
         }
 
         this._hoverOpen = false
+        this._wasHoverOpened = false
         super.hide()
         this._clickOpen = this._isShown()
         return
       }
 
       this._hoverOpen = false
+      this._wasHoverOpened = false
       this._cancelScheduledHide()
       super.show()
       this._clickOpen = this._isShown()
