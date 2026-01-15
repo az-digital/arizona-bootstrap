@@ -28,18 +28,15 @@ function getPrimaryDropdownTrigger(dropdownElement) {
 }
 
 function closeOtherDropdowns(navbar, currentDropdownElement) {
-  const openDropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown.show')
-  for (const openDropdown of openDropdowns) {
-    if (openDropdown === currentDropdownElement) {
+  const openTriggers = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown .dropdown-toggle.show')
+
+  for (const trigger of openTriggers) {
+    if (!(trigger instanceof HTMLElement)) {
       continue
     }
 
-    if (!(openDropdown instanceof HTMLElement)) {
-      continue
-    }
-
-    const trigger = getPrimaryDropdownTrigger(openDropdown)
-    if (!trigger) {
+    const dropdownElement = trigger.closest('.navbar-nav > .nav-item.dropdown')
+    if (!dropdownElement || dropdownElement === currentDropdownElement) {
       continue
     }
 
