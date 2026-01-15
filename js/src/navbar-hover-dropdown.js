@@ -275,6 +275,35 @@ function enableAzNavbarHoverDropdowns() {
     return
   }
 
+  const handleOutsideInteraction = event => {
+    const target = event?.target
+    if (!(target instanceof Node)) {
+      return
+    }
+
+    for (const navbar of navbars) {
+      const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
+
+      for (const trigger of openTriggers) {
+        const instance = Dropdown.getInstance(trigger)
+
+        if (!(instance instanceof NavbarHoverDropdown) || !instance.isClickOpen()) {
+          continue
+        }
+
+        const dropdownElement = trigger.closest('.navbar-nav > .nav-item.dropdown')
+        if (!dropdownElement || dropdownElement.contains(target)) {
+          continue
+        }
+
+        instance.hide()
+      }
+    }
+  }
+
+  EventHandler.on(document, 'click', handleOutsideInteraction)
+  EventHandler.on(document, 'focusin', handleOutsideInteraction)
+
   for (const navbar of navbars) {
     EventHandler.on(navbar, 'mouseleave', () => {
       const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
