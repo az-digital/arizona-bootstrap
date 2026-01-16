@@ -18,6 +18,9 @@
   --az-navbar-accent-color: #{$red};
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 1.25rem;
+  --az-navbar-dropdown-toggle-icon: #{escape-svg($az-navbar-dropdown-toggle-icon)};
+  --az-navbar-dropdown-toggle-active-child-icon: #{escape-svg($az-navbar-dropdown-toggle-active-child-icon)};
+  --az-navbar-dropdown-toggle-active-icon: #{escape-svg($az-navbar-dropdown-toggle-active-icon)};
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
@@ -115,7 +118,7 @@
       color: var(--az-navbar-font-color);
       vertical-align: 0;
       content: "";
-      background-image: url("img/expand_circle_down_24dp_1E5288_FILL0_wght400_GRAD0_opsz24.svg");
+      background-image: var(--az-navbar-dropdown-toggle-icon);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
@@ -157,7 +160,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
   .dropdown:has(.collapse .active) > .dropdown-toggle {
     &::after {
-      background-image: url("img/expand_circle_down_24dp_AB0520_FILL0_wght400_GRAD0_opsz24.svg");
+      background-image: var(--az-navbar-dropdown-toggle-active-child-icon);
     }
   }
 
@@ -166,7 +169,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
   .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
     &::after {
-      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
@@ -179,7 +182,7 @@
   .nav-link.dropdown-toggle[aria-expanded="true"] {
     &::after {
       text-decoration: none; // Prevent underline from being inherited
-      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
@@ -189,13 +192,13 @@
   .nav-item .dropdown-toggle-split:focus::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
-    background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
+    background-image: var(--az-navbar-dropdown-toggle-active-icon);
   }
 
   // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
   @media (hover: hover) {
     .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-      background-image: url("img/expand_circle_down_24dp_AB0520_FILL1_wght400_GRAD0_opsz24.svg");
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
