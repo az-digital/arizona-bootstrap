@@ -14,17 +14,8 @@ const HIDE_DELAY_MS = 300
 const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
 
 function getPrimaryDropdownTrigger(dropdownElement) {
-  const splitToggle = dropdownElement.querySelector(':scope > .dropdown-toggle.dropdown-toggle-split')
-  if (splitToggle instanceof HTMLElement) {
-    return splitToggle
-  }
-
   const toggle = dropdownElement.querySelector(':scope > .dropdown-toggle')
-  if (toggle instanceof HTMLElement) {
-    return toggle
-  }
-
-  return null
+  return toggle instanceof HTMLElement ? toggle : null
 }
 
 function closeOtherDropdowns(navbar, currentDropdownElement) {
