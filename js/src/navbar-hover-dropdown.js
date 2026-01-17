@@ -117,9 +117,7 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   _handleHoverEnter() {
-    console.log('[DEBUG] _handleHoverEnter', { suppressHover: this._suppressHover, isShown: this._isShown(), clickOpen: this._clickOpen, hoverOpen: this._hoverOpen })
     if (this._suppressHover) {
-      console.log('[DEBUG] _handleHoverEnter - SUPPRESSED')
       return
     }
 
@@ -132,23 +130,19 @@ class NavbarHoverDropdown extends Dropdown {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
     }
 
-    console.log('[DEBUG] HOVER OPEN')
     this.show()
     this._removePointerFocus()
   }
 
   _handleHoverLeave() {
-    console.log('[DEBUG] _handleHoverLeave - scheduling HOVER CLOSE', { clickOpen: this._clickOpen, hoverOpen: this._hoverOpen })
     this._suppressHover = false
     this._scheduleHide({ source: 'hover' })
   }
 
   _handleFocus(event) {
-    console.log('[DEBUG] _handleFocus', { suppressNextFocus: this._suppressNextFocus, isShown: this._isShown() })
     // Suppress focus triggered by click - the click handler manages that interaction
     if (this._suppressNextFocus) {
       this._suppressNextFocus = false
-      console.log('[DEBUG] _handleFocus - SUPPRESSED')
       return
     }
 
@@ -182,12 +176,10 @@ class NavbarHoverDropdown extends Dropdown {
 
   _handleMouseDown() {
     // Set flag before focus fires (event order: mousedown → focus → click)
-    console.log('[DEBUG] _handleMouseDown - setting suppressNextFocus')
     this._suppressNextFocus = true
   }
 
   _handleClick(event) {
-    console.log('[DEBUG] _handleClick', { isShown: this._isShown(), clickOpen: this._clickOpen, hoverOpen: this._hoverOpen, wasHoverOpened: this._wasHoverOpened })
     event.preventDefault()
     event.stopImmediatePropagation()
 
@@ -222,18 +214,16 @@ class NavbarHoverDropdown extends Dropdown {
   toggle() {
     // Ignore toggle calls from Bootstrap's delegated handler after we already processed the click
     if (this._ignoreNextToggle) {
-      console.log('[DEBUG] toggle - IGNORED (Bootstrap delegated handler)')
       this._ignoreNextToggle = false
       return
     }
 
     if (this._pendingClick) {
       this._pendingClick = false
-      this._ignoreNextToggle = true  // Ignore Bootstrap's subsequent toggle call
+      this._ignoreNextToggle = true // Ignore Bootstrap's subsequent toggle call
 
       if (this._isShown()) {
         if (this._wasHoverOpened && !this._clickOpen) {
-          console.log('[DEBUG] toggle - CLICK LOCK (was hover opened, now click locked)')
           this._clickOpen = true
           this._hoverOpen = false
           this._wasHoverOpened = false
@@ -241,7 +231,6 @@ class NavbarHoverDropdown extends Dropdown {
           return
         }
 
-        console.log('[DEBUG] toggle - CLICK CLOSE')
         this._hoverOpen = false
         this._wasHoverOpened = false
         this._suppressHover = true
@@ -250,7 +239,6 @@ class NavbarHoverDropdown extends Dropdown {
         return
       }
 
-      console.log('[DEBUG] toggle - CLICK OPEN')
       this._hoverOpen = false
       this._wasHoverOpened = false
       this._cancelScheduledHide()
@@ -263,8 +251,6 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   hide() {
-    console.log('[DEBUG] hide() called', { clickOpen: this._clickOpen, hoverOpen: this._hoverOpen })
-    console.trace('[DEBUG] hide() stack trace')
     this._hoverOpen = false
     this._clickOpen = false
     this._cancelScheduledHide()
