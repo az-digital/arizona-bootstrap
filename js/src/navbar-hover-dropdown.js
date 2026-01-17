@@ -55,6 +55,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._clickOpen = false
     this._pendingClick = false
     this._wasHoverOpened = false
+    this._suppressHover = false
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -111,6 +112,10 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   _handleHoverEnter() {
+    if (this._suppressHover) {
+      return
+    }
+
     this._cancelScheduledHide()
     this._hoverTriggered = true
     this._hoverOpen = true
@@ -125,6 +130,7 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   _handleHoverLeave() {
+    this._suppressHover = false
     this._scheduleHide({ source: 'hover' })
   }
 
@@ -204,6 +210,7 @@ class NavbarHoverDropdown extends Dropdown {
 
         this._hoverOpen = false
         this._wasHoverOpened = false
+        this._suppressHover = true
         super.hide()
         this._clickOpen = this._isShown()
         return
