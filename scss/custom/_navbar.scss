@@ -90,6 +90,11 @@
       text-decoration-color: var(--az-navbar-font-hover-color);
     }
 
+    // Single dropdowns: don't keep underline just because the menu is open
+    &:not(.active):not(.is-active):not(:active).dropdown-toggle.show:not(:hover) {
+      text-decoration: none;
+    }
+
     &:focus-visible {
       @include border-radius(2px);
       outline: 0;
