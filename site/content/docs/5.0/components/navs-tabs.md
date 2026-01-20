@@ -218,13 +218,16 @@ Take that same HTML, but use `.nav-utility` instead to provide a more muted appe
 {{< example >}}
 <ul class="nav nav-utility">
   <li class="nav-item">
-    <a href="#" class="nav-link">Link</a>
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
   </li>
   <li class="nav-item">
-    <a href="#" class="nav-link">Longer Link</a>
+    <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
-    <a href="#" class="nav-link">Much Longer Utility Link</a>
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </li>
 </ul>
 {{< /example >}}
