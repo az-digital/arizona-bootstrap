@@ -332,7 +332,12 @@ function enableAzNavbarHoverDropdowns() {
       for (const trigger of openTriggers) {
         const instance = Dropdown.getInstance(trigger)
 
-        if (instance instanceof NavbarHoverDropdown && instance.isClickOpen()) {
+        if (instance instanceof NavbarHoverDropdown) {
+          if (instance.isClickOpen()) {
+            continue
+          }
+
+          instance._scheduleHide({ source: 'navbar' })
           continue
         }
 
