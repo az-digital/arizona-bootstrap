@@ -288,6 +288,17 @@
       .btn {
         margin-left: 0;
       }
+
+      .dropdown-item {
+        flex: 1 1 0;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        white-space: normal;
+      }
+
+      .dropdown-toggle-split {
+        flex: 0 0 auto;
+      }
     }
 
     li {
@@ -345,6 +356,9 @@
       font-weight: var(--az-navbar-font-weight);
       color: var(--az-navbar-font-color);
       text-decoration: none;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      white-space: normal;
       border-bottom: 1px solid var(--az-navbar-border-color);
 
       /* stylelint-disable selector-no-qualifying-type */
