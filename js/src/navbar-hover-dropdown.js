@@ -130,7 +130,12 @@ class NavbarHoverDropdown extends Dropdown {
       closeOtherDropdowns(this._navbar, this._dropdownElement)
     }
 
+    this._suppressNextFocus = true
     this.show()
+    if (this._suppressNextFocus) {
+      this._suppressNextFocus = false
+    }
+
     this._removePointerFocus()
   }
 
@@ -331,6 +336,45 @@ function enableAzNavbarHoverDropdowns() {
   EventHandler.on(document, 'focusin', handleOutsideInteraction)
 
   for (const navbar of navbars) {
+    EventHandler.on(navbar, 'mouseover', event => {
+      const target = event?.target
+      if (!(target instanceof Element)) {
+        return
+      }
+
+      const navList = target.closest('.navbar-nav')
+      if (!navList) {
+        return
+      }
+
+      const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
+
+      for (const trigger of openTriggers) {
+        const instance = Dropdown.getInstance(trigger)
+
+        if (!(instance instanceof NavbarHoverDropdown) || instance.isClickOpen()) {
+          continue
+        }
+
+        if (!instance._hoverOpen) {
+          continue
+        }
+
+        const dropdownElement = trigger.closest('.navbar-nav .nav-item.dropdown')
+        if (dropdownElement) {
+          const menuElement = instance._menu || dropdownElement.querySelector('.dropdown-menu')
+          const isInsideToggle = trigger.contains(target)
+          const isInsideMenu = menuElement instanceof Element && menuElement.contains(target)
+
+          if (isInsideToggle || isInsideMenu) {
+            continue
+          }
+        }
+
+        instance._scheduleHide({ source: 'hover' })
+      }
+    })
+
     EventHandler.on(navbar, 'mouseleave', () => {
       const openTriggers = navbar.querySelectorAll('.dropdown-toggle.show')
 
