@@ -15,6 +15,7 @@
     &:active,
     &.is-active {
       background-color: initial;
+      border-bottom-color: $dark-silver;
       @include border-radius(0);
     }
 
