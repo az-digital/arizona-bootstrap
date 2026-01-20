@@ -212,12 +212,6 @@ class NavbarHoverDropdown extends Dropdown {
   }
 
   toggle() {
-    // Ignore toggle calls from Bootstrap's delegated handler after we already processed the click
-    if (this._ignoreNextToggle) {
-      this._ignoreNextToggle = false
-      return
-    }
-
     if (this._pendingClick) {
       this._pendingClick = false
       this._ignoreNextToggle = true // Ignore Bootstrap's subsequent toggle call
@@ -235,6 +229,7 @@ class NavbarHoverDropdown extends Dropdown {
         this._wasHoverOpened = false
         this._suppressHover = true
         super.hide()
+        this._ignoreNextToggle = true
         this._clickOpen = this._isShown()
         return
       }
@@ -247,12 +242,20 @@ class NavbarHoverDropdown extends Dropdown {
       return
     }
 
+    // Ignore toggle calls from Bootstrap's delegated handler after we already processed the click
+    if (this._ignoreNextToggle) {
+      this._ignoreNextToggle = false
+      return
+    }
+
     return super.toggle()
   }
 
   hide() {
     this._hoverOpen = false
     this._clickOpen = false
+    this._pendingClick = false
+    this._ignoreNextToggle = false
     this._cancelScheduledHide()
     return super.hide()
   }
@@ -260,6 +263,8 @@ class NavbarHoverDropdown extends Dropdown {
   _completeHide(relatedTarget) {
     this._hoverOpen = false
     this._clickOpen = false
+    this._pendingClick = false
+    this._ignoreNextToggle = false
     this._cancelScheduledHide()
     super._completeHide(relatedTarget)
   }
