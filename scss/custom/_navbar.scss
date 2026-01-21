@@ -245,7 +245,9 @@
     .dropdown-toggle-split:focus::after {
       display: block;
       inline-size: 1.5rem;
+      width: 1.5rem;
       block-size: 1.5rem;
+      height: 1.5rem;
       margin: 0;
       font-family: "Material Symbols Rounded", sans-serif;
       font-size: 1.5rem;
