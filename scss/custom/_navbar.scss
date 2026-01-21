@@ -69,7 +69,6 @@
     &.active,
     &.is-active,
     &:active,
-    &.show,
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
@@ -88,11 +87,6 @@
     // On hover, underline is blue, text remains blue (variable override above on navbar-nav)
     &:hover {
       text-decoration-color: var(--az-navbar-font-hover-color);
-    }
-
-    // Single dropdowns: don't keep underline just because the menu is open
-    &:not(.active):not(.is-active):not(:active).dropdown-toggle.show:not(:hover) {
-      text-decoration: none;
     }
 
     &:focus-visible {
