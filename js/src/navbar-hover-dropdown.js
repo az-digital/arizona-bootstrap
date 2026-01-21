@@ -11,6 +11,7 @@ import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.
 const HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)'
 const HIDE_DELAY_MS = 300
 
+// Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
 const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
 
 function getPrimaryDropdownTrigger(dropdownElement) {
@@ -18,6 +19,7 @@ function getPrimaryDropdownTrigger(dropdownElement) {
   return toggle instanceof HTMLElement ? toggle : null
 }
 
+// Close sibling dropdowns unless they were opened via click.
 function closeOtherDropdowns(navbar, currentDropdownElement) {
   const openTriggers = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown .dropdown-toggle.show')
 
@@ -49,6 +51,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._navbar = navbar
     this._hideTimer = null
     this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
+    // State flags for hover/click coordination.
     this._hoverTriggered = false
     this._suppressNextBlur = false
     this._suppressNextFocus = false
@@ -116,6 +119,7 @@ class NavbarHoverDropdown extends Dropdown {
     }
   }
 
+  // Hover opens the menu and closes hover-open siblings.
   _handleHoverEnter() {
     if (this._suppressHover) {
       return
@@ -144,6 +148,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._scheduleHide({ source: 'hover' })
   }
 
+  // Focus opens the menu, but skips focus transitions into the menu.
   _handleFocus(event) {
     // Suppress focus triggered by click - the click handler manages that interaction
     if (this._suppressNextFocus) {
@@ -166,6 +171,7 @@ class NavbarHoverDropdown extends Dropdown {
     this.show()
   }
 
+  // Blur schedules a hide unless focus moved into the menu.
   _handleBlur(event) {
     if (this._suppressNextBlur) {
       this._suppressNextBlur = false
@@ -184,6 +190,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._suppressNextFocus = true
   }
 
+  // Click is handled here to prevent Bootstrap's delegated double-toggle.
   _handleClick(event) {
     event.preventDefault()
     event.stopImmediatePropagation()
@@ -193,6 +200,7 @@ class NavbarHoverDropdown extends Dropdown {
     this.toggle()
   }
 
+  // Hide on hover-out, but never when the menu is click-open.
   _scheduleHide({ source } = {}) {
     this._cancelScheduledHide()
 
@@ -285,6 +293,7 @@ class NavbarHoverDropdown extends Dropdown {
     super._completeHide(relatedTarget)
   }
 
+  // Remove focus after hover to avoid sticky focus rings.
   _removePointerFocus() {
     if (!this._hoverTriggered) {
       return
@@ -303,6 +312,7 @@ class NavbarHoverDropdown extends Dropdown {
   }
 }
 
+// Wire up hover dropdowns for AZ navbars and global outside interactions.
 function enableAzNavbarHoverDropdowns() {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     return
