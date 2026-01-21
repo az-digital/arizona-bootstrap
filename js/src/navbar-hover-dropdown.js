@@ -216,6 +216,17 @@ class NavbarHoverDropdown extends Dropdown {
     }
   }
 
+  /**
+   * Handles click-driven toggling while preserving independent hover state.
+   * The click handler sets `_pendingClick`, and this method processes that
+   * click before Bootstrap's delegated toggle runs.
+   *
+   * Behavior:
+   * - If a click occurs while the menu is hover-open, convert it to click-open.
+   * - If already open via click, close and suppress immediate re-toggle.
+   * - Otherwise open via click and mark `_clickOpen`.
+   * - Ignore the next delegated `toggle()` invoked by Bootstrap after a handled click.
+   */
   toggle() {
     if (this._pendingClick) {
       this._pendingClick = false
