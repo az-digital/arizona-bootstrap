@@ -99,7 +99,7 @@
 
   // Reduce spacing between the nav-link and the split toggle button
   .btn-group:has(.dropdown-toggle-split) > .nav-link {
-    padding-right: .3125rem;
+    padding-right: .5rem;
   }
 
   .dropdown-toggle {
@@ -137,12 +137,12 @@
   // Position the icon for single dropdowns to prevent underline and overlap issues
   :not(.btn-group) > .dropdown-toggle {
     position: relative; // Create a positioning context for the ::after element
-    padding-right: 2.3125rem; // Add space on the right for the icon (32+5px)
+    padding-right: 2.75rem; // Add space on the right for the icon (8px + 24px + 12px = 44px)
 
     &::after {
       position: absolute; // Take the icon out of the document flow
       top: 50%; // Center it vertically
-      right: .625rem; // Position the icon from the right edge
+      right: .75rem; // Position the icon from the right edge (12px)
       transform: translateY(-50%); // Fine-tune vertical centering
     }
   }
