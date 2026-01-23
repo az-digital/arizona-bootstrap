@@ -21,6 +21,7 @@
   --az-navbar-dropdown-toggle-icon: #{escape-svg($az-navbar-dropdown-toggle-icon)};
   --az-navbar-dropdown-toggle-active-child-icon: #{escape-svg($az-navbar-dropdown-toggle-active-child-icon)};
   --az-navbar-dropdown-toggle-active-icon: #{escape-svg($az-navbar-dropdown-toggle-active-icon)};
+  --az-navbar-tertiary-menu-item-padding-y: .5rem;
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
@@ -351,11 +352,22 @@
     list-style: none;
     background-color: $cool-gray;
 
+    /* stylelint-disable selector-max-compound-selectors */
+    // First navigation element should have double top padding
+    > li:first-child > a {
+      padding-top: 1rem;
+    }
+    // Last navigation element should have double bottom padding
+    > li:last-child > a {
+      padding-bottom: 1rem;
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+
     a {
       display: block;
-      padding-top: var(--bs-dropdown-item-padding-y);
+      padding-top: var(--az-navbar-tertiary-menu-item-padding-y);
       padding-right: var(--bs-dropdown-item-padding-x);
-      padding-bottom: var(--bs-dropdown-item-padding-y);
+      padding-bottom: var(--az-navbar-tertiary-menu-item-padding-y);
       padding-left: 1.875rem;
       font-weight: var(--az-navbar-font-weight);
       color: var(--az-navbar-font-color);
