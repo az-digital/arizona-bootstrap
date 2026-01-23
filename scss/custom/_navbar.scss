@@ -18,6 +18,9 @@
   --az-navbar-accent-color: #{$red};
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 1.25rem;
+  --az-navbar-dropdown-toggle-icon: #{escape-svg($az-navbar-dropdown-toggle-icon)};
+  --az-navbar-dropdown-toggle-active-child-icon: #{escape-svg($az-navbar-dropdown-toggle-active-child-icon)};
+  --az-navbar-dropdown-toggle-active-icon: #{escape-svg($az-navbar-dropdown-toggle-active-icon)};
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
@@ -69,7 +72,6 @@
     &.active,
     &.is-active,
     &:active,
-    &.show,
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
@@ -106,15 +108,18 @@
     @include border-radius(0);
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
+      inline-size: 1.5rem; // Matches previous font-size for consistent layout
+      width: 1.5rem; // Physical fallback for older browsers
+      block-size: 1.5rem;
+      height: 1.5rem;
       margin-bottom: 0; // Remove Bootstrap's default bottom margin on the single dropdown's icon
-      font-family: "Material Symbols Rounded", sans-serif;
-      font-size: 1.55rem; // Increased slightly from 1.5 so that top of icon is not clipped on hover
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      font-weight: 300; // Needed to prevent inheritance of parent's font weight - otherwise redundant
       line-height: 1;
-      color: var(--az-navbar-font-color);
       vertical-align: 0;
-      content: "expand_circle_down";
+      content: "";
+      background-image: var(--az-navbar-dropdown-toggle-icon);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
       border: 0;
     }
   }
@@ -153,8 +158,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
   .dropdown:has(.collapse .active) > .dropdown-toggle {
     &::after {
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: var(--az-navbar-dropdown-toggle-active-child-icon);
     }
   }
 
@@ -163,8 +167,7 @@
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
   .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
     &::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
@@ -176,9 +179,8 @@
   .nav-link.dropdown-toggle:hover,
   .nav-link.dropdown-toggle[aria-expanded="true"] {
     &::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
       text-decoration: none; // Prevent underline from being inherited
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
@@ -188,15 +190,13 @@
   .nav-item .dropdown-toggle-split:focus::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
   .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
-    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-    color: var(--az-navbar-accent-color);
+    background-image: var(--az-navbar-dropdown-toggle-active-icon);
   }
 
   // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
   @media (hover: hover) {
     .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-      font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-      color: var(--az-navbar-accent-color);
+      background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
@@ -214,13 +214,16 @@
     --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
     --bs-dropdown-item-padding-x: 1.25rem;
-    --bs-dropdown-item-padding-y: .75rem;
+    --bs-dropdown-item-padding-y: .6875rem;
     margin-top: var(--az-navbar-nav-item-margin-y);
     overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
     .dropdown-toggle-split {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
@@ -237,13 +240,24 @@
     }
 
     // Plus icon when collapsed
-    .dropdown-toggle-split::after {
+    .dropdown-toggle-split::after,
+    .dropdown-toggle-split:focus::after {
+      display: block;
+      inline-size: 1.5rem;
+      width: 1.5rem;
+      block-size: 1.5rem;
+      height: 1.5rem;
+      margin: 0;
       font-family: "Material Symbols Rounded", sans-serif;
-      font-size: 1.25rem;
-      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-size: 1.5rem;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      font-weight: 400;
+      line-height: 1.5rem;
       color: var(--az-navbar-font-color);
-      vertical-align: 0;
-      content: "add";
+      text-align: center;
+      // Material Symbols "Add" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:add:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=add
+      content: "\e145";
+      background-image: none;
       border: 0;
     }
 
@@ -253,8 +267,7 @@
     .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle,
     .btn-group:has(.collapse .active) > .dropdown-toggle {
       &::after {
-        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-        color: var(--az-navbar-font-color);
+        background-image: none;
       }
     }
 
@@ -278,7 +291,8 @@
 
     // Subtract icon when expanded
     .dropdown-toggle-split[aria-expanded="true"]::after {
-      content: "remove";
+      // Material Symbols "Remove" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:remove:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=remove
+      content: "\e15b";
     }
 
     // Button group layout for dropdown toggle at second level
