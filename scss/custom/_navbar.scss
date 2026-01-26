@@ -17,10 +17,14 @@
   --az-navbar-border-color: #{$cool-gray};
   --az-navbar-accent-color: #{$red};
   --az-navbar-min-height: 60px;
-  --az-navbar-nav-item-margin-y: 1.25rem;
+  --az-navbar-nav-item-margin-y: 19px;
   --az-navbar-dropdown-toggle-icon: #{escape-svg($az-navbar-dropdown-toggle-icon)};
   --az-navbar-dropdown-toggle-active-child-icon: #{escape-svg($az-navbar-dropdown-toggle-active-child-icon)};
   --az-navbar-dropdown-toggle-active-icon: #{escape-svg($az-navbar-dropdown-toggle-active-icon)};
+  --az-navbar-dropdown-padding-x: 12px;
+  --az-navbar-dropdown-toggle-icon-gap: 8px;
+  --az-navbar-dropdown-toggle-icon-size: 22px;
+  --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-tertiary-menu-item-padding-y: .5rem;
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
@@ -100,22 +104,32 @@
     }
   }
 
-  // Reduce spacing between the nav-link and the split toggle button
-  .btn-group:has(.dropdown-toggle-split) > .nav-link {
-    padding-right: .5rem;
+  // For Split Dropdown only.
+  // Remove right padding from nav-link in split dropdowns to eliminate gap between
+  // the nav-link text and the split toggle button
+  .dropdown.btn-group > .nav-link {
+    padding-right: 0;
+  }
+
+  // For Split Dropdown only.
+  // Override Bootstrap's margin-left on adjacent buttons in split dropdown btn-groups
+  .dropdown.btn-group > .dropdown-toggle-split {
+    margin-left: 0;
   }
 
   .dropdown-toggle {
+    padding-right: var(--az-navbar-dropdown-toggle-padding-end);
     @include border-radius(0);
+
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
-      inline-size: 1.5rem; // Matches previous font-size for consistent layout
-      width: 1.5rem; // Physical fallback for older browsers
-      block-size: 1.5rem;
-      height: 1.5rem;
+      inline-size: var(--az-navbar-dropdown-toggle-icon-size);
+      width: var(--az-navbar-dropdown-toggle-icon-size);
+      block-size: var(--az-navbar-dropdown-toggle-icon-size);
+      height: var(--az-navbar-dropdown-toggle-icon-size);
       margin-bottom: 0; // Remove Bootstrap's default bottom margin on the single dropdown's icon
+      margin-left: var(--az-navbar-dropdown-toggle-icon-gap);
       line-height: 1;
-      vertical-align: 0;
       content: "";
       background-image: var(--az-navbar-dropdown-toggle-icon);
       background-repeat: no-repeat;
@@ -137,19 +151,6 @@
       @include border-radius(2px);
       outline: 0;
       box-shadow: $focus-ring-box-shadow;
-    }
-  }
-
-  // Position the icon for single dropdowns to prevent underline and overlap issues
-  :not(.btn-group) > .dropdown-toggle {
-    position: relative; // Create a positioning context for the ::after element
-    padding-right: 2.75rem; // Add space on the right for the icon (8px + 24px + 12px = 44px)
-
-    &::after {
-      position: absolute; // Take the icon out of the document flow
-      top: 50%; // Center it vertically
-      right: .75rem; // Position the icon from the right edge (12px)
-      transform: translateY(-50%); // Fine-tune vertical centering
     }
   }
 
