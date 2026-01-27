@@ -26,6 +26,8 @@
   --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-tertiary-menu-item-padding-y: .5rem;
+  --az-navbar-focus-ring: #{$focus-ring-box-shadow};
+  --az-navbar-focus-ring-inset: inset #{$focus-ring-box-shadow};
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
@@ -100,7 +102,7 @@
     &:focus-visible {
       @include border-radius(2px);
       outline: 0;
-      box-shadow: 0 0 0 .25rem rgba($red, .5);
+      box-shadow: var(--az-navbar-focus-ring);
     }
   }
 
@@ -140,6 +142,12 @@
       background-size: 100% 100%;
       border: 0;
     }
+
+    &:focus-visible {
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: var(--az-navbar-focus-ring);
+    }
   }
 
   /* Primary navigation split dropdown toggle */
@@ -149,12 +157,6 @@
     padding-bottom: 0;
     padding-left: 0;
     --bs-btn-border-width: 0;
-
-    &:focus-visible {
-      @include border-radius(2px);
-      outline: 0;
-      box-shadow: $focus-ring-box-shadow;
-    }
   }
 
   // Toggle icon switches to red outline when a second- or third-level item is active in its submenu
@@ -201,6 +203,12 @@
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
+    .dropdown-toggle {
+      &:focus-visible {
+        box-shadow: var(--az-navbar-focus-ring-inset);
+      }
+    }
+
     .dropdown-toggle-split {
       display: flex;
       align-items: center;
@@ -208,12 +216,6 @@
       padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
-
-      &:focus-visible {
-        @include border-radius(2px);
-        outline: 0;
-        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
-      }
 
       &:focus::after {
         color: var(--az-navbar-font-color);
@@ -313,7 +315,7 @@
     &:focus-visible {
       @include border-radius(2px);
       outline: 0;
-      box-shadow: inset 0 0 0 .25rem rgba($red, .5);
+      box-shadow: var(--az-navbar-focus-ring-inset);
     }
 
     &:hover {
@@ -389,7 +391,7 @@
       &:focus-visible {
         @include border-radius(2px);
         outline: 0;
-        box-shadow: inset 0 0 0 .25rem rgba($red, .5);
+        box-shadow: var(--az-navbar-focus-ring-inset);
       }
       /* stylelint-enable selector-no-qualifying-type */
     }
