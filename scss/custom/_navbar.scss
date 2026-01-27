@@ -23,7 +23,7 @@
   --az-navbar-dropdown-toggle-active-icon: #{escape-svg($az-navbar-dropdown-toggle-active-icon)};
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 8px;
-  --az-navbar-dropdown-toggle-icon-size: 22px;
+  --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-tertiary-menu-item-padding-y: .5rem;
   --bs-navbar-color: #{$azurite};
@@ -180,13 +180,6 @@
       background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
-
-  // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
-  // @media (hover: hover) {
-  //   .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-  //     background-image: var(--az-navbar-dropdown-toggle-active-icon);
-  //   }
-  // }
 
   // Secondary navigation level
   .dropdown-menu {
