@@ -123,12 +123,14 @@
 
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
+      // Prevent the icon from shrinking when `.dropdown-toggle` is a flex container
+      // (Bootstrap sets `.navbar-nav .dropdown-toggle { display: flex; }`, making `::after` a flex item)
       flex-shrink: 0;
       inline-size: var(--az-navbar-dropdown-toggle-icon-size);
       width: var(--az-navbar-dropdown-toggle-icon-size);
       block-size: var(--az-navbar-dropdown-toggle-icon-size);
       height: var(--az-navbar-dropdown-toggle-icon-size);
-      margin-bottom: 0; // Remove Bootstrap's default bottom margin on the single dropdown's icon
+      margin-bottom: 0; // Remove Bootstrap's default bottom margin
       margin-left: var(--az-navbar-dropdown-toggle-icon-gap);
       line-height: 1;
       content: "";
