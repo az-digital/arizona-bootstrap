@@ -123,6 +123,7 @@
 
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
+      flex-shrink: 0;
       inline-size: var(--az-navbar-dropdown-toggle-icon-size);
       width: var(--az-navbar-dropdown-toggle-icon-size);
       block-size: var(--az-navbar-dropdown-toggle-icon-size);
@@ -154,8 +155,7 @@
     }
   }
 
-  // Dropdown button icon is a red outline when when a second or third level nav item
-  // is active in its menu subtree.
+  // Toggle icon switches to red outline when a second- or third-level item is active in its submenu
   .dropdown:has(.dropdown-item.active) > .dropdown-toggle,
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
   .dropdown:has(.collapse .active) > .dropdown-toggle {
@@ -164,43 +164,27 @@
     }
   }
 
-  // Dropdown icon should be filled when hovering, regardless of active children
+  // Toggle icon fills with solid red when hovering over toggle or when dropdown is expanded
+  .dropdown-toggle:hover,
   .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover,
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
-  .dropdown:has(.collapse .active) > .dropdown-toggle:hover {
-    &::after {
-      background-image: var(--az-navbar-dropdown-toggle-active-icon);
-    }
-  }
-
-  // Dropdown button has a red fill on hover or when expanded
-  .dropdown-toggle:hover,
-  .btn-group:has(.active) > .dropdown-toggle-split:hover,
+  .dropdown:has(.collapse .active) > .dropdown-toggle:hover,
   .dropdown-toggle[aria-expanded="true"],
-  .btn-group:has(.active) > .dropdown-toggle-split[aria-expanded="true"],
-  .nav-link.dropdown-toggle:hover,
-  .nav-link.dropdown-toggle[aria-expanded="true"] {
+  .dropdown:has(.dropdown-item.active) > .dropdown-toggle[aria-expanded="true"],
+  .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle[aria-expanded="true"],
+  .dropdown:has(.collapse .active) > .dropdown-toggle[aria-expanded="true"] {
     &::after {
       text-decoration: none; // Prevent underline from being inherited
       background-image: var(--az-navbar-dropdown-toggle-active-icon);
     }
   }
 
-
-  // Keep the primary toggle icon solid red when submenu is open via keyboard focus
-  .nav-item .nav-link.dropdown-toggle:focus::after,
-  .nav-item .dropdown-toggle-split:focus::after,
-  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
-  .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
-    background-image: var(--az-navbar-dropdown-toggle-active-icon);
-  }
-
   // Touch-safe hover cues: keep the primary toggle icon solid red while hovering the submenu
-  @media (hover: hover) {
-    .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-      background-image: var(--az-navbar-dropdown-toggle-active-icon);
-    }
-  }
+  // @media (hover: hover) {
+  //   .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
+  //     background-image: var(--az-navbar-dropdown-toggle-active-icon);
+  //   }
+  // }
 
   // Secondary navigation level
   .dropdown-menu {
