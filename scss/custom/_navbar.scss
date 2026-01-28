@@ -25,7 +25,9 @@
   --az-navbar-dropdown-toggle-icon-gap: 8px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
-  --az-navbar-tertiary-menu-item-padding-y: .5rem;
+  --az-navbar-tertiary-menu-padding-y: 16px;
+  --az-navbar-tertiary-menu-item-padding-y: 8px;
+  --az-navbar-tertiary-menu-item-padding-start: 30px; // increased from 20px to indicate parent-child relationship
   --az-navbar-focus-ring: #{$focus-ring-box-shadow};
   --az-navbar-focus-ring-inset: inset #{$focus-ring-box-shadow};
   --bs-navbar-color: #{$azurite};
@@ -314,11 +316,11 @@
     /* stylelint-disable selector-max-compound-selectors */
     // First navigation element should have double top padding
     > li:first-child > a {
-      padding-top: 1rem;
+      padding-top: var(--az-navbar-tertiary-menu-padding-y);
     }
     // Last navigation element should have double bottom padding
     > li:last-child > a {
-      padding-bottom: 1rem;
+      padding-bottom: var(--az-navbar-tertiary-menu-padding-y);
     }
     /* stylelint-enable selector-max-compound-selectors */
 
@@ -327,7 +329,7 @@
       padding-top: var(--az-navbar-tertiary-menu-item-padding-y);
       padding-right: var(--bs-dropdown-item-padding-x);
       padding-bottom: var(--az-navbar-tertiary-menu-item-padding-y);
-      padding-left: 1.875rem;
+      padding-left: var(--az-navbar-tertiary-menu-item-padding-start);
       font-weight: var(--az-navbar-font-weight);
       color: var(--az-navbar-font-color);
       text-decoration: none;
