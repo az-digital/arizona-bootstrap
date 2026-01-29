@@ -25,6 +25,8 @@
   --az-navbar-dropdown-toggle-icon-gap: 8px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
+  --az-navbar-secondary-dropdown-item-padding-x: 20px;
+  --az-navbar-secondary-dropdown-item-padding-y: 11px;
   --az-navbar-tertiary-menu-padding-y: 16px;
   --az-navbar-tertiary-menu-item-padding-y: 8px;
   --az-navbar-tertiary-menu-item-padding-start: 30px; // increased from 20px to indicate parent-child relationship
@@ -198,8 +200,8 @@
     --bs-dropdown-link-hover-bg: var(--az-navbar-border-color);
     --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
-    --bs-dropdown-item-padding-x: 1.25rem;
-    --bs-dropdown-item-padding-y: .6875rem;
+    --bs-dropdown-item-padding-x: var(--az-navbar-secondary-dropdown-item-padding-x);
+    --bs-dropdown-item-padding-y: var(--az-navbar-secondary-dropdown-item-padding-y);
     margin-top: var(--az-navbar-nav-item-margin-y);
     overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
