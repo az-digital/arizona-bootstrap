@@ -233,10 +233,10 @@
       &::after,
       &:focus::after {
         display: block;
-        inline-size: 1.5rem;
-        width: 1.5rem;
-        block-size: 1.5rem;
-        height: 1.5rem;
+        inline-size: var(--az-navbar-dropdown-toggle-icon-size);
+        width: var(--az-navbar-dropdown-toggle-icon-size);
+        block-size: var(--az-navbar-dropdown-toggle-icon-size);
+        height: var(--az-navbar-dropdown-toggle-icon-size);
         margin: 0;
         font-family: "Material Symbols Rounded", sans-serif;
         font-size: 1.5rem;
