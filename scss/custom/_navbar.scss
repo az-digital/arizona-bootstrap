@@ -26,7 +26,7 @@
   --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
-  --az-navbar-secondary-dropdown-item-padding-y: 11px;
+  --az-navbar-secondary-dropdown-item-padding-y: 12px;
   --az-navbar-tertiary-menu-padding-y: 16px;
   --az-navbar-tertiary-menu-item-padding-y: 8px;
   --az-navbar-tertiary-menu-item-padding-start: 30px; // increased from 20px to indicate parent-child relationship
@@ -238,7 +238,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
+      padding: calc(var(--bs-dropdown-item-padding-y) - 1px); // stylelint-disable-line function-disallowed-list
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
 
