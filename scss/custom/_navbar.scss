@@ -75,6 +75,7 @@
     }
   }
 
+  // Primary nav link styles (underline on hover/active, focus ring).
   .nav-link {
     // No vertical padding so left border is drawn correctly
     padding: 0 var(--bs-navbar-nav-link-padding-x);
@@ -111,8 +112,8 @@
   }
 
   // For Split Dropdown only.
-  // Remove right padding from nav-link in split dropdowns to eliminate gap between
-  // the nav-link text and the split toggle button
+  // Removes the gap between the text link and the split toggle button caused by
+  // Bootstrap's btn-group adjacent button spacing.
   .dropdown.btn-group > .nav-link {
     padding-right: 0;
   }
@@ -123,6 +124,7 @@
     margin-left: 0;
   }
 
+  // Primary dropdown toggle (single dropdown and split dropdown toggle).
   .dropdown-toggle {
     padding-right: var(--az-navbar-dropdown-toggle-padding-end);
     @include border-radius(0);
@@ -163,7 +165,7 @@
     --bs-btn-border-width: 0;
   }
 
-  // Toggle icon switches to red outline when a second- or third-level item is active in its submenu
+  // Toggle icon switches to red outline when a second- or third-level item is active in its submenu.
   .dropdown:has(.dropdown-item.active) > .dropdown-toggle,
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle,
   .dropdown:has(.collapse .active) > .dropdown-toggle {
@@ -172,7 +174,7 @@
     }
   }
 
-  // Toggle icon fills with solid red when hovering over toggle or when dropdown is expanded
+  // Toggle icon fills with solid red when hovering over toggle or when dropdown is expanded.
   .dropdown-toggle:hover,
   .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover,
   .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover,
@@ -188,6 +190,7 @@
   }
 
   // Secondary navigation (dropdown menu, level 2)
+  // Styles the dropdown menu, list rows, and the nested split toggle.
   .dropdown-menu {
     --bs-dropdown-padding-y: 0;
     --bs-dropdown-spacer: 0;
@@ -207,6 +210,7 @@
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
 
+    // Divider for each row in the secondary dropdown menu.
     li {
       border-bottom: 1px solid var(--az-navbar-border-color);
 
@@ -215,7 +219,7 @@
       }
     }
 
-    // Button group layout for dropdown toggle at second level
+    // Button group layout for dropdown toggle at second level.
     .btn-group {
       display: flex;
       @include border-radius(0);
@@ -224,6 +228,7 @@
       }
     }
 
+    // Secondary-level split toggle button (expands tertiary submenu).
     .dropdown-toggle {
       display: flex;
       align-items: center;
@@ -272,6 +277,7 @@
     }
   }
 
+  // Secondary dropdown menu link styles.
   .dropdown-item {
     display: flex;
     flex: 1 1 auto;
@@ -307,6 +313,7 @@
   }
 
   // Tertiary navigation (collapsible submenu, level 3)
+  // Handles the nested list that expands from a secondary split toggle.
   .dropdown-menu .collapse,
   .dropdown-menu .collapsing,
   .dropdown-menu .show {
@@ -377,6 +384,7 @@
       /* stylelint-enable selector-no-qualifying-type */
     }
   }
+  // Disable transition timing during collapse for a snappier submenu.
   .dropdown-menu .collapsing {
     height: auto;
     transition-delay: 0s;
