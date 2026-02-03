@@ -240,7 +240,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: calc(var(--bs-dropdown-item-padding-y) - 1px); // stylelint-disable-line function-disallowed-list
+      padding: var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
 
@@ -290,6 +290,10 @@
     flex: 1 1 auto;
     align-items: center;
     min-width: 0; // allows text truncation if needed
+    // add a little extra top space to "visually" center text
+    padding-top: calc(var(--bs-dropdown-item-padding-y) + 2px); // stylelint-disable-line function-disallowed-list
+    padding-bottom: var(--bs-dropdown-item-padding-y);
+
     font-weight: var(--az-navbar-font-weight);
     border-left: unset;
 
