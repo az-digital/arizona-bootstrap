@@ -22,7 +22,7 @@
   --az-navbar-dropdown-toggle-icon-active: #{escape-svg($az-navbar-dropdown-toggle-icon-active)};
   --az-navbar-dropdown-toggle-icon-active-child: #{escape-svg($az-navbar-dropdown-toggle-icon-active-child)};
   --az-navbar-dropdown-padding-x: 12px;
-  --az-navbar-dropdown-toggle-icon-gap: 8px;
+  --az-navbar-dropdown-toggle-icon-gap: 6px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
   --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
