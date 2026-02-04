@@ -27,7 +27,6 @@
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 6px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
-  --az-navbar-dropdown-toggle-padding-end: calc(var(--az-navbar-dropdown-toggle-icon-gap) + var(--az-navbar-dropdown-toggle-icon-size) + var(--az-navbar-dropdown-padding-x)); // stylelint-disable-line function-disallowed-list
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
   --az-navbar-secondary-dropdown-item-padding-y: 12px;
   --az-navbar-tertiary-menu-padding-y: 16px;
@@ -134,7 +133,7 @@
 
   // Primary dropdown toggle (single dropdown and split dropdown toggle).
   .dropdown-toggle {
-    padding-right: var(--az-navbar-dropdown-toggle-padding-end);
+    padding: 0 var(--bs-navbar-nav-link-padding-x);
     @include border-radius(0);
 
     &::after {
@@ -164,13 +163,9 @@
     }
   }
 
-  /* Primary navigation split dropdown toggle */
-  // Using dropdown-toggle-split here to differentiate padding-right on
+  // Using dropdown-toggle-split here to differentiate padding-left on
   // Single Dropdown (.dropdown-toggle) and Split Dropdown (.dropdown-toggle.dropdown-toggle-split).
   .dropdown-toggle-split {
-    padding-top: 0;
-    padding-right: var(--bs-navbar-nav-link-padding-x);
-    padding-bottom: 0;
     padding-left: 0;
     --bs-btn-border-width: 0;
   }
