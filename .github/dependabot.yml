@@ -12,6 +12,7 @@ updates:
       - dependency-name: "eslint-plugin-unicorn"
       - dependency-name: "jquery"
       - dependency-name: "sass"
+      - dependency-name: "stylelint"
       - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     labels:
@@ -35,6 +36,7 @@ updates:
       - dependency-name: "eslint-plugin-unicorn"
       - dependency-name: "jquery"
       - dependency-name: "sass"
+      - dependency-name: "stylelint"
       - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     labels:

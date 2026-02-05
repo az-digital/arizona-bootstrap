@@ -1,0 +1,27 @@
+// Utility Links custom nav styling
+
+.nav.nav-utility {
+  margin: 1rem 0 1.5rem;
+  .nav-item {
+    padding: 0 .6rem;
+  }
+  .nav-link {
+    padding: 0;
+    font-weight: 500;
+    color: $dark-silver;
+    border-bottom: 2px solid transparent;
+
+    &.active,
+    &:active,
+    &.is-active {
+      background-color: initial;
+      border-bottom-color: $dark-silver;
+      @include border-radius(0);
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $dark-silver;
+    }
+  }
+}
