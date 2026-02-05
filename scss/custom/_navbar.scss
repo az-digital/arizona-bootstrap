@@ -18,6 +18,7 @@
   --az-navbar-accent-color: #{$red};
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 1.25rem;
+  --az-navbar-secondary-max-width: 50cqw;
   --bs-navbar-color: #{$azurite};
   --bs-navbar-hover-color: #{$blue};
   --bs-navbar-disabled-color: #{$dark-silver};
@@ -25,6 +26,7 @@
   --bs-navbar-nav-link-padding-x: .75rem;
 
   font: var(--az-navbar-font);
+  container-type: inline-size;
 
   // Primary navigation level
   .navbar-nav {
@@ -290,7 +292,7 @@
       }
 
       .dropdown-item {
-        flex: 1 1 0;
+        flex: 1 1 auto;
         word-break: break-word;
         overflow-wrap: anywhere;
         white-space: normal;
@@ -303,6 +305,19 @@
 
     li {
       border-bottom: 1px solid var(--az-navbar-border-color);
+    }
+  }
+
+  // Secondary split dropdown menu width
+  .nav-item.dropdown.btn-group > .dropdown-menu {
+    width: max-content;
+    max-width: var(--az-navbar-secondary-max-width);
+    min-width: min(16rem, 100%);
+
+    > li > .dropdown-item {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      white-space: normal;
     }
   }
 
