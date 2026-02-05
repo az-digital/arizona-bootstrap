@@ -323,12 +323,12 @@
   }
 
   // Secondary split dropdown menu width
-  .nav-item.dropdown.btn-group > .dropdown-menu {
+  :where(.dropdown.btn-group) > .dropdown-menu {
     width: max-content;
-    max-width: var(--az-navbar-secondary-max-width);
     min-width: min(16rem, 100%);
+    max-width: var(--az-navbar-secondary-max-width);
 
-    > li > .dropdown-item {
+    .dropdown-item {
       word-break: break-word;
       overflow-wrap: anywhere;
       white-space: normal;
