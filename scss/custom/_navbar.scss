@@ -133,7 +133,6 @@
 
   // Primary dropdown toggle (single dropdown and split dropdown toggle).
   .dropdown-toggle {
-    padding: 0 var(--bs-navbar-nav-link-padding-x);
     @include border-radius(0);
 
     &::after {
@@ -163,11 +162,13 @@
     }
   }
 
-  // Using dropdown-toggle-split here to differentiate padding-left on
-  // Single Dropdown (.dropdown-toggle) and Split Dropdown (.dropdown-toggle.dropdown-toggle-split).
+  // Spacing adjustments needed for the Split Dropdown (.dropdown-toggle.dropdown-toggle-split) icon container.
   .dropdown-toggle-split {
-    padding-left: 0;
     --bs-btn-border-width: 0;
+    padding-top: 0;
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-bottom: 0;
+    padding-left: 0;
   }
 
   // Toggle icon switches to red outline when a second- or third-level item is active in its submenu.
