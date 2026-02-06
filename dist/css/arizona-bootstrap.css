@@ -21884,17 +21884,41 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-navbar-border-color: #e2e9eb;
   --az-navbar-accent-color: #ab0520;
   --az-navbar-min-height: 60px;
-  --az-navbar-nav-item-margin-y: 1.25rem;
+  --az-navbar-nav-item-margin-y: 18px;
   --az-navbar-dropdown-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231e5288'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/%3e%3c/svg%3e");
-  --az-navbar-dropdown-toggle-active-child-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23ab0520'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/%3e%3c/svg%3e");
-  --az-navbar-dropdown-toggle-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23ab0520'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3e%3c/svg%3e");
+  --az-navbar-dropdown-toggle-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23ab0520'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3e%3c/svg%3e");
+  --az-navbar-dropdown-toggle-icon-active-child: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23ab0520'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/%3e%3c/svg%3e");
+  --az-navbar-dropdown-padding-x: 12px;
+  --az-navbar-dropdown-toggle-icon-gap: 6px;
+  --az-navbar-dropdown-toggle-icon-size: 24px;
+  --az-navbar-secondary-dropdown-item-padding-x: 20px;
+  --az-navbar-secondary-dropdown-item-padding-y: 12px;
+  --az-navbar-tertiary-menu-padding-y: 16px;
+  --az-navbar-tertiary-menu-item-padding-y: 8px;
+  --az-navbar-tertiary-menu-item-padding-start: 30px;
+  --az-navbar-focus-ring: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+  --az-navbar-focus-ring-inset: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
   --bs-navbar-color: #1e5288;
   --bs-navbar-hover-color: #0c234b;
   --bs-navbar-disabled-color: #49595e;
   --bs-navbar-active-color: #0c234b;
-  --bs-navbar-nav-link-padding-x: .75rem;
+  --bs-navbar-nav-link-padding-x: 12px;
   font: var(--az-navbar-font);
-  /* Primary navigation split dropdown toggle */
+}
+.navbar-az .dropdown-menu .collapse a.active, .navbar-az .dropdown-menu .collapse a.is-active, .navbar-az .dropdown-menu .collapse a:active, .navbar-az .dropdown-menu .collapse a.show, .navbar-az .dropdown-menu .collapse a:hover,
+.navbar-az .dropdown-menu .collapsing a.active,
+.navbar-az .dropdown-menu .collapsing a.is-active,
+.navbar-az .dropdown-menu .collapsing a:active,
+.navbar-az .dropdown-menu .collapsing a.show,
+.navbar-az .dropdown-menu .collapsing a:hover,
+.navbar-az .dropdown-menu .show a.active,
+.navbar-az .dropdown-menu .show a.is-active,
+.navbar-az .dropdown-menu .show a:active,
+.navbar-az .dropdown-menu .show a.show,
+.navbar-az .dropdown-menu .show a:hover, .navbar-az .dropdown-item:hover, .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active, .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 .navbar-az .navbar-nav {
   --bs-nav-link-font-weight: var(--az-navbar-font-weight);
@@ -21928,9 +21952,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   padding: 0 var(--bs-navbar-nav-link-padding-x);
 }
 .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
   background-color: unset;
 }
 .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active {
@@ -21945,23 +21966,28 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .nav-link:focus-visible {
   border-radius: 2px;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+  box-shadow: var(--az-navbar-focus-ring);
 }
-.navbar-az .btn-group:has(.dropdown-toggle-split) > .nav-link {
-  padding-right: 0.3125rem;
+.navbar-az .dropdown.btn-group > .nav-link {
+  padding-right: 0;
+}
+.navbar-az .dropdown.btn-group > .dropdown-toggle-split {
+  margin-left: 0;
 }
 .navbar-az .dropdown-toggle {
   border-radius: 0;
 }
 .navbar-az .dropdown-toggle::after {
   display: inline-block;
-  inline-size: 1.5rem;
-  width: 1.5rem;
-  block-size: 1.5rem;
-  height: 1.5rem;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  inline-size: var(--az-navbar-dropdown-toggle-icon-size);
+  width: var(--az-navbar-dropdown-toggle-icon-size);
+  block-size: var(--az-navbar-dropdown-toggle-icon-size);
+  height: var(--az-navbar-dropdown-toggle-icon-size);
   margin-bottom: 0;
+  margin-left: var(--az-navbar-dropdown-toggle-icon-gap);
   line-height: 1;
-  vertical-align: 0;
   content: "";
   background-image: var(--az-navbar-dropdown-toggle-icon);
   background-repeat: no-repeat;
@@ -21969,58 +21995,33 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-size: 100% 100%;
   border: 0;
 }
+.navbar-az .dropdown-toggle:focus-visible {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: var(--az-navbar-focus-ring);
+}
 .navbar-az .dropdown-toggle-split {
+  --bs-btn-border-width: 0;
   padding-top: 0;
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-bottom: 0;
   padding-left: 0;
-  --bs-btn-border-width: 0;
-}
-.navbar-az .dropdown-toggle-split:focus-visible {
-  border-radius: 2px;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
-}
-.navbar-az :not(.btn-group) > .dropdown-toggle {
-  position: relative;
-  padding-right: 2.3125rem;
-}
-.navbar-az :not(.btn-group) > .dropdown-toggle::after {
-  position: absolute;
-  top: 50%;
-  right: 0.625rem;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 .navbar-az .dropdown:has(.dropdown-item.active) > .dropdown-toggle::after,
 .navbar-az .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle::after,
 .navbar-az .dropdown:has(.collapse .active) > .dropdown-toggle::after {
-  background-image: var(--az-navbar-dropdown-toggle-active-child-icon);
-}
-.navbar-az .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover::after,
-.navbar-az .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover::after,
-.navbar-az .dropdown:has(.collapse .active) > .dropdown-toggle:hover::after {
-  background-image: var(--az-navbar-dropdown-toggle-active-icon);
+  background-image: var(--az-navbar-dropdown-toggle-icon-active-child);
 }
 .navbar-az .dropdown-toggle:hover::after,
-.navbar-az .btn-group:has(.active) > .dropdown-toggle-split:hover::after,
+.navbar-az .dropdown:has(.dropdown-item.active) > .dropdown-toggle:hover::after,
+.navbar-az .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle:hover::after,
+.navbar-az .dropdown:has(.collapse .active) > .dropdown-toggle:hover::after,
 .navbar-az .dropdown-toggle[aria-expanded=true]::after,
-.navbar-az .btn-group:has(.active) > .dropdown-toggle-split[aria-expanded=true]::after,
-.navbar-az .nav-link.dropdown-toggle:hover::after,
-.navbar-az .nav-link.dropdown-toggle[aria-expanded=true]::after {
+.navbar-az .dropdown:has(.dropdown-item.active) > .dropdown-toggle[aria-expanded=true]::after,
+.navbar-az .dropdown:has(.dropdown-item.is-active) > .dropdown-toggle[aria-expanded=true]::after,
+.navbar-az .dropdown:has(.collapse .active) > .dropdown-toggle[aria-expanded=true]::after {
   text-decoration: none;
-  background-image: var(--az-navbar-dropdown-toggle-active-icon);
-}
-.navbar-az .nav-item .nav-link.dropdown-toggle:focus::after,
-.navbar-az .nav-item .dropdown-toggle-split:focus::after,
-.navbar-az .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle::after,
-.navbar-az .nav-item:has(> .dropdown-menu:focus-within) > .dropdown-toggle-split::after {
-  background-image: var(--az-navbar-dropdown-toggle-active-icon);
-}
-@media (hover: hover) {
-  .navbar-az .nav-item:has(> .dropdown-menu:hover) > .dropdown-toggle::after {
-    background-image: var(--az-navbar-dropdown-toggle-active-icon);
-  }
+  background-image: var(--az-navbar-dropdown-toggle-icon-active);
 }
 .navbar-az .dropdown-menu {
   --bs-dropdown-padding-y: 0;
@@ -22034,41 +22035,46 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-dropdown-link-hover-bg: var(--az-navbar-border-color);
   --bs-dropdown-link-active-color: var(--az-navbar-font-active-color);
   --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
-  --bs-dropdown-item-padding-x: 1.25rem;
-  --bs-dropdown-item-padding-y: .6875rem;
-  margin-top: var(--az-navbar-nav-item-margin-y);
+  --bs-dropdown-item-padding-x: var(--az-navbar-secondary-dropdown-item-padding-x);
+  --bs-dropdown-item-padding-y: var(--az-navbar-secondary-dropdown-item-padding-y);
+  margin-top: calc(var(--az-navbar-nav-item-margin-y) + 1px);
   overflow: hidden;
   border-top: 2px solid var(--bs-dropdown-border-color);
   box-shadow: var(--bs-dropdown-box-shadow);
 }
-.navbar-az .dropdown-menu .dropdown-toggle-split {
+.navbar-az .dropdown-menu li {
+  border-bottom: 1px solid var(--az-navbar-border-color);
+}
+.navbar-az .dropdown-menu li:has(.collapse .active) .dropdown-toggle {
+  background-color: #e2e9eb;
+}
+.navbar-az .dropdown-menu .btn-group {
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0;
+}
+.navbar-az .dropdown-menu .btn-group .btn {
+  margin-left: 0;
+}
+.navbar-az .dropdown-menu .dropdown-toggle {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-y);
+  padding: var(--bs-dropdown-item-padding-y);
   -webkit-margin-start: auto;
   -moz-margin-start: auto;
   margin-inline-start: auto;
   border-left: 1px solid var(--az-navbar-border-color);
 }
-.navbar-az .dropdown-menu .dropdown-toggle-split:focus-visible {
-  border-radius: 2px;
-  outline: 0;
-  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
-}
-.navbar-az .dropdown-menu .dropdown-toggle-split:focus::after {
-  color: var(--az-navbar-font-color);
-}
-.navbar-az .dropdown-menu .dropdown-toggle-split::after,
-.navbar-az .dropdown-menu .dropdown-toggle-split:focus::after {
+.navbar-az .dropdown-menu .dropdown-toggle::after, .navbar-az .dropdown-menu .dropdown-toggle:focus::after {
   display: block;
-  inline-size: 1.5rem;
-  width: 1.5rem;
-  block-size: 1.5rem;
-  height: 1.5rem;
+  inline-size: var(--az-navbar-dropdown-toggle-icon-size);
+  width: var(--az-navbar-dropdown-toggle-icon-size);
+  block-size: var(--az-navbar-dropdown-toggle-icon-size);
+  height: var(--az-navbar-dropdown-toggle-icon-size);
   margin: 0;
   font-family: "Material Symbols Rounded", sans-serif;
   font-size: 1.5rem;
@@ -22081,34 +22087,17 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-image: none;
   border: 0;
 }
-.navbar-az .dropdown-menu .btn-group:has(.dropdown-item.active) > .dropdown-toggle::after,
-.navbar-az .dropdown-menu .btn-group:has(.dropdown-item.is-active) > .dropdown-toggle::after,
-.navbar-az .dropdown-menu .btn-group:has(.collapse .active) > .dropdown-toggle::after {
-  background-image: none;
-}
-.navbar-az .dropdown-menu .btn-group:has(.dropdown-item.active) > .dropdown-toggle-split::after {
-  color: var(--az-navbar-font-color);
-}
-.navbar-az .dropdown-menu li:has(.collapse .active) .dropdown-toggle-split {
+.navbar-az .dropdown-menu .dropdown-toggle[aria-expanded=true] {
   background-color: #e2e9eb;
 }
-.navbar-az .dropdown-menu .dropdown-toggle-split:hover,
-.navbar-az .dropdown-menu .dropdown-toggle-split[aria-expanded=true] {
-  background-color: #e2e9eb;
-}
-.navbar-az .dropdown-menu .dropdown-toggle-split[aria-expanded=true]::after {
+.navbar-az .dropdown-menu .dropdown-toggle[aria-expanded=true]::after {
   content: "\e15b";
 }
-.navbar-az .dropdown-menu .btn-group {
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 0;
+.navbar-az .dropdown-menu .dropdown-toggle:hover {
+  background-color: #e2e9eb;
 }
-.navbar-az .dropdown-menu .btn-group .btn {
-  margin-left: 0;
-}
-.navbar-az .dropdown-menu li {
-  border-bottom: 1px solid var(--az-navbar-border-color);
+.navbar-az .dropdown-menu .dropdown-toggle:focus-visible {
+  box-shadow: var(--az-navbar-focus-ring-inset);
 }
 .navbar-az .dropdown-item {
   display: -ms-flexbox;
@@ -22118,15 +22107,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  padding-top: calc(var(--bs-dropdown-item-padding-y) + 2px);
+  padding-bottom: var(--bs-dropdown-item-padding-y);
   font-weight: var(--az-navbar-font-weight);
   border-left: unset;
 }
 .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
   -webkit-text-decoration-color: var(--az-navbar-accent-color);
   text-decoration-color: var(--az-navbar-accent-color);
-  text-underline-offset: 4px;
 }
 .navbar-az .dropdown-item:focus {
   background-color: var(--az-navbar-border-color);
@@ -22134,28 +22122,40 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-item:focus-visible {
   border-radius: 2px;
   outline: 0;
-  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+  box-shadow: var(--az-navbar-focus-ring-inset);
 }
 .navbar-az .dropdown-item:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
   -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
   text-decoration-color: var(--az-navbar-font-hover-color);
-  text-underline-offset: 4px;
 }
 .navbar-az .dropdown-menu .collapse,
-.navbar-az .dropdown-menu .collapsing {
+.navbar-az .dropdown-menu .collapsing,
+.navbar-az .dropdown-menu .show {
   padding: 0;
   margin: 0;
   list-style: none;
   background-color: #e2e9eb;
+  /* stylelint-disable selector-max-compound-selectors */
+  /* stylelint-enable selector-max-compound-selectors */
+}
+.navbar-az .dropdown-menu .collapse > li:first-child > a,
+.navbar-az .dropdown-menu .collapsing > li:first-child > a,
+.navbar-az .dropdown-menu .show > li:first-child > a {
+  padding-top: var(--az-navbar-tertiary-menu-padding-y);
+}
+.navbar-az .dropdown-menu .collapse > li:last-child > a,
+.navbar-az .dropdown-menu .collapsing > li:last-child > a,
+.navbar-az .dropdown-menu .show > li:last-child > a {
+  padding-bottom: var(--az-navbar-tertiary-menu-padding-y);
 }
 .navbar-az .dropdown-menu .collapse a,
-.navbar-az .dropdown-menu .collapsing a {
+.navbar-az .dropdown-menu .collapsing a,
+.navbar-az .dropdown-menu .show a {
   display: block;
-  padding-top: var(--bs-dropdown-item-padding-y);
-  padding-bottom: var(--bs-dropdown-item-padding-y);
-  padding-left: 1.875rem;
+  padding-top: var(--az-navbar-tertiary-menu-item-padding-y);
+  padding-right: var(--bs-dropdown-item-padding-x);
+  padding-bottom: var(--az-navbar-tertiary-menu-item-padding-y);
+  padding-left: var(--az-navbar-tertiary-menu-item-padding-start);
   font-weight: var(--az-navbar-font-weight);
   color: var(--az-navbar-font-color);
   text-decoration: none;
@@ -22168,37 +22168,46 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .collapsing a.is-active,
 .navbar-az .dropdown-menu .collapsing a:active,
 .navbar-az .dropdown-menu .collapsing a.show,
-.navbar-az .dropdown-menu .collapsing a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+.navbar-az .dropdown-menu .collapsing a:hover,
+.navbar-az .dropdown-menu .show a.active,
+.navbar-az .dropdown-menu .show a.is-active,
+.navbar-az .dropdown-menu .show a:active,
+.navbar-az .dropdown-menu .show a.show,
+.navbar-az .dropdown-menu .show a:hover {
   background-color: unset;
 }
 .navbar-az .dropdown-menu .collapse a.active, .navbar-az .dropdown-menu .collapse a.is-active, .navbar-az .dropdown-menu .collapse a:active,
 .navbar-az .dropdown-menu .collapsing a.active,
 .navbar-az .dropdown-menu .collapsing a.is-active,
-.navbar-az .dropdown-menu .collapsing a:active {
+.navbar-az .dropdown-menu .collapsing a:active,
+.navbar-az .dropdown-menu .show a.active,
+.navbar-az .dropdown-menu .show a.is-active,
+.navbar-az .dropdown-menu .show a:active {
   color: var(--az-navbar-font-active-color);
   -webkit-text-decoration-color: var(--az-navbar-accent-color);
   text-decoration-color: var(--az-navbar-accent-color);
 }
 .navbar-az .dropdown-menu .collapse a:hover,
-.navbar-az .dropdown-menu .collapsing a:hover {
+.navbar-az .dropdown-menu .collapsing a:hover,
+.navbar-az .dropdown-menu .show a:hover {
   color: var(--az-navbar-font-hover-color);
   -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
   text-decoration-color: var(--az-navbar-font-hover-color);
 }
 .navbar-az .dropdown-menu .collapse a.disabled, .navbar-az .dropdown-menu .collapse a[aria-disabled=true],
 .navbar-az .dropdown-menu .collapsing a.disabled,
-.navbar-az .dropdown-menu .collapsing a[aria-disabled=true] {
+.navbar-az .dropdown-menu .collapsing a[aria-disabled=true],
+.navbar-az .dropdown-menu .show a.disabled,
+.navbar-az .dropdown-menu .show a[aria-disabled=true] {
   color: var(--az-navbar-font-disabled-color);
   pointer-events: none;
 }
 .navbar-az .dropdown-menu .collapse a:focus-visible,
-.navbar-az .dropdown-menu .collapsing a:focus-visible {
+.navbar-az .dropdown-menu .collapsing a:focus-visible,
+.navbar-az .dropdown-menu .show a:focus-visible {
   border-radius: 2px;
   outline: 0;
-  box-shadow: inset 0 0 0 0.25rem rgba(171, 5, 32, 0.5);
+  box-shadow: var(--az-navbar-focus-ring-inset);
 }
 .navbar-az .dropdown-menu .collapsing {
   height: auto;
