@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar-hover-dropdown.js
+ * Arizona Bootstrap: navbar.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -398,7 +398,7 @@ class NavbarHoverDropdown extends Dropdown {
 }
 
 // Wire up hover dropdowns for AZ navbars and global outside interactions.
-function enableAzNavbarHoverDropdowns() {
+function enableAzNavbar() {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     return
   }
@@ -534,4 +534,4 @@ function createNavbarHoverDropdown(triggerElement, dropdownElement, navbar) {
   return new NavbarHoverDropdown(triggerElement, dropdownElement, navbar)
 }
 
-export { enableAzNavbarHoverDropdowns as default }
+export { enableAzNavbar as default }
