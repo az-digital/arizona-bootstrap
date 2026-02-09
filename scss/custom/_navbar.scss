@@ -27,6 +27,7 @@
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 6px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
+  --az-navbar-dropdown-max-width: 50%; // Dynamically updated via JS to half the navbar width in px
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
   --az-navbar-secondary-dropdown-item-padding-y: 12px;
   --az-navbar-tertiary-menu-padding-y: 16px;
@@ -39,7 +40,6 @@
   --bs-navbar-disabled-color: #{$dark-silver};
   --bs-navbar-active-color: #{$blue};
   --bs-navbar-nav-link-padding-x: 12px;
-  --az-navbar-dropdown-max-width: 50%; // Dynamically updated via JS to half the navbar width in px
 
   font: var(--az-navbar-font);
 
