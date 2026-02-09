@@ -39,6 +39,7 @@
   --bs-navbar-disabled-color: #{$dark-silver};
   --bs-navbar-active-color: #{$blue};
   --bs-navbar-nav-link-padding-x: 12px;
+  --az-navbar-dropdown-max-width: 50%; // Dynamically updated via JS to half the navbar width in px
 
   font: var(--az-navbar-font);
 
@@ -211,6 +212,12 @@
     --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
     --bs-dropdown-item-padding-x: var(--az-navbar-secondary-dropdown-item-padding-x);
     --bs-dropdown-item-padding-y: var(--az-navbar-secondary-dropdown-item-padding-y);
+    // Use max-content so the dropdown expands to fit text without premature wrapping,
+    // but cap at half the navbar width to prevent overflow off screen.
+    // min-width: 100% ensures the dropdown is at least as wide as its parent nav-item.
+    width: max-content;
+    min-width: 100%;
+    max-width: var(--az-navbar-dropdown-max-width);
     // Bump offset by 1px so dropdown-menu does not overlap the bottom border of the navbar
     margin-top: calc(var(--az-navbar-nav-item-margin-y) + 1px); // stylelint-disable-line function-disallowed-list
     overflow: hidden;
@@ -295,6 +302,8 @@
     padding-bottom: var(--bs-dropdown-item-padding-y);
 
     font-weight: var(--az-navbar-font-weight);
+    overflow-wrap: break-word;
+    white-space: normal; // Override Bootstrap's nowrap to allow long text to wrap
     border-left: unset;
 
     &.active,

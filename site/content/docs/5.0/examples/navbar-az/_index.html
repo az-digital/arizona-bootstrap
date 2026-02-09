@@ -28,8 +28,24 @@ extra_css:
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
-              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation With Much Longer Text That Would Previously Run Off Screen</a></li>
               <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Single Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown btn-group">
@@ -40,14 +56,14 @@ extra_css:
             <ul class="dropdown-menu" id="secondaryMenu1">
               <li>
                 <div class="btn-group">
-                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - Children</a>
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - Children With a Very Long Title Example</a>
                   <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu1" data-bs-auto-close="outside" aria-controls="tertiaryMenu1" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                   </button>
                 </div>
                 <ul id="tertiaryMenu1" class="collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 1">
                   <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
-                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation With a Longer Title That Wraps Nicely</a></li>
                   <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
                 </ul>
               </li>
@@ -68,14 +84,18 @@ extra_css:
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Single Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation</a></li>
+            </ul>
           </li>
         </ul>
       </div>

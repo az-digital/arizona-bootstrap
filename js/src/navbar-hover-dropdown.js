@@ -10,9 +10,94 @@ import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.
 
 const HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)'
 const HIDE_DELAY_MS = 300
+const RESIZE_DEBOUNCE_MS = 100
 
 // Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
 const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
+
+/**
+ * Calculate and set the max-width for dropdown menus in a navbar-az to half
+ * the navbar width, and toggle `dropdown-menu-end` on dropdowns positioned
+ * past the midpoint that would otherwise overflow.
+ */
+function updateDropdownAlignment(navbar) {
+  const navbarWidth = navbar.offsetWidth
+  const halfWidth = Math.floor(navbarWidth / 2)
+
+  // Set the CSS custom property so dropdown-menu max-width stays in sync.
+  navbar.style.setProperty('--az-navbar-dropdown-max-width', `${halfWidth}px`)
+
+  const dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown')
+
+  for (const dropdown of dropdowns) {
+    const menu = dropdown.querySelector(':scope > .dropdown-menu')
+    if (!menu) {
+      continue
+    }
+
+    // Determine this dropdown's horizontal position relative to the navbar.
+    const navbarRect = navbar.getBoundingClientRect()
+    const dropdownRect = dropdown.getBoundingClientRect()
+    const dropdownStart = dropdownRect.left - navbarRect.left
+    const remainingSpace = navbarRect.right - dropdownRect.left
+
+    // Only right-align if the dropdown is past the midpoint AND its max-content
+    // width would overflow the remaining space to the right of the navbar.
+    // We temporarily measure the menu's natural width to make this determination.
+    // The menu may be hidden (display:none), so we must briefly make it visible
+    // off-screen to get an accurate measurement.
+    const wasHidden = window.getComputedStyle(menu).display === 'none'
+    if (wasHidden) {
+      menu.style.display = 'block'
+      menu.style.visibility = 'hidden'
+      menu.style.position = 'absolute'
+    }
+
+    const savedMaxWidth = menu.style.maxWidth
+    const savedWidth = menu.style.width
+    menu.style.maxWidth = 'none'
+    menu.style.width = 'max-content'
+    const naturalWidth = menu.scrollWidth
+    menu.style.maxWidth = savedMaxWidth
+    menu.style.width = savedWidth
+
+    if (wasHidden) {
+      menu.style.display = ''
+      menu.style.visibility = ''
+      menu.style.position = ''
+    }
+
+    if (dropdownStart > halfWidth && naturalWidth > remainingSpace) {
+      menu.classList.add('dropdown-menu-end')
+    } else {
+      menu.classList.remove('dropdown-menu-end')
+    }
+  }
+}
+
+/**
+ * Set up a ResizeObserver to keep dropdown alignment in sync with the navbar
+ * width (handles viewport changes, container resizing, etc.).
+ */
+function observeNavbarResize(navbar) {
+  if (typeof ResizeObserver === 'undefined') {
+    return
+  }
+
+  let resizeTimer = null
+
+  const observer = new ResizeObserver(() => {
+    if (resizeTimer) {
+      clearTimeout(resizeTimer)
+    }
+
+    resizeTimer = setTimeout(() => {
+      updateDropdownAlignment(navbar)
+    }, RESIZE_DEBOUNCE_MS)
+  })
+
+  observer.observe(navbar)
+}
 
 function getPrimaryDropdownTrigger(dropdownElement) {
   const toggle = dropdownElement.querySelector(':scope > .dropdown-toggle')
@@ -357,6 +442,10 @@ function enableAzNavbarHoverDropdowns() {
   EventHandler.on(document, 'focusin', handleOutsideInteraction)
 
   for (const navbar of navbars) {
+    // Set initial dropdown alignment and start observing resize changes.
+    updateDropdownAlignment(navbar)
+    observeNavbarResize(navbar)
+
     EventHandler.on(navbar, 'mouseover', event => {
       const target = event?.target
       if (!(target instanceof Element)) {
