@@ -19,7 +19,7 @@ export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
 export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
-export { default as enableAzNavbarHoverDropdowns } from './src/navbar-hover-dropdown.js'
+export { default as enableAzNavbar } from './src/navbar.js'
 
 /**
  * Temporary fix for blocked aria-hidden attribute on modals.
@@ -38,5 +38,5 @@ photoGalleryGridSlideToImage()
 /**
  * Enable hover-driven dropdowns on AZ Navbar.
  */
-/* global enableAzNavbarHoverDropdowns */
-enableAzNavbarHoverDropdowns()
+/* global enableAzNavbar */
+enableAzNavbar()
