@@ -5,6 +5,7 @@
  * --------------------------------------------------------------------------
  */
 
+import Collapse from '../../node_modules/bootstrap/js/src/collapse.js'
 import Dropdown from '../../node_modules/bootstrap/js/src/dropdown.js'
 import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
 
@@ -136,6 +137,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._navbar = navbar
     this._hideTimer = null
     this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
+    this._initialCollapseStates = this._captureCollapseStates()
     // State flags for hover/click coordination.
     this._hoverTriggered = false
     this._suppressNextBlur = false
@@ -366,6 +368,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._pendingClick = false
     this._ignoreNextToggle = false
     this._cancelScheduledHide()
+    this._resetCollapseState()
     return super.hide()
   }
 
@@ -375,7 +378,62 @@ class NavbarHoverDropdown extends Dropdown {
     this._pendingClick = false
     this._ignoreNextToggle = false
     this._cancelScheduledHide()
+    this._resetCollapseState()
     super._completeHide(relatedTarget)
+  }
+
+  /**
+   * Snapshot the initial show/hide state of each `.collapse` submenu inside
+   * this dropdown's menu, based on the server-rendered HTML at page load.
+   */
+  _captureCollapseStates() {
+    const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
+    if (!menu) {
+      return new Map()
+    }
+
+    const states = new Map()
+    const collapses = menu.querySelectorAll('.collapse')
+    for (const collapse of collapses) {
+      states.set(collapse, collapse.classList.contains('show'))
+    }
+
+    return states
+  }
+
+  /**
+   * Reset every `.collapse` submenu inside this dropdown's menu back to its
+   * initial page-load state (determined by `.active` placement in the HTML).
+   */
+  _resetCollapseState() {
+    if (!this._initialCollapseStates || this._initialCollapseStates.size === 0) {
+      return
+    }
+
+    for (const [collapse, wasShown] of this._initialCollapseStates) {
+      const isShown = collapse.classList.contains('show')
+
+      if (wasShown === isShown) {
+        continue
+      }
+
+      const instance = Collapse.getOrCreateInstance(collapse, { toggle: false })
+
+      if (wasShown) {
+        instance.show()
+      } else {
+        instance.hide()
+      }
+
+      // Sync the toggle button's aria-expanded attribute.
+      if (collapse.id) {
+        const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
+        const toggle = menu?.querySelector(`[data-bs-target="#${collapse.id}"]`)
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', String(wasShown))
+        }
+      }
+    }
   }
 
   // Remove focus after hover to avoid sticky focus rings.
