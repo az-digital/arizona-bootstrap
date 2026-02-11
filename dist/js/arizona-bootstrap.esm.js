@@ -5360,19 +5360,95 @@ function photoGalleryGridSlideToImage$1() {
 
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar-hover-dropdown.js
+ * Arizona Bootstrap: navbar.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
 var HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)';
 var HIDE_DELAY_MS = 300;
+var RESIZE_DEBOUNCE_MS = 100;
 
 // Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
 var supportsPointerHover = () => {
   var _window$matchMedia, _window;
   return typeof window !== 'undefined' && ((_window$matchMedia = (_window = window).matchMedia) === null || _window$matchMedia === void 0 || (_window$matchMedia = _window$matchMedia.call(_window, HOVER_MEDIA_QUERY)) === null || _window$matchMedia === void 0 ? void 0 : _window$matchMedia.matches) === true;
 };
+
+/**
+ * Calculate and set the max-width for dropdown menus in a navbar-az to half
+ * the navbar width, and toggle `dropdown-menu-end` on dropdowns positioned
+ * past the midpoint that would otherwise overflow.
+ */
+function updateDropdownAlignment(navbar) {
+  var navbarWidth = navbar.offsetWidth;
+  var halfWidth = Math.floor(navbarWidth / 2);
+
+  // Set the CSS custom property so dropdown-menu max-width stays in sync.
+  navbar.style.setProperty('--az-navbar-dropdown-max-width', "".concat(halfWidth, "px"));
+  var dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown');
+  for (var dropdown of dropdowns) {
+    var menu = dropdown.querySelector(':scope > .dropdown-menu');
+    if (!menu) {
+      continue;
+    }
+
+    // Determine this dropdown's horizontal position relative to the navbar.
+    var navbarRect = navbar.getBoundingClientRect();
+    var dropdownRect = dropdown.getBoundingClientRect();
+    var dropdownStart = dropdownRect.left - navbarRect.left;
+    var remainingSpace = navbarRect.right - dropdownRect.left;
+
+    // Only right-align if the dropdown is past the midpoint AND its max-content
+    // width would overflow the remaining space to the right of the navbar.
+    // We temporarily measure the menu's natural width to make this determination.
+    // The menu may be hidden (display:none), so we must briefly make it visible
+    // off-screen to get an accurate measurement.
+    var wasHidden = window.getComputedStyle(menu).display === 'none';
+    if (wasHidden) {
+      menu.style.display = 'block';
+      menu.style.visibility = 'hidden';
+      menu.style.position = 'absolute';
+    }
+    var savedMaxWidth = menu.style.maxWidth;
+    var savedWidth = menu.style.width;
+    menu.style.maxWidth = 'none';
+    menu.style.width = 'max-content';
+    var naturalWidth = menu.scrollWidth;
+    menu.style.maxWidth = savedMaxWidth;
+    menu.style.width = savedWidth;
+    if (wasHidden) {
+      menu.style.display = '';
+      menu.style.visibility = '';
+      menu.style.position = '';
+    }
+    if (dropdownStart > halfWidth && naturalWidth > remainingSpace) {
+      menu.classList.add('dropdown-menu-end');
+    } else {
+      menu.classList.remove('dropdown-menu-end');
+    }
+  }
+}
+
+/**
+ * Set up a ResizeObserver to keep dropdown alignment in sync with the navbar
+ * width (handles viewport changes, container resizing, etc.).
+ */
+function observeNavbarResize(navbar) {
+  if (typeof ResizeObserver === 'undefined') {
+    return;
+  }
+  var resizeTimer = null;
+  var observer = new ResizeObserver(() => {
+    if (resizeTimer) {
+      clearTimeout(resizeTimer);
+    }
+    resizeTimer = setTimeout(() => {
+      updateDropdownAlignment(navbar);
+    }, RESIZE_DEBOUNCE_MS);
+  });
+  observer.observe(navbar);
+}
 function getPrimaryDropdownTrigger(dropdownElement) {
   var toggle = dropdownElement.querySelector(':scope > .dropdown-toggle');
   return toggle instanceof HTMLElement ? toggle : null;
@@ -5639,7 +5715,7 @@ class NavbarHoverDropdown extends Dropdown {
 }
 
 // Wire up hover dropdowns for AZ navbars and global outside interactions.
-function enableAzNavbarHoverDropdowns$1() {
+function enableAzNavbar$1() {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     return;
   }
@@ -5673,6 +5749,9 @@ function enableAzNavbarHoverDropdowns$1() {
   EventHandler.on(document, 'click', handleOutsideInteraction);
   EventHandler.on(document, 'focusin', handleOutsideInteraction);
   var _loop = function _loop(navbar) {
+    // Set initial dropdown alignment and start observing resize changes.
+    updateDropdownAlignment(navbar);
+    observeNavbarResize(navbar);
     EventHandler.on(navbar, 'mouseover', event => {
       var target = event === null || event === void 0 ? void 0 : event.target;
       if (!(target instanceof Element)) {
@@ -5773,8 +5852,8 @@ photoGalleryGridSlideToImage();
 /**
  * Enable hover-driven dropdowns on AZ Navbar.
  */
-/* global enableAzNavbarHoverDropdowns */
-enableAzNavbarHoverDropdowns();
+/* global enableAzNavbar */
+enableAzNavbar();
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip, enableAzNavbarHoverDropdowns$1 as enableAzNavbarHoverDropdowns, fixModalAriaHidden$1 as fixModalAriaHidden, photoGalleryGridSlideToImage$1 as photoGalleryGridSlideToImage };
+export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip, enableAzNavbar$1 as enableAzNavbar, fixModalAriaHidden$1 as fixModalAriaHidden, photoGalleryGridSlideToImage$1 as photoGalleryGridSlideToImage };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map
