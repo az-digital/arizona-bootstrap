@@ -1,18 +1,104 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar-hover-dropdown.js
+ * Arizona Bootstrap: navbar.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
+import Collapse from '../../node_modules/bootstrap/js/src/collapse.js'
 import Dropdown from '../../node_modules/bootstrap/js/src/dropdown.js'
 import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
 
 const HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)'
 const HIDE_DELAY_MS = 300
+const RESIZE_DEBOUNCE_MS = 100
 
 // Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
 const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
+
+/**
+ * Calculate and set the max-width for dropdown menus in a navbar-az to half
+ * the navbar width, and toggle `dropdown-menu-end` on dropdowns positioned
+ * past the midpoint that would otherwise overflow.
+ */
+function updateDropdownAlignment(navbar) {
+  const navbarWidth = navbar.offsetWidth
+  const halfWidth = Math.floor(navbarWidth / 2)
+
+  // Set the CSS custom property so dropdown-menu max-width stays in sync.
+  navbar.style.setProperty('--az-navbar-dropdown-max-width', `${halfWidth}px`)
+
+  const dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown')
+
+  for (const dropdown of dropdowns) {
+    const menu = dropdown.querySelector(':scope > .dropdown-menu')
+    if (!menu) {
+      continue
+    }
+
+    // Determine this dropdown's horizontal position relative to the navbar.
+    const navbarRect = navbar.getBoundingClientRect()
+    const dropdownRect = dropdown.getBoundingClientRect()
+    const dropdownStart = dropdownRect.left - navbarRect.left
+    const remainingSpace = navbarRect.right - dropdownRect.left
+
+    // Only right-align if the dropdown is past the midpoint AND its max-content
+    // width would overflow the remaining space to the right of the navbar.
+    // We temporarily measure the menu's natural width to make this determination.
+    // The menu may be hidden (display:none), so we must briefly make it visible
+    // off-screen to get an accurate measurement.
+    const wasHidden = window.getComputedStyle(menu).display === 'none'
+    if (wasHidden) {
+      menu.style.display = 'block'
+      menu.style.visibility = 'hidden'
+      menu.style.position = 'absolute'
+    }
+
+    const savedMaxWidth = menu.style.maxWidth
+    const savedWidth = menu.style.width
+    menu.style.maxWidth = 'none'
+    menu.style.width = 'max-content'
+    const naturalWidth = menu.scrollWidth
+    menu.style.maxWidth = savedMaxWidth
+    menu.style.width = savedWidth
+
+    if (wasHidden) {
+      menu.style.display = ''
+      menu.style.visibility = ''
+      menu.style.position = ''
+    }
+
+    if (dropdownStart > halfWidth && naturalWidth > remainingSpace) {
+      menu.classList.add('dropdown-menu-end')
+    } else {
+      menu.classList.remove('dropdown-menu-end')
+    }
+  }
+}
+
+/**
+ * Set up a ResizeObserver to keep dropdown alignment in sync with the navbar
+ * width (handles viewport changes, container resizing, etc.).
+ */
+function observeNavbarResize(navbar) {
+  if (typeof ResizeObserver === 'undefined') {
+    return
+  }
+
+  let resizeTimer = null
+
+  const observer = new ResizeObserver(() => {
+    if (resizeTimer) {
+      clearTimeout(resizeTimer)
+    }
+
+    resizeTimer = setTimeout(() => {
+      updateDropdownAlignment(navbar)
+    }, RESIZE_DEBOUNCE_MS)
+  })
+
+  observer.observe(navbar)
+}
 
 function getPrimaryDropdownTrigger(dropdownElement) {
   const toggle = dropdownElement.querySelector(':scope > .dropdown-toggle')
@@ -51,6 +137,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._navbar = navbar
     this._hideTimer = null
     this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown')
+    this._initialCollapseStates = this._captureCollapseStates()
     // State flags for hover/click coordination.
     this._hoverTriggered = false
     this._suppressNextBlur = false
@@ -281,6 +368,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._pendingClick = false
     this._ignoreNextToggle = false
     this._cancelScheduledHide()
+    this._resetCollapseState()
     return super.hide()
   }
 
@@ -290,7 +378,74 @@ class NavbarHoverDropdown extends Dropdown {
     this._pendingClick = false
     this._ignoreNextToggle = false
     this._cancelScheduledHide()
+    this._resetCollapseState()
     super._completeHide(relatedTarget)
+  }
+
+  /**
+   * Snapshot the initial show/hide state of each `.collapse` submenu inside
+   * this dropdown's menu, based on the server-rendered HTML at page load.
+   */
+  _captureCollapseStates() {
+    const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
+    if (!menu) {
+      return new Map()
+    }
+
+    const states = new Map()
+    const collapses = menu.querySelectorAll('.collapse')
+    for (const collapse of collapses) {
+      states.set(collapse, collapse.classList.contains('show'))
+    }
+
+    return states
+  }
+
+  /**
+   * Reset every `.collapse` submenu inside this dropdown's menu back to its
+   * initial page-load state (determined by `.active` placement in the HTML).
+   */
+  _resetCollapseState() {
+    if (!this._initialCollapseStates || this._initialCollapseStates.size === 0) {
+      return
+    }
+
+    const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
+    const togglesByTarget = new Map()
+
+    if (menu) {
+      const toggles = menu.querySelectorAll('[data-bs-target]')
+      for (const toggle of toggles) {
+        const target = toggle.getAttribute('data-bs-target')
+        if (target) {
+          togglesByTarget.set(target, toggle)
+        }
+      }
+    }
+
+    for (const [collapse, wasShown] of this._initialCollapseStates) {
+      const isShown = collapse.classList.contains('show')
+
+      if (wasShown === isShown) {
+        continue
+      }
+
+      const instance = Collapse.getOrCreateInstance(collapse, { toggle: false })
+
+      if (wasShown) {
+        instance.show()
+      } else {
+        instance.hide()
+      }
+
+      // Sync the toggle button's aria-expanded attribute.
+      if (collapse.id) {
+        const toggle = togglesByTarget.get(`#${collapse.id}`)
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', String(wasShown))
+        }
+      }
+    }
   }
 
   // Remove focus after hover to avoid sticky focus rings.
@@ -313,7 +468,7 @@ class NavbarHoverDropdown extends Dropdown {
 }
 
 // Wire up hover dropdowns for AZ navbars and global outside interactions.
-function enableAzNavbarHoverDropdowns() {
+function enableAzNavbar() {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     return
   }
@@ -357,6 +512,10 @@ function enableAzNavbarHoverDropdowns() {
   EventHandler.on(document, 'focusin', handleOutsideInteraction)
 
   for (const navbar of navbars) {
+    // Set initial dropdown alignment and start observing resize changes.
+    updateDropdownAlignment(navbar)
+    observeNavbarResize(navbar)
+
     EventHandler.on(navbar, 'mouseover', event => {
       const target = event?.target
       if (!(target instanceof Element)) {
@@ -445,4 +604,4 @@ function createNavbarHoverDropdown(triggerElement, dropdownElement, navbar) {
   return new NavbarHoverDropdown(triggerElement, dropdownElement, navbar)
 }
 
-export { enableAzNavbarHoverDropdowns as default }
+export { enableAzNavbar as default }

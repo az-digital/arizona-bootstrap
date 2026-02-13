@@ -21891,6 +21891,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 6px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
+  --az-navbar-dropdown-max-width: 50%;
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
   --az-navbar-secondary-dropdown-item-padding-y: 12px;
   --az-navbar-tertiary-menu-padding-y: 16px;
@@ -22037,6 +22038,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-dropdown-link-disabled-color: var(--az-navbar-font-disabled-color);
   --bs-dropdown-item-padding-x: var(--az-navbar-secondary-dropdown-item-padding-x);
   --bs-dropdown-item-padding-y: var(--az-navbar-secondary-dropdown-item-padding-y);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  max-width: var(--az-navbar-dropdown-max-width);
   margin-top: calc(var(--az-navbar-nav-item-margin-y) + 1px);
   overflow: hidden;
   border-top: 2px solid var(--bs-dropdown-border-color);
@@ -22110,6 +22116,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   padding-top: calc(var(--bs-dropdown-item-padding-y) + 2px);
   padding-bottom: var(--bs-dropdown-item-padding-y);
   font-weight: var(--az-navbar-font-weight);
+  overflow-wrap: break-word;
+  white-space: normal;
   border-left: unset;
 }
 .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active {

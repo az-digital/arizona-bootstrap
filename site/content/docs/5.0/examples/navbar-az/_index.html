@@ -68,14 +68,90 @@ extra_css:
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="{{< ref "navbar-az" >}}">Long Children</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" id="secondaryMenu2">
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation With an Extremely Long Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation With an Extremely Long Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports (And This One Has Children)</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu3" data-bs-auto-close="outside" aria-controls="tertiaryMenu3" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu3" class="collapse" data-bs-parent="#secondaryMenu2" role="group" aria-label="Tertiary Menu 3">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation With a Much Longer Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu4" data-bs-auto-close="outside" aria-controls="tertiaryMenu4" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu4" class="collapse" data-bs-parent="#secondaryMenu2" role="group" aria-label="Tertiary Menu 4">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="{{< ref "navbar-az" >}}">Long Navbar</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" id="secondaryMenu4">
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{< ref "navbar-az" >}}">Primary Navigation</a>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link" href="{{< ref "navbar-az" >}}">Longer Navbar</a>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" id="secondaryMenu3">
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation With an Extremely Long Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation With an Extremely Long Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports (And This One Has Children)</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu5" data-bs-auto-close="outside" aria-controls="tertiaryMenu5" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu5" class="collapse" data-bs-parent="#secondaryMenu3" role="group" aria-label="Tertiary Menu 5">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation With a Much Longer Title That Wraps Nicely and Keeps Wrapping So We Can Demonstrate Overflow Handling in Narrow Viewports</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu6" data-bs-auto-close="outside" aria-controls="tertiaryMenu6" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu6" class="collapse" data-bs-parent="#secondaryMenu3" role="group" aria-label="Tertiary Menu 6">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
