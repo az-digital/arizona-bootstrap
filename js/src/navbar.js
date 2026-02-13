@@ -410,6 +410,19 @@ class NavbarHoverDropdown extends Dropdown {
       return
     }
 
+    const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
+    const togglesByTarget = new Map()
+
+    if (menu) {
+      const toggles = menu.querySelectorAll('[data-bs-target]')
+      for (const toggle of toggles) {
+        const target = toggle.getAttribute('data-bs-target')
+        if (target) {
+          togglesByTarget.set(target, toggle)
+        }
+      }
+    }
+
     for (const [collapse, wasShown] of this._initialCollapseStates) {
       const isShown = collapse.classList.contains('show')
 
@@ -427,8 +440,7 @@ class NavbarHoverDropdown extends Dropdown {
 
       // Sync the toggle button's aria-expanded attribute.
       if (collapse.id) {
-        const menu = this._menu || this._dropdownElement?.querySelector('.dropdown-menu')
-        const toggle = menu?.querySelector(`[data-bs-target="#${collapse.id}"]`)
+        const toggle = togglesByTarget.get(`#${collapse.id}`)
         if (toggle) {
           toggle.setAttribute('aria-expanded', String(wasShown))
         }
