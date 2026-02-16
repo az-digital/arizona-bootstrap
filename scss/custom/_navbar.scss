@@ -27,6 +27,7 @@
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 6px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
+  --az-navbar-hover-bridge-height: 20px;
   --az-navbar-dropdown-max-width: 50%; // Dynamically updated via JS to half the navbar width in px
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
   --az-navbar-secondary-dropdown-item-padding-y: 12px;
@@ -130,6 +131,36 @@
   // Override Bootstrap's margin-left on adjacent buttons in split dropdown btn-groups
   .dropdown.btn-group > .dropdown-toggle-split {
     margin-left: 0;
+  }
+
+  // Desktop hover bridge between top-level toggle and menu to keep hover open while crossing the vertical gap.
+  // Applies to both single-dropdown toggles and split-dropdown toggle buttons without requiring HTML changes.
+  @media (hover: hover) and (pointer: fine) {
+    .nav-item.dropdown > .dropdown-toggle:is(:hover, :focus, [aria-expanded="true"]) {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: block;
+        height: var(--az-navbar-hover-bridge-height);
+        content: "";
+      }
+    }
+
+    .nav-item.dropdown > .dropdown-menu {
+      &::before {
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        left: 0;
+        display: block;
+        height: var(--az-navbar-hover-bridge-height);
+        content: "";
+      }
+    }
   }
 
   // Primary dropdown toggle (single dropdown and split dropdown toggle).
