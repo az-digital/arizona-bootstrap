@@ -226,7 +226,7 @@
     min-width: 100%;
     max-width: var(--az-navbar-dropdown-max-width);
     // Bump offset by 1px so dropdown-menu does not overlap the bottom border of the navbar
-    margin-top: calc(var(--az-navbar-nav-item-margin-y) + 1px); // stylelint-disable-line function-disallowed-list
+    // margin-top: calc(var(--az-navbar-nav-item-margin-y) + 1px); // stylelint-disable-line function-disallowed-list
     overflow: hidden;
     border-top: 2px solid var(--bs-dropdown-border-color);
     box-shadow: var(--bs-dropdown-box-shadow); // force shadow here - needed because shadows are disabled globally
