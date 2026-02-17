@@ -119,6 +119,11 @@
     }
   }
 
+  // Single Dropdown only: remove hover underline at the primary level.
+  .dropdown:not(.btn-group) > .nav-link.dropdown-toggle:hover {
+    text-decoration: none;
+  }
+
   // For Split Dropdown only.
   // Removes the gap between the text link and the split toggle button caused by
   // Bootstrap's btn-group adjacent button spacing.
