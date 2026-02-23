@@ -101,7 +101,8 @@
     &.active,
     &.is-active,
     &:active,
-    &:hover {
+    // Single Dropdown only: remove hover underline at the primary level.
+    &:not(.dropdown-toggle):hover {
       @extend %text-decoration-properties;
       background-color: unset;
     }

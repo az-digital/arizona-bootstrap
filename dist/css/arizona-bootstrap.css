@@ -21916,7 +21916,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .show a.is-active,
 .navbar-az .dropdown-menu .show a:active,
 .navbar-az .dropdown-menu .show a.show,
-.navbar-az .dropdown-menu .show a:hover, .navbar-az .dropdown-item:hover, .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active, .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
+.navbar-az .dropdown-menu .show a:hover, .navbar-az .dropdown-item:hover, .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active, .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:not(.dropdown-toggle):hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -21952,7 +21952,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .nav-link {
   padding: 0 var(--bs-navbar-nav-link-padding-x);
 }
-.navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
+.navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:not(.dropdown-toggle):hover {
   background-color: unset;
 }
 .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active {
