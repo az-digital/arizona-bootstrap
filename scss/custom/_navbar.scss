@@ -91,8 +91,7 @@
     &.active,
     &.is-active,
     &:active,
-    // Single Dropdown only: remove hover underline at the primary level.
-    &:not(.dropdown-toggle):hover {
+    &:hover {
       @extend %text-decoration-properties;
       background-color: unset;
     }
@@ -115,6 +114,11 @@
       outline: 0;
       box-shadow: var(--az-navbar-focus-ring);
     }
+  }
+
+  // Single Dropdown only: remove hover underline at the primary level.
+  .dropdown:not(.btn-group) > .nav-link.dropdown-toggle:hover {
+    text-decoration: none;
   }
 
   // For Split Dropdown only.
