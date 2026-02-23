@@ -88,7 +88,6 @@
 
   // Primary nav link styles (underline on hover/active, focus ring).
   .nav-link {
-    // No vertical padding so left border is drawn correctly
     padding: var(--az-navbar-nav-item-margin-y) var(--bs-navbar-nav-link-padding-x);
 
     // Both hover and active states have an underline
