@@ -133,6 +133,13 @@
     margin-left: 0;
   }
 
+  // For Single Dropdown only (top-level non-split dropdown toggle).
+  // Prevent click-only focus ring in browsers that support :focus-visible.
+  .navbar-nav > .dropdown:not(.btn-group) > .dropdown-toggle:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+  }
+
   // Primary dropdown toggle (single dropdown and split dropdown toggle).
   .dropdown-toggle {
     @include border-radius(0);
