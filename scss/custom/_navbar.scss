@@ -60,10 +60,7 @@
   .nav-item {
     display: flex;
     align-items: center;
-    // margin-top: var(--az-navbar-nav-item-margin-y);
-    // margin-bottom: var(--az-navbar-nav-item-margin-y);
     line-height: var(--az-navbar-line-height);
-    // border-left: 1px solid var(--az-navbar-border-color);
     @include border-radius(0);
 
     // Unsets background colors provided by override/navbar
