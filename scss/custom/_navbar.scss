@@ -77,12 +77,6 @@
     &:has(> .nav-link.show) {
       background-color: unset;
     }
-
-    // First primary nav item should have no left border
-    &:first-child {
-      padding-inline-start: 0;
-      border-left: 0;
-    }
   }
 
   .vr {
