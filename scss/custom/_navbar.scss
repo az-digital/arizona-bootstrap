@@ -345,6 +345,10 @@
     list-style: none;
     background-color: $cool-gray;
 
+    li {
+      border-bottom: 0;
+    }
+
     /* stylelint-disable selector-max-compound-selectors */
     // First navigation element should have double top padding
     > li:first-child > a {
@@ -365,7 +369,6 @@
       font-weight: var(--az-navbar-font-weight);
       color: var(--az-navbar-font-color);
       text-decoration: none;
-      border-bottom: 1px solid var(--az-navbar-border-color);
 
       /* stylelint-disable selector-no-qualifying-type */
       // Both hover and active states have an underline
