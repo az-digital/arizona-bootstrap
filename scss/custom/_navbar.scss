@@ -18,6 +18,8 @@
   --az-navbar-accent-color: #{$red};
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 18px;
+  --az-navbar-nav-link-padding-y: 18px;
+  --az-navbar-vr-margin-y: 17px;
   // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%231e5288&selected=Material+Symbols+Rounded:expand_circle_down:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+ci
   --az-navbar-dropdown-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$azurite}'><path d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
   // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23AB0520&selected=Material+Symbols+Rounded:expand_circle_down:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=expand+ci
@@ -27,6 +29,7 @@
   --az-navbar-dropdown-padding-x: 12px;
   --az-navbar-dropdown-toggle-icon-gap: 8px;
   --az-navbar-dropdown-toggle-icon-size: 24px;
+  --az-navbar-dropdown-toggle-padding-y: 17px;
   --az-navbar-dropdown-max-width: 50%; // Dynamically updated via JS to half the navbar width in px
   --az-navbar-secondary-dropdown-item-padding-x: 20px;
   --az-navbar-secondary-dropdown-item-padding-y: 12px;
@@ -55,7 +58,6 @@
   .navbar-nav {
     --bs-nav-link-font-weight: var(--az-navbar-font-weight);
     --bs-nav-link-hover-color: var(--az-navbar-font-hover-color);
-    min-height: var(--az-navbar-min-height);
   }
 
   .nav-item {
@@ -78,15 +80,18 @@
   }
 
   .vr {
-    margin-top: var(--az-navbar-nav-item-margin-y);
-    margin-bottom: var(--az-navbar-nav-item-margin-y);
+    margin-top: var(--az-navbar-vr-margin-y);
+    margin-bottom: var(--az-navbar-vr-margin-y);
     color: var(--az-navbar-border-color);
     opacity: 1;
   }
 
   // Primary nav link styles (underline on hover/active, focus ring).
   .nav-link {
-    padding: var(--az-navbar-nav-item-margin-y) var(--bs-navbar-nav-link-padding-x);
+    display: flex;
+    align-items: center; // vertically center text within stretched height
+    align-self: stretch;
+    padding: var(--az-navbar-nav-link-padding-y) var(--bs-navbar-nav-link-padding-x);
 
     // Both hover and active states have an underline
     &.active,
@@ -138,6 +143,9 @@
   // Primary dropdown toggle (single dropdown and split dropdown toggle).
   .dropdown-toggle {
     @include border-radius(0);
+    align-self: stretch;
+    padding-top: var(--az-navbar-dropdown-toggle-padding-y);
+    padding-bottom: var(--az-navbar-dropdown-toggle-padding-y);
 
     &::after {
       display: inline-block; // This prevents the parent's underline from drawing through the icon
@@ -169,9 +177,7 @@
   // Spacing adjustments needed for the Split Dropdown (.dropdown-toggle.dropdown-toggle-split) icon container.
   .dropdown-toggle-split {
     --bs-btn-border-width: 0;
-    padding-top: var(--az-navbar-nav-item-margin-y);
     padding-right: var(--bs-navbar-nav-link-padding-x);
-    padding-bottom: var(--az-navbar-nav-item-margin-y);
     padding-left: 0;
   }
 
