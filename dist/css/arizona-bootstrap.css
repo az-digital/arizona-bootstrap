@@ -22074,6 +22074,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   -moz-margin-start: auto;
   margin-inline-start: auto;
   border-left: 1px solid var(--az-navbar-border-color);
+  transition: none;
 }
 .navbar-az .dropdown-menu .dropdown-toggle::after, .navbar-az .dropdown-menu .dropdown-toggle:focus::after {
   display: block;
@@ -22218,7 +22219,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: var(--az-navbar-focus-ring-inset);
 }
 .navbar-az .dropdown-menu .collapsing {
-  height: auto;
   transition-delay: 0s;
   transition-duration: 0s;
   transition-property: none;
