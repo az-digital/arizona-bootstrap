@@ -251,6 +251,7 @@
       padding: var(--bs-dropdown-item-padding-y);
       margin-inline-start: auto; // pushes to the far right
       border-left: 1px solid var(--az-navbar-border-color);
+      transition: none; // stylelint-disable-line property-disallowed-list -- Prevent inherited .btn fade on background-color
 
       &::after,
       &:focus::after {
@@ -401,7 +402,6 @@
   }
   // Disable transition timing during collapse for a snappier submenu.
   .dropdown-menu .collapsing {
-    height: auto;
     transition-delay: 0s;
     transition-duration: 0s;
     transition-property: none;
