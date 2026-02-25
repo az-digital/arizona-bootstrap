@@ -391,11 +391,20 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        <li class="nav-item" role="presentation">
+          <span class="vr" aria-hidden="true"></span>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+        <li class="nav-item" role="presentation">
+          <span class="vr" aria-hidden="true"></span>
+        </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <span class="vr" aria-hidden="true"></span>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -406,6 +415,9 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
             <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
             <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
           </ul>
+        </li>
+        <li class="nav-item" role="presentation">
+          <span class="vr" aria-hidden="true"></span>
         </li>
         <li class="nav-item dropdown btn-group">
           <a class="nav-link" href="#">Split Dropdown</a>
