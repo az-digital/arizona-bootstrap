@@ -5,7 +5,7 @@ description: Guidance and suggestions for using icon libraries with Arizona Boot
 group: icons
 redirect_from:
   - "/icons/"
-  - "/docs/5.0/icons/"
+  - "/docs/5.1/icons/"
 toc: true
 ---
 

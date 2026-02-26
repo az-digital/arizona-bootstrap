@@ -4,7 +4,7 @@ title: Get started with Arizona Bootstrap
 description: Arizona Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 group: getting-started
 aliases:
-  - "/docs/5.0/getting-started/"
+  - "/docs/5.1/getting-started/"
   - "/docs/getting-started/"
   - "/getting-started/"
 toc: true

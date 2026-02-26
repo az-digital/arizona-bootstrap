@@ -3,7 +3,7 @@ layout: docs
 title: Clearfix
 description: Quickly and easily clear floated content within a container by adding a clearfix utility.
 group: helpers
-aliases: "/docs/5.0/helpers/"
+aliases: "/docs/5.1/helpers/"
 ---
 
 Easily clear `float`s by adding `.clearfix` **to the parent element**. Can also be used as a mixin.

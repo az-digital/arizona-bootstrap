@@ -5,7 +5,7 @@ description: Learn more about the team maintaining Arizona Bootstrap, how and wh
 group: about
 aliases:
   - "/about/"
-  - "/docs/5.0/about/"
+  - "/docs/5.1/about/"
 ---
 
 ## Team
