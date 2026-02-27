@@ -39,7 +39,7 @@
     "js-minify-bundle": "terser --compress passes=2,typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/arizona-bootstrap.bundle.js.map,includeSources,url=arizona-bootstrap.bundle.min.js.map\" --output dist/js/arizona-bootstrap.bundle.min.js dist/js/arizona-bootstrap.bundle.js",
     "lint": "npm-run-all  --aggregate-output --continue-on-error --parallel js-lint css-lint",
     "test": "npm-run-all lint dist docs-build docs-lint",
-    "update-deps": "ncu -u -x \"bootstrap,eslint,eslint-config-xo,eslint-plugin-unicorn,jquery,sass,stylelint,linkinator,vnu-jar\" ",
+    "update-deps": "ncu -u -x \"bootstrap,eslint,eslint-config-xo,eslint-plugin-unicorn,jquery,sass,stylelint,linkinator,vnu-jar\"",
     "release-sri": "node build/generate-sri.mjs",
     "version": "npm-run-all dist release-sri docs-serve-config docs-build",
     "watch": "npm-run-all --parallel watch-*",
