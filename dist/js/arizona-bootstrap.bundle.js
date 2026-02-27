@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v5.0.5 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.1.0 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -3854,12 +3854,6 @@
       return instance;
     };
   }
-  var createPopper$2 = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line import/no-unused-modules
-
-  var defaultModifiers$1 = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1];
-  var createPopper$1 = /*#__PURE__*/popperGenerator({
-    defaultModifiers: defaultModifiers$1
-  }); // eslint-disable-next-line import/no-unused-modules
 
   var defaultModifiers = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1, offset$1, flip$1, preventOverflow$1, arrow$1, hide$1];
   var createPopper = /*#__PURE__*/popperGenerator({
@@ -3882,8 +3876,6 @@
     clippingParents,
     computeStyles: computeStyles$1,
     createPopper,
-    createPopperBase: createPopper$2,
-    createPopperLite: createPopper$1,
     detectOverflow,
     end,
     eventListeners,

@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap navbar.js v5.0.5 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap navbar.js v5.1.0 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
