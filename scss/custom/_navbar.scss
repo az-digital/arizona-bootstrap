@@ -341,6 +341,11 @@
   .dropdown-menu .collapse,
   .dropdown-menu .collapsing,
   .dropdown-menu .show {
+    // Prevent tertiary items from inflating the dropdown's max-content width.
+    // width: 0 contributes nothing during intrinsic sizing; min-width: 100%
+    // resolves to 0 during intrinsic sizing but fills the parent during layout.
+    width: 0;
+    min-width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
