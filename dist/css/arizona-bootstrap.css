@@ -21915,11 +21915,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .collapsing a:active,
 .navbar-az .dropdown-menu .collapsing a.show,
 .navbar-az .dropdown-menu .collapsing a:hover,
-.navbar-az .dropdown-menu .show a.active,
-.navbar-az .dropdown-menu .show a.is-active,
-.navbar-az .dropdown-menu .show a:active,
-.navbar-az .dropdown-menu .show a.show,
-.navbar-az .dropdown-menu .show a:hover, .navbar-az .dropdown-item:hover, .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active, .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
+.navbar-az .dropdown-menu .collapse.show a.active,
+.navbar-az .dropdown-menu .collapse.show a.is-active,
+.navbar-az .dropdown-menu .collapse.show a:active,
+.navbar-az .dropdown-menu .collapse.show a.show,
+.navbar-az .dropdown-menu .collapse.show a:hover, .navbar-az .dropdown-item:hover, .navbar-az .dropdown-item.active, .navbar-az .dropdown-item.is-active, .navbar-az .nav-link.active, .navbar-az .nav-link.is-active, .navbar-az .nav-link:active, .navbar-az .nav-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -22150,7 +22150,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .navbar-az .dropdown-menu .collapse,
 .navbar-az .dropdown-menu .collapsing,
-.navbar-az .dropdown-menu .show {
+.navbar-az .dropdown-menu .collapse.show {
+  width: 0;
+  min-width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -22160,22 +22162,22 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .navbar-az .dropdown-menu .collapse li,
 .navbar-az .dropdown-menu .collapsing li,
-.navbar-az .dropdown-menu .show li {
+.navbar-az .dropdown-menu .collapse.show li {
   border-bottom: 0;
 }
 .navbar-az .dropdown-menu .collapse > li:first-child > a,
 .navbar-az .dropdown-menu .collapsing > li:first-child > a,
-.navbar-az .dropdown-menu .show > li:first-child > a {
+.navbar-az .dropdown-menu .collapse.show > li:first-child > a {
   padding-top: var(--az-navbar-tertiary-menu-padding-y);
 }
 .navbar-az .dropdown-menu .collapse > li:last-child > a,
 .navbar-az .dropdown-menu .collapsing > li:last-child > a,
-.navbar-az .dropdown-menu .show > li:last-child > a {
+.navbar-az .dropdown-menu .collapse.show > li:last-child > a {
   padding-bottom: var(--az-navbar-tertiary-menu-padding-y);
 }
 .navbar-az .dropdown-menu .collapse a,
 .navbar-az .dropdown-menu .collapsing a,
-.navbar-az .dropdown-menu .show a {
+.navbar-az .dropdown-menu .collapse.show a {
   display: block;
   padding-top: var(--az-navbar-tertiary-menu-item-padding-y);
   padding-right: var(--bs-dropdown-item-padding-x);
@@ -22184,8 +22186,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   font-weight: var(--az-navbar-font-weight);
   color: var(--az-navbar-font-color);
   text-decoration: none;
-  /* stylelint-disable selector-no-qualifying-type */
-  /* stylelint-enable selector-no-qualifying-type */
+  /* stylelint-disable selector-max-class, selector-no-qualifying-type */
+  /* stylelint-enable selector-max-class, selector-no-qualifying-type */
 }
 .navbar-az .dropdown-menu .collapse a.active, .navbar-az .dropdown-menu .collapse a.is-active, .navbar-az .dropdown-menu .collapse a:active, .navbar-az .dropdown-menu .collapse a.show, .navbar-az .dropdown-menu .collapse a:hover,
 .navbar-az .dropdown-menu .collapsing a.active,
@@ -22193,27 +22195,27 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .collapsing a:active,
 .navbar-az .dropdown-menu .collapsing a.show,
 .navbar-az .dropdown-menu .collapsing a:hover,
-.navbar-az .dropdown-menu .show a.active,
-.navbar-az .dropdown-menu .show a.is-active,
-.navbar-az .dropdown-menu .show a:active,
-.navbar-az .dropdown-menu .show a.show,
-.navbar-az .dropdown-menu .show a:hover {
+.navbar-az .dropdown-menu .collapse.show a.active,
+.navbar-az .dropdown-menu .collapse.show a.is-active,
+.navbar-az .dropdown-menu .collapse.show a:active,
+.navbar-az .dropdown-menu .collapse.show a.show,
+.navbar-az .dropdown-menu .collapse.show a:hover {
   background-color: unset;
 }
 .navbar-az .dropdown-menu .collapse a.active, .navbar-az .dropdown-menu .collapse a.is-active, .navbar-az .dropdown-menu .collapse a:active,
 .navbar-az .dropdown-menu .collapsing a.active,
 .navbar-az .dropdown-menu .collapsing a.is-active,
 .navbar-az .dropdown-menu .collapsing a:active,
-.navbar-az .dropdown-menu .show a.active,
-.navbar-az .dropdown-menu .show a.is-active,
-.navbar-az .dropdown-menu .show a:active {
+.navbar-az .dropdown-menu .collapse.show a.active,
+.navbar-az .dropdown-menu .collapse.show a.is-active,
+.navbar-az .dropdown-menu .collapse.show a:active {
   color: var(--az-navbar-font-active-color);
   -webkit-text-decoration-color: var(--az-navbar-accent-color);
   text-decoration-color: var(--az-navbar-accent-color);
 }
 .navbar-az .dropdown-menu .collapse a:hover,
 .navbar-az .dropdown-menu .collapsing a:hover,
-.navbar-az .dropdown-menu .show a:hover {
+.navbar-az .dropdown-menu .collapse.show a:hover {
   color: var(--az-navbar-font-hover-color);
   -webkit-text-decoration-color: var(--az-navbar-font-hover-color);
   text-decoration-color: var(--az-navbar-font-hover-color);
@@ -22221,14 +22223,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az .dropdown-menu .collapse a.disabled, .navbar-az .dropdown-menu .collapse a[aria-disabled=true],
 .navbar-az .dropdown-menu .collapsing a.disabled,
 .navbar-az .dropdown-menu .collapsing a[aria-disabled=true],
-.navbar-az .dropdown-menu .show a.disabled,
-.navbar-az .dropdown-menu .show a[aria-disabled=true] {
+.navbar-az .dropdown-menu .collapse.show a.disabled,
+.navbar-az .dropdown-menu .collapse.show a[aria-disabled=true] {
   color: var(--az-navbar-font-disabled-color);
   pointer-events: none;
 }
 .navbar-az .dropdown-menu .collapse a:focus-visible,
 .navbar-az .dropdown-menu .collapsing a:focus-visible,
-.navbar-az .dropdown-menu .show a:focus-visible {
+.navbar-az .dropdown-menu .collapse.show a:focus-visible {
   border-radius: 2px;
   outline: 0;
   box-shadow: var(--az-navbar-focus-ring-inset);
