@@ -360,9 +360,9 @@ body {
 .demo-hero-title {
   max-width: 40rem;
   margin-bottom: 1rem;
-  color: #fff;
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
+  color: #fff;
 }
 
 .demo-hero-copy {
