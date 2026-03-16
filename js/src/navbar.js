@@ -148,6 +148,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._wasHoverOpened = false
     this._suppressHover = false
     this._ignoreNextToggle = false
+    this._pointerClick = false
 
     if (supportsPointerHover()) {
       this._addHoverListeners()
@@ -170,7 +171,7 @@ class NavbarHoverDropdown extends Dropdown {
     this._boundMenuLeave = () => this._handleHoverLeave()
     this._boundOnFocus = event => this._handleFocus(event)
     this._boundOnBlur = event => this._handleBlur(event)
-    this._boundOnMouseDown = () => this._handleMouseDown()
+    this._boundOnMouseDown = event => this._handleMouseDown(event)
     this._boundOnClick = event => this._handleClick(event)
 
     EventHandler.on(this._element, 'mouseenter', this._boundOnEnter)
@@ -272,9 +273,10 @@ class NavbarHoverDropdown extends Dropdown {
     this._scheduleHide()
   }
 
-  _handleMouseDown() {
+  _handleMouseDown(event) {
     // Set flag before focus fires (event order: mousedown → focus → click)
     this._suppressNextFocus = true
+    this._pointerClick = event.button === 0
   }
 
   // Click is handled here to prevent Bootstrap's delegated double-toggle.
@@ -285,6 +287,14 @@ class NavbarHoverDropdown extends Dropdown {
     this._pendingClick = true
     this._cancelScheduledHide()
     this.toggle()
+
+    const shouldBlurClickFocus = this._pointerClick && this._isSingleDropdownLinkTrigger()
+    this._pointerClick = false
+
+    if (shouldBlurClickFocus && document.activeElement === this._element) {
+      this._suppressNextBlur = true
+      this._element.blur()
+    }
   }
 
   // Hide on hover-out, but never when the menu is click-open.
@@ -460,6 +470,15 @@ class NavbarHoverDropdown extends Dropdown {
     }
 
     this._hoverTriggered = false
+  }
+
+  _isSingleDropdownLinkTrigger() {
+    if (!this._element.matches('.nav-link.dropdown-toggle:not(.dropdown-toggle-split)')) {
+      return false
+    }
+
+    const dropdownElement = this._element.closest('.navbar-nav > .nav-item.dropdown')
+    return dropdownElement instanceof HTMLElement && !dropdownElement.classList.contains('btn-group')
   }
 
   isClickOpen() {
