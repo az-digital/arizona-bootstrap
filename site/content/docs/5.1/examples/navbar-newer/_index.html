@@ -1,7 +1,6 @@
 ---
 layout: examples
 title: Newer Navbar Template
-hide_theme_toggler: true
 extra_css:
   - "navbar-newer.css"
 ---
@@ -9,33 +8,31 @@ extra_css:
 <main>
   <header>
     <nav class="navbar navbar-az-newer" aria-label="University utility navigation">
-      <div class="container-lg demo-navbar-bar">
-        <a class="navbar-brand demo-navbar-brand" href="#">
-          <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona" width="150" height="36">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#">
+          <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
         </a>
 
-        <div class="demo-navbar-actions ms-auto">
-          <div class="demo-navbar-desktop-tools d-none d-lg-flex align-items-center">
-            <ul class="navbar-nav flex-row demo-navbar-utility-links">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Apply</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Visit</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Give</a>
-              </li>
-            </ul>
+        <div class="demo-navbar-tools ms-auto">
+          <ul class="navbar-nav flex-row navbar-actions d-none d-lg-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Apply</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Visit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Give</a>
+            </li>
+          </ul>
 
-            <form class="demo-navbar-search" role="search">
-              <label class="visually-hidden" for="navbar-newer-search-desktop">Search the site</label>
-              <div class="input-group">
-                <input id="navbar-newer-search-desktop" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-                <button class="btn demo-navbar-search-button" type="submit">Search</button>
-              </div>
-            </form>
-          </div>
+          <form class="navbar-search" role="search">
+            <label class="visually-hidden" for="navbar-newer-search-desktop">Search the site</label>
+            <div class="input-group">
+              <input id="navbar-newer-search-desktop" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <button class="btn demo-navbar-search-button" type="submit">Search</button>
+            </div>
+          </form>
 
           <button class="navbar-toggler demo-navbar-menu-button" type="button" data-bs-toggle="modal" data-bs-target="#navbar-newer-menu" aria-controls="navbar-newer-menu" aria-label="Open site menu">
             <span class="navbar-toggler-icon"></span>
@@ -56,18 +53,18 @@ extra_css:
               <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona" width="150" height="36">
             </a>
 
-            <div class="demo-navbar-actions ms-auto">
-              <ul class="navbar-nav flex-row demo-navbar-utility-links d-none d-lg-flex">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Apply</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Visit</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Give</a>
-                </li>
-              </ul>
+            <div class="demo-navbar-tools ms-auto">
+              <ul class="navbar-nav flex-row navbar-actions d-none d-lg-flex align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Apply</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Give</a>
+                  </li>
+                </ul>
 
               <button class="btn demo-navbar-menu-button demo-navbar-menu-close" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
                 <span class="demo-menu-close-icon" aria-hidden="true"></span>

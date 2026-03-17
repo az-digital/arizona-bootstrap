@@ -1,7 +1,16 @@
 .navbar-az-newer {
+  --az-navbar-newer-height: 110px;
+  --az-navbar-newer-brand-height: 60px;
   --bs-navbar-brand-padding-y: 25px;
-  min-height: 110px;
+  min-height: var(--az-navbar-newer-height);
   background-color: #{$blue};
   border-top: 0;
   border-bottom: 0;
+
+  .navbar-brand {
+    img {
+      height: var(--az-navbar-newer-brand-height);
+      @include border-radius(0);
+    }
+  }
 }
