@@ -1,23 +1,18 @@
-body {
-  margin: 0;
-  background: #f5f7fa;
-}
-
-.navbar-newer-demo {
+/* .navbar-newer-demo {
   min-height: 100vh;
   color: #102a43;
-}
+} */
 
-.demo-masthead {
+/* .demo-masthead {
   position: relative;
 }
 
-.demo-masthead .navbar.demo-navbar {
+.demo-masthead .navbar.navbar-az-newer {
   padding: 0;
   background: #0f2d5c;
   border-top: 0;
   border-bottom: 0;
-}
+} */
 
 .demo-navbar-bar,
 .demo-menu-header-bar {
@@ -28,7 +23,7 @@ body {
   padding: 1rem 1.5rem;
 }
 
-.demo-navbar-brand {
+/* .demo-navbar-brand {
   display: inline-flex;
   align-items: center;
   margin-right: 0;
@@ -38,7 +33,7 @@ body {
   display: block;
   max-width: min(100%, 17.625rem);
   height: auto;
-}
+} */
 
 .demo-navbar-actions {
   display: flex;
