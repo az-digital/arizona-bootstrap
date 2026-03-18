@@ -1,9 +1,20 @@
+// TODO - these are coming from legacy navbar
+.navbar-nav .nav-link:not(.active) {
+  font-weight: 700;
+}
+.navbar-nav .nav-link {
+  padding-top: 41.5px;
+  padding-bottom: 41.5px;
+}
+// TODO - can they be scoped to just legacy navbar?
+
 .navbar-az-newer {
   --az-navbar-newer-height: 110px;
   --az-navbar-newer-brand-height: 60px;
   --bs-navbar-brand-padding-y: 25px;
+  --bs-navbar-toggler-border-radius: 8px;
   min-height: var(--az-navbar-newer-height);
-  background-color: #{$blue};
+  background-color: var(--bs-blue);
   border-top: 0;
   border-bottom: 0;
 
@@ -12,5 +23,39 @@
       height: var(--az-navbar-newer-brand-height);
       @include border-radius(0);
     }
+  }
+
+  .navbar-tools {
+    display: flex;
+    // gap: .5rem;
+    align-items: center;
+  }
+
+  .navbar-actions {
+    --bs-nav-link-padding-x: 15px;
+    --bs-nav-link-padding-y: 41.5px;
+    --bs-nav-link-font-size: 22px;
+    --bs-nav-link-font-weight: 700;
+    --bs-nav-link-color: var(--bs-white);
+    line-height: 27px;
+  }
+
+  .navbar-search {
+    margin-right: 24px;
+    margin-left: 15px;
+  }
+
+  .navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    min-height: 70px;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    background: #b01c2e;
+    border: 0;
   }
 }
