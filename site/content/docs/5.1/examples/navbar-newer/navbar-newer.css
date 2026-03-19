@@ -7,20 +7,6 @@
   padding: 1rem 1.5rem;
 }
 
-/* .navbar-tools {
-  display: flex;
-  gap: .5rem;
-  align-items: center;
-} */
-
-/* .navbar-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 0;
-} */
-
 .navbar-search {
   width: 8.5rem;
 }
@@ -67,32 +53,6 @@
   color: #fff;
   background: rgba(255, 255, 255, .18);
 }
-
-/* .navbar-actions .nav-link {
-  padding: .25rem .75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-} */
-
-.navbar-actions .nav-link:hover,
-.navbar-actions .nav-link:focus {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* .demo-navbar-menu-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 4.25rem;
-  min-height: 4.25rem;
-  padding: .875rem;
-  color: #fff;
-  background: #b01c2e;
-  border: 0;
-  border-radius: .75rem;
-} */
 
 .demo-navbar-menu-button:hover,
 .demo-navbar-menu-button:focus {
