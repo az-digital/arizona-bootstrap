@@ -4,7 +4,23 @@
   gap: 1rem;
   align-items: center;
   min-height: 6.5rem;
+}
+
+.demo-navbar-bar {
   padding: 1rem 1.5rem;
+}
+
+.demo-menu-header .navbar-az-newer {
+  width: 100%;
+  padding: 0;
+}
+
+.demo-menu-header-bar {
+  padding: 0;
+}
+
+.demo-menu-header-bar .navbar-brand {
+  flex: 0 0 auto;
 }
 
 .demo-navbar-menu-close {
@@ -39,7 +55,7 @@
 }
 
 .demo-menu {
-  --bs-modal-bg: transparent;
+  /* --bs-modal-bg: transparent; */
   --bs-modal-border-width: 0;
   --bs-modal-border-radius: 0;
   --bs-modal-padding: 0;
@@ -56,7 +72,7 @@
 .demo-menu-surface {
   min-height: 100vh;
   color: #fff;
-  background: #0f2d5c;
+  /* background: #0f2d5c; */
   border: 0;
   border-radius: 0;
 }
@@ -322,7 +338,15 @@
   .demo-navbar-bar,
   .demo-menu-header-bar {
     min-height: 5.25rem;
+  }
+
+  .demo-navbar-bar {
     padding: .875rem 1rem;
+  }
+
+  .demo-menu-header .navbar-az-newer {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .demo-hero-content {
@@ -379,7 +403,7 @@
 @media (max-width: 575.98px) {
   .demo-navbar-bar,
   .demo-menu-header-bar {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .demo-menu-search-icon {
