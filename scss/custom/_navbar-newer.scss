@@ -2,6 +2,11 @@
   --az-navbar-newer-height: 110px;
   --az-navbar-newer-brand-height: 60px;
   --bs-navbar-brand-padding-y: 25px;
+  --bs-navbar-toggler-padding-y: 12.5px;
+  --bs-navbar-toggler-padding-x: 12.5px;
+  --bs-navbar-toggler-font-size: 30px;
+  // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:menu:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=hamburger&icon.style=Rounded
+  --bs-navbar-toggler-icon-bg: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/></svg>"))};
   --bs-navbar-toggler-border-radius: 8px;
   min-height: var(--az-navbar-newer-height);
   background-color: var(--bs-blue);
@@ -87,26 +92,16 @@
       &::placeholder {
         color: var(--bs-white);
       }
-
-      &:focus {
-        color: var(--bs-white);
-        background: rgba(15, 45, 92, .2);
-        box-shadow: none;
-      }
     }
 
     .btn {
       display: inline-grid;
       flex: 0 0 auto;
       place-items: center;
-      // min-width: 3.25rem;
-      // font-size: .8rem;
-      // font-weight: 600;
       min-width: 70px;
       min-height: 70px;
       padding: 10px;
       color: var(--bs-white);
-      // background: rgba(255, 255, 255, .08);
       border: 0;
       border-left: 2px solid var(--bs-white);
       @include border-radius(0);
@@ -136,10 +131,8 @@
     justify-content: center;
     min-width: 70px;
     min-height: 70px;
-    padding: 0;
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #fff;
     background: #b01c2e;
     border: 0;
   }

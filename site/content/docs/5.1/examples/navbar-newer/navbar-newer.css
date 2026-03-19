@@ -7,18 +7,6 @@
   padding: 1rem 1.5rem;
 }
 
-.demo-navbar-menu-button:hover,
-.demo-navbar-menu-button:focus {
-  color: #fff;
-  background: #c32035;
-  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .3);
-}
-
-.demo-navbar-menu-button .navbar-toggler-icon {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
 .demo-navbar-menu-close {
   flex: 0 0 auto;
 }
@@ -392,11 +380,6 @@
   .demo-navbar-bar,
   .demo-menu-header-bar {
     align-items: flex-start;
-  }
-
-  .demo-navbar-menu-button {
-    min-width: 3.5rem;
-    min-height: 3.5rem;
   }
 
   .demo-menu-search-icon {
