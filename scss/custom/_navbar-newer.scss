@@ -15,7 +15,7 @@
     }
   }
 
-  .navbar-tools {
+  .navbar-az-newer-tools {
     display: flex;
     align-items: center;
     min-width: 0;
@@ -26,7 +26,6 @@
     --bs-nav-link-padding-x: 15px;
     --bs-nav-link-padding-y: 41.5px;
     --bs-nav-link-color: var(--bs-white);
-    line-height: 27px;
 
     .nav-item {
       &:hover {
