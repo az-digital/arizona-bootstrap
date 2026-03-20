@@ -138,7 +138,7 @@ jobs:
         run: |
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
-          if [ -n "$(git status --porcelain dist js/dist)" ] ; then
+          if [ -n "$(git status --porcelain dist)" ] ; then
             git add -f dist
             git commit -m "Save updated CSS and JS files before deployment to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"
             git push origin "HEAD:${AZ_TRIMMED_REF}"
