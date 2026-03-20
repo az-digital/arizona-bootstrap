@@ -140,5 +140,60 @@
 
 
 .navbar-az-newer-modal {
+  --az-navbar-newer-modal-footer-font: normal normal 600 20px/24px proxima-nova-condensed;
+  --az-navbar-newer-modal-footer-brand-font: normal normal bold 22px/27px proxima-nova-condensed;
   --bs-modal-bg: var(--bs-blue);
+  --bs-modal-padding: 0;
+  --bs-modal-header-border-width: 0;
+  --bs-modal-footer-gap: 0;
+  --bs-modal-footer-bg: var(--bs-midnight);
+  --bs-modal-footer-border-color: var(--bs-azurite);
+  --bs-modal-footer-border-width: 1px;
+
+  .modal-footer {
+
+    .navbar {
+      --bs-navbar-brand-padding-y: 0;
+      --bs-navbar-brand-margin-end: 0;
+      --bs-navbar-brand-color: var(--bs-sky);
+      --bs-navbar-brand-hover-color: var(--bs-sky);
+      border-top: 0;
+      border-bottom: 0;
+    }
+
+    .navbar-brand {
+      font: var(--az-navbar-newer-modal-footer-brand-font);
+      letter-spacing: .44px;
+    }
+
+    .navbar-nav {
+      --bs-nav-link-color: var(--bs-white);
+      --bs-nav-link-hover-color: var(--bs-sky);
+
+      .nav-item {
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:has(> .nav-link.active),
+        &:has(> .nav-link.is-active),
+        &:has(> .nav-link:active),
+        &:has(> .nav-link.show) {
+          background-color: transparent;
+        }
+
+        /* stylelint-disable selector-max-class, selector-max-compound-selectors */
+        .nav-link {
+          font: var(--az-navbar-newer-modal-footer-font);
+          letter-spacing: .2px;
+
+          &:active {
+            color: var(--bs-sky);
+            background-color: transparent;
+          }
+        }
+        /* stylelint-enable selector-max-class, selector-max-compound-selectors */
+      }
+    }
+  }
 }

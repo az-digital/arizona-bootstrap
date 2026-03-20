@@ -76,7 +76,7 @@ extra_css:
         </div>
 
         <div class="modal-body demo-menu-body">
-          <div class="container-fluid demo-menu-inner">
+          <div class="container-lg demo-menu-inner">
             <form class="demo-menu-search" role="search">
               <label class="visually-hidden" for="navbar-newer-search-panel">Search the site</label>
               <div class="input-group">
@@ -156,30 +156,39 @@ extra_css:
           </div>
         </div>
 
-        <div class="modal-footer demo-menu-footer">
-          <div class="demo-menu-footer-row">
-            <span class="demo-menu-footer-label">Resources For:</span>
-            <div class="demo-menu-footer-links">
-              <a href="#">Current Students</a>
-              <a href="#">Faculty &amp; Staff</a>
-              <a href="#">Alumni</a>
-              <a href="#">Parents &amp; Families</a>
-              <a href="#">Business or Partner</a>
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100">
+            <div class="container-lg">
+              <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <span class="navbar-brand">Resources for:</span>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Current Students</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Faculty &amp; Staff</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Parents &amp; Families</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Business or Partner</a></li>
+              </ul>
             </div>
-          </div>
-
-          <div class="demo-menu-footer-row">
-            <span class="demo-menu-footer-label">Helpful Links:</span>
-            <div class="demo-menu-footer-links">
-              <a href="#">Campus Map</a>
-              <a href="#">A-Z Directory</a>
-              <a href="#">UAccess</a>
-              <a href="#">Phonebook</a>
-              <a href="#">Future Wildcat</a>
-              <a href="#">Weather</a>
-              <a href="#">Calendar</a>
+          </nav>
+        </div>
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100" aria-labelledby="demo-menu-helpful-links-label">
+            <div class="container-lg">
+              <ul class="navbar-nav demo-menu-footer-links flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <span class="navbar-brand" id="demo-menu-helpful-links-label">Helpful Links:</span>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Campus Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">A-Z Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">UAccess</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Phonebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Future Wildcat</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Weather</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calendar</a></li>
+              </ul>
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </div>
