@@ -1,0 +1,206 @@
+---
+layout: examples
+title: Newer Navbar Template
+extra_css:
+  - "navbar-newer.css"
+---
+
+<main>
+  <header>
+    <nav class="navbar navbar-az-newer" aria-label="University utility navigation">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#">
+          <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+        </a>
+
+        <div class="navbar-az-newer-tools ms-auto">
+          <ul class="navbar-nav flex-row navbar-az-newer-actions d-none d-lg-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Apply</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Visit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Give</a>
+            </li>
+          </ul>
+
+          <form class="navbar-az-newer-search" role="search">
+            <label class="visually-hidden" for="navbar-newer-search-desktop">Search the site</label>
+            <div class="input-group">
+              <input id="navbar-newer-search-desktop" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <button class="btn" type="submit"></button>
+            </div>
+          </form>
+
+          <button class="navbar-toggler demo-navbar-menu-button" type="button" data-bs-toggle="modal" data-bs-target="#navbar-newer-menu" aria-controls="navbar-newer-menu" aria-label="Open site menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="modal fade demo-menu navbar-az-newer-modal" id="navbar-newer-menu" tabindex="-1" aria-labelledby="navbar-newer-menu-label" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen demo-menu-dialog">
+      <div class="modal-content demo-menu-surface">
+        <div class="modal-header demo-menu-header">
+          <div class="navbar navbar-az-newer">
+            <div class="container-lg demo-menu-header-bar">
+              <h2 class="visually-hidden" id="navbar-newer-menu-label">Site menu</h2>
+
+              <a class="navbar-brand" href="#">
+                <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+              </a>
+
+              <div class="navbar-az-newer-tools ms-auto">
+                <ul class="navbar-nav flex-row navbar-az-newer-actions d-none d-lg-flex align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Apply</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Give</a>
+                  </li>
+                </ul>
+
+                <button class="navbar-toggler demo-navbar-menu-button demo-navbar-menu-close" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+                  <span class="demo-menu-close-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body demo-menu-body">
+          <div class="container-lg demo-menu-inner">
+            <form class="demo-menu-search" role="search">
+              <label class="visually-hidden" for="navbar-newer-search-panel">Search the site</label>
+              <div class="input-group">
+                <span class="demo-menu-search-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                    <path d="M15.5 15.5 20 20"></path>
+                  </svg>
+                </span>
+                <input id="navbar-newer-search-panel" class="form-control" type="search" placeholder="type your search term and press enter..." aria-label="Search the site">
+              </div>
+            </form>
+
+            <div class="demo-menu-content">
+              <nav class="demo-menu-primary" aria-label="Primary navigation">
+                <div class="dropend demo-menu-item">
+                  <button class="btn demo-menu-primary-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-offset="0,12" aria-expanded="false">
+                    Admissions
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark demo-menu-secondary-menu">
+                    <li><a class="dropdown-item" href="#">Admissions Overview</a></li>
+                    <li><a class="dropdown-item" href="#">Undergraduate Students</a></li>
+                    <li><a class="dropdown-item" href="#">Graduate Students</a></li>
+                    <li><a class="dropdown-item" href="#">Online Students</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropend demo-menu-item">
+                  <button class="btn demo-menu-primary-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-offset="0,12" aria-expanded="false">
+                    Academics
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark demo-menu-secondary-menu">
+                    <li><a class="dropdown-item" href="#">Colleges and Schools</a></li>
+                    <li><a class="dropdown-item" href="#">Majors and Programs</a></li>
+                    <li><a class="dropdown-item" href="#">Libraries</a></li>
+                    <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropend demo-menu-item">
+                  <button class="btn demo-menu-primary-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-offset="0,12" aria-expanded="false">
+                    Research
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark demo-menu-secondary-menu">
+                    <li><a class="dropdown-item" href="#">Research Areas</a></li>
+                    <li><a class="dropdown-item" href="#">Institutes and Centers</a></li>
+                    <li><a class="dropdown-item" href="#">Innovation Partnerships</a></li>
+                    <li><a class="dropdown-item" href="#">Research Support</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropend demo-menu-item">
+                  <button class="btn demo-menu-primary-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-offset="0,12" aria-expanded="false">
+                    Campus Life
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark demo-menu-secondary-menu">
+                    <li><a class="dropdown-item" href="#">Housing and Dining</a></li>
+                    <li><a class="dropdown-item" href="#">Student Organizations</a></li>
+                    <li><a class="dropdown-item" href="#">Arts and Culture</a></li>
+                    <li><a class="dropdown-item" href="#">Athletics</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropend demo-menu-item">
+                  <button class="btn demo-menu-primary-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-offset="0,12" aria-expanded="false">
+                    About
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark demo-menu-secondary-menu">
+                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                    <li><a class="dropdown-item" href="#">Rankings and Facts</a></li>
+                    <li><a class="dropdown-item" href="#">News and Events</a></li>
+                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100">
+            <div class="container-lg">
+              <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <span class="navbar-brand">Resources for:</span>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Current Students</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Faculty &amp; Staff</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Parents &amp; Families</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Business or Partner</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100" aria-labelledby="demo-menu-helpful-links-label">
+            <div class="container-lg">
+              <ul class="navbar-nav demo-menu-footer-links flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <span class="navbar-brand" id="demo-menu-helpful-links-label">Helpful Links:</span>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Campus Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">A-Z Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">UAccess</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Phonebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Future Wildcat</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Weather</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calendar</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="demo-hero" aria-label="Feature banner">
+    <img class="demo-hero-image" src="{{<docsextraref "/assets/img/photo-gallery-demo/gallery-img-1.jpg" >}}" alt="">
+    <div class="demo-hero-overlay"></div>
+    <div class="container demo-hero-content">
+      <p class="demo-hero-eyebrow">Structural demo</p>
+      <h1 class="demo-hero-title">University masthead prototype</h1>
+      <p class="demo-hero-copy">This example focuses on layout first: left-aligned brand, right-side utility links and search, a persistent menu trigger, and a full-width hero region below.</p>
+    </div>
+  </section>
+</main>
