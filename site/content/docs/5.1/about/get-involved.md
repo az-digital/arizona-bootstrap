@@ -15,7 +15,7 @@ If you want to get involved with Arizona Bootstrap, you can:
 </ul>
 
 
-## Join our Discussions in Teams
+## Join our Discussions on Teams
 
 The Arizona Digital team uses Microsoft Teams channels with a variety of purposes, ranging from general discussion to topics about specific repos and products. You are welcome to join any and all of these channels.
 
