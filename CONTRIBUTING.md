@@ -4,11 +4,11 @@ Want to contribute? Any release of Arizona Bootstrap is tested and ready to use,
 
 If you want to get involved, you can:
 
-- Request access to join the discussion on Slack ([learn more]((digital.arizona.edu/arizona-bootstrap/main/docs/0.0/about/get-involved))
-- Participate in Friday meetings and Wednesday pull request review sessions (ask for more details in Slack)
+- Join the discussion on Teams ([learn more]((digital.arizona.edu/arizona-bootstrap/main/docs/0.0/about/get-involved))
+- Participate in Friday meetings and Wednesday pull request review sessions (ask for more details on Teams)
 - Submit pull requests on GitHub
 
-Questions, bug reports or suggestions can also be emailed to [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or (preferably!) reported on Slack.
+Questions, bug reports or suggestions can also be emailed to [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or (preferably!) reported on Teams.
 
 ## Installation
 
