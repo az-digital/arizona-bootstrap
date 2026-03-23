@@ -1,8 +1,3 @@
-.demo-menu-header .navbar-az-newer {
-  width: 100%;
-  padding: 0;
-}
-
 .demo-navbar-menu-close {
   flex: 0 0 auto;
 }
@@ -32,18 +27,6 @@
 
 .demo-menu-close-icon::after {
   transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.demo-menu-surface {
-  min-height: 100vh;
-  color: #fff;
-  /* background: #0f2d5c; */
-  border: 0;
-  border-radius: 0;
-}
-
-.demo-menu-header {
-  padding: 0;
 }
 
 .demo-menu-body {
