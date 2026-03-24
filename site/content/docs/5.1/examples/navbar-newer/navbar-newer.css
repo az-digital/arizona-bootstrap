@@ -1,21 +1,7 @@
-.demo-menu-body {
-  display: flex;
-  flex: 1 1 auto;
-  padding: 0;
-  overflow-y: auto;
-}
-
-.demo-menu-inner {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1.25rem 1.5rem 2.5rem;
-}
-
-.demo-menu-search {
+/* .demo-menu-search {
   width: min(100%, 58rem);
   margin-bottom: 2.75rem;
-}
+} */
 
 .demo-menu-search .input-group {
   flex-wrap: nowrap;
