@@ -4,7 +4,7 @@ Want to contribute? Any release of Arizona Bootstrap is tested and ready to use,
 
 If you want to get involved, you can:
 
-- Join the discussion on Teams ([learn more]((digital.arizona.edu/arizona-bootstrap/main/docs/0.0/about/get-involved))
+- [Join the discussion on Teams](https://teams.microsoft.com/l/team/19%3A-MwdU6fBIuJVWL2G4F0NmFMqxrJ8kms2-qW5y3qCPe41%40thread.tacv2/conversations?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&tenantId=5ee35505-eb8e-4929-937d-645df5013288)
 - Participate in Friday meetings and Wednesday pull request review sessions (ask for more details on Teams)
 - Submit pull requests on GitHub
 
