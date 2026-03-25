@@ -9,19 +9,19 @@ toc: true
 If you want to get involved with Arizona Bootstrap, you can:
 
 <ul>
-  <li>Join our Arizona Digital discussions in Slack</li>
+  <li>Join our Arizona Digital discussions on Teams</li>
   <li>Join our weekly Arizona Digital meetings</li>
   <li>Contribute to issues and pull requests on GitHub</li>
 </ul>
 
 
-## Join our Discussions in Slack
+## Join our Discussions on Teams
 
-The Arizona Digital team uses Slack channels with a variety of purposes, ranging from general discussion to topics about specific repos and products. You are welcome to join any and all of these channels.
+The Arizona Digital team uses Microsoft Teams channels with a variety of purposes, ranging from general discussion to topics about specific repos and products. You are welcome to join any and all of these channels.
 
-<strong>To connect with us in Slack, you must first <a href="https://quickstart.arizona.edu/join-us-on-slack" target="_blank">request access to the University of Arizona Slack workspace</a>.</strong> Once you have access, you can join any of the channels listed below.
+<strong>To connect with us on Teams, you must first <a href="https://teams.microsoft.com/l/team/19%3A-MwdU6fBIuJVWL2G4F0NmFMqxrJ8kms2-qW5y3qCPe41%40thread.tacv2/conversations?groupId=56dd8bd6-c065-4f07-bef0-9293bb01f97f&tenantId=5ee35505-eb8e-4929-937d-645df5013288" target="_blank">join our Arizona Digital team</a>.</strong> Once you join the team, you can join any of the channels listed below.
 
-### Primary Arizona Digital Channels
+### Arizona Digital Channels
 
 <div class="primary-channels-table">
   <table class="table table-striped">
@@ -31,51 +31,56 @@ The Arizona Digital team uses Slack channels with a variety of purposes, ranging
         <th scope="col">Purpose</th>
       </tr>
     </thead>
-    {{< slackchannels.inline >}}
       <tbody>
-        {{ $slackChannels := index $.Site.Data "slack-channels" }}
-        {{- range $slackChannel := where $slackChannels "primary" "eq" true -}}
-          <tr>
-            <td>{{ $slackChannel.channel }}</td>
-            <td>
-              <ul class="ps-3">{{ range $slackChannel.description }}
-                <li>{{ .purpose }}</li>{{- end }}
-              </ul>
-            </td>
-          </tr>
-        {{- end }}
+        <tr>
+          <td>
+            General
+          </td>
+          <td>
+            Sharing general information with the Arizona Digital community and home to the Releases calendar.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Bootstrap
+          </td>
+          <td>
+            GitHub updates and conversation around the arizona-bootstrap repo.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Documentation Site
+          </td>
+          <td>
+            Conversation around updates to the quickstart.arizona.edu website.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Meetings
+          </td>
+          <td>
+            Notes and updates about the Arizona Digital meetings.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Quickstart
+          </td>
+          <td>
+            GitHub updates and conversation around the az_quickstart repo.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Support
+          </td>
+          <td>
+            A place to get support from anyone within the Arizona Digital team. 
+          </td>
+        </tr>
       </tbody>
-    {{< /slackchannels.inline >}}
-  </table>
-</div>
-
-Please feel free to post questions, bug reports, and suggestions to the **#azdigital-support** channel. We are also available by email at [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu).
-
-### Additional Channels of Interest
-
-<div id="additional-channels-table">
-  <table class="table table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Channel</th>
-        <th scope="col">Purpose</th>
-      </tr>
-    </thead>
-    {{< slackchannels.inline >}}
-      <tbody>
-        {{ $slackChannels := index $.Site.Data "slack-channels" }}
-        {{- range $slackChannel := where $slackChannels "primary" "ne" true -}}
-          <tr>
-            <td>{{ $slackChannel.channel }}</td>
-            <td>
-              <ul class="ps-3">{{ range $slackChannel.description }}
-                <li>{{ .purpose }}</li>{{- end }}
-              </ul>
-            </td>
-          </tr>
-        {{- end }}
-      </tbody>
-    {{< /slackchannels.inline >}}
   </table>
 </div>
 
