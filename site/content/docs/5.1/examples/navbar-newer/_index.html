@@ -95,38 +95,41 @@ extra_css:
               <div class="col">
                 <!-- primary nav items -->
                 <div class="nav flex-column navbar-az-newer-nav-primary" id="az-navbar-newer-primary-tablist" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link" id="az-navbar-newer-primary-admissions-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-admissions-content" aria-selected="true">Admissions</button>
+                  <button class="nav-link active" id="az-navbar-newer-primary-admissions-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-admissions-content" aria-selected="true">Admissions</button>
                   <button class="nav-link" id="az-navbar-newer-primary-academics-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-academics-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-academics-content" aria-selected="false">Academics</button>
                   <button class="nav-link" id="az-navbar-newer-primary-research-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-research-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-research-content" aria-selected="false">Research</button>
                   <button class="nav-link" id="az-navbar-newer-primary-campus-life-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-campus-life-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-campus-life-content" aria-selected="false">Campus Life</button>
                   <button class="nav-link" id="az-navbar-newer-primary-about-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-primary-about-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-about-content" aria-selected="false">About</button>
                 </div>
               </div>
-              <div class="col">
-                <!-- secondary nav items -->
+              <div class="col-8">
                 <div class="tab-content" id="az-navbar-newer-primary-tab-content">
                   <div class="tab-pane fade show active" id="az-navbar-newer-primary-admissions-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-admissions-tab" tabindex="0">
-                    <div class="nav flex-column nav-pills me-3" id="az-navbar-newer-secondary-tablist" role="tablist" aria-orientation="vertical">
-                      <button class="nav-link" id="az-navbar-newer-secondary-admissions-overview-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-admissions-overview-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-admissions-overview-content" aria-selected="true">Admissions Overview</button>
-                      <button class="nav-link" id="az-navbar-newer-secondary-undergraduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-undergraduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-undergraduate-content" aria-selected="false">Undergraduate Students</button>
-                      <button class="nav-link" id="az-navbar-newer-secondary-graduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-graduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-graduate-content" aria-selected="false">Graduate Students</button>
-                      <button class="nav-link" id="az-navbar-newer-secondary-online-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-online-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-online-content" aria-selected="false">Online Students</button>
+                    <div class="row">
+                      <div class="col">
+                        <!-- secondary nav items -->
+                        <div class="nav flex-column nav-pills me-3" id="az-navbar-newer-secondary-tablist" role="tablist" aria-orientation="vertical">
+                          <button class="nav-link active" id="az-navbar-newer-secondary-admissions-overview-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-admissions-overview-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-admissions-overview-content" aria-selected="true">Admissions Overview</button>
+                          <button class="nav-link" id="az-navbar-newer-secondary-undergraduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-undergraduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-undergraduate-content" aria-selected="false">Undergraduate Students</button>
+                          <button class="nav-link" id="az-navbar-newer-secondary-graduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-graduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-graduate-content" aria-selected="false">Graduate Students</button>
+                          <button class="nav-link" id="az-navbar-newer-secondary-online-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-online-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-online-content" aria-selected="false">Online Students</button>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <!-- tertiary nav items -->
+                        <div class="tab-content" id="az-navbar-newer-secondary-tab-content">
+                          <div class="tab-pane fade show active" id="az-navbar-newer-secondary-admissions-overview-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-admissions-overview-tab" tabindex="0">Admissions Overview menu</div>
+                          <div class="tab-pane fade" id="az-navbar-newer-secondary-undergraduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-undergraduate-tab" tabindex="0">Undergraduate Students menu</div>
+                          <div class="tab-pane fade" id="az-navbar-newer-secondary-graduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-graduate-tab" tabindex="0">Graduate Students menu</div>
+                          <div class="tab-pane fade" id="az-navbar-newer-secondary-online-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-online-tab" tabindex="0">Online Students menu</div>
+                        </div>
+                      </div>
                     </div>
-
                   </div>
                   <div class="tab-pane fade" id="az-navbar-newer-primary-academics-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-academics-tab" tabindex="0">Academics menu</div>
                   <div class="tab-pane fade" id="az-navbar-newer-primary-research-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-research-tab" tabindex="0">Research menu</div>
                   <div class="tab-pane fade" id="az-navbar-newer-primary-campus-life-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-campus-life-tab" tabindex="0">Campus Life menu</div>
                   <div class="tab-pane fade" id="az-navbar-newer-primary-about-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-about-tab" tabindex="0">About menu</div>
-                </div>
-              </div>
-              <div class="col">
-                <!-- tertiary nav items -->
-                <div class="tab-content" id="az-navbar-newer-secondary-tab-content">
-                  <div class="tab-pane fade show" id="az-navbar-newer-secondary-admissions-overview-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-admissions-overview-tab" tabindex="0">Admissions Overview menu</div>
-                  <div class="tab-pane fade" id="az-navbar-newer-secondary-undergraduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-undergraduate-tab" tabindex="0">Undergraduate Students menu</div>
-                  <div class="tab-pane fade" id="az-navbar-newer-secondary-graduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-graduate-tab" tabindex="0">Graduate Students menu</div>
-                  <div class="tab-pane fade" id="az-navbar-newer-secondary-online-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-online-tab" tabindex="0">Online Students menu</div>
                 </div>
               </div>
             </div>
