@@ -1,4 +1,4 @@
-FROM node:22.22.0-bookworm-slim
+FROM node:22.22.2-bookworm-slim
 
 ENV LANG=C.UTF-8
 
@@ -37,7 +37,7 @@ RUN apt-get update \
   && chmod 755 /root \
   && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install --location=global npm-check-updates@18.0.2 \
+  && npm install --location=global npm-check-updates@19.6.5 \
   && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
   && unzip -d /tmp /tmp/awscliv2.zip \
   && /tmp/aws/install \
