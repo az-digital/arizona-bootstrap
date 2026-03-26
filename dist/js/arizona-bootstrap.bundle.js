@@ -7329,7 +7329,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
@@ -7364,7 +7364,7 @@
     }
 
     // Static
-    ;
+  ;
     Offcanvasmenu._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util.getSelectorFromElement(element);
       return selector ? document.querySelector(selector) : null;
