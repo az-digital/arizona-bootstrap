@@ -108,21 +108,12 @@ extra_css:
                     <div class="row">
                       <div class="col">
                         <!-- secondary nav items -->
-                        <div class="nav flex-column nav-pills me-3" id="az-navbar-newer-secondary-tablist" role="tablist" aria-orientation="vertical">
-                          <button class="nav-link" id="az-navbar-newer-secondary-admissions-overview-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-admissions-overview-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-admissions-overview-content" aria-selected="false">Admissions Overview</button>
-                          <button class="nav-link" id="az-navbar-newer-secondary-undergraduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-undergraduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-undergraduate-content" aria-selected="false">Undergraduate Students</button>
-                          <button class="nav-link" id="az-navbar-newer-secondary-graduate-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-graduate-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-graduate-content" aria-selected="false">Graduate Students</button>
-                          <button class="nav-link" id="az-navbar-newer-secondary-online-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-secondary-online-content" type="button" role="tab" aria-controls="az-navbar-newer-secondary-online-content" aria-selected="false">Online Students</button>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <!-- tertiary nav items -->
-                        <div class="tab-content" id="az-navbar-newer-secondary-tab-content">
-                          <div class="tab-pane fade" id="az-navbar-newer-secondary-admissions-overview-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-admissions-overview-tab" tabindex="0">Admissions Overview menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-secondary-undergraduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-undergraduate-tab" tabindex="0">Undergraduate Students menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-secondary-graduate-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-graduate-tab" tabindex="0">Graduate Students menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-secondary-online-content" role="tabpanel" aria-labelledby="az-navbar-newer-secondary-online-tab" tabindex="0">Online Students menu</div>
-                        </div>
+                        <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Admissions">
+                          <a class="nav-link" href="#">Admissions Overview</a>
+                          <a class="nav-link" href="#">Undergraduate Students</a>
+                          <a class="nav-link" href="#">Graduate Students</a>
+                          <a class="nav-link" href="#">Online Students</a>
+                        </nav>
                       </div>
                     </div>
                   </div>
@@ -132,30 +123,33 @@ extra_css:
                     <div class="row">
                       <div class="col">
                         <!-- secondary nav items -->
-                        <div class="nav flex-column nav-pills me-3" id="az-navbar-newer-campus-life-secondary-tablist" role="tablist" aria-orientation="vertical">
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-overview-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-overview-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-overview-content" aria-selected="false">Campus Life Overview</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-visit-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-visit-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-visit-content" aria-selected="false">Visit Campus</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-dining-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-dining-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-dining-content" aria-selected="false">Living &amp; Dining on Campus</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-involved-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-involved-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-involved-content" aria-selected="false">Getting Involved</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-spirit-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-spirit-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-spirit-content" aria-selected="false">Spirit &amp; Traditions</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-arts-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-arts-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-arts-content" aria-selected="false">Arts &amp; Culture</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-tucson-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-tucson-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-tucson-content" aria-selected="false">All About Tucson</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-wellness-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-wellness-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-wellness-content" aria-selected="false">Health &amp; Wellness</button>
-                          <button class="nav-link" id="az-navbar-newer-campus-life-secondary-athletics-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-athletics-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-athletics-content" aria-selected="false">Arizona Athletics</button>
-                        </div>
+                        <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Campus Life">
+                          <a class="nav-link" href="#">Campus Life Overview</a>
+                          <div class="d-flex align-items-center">
+                            <a class="nav-link flex-grow-1" href="#">Visit Campus</a>
+                            <button class="btn navbar-az-newer-nav-toggle" id="az-navbar-newer-campus-life-secondary-visit-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-visit-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-visit-content" aria-selected="false" aria-label="Show Visit Campus submenu">
+                              <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <a class="nav-link" href="#">Living &amp; Dining on Campus</a>
+                          <a class="nav-link" href="#">Getting Involved</a>
+                          <a class="nav-link" href="#">Spirit &amp; Traditions</a>
+                          <a class="nav-link" href="#">Arts &amp; Culture</a>
+                          <a class="nav-link" href="#">All About Tucson</a>
+                          <div class="d-flex align-items-center">
+                            <a class="nav-link flex-grow-1" href="#">Health &amp; Wellness</a>
+                            <button class="btn navbar-az-newer-nav-toggle" id="az-navbar-newer-campus-life-secondary-wellness-tab" data-bs-toggle="pill" data-bs-target="#az-navbar-newer-campus-life-secondary-wellness-content" type="button" role="tab" aria-controls="az-navbar-newer-campus-life-secondary-wellness-content" aria-selected="false" aria-label="Show Health &amp; Wellness submenu">
+                              <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <a class="nav-link" href="#">Arizona Athletics</a>
+                        </nav>
                       </div>
                       <div class="col">
                         <!-- tertiary nav items -->
                         <div class="tab-content" id="az-navbar-newer-campus-life-secondary-tab-content">
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-overview-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-overview-tab" tabindex="0">Campus Life Overview menu</div>
                           <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-visit-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-visit-tab" tabindex="0">Visit Campus menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-dining-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-dining-tab" tabindex="0">Living &amp; Dining on Campus menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-involved-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-involved-tab" tabindex="0">Getting Involved menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-spirit-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-spirit-tab" tabindex="0">Spirit &amp; Traditions menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-arts-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-arts-tab" tabindex="0">Arts &amp; Culture menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-tucson-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-tucson-tab" tabindex="0">All About Tucson menu</div>
                           <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-wellness-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-wellness-tab" tabindex="0">Health &amp; Wellness menu</div>
-                          <div class="tab-pane fade" id="az-navbar-newer-campus-life-secondary-athletics-content" role="tabpanel" aria-labelledby="az-navbar-newer-campus-life-secondary-athletics-tab" tabindex="0">Arizona Athletics menu</div>
                         </div>
                       </div>
                     </div>
