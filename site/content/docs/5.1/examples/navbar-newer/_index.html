@@ -30,7 +30,7 @@ extra_css:
             <label class="visually-hidden" for="navbar-newer-search-desktop">Search the site</label>
             <div class="input-group">
               <input id="navbar-newer-search-desktop" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-              <button class="btn" type="submit"></button>
+              <button class="btn" type="submit" aria-label="Submit site search"></button>
             </div>
           </form>
 
@@ -42,7 +42,7 @@ extra_css:
     </nav>
   </header>
 
-  <div class="modal navbar-az-newer-modal" id="navbar-newer-menu" tabindex="-1" aria-labelledby="navbar-newer-menu-label" aria-hidden="true">
+  <div class="modal navbar-az-newer-modal" id="navbar-newer-menu" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-newer-menu-label" aria-hidden="true">
     <h2 id="navbar-newer-menu-label" class="visually-hidden">Site menu</h2>
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
@@ -110,7 +110,7 @@ extra_css:
                         <!-- secondary nav items -->
                         <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Admissions">
                           <a class="nav-link" href="#">Admissions Overview</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <div class="d-flex align-items-center">
                             <a class="nav-link flex-grow-1" href="#">Undergraduate Students</a>
                             <div class="vr"></div>
@@ -118,9 +118,9 @@ extra_css:
                               <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
                             </button>
                           </div>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Graduate Students</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Online Students</a>
                         </nav>
                       </div>
@@ -130,9 +130,9 @@ extra_css:
                           <div class="collapse" id="az-navbar-newer-admissions-secondary-undergraduate-content">
                             <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Undergraduate Students submenu">
                               <a class="nav-link" href="#">Applying &amp; Requirements</a>
-                              <hr class="border-top border-azurite opacity-100">
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                               <a class="nav-link" href="#">Tuition &amp; Aid</a>
-                              <hr class="border-top border-azurite opacity-100">
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                               <a class="nav-link" href="#">Admitted Students</a>
                             </nav>
                           </div>
@@ -148,7 +148,7 @@ extra_css:
                         <!-- secondary nav items -->
                         <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Campus Life">
                           <a class="nav-link" href="#">Campus Life Overview</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <div class="d-flex align-items-center">
                             <a class="nav-link flex-grow-1" href="#">Visit Campus</a>
                             <div class="vr"></div>
@@ -156,17 +156,17 @@ extra_css:
                               <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
                             </button>
                           </div>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Living &amp; Dining on Campus</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Getting Involved</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Spirit &amp; Traditions</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Arts &amp; Culture</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">All About Tucson</a>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <div class="d-flex align-items-center">
                             <a class="nav-link flex-grow-1" href="#">Health &amp; Wellness</a>
                             <div class="vr"></div>
@@ -174,7 +174,7 @@ extra_css:
                               <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
                             </button>
                           </div>
-                          <hr class="border-top border-azurite opacity-100">
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
                           <a class="nav-link" href="#">Arizona Athletics</a>
                         </nav>
                       </div>
