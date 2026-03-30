@@ -78,7 +78,7 @@
       min-width: 0;
       height: 70px;
       overflow: hidden;
-      border: 2px solid var(--bs-white);
+      border: 1.5px solid var(--bs-white);
       @include border-radius(8px);
     }
 
@@ -95,6 +95,24 @@
       &::placeholder {
         color: var(--bs-white);
       }
+
+      &[type="search"]::-webkit-search-cancel-button {
+        cursor: pointer;
+        filter: invert(1) brightness(1.25);
+        opacity: 1;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .vr {
+      width: 1.5px;
+      margin-top: 11.5px;
+      margin-bottom: 11.5px;
+      background-color: var(--bs-white);
+      opacity: 1;
     }
 
     .btn {
@@ -104,9 +122,10 @@
       min-width: 70px;
       min-height: 70px;
       padding: 10px;
+      margin: 0;
       color: var(--bs-white);
       border: 0;
-      border-left: 2px solid var(--bs-white);
+      // border-left: 2px solid var(--bs-white);
       @include border-radius(0);
 
       &::before {
