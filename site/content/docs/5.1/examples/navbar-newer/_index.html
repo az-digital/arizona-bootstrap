@@ -26,10 +26,10 @@ extra_css:
             </li>
           </ul>
 
-          <form class="navbar-az-newer-search" role="search">
-            <label class="visually-hidden" for="navbar-newer-search-desktop">Search the site</label>
+          <form class="navbar-az-newer-search ms-3 me-4" role="search">
+            <label class="visually-hidden" for="navbar-az-newer-search">Search the site</label>
             <div class="input-group">
-              <input id="navbar-newer-search-desktop" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <input id="navbar-az-newer-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
               <div class="vr"></div>
               <button class="btn" type="submit" aria-label="Submit site search"></button>
             </div>
@@ -77,16 +77,12 @@ extra_css:
 
         <div class="modal-body">
           <div class="container-lg">
-            <form class="navbar-az-newer-modal-search demo-menu-search" role="search">
-              <label class="visually-hidden" for="navbar-newer-search-panel">Search the site</label>
+            <form class="navbar-az-newer-search my-5" role="search">
+              <label class="visually-hidden" for="navbar-az-newer-modal-search">Search the site</label>
               <div class="input-group">
-                <span class="demo-menu-search-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                    <circle cx="10.5" cy="10.5" r="6.5"></circle>
-                    <path d="M15.5 15.5 20 20"></path>
-                  </svg>
-                </span>
-                <input id="navbar-newer-search-panel" class="form-control" type="search" placeholder="type your search term and press enter..." aria-label="Search the site">
+                <button class="btn" type="submit" aria-label="Submit site search"></button>
+                <div class="vr"></div>
+                <input id="navbar-az-newer-modal-search" class="form-control" type="search" placeholder="type your search term and press enter..." aria-label="Search the site">
               </div>
             </form>
           </div>

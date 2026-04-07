@@ -62,90 +62,6 @@
     }
   }
 
-  .navbar-az-newer-search {
-    // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
-    --az-navbar-newer-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
-    --az-navbar-newer-search-font: normal normal normal 16px/20px proxima-nova;
-    flex: 1 1 220px;
-    min-width: 0;
-    max-width: 220px;
-    margin-right: 24px;
-    margin-left: 15px;
-
-    .input-group {
-      flex-wrap: nowrap;
-      width: 100%;
-      min-width: 0;
-      height: 70px;
-      overflow: hidden;
-      border: 1.5px solid var(--bs-white);
-      @include border-radius(8px);
-    }
-
-    .form-control {
-      min-width: 0;
-      min-height: 0;
-      font: var(--az-navbar-newer-search-font);
-      color: var(--bs-white);
-      background: rgba(15, 45, 92, .2);
-
-      border: 0;
-      @include border-radius(0);
-
-      &::placeholder {
-        color: var(--bs-white);
-      }
-
-      &[type="search"]::-webkit-search-cancel-button {
-        cursor: pointer;
-        filter: invert(1) brightness(1.25);
-        opacity: 1;
-      }
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-
-    .vr {
-      width: 1.5px;
-      margin-top: 11.5px;
-      margin-bottom: 11.5px;
-      background-color: var(--bs-white);
-      opacity: 1;
-    }
-
-    .btn {
-      display: inline-grid;
-      flex: 0 0 auto;
-      place-items: center;
-      min-width: 70px;
-      min-height: 70px;
-      padding: 10px;
-      margin: 0;
-      color: var(--bs-white);
-      border: 0;
-      // border-left: 2px solid var(--bs-white);
-      @include border-radius(0);
-
-      &::before {
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: 1;
-        content: "";
-        background-image: var(--az-navbar-newer-search-icon);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-
-    }
-
-    @media (max-width: 575.98px) {
-      display: none;
-    }
-  }
-
   .navbar-toggler {
     display: inline-flex;
     flex: 0 0 auto;
@@ -157,6 +73,93 @@
     margin-bottom: 20px;
     background: #b01c2e;
     border: 0;
+  }
+}
+
+
+.navbar-az-newer-search {
+  --az-navbar-newer-search-color: var(--bs-white);
+  --az-navbar-newer-search-hover-color: var(--bs-white);
+  // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
+  --az-navbar-newer-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
+  --az-navbar-newer-search-font: normal normal normal 16px/20px proxima-nova;
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: 220px;
+  // margin-right: 24px;
+  // margin-left: 15px;
+
+  .input-group {
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
+    height: 70px;
+    overflow: hidden;
+    border: 1.5px solid var(--az-navbar-newer-search-color);
+    @include border-radius(8px);
+  }
+
+  .form-control {
+    min-width: 0;
+    min-height: 0;
+    font: var(--az-navbar-newer-search-font);
+    color: var(--az-navbar-newer-search-color);
+    background: rgba(15, 45, 92, .2);
+
+    border: 0;
+    @include border-radius(0);
+
+    &::placeholder {
+      color: var(--az-navbar-newer-search-color);
+    }
+
+    &[type="search"]::-webkit-search-cancel-button {
+      cursor: pointer;
+      filter: invert(1) brightness(1.25);
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .vr {
+    width: 1.5px;
+    margin-top: 11.5px;
+    margin-bottom: 11.5px;
+    background-color: var(--az-navbar-newer-search-color);
+    opacity: 1;
+  }
+
+  .btn {
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    min-width: 70px;
+    min-height: 70px;
+    padding: 10px;
+    margin: 0;
+    color: var(--az-navbar-newer-search-color);
+    border: 0;
+    // border-left: 2px solid var(--bs-white);
+    @include border-radius(0);
+
+    &::before {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 1;
+      content: "";
+      background-image: var(--az-navbar-newer-search-icon);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+  }
+
+  @media (max-width: 575.98px) {
+    display: none;
   }
 }
 
@@ -179,10 +182,9 @@
     }
   }
 
-  .navbar-az-newer-modal-search {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 37px;
+  .navbar-az-newer-search {
+    --az-navbar-newer-search-color: var(--bs-cool-gray);
+    max-width: none;
   }
 
   .modal-footer {
