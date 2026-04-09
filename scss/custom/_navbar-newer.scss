@@ -255,6 +255,7 @@
 
 
 .navbar-az-newer-modal-menu {
+
   .navbar-az-newer-nav-primary {
     --az-navbar-newer-nav-primary-font: normal normal bold 68px/68px garamond-premier-pro;
     --bs-nav-link-color: var(--bs-white);
@@ -307,6 +308,8 @@
   }
 
   .navbar-az-newer-nav-secondary {
+    // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=chevron+right&icon.size=24&icon.color=%23ffffff
+    --az-navbar-newer-nav-secondary-hover-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l160 160q12 12 12 28t-12 28L404-292q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></svg>"))};
     position: relative;
     flex-grow: 1;
     width: 50%;
@@ -320,7 +323,11 @@
     }
 
     .nav-link {
+      display: flex;
+      // gap: 6px;
+      align-items: center;
       padding-top: 16px;
+      padding-right: 24px;
       padding-bottom: 17px;
       padding-left: 24px;
       margin: 0;
@@ -329,16 +336,37 @@
       text-align: start;
       letter-spacing: .68px;
 
-      &.active,
-      &:hover {
+      &::after {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        content: "";
+        background-image: var(--az-navbar-newer-nav-secondary-hover-icon);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0;
+        transform: translateX(-8px);
+        @include transition(opacity .3s ease-out, transform .3s ease-out);
+      }
+
+      &.active {
         color: var(--bs-white);
-        text-decoration: underline;
-        text-decoration-thickness: 6px;
-        text-decoration-color: var(--bs-bloom);
-        text-underline-offset: -1px;
-        text-decoration-skip-ink: none;
         background-color: transparent;
         @include border-radius(0);
+      }
+
+      &:hover {
+        color: var(--bs-white);
+        text-decoration: none;
+        background-color: transparent;
+        @include border-radius(0);
+
+        &::after {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     }
 
