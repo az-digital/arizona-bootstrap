@@ -42,10 +42,24 @@
     }
 
     .nav-link {
+      position: relative;
       padding-top: 41.5px;
       padding-bottom: 41.5px;
       font: var(--az-navbar-newer-actions-font);
       letter-spacing: .66px;
+
+      &::after {
+        position: absolute;
+        right: var(--bs-nav-link-padding-x);
+        bottom: 35px;
+        left: var(--bs-nav-link-padding-x);
+        height: 2px;
+        content: "";
+        background: var(--bs-bloom);
+        opacity: 0;
+        @include border-radius(999px);
+        @include transition(opacity .1s ease-out);
+      }
 
       &:active {
         color: unset;
@@ -54,10 +68,10 @@
 
       &:hover {
         color: var(--bs-white);
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-decoration-color: var(--bs-bloom);
-        text-underline-offset: 12px;
+
+        &::after {
+          opacity: 1;
+        }
       }
     }
   }
