@@ -185,6 +185,10 @@
   .navbar-az-newer-search {
     --az-navbar-newer-search-color: var(--bs-cool-gray);
     max-width: none;
+
+    .input-group {
+      flex-direction: row-reverse;
+    }
   }
 
   .modal-footer {
