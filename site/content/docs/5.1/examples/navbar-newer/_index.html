@@ -1,0 +1,241 @@
+---
+layout: examples
+title: Newer Navbar Template
+extra_css:
+  - "navbar-newer.css"
+---
+
+<main>
+  <header>
+    <nav class="navbar navbar-az-newer" aria-label="Main navigation">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#">
+          <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+        </a>
+
+        <div class="navbar-az-newer-tools ms-auto">
+          <ul class="navbar-nav flex-row navbar-az-newer-actions d-none d-lg-flex align-items-center mx-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Apply</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Visit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Give</a>
+            </li>
+          </ul>
+
+          <form class="navbar-az-newer-search me-4" role="search">
+            <label class="visually-hidden" for="navbar-az-newer-search">Search the site</label>
+            <div class="input-group">
+              <input id="navbar-az-newer-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <div class="vr"></div>
+              <button class="btn" type="submit" aria-label="Submit site search"></button>
+            </div>
+          </form>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbar-newer-menu" aria-controls="navbar-newer-menu" aria-label="Open site menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="modal navbar-az-newer-modal" id="navbar-newer-menu" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-newer-menu-label" aria-hidden="true">
+    <h2 id="navbar-newer-menu-label" class="visually-hidden">Site menu</h2>
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="navbar navbar-az-newer w-100">
+            <div class="container-lg">
+              <a class="navbar-brand" href="#">
+                <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+              </a>
+
+              <div class="navbar-az-newer-tools ms-auto">
+                <ul class="navbar-nav flex-row navbar-az-newer-actions d-none d-lg-flex align-items-center mx-3">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Apply</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Give</a>
+                  </li>
+                </ul>
+
+                <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+                  <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="container-lg">
+            <form class="navbar-az-newer-search my-5" role="search">
+              <label class="visually-hidden" for="navbar-az-newer-modal-search">Search the site</label>
+              <div class="input-group">
+                <input id="navbar-az-newer-modal-search" class="form-control" type="search" placeholder="type your search term and press enter..." aria-label="Search the site">
+                <div class="vr"></div>
+                <button class="btn" type="submit" aria-label="Submit site search"></button>
+              </div>
+            </form>
+          </div>
+
+          <div class="container-lg text-white navbar-az-newer-modal-menu">
+            <div class="row">
+              <div class="col-4">
+                <!-- primary nav items -->
+                <div class="nav flex-column navbar-az-newer-nav-primary" id="az-navbar-newer-primary-tablist" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link" id="az-navbar-newer-primary-admissions-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-newer-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-admissions-content" aria-selected="false">Admissions</button>
+                  <button class="nav-link" id="az-navbar-newer-primary-academics-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-newer-primary-academics-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-academics-content" aria-selected="false">Academics</button>
+                  <button class="nav-link" id="az-navbar-newer-primary-research-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-newer-primary-research-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-research-content" aria-selected="false">Research</button>
+                  <button class="nav-link" id="az-navbar-newer-primary-campus-life-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-newer-primary-campus-life-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-campus-life-content" aria-selected="false">Campus Life</button>
+                  <button class="nav-link" id="az-navbar-newer-primary-about-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-newer-primary-about-content" type="button" role="tab" aria-controls="az-navbar-newer-primary-about-content" aria-selected="false">About</button>
+                </div>
+              </div>
+              <div class="col-8 d-flex">
+                <div class="tab-content d-flex flex-grow-1 w-100" id="az-navbar-newer-primary-tab-content">
+                  <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-newer-primary-admissions-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-admissions-tab" tabindex="0">
+                    <div class="row h-100">
+                      <div class="col border-start border-azurite h-100 d-flex flex-column p-0">
+                        <!-- secondary nav items -->
+                        <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Admissions">
+                          <a class="nav-link" href="#">Admissions Overview</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <div class="d-flex align-items-center">
+                            <a class="nav-link flex-grow-1" href="#">Undergraduate Students</a>
+                            <div class="vr"></div>
+                            <button class="btn navbar-az-newer-nav-toggle" id="az-navbar-newer-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-newer-admissions-secondary-undergraduate-content" type="button" aria-expanded="false" aria-controls="az-navbar-newer-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
+                              <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="collapse navbar-az-newer-nav-tertiary-panel" id="az-navbar-newer-admissions-secondary-undergraduate-content">
+                            <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Undergraduate Students submenu">
+                              <a class="nav-link" href="#">Applying &amp; Requirements</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Tuition &amp; Aid</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Admitted Students</a>
+                            </nav>
+                          </div>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Graduate Students</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Online Students</a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-newer-primary-academics-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-academics-tab" tabindex="0">Academics menu</div>
+                  <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-newer-primary-research-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-research-tab" tabindex="0">Research menu</div>
+                  <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-newer-primary-campus-life-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-campus-life-tab" tabindex="0">
+                    <div class="row h-100">
+                      <div class="col border-start border-azurite h-100 d-flex flex-column p-0">
+                        <!-- secondary nav items -->
+                        <nav class="nav flex-column navbar-az-newer-nav-secondary" id="az-navbar-newer-campus-life-secondary-nav" aria-label="Campus Life">
+                          <a class="nav-link" href="#">Campus Life Overview</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <div class="d-flex align-items-center">
+                            <a class="nav-link flex-grow-1" href="#">Visit Campus</a>
+                            <div class="vr"></div>
+                            <button class="btn navbar-az-newer-nav-toggle" id="az-navbar-newer-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-newer-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-newer-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
+                              <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="collapse navbar-az-newer-nav-tertiary-panel" id="az-navbar-newer-campus-life-secondary-visit-content" data-bs-parent="#az-navbar-newer-campus-life-secondary-nav">
+                            <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Visit Campus submenu">
+                              <a class="nav-link" href="#">Calendar &amp; Events</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Libraries</a>
+                            </nav>
+                          </div>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Living &amp; Dining on Campus</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Getting Involved</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Spirit &amp; Traditions</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Arts &amp; Culture</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">All About Tucson</a>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <div class="d-flex align-items-center">
+                            <a class="nav-link flex-grow-1" href="#">Health &amp; Wellness</a>
+                            <div class="vr"></div>
+                            <button class="btn navbar-az-newer-nav-toggle" id="az-navbar-newer-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-newer-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-newer-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
+                              <span class="navbar-az-newer-nav-toggle-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="collapse navbar-az-newer-nav-tertiary-panel" id="az-navbar-newer-campus-life-secondary-wellness-content" data-bs-parent="#az-navbar-newer-campus-life-secondary-nav">
+                            <nav class="nav flex-column navbar-az-newer-nav-secondary" aria-label="Health &amp; Wellness submenu">
+                              <a class="nav-link" href="#">Campus Recreation</a>
+                            </nav>
+                          </div>
+                          <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                          <a class="nav-link" href="#">Arizona Athletics</a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-newer-primary-about-content" role="tabpanel" aria-labelledby="az-navbar-newer-primary-about-tab" tabindex="0">About menu</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100" aria-labelledby="resources-for-label">
+            <div class="container-lg">
+              <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <h2 class="navbar-brand d-inline m-0" id="resources-for-label">Resources for:</h2>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Current Students</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Faculty &amp; Staff</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Parents &amp; Families</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Business or Partner</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="modal-footer justify-content-start">
+          <nav class="navbar w-100" aria-labelledby="helpful-links-label">
+            <div class="container-lg">
+              <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 mb-0">
+                <li class="nav-item">
+                  <h2 class="navbar-brand d-inline m-0" id="helpful-links-label">Helpful Links:</h2>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Campus Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">A-Z Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">UAccess</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Phonebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Future Wildcat</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Weather</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calendar</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="demo-hero" aria-label="Feature banner">
+    <img class="demo-hero-image" src="{{<docsextraref "/assets/img/photo-gallery-demo/gallery-img-1.jpg" >}}" alt="">
+    <div class="demo-hero-overlay"></div>
+    <div class="container demo-hero-content">
+      <p class="demo-hero-eyebrow">Structural demo</p>
+      <h1 class="demo-hero-title">University masthead prototype</h1>
+      <p class="demo-hero-copy">This example focuses on layout first: left-aligned brand, right-side utility links and search, a persistent menu trigger, and a full-width hero region below.</p>
+    </div>
+  </section>
+</main>

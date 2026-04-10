@@ -1,0 +1,56 @@
+.demo-hero {
+  position: relative;
+  min-height: clamp(20rem, 45vw, 34rem);
+  overflow: hidden;
+}
+
+.demo-hero-image,
+.demo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.demo-hero-image {
+  object-fit: cover;
+}
+
+.demo-hero-overlay {
+  background: linear-gradient(90deg, rgba(10, 25, 47, .72) 0%, rgba(10, 25, 47, .4) 45%, rgba(10, 25, 47, .18) 100%);
+}
+
+.demo-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: clamp(20rem, 45vw, 34rem);
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  color: #fff;
+}
+
+.demo-hero-eyebrow {
+  margin-bottom: .75rem;
+  font-size: .875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.demo-hero-title {
+  max-width: 40rem;
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.demo-hero-copy {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
