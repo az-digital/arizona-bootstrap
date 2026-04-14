@@ -196,6 +196,25 @@
     }
   }
 
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .modal-header,
+  .modal-footer {
+    flex: 0 0 auto;
+  }
+
+  .modal-body {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
   .navbar-az-newer-search {
     --az-navbar-newer-search-color: var(--bs-cool-gray);
     max-width: none;
@@ -255,6 +274,39 @@
 
 
 .navbar-az-newer-modal-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+
+  .row {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: 0;
+    max-height: 100%;
+  }
+
+  .tab-content,
+  .tab-pane,
+  .tab-pane > .row,
+  .tab-pane > .row > .col {
+    min-height: 0;
+  }
+
+  .tab-pane > .row > .col {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  .navbar-az-newer-nav-primary-col {
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
 
   .navbar-az-newer-nav-primary {
     --az-navbar-newer-nav-primary-font: normal normal bold 68px/68px garamond-premier-pro;
@@ -312,7 +364,9 @@
     --az-navbar-newer-nav-secondary-hover-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l160 160q12 12 12 28t-12 28L404-292q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></svg>"))};
     position: relative;
     flex-grow: 1;
+    flex-wrap: nowrap;
     width: 50%;
+    min-height: 0;
     --az-navbar-newer-nav-secondary-font: normal normal bold 24px/29px proxima-nova-condensed;
     --bs-nav-link-color: var(--bs-white);
     --bs-nav-link-hover-color: var(--bs-white);
@@ -428,6 +482,10 @@
     bottom: 0;
     left: 100%;
     width: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 
     .navbar-az-newer-nav-secondary {
       position: static;
