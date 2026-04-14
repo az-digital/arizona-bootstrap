@@ -295,12 +295,6 @@
     min-height: 0;
   }
 
-  .tab-pane > .row > .col {
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-  }
-
   .navbar-az-newer-nav-primary-col {
     min-height: 0;
     overflow-x: hidden;
@@ -363,7 +357,9 @@
     // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=chevron+right&icon.size=24&icon.color=%23ffffff
     --az-navbar-newer-nav-secondary-hover-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l160 160q12 12 12 28t-12 28L404-292q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></svg>"))};
     position: relative;
+    display: flex;
     flex-grow: 1;
+    flex-direction: column;
     flex-wrap: nowrap;
     width: 50%;
     min-height: 0;
@@ -374,6 +370,14 @@
     // TODO - potentially remove this - not yet approved
     @include media-breakpoint-down(xl) {
       --az-navbar-newer-nav-secondary-font: normal normal bold 22px/22px proxima-nova-condensed;
+    }
+
+    .navbar-az-newer-nav-secondary-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
     }
 
     .nav-link {
