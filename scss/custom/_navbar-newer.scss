@@ -375,7 +375,7 @@
     .navbar-az-newer-nav-secondary-scroll {
       flex: 1 1 auto;
       min-height: 0;
-      overflow-x: hidden;
+      overflow-x: visible;
       overflow-y: auto;
       scrollbar-gutter: stable;
     }
