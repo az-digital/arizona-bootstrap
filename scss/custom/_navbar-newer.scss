@@ -191,6 +191,9 @@
   --bs-modal-footer-border-width: 1px;
 
   .modal-header {
+    flex-direction: column;
+    align-items: stretch;
+
     .navbar-az-newer {
       --bs-navbar-toggler-icon-bg: var(--az-navbar-newer-toggler-icon-close);
     }
