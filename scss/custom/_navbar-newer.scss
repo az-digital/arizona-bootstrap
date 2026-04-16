@@ -228,26 +228,54 @@
   }
 
   .modal-footer {
-
     .navbar {
-      --bs-navbar-brand-padding-y: 0;
       --bs-navbar-brand-margin-end: 0;
       --bs-navbar-brand-color: var(--bs-sky);
       --bs-navbar-brand-hover-color: var(--bs-sky);
+      flex-wrap: nowrap;
+      width: 100%;
+      height: 90px;
+      white-space: nowrap;
       border-top: 0;
       border-bottom: 0;
     }
 
+    .container-lg {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
+
     .navbar-brand {
+      flex: 0 0 auto;
+      padding: 0;
+      margin: 0;
       font: var(--az-navbar-newer-modal-footer-brand-font);
       letter-spacing: .44px;
+      white-space: nowrap;
+    }
+
+    .navbar-az-newer-modal-footer-scroll {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-gutter: stable;
     }
 
     .navbar-nav {
       --bs-nav-link-color: var(--bs-white);
       --bs-nav-link-hover-color: var(--bs-sky);
+      flex-wrap: nowrap;
+      gap: 30px;
+      width: max-content;
+      min-width: max-content;
 
       .nav-item {
+        flex: 0 0 auto;
+
         &:hover {
           background-color: transparent;
         }
@@ -261,8 +289,11 @@
 
         /* stylelint-disable selector-max-class, selector-max-compound-selectors */
         .nav-link {
+          padding-top: 14px;
+          padding-bottom: 14px;
           font: var(--az-navbar-newer-modal-footer-font);
           letter-spacing: .2px;
+          white-space: nowrap;
 
           &:active {
             color: var(--bs-sky);
