@@ -302,13 +302,18 @@
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-gutter: stable;
+    // scrollbar-gutter: stable;
+  }
+
+  .navbar-az-newer-nav-secondary-tertiary-cols:has(.tab-pane.show) {
+    border-inline-start: var(--bs-border-width) solid var(--bs-azurite);
   }
 
   .navbar-az-newer-nav-primary {
     --az-navbar-newer-nav-primary-font: normal normal bold 68px/68px garamond-premier-pro;
     --bs-nav-link-color: var(--bs-white);
     --bs-nav-link-hover-color: var(--bs-white);
+    padding-right: 24px;
 
     // TODO - potentially remove this - not yet approved
     @include media-breakpoint-down(xl) {
@@ -380,7 +385,7 @@
       min-height: 0;
       overflow-x: visible;
       overflow-y: auto;
-      scrollbar-gutter: stable;
+      // scrollbar-gutter: stable;
     }
 
     .nav-link {
@@ -492,7 +497,7 @@
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-gutter: stable;
+    // scrollbar-gutter: stable;
 
     .navbar-az-newer-nav-secondary {
       position: static;
