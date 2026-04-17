@@ -39,6 +39,30 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 </div>
 ```
 
+### Blue header
+
+<div class="arizona-header bg-blue">
+  <div class="container">
+    <div class="row">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+      </a>
+    </div>
+  </div>
+</div>
+<p></p>
+
+```html
+<div class="arizona-header az-fixed-header-on-mobile bg-blue" id="header_arizona">
+  <div class="container">
+    <div class="row">
+      <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+      </a>
+    </div>
+  </div>
+</div>
+```
 
 ## Extending the header
 
