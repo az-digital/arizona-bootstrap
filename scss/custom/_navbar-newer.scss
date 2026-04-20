@@ -34,10 +34,12 @@
     --bs-nav-link-padding-x: 15px;
     --bs-nav-link-padding-y: 41.5px;
     --bs-nav-link-color: var(--bs-white);
+    --bs-nav-link-hover-color: var(--bs-white);
 
     .nav-item {
-      &:hover {
-        background-color: unset;
+      &:hover,
+      &:has(> .nav-link.active) {
+        background-color: transparent;
       }
     }
 
@@ -61,14 +63,14 @@
         @include transition(opacity .1s ease-out);
       }
 
-      &:active {
-        color: unset;
-        background-color: unset;
+      &:active,
+      &.active,
+      &.is-active {
+        color: var(--bs-sky);
+        background-color: transparent;
       }
 
       &:hover {
-        color: var(--bs-white);
-
         &::after {
           opacity: 1;
         }
