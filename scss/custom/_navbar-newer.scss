@@ -234,6 +234,9 @@
 
   .modal-footer {
     .navbar {
+      --bs-navbar-color: var(--bs-white);
+      --bs-navbar-hover-color: var(--bs-sky);
+      --bs-navbar-active-color: var(--bs-sky);
       --bs-navbar-brand-margin-end: 0;
       --bs-navbar-brand-color: var(--bs-sky);
       --bs-navbar-brand-hover-color: var(--bs-sky);
@@ -300,8 +303,10 @@
           letter-spacing: .2px;
           white-space: nowrap;
 
-          &:active {
-            color: var(--bs-sky);
+          &:active,
+          &.active,
+          &.is-active {
+            color: var(--bs-navbar-active-color);
             background-color: transparent;
           }
         }
