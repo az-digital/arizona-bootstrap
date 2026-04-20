@@ -449,13 +449,12 @@
       }
 
       &.active {
-        color: var(--bs-white);
+        color: var(--bs-sky);
         background-color: transparent;
         @include border-radius(0);
       }
 
       &:hover {
-        color: var(--bs-white);
         text-decoration: none;
         background-color: transparent;
         @include border-radius(0);
