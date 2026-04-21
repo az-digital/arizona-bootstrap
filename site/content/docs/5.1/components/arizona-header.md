@@ -25,7 +25,6 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
     </div>
   </div>
 </div>
-<p></p>
 
 ```html
 <div class="arizona-header az-fixed-header-on-mobile bg-red" id="header_arizona">
@@ -41,6 +40,8 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 
 ### Blue header
 
+The blue Arizona Header is to be used on marketing-approved subdomains of arizona.edu. This functionality should not be used until the flagship arizona.edu website is using a blue header.
+
 <div class="arizona-header bg-blue">
   <div class="container">
     <div class="row">
@@ -50,7 +51,6 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
     </div>
   </div>
 </div>
-<p></p>
 
 ```html
 <div class="arizona-header az-fixed-header-on-mobile bg-blue" id="header_arizona">
