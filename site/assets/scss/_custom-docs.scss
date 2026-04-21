@@ -43,7 +43,7 @@
   --#{$prefix}nav-link-color: var(--#{$prefix}navbar-color);
 
   &::after {
-    background-image: linear-gradient(var(--bs-chili), var(--bs-chili) 95%);
+    background-image: linear-gradient(var(--bs-blue), var(--bs-blue) 95%);
   }
 }
 
@@ -51,8 +51,9 @@
   .nav-item {
     &:hover,
     &:has(> .nav-link.active),
-    &:has(> .nav-link:active) {
-      background-color: initial;
+    &:has(> .nav-link:active),
+    &:has(> .nav-link.show) {
+      background-color: transparent;
     }
   }
 
@@ -61,7 +62,7 @@
     &:hover,
     &:active,
     &.active {
-      background-color: initial;
+      background-color: transparent;
     }
   }
 }
