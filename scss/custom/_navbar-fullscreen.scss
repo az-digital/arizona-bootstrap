@@ -1,5 +1,5 @@
 .navbar-az-fullscreen {
-  --az-navbar-fullscreen-height: 110px;
+  --az-navbar-fullscreen-height: 100px;
   --az-navbar-fullscreen-bg: var(--bs-blue);
   --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
   --az-navbar-fullscreen-bottom-border-width: 3px;
@@ -8,12 +8,12 @@
   --az-navbar-fullscreen-toggler-icon-open: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/></svg>"))};
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:close:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=close&icon.size=24&icon.color=%231e5288
   --az-navbar-fullscreen-toggler-icon-close: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z'/></svg>"))};
-  --bs-navbar-brand-padding-y: 25px;
+  --bs-navbar-brand-padding-y: 20px;
   --bs-navbar-color: var(--bs-white);
   --bs-navbar-hover-color: var(--bs-white);
   --bs-navbar-active-color: var(--bs-sky);
-  --bs-navbar-toggler-padding-y: 12.5px;
-  --bs-navbar-toggler-padding-x: 12.5px;
+  --bs-navbar-toggler-padding-y: 7.5px;
+  --bs-navbar-toggler-padding-x: 7.5px;
   --bs-navbar-toggler-font-size: 30px;
   --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
   --bs-navbar-toggler-border-radius: 8px;
@@ -38,7 +38,7 @@
   .navbar-az-fullscreen-actions {
     --az-navbar-fullscreen-actions-font: normal normal bold 22px/27px proxima-nova-condensed;
     --bs-nav-link-padding-x: 15px;
-    --bs-nav-link-padding-y: 41.5px;
+    --bs-nav-link-padding-y: 36.5px;
     --bs-nav-link-color: var(--bs-white);
     --bs-nav-link-hover-color: var(--bs-sky);
 
@@ -50,9 +50,8 @@
     }
 
     .nav-link {
-      position: relative;
-      padding-top: 41.5px;
-      padding-bottom: 41.5px;
+      padding-top: var(--bs-nav-link-padding-y);
+      padding-bottom: var(--bs-nav-link-padding-y);
       font: var(--az-navbar-fullscreen-actions-font);
       letter-spacing: .66px;
 
@@ -70,10 +69,10 @@
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    min-width: 70px;
-    min-height: 70px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    min-width: var(--az-navbar-fullscreen-brand-height);
+    min-height: var(--az-navbar-fullscreen-brand-height);
+    margin-top: var(--bs-navbar-brand-padding-y);
+    margin-bottom: var(--bs-navbar-brand-padding-y);
     background: #b01c2e;
     border: 0;
   }
@@ -81,6 +80,7 @@
 
 
 .navbar-az-fullscreen-search {
+  --az-navbar-fullscreen-search-height: 60px;
   --az-navbar-fullscreen-search-color: var(--bs-white);
   --az-navbar-fullscreen-search-hover-color: var(--bs-white);
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
@@ -96,7 +96,7 @@
     flex-wrap: nowrap;
     width: 100%;
     min-width: 0;
-    height: 70px;
+    height: var(--az-navbar-fullscreen-search-height);
     overflow: hidden;
     border: 1.5px solid var(--az-navbar-fullscreen-search-color);
     @include border-radius(8px);
