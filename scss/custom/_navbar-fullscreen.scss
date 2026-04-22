@@ -1,5 +1,8 @@
 .navbar-az-fullscreen {
   --az-navbar-fullscreen-height: 110px;
+  --az-navbar-fullscreen-bg: var(--bs-blue);
+  --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
+  --az-navbar-fullscreen-bottom-border-width: 3px;
   --az-navbar-fullscreen-brand-height: 60px;
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:menu:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=hamburger&icon.style=Rounded
   --az-navbar-fullscreen-toggler-icon-open: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/></svg>"))};
@@ -15,9 +18,9 @@
   --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
   --bs-navbar-toggler-border-radius: 8px;
   min-height: var(--az-navbar-fullscreen-height);
-  background-color: var(--bs-blue);
+  background-color: var(--az-navbar-fullscreen-bg);
   border-top: 0;
-  border-bottom: 0;
+  border-bottom: var(--az-navbar-fullscreen-bottom-border-width) solid var(--az-navbar-fullscreen-bottom-border-color);
 
   .navbar-brand {
     img {
@@ -200,6 +203,7 @@
     align-items: stretch;
 
     .navbar-az-fullscreen {
+      --az-navbar-fullscreen-bottom-border-width: 0;
       --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-close);
     }
   }
