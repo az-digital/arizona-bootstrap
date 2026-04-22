@@ -53,7 +53,7 @@ The blue Arizona Header is to be used on marketing-approved subdomains of arizon
 </div>
 
 ```html
-<div class="arizona-header bg-blue">
+<div class="arizona-header az-fixed-header-on-mobile bg-blue">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
