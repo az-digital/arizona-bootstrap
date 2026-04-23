@@ -85,17 +85,13 @@
   --az-navbar-fullscreen-search-hover-color: var(--bs-white);
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
   --az-navbar-fullscreen-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
-  --az-navbar-fullscreen-search-font: normal normal normal 16px/20px proxima-nova;
+  --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova;
   flex: 1 1 220px;
   min-width: 0;
   max-width: 220px;
-  // margin-right: 24px;
-  // margin-left: 15px;
 
   .input-group {
     flex-wrap: nowrap;
-    width: 100%;
-    min-width: 0;
     height: var(--az-navbar-fullscreen-search-height);
     overflow: hidden;
     border: 1.5px solid var(--az-navbar-fullscreen-search-color);
@@ -103,12 +99,10 @@
   }
 
   .form-control {
-    min-width: 0;
-    min-height: 0;
+    padding-right: 0;
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
-    background: rgba(15, 45, 92, .2);
-
+    background-color: transparent;
     border: 0;
     @include border-radius(0);
 
@@ -127,25 +121,16 @@
     }
   }
 
-  .vr {
-    width: 1.5px;
-    margin-top: 11.5px;
-    margin-bottom: 11.5px;
-    background-color: var(--az-navbar-fullscreen-search-color);
-    opacity: 1;
-  }
-
   .btn {
     display: inline-grid;
     flex: 0 0 auto;
     place-items: center;
-    min-width: 70px;
-    min-height: 70px;
+    min-width: var(--az-navbar-fullscreen-search-height);
+    min-height: var(--az-navbar-fullscreen-search-height);
     padding: 10px;
     margin: 0;
     color: var(--az-navbar-fullscreen-search-color);
     border: 0;
-    // border-left: 2px solid var(--bs-white);
     @include border-radius(0);
 
     &::before {
