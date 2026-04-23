@@ -161,16 +161,18 @@
 
 
 .navbar-az-fullscreen-modal {
-  --az-navbar-fullscreen-modal-footer-font: normal normal 600 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 22px/27px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 20px/24px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-letter-spacing: .2px;
+  --az-navbar-fullscreen-modal-footer-brand-font: normal normal medium 20px/24px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .4px;
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
   --bs-modal-header-border-width: 0;
   --bs-modal-footer-gap: 0;
-  --bs-modal-footer-bg: var(--bs-midnight);
-  --bs-modal-footer-border-color: var(--bs-azurite);
-  --bs-modal-footer-border-width: 1px;
+  --bs-modal-footer-bg: var(--bs-azurite);
+  --bs-modal-footer-border-color: var(--bs-blue);
+  --bs-modal-footer-border-width: 2px;
 
   .modal-header {
     flex-direction: column;
@@ -209,12 +211,12 @@
 
   .modal-footer {
     .navbar {
-      --bs-navbar-color: var(--bs-white);
+      --bs-navbar-color: var(--bs-sky);
       --bs-navbar-hover-color: var(--bs-sky);
       --bs-navbar-active-color: var(--bs-sky);
       --bs-navbar-brand-margin-end: 0;
-      --bs-navbar-brand-color: var(--bs-sky);
-      --bs-navbar-brand-hover-color: var(--bs-sky);
+      --bs-navbar-brand-color: var(--bs-white);
+      --bs-navbar-brand-hover-color: var(--bs-white);
       flex-wrap: nowrap;
       width: 100%;
       height: 90px;
@@ -236,7 +238,7 @@
       padding: 0;
       margin: 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
-      letter-spacing: .44px;
+      letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
       white-space: nowrap;
     }
 
@@ -249,8 +251,8 @@
     }
 
     .navbar-nav {
-      --bs-nav-link-color: var(--bs-white);
-      --bs-nav-link-hover-color: var(--bs-sky);
+      --bs-nav-link-color: var(--bs-navbar-color);
+      --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
       flex-wrap: nowrap;
       gap: 30px;
       width: max-content;
@@ -275,7 +277,7 @@
           padding-top: 14px;
           padding-bottom: 14px;
           font: var(--az-navbar-fullscreen-modal-footer-font);
-          letter-spacing: .2px;
+          letter-spacing: var(--az-navbar-fullscreen-modal-footer-letter-spacing);
           white-space: nowrap;
 
           &:active,
