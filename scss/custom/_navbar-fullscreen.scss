@@ -251,6 +251,7 @@
     }
 
     .navbar-nav {
+      --bs-nav-link-padding-y: 30px;
       --bs-nav-link-color: var(--bs-navbar-color);
       --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
       flex-wrap: nowrap;
@@ -274,8 +275,8 @@
 
         /* stylelint-disable selector-max-class, selector-max-compound-selectors */
         .nav-link {
-          padding-top: 14px;
-          padding-bottom: 14px;
+          padding-top: var(--bs-nav-link-padding-y);
+          padding-bottom: var(--bs-nav-link-padding-y);
           font: var(--az-navbar-fullscreen-modal-footer-font);
           letter-spacing: var(--az-navbar-fullscreen-modal-footer-letter-spacing);
           white-space: nowrap;
