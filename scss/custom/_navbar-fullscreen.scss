@@ -4,6 +4,8 @@
   --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
   --az-navbar-fullscreen-bottom-border-width: 3px;
   --az-navbar-fullscreen-brand-height: 60px;
+  --az-navbar-fullscreen-toggler-bg: var(--bs-red);
+  --az-navbar-fullscreen-toggler-hover-color: var(--bs-chili);
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:menu:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=hamburger&icon.style=Rounded
   --az-navbar-fullscreen-toggler-icon-open: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/></svg>"))};
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:close:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=close&icon.size=24&icon.color=%231e5288
@@ -36,7 +38,9 @@
   }
 
   .navbar-az-fullscreen-actions {
-    --az-navbar-fullscreen-actions-font: normal normal bold 22px/27px proxima-nova-condensed;
+    --az-navbar-fullscreen-actions-font-size: 22px;
+    --az-navbar-fullscreen-actions-line-height: 27px;
+    --az-navbar-fullscreen-actions-font: normal normal bold var(--az-navbar-fullscreen-actions-font-size) / var(--az-navbar-fullscreen-actions-line-height) proxima-nova-condensed;
     --bs-nav-link-padding-x: 15px;
     --bs-nav-link-padding-y: 36.5px;
     --bs-nav-link-color: var(--bs-white);
@@ -73,8 +77,12 @@
     min-height: var(--az-navbar-fullscreen-brand-height);
     margin-top: var(--bs-navbar-brand-padding-y);
     margin-bottom: var(--bs-navbar-brand-padding-y);
-    background: #b01c2e;
+    background-color: var(--az-navbar-fullscreen-toggler-bg);
     border: 0;
+
+    // &:hover {
+    //   background-color: var(--az-navbar-fullscreen-toggler-hover-color);
+    // }
   }
 }
 
@@ -197,9 +205,6 @@
     --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
     max-width: none;
 
-    .input-group {
-      flex-direction: row-reverse;
-    }
   }
 
   .modal-footer {
