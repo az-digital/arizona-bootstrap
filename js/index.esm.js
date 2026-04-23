@@ -19,6 +19,7 @@ export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
 export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as AzTab } from './src/az-tab.js'
+export { default as NavbarAzFullscreenMobileNav } from './src/navbar-az-fullscreen-mobile-nav.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
 export { default as enableAzNavbar } from './src/navbar.js'
 
