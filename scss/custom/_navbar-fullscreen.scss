@@ -157,16 +157,18 @@
 
 
 .navbar-az-fullscreen-modal {
-  --az-navbar-fullscreen-modal-footer-font: normal normal 600 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 22px/27px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 20px/24px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-letter-spacing: .2px;
+  --az-navbar-fullscreen-modal-footer-brand-font: normal normal medium 20px/24px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .4px;
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
   --bs-modal-header-border-width: 0;
   --bs-modal-footer-gap: 0;
-  --bs-modal-footer-bg: var(--bs-midnight);
-  --bs-modal-footer-border-color: var(--bs-azurite);
-  --bs-modal-footer-border-width: 1px;
+  --bs-modal-footer-bg: var(--bs-azurite);
+  --bs-modal-footer-border-color: var(--bs-blue);
+  --bs-modal-footer-border-width: 2px;
 
   .modal-header {
     flex-direction: column;
@@ -205,12 +207,12 @@
 
   .modal-footer {
     .navbar {
-      --bs-navbar-color: var(--bs-white);
+      --bs-navbar-color: var(--bs-sky);
       --bs-navbar-hover-color: var(--bs-sky);
       --bs-navbar-active-color: var(--bs-sky);
       --bs-navbar-brand-margin-end: 0;
-      --bs-navbar-brand-color: var(--bs-sky);
-      --bs-navbar-brand-hover-color: var(--bs-sky);
+      --bs-navbar-brand-color: var(--bs-white);
+      --bs-navbar-brand-hover-color: var(--bs-white);
       flex-wrap: nowrap;
       width: 100%;
       height: 90px;
@@ -232,7 +234,7 @@
       padding: 0;
       margin: 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
-      letter-spacing: .44px;
+      letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
       white-space: nowrap;
     }
 
@@ -245,8 +247,9 @@
     }
 
     .navbar-nav {
-      --bs-nav-link-color: var(--bs-white);
-      --bs-nav-link-hover-color: var(--bs-sky);
+      --bs-nav-link-padding-y: 30px;
+      --bs-nav-link-color: var(--bs-navbar-color);
+      --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
       flex-wrap: nowrap;
       gap: 30px;
       width: max-content;
@@ -268,10 +271,10 @@
 
         /* stylelint-disable selector-max-class, selector-max-compound-selectors */
         .nav-link {
-          padding-top: 14px;
-          padding-bottom: 14px;
+          padding-top: var(--bs-nav-link-padding-y);
+          padding-bottom: var(--bs-nav-link-padding-y);
           font: var(--az-navbar-fullscreen-modal-footer-font);
-          letter-spacing: .2px;
+          letter-spacing: var(--az-navbar-fullscreen-modal-footer-letter-spacing);
           white-space: nowrap;
 
           &:active,
@@ -289,12 +292,37 @@
 
 
 .navbar-az-fullscreen-modal-menu {
+  --az-navbar-fullscreen-modal-menu-primary-font: normal normal 600 58px/66px garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .12px;
+  --az-navbar-fullscreen-modal-menu-primary-color: var(--bs-white);
+  --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--bs-bloom);
+  --az-navbar-fullscreen-modal-menu-primary-active-color: var(--bs-bloom);
+  --az-navbar-fullscreen-modal-menu-secondary-font-size: 20px;
+  --az-navbar-fullscreen-modal-menu-secondary-line-height: 24px;
+  --az-navbar-fullscreen-modal-menu-secondary-font: normal normal bold var(--az-navbar-fullscreen-modal-menu-secondary-font-size) / var(--az-navbar-fullscreen-modal-menu-secondary-line-height) proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-menu-secondary-letter-spacing: .4px;
+  --az-navbar-fullscreen-modal-menu-secondary-color: var(--bs-white);
+  --az-navbar-fullscreen-modal-menu-secondary-hover-color: var(--bs-white);
+  --az-navbar-fullscreen-modal-menu-secondary-active-color: var(--bs-sky);
+  --az-navbar-fullscreen-modal-menu-tertiary-font: var(--az-navbar-fullscreen-modal-menu-secondary-font);
+  --az-navbar-fullscreen-modal-menu-tertiary-letter-spacing: var(--az-navbar-fullscreen-modal-menu-secondary-letter-spacing);
+  --az-navbar-fullscreen-modal-menu-tertiary-color: var(--az-navbar-fullscreen-modal-menu-secondary-color);
+  --az-navbar-fullscreen-modal-menu-tertiary-hover-color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
+  --az-navbar-fullscreen-modal-menu-tertiary-active-color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
+  --az-navbar-fullscreen-modal-menu-separator-color: var(--bs-azurite);
+  --az-navbar-fullscreen-modal-menu-col-spacing-x: 24px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 0;
-  max-height: 100%;
-  overflow: hidden;
+
+  @include media-breakpoint-down(xxl) {
+    --az-navbar-fullscreen-modal-menu-secondary-font-size: 18px;
+    --az-navbar-fullscreen-modal-menu-secondary-line-height: 22px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    --az-navbar-fullscreen-modal-menu-secondary-font-size: 16px;
+    --az-navbar-fullscreen-modal-menu-secondary-line-height: 20px;
+  }
 
   .row {
     flex-wrap: nowrap;
@@ -318,18 +346,17 @@
   }
 
   .navbar-az-fullscreen-nav-secondary-tertiary-cols:has(.tab-pane.show) {
-    border-inline-start: var(--bs-border-width) solid var(--bs-azurite);
+    border-inline-start: var(--bs-border-width) solid var(--az-navbar-fullscreen-modal-menu-separator-color);
   }
 
   .navbar-az-fullscreen-nav-primary {
-    --az-navbar-fullscreen-nav-primary-font: normal normal bold 68px/68px garamond-premier-pro;
-    --bs-nav-link-color: var(--bs-white);
-    --bs-nav-link-hover-color: var(--bs-white);
-    padding-right: 24px;
+    --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
+    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
+    padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
 
     // TODO - potentially remove this - not yet approved
     @include media-breakpoint-down(xl) {
-      --az-navbar-fullscreen-nav-primary-font: normal normal bold 52px/52px garamond-premier-pro;
+      --az-navbar-fullscreen-modal-menu-primary-font: normal normal bold 52px/52px garamond-premier-pro;
     }
 
     .nav-link {
@@ -338,20 +365,20 @@
       padding: 0;
       margin-top: 15px;
       margin-bottom: 15px;
-      font: var(--az-navbar-fullscreen-nav-primary-font);
+      font: var(--az-navbar-fullscreen-modal-menu-primary-font);
       text-align: start;
-      letter-spacing: .68px;
+      letter-spacing: var(--az-navbar-fullscreen-modal-menu-primary-letter-spacing);
       isolation: isolate;
 
       &::after {
         position: absolute;
         right: 0;
-        bottom: 9px;
+        bottom: 0;
         left: 0;
         z-index: -1;
-        height: 6px;
+        height: 2px;
         content: "";
-        background: var(--bs-bloom);
+        background: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
         opacity: 0;
         transform: scaleX(0);
         transform-origin: left;
@@ -361,7 +388,7 @@
 
       &.active,
       &:hover {
-        color: var(--bs-white);
+        color: var(--az-navbar-fullscreen-modal-menu-primary-color);
         background-color: transparent;
         @include border-radius(0);
 
@@ -376,6 +403,10 @@
   .navbar-az-fullscreen-nav-secondary {
     // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=chevron+right&icon.size=24&icon.color=%23ffffff
     --az-navbar-fullscreen-nav-secondary-hover-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l160 160q12 12 12 28t-12 28L404-292q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></svg>"))};
+    --bs-nav-link-padding-x: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
+    --bs-nav-link-padding-y: 16px;
+    --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-secondary-color);
+    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
     position: relative;
     display: flex;
     flex-grow: 1;
@@ -383,14 +414,6 @@
     flex-wrap: nowrap;
     width: 50%;
     min-height: 0;
-    --az-navbar-fullscreen-nav-secondary-font: normal normal bold 24px/29px proxima-nova-condensed;
-    --bs-nav-link-color: var(--bs-white);
-    --bs-nav-link-hover-color: var(--bs-white);
-
-    // TODO - potentially remove this - not yet approved
-    @include media-breakpoint-down(xl) {
-      --az-navbar-fullscreen-nav-secondary-font: normal normal bold 22px/22px proxima-nova-condensed;
-    }
 
     .navbar-az-fullscreen-nav-secondary-scroll {
       flex: 1 1 auto;
@@ -402,22 +425,20 @@
 
     .nav-link {
       display: flex;
-      // gap: 6px;
       align-items: center;
-      padding-top: 16px;
-      padding-right: 24px;
-      padding-bottom: 17px;
-      padding-left: 24px;
+      // padding-top: 16px;
+      // padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
+      // padding-bottom: 16px;
+      // padding-left: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
       margin: 0;
-      // height: 68px;
-      font: var(--az-navbar-fullscreen-nav-secondary-font);
+      font: var(--az-navbar-fullscreen-modal-menu-secondary-font);
       text-align: start;
-      letter-spacing: .68px;
+      letter-spacing: var(--az-navbar-fullscreen-modal-menu-secondary-letter-spacing);
 
       &::after {
         flex: 0 0 auto;
-        width: 30px;
-        height: 30px;
+        width: var(--az-navbar-fullscreen-modal-menu-secondary-line-height);
+        height: var(--az-navbar-fullscreen-modal-menu-secondary-line-height);
         pointer-events: none;
         content: "";
         background-image: var(--az-navbar-fullscreen-nav-secondary-hover-icon);
@@ -429,8 +450,10 @@
         @include transition(opacity .3s ease-out, transform .3s ease-out);
       }
 
-      &.active {
-        color: var(--bs-sky);
+      &:active,
+      &.active,
+      &.is-active {
+        color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
         background-color: transparent;
         @include border-radius(0);
       }
@@ -449,15 +472,15 @@
 
     hr {
       margin-top: 0;
-      margin-right: 24px;
+      margin-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
       margin-bottom: 0;
-      margin-left: 24px;
+      margin-left: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
     }
 
     .vr {
       margin-top: 16px;
       margin-bottom: 16px;
-      color: var(--bs-azurite);
+      color: var(--az-navbar-fullscreen-modal-menu-separator-color);
       opacity: 1;
     }
 
@@ -469,7 +492,7 @@
       // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:do_not_disturb_on:FILL@1;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=do+not+d&icon.size=24&icon.color=%23e3e3e3
       --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='M320-440h320q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
       flex: 0 0 auto;
-      padding: 16px 24px 16px 12px;
+      padding: 16px var(--az-navbar-fullscreen-modal-menu-col-spacing-x) 16px 12px;
       // margin-left: 12px;
       border: 0;
       // border-left: 1px solid var(--bs-azurite);
@@ -522,7 +545,7 @@
     }
 
     &.show {
-      border-inline-start: var(--bs-border-width) solid var(--bs-azurite);
+      border-inline-start: var(--bs-border-width) solid var(--az-navbar-fullscreen-modal-menu-separator-color);
     }
   }
 
