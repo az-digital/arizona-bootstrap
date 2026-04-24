@@ -613,6 +613,11 @@
 
   .navbar-az-fullscreen-actions {
     --bs-nav-link-padding-y: 12px;
+
+    .nav-link,
+    .vr {
+      color: var(--bs-sky);
+    }
   }
 
   .navbar-az-fullscreen-nav-primary {

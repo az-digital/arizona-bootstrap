@@ -21,6 +21,15 @@ class NavbarAzFullscreenMobileNav {
       return
     }
 
+    // Save call-to-action items as a fragment
+    const ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions')
+    this.ctaFragment = null
+    if (ctaElement) {
+      const fragment = document.createDocumentFragment()
+      fragment.append(ctaElement.cloneNode(true))
+      this.ctaFragment = fragment
+    }
+
     this.navigationStack = [] // Stack to track navigation history
     this.init()
   }
@@ -238,7 +247,19 @@ class NavbarAzFullscreenMobileNav {
   resetToPrimaryNav() {
     const primaryNav = document.querySelector('.navbar-az-fullscreen-nav-primary')
     if (primaryNav) {
-      this.mobileCol.innerHTML = primaryNav.outerHTML
+      // Clear the mobile column
+      this.mobileCol.innerHTML = ''
+
+      // Add call-to-action items
+      if (this.ctaFragment) {
+        const ctaClone = this.ctaFragment.cloneNode(true)
+        this.mobileCol.append(ctaClone)
+      }
+
+      // Add primary navigation
+      const primaryClone = primaryNav.cloneNode(true)
+      this.mobileCol.append(primaryClone)
+
       this.setupPrimaryNavListeners()
     }
   }
