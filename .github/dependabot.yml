@@ -13,7 +13,6 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     cooldown:
       default-days: 5
@@ -39,7 +38,6 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     cooldown:
       default-days: 5
