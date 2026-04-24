@@ -197,14 +197,26 @@ title: AZ Navbar Fullscreen - Home
                   <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-az-fullscreen-primary-about-content" role="tabpanel" aria-labelledby="az-navbar-az-fullscreen-primary-about-tab" tabindex="0">About menu</div>
                 </div>
               </div>
-              <div class="col-12 d-md-none navbar-az-fullscreen-nav-mobile-col">
+              <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-md-none">
+                <!-- call-to-action items -->
+                <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-4">
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:9001/docs/5.1/examples/navbar-az-fullscreen/apply/">Apply</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Give</a>
+                  </li>
+                </ul>
                 <!-- initial mobile nav items -->
-                <div class="nav flex-column navbar-az-fullscreen-nav-primary" id="az-navbar-az-fullscreen-primary-tablist" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link" id="az-navbar-az-fullscreen-primary-admissions-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-selected="false">Admissions</button>
-                  <button class="nav-link" id="az-navbar-az-fullscreen-primary-academics-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-selected="false">Academics</button>
-                  <button class="nav-link" id="az-navbar-az-fullscreen-primary-research-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-selected="false">Research</button>
-                  <button class="nav-link" id="az-navbar-az-fullscreen-primary-campus-life-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-selected="false">Campus Life</button>
-                  <button class="nav-link" id="az-navbar-az-fullscreen-primary-about-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-about-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-about-content" aria-selected="false">About</button>
+                <div class="nav flex-column navbar-az-fullscreen-nav-primary" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-selected="false">Admissions</button>
+                  <button class="nav-link" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-selected="false">Academics</button>
+                  <button class="nav-link" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-selected="false">Research</button>
+                  <button class="nav-link" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-selected="false">Campus Life</button>
+                  <button class="nav-link" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-about-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-about-content" aria-selected="false">About</button>
                 </div>
               </div>
             </div>
