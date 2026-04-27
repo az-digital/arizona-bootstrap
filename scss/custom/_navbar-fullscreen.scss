@@ -110,7 +110,6 @@
   }
 
   .form-control {
-    padding-right: 0;
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
     background-color: transparent;
@@ -130,6 +129,14 @@
     &:focus {
       box-shadow: none;
     }
+  }
+
+  .vr {
+    width: var(--az-navbar-fullscreen-search-border-width);
+    margin-top: 11.5px;
+    margin-bottom: 11.5px;
+    background-color: var(--az-navbar-fullscreen-search-border-color);
+    opacity: 1;
   }
 
   .btn {
