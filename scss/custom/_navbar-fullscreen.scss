@@ -322,11 +322,13 @@
 
 
 .navbar-az-fullscreen-modal-menu {
-  --az-navbar-fullscreen-modal-menu-primary-font: normal normal 600 58px/66px garamond-premier-pro;
-  --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .12px;
+  --az-navbar-fullscreen-modal-menu-primary-font-size: 48px;
+  --az-navbar-fullscreen-modal-menu-primary-line-height: 48px;
+  --az-navbar-fullscreen-modal-menu-primary-font: normal normal 600 var(--az-navbar-fullscreen-modal-menu-primary-font-size) / var(--az-navbar-fullscreen-modal-menu-primary-line-height) garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .1px;
   --az-navbar-fullscreen-modal-menu-primary-color: var(--bs-white);
-  --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--bs-bloom);
-  --az-navbar-fullscreen-modal-menu-primary-active-color: var(--bs-bloom);
+  --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--bs-sky);
+  --az-navbar-fullscreen-modal-menu-primary-active-color: var(--bs-sky);
   --az-navbar-fullscreen-modal-menu-secondary-font-size: 20px;
   --az-navbar-fullscreen-modal-menu-secondary-line-height: 24px;
   --az-navbar-fullscreen-modal-menu-secondary-font: normal normal bold var(--az-navbar-fullscreen-modal-menu-secondary-font-size) / var(--az-navbar-fullscreen-modal-menu-secondary-line-height) proxima-nova-condensed;
@@ -381,7 +383,7 @@
 
   .navbar-az-fullscreen-nav-primary {
     --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
-    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
+    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
     padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
 
     // TODO - potentially remove this - not yet approved
@@ -416,11 +418,16 @@
         @include transition(opacity .3s ease-out, transform .3s ease-out);
       }
 
+      &:active,
       &.active,
-      &:hover {
-        color: var(--az-navbar-fullscreen-modal-menu-primary-color);
+      &.is-active {
+        color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
         background-color: transparent;
-        @include border-radius(0);
+      }
+
+      &:hover {
+        color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
+        background-color: transparent;
 
         &::after {
           opacity: 1;
