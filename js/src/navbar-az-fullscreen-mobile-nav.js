@@ -31,6 +31,7 @@ class NavbarAzFullscreenMobileNav {
     }
 
     this.navigationStack = [] // Stack to track navigation history
+    this.labelToTargetMap = {} // Map to store label-to-targetId mappings from page content
     this.init()
   }
 
@@ -49,10 +50,16 @@ class NavbarAzFullscreenMobileNav {
     const primaryButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-primary .nav-link')
 
     for (const button of primaryButtons) {
+      const targetId = button.getAttribute('data-az-menu-element')
+      const label = button.textContent.trim()
+
+      // Build dynamic mapping from page content
+      if (targetId && label) {
+        this.labelToTargetMap[label] = targetId
+      }
+
       button.addEventListener('click', e => {
         e.preventDefault()
-        const targetId = button.getAttribute('data-bs-target')
-        const label = button.textContent.trim()
 
         if (targetId) {
           this.showSecondaryNav(targetId, label)
@@ -62,87 +69,48 @@ class NavbarAzFullscreenMobileNav {
   }
 
   /**
+   * Display navigation menu (secondary or tertiary)
+   * @param {Element|string} content - The content element or target ID to display
+   * @param {string} label - The label of the menu item
+   * @param {string} navType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
+   * @param {string} backButtonLabel - Label for the back button
+   * @param {string} parentLabel - Parent label (used for tertiary navigation)
+   */
+  showNavMenu(content, label, navType, backButtonLabel, parentLabel = null) {
+    // Handle both targetId (string) and Element
+    let element = content
+    if (typeof content === 'string') {
+      element = document.querySelector(content)
+      if (!element) {
+        return
+      }
+    }
+
+    // Create the menu display
+    const menuHtml = this.buildMenuHtml(element, label, backButtonLabel)
+
+    // Update navigation stack
+    const stackEntry = { type: navType, label }
+    if (parentLabel) {
+      stackEntry.parentLabel = parentLabel
+    }
+
+    this.navigationStack.push(stackEntry)
+
+    // Update mobile column
+    this.mobileCol.innerHTML = menuHtml
+
+    // Set up listeners for the new menu
+    this.setupNavListeners(label, navType)
+  }
+
+  /**
    * Display secondary navigation for a primary menu item
    * @param {string} targetId - The ID of the secondary content to display
    * @param {string} label - The label of the primary menu item
    */
   showSecondaryNav(targetId, label) {
-    // Extract the menu content from desktop view
-    const desktopContent = document.querySelector(targetId)
-    if (!desktopContent) {
-      // Secondary content not found for ${targetId}
-      return
-    }
-
-    // Create the secondary menu display
-    const secondaryMenuHtml = this.buildSecondaryMenuHtml(desktopContent)
-
-    // Update navigation stack
-    this.navigationStack.push({
-      type: 'primary',
-      label
-    })
-
-    // Update mobile column
-    this.mobileCol.innerHTML = secondaryMenuHtml
-
-    // Set up listeners for the new secondary menu
-    this.setupSecondaryNavListeners(label)
-  }
-
-  /**
-   * Build HTML for secondary menu display
-   * @param {Element} desktopContent - The desktop secondary content element
-   * @returns {string} HTML string for the secondary menu
-   */
-  buildSecondaryMenuHtml(desktopContent) {
-    let html = '<div class="navbar-az-fullscreen-nav-secondary-mobile">'
-
-    // Add back button
-    html += this.createBackButton('Main Menu')
-
-    // Extract secondary nav content from desktop
-    const secondaryNav = desktopContent.querySelector('.navbar-az-fullscreen-nav-secondary')
-    if (secondaryNav) {
-      // Clone the secondary nav structure
-      const navContent = secondaryNav.innerHTML
-      html += '<nav class="nav flex-column navbar-az-fullscreen-nav-secondary">'
-      html += navContent
-      html += '</nav>'
-    }
-
-    html += '</div>'
-    return html
-  }
-
-  /**
-   * Set up event listeners for secondary navigation items
-   * @param {string} parentLabel - The label of the parent menu
-   */
-  setupSecondaryNavListeners(parentLabel) {
-    // Back button
-    const backButton = this.mobileCol.querySelector('.navbar-az-fullscreen-nav-back-btn')
-    if (backButton) {
-      backButton.addEventListener('click', () => {
-        this.goBack()
-      })
-    }
-
-    // Secondary menu toggle buttons (for tertiary menus)
-    const toggleButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-toggle')
-    for (const button of toggleButtons) {
-      button.addEventListener('click', e => {
-        e.preventDefault()
-        const tertiaryId = button.getAttribute('data-bs-target')
-        const tertiaryContent = document.querySelector(tertiaryId)
-
-        if (tertiaryContent) {
-          // Extract the tertiary label from the parent link
-          const parentLink = button.previousElementSibling?.textContent?.trim() || parentLabel
-          this.showTertiaryNav(tertiaryContent, parentLink, parentLabel)
-        }
-      })
-    }
+    this.showNavMenu(targetId, label, 'primary', 'Main Menu')
   }
 
   /**
@@ -152,54 +120,104 @@ class NavbarAzFullscreenMobileNav {
    * @param {string} parentLabel - The label of the parent secondary menu
    */
   showTertiaryNav(tertiaryContent, label, parentLabel) {
-    const tertiaryMenuHtml = this.buildTertiaryMenuHtml(tertiaryContent, label, parentLabel)
+    this.showNavMenu(tertiaryContent, label, 'secondary', parentLabel, parentLabel)
+  }
 
-    // Update navigation stack
-    this.navigationStack.push({
-      type: 'secondary',
-      label,
-      parentLabel
-    })
+  /**
+   * Build HTML for menu display
+   * @param {Element} content - The content element to display
+   * @param {string} label - The label of the menu item that was clicked
+   * @param {string} backButtonLabel - Label for the back button
+   * @returns {string} HTML string for the menu
+   */
+  buildMenuHtml(content, label, backButtonLabel) {
+    let html = '<div class="navbar-az-fullscreen-nav-menu-mobile">'
 
-    // Update mobile column
-    this.mobileCol.innerHTML = tertiaryMenuHtml
+    // Add back button
+    html += this.createBackButton(backButtonLabel)
 
-    // Set up listeners for back button
+    // Add menu heading
+    html += `<h2 class="navbar-az-fullscreen-nav-mobile-menu-heading">${label} Menu</h2>`
+
+    // Extract nav content from content
+    const nav = content.querySelector('.navbar-az-fullscreen-nav-secondary')
+    if (nav) {
+      // Clone the nav element to avoid modifying the original
+      const navClone = nav.cloneNode(true)
+      // Remove tertiary panel if it exists
+      const tertiaryPanel = navClone.querySelector('.navbar-az-fullscreen-nav-tertiary-panel')
+      if (tertiaryPanel) {
+        tertiaryPanel.remove()
+      }
+
+      // Process all buttons in the cloned nav
+      let buttonCounter = 0
+      const buttons = navClone.querySelectorAll('button')
+      for (const button of buttons) {
+        // Store data-bs-target value before removing attributes
+        const targetId = button.getAttribute('data-bs-target')
+
+        // Remove Bootstrap attributes
+        button.removeAttribute('data-bs-toggle')
+        button.removeAttribute('data-bs-target')
+        button.removeAttribute('aria-expanded')
+
+        // Create dynamic id
+        buttonCounter++
+        button.id = `az-fullscreen-nav-mobile-${buttonCounter}`
+
+        // Update aria-controls
+        button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+
+        // Add data-az-menu-element attribute with original target value
+        if (targetId) {
+          button.setAttribute('data-az-menu-element', targetId)
+        }
+      }
+
+      const navContent = navClone.innerHTML
+      html += '<nav class="nav flex-column navbar-az-fullscreen-nav-secondary"><hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">'
+      html += navContent
+      html += '<hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation"></nav>'
+    } else {
+      // Fallback: use the entire content if no nav element found
+      html += content.innerHTML
+    }
+
+    html += '</div>'
+    return html
+  }
+
+  /**
+   * Set up event listeners for navigation menu
+   * @param {string} parentLabel - The label of the parent/current menu
+   * @param {string} parentNavType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
+   */
+  setupNavListeners(parentLabel, parentNavType) {
+    // Back button
     const backButton = this.mobileCol.querySelector('.navbar-az-fullscreen-nav-back-btn')
     if (backButton) {
       backButton.addEventListener('click', () => {
         this.goBack()
       })
     }
-  }
 
-  /**
-   * Build HTML for tertiary menu display
-   * @param {Element} tertiaryContent - The tertiary content element
-   * @param {string} label - The label of the menu
-   * @param {string} parentLabel - The label of the parent menu
-   * @returns {string} HTML string for the tertiary menu
-   */
-  buildTertiaryMenuHtml(tertiaryContent, label, parentLabel) {
-    let html = '<div class="navbar-az-fullscreen-nav-tertiary-mobile">'
+    // Toggle buttons for secondary menu navigation
+    if (parentNavType === 'primary') {
+      const toggleButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-toggle')
+      for (const button of toggleButtons) {
+        button.addEventListener('click', e => {
+          const tertiaryId = button.getAttribute('data-az-menu-element')
+          const tertiaryContent = document.querySelector(tertiaryId)
 
-    // Add back button
-    html += this.createBackButton(`${parentLabel}`)
-
-    // Extract tertiary nav content
-    const tertiaryNav = tertiaryContent.querySelector('.navbar-az-fullscreen-nav-secondary')
-    if (tertiaryNav) {
-      const navContent = tertiaryNav.innerHTML
-      html += '<nav class="nav flex-column navbar-az-fullscreen-nav-secondary">'
-      html += navContent
-      html += '</nav>'
-    } else {
-      // Fallback: use the entire content if no nav element found
-      html += tertiaryContent.innerHTML
+          if (tertiaryContent) {
+            // Extract the tertiary label from button aria-label text
+            const toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
+            this.showTertiaryNav(tertiaryContent, toggleLabel, parentLabel)
+          }
+        })
+      }
     }
-
-    html += '</div>'
-    return html
   }
 
   /**
@@ -213,7 +231,6 @@ class NavbarAzFullscreenMobileNav {
         <button type="button" class="btn navbar-az-fullscreen-nav-back-btn" aria-label="Back to ${label}">
           Back to ${label}
         </button>
-        <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
       </div>
     `
   }
@@ -258,6 +275,33 @@ class NavbarAzFullscreenMobileNav {
 
       // Add primary navigation
       const primaryClone = primaryNav.cloneNode(true)
+
+      // Update the tablist id for mobile
+      const tablist = primaryClone.querySelector('#az-navbar-az-fullscreen-primary-tablist')
+      if (tablist) {
+        tablist.id = 'az-navbar-az-fullscreen-primary-tablist-mobile'
+      }
+
+      // Process all buttons in the cloned primary nav
+      const buttons = primaryClone.querySelectorAll('button')
+      for (const button of buttons) {
+        // Replace data-bs-target with data-az-menu-element
+        const targetId = button.getAttribute('data-bs-target')
+        if (targetId) {
+          button.setAttribute('data-az-menu-element', targetId)
+          button.removeAttribute('data-bs-target')
+        }
+
+        // Remove specific attributes
+        button.removeAttribute('id')
+        button.removeAttribute('data-bs-toggle')
+        button.removeAttribute('role')
+        button.removeAttribute('aria-selected')
+
+        // Update aria-controls
+        button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+      }
+
       this.mobileCol.append(primaryClone)
 
       this.setupPrimaryNavListeners()
@@ -270,14 +314,7 @@ class NavbarAzFullscreenMobileNav {
    * @returns {string} The target ID
    */
   getTargetIdForLabel(label) {
-    const labelMap = {
-      Admissions: '#az-navbar-az-fullscreen-primary-admissions-content',
-      Academics: '#az-navbar-az-fullscreen-primary-academics-content',
-      Research: '#az-navbar-az-fullscreen-primary-research-content',
-      'Campus Life': '#az-navbar-az-fullscreen-primary-campus-life-content',
-      About: '#az-navbar-az-fullscreen-primary-about-content'
-    }
-    return labelMap[label] || ''
+    return this.labelToTargetMap[label] || ''
   }
 }
 
