@@ -187,10 +187,10 @@
 
 
 .navbar-az-fullscreen-modal {
-  --az-navbar-fullscreen-modal-footer-font: normal normal bold 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-letter-spacing: .2px;
-  --az-navbar-fullscreen-modal-footer-brand-font: normal normal medium 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .4px;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
+  --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
@@ -245,7 +245,7 @@
       --bs-navbar-brand-hover-color: var(--bs-white);
       flex-wrap: nowrap;
       width: 100%;
-      height: 90px;
+      // height: 90px;
       white-space: nowrap;
       border-top: 0;
       border-bottom: 0;
@@ -262,7 +262,7 @@
     .navbar-brand {
       flex: 0 0 auto;
       padding: 0;
-      margin: 0;
+      margin: 30px 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
       letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
       white-space: nowrap;
