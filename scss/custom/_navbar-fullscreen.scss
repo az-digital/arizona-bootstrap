@@ -87,26 +87,28 @@
 }
 
 .navbar-az-fullscreen-search {
+  --az-navbar-fullscreen-search-width: 260px;
   --az-navbar-fullscreen-search-height: 60px;
   --az-navbar-fullscreen-search-color: var(--bs-white);
   --az-navbar-fullscreen-search-hover-color: var(--bs-white);
+  --az-navbar-fullscreen-search-border-width: 1.5px;
+  --az-navbar-fullscreen-search-border-color: var(--az-navbar-fullscreen-search-color);
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
   --az-navbar-fullscreen-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
   --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova;
-  flex: 1 1 220px;
+  flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
-  max-width: 220px;
+  max-width: var(--az-navbar-fullscreen-search-width);
 
   .input-group {
     flex-wrap: nowrap;
     height: var(--az-navbar-fullscreen-search-height);
     overflow: hidden;
-    border: 1.5px solid var(--az-navbar-fullscreen-search-color);
+    border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
     @include border-radius(8px);
   }
 
   .form-control {
-    padding-right: 0;
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
     background-color: transparent;
@@ -126,6 +128,14 @@
     &:focus {
       box-shadow: none;
     }
+  }
+
+  .vr {
+    width: var(--az-navbar-fullscreen-search-border-width);
+    margin-top: 11.5px;
+    margin-bottom: 11.5px;
+    background-color: var(--az-navbar-fullscreen-search-border-color);
+    opacity: 1;
   }
 
   .btn {
@@ -156,10 +166,10 @@
 
 
 .navbar-az-fullscreen-modal {
-  --az-navbar-fullscreen-modal-footer-font: normal normal bold 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-letter-spacing: .2px;
-  --az-navbar-fullscreen-modal-footer-brand-font: normal normal medium 20px/24px proxima-nova-condensed;
-  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .4px;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
+  --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
@@ -214,7 +224,7 @@
       --bs-navbar-brand-hover-color: var(--bs-white);
       flex-wrap: nowrap;
       width: 100%;
-      height: 90px;
+      // height: 90px;
       white-space: nowrap;
       border-top: 0;
       border-bottom: 0;
@@ -231,7 +241,7 @@
     .navbar-brand {
       flex: 0 0 auto;
       padding: 0;
-      margin: 0;
+      margin: 30px 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
       letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
       white-space: nowrap;
@@ -291,17 +301,19 @@
 
 
 .navbar-az-fullscreen-modal-menu {
-  --az-navbar-fullscreen-modal-menu-primary-font: normal normal 600 58px/66px garamond-premier-pro;
-  --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .12px;
+  --az-navbar-fullscreen-modal-menu-primary-font-size: 48px;
+  --az-navbar-fullscreen-modal-menu-primary-line-height: 48px;
+  --az-navbar-fullscreen-modal-menu-primary-font: normal normal 600 var(--az-navbar-fullscreen-modal-menu-primary-font-size) / var(--az-navbar-fullscreen-modal-menu-primary-line-height) garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .1px;
   --az-navbar-fullscreen-modal-menu-primary-color: var(--bs-white);
-  --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--bs-bloom);
-  --az-navbar-fullscreen-modal-menu-primary-active-color: var(--bs-bloom);
+  --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--bs-sky);
+  --az-navbar-fullscreen-modal-menu-primary-active-color: var(--bs-sky);
   --az-navbar-fullscreen-modal-menu-secondary-font-size: 20px;
   --az-navbar-fullscreen-modal-menu-secondary-line-height: 24px;
   --az-navbar-fullscreen-modal-menu-secondary-font: normal normal bold var(--az-navbar-fullscreen-modal-menu-secondary-font-size) / var(--az-navbar-fullscreen-modal-menu-secondary-line-height) proxima-nova-condensed;
   --az-navbar-fullscreen-modal-menu-secondary-letter-spacing: .4px;
   --az-navbar-fullscreen-modal-menu-secondary-color: var(--bs-white);
-  --az-navbar-fullscreen-modal-menu-secondary-hover-color: var(--bs-white);
+  --az-navbar-fullscreen-modal-menu-secondary-hover-color: var(--bs-sky);
   --az-navbar-fullscreen-modal-menu-secondary-active-color: var(--bs-sky);
   --az-navbar-fullscreen-modal-menu-tertiary-font: var(--az-navbar-fullscreen-modal-menu-secondary-font);
   --az-navbar-fullscreen-modal-menu-tertiary-letter-spacing: var(--az-navbar-fullscreen-modal-menu-secondary-letter-spacing);
@@ -350,7 +362,7 @@
 
   .navbar-az-fullscreen-nav-primary {
     --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
-    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
+    --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
     padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
 
     // TODO - potentially remove this - not yet approved
@@ -369,6 +381,23 @@
       letter-spacing: var(--az-navbar-fullscreen-modal-menu-primary-letter-spacing);
       isolation: isolate;
 
+      &:active,
+      &.active,
+      &.is-active {
+        color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
+        background-color: transparent;
+      }
+
+      &:hover {
+        color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
+        background-color: transparent;
+
+        &::after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
       &::after {
         position: absolute;
         right: 0;
@@ -383,18 +412,6 @@
         transform-origin: left;
         @include border-radius(999px);
         @include transition(opacity .3s ease-out, transform .3s ease-out);
-      }
-
-      &.active,
-      &:hover {
-        color: var(--az-navbar-fullscreen-modal-menu-primary-color);
-        background-color: transparent;
-        @include border-radius(0);
-
-        &::after {
-          opacity: 1;
-          transform: scaleX(1);
-        }
       }
     }
   }
@@ -423,50 +440,47 @@
     }
 
     .nav-link {
+      position: relative;
       display: flex;
       align-items: center;
-      // padding-top: 16px;
-      // padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
-      // padding-bottom: 16px;
-      // padding-left: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
       margin: 0;
       font: var(--az-navbar-fullscreen-modal-menu-secondary-font);
       text-align: start;
       letter-spacing: var(--az-navbar-fullscreen-modal-menu-secondary-letter-spacing);
-
-      &::after {
-        flex: 0 0 auto;
-        width: var(--az-navbar-fullscreen-modal-menu-secondary-line-height);
-        height: var(--az-navbar-fullscreen-modal-menu-secondary-line-height);
-        pointer-events: none;
-        content: "";
-        background-image: var(--az-navbar-fullscreen-nav-secondary-hover-icon);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        opacity: 0;
-        transform: translateX(-8px);
-        @include transition(opacity .3s ease-out, transform .3s ease-out);
-      }
+      isolation: isolate;
 
       &:active,
       &.active,
       &.is-active {
         color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
         background-color: transparent;
-        @include border-radius(0);
       }
 
       &:hover {
-        text-decoration: none;
+        color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
         background-color: transparent;
-        @include border-radius(0);
 
-        &::after {
-          opacity: 1;
-          transform: translateX(0);
-        }
+        // &::after {
+        //   opacity: 1;
+        //   transform: scaleX(1);
+        // }
       }
+
+      // &::after {
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: -1;
+      //   height: 2px;
+      //   content: "";
+      //   background: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
+      //   opacity: 0;
+      //   transform: scaleX(0);
+      //   transform-origin: left;
+      //   @include border-radius(999px);
+      //   @include transition(opacity .3s ease-out, transform .3s ease-out);
+      // }
     }
 
     hr {
@@ -477,19 +491,20 @@
     }
 
     .vr {
+      width: 2px;
       margin-top: 16px;
       margin-bottom: 16px;
-      color: var(--az-navbar-fullscreen-modal-menu-separator-color);
+      color: var(--bs-bloom);
       opacity: 1;
     }
 
     .navbar-az-fullscreen-nav-toggle {
-      // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:add_circle:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=add+circle&icon.size=24&icon.color=%23e3e3e3
-      --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='M440-440v120q0 17 11.5 28.5T480-280q17 0 28.5-11.5T520-320v-120h120q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H520v-120q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v120H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440h120Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
-      // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:add_circle:FILL@1;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=add+circle&icon.size=24&icon.color=%23e3e3e3
-      --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='M440-440v120q0 17 11.5 28.5T480-280q17 0 28.5-11.5T520-320v-120h120q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H520v-120q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v120H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440h120Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
-      // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:do_not_disturb_on:FILL@1;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=do+not+d&icon.size=24&icon.color=%23e3e3e3
-      --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='M320-440h320q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
+      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+      --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
+      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+      --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
+      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+      --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
       flex: 0 0 auto;
       padding: 16px var(--az-navbar-fullscreen-modal-menu-col-spacing-x) 16px 12px;
       // margin-left: 12px;
@@ -507,6 +522,7 @@
 
       &[aria-expanded="true"] .navbar-az-fullscreen-nav-toggle-icon {
         background-image: var(--az-navbar-fullscreen-nav-toggle-icon-active);
+        transform: scaleX(-1);
       }
 
       .navbar-az-fullscreen-nav-toggle-icon {
