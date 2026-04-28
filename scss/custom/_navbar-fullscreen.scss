@@ -512,9 +512,10 @@
     }
 
     .vr {
+      width: 2px;
       margin-top: 16px;
       margin-bottom: 16px;
-      color: var(--az-navbar-fullscreen-modal-menu-separator-color);
+      color: var(--bs-bloom);
       opacity: 1;
     }
 
