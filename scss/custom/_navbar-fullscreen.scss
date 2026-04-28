@@ -587,7 +587,7 @@
 }
 
 /* Mobile Nav styling */
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .navbar-az-fullscreen {
     --az-navbar-fullscreen-height: 69px;
     --az-navbar-fullscreen-brand-height: 45px;
