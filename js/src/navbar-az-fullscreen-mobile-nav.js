@@ -6,7 +6,7 @@
  */
 
 /**
- * Arizona Bootstrap Fullscreen Navbar Mobile Navigation
+ * Arizona Bootstrap Fullscreen Navbar Mobile Navigation (experimental)
  * Handles paged navigation for mobile view of #navbar-az-fullscreen-nav-mobile-col.
  */
 
