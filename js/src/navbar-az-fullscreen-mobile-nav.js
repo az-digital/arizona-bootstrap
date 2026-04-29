@@ -175,7 +175,8 @@ class NavbarAzFullscreenMobileNav {
         }
       }
 
-      const navContent = navClone.innerHTML
+      let navContent = navClone.innerHTML
+      navContent = navContent.replaceAll('class="vr"', 'class="vr my-2"')
       html += '<nav class="nav flex-column navbar-az-fullscreen-nav-secondary"><hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">'
       html += navContent
       html += '<hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation"></nav>'
