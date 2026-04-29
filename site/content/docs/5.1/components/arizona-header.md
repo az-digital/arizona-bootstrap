@@ -38,7 +38,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 </div>
 ```
 
-### Blue header
+### Blue header (experimental)
 
 The blue Arizona Header is to be used on marketing-approved subdomains of arizona.edu. This functionality should not be used until the flagship arizona.edu website is using a blue header.
 
