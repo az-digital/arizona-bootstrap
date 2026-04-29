@@ -5,6 +5,9 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * Experimental az-tab component.
+ */
 import Tab from '../../node_modules/bootstrap/js/src/tab.js'
 import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.js'
 import SelectorEngine from '../../node_modules/bootstrap/js/src/dom/selector-engine.js'
