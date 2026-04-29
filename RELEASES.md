@@ -62,6 +62,7 @@ Patch releases will be released as necessary and limited to:
   - Documentation clarifications
   - Critical institutional link changes
   - Critical brand changes
+  - Experimental features
 - Development dependencies
   - Version number bumps that _dependabot_ suggests
   - Changes matching minor upstream Bootstrap maintenance
@@ -84,6 +85,10 @@ The following types of changes are allowed for minor releases in addition to tho
 ### Major Releases (X.y.z)
 Incompatible changes to the CSS and JavaScript (for example, moving to Bootstrap
 v5).
+
+## Experimental Features
+
+To allow fast iteration and feedback, complex or in-progress features may be released as **Experimental**. These may appear in patch releases and do not follow the full stability policy.
 
 ## Triggering a Patch Release
 An Arizona Digital developer with appropriate access rights in the main Arizona
