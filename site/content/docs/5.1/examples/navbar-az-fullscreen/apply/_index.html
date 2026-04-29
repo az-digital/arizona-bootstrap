@@ -30,13 +30,14 @@ title: AZ Navbar Fullscreen - Apply
             </li>
           </ul>
 
-          <form class="navbar-az-fullscreen-search me-4" role="search">
+          <form class="navbar-az-fullscreen-search me-2 me-lg-4" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
-            <div class="input-group">
+            <div class="input-group d-none d-lg-flex">
               <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
               <div class="vr"></div>
               <button class="btn" type="submit" aria-label="Submit site search"></button>
             </div>
+            <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
           </form>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu" aria-controls="navbar-az-fullscreen-menu" aria-label="Open site menu">
@@ -82,7 +83,7 @@ title: AZ Navbar Fullscreen - Apply
             </div>
           </div>
           <div class="container-lg">
-            <form class="navbar-az-fullscreen-search my-5" role="search">
+            <form class="navbar-az-fullscreen-search my-2 my-lg-5" role="search">
               <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
               <div class="input-group">
                 <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -96,7 +97,7 @@ title: AZ Navbar Fullscreen - Apply
         <div class="modal-body">
           <div class="container-lg text-white navbar-az-fullscreen-modal-menu">
             <div class="row g-0">
-              <div class="col-4 navbar-az-fullscreen-nav-primary-col">
+              <div class="col-4 d-none d-lg-block navbar-az-fullscreen-nav-primary-col">
                 <!-- primary nav items -->
                 <div class="nav flex-column navbar-az-fullscreen-nav-primary" id="az-navbar-az-fullscreen-primary-tablist" role="tablist" aria-orientation="vertical">
                   <button class="nav-link" id="az-navbar-az-fullscreen-primary-admissions-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-selected="false">Admissions</button>
@@ -106,7 +107,7 @@ title: AZ Navbar Fullscreen - Apply
                   <button class="nav-link" id="az-navbar-az-fullscreen-primary-about-tab" data-bs-toggle="pill-hover" data-bs-target="#az-navbar-az-fullscreen-primary-about-content" type="button" role="tab" aria-controls="az-navbar-az-fullscreen-primary-about-content" aria-selected="false">About</button>
                 </div>
               </div>
-              <div class="col-8 navbar-az-fullscreen-nav-secondary-tertiary-cols d-flex">
+              <div class="col-8 d-none d-lg-flex navbar-az-fullscreen-nav-secondary-tertiary-cols">
                 <div class="tab-content d-flex flex-grow-1 w-100" id="az-navbar-az-fullscreen-primary-tab-content">
                   <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-az-fullscreen-primary-admissions-content" role="tabpanel" aria-labelledby="az-navbar-az-fullscreen-primary-admissions-tab" tabindex="0">
                     <div class="h-100">
@@ -209,6 +210,40 @@ title: AZ Navbar Fullscreen - Apply
                   </div>
                   <div class="tab-pane fade flex-grow-1 h-100 w-100" id="az-navbar-az-fullscreen-primary-about-content" role="tabpanel" aria-labelledby="az-navbar-az-fullscreen-primary-about-tab" tabindex="0">About menu</div>
                 </div>
+              </div>
+            </div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+              <!-- call-to-action items -->
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+                <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:9001/docs/5.1/examples/navbar-az-fullscreen/apply/">Apply</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <span class="vr" aria-hidden="true"></span>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Visit</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <span class="vr" aria-hidden="true"></span>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Give</a>
+                </li>
+              </ul>
+              <!-- initial mobile nav items -->
+              <div class="nav flex-column navbar-az-fullscreen-nav-primary" role="tablist" aria-orientation="vertical">
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Admissions</button>
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Academics</button>
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Research</button>
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Campus Life</button>
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-about-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">About</button>
+                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
               </div>
             </div>
           </div>
