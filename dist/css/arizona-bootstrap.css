@@ -19437,35 +19437,51 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .btn-primary, .btn-red {
-  color: #fff;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
 }
 
 .btn-secondary, .btn-blue {
-  color: #fff;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
 }
 
 .btn-success {
-  color: #001c48;
+  --bs-btn-color: var(--bs-midnight);
+  --bs-btn-hover-color: var(--bs-midnight);
+  --bs-btn-active-color: var(--bs-midnight);
 }
 
 .btn-info {
-  color: #001c48;
+  --bs-btn-color: var(--bs-midnight);
+  --bs-btn-hover-color: var(--bs-midnight);
+  --bs-btn-active-color: var(--bs-midnight);
 }
 
 .btn-warning {
-  color: #000;
+  --bs-btn-color: var(--bs-black);
+  --bs-btn-hover-color: var(--bs-black);
+  --bs-btn-active-color: var(--bs-black);
 }
 
 .btn-danger {
-  color: #fff;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
 }
 
 .btn-light {
-  color: #001c48;
+  --bs-btn-color: var(--bs-midnight);
+  --bs-btn-hover-color: var(--bs-midnight);
+  --bs-btn-active-color: var(--bs-midnight);
 }
 
 .btn-dark {
-  color: #fff;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
 }
 
 .btn-primary, .btn-red {
