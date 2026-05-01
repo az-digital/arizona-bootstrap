@@ -35,7 +35,6 @@ $enable-dark-mode: false;
 */
 $font-size-base: 1rem;
 $link-color: $red;
-$link-hover-color: $chili;
 // fusv-disable
 $lead-font-weight: 400;
 // fusv-enable
@@ -194,9 +193,9 @@ $tooltip-bg: $blue;
 
 // >> Shadows
 // fusv-disable
-$box-shadow:    0 .25rem 1rem #{'rgba(var(--bs-black-rgb), .15)'} !default;
-$box-shadow-sm: 0 .1rem .25rem #{'rgba(var(--bs-black-rgb), .075)'} !default;
-$box-shadow-lg: 0 .75rem 3rem #{'rgba(var(--bs-black-rgb), .175)'} !default;
+$box-shadow:    0 .25rem 1rem #{"rgba(var(--bs-black-rgb), .15)"} !default;
+$box-shadow-sm: 0 .1rem .25rem #{"rgba(var(--bs-black-rgb), .075)"} !default;
+$box-shadow-lg: 0 .75rem 3rem #{"rgba(var(--bs-black-rgb), .175)"} !default;
 // fusv-enable
 
 // >> Focus

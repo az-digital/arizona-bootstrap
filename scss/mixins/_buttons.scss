@@ -9,13 +9,11 @@
     --bs-btn-color: var(--bs-midnight);
     --bs-btn-hover-color: var(--bs-midnight);
     --bs-btn-active-color: var(--bs-midnight);
-  }
-  @else if $background == $warning {
+  } @else if $background == $warning {
     --bs-btn-color: var(--bs-black);
     --bs-btn-hover-color: var(--bs-black);
     --bs-btn-active-color: var(--bs-black);
-  }
-  @else {
+  } @else {
     --bs-btn-color: var(--bs-white);
     --bs-btn-hover-color: var(--bs-white);
     --bs-btn-active-color: var(--bs-white);
