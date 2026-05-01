@@ -7,6 +7,8 @@ $colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb,
 
 :root,
 [data-bs-theme="light"] {
+  --bs-font-material-symbols: "Material Symbols Rounded";
+
   @each $color, $value in $colors-rgb {
     --#{$prefix}#{$color}-rgb: #{$value};
   }

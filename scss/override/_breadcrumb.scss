@@ -1,17 +1,21 @@
 // Overrides for Breadcrumbs
 .breadcrumb {
+  --bs-breadcrumb-bg: var(--bs-white);
+  --bs-breadcrumb-divider-color: var(--bs-gray-600);
+  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols);
+
   a {
     padding: 1px 0;
     font-weight: 500;
-    color: var(--bs-link-color);
+    color: var(--bs-azurite);
     &:hover {
-      color: var(--bs-link-hover-color);
+      --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
     }
   }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: "Material Symbols Rounded", monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
 }
 
 // Remove margins/padding on Breadcrumbs for larger displays

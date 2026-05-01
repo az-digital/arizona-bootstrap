@@ -5474,9 +5474,9 @@ textarea.form-control-lg {
   --bs-breadcrumb-padding-x: 1rem;
   --bs-breadcrumb-padding-y: 0.75rem;
   --bs-breadcrumb-margin-bottom: 1rem;
-  --bs-breadcrumb-bg: #fff;
+  --bs-breadcrumb-bg: ;
   --bs-breadcrumb-border-radius: ;
-  --bs-breadcrumb-divider-color: #6c757d;
+  --bs-breadcrumb-divider-color: var(--bs-secondary-color);
   --bs-breadcrumb-item-padding-x: 0.5rem;
   --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
   display: -ms-flexbox;
@@ -8141,6 +8141,7 @@ textarea.form-control-lg {
 */
 :root,
 [data-bs-theme=light] {
+  --bs-font-material-symbols: "Material Symbols Rounded";
   --bs-red-rgb: 171, 5, 32;
   --bs-bloom-rgb: 239, 64, 86;
   --bs-chili-rgb: 139, 0, 21;
@@ -19391,17 +19392,22 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 /* stylelint-enable declaration-no-important */
+.breadcrumb {
+  --bs-breadcrumb-bg: var(--bs-white);
+  --bs-breadcrumb-divider-color: var(--bs-gray-600);
+  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols);
+}
 .breadcrumb a {
   padding: 1px 0;
   font-weight: 500;
-  color: var(--bs-link-color);
+  color: var(--bs-azurite);
 }
 .breadcrumb a:hover {
-  color: var(--bs-link-hover-color);
+  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: "Material Symbols Rounded", monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
 }
 
 @media (min-width: 992px) {
@@ -19412,7 +19418,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .breadcrumb-item-home::before {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
-  font-family: "Material Symbols Rounded", monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: var(--bs-breadcrumb-divider-color);
   content: "\e88a";
@@ -22101,7 +22107,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   block-size: var(--az-navbar-dropdown-toggle-icon-size);
   height: var(--az-navbar-dropdown-toggle-icon-size);
   margin: 0;
-  font-family: "Material Symbols Rounded", sans-serif;
+  font-family: var(--bs-font-material-symbols), sans-serif;
   font-size: 1.5rem;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-weight: 400;
