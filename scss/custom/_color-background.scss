@@ -2,17 +2,22 @@
 // > Custom Color and Background helper classes
 //
 
-// Placeholder consumed by all AZ text-bg classes — keeps color/bg-color in one place.
+// Placeholder consumed by brand/gray text-bg classes — sets both color and background-color.
 %az-text-bg-base {
-  color: var(--#{$prefix}text-bg-color) if($enable-important-utilities, !important, null);
-  background-color: var(--#{$prefix}text-bg-bg) if($enable-important-utilities, !important, null);
+  color: var(--bs-text-bg-color) if($enable-important-utilities, !important, null);
+  background-color: var(--bs-text-bg-bg) if($enable-important-utilities, !important, null);
+}
+
+// Placeholder consumed by transparent/gradient text-bg classes — sets color only.
+%az-text-bg-color {
+  color: var(--bs-text-bg-color) if($enable-important-utilities, !important, null);
 }
 
 // >> Brand
 @each $color, $value in $colors {
   .text-bg-#{$color} {
-    --#{$prefix}text-bg-color: #{color-contrast($value)};
-    --#{$prefix}text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
@@ -28,8 +33,8 @@
 // >> Grays
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
-    --#{$prefix}text-bg-color: #{color-contrast($value)};
-    --#{$prefix}text-bg-bg: rgba(var(--#{$prefix}gray-#{$color}-rgb), 1);
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-bg: var(--#{$prefix}gray-#{$color});
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
@@ -38,9 +43,9 @@
 // >> Brand Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
-    --#{$prefix}text-bg-color: #{color-contrast($value)};
-    @extend %az-text-bg-base;
-    @include background-transparent($value);
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    @extend %az-text-bg-color;
+    @include background-transparent($color);
     @include az-color-contrast($color);
   }
 }
@@ -48,9 +53,9 @@
 // >> Brand Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
-    --#{$prefix}text-bg-color: #{color-contrast($value)};
-    @extend %az-text-bg-base;
-    @include background-gradient($value);
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    @extend %az-text-bg-color;
+    @include background-gradient($color);
     @include az-color-contrast($color);
   }
 }

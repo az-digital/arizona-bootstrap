@@ -3,11 +3,11 @@
 //
 
 // >> Transparent Backgrounds
-@mixin background-transparent($bg-color) {
-  background-color: rgba($bg-color, .8);
+@mixin background-transparent($bg-color-name) {
+  background-color: rgba(var(--bs-#{$bg-color-name}-rgb), .8);
 }
 
 // >> Gradient Backgrounds
-@mixin background-gradient($bg-color) {
-  background-image: linear-gradient(180deg, transparent, $bg-color);
+@mixin background-gradient($bg-color-name) {
+  background-image: linear-gradient(180deg, transparent, var(--bs-#{$bg-color-name}));
 }

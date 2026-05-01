@@ -91,7 +91,7 @@
   p,
   li,
   hr {
-    background-color: rgba(255, 255, 255, .7);
+    background-color: #{'rgba(var(--bs-white-rgb), .7)'};
   }
 
   @each $color, $value in $colors {

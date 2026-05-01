@@ -4,9 +4,9 @@
 @use "sass:map";
 
 @mixin callout-variant($color, $value) {
-  border-color: $value;
+  border-color: var(--bs-#{$color});
 
-  $callout-heading-color: $value;
+  $callout-heading-color: var(--bs-#{$color});
   $inaccessible-brand-callouts: "bloom", "sky", "oasis", "cool-gray", "warm-gray";
 
   // Set the heading color variable to the body color for all theme color callouts.
