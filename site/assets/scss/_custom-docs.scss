@@ -8,7 +8,7 @@
   padding-right: .75rem;
   padding-bottom: .5625rem;
   font-size: 1rem;
-  color: var(--bs-black);
+  --bs-badge-color: var(--bs-black);
   background-color: var(--bs-light);
 
   &::before {
@@ -69,9 +69,13 @@
 
 // >> Sidebar
 .bd-toc-item {
+  --bs-link-color-rgb: var(--bs-azurite-rgb);
+  --bs-link-hover-color-rgb: var(--bs-midnight-rgb);
+
   &.active {
+    --bs-link-color-rgb: var(--bs-midnight-rgb);
+
     .bd-toc-link {
-      color: var(--bs-midnight);
       background-color: var(--bs-gray-400);
     }
 
@@ -84,11 +88,9 @@
 
   .bd-toc-link {
     padding: .75rem 1rem;
-    color: var(--bs-azurite);
     text-decoration: none;
 
     &:hover {
-      color: var(--bs-midnight);
       background-color: var(--bs-gray-200);
     }
   }
@@ -96,10 +98,12 @@
 
 .bd-sidenav,
 .bd-sidebar {
+  --bs-link-color-rgb: var(--bs-midnight-rgb);
+  --bs-link-hover-color-rgb: var(--bs-midnight-rgb);
+
   li {
     a {
       font-weight: initial;
-      color: var(--bs-midnight);
       text-decoration: none;
     }
   }
@@ -119,7 +123,6 @@
     li {
       a {
         &:hover {
-          color: var(--bs-midnight);
           background-color: var(--bs-gray-100);
         }
       }
@@ -137,7 +140,7 @@
 
   &:hover,
   &.active {
-    color: var(--bs-midnight);
+    --bs-link-color-rgb: var(--bs-midnight-rgb);
     border-left-color: var(--bs-midnight);
   }
 }
@@ -175,19 +178,15 @@
 
 .btn-bd-red,
 .btn-bd-download {
-  color: var(--bs-red);
-  border-color: var(--bs-red);
-
-  &:hover,
-  &:active {
-    color: var(--bs-white);
-    background-color: var(--bs-red);
-    border-color: var(--bs-red);
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 3px rgba(var(--bs-red-rgb), .25);
-  }
+  --bs-btn-color: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-red);
+  --bs-btn-hover-border-color: var(--bs-red);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
 }
 
 //
