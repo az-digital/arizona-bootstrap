@@ -8142,6 +8142,8 @@ textarea.form-control-lg {
 :root,
 [data-bs-theme=light] {
   --bs-font-material-symbols: "Material Symbols Rounded";
+  --bs-emphasis-color: var(--bs-blue);
+  --bs-heading-color: var(--bs-blue);
   --bs-red-rgb: 171, 5, 32;
   --bs-bloom-rgb: 239, 64, 86;
   --bs-chili-rgb: 139, 0, 21;
@@ -19166,7 +19168,6 @@ h6,
 .h5,
 .h6 {
   margin: 1.042em 0 0.667em;
-  color: var(--bs-blue);
 }
 
 /*
