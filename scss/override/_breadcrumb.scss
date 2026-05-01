@@ -3,9 +3,9 @@
   a {
     padding: 1px 0;
     font-weight: 500;
-    color: $breadcrumb-color;
+    color: var(--bs-link-color);
     &:hover {
-      color: $breadcrumb-hover-color;
+      color: var(--bs-link-hover-color);
     }
   }
 }

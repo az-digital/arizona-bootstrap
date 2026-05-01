@@ -2,11 +2,18 @@
 // > Custom Color and Background helper classes
 //
 
+// Placeholder consumed by all AZ text-bg classes — keeps color/bg-color in one place.
+%az-text-bg-base {
+  color: var(--#{$prefix}text-bg-color) if($enable-important-utilities, !important, null);
+  background-color: var(--#{$prefix}text-bg-bg) if($enable-important-utilities, !important, null);
+}
+
 // >> Brand
 @each $color, $value in $colors {
   .text-bg-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    --#{$prefix}text-bg-color: #{color-contrast($value)};
+    --#{$prefix}text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
+    @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
 }
@@ -21,8 +28,9 @@
 // >> Grays
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: $value if($enable-important-utilities, !important, null);
+    --#{$prefix}text-bg-color: #{color-contrast($value)};
+    --#{$prefix}text-bg-bg: rgba(var(--#{$prefix}gray-#{$color}-rgb), 1);
+    @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
 }
@@ -30,7 +38,8 @@
 // >> Brand Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    --#{$prefix}text-bg-color: #{color-contrast($value)};
+    @extend %az-text-bg-base;
     @include background-transparent($value);
     @include az-color-contrast($color);
   }
@@ -39,12 +48,13 @@
 // >> Brand Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    --#{$prefix}text-bg-color: #{color-contrast($value)};
+    @extend %az-text-bg-base;
     @include background-gradient($value);
     @include az-color-contrast($color);
   }
 }
 
 .text-bg-dark .btn-close {
-  color: $white;
+  color: var(--bs-white);
 }

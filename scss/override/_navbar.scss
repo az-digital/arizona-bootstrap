@@ -2,23 +2,23 @@
 
 .navbar {
   justify-content: space-between;
-  border-top: 1px solid $navbar-light-border-color;
-  border-bottom: 1px solid $navbar-light-border-color;
+  border-top: 1px solid var(--bs-gray-200);
+  border-bottom: 1px solid var(--bs-gray-200);
 }
 
 .navbar-nav {
-  --#{$prefix}nav-link-color: #{$nav-link-color};
+  --#{$prefix}nav-link-color: var(--bs-nav-link-color);
 
   .nav-item {
     &:hover {
-      background-color: $gray-100;
+      background-color: var(--bs-gray-100);
     }
 
     &:has(> .nav-link.active),
     &:has(> .nav-link.is-active),
     &:has(> .nav-link:active),
     &:has(> .nav-link.show) {
-      background-color: $nav-tabs-link-bg;
+      background-color: var(--bs-nav-tabs-link-active-bg);
     }
   }
 
@@ -35,7 +35,7 @@
     &.is-active,
     &:active,
     &.show {
-      color: $navbar-light-active-color;
+      color: var(--bs-navbar-active-color);
     }
   }
 
@@ -54,7 +54,7 @@
 
 @include color-mode(dark) {
   .navbar-nav {
-    --#{$prefix}nav-link-color: #{$gray-100};
+    --#{$prefix}nav-link-color: var(--bs-gray-100);
 
     .nav-item {
       &:hover {
@@ -65,7 +65,7 @@
       &:has(> .nav-link.is-active),
       &:has(> .nav-link:active),
       &:has(> .nav-link.show) {
-        background-color: $gray-900;
+        background-color: var(--bs-gray-900);
       }
     }
 
@@ -75,7 +75,7 @@
       &.active,
       &.is-active,
       &.show {
-        color: $white;
+        color: var(--bs-white);
       }
     }
   }

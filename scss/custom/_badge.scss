@@ -9,15 +9,15 @@
   text-decoration: none;
 
   &.text-bg-chili {
-    color: $white !important;
-    background-color: $red !important;
+    color: var(--bs-white) !important;
+    background-color: var(--bs-red) !important;
   }
   &.text-bg-midnight {
-    color: $white !important;
-    background-color: $azurite !important;
+    color: var(--bs-white) !important;
+    background-color: var(--bs-azurite) !important;
   }
   &.text-bg-light {
-    background-color: #c1c9d0 !important;
+    background-color: var(--bs-silver-300, var(--bs-gray-400)) !important;
   }
 }
 /* stylelint-enable declaration-no-important */

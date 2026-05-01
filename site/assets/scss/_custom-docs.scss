@@ -8,8 +8,8 @@
   padding-right: .75rem;
   padding-bottom: .5625rem;
   font-size: 1rem;
-  color: $black;
-  background-color: $light;
+  color: var(--bs-black);
+  background-color: var(--bs-light);
 
   &::before {
     margin-right: .5rem;
@@ -71,25 +71,25 @@
 .bd-toc-item {
   &.active {
     .bd-toc-link {
-      color: $midnight;
-      background-color: $gray-400;
+      color: var(--bs-midnight);
+      background-color: var(--bs-gray-400);
     }
 
     &:hover {
       .bd-toc-link {
-        background-color: $gray-400;
+        background-color: var(--bs-gray-400);
       }
     }
   }
 
   .bd-toc-link {
     padding: .75rem 1rem;
-    color: $azurite;
+    color: var(--bs-azurite);
     text-decoration: none;
 
     &:hover {
-      color: $midnight;
-      background-color: $gray-200;
+      color: var(--bs-midnight);
+      background-color: var(--bs-gray-200);
     }
   }
 }
@@ -99,7 +99,7 @@
   li {
     a {
       font-weight: initial;
-      color: $midnight;
+      color: var(--bs-midnight);
       text-decoration: none;
     }
   }
@@ -107,20 +107,20 @@
     // included for docs specifically
     .bd-sidenav-active {
       a {
-        background-color: $gray-200;
+        background-color: var(--bs-gray-200);
       }
 
       &:hover {
         a {
-          background-color: $gray-200;
+          background-color: var(--bs-gray-200);
         }
       }
     }
     li {
       a {
         &:hover {
-          color: $midnight;
-          background-color: $gray-100;
+          color: var(--bs-midnight);
+          background-color: var(--bs-gray-100);
         }
       }
     }
@@ -137,8 +137,8 @@
 
   &:hover,
   &.active {
-    color: $midnight;
-    border-left-color: $midnight;
+    color: var(--bs-midnight);
+    border-left-color: var(--bs-midnight);
   }
 }
 // stylelint-enable selector-no-qualifying-type
@@ -147,13 +147,13 @@
 // > LAYOUT
 //
 .bd-example-container-header {
-  background-color: $blue;
+  background-color: var(--bs-blue);
 }
 .bd-example-container-sidebar {
-  background-color: $bloom;
+  background-color: var(--bs-bloom);
 }
 .bd-example-container-body {
-  background-color: $river;
+  background-color: var(--bs-river);
 }
 
 // >> Background and border colors for grid items
@@ -175,18 +175,18 @@
 
 .btn-bd-red,
 .btn-bd-download {
-  color: $red;
-  border-color: $red;
+  color: var(--bs-red);
+  border-color: var(--bs-red);
 
   &:hover,
   &:active {
-    color: $white;
-    background-color: $red;
-    border-color: $red;
+    color: var(--bs-white);
+    background-color: var(--bs-red);
+    border-color: var(--bs-red);
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px rgba($red, .25);
+    box-shadow: 0 0 0 3px rgba(var(--bs-red-rgb), .25);
   }
 }
 
@@ -225,16 +225,16 @@
 
   &.demo-active {
     top: -5px;
-    box-shadow: 0 7px 6px -4px $gray-700;
+    box-shadow: 0 7px 6px -4px var(--bs-gray-700);
   }
 }
 
 .btn-triangle-background-demo {
-  background-color: $white;
+  background-color: var(--bs-white);
 
   &.demo-active {
-    color: $white;
-    background-color: $azurite;
+    color: var(--bs-white);
+    background-color: var(--bs-azurite);
   }
 }
 

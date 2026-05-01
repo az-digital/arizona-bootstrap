@@ -15,6 +15,7 @@ $bd-callout-variants: info, warning, danger !default;
 :root,
 [data-bs-theme="light"] {
   --bd-purple: #{$bd-purple};
+  --bd-purple-light: #{$bd-purple-light};
   --bd-violet: #{$bd-violet};
   --bd-accent: #{$bd-accent};
   --bd-violet-rgb: #{$bd-violet-rgb};

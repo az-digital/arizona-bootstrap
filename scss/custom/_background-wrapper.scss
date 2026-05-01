@@ -99,7 +99,7 @@
       p,
       li,
       hr {
-        background-color: rgba($value, .7);
+        background-color: rgba(var(--#{$prefix}#{$color}-rgb), .7);
       }
     }
   }

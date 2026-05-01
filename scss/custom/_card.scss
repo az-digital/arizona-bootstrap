@@ -13,7 +13,7 @@
 .card:not([class*=" text-bg-"]) > {
   .card-header,
   .card-footer {
-    background-color: $gray-200;
+    background-color: var(--bs-gray-200);
   }
 }
 

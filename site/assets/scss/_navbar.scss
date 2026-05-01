@@ -1,7 +1,7 @@
 .bd-navbar {
   padding: .75rem 0;
   background-color: transparent;
-  box-shadow: 0 .5rem 1rem rgba($black, .15), inset 0 -1px 0 rgba($white, .15);
+  box-shadow: 0 .5rem 1rem rgba(var(--bs-black-rgb), .15), inset 0 -1px 0 rgba(var(--bs-white-rgb), .15);
 
   @media (forced-colors) {
     background-color: Canvas;
@@ -42,7 +42,7 @@
   }
 
   .navbar-brand {
-    color: $white;
+    color: var(--bs-white);
     @include transition(transform .2s ease-in-out);
 
     &:hover {
@@ -54,16 +54,16 @@
   .nav-link {
     padding-right: $spacer * .25;
     padding-left: $spacer * .25;
-    color: rgba($white, .85);
+    color: rgba(var(--bs-white-rgb), .85);
 
     &:hover,
     &:focus {
-      color: $white;
+      color: var(--bs-white);
     }
 
     &.active {
       font-weight: 600;
-      color: $white;
+      color: var(--bs-white);
     }
   }
 
@@ -128,6 +128,6 @@
 
 @include color-mode(dark) {
   .bd-navbar {
-    box-shadow: 0 .5rem 1rem rgba($black, .15), inset 0 -1px 0 rgba($white, .15);
+    box-shadow: 0 .5rem 1rem rgba(var(--bs-black-rgb), .15), inset 0 -1px 0 rgba(var(--bs-white-rgb), .15);
   }
 }

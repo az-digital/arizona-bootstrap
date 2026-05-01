@@ -8,20 +8,20 @@
   .nav-link {
     padding: 0;
     font-weight: 500;
-    color: $dark-silver;
+    color: var(--bs-dark-silver);
     border-bottom: 2px solid transparent;
 
     &.active,
     &:active,
     &.is-active {
       background-color: initial;
-      border-bottom-color: $dark-silver;
+      border-bottom-color: var(--bs-dark-silver);
       @include border-radius(0);
     }
 
     &:hover,
     &:focus {
-      border-bottom-color: $dark-silver;
+      border-bottom-color: var(--bs-dark-silver);
     }
   }
 }
