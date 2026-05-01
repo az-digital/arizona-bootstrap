@@ -1,7 +1,7 @@
 .breadcrumb-item-home::before {
   float: left; // Suppress inline spacings and underlining of the separator
   padding-right: var(--bs-breadcrumb-item-padding-x);
-  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family);
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: var(--bs-breadcrumb-divider-color);
   // Material Symbols Rounded: Home

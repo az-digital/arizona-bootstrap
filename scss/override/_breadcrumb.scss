@@ -2,20 +2,18 @@
 .breadcrumb {
   --bs-breadcrumb-bg: var(--bs-white);
   --bs-breadcrumb-divider-color: var(--bs-gray-600);
-  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols);
+  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols), monospace;
+  --bs-link-hover-color-rgb: var(--bs-blue-rgb);
 
   a {
     padding: 1px 0;
     font-weight: 500;
-    color: var(--bs-azurite);
-    &:hover {
-      --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
-    }
+    --bs-link-color-rgb: var(--bs-azurite-rgb);
   }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family);
 }
 
 // Remove margins/padding on Breadcrumbs for larger displays

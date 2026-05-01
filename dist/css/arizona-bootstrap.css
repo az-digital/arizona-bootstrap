@@ -19395,19 +19395,17 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .breadcrumb {
   --bs-breadcrumb-bg: var(--bs-white);
   --bs-breadcrumb-divider-color: var(--bs-gray-600);
-  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols);
+  --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols), monospace;
+  --bs-link-hover-color-rgb: var(--bs-blue-rgb);
 }
 .breadcrumb a {
   padding: 1px 0;
   font-weight: 500;
-  color: var(--bs-azurite);
-}
-.breadcrumb a:hover {
-  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+  --bs-link-color-rgb: var(--bs-azurite-rgb);
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family);
 }
 
 @media (min-width: 992px) {
@@ -19418,7 +19416,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .breadcrumb-item-home::before {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
-  font-family: var(--bs-breadcrumb-divider-font-family), monospace;
+  font-family: var(--bs-breadcrumb-divider-font-family);
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   color: var(--bs-breadcrumb-divider-color);
   content: "\e88a";
