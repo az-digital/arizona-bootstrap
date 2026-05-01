@@ -110,7 +110,16 @@ $breadcrumb-divider-color: $gray-600;
 $breadcrumb-divider: "\e5cc";
 // fusv-enable
 
-// >> Buttons — set via CSS custom properties in override/_buttons.scss
+// >> Buttons
+// fusv-disable
+$btn-font-weight: 500;
+$btn-border-width: 2px;
+$btn-padding-y: .5rem;
+$btn-padding-x: 1.25rem;
+$btn-border-radius: 3rem;
+$btn-border-radius-sm: 3rem;
+$btn-border-radius-lg: 3rem;
+// fusv-enable
 
 // >> Dropdowns
 // fusv-disable
