@@ -71,34 +71,26 @@
 }
 
 .btn-link {
-  color: var(--bs-link-color);
-  &:hover {
-    color: var(--bs-link-hover-color);
-  }
+  --bs-btn-color: var(--bs-link-color);
+  --bs-btn-hover-color: var(--bs-link-hover-color);
 }
 
 // >> Variant Accessibility
 .btn-success,
 .btn-info,
 .btn-outline-info {
-  &:hover {
-    color: var(--bs-midnight);
-  }
+  --bs-btn-hover-color: var(--bs-midnight);
 }
 .btn-warning {
-  &:hover {
-    color: var(--bs-black);
-  }
+  --bs-btn-hover-color: var(--bs-black);
 }
 .btn-outline-info {
-  color: var(--bs-azurite);
+  --bs-btn-color: var(--bs-azurite);
 }
 .btn-outline-warning {
-  color: var(--bs-ash);
-  &:hover {
-    color: var(--bs-black);
-  }
+  --bs-btn-color: var(--bs-ash);
+  --bs-btn-hover-color: var(--bs-black);
 }
 .btn-outline-light {
-  color: var(--bs-ash);
+  --bs-btn-color: var(--bs-ash);
 }
