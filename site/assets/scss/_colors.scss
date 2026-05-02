@@ -55,11 +55,14 @@
   }
 }
 
-@mixin bd-swatch-variant($value) {
-  --bs-bd-swatch-color: #{color-contrast($value)};
-  --bs-bd-swatch-bg: #{$value};
-  color: var(--bs-bd-swatch-color);
-  background-color: var(--bs-bd-swatch-bg);
+// Base class for .bd-* docs palette swatches.
+// Each .bd-{color}-{shade} class only overrides the two custom properties;
+// all color values come from CSS variables registered on :root at build time.
+.bd-swatch-base,
+[class^="bd-"],
+[class*=" bd-"] {
+  color: var(--bs-bd-color);
+  background-color: var(--bs-bd-bg);
 }
 
 $docs-bd-numbered-scales: (
@@ -93,21 +96,27 @@ $docs-bd-numbered-scales: (
 @each $name, $scale in $docs-bd-numbered-scales {
   @each $token, $value in $scale {
     @if str-index($token, "-") {
+      // Token already contains the full name (e.g. cool-gray-100)
       .bd-#{$token} {
-        @include bd-swatch-variant($value);
+        --bs-bd-color: var(--bs-#{$token}-contrast);
+        --bs-bd-bg: var(--bs-#{$token});
       }
     } @else {
+      // Token is a bare shade number (e.g. 100) — prepend color name
       .bd-#{$name}-#{$token} {
-        @include bd-swatch-variant($value);
+        --bs-bd-color: var(--bs-#{$name}-#{$token}-contrast);
+        --bs-bd-bg: var(--bs-#{$name}-#{$token});
       }
     }
   }
 }
 
 .bd-white {
-  @include bd-swatch-variant($white);
+  --bs-bd-color: var(--bs-white-contrast);
+  --bs-bd-bg: var(--bs-white);
 }
 
 .bd-black {
-  @include bd-swatch-variant($black);
+  --bs-bd-color: var(--bs-black-contrast);
+  --bs-bd-bg: var(--bs-black);
 }

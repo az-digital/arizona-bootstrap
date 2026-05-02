@@ -12,10 +12,91 @@ $bd-sidebar-link-bg-dark: rgba(mix($bd-violet, $black, 75%), .5);
 $bd-gutter-x: 3rem;
 $bd-callout-variants: info, warning, danger !default;
 
+// Color-scale tokens for docs palette swatches.
+//
+// Background values are expressed as color-mix() so each numbered shade is
+// derived from its base runtime token (e.g. --bs-bloom) rather than a baked-in
+// hex value.  Changing --bs-bloom at runtime will automatically update all
+// --bs-bloom-100…900 swatches.
+//
+// Contrast colors are still Sass-computed at build time; CSS has no equivalent
+// of WCAG contrast-ratio calculation at runtime.
+//
+// Mix percentages mirror Bootstrap's tint-color() / shade-color() functions:
+//   tint-color($c, 80%) == color-mix(in srgb, $c 20%, white)
+//   shade-color($c, 20%) == color-mix(in srgb, $c 80%, black)
+$bd-tint-mix: (
+  "100": 20%,
+  "200": 40%,
+  "300": 60%,
+  "400": 80%,
+);
+
+$bd-shade-mix: (
+  "600": 80%,
+  "700": 60%,
+  "800": 40%,
+  "900": 20%,
+);
+
+$docs-bd-scales: (
+  "blue": $blues,
+  "indigo": $indigos,
+  "purple": $purples,
+  "pink": $pinks,
+  "red": $reds,
+  "orange": $oranges,
+  "yellow": $yellows,
+  "green": $greens,
+  "teal": $teals,
+  "cyan": $cyans,
+  "gray": $grays,
+  "bloom": $blooms,
+  "chili": $chilis,
+  "sky": $skys,
+  "oasis": $oases,
+  "azurite": $azurites,
+  "midnight": $midnights,
+  "cool-gray": $cool-grays,
+  "warm-gray": $warm-grays,
+  "leaf": $leafs,
+  "river": $rivers,
+  "silver": $silvers,
+  "mesa": $mesas,
+  "ash": $ashes,
+  "sage": $sages
+);
+
 :root,
 [data-bs-theme="light"] {
   --bd-purple: #{$bd-purple};
   --bd-purple-light: #{$bd-purple-light};
+
+  // Color scale tokens for docs swatches.
+  // The property name is always --bs-{name}-{shade} regardless of how the
+  // Sass map key is formatted (bare "100" or prefixed "bloom-100").
+  @each $name, $scale in $docs-bd-scales {
+    @each $token, $value in $scale {
+      // Extract the trailing 3-digit shade number (100–900)
+      $shade: str-slice($token, str-length($token) - 2);
+
+      // Contrast: Sass-computed at build time (no runtime equivalent)
+      --bs-#{$name}-#{$shade}-contrast: #{color-contrast($value)};
+
+      // Background: derived from the base runtime token via color-mix()
+      @if $shade == "500" {
+        // 500 is the base color itself
+        --bs-#{$name}-#{$shade}: var(--bs-#{$name});
+      } @else if map-has-key($bd-tint-mix, $shade) {
+        --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-tint-mix, $shade)}, var(--bs-white));
+      } @else if map-has-key($bd-shade-mix, $shade) {
+        --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-shade-mix, $shade)}, var(--bs-black));
+      }
+    }
+  }
+
+  --bs-white-contrast: #{color-contrast($white)};
+  --bs-black-contrast: #{color-contrast($black)};
   --bd-violet: #{$bd-violet};
   --bd-accent: #{$bd-accent};
   --bd-violet-rgb: #{$bd-violet-rgb};
