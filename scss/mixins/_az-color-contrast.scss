@@ -40,16 +40,16 @@
   }
   @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
     .btn:not(.btn-arizona-header):focus-visible {
-      box-shadow: 0 0 $focus-ring-blur $focus-ring-width rgba($black, .5);
+      box-shadow: 0 0 $focus-ring-blur $focus-ring-width #{"rgba(var(--bs-black-rgb), .5)"};
     }
   }
   @if list.index($dark-background-colors, $bg-color-name) {
     .btn:not(.btn-arizona-header):focus-visible {
-      box-shadow: 0 0 $focus-ring-blur $focus-ring-width rgba($white, .75);
+      box-shadow: 0 0 $focus-ring-blur $focus-ring-width #{"rgba(var(--bs-white-rgb), .75)"};
     }
     .az-gallery-grid-btn:focus-visible {
       outline: 0;
-      box-shadow: 0 0 $focus-ring-blur 2px rgba($white, .75), inset 0 0 $focus-ring-blur 2px rgba($white, .75);
+      box-shadow: 0 0 $focus-ring-blur 2px #{"rgba(var(--bs-white-rgb), .75)"}, inset 0 0 $focus-ring-blur 2px #{"rgba(var(--bs-white-rgb), .75)"};
     }
   }
 
@@ -57,13 +57,13 @@
   @if list.index($light-background-colors, $bg-color-name) {
     .ul-triangles li::before,
     .az-list-triangles li::before {
-      border-left-color: $black;
+      border-left-color: var(--bs-black);
     }
   }
   @else {
     .ul-triangles li::before,
     .az-list-triangles li::before {
-      border-left-color: $white;
+      border-left-color: var(--bs-white);
     }
   }
 }

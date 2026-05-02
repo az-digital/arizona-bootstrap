@@ -137,8 +137,8 @@ Here's an example that changes the `background-color` and `color` for the `<body
 @import "../node_modules/bootstrap/scss/functions";
 
 // Default variable overrides
-$body-bg: #000;
-$body-color: #111;
+$body-bg: $black;
+$body-color: $gray-900;
 
 // Required
 @import "../node_modules/bootstrap/scss/variables";
@@ -265,7 +265,7 @@ In practice, you'd call the function and pass in the color and weight parameters
 
 In order to meet the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG/) contrast requirements, authors **must** provide a minimum [text color contrast of 4.5:1](https://www.w3.org/TR/WCAG/#contrast-minimum) and a minimum [non-text color contrast of 3:1](https://www.w3.org/TR/WCAG/#non-text-contrast), with very few exceptions.
 
-To help with this, we included the `color-contrast` function in Bootstrap. It uses the [WCAG contrast ratio algorithm](https://www.w3.org/TR/WCAG/#dfn-contrast-ratio) for calculating contrast thresholds based on [relative luminance](https://www.w3.org/TR/WCAG/#dfn-relative-luminance) in an `sRGB` color space to automatically return a light (`#fff`), dark (`#212529`) or black (`#000`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
+To help with this, we included the `color-contrast` function in Bootstrap. It uses the [WCAG contrast ratio algorithm](https://www.w3.org/TR/WCAG/#dfn-contrast-ratio) for calculating contrast thresholds based on [relative luminance](https://www.w3.org/TR/WCAG/#dfn-relative-luminance) in an `sRGB` color space to automatically return a light (`$white`), dark (`$gray-900`) or black (`$black`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
 
 For example, to generate color swatches from our `$theme-colors` map:
 
@@ -273,6 +273,7 @@ For example, to generate color swatches from our `$theme-colors` map:
 @each $color, $value in $theme-colors {
   .swatch-#{$color} {
     color: color-contrast($value);
+    background-color: rgb(var(--bs-#{$color}-rgb));
   }
 }
 ```
@@ -281,7 +282,7 @@ It can also be used for one-off contrast needs:
 
 ```scss
 .custom-element {
-  color: color-contrast(#000); // returns `color: #fff`
+  color: color-contrast($black); // returns `color: $white`
 }
 ```
 
@@ -289,7 +290,7 @@ You can also specify a base color with our color map functions:
 
 ```scss
 .custom-element {
-  color: color-contrast($dark); // returns `color: #fff`
+  color: color-contrast($dark); // returns `color: $white`
 }
 ```
 

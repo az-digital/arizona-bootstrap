@@ -3,12 +3,30 @@
 */
 
 .callout {
+  --bs-callout-border-color: var(--bs-border-color);
+  --bs-callout-heading-color: inherit;
+
   padding: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--bs-callout-border-color);
   border-left-width: .25rem;
   @include border-radius();
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: var(--bs-callout-heading-color);
+  }
 
   h4 {
     margin-top: 0;

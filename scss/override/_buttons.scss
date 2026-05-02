@@ -4,6 +4,11 @@
 // > BUTTONS
 //
 
+.btn {
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(var(--bs-white-rgb), .15), 0 1px 1px rgba(var(--bs-black-rgb), .075);
+  --bs-btn-focus-box-shadow: 0 0 0 var(--bs-focus-ring-width) rgba(var(--bs-btn-focus-shadow-rgb), .5);
+}
+
 // >> Variants
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
@@ -13,79 +18,79 @@
 
 // Overriding btn-primary to mirror custom .btn-red
 .btn-primary {
-  @include button-variant(
-    $background: $red,
-    $border: $red,
-    $color: $white,
-    $hover-background: $chili,
-    $hover-border: $chili,
-    $hover-color: $white,
-    $active-background: $red,
-    $active-border: $red,
-    $active-color: $white
-  );
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-chili);
+  --bs-btn-hover-border-color: var(--bs-chili);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
 }
 
 // Overriding .btn-secondary to mirror custom .btn-blue
 .btn-secondary {
-  @include button-variant(
-    $background: $blue,
-    $border: $blue,
-    $color: $white,
-    $hover-background: $azurite,
-    $hover-border: $azurite,
-    $hover-color: $white,
-    $active-background: tint-color($blue, 20%),
-    $active-border: tint-color($blue, 20%),
-    $active-color: $white
-  );
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-blue);
+  --bs-btn-border-color: var(--bs-blue);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-azurite);
+  --bs-btn-hover-border-color: var(--bs-azurite);
+  --bs-btn-focus-shadow-rgb: var(--bs-blue-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-oasis);
+  --bs-btn-active-border-color: var(--bs-oasis);
 }
 
 // Overriding .btn-outline-primary to mirror custom .btn-outline-red
 .btn-outline-primary {
-  @include button-outline-variant(
-    $color: $red,
-    $color-hover: $white
-  );
+  --bs-btn-color: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-red);
+  --bs-btn-hover-border-color: var(--bs-red);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
 }
 
 // Overriding .btn-outline-secondary to mirror custom .btn-outline-blue
 .btn-outline-secondary {
-  @include button-outline-variant(
-    $color: $blue,
-    $color-hover: $white
-  );
+  --bs-btn-color: var(--bs-blue);
+  --bs-btn-border-color: var(--bs-blue);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-blue);
+  --bs-btn-hover-border-color: var(--bs-blue);
+  --bs-btn-focus-shadow-rgb: var(--bs-blue-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-blue);
+  --bs-btn-active-border-color: var(--bs-blue);
 }
 
 .btn-link {
-  color: $link-color;
-  &:hover {
-    color: $link-hover-color;
-  }
+  --bs-btn-color: var(--bs-link-color);
+  --bs-btn-hover-color: var(--bs-link-hover-color);
 }
 
 // >> Variant Accessibility
 .btn-success,
 .btn-info,
 .btn-outline-info {
-  &:hover {
-    color: $midnight;
-  }
+  --bs-btn-hover-color: var(--bs-midnight);
 }
 .btn-warning {
-  &:hover {
-    color: $black;
-  }
+  --bs-btn-hover-color: var(--bs-black);
 }
 .btn-outline-info {
-  color: $azurite;
+  --bs-btn-color: var(--bs-azurite);
 }
 .btn-outline-warning {
-  color: $ash;
-  &:hover {
-    color: $black;
-  }
+  --bs-btn-color: var(--bs-ash);
+  --bs-btn-hover-color: var(--bs-black);
 }
 .btn-outline-light {
-  color: $ash;
+  --bs-btn-color: var(--bs-ash);
 }

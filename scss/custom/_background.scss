@@ -5,13 +5,13 @@
 // >>> Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-transparent-#{$color} {
-    @include background-transparent($value);
+    @include background-transparent($color);
   }
 }
 
 // >>> Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-gradient-#{$color} {
-    @include background-gradient($value);
+    @include background-gradient($color);
   }
 }

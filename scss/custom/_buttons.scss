@@ -20,11 +20,15 @@
 }
 
 .btn-outline-white {
-  @include button-outline-variant(
-    $color: $white,
-    $color-hover: $gray-800,
-    $active-background: $white,
-  );
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-border-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-gray-800);
+  --bs-btn-hover-bg: var(--bs-white);
+  --bs-btn-hover-border-color: var(--bs-white);
+  --bs-btn-focus-shadow-rgb: var(--bs-white-rgb);
+  --bs-btn-active-color: var(--bs-gray-800);
+  --bs-btn-active-bg: var(--bs-white);
+  --bs-btn-active-border-color: var(--bs-white);
 }
 
 // >> Arrow Buttons

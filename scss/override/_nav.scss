@@ -4,9 +4,9 @@
   &.active,
   &:active,
   &.is-active {
-    color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-bg;
-    @include border-radius($nav-pills-border-radius);
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: var(--bs-nav-tabs-link-active-bg);
+    @include border-radius(var(--bs-nav-pills-border-radius));
   }
 
   &.dropdown-toggle::after {
@@ -21,12 +21,12 @@
   }
 
   .nav-link {
-    background-color: $nav-tabs-link-bg;
+    background-color: var(--bs-nav-tabs-link-active-bg);
 
     &.active,
     &:active,
     &.is-active {
-      @include border-radius($nav-tabs-border-radius $nav-tabs-border-radius 0 0);
+      @include border-radius(var(--bs-nav-tabs-border-radius) var(--bs-nav-tabs-border-radius) 0 0);
     }
 
     &.disabled,
@@ -40,20 +40,20 @@
   &.active,
   &:active,
   &.is-active {
-    background-color: $nav-tabs-link-active-bg;
+    background-color: var(--bs-nav-tabs-link-active-bg);
     @include border-radius(revert);
   }
 }
 
 .nav.nav-pills > .nav-item:not(.nav-item .nav-item) {
   &:first-child {
-    @include border-top-start-radius($nav-pills-border-radius);
-    @include border-top-end-radius($nav-pills-border-radius);
+    @include border-top-start-radius(var(--bs-nav-pills-border-radius));
+    @include border-top-end-radius(var(--bs-nav-pills-border-radius));
     overflow-x: hidden;
   }
   &:last-child {
-    @include border-bottom-start-radius($nav-pills-border-radius);
-    @include border-bottom-end-radius($nav-pills-border-radius);
+    @include border-bottom-start-radius(var(--bs-nav-pills-border-radius));
+    @include border-bottom-end-radius(var(--bs-nav-pills-border-radius));
     overflow-x: hidden;
   }
 }
@@ -61,7 +61,7 @@
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
-  border: solid 1px $nav-tabs-border-color;
+  border: solid 1px var(--bs-nav-tabs-border-color);
 
   ul > li {
     border: 0;
@@ -96,7 +96,7 @@
 
     &:hover,
     &:focus {
-      background-color: $nav-pills-link-active-bg;
+      background-color: var(--bs-nav-pills-link-active-bg);
     }
   }
 }
@@ -105,5 +105,5 @@
 .nav-link:focus-visible {
   @include border-radius(2px);
   outline: 0;
-  box-shadow: $focus-ring-box-shadow;
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
 }

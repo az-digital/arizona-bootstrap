@@ -1,7 +1,7 @@
 .skippy {
-  background-color: $bd-purple;
+  background-color: var(--bd-purple);
 
   a {
-    color: $white;
+    color: var(--bs-white);
   }
 }

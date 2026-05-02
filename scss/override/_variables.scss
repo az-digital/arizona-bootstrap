@@ -35,8 +35,8 @@ $enable-dark-mode: false;
 */
 $font-size-base: 1rem;
 $link-color: $red;
-$link-hover-color: $chili;
 // fusv-disable
+$link-hover-color: $chili;
 $lead-font-weight: 400;
 // fusv-enable
 
@@ -99,11 +99,9 @@ $accordion-button-active-color: var(--bs-accordion-btn-color);
 
 // >> Breadcrumbs
 // fusv-disable
-$breadcrumb-bg: $white;
 $breadcrumb-padding-x: 1rem;
 $breadcrumb-padding-y: .75rem;
 // fusv-enable
-$breadcrumb-divider-color: $gray-600;
 // fusv-disable
 // Material Symbols Rounded: Chevron Right
 // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right
@@ -180,7 +178,7 @@ $pagination-hover-color: $midnight;
 $pagination-active-bg: $blue;
 $pagination-active-border-color: $blue;
 $pagination-focus-color: $blue;
-$pagination-focus-ring-box-shadow: 0 0 0 .25rem rgba($blue, .25);
+$pagination-focus-ring-box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
 $pagination-focus-box-shadow: $pagination-focus-ring-box-shadow;
 // fusv-enable
 
@@ -196,9 +194,9 @@ $tooltip-bg: $blue;
 
 // >> Shadows
 // fusv-disable
-$box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
-$box-shadow-sm:             0 .1rem .25rem rgba($black, .075) !default;
-$box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
+$box-shadow:    0 .25rem 1rem #{"rgba(var(--bs-black-rgb), .15)"} !default;
+$box-shadow-sm: 0 .1rem .25rem #{"rgba(var(--bs-black-rgb), .075)"} !default;
+$box-shadow-lg: 0 .75rem 3rem #{"rgba(var(--bs-black-rgb), .175)"} !default;
 // fusv-enable
 
 // >> Focus
