@@ -19178,6 +19178,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px var(--bs-red);
 }
 
+a.focus-ring:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+  box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0) var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width, 2px) var(--bs-focus-ring-color, var(--bs-red));
+}
+
 .accordion-header {
   margin: 0;
 }
