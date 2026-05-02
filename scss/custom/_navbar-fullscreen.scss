@@ -366,6 +366,7 @@
     min-height: 0;
   }
 
+  .navbar-az-fullscreen-modal-menu-nav-col,
   .navbar-az-fullscreen-nav-primary-col {
     min-height: 0;
     overflow-x: hidden;
@@ -373,9 +374,120 @@
     // scrollbar-gutter: stable;
   }
 
-  .navbar-az-fullscreen-nav-secondary-tertiary-cols:has(.tab-pane.show) {
-    border-inline-start: var(--bs-border-width) solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+
+  .navbar-az-fullscreen-modal-menu-nav-col-primary {
+    border-right: 1px solid var(--bs-azurite);
   }
+
+  .navbar-az-fullscreen-modal-menu-nav-primary {
+    // TODO
+  }
+
+  .navbar-az-fullscreen-modal-menu-nav-col-secondary {
+    border-right: 1px solid var(--bs-azurite);
+  }
+
+  .navbar-az-fullscreen-modal-menu-nav-secondary {
+    // TODO
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  .nav-link-text {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-right: 24px;
+    margin-left: 24px;
+    border-bottom: 1px solid var(--bs-azurite);
+  }
+
+  .nav-item:has(> .nav-link + .navbar-az-fullscreen-nav-toggle),
+  .nav-item:has(> .nav-link + .vr + .navbar-az-fullscreen-nav-toggle) {
+    .nav-link .nav-link-text {
+      margin-right: 0;
+      // border-right: 2px solid var(--bs-bloom);
+    }
+  }
+
+  .navbar-az-fullscreen-nav-toggle {
+    // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+    --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
+    // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+    --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
+    // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
+    --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
+    flex: 0 0 auto;
+    // padding: 16px var(--az-navbar-fullscreen-modal-menu-col-spacing-x) 16px 0
+    padding: 0;
+    border: 0;
+    // margin-left: 12px;
+    // border-bottom: 1px solid var(--bs-azurite);
+    // border-left: 1px solid var(--bs-azurite);
+    @include border-radius(0);
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:not([aria-expanded="true"]):hover .navbar-az-fullscreen-nav-toggle-icon {
+      background-image: var(--az-navbar-fullscreen-nav-toggle-icon-hover);
+    }
+
+    &[aria-expanded="true"] .navbar-az-fullscreen-nav-toggle-icon {
+      background-image: var(--az-navbar-fullscreen-nav-toggle-icon-active);
+      // transform: scaleX(-1);
+    }
+
+    .navbar-az-fullscreen-nav-toggle-icon {
+      box-sizing: content-box;
+      display: block;
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      // padding-left: 12px;
+      padding: 13px 0 13px 12px;
+      // margin-left: 12px;
+      margin-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
+      font-size: 30px;
+      background-image: var(--az-navbar-fullscreen-nav-toggle-icon);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-clip: content-box;
+      background-origin: content-box;
+      background-size: contain;
+      border-bottom: 1px solid var(--bs-azurite);
+      border-left: 2px solid var(--bs-bloom);
+    }
+  }
+
+  .navbar-az-fullscreen-modal-menu-nav-col-tertiary {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .navbar-az-fullscreen-modal-menu-nav-tertiary {
+    --bs-nav-link-color: var(--bs-white);
+    // position: static;
+    // width: 100%;
+    .nav-link-text {
+      margin-right: 0;
+    }
+  }
+
+
+  // .navbar-az-fullscreen-nav-secondary-tertiary-cols:has(.tab-pane.show) {
+  //   border-inline-start: var(--bs-border-width) solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+  // }
 
   .navbar-az-fullscreen-nav-primary {
     --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-color);
@@ -436,8 +548,8 @@
   .navbar-az-fullscreen-nav-secondary {
     // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=chevron+right&icon.size=24&icon.color=%23ffffff
     --az-navbar-fullscreen-nav-secondary-hover-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l160 160q12 12 12 28t-12 28L404-292q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/></svg>"))};
-    --bs-nav-link-padding-x: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
-    --bs-nav-link-padding-y: 16px;
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0;
     --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-secondary-color);
     --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
     position: relative;
@@ -445,7 +557,7 @@
     flex-grow: 1;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 50%;
+    // width: 50%;
     min-height: 0;
 
     .navbar-az-fullscreen-nav-secondary-scroll {
@@ -515,44 +627,7 @@
       opacity: 1;
     }
 
-    .navbar-az-fullscreen-nav-toggle {
-      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
-      --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
-      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
-      --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>"))};
-      // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:expand_circle_right:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=expand+circle+right
-      --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$sky}'><path d='m507-480-95 95q-11 11-11 27.5t11 28.5q12 12 28.5 12t28.5-12l123-123q12-12 12-28t-12-28L468-632q-12-12-28-11.5T412-631q-11 12-11.5 28t11.5 28l95 95ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/></svg>"))};
-      flex: 0 0 auto;
-      padding: 16px var(--az-navbar-fullscreen-modal-menu-col-spacing-x) 16px 12px;
-      // margin-left: 12px;
-      border: 0;
-      // border-left: 1px solid var(--bs-azurite);
-      @include border-radius(0);
 
-      &:focus {
-        box-shadow: none;
-      }
-
-      &:not([aria-expanded="true"]):hover .navbar-az-fullscreen-nav-toggle-icon {
-        background-image: var(--az-navbar-fullscreen-nav-toggle-icon-hover);
-      }
-
-      &[aria-expanded="true"] .navbar-az-fullscreen-nav-toggle-icon {
-        background-image: var(--az-navbar-fullscreen-nav-toggle-icon-active);
-        transform: scaleX(-1);
-      }
-
-      .navbar-az-fullscreen-nav-toggle-icon {
-        display: block;
-        width: 30px;
-        height: 30px;
-        // margin-left: 12px;
-        background-image: var(--az-navbar-fullscreen-nav-toggle-icon);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
   }
 
   .navbar-az-fullscreen-nav-tertiary {
