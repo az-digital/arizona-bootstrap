@@ -103,9 +103,9 @@ $docs-bd-scales: (
   --bd-accent-rgb: #{$bd-accent-rgb};
   --bd-pink-rgb: #{to-rgb($pink-500)};
   --bd-teal-rgb: #{to-rgb($teal-500)};
-  --bd-violet-bg: var(--bd-violet);
-  --bd-toc-color: var(--bd-violet);
-  --bd-sidebar-link-bg: rgba(var(--bd-violet-rgb), .1);
+  --bd-violet-bg: var(--bs-blue);
+  --bd-toc-color: var(--bs-azurite);
+  --bd-sidebar-link-bg: rgba(var(--bs-azurite-rgb), .1);
   --bd-callout-link: #{to-rgb($blue-600)};
   --bd-callout-code-color: #{$pink-600};
   --bd-pre-bg: var(--bs-tertiary-bg);
@@ -113,7 +113,7 @@ $docs-bd-scales: (
 
 @include color-mode(dark, true) {
   --bd-violet: #{$bd-violet-dark};
-  --bd-violet-bg: #{$bd-violet};
+  --bd-violet-bg: var(--bs-azurite);
   --bd-toc-color: var(--#{$prefix}emphasis-color);
   --bd-sidebar-link-bg: #{$bd-sidebar-link-bg-dark};
   --bd-callout-link: #{to-rgb($blue-300)};

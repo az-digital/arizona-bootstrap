@@ -56,11 +56,7 @@
 }
 
 // Base class for .bd-* docs palette swatches.
-// Each .bd-{color}-{shade} class only overrides the two custom properties;
-// all color values come from CSS variables registered on :root at build time.
-.bd-swatch-base,
-[class^="bd-"],
-[class*=" bd-"] {
+.bd-swatch-base {
   color: var(--bs-bd-color);
   background-color: var(--bs-bd-bg);
 }
@@ -100,12 +96,16 @@ $docs-bd-numbered-scales: (
       .bd-#{$token} {
         --bs-bd-color: var(--bs-#{$token}-contrast);
         --bs-bd-bg: var(--bs-#{$token});
+        color: var(--bs-bd-color);
+        background-color: var(--bs-bd-bg);
       }
     } @else {
       // Token is a bare shade number (e.g. 100) — prepend color name
       .bd-#{$name}-#{$token} {
         --bs-bd-color: var(--bs-#{$name}-#{$token}-contrast);
         --bs-bd-bg: var(--bs-#{$name}-#{$token});
+        color: var(--bs-bd-color);
+        background-color: var(--bs-bd-bg);
       }
     }
   }
@@ -114,9 +114,13 @@ $docs-bd-numbered-scales: (
 .bd-white {
   --bs-bd-color: var(--bs-white-contrast);
   --bs-bd-bg: var(--bs-white);
+  color: var(--bs-bd-color);
+  background-color: var(--bs-bd-bg);
 }
 
 .bd-black {
   --bs-bd-color: var(--bs-black-contrast);
   --bs-bd-bg: var(--bs-black);
+  color: var(--bs-bd-color);
+  background-color: var(--bs-bd-bg);
 }

@@ -140,8 +140,7 @@
 
   &:hover,
   &.active {
-    --bs-link-color-rgb: var(--bs-midnight-rgb);
-    border-left-color: var(--bs-midnight);
+    --bd-toc-color: var(--bs-midnight-rgb);
   }
 }
 // stylelint-enable selector-no-qualifying-type
@@ -178,7 +177,8 @@
 
 .btn-bd-red,
 .btn-bd-download {
-  --bs-btn-color: var(--bs-red);
+  --bs-bd-color: var(--bs-red);
+  --bs-btn-color: var(--bs-bd-color);
   --bs-btn-border-color: var(--bs-red);
   --bs-btn-hover-color: var(--bs-white);
   --bs-btn-hover-bg: var(--bs-red);
