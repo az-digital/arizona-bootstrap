@@ -53,14 +53,6 @@
     // &:hover {
     //   background-color: var(--az-navbar-fullscreen-toggler-hover-color);
     // }
-
-    .navbar-toggler-icon {
-      --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
-      background-image: var(--bs-navbar-toggler-icon-bg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-    }
   }
 }
 
