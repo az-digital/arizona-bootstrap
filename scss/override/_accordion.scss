@@ -4,3 +4,10 @@
 .accordion-header {
   margin: 0;
 }
+
+// Use CSS vars so button backgrounds respond to dark mode.
+// Bootstrap bakes gray-200 as the default; replace with secondary-bg token.
+.accordion {
+  --bs-accordion-btn-bg: var(--bs-secondary-bg);
+  --bs-accordion-active-bg: var(--bs-secondary-bg);
+}

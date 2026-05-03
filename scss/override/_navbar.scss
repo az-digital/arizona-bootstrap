@@ -31,10 +31,7 @@
       font-weight: 600;
     }
 
-    &.active,
-    &.is-active,
-    &:active,
-    &.show {
+    &.is-active {
       color: var(--bs-navbar-active-color);
     }
   }
@@ -55,6 +52,7 @@
 @include color-mode(dark) {
   .navbar-nav {
     --#{$prefix}nav-link-color: var(--bs-gray-100);
+    --#{$prefix}nav-link-hover-color: var(--bs-white);
 
     .nav-item {
       &:hover {
@@ -70,12 +68,8 @@
     }
 
     .nav-link {
-      &:hover,
-      &:active,
-      &.active,
-      &.is-active,
-      &.show {
-        color: var(--bs-white);
+      &:hover {
+        --#{$prefix}nav-link-hover-color: var(--bs-sky);
       }
     }
   }

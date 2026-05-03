@@ -23,7 +23,7 @@ $background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-va
 
 $bg-grays: ();
 @each $key, $value in $grays {
-  $bg-grays: map-merge($bg-grays, ("gray-" + $key: $value));
+  $bg-grays: map-merge($bg-grays, ("gray-" + $key: var(--#{$prefix}gray-#{$key})));
 }
 $background-colors: map-merge($background-colors, $bg-grays);
 

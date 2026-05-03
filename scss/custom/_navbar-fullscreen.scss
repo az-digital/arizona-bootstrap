@@ -53,6 +53,14 @@
     // &:hover {
     //   background-color: var(--az-navbar-fullscreen-toggler-hover-color);
     // }
+
+    .navbar-toggler-icon {
+      --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
+      background-image: var(--bs-navbar-toggler-icon-bg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
   }
 }
 
@@ -261,6 +269,7 @@
       margin: 30px 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
       letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
+      color: var(--bs-navbar-brand-color);
       white-space: nowrap;
     }
 
