@@ -19376,27 +19376,25 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-image: linear-gradient(180deg, transparent, var(--bs-black));
 }
 
-/* stylelint-disable declaration-no-important */
 .badge.badge-link:hover,
 .badge.badge-link:focus {
   text-decoration: none;
 }
 .badge.badge-link:hover.text-bg-chili,
 .badge.badge-link:focus.text-bg-chili {
-  color: var(--bs-white) !important;
-  background-color: var(--bs-red) !important;
+  --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
 }
 .badge.badge-link:hover.text-bg-midnight,
 .badge.badge-link:focus.text-bg-midnight {
-  color: var(--bs-white) !important;
-  background-color: var(--bs-azurite) !important;
+  --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
 }
 .badge.badge-link:hover.text-bg-light,
 .badge.badge-link:focus.text-bg-light {
-  background-color: var(--bs-silver-300) !important;
+  --bs-text-bg-bg: var(--bs-silver-300);
 }
 
-/* stylelint-enable declaration-no-important */
 .breadcrumb {
   --bs-breadcrumb-bg: var(--bs-white);
   --bs-breadcrumb-divider-color: var(--bs-gray-600);
@@ -19610,9 +19608,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin-top: 0;
 }
 
-.card:not([class*=" text-bg-"]) > .card-header,
-.card:not([class*=" text-bg-"]) > .card-footer {
-  background-color: var(--bs-gray-200);
+.card:not([class*=" text-bg-"]) {
+  --bs-card-cap-bg: var(--bs-gray-200);
 }
 
 .card-header {
@@ -19631,12 +19628,12 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-color: initial;
 }
 
-.text-bg-gray-900, .text-bg-gray-800, .text-bg-gray-700, .text-bg-gray-600, .text-bg-gray-500, .text-bg-gray-400, .text-bg-gray-300, .text-bg-gray-200, .text-bg-gray-100, .text-bg-black, .text-bg-white, .text-bg-sage, .text-bg-ash, .text-bg-mesa, .text-bg-silver, .text-bg-river, .text-bg-leaf, .text-bg-warm-gray, .text-bg-cool-gray, .text-bg-midnight, .text-bg-azurite, .text-bg-oasis, .text-bg-sky, .text-bg-blue, .text-bg-chili, .text-bg-bloom, .text-bg-red {
+.text-bg-gray-900, .text-bg-gray-800, .text-bg-gray-700, .text-bg-gray-600, .text-bg-gray-500, .text-bg-gray-400, .text-bg-gray-300, .text-bg-gray-200, .text-bg-gray-100, .text-bg-dark, .text-bg-light, .text-bg-danger, .text-bg-warning, .text-bg-info, .text-bg-success, .text-bg-secondary, .text-bg-primary, .text-bg-black, .text-bg-white, .text-bg-sage, .text-bg-ash, .text-bg-mesa, .text-bg-silver, .text-bg-river, .text-bg-leaf, .text-bg-warm-gray, .text-bg-cool-gray, .text-bg-midnight, .text-bg-azurite, .text-bg-oasis, .text-bg-sky, .text-bg-blue, .text-bg-chili, .text-bg-bloom, .text-bg-red {
   color: var(--bs-text-bg-color) !important;
   background-color: var(--bs-text-bg-bg) !important;
 }
 
-.text-bg-gradient-black, .text-bg-gradient-white, .text-bg-gradient-warm-gray, .text-bg-gradient-cool-gray, .text-bg-gradient-midnight, .text-bg-gradient-azurite, .text-bg-gradient-oasis, .text-bg-gradient-sky, .text-bg-gradient-blue, .text-bg-gradient-chili, .text-bg-gradient-bloom, .text-bg-gradient-red, .text-bg-transparent-black, .text-bg-transparent-white, .text-bg-transparent-warm-gray, .text-bg-transparent-cool-gray, .text-bg-transparent-midnight, .text-bg-transparent-azurite, .text-bg-transparent-oasis, .text-bg-transparent-sky, .text-bg-transparent-blue, .text-bg-transparent-chili, .text-bg-transparent-bloom, .text-bg-transparent-red, .text-bg-dark, .text-bg-light, .text-bg-danger, .text-bg-warning, .text-bg-info, .text-bg-success, .text-bg-secondary, .text-bg-primary {
+.text-bg-gradient-black, .text-bg-gradient-white, .text-bg-gradient-warm-gray, .text-bg-gradient-cool-gray, .text-bg-gradient-midnight, .text-bg-gradient-azurite, .text-bg-gradient-oasis, .text-bg-gradient-sky, .text-bg-gradient-blue, .text-bg-gradient-chili, .text-bg-gradient-bloom, .text-bg-gradient-red, .text-bg-transparent-black, .text-bg-transparent-white, .text-bg-transparent-warm-gray, .text-bg-transparent-cool-gray, .text-bg-transparent-midnight, .text-bg-transparent-azurite, .text-bg-transparent-oasis, .text-bg-transparent-sky, .text-bg-transparent-blue, .text-bg-transparent-chili, .text-bg-transparent-bloom, .text-bg-transparent-red {
   color: var(--bs-text-bg-color) !important;
 }
 
@@ -20276,6 +20273,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-primary {
   --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-primary-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-primary h1,
 .text-bg-primary h2,
@@ -20315,6 +20313,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-secondary {
   --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-secondary-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-secondary h1,
 .text-bg-secondary h2,
@@ -20354,6 +20353,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-success {
   --bs-text-bg-color: var(--bs-midnight);
+  --bs-text-bg-bg: RGBA(var(--bs-success-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-success h1,
 .text-bg-success h2,
@@ -20386,6 +20386,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-info {
   --bs-text-bg-color: var(--bs-midnight);
+  --bs-text-bg-bg: RGBA(var(--bs-info-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-info h1,
 .text-bg-info h2,
@@ -20418,6 +20419,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-warning {
   --bs-text-bg-color: var(--bs-midnight);
+  --bs-text-bg-bg: RGBA(var(--bs-warning-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-warning h1,
 .text-bg-warning h2,
@@ -20450,6 +20452,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-danger {
   --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-danger-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-danger h1,
 .text-bg-danger h2,
@@ -20489,6 +20492,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-light {
   --bs-text-bg-color: var(--bs-midnight);
+  --bs-text-bg-bg: RGBA(var(--bs-light-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-light h1,
 .text-bg-light h2,
@@ -20521,6 +20525,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-dark {
   --bs-text-bg-color: var(--bs-white);
+  --bs-text-bg-bg: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-dark h1,
 .text-bg-dark h2,

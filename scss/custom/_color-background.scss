@@ -23,11 +23,12 @@
   }
 }
 
-// >> Theme Colors (only adds the custom color contrast mixin)
+// >> Theme Colors
 @each $color, $value in $theme-colors {
   .text-bg-#{$color} {
     --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
-    @extend %az-text-bg-color;
+    --bs-text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
+    @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
 }

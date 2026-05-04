@@ -3,21 +3,19 @@
 //
 
 // Include custom .badge-link styles for chili, midnight, and light badges.
-/* stylelint-disable declaration-no-important */
 .badge.badge-link:hover,
 .badge.badge-link:focus {
   text-decoration: none;
 
   &.text-bg-chili {
-    color: var(--bs-white) !important;
-    background-color: var(--bs-red) !important;
+    --bs-text-bg-color: var(--bs-white);
+    --bs-text-bg-bg: RGBA(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
   }
   &.text-bg-midnight {
-    color: var(--bs-white) !important;
-    background-color: var(--bs-azurite) !important;
+    --bs-text-bg-color: var(--bs-white);
+    --bs-text-bg-bg: RGBA(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
   }
   &.text-bg-light {
-    background-color: var(--bs-silver-300) !important;
+    --bs-text-bg-bg: var(--bs-silver-300);
   }
 }
-/* stylelint-enable declaration-no-important */

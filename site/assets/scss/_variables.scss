@@ -83,14 +83,18 @@ $docs-bd-scales: (
       // Contrast: Sass-computed at build time (no runtime equivalent)
       --bs-#{$name}-#{$shade}-contrast: #{color-contrast($value)};
 
-      // Background: derived from the base runtime token via color-mix()
-      @if $shade == "500" {
-        // 500 is the base color itself
-        --bs-#{$name}-#{$shade}: var(--bs-#{$name});
-      } @else if map-has-key($bd-tint-mix, $shade) {
-        --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-tint-mix, $shade)}, var(--bs-white));
-      } @else if map-has-key($bd-shade-mix, $shade) {
-        --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-shade-mix, $shade)}, var(--bs-black));
+      // Keep Bootstrap gray scale tokens owned by the framework.
+      // Docs still provides the matching contrast tokens for swatches.
+      @if $name != "gray" {
+        // Background: derived from the base runtime token via color-mix()
+        @if $shade == "500" {
+          // 500 is the base color itself
+          --bs-#{$name}-#{$shade}: var(--bs-#{$name});
+        } @else if map-has-key($bd-tint-mix, $shade) {
+          --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-tint-mix, $shade)}, var(--bs-white));
+        } @else if map-has-key($bd-shade-mix, $shade) {
+          --bs-#{$name}-#{$shade}: color-mix(in srgb, var(--bs-#{$name}) #{map-get($bd-shade-mix, $shade)}, var(--bs-black));
+        }
       }
     }
   }
