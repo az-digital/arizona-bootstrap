@@ -22436,13 +22436,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-color: var(--az-navbar-fullscreen-toggler-bg);
   border: 0;
 }
-.navbar-az-fullscreen .navbar-toggler .navbar-toggler-icon {
-  --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
-  background-image: var(--bs-navbar-toggler-icon-bg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
 
 .navbar-az-fullscreen-actions {
   --az-navbar-fullscreen-actions-font-size: 22px;
