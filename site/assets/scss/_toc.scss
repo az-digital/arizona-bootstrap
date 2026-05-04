@@ -37,8 +37,8 @@
 
       &.active {
         --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
-        border-left-color: rgba(var(--bs-link-color-rgb), 1);
         font-weight: 500;
+        border-left-color: rgba(var(--bs-link-color-rgb), 1);
       }
 
       code {
