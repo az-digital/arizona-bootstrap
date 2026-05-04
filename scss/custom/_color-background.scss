@@ -17,7 +17,7 @@
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
-    --bs-text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
+    --bs-text-bg-bg: rgba(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
@@ -27,7 +27,7 @@
 @each $color, $value in $theme-colors {
   .text-bg-#{$color} {
     --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
-    --bs-text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
+    --bs-text-bg-bg: rgba(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
   }
