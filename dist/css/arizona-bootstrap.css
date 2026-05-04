@@ -19396,7 +19396,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .breadcrumb {
-  --bs-breadcrumb-bg: var(--bs-white);
+  --bs-breadcrumb-bg: var(--bs-body-bg);
   --bs-breadcrumb-divider-color: var(--bs-gray-600);
   --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols), monospace;
   --bs-link-color-rgb: var(--bs-azurite-rgb);
@@ -21785,6 +21785,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-radius: revert;
 }
 
+.nav-pills {
+  --bs-nav-pills-link-active-color: var(--bs-midnight);
+}
+
 .nav.nav-pills > .nav-item:not(.nav-item .nav-item):first-child {
   border-top-left-radius: var(--bs-nav-pills-border-radius);
   border-top-right-radius: var(--bs-nav-pills-border-radius);
@@ -21865,7 +21869,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .navbar-nav {
-  --bs-nav-link-color: var(--bs-nav-link-color);
+  --bs-nav-link-color: var(--bs-navbar-color);
   --bs-nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
 }
 .navbar-nav .nav-item:hover {
@@ -22363,7 +22367,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   letter-spacing: 0.66px;
 }
 .navbar-az-fullscreen-actions .nav-link:active, .navbar-az-fullscreen-actions .nav-link.active, .navbar-az-fullscreen-actions .nav-link.is-active {
-  color: var(--bs-navbar-active-color);
+  --bs-nav-link-color: var(--bs-navbar-active-color);
   background-color: transparent;
 }
 .navbar-az-fullscreen-actions .vr {
@@ -22581,7 +22585,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   white-space: nowrap;
 }
 .navbar-az-fullscreen-modal .modal-footer .navbar-nav .nav-item .nav-link:active, .navbar-az-fullscreen-modal .modal-footer .navbar-nav .nav-item .nav-link.active, .navbar-az-fullscreen-modal .modal-footer .navbar-nav .nav-item .nav-link.is-active {
-  color: var(--bs-navbar-active-color);
   background-color: transparent;
 }
 
@@ -22672,11 +22675,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   isolation: isolate;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-primary .nav-link:active, .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-primary .nav-link.active, .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-primary .nav-link.is-active {
-  color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
+  --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
   background-color: transparent;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-primary .nav-link:hover {
-  color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
   background-color: transparent;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-primary .nav-link:hover::after {
@@ -22746,11 +22748,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   isolation: isolate;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-secondary .nav-link:active, .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-secondary .nav-link.active, .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-secondary .nav-link.is-active {
-  color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
+  --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
   background-color: transparent;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-secondary .nav-link:hover {
-  color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
   background-color: transparent;
 }
 .navbar-az-fullscreen-modal-menu .navbar-az-fullscreen-nav-secondary hr {
@@ -22869,11 +22870,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions {
   --bs-nav-link-padding-y: 12px;
+  --bs-nav-link-color: var(--bs-sky);
 }
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions .nav-link,
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions .vr {
   font-size: 20px;
   line-height: 24px;
+}
+#navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions .vr {
   color: var(--bs-sky);
 }
 #navbar-az-fullscreen-nav-mobile-col .nav.navbar-az-fullscreen-nav-primary .nav-link {

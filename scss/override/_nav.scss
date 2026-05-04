@@ -42,6 +42,10 @@
   }
 }
 
+.nav-pills {
+  --#{$prefix}nav-pills-link-active-color: var(--bs-midnight);
+}
+
 .nav.nav-pills > .nav-item:not(.nav-item .nav-item) {
   &:first-child {
     @include border-top-start-radius(var(--bs-nav-pills-border-radius));

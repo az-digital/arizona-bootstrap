@@ -7,7 +7,7 @@
 }
 
 .navbar-nav {
-  --#{$prefix}nav-link-color: var(--bs-nav-link-color);
+  --#{$prefix}nav-link-color: var(--bs-navbar-color);
   --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
 
   .nav-item {

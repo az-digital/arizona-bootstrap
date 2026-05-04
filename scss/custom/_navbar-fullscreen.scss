@@ -89,7 +89,7 @@
     &:active,
     &.active,
     &.is-active {
-      color: var(--bs-navbar-active-color);
+      --bs-nav-link-color: var(--bs-navbar-active-color);
       background-color: transparent;
     }
   }
