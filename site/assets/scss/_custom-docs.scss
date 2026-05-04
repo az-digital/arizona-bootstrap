@@ -134,16 +134,13 @@
   display: none;
 }
 
-// stylelint-disable selector-no-qualifying-type
-.bd-toc nav a {
-  font-weight: revert;
+.bd-toc nav {
+  --bs-link-hover-color-rgb: var(--bs-midnight-rgb);
 
-  &:hover,
-  &.active {
-    --bd-toc-color: var(--bs-midnight-rgb);
+  a {
+    font-weight: revert;
   }
 }
-// stylelint-enable selector-no-qualifying-type
 
 //
 // > LAYOUT
