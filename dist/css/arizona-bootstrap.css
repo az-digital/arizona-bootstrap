@@ -21761,9 +21761,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .nav-link.active, .nav-link:active, .nav-link.is-active {
-  color: var(--bs-nav-tabs-link-active-color);
-  background-color: var(--bs-nav-tabs-link-active-bg);
-  border-radius: var(--bs-nav-pills-border-radius);
+  --bs-nav-link-color: var(--bs-midnight);
 }
 .nav-link.dropdown-toggle::after {
   margin-bottom: 0.1875rem;
@@ -21784,7 +21782,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .nav.nav-underline .nav-link.active, .nav.nav-underline .nav-link:active, .nav.nav-underline .nav-link.is-active {
-  background-color: var(--bs-nav-tabs-link-active-bg);
   border-radius: revert;
 }
 
