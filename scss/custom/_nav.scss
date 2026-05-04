@@ -18,13 +18,13 @@
     &:active,
     &.is-active {
       background-color: initial;
-      border-bottom-color: currentColor;
+      border-bottom-color: currentcolor;
       @include border-radius(0);
     }
 
     &:hover,
     &:focus {
-      border-bottom-color: currentColor;
+      border-bottom-color: currentcolor;
     }
   }
 }
