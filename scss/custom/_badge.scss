@@ -9,11 +9,11 @@
 
   &.text-bg-chili {
     --bs-text-bg-color: var(--bs-white);
-    --bs-text-bg-bg: RGBA(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
+    --bs-text-bg-bg: rgba(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
   }
   &.text-bg-midnight {
     --bs-text-bg-color: var(--bs-white);
-    --bs-text-bg-bg: RGBA(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
+    --bs-text-bg-bg: rgba(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
   }
   &.text-bg-light {
     --bs-text-bg-bg: var(--bs-silver-300);
