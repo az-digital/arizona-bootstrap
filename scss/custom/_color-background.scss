@@ -16,7 +16,7 @@
 // >> Brand
 @each $color, $value in $colors {
   .text-bg-#{$color} {
-    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
     --bs-text-bg-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1));
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
@@ -26,6 +26,8 @@
 // >> Theme Colors (only adds the custom color contrast mixin)
 @each $color, $value in $theme-colors {
   .text-bg-#{$color} {
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
+    @extend %az-text-bg-color;
     @include az-color-contrast($color);
   }
 }
@@ -33,7 +35,7 @@
 // >> Grays
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
-    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
     --bs-text-bg-bg: var(--#{$prefix}gray-#{$color});
     @extend %az-text-bg-base;
     @include az-color-contrast($color);
@@ -43,7 +45,7 @@
 // >> Brand Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
-    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
     @extend %az-text-bg-color;
     @include background-transparent($color);
     @include az-color-contrast($color);
@@ -53,7 +55,7 @@
 // >> Brand Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
-    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
     @extend %az-text-bg-color;
     @include background-gradient($color);
     @include az-color-contrast($color);
