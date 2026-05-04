@@ -306,7 +306,6 @@
           &:active,
           &.active,
           &.is-active {
-            color: var(--bs-navbar-active-color);
             background-color: transparent;
           }
         }
@@ -401,12 +400,11 @@
       &:active,
       &.active,
       &.is-active {
-        color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
+        --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
         background-color: transparent;
       }
 
       &:hover {
-        color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
         background-color: transparent;
 
         &::after {
@@ -469,12 +467,11 @@
       &:active,
       &.active,
       &.is-active {
-        color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
+        --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
         background-color: transparent;
       }
 
       &:hover {
-        color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
         background-color: transparent;
 
         // &::after {
@@ -646,11 +643,15 @@
 
   .navbar-az-fullscreen-actions {
     --bs-nav-link-padding-y: 12px;
+    --bs-nav-link-color: var(--bs-sky);
 
     .nav-link,
     .vr {
       font-size: 20px;
       line-height: 24px;
+    }
+
+    .vr {
       color: var(--bs-sky);
     }
   }
