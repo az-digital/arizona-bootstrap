@@ -3,12 +3,12 @@
   --bs-breadcrumb-bg: var(--bs-white);
   --bs-breadcrumb-divider-color: var(--bs-gray-600);
   --bs-breadcrumb-divider-font-family: var(--bs-font-material-symbols), monospace;
+  --bs-link-color-rgb: var(--bs-azurite-rgb);
   --bs-link-hover-color-rgb: var(--bs-blue-rgb);
 
   a {
     padding: 1px 0;
     font-weight: 500;
-    --bs-link-color-rgb: var(--bs-azurite-rgb);
   }
 }
 
