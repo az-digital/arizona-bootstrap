@@ -91,7 +91,6 @@
     display: flex;
     align-items: center; // vertically center text within stretched height
     align-self: stretch;
-    padding: var(--az-navbar-nav-link-padding-y) var(--bs-navbar-nav-link-padding-x);
 
     // Both hover and active states have an underline
     &.active,

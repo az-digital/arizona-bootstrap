@@ -8,6 +8,7 @@
 
 .navbar-nav {
   --#{$prefix}nav-link-color: var(--bs-nav-link-color);
+  --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
 
   .nav-item {
     &:hover {
@@ -23,8 +24,6 @@
   }
 
   .nav-link {
-    padding-top: $navbar-nav-link-padding-y;
-    padding-bottom: $navbar-nav-link-padding-y;
     @include border-radius(0);
 
     &:not(.active) {
@@ -32,7 +31,7 @@
     }
 
     &.is-active {
-      color: var(--bs-navbar-active-color);
+      --#{$prefix}nav-link-color: var(--bs-navbar-active-color);
     }
   }
 
@@ -68,6 +67,10 @@
     }
 
     .nav-link {
+      &.is-active {
+        --#{$prefix}nav-link-hover-color: var(--bs-white);
+      }
+
       &:hover {
         --#{$prefix}nav-link-hover-color: var(--bs-sky);
       }
