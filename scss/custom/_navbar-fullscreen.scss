@@ -442,6 +442,7 @@
     }
 
     .navbar-az-fullscreen-nav-toggle-icon {
+      position: relative;
       box-sizing: content-box;
       display: block;
       flex-shrink: 0;
@@ -459,7 +460,18 @@
       background-origin: content-box;
       background-size: contain;
       border-bottom: 1px solid var(--bs-azurite);
-      border-left: 2px solid var(--bs-bloom);
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        height: 30px;
+        content: "";
+        background-color: var(--bs-bloom);
+        transform: translateY(-50%);
+        @include border-radius(999px);
+      }
     }
   }
 
