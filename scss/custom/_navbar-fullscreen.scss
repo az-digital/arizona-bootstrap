@@ -413,12 +413,10 @@
     // TODO
   }
 
-  .nav-item:has(> .nav-link + .navbar-az-fullscreen-nav-toggle),
-  .nav-item:has(> .nav-link + .vr + .navbar-az-fullscreen-nav-toggle) {
-    .nav-link .nav-link-text {
-      margin-right: 0;
-      // border-right: 2px solid var(--bs-bloom);
-    }
+  .nav-item:has(> .nav-link + .navbar-az-fullscreen-nav-toggle) > .nav-link > .nav-link-text,
+  .nav-item:has(> .nav-link + .vr + .navbar-az-fullscreen-nav-toggle) > .nav-link > .nav-link-text {
+    margin-right: 0;
+    // border-right: 2px solid var(--bs-bloom);
   }
 
   .navbar-az-fullscreen-nav-toggle {
