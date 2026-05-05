@@ -37,8 +37,8 @@
       }
 
       &.active {
-        color: rgba(var(--bs-link-hover-color-rgb), 1);
         font-weight: 500;
+        color: rgba(var(--bs-link-hover-color-rgb), 1);
         border-left-color: rgba(var(--bs-link-color-rgb), 1);
       }
 
