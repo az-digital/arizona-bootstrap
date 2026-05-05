@@ -578,9 +578,10 @@
     overflow: hidden;
 
     > .navbar-az-fullscreen-nav-primary {
-      flex: 1 1 auto;
+      flex: 0 0 auto;
       width: var(--az-navbar-fullscreen-primary-col-width);
       min-height: 0;
+      max-height: 100%;
       padding-right: 0;
       overflow-x: hidden;
       overflow-y: auto;
