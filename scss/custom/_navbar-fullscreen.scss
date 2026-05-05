@@ -398,7 +398,7 @@
 
 
   .navbar-az-fullscreen-modal-menu-nav-col-primary {
-    border-right: 1px solid var(--bs-azurite);
+    // border-right: 1px solid var(--bs-azurite);
   }
 
   .navbar-az-fullscreen-modal-menu-nav-primary {
@@ -516,6 +516,7 @@
     --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
     flex-wrap: nowrap;
     padding-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
+    border-right: 1px solid var(--bs-azurite);
 
     // TODO - potentially remove this - not yet approved
     // @include media-breakpoint-down(xl) {
@@ -551,21 +552,21 @@
         }
       }
 
-      &::after {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        height: 2px;
-        content: "";
-        background: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
-        opacity: 0;
-        transform: scaleX(0);
-        transform-origin: left;
-        @include border-radius(999px);
-        @include transition(opacity .3s ease-out, transform .3s ease-out);
-      }
+      // &::after {
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: -1;
+      //   height: 2px;
+      //   content: "";
+      //   background: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
+      //   opacity: 0;
+      //   transform: scaleX(0);
+      //   transform-origin: left;
+      //   @include border-radius(999px);
+      //   @include transition(opacity .3s ease-out, transform .3s ease-out);
+      // }
     }
   }
 
@@ -598,7 +599,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     background-color: var(--bs-blue);
-    border-left: 1px solid var(--bs-azurite);
+    // border-left: 1px solid var(--bs-azurite);
 
     &.collapsing {
       height: auto;
