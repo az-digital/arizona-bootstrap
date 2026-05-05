@@ -22872,9 +22872,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   font-size: 20px;
   line-height: 24px;
 }
-#navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions .vr {
-  color: var(--bs-sky);
-}
 #navbar-az-fullscreen-nav-mobile-col .nav.navbar-az-fullscreen-nav-primary .nav-link {
   margin-top: 14px;
   margin-bottom: 14px;
