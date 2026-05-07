@@ -94,198 +94,215 @@ title: AZ Navbar Fullscreen - Tuition & Aid
           </div>
         </div>
 
-        <div class="modal-body">
-          <div class="container-lg navbar-az-fullscreen-modal-menu">
+        <div class="modal-body mb-lg-5">
+          <div class="navbar-az-fullscreen-modal-menu container-lg ">
             <div class="row g-0">
-              <div class="col d-none d-lg-flex navbar-az-fullscreen-nav-primary-col" id="az-navbar-az-fullscreen-primary-accordion">
-                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
-                  <!-- Admissions primary row -->
-                  <div class="nav-item">
-                    <a class="nav-link" href="{{< ref "admissions" >}}">
-                      <span class="nav-link-text">Admissions</span>
-                    </a>
-                    <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
-                      <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="collapse show navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                      <div class="navbar-az-fullscreen-primary-submenu-inner">
-                        <nav class="nav col-6 navbar-az-fullscreen-nav-secondary navbar-az-fullscreen-modal-menu-nav-col-secondary" aria-label="Admissions">
-                          <div class="navbar-az-fullscreen-nav-secondary-scroll">
-                            <li class="nav-item">
-                              <a class="nav-link" href="{{< ref "admissions" >}}">
-                                <span class="nav-link-text">Admissions Overview</span>
-                              </a>
-                            </li>
-                            <div class="nav-item">
-                              <a class="nav-link" href="{{< ref "undergraduate" >}}">
-                                <span class="nav-link-text">Undergraduate Students</span>
-                              </a>
-                              <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
-                                <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                              </button>
-                              <div class="navbar-az-fullscreen-modal-menu-nav-col-tertiary collapse show" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
-                                <ul class="nav col navbar-az-fullscreen-modal-menu-nav-tertiary" aria-label="Undergraduate Students submenu">
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                      <span class="nav-link-text">Applying &amp; Requirements</span>
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link active" href="{{< ref "tuition" >}}">
-                                      <span class="nav-link-text">Tuition &amp; Aid</span>
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                      <span class="nav-link-text">Students</span>
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                      <span class="nav-link-text">Students</span>
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                      <span class="nav-link-text">Students</span>
-                                    </a>
-                                  </li>
-                                  <!-- <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                      <span class="nav-link-text">Students</span>
-                                    </a>
-                                  </li> -->
-                                </ul>
+              <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
+                <div class="navbar-az-fullscreen-modal-menu-nav-col col-4">
+                  <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                    <!-- Admissions primary row -->
+                    <div class="nav-item">
+                      <a class="nav-link" href="{{< ref "admissions" >}}">
+                        <span class="nav-link-text">Admissions</span>
+                      </a>
+                      <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
+                        <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="collapse show navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-primary-submenu-inner">
+                          <nav class="nav col-6 navbar-az-fullscreen-nav-secondary navbar-az-fullscreen-modal-menu-nav-col-secondary" aria-label="Admissions">
+                            <div class="navbar-az-fullscreen-modal-menu-nav-col">
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{< ref "admissions" >}}">
+                                  <span class="nav-link-text">Admissions Overview</span>
+                                </a>
+                              </li>
+                              <div class="nav-item">
+                                <a class="nav-link" href="{{< ref "undergraduate" >}}">
+                                  <span class="nav-link-text">Undergraduate Students</span>
+                                </a>
+                                <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
+                                  <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="navbar-az-fullscreen-modal-menu-nav-col-tertiary navbar-az-fullscreen-modal-menu-nav-col collapse show" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
+                                  <ul class="nav col" aria-label="Undergraduate Students submenu">
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">
+                                        <span class="nav-link-text">Applying &amp; Requirements</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link active" href="{{< ref "tuition" >}}">
+                                        <span class="nav-link-text">Tuition &amp; Aid</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">
+                                        <span class="nav-link-text">Students</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">
+                                        <span class="nav-link-text">Students</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">
+                                        <span class="nav-link-text">Students</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#">
+                                        <span class="nav-link-text">Students</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
                               </div>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Graduate Students</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Online Students</span>
+                                </a>
+                              </li>
+                              <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Online Students</span>
+                                </a>
+                              </li> -->
+                              <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                  <span class="nav-link-text">Online Students</span>
+                                </a>
+                              </li> -->
                             </div>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">
-                                <span class="nav-link-text">Graduate Students</span>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">
-                                <span class="nav-link-text">Online Students</span>
-                              </a>
-                            </li>
-                          </div>
-                        </nav>
+                          </nav>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Academics primary row -->
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Academics</span>
-                    </a>
-                    <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-label="Toggle Academics submenu">
-                      <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-academics-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                      <div class="navbar-az-fullscreen-primary-submenu-inner">
-                        Academics menu
+                    <!-- Academics primary row -->
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Academics</span>
+                      </a>
+                      <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-label="Toggle Academics submenu">
+                        <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-academics-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-primary-submenu-inner">
+                          Academics menu
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Research primary row -->
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Research</span>
-                    </a>
-                    <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-label="Toggle Research submenu">
-                      <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-research-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                      <div class="navbar-az-fullscreen-primary-submenu-inner">
-                        Research menu
+                    <!-- Research primary row -->
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Research</span>
+                      </a>
+                      <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-label="Toggle Research submenu">
+                        <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-research-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-primary-submenu-inner">
+                          Research menu
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Campus Life primary row -->
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Campus Life</span>
-                    </a>
-                    <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-label="Toggle Campus Life submenu">
-                      <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-campus-life-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                      <div class="navbar-az-fullscreen-primary-submenu-inner">
-                        <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
-                          <div class="navbar-az-fullscreen-nav-secondary-scroll">
-                            <a class="nav-link" href="#">Campus Life Overview</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <div class="d-flex align-items-center">
-                              <a class="nav-link flex-grow-1" href="#">Visit Campus</a>
-                              <div class="vr"></div>
-                              <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
-                                <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                              </button>
+                    <!-- Campus Life primary row -->
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Campus Life</span>
+                      </a>
+                      <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-label="Toggle Campus Life submenu">
+                        <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-campus-life-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-primary-submenu-inner">
+                          <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
+                            <div class="navbar-az-fullscreen-nav-secondary-scroll">
+                              <a class="nav-link" href="#">Campus Life Overview</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <div class="d-flex align-items-center">
+                                <a class="nav-link flex-grow-1" href="#">Visit Campus</a>
+                                <div class="vr"></div>
+                                <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
+                                  <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                              </div>
+                              <div class="collapse navbar-az-fullscreen-nav-tertiary-panel" id="az-navbar-az-fullscreen-campus-life-secondary-visit-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
+                                <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" aria-label="Visit Campus submenu">
+                                  <a class="nav-link" href="{{< ref "calendar" >}}">Calendar &amp; Events</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                  <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                                  <a class="nav-link" href="#">Libraries</a>
+                                </nav>
+                              </div>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Living &amp; Dining on Campus</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Getting Involved</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Spirit &amp; Traditions</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Arts &amp; Culture</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">All About Tucson</a>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <div class="d-flex align-items-center">
+                                <a class="nav-link flex-grow-1" href="#">Health &amp; Wellness</a>
+                                <div class="vr"></div>
+                                <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
+                                  <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                                </button>
+                              </div>
+                              <div class="collapse navbar-az-fullscreen-nav-tertiary-panel" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
+                                <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" aria-label="Health &amp; Wellness submenu">
+                                  <a class="nav-link" href="{{< ref "campus-rec" >}}">Campus Recreation</a>
+                                </nav>
+                              </div>
+                              <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
+                              <a class="nav-link" href="#">Arizona Athletics</a>
                             </div>
-                            <div class="collapse navbar-az-fullscreen-nav-tertiary-panel" id="az-navbar-az-fullscreen-campus-life-secondary-visit-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
-                              <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" aria-label="Visit Campus submenu">
-                                <a class="nav-link" href="{{< ref "calendar" >}}">Calendar &amp; Events</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                                <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                                <a class="nav-link" href="#">Libraries</a>
-                              </nav>
-                            </div>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">Living &amp; Dining on Campus</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">Getting Involved</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">Spirit &amp; Traditions</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">Arts &amp; Culture</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">All About Tucson</a>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <div class="d-flex align-items-center">
-                              <a class="nav-link flex-grow-1" href="#">Health &amp; Wellness</a>
-                              <div class="vr"></div>
-                              <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
-                                <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                              </button>
-                            </div>
-                            <div class="collapse navbar-az-fullscreen-nav-tertiary-panel" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
-                              <nav class="nav flex-column navbar-az-fullscreen-nav-secondary" aria-label="Health &amp; Wellness submenu">
-                                <a class="nav-link" href="{{< ref "campus-rec" >}}">Campus Recreation</a>
-                              </nav>
-                            </div>
-                            <hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation">
-                            <a class="nav-link" href="#">Arizona Athletics</a>
-                          </div>
-                        </nav>
+                          </nav>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- About primary row -->
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">About</span>
-                    </a>
-                    <!--<button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-about-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-about-content" aria-label="Toggle About submenu">
-                      <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-about-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                      <div class="navbar-az-fullscreen-primary-submenu-inner">
-                        About menu
-                      </div>
-                    </div>-->
-                  </div>
-                </nav>
+                    <!-- About primary row -->
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">About</span>
+                      </a>
+                      <!--<button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-about-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-about-content" aria-label="Toggle About submenu">
+                        <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                      <div class="collapse navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-about-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-primary-submenu-inner">
+                          About menu
+                        </div>
+                      </div>-->
+                    </div>
+                    <!-- <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">About</span>
+                      </a>
+                    </div> -->
+                  </nav>
+                </div>
               </div>
             </div>
             <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
