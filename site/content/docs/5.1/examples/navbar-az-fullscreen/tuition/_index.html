@@ -108,10 +108,10 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                       <button class="btn navbar-az-fullscreen-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
                         <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
                       </button>
-                      <div class="collapse show navbar-az-fullscreen-primary-submenu" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
-                        <div class="navbar-az-fullscreen-primary-submenu-inner">
-                          <nav class="nav col-6 navbar-az-fullscreen-nav-secondary navbar-az-fullscreen-modal-menu-nav-col-secondary" aria-label="Admissions">
-                            <div class="navbar-az-fullscreen-modal-menu-nav-col">
+                      <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse show" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                        <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                          <div class="col-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                            <nav class="nav" aria-label="Admissions">
                               <li class="nav-item">
                                 <a class="nav-link" href="{{< ref "admissions" >}}">
                                   <span class="nav-link-text">Admissions Overview</span>
@@ -124,39 +124,43 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                                 <button class="btn navbar-az-fullscreen-nav-toggle" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
                                   <span class="navbar-az-fullscreen-nav-toggle-icon" aria-hidden="true"></span>
                                 </button>
-                                <div class="navbar-az-fullscreen-modal-menu-nav-col-tertiary navbar-az-fullscreen-modal-menu-nav-col collapse show" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
-                                  <ul class="nav col" aria-label="Undergraduate Students submenu">
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="#">
-                                        <span class="nav-link-text">Applying &amp; Requirements</span>
-                                      </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link active" href="{{< ref "tuition" >}}">
-                                        <span class="nav-link-text">Tuition &amp; Aid</span>
-                                      </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="#">
-                                        <span class="nav-link-text">Students</span>
-                                      </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="#">
-                                        <span class="nav-link-text">Students</span>
-                                      </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="#">
-                                        <span class="nav-link-text">Students</span>
-                                      </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="#">
-                                        <span class="nav-link-text">Students</span>
-                                      </a>
-                                    </li>
-                                  </ul>
+                                <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse show" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
+                                  <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                    <div class="col navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                      <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Undergraduate Students submenu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Applying &amp; Requirements</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link active" href="{{< ref "tuition" >}}">
+                                            <span class="nav-link-text">Tuition &amp; Aid</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Students</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                               <li class="nav-item">
@@ -179,8 +183,8 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                                   <span class="nav-link-text">Online Students</span>
                                 </a>
                               </li> -->
-                            </div>
-                          </nav>
+                            </nav>
+                          </div>
                         </div>
                       </div>
                     </div>
