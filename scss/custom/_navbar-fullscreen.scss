@@ -83,6 +83,9 @@
   --bs-nav-link-font-weight: var(--az-navbar-fullscreen-actions-font-weight);
   --bs-nav-link-color: var(--bs-white);
   --bs-nav-link-hover-color: var(--bs-sky);
+
+  flex-direction: row;
+  align-items: center;
   font: var(--az-navbar-fullscreen-actions-font);
   letter-spacing: .66px;
 
