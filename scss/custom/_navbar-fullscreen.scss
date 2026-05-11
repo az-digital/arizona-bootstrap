@@ -7,14 +7,21 @@
   --az-navbar-fullscreen-brand-height: 60px;
   --az-navbar-fullscreen-toggler-bg: var(--bs-red);
   --az-navbar-fullscreen-toggler-hover-color: var(--bs-chili);
+  // --az-navbar-fullscreen-toggler-padding-y: 12px;
+  // --az-navbar-fullscreen-toggler-padding-x: 30px;
+  // --az-navbar-fullscreen-toggler-border-radius: 24px;
+  --az-navbar-fullscreen-toggler-focus-color: var(--bs-bloom);
+  --az-navbar-fullscreen-toggler-focus-width: 2px;
+  --az-navbar-fullscreen-toggler-focus-offset: 2px;
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:menu:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=hamburger&icon.style=Rounded
   --az-navbar-fullscreen-toggler-icon-open: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/></svg>"))};
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:close:FILL@0;wght@400;GRAD@0;opsz@24&icon.style=Rounded&icon.query=close&icon.size=24&icon.color=%231e5288
   --az-navbar-fullscreen-toggler-icon-close: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z'/></svg>"))};
-  --bs-navbar-brand-padding-y: 20px;
+  --bs-navbar-padding-y: 20px;
   --bs-navbar-color: var(--bs-white);
   --bs-navbar-hover-color: var(--bs-white);
   --bs-navbar-active-color: var(--bs-sky);
+  --bs-navbar-brand-padding-y: 0;
   --bs-navbar-toggler-padding-y: 7.5px;
   --bs-navbar-toggler-padding-x: 7.5px;
   --bs-navbar-toggler-font-size: 30px;
@@ -28,15 +35,9 @@
   .navbar-brand {
     img {
       height: var(--az-navbar-fullscreen-brand-height);
-      // @include border-radius(0);
+      @include border-radius(0);
     }
   }
-
-  // .navbar-az-fullscreen-tools {
-  //   display: flex;
-  //   align-items: center;
-  //   min-width: 0;
-  // }
 
   .navbar-toggler {
     display: inline-flex;
@@ -45,46 +46,72 @@
     justify-content: center;
     min-width: var(--az-navbar-fullscreen-brand-height);
     min-height: var(--az-navbar-fullscreen-brand-height);
+    // padding: var(--az-navbar-fullscreen-toggler-padding-y) var(--az-navbar-fullscreen-toggler-padding-x);
     margin-top: var(--bs-navbar-brand-padding-y);
     margin-bottom: var(--bs-navbar-brand-padding-y);
     background-color: var(--az-navbar-fullscreen-toggler-bg);
     border: 0;
+    // @include border-radius(var(--az-navbar-fullscreen-toggler-border-radius));
 
-    // &:hover {
-    //   background-color: var(--az-navbar-fullscreen-toggler-hover-color);
-    // }
+    &:hover {
+      background-color: var(--az-navbar-fullscreen-toggler-hover-color);
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      background-color: var(--az-navbar-fullscreen-toggler-hover-color);
+      outline: var(--az-navbar-fullscreen-toggler-focus-width) solid var(--az-navbar-fullscreen-toggler-focus-color);
+      outline-offset: var(--az-navbar-fullscreen-toggler-focus-offset);
+      box-shadow: none;
+    }
   }
 }
 
 .navbar-az-fullscreen-actions {
+  --az-navbar-fullscreen-actions-font-weight: bold;
   --az-navbar-fullscreen-actions-font-size: 22px;
   --az-navbar-fullscreen-actions-line-height: 27px;
-  --az-navbar-fullscreen-actions-font: normal normal bold var(--az-navbar-fullscreen-actions-font-size) / var(--az-navbar-fullscreen-actions-line-height) proxima-nova-condensed;
-  --az-navbar-fullscreen-actions-separator-width: 1px;
-  --az-navbar-fullscreen-actions-separator-height: 24px;
+  --az-navbar-fullscreen-actions-font: normal normal var(--az-navbar-fullscreen-actions-font-weight) var(--az-navbar-fullscreen-actions-font-size) / var(--az-navbar-fullscreen-actions-line-height) proxima-nova-condensed;
+  --az-navbar-fullscreen-actions-separator-width: 2px;
   --az-navbar-fullscreen-actions-separator-color: var(--bs-bloom);
   --bs-nav-link-padding-x: 15px;
-  --bs-nav-link-padding-y: 36.5px;
+  --bs-nav-link-padding-y: 16.5px;
+  --bs-nav-link-font-weight: var(--az-navbar-fullscreen-actions-font-weight);
   --bs-nav-link-color: var(--bs-white);
   --bs-nav-link-hover-color: var(--bs-sky);
+  font: var(--az-navbar-fullscreen-actions-font);
+  letter-spacing: .66px;
 
   .nav-item {
     &:hover,
-    &:has(> .nav-link.active) {
+    &:has(> .nav-link.active),
+    &:has(> .nav-link.is-active),
+    &:has(> .nav-link:active) {
       background-color: transparent;
     }
 
-    &[role="presentation"] {
-      display: flex;
-      align-items: center;
+    &:not(:last-child) > .nav-link {
+      &::after {
+        position: absolute;
+        top: var(--bs-nav-link-padding-y);
+        right: 0;
+        bottom: var(--bs-nav-link-padding-y);
+        width: var(--az-navbar-fullscreen-actions-separator-width);
+        content: "";
+        background-color: var(--az-navbar-fullscreen-actions-separator-color);
+        @include border-radius(999px);
+      }
     }
   }
 
   .nav-link {
+    position: relative;
     padding-top: var(--bs-nav-link-padding-y);
     padding-bottom: var(--bs-nav-link-padding-y);
-    font: var(--az-navbar-fullscreen-actions-font);
-    letter-spacing: .66px;
 
     &:active,
     &.active,
@@ -92,14 +119,32 @@
       color: var(--bs-navbar-active-color);
       background-color: transparent;
     }
+
+    &:hover {
+      .nav-link-text::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
   }
 
-  .vr {
-    display: block;
-    width: var(--az-navbar-fullscreen-actions-separator-width);
-    height: var(--az-navbar-fullscreen-actions-separator-height);
-    background-color: var(--az-navbar-fullscreen-actions-separator-color);
-    opacity: 1;
+  .nav-link-text {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--bs-nav-link-hover-color);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      @include border-radius(999px);
+      @include transition(opacity .3s ease-out, transform .3s ease-out);
+    }
   }
 }
 
