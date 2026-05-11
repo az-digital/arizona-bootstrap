@@ -28,15 +28,15 @@
   .navbar-brand {
     img {
       height: var(--az-navbar-fullscreen-brand-height);
-      @include border-radius(0);
+      // @include border-radius(0);
     }
   }
 
-  .navbar-az-fullscreen-tools {
-    display: flex;
-    align-items: center;
-    min-width: 0;
-  }
+  // .navbar-az-fullscreen-tools {
+  //   display: flex;
+  //   align-items: center;
+  //   min-width: 0;
+  // }
 
   .navbar-toggler {
     display: inline-flex;
