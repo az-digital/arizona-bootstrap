@@ -7,9 +7,6 @@
   --az-navbar-fullscreen-brand-height: 60px;
   --az-navbar-fullscreen-toggler-bg: var(--bs-red);
   --az-navbar-fullscreen-toggler-hover-color: var(--bs-chili);
-  // --az-navbar-fullscreen-toggler-padding-y: 12px;
-  // --az-navbar-fullscreen-toggler-padding-x: 30px;
-  // --az-navbar-fullscreen-toggler-border-radius: 24px;
   --az-navbar-fullscreen-toggler-focus-color: var(--bs-bloom);
   --az-navbar-fullscreen-toggler-focus-width: 2px;
   --az-navbar-fullscreen-toggler-focus-offset: 2px;
@@ -46,12 +43,10 @@
     justify-content: center;
     min-width: var(--az-navbar-fullscreen-brand-height);
     min-height: var(--az-navbar-fullscreen-brand-height);
-    // padding: var(--az-navbar-fullscreen-toggler-padding-y) var(--az-navbar-fullscreen-toggler-padding-x);
     margin-top: var(--bs-navbar-brand-padding-y);
     margin-bottom: var(--bs-navbar-brand-padding-y);
     background-color: var(--az-navbar-fullscreen-toggler-bg);
     border: 0;
-    // @include border-radius(var(--az-navbar-fullscreen-toggler-border-radius));
 
     &:hover {
       background-color: var(--az-navbar-fullscreen-toggler-hover-color);
@@ -152,18 +147,25 @@
 }
 
 .navbar-az-fullscreen-search {
-  --az-navbar-fullscreen-search-width: 260px;
+  --az-navbar-fullscreen-search-width: 280px;
   --az-navbar-fullscreen-search-height: 60px;
   --az-navbar-fullscreen-search-color: var(--bs-white);
-  --az-navbar-fullscreen-search-hover-color: var(--bs-white);
-  --az-navbar-fullscreen-search-border-width: 1.5px;
+  --az-navbar-fullscreen-search-hover-color: var(--bs-sky);
+  --az-navbar-fullscreen-search-border-width: 2px;
   --az-navbar-fullscreen-search-border-color: var(--az-navbar-fullscreen-search-color);
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:search:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231e5288&icon.query=search&icon.style=Rounded
   --az-navbar-fullscreen-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
-  --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova;
+  --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
+
+  &:hover {
+    .input-group {
+      border-color: var(--az-navbar-fullscreen-search-hover-color);
+    }
+  }
 
   .input-group {
     flex-wrap: nowrap;
@@ -174,6 +176,7 @@
   }
 
   .form-control {
+    padding: 8px 12px;
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
     background-color: transparent;
@@ -193,15 +196,28 @@
     &:focus {
       box-shadow: none;
     }
+
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      bottom: 8px;
+      width: var(--az-navbar-fullscreen-search-border-width);
+      content: "";
+      background-color: var(--az-navbar-fullscreen-search-separator-color);
+      @include border-radius(999px);
+    }
+
   }
 
-  .vr {
-    width: var(--az-navbar-fullscreen-search-border-width);
-    margin-top: 11.5px;
-    margin-bottom: 11.5px;
-    background-color: var(--az-navbar-fullscreen-search-border-color);
-    opacity: 1;
-  }
+  // .vr {
+  //   width: var(--az-navbar-fullscreen-search-border-width);
+  //   margin-top: 8px;
+  //   margin-bottom: 8px;
+  //   background-color: var(--az-navbar-fullscreen-search-separator-color);
+  //   opacity: 1;
+  //   @include border-radius(999px);
+  // }
 
   .btn {
     display: inline-grid;
@@ -225,7 +241,10 @@
       background-position: center;
       background-size: contain;
     }
+  }
 
+  .search-icon {
+    // TODO
   }
 }
 
