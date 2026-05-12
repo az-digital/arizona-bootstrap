@@ -173,6 +173,10 @@
     overflow: hidden;
     border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
     @include border-radius(8px);
+
+    .btn {
+      padding: 8px;
+    }
   }
 
   .form-control {
@@ -196,55 +200,36 @@
     &:focus {
       box-shadow: none;
     }
-
-    &::after {
-      position: absolute;
-      top: 8px;
-      right: 0;
-      bottom: 8px;
-      width: var(--az-navbar-fullscreen-search-border-width);
-      content: "";
-      background-color: var(--az-navbar-fullscreen-search-separator-color);
-      @include border-radius(999px);
-    }
-
   }
 
-  // .vr {
-  //   width: var(--az-navbar-fullscreen-search-border-width);
-  //   margin-top: 8px;
-  //   margin-bottom: 8px;
-  //   background-color: var(--az-navbar-fullscreen-search-separator-color);
-  //   opacity: 1;
-  //   @include border-radius(999px);
-  // }
-
   .btn {
-    display: inline-grid;
-    flex: 0 0 auto;
-    place-items: center;
     min-width: var(--az-navbar-fullscreen-search-height);
-    min-height: var(--az-navbar-fullscreen-search-height);
-    padding: 10px;
     margin: 0;
     color: var(--az-navbar-fullscreen-search-color);
     border: 0;
     @include border-radius(0);
 
     &::before {
-      width: 100%;
-      max-width: 100%;
-      aspect-ratio: 1;
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      width: var(--az-navbar-fullscreen-search-border-width);
       content: "";
-      background-image: var(--az-navbar-fullscreen-search-icon);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      background-color: var(--az-navbar-fullscreen-search-separator-color);
+      @include border-radius(999px);
     }
   }
 
   .search-icon {
-    // TODO
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1;
+    background-image: var(--az-navbar-fullscreen-search-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 
