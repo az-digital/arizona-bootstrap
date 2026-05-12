@@ -436,10 +436,12 @@
   //   --az-navbar-fullscreen-modal-menu-secondary-line-height: 22px;
   // }
 
-  // @include media-breakpoint-down(xl) {
-  //   --az-navbar-fullscreen-modal-menu-secondary-font-size: 16px;
-  //   --az-navbar-fullscreen-modal-menu-secondary-line-height: 20px;
-  // }
+  @include media-breakpoint-down(xl) {
+    // --az-navbar-fullscreen-modal-menu-secondary-font-size: 16px;
+    // --az-navbar-fullscreen-modal-menu-secondary-line-height: 20px;
+    --az-navbar-fullscreen-modal-menu-primary-font-size: 40px;
+    --az-navbar-fullscreen-modal-menu-primary-line-height: 40px;
+  }
 
   .row {
     flex: 1 1 auto;
