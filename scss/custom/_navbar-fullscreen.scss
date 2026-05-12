@@ -380,7 +380,7 @@
   --az-navbar-fullscreen-modal-menu-color: var(--bs-white);
   --az-navbar-fullscreen-modal-menu-hover-color: var(--bs-sky);
   --az-navbar-fullscreen-modal-menu-active-color: var(--bs-sky);
-  // TODO --az-navbar-fullscreen-modal-menu-disabled-color:
+  --az-navbar-fullscreen-modal-menu-underline-height: 1px;
 
   // primary nav
   --az-navbar-fullscreen-modal-menu-primary-font-weight: 600;
@@ -392,7 +392,7 @@
   --az-navbar-fullscreen-modal-menu-primary-color: var(--az-navbar-fullscreen-modal-menu-color);
   --az-navbar-fullscreen-modal-menu-primary-hover-color: var(--az-navbar-fullscreen-modal-menu-hover-color);
   --az-navbar-fullscreen-modal-menu-primary-active-color: var(--az-navbar-fullscreen-modal-menu-active-color);
-  // TODO --az-navbar-fullscreen-modal-menu-primary-disabled-color:
+  --az-navbar-fullscreen-modal-menu-primary-underline-height: 2px;
 
   // secondary nav
   --az-navbar-fullscreen-modal-menu-secondary-font-weight: var(--az-navbar-fullscreen-modal-menu-font-weight);
@@ -403,7 +403,7 @@
   --az-navbar-fullscreen-modal-menu-secondary-color: var(--az-navbar-fullscreen-modal-menu-color);
   --az-navbar-fullscreen-modal-menu-secondary-hover-color: var(--az-navbar-fullscreen-modal-menu-hover-color);
   --az-navbar-fullscreen-modal-menu-secondary-active-color: var(--az-navbar-fullscreen-modal-menu-letter-active-color);
-  // TODO --az-navbar-fullscreen-modal-menu-secondary-disabled-color:
+  --az-navbar-fullscreen-modal-menu-secondary-underline-height: var(--az-navbar-fullscreen-modal-menu-underline-height);
 
   // tertiary nav
   --az-navbar-fullscreen-modal-menu-tertiary-font-weight: var(--az-navbar-fullscreen-modal-menu-font-weight);
@@ -414,7 +414,7 @@
   --az-navbar-fullscreen-modal-menu-tertiary-color: var(--az-navbar-fullscreen-modal-menu-color);
   --az-navbar-fullscreen-modal-menu-tertiary-hover-color: var(--az-navbar-fullscreen-modal-menu-hover-color);
   --az-navbar-fullscreen-modal-menu-tertiary-active-color: var(--az-navbar-fullscreen-modal-menu-active-color);
-  // TODO --az-navbar-fullscreen-modal-menu-tertiary-disabled-color:
+  --az-navbar-fullscreen-modal-menu-tertiary-underline-height: var(--az-navbar-fullscreen-modal-menu-underline-height);
 
   --az-navbar-fullscreen-modal-menu-separator-color: var(--bs-azurite);
   --az-navbar-fullscreen-modal-menu-col-spacing-x: 24px;
@@ -442,6 +442,7 @@
   }
 
   .nav {
+    --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-underline-height);
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 16px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-font-size);
@@ -508,9 +509,9 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: 2px;
+      height: var(--az-nav-link-text-underline-height);
       content: "";
-      background: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
+      background: var(--az-navbar-fullscreen-modal-menu-hover-color);
       opacity: 0;
       transform: scaleX(0);
       transform-origin: left;
@@ -572,6 +573,7 @@
   }
 
   .navbar-az-fullscreen-nav-primary {
+    --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-primary-underline-height);
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-primary-font-size);
     --bs-nav-link-font-weight: var(--az-navbar-fullscreen-modal-menu-primary-font-weight);
     margin-left: 0;
