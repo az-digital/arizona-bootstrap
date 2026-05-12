@@ -602,6 +602,17 @@
     top: 0;
     right: 0;
     bottom: 0;
+
+    &.collapse.show,
+    &.collapsing {
+      min-height: 100%;
+    }
+
+    &.collapse,
+    &.collapsing,
+    &.collapse.show {
+      @include transition(none);
+    }
   }
 
   .navbar-az-fullscreen-modal-menu-primary-submenu {
@@ -626,10 +637,6 @@
     border-right: 0;
   }
 
-  .collapse,
-  .collapsing {
-    @include transition(none);
-  }
 }
 
 
