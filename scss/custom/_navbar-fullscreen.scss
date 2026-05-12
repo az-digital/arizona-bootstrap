@@ -465,7 +465,10 @@
 
   .nav-item {
     display: flex;
-    border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+    }
   }
 
   .nav-item:has(> .nav-link + .nav-toggle) > .nav-link {
