@@ -239,6 +239,8 @@
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
+  --az-navbar-fullscreen-modal-fade-size: 56px;
+  --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
@@ -258,23 +260,60 @@
     }
   }
 
-  // .modal-content {
-  //   display: flex;
-  //   flex-direction: column;
-  //   height: 100dvh;
-  //   min-height: 0;
-  // }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    min-height: 0;
+  }
 
-  // .modal-header,
-  // .modal-footer {
-  //   flex: 0 0 auto;
-  // }
+  .modal-header,
+  .modal-footer {
+    position: relative;
+    z-index: 3;
+    flex: 0 0 auto;
+  }
 
   .modal-body {
+    position: relative;
+    z-index: 1;
     display: flex; // this is important apparently!
-    // flex: 1 1 auto;
-    // min-height: 0;
-    // overflow: hidden;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      &::before,
+      &::after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        height: var(--az-navbar-fullscreen-modal-fade-size);
+        pointer-events: none;
+        content: "";
+        opacity: 0;
+        @include transition(opacity .2s ease-out);
+      }
+
+      &::before {
+        top: 0;
+        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+
+      &::after {
+        bottom: 0;
+        background: linear-gradient(to top, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+
+      &.has-top-scroll-fade::before {
+        opacity: 1;
+      }
+
+      &.has-bottom-scroll-fade::after {
+        opacity: 1;
+      }
+    }
   }
 
   .navbar-az-fullscreen-search {
