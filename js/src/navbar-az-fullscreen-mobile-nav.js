@@ -12,12 +12,11 @@
 
 class NavbarAzFullscreenMobileNav {
   constructor() {
-    this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col')
-    this.desktopSecondaryContainer = document.querySelector('.navbar-az-fullscreen-nav-secondary-tertiary-cols')
     this.primaryNavContainer = document.querySelector('.navbar-az-fullscreen-nav-primary-col')
+    this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col')
 
-    if (!this.mobileCol) {
-      // Mobile navbar column not found
+    if (!this.primaryNavContainer || !this.mobileCol) {
+      // One or more required containers not found
       return
     }
 
@@ -30,8 +29,6 @@ class NavbarAzFullscreenMobileNav {
       this.ctaFragment = fragment
     }
 
-    this.navigationStack = [] // Stack to track navigation history
-    this.labelToTargetMap = {} // Map to store label-to-targetId mappings from page content
     this.init()
   }
 
@@ -39,108 +36,116 @@ class NavbarAzFullscreenMobileNav {
    * Initialize the mobile navigation
    */
   init() {
-    // Set up event listeners for primary navigation items in mobile view
-    this.setupPrimaryNavListeners()
-  }
+    let found = false
 
-  /**
-   * Set up click listeners on primary navigation items
-   */
-  setupPrimaryNavListeners() {
-    const primaryButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-primary .nav-link')
-
-    for (const button of primaryButtons) {
-      const targetId = button.getAttribute('data-az-menu-element')
-      const label = button.textContent.trim()
-
-      // Build dynamic mapping from page content
-      if (targetId && label) {
-        this.labelToTargetMap[label] = targetId
-      }
-
-      button.addEventListener('click', e => {
-        e.preventDefault()
-
-        if (targetId) {
-          this.showSecondaryNav(targetId, label)
+    // Check tertiary links for match with current pathname
+    const tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary-panel a.nav-link.active')
+    for (const link of tertiaryLinks) {
+      if (link.href === window.location.href) {
+        const tertiaryPanel = link.closest('.navbar-az-fullscreen-nav-tertiary-panel')
+        if (!tertiaryPanel) {
+          continue
         }
-      })
+
+        const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
+        const tertiaryLabel = link.textContent.trim()
+        // Extract parent label from the secondary menu containing this tertiary panel
+        const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
+        const parentLabel = secondaryContentButton?.previousElementSibling.previousElementSibling.textContent || ''
+        const secondaryContent = secondaryContentButton?.closest('.tab-pane.active')
+        const secondaryContentId = secondaryContent?.getAttribute('id') || ''
+
+        this.showTertiaryNav(tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
+        found = true
+      }
+    }
+
+    // Check secondary links for match with current pathname
+    if (!found) {
+      const secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary-scroll a.nav-link.active')
+      for (const link of secondaryLinks) {
+        if (link.href === window.location.href) {
+          const secondaryContent = link.closest('.tab-pane.active')
+          const targetId = secondaryContent?.getAttribute('id') || ''
+          const label = link.textContent.trim()
+
+          if (targetId) {
+            this.showSecondaryNav(`#${targetId}`, label)
+            found = true
+            break
+          }
+        }
+      }
+    }
+
+    // If no matching links found, display primary navigation
+    if (!found) {
+      this.setupNavListeners(1, '', 'Main Menu', '')
     }
   }
 
   /**
-   * Display navigation menu (secondary or tertiary)
-   * @param {Element|string} content - The content element or target ID to display
+   * Display secondary or tertiary navigation menu page
+   * @param {number} navLevel - Navigation level
+   * @param {string} sourceElementId - The source element ID to use
    * @param {string} label - The label of the menu item
-   * @param {string} navType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
-   * @param {string} backButtonLabel - Label for the back button
-   * @param {string} parentLabel - Parent label (used for tertiary navigation)
+   * @param {string} parentLabel - Parent label
+   * @param {string} parentElementId - The parent element ID to use for back navigation (optional)
    */
-  showNavMenu(content, label, navType, backButtonLabel, parentLabel = null) {
-    // Handle both targetId (string) and Element
-    let element = content
-    if (typeof content === 'string') {
-      element = document.querySelector(content)
-      if (!element) {
-        return
-      }
+  showNavMenu(navLevel, sourceElementId, label, parentLabel, parentElementId = null) {
+    const element = document.querySelector(`${sourceElementId}`)
+    if (!element) {
+      return
     }
 
     // Create the menu display
-    const menuHtml = this.buildMenuHtml(element, label, backButtonLabel)
-
-    // Update navigation stack
-    const stackEntry = { type: navType, label }
-    if (parentLabel) {
-      stackEntry.parentLabel = parentLabel
-    }
-
-    this.navigationStack.push(stackEntry)
+    const menuHtml = this.buildMenuHtml(element, label, parentLabel)
 
     // Update mobile column
     this.mobileCol.innerHTML = menuHtml
 
     // Set up listeners for the new menu
-    this.setupNavListeners(label, navType)
+    this.setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId)
   }
 
   /**
    * Display secondary navigation for a primary menu item
-   * @param {string} targetId - The ID of the secondary content to display
+   * @param {string} sourceElementId - The ID of the source secondary content element
    * @param {string} label - The label of the primary menu item
    */
-  showSecondaryNav(targetId, label) {
-    this.showNavMenu(targetId, label, 'primary', 'Main Menu')
+  showSecondaryNav(sourceElementId, label) {
+    this.showNavMenu(2, sourceElementId, label, 'Main Menu')
   }
 
   /**
    * Display tertiary navigation
-   * @param {Element} tertiaryContent - The tertiary content element
+   * @param {string} sourceElementId - The ID of the source tertiary content element
    * @param {string} label - The label of the tertiary menu
    * @param {string} parentLabel - The label of the parent secondary menu
+   * @param {string} parentElementId - The ID of the parent secondary content element (optional)
    */
-  showTertiaryNav(tertiaryContent, label, parentLabel) {
-    this.showNavMenu(tertiaryContent, label, 'secondary', parentLabel, parentLabel)
+  showTertiaryNav(sourceElementId, label, parentLabel, parentElementId = null) {
+    this.showNavMenu(3, sourceElementId, label, parentLabel, parentElementId)
   }
 
   /**
-   * Build HTML for menu display
-   * @param {Element} content - The content element to display
+   * Build HTML for menu page display
+   * @param {Element} sourceElement - The source element for the menu page content
    * @param {string} label - The label of the menu item that was clicked
-   * @param {string} backButtonLabel - Label for the back button
+   * @param {string} parentLabel - The label of the parent menu
    * @returns {string} HTML string for the menu
    */
-  buildMenuHtml(content, label, backButtonLabel) {
+  buildMenuHtml(sourceElement, label, parentLabel) {
     let html = '<div class="navbar-az-fullscreen-nav-menu-mobile">'
 
     // Add back button
-    html += this.createBackButton(backButtonLabel)
+    html += this.createBackButton(parentLabel)
 
     // Add menu heading
     html += `<h2 class="navbar-az-fullscreen-nav-mobile-menu-heading">${label} Menu</h2>`
 
-    // Extract nav content from content
-    const nav = content.querySelector('.navbar-az-fullscreen-nav-secondary')
+    // Extract nav content from source element
+    const nav = sourceElement.querySelector('.navbar-az-fullscreen-nav-secondary')
     if (nav) {
       // Clone the nav element to avoid modifying the original
       const navClone = nav.cloneNode(true)
@@ -181,8 +186,8 @@ class NavbarAzFullscreenMobileNav {
       html += navContent
       html += '<hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation"></nav>'
     } else {
-      // Fallback: use the entire content if no nav element found
-      html += content.innerHTML
+      // Fallback: use the entire source element if no nav element found
+      html += sourceElement.innerHTML
     }
 
     html += '</div>'
@@ -190,31 +195,56 @@ class NavbarAzFullscreenMobileNav {
   }
 
   /**
-   * Set up event listeners for navigation menu
-   * @param {string} parentLabel - The label of the parent/current menu
-   * @param {string} parentNavType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
+   * Set up event listeners for navigation menu pages
+   * @param {number} navLevel - Navigation level
+   * @param {string} sourceElementId - The ID of the source element
+   * @param {string} label - The label of the menu
+   * @param {string} parentLabel - The label of the parent menu
+   * @param {string} parentElementId - The ID of the parent element (optional)
    */
-  setupNavListeners(parentLabel, parentNavType) {
+  setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId = null) {
+    if (navLevel === 1) {
+      const primaryButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-primary .nav-link')
+      for (const button of primaryButtons) {
+        const targetId = button.getAttribute('data-az-menu-element')
+        const label = button.textContent.trim()
+        button.addEventListener('click', e => {
+          e.preventDefault()
+          if (targetId) {
+            this.showSecondaryNav(targetId, label)
+          }
+        })
+      }
+
+      return
+    }
+
     // Back button
     const backButton = this.mobileCol.querySelector('.navbar-az-fullscreen-nav-back-btn')
     if (backButton) {
       backButton.addEventListener('click', () => {
-        this.goBack()
+        if (navLevel === 2) {
+          this.resetToPrimaryNav()
+        } else {
+          this.showSecondaryNav(
+            parentElementId,
+            parentLabel
+          )
+        }
       })
     }
 
     // Toggle buttons for secondary menu navigation
-    if (parentNavType === 'primary') {
+    if (navLevel === 2) {
       const toggleButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-toggle')
       for (const button of toggleButtons) {
         button.addEventListener('click', e => {
           const tertiaryId = button.getAttribute('data-az-menu-element')
-          const tertiaryContent = document.querySelector(tertiaryId)
 
-          if (tertiaryContent) {
+          if (tertiaryId) {
             // Extract the tertiary label from button aria-label text
             const toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
-            this.showTertiaryNav(tertiaryContent, toggleLabel, parentLabel)
+            this.showTertiaryNav(tertiaryId, toggleLabel, label, sourceElementId)
           }
         })
       }
@@ -234,29 +264,6 @@ class NavbarAzFullscreenMobileNav {
         </button>
       </div>
     `
-  }
-
-  /**
-   * Navigate back to the previous menu
-   */
-  goBack() {
-    // Remove current level from stack
-    this.navigationStack.pop()
-
-    if (this.navigationStack.length === 0) {
-      // Back to primary menu
-      this.resetToPrimaryNav()
-    } else {
-      const previousLevel = this.navigationStack[this.navigationStack.length - 1]
-      if (previousLevel.type === 'primary') {
-        // Back to secondary menu
-        this.navigationStack.pop()
-        this.showSecondaryNav(
-          this.getTargetIdForLabel(previousLevel.label),
-          previousLevel.label
-        )
-      }
-    }
   }
 
   /**
@@ -305,17 +312,8 @@ class NavbarAzFullscreenMobileNav {
 
       this.mobileCol.append(primaryClone)
 
-      this.setupPrimaryNavListeners()
+      this.setupNavListeners(1, '', 'Main Menu', '')
     }
-  }
-
-  /**
-   * Get the target ID for a primary menu label
-   * @param {string} label - The menu label
-   * @returns {string} The target ID
-   */
-  getTargetIdForLabel(label) {
-    return this.labelToTargetMap[label] || ''
   }
 }
 
