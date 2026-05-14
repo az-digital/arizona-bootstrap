@@ -239,6 +239,9 @@
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
+  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 20px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 15px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
   --az-navbar-fullscreen-modal-fade-size: 56px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
   --bs-modal-bg: var(--bs-blue);
@@ -249,6 +252,19 @@
   --bs-modal-footer-bg: var(--bs-azurite);
   --bs-modal-footer-border-color: var(--bs-blue);
   --bs-modal-footer-border-width: 2px;
+
+  @include media-breakpoint-down(xxl) {
+    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 10px;
+    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
+    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    --az-navbar-fullscreen-modal-footer-font: normal normal bold 16px/20px proxima-nova-condensed;
+    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
+    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
+    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
+  }
 
   .modal-header {
     flex-direction: column;
@@ -321,8 +337,8 @@
   }
 
   .modal-footer {
-
     .navbar {
+      --bs-navbar-padding-y: var(--az-navbar-fullscreen-modal-footer-navbar-padding-y);
       --bs-navbar-color: var(--bs-sky);
       --bs-navbar-hover-color: var(--bs-sky);
       --bs-navbar-active-color: var(--bs-sky);
@@ -343,8 +359,8 @@
     }
 
     .navbar-nav {
-      --bs-nav-link-padding-x: 15px;
-      --bs-nav-link-padding-y: 30px;
+      --bs-nav-link-padding-x: var(--az-navbar-fullscreen-modal-footer-nav-link-padding-x);
+      --bs-nav-link-padding-y: var(--az-navbar-fullscreen-modal-footer-nav-link-padding-y);
       --bs-nav-link-color: var(--bs-navbar-color);
       --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
       flex-direction: row;
