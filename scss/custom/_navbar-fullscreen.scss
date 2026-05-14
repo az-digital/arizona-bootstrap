@@ -342,22 +342,15 @@
       letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
     }
 
-    .navbar-az-fullscreen-modal-footer-scroll {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-gutter: stable;
-    }
-
     .navbar-nav {
       --bs-nav-link-padding-x: 15px;
       --bs-nav-link-padding-y: 30px;
       --bs-nav-link-color: var(--bs-navbar-color);
       --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
       flex-direction: row;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
+      width: 100%;
     }
 
     .nav-item {
