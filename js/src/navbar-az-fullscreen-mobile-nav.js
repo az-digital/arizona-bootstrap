@@ -317,17 +317,22 @@ class NavbarAzFullscreenMobileNav {
   }
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const _navbarAzFullscreenMobileNav = new NavbarAzFullscreenMobileNav()
-  })
-} else {
-  const _navbarAzFullscreenMobileNav = new NavbarAzFullscreenMobileNav()
+/**
+ * Initialize Arizona Bootstrap fullscreen mobile navigation.
+ * Initializes immediately if DOM is ready, otherwise defers until DOM is loaded.
+ * @returns {NavbarAzFullscreenMobileNav} The created mobile navigation instance
+ */
+function enableNavbarAzFullscreenMobileNav() {
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return
+  }
+
+  // Defer initialization until DOM is ready if needed
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new NavbarAzFullscreenMobileNav(), { once: true })
+  } else {
+    return new NavbarAzFullscreenMobileNav()
+  }
 }
 
-if (typeof window !== 'undefined') {
-  window.NavbarAzFullscreenMobileNav = NavbarAzFullscreenMobileNav
-}
-
-export default NavbarAzFullscreenMobileNav
+export { enableNavbarAzFullscreenMobileNav as default }
