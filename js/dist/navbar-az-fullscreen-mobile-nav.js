@@ -51,11 +51,10 @@
    */
   var NavbarAzFullscreenMobileNav = /*#__PURE__*/function () {
     function NavbarAzFullscreenMobileNav() {
-      this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col');
-      this.desktopSecondaryContainer = document.querySelector('.navbar-az-fullscreen-nav-secondary-tertiary-cols');
       this.primaryNavContainer = document.querySelector('.navbar-az-fullscreen-nav-primary-col');
-      if (!this.mobileCol) {
-        // Mobile navbar column not found
+      this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col');
+      if (!this.primaryNavContainer || !this.mobileCol) {
+        // One or more required containers not found
         return;
       }
 
@@ -67,8 +66,6 @@
         fragment.append(ctaElement.cloneNode(true));
         this.ctaFragment = fragment;
       }
-      this.navigationStack = []; // Stack to track navigation history
-      this.labelToTargetMap = {}; // Map to store label-to-targetId mappings from page content
       this.init();
     }
 
@@ -77,115 +74,121 @@
      */
     var _proto = NavbarAzFullscreenMobileNav.prototype;
     _proto.init = function init() {
-      // Set up event listeners for primary navigation items in mobile view
-      this.setupPrimaryNavListeners();
-    }
+      var found = false;
 
-    /**
-     * Set up click listeners on primary navigation items
-     */;
-    _proto.setupPrimaryNavListeners = function setupPrimaryNavListeners() {
-      var _this = this;
-      var primaryButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-primary .nav-link');
-      var _loop = function _loop() {
-        var button = _step.value;
-        var targetId = button.getAttribute('data-az-menu-element');
-        var label = button.textContent.trim();
-
-        // Build dynamic mapping from page content
-        if (targetId && label) {
-          _this.labelToTargetMap[label] = targetId;
-        }
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (targetId) {
-            _this.showSecondaryNav(targetId, label);
+      // Check tertiary links for match with current pathname
+      var tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary-panel a.nav-link.active');
+      for (var _iterator = _createForOfIteratorHelperLoose(tertiaryLinks), _step; !(_step = _iterator()).done;) {
+        var _link = _step.value;
+        if (_link.href === window.location.href) {
+          var tertiaryPanel = _link.closest('.navbar-az-fullscreen-nav-tertiary-panel');
+          if (!tertiaryPanel) {
+            continue;
           }
-        });
-      };
-      for (var _iterator = _createForOfIteratorHelperLoose(primaryButtons), _step; !(_step = _iterator()).done;) {
-        _loop();
+          var tertiaryPanelId = tertiaryPanel != null && tertiaryPanel.getAttribute('id') ? "#" + tertiaryPanel.getAttribute('id') : '';
+          var tertiaryLabel = _link.textContent.trim();
+          // Extract parent label from the secondary menu containing this tertiary panel
+          var secondaryContentButton = document.querySelector("[data-bs-target=\"" + tertiaryPanelId + "\"]");
+          var parentLabel = (secondaryContentButton == null ? void 0 : secondaryContentButton.previousElementSibling.previousElementSibling.textContent) || '';
+          var _secondaryContent = secondaryContentButton == null ? void 0 : secondaryContentButton.closest('.tab-pane.active');
+          var secondaryContentId = (_secondaryContent == null ? void 0 : _secondaryContent.getAttribute('id')) || '';
+          this.showTertiaryNav(tertiaryPanelId, tertiaryLabel, parentLabel, "#" + secondaryContentId);
+          found = true;
+        }
+      }
+
+      // Check secondary links for match with current pathname
+      if (!found) {
+        var secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary-scroll a.nav-link.active');
+        for (var _iterator2 = _createForOfIteratorHelperLoose(secondaryLinks), _step2; !(_step2 = _iterator2()).done;) {
+          var link = _step2.value;
+          if (link.href === window.location.href) {
+            var secondaryContent = link.closest('.tab-pane.active');
+            var targetId = (secondaryContent == null ? void 0 : secondaryContent.getAttribute('id')) || '';
+            var label = link.textContent.trim();
+            if (targetId) {
+              this.showSecondaryNav("#" + targetId, label);
+              found = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // If no matching links found, display primary navigation
+      if (!found) {
+        this.setupNavListeners(1, '', 'Main Menu', '');
       }
     }
 
     /**
-     * Display navigation menu (secondary or tertiary)
-     * @param {Element|string} content - The content element or target ID to display
+     * Display secondary or tertiary navigation menu page
+     * @param {number} navLevel - Navigation level
+     * @param {string} sourceElementId - The source element ID to use
      * @param {string} label - The label of the menu item
-     * @param {string} navType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
-     * @param {string} backButtonLabel - Label for the back button
-     * @param {string} parentLabel - Parent label (used for tertiary navigation)
+     * @param {string} parentLabel - Parent label
+     * @param {string} parentElementId - The parent element ID to use for back navigation (optional)
      */;
-    _proto.showNavMenu = function showNavMenu(content, label, navType, backButtonLabel, parentLabel) {
-      if (parentLabel === void 0) {
-        parentLabel = null;
+    _proto.showNavMenu = function showNavMenu(navLevel, sourceElementId, label, parentLabel, parentElementId) {
+      if (parentElementId === void 0) {
+        parentElementId = null;
       }
-      // Handle both targetId (string) and Element
-      var element = content;
-      if (typeof content === 'string') {
-        element = document.querySelector(content);
-        if (!element) {
-          return;
-        }
+      var element = document.querySelector("" + sourceElementId);
+      if (!element) {
+        return;
       }
 
       // Create the menu display
-      var menuHtml = this.buildMenuHtml(element, label, backButtonLabel);
-
-      // Update navigation stack
-      var stackEntry = {
-        type: navType,
-        label: label
-      };
-      if (parentLabel) {
-        stackEntry.parentLabel = parentLabel;
-      }
-      this.navigationStack.push(stackEntry);
+      var menuHtml = this.buildMenuHtml(element, label, parentLabel);
 
       // Update mobile column
       this.mobileCol.innerHTML = menuHtml;
 
       // Set up listeners for the new menu
-      this.setupNavListeners(label, navType);
+      this.setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId);
     }
 
     /**
      * Display secondary navigation for a primary menu item
-     * @param {string} targetId - The ID of the secondary content to display
+     * @param {string} sourceElementId - The ID of the source secondary content element
      * @param {string} label - The label of the primary menu item
      */;
-    _proto.showSecondaryNav = function showSecondaryNav(targetId, label) {
-      this.showNavMenu(targetId, label, 'primary', 'Main Menu');
+    _proto.showSecondaryNav = function showSecondaryNav(sourceElementId, label) {
+      this.showNavMenu(2, sourceElementId, label, 'Main Menu');
     }
 
     /**
      * Display tertiary navigation
-     * @param {Element} tertiaryContent - The tertiary content element
+     * @param {string} sourceElementId - The ID of the source tertiary content element
      * @param {string} label - The label of the tertiary menu
      * @param {string} parentLabel - The label of the parent secondary menu
+     * @param {string} parentElementId - The ID of the parent secondary content element (optional)
      */;
-    _proto.showTertiaryNav = function showTertiaryNav(tertiaryContent, label, parentLabel) {
-      this.showNavMenu(tertiaryContent, label, 'secondary', parentLabel, parentLabel);
+    _proto.showTertiaryNav = function showTertiaryNav(sourceElementId, label, parentLabel, parentElementId) {
+      if (parentElementId === void 0) {
+        parentElementId = null;
+      }
+      this.showNavMenu(3, sourceElementId, label, parentLabel, parentElementId);
     }
 
     /**
-     * Build HTML for menu display
-     * @param {Element} content - The content element to display
+     * Build HTML for menu page display
+     * @param {Element} sourceElement - The source element for the menu page content
      * @param {string} label - The label of the menu item that was clicked
-     * @param {string} backButtonLabel - Label for the back button
+     * @param {string} parentLabel - The label of the parent menu
      * @returns {string} HTML string for the menu
      */;
-    _proto.buildMenuHtml = function buildMenuHtml(content, label, backButtonLabel) {
+    _proto.buildMenuHtml = function buildMenuHtml(sourceElement, label, parentLabel) {
       var html = '<div class="navbar-az-fullscreen-nav-menu-mobile">';
 
       // Add back button
-      html += this.createBackButton(backButtonLabel);
+      html += this.createBackButton(parentLabel);
 
       // Add menu heading
       html += "<h2 class=\"navbar-az-fullscreen-nav-mobile-menu-heading\">" + label + " Menu</h2>";
 
-      // Extract nav content from content
-      var nav = content.querySelector('.navbar-az-fullscreen-nav-secondary');
+      // Extract nav content from source element
+      var nav = sourceElement.querySelector('.navbar-az-fullscreen-nav-secondary');
       if (nav) {
         // Clone the nav element to avoid modifying the original
         var navClone = nav.cloneNode(true);
@@ -198,8 +201,8 @@
         // Process all buttons in the cloned nav
         var buttonCounter = 0;
         var buttons = navClone.querySelectorAll('button');
-        for (var _iterator2 = _createForOfIteratorHelperLoose(buttons), _step2; !(_step2 = _iterator2()).done;) {
-          var button = _step2.value;
+        for (var _iterator3 = _createForOfIteratorHelperLoose(buttons), _step3; !(_step3 = _iterator3()).done;) {
+          var button = _step3.value;
           // Store data-bs-target value before removing attributes
           var targetId = button.getAttribute('data-bs-target');
 
@@ -226,44 +229,72 @@
         html += navContent;
         html += '<hr class="border-top border-azurite opacity-100" aria-hidden="true" role="presentation"></nav>';
       } else {
-        // Fallback: use the entire content if no nav element found
-        html += content.innerHTML;
+        // Fallback: use the entire source element if no nav element found
+        html += sourceElement.innerHTML;
       }
       html += '</div>';
       return html;
     }
 
     /**
-     * Set up event listeners for navigation menu
-     * @param {string} parentLabel - The label of the parent/current menu
-     * @param {string} parentNavType - Navigation type: 'primary' (secondary menu) or 'secondary' (tertiary menu)
+     * Set up event listeners for navigation menu pages
+     * @param {number} navLevel - Navigation level
+     * @param {string} sourceElementId - The ID of the source element
+     * @param {string} label - The label of the menu
+     * @param {string} parentLabel - The label of the parent menu
+     * @param {string} parentElementId - The ID of the parent element (optional)
      */;
-    _proto.setupNavListeners = function setupNavListeners(parentLabel, parentNavType) {
-      var _this2 = this;
+    _proto.setupNavListeners = function setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId) {
+      var _this = this;
+      if (parentElementId === void 0) {
+        parentElementId = null;
+      }
+      if (navLevel === 1) {
+        var primaryButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-primary .nav-link');
+        var _loop = function _loop() {
+          var button = _step4.value;
+          var targetId = button.getAttribute('data-az-menu-element');
+          var label = button.textContent.trim();
+          button.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (targetId) {
+              _this.showSecondaryNav(targetId, label);
+            }
+          });
+        };
+        for (var _iterator4 = _createForOfIteratorHelperLoose(primaryButtons), _step4; !(_step4 = _iterator4()).done;) {
+          _loop();
+        }
+        return;
+      }
+
       // Back button
       var backButton = this.mobileCol.querySelector('.navbar-az-fullscreen-nav-back-btn');
       if (backButton) {
         backButton.addEventListener('click', function () {
-          _this2.goBack();
+          if (navLevel === 2) {
+            _this.resetToPrimaryNav();
+          } else {
+            _this.showSecondaryNav(parentElementId, parentLabel);
+          }
         });
       }
 
       // Toggle buttons for secondary menu navigation
-      if (parentNavType === 'primary') {
+      if (navLevel === 2) {
         var toggleButtons = this.mobileCol.querySelectorAll('.navbar-az-fullscreen-nav-toggle');
         var _loop2 = function _loop2() {
-          var button = _step3.value;
+          var button = _step5.value;
           button.addEventListener('click', function (e) {
             var tertiaryId = button.getAttribute('data-az-menu-element');
-            var tertiaryContent = document.querySelector(tertiaryId);
-            if (tertiaryContent) {
+            if (tertiaryId) {
               // Extract the tertiary label from button aria-label text
               var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
-              _this2.showTertiaryNav(tertiaryContent, toggleLabel, parentLabel);
+              _this.showTertiaryNav(tertiaryId, toggleLabel, label, sourceElementId);
             }
           });
         };
-        for (var _iterator3 = _createForOfIteratorHelperLoose(toggleButtons), _step3; !(_step3 = _iterator3()).done;) {
+        for (var _iterator5 = _createForOfIteratorHelperLoose(toggleButtons), _step5; !(_step5 = _iterator5()).done;) {
           _loop2();
         }
       }
@@ -276,25 +307,6 @@
      */;
     _proto.createBackButton = function createBackButton(label) {
       return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to " + label + "\">\n          Back to " + label + "\n        </button>\n      </div>\n    ";
-    }
-
-    /**
-     * Navigate back to the previous menu
-     */;
-    _proto.goBack = function goBack() {
-      // Remove current level from stack
-      this.navigationStack.pop();
-      if (this.navigationStack.length === 0) {
-        // Back to primary menu
-        this.resetToPrimaryNav();
-      } else {
-        var previousLevel = this.navigationStack[this.navigationStack.length - 1];
-        if (previousLevel.type === 'primary') {
-          // Back to secondary menu
-          this.navigationStack.pop();
-          this.showSecondaryNav(this.getTargetIdForLabel(previousLevel.label), previousLevel.label);
-        }
-      }
     }
 
     /**
@@ -323,8 +335,8 @@
 
         // Process all buttons in the cloned primary nav
         var buttons = primaryClone.querySelectorAll('button');
-        for (var _iterator4 = _createForOfIteratorHelperLoose(buttons), _step4; !(_step4 = _iterator4()).done;) {
-          var button = _step4.value;
+        for (var _iterator6 = _createForOfIteratorHelperLoose(buttons), _step6; !(_step6 = _iterator6()).done;) {
+          var button = _step6.value;
           // Replace data-bs-target with data-az-menu-element
           var targetId = button.getAttribute('data-bs-target');
           if (targetId) {
@@ -342,32 +354,34 @@
           button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col');
         }
         this.mobileCol.append(primaryClone);
-        this.setupPrimaryNavListeners();
+        this.setupNavListeners(1, '', 'Main Menu', '');
       }
-    }
-
-    /**
-     * Get the target ID for a primary menu label
-     * @param {string} label - The menu label
-     * @returns {string} The target ID
-     */;
-    _proto.getTargetIdForLabel = function getTargetIdForLabel(label) {
-      return this.labelToTargetMap[label] || '';
     };
     return NavbarAzFullscreenMobileNav;
-  }(); // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      new NavbarAzFullscreenMobileNav();
-    });
-  } else {
-    new NavbarAzFullscreenMobileNav();
-  }
-  if (typeof window !== 'undefined') {
-    window.NavbarAzFullscreenMobileNav = NavbarAzFullscreenMobileNav;
+  }();
+  /**
+   * Initialize Arizona Bootstrap fullscreen mobile navigation.
+   * Initializes immediately if DOM is ready, otherwise defers until DOM is loaded.
+   * @returns {NavbarAzFullscreenMobileNav} The created mobile navigation instance
+   */
+  function enableNavbarAzFullscreenMobileNav() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+
+    // Defer initialization until DOM is ready if needed
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        return new NavbarAzFullscreenMobileNav();
+      }, {
+        once: true
+      });
+    } else {
+      return new NavbarAzFullscreenMobileNav();
+    }
   }
 
-  return NavbarAzFullscreenMobileNav;
+  return enableNavbarAzFullscreenMobileNav;
 
 }));
 //# sourceMappingURL=navbar-az-fullscreen-mobile-nav.js.map
