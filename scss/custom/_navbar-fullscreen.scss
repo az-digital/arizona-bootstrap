@@ -89,7 +89,7 @@
     &:active,
     &.active,
     &.is-active {
-      --bs-nav-link-color: var(--bs-navbar-active-color);
+      color: var(--bs-navbar-active-color);
       background-color: transparent;
     }
   }
@@ -306,6 +306,7 @@
           &:active,
           &.active,
           &.is-active {
+            color: var(--bs-navbar-active-color);
             background-color: transparent;
           }
         }
@@ -400,11 +401,12 @@
       &:active,
       &.active,
       &.is-active {
-        --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
+        color: var(--az-navbar-fullscreen-modal-menu-primary-active-color);
         background-color: transparent;
       }
 
       &:hover {
+        color: var(--az-navbar-fullscreen-modal-menu-primary-hover-color);
         background-color: transparent;
 
         &::after {
@@ -467,11 +469,12 @@
       &:active,
       &.active,
       &.is-active {
-        --bs-nav-link-color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
+        color: var(--az-navbar-fullscreen-modal-menu-secondary-active-color);
         background-color: transparent;
       }
 
       &:hover {
+        color: var(--az-navbar-fullscreen-modal-menu-secondary-hover-color);
         background-color: transparent;
 
         // &::after {
@@ -508,7 +511,7 @@
       width: 2px;
       margin-top: 16px;
       margin-bottom: 16px;
-      background-color: var(--bs-bloom);
+      color: var(--bs-bloom);
       opacity: 1;
     }
 
@@ -643,11 +646,12 @@
 
   .navbar-az-fullscreen-actions {
     --bs-nav-link-padding-y: 12px;
-    --bs-nav-link-color: var(--bs-sky);
 
-    .nav-link {
+    .nav-link,
+    .vr {
       font-size: 20px;
       line-height: 24px;
+      color: var(--bs-sky);
     }
   }
 
