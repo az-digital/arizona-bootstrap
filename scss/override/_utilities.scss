@@ -13,6 +13,10 @@ $colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb,
   @each $color, $value in $colors-rgb {
     --#{$prefix}#{$color}-rgb: #{$value};
   }
+
+  @each $token, $value in $silvers {
+    --#{$prefix}#{$token}: #{$value};
+  }
 }
 
 // text colors

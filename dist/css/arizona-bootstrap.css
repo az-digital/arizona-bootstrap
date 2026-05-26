@@ -8163,6 +8163,15 @@ textarea.form-control-lg {
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-dark-silver-rgb: 73, 89, 94;
+  --bs-silver-100: #eceeef;
+  --bs-silver-200: #d8dddf;
+  --bs-silver-300: #c5cdce;
+  --bs-silver-400: #b1bcbe;
+  --bs-silver-500: #9eabae;
+  --bs-silver-600: #7e898b;
+  --bs-silver-700: #5f6768;
+  --bs-silver-800: #3f4446;
+  --bs-silver-900: #202223;
 }
 
 .align-baseline {
