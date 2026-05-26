@@ -46,7 +46,7 @@ The blue Arizona Header is to be used on marketing-approved subdomains of arizon
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -57,7 +57,7 @@ The blue Arizona Header is to be used on marketing-approved subdomains of arizon
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="https://cdn.digital.arizona.edu/logos/v1.0.0/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
       </a>
     </div>
   </div>
