@@ -22871,9 +22871,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .bg-trilines {
   background-image: url("img/trilines.svg");
-  background-repeat: no-repeat;
-  background-position: top 0 right -1em;
   background-size: auto 305px;
+  background-position: top right;
+  background-position: top 0 right -1em;
+  background-repeat: no-repeat;
 }
 .bg-trilines p,
 .bg-trilines li,
