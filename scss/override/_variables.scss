@@ -81,9 +81,9 @@ $table-variants: map-merge(
   map-remove($theme-colors, "success", "danger", "warning", "info")
 );
 $table-striped-bg-factor: .09;
-$table-striped-bg: rgba($gray-300, .35);
+$table-striped-bg: rgba(var(--bs-gray-300-rgb), .35);
 $table-hover-bg-factor: .18;
-$table-hover-bg: rgba($gray-300, .6);
+$table-hover-bg: rgba(var(--bs-gray-300-rgb), .6);
 // fusv-enable
 
 /*
@@ -120,16 +120,16 @@ $btn-border-radius-lg: 3rem;
 
 // >> Dropdowns
 // fusv-disable
-$dropdown-color: $cool-gray;
-$dropdown-bg: $blue;
-$dropdown-divider-bg: $white;
-$dropdown-link-color: $white;
-$dropdown-link-hover-color: $white;
-$dropdown-link-hover-bg: $azurite;
-$dropdown-link-active-color: $blue;
-$dropdown-link-active-bg: $white;
-$dropdown-link-disabled-color: $gray-600;
-$dropdown-header-color: $white;
+$dropdown-color: var(--bs-cool-gray);
+$dropdown-bg: var(--bs-blue);
+$dropdown-divider-bg: var(--bs-white);
+$dropdown-link-color: var(--bs-white);
+$dropdown-link-hover-color: var(--bs-white);
+$dropdown-link-hover-bg: var(--bs-azurite);
+$dropdown-link-active-color: var(--bs-blue);
+$dropdown-link-active-bg: var(--bs-white);
+$dropdown-link-disabled-color: var(--bs-gray-600);
+$dropdown-header-color: var(--bs-white);
 // fusv-enable
 
 // >> Forms
@@ -140,25 +140,25 @@ $form-label-font-weight: 700;
 
 // >> List Groups
 // fusv-disable
-$list-group-active-bg: $blue;
+$list-group-active-bg: var(--bs-blue);
 // fusv-enable
 
 // >> Navs
 // fusv-disable
 $nav-link-font-weight: 700;
-$nav-link-color: $azurite;
-$nav-link-hover-color: $midnight;
-$nav-link-disabled-color: $dark-silver;
+$nav-link-color: var(--bs-azurite);
+$nav-link-hover-color: var(--bs-midnight);
+$nav-link-disabled-color: var(--bs-dark-silver);
 
-$nav-tabs-border-color: $gray-200;
-$nav-tabs-link-active-color: $midnight;
-$nav-tabs-link-active-bg: $white;
-$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
+$nav-tabs-border-color: var(--bs-gray-200);
+$nav-tabs-link-active-color: var(--bs-midnight);
+$nav-tabs-link-active-bg: var(--bs-white);
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
 
-$nav-pills-link-active-color: $midnight;
-$nav-pills-link-active-bg: $gray-200;
+$nav-pills-link-active-color: var(--bs-midnight);
+$nav-pills-link-active-bg: var(--bs-gray-200);
 
-$nav-underline-link-active-color: $midnight;
+$nav-underline-link-active-color: var(--bs-midnight);
 // fusv-enable
 
 // >> Navbar
@@ -172,11 +172,11 @@ $navbar-light-disabled-color: $nav-link-disabled-color;
 
 // >> Pagination
 // fusv-disable
-$pagination-color: $breadcrumb-color;
-$pagination-hover-color: $midnight;
-$pagination-active-bg: $blue;
-$pagination-active-border-color: $blue;
-$pagination-focus-color: $blue;
+$pagination-color: var(--bs-azurite);
+$pagination-hover-color: var(--bs-midnight);
+$pagination-active-bg: var(--bs-blue);
+$pagination-active-border-color: var(--bs-blue);
+$pagination-focus-color: var(--bs-blue);
 $pagination-focus-ring-box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
 $pagination-focus-box-shadow: $pagination-focus-ring-box-shadow;
 // fusv-enable
@@ -188,7 +188,7 @@ $popover-font-size: $font-size-base;
 
 // >> Tooltips
 // fusv-disable
-$tooltip-bg: $blue;
+$tooltip-bg: var(--bs-blue);
 // fusv-enable
 
 // >> Shadows

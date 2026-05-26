@@ -2420,11 +2420,11 @@ progress {
   --bs-table-border-color: var(--bs-border-color);
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: var(--bs-emphasis-color);
-  --bs-table-striped-bg: rgba(222, 226, 230, 0.35);
+  --bs-table-striped-bg: rgba(var(--bs-gray-300-rgb), 0.35);
   --bs-table-active-color: var(--bs-emphasis-color);
   --bs-table-active-bg: rgba(var(--bs-emphasis-color-rgb), 0.1);
   --bs-table-hover-color: var(--bs-emphasis-color);
-  --bs-table-hover-bg: rgba(222, 226, 230, 0.6);
+  --bs-table-hover-bg: rgba(var(--bs-gray-300-rgb), 0.6);
   width: 100%;
   margin-bottom: 1rem;
   vertical-align: top;
@@ -4118,24 +4118,24 @@ textarea.form-control-lg {
   --bs-dropdown-padding-y: 0.5rem;
   --bs-dropdown-spacer: 0.125rem;
   --bs-dropdown-font-size: 1rem;
-  --bs-dropdown-color: #e2e9eb;
-  --bs-dropdown-bg: #0c234b;
+  --bs-dropdown-color: var(--bs-cool-gray);
+  --bs-dropdown-bg: var(--bs-blue);
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-border-radius: var(--bs-border-radius);
   --bs-dropdown-border-width: var(--bs-border-width);
   --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
-  --bs-dropdown-divider-bg: #fff;
+  --bs-dropdown-divider-bg: var(--bs-white);
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: var(--bs-box-shadow);
-  --bs-dropdown-link-color: #fff;
-  --bs-dropdown-link-hover-color: #fff;
-  --bs-dropdown-link-hover-bg: #1e5288;
-  --bs-dropdown-link-active-color: #0c234b;
-  --bs-dropdown-link-active-bg: #fff;
-  --bs-dropdown-link-disabled-color: #6c757d;
+  --bs-dropdown-link-color: var(--bs-white);
+  --bs-dropdown-link-hover-color: var(--bs-white);
+  --bs-dropdown-link-hover-bg: var(--bs-azurite);
+  --bs-dropdown-link-active-color: var(--bs-blue);
+  --bs-dropdown-link-active-bg: var(--bs-white);
+  --bs-dropdown-link-disabled-color: var(--bs-gray-600);
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.25rem;
-  --bs-dropdown-header-color: #fff;
+  --bs-dropdown-header-color: var(--bs-white);
   --bs-dropdown-header-padding-x: 1rem;
   --bs-dropdown-header-padding-y: 0.5rem;
   position: absolute;
@@ -4394,10 +4394,10 @@ textarea.form-control-lg {
   --bs-dropdown-box-shadow: ;
   --bs-dropdown-link-color: #dee2e6;
   --bs-dropdown-link-hover-color: #fff;
-  --bs-dropdown-divider-bg: #fff;
+  --bs-dropdown-divider-bg: var(--bs-white);
   --bs-dropdown-link-hover-bg: rgba(255, 255, 255, 0.15);
-  --bs-dropdown-link-active-color: #0c234b;
-  --bs-dropdown-link-active-bg: #fff;
+  --bs-dropdown-link-active-color: var(--bs-blue);
+  --bs-dropdown-link-active-bg: var(--bs-white);
   --bs-dropdown-link-disabled-color: #adb5bd;
   --bs-dropdown-header-color: #adb5bd;
 }
@@ -4515,9 +4515,9 @@ textarea.form-control-lg {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: 700;
-  --bs-nav-link-color: #1e5288;
-  --bs-nav-link-hover-color: #001c48;
-  --bs-nav-link-disabled-color: #49595e;
+  --bs-nav-link-color: var(--bs-azurite);
+  --bs-nav-link-hover-color: var(--bs-midnight);
+  --bs-nav-link-disabled-color: var(--bs-dark-silver);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -4558,12 +4558,12 @@ textarea.form-control-lg {
 
 .nav-tabs {
   --bs-nav-tabs-border-width: var(--bs-border-width);
-  --bs-nav-tabs-border-color: #e9ecef;
+  --bs-nav-tabs-border-color: var(--bs-gray-200);
   --bs-nav-tabs-border-radius: var(--bs-border-radius);
-  --bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-secondary-bg) #e9ecef;
-  --bs-nav-tabs-link-active-color: #001c48;
-  --bs-nav-tabs-link-active-bg: #fff;
-  --bs-nav-tabs-link-active-border-color: #e9ecef #e9ecef #fff;
+  --bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-secondary-bg) var(--bs-gray-200);
+  --bs-nav-tabs-link-active-color: var(--bs-midnight);
+  --bs-nav-tabs-link-active-bg: var(--bs-white);
+  --bs-nav-tabs-link-active-border-color: var(--bs-gray-200) var(--bs-gray-200) var(--bs-white);
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
 }
 .nav-tabs .nav-link {
@@ -4590,8 +4590,8 @@ textarea.form-control-lg {
 
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
-  --bs-nav-pills-link-active-color: #001c48;
-  --bs-nav-pills-link-active-bg: #e9ecef;
+  --bs-nav-pills-link-active-color: var(--bs-midnight);
+  --bs-nav-pills-link-active-bg: var(--bs-gray-200);
 }
 .nav-pills .nav-link {
   border-radius: var(--bs-nav-pills-border-radius);
@@ -4605,7 +4605,7 @@ textarea.form-control-lg {
 .nav-underline {
   --bs-nav-underline-gap: 1rem;
   --bs-nav-underline-border-width: 0.125rem;
-  --bs-nav-underline-link-active-color: #001c48;
+  --bs-nav-underline-link-active-color: var(--bs-midnight);
   gap: var(--bs-nav-underline-gap);
 }
 .nav-underline .nav-link {
@@ -4655,14 +4655,14 @@ textarea.form-control-lg {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0;
   --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
-  --bs-navbar-hover-color: #001c48;
-  --bs-navbar-disabled-color: #49595e;
-  --bs-navbar-active-color: #001c48;
+  --bs-navbar-hover-color: var(--bs-midnight);
+  --bs-navbar-disabled-color: var(--bs-dark-silver);
+  --bs-navbar-active-color: var(--bs-midnight);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: #001c48;
-  --bs-navbar-brand-hover-color: #001c48;
+  --bs-navbar-brand-color: var(--bs-midnight);
+  --bs-navbar-brand-hover-color: var(--bs-midnight);
   --bs-navbar-nav-link-padding-x: 1rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -5508,20 +5508,20 @@ textarea.form-control-lg {
   --bs-pagination-padding-x: 0.75rem;
   --bs-pagination-padding-y: 0.375rem;
   --bs-pagination-font-size: 1rem;
-  --bs-pagination-color: #1e5288;
+  --bs-pagination-color: var(--bs-azurite);
   --bs-pagination-bg: var(--bs-body-bg);
   --bs-pagination-border-width: var(--bs-border-width);
   --bs-pagination-border-color: var(--bs-border-color);
   --bs-pagination-border-radius: var(--bs-border-radius);
-  --bs-pagination-hover-color: #001c48;
+  --bs-pagination-hover-color: var(--bs-midnight);
   --bs-pagination-hover-bg: var(--bs-tertiary-bg);
   --bs-pagination-hover-border-color: var(--bs-border-color);
-  --bs-pagination-focus-color: #0c234b;
+  --bs-pagination-focus-color: var(--bs-blue);
   --bs-pagination-focus-bg: var(--bs-secondary-bg);
   --bs-pagination-focus-box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
   --bs-pagination-active-color: #fff;
-  --bs-pagination-active-bg: #0c234b;
-  --bs-pagination-active-border-color: #0c234b;
+  --bs-pagination-active-bg: var(--bs-blue);
+  --bs-pagination-active-border-color: var(--bs-blue);
   --bs-pagination-disabled-color: var(--bs-secondary-color);
   --bs-pagination-disabled-bg: var(--bs-secondary-bg);
   --bs-pagination-disabled-border-color: var(--bs-border-color);
@@ -5811,8 +5811,8 @@ textarea.form-control-lg {
   --bs-list-group-disabled-color: var(--bs-secondary-color);
   --bs-list-group-disabled-bg: var(--bs-body-bg);
   --bs-list-group-active-color: #fff;
-  --bs-list-group-active-bg: #0c234b;
-  --bs-list-group-active-border-color: #0c234b;
+  --bs-list-group-active-bg: var(--bs-blue);
+  --bs-list-group-active-border-color: var(--bs-blue);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -6585,7 +6585,7 @@ textarea.form-control-lg {
   --bs-tooltip-margin: ;
   --bs-tooltip-font-size: 0.875rem;
   --bs-tooltip-color: var(--bs-body-bg);
-  --bs-tooltip-bg: #0c234b;
+  --bs-tooltip-bg: var(--bs-blue);
   --bs-tooltip-border-radius: var(--bs-border-radius);
   --bs-tooltip-opacity: 0.9;
   --bs-tooltip-arrow-width: 0.8rem;
@@ -19076,11 +19076,11 @@ textarea.form-control-lg {
   }
   .nav-tabs.nav-tabs-lg .nav-link:not(.active), .nav-tabs.nav-tabs-lg .nav-link:not(.disabled) {
     background-color: var(--bs-secondary-bg);
-    border: var(--bs-border-width) solid #e9ecef;
+    border: var(--bs-border-width) solid var(--bs-gray-200);
   }
   .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
     background-color: revert;
-    border-color: #e9ecef #e9ecef #fff;
+    border-color: var(--bs-gray-200) var(--bs-gray-200) var(--bs-white);
     border-bottom-left-radius: initial;
     border-bottom-right-radius: initial;
   }
@@ -22871,9 +22871,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .bg-trilines {
   background-image: url("img/trilines.svg");
-  background-size: auto 305px;
-  background-position: top 0 right -1em;
   background-repeat: no-repeat;
+  background-position: top 0 right -1em;
+  background-size: auto 305px;
 }
 .bg-trilines p,
 .bg-trilines li,
