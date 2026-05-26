@@ -19927,7 +19927,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-cool-gray {
-  --bs-text-bg-color: var(--bs-midnight);
+  --bs-text-bg-color: var(--bs-black);
   --bs-text-bg-bg: rgba(var(--bs-cool-gray-rgb), var(--bs-bg-opacity, 1));
 }
 .text-bg-cool-gray h1,
