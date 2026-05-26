@@ -38,7 +38,7 @@
       box-shadow: 0 0 $focus-ring-blur 2px;
     }
   }
-  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
+  @if not list.index($light-background-colors-with-red-links, $bg-color-name) and not list.index($dark-background-colors, $bg-color-name) {
     .btn:not(.btn-arizona-header):focus-visible {
       box-shadow: 0 0 $focus-ring-blur $focus-ring-width #{"rgba(var(--bs-black-rgb), .5)"};
     }

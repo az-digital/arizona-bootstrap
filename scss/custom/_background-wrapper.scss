@@ -1,7 +1,6 @@
 //
 // > Background Wrapper custom component
 //
-
 .background-wrapper {
   width: 100%;
   padding: 3rem 0;
@@ -11,87 +10,64 @@
 
 // >>> Triangles Top Left
 .bg-triangles-top-left {
-  background: {
-    image: url("img/triangles-top-left.svg");
-    repeat: no-repeat;
-    position: 0 0;
-    size: auto;
-    blend-mode: multiply;
-  }
+  background-image: url("img/triangles-top-left.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto;
+  background-blend-mode: multiply;
 }
 .text-bg-red.bg-triangles-top-left {
-  background: {
-    image: url("img/triangles-top-left-red.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-top-left-red.svg");
+  background-blend-mode: initial;
 }
 .text-bg-blue.bg-triangles-top-left {
-  background: {
-    image: url("img/triangles-top-left-blue.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-top-left-blue.svg");
+  background-blend-mode: initial;
 }
-
 // >>> Triangles Top Right
 .bg-triangles-top-right {
-  background: {
-    image: url("img/triangles-top-right.svg");
-    repeat: no-repeat;
-    position: top right;
-    size: auto;
-    blend-mode: multiply;
-  }
+  background-image: url("img/triangles-top-right.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: auto;
+  background-blend-mode: multiply;
 }
 .text-bg-red.bg-triangles-top-right {
-  background: {
-    image: url("img/triangles-top-right-red.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-top-right-red.svg");
+  background-blend-mode: initial;
 }
 .text-bg-blue.bg-triangles-top-right {
-  background: {
-    image: url("img/triangles-top-right-blue.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-top-right-blue.svg");
+  background-blend-mode: initial;
 }
 
 // >>> Triangles Centered
 .bg-triangles-centered {
-  background: {
-    image: url("img/triangles-centered.svg");
-    repeat: no-repeat;
-    position: center bottom;
-    size: auto;
-    blend-mode: multiply;
-  }
+  background-image: url("img/triangles-centered.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto;
+  background-blend-mode: multiply;
 }
 .text-bg-red.bg-triangles-centered {
-  background: {
-    image: url("img/triangles-centered-red.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-centered-red.svg");
+  background-blend-mode: initial;
 }
 .text-bg-blue.bg-triangles-centered {
-  background: {
-    image: url("img/triangles-centered-blue.svg");
-    blend-mode: initial;
-  }
+  background-image: url("img/triangles-centered-blue.svg");
+  background-blend-mode: initial;
 }
 
 // >>> Trilines
 .bg-trilines {
-  background: {
-    image: url("img/trilines.svg");
-    size: auto 305px;
-    position: top right;
-    position: top 0 right -1em;
-    repeat: no-repeat;
-  }
-
+  background-image: url("img/trilines.svg");
+  background-size: auto 305px;
+  background-position: top 0 right -1em;
+  background-repeat: no-repeat;
   p,
   li,
   hr {
-    background-color: #{"rgba(var(--bs-white-rgb), .7)"};
+    background-color: rgba(var(--bs-white-rgb), .7);
   }
 
   @each $color, $value in $colors {

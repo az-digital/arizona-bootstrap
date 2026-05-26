@@ -5474,7 +5474,7 @@ textarea.form-control-lg {
   --bs-breadcrumb-padding-x: 1rem;
   --bs-breadcrumb-padding-y: 0.75rem;
   --bs-breadcrumb-margin-bottom: 1rem;
-  --bs-breadcrumb-bg: #fff;
+  --bs-breadcrumb-bg: var(--bs-body-bg);
   --bs-breadcrumb-border-radius: ;
   --bs-breadcrumb-divider-color: var(--bs-secondary-color);
   --bs-breadcrumb-item-padding-x: 0.5rem;
@@ -7760,46 +7760,6 @@ textarea.form-control-lg {
   content: "";
 }
 
-.text-bg-primary {
-  color: #fff !important;
-  background-color: RGBA(var(--bs-primary-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-secondary {
-  color: #fff !important;
-  background-color: RGBA(var(--bs-secondary-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-success {
-  color: #000 !important;
-  background-color: RGBA(var(--bs-success-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-info {
-  color: #000 !important;
-  background-color: RGBA(var(--bs-info-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-warning {
-  color: #000 !important;
-  background-color: RGBA(var(--bs-warning-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-danger {
-  color: #fff !important;
-  background-color: RGBA(var(--bs-danger-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-light {
-  color: #000 !important;
-  background-color: RGBA(var(--bs-light-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
-.text-bg-dark {
-  color: #fff !important;
-  background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
 .link-primary {
   color: RGBA(var(--bs-primary-rgb), var(--bs-link-opacity, 1)) !important;
   -webkit-text-decoration-color: RGBA(var(--bs-primary-rgb), var(--bs-link-underline-opacity, 1)) !important;
@@ -8143,6 +8103,7 @@ textarea.form-control-lg {
 [data-bs-theme=light] {
   --bs-font-material-symbols: "Material Symbols Rounded";
   --bs-emphasis-color: var(--bs-blue);
+  --bs-text-opacity: 1;
   --bs-red-rgb: 171, 5, 32;
   --bs-bloom-rgb: 239, 64, 86;
   --bs-chili-rgb: 139, 0, 21;
@@ -8164,9 +8125,6 @@ textarea.form-control-lg {
   --bs-dark-silver-rgb: 73, 89, 94;
 }
 
-/*
-* > Utilities API Customizations
-*/
 .align-baseline {
   vertical-align: baseline !important;
 }
@@ -19047,7 +19005,7 @@ textarea.form-control-lg {
   border-color: transparent;
 }
 .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
-  background-color: #e9ecef;
+  background-color: var(--bs-secondary-bg);
   border-bottom-left-radius: var(--bs-border-radius);
   border-bottom-right-radius: var(--bs-border-radius);
 }
@@ -19068,7 +19026,7 @@ textarea.form-control-lg {
     padding: 1.25em 1.75em;
   }
   .nav-tabs.nav-tabs-lg .nav-link:not(.active), .nav-tabs.nav-tabs-lg .nav-link:not(.disabled) {
-    background-color: #e9ecef;
+    background-color: var(--bs-secondary-bg);
     border: var(--bs-border-width) solid #e9ecef;
   }
   .nav-tabs.nav-tabs-lg .nav-link.active, .nav-tabs.nav-tabs-lg .nav-link:active {
@@ -19618,18 +19576,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-color: initial;
 }
 
-.text-bg-gray-900, .text-bg-gray-800, .text-bg-gray-700, .text-bg-gray-600, .text-bg-gray-500, .text-bg-gray-400, .text-bg-gray-300, .text-bg-gray-200, .text-bg-gray-100, .text-bg-dark, .text-bg-light, .text-bg-danger, .text-bg-warning, .text-bg-info, .text-bg-success, .text-bg-secondary, .text-bg-primary, .text-bg-black, .text-bg-white, .text-bg-sage, .text-bg-ash, .text-bg-mesa, .text-bg-silver, .text-bg-river, .text-bg-leaf, .text-bg-warm-gray, .text-bg-cool-gray, .text-bg-midnight, .text-bg-azurite, .text-bg-oasis, .text-bg-sky, .text-bg-blue, .text-bg-chili, .text-bg-bloom, .text-bg-red {
-  color: var(--bs-text-bg-color) !important;
-  background-color: var(--bs-text-bg-bg) !important;
-}
-
-.text-bg-gradient-black, .text-bg-gradient-white, .text-bg-gradient-warm-gray, .text-bg-gradient-cool-gray, .text-bg-gradient-midnight, .text-bg-gradient-azurite, .text-bg-gradient-oasis, .text-bg-gradient-sky, .text-bg-gradient-blue, .text-bg-gradient-chili, .text-bg-gradient-bloom, .text-bg-gradient-red, .text-bg-transparent-black, .text-bg-transparent-white, .text-bg-transparent-warm-gray, .text-bg-transparent-cool-gray, .text-bg-transparent-midnight, .text-bg-transparent-azurite, .text-bg-transparent-oasis, .text-bg-transparent-sky, .text-bg-transparent-blue, .text-bg-transparent-chili, .text-bg-transparent-bloom, .text-bg-transparent-red {
-  color: var(--bs-text-bg-color) !important;
-}
-
 .text-bg-red {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-red-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-red h1,
 .text-bg-red h2,
@@ -19653,9 +19602,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-red .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-red .az-gallery-grid-btn:focus-visible {
@@ -19668,8 +19614,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-bloom {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-bloom-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-bloom-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-bloom h1,
 .text-bg-bloom h2,
@@ -19701,8 +19647,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-chili {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-chili-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-chili-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-chili h1,
 .text-bg-chili h2,
@@ -19726,9 +19672,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-chili .az-gallery-grid-btn:focus-visible {
@@ -19741,8 +19684,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-blue {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-blue-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-blue-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-blue h1,
 .text-bg-blue h2,
@@ -19766,9 +19709,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-blue .az-gallery-grid-btn:focus-visible {
@@ -19781,8 +19721,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-sky {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-sky-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-sky-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-sky h1,
 .text-bg-sky h2,
@@ -19814,8 +19754,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-oasis {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-oasis-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-oasis-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-oasis h1,
 .text-bg-oasis h2,
@@ -19847,8 +19787,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-azurite {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-azurite h1,
 .text-bg-azurite h2,
@@ -19872,9 +19812,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-azurite .az-gallery-grid-btn:focus-visible {
@@ -19887,8 +19824,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-midnight {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-midnight-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-midnight-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-midnight h1,
 .text-bg-midnight h2,
@@ -19912,9 +19849,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-midnight .az-gallery-grid-btn:focus-visible {
@@ -19927,8 +19861,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-cool-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-cool-gray-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-cool-gray-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-cool-gray h1,
 .text-bg-cool-gray h2,
@@ -19950,8 +19884,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-warm-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-warm-gray-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-warm-gray-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-warm-gray h1,
 .text-bg-warm-gray h2,
@@ -19973,8 +19907,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-leaf {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-leaf-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-leaf-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-leaf h1,
 .text-bg-leaf h2,
@@ -20006,8 +19940,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-river {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-river-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-river-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-river h1,
 .text-bg-river h2,
@@ -20031,9 +19965,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-river .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-river .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-river .az-gallery-grid-btn:focus-visible {
@@ -20046,8 +19977,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-silver {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-silver-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-silver-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-silver h1,
 .text-bg-silver h2,
@@ -20079,8 +20010,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-mesa {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-mesa-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-mesa-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-mesa h1,
 .text-bg-mesa h2,
@@ -20104,9 +20035,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-mesa .az-gallery-grid-btn:focus-visible {
@@ -20119,8 +20047,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-ash {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-ash-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-ash-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-ash h1,
 .text-bg-ash h2,
@@ -20144,9 +20072,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-ash .az-gallery-grid-btn:focus-visible {
@@ -20159,8 +20084,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-sage {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-sage-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-sage-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-sage h1,
 .text-bg-sage h2,
@@ -20184,9 +20109,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-sage .az-gallery-grid-btn:focus-visible {
@@ -20199,8 +20121,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-white {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-white-rgb), var(--bs-bg-opacity, 1));
+  color: #000 !important;
+  background-color: RGBA(var(--bs-white-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-white h1,
 .text-bg-white h2,
@@ -20222,8 +20144,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-black {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-black-rgb), var(--bs-bg-opacity, 1));
+  color: #fff !important;
+  background-color: RGBA(var(--bs-black-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-black h1,
 .text-bg-black h2,
@@ -20247,9 +20169,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-black .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-black .az-gallery-grid-btn:focus-visible {
@@ -20261,10 +20180,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-white);
 }
 
-.text-bg-primary {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-primary h1,
 .text-bg-primary h2,
 .text-bg-primary h3,
@@ -20287,9 +20202,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-primary .az-gallery-grid-btn:focus-visible {
@@ -20301,10 +20213,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-white);
 }
 
-.text-bg-secondary {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-secondary h1,
 .text-bg-secondary h2,
 .text-bg-secondary h3,
@@ -20327,9 +20235,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-secondary .az-gallery-grid-btn:focus-visible {
@@ -20341,10 +20246,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-white);
 }
 
-.text-bg-success {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-success-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-success h1,
 .text-bg-success h2,
 .text-bg-success h3,
@@ -20374,10 +20275,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-black);
 }
 
-.text-bg-info {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-info-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-info h1,
 .text-bg-info h2,
 .text-bg-info h3,
@@ -20407,10 +20304,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-black);
 }
 
-.text-bg-warning {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-warning h1,
 .text-bg-warning h2,
 .text-bg-warning h3,
@@ -20440,10 +20333,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-black);
 }
 
-.text-bg-danger {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-danger h1,
 .text-bg-danger h2,
 .text-bg-danger h3,
@@ -20466,9 +20355,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-danger .az-gallery-grid-btn:focus-visible {
@@ -20480,10 +20366,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-white);
 }
 
-.text-bg-light {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: rgba(var(--bs-light-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-light h1,
 .text-bg-light h2,
 .text-bg-light h3,
@@ -20513,10 +20395,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-left-color: var(--bs-black);
 }
 
-.text-bg-dark {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity, 1));
-}
 .text-bg-dark h1,
 .text-bg-dark h2,
 .text-bg-dark h3,
@@ -20539,9 +20417,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-dark .az-gallery-grid-btn:focus-visible {
@@ -20554,8 +20429,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-100 {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: var(--bs-gray-100);
+  color: #000 !important;
+  background-color: #f8f9fa !important;
 }
 .text-bg-gray-100 h1,
 .text-bg-gray-100 h2,
@@ -20577,8 +20452,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-200 {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: var(--bs-gray-200);
+  color: #000 !important;
+  background-color: #e9ecef !important;
 }
 .text-bg-gray-200 h1,
 .text-bg-gray-200 h2,
@@ -20600,8 +20475,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-300 {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: var(--bs-gray-300);
+  color: #000 !important;
+  background-color: #dee2e6 !important;
 }
 .text-bg-gray-300 h1,
 .text-bg-gray-300 h2,
@@ -20623,8 +20498,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-400 {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: var(--bs-gray-400);
+  color: #000 !important;
+  background-color: #ced4da !important;
 }
 .text-bg-gray-400 h1,
 .text-bg-gray-400 h2,
@@ -20646,8 +20521,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-500 {
-  --bs-text-bg-color: var(--bs-midnight);
-  --bs-text-bg-bg: var(--bs-gray-500);
+  color: #000 !important;
+  background-color: #adb5bd !important;
 }
 .text-bg-gray-500 h1,
 .text-bg-gray-500 h2,
@@ -20669,8 +20544,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-600 {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: var(--bs-gray-600);
+  color: #fff !important;
+  background-color: #6c757d !important;
 }
 .text-bg-gray-600 h1,
 .text-bg-gray-600 h2,
@@ -20694,9 +20569,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gray-600 .az-gallery-grid-btn:focus-visible {
@@ -20709,8 +20581,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-700 {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: var(--bs-gray-700);
+  color: #fff !important;
+  background-color: #495057 !important;
 }
 .text-bg-gray-700 h1,
 .text-bg-gray-700 h2,
@@ -20734,9 +20606,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gray-700 .az-gallery-grid-btn:focus-visible {
@@ -20749,8 +20618,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-800 {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: var(--bs-gray-800);
+  color: #fff !important;
+  background-color: #343a40 !important;
 }
 .text-bg-gray-800 h1,
 .text-bg-gray-800 h2,
@@ -20774,9 +20643,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gray-800 .az-gallery-grid-btn:focus-visible {
@@ -20789,8 +20655,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gray-900 {
-  --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: var(--bs-gray-900);
+  color: #fff !important;
+  background-color: #212529 !important;
 }
 .text-bg-gray-900 h1,
 .text-bg-gray-900 h2,
@@ -20814,9 +20680,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gray-900 .az-gallery-grid-btn:focus-visible {
@@ -20829,8 +20692,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-red {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-red-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#ab0520-rgb), 0.8);
 }
 .text-bg-transparent-red h1,
 .text-bg-transparent-red h2,
@@ -20854,9 +20717,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-red .az-gallery-grid-btn:focus-visible {
@@ -20869,8 +20729,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-bloom {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-bloom-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#ef4056-rgb), 0.8);
 }
 .text-bg-transparent-bloom h1,
 .text-bg-transparent-bloom h2,
@@ -20902,8 +20762,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-chili {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-chili-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#8b0015-rgb), 0.8);
 }
 .text-bg-transparent-chili h1,
 .text-bg-transparent-chili h2,
@@ -20927,9 +20787,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-chili .az-gallery-grid-btn:focus-visible {
@@ -20942,8 +20799,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-blue {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-blue-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#0c234b-rgb), 0.8);
 }
 .text-bg-transparent-blue h1,
 .text-bg-transparent-blue h2,
@@ -20967,9 +20824,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-blue .az-gallery-grid-btn:focus-visible {
@@ -20982,8 +20836,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-sky {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-sky-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#81d3eb-rgb), 0.8);
 }
 .text-bg-transparent-sky h1,
 .text-bg-transparent-sky h2,
@@ -21015,8 +20869,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-oasis {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-oasis-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#378dbd-rgb), 0.8);
 }
 .text-bg-transparent-oasis h1,
 .text-bg-transparent-oasis h2,
@@ -21048,8 +20902,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-azurite {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-azurite-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#1e5288-rgb), 0.8);
 }
 .text-bg-transparent-azurite h1,
 .text-bg-transparent-azurite h2,
@@ -21073,9 +20927,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-azurite .az-gallery-grid-btn:focus-visible {
@@ -21088,8 +20939,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-midnight {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-midnight-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#001c48-rgb), 0.8);
 }
 .text-bg-transparent-midnight h1,
 .text-bg-transparent-midnight h2,
@@ -21113,9 +20964,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-midnight .az-gallery-grid-btn:focus-visible {
@@ -21128,8 +20976,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-cool-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-cool-gray-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#e2e9eb-rgb), 0.8);
 }
 .text-bg-transparent-cool-gray h1,
 .text-bg-transparent-cool-gray h2,
@@ -21151,8 +20999,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-warm-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-warm-gray-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#f4ede5-rgb), 0.8);
 }
 .text-bg-transparent-warm-gray h1,
 .text-bg-transparent-warm-gray h2,
@@ -21174,8 +21022,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-white {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-color: rgba(var(--bs-white-rgb), 0.8);
+  color: #000 !important;
+  background-color: rgba(var(--bs-#fff-rgb), 0.8);
 }
 .text-bg-transparent-white h1,
 .text-bg-transparent-white h2,
@@ -21197,8 +21045,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-transparent-black {
-  --bs-text-bg-color: var(--bs-white);
-  background-color: rgba(var(--bs-black-rgb), 0.8);
+  color: #fff !important;
+  background-color: rgba(var(--bs-#000-rgb), 0.8);
 }
 .text-bg-transparent-black h1,
 .text-bg-transparent-black h2,
@@ -21222,9 +21070,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-transparent-black .az-gallery-grid-btn:focus-visible {
@@ -21237,8 +21082,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-red {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-red));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#ab0520));
 }
 .text-bg-gradient-red h1,
 .text-bg-gradient-red h2,
@@ -21262,9 +21107,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gradient-red .az-gallery-grid-btn:focus-visible {
@@ -21277,8 +21119,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-bloom {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-bloom));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#ef4056));
 }
 .text-bg-gradient-bloom h1,
 .text-bg-gradient-bloom h2,
@@ -21310,8 +21152,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-chili {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-chili));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#8b0015));
 }
 .text-bg-gradient-chili h1,
 .text-bg-gradient-chili h2,
@@ -21335,9 +21177,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gradient-chili .az-gallery-grid-btn:focus-visible {
@@ -21350,8 +21189,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-blue {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-blue));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#0c234b));
 }
 .text-bg-gradient-blue h1,
 .text-bg-gradient-blue h2,
@@ -21375,9 +21214,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gradient-blue .az-gallery-grid-btn:focus-visible {
@@ -21390,8 +21226,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-sky {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-sky));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#81d3eb));
 }
 .text-bg-gradient-sky h1,
 .text-bg-gradient-sky h2,
@@ -21423,8 +21259,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-oasis {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-oasis));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#378dbd));
 }
 .text-bg-gradient-oasis h1,
 .text-bg-gradient-oasis h2,
@@ -21456,8 +21292,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-azurite {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-azurite));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#1e5288));
 }
 .text-bg-gradient-azurite h1,
 .text-bg-gradient-azurite h2,
@@ -21481,9 +21317,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gradient-azurite .az-gallery-grid-btn:focus-visible {
@@ -21496,8 +21329,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-midnight {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-midnight));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#001c48));
 }
 .text-bg-gradient-midnight h1,
 .text-bg-gradient-midnight h2,
@@ -21521,9 +21354,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   box-shadow: 0 0 0 2px;
 }
 .text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
-}
-.text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
 }
 .text-bg-gradient-midnight .az-gallery-grid-btn:focus-visible {
@@ -21536,8 +21366,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-cool-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-cool-gray));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#e2e9eb));
 }
 .text-bg-gradient-cool-gray h1,
 .text-bg-gradient-cool-gray h2,
@@ -21559,8 +21389,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-warm-gray {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-warm-gray));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#f4ede5));
 }
 .text-bg-gradient-warm-gray h1,
 .text-bg-gradient-warm-gray h2,
@@ -21582,8 +21412,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-white {
-  --bs-text-bg-color: var(--bs-midnight);
-  background-image: linear-gradient(180deg, transparent, var(--bs-white));
+  color: #000 !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#fff));
 }
 .text-bg-gradient-white h1,
 .text-bg-gradient-white h2,
@@ -21605,8 +21435,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .text-bg-gradient-black {
-  --bs-text-bg-color: var(--bs-white);
-  background-image: linear-gradient(180deg, transparent, var(--bs-black));
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, var(--bs-#000));
 }
 .text-bg-gradient-black h1,
 .text-bg-gradient-black h2,
@@ -21628,9 +21458,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-black a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-gradient-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-black-rgb), .5);
 }
 .text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-white-rgb), .75);
@@ -22996,14 +22823,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-trilines {
   background-image: url("img/trilines.svg");
   background-size: auto 305px;
-  background-position: top right;
   background-position: top 0 right -1em;
   background-repeat: no-repeat;
 }
 .bg-trilines p,
 .bg-trilines li,
 .bg-trilines hr {
-  background-color: rgba(var(--bs-white-rgb), .7);
+  background-color: rgba(var(--bs-white-rgb), 0.7);
 }
 .bg-trilines.text-bg-red p,
 .bg-trilines.text-bg-red li,

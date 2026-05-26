@@ -1,7 +1,6 @@
 //
 // > Custom Background utility classes
 //
-
 // >>> Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-transparent-#{$color} {

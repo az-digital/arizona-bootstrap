@@ -48,7 +48,17 @@
 @import "../node_modules/bootstrap/scss/spinners";
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/placeholders";
-@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/helpers/clearfix";
+@import "../node_modules/bootstrap/scss/helpers/colored-links";
+@import "../node_modules/bootstrap/scss/helpers/focus-ring";
+@import "../node_modules/bootstrap/scss/helpers/icon-link";
+@import "../node_modules/bootstrap/scss/helpers/ratio";
+@import "../node_modules/bootstrap/scss/helpers/position";
+@import "../node_modules/bootstrap/scss/helpers/stacks";
+@import "../node_modules/bootstrap/scss/helpers/visually-hidden";
+@import "../node_modules/bootstrap/scss/helpers/stretched-link";
+@import "../node_modules/bootstrap/scss/helpers/text-truncation";
+@import "../node_modules/bootstrap/scss/helpers/vr";
 
 // Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "override/utilities";
