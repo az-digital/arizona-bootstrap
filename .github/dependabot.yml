@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "2.x"
     ignore:
       - dependency-name: "bootstrap"
@@ -13,8 +13,9 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
     labels:
       - "ci"
       - "2.0.x only"
@@ -27,7 +28,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "main"
     ignore:
       - dependency-name: "bootstrap"
@@ -37,8 +38,9 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
     labels:
       - "ci"
     groups:
@@ -50,39 +52,47 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "2.x"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
     labels:
       - "ci"
 
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "main"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
     labels:
       - "ci"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "2.x"
+    cooldown:
+      default-days: 5
     labels:
       - "ci"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     target-branch: "main"
+    cooldown:
+      default-days: 5
     labels:
       - "ci"

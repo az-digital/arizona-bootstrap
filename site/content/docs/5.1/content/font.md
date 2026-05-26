@@ -5,7 +5,7 @@ description: The Proxima Nova font suite is available for official use by Univer
 group: content
 toc: true
 extra_js:
-  - src: "docs/5.0/assets/js/font-sample.js"
+  - src: "docs/5.1/assets/js/font-sample.js"
     async: true
 ---
 

@@ -4,11 +4,11 @@ Want to contribute? Any release of Arizona Bootstrap is tested and ready to use,
 
 If you want to get involved, you can:
 
-- Request access to join the discussion on Slack ([learn more]((digital.arizona.edu/arizona-bootstrap/main/docs/0.0/about/get-involved))
-- Participate in Friday meetings and Wednesday pull request review sessions (ask for more details in Slack)
+- Join the discussion on Teams
+- Participate in Friday meetings and Wednesday pull request review sessions (ask for more details on Teams)
 - Submit pull requests on GitHub
 
-Questions, bug reports or suggestions can also be emailed to [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or (preferably!) reported on Slack.
+Questions, bug reports or suggestions can also be emailed to [az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or (preferably!) reported on Teams.
 
 ## Installation
 
@@ -16,12 +16,23 @@ Include Arizona Bootstrap’s source Sass and JavaScript files via `npm`. Packag
 
 `npm install https://github.com/az-digital/arizona-bootstrap`
 
-## Pull Request Process
+## Pull Request Processes
+
+### Create a PR
 
 1. Create an issue on GitHub with the appropriate [issue type template](https://github.com/az-digital/arizona-bootstrap/issues/new/choose).
 2. Create a branch on the arizona-bootstrap repository using the issue type naming convention of `<issue-type>/<issue-number>`. Example: `feature/123` or `bug/123`.
 3. Make and commit your changes.
 4. Create a pull request to be reviewed by the Arizona Digital community. Be sure to include a reference to the issue in your pull request description. Read more about [linking a pull request to an issue](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue).
+
+### Review a PR
+
+1. Open the PR in GitHub
+2. Open "All checks have passed" at the bottom of the PR
+3. Click on "Build & deploy review site / Build & deploy review site (pull_request)"
+4. Open "Display review site URL"
+5. Click the displayed review site URL to review changes
+6. Return to the PR to comment or approve
 
 ## Policies
 

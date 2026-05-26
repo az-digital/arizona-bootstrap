@@ -129,9 +129,45 @@ extra_css:
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu" id="secondaryMenu4">
-              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
-              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
-              <li><a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a></li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu7" data-bs-auto-close="outside" aria-controls="tertiaryMenu7" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu7" class="collapse" data-bs-parent="#secondaryMenu4" role="group" aria-label="Tertiary Menu 7">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu8" data-bs-auto-close="outside" aria-controls="tertiaryMenu8" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu8" class="collapse" data-bs-parent="#secondaryMenu4" role="group" aria-label="Tertiary Menu 8">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation - With an Extremely Long Title</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="btn-group">
+                  <a class="dropdown-item" href="{{< ref "secondary" >}}">Secondary Navigation - With Longer Titles</a>
+                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu9" data-bs-auto-close="outside" aria-controls="tertiaryMenu9" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
+                </div>
+                <ul id="tertiaryMenu9" class="collapse" data-bs-parent="#secondaryMenu4" role="group" aria-label="Tertiary Menu 9">
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation - With an Even Extremely Longer Title</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                  <li><a href="{{< ref "tertiary" >}}">Tertiary Navigation</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li class="nav-item" role="presentation">

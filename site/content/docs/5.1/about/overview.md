@@ -20,4 +20,4 @@ Arizona Bootstrap 5 (based on Bootstrap version 5) was released in July 2025.
 
 ## Get Involved
 
-See the [Get Involved page]({{< docsref "/about/get-involved" >}}) to learn how to join our discussions in Slack, join our weekly Arizona Digital meetings, and contribute directly to the development of Arizona Bootstrap.
+See the [Get Involved page]({{< docsref "/about/get-involved" >}}) to learn how to join our discussions on Teams, join our weekly Arizona Digital meetings, and contribute directly to the development of Arizona Bootstrap.

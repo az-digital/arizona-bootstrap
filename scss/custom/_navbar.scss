@@ -340,7 +340,12 @@
   // Handles the nested list that expands from a secondary split toggle.
   .dropdown-menu .collapse,
   .dropdown-menu .collapsing,
-  .dropdown-menu .show {
+  .dropdown-menu .collapse.show {
+    // Prevent tertiary items from inflating the dropdown's max-content width.
+    // width: 0 contributes nothing during intrinsic sizing; min-width: 100%
+    // resolves to 0 during intrinsic sizing but fills the parent during layout.
+    width: 0;
+    min-width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -371,7 +376,7 @@
       color: var(--az-navbar-font-color);
       text-decoration: none;
 
-      /* stylelint-disable selector-no-qualifying-type */
+      /* stylelint-disable selector-max-class, selector-no-qualifying-type */
       // Both hover and active states have an underline
       &.active,
       &.is-active,
@@ -406,7 +411,7 @@
         outline: 0;
         box-shadow: var(--az-navbar-focus-ring-inset);
       }
-      /* stylelint-enable selector-no-qualifying-type */
+      /* stylelint-enable selector-max-class, selector-no-qualifying-type */
     }
   }
   // Disable transition timing during collapse for a snappier submenu.
