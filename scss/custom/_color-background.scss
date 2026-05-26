@@ -56,7 +56,7 @@
 // >> Brand Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
-    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-midnight)", "var(--bs-white)")};
+    --bs-text-bg-color: #{if(color-contrast($value) == $black, "var(--bs-black)", "var(--bs-white)")};
     @extend %az-text-bg-color;
     @include background-gradient($color);
     @include az-color-contrast($color);
