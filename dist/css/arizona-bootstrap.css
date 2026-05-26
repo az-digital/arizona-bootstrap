@@ -19384,7 +19384,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .badge.badge-link:hover.text-bg-midnight,
 .badge.badge-link:focus.text-bg-midnight {
   --bs-text-bg-color: var(--bs-white);
-  --bs-text-bg-bg: rgba(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
+  --bs-text-bg-bg: var(--bs-azurite);
 }
 .badge.badge-link:hover.text-bg-light,
 .badge.badge-link:focus.text-bg-light {
