@@ -461,6 +461,81 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 </nav>
 {{< /example >}}
 
+## AZ Navbar Fullscreen
+<span class="badge badge-az-custom">Arizona Bootstrap Experimental Feature</span>
+
+The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal navigation pattern supports a logo (brand), a minimal Call to Actions menu, a search box, and a modal activation toggle.
+
+### Brand
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <a class="navbar-brand" href="#">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+### Calls to Action Menu
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Apply</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Visit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Give</span>
+        </a>
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+### Search
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <form class="navbar-az-fullscreen-search d-flex me-2 me-lg-4" role="search">
+      <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
+      <div class="input-group d-none d-lg-flex">
+        <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+        <button class="btn" type="submit" aria-label="Submit site search">
+          <span class="search-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
+    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+### Modal Menu
+#### Modal Menu Header
+#### Modal Menu Footers
+### CSS Variables
+{{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+
 ## Containers
 
 Although it's not required, you can wrap a navbar in a `.container` to center it on a page–though note that an inner container is still required. Or you can add a container inside the `.navbar` to only center the contents of a [fixed or static top navbar](#placement).

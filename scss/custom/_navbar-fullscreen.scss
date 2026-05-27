@@ -1,5 +1,6 @@
 // Experimental custom az-fullscreen navbar
 .navbar-az-fullscreen {
+  // scss-docs-start navbar-az-fullscreen-css-vars
   --az-navbar-fullscreen-height: 100px;
   --az-navbar-fullscreen-bg: var(--bs-blue);
   --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
@@ -24,6 +25,8 @@
   --bs-navbar-toggler-font-size: 30px;
   --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-open);
   --bs-navbar-toggler-border-radius: 8px;
+  // scss-docs-end navbar-az-fullscreen-css-vars
+
   min-height: var(--az-navbar-fullscreen-height);
   background-color: var(--az-navbar-fullscreen-bg);
   border-top: 0;
