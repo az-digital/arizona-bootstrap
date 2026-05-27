@@ -29,7 +29,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
           </li>
         </ul>
 
-        <form class="navbar-az-fullscreen-search me-2 me-lg-4" role="search">
+        <form class="navbar-az-fullscreen-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
           <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
           <div class="input-group d-none d-lg-flex">
             <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -37,7 +37,9 @@ title: AZ Navbar Fullscreen - Tuition & Aid
               <span class="search-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
+          <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site">
+            <span class="search-icon" aria-hidden="true"></span>
+          </button>
         </form>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu" aria-controls="navbar-az-fullscreen-menu" aria-label="Open site menu">
@@ -96,7 +98,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
           <div class="navbar-az-fullscreen-modal-menu container-lg ">
             <div class="row g-0">
               <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
-                <div class="navbar-az-fullscreen-modal-menu-nav-col col-4">
+                <div class="navbar-az-fullscreen-modal-menu-nav-col col-12 col-lg-4">
                   <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
                     <!-- Admissions primary row -->
                     <div class="nav-item">
@@ -108,7 +110,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse show" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                          <div class="col-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
                             <ul class="nav" aria-label="Admissions">
                               <li class="nav-item">
                                 <a class="nav-link" href="{{< ref "undergraduate" >}}">
@@ -191,7 +193,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-academics-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                          <div class="col-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
                             <ul class="nav" id="az-navbar-az-fullscreen-academics-secondary-nav" aria-label="Academics">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
@@ -254,7 +256,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-research-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                          <div class="col-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
                             <ul class="nav" aria-label="Research">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
@@ -276,7 +278,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-campus-life-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                          <div class="col-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
                             <ul class="nav" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
@@ -404,45 +406,73 @@ title: AZ Navbar Fullscreen - Tuition & Aid
                   </nav>
                 </div>
               </div>
-            </div>
-            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
-              <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{< ref "apply" >}}">Apply</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <span class="vr" aria-hidden="true"></span>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Visit</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <span class="vr" aria-hidden="true"></span>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Give</a>
-                </li>
-              </ul>
-              <!-- initial mobile nav items -->
-              <div class="nav flex-column navbar-az-fullscreen-nav-primary">
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
-                <button class="nav-link active" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Admissions</button>
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
-                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Academics</button>
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
-                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Research</button>
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
-                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">Campus Life</button>
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
-                <button class="nav-link" data-az-menu-element="#az-navbar-az-fullscreen-primary-about-content" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col">About</button>
-                <hr class="border-bottom border-azurite opacity-100 my-0" aria-hidden="true" role="presentation">
+              <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+                <!-- call-to-action items -->
+                <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{< ref "apply" >}}">
+                      <span class="nav-link-text">Apply</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Visit</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Give</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- initial mobile nav items -->
+                <div class="navbar-az-fullscreen-modal-menu-nav-col col-12">
+                  <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                    <div class="nav-item">
+                      <a class="nav-link" href="{{< ref "admissions" >}}">
+                        <span class="nav-link-text">Admissions</span>
+                      </a>
+                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Admissions submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Academics</span>
+                      </a>
+                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Academics submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Research</span>
+                      </a>
+                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Research submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Campus Life</span>
+                      </a>
+                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Campus Life submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">About</span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-top">
           <nav class="navbar" aria-labelledby="resources-for-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
@@ -478,7 +508,7 @@ title: AZ Navbar Fullscreen - Tuition & Aid
             </div>
           </nav>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-bottom">
           <nav class="navbar" aria-labelledby="helpful-links-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
