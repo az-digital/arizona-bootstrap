@@ -254,15 +254,15 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
 You can create a button instance with the button constructor, for example:
 
 ```js
-const bsButton = new bootstrap.Button('#myButton')
+const bsButton = new arizonaBootstrap.Button('#myButton')
 ```
 
 {{< bs-table "table" >}}
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element's button. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the button instance associated with a DOM element, you can use it like this: `bootstrap.Button.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a button instance associated with a DOM element or creates a new one in case it wasn't initialized. You can use it like this: `bootstrap.Button.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the button instance associated with a DOM element, you can use it like this: `arizonaBootstrap.Button.getInstance(element)`. |
+| `getOrCreateInstance` | Static method which returns a button instance associated with a DOM element or creates a new one in case it wasn't initialized. You can use it like this: `arizonaBootstrap.Button.getOrCreateInstance(element)`. |
 | `toggle` | Toggles push state. Gives the button the appearance that it has been activated. |
 {{< /bs-table >}}
 
@@ -270,7 +270,7 @@ For example, to toggle all buttons
 
 ```js
 document.querySelectorAll('.btn').forEach(buttonElement => {
-  const button = bootstrap.Button.getOrCreateInstance(buttonElement)
+  const button = arizonaBootstrap.Button.getOrCreateInstance(buttonElement)
   button.toggle()
 })
 ```

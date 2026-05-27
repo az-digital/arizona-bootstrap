@@ -422,7 +422,7 @@ On the `.nav-underline` modifier class:
 
 ## JavaScript behavior
 
-Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our navigational tabs and pills to create tabbable panes of local content.
+Use the tab JavaScript plugin—include it individually or through the compiled `arizona-bootstrap.js` file—to extend our navigational tabs and pills to create tabbable panes of local content.
 
 <div class="bd-example">
   <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
@@ -679,7 +679,7 @@ Enable tabbable tabs via JavaScript (each tab needs to be activated individually
 ```js
 const triggerTabList = document.querySelectorAll('#myTab button')
 triggerTabList.forEach(triggerEl => {
-  const tabTrigger = new bootstrap.Tab(triggerEl)
+  const tabTrigger = new arizonaBootstrap.Tab(triggerEl)
 
   triggerEl.addEventListener('click', event => {
     event.preventDefault()
@@ -692,10 +692,10 @@ You can activate individual tabs in several ways:
 
 ```js
 const triggerEl = document.querySelector('#myTab button[data-bs-target="#profile"]')
-bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+arizonaBootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
 
 const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
-bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+arizonaBootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
 ```
 
 ### Fade effect
@@ -722,15 +722,15 @@ Activates your content as a tab element.
 You can create a tab instance with the constructor, for example:
 
 ```js
-const bsTab = new bootstrap.Tab('#myTab')
+const bsTab = new arizonaBootstrap.Tab('#myTab')
 ```
 
 {{< bs-table >}}
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element's tab. |
-| `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `bootstrap.Tab.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `bootstrap.Tab.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `arizonaBootstrap.Tab.getInstance(element)`. |
+| `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `arizonaBootstrap.Tab.getOrCreateInstance(element)`. |
 | `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.bs.tab` event occurs). |
 {{< /bs-table >}}
 
