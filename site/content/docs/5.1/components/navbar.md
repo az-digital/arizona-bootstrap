@@ -669,10 +669,246 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
 {{< /example >}}
 
 #### Modal Menu Header
+{{< example show_markup=false >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-header">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <a class="navbar-brand" href="#">
+              <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+            </a>
+            <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Apply</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Visit</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Give</span>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="container-lg">
+          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
+            <div class="input-group">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <button class="btn" type="submit" aria-label="Submit site search">
+                <span class="search-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+              <!-- call-to-action items -->
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Apply</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Visit</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Give</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+```html
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-header">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <a class="navbar-brand" href="#">
+              <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+            </a>
+            <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Apply</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Visit</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Give</span>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="container-lg">
+          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
+            <div class="input-group">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <button class="btn" type="submit" aria-label="Submit site search">
+                <span class="search-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+              <!-- call-to-action items -->
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Apply</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Visit</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Give</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
+#### Modal Menu Footer
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-footer">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-footer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-top">
+        <nav class="navbar" aria-labelledby="resources-for-label">
+          <div class="container-lg">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <h2 class="navbar-brand" id="resources-for-label">Resources for:</h2>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Current Students</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Faculty &amp; Staff</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Alumni</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Parents &amp; Families</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Business or Partner</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
 
-#### Modal Menu Footers
-
+#### Mobile Menu
+Documentation coming soon.
 
 ### CSS Variables
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
