@@ -525,7 +525,7 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search d-flex me-2 me-lg-4" role="search">
+    <form class="navbar-az-fullscreen-search d-flex ms-auto me-2 me-lg-4" role="search">
       <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -543,8 +543,137 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
 {{< /example >}}
 
 ### Modal Menu
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-menu" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg ">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
+              <div class="navbar-az-fullscreen-modal-menu-nav-col col-12 col-lg-4">
+                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Home</span>
+                    </a>
+                    <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home menu">
+                      <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                      <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                        <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <ul class="nav" aria-label="Home menu">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Action</span>
+                              </a>
+                              <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-secondary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-secondary-submenu" aria-label="Toggle Action submenu">
+                                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                              </button>
+                              <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="navbar-az-fullscreen-secondary-submenu">
+                                <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                  <div class="col navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                    <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Action submenu">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                          <span class="nav-link-text">Yet another action</span>
+                                        </a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                          <span class="nav-link-text">A final action</span>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Another action</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Something else here</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Features</span>
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Pricing</span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+              <!-- initial mobile nav items -->
+              <div class="navbar-az-fullscreen-modal-menu-nav-col col-12">
+                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Home</span>
+                    </a>
+                    <button class="btn nav-toggle" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home menu">
+                      <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Features</span>
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Pricing</span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 #### Modal Menu Header
+
+
 #### Modal Menu Footers
+
+
 ### CSS Variables
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
