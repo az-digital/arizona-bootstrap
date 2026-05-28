@@ -467,7 +467,8 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal navigation pattern supports a logo (brand), a minimal Call to Actions menu, a search box, and a modal activation toggle.
 
 ### Brand
-{{< example >}}
+
+{{< example show_markup=false >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
     <a class="navbar-brand" href="#">
@@ -479,6 +480,18 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
   </div>
 </nav>
 {{< /example >}}
+```html
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <a class="navbar-brand" href="#">
+      <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+```
 
 ### Calls to Action Menu
 {{< example >}}
