@@ -29,7 +29,7 @@ Modify the styling of a focus ring with our CSS variables, Sass variables, utili
 Modify the `--bs-focus-ring-*` CSS variables as needed to change the default appearance.
 
 {{< example >}}
-<a href="#" class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style="--bs-focus-ring-color: rgba(var(--bs-success-rgb), .25)">
+<a href="#" class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style="--bs-focus-ring-color: var(--bd-green-rgba)">
   Green focus ring
 </a>
 {{< /example >}}
