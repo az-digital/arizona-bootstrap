@@ -476,6 +476,7 @@ Existing Bootstrap navigation elements and patterns are used whenever possible. 
 
 ### Brand
 The brand element displays the logo of the site. A University of Arizona wordmark SVG is packaged with Arizona Bootstrap for use as a default.
+
 {{< example show_markup=false >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -503,6 +504,7 @@ The brand element displays the logo of the site. A University of Arizona wordmar
 
 ### Calls to Action Menu
 The Calls to Action menu provides greater visibility for certain high-value actions. It is recommended to provide no more than 3 CTAs.
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -686,8 +688,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
     </button>
   </div>
 </nav>
-<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
-  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-header-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-header-label" class="visually-hidden">Site menu</h2>
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
@@ -733,8 +735,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
       <div class="modal-body">
         <div class="navbar-az-fullscreen-modal-menu container-lg">
           <div class="row g-0">
-            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
-            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
               <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
                 <li class="nav-item">
@@ -769,8 +771,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
     </button>
   </div>
 </nav>
-<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
-  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-header-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-header-label" class="visually-hidden">Site menu</h2>
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
@@ -816,8 +818,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
       <div class="modal-body">
         <div class="navbar-az-fullscreen-modal-menu container-lg">
           <div class="row g-0">
-            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
-            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
               <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
                 <li class="nav-item">
@@ -854,8 +856,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
     </button>
   </div>
 </nav>
-<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-footer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
-  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-footer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-footer-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-footer-label" class="visually-hidden">Site menu</h2>
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
@@ -870,8 +872,8 @@ The Calls to Action menu provides greater visibility for certain high-value acti
       <div class="modal-body">
         <div class="navbar-az-fullscreen-modal-menu container-lg">
           <div class="row g-0">
-            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion"></div>
-            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none"></div>
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-footer"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-footer" class="col-12 d-lg-none"></div>
           </div>
         </div>
       </div>
@@ -923,18 +925,23 @@ Documentation coming soon.
 The following properties are set and used:
 
 On the `.navbar-az-fullscreen` custom class:
+
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-actions` custom class:
+
 {{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-search` custom class:
+
 {{< scss-docs name="navbar-az-fullscreen-search-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-modal` custom class:
+
 {{< scss-docs name="navbar-az-fullscreen-modal-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-modal-menu` custom class:
+
 {{< scss-docs name="navbar-az-fullscreen-modal-menu-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 ## Containers
