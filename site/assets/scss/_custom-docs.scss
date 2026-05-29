@@ -25,6 +25,15 @@
   }
 }
 
+.badge-az-experimental {
+  @extend .badge-az-custom;
+  &::before {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword, declaration-no-important */
+    font-family: "Material Symbols Rounded" !important;
+    content: "\e686";
+  }
+}
+
 //
 // > MISC
 //

@@ -39,7 +39,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 ```
 
 ### Blue header
-<span class="badge badge-az-custom mt-0">Arizona Bootstrap Experimental Feature</span>
+<span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span>
 
 The blue Arizona Header is to be used on marketing-approved subdomains of arizona.edu. This functionality should not be used until the flagship arizona.edu website is using a blue header.
 
