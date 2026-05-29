@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the popover plugin:
 
-- Popovers rely on the third party library [Popper](https://popper.js.org/docs/v2/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before `bootstrap.js`, or use one `bootstrap.bundle.min.js` which contains Popper.
+- Popovers rely on the third party library [Popper](https://popper.js.org/docs/v2/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before `arizona-bootstrap.js`, or use `arizona-bootstrap.bundle.min.js`, which contains Popper.
 - Popovers require the [popover plugin]({{< docsref "/components/popovers" >}}) as a dependency.
 - Popovers are opt-in for performance reasons, so **you must initialize them yourself**.
 - Zero-length `title` and `content` values will never show a popover.
@@ -39,7 +39,7 @@ As mentioned above, you must initialize popovers before they can be used. One wa
 
 ```js
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new arizonaBootstrap.Popover(popoverTriggerEl))
 ```
 
 ### Live demo
@@ -78,7 +78,7 @@ Four options are available: top, right, bottom, and left. Directions are mirrore
 When you have some styles on a parent element that interfere with a popover, you'll want to specify a custom `container` so that the popover's HTML appears within that element instead. This is common in responsive tables, input groups, and the like.
 
 ```js
-const popover = new bootstrap.Popover('.example-popover', {
+const popover = new arizonaBootstrap.Popover('.example-popover', {
   container: 'body'
 })
 ```
@@ -86,7 +86,7 @@ const popover = new bootstrap.Popover('.example-popover', {
 Another situation where you'll want to set an explicit custom `container` are popovers inside a [modal dialog]({{< docsref "/components/modal" >}}), to make sure that the popover itself is appended to the modal. This is particularly important for popovers that contain interactive elements – modal dialogs will trap focus, so unless the popover is a child element of the modal, users won't be able to focus or activate these interactive elements.
 
 ```js
-const popover = new bootstrap.Popover('.example-popover', {
+const popover = new arizonaBootstrap.Popover('.example-popover', {
   container: '.modal-body'
 })
 ```
@@ -122,7 +122,7 @@ Use the `focus` trigger to dismiss popovers on the user's next click of an eleme
 {{< /example >}}
 
 ```js
-const popover = new bootstrap.Popover('.popover-dismiss', {
+const popover = new arizonaBootstrap.Popover('.popover-dismiss', {
   trigger: 'focus'
 })
 ```
@@ -159,7 +159,7 @@ Enable popovers via JavaScript:
 
 ```js
 const exampleEl = document.getElementById('example')
-const popover = new bootstrap.Popover(exampleEl, options)
+const popover = new arizonaBootstrap.Popover(exampleEl, options)
 ```
 
 {{< callout warning >}}
@@ -212,7 +212,7 @@ Options for individual popovers can alternatively be specified through the use o
 #### Using function with `popperConfig`
 
 ```js
-const popover = new bootstrap.Popover(element, {
+const popover = new arizonaBootstrap.Popover(element, {
   popperConfig(defaultBsPopperConfig) {
     // const newPopperConfig = {...}
     // use defaultBsPopperConfig if needed...
@@ -246,7 +246,7 @@ const popover = new bootstrap.Popover(element, {
 
 ```js
 // getOrCreateInstance example
-const popover = bootstrap.Popover.getOrCreateInstance('#example') // Returns a Bootstrap popover instance
+const popover = arizonaBootstrap.Popover.getOrCreateInstance('#example') // Returns an Arizona Bootstrap popover instance
 
 // setContent example
 popover.setContent({

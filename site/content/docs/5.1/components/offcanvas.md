@@ -272,7 +272,7 @@ Enable manually with:
 
 ```js
 const offcanvasElementList = document.querySelectorAll('.offcanvas')
-const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new arizonaBootstrap.Offcanvas(offcanvasEl))
 ```
 
 ### Options
@@ -300,7 +300,7 @@ Activates your content as an offcanvas element. Accepts an optional options `obj
 You can create an offcanvas instance with the constructor, for example:
 
 ```js
-const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas')
+const bsOffcanvas = new arizonaBootstrap.Offcanvas('#myOffcanvas')
 ```
 
 {{< bs-table "table" >}}
