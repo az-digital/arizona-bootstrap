@@ -38,10 +38,10 @@ class NavbarAzFullscreenMobileNav {
     let found = false
 
     // Check tertiary links for match with current pathname
-    const tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary-panel a.nav-link.active')
+    const tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
     for (const link of tertiaryLinks) {
       if (link.href === window.location.href) {
-        const tertiaryPanel = link.closest('.navbar-az-fullscreen-nav-tertiary-panel')
+        const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
         if (!tertiaryPanel) {
           continue
         }
@@ -50,8 +50,8 @@ class NavbarAzFullscreenMobileNav {
         const tertiaryLabel = link.textContent.trim()
         // Extract parent label from the secondary menu containing this tertiary panel
         const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
-        const parentLabel = secondaryContentButton?.previousElementSibling.previousElementSibling.textContent || ''
-        const secondaryContent = secondaryContentButton?.closest('.tab-pane.active')
+        const parentLabel = secondaryContentButton?.previousElementSibling.textContent || ''
+        const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
         const secondaryContentId = secondaryContent?.getAttribute('id') || ''
 
         this.showTertiaryNav(tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
@@ -61,10 +61,10 @@ class NavbarAzFullscreenMobileNav {
 
     // Check secondary links for match with current pathname
     if (!found) {
-      const secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary-scroll a.nav-link.active')
+      const secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
       for (const link of secondaryLinks) {
         if (link.href === window.location.href) {
-          const secondaryContent = link.closest('.tab-pane.active')
+          const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
           const targetId = secondaryContent?.getAttribute('id') || ''
           const label = link.textContent.trim()
 
