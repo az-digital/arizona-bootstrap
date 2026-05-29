@@ -70,6 +70,7 @@
 }
 
 .navbar-az-fullscreen-actions {
+  // scss-docs-start navbar-az-fullscreen-actions-css-vars
   --az-navbar-fullscreen-actions-font-weight: bold;
   --az-navbar-fullscreen-actions-font-size: 22px;
   --az-navbar-fullscreen-actions-line-height: 27px;
@@ -81,6 +82,7 @@
   --bs-nav-link-font-weight: var(--az-navbar-fullscreen-actions-font-weight);
   --bs-nav-link-color: var(--bs-white);
   --bs-nav-link-hover-color: var(--bs-sky);
+  // scss-docs-end navbar-az-fullscreen-actions-css-vars
 
   flex-direction: row;
   align-items: center;
@@ -150,6 +152,7 @@
 }
 
 .navbar-az-fullscreen-search {
+  // scss-docs-start navbar-az-fullscreen-search-css-vars
   --az-navbar-fullscreen-search-width: 280px;
   --az-navbar-fullscreen-search-height: 60px;
   --az-navbar-fullscreen-search-color: var(--bs-white);
@@ -160,6 +163,7 @@
   --az-navbar-fullscreen-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#{$white}'><path d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/></svg>"))};
   --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
+  // scss-docs-end navbar-az-fullscreen-search-css-vars
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
@@ -238,6 +242,7 @@
 
 
 .navbar-az-fullscreen-modal {
+  // scss-docs-start navbar-az-fullscreen-modal-css-vars
   --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
@@ -268,6 +273,7 @@
     --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
     --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
   }
+  // scss-docs-end navbar-az-fullscreen-modal-css-vars
 
   .modal-header {
     flex-direction: column;
@@ -471,8 +477,8 @@
 }
 
 
-.navbar-az-fullscreen-modal-menu {
-
+.navbar-az-fullscreen-modal-menu { 
+  // scss-docs-start navbar-az-fullscreen-modal-menu-css-vars
   // default values
   --az-navbar-fullscreen-modal-menu-font-weight: bold;
   --az-navbar-fullscreen-modal-menu-font-size: 20px;
@@ -521,6 +527,7 @@
 
   --az-navbar-fullscreen-modal-menu-separator-color: var(--bs-azurite);
   --az-navbar-fullscreen-modal-menu-col-spacing-x: 24px;
+  // scss-docs-end navbar-az-fullscreen-modal-menu-css-vars
 
   display: flex;
   flex: 0 0 auto;

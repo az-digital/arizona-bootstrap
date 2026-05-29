@@ -464,10 +464,18 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 ## AZ Navbar Fullscreen
 <span class="badge badge-az-custom">Arizona Bootstrap Experimental Feature</span>
 
-The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal navigation pattern supports a logo (brand), a minimal Call to Actions menu, a search box, and a modal activation toggle.
+The fullscreen AZ Navbar navigation pattern presents a minimal, (non-modal) navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal element supports a [logo (brand)](#brand-1), a minimal [Call to Actions](#calls-to-action-menu) menu, a [search](#search) box, and a modal activation toggle. When the [modal menu](#modal-menu) is open, the same [header elements](#modal-menu-header) are supported along with a multicolumn, 3-tier deep menu structure, and support for modal [footer menu bars](#modal-menu-footer).
+
+To see a comprehensive example of this navigation experience, see the [Navbar AZ fullscreen]({{< ref "navbar-az-fullscreen" >}}) Example.
+
+{{< callout warning >}}
+AZ Navbar Fullscreen requires both the **Proxima Nova Condensed** and **Garamond Premier Pro** fonts to render correctly.
+{{< /callout >}}
+
+Existing Bootstrap navigation elements and patterns are used whenever possible. Overrides of existing Bootstrap classes are scoped to the `.navbar-az-fullscreen*` custom classes provided in [_navbar-fullscreen.scss](https://github.com/az-digital/arizona-bootstrap/blob/main/scss/custom/_navbar-fullscreen.scss) to minimize conflict with existing overrides. New CSS properties are prefixed with `--az-navbar-fullscreen-*` and contained within custom `navbar-az-fullscreen*` classes.
 
 ### Brand
-
+The brand element displays the logo of the site. A University of Arizona wordmark SVG is packaged with Arizona Bootstrap for use as a default.
 {{< example show_markup=false >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -494,6 +502,7 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
 ```
 
 ### Calls to Action Menu
+The Calls to Action menu provides greater visibility for certain high-value actions. It is recommended to provide no more than 3 CTAs.
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -911,8 +920,22 @@ The fullscreen AZ Navbar navigation pattern presents a minimal navbar with the o
 Documentation coming soon.
 
 ### CSS Variables
+The following properties are set and used:
+
+On the `.navbar-az-fullscreen` custom class:
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
+On the `.navbar-az-fullscreen-actions` custom class:
+{{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-search` custom class:
+{{< scss-docs name="navbar-az-fullscreen-search-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-modal` custom class:
+{{< scss-docs name="navbar-az-fullscreen-modal-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-modal-menu` custom class:
+{{< scss-docs name="navbar-az-fullscreen-modal-menu-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
 ## Containers
 
