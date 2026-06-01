@@ -63,6 +63,33 @@ Please note that while the example below has a `min-height` set to avoid excessi
 </div>
 {{< /example >}}
 
+## AZ Hover Collapse
+
+Arizona Bootstrap extends the collapse plugin with `AzCollapse`, which adds hover-open and focus-open behavior to standard collapse panels. The panel markup is identical to regular collapse — only the trigger's `data-bs-toggle` value changes from `"collapse"` to `"az-collapse-hover"`.
+
+The trigger responds to three interactions:
+
+- **Hover** — opens the panel on pointer devices that support hover (e.g., a desktop mouse)
+- **Focus** — opens the panel when the trigger receives keyboard focus
+- **Click** — toggles the panel open or closed on all devices
+
+{{< callout info >}}
+Hover activation is limited to devices that match the CSS media query <code>(hover: hover) and (pointer: fine)</code>. On touch-only devices, click is the sole toggle interaction.
+{{< /callout >}}
+
+{{< example >}}
+<p>
+  <button class="btn btn-red" type="button" data-bs-toggle="az-collapse-hover" data-bs-target="#azCollapseHoverExample" aria-expanded="false" aria-controls="azCollapseHoverExample">
+    Hover, focus, or click to toggle
+  </button>
+</p>
+<div class="collapse" id="azCollapseHoverExample">
+  <div class="card card-body">
+    Some placeholder content for the AZ hover collapse component. This panel opens on hover on pointer devices, on focus for keyboard users, and on click for all devices.
+  </div>
+</div>
+{{< /example >}}
+
 ## Multiple toggles and targets
 
 A `<button>` or `<a>` element can show and hide multiple elements by referencing them with a selector in its `data-bs-target` or `href` attribute.
