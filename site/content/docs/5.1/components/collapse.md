@@ -91,6 +91,23 @@ Hover activation is limited to devices that match the CSS media query <code>(hov
 </div>
 {{< /example >}}
 
+### Hover delay
+
+Use the `delay` option to pause hover-open by a number of milliseconds. Set `data-bs-delay` on the collapse panel element, or use `data-bs-config` to pass it as JSON. A delay only applies to hover; focus and click open the panel immediately.
+
+{{< example >}}
+<p>
+  <button class="btn btn-red" type="button" data-bs-toggle="az-collapse-hover" data-bs-target="#azCollapseHoverDelayExample" aria-expanded="false" aria-controls="azCollapseHoverDelayExample">
+    Hover to toggle (300 ms delay)
+  </button>
+</p>
+<div class="collapse" id="azCollapseHoverDelayExample" data-bs-delay="300">
+  <div class="card card-body">
+    This panel has a 300 ms hover delay. Briefly passing the cursor over the trigger will not open it.
+  </div>
+</div>
+{{< /example >}}
+
 ## Multiple toggles and targets
 
 A `<button>` or `<a>` element can show and hide multiple elements by referencing them with a selector in its `data-bs-target` or `href` attribute.

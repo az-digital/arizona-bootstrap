@@ -23,6 +23,7 @@ const EVENT_KEY = `.${DATA_KEY}`
 
 const EVENT_CLICK_DATA_API = `click${EVENT_KEY}`
 const EVENT_MOUSEENTER_DATA_API = `mouseenter${EVENT_KEY}`
+const EVENT_MOUSELEAVE_DATA_API = `mouseleave${EVENT_KEY}`
 const EVENT_FOCUSIN_DATA_API = `focusin${EVENT_KEY}`
 const EVENT_LOAD_DATA_API = `load${EVENT_KEY}`
 const EVENT_SHOW_BS_COLLAPSE = 'show.bs.collapse'
@@ -33,6 +34,19 @@ const CLASS_NAME_COLLAPSED = 'collapsed'
 const HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)'
 
 const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="az-collapse-hover"]'
+
+const Default = {
+  ...Collapse.Default,
+  delay: 0
+}
+
+const DefaultType = {
+  ...Collapse.DefaultType,
+  delay: 'number'
+}
+
+// Tracks pending hover-open timers keyed by trigger element.
+const hoverTimers = new WeakMap()
 
 const supportsPointerHover = () => typeof window !== 'undefined' && window.matchMedia?.(HOVER_MEDIA_QUERY)?.matches === true
 
@@ -67,6 +81,14 @@ class AzCollapse extends Collapse {
   static get DATA_KEY() {
     return DATA_KEY
   }
+
+  static get Default() {
+    return Default
+  }
+
+  static get DefaultType() {
+    return DefaultType
+  }
 }
 
 /**
@@ -89,8 +111,35 @@ EventHandler.on(document, EVENT_MOUSEENTER_DATA_API, SELECTOR_DATA_TOGGLE, funct
     return
   }
 
-  for (const element of SelectorEngine.getMultipleElementsFromSelector(this)) {
-    AzCollapse.getOrCreateInstance(element, { toggle: false }).show()
+  const panels = SelectorEngine.getMultipleElementsFromSelector(this)
+  if (!panels.length) {
+    return
+  }
+
+  const { delay } = AzCollapse.getOrCreateInstance(panels[0], { toggle: false })._config
+
+  if (delay <= 0) {
+    for (const element of panels) {
+      AzCollapse.getOrCreateInstance(element, { toggle: false }).show()
+    }
+
+    return
+  }
+
+  const timer = setTimeout(() => {
+    hoverTimers.delete(this)
+    for (const element of panels) {
+      AzCollapse.getOrCreateInstance(element, { toggle: false }).show()
+    }
+  }, delay)
+  hoverTimers.set(this, timer)
+})
+
+EventHandler.on(document, EVENT_MOUSELEAVE_DATA_API, SELECTOR_DATA_TOGGLE, function () {
+  const timer = hoverTimers.get(this)
+  if (timer !== undefined) {
+    clearTimeout(timer)
+    hoverTimers.delete(this)
   }
 })
 
