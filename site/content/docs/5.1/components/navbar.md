@@ -585,7 +585,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
                     <a class="nav-link" href="#">
                       <span class="nav-link-text">Home</span>
                     </a>
-                    <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home menu">
+                    <button class="btn nav-toggle" type="button" data-bs-toggle="az-collapse-hover" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home menu">
                       <span class="nav-toggle-icon" aria-hidden="true"></span>
                     </button>
                     <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
