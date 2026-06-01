@@ -64,6 +64,7 @@ Please note that while the example below has a `min-height` set to avoid excessi
 {{< /example >}}
 
 ## AZ Hover Collapse
+<span class="badge badge-az-custom">Arizona Bootstrap Experimental Feature</span>
 
 Arizona Bootstrap extends the collapse plugin with `AzCollapse`, which adds hover-open and focus-open behavior to standard collapse panels. The panel markup is identical to regular collapse — only the trigger's `data-bs-toggle` value changes from `"collapse"` to `"az-collapse-hover"`.
 
