@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Font
-description: The Proxima Nova font suite is available for official use by University of Arizona employees through a license with Adobe.
+description: Additional fonts are available for official use by University of Arizona employees through a license with Adobe.
 group: content
 toc: true
 extra_js:
@@ -11,13 +11,11 @@ extra_js:
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 mt-0">Heads Up!</p>
-  If you're using Arizona Bootstrap, Proxima Nova will still need to be added to
-  your project.
+  If you're using Arizona Bootstrap, Proxima Nova and Garamond Premier Pro will still need to be added to your project.
 </div>
 
 ## How to Use
-The Proxima Nova font suite is available for official use by University of Arizona
-employees through a license with Adobe Typekit.
+The Proxima Nova and Garamond Premier Pro font suites are available for official use by University of Arizona employees through a license with Adobe Typekit.
 
 ### Reference link
 
@@ -29,9 +27,40 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 ```html
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Garamond Premier Pro reference. -->
+<link href="https://use.typekit.net/eyf6fhr.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
+
+## Utility Classes
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+`.proxima-nova`.
+
+{{< example >}}
+<p class="proxima-nova">
+  This is the regular Proxima Nova font.
+</p>
+{{< /example >}}
+
+`.proxima-nova-condensed`.
+
+{{< example >}}
+<p class="proxima-nova-condensed">
+  This is the condensed Proxima Nova font.
+</p>
+{{< /example >}}
+
+`.garamond-premier-pro`.
+
+{{< example >}}
+<p class="garamond-premier-pro">
+  This is the Garamond Premier Pro font.
+</p>
+{{< /example >}}
+
 
 ## Centrally-managed Typekit Webfont
 
@@ -86,8 +115,7 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 `$font-family-base` and recompile Arizona Bootstrap.
 
 ## Adding Specific CSS Classes
-<span class="badge bg-warning align-text-top">Important</span> The following instructions are for adding specific CSS classes for font weights or styles. If using Arizona Bootstrap, you will most likely not need to do this unless you are trying to use a specific variant.
-
+<span class="badge bg-warning align-text-top">Important</span> The following instructions are for adding specific CSS classes for font weights or styles to your project. If using Arizona Bootstrap, you will most likely not need to do this unless you are trying to use a specific variant.
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
@@ -132,29 +160,6 @@ font-style: italic;
   <span>abcdefghijklmnopqrstuvwxyz</span> <br>
   <span>0123456789</span> <br>
   <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<div>
-  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova' data-font-name='Proxima Nova Regular' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-</div>
-
-### Proxima Nova Regular
-
-```css
-.proxima-nova {
-font-family: proxima-nova, sans-serif;
-font-weight: 400;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova">
- <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
- <span>abcdefghijklmnopqrstuvwxyz</span> <br>
- <span>0123456789</span> <br>
- <span>!@#$%^&</span>
 </div>
 {{< /example >}}
 
@@ -320,29 +325,6 @@ font-style: italic;
 {{< /example >}}
 
 <div>
-  <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c' data-font-name='Proxima Nova Condensed Regular' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-</div>
-
-### Proxima Nova Condensed Regular
-
-```css
-.proxima-nova-c {
-font-family: proxima-nova-condensed, sans-serif;
-font-weight: 400;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-c">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
-  <span>0123456789</span> <br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<div>
   <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-c-italic' data-font-name='Proxima Nova Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 </div>
 
@@ -350,9 +332,9 @@ font-style: normal;
 
 ```css
 .proxima-nova-c-italic {
-font-family: proxima-nova, sans-serif;
-font-weight: 400;
-font-style: italic;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 ```
 
@@ -365,60 +347,42 @@ font-style: italic;
 </div>
 {{< /example >}}
 
-### Examples in CSS
+### Examples
 
-Below are two examples of how you would use the Proxima Nova fonts in your code.
+Below are two examples of how you would use the Proxima Nova fonts in your project.
 
-**Example 1**
+**Example 1: Using Existing Arizona Bootstrap Classes**
 
 {{< example >}}
-  <h2 class="pn">Hello World!</h2>
-  <div class="pn">
-    <em>Hello World!</em>
+  <h2 class="proxima-nova">Proxima Nova Heading</h2>
+  <div class="proxima-nova">
+    <em>Proxima Nova with emphasis</em>
   </div>
-  <div class="pn">
-    <strong>Hello World!</strong>
+  <div class="proxima-nova">
+    <strong>Proxima Nova with strong importance</strong>
   </div>
-  <div class="pn">
-    <strong><em>Hello World!</em></strong>
+  <div class="proxima-nova">
+    <strong><em>Proxima Nova with emphasis and strong importance</em></strong>
   </div>
 {{< /example >}}
 
-```css
-.pn {
-font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-// Not strictly necessary, since Arizona Bootstrap already sets <em> to italic.
-.pn em {
-font-style: italic;
-}
-// Not strictly necessary, since Arizona Bootstrap already sets <strong> to
-bolder.
-.pn strong {
-font-weight:700;
-}
-```
-{{< example >}}
-<h2 class="pn">Hello World!</h2>
-<div>
-  <em class="pn">Hello World!</em>
-</div>
-<div>
-  <strong class="pn">Hello World!</strong>
-</div>
-<div>
-  <strong class="pn"><em>Hello World!</em></strong>
-</div>
-{{< /example >}}
+**Example 2: Using a Project-Specific Class**
 
-**Example 2**
+<!-- Include new class for Example 2. -->
+<style>
+.proxima-nova-extra-condensed {
+  font-family: proxima-nova-extra-condensed, sans-serif;
+}
+</style>
 
 ```css
-p { font-family: proxima-nova-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+.proxima-nova-extra-condensed {
+  font-family: proxima-nova-extra-condensed, sans-serif;
+}
 ```
 
 {{< example >}}
-<p>Hello World!</p>
+<p class="proxima-nova-extra-condensed">Proxima Nova Extra Condensed</p>
 {{< /example >}}
 
 <div id="specimen-modal" tabindex="-1" class="modal fade bs-example-modal-lg" aria-labelledby="myModalLabel" aria-hidden="true">
