@@ -18,7 +18,7 @@ import Tab from '../node_modules/bootstrap/js/src/tab.js'
 import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
-import AzTab from './src/az-tab.js'
+import AzCollapse from './src/az-collapse.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
 import enableAzNavbar from './src/navbar.js'
 import enableNavbarAzFullscreenMobileNav from './src/navbar-az-fullscreen-mobile-nav.js'
@@ -34,7 +34,7 @@ export default {
   Popover,
   ScrollSpy,
   Tab,
-  AzTab,
+  AzCollapse,
   Toast,
   Tooltip,
   fixModalAriaHidden,
