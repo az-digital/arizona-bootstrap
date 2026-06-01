@@ -443,7 +443,9 @@
     @include border-radius(0);
 
     &:focus {
-      box-shadow: none;
+      @include border-radius(2px);
+      outline: 0;
+      box-shadow: $focus-ring-box-shadow;
     }
 
     &:not([aria-expanded="true"]):hover .nav-toggle-icon {
