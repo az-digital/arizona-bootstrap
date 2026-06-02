@@ -1,0 +1,15 @@
+//
+// > Custom font styles
+//
+
+.proxima-nova {
+  font-family: $font-family-sans-serif;
+}
+
+.proxima-nova-condensed {
+  font-family: proxima-nova-condensed, #{$font-family-sans-serif};
+}
+
+.garamond-premier-pro {
+  font-family: garamond-premier-pro, #{$font-family-sans-serif};
+}
