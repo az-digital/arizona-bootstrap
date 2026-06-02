@@ -62,12 +62,12 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 {{< /example >}}
 
 
-## Centrally-managed Typekit Webfont
+## Centrally-managed Typekit Webfonts
 
 For ease of integration into web projects around campus, the Arizona Digital
-team manages a Typekit webfont project that can be referenced by your site.
+team manages Typekit webfont projects that can be referenced by your site.
 
-#### Notes to consider when using the centrally managed webfont project.
+#### Notes to consider when using the centrally managed webfont projects.
 Our license with Typekit allows anyone with a NetID to create their own webfont
 project in Creative Cloud Typekit and use it in all of their web projects.
 
@@ -109,6 +109,7 @@ every device and OS. Read more about [native font stacks in this Smashing Magazi
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 ```
+<p></p>
 
 This `font-family` is applied to the `<body>` and automatically inherited
 globally throughout Bootstrap. To switch the global `font-family`, update
