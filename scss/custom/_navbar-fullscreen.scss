@@ -432,12 +432,20 @@
 
   .nav-toggle {
     --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$white}' stroke-width='2' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$white}' stroke-width='2' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
-    --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$sky}' stroke-width='3' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$sky}' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
+    --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$sky}' stroke-width='2' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$sky}' stroke-width='2' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
     --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='#{$sky}' stroke='none' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$blue}' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
+    --az-navbar-fullscreen-nav-toggle-size: 30px;
+    --az-navbar-fullscreen-nav-toggle-separator-offset: 16px;
     position: relative;
+    box-sizing: content-box;
+    display: inline-flex;
     flex: 0 0 auto;
+    align-items: center;
     align-self: center;
-    padding: 0 0 0 12px;
+    justify-content: center;
+    width: var(--az-navbar-fullscreen-nav-toggle-size);
+    height: var(--az-navbar-fullscreen-nav-toggle-size);
+    padding: 0 0 0 var(--az-navbar-fullscreen-nav-toggle-separator-offset);
     border: 0;
     @include border-radius(0);
 
@@ -466,15 +474,13 @@
     }
 
     .nav-toggle-icon {
-      --az-nav-toggle-icon-size: 30px;
+      --az-nav-toggle-icon-size: var(--az-navbar-fullscreen-nav-toggle-size);
       position: relative;
       box-sizing: content-box;
       display: block;
       flex-shrink: 0;
       width: var(--az-nav-toggle-icon-size);
       height: var(--az-nav-toggle-icon-size);
-      // padding: 13px 0;
-      // margin-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
       font-size: var(--az-nav-toggle-icon-size);
       background-image: var(--az-navbar-fullscreen-nav-toggle-icon);
       background-repeat: no-repeat;
@@ -482,6 +488,15 @@
       background-clip: content-box;
       background-origin: content-box;
       background-size: contain;
+    }
+  }
+
+  .nav-toggle-hover {
+    @extend .nav-toggle;
+    --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$sky}' stroke-width='3' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$sky}' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
+    .nav-toggle-icon {
+      /* stylelint-disable-next-line function-disallowed-list */
+      --az-nav-toggle-icon-size: calc(var(--az-navbar-fullscreen-nav-toggle-size) - 2px);
     }
   }
 }
@@ -644,12 +659,10 @@
     margin-left: 0;
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
 
-    /* stylelint-disable selector-max-class, selector-max-compound-selectors */
-    > .nav-item > .nav-toggle > .nav-toggle-icon {
-      --az-nav-toggle-icon-size: var(--az-navbar-fullscreen-modal-menu-primary-line-height);
-      // padding: 16px 0;
+    > .nav-item > .nav-toggle {
+      --az-navbar-fullscreen-nav-toggle-size: 40px;
+      --az-navbar-fullscreen-nav-toggle-separator-offset: 24px;
     }
-    /* stylelint-enable selector-max-class, selector-max-compound-selectors */
   }
 
   .navbar-az-fullscreen-modal-menu-submenu {
