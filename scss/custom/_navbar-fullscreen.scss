@@ -654,6 +654,7 @@
 
   .navbar-az-fullscreen-nav-primary {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-primary-underline-height);
+    --bs-nav-link-padding-y: 24px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-primary-font-size);
     --bs-nav-link-font-weight: var(--az-navbar-fullscreen-modal-menu-primary-font-weight);
     margin-left: 0;
