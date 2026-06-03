@@ -462,7 +462,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 {{< /example >}}
 
 ## AZ Navbar Fullscreen
-<span class="badge badge-az-custom">Arizona Bootstrap Experimental Feature</span>
+<span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span>
 
 The fullscreen AZ Navbar navigation pattern presents a minimal, (non-modal) navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal element supports a [logo (brand)](#brand-1), a minimal [Call to Actions](#calls-to-action-menu) menu, a [search](#search) box, and a modal activation toggle. When the [modal menu](#modal-menu) is open, the same [header elements](#modal-menu-header) are supported along with a multicolumn, 3-tier deep menu structure, and support for modal [footer menu bars](#modal-menu-footer).
 
