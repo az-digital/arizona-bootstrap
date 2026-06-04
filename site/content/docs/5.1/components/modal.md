@@ -802,9 +802,9 @@ While both ways to dismiss a modal are supported, keep in mind that dismissing f
 Create a modal with a single line of JavaScript:
 
 ```js
-const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+const myModal = new arizonaBootstrap.Modal(document.getElementById('myModal'), options)
 // or
-const myModalAlternative = new bootstrap.Modal('#myModal', options)
+const myModalAlternative = new arizonaBootstrap.Modal('#myModal', options)
 ```
 
 ### Options
@@ -832,7 +832,7 @@ const myModalAlternative = new bootstrap.Modal('#myModal', options)
 Activates your content as a modal. Accepts an optional options `object`.
 
 ```js
-const myModal = new bootstrap.Modal('#myModal', {
+const myModal = new arizonaBootstrap.Modal('#myModal', {
   keyboard: false
 })
 ```

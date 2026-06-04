@@ -1,6 +1,6 @@
 /*!
-  * Arizona Bootstrap v5.0.2 (https://github.com/az-digital/arizona-bootstrap)
-  * Copyright 2025 The Arizona Board of Regents on behalf of The University of Arizona
+  * Arizona Bootstrap v5.1.3 (https://github.com/az-digital/arizona-bootstrap)
+  * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
@@ -1039,12 +1039,12 @@ const enableDismissTrigger = (component, method = 'hide') => {
  * Constants
  */
 
-const NAME$f = 'alert';
-const DATA_KEY$a = 'bs.alert';
-const EVENT_KEY$b = `.${DATA_KEY$a}`;
+const NAME$g = 'alert';
+const DATA_KEY$b = 'bs.alert';
+const EVENT_KEY$c = `.${DATA_KEY$b}`;
 
-const EVENT_CLOSE = `close${EVENT_KEY$b}`;
-const EVENT_CLOSED = `closed${EVENT_KEY$b}`;
+const EVENT_CLOSE = `close${EVENT_KEY$c}`;
+const EVENT_CLOSED = `closed${EVENT_KEY$c}`;
 const CLASS_NAME_FADE$5 = 'fade';
 const CLASS_NAME_SHOW$8 = 'show';
 
@@ -1055,7 +1055,7 @@ const CLASS_NAME_SHOW$8 = 'show';
 class Alert extends BaseComponent {
   // Getters
   static get NAME() {
-    return NAME$f
+    return NAME$g
   }
 
   // Public
@@ -1121,14 +1121,14 @@ defineJQueryPlugin(Alert);
  * Constants
  */
 
-const NAME$e = 'button';
-const DATA_KEY$9 = 'bs.button';
-const EVENT_KEY$a = `.${DATA_KEY$9}`;
+const NAME$f = 'button';
+const DATA_KEY$a = 'bs.button';
+const EVENT_KEY$b = `.${DATA_KEY$a}`;
 const DATA_API_KEY$6 = '.data-api';
 
 const CLASS_NAME_ACTIVE$3 = 'active';
-const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
-const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
+const SELECTOR_DATA_TOGGLE$6 = '[data-bs-toggle="button"]';
+const EVENT_CLICK_DATA_API$7 = `click${EVENT_KEY$b}${DATA_API_KEY$6}`;
 
 /**
  * Class definition
@@ -1137,7 +1137,7 @@ const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
 class Button extends BaseComponent {
   // Getters
   static get NAME() {
-    return NAME$e
+    return NAME$f
   }
 
   // Public
@@ -1162,10 +1162,10 @@ class Button extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event => {
+EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DATA_TOGGLE$6, event => {
   event.preventDefault();
 
-  const button = event.target.closest(SELECTOR_DATA_TOGGLE$5);
+  const button = event.target.closest(SELECTOR_DATA_TOGGLE$6);
   const data = Button.getOrCreateInstance(button);
 
   data.toggle();
@@ -1189,13 +1189,13 @@ defineJQueryPlugin(Button);
  * Constants
  */
 
-const NAME$d = 'swipe';
-const EVENT_KEY$9 = '.bs.swipe';
-const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$9}`;
-const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$9}`;
-const EVENT_TOUCHEND = `touchend${EVENT_KEY$9}`;
-const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$9}`;
-const EVENT_POINTERUP = `pointerup${EVENT_KEY$9}`;
+const NAME$e = 'swipe';
+const EVENT_KEY$a = '.bs.swipe';
+const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
+const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
+const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
+const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
+const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
 const POINTER_TYPE_TOUCH = 'touch';
 const POINTER_TYPE_PEN = 'pen';
 const CLASS_NAME_POINTER_EVENT = 'pointer-event';
@@ -1242,12 +1242,12 @@ class Swipe extends Config {
   }
 
   static get NAME() {
-    return NAME$d
+    return NAME$e
   }
 
   // Public
   dispose() {
-    EventHandler.off(this._element, EVENT_KEY$9);
+    EventHandler.off(this._element, EVENT_KEY$a);
   }
 
   // Private
@@ -1331,13 +1331,13 @@ class Swipe extends Config {
  * Constants
  */
 
-const NAME$c = 'carousel';
-const DATA_KEY$8 = 'bs.carousel';
-const EVENT_KEY$8 = `.${DATA_KEY$8}`;
+const NAME$d = 'carousel';
+const DATA_KEY$9 = 'bs.carousel';
+const EVENT_KEY$9 = `.${DATA_KEY$9}`;
 const DATA_API_KEY$5 = '.data-api';
 
-const ARROW_LEFT_KEY$1 = 'ArrowLeft';
-const ARROW_RIGHT_KEY$1 = 'ArrowRight';
+const ARROW_LEFT_KEY$2 = 'ArrowLeft';
+const ARROW_RIGHT_KEY$2 = 'ArrowRight';
 const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
 const ORDER_NEXT = 'next';
@@ -1345,14 +1345,14 @@ const ORDER_PREV = 'prev';
 const DIRECTION_LEFT = 'left';
 const DIRECTION_RIGHT = 'right';
 
-const EVENT_SLIDE = `slide${EVENT_KEY$8}`;
-const EVENT_SLID = `slid${EVENT_KEY$8}`;
-const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$8}`;
-const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$8}`;
-const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$8}`;
-const EVENT_DRAG_START = `dragstart${EVENT_KEY$8}`;
-const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$8}${DATA_API_KEY$5}`;
-const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
+const EVENT_SLIDE = `slide${EVENT_KEY$9}`;
+const EVENT_SLID = `slid${EVENT_KEY$9}`;
+const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$9}`;
+const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$9}`;
+const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$9}`;
+const EVENT_DRAG_START = `dragstart${EVENT_KEY$9}`;
+const EVENT_LOAD_DATA_API$4 = `load${EVENT_KEY$9}${DATA_API_KEY$5}`;
+const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$9}${DATA_API_KEY$5}`;
 
 const CLASS_NAME_CAROUSEL = 'carousel';
 const CLASS_NAME_ACTIVE$2 = 'active';
@@ -1371,8 +1371,8 @@ const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
 const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
 
 const KEY_TO_DIRECTION = {
-  [ARROW_LEFT_KEY$1]: DIRECTION_RIGHT,
-  [ARROW_RIGHT_KEY$1]: DIRECTION_LEFT
+  [ARROW_LEFT_KEY$2]: DIRECTION_RIGHT,
+  [ARROW_RIGHT_KEY$2]: DIRECTION_LEFT
 };
 
 const Default$b = {
@@ -1425,7 +1425,7 @@ class Carousel extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$c
+    return NAME$d
   }
 
   // Public
@@ -1737,7 +1737,7 @@ class Carousel extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_SLIDE, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
@@ -1765,7 +1765,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function 
   carousel._maybeEnableCycle();
 });
 
-EventHandler.on(window, EVENT_LOAD_DATA_API$3, () => {
+EventHandler.on(window, EVENT_LOAD_DATA_API$4, () => {
   const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE);
 
   for (const carousel of carousels) {
@@ -1791,16 +1791,16 @@ defineJQueryPlugin(Carousel);
  * Constants
  */
 
-const NAME$b = 'collapse';
-const DATA_KEY$7 = 'bs.collapse';
-const EVENT_KEY$7 = `.${DATA_KEY$7}`;
+const NAME$c = 'collapse';
+const DATA_KEY$8 = 'bs.collapse';
+const EVENT_KEY$8 = `.${DATA_KEY$8}`;
 const DATA_API_KEY$4 = '.data-api';
 
-const EVENT_SHOW$6 = `show${EVENT_KEY$7}`;
-const EVENT_SHOWN$6 = `shown${EVENT_KEY$7}`;
-const EVENT_HIDE$6 = `hide${EVENT_KEY$7}`;
-const EVENT_HIDDEN$6 = `hidden${EVENT_KEY$7}`;
-const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$7}${DATA_API_KEY$4}`;
+const EVENT_SHOW$6 = `show${EVENT_KEY$8}`;
+const EVENT_SHOWN$6 = `shown${EVENT_KEY$8}`;
+const EVENT_HIDE$6 = `hide${EVENT_KEY$8}`;
+const EVENT_HIDDEN$6 = `hidden${EVENT_KEY$8}`;
+const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$4}`;
 
 const CLASS_NAME_SHOW$7 = 'show';
 const CLASS_NAME_COLLAPSE = 'collapse';
@@ -1813,7 +1813,7 @@ const WIDTH = 'width';
 const HEIGHT = 'height';
 
 const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
-const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="collapse"]';
+const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="collapse"]';
 
 const Default$a = {
   parent: null,
@@ -1836,7 +1836,7 @@ class Collapse extends BaseComponent {
     this._isTransitioning = false;
     this._triggerArray = [];
 
-    const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
+    const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$5);
 
     for (const elem of toggleList) {
       const selector = SelectorEngine.getSelectorFromElement(elem);
@@ -1869,7 +1869,7 @@ class Collapse extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$b
+    return NAME$c
   }
 
   // Public
@@ -1997,7 +1997,7 @@ class Collapse extends BaseComponent {
       return
     }
 
-    const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE$4);
+    const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE$5);
 
     for (const element of children) {
       const selected = SelectorEngine.getElementFromSelector(element);
@@ -2050,7 +2050,7 @@ class Collapse extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$5, function (event) {
   // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
   if (event.target.tagName === 'A' || (event.delegateTarget && event.delegateTarget.tagName === 'A')) {
     event.preventDefault();
@@ -2079,24 +2079,24 @@ defineJQueryPlugin(Collapse);
  * Constants
  */
 
-const NAME$a = 'dropdown';
-const DATA_KEY$6 = 'bs.dropdown';
-const EVENT_KEY$6 = `.${DATA_KEY$6}`;
+const NAME$b = 'dropdown';
+const DATA_KEY$7 = 'bs.dropdown';
+const EVENT_KEY$7 = `.${DATA_KEY$7}`;
 const DATA_API_KEY$3 = '.data-api';
 
 const ESCAPE_KEY$2 = 'Escape';
 const TAB_KEY$1 = 'Tab';
-const ARROW_UP_KEY$1 = 'ArrowUp';
-const ARROW_DOWN_KEY$1 = 'ArrowDown';
+const ARROW_UP_KEY$2 = 'ArrowUp';
+const ARROW_DOWN_KEY$2 = 'ArrowDown';
 const RIGHT_MOUSE_BUTTON = 2; // MouseEvent.button value for the secondary button, usually the right button
 
-const EVENT_HIDE$5 = `hide${EVENT_KEY$6}`;
-const EVENT_HIDDEN$5 = `hidden${EVENT_KEY$6}`;
-const EVENT_SHOW$5 = `show${EVENT_KEY$6}`;
-const EVENT_SHOWN$5 = `shown${EVENT_KEY$6}`;
-const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$6}${DATA_API_KEY$3}`;
-const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$6}${DATA_API_KEY$3}`;
-const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$6}${DATA_API_KEY$3}`;
+const EVENT_HIDE$5 = `hide${EVENT_KEY$7}`;
+const EVENT_HIDDEN$5 = `hidden${EVENT_KEY$7}`;
+const EVENT_SHOW$5 = `show${EVENT_KEY$7}`;
+const EVENT_SHOWN$5 = `shown${EVENT_KEY$7}`;
+const EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$7}${DATA_API_KEY$3}`;
+const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$7}${DATA_API_KEY$3}`;
+const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$7}${DATA_API_KEY$3}`;
 
 const CLASS_NAME_SHOW$6 = 'show';
 const CLASS_NAME_DROPUP = 'dropup';
@@ -2105,8 +2105,8 @@ const CLASS_NAME_DROPSTART = 'dropstart';
 const CLASS_NAME_DROPUP_CENTER = 'dropup-center';
 const CLASS_NAME_DROPDOWN_CENTER = 'dropdown-center';
 
-const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
-const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$3}.${CLASS_NAME_SHOW$6}`;
+const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
+const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$4}.${CLASS_NAME_SHOW$6}`;
 const SELECTOR_MENU = '.dropdown-menu';
 const SELECTOR_NAVBAR = '.navbar';
 const SELECTOR_NAVBAR_NAV = '.navbar-nav';
@@ -2166,7 +2166,7 @@ class Dropdown extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$a
+    return NAME$b
   }
 
   // Public
@@ -2269,7 +2269,7 @@ class Dropdown extends BaseComponent {
       typeof config.reference.getBoundingClientRect !== 'function'
     ) {
       // Popper virtual elements require a getBoundingClientRect method
-      throw new TypeError(`${NAME$a.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`)
+      throw new TypeError(`${NAME$b.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`)
     }
 
     return config
@@ -2386,7 +2386,7 @@ class Dropdown extends BaseComponent {
 
     // if target isn't included in items (e.g. when expanding the dropdown)
     // allow cycling to get the last item in case key equals ARROW_UP_KEY
-    getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.includes(target)).focus();
+    getNextActiveElement(items, target, key === ARROW_DOWN_KEY$2, !items.includes(target)).focus();
   }
 
   // Static
@@ -2450,7 +2450,7 @@ class Dropdown extends BaseComponent {
 
     const isInput = /input|textarea/i.test(event.target.tagName);
     const isEscapeEvent = event.key === ESCAPE_KEY$2;
-    const isUpOrDownEvent = [ARROW_UP_KEY$1, ARROW_DOWN_KEY$1].includes(event.key);
+    const isUpOrDownEvent = [ARROW_UP_KEY$2, ARROW_DOWN_KEY$2].includes(event.key);
 
     if (!isUpOrDownEvent && !isEscapeEvent) {
       return
@@ -2463,11 +2463,11 @@ class Dropdown extends BaseComponent {
     event.preventDefault();
 
     // TODO: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
-    const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ?
+    const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$4) ?
       this :
-      (SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0] ||
-        SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$3)[0] ||
-        SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode));
+      (SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$4)[0] ||
+        SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$4)[0] ||
+        SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$4, event.delegateTarget.parentNode));
 
     const instance = Dropdown.getOrCreateInstance(getToggleButton);
 
@@ -2490,11 +2490,11 @@ class Dropdown extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$3, Dropdown.dataApiKeydownHandler);
+EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$4, Dropdown.dataApiKeydownHandler);
 EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown.dataApiKeydownHandler);
-EventHandler.on(document, EVENT_CLICK_DATA_API$3, Dropdown.clearMenus);
+EventHandler.on(document, EVENT_CLICK_DATA_API$4, Dropdown.clearMenus);
 EventHandler.on(document, EVENT_KEYUP_DATA_API, Dropdown.clearMenus);
-EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
   event.preventDefault();
   Dropdown.getOrCreateInstance(this).toggle();
 });
@@ -2517,10 +2517,10 @@ defineJQueryPlugin(Dropdown);
  * Constants
  */
 
-const NAME$9 = 'backdrop';
+const NAME$a = 'backdrop';
 const CLASS_NAME_FADE$4 = 'fade';
 const CLASS_NAME_SHOW$5 = 'show';
-const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$9}`;
+const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$a}`;
 
 const Default$8 = {
   className: 'modal-backdrop',
@@ -2560,7 +2560,7 @@ class Backdrop extends Config {
   }
 
   static get NAME() {
-    return NAME$9
+    return NAME$a
   }
 
   // Public
@@ -2662,11 +2662,11 @@ class Backdrop extends Config {
  * Constants
  */
 
-const NAME$8 = 'focustrap';
-const DATA_KEY$5 = 'bs.focustrap';
-const EVENT_KEY$5 = `.${DATA_KEY$5}`;
-const EVENT_FOCUSIN$2 = `focusin${EVENT_KEY$5}`;
-const EVENT_KEYDOWN_TAB = `keydown.tab${EVENT_KEY$5}`;
+const NAME$9 = 'focustrap';
+const DATA_KEY$6 = 'bs.focustrap';
+const EVENT_KEY$6 = `.${DATA_KEY$6}`;
+const EVENT_FOCUSIN$2 = `focusin${EVENT_KEY$6}`;
+const EVENT_KEYDOWN_TAB = `keydown.tab${EVENT_KEY$6}`;
 
 const TAB_KEY = 'Tab';
 const TAB_NAV_FORWARD = 'forward';
@@ -2704,7 +2704,7 @@ class FocusTrap extends Config {
   }
 
   static get NAME() {
-    return NAME$8
+    return NAME$9
   }
 
   // Public
@@ -2717,7 +2717,7 @@ class FocusTrap extends Config {
       this._config.trapElement.focus();
     }
 
-    EventHandler.off(document, EVENT_KEY$5); // guard against infinite focus loop
+    EventHandler.off(document, EVENT_KEY$6); // guard against infinite focus loop
     EventHandler.on(document, EVENT_FOCUSIN$2, event => this._handleFocusin(event));
     EventHandler.on(document, EVENT_KEYDOWN_TAB, event => this._handleKeydown(event));
 
@@ -2730,7 +2730,7 @@ class FocusTrap extends Config {
     }
 
     this._isActive = false;
-    EventHandler.off(document, EVENT_KEY$5);
+    EventHandler.off(document, EVENT_KEY$6);
   }
 
   // Private
@@ -2883,22 +2883,22 @@ class ScrollBarHelper {
  * Constants
  */
 
-const NAME$7 = 'modal';
-const DATA_KEY$4 = 'bs.modal';
-const EVENT_KEY$4 = `.${DATA_KEY$4}`;
+const NAME$8 = 'modal';
+const DATA_KEY$5 = 'bs.modal';
+const EVENT_KEY$5 = `.${DATA_KEY$5}`;
 const DATA_API_KEY$2 = '.data-api';
 const ESCAPE_KEY$1 = 'Escape';
 
-const EVENT_HIDE$4 = `hide${EVENT_KEY$4}`;
-const EVENT_HIDE_PREVENTED$1 = `hidePrevented${EVENT_KEY$4}`;
-const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$4}`;
-const EVENT_SHOW$4 = `show${EVENT_KEY$4}`;
-const EVENT_SHOWN$4 = `shown${EVENT_KEY$4}`;
-const EVENT_RESIZE$1 = `resize${EVENT_KEY$4}`;
-const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$4}`;
-const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$4}`;
-const EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$4}`;
-const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$2}`;
+const EVENT_HIDE$4 = `hide${EVENT_KEY$5}`;
+const EVENT_HIDE_PREVENTED$1 = `hidePrevented${EVENT_KEY$5}`;
+const EVENT_HIDDEN$4 = `hidden${EVENT_KEY$5}`;
+const EVENT_SHOW$4 = `show${EVENT_KEY$5}`;
+const EVENT_SHOWN$4 = `shown${EVENT_KEY$5}`;
+const EVENT_RESIZE$1 = `resize${EVENT_KEY$5}`;
+const EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$5}`;
+const EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$5}`;
+const EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$5}`;
+const EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$5}${DATA_API_KEY$2}`;
 
 const CLASS_NAME_OPEN = 'modal-open';
 const CLASS_NAME_FADE$3 = 'fade';
@@ -2908,7 +2908,7 @@ const CLASS_NAME_STATIC = 'modal-static';
 const OPEN_SELECTOR$1 = '.modal.show';
 const SELECTOR_DIALOG = '.modal-dialog';
 const SELECTOR_MODAL_BODY = '.modal-body';
-const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
+const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="modal"]';
 
 const Default$6 = {
   backdrop: true,
@@ -2950,7 +2950,7 @@ class Modal extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$7
+    return NAME$8
   }
 
   // Public
@@ -3004,8 +3004,8 @@ class Modal extends BaseComponent {
   }
 
   dispose() {
-    EventHandler.off(window, EVENT_KEY$4);
-    EventHandler.off(this._dialog, EVENT_KEY$4);
+    EventHandler.off(window, EVENT_KEY$5);
+    EventHandler.off(this._dialog, EVENT_KEY$5);
 
     this._backdrop.dispose();
     this._focustrap.deactivate();
@@ -3199,7 +3199,7 @@ class Modal extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (['A', 'AREA'].includes(this.tagName)) {
@@ -3250,11 +3250,11 @@ defineJQueryPlugin(Modal);
  * Constants
  */
 
-const NAME$6 = 'offcanvas';
-const DATA_KEY$3 = 'bs.offcanvas';
-const EVENT_KEY$3 = `.${DATA_KEY$3}`;
+const NAME$7 = 'offcanvas';
+const DATA_KEY$4 = 'bs.offcanvas';
+const EVENT_KEY$4 = `.${DATA_KEY$4}`;
 const DATA_API_KEY$1 = '.data-api';
-const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$3}${DATA_API_KEY$1}`;
+const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$4}${DATA_API_KEY$1}`;
 const ESCAPE_KEY = 'Escape';
 
 const CLASS_NAME_SHOW$3 = 'show';
@@ -3263,16 +3263,16 @@ const CLASS_NAME_HIDING = 'hiding';
 const CLASS_NAME_BACKDROP = 'offcanvas-backdrop';
 const OPEN_SELECTOR = '.offcanvas.show';
 
-const EVENT_SHOW$3 = `show${EVENT_KEY$3}`;
-const EVENT_SHOWN$3 = `shown${EVENT_KEY$3}`;
-const EVENT_HIDE$3 = `hide${EVENT_KEY$3}`;
-const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$3}`;
-const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$3}`;
-const EVENT_RESIZE = `resize${EVENT_KEY$3}`;
-const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$3}${DATA_API_KEY$1}`;
-const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$3}`;
+const EVENT_SHOW$3 = `show${EVENT_KEY$4}`;
+const EVENT_SHOWN$3 = `shown${EVENT_KEY$4}`;
+const EVENT_HIDE$3 = `hide${EVENT_KEY$4}`;
+const EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$4}`;
+const EVENT_HIDDEN$3 = `hidden${EVENT_KEY$4}`;
+const EVENT_RESIZE = `resize${EVENT_KEY$4}`;
+const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$1}`;
+const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$4}`;
 
-const SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="offcanvas"]';
+const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="offcanvas"]';
 
 const Default$5 = {
   backdrop: true,
@@ -3310,7 +3310,7 @@ class Offcanvas extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$6
+    return NAME$7
   }
 
   // Public
@@ -3457,7 +3457,7 @@ class Offcanvas extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
 
   if (['A', 'AREA'].includes(this.tagName)) {
@@ -3485,7 +3485,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, functi
   data.toggle(this);
 });
 
-EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
+EventHandler.on(window, EVENT_LOAD_DATA_API$3, () => {
   for (const selector of SelectorEngine.find(OPEN_SELECTOR)) {
     Offcanvas.getOrCreateInstance(selector).show();
   }
@@ -3636,7 +3636,7 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
  * Constants
  */
 
-const NAME$5 = 'TemplateFactory';
+const NAME$6 = 'TemplateFactory';
 
 const Default$4 = {
   allowList: DefaultAllowlist,
@@ -3683,7 +3683,7 @@ class TemplateFactory extends Config {
   }
 
   static get NAME() {
-    return NAME$5
+    return NAME$6
   }
 
   // Public
@@ -3791,7 +3791,7 @@ class TemplateFactory extends Config {
  * Constants
  */
 
-const NAME$4 = 'tooltip';
+const NAME$5 = 'tooltip';
 const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
 
 const CLASS_NAME_FADE$2 = 'fade';
@@ -3911,7 +3911,7 @@ class Tooltip extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$4
+    return NAME$5
   }
 
   // Public
@@ -4414,7 +4414,7 @@ defineJQueryPlugin(Tooltip);
  * Constants
  */
 
-const NAME$3 = 'popover';
+const NAME$4 = 'popover';
 
 const SELECTOR_TITLE = '.popover-header';
 const SELECTOR_CONTENT = '.popover-body';
@@ -4452,7 +4452,7 @@ class Popover extends Tooltip {
   }
 
   static get NAME() {
-    return NAME$3
+    return NAME$4
   }
 
   // Overrides
@@ -4508,14 +4508,14 @@ defineJQueryPlugin(Popover);
  * Constants
  */
 
-const NAME$2 = 'scrollspy';
-const DATA_KEY$2 = 'bs.scrollspy';
-const EVENT_KEY$2 = `.${DATA_KEY$2}`;
+const NAME$3 = 'scrollspy';
+const DATA_KEY$3 = 'bs.scrollspy';
+const EVENT_KEY$3 = `.${DATA_KEY$3}`;
 const DATA_API_KEY = '.data-api';
 
-const EVENT_ACTIVATE = `activate${EVENT_KEY$2}`;
-const EVENT_CLICK = `click${EVENT_KEY$2}`;
-const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}${DATA_API_KEY}`;
+const EVENT_ACTIVATE = `activate${EVENT_KEY$3}`;
+const EVENT_CLICK = `click${EVENT_KEY$3}`;
+const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$3}${DATA_API_KEY}`;
 
 const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
 const CLASS_NAME_ACTIVE$1 = 'active';
@@ -4577,7 +4577,7 @@ class ScrollSpy extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME$2
+    return NAME$3
   }
 
   // Public
@@ -4773,7 +4773,7 @@ class ScrollSpy extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => {
+EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
   for (const spy of SelectorEngine.find(SELECTOR_DATA_SPY)) {
     ScrollSpy.getOrCreateInstance(spy);
   }
@@ -4797,24 +4797,24 @@ defineJQueryPlugin(ScrollSpy);
  * Constants
  */
 
-const NAME$1 = 'tab';
-const DATA_KEY$1 = 'bs.tab';
-const EVENT_KEY$1 = `.${DATA_KEY$1}`;
+const NAME$2 = 'tab';
+const DATA_KEY$2 = 'bs.tab';
+const EVENT_KEY$2 = `.${DATA_KEY$2}`;
 
-const EVENT_HIDE$1 = `hide${EVENT_KEY$1}`;
-const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$1}`;
-const EVENT_SHOW$1 = `show${EVENT_KEY$1}`;
-const EVENT_SHOWN$1 = `shown${EVENT_KEY$1}`;
-const EVENT_CLICK_DATA_API = `click${EVENT_KEY$1}`;
-const EVENT_KEYDOWN = `keydown${EVENT_KEY$1}`;
-const EVENT_LOAD_DATA_API = `load${EVENT_KEY$1}`;
+const EVENT_HIDE$1 = `hide${EVENT_KEY$2}`;
+const EVENT_HIDDEN$1 = `hidden${EVENT_KEY$2}`;
+const EVENT_SHOW$1 = `show${EVENT_KEY$2}`;
+const EVENT_SHOWN$1 = `shown${EVENT_KEY$2}`;
+const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$2}`;
+const EVENT_KEYDOWN = `keydown${EVENT_KEY$2}`;
+const EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}`;
 
-const ARROW_LEFT_KEY = 'ArrowLeft';
-const ARROW_RIGHT_KEY = 'ArrowRight';
-const ARROW_UP_KEY = 'ArrowUp';
-const ARROW_DOWN_KEY = 'ArrowDown';
-const HOME_KEY = 'Home';
-const END_KEY = 'End';
+const ARROW_LEFT_KEY$1 = 'ArrowLeft';
+const ARROW_RIGHT_KEY$1 = 'ArrowRight';
+const ARROW_UP_KEY$1 = 'ArrowUp';
+const ARROW_DOWN_KEY$1 = 'ArrowDown';
+const HOME_KEY$1 = 'Home';
+const END_KEY$1 = 'End';
 
 const CLASS_NAME_ACTIVE = 'active';
 const CLASS_NAME_FADE$1 = 'fade';
@@ -4828,10 +4828,10 @@ const NOT_SELECTOR_DROPDOWN_TOGGLE = `:not(${SELECTOR_DROPDOWN_TOGGLE})`;
 const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
 const SELECTOR_OUTER = '.nav-item, .list-group-item';
 const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
-const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'; // TODO: could only be `tab` in v6
-const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
+const SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'; // TODO: could only be `tab` in v6
+const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE$1}`;
 
-const SELECTOR_DATA_TOGGLE_ACTIVE = `.${CLASS_NAME_ACTIVE}[data-bs-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="list"]`;
+const SELECTOR_DATA_TOGGLE_ACTIVE$1 = `.${CLASS_NAME_ACTIVE}[data-bs-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="list"]`;
 
 /**
  * Class definition
@@ -4856,7 +4856,7 @@ class Tab extends BaseComponent {
 
   // Getters
   static get NAME() {
-    return NAME$1
+    return NAME$2
   }
 
   // Public
@@ -4936,7 +4936,7 @@ class Tab extends BaseComponent {
   }
 
   _keydown(event) {
-    if (!([ARROW_LEFT_KEY, ARROW_RIGHT_KEY, ARROW_UP_KEY, ARROW_DOWN_KEY, HOME_KEY, END_KEY].includes(event.key))) {
+    if (!([ARROW_LEFT_KEY$1, ARROW_RIGHT_KEY$1, ARROW_UP_KEY$1, ARROW_DOWN_KEY$1, HOME_KEY$1, END_KEY$1].includes(event.key))) {
       return
     }
 
@@ -4946,10 +4946,10 @@ class Tab extends BaseComponent {
     const children = this._getChildren().filter(element => !isDisabled(element));
     let nextActiveElement;
 
-    if ([HOME_KEY, END_KEY].includes(event.key)) {
-      nextActiveElement = children[event.key === HOME_KEY ? 0 : children.length - 1];
+    if ([HOME_KEY$1, END_KEY$1].includes(event.key)) {
+      nextActiveElement = children[event.key === HOME_KEY$1 ? 0 : children.length - 1];
     } else {
-      const isNext = [ARROW_RIGHT_KEY, ARROW_DOWN_KEY].includes(event.key);
+      const isNext = [ARROW_RIGHT_KEY$1, ARROW_DOWN_KEY$1].includes(event.key);
       nextActiveElement = getNextActiveElement(children, event.target, isNext, true);
     }
 
@@ -5069,7 +5069,7 @@ class Tab extends BaseComponent {
  * Data API implementation
  */
 
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
   if (['A', 'AREA'].includes(this.tagName)) {
     event.preventDefault();
   }
@@ -5084,8 +5084,8 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 /**
  * Initialize on focus
  */
-EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-  for (const element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE)) {
+EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => {
+  for (const element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE$1)) {
     Tab.getOrCreateInstance(element);
   }
 });
@@ -5107,18 +5107,18 @@ defineJQueryPlugin(Tab);
  * Constants
  */
 
-const NAME = 'toast';
-const DATA_KEY = 'bs.toast';
-const EVENT_KEY = `.${DATA_KEY}`;
+const NAME$1 = 'toast';
+const DATA_KEY$1 = 'bs.toast';
+const EVENT_KEY$1 = `.${DATA_KEY$1}`;
 
-const EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`;
-const EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`;
-const EVENT_FOCUSIN = `focusin${EVENT_KEY}`;
-const EVENT_FOCUSOUT = `focusout${EVENT_KEY}`;
-const EVENT_HIDE = `hide${EVENT_KEY}`;
-const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
-const EVENT_SHOW = `show${EVENT_KEY}`;
-const EVENT_SHOWN = `shown${EVENT_KEY}`;
+const EVENT_MOUSEOVER = `mouseover${EVENT_KEY$1}`;
+const EVENT_MOUSEOUT = `mouseout${EVENT_KEY$1}`;
+const EVENT_FOCUSIN = `focusin${EVENT_KEY$1}`;
+const EVENT_FOCUSOUT = `focusout${EVENT_KEY$1}`;
+const EVENT_HIDE = `hide${EVENT_KEY$1}`;
+const EVENT_HIDDEN = `hidden${EVENT_KEY$1}`;
+const EVENT_SHOW = `show${EVENT_KEY$1}`;
+const EVENT_SHOWN = `shown${EVENT_KEY$1}`;
 
 const CLASS_NAME_FADE = 'fade';
 const CLASS_NAME_HIDE = 'hide'; // @deprecated - kept here only for backwards compatibility
@@ -5161,7 +5161,7 @@ class Toast extends BaseComponent {
   }
 
   static get NAME() {
-    return NAME
+    return NAME$1
   }
 
   // Public
@@ -5334,6 +5334,110 @@ function fixModalAriaHidden$1() {
 
 /**
  * --------------------------------------------------------------------------
+ * Arizona Bootstrap: az-tab.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+
+/**
+ * Constants
+ */
+
+var NAME = 'az-tab';
+var DATA_KEY = "bs.".concat(NAME);
+var EVENT_KEY = ".".concat(DATA_KEY);
+var EVENT_CLICK_DATA_API = "click".concat(EVENT_KEY);
+var EVENT_MOUSEENTER_DATA_API = "mouseenter".concat(EVENT_KEY);
+var EVENT_FOCUSIN_DATA_API = "focusin".concat(EVENT_KEY);
+var EVENT_LOAD_DATA_API = "load".concat(EVENT_KEY);
+var ARROW_LEFT_KEY = 'ArrowLeft';
+var ARROW_RIGHT_KEY = 'ArrowRight';
+var ARROW_UP_KEY = 'ArrowUp';
+var ARROW_DOWN_KEY = 'ArrowDown';
+var HOME_KEY = 'Home';
+var END_KEY = 'End';
+var HOVER_MEDIA_QUERY$1 = '(hover: hover) and (pointer: fine)';
+var SELECTOR_DATA_TOGGLE = '[data-bs-toggle="pill-hover"]';
+var SELECTOR_DATA_TOGGLE_ACTIVE = '.active[data-bs-toggle="pill-hover"]';
+var supportsPointerHover$1 = () => {
+  var _window$matchMedia, _window;
+  return typeof window !== 'undefined' && ((_window$matchMedia = (_window = window).matchMedia) === null || _window$matchMedia === void 0 || (_window$matchMedia = _window$matchMedia.call(_window, HOVER_MEDIA_QUERY$1)) === null || _window$matchMedia === void 0 ? void 0 : _window$matchMedia.matches) === true;
+};
+
+/**
+ * Class definition
+ */
+
+class AzTab extends Tab {
+  // Getters
+  static get NAME() {
+    return NAME;
+  }
+  _keydown(event) {
+    if (![ARROW_LEFT_KEY, ARROW_RIGHT_KEY, ARROW_UP_KEY, ARROW_DOWN_KEY, HOME_KEY, END_KEY].includes(event.key)) {
+      return;
+    }
+    event.stopPropagation();
+    event.preventDefault();
+    var children = this._getChildren().filter(element => !isDisabled(element));
+    var nextActiveElement;
+    if ([HOME_KEY, END_KEY].includes(event.key)) {
+      nextActiveElement = children[event.key === HOME_KEY ? 0 : children.length - 1];
+    } else {
+      var isNext = [ARROW_RIGHT_KEY, ARROW_DOWN_KEY].includes(event.key);
+      nextActiveElement = getNextActiveElement(children, event.target, isNext, true);
+    }
+    if (nextActiveElement) {
+      nextActiveElement.focus({
+        preventScroll: true
+      });
+      AzTab.getOrCreateInstance(nextActiveElement).show();
+    }
+  }
+}
+
+/**
+ * Data API implementation
+ */
+
+EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  if (['A', 'AREA'].includes(this.tagName)) {
+    event.preventDefault();
+  }
+  if (isDisabled(this)) {
+    return;
+  }
+  AzTab.getOrCreateInstance(this).show();
+});
+
+// Limit hover activation to devices that actually support hover with a fine pointer.
+EventHandler.on(document, EVENT_MOUSEENTER_DATA_API, SELECTOR_DATA_TOGGLE, function () {
+  if (!supportsPointerHover$1() || isDisabled(this)) {
+    return;
+  }
+  AzTab.getOrCreateInstance(this).show();
+});
+
+// Activate on focus so keyboard navigation into the trigger opens the matching panel.
+EventHandler.on(document, EVENT_FOCUSIN_DATA_API, SELECTOR_DATA_TOGGLE, function () {
+  if (isDisabled(this)) {
+    return;
+  }
+  AzTab.getOrCreateInstance(this).show();
+});
+
+/**
+ * Initialize on focus
+ */
+EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
+  for (var element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE)) {
+    AzTab.getOrCreateInstance(element);
+  }
+});
+
+/**
+ * --------------------------------------------------------------------------
  * Arizona Bootstrap: photogallery.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
@@ -5355,6 +5459,1028 @@ function photoGalleryGridSlideToImage$1() {
   };
   for (var gridButton of gridButtons) {
     _loop();
+  }
+}
+
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
+}
+function _arrayWithHoles(r) {
+  if (Array.isArray(r)) return r;
+}
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = true,
+      o = false;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) ; else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = true, n = r;
+    } finally {
+      try {
+        if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
+    }
+    return a;
+  }
+}
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _slicedToArray(r, e) {
+  return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
+}
+
+var HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)';
+var HIDE_DELAY_MS = 300;
+var RESIZE_DEBOUNCE_MS = 100;
+
+// Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
+var supportsPointerHover = () => {
+  var _window$matchMedia, _window;
+  return typeof window !== 'undefined' && ((_window$matchMedia = (_window = window).matchMedia) === null || _window$matchMedia === void 0 || (_window$matchMedia = _window$matchMedia.call(_window, HOVER_MEDIA_QUERY)) === null || _window$matchMedia === void 0 ? void 0 : _window$matchMedia.matches) === true;
+};
+
+/**
+ * Calculate and set the max-width for dropdown menus in a navbar-az to half
+ * the navbar width, and toggle `dropdown-menu-end` on dropdowns positioned
+ * past the midpoint that would otherwise overflow.
+ */
+function updateDropdownAlignment(navbar) {
+  var navbarWidth = navbar.offsetWidth;
+  var halfWidth = Math.floor(navbarWidth / 2);
+
+  // Set the CSS custom property so dropdown-menu max-width stays in sync.
+  navbar.style.setProperty('--az-navbar-dropdown-max-width', "".concat(halfWidth, "px"));
+  var dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown');
+  for (var dropdown of dropdowns) {
+    var menu = dropdown.querySelector(':scope > .dropdown-menu');
+    if (!menu) {
+      continue;
+    }
+
+    // Determine this dropdown's horizontal position relative to the navbar.
+    var navbarRect = navbar.getBoundingClientRect();
+    var dropdownRect = dropdown.getBoundingClientRect();
+    var dropdownStart = dropdownRect.left - navbarRect.left;
+    var remainingSpace = navbarRect.right - dropdownRect.left;
+
+    // Only right-align if the dropdown is past the midpoint AND its max-content
+    // width would overflow the remaining space to the right of the navbar.
+    // We temporarily measure the menu's natural width to make this determination.
+    // The menu may be hidden (display:none), so we must briefly make it visible
+    // off-screen to get an accurate measurement.
+    var wasHidden = window.getComputedStyle(menu).display === 'none';
+    if (wasHidden) {
+      menu.style.display = 'block';
+      menu.style.visibility = 'hidden';
+      menu.style.position = 'absolute';
+    }
+    var savedMaxWidth = menu.style.maxWidth;
+    var savedWidth = menu.style.width;
+    menu.style.maxWidth = 'none';
+    menu.style.width = 'max-content';
+    var naturalWidth = menu.scrollWidth;
+    menu.style.maxWidth = savedMaxWidth;
+    menu.style.width = savedWidth;
+    if (wasHidden) {
+      menu.style.display = '';
+      menu.style.visibility = '';
+      menu.style.position = '';
+    }
+    if (dropdownStart > halfWidth && naturalWidth > remainingSpace) {
+      menu.classList.add('dropdown-menu-end');
+    } else {
+      menu.classList.remove('dropdown-menu-end');
+    }
+  }
+}
+
+/**
+ * Set up a ResizeObserver to keep dropdown alignment in sync with the navbar
+ * width (handles viewport changes, container resizing, etc.).
+ */
+function observeNavbarResize(navbar) {
+  if (typeof ResizeObserver === 'undefined') {
+    return;
+  }
+  var resizeTimer = null;
+  var observer = new ResizeObserver(() => {
+    if (resizeTimer) {
+      clearTimeout(resizeTimer);
+    }
+    resizeTimer = setTimeout(() => {
+      updateDropdownAlignment(navbar);
+    }, RESIZE_DEBOUNCE_MS);
+  });
+  observer.observe(navbar);
+}
+function getPrimaryDropdownTrigger(dropdownElement) {
+  var toggle = dropdownElement.querySelector(':scope > .dropdown-toggle');
+  return toggle instanceof HTMLElement ? toggle : null;
+}
+
+// Close sibling dropdowns unless they were opened via click.
+function closeOtherDropdowns(navbar, currentDropdownElement) {
+  var openTriggers = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown .dropdown-toggle.show');
+  for (var trigger of openTriggers) {
+    var _instance$isClickOpen;
+    if (!(trigger instanceof HTMLElement)) {
+      continue;
+    }
+    var dropdownElement = trigger.closest('.navbar-nav > .nav-item.dropdown');
+    if (!dropdownElement || dropdownElement === currentDropdownElement) {
+      continue;
+    }
+    var instance = Dropdown.getInstance(trigger);
+    if (instance !== null && instance !== void 0 && (_instance$isClickOpen = instance.isClickOpen) !== null && _instance$isClickOpen !== void 0 && _instance$isClickOpen.call(instance)) {
+      continue;
+    }
+    instance === null || instance === void 0 || instance.hide();
+  }
+}
+class NavbarHoverDropdown extends Dropdown {
+  constructor(element, dropdownElement, navbar, config) {
+    super(element, config);
+    this._dropdownElement = dropdownElement;
+    this._navbar = navbar;
+    this._hideTimer = null;
+    this._shouldCloseSiblings = dropdownElement.matches('.navbar-nav > .nav-item.dropdown');
+    this._initialCollapseStates = this._captureCollapseStates();
+    // State flags for hover/click coordination.
+    this._hoverTriggered = false;
+    this._suppressNextBlur = false;
+    this._suppressNextFocus = false;
+    this._hoverOpen = false;
+    this._clickOpen = false;
+    this._pendingClick = false;
+    this._wasHoverOpened = false;
+    this._suppressHover = false;
+    this._ignoreNextToggle = false;
+    if (supportsPointerHover()) {
+      this._addHoverListeners();
+    }
+  }
+  dispose() {
+    this._removeHoverListeners();
+    super.dispose();
+  }
+  _addHoverListeners() {
+    if (!this._dropdownElement) {
+      return;
+    }
+    this._boundOnEnter = () => this._handleHoverEnter();
+    this._boundOnLeave = () => this._handleHoverLeave();
+    this._boundMenuEnter = () => this._cancelScheduledHide();
+    this._boundMenuLeave = () => this._handleHoverLeave();
+    this._boundOnFocus = event => this._handleFocus(event);
+    this._boundOnBlur = event => this._handleBlur(event);
+    this._boundOnMouseDown = () => this._handleMouseDown();
+    this._boundOnClick = event => this._handleClick(event);
+    EventHandler.on(this._element, 'mouseenter', this._boundOnEnter);
+    EventHandler.on(this._element, 'mouseleave', this._boundOnLeave);
+    EventHandler.on(this._element, 'focus', this._boundOnFocus);
+    EventHandler.on(this._element, 'blur', this._boundOnBlur);
+    EventHandler.on(this._element, 'mousedown', this._boundOnMouseDown);
+    EventHandler.on(this._element, 'click', this._boundOnClick);
+    EventHandler.on(this._dropdownElement, 'mouseleave', this._boundOnLeave);
+    if (this._menu) {
+      EventHandler.on(this._menu, 'mouseenter', this._boundMenuEnter);
+      EventHandler.on(this._menu, 'mouseleave', this._boundMenuLeave);
+    }
+  }
+  _removeHoverListeners() {
+    if (!this._dropdownElement || !supportsPointerHover()) {
+      return;
+    }
+    EventHandler.off(this._element, 'mouseenter', this._boundOnEnter);
+    EventHandler.off(this._element, 'mouseleave', this._boundOnLeave);
+    EventHandler.off(this._element, 'focus', this._boundOnFocus);
+    EventHandler.off(this._element, 'blur', this._boundOnBlur);
+    EventHandler.off(this._element, 'mousedown', this._boundOnMouseDown);
+    EventHandler.off(this._element, 'click', this._boundOnClick);
+    EventHandler.off(this._dropdownElement, 'mouseleave', this._boundOnLeave);
+    if (this._menu) {
+      EventHandler.off(this._menu, 'mouseenter', this._boundMenuEnter);
+      EventHandler.off(this._menu, 'mouseleave', this._boundMenuLeave);
+    }
+  }
+
+  // Hover opens the menu and closes hover-open siblings.
+  _handleHoverEnter() {
+    if (this._suppressHover) {
+      return;
+    }
+    this._cancelScheduledHide();
+    this._hoverTriggered = true;
+    this._hoverOpen = true;
+    this._wasHoverOpened = true;
+    if (this._shouldCloseSiblings && this._navbar && this._dropdownElement) {
+      closeOtherDropdowns(this._navbar, this._dropdownElement);
+    }
+    this._suppressNextFocus = true;
+    this.show();
+    if (this._suppressNextFocus) {
+      this._suppressNextFocus = false;
+    }
+    this._removePointerFocus();
+  }
+  _handleHoverLeave() {
+    this._suppressHover = false;
+    this._scheduleHide({
+      source: 'hover'
+    });
+  }
+
+  // Focus opens the menu, but skips focus transitions into the menu.
+  _handleFocus(event) {
+    var _this$_menu;
+    // Suppress focus triggered by click - the click handler manages that interaction
+    if (this._suppressNextFocus) {
+      this._suppressNextFocus = false;
+      return;
+    }
+    if (event.relatedTarget && (_this$_menu = this._menu) !== null && _this$_menu !== void 0 && _this$_menu.contains(event.relatedTarget)) {
+      return;
+    }
+    this._cancelScheduledHide();
+    if (this._isShown()) {
+      return;
+    }
+    this._hoverOpen = false;
+    this._wasHoverOpened = false;
+    this.show();
+  }
+
+  // Blur schedules a hide unless focus moved into the menu.
+  _handleBlur(event) {
+    var _this$_menu2;
+    if (this._suppressNextBlur) {
+      this._suppressNextBlur = false;
+      return;
+    }
+    if (event.relatedTarget && (_this$_menu2 = this._menu) !== null && _this$_menu2 !== void 0 && _this$_menu2.contains(event.relatedTarget)) {
+      return;
+    }
+    this._scheduleHide();
+  }
+  _handleMouseDown() {
+    // Set flag before focus fires (event order: mousedown → focus → click)
+    this._suppressNextFocus = true;
+  }
+
+  // Click is handled here to prevent Bootstrap's delegated double-toggle.
+  _handleClick(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    this._pendingClick = true;
+    this._cancelScheduledHide();
+    this.toggle();
+  }
+
+  // Hide on hover-out, but never when the menu is click-open.
+  _scheduleHide() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      source = _ref.source;
+    this._cancelScheduledHide();
+    if (this._clickOpen) {
+      return;
+    }
+    if (source === 'hover' && !this._hoverOpen) {
+      return;
+    }
+    this._hideTimer = window.setTimeout(() => {
+      this.hide();
+    }, HIDE_DELAY_MS);
+  }
+  _cancelScheduledHide() {
+    if (this._hideTimer) {
+      window.clearTimeout(this._hideTimer);
+      this._hideTimer = null;
+    }
+  }
+
+  /**
+   * Handles click-driven toggling while preserving independent hover state.
+   * The click handler sets `_pendingClick`, and this method processes that
+   * click before Bootstrap's delegated toggle runs.
+   *
+   * Behavior:
+   * - If a click occurs while the menu is hover-open, convert it to click-open.
+   * - If already open via click, close and suppress immediate re-toggle.
+   * - Otherwise open via click and mark `_clickOpen`.
+   * - Ignore the next delegated `toggle()` invoked by Bootstrap after a handled click.
+   */
+  toggle() {
+    if (this._pendingClick) {
+      this._pendingClick = false;
+      this._ignoreNextToggle = true; // Ignore Bootstrap's subsequent toggle call
+
+      if (this._isShown()) {
+        if (this._wasHoverOpened && !this._clickOpen) {
+          this._clickOpen = true;
+          this._hoverOpen = false;
+          this._wasHoverOpened = false;
+          this._cancelScheduledHide();
+          return;
+        }
+        this._hoverOpen = false;
+        this._wasHoverOpened = false;
+        this._suppressHover = true;
+        super.hide();
+        this._ignoreNextToggle = true;
+        this._clickOpen = this._isShown();
+        return;
+      }
+      this._hoverOpen = false;
+      this._wasHoverOpened = false;
+      this._cancelScheduledHide();
+      super.show();
+      this._clickOpen = this._isShown();
+      return;
+    }
+
+    // Ignore toggle calls from Bootstrap's delegated handler after we already processed the click
+    if (this._ignoreNextToggle) {
+      this._ignoreNextToggle = false;
+      return;
+    }
+    return super.toggle();
+  }
+  hide() {
+    this._hoverOpen = false;
+    this._clickOpen = false;
+    this._pendingClick = false;
+    this._ignoreNextToggle = false;
+    this._cancelScheduledHide();
+    this._resetCollapseState();
+    return super.hide();
+  }
+  _completeHide(relatedTarget) {
+    this._hoverOpen = false;
+    this._clickOpen = false;
+    this._pendingClick = false;
+    this._ignoreNextToggle = false;
+    this._cancelScheduledHide();
+    this._resetCollapseState();
+    super._completeHide(relatedTarget);
+  }
+
+  /**
+   * Snapshot the initial show/hide state of each `.collapse` submenu inside
+   * this dropdown's menu, based on the server-rendered HTML at page load.
+   */
+  _captureCollapseStates() {
+    var _this$_dropdownElemen;
+    var menu = this._menu || ((_this$_dropdownElemen = this._dropdownElement) === null || _this$_dropdownElemen === void 0 ? void 0 : _this$_dropdownElemen.querySelector('.dropdown-menu'));
+    if (!menu) {
+      return new Map();
+    }
+    var states = new Map();
+    var collapses = menu.querySelectorAll('.collapse');
+    for (var collapse of collapses) {
+      states.set(collapse, collapse.classList.contains('show'));
+    }
+    return states;
+  }
+
+  /**
+   * Reset every `.collapse` submenu inside this dropdown's menu back to its
+   * initial page-load state (determined by `.active` placement in the HTML).
+   */
+  _resetCollapseState() {
+    var _this$_dropdownElemen2;
+    if (!this._initialCollapseStates || this._initialCollapseStates.size === 0) {
+      return;
+    }
+    var menu = this._menu || ((_this$_dropdownElemen2 = this._dropdownElement) === null || _this$_dropdownElemen2 === void 0 ? void 0 : _this$_dropdownElemen2.querySelector('.dropdown-menu'));
+    var togglesByTarget = new Map();
+    if (menu) {
+      var toggles = menu.querySelectorAll('[data-bs-target]');
+      for (var toggle of toggles) {
+        var target = toggle.getAttribute('data-bs-target');
+        if (target) {
+          togglesByTarget.set(target, toggle);
+        }
+      }
+    }
+    for (var _ref4 of this._initialCollapseStates) {
+      var _ref3 = _slicedToArray(_ref4, 2);
+      var collapse = _ref3[0];
+      var wasShown = _ref3[1];
+      var isShown = collapse.classList.contains('show');
+      if (wasShown === isShown) {
+        continue;
+      }
+      var instance = Collapse.getOrCreateInstance(collapse, {
+        toggle: false
+      });
+      if (wasShown) {
+        instance.show();
+      } else {
+        instance.hide();
+      }
+
+      // Sync the toggle button's aria-expanded attribute.
+      if (collapse.id) {
+        var _toggle = togglesByTarget.get("#".concat(collapse.id));
+        if (_toggle) {
+          _toggle.setAttribute('aria-expanded', String(wasShown));
+        }
+      }
+    }
+  }
+
+  // Remove focus after hover to avoid sticky focus rings.
+  _removePointerFocus() {
+    if (!this._hoverTriggered) {
+      return;
+    }
+    if (document.activeElement === this._element) {
+      this._suppressNextBlur = true;
+      this._element.blur();
+    }
+    this._hoverTriggered = false;
+  }
+  isClickOpen() {
+    return this._clickOpen;
+  }
+}
+
+// Wire up hover dropdowns for AZ navbars and global outside interactions.
+function enableAzNavbar$1() {
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return;
+  }
+  var navbars = document.querySelectorAll('.navbar-az');
+  if (!navbars.length) {
+    return;
+  }
+  if (!supportsPointerHover()) {
+    return;
+  }
+  var handleOutsideInteraction = event => {
+    var target = event === null || event === void 0 ? void 0 : event.target;
+    if (!(target instanceof Node)) {
+      return;
+    }
+    for (var navbar of navbars) {
+      var openTriggers = navbar.querySelectorAll('.dropdown-toggle.show');
+      for (var trigger of openTriggers) {
+        var instance = Dropdown.getInstance(trigger);
+        if (!(instance instanceof NavbarHoverDropdown) || !instance.isClickOpen()) {
+          continue;
+        }
+        var dropdownElement = trigger.closest('.navbar-nav > .nav-item.dropdown');
+        if (!dropdownElement || dropdownElement.contains(target)) {
+          continue;
+        }
+        instance.hide();
+      }
+    }
+  };
+  EventHandler.on(document, 'click', handleOutsideInteraction);
+  EventHandler.on(document, 'focusin', handleOutsideInteraction);
+  var _loop = function _loop(navbar) {
+    // Set initial dropdown alignment and start observing resize changes.
+    updateDropdownAlignment(navbar);
+    observeNavbarResize(navbar);
+    EventHandler.on(navbar, 'mouseover', event => {
+      var target = event === null || event === void 0 ? void 0 : event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+      var navList = target.closest('.navbar-nav');
+      if (!navList) {
+        return;
+      }
+      var openTriggers = navbar.querySelectorAll('.dropdown-toggle.show');
+      for (var trigger of openTriggers) {
+        var instance = Dropdown.getInstance(trigger);
+        if (!(instance instanceof NavbarHoverDropdown) || instance.isClickOpen()) {
+          continue;
+        }
+        if (!instance._hoverOpen) {
+          continue;
+        }
+        var dropdownElement = trigger.closest('.navbar-nav .nav-item.dropdown');
+        if (dropdownElement) {
+          var menuElement = instance._menu || dropdownElement.querySelector('.dropdown-menu');
+          var isInsideToggle = trigger.contains(target);
+          var isInsideMenu = menuElement instanceof Element && menuElement.contains(target);
+          if (isInsideToggle || isInsideMenu) {
+            continue;
+          }
+        }
+        instance._scheduleHide({
+          source: 'hover'
+        });
+      }
+    });
+    EventHandler.on(navbar, 'mouseleave', () => {
+      var openTriggers = navbar.querySelectorAll('.dropdown-toggle.show');
+      for (var trigger of openTriggers) {
+        var instance = Dropdown.getInstance(trigger);
+        if (instance instanceof NavbarHoverDropdown) {
+          if (instance.isClickOpen()) {
+            continue;
+          }
+          instance._scheduleHide({
+            source: 'navbar'
+          });
+          continue;
+        }
+        instance === null || instance === void 0 || instance.hide();
+      }
+    });
+    var dropdowns = navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown');
+    for (var dropdownElement of dropdowns) {
+      if (!(dropdownElement instanceof HTMLElement)) {
+        continue;
+      }
+      var triggerElement = getPrimaryDropdownTrigger(dropdownElement);
+      if (!triggerElement) {
+        continue;
+      }
+      var existingInstance = Dropdown.getInstance(triggerElement);
+      if (existingInstance && !(existingInstance instanceof NavbarHoverDropdown)) {
+        existingInstance.dispose();
+      }
+      if (existingInstance instanceof NavbarHoverDropdown) {
+        continue;
+      }
+      createNavbarHoverDropdown(triggerElement, dropdownElement, navbar);
+    }
+  };
+  for (var navbar of navbars) {
+    _loop(navbar);
+  }
+}
+function createNavbarHoverDropdown(triggerElement, dropdownElement, navbar) {
+  return new NavbarHoverDropdown(triggerElement, dropdownElement, navbar);
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * Arizona Bootstrap: navbar-az-fullscreen.js
+ * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+/**
+ * Arizona Bootstrap Fullscreen Navbar Mobile Navigation (experimental)
+ * Handles paged navigation for mobile view of #navbar-az-fullscreen-nav-mobile-col.
+ */
+
+class NavbarAzFullscreenMobileNav {
+  constructor() {
+    this.primaryNavElementId = '#az-navbar-az-fullscreen-primary-accordion';
+    this.primaryNavContainer = document.querySelector(this.primaryNavElementId);
+    this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col');
+    if (!this.primaryNavContainer || !this.mobileCol) {
+      // One or more required containers not found
+      return;
+    }
+
+    // Save call-to-action items
+    var ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions');
+    this.mobileCtaHTML = null;
+    if (ctaElement) {
+      this.mobileCtaHTML = ctaElement.cloneNode(true).outerHTML;
+    }
+    this.init();
+  }
+
+  /**
+   * Initialize the mobile navigation
+   */
+  init() {
+    var found = false;
+
+    // Check tertiary links for match with current pathname
+    var tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
+    for (var link of tertiaryLinks) {
+      if (link.href === window.location.href) {
+        var tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
+        if (!tertiaryPanel) {
+          continue;
+        }
+        var tertiaryPanelId = tertiaryPanel !== null && tertiaryPanel !== void 0 && tertiaryPanel.getAttribute('id') ? "#".concat(tertiaryPanel.getAttribute('id')) : '';
+        var tertiaryLabel = link.textContent.trim();
+        // Extract parent label from the secondary menu containing this tertiary panel
+        var secondaryContentButton = document.querySelector("[data-bs-target=\"".concat(tertiaryPanelId, "\"]"));
+        var parentLabel = (secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.previousElementSibling.textContent) || '';
+        var secondaryContent = secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+        var secondaryContentId = (secondaryContent === null || secondaryContent === void 0 ? void 0 : secondaryContent.getAttribute('id')) || '';
+        this.showTertiaryNav(tertiaryPanelId, tertiaryLabel, parentLabel, "#".concat(secondaryContentId));
+        found = true;
+      }
+    }
+
+    // Check secondary links for match with current pathname
+    if (!found) {
+      var secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active');
+      for (var _link of secondaryLinks) {
+        if (_link.href === window.location.href) {
+          var _secondaryContent = _link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+          var targetId = (_secondaryContent === null || _secondaryContent === void 0 ? void 0 : _secondaryContent.getAttribute('id')) || '';
+          var label = _link.textContent.trim();
+          if (targetId) {
+            this.showSecondaryNav("#".concat(targetId), label);
+            found = true;
+            break;
+          }
+        }
+      }
+    }
+
+    // If no matching links found, display primary navigation
+    if (!found) {
+      this.setupNavListeners(1, this.primaryNavElementId);
+    }
+
+    // Set up mobile modal footers
+
+    // Save top footer label
+    this.topFooter = document.getElementById('navbar-az-fullscreen-modal-footer-top');
+    if (this.topFooter) {
+      // Save top footer nav links to an array
+      this.topFooterLinks = Array.from(document.querySelectorAll('#navbar-az-fullscreen-modal-footer-top .nav-link')).map(link => {
+        return {
+          href: link.href,
+          text: link.textContent.trim()
+        };
+      });
+    }
+
+    // Save bottom footer label
+    this.bottomFooter = document.getElementById('navbar-az-fullscreen-modal-footer-bottom');
+    if (this.bottomFooter) {
+      // Save bottom footer nav links to an array
+      this.bottomFooterLinks = Array.from(document.querySelectorAll('#navbar-az-fullscreen-modal-footer-bottom .nav-link')).map(link => {
+        return {
+          href: link.href,
+          text: link.textContent.trim()
+        };
+      });
+    }
+    this.setupModalMobileFooter('navbar-az-fullscreen-modal-footer-top');
+    this.setupModalMobileFooter('navbar-az-fullscreen-modal-footer-bottom');
+  }
+
+  /**
+   * Set up the content and event listeners for a modal footer on mobile
+   * @param {string} id - The ID of the modal footer to update
+   */
+  setupModalMobileFooter(id) {
+    var _this = this;
+    var footer = document.getElementById(id);
+    if (!footer) {
+      return;
+    }
+    var firstFooterNavItem = footer.querySelector('.navbar-nav .nav-item');
+    if (!firstFooterNavItem) {
+      return;
+    }
+
+    // Clone the first nav item
+    var clonedNavItem = firstFooterNavItem.cloneNode(true);
+
+    // Get the original heading element and extract its text and id
+    var originalHeading = footer.querySelector('h2.navbar-brand');
+    var headingText = (originalHeading === null || originalHeading === void 0 ? void 0 : originalHeading.textContent.trim()) || 'Resources for:';
+    var headingId = (originalHeading === null || originalHeading === void 0 ? void 0 : originalHeading.id) || 'resources-for-label';
+
+    // Determine which footer links to use based on the id parameter
+    var footerLinks = id === 'navbar-az-fullscreen-modal-footer-top' ? this.topFooterLinks : this.bottomFooterLinks;
+
+    // Get the first 3 link texts
+    var linkTexts = footerLinks ? footerLinks.slice(0, 3).map(link => link.text) : [];
+
+    // Create the text with "and more..."
+    var footerText = linkTexts.length > 0 ? "".concat(linkTexts.join(', '), ", and more...") : 'View more...';
+
+    // Determine the data-az-menu-element and other attributes based on which footer this is
+    var menuElementId = id === 'navbar-az-fullscreen-modal-footer-top' ? '#navbar-az-fullscreen-modal-footer-top' : '#navbar-az-fullscreen-modal-footer-bottom';
+    var ariaLabel = "Toggle ".concat(headingText.replace(':', '').trim(), " submenu");
+    var html = "<button class=\"btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text\" type=\"button\" aria-controls=\"navbar-az-fullscreen-nav-mobile-col\" aria-label=\"".concat(ariaLabel, "\" data-az-menu-element=\"").concat(menuElementId, "\"><h2 class=\"navbar-brand nav-link-text m-0\" id=\"").concat(headingId, "\">").concat(headingText, "</h2><span class=\"text-white\">").concat(footerText, "</span></button>");
+    html += "<button class=\"btn nav-toggle navbar-az-fullscreen-mobile-footer-btn\" type=\"button\" aria-controls=\"navbar-az-fullscreen-nav-mobile-col\" aria-label=\"".concat(ariaLabel, "\" data-az-menu-element=\"").concat(menuElementId, "\">");
+    html += '<span class="nav-toggle-icon" aria-hidden="true"></span>';
+    html += '</button>';
+    clonedNavItem.innerHTML = html;
+    clonedNavItem.classList.add('d-lg-none');
+
+    // Insert the cloned item as the first child of the parent
+    var parentNav = firstFooterNavItem.parentElement;
+    parentNav.insertBefore(clonedNavItem, parentNav.firstChild);
+
+    // Set up event listeners for footer buttons
+    var footerButtons = clonedNavItem.querySelectorAll('.btn');
+    var _loop = function _loop(button) {
+      button.addEventListener('click', e => {
+        var targetId = button.getAttribute('data-az-menu-element');
+        if (targetId) {
+          // Extract the menu label from button aria-label text
+          var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
+          _this.showSecondaryNav(targetId, toggleLabel);
+        }
+      });
+    };
+    for (var button of footerButtons) {
+      _loop(button);
+    }
+  }
+
+  /**
+   * Display navigation menu page
+   * @param {number} navLevel - Navigation level
+   * @param {string} sourceElementId - ID of the source element containing the menu content
+   * @param {string} label - The label for the menu heading (optional)
+   * @param {string} parentLabel - Parent label to use for back navigation (optional)
+   * @param {string} parentElementId - Parent element ID to use for back navigation (optional)
+   */
+  showNavMenu(navLevel, sourceElementId) {
+    var label = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var parentLabel = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    var parentElementId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+    var element = document.querySelector("".concat(sourceElementId));
+    if (!element) {
+      return;
+    }
+
+    // Create the menu display
+    var menuHtml = '';
+    menuHtml = sourceElementId.includes('footer') ? this.buildFooterMenuHtml(element, label) : this.buildMenuHtml(navLevel, element, label, parentLabel);
+
+    // Update mobile column
+    this.mobileCol.innerHTML = menuHtml;
+
+    // Set up listeners for the new menu
+    this.setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId);
+  }
+
+  /**
+   * Display primary navigation
+   * @param {string} sourceElementId - The ID of the source primary content element
+   */
+  showPrimaryNav(sourceElementId) {
+    this.showNavMenu(1, sourceElementId);
+  }
+
+  /**
+   * Display secondary navigation for a primary menu item
+   * @param {string} sourceElementId - The ID of the source secondary content element
+   * @param {string} label - The label of the secondary menu
+   */
+  showSecondaryNav(sourceElementId, label) {
+    this.showNavMenu(2, sourceElementId, label, 'Main Menu');
+  }
+
+  /**
+   * Display tertiary navigation
+   * @param {string} sourceElementId - The ID of the source tertiary content element
+   * @param {string} label - The label of the tertiary menu
+   * @param {string} parentLabel - The label of the parent secondary menu
+   * @param {string} parentElementId - The ID of the parent secondary content element (optional)
+   */
+  showTertiaryNav(sourceElementId, label, parentLabel) {
+    var parentElementId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    this.showNavMenu(3, sourceElementId, label, parentLabel, parentElementId);
+  }
+
+  /**
+   * Build HTML for menu page display
+   * @param {number} navLevel - Navigation level
+   * @param {Element} sourceElement - The source element for the menu page content
+   * @param {string} label - The label for the menu heading (optional)
+   * @param {string} parentLabel - The label of the parent menu (optional)
+   * @returns {string} HTML string for the menu
+   */
+  buildMenuHtml(navLevel, sourceElement) {
+    var label = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var parentLabel = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    var html = '<div class="navbar-az-fullscreen-nav-menu-mobile">';
+    if (navLevel === 1) {
+      // Add call-to-action items
+      if (this.mobileCtaHTML) {
+        html += this.mobileCtaHTML;
+      }
+    } else {
+      // Add back button
+      html += this.createBackButton(parentLabel);
+
+      // Add menu heading
+      html += "<h2 class=\"navbar-az-fullscreen-nav-mobile-menu-heading\">".concat(label, " Menu</h2>");
+    }
+    var nav;
+    switch (navLevel) {
+      case 1:
+        {
+          nav = sourceElement.querySelector('.navbar-az-fullscreen-modal-menu-nav-col');
+          break;
+        }
+      case 2:
+        {
+          nav = sourceElement.querySelector('.navbar-az-fullscreen-modal-menu-nav-col-secondary');
+          break;
+        }
+      case 3:
+        {
+          nav = sourceElement.querySelector('.navbar-az-fullscreen-modal-menu-nav-col-tertiary');
+          break;
+        }
+    }
+    if (nav) {
+      // Clone the nav element to avoid modifying the original
+      var navClone = nav.cloneNode(true);
+
+      // Remove secondary panels if they exist
+      var secondaryPanels = navClone.querySelectorAll('.navbar-az-fullscreen-modal-menu-primary-submenu');
+      if (secondaryPanels) {
+        for (var panel of secondaryPanels) {
+          panel.remove();
+        }
+      }
+
+      // Remove tertiary panels if they exist
+      var tertiaryPanel = navClone.querySelectorAll('.navbar-az-fullscreen-modal-menu-secondary-submenu');
+      if (tertiaryPanel) {
+        for (var _panel of tertiaryPanel) {
+          _panel.remove();
+        }
+      }
+
+      // Process all buttons in the cloned nav
+      var buttonCounter = 0;
+      var buttons = navClone.querySelectorAll('button');
+      for (var button of buttons) {
+        // Store data-bs-target value before removing attributes
+        var targetId = button.getAttribute('data-bs-target');
+
+        // Remove Bootstrap attributes
+        button.removeAttribute('data-bs-toggle');
+        button.removeAttribute('data-bs-target');
+        button.removeAttribute('aria-expanded');
+
+        // Create dynamic id
+        buttonCounter++;
+        button.id = "az-fullscreen-nav-mobile-".concat(buttonCounter);
+
+        // Update aria-controls
+        button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col');
+
+        // Add data-az-menu-element attribute with original target value
+        if (targetId) {
+          button.setAttribute('data-az-menu-element', targetId);
+        }
+      }
+      html += navClone.outerHTML;
+    } else {
+      // Fallback: use the entire source element if no nav element found
+      html += sourceElement.outerHTML;
+    }
+    html += '</div>';
+    return html;
+  }
+
+  /**
+   * Build HTML for footer menu page display
+   * @param {Element} sourceElement - The source footer element
+   * @param {string} label - The label for the menu heading (optional)
+   * @returns {string} HTML string for the footer menu
+   */
+  buildFooterMenuHtml(sourceElement) {
+    var label = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var html = '<div class="navbar-az-fullscreen-nav-menu-mobile">';
+
+    // Add back button
+    html += this.createBackButton('Main Menu');
+
+    // Get the original heading element and extract its text
+    var originalHeading = sourceElement.querySelector('h2.navbar-brand');
+    var headingText = (originalHeading === null || originalHeading === void 0 ? void 0 : originalHeading.textContent.trim()) || label || 'Menu';
+
+    // Add menu heading
+    html += "<h2 class=\"navbar-az-fullscreen-nav-mobile-menu-heading\">".concat(headingText, "</h2>");
+
+    // Determine which footer links to use
+    var footerId = sourceElement.id;
+    var footerLinks = footerId === 'navbar-az-fullscreen-modal-footer-top' ? this.topFooterLinks : this.bottomFooterLinks;
+    var navId = footerId === 'navbar-az-fullscreen-modal-footer-top' ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav';
+    var ariaLabel = headingText.replace(':', '').trim();
+
+    // Build the nav structure with all footer links
+    html += '<div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">';
+    html += "<ul class=\"nav\" id=\"".concat(navId, "\" aria-label=\"").concat(ariaLabel, "\">");
+    if (footerLinks && footerLinks.length > 0) {
+      for (var link of footerLinks) {
+        html += '<li class="nav-item">';
+        html += "<a class=\"nav-link\" href=\"".concat(link.href, "\">");
+        html += "<span class=\"nav-link-text\">".concat(link.text, "</span>");
+        html += '</a>';
+        html += '</li>';
+      }
+    }
+    html += '</ul>';
+    html += '</div>';
+    html += '</div>';
+    return html;
+  }
+
+  /**
+   * Set up event listeners for navigation menu pages
+   * @param {number} navLevel - Navigation level
+   * @param {string} sourceElementId - ID of the source element for the current menu content
+   * @param {string} label - The label for the menu heading (optional)
+   * @param {string} parentLabel - The label of the parent menu (optional)
+   * @param {string} parentElementId - The ID of the parent element (optional)
+   */
+  setupNavListeners(navLevel, sourceElementId) {
+    var _this2 = this;
+    var label = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var parentLabel = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    var parentElementId = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+    if (navLevel !== 1) {
+      // Back button
+      var backButton = this.mobileCol.querySelector('.navbar-az-fullscreen-nav-back-btn');
+      if (backButton) {
+        backButton.addEventListener('click', () => {
+          if (navLevel === 2) {
+            this.showPrimaryNav(this.primaryNavElementId);
+          } else {
+            this.showSecondaryNav(parentElementId, parentLabel);
+          }
+        });
+      }
+    }
+
+    // Toggle buttons for secondary menu navigation
+    if (navLevel !== 3) {
+      var toggleButtons = this.mobileCol.querySelectorAll('.nav-toggle');
+      var _loop2 = function _loop2(button) {
+        button.addEventListener('click', e => {
+          var targetId = button.getAttribute('data-az-menu-element');
+          if (targetId) {
+            // Extract the menu label from button aria-label text
+            var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
+            if (navLevel === 1) {
+              _this2.showSecondaryNav(targetId, toggleLabel);
+            } else {
+              _this2.showTertiaryNav(targetId, toggleLabel, label, sourceElementId);
+            }
+          }
+        });
+      };
+      for (var button of toggleButtons) {
+        _loop2(button);
+      }
+    }
+  }
+
+  /**
+   * Create a back button element
+   * @param {string} label - The label for the back button
+   * @returns {string} HTML string for the back button
+   */
+  createBackButton(label) {
+    return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to ".concat(label, "\">\n          Back to ").concat(label, "\n        </button>\n      </div>\n    ");
+  }
+}
+
+/**
+ * Initialize Arizona Bootstrap fullscreen mobile navigation.
+ * Initializes immediately if DOM is ready, otherwise defers until DOM is loaded.
+ * @returns {NavbarAzFullscreenMobileNav} The created mobile navigation instance
+ */
+function enableNavbarAzFullscreenMobileNav$1() {
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return;
+  }
+
+  // Defer initialization until DOM is ready if needed
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new NavbarAzFullscreenMobileNav(), {
+      once: true
+    });
+  } else {
+    return new NavbarAzFullscreenMobileNav();
   }
 }
 
@@ -5380,5 +6506,17 @@ fixModalAriaHidden();
 /* global photoGalleryGridSlideToImage */
 photoGalleryGridSlideToImage();
 
-export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip, fixModalAriaHidden$1 as fixModalAriaHidden, photoGalleryGridSlideToImage$1 as photoGalleryGridSlideToImage };
+/**
+ * Enable hover-driven dropdowns on AZ Navbar.
+ */
+/* global enableAzNavbar */
+enableAzNavbar();
+
+/**
+ * Enable AZ Navbar Fullscreen mobile navigation.
+ */
+/* global enableNavbarAzFullscreenMobileNav */
+enableNavbarAzFullscreenMobileNav();
+
+export { Alert, AzTab, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip, enableAzNavbar$1 as enableAzNavbar, enableNavbarAzFullscreenMobileNav$1 as enableNavbarAzFullscreenMobileNav, fixModalAriaHidden$1 as fixModalAriaHidden, photoGalleryGridSlideToImage$1 as photoGalleryGridSlideToImage };
 //# sourceMappingURL=arizona-bootstrap.esm.js.map

@@ -1,8 +1,8 @@
-/* global bootstrap: false */
+/* global arizonaBootstrap: false */
 (() => {
   'use strict'
   const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   tooltipTriggerList.forEach(tooltipTriggerEl => {
-    new bootstrap.Tooltip(tooltipTriggerEl)
+    new arizonaBootstrap.Tooltip(tooltipTriggerEl)
   })
 })()

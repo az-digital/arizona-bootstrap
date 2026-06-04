@@ -113,6 +113,7 @@ $docs-bd-scales: (
   --bd-callout-link: #{to-rgb($blue-600)};
   --bd-callout-code-color: #{$pink-600};
   --bd-pre-bg: var(--bs-tertiary-bg);
+  --bd-green-rgba: rgba(var(--bs-success-rgb), .25);
 }
 
 @include color-mode(dark, true) {

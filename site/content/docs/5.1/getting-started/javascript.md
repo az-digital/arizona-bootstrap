@@ -18,7 +18,7 @@ While the Arizona Bootstrap CSS can be used with any framework, **the Arizona Bo
 
 ## Using Arizona Bootstrap as a module
 
-We provide a version of Arizona Bootstrap built as `ESM` (`bootstrap.esm.js` and `bootstrap.esm.min.js`) which allows you to use Arizona Bootstrap as a module in the browser, if your [targeted browsers support it](https://caniuse.com/es6-module).
+We provide a version of Arizona Bootstrap built as `ESM` (`arizona-bootstrap.esm.js` and `arizona-bootstrap.esm.min.js`) which allows you to use Arizona Bootstrap as a module in the browser, if your [targeted browsers support it](https://caniuse.com/es6-module).
 
 <!-- eslint-skip -->
 ```html
