@@ -882,7 +882,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <h2 class="navbar-brand" id="resources-for-label">Resources for:</h2>
+                  <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
