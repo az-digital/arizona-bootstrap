@@ -13,7 +13,7 @@
   --az-navbar-fullscreen-toggler-focus-offset: 2px;
   --az-navbar-fullscreen-toggler-icon-open: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35' fill='none'><line x1='2.5' y1='2.5' x2='32.5' y2='2.5' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/><line x1='2.5' y1='17.5' x2='32.5' y2='17.5' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/><line x1='2.5' y1='32.5' x2='32.5' y2='32.5' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/></svg>"))};
   --az-navbar-fullscreen-toggler-icon-close: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='36.07' height='36.07' viewBox='0 0 36.07 36.07' fill='none'><line x1='4' y1='4' x2='32.07' y2='32.07' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/><line x1='32.07' y1='4' x2='4' y2='32.07' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/></svg>"))};
-  --az-navbar-fullscreen-toggler-size: 30px;
+  --az-navbar-fullscreen-toggler-icon-size: 30px;
   --bs-navbar-padding-y: 20px;
   --bs-navbar-color: var(--bs-white);
   --bs-navbar-hover-color: var(--bs-white);
@@ -67,8 +67,8 @@
   }
 
   .navbar-toggler-icon {
-    width: var(--az-navbar-fullscreen-toggler-size);
-    height: var(--az-navbar-fullscreen-toggler-size);
+    width: var(--az-navbar-fullscreen-toggler-icon-size);
+    height: var(--az-navbar-fullscreen-toggler-icon-size);
   }
 }
 
@@ -496,10 +496,6 @@
   .nav-toggle-hover {
     @extend .nav-toggle;
     --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$sky}' stroke-width='3' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$sky}' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
-    .nav-toggle-icon {
-      /* stylelint-disable-next-line function-disallowed-list */
-      --az-nav-toggle-icon-size: calc(var(--az-navbar-fullscreen-nav-toggle-size) - 2px);
-    }
   }
 }
 
@@ -716,6 +712,7 @@
   .navbar-az-fullscreen {
     --az-navbar-fullscreen-height: 69px;
     --az-navbar-fullscreen-brand-height: 45px;
+    --az-navbar-fullscreen-toggler-icon-size: 24px;
     --bs-navbar-brand-padding-x: 12px;
     --bs-navbar-brand-padding-y: 12px;
     padding-top: 0;
@@ -757,36 +754,24 @@
   }
 
   .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-height: 45px;
+    --az-navbar-fullscreen-search-height: 35px;
     flex: none;
 
-    .input-group {
-      height: 51px;
-
-      .btn::before {
-        left: -8px;
-      }
-    }
 
     .navbar-toggler-search {
       padding: 0;
     }
-
-    /* stylelint-disable selector-max-id */
-    #navbar-az-fullscreen-modal-search + .btn {
-      width: 40px;
-      min-width: unset;
-      min-height: unset;
-      padding: 0;
-      margin-right: 4px;
-    }
-    /* stylelint-enable selector-max-id */
   }
 
-  header .navbar-toggler-icon {
-    width: 2.75rem;
-    height: 2.75rem;
-    transform: scaleX(.8) scaleY(1.25);
+  .modal-header {
+    .navbar-az-fullscreen-search {
+      --az-navbar-fullscreen-search-height: 51px;
+      .input-group {
+        .btn {
+          padding: 10px;
+        }
+      }
+    }
   }
 }
 
