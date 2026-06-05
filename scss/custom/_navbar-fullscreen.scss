@@ -814,7 +814,7 @@
       line-height: 1em;
     }
 
-    > .nav-item > .nav-toggle {
+    .nav-toggle {
       --az-navbar-fullscreen-nav-toggle-size: 38px;
       --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
     }
@@ -830,6 +830,11 @@
       margin-left: 0;
       border-top: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
       border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+    }
+
+    .nav-toggle {
+      --az-navbar-fullscreen-nav-toggle-size: 38px;
+      --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
     }
   }
 
