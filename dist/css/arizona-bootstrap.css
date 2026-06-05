@@ -22659,10 +22659,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az-fullscreen-modal .nav-toggle:focus {
   box-shadow: none;
 }
-.navbar-az-fullscreen-modal .nav-toggle:not([aria-expanded=true]):hover .nav-toggle-icon {
+.navbar-az-fullscreen-modal .nav-toggle.collapsed:hover .nav-toggle-icon {
   background-image: var(--az-navbar-fullscreen-nav-toggle-icon-hover);
 }
-.navbar-az-fullscreen-modal .nav-toggle[aria-expanded=true] .nav-toggle-icon {
+.navbar-az-fullscreen-modal .nav-toggle:not(.collapsed) .nav-toggle-icon {
   background-image: var(--az-navbar-fullscreen-nav-toggle-icon-active);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
@@ -23037,6 +23037,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 #navbar-az-fullscreen-nav-mobile-col .nav-toggle-icon {
   pointer-events: none;
+}
+#navbar-az-fullscreen-nav-mobile-col .nav-toggle:not(.collapsed) .nav-toggle-icon {
+  -webkit-transform: none;
+  transform: none;
 }
 
 /* stylelint-enable selector-max-id */

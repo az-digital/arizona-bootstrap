@@ -150,7 +150,7 @@ class NavbarAzFullscreenMobileNav {
 
     let html = `<button class="btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="${ariaLabel}" data-az-menu-element="${menuElementId}"><h2 class="navbar-brand nav-link-text m-0" id="${headingId}">${headingText}</h2><span class="text-white">${footerText}</span></button>`
 
-    html += `<button class="btn nav-toggle navbar-az-fullscreen-mobile-footer-btn" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="${ariaLabel}" data-az-menu-element="${menuElementId}">`
+    html += `<button class="btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="${ariaLabel}" data-az-menu-element="${menuElementId}">`
     html += '<span class="nav-toggle-icon" aria-hidden="true"></span>'
     html += '</button>'
 
@@ -295,6 +295,9 @@ class NavbarAzFullscreenMobileNav {
         }
       }
 
+      // Confirm if any active links are present
+      const activeLinkExists = navClone.querySelectorAll('.nav-link.active').length > 0
+
       // Process all buttons in the cloned nav
       let buttonCounter = 0
       const buttons = navClone.querySelectorAll('button')
@@ -317,6 +320,11 @@ class NavbarAzFullscreenMobileNav {
         // Add data-az-menu-element attribute with original target value
         if (targetId) {
           button.setAttribute('data-az-menu-element', targetId)
+        }
+
+        // Add collapsed class if this menu page has an active link
+        if (activeLinkExists) {
+          button.classList.add('collapsed')
         }
       }
 
