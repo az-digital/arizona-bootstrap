@@ -813,6 +813,11 @@
       font-size: 38px;
       line-height: 1em;
     }
+
+    > .nav-item > .nav-toggle {
+      --az-navbar-fullscreen-nav-toggle-size: 38px;
+      --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
+    }
   }
 
   .navbar-az-fullscreen-modal-menu-nav-col-secondary,
