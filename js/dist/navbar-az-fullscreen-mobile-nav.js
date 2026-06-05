@@ -186,7 +186,7 @@
       var menuElementId = id === 'navbar-az-fullscreen-modal-footer-top' ? '#navbar-az-fullscreen-modal-footer-top' : '#navbar-az-fullscreen-modal-footer-bottom';
       var ariaLabel = "Toggle " + headingText.replace(':', '').trim() + " submenu";
       var html = "<button class=\"btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text\" type=\"button\" aria-controls=\"navbar-az-fullscreen-nav-mobile-col\" aria-label=\"" + ariaLabel + "\" data-az-menu-element=\"" + menuElementId + "\"><h2 class=\"navbar-brand nav-link-text m-0\" id=\"" + headingId + "\">" + headingText + "</h2><span class=\"text-white\">" + footerText + "</span></button>";
-      html += "<button class=\"btn nav-toggle navbar-az-fullscreen-mobile-footer-btn\" type=\"button\" aria-controls=\"navbar-az-fullscreen-nav-mobile-col\" aria-label=\"" + ariaLabel + "\" data-az-menu-element=\"" + menuElementId + "\">";
+      html += "<button class=\"btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn\" type=\"button\" aria-controls=\"navbar-az-fullscreen-nav-mobile-col\" aria-label=\"" + ariaLabel + "\" data-az-menu-element=\"" + menuElementId + "\">";
       html += '<span class="nav-toggle-icon" aria-hidden="true"></span>';
       html += '</button>';
       clonedNavItem.innerHTML = html;
@@ -347,6 +347,9 @@
           }
         }
 
+        // Confirm if any active links are present
+        var activeLinkExists = navClone.querySelectorAll('.nav-link.active').length > 0;
+
         // Process all buttons in the cloned nav
         var buttonCounter = 0;
         var buttons = navClone.querySelectorAll('button');
@@ -370,6 +373,11 @@
           // Add data-az-menu-element attribute with original target value
           if (targetId) {
             button.setAttribute('data-az-menu-element', targetId);
+          }
+
+          // Add collapsed class if this menu page has an active link
+          if (activeLinkExists) {
+            button.classList.add('collapsed');
           }
         }
         html += navClone.outerHTML;
