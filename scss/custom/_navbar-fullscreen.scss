@@ -898,6 +898,10 @@
   letter-spacing: .44px;
 }
 
+.nav-toggle.navbar-az-fullscreen-mobile-footer-btn {
+  --az-navbar-fullscreen-nav-toggle-size: 38px;
+}
+
 .navbar-az-fullscreen-mobile-footer-btn > * {
   pointer-events: none;
 }
