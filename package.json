@@ -70,8 +70,8 @@
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.5",
     "@popperjs/core": "^2.11.8",
-    "@rollup/plugin-babel": "^7.0.0",
-    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-babel": "^7.1.0",
+    "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-replace": "^6.0.3",
     "autoprefixer": "^10.4.27",
@@ -92,7 +92,7 @@
     "js-yaml": "^4.1.1",
     "linkinator": "^7.6.1",
     "nodemon": "^3.1.14",
-    "npm-run-all2": "^8.0.4",
+    "npm-run-all2": "^9.0.1",
     "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
     "rollup": "^4.60.3",
@@ -101,7 +101,7 @@
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "terser": "^5.47.1",
-    "vnu-jar": "26.5.22"
+    "vnu-jar": "26.5.29"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
