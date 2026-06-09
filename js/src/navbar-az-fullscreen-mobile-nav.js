@@ -440,7 +440,7 @@ class NavbarAzFullscreenMobileNav {
     return `
       <div class="navbar-az-fullscreen-nav-back">
         <button type="button" class="btn navbar-az-fullscreen-nav-back-btn" aria-label="Back to ${label}">
-          Back to ${label}
+          <span>Back to ${label}</span>
         </button>
       </div>
     `
