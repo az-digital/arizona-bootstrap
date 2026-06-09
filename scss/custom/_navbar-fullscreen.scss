@@ -212,6 +212,9 @@
   }
 
   .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: var(--az-navbar-fullscreen-search-height);
     margin: 0;
     color: var(--az-navbar-fullscreen-search-color);
@@ -232,9 +235,8 @@
 
   .search-icon {
     display: block;
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 1;
+    width: 35px;
+    height: 35px;
     background-image: var(--az-navbar-fullscreen-search-icon);
     background-repeat: no-repeat;
     background-position: center;
