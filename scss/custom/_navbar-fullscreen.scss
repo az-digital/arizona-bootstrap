@@ -496,14 +496,7 @@
       @include border-radius(999px);
     }
   }
-
-  // TODO: remove this - it will be the default
-  .nav-toggle-hover {
-    @extend .nav-toggle;
-    --az-navbar-fullscreen-nav-toggle-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='41.88' height='41.88' viewBox='0 0 41.88 41.88'><circle fill='none' stroke='#{$sky}' stroke-width='3' cx='20.94' cy='20.94' r='19.44'/><path fill='none' stroke='#{$sky}' stroke-width='3' stroke-linecap='round' d='M17.26 11.22l9.72 9.72-9.72 9.72'/></svg>"))};
-  }
 }
-
 
 .navbar-az-fullscreen-modal-menu {
   // scss-docs-start navbar-az-fullscreen-modal-menu-css-vars
