@@ -766,10 +766,16 @@
   .modal-header {
     .navbar-az-fullscreen-search {
       --az-navbar-fullscreen-search-height: 51px;
+
       .input-group {
         .btn {
           padding: 10px;
         }
+      }
+
+      .search-icon {
+        width: 30px;
+        height: 30px;
       }
     }
   }
