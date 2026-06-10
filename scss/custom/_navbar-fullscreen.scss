@@ -192,7 +192,7 @@
       top: 8px;
       bottom: 8px;
       left: 0;
-      width: 1px;
+      width: var(--az-navbar-fullscreen-search-border-width);
       content: "";
       background-color: var(--az-navbar-fullscreen-search-separator-color);
       @include border-radius(999px);
