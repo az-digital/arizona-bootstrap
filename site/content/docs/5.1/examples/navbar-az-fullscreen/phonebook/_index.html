@@ -1,6 +1,6 @@
 ---
 layout: examples
-title: AZ Navbar Fullscreen - Business or Partner
+title: AZ Navbar Fullscreen - Phonebook
 ---
 
 <main>
@@ -485,7 +485,7 @@ title: AZ Navbar Fullscreen - Business or Partner
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="{{< ref "partner" >}}">
+                    <a class="nav-link" href="{{< ref "partner" >}}">
                       <span class="nav-link-text">Business or Partner</span>
                     </a>
                   </li>
@@ -516,7 +516,7 @@ title: AZ Navbar Fullscreen - Business or Partner
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{< ref "phonebook" >}}">
+                    <a class="nav-link active" href="{{< ref "phonebook" >}}">
                       <span class="nav-link-text">Phonebook</span>
                     </a>
                   </li>
@@ -546,7 +546,7 @@ title: AZ Navbar Fullscreen - Business or Partner
   <section>
     <div class="container my-5">
       <div class="bg-cool-gray p-5 rounded">
-        <h1>AZ Navbar Fullscreen - Business or Partner</h1>
+        <h1>AZ Navbar Fullscreen - Phonebook</h1>
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -636,7 +636,9 @@ title: AZ Navbar Fullscreen - Business or Partner
             <li class="breadcrumb-item breadcrumb-item-home">
               <a href="{{< ref "navbar-az-fullscreen" >}}">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Business or Partner</li>
+            <li class="breadcrumb-item">
+              <a href="{{< ref "partner" >}}">Business or Partner</a>
+            </li>
           </ol>
         </nav>
 
@@ -645,9 +647,7 @@ title: AZ Navbar Fullscreen - Business or Partner
             <li class="breadcrumb-item breadcrumb-item-home">
               <a href="{{< ref "navbar-az-fullscreen" >}}">Home</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="{{< ref "phonebook" >}}">Phonebook</a>
-            </li>
+            <li class="breadcrumb-item active" aria-current="page">Phonebook</li>
           </ol>
         </nav>
 
