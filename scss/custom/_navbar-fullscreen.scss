@@ -169,6 +169,7 @@
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
+  margin-right: 30px;
 
   &:hover {
     .input-group {
@@ -331,6 +332,7 @@
     --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
     max-width: none;
     margin-top: 40px;
+    margin-right: 0;
     margin-bottom: 28px;
   }
 
@@ -763,9 +765,10 @@
   .navbar-az-fullscreen-search {
     --az-navbar-fullscreen-search-height: 35px;
     flex: none;
+    margin-right: 18px;
 
     .navbar-toggler-search {
-      padding: 0;
+      padding: 6px 5px 4px;
     }
   }
 
