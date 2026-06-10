@@ -327,6 +327,7 @@
     --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
     max-width: none;
     margin-top: 40px;
+    margin-bottom: 28px;
   }
 
   .modal-content > .modal-footer:not(.modal-footer ~ .modal-footer) {
@@ -748,6 +749,7 @@
 
     .navbar-az-fullscreen-search {
       margin-top: 12px;
+      margin-bottom: 0;
     }
   }
 
