@@ -114,9 +114,11 @@
   <body{{ with .Page.Params.body_class }} class="{{ . }}"{{ end }}>
     {{ partial "examples/icons" . }}
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      {{ partial "theme-toggler" . }}
-    </div>
+    {{- if .Site.Params.enable_color_mode_toggler -}}
+      <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        {{ partial "theme-toggler" . }}
+      </div>
+    {{- end -}}
 
     {{ .Content }}
 

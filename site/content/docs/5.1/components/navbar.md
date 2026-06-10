@@ -536,7 +536,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search d-flex ms-auto me-2 me-lg-4" role="search">
+    <form class="navbar-az-fullscreen-search d-flex ms-auto me-4" role="search">
       <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -877,12 +877,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
       </div>
-      <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-top">
+      <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
         <nav class="navbar" aria-labelledby="resources-for-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <h2 class="navbar-brand" id="resources-for-label">Resources for:</h2>
+                  <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
