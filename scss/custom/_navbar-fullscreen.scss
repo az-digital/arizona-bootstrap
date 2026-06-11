@@ -655,7 +655,6 @@
     --az-navbar-fullscreen-nav-toggle-size: 40px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 24px;
     --az-navbar-fullscreen-nav-toggle-padding-y: 0;
-    --az-nav-toggle-icon-padding: 16px 0;
     margin-left: 0;
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
     letter-spacing: .1px;
@@ -664,7 +663,6 @@
   .navbar-az-fullscreen-modal-menu-submenu {
     --az-navbar-fullscreen-nav-toggle-size: 30px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 16px;
-    --az-nav-toggle-icon-padding: 13px 0;
     position: absolute;
     top: 0;
     right: 0;
