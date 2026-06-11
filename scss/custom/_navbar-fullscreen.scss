@@ -581,7 +581,7 @@
 
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
-      overflow: hidden;
+      scrollbar-gutter: stable;
 
       &::before {
         position: sticky;
@@ -603,10 +603,6 @@
 
     .navbar-az-fullscreen-modal-menu-nav-col > .nav {
       min-height: 0;
-      max-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      scrollbar-gutter: stable;
 
       > .nav-item:first-child {
         padding-top: $az-navbar-fullscreen-modal-menu-nav-col-fade-size;
