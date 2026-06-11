@@ -731,7 +731,6 @@
       padding: 0;
       margin-top: 0;
       margin-bottom: 0;
-      @include border-radius(4px);
     }
   }
 
@@ -778,7 +777,6 @@
 
       .input-group {
         border-width: 1px;
-        @include border-radius(4px);
 
         .form-control {
           font-size: 14px;
