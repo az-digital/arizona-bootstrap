@@ -182,7 +182,7 @@
     height: var(--az-navbar-fullscreen-search-height);
     overflow: hidden;
     border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
-    @include border-radius(5px);
+    @include border-radius(8px);
 
     .btn {
       padding: 13px;
