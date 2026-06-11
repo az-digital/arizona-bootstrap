@@ -166,6 +166,7 @@
   --az-navbar-fullscreen-search-font: italic normal normal 20px/24px proxima-nova;
   --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
   // scss-docs-end navbar-az-fullscreen-search-css-vars
+  display: flex;
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
