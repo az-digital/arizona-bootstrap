@@ -6405,7 +6405,7 @@
      * @returns {string} HTML string for the back button
      */
     createBackButton(label) {
-      return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to ".concat(label, "\">\n          Back to ").concat(label, "\n        </button>\n      </div>\n    ");
+      return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to ".concat(label, "\">\n          <span>Back to ").concat(label, "</span>\n        </button>\n      </div>\n    ");
     }
   }
 

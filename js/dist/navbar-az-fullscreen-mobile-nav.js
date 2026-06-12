@@ -519,7 +519,7 @@
      * @returns {string} HTML string for the back button
      */;
     _proto.createBackButton = function createBackButton(label) {
-      return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to " + label + "\">\n          Back to " + label + "\n        </button>\n      </div>\n    ";
+      return "\n      <div class=\"navbar-az-fullscreen-nav-back\">\n        <button type=\"button\" class=\"btn navbar-az-fullscreen-nav-back-btn\" aria-label=\"Back to " + label + "\">\n          <span>Back to " + label + "</span>\n        </button>\n      </div>\n    ";
     };
     return NavbarAzFullscreenMobileNav;
   }();
