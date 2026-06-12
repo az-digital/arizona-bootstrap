@@ -22390,10 +22390,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-navbar-fullscreen-search-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%23fff' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
   --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex: 1 1 var(--az-navbar-fullscreen-search-width);
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
+  margin-right: 30px;
 }
 .navbar-az-fullscreen-search:hover .input-group {
   border-color: var(--az-navbar-fullscreen-search-hover-color);
@@ -22409,8 +22412,18 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az-fullscreen-search .input-group .btn {
   padding: 13px;
 }
+.navbar-az-fullscreen-search .input-group .btn::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: var(--az-navbar-fullscreen-search-border-width);
+  content: "";
+  background-color: var(--az-navbar-fullscreen-search-separator-color);
+  border-radius: 999px;
+}
 .navbar-az-fullscreen-search .form-control {
-  padding: 8px 12px;
+  padding: 8px 12px 8px 16px;
   font: var(--az-navbar-fullscreen-search-font);
   color: var(--az-navbar-fullscreen-search-color);
   background-color: transparent;
@@ -22453,16 +22466,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   color: var(--az-navbar-fullscreen-search-color);
   border: 0;
   border-radius: 0;
-}
-.navbar-az-fullscreen-search .input-group .btn::before {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 0;
-  width: var(--az-navbar-fullscreen-search-border-width);
-  content: "";
-  background-color: var(--az-navbar-fullscreen-search-separator-color);
-  border-radius: 999px;
 }
 .navbar-az-fullscreen-search .search-icon {
   display: block;
@@ -22560,7 +22563,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .navbar-az-fullscreen-modal .navbar-az-fullscreen-search {
   --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
+  --az-navbar-fullscreen-search-font: italic normal normal 20px/24px proxima-nova;
   max-width: none;
+  margin-top: 40px;
+  margin-right: 0;
+  margin-bottom: 28px;
 }
 @media (min-width: 992px) {
   .navbar-az-fullscreen-modal .modal-content > .modal-footer:not(.modal-footer ~ .modal-footer)::before {
@@ -22941,23 +22948,39 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   .navbar-az-fullscreen-modal .modal-footer .nav-item:nth-child(n+2) {
     display: none;
   }
+  .navbar-az-fullscreen-modal .navbar-az-fullscreen-search {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
   .navbar-az-fullscreen-search {
     --az-navbar-fullscreen-search-height: 35px;
     -ms-flex: none;
     flex: none;
+    margin-right: 18px;
   }
   .navbar-az-fullscreen-search .navbar-toggler-search {
-    padding: 0;
+    padding: 6px 5px 4px;
   }
   .modal-header .navbar-az-fullscreen-search {
     --az-navbar-fullscreen-search-height: 51px;
   }
+  .modal-header .navbar-az-fullscreen-search .input-group {
+    border-width: 1px;
+    border-radius: 4px;
+  }
+  .modal-header .navbar-az-fullscreen-search .input-group .form-control {
+    font-size: 14px;
+    line-height: 17px;
+  }
   .modal-header .navbar-az-fullscreen-search .input-group .btn {
-    padding: 10px;
+    padding: 10px 14px;
   }
   .modal-header .navbar-az-fullscreen-search .search-icon {
     width: 30px;
     height: 30px;
+  }
+  .modal-open .navbar-az-fullscreen {
+    --az-navbar-fullscreen-toggler-icon-size: 28px;
   }
 }
 /* stylelint-disable selector-max-id */
