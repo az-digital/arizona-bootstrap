@@ -586,7 +586,7 @@
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
       scrollbar-gutter: stable;
-      border-left: 1px solid var(--bs-azurite);
+      border-right: 1px solid var(--bs-azurite);
 
       &::before {
         position: sticky;
