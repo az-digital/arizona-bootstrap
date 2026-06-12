@@ -536,7 +536,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search d-flex ms-auto me-4" role="search">
+    <form class="navbar-az-fullscreen-search ms-auto me-4" role="search">
       <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -721,7 +721,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+          <form class="navbar-az-fullscreen-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -804,7 +804,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+          <form class="navbar-az-fullscreen-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">

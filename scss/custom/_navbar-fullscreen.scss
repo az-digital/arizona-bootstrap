@@ -166,9 +166,11 @@
   --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
   // scss-docs-end navbar-az-fullscreen-search-css-vars
+  display: flex;
   flex: 1 1 var(--az-navbar-fullscreen-search-width);
   min-width: 0;
   max-width: var(--az-navbar-fullscreen-search-width);
+  margin-right: 30px;
 
   &:hover {
     .input-group {
@@ -186,10 +188,21 @@
     .btn {
       padding: 13px;
     }
+
+    .btn::before {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      width: var(--az-navbar-fullscreen-search-border-width);
+      content: "";
+      background-color: var(--az-navbar-fullscreen-search-separator-color);
+      @include border-radius(999px);
+    }
   }
 
   .form-control {
-    padding: 8px 12px;
+    padding: 8px 12px 8px 16px;
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
     background-color: transparent;
@@ -220,17 +233,6 @@
     color: var(--az-navbar-fullscreen-search-color);
     border: 0;
     @include border-radius(0);
-  }
-
-  .input-group .btn::before {
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    left: 0;
-    width: var(--az-navbar-fullscreen-search-border-width);
-    content: "";
-    background-color: var(--az-navbar-fullscreen-search-separator-color);
-    @include border-radius(999px);
   }
 
   .search-icon {
@@ -329,7 +331,11 @@
 
   .navbar-az-fullscreen-search {
     --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
+    --az-navbar-fullscreen-search-font: italic normal normal 20px/24px proxima-nova;
     max-width: none;
+    margin-top: 40px;
+    margin-right: 0;
+    margin-bottom: 28px;
   }
 
   .modal-content > .modal-footer:not(.modal-footer ~ .modal-footer) {
@@ -751,15 +757,20 @@
         display: none;
       }
     }
+
+    .navbar-az-fullscreen-search {
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
   }
 
   .navbar-az-fullscreen-search {
     --az-navbar-fullscreen-search-height: 35px;
     flex: none;
-
+    margin-right: 18px;
 
     .navbar-toggler-search {
-      padding: 0;
+      padding: 6px 5px 4px;
     }
   }
 
@@ -768,8 +779,16 @@
       --az-navbar-fullscreen-search-height: 51px;
 
       .input-group {
+        border-width: 1px;
+        @include border-radius(4px);
+
+        .form-control {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
         .btn {
-          padding: 10px;
+          padding: 10px 14px;
         }
       }
 
@@ -778,6 +797,10 @@
         height: 30px;
       }
     }
+  }
+
+  .modal-open .navbar-az-fullscreen {
+    --az-navbar-fullscreen-toggler-icon-size: 28px;
   }
 }
 
