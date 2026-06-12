@@ -796,10 +796,10 @@
     }
 
     .nav-link {
+      padding: 0 30px;
       font-size: 20px;
       line-height: 38px;
       color: var(--bs-sky);
-      padding: 0 30px;
 
       &::after {
         top: 0;
