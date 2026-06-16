@@ -39,6 +39,35 @@ Click on the background color options below to see a live preview of what the ba
   </div>
 </div>
 
+<p class="mt-3"><span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span></p>
+
+<div class="row mb-4 pt-0 pb-4 pt-xl-4 bg-gray-100">
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-sky-left" data-triangles="monsoon-sky-left" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Sky Left</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-sky-right" data-triangles="monsoon-sky-right" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Sky Right</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-white-left" data-triangles="monsoon-white-left" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon White Left</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-white-right" data-triangles="monsoon-white-right" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon White Right</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-warm-gray-left" data-triangles="monsoon-warm-gray-left" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Warm Gray Left</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-warm-gray-right" data-triangles="monsoon-warm-gray-right" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Warm Gray Right</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-cool-gray-left" data-triangles="monsoon-cool-gray-left" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Cool Gray Left</button>
+  </div>
+  <div class="col-6 col-lg-3 mt-3 mt-xl-0">
+    <button id="monsoon-background-btn-cool-gray-right" data-triangles="monsoon-cool-gray-right" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Cool Gray Right</button>
+  </div>
+</div>
+
 {{< example >}}
 <div class="background-wrapper" id="background-wrapper-live-demo">
   <div class="container">
