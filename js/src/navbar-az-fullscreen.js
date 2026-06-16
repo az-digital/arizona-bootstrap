@@ -43,15 +43,13 @@ function getDesktopVisibleNavColumns(modalElement) {
 
 function getVisibleNavTargets(modalElement) {
   const targets = []
-  const seen = new Set()
 
   for (const column of getDesktopVisibleNavColumns(modalElement)) {
     const nav = column.querySelector(':scope > .nav')
-    if (!(nav instanceof HTMLElement) || !isVisible(nav) || seen.has(column)) {
+    if (!(nav instanceof HTMLElement) || !isVisible(nav)) {
       continue
     }
 
-    seen.add(column)
     targets.push({ nav, column })
   }
 
