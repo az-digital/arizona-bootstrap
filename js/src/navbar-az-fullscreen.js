@@ -14,10 +14,11 @@ const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
 const NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col'
 const COLLAPSE_SELECTOR = '.collapse[id]'
 const COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]'
-const PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu > .row > .d-lg-flex > .navbar-az-fullscreen-modal-menu-nav-col'
+const PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary'
 const PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary'
 const SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary'
 const TERTIARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-tertiary'
+const COLLAPSING_SUBMENU_SELECTOR = '.navbar-az-fullscreen-modal-menu-submenu.collapsing'
 const ACTIVE_SECONDARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-primary-submenu.collapse.show .navbar-az-fullscreen-modal-menu-nav-col-secondary'
 const ACTIVE_TERTIARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-secondary-submenu.collapse.show .navbar-az-fullscreen-modal-menu-nav-col-tertiary'
 
@@ -45,15 +46,13 @@ function getDesktopVisibleNavColumns(modalElement) {
 
 function getVisibleNavTargets(modalElement) {
   const targets = []
-  const seen = new Set()
 
   for (const column of getDesktopVisibleNavColumns(modalElement)) {
     const nav = column.querySelector(':scope > .nav')
-    if (!(nav instanceof HTMLElement) || !isVisible(nav) || seen.has(column)) {
+    if (!(nav instanceof HTMLElement) || !isVisible(nav)) {
       continue
     }
 
-    seen.add(column)
     targets.push({ nav, column })
   }
 
@@ -156,12 +155,13 @@ function synchronizeNavColumnHeights(modalElement) {
     return
   }
 
-  clearNavColumnHeights(modalElement)
-
-  const activeTargets = getActiveDesktopNavTargets(modalElement)
+  const isCollapseTransitioning = modalElement.querySelector(COLLAPSING_SUBMENU_SELECTOR) instanceof HTMLElement
+  const activeTargets = isCollapseTransitioning ? getVisibleNavTargets(modalElement) : getActiveDesktopNavTargets(modalElement)
   if (activeTargets.length === 0) {
     return
   }
+
+  clearNavColumnHeights(modalElement)
 
   let tallestVisibleContent = 0
   for (const target of activeTargets) {
@@ -170,7 +170,7 @@ function synchronizeNavColumnHeights(modalElement) {
 
   const maxAvailableHeight = modalBody.clientHeight
   const syncedHeight = Math.min(tallestVisibleContent, maxAvailableHeight)
-  const visibleColumns = getUniqueColumns(activeTargets)
+  const visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets)
 
   for (const column of visibleColumns) {
     // Secondary/tertiary columns can be flex-grown by CSS; lock flex sizing
@@ -260,6 +260,19 @@ function restoreModalDefaultState(modalElement, modalDefaultState) {
   }))
 }
 
+function scheduleRefresh(refresh, frameState) {
+  if (frameState.isQueued) {
+    return
+  }
+
+  frameState.isQueued = true
+
+  Promise.resolve().then(() => {
+    frameState.isQueued = false
+    refresh()
+  })
+}
+
 /**
  * Keep fullscreen nav columns equal-height to the tallest visible column while
  * preserving independent scrolling when available vertical space is limited.
@@ -284,11 +297,12 @@ function enableNavbarAzFullscreen() {
     }
 
     const modalDefaultState = captureModalDefaultState(modal)
+    const refreshFrameState = { isQueued: false }
 
     const refreshOnCollapseEvent = event => {
       const target = event?.target
       if (target instanceof HTMLElement && modal.contains(target)) {
-        refresh()
+        scheduleRefresh(refresh, refreshFrameState)
       }
     }
 
@@ -301,6 +315,8 @@ function enableNavbarAzFullscreen() {
 
     EventHandler.on(modal, 'shown.bs.modal', refresh)
     EventHandler.on(modal, 'hidden.bs.modal', resetOnModalHidden)
+    EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent)
+    EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'hidden.bs.collapse', refreshOnCollapseEvent)
 
