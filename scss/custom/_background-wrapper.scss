@@ -104,3 +104,64 @@
     }
   }
 }
+
+// >>> Monsoon
+.bg-monsoon-sky-left,
+.bg-monsoon-sky-right,
+.bg-monsoon-white-left,
+.bg-monsoon-white-right,
+.bg-monsoon-warm-gray-left,
+.bg-monsoon-warm-gray-right,
+.bg-monsoon-cool-gray-left,
+.bg-monsoon-cool-gray-right {
+  background: {
+    repeat: repeat-y;
+    size: 300px;
+  }
+}
+
+.bg-monsoon-sky-left,
+.bg-monsoon-white-left,
+.bg-monsoon-warm-gray-left,
+.bg-monsoon-cool-gray-left {
+  background: {
+    position: top left;
+  }
+}
+
+.bg-monsoon-sky-right,
+.bg-monsoon-white-right,
+.bg-monsoon-warm-gray-right,
+.bg-monsoon-cool-gray-right {
+  background: {
+    position: top right;
+  }
+}
+
+.bg-monsoon-sky-left,
+.bg-monsoon-sky-right {
+  background: {
+    image: url("img/monsoon-sky.svg");
+  }
+}
+
+.bg-monsoon-white-left,
+.bg-monsoon-white-right {
+  background: {
+    image: url("img/monsoon-white.svg");
+  }
+}
+
+.bg-monsoon-warm-gray-left,
+.bg-monsoon-warm-gray-right {
+  background: {
+    image: url("img/monsoon-warm-gray.svg");
+  }
+}
+
+.bg-monsoon-cool-gray-left,
+.bg-monsoon-cool-gray-right {
+  background: {
+    image: url("img/monsoon-cool-gray.svg");
+  }
+}

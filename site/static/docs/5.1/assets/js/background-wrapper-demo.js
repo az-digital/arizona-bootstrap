@@ -22,7 +22,8 @@
         const classesToRemove = wrapperClassList.filter(cls =>
           cls !== 'background-wrapper' &&
           cls !== 'bg-trilines' &&
-          !cls.startsWith('bg-triangles')
+          !cls.startsWith('bg-triangles') &&
+          !cls.startsWith('bg-monsoon')
         )
 
         // toggle the active button
@@ -54,7 +55,7 @@
         const wrapperClassList = wrapper.className.split(' ')
         const classesToRemove = wrapperClassList.filter(cls =>
           cls !== 'background-wrapper' &&
-          (cls.startsWith('bg-triangles') || cls === 'bg-trilines')
+          (cls.startsWith('bg-triangles') || cls === 'bg-trilines' || cls.startsWith('bg-monsoon'))
         )
 
         // toggle the active button
