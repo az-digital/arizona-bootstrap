@@ -7,7 +7,7 @@
   "description": "University of Arizona theme for Bootstrap.",
   "scripts": {
     "start": "npm-run-all --parallel watch docs-serve",
-    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css": "npm-run-all css-compile css-prefix css-minify svg-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css scss/:dist/css/",
     "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
     "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
@@ -38,6 +38,7 @@
     "js-minify-standalone-esm": "terser --compress passes=2 --mangle --comments \"/^!/\" --source-map \"content=dist/js/arizona-bootstrap.esm.js.map,includeSources,url=arizona-bootstrap.esm.min.js.map\" --output dist/js/arizona-bootstrap.esm.min.js dist/js/arizona-bootstrap.esm.js",
     "js-minify-bundle": "terser --compress passes=2,typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/arizona-bootstrap.bundle.js.map,includeSources,url=arizona-bootstrap.bundle.min.js.map\" --output dist/js/arizona-bootstrap.bundle.min.js dist/js/arizona-bootstrap.bundle.js",
     "lint": "npm-run-all  --aggregate-output --continue-on-error --parallel js-lint css-lint",
+    "svg-minify": "node build/svg-minify.mjs",
     "test": "npm-run-all lint dist docs-build docs-lint",
     "update-deps": "ncu --cooldown 5 -u -x \"bootstrap,eslint,eslint-config-xo,eslint-plugin-unicorn,jquery,sass,stylelint,vnu-jar\"",
     "release-sri": "node build/generate-sri.mjs",
@@ -100,6 +101,7 @@
     "shelljs": "^0.10.0",
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
+    "svgo": "4.0.1",
     "terser": "^5.47.1",
     "vnu-jar": "26.5.29"
   },
