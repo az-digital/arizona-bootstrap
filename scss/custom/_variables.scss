@@ -395,14 +395,6 @@ $heading-margins: 1.042em 0 .667em;
 * > COMPONENTS
 */
 
-// >> Breadcrumbs
-$breadcrumb-color: $azurite;
-$breadcrumb-hover-color: $midnight;
-
 // >> Navs
-$nav-tabs-link-bg: $gray-200;
+$nav-tabs-link-bg: var(--bs-secondary-bg);
 $nav-tabs-lg-link-padding: 1.25em 1.75em;
-
-// >> Navbar
-$navbar-nav-link-padding-y: 1.25rem;
-$navbar-light-border-color: $gray-200;

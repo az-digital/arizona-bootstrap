@@ -2,40 +2,36 @@
 
 .navbar {
   justify-content: space-between;
-  border-top: 1px solid $navbar-light-border-color;
-  border-bottom: 1px solid $navbar-light-border-color;
+  border-top: 1px solid var(--bs-gray-200);
+  border-bottom: 1px solid var(--bs-gray-200);
 }
 
 .navbar-nav {
-  --#{$prefix}nav-link-color: #{$nav-link-color};
+  --#{$prefix}nav-link-color: var(--bs-navbar-color);
+  --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
 
   .nav-item {
     &:hover {
-      background-color: $gray-100;
+      background-color: var(--bs-gray-100);
     }
 
     &:has(> .nav-link.active),
     &:has(> .nav-link.is-active),
     &:has(> .nav-link:active),
     &:has(> .nav-link.show) {
-      background-color: $nav-tabs-link-bg;
+      background-color: var(--bs-nav-tabs-link-active-bg);
     }
   }
 
   .nav-link {
-    padding-top: $navbar-nav-link-padding-y;
-    padding-bottom: $navbar-nav-link-padding-y;
     @include border-radius(0);
 
     &:not(.active) {
       font-weight: 600;
     }
 
-    &.active,
-    &.is-active,
-    &:active,
-    &.show {
-      color: $navbar-light-active-color;
+    &.is-active {
+      --#{$prefix}nav-link-color: var(--bs-navbar-active-color);
     }
   }
 
@@ -54,7 +50,8 @@
 
 @include color-mode(dark) {
   .navbar-nav {
-    --#{$prefix}nav-link-color: #{$gray-100};
+    --#{$prefix}nav-link-color: var(--bs-gray-100);
+    --#{$prefix}nav-link-hover-color: var(--bs-white);
 
     .nav-item {
       &:hover {
@@ -65,17 +62,17 @@
       &:has(> .nav-link.is-active),
       &:has(> .nav-link:active),
       &:has(> .nav-link.show) {
-        background-color: $gray-900;
+        background-color: var(--bs-gray-900);
       }
     }
 
     .nav-link {
-      &:hover,
-      &:active,
-      &.active,
-      &.is-active,
-      &.show {
-        color: $white;
+      &.is-active {
+        --#{$prefix}nav-link-hover-color: var(--bs-white);
+      }
+
+      &:hover {
+        --#{$prefix}nav-link-hover-color: var(--bs-sky);
       }
     }
   }
