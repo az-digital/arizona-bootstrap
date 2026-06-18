@@ -258,6 +258,8 @@
   --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
   --az-navbar-fullscreen-modal-fade-size: 56px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
+  --az-navbar-fullscreen-modal-scrollbar-thumb-color: #{shade-color($blue, 50%)};
+  --az-navbar-fullscreen-modal-scrollbar-track-color: transparent;
   --bs-modal-bg: var(--bs-blue);
   --bs-modal-padding: 0;
   --bs-modal-header-padding: 0;
@@ -574,8 +576,6 @@
     --bs-nav-link-hover-color: var(--az-navbar-fullscreen-modal-menu-hover-color);
     flex-direction: column;
     flex-wrap: nowrap;
-    // margin-right: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
-    // margin-left: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
     padding-left: var(--az-navbar-fullscreen-modal-menu-col-spacing-x);
     font: var(--az-navbar-fullscreen-modal-menu-font);
   }
@@ -585,7 +585,9 @@
 
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
+      scrollbar-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color) var(--az-navbar-fullscreen-modal-scrollbar-track-color);
       scrollbar-gutter: stable;
+      scrollbar-width: thin;
       border-right: 1px solid transparent;
       border-image:
         linear-gradient(
@@ -617,6 +619,23 @@
         border-right: 0;
         border-image: none;
       }
+
+      .nav-item {
+        margin-right: 12px;
+      }
+
+      &::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color);
+        @include border-radius(6px);
+      }
     }
 
     .navbar-az-fullscreen-modal-menu-nav-col > .nav {
@@ -635,7 +654,6 @@
 
     .nav-item {
       display: flex;
-      margin-right: 8px;
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
