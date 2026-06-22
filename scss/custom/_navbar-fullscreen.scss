@@ -291,6 +291,21 @@
       --az-navbar-fullscreen-bottom-border-width: 0;
       --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-close);
     }
+
+    @include media-breakpoint-up(lg) {
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        height: 60px;
+        pointer-events: none;
+        content: "";
+        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 20px, rgb(0 0 0 / 0) 60px);
+        transform: translateY(100%);
+      }
+    }
   }
 
   .modal-content {
@@ -598,22 +613,6 @@
           var(--bs-azurite) 100%
         )
         1;
-
-      &::before {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        display: block;
-        height: $az-navbar-fullscreen-modal-menu-nav-col-fade-size;
-        margin-bottom: -$az-navbar-fullscreen-modal-menu-nav-col-fade-size;
-        pointer-events: none;
-        content: "";
-        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 20px, rgb(0 0 0 / 0) 60px);
-      }
-
-      &.navbar-az-fullscreen-modal-menu-nav-col-tertiary::before {
-        border-right: 0;
-      }
 
       &.navbar-az-fullscreen-modal-menu-nav-col-tertiary {
         border-right: 0;
