@@ -256,7 +256,8 @@
   --az-navbar-fullscreen-modal-footer-navbar-padding-y: 20px;
   --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 15px;
   --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
-  --az-navbar-fullscreen-modal-fade-size: 56px;
+  --az-navbar-fullscreen-modal-top-fade-size: 60px;
+  --az-navbar-fullscreen-modal-bottom-fade-size: 30px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
   --az-navbar-fullscreen-modal-scrollbar-thumb-color: #{shade-color($blue, 50%)};
   --az-navbar-fullscreen-modal-scrollbar-track-color: transparent;
@@ -299,10 +300,10 @@
         bottom: 0;
         left: 0;
         z-index: 2;
-        height: 60px;
+        height: var(--az-navbar-fullscreen-modal-top-fade-size);
         pointer-events: none;
         content: "";
-        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 20px, rgb(0 0 0 / 0) 60px);
+        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 20px, rgb(0 0 0 / 0) var(--az-navbar-fullscreen-modal-top-fade-size));
         transform: translateY(100%);
       }
     }
@@ -348,7 +349,7 @@
         right: 0;
         left: 0;
         z-index: 1;
-        height: var(--az-navbar-fullscreen-modal-fade-size);
+        height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
         pointer-events: none;
         content: "";
         background: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, var(--az-navbar-fullscreen-modal-fade-color) 100%);
@@ -596,8 +597,6 @@
   }
 
   @include media-breakpoint-up(lg) {
-    $az-navbar-fullscreen-modal-menu-nav-col-fade-size: 60px;
-
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
       scrollbar-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color) var(--az-navbar-fullscreen-modal-scrollbar-track-color);
@@ -608,8 +607,8 @@
         linear-gradient(
           to bottom,
           rgb(0 0 0 / 0) 0,
-          rgb(0 0 0 / 0) $az-navbar-fullscreen-modal-menu-nav-col-fade-size,
-          var(--bs-azurite) $az-navbar-fullscreen-modal-menu-nav-col-fade-size,
+          rgb(0 0 0 / 0) var(--az-navbar-fullscreen-modal-top-fade-size),
+          var(--bs-azurite) var(--az-navbar-fullscreen-modal-top-fade-size),
           var(--bs-azurite) 100%
         )
         1;
@@ -641,7 +640,7 @@
       min-height: 0;
 
       > .nav-item:first-child {
-        padding-top: $az-navbar-fullscreen-modal-menu-nav-col-fade-size;
+        padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
       }
     }
   }
