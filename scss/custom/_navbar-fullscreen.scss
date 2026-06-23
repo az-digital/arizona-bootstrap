@@ -601,8 +601,6 @@
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
       scrollbar-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color) var(--az-navbar-fullscreen-modal-scrollbar-track-color);
-      // scrollbar-gutter: stable;
-      // scrollbar-width: thin;
       border-right: 1px solid transparent;
       border-image:
         linear-gradient(
@@ -618,14 +616,6 @@
         border-right: 0;
         border-image: none;
       }
-
-      // .nav-item {
-      //   margin-right: 12px;
-      // }
-
-      // &::-webkit-scrollbar {
-      //   width: 12px;
-      // }
 
       &::-webkit-scrollbar-track {
         background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
