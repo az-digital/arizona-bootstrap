@@ -72,6 +72,15 @@
   }
 }
 
+// Optional helper to offset content when using `.fixed-top` with fullscreen navbar.
+.navbar-az-fullscreen-fixed-top-offset {
+  padding-top: 100px;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 69px;
+  }
+}
+
 .navbar-az-fullscreen-actions {
   // scss-docs-start navbar-az-fullscreen-actions-css-vars
   --az-navbar-fullscreen-actions-font-weight: bold;
