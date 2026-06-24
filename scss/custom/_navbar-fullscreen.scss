@@ -643,7 +643,6 @@
 
     .nav-item {
       display: flex;
-      margin-right: 8px;
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -708,9 +707,7 @@
     --az-navbar-fullscreen-nav-toggle-padding-y: 0;
     padding-left: 0;
     margin-left: 0;
-
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
-    // border-right: 1px solid var(--bs-azurite);
     letter-spacing: .1px;
     border-left: 0;
   }
