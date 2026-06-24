@@ -21,6 +21,7 @@ import fixModalAriaHidden from './src/modal.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
 import enableAzNavbar from './src/navbar.js'
 import enableNavbarAzFullscreenMobileNav from './src/navbar-az-fullscreen-mobile-nav.js'
+import syncNavbarAzFullscreenModalScrollbar from './src/navbar-az-fullscreen-scrollbar.js'
 
 export default {
   Alert,
@@ -38,7 +39,8 @@ export default {
   fixModalAriaHidden,
   photoGalleryGridSlideToImage,
   enableAzNavbar,
-  enableNavbarAzFullscreenMobileNav
+  enableNavbarAzFullscreenMobileNav,
+  syncNavbarAzFullscreenModalScrollbar
 }
 
 /**
@@ -62,3 +64,10 @@ enableAzNavbar()
  * Enable AZ Navbar Fullscreen mobile navigation.
  */
 enableNavbarAzFullscreenMobileNav()
+
+/**
+ * Keep AZ Navbar Fullscreen modal-header navbar aligned with the non-modal
+ * `.fixed-top` navbar while the modal is open.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/2100.
+ */
+syncNavbarAzFullscreenModalScrollbar()

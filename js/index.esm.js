@@ -21,6 +21,7 @@ export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
 export { default as enableAzNavbar } from './src/navbar.js'
 export { default as enableNavbarAzFullscreenMobileNav } from './src/navbar-az-fullscreen-mobile-nav.js'
+export { default as syncNavbarAzFullscreenModalScrollbar } from './src/navbar-az-fullscreen-scrollbar.js'
 
 /**
  * Temporary fix for blocked aria-hidden attribute on modals.
@@ -47,3 +48,11 @@ enableAzNavbar()
  */
 /* global enableNavbarAzFullscreenMobileNav */
 enableNavbarAzFullscreenMobileNav()
+
+/**
+ * Keep AZ Navbar Fullscreen modal-header navbar aligned with the non-modal
+ * `.fixed-top` navbar while the modal is open.
+ * See https://github.com/az-digital/arizona-bootstrap/issues/2100.
+ */
+/* global syncNavbarAzFullscreenModalScrollbar */
+syncNavbarAzFullscreenModalScrollbar()
