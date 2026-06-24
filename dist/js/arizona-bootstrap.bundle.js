@@ -163,7 +163,7 @@
     return null
   };
 
-  const isVisible = element => {
+  const isVisible$1 = element => {
     if (!isElement$1(element) || element.getClientRects().length === 0) {
       return false
     }
@@ -976,7 +976,7 @@
         '[contenteditable="true"]'
       ].map(selector => `${selector}:not([tabindex^="-"])`).join(',');
 
-      return this.find(focusables, element).filter(el => !isDisabled(el) && isVisible(el))
+      return this.find(focusables, element).filter(el => !isDisabled(el) && isVisible$1(el))
     },
 
     getSelectorFromElement(element) {
@@ -1441,7 +1441,7 @@
       // FIXME TODO use `document.visibilityState`
       // Don't call next when the page isn't visible
       // or the carousel or its parent isn't visible
-      if (!document.hidden && isVisible(this._element)) {
+      if (!document.hidden && isVisible$1(this._element)) {
         this.next();
       }
     }
@@ -3636,7 +3636,7 @@
     }, []);
   }
 
-  function debounce(fn) {
+  function debounce$1(fn) {
     var pending;
     return function () {
       if (!pending) {
@@ -3796,7 +3796,7 @@
         },
         // Async and optimistically optimized update – it will not be executed if
         // not necessary (debounced to run at most once-per-tick)
-        update: debounce(function () {
+        update: debounce$1(function () {
           return new Promise(function (resolve) {
             instance.forceUpdate();
             resolve(state);
@@ -4211,7 +4211,7 @@
     }
 
     _selectMenuItem({ key, target }) {
-      const items = SelectorEngine.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter(element => isVisible(element));
+      const items = SelectorEngine.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter(element => isVisible$1(element));
 
       if (!items.length) {
         return
@@ -5046,7 +5046,7 @@
       }
 
       EventHandler.one(target, EVENT_HIDDEN$4, () => {
-        if (isVisible(this)) {
+        if (isVisible$1(this)) {
           this.focus();
         }
       });
@@ -5303,7 +5303,7 @@
 
     EventHandler.one(target, EVENT_HIDDEN$3, () => {
       // focus on trigger when it is closed
-      if (isVisible(this)) {
+      if (isVisible$1(this)) {
         this.focus();
       }
     });
@@ -6538,7 +6538,7 @@
         const observableSection = SelectorEngine.findOne(decodeURI(anchor.hash), this._element);
 
         // ensure that the observableSection exists & is visible
-        if (isVisible(observableSection)) {
+        if (isVisible$1(observableSection)) {
           this._targetLinks.set(decodeURI(anchor.hash), anchor);
           this._observableSections.set(anchor.hash, observableSection);
         }
@@ -7239,7 +7239,7 @@
 
   var HOVER_MEDIA_QUERY = '(hover: hover) and (pointer: fine)';
   var HIDE_DELAY_MS = 300;
-  var RESIZE_DEBOUNCE_MS = 100;
+  var RESIZE_DEBOUNCE_MS$1 = 100;
 
   // Enable hover behavior only on fine-pointer devices to avoid touch conflicts.
   var supportsPointerHover = () => {
@@ -7317,7 +7317,7 @@
       }
       resizeTimer = setTimeout(() => {
         updateDropdownAlignment(navbar);
-      }, RESIZE_DEBOUNCE_MS);
+      }, RESIZE_DEBOUNCE_MS$1);
     });
     observer.observe(navbar);
   }
@@ -7769,6 +7769,227 @@
   /**
    * --------------------------------------------------------------------------
    * Arizona Bootstrap: navbar-az-fullscreen.js
+   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var DESKTOP_MEDIA_QUERY = '(min-width: 992px)';
+  var RESIZE_DEBOUNCE_MS = 100;
+  var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col';
+  var PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary';
+  var PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary';
+  var SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary';
+  var TERTIARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-tertiary';
+  var COLLAPSING_SUBMENU_SELECTOR = '.navbar-az-fullscreen-modal-menu-submenu.collapsing';
+  var ACTIVE_SECONDARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-primary-submenu.collapse.show .navbar-az-fullscreen-modal-menu-nav-col-secondary';
+  var ACTIVE_TERTIARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-secondary-submenu.collapse.show .navbar-az-fullscreen-modal-menu-nav-col-tertiary';
+  function isDesktopViewport() {
+    var _window$matchMedia, _window;
+    return typeof window !== 'undefined' && ((_window$matchMedia = (_window = window).matchMedia) === null || _window$matchMedia === void 0 || (_window$matchMedia = _window$matchMedia.call(_window, DESKTOP_MEDIA_QUERY)) === null || _window$matchMedia === void 0 ? void 0 : _window$matchMedia.matches) === true;
+  }
+  function isVisible(element) {
+    if (!(element instanceof HTMLElement)) {
+      return false;
+    }
+    if (element.getClientRects().length === 0) {
+      return false;
+    }
+    var computedStyle = window.getComputedStyle(element);
+    return computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden';
+  }
+  function getDesktopVisibleNavColumns(modalElement) {
+    var allColumns = modalElement.querySelectorAll(NAV_COL_SELECTOR);
+    return [...allColumns].filter(isVisible);
+  }
+  function getVisibleNavTargets(modalElement) {
+    var targets = [];
+    for (var column of getDesktopVisibleNavColumns(modalElement)) {
+      var nav = column.querySelector(':scope > .nav');
+      if (!(nav instanceof HTMLElement) || !isVisible(nav)) {
+        continue;
+      }
+      targets.push({
+        nav,
+        column
+      });
+    }
+    return targets;
+  }
+  function getActiveDesktopNavTargets(modalElement) {
+    var targets = [];
+    var seenColumns = new Set();
+    var addTarget = nav => {
+      if (!(nav instanceof HTMLElement) || !isVisible(nav)) {
+        return;
+      }
+      var column = nav.closest(NAV_COL_SELECTOR);
+      if (!(column instanceof HTMLElement) || !isVisible(column) || seenColumns.has(column)) {
+        return;
+      }
+      seenColumns.add(column);
+      targets.push({
+        nav,
+        column
+      });
+    };
+    addTarget(modalElement.querySelector("".concat(PRIMARY_NAV_COL_SELECTOR, " > ").concat(PRIMARY_NAV_SELECTOR)));
+    for (var nav of modalElement.querySelectorAll("".concat(ACTIVE_SECONDARY_NAV_COL_SELECTOR, " > ").concat(SECONDARY_NAV_SELECTOR))) {
+      addTarget(nav);
+    }
+    for (var _nav of modalElement.querySelectorAll("".concat(ACTIVE_TERTIARY_NAV_COL_SELECTOR, " > ").concat(TERTIARY_NAV_SELECTOR))) {
+      addTarget(_nav);
+    }
+    return targets.length > 0 ? targets : getVisibleNavTargets(modalElement);
+  }
+  function clearNavColumnHeights(modalElement) {
+    var allColumns = modalElement.querySelectorAll(NAV_COL_SELECTOR);
+    for (var column of allColumns) {
+      if (column instanceof HTMLElement) {
+        column.style.height = '';
+        column.style.flexGrow = '';
+        column.style.flexShrink = '';
+        column.style.flexBasis = '';
+      }
+    }
+  }
+  function getNumericCssValue(value) {
+    var numericValue = Number.parseFloat(value);
+    return Number.isFinite(numericValue) ? numericValue : 0;
+  }
+  function getNavContentHeight(navElement) {
+    var navItems = navElement.querySelectorAll(':scope > .nav-item');
+    if (!navItems.length) {
+      return Math.ceil(navElement.getBoundingClientRect().height);
+    }
+    var totalHeight = 0;
+    for (var navItem of navItems) {
+      if (navItem instanceof HTMLElement && isVisible(navItem)) {
+        totalHeight += navItem.getBoundingClientRect().height;
+      }
+    }
+    var computedStyle = window.getComputedStyle(navElement);
+    totalHeight += getNumericCssValue(computedStyle.paddingTop);
+    totalHeight += getNumericCssValue(computedStyle.paddingBottom);
+    totalHeight += getNumericCssValue(computedStyle.borderTopWidth);
+    totalHeight += getNumericCssValue(computedStyle.borderBottomWidth);
+    return Math.ceil(totalHeight);
+  }
+  function getUniqueColumns(targets) {
+    var columns = [];
+    var seen = new Set();
+    for (var target of targets) {
+      var column = target === null || target === void 0 ? void 0 : target.column;
+      if (column instanceof HTMLElement && !seen.has(column)) {
+        seen.add(column);
+        columns.push(column);
+      }
+    }
+    return columns;
+  }
+  function synchronizeNavColumnHeights(modalElement) {
+    if (!isDesktopViewport()) {
+      clearNavColumnHeights(modalElement);
+      return;
+    }
+    var modalBody = modalElement.querySelector('.modal-body');
+    if (!(modalBody instanceof HTMLElement)) {
+      return;
+    }
+    var isCollapseTransitioning = modalElement.querySelector(COLLAPSING_SUBMENU_SELECTOR) instanceof HTMLElement;
+    var activeTargets = isCollapseTransitioning ? getVisibleNavTargets(modalElement) : getActiveDesktopNavTargets(modalElement);
+    if (activeTargets.length === 0) {
+      return;
+    }
+    clearNavColumnHeights(modalElement);
+    var tallestVisibleContent = 0;
+    for (var target of activeTargets) {
+      tallestVisibleContent = Math.max(tallestVisibleContent, getNavContentHeight(target.nav));
+    }
+    var maxAvailableHeight = modalBody.clientHeight;
+    var syncedHeight = Math.min(tallestVisibleContent, maxAvailableHeight);
+    var visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets);
+    for (var column of visibleColumns) {
+      // Secondary/tertiary columns can be flex-grown by CSS; lock flex sizing
+      // during sync so inline height can consistently control divider length.
+      column.style.flexGrow = '0';
+      column.style.flexShrink = '0';
+      column.style.flexBasis = 'auto';
+      column.style.height = "".concat(syncedHeight, "px");
+    }
+  }
+  function debounce(callback, waitMs) {
+    var timerId = null;
+    return function () {
+      for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+        arguments_[_key] = arguments[_key];
+      }
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        callback(...arguments_);
+      }, waitMs);
+    };
+  }
+  function scheduleRefresh(refresh, frameState) {
+    if (frameState.isQueued) {
+      return;
+    }
+    frameState.isQueued = true;
+    Promise.resolve().then(() => {
+      frameState.isQueued = false;
+      refresh();
+    });
+  }
+
+  /**
+   * Keep fullscreen nav columns equal-height to the tallest visible column while
+   * preserving independent scrolling when available vertical space is limited.
+   */
+  function enableNavbarAzFullscreen() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+    var fullscreenModals = document.querySelectorAll(FULLSCREEN_MODAL_SELECTOR);
+    if (!fullscreenModals.length) {
+      return;
+    }
+    var _loop = function _loop(modal) {
+      if (!(modal instanceof HTMLElement)) {
+        return 1; // continue
+      }
+      var refresh = () => {
+        synchronizeNavColumnHeights(modal);
+      };
+      var refreshFrameState = {
+        isQueued: false
+      };
+      var refreshOnCollapseEvent = event => {
+        var target = event === null || event === void 0 ? void 0 : event.target;
+        if (target instanceof HTMLElement && modal.contains(target)) {
+          scheduleRefresh(refresh, refreshFrameState);
+        }
+      };
+      var debouncedRefresh = debounce(refresh, RESIZE_DEBOUNCE_MS);
+      EventHandler.on(modal, 'shown.bs.modal', refresh);
+      EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent);
+      EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent);
+      EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent);
+      EventHandler.on(modal, 'hidden.bs.collapse', refreshOnCollapseEvent);
+      window.addEventListener('resize', debouncedRefresh);
+
+      // Sync once so initially shown states render correctly on first paint.
+      refresh();
+    };
+    for (var modal of fullscreenModals) {
+      if (_loop(modal)) continue;
+    }
+  }
+
+  /**
+   * --------------------------------------------------------------------------
+   * Arizona Bootstrap: navbar-az-fullscreen-mobile-nav.js
    * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -8262,6 +8483,7 @@
     fixModalAriaHidden,
     photoGalleryGridSlideToImage,
     enableAzNavbar,
+    enableNavbarAzFullscreen,
     enableNavbarAzFullscreenMobileNav
   };
 
@@ -8281,6 +8503,11 @@
    * Enable hover-driven dropdowns on AZ Navbar.
    */
   enableAzNavbar();
+
+  /**
+   * Enable AZ Navbar Fullscreen desktop nav column height synchronization.
+   */
+  enableNavbarAzFullscreen();
 
   /**
    * Enable AZ Navbar Fullscreen mobile navigation.

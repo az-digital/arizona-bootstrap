@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar-az-fullscreen.js
+ * Arizona Bootstrap: navbar-az-fullscreen-mobile-nav.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
