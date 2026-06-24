@@ -20,6 +20,7 @@ import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
 import enableAzNavbar from './src/navbar.js'
+import enableNavbarAzFullscreen from './src/navbar-az-fullscreen.js'
 import enableNavbarAzFullscreenMobileNav from './src/navbar-az-fullscreen-mobile-nav.js'
 import syncNavbarAzFullscreenModalScrollbar from './src/navbar-az-fullscreen-scrollbar.js'
 
@@ -39,6 +40,7 @@ export default {
   fixModalAriaHidden,
   photoGalleryGridSlideToImage,
   enableAzNavbar,
+  enableNavbarAzFullscreen,
   enableNavbarAzFullscreenMobileNav,
   syncNavbarAzFullscreenModalScrollbar
 }
@@ -59,6 +61,11 @@ photoGalleryGridSlideToImage()
  * Enable hover-driven dropdowns on AZ Navbar.
  */
 enableAzNavbar()
+
+/**
+ * Enable AZ Navbar Fullscreen desktop nav column height synchronization.
+ */
+enableNavbarAzFullscreen()
 
 /**
  * Enable AZ Navbar Fullscreen mobile navigation.

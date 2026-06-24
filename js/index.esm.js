@@ -20,6 +20,7 @@ export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
 export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
 export { default as enableAzNavbar } from './src/navbar.js'
+export { default as enableNavbarAzFullscreen } from './src/navbar-az-fullscreen.js'
 export { default as enableNavbarAzFullscreenMobileNav } from './src/navbar-az-fullscreen-mobile-nav.js'
 export { default as syncNavbarAzFullscreenModalScrollbar } from './src/navbar-az-fullscreen-scrollbar.js'
 
@@ -42,6 +43,12 @@ photoGalleryGridSlideToImage()
  */
 /* global enableAzNavbar */
 enableAzNavbar()
+
+/**
+ * Enable AZ Navbar Fullscreen desktop nav column height synchronization.
+ */
+/* global enableNavbarAzFullscreen */
+enableNavbarAzFullscreen()
 
 /**
  * Enable AZ Navbar Fullscreen mobile navigation.
