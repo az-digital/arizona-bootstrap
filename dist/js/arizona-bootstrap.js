@@ -5965,8 +5965,11 @@
 
   var DESKTOP_MEDIA_QUERY = '(min-width: 992px)';
   var RESIZE_DEBOUNCE_MS = 100;
-  var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var FULLSCREEN_MODAL_SELECTOR$1 = '.navbar-az-fullscreen-modal';
+  var FULLSCREEN_MODAL_RESET_EVENT$1 = 'az.navbar-fullscreen.reset';
   var NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col';
+  var COLLAPSE_SELECTOR = '.collapse[id]';
+  var COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]';
   var PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary';
   var PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary';
   var SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary';
@@ -6122,6 +6125,62 @@
       }, waitMs);
     };
   }
+  function captureModalDefaultState(modalElement) {
+    var collapseStates = [];
+    for (var collapseElement of modalElement.querySelectorAll(COLLAPSE_SELECTOR)) {
+      if (collapseElement instanceof HTMLElement) {
+        collapseStates.push({
+          id: collapseElement.id,
+          isShown: collapseElement.classList.contains('show')
+        });
+      }
+    }
+    var toggleStates = [];
+    for (var toggleElement of modalElement.querySelectorAll(COLLAPSE_TOGGLE_SELECTOR)) {
+      if (toggleElement instanceof HTMLElement) {
+        toggleStates.push({
+          element: toggleElement,
+          isCollapsed: toggleElement.classList.contains('collapsed'),
+          isExpanded: toggleElement.getAttribute('aria-expanded') === 'true'
+        });
+      }
+    }
+    return {
+      collapseStates,
+      toggleStates
+    };
+  }
+  function restoreModalDefaultState(modalElement, modalDefaultState) {
+    if (!modalDefaultState) {
+      return;
+    }
+    for (var collapseState of modalDefaultState.collapseStates) {
+      var collapseElement = modalElement.querySelector("#".concat(CSS.escape(collapseState.id)));
+      if (!(collapseElement instanceof HTMLElement)) {
+        continue;
+      }
+      collapseElement.classList.remove('collapsing');
+      collapseElement.style.height = '';
+      if (collapseState.isShown) {
+        collapseElement.classList.add('show');
+      } else {
+        collapseElement.classList.remove('show');
+      }
+    }
+    for (var toggleState of modalDefaultState.toggleStates) {
+      if (!(toggleState.element instanceof HTMLElement)) {
+        continue;
+      }
+      toggleState.element.classList.toggle('collapsed', toggleState.isCollapsed);
+      toggleState.element.setAttribute('aria-expanded', String(toggleState.isExpanded));
+    }
+    modalElement.dispatchEvent(new CustomEvent(FULLSCREEN_MODAL_RESET_EVENT$1, {
+      bubbles: true,
+      detail: {
+        modal: modalElement
+      }
+    }));
+  }
   function scheduleRefresh(refresh, frameState) {
     if (frameState.isQueued) {
       return;
@@ -6141,7 +6200,7 @@
     if (typeof document === 'undefined' || typeof window === 'undefined') {
       return;
     }
-    var fullscreenModals = document.querySelectorAll(FULLSCREEN_MODAL_SELECTOR);
+    var fullscreenModals = document.querySelectorAll(FULLSCREEN_MODAL_SELECTOR$1);
     if (!fullscreenModals.length) {
       return;
     }
@@ -6152,6 +6211,7 @@
       var refresh = () => {
         synchronizeNavColumnHeights(modal);
       };
+      var modalDefaultState = captureModalDefaultState(modal);
       var refreshFrameState = {
         isQueued: false
       };
@@ -6161,8 +6221,13 @@
           scheduleRefresh(refresh, refreshFrameState);
         }
       };
+      var resetOnModalHidden = () => {
+        restoreModalDefaultState(modal, modalDefaultState);
+        refresh();
+      };
       var debouncedRefresh = debounce(refresh, RESIZE_DEBOUNCE_MS);
       EventHandler.on(modal, 'shown.bs.modal', refresh);
+      EventHandler.on(modal, 'hidden.bs.modal', resetOnModalHidden);
       EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent);
@@ -6189,23 +6254,62 @@
    * Handles paged navigation for mobile view of #navbar-az-fullscreen-nav-mobile-col.
    */
 
+  var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset';
   class NavbarAzFullscreenMobileNav {
     constructor() {
+      var _this$mobileCol, _topFooter$innerHTML, _bottomFooter$innerHT, _topFooter$className, _bottomFooter$classNa, _this$modalElement;
       this.primaryNavElementId = '#az-navbar-az-fullscreen-primary-accordion';
       this.primaryNavContainer = document.querySelector(this.primaryNavElementId);
       this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col');
       this.modalFooterTopId = '#navbar-az-fullscreen-modal-footer-top';
       this.modalFooterBottomId = '#navbar-az-fullscreen-modal-footer-bottom';
+      this.modalElement = (_this$mobileCol = this.mobileCol) === null || _this$mobileCol === void 0 ? void 0 : _this$mobileCol.closest(FULLSCREEN_MODAL_SELECTOR);
       if (!this.primaryNavContainer || !this.mobileCol) {
         // One or more required containers not found
         return;
       }
+      this.mobileColInitialHTML = this.mobileCol.innerHTML;
+      var topFooter = document.querySelector(this.modalFooterTopId);
+      var bottomFooter = document.querySelector(this.modalFooterBottomId);
+      this.modalFooterTopInitialHTML = (_topFooter$innerHTML = topFooter === null || topFooter === void 0 ? void 0 : topFooter.innerHTML) !== null && _topFooter$innerHTML !== void 0 ? _topFooter$innerHTML : null;
+      this.modalFooterBottomInitialHTML = (_bottomFooter$innerHT = bottomFooter === null || bottomFooter === void 0 ? void 0 : bottomFooter.innerHTML) !== null && _bottomFooter$innerHT !== void 0 ? _bottomFooter$innerHT : null;
+      this.modalFooterTopInitialClassName = (_topFooter$className = topFooter === null || topFooter === void 0 ? void 0 : topFooter.className) !== null && _topFooter$className !== void 0 ? _topFooter$className : null;
+      this.modalFooterBottomInitialClassName = (_bottomFooter$classNa = bottomFooter === null || bottomFooter === void 0 ? void 0 : bottomFooter.className) !== null && _bottomFooter$classNa !== void 0 ? _bottomFooter$classNa : null;
 
       // Save call-to-action items
       var ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions');
       this.mobileCtaHTML = null;
       if (ctaElement) {
         this.mobileCtaHTML = ctaElement.cloneNode(true).outerHTML;
+      }
+      (_this$modalElement = this.modalElement) === null || _this$modalElement === void 0 || _this$modalElement.addEventListener(FULLSCREEN_MODAL_RESET_EVENT, () => {
+        this.resetToDefaultState();
+      });
+      this.init();
+    }
+    resetToDefaultState() {
+      if (!(this.mobileCol instanceof HTMLElement)) {
+        return;
+      }
+      this.mobileCol.innerHTML = this.mobileColInitialHTML;
+      var topFooter = document.querySelector(this.modalFooterTopId);
+      if (topFooter instanceof HTMLElement) {
+        if (typeof this.modalFooterTopInitialClassName === 'string') {
+          topFooter.className = this.modalFooterTopInitialClassName;
+        }
+        if (typeof this.modalFooterTopInitialHTML === 'string') {
+          topFooter.innerHTML = this.modalFooterTopInitialHTML;
+        }
+      }
+      var bottomFooter = document.querySelector(this.modalFooterBottomId);
+      if (bottomFooter instanceof HTMLElement) {
+        if (typeof this.modalFooterBottomInitialClassName === 'string') {
+          bottomFooter.className = this.modalFooterBottomInitialClassName;
+        }
+        if (typeof this.modalFooterBottomInitialHTML === 'string') {
+          bottomFooter.innerHTML = this.modalFooterBottomInitialHTML;
+        }
       }
       this.init();
     }
