@@ -462,7 +462,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 {{< /example >}}
 
 ## AZ Navbar Fullscreen
-<span class="badge badge-az-custom">Arizona Bootstrap Experimental Feature</span>
+<span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span>
 
 The fullscreen AZ Navbar navigation pattern presents a minimal, (non-modal) navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal element supports a [logo (brand)](#brand-1), a minimal [Call to Actions](#calls-to-action-menu) menu, a [search](#search) box, and a modal activation toggle. When the [modal menu](#modal-menu) is open, the same [header elements](#modal-menu-header) are supported along with a multicolumn, 3-tier deep menu structure, and support for modal [footer menu bars](#modal-menu-footer).
 
@@ -536,7 +536,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search d-flex ms-auto me-2 me-lg-4" role="search">
+    <form class="navbar-az-fullscreen-search ms-auto me-4" role="search">
       <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -579,7 +579,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
         <div class="navbar-az-fullscreen-modal-menu container-lg ">
           <div class="row g-0">
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
-              <div class="navbar-az-fullscreen-modal-menu-nav-col col-12 col-lg-4">
+              <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-12 col-lg-4">
                 <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
                   <div class="nav-item">
                     <a class="nav-link" href="#">
@@ -591,7 +591,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
                     <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                       <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
                         <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
-                          <ul class="nav" aria-label="Home menu">
+                          <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Home menu">
                             <li class="nav-item">
                               <a class="nav-link" href="#">
                                 <span class="nav-link-text">Action</span>
@@ -721,7 +721,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+          <form class="navbar-az-fullscreen-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -738,7 +738,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -804,7 +804,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+          <form class="navbar-az-fullscreen-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -821,7 +821,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -877,12 +877,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
       </div>
-      <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-top">
+      <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
         <nav class="navbar" aria-labelledby="resources-for-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <h2 class="navbar-brand" id="resources-for-label">Resources for:</h2>
+                  <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -917,6 +917,11 @@ The Calls to Action menu provides greater visibility for certain high-value acti
   </div>
 </div>
 {{< /example >}}
+
+#### Desktop Column Sync
+On desktop viewports (`lg` and above), the fullscreen modal synchronizes the height of the visible primary, secondary, and tertiary navigation columns to the tallest visible navigation column. This keeps column separators aligned while preserving independent scrolling within each column when content exceeds the available modal body height.
+
+This behavior is initialized by `enableNavbarAzFullscreen()` and is included automatically in the bundled Arizona Bootstrap JavaScript builds. If you assemble the component markup manually, keep the primary column on `.navbar-az-fullscreen-modal-menu-nav-col-primary` and apply `.navbar-az-fullscreen-nav-secondary` and `.navbar-az-fullscreen-nav-tertiary` to secondary and tertiary nav lists so the desktop synchronization logic can target the active columns correctly.
 
 #### Mobile Menu
 Documentation coming soon.

@@ -29,7 +29,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
           </li>
         </ul>
 
-        <form class="navbar-az-fullscreen-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
+        <form class="navbar-az-fullscreen-search ms-auto ms-lg-0" role="search">
           <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
           <div class="input-group d-none d-lg-flex">
             <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -82,7 +82,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
             </div>
           </div>
           <div class="container-lg">
-            <form class="navbar-az-fullscreen-search my-2 mt-lg-5 mb-lg-4" role="search">
+            <form class="navbar-az-fullscreen-search" role="search">
               <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
               <div class="input-group">
                 <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -98,24 +98,24 @@ title: AZ Navbar Fullscreen - Undergraduate Students
           <div class="navbar-az-fullscreen-modal-menu container-lg ">
             <div class="row g-0">
               <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
-                <div class="navbar-az-fullscreen-modal-menu-nav-col col-12 col-lg-4">
+                <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-12 col-lg-4">
                   <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
                     <div class="nav-item">
                       <a class="nav-link" href="{{< ref "admissions" >}}">
                         <span class="nav-link-text">Admissions</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
+                      <button class="btn nav-toggle nav-toggle-separated" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-admissions-content" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-primary-admissions-content" aria-label="Toggle Admissions submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse show" id="az-navbar-az-fullscreen-primary-admissions-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
                           <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
-                            <ul class="nav" aria-label="Admissions">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Admissions">
                               <li class="nav-item">
                                 <a class="nav-link active" href="{{< ref "undergraduate" >}}">
                                   <span class="nav-link-text">Undergraduate Students</span>
                                 </a>
-                                <button class="btn nav-toggle" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
+                                <button class="btn nav-toggle nav-toggle-separated" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" type="button" aria-expanded="true" aria-controls="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content" aria-label="Toggle Undergraduate Students submenu">
                                   <span class="nav-toggle-icon" aria-hidden="true"></span>
                                 </button>
                                 <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse show" id="az-navbar-az-fullscreen-admissions-secondary-undergraduate-content">
@@ -176,18 +176,18 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Academics</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-label="Toggle Academics submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-academics-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-academics-content" aria-label="Toggle Academics submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-academics-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
                           <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
-                            <ul class="nav" id="az-navbar-az-fullscreen-academics-secondary-nav" aria-label="Academics">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-academics-secondary-nav" aria-label="Academics">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
                                   <span class="nav-link-text">Degrees &amp; Programs</span>
                                 </a>
-                                <button class="btn nav-toggle" id="az-navbar-az-fullscreen-academics-secondary-degrees-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-academics-secondary-degrees-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-academics-secondary-degrees-content" aria-label="Toggle Degrees &amp; Programs submenu">
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-academics-secondary-degrees-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-academics-secondary-degrees-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-academics-secondary-degrees-content" aria-label="Toggle Degrees &amp; Programs submenu">
                                   <span class="nav-toggle-icon" aria-hidden="true"></span>
                                 </button>
                                 <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-academics-secondary-degrees-content">
@@ -238,13 +238,13 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Research</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-label="Toggle Research submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-research-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-research-content" aria-label="Toggle Research submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-research-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
                           <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
-                            <ul class="nav" aria-label="Research">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Research">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
                                   <span class="nav-link-text">Research &amp; Partnerships</span>
@@ -259,13 +259,13 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Campus Life</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-label="Toggle Campus Life submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-primary-campus-life-content" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-primary-campus-life-content" aria-label="Toggle Campus Life submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                       <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="az-navbar-az-fullscreen-primary-campus-life-content" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                         <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
                           <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
-                            <ul class="nav" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
+                            <ul class="nav navbar-az-fullscreen-nav-secondary" id="az-navbar-az-fullscreen-campus-life-secondary-nav" aria-label="Campus Life">
                               <li class="nav-item">
                                 <a class="nav-link" href="#">
                                   <span class="nav-link-text">Campus Life Overview</span>
@@ -275,7 +275,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                                 <a class="nav-link" href="#">
                                   <span class="nav-link-text">Visit Campus</span>
                                 </a>
-                                <button class="btn nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-campus-life-secondary-visit-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-visit-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-visit-content" aria-label="Toggle Visit Campus submenu">
                                   <span class="nav-toggle-icon" aria-hidden="true"></span>
                                 </button>
                                 <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-campus-life-secondary-visit-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
@@ -356,7 +356,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                                 <a class="nav-link" href="#">
                                   <span class="nav-link-text">Health &amp; Wellness</span>
                                 </a>
-                                <button class="btn nav-toggle" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
+                                <button class="btn nav-toggle nav-toggle-separated collapsed" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-tab" data-bs-toggle="collapse" data-bs-target="#az-navbar-az-fullscreen-campus-life-secondary-wellness-content" type="button" aria-expanded="false" aria-controls="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" aria-label="Toggle Health &amp; Wellness submenu">
                                   <span class="nav-toggle-icon" aria-hidden="true"></span>
                                 </button>
                                 <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="az-navbar-az-fullscreen-campus-life-secondary-wellness-content" data-bs-parent="#az-navbar-az-fullscreen-campus-life-secondary-nav">
@@ -393,7 +393,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
               </div>
               <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
                 <!-- call-to-action items -->
-                <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center gap-2 mt-2 mb-card">
+                <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
                   <li class="nav-item">
                     <a class="nav-link" href="{{< ref "apply" >}}">
                       <span class="nav-link-text">Apply</span>
@@ -417,7 +417,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="{{< ref "admissions" >}}">
                         <span class="nav-link-text">Admissions</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Admissions submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-admissions-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Admissions submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                     </div>
@@ -425,7 +425,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Academics</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Academics submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-academics-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Academics submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                     </div>
@@ -433,7 +433,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Research</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Research submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-research-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Research submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                     </div>
@@ -441,7 +441,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                       <a class="nav-link" href="#">
                         <span class="nav-link-text">Campus Life</span>
                       </a>
-                      <button class="btn nav-toggle" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Campus Life submenu">
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#az-navbar-az-fullscreen-primary-campus-life-content" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Campus Life submenu">
                         <span class="nav-toggle-icon" aria-hidden="true"></span>
                       </button>
                     </div>
@@ -457,12 +457,12 @@ title: AZ Navbar Fullscreen - Undergraduate Students
           </div>
         </div>
 
-        <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-top">
+        <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
           <nav class="navbar" aria-labelledby="resources-for-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <h2 class="navbar-brand" id="resources-for-label">Resources for:</h2>
+                    <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -493,7 +493,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
             </div>
           </nav>
         </div>
-        <div class="modal-footer" id="navbar-az-fullscreen-modal-footer-bottom">
+        <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-bottom">
           <nav class="navbar" aria-labelledby="helpful-links-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
@@ -516,7 +516,7 @@ title: AZ Navbar Fullscreen - Undergraduate Students
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{< ref "phonebook" >}}">
                       <span class="nav-link-text">Phonebook</span>
                     </a>
                   </li>
@@ -638,6 +638,17 @@ title: AZ Navbar Fullscreen - Undergraduate Students
             </li>
             <li class="breadcrumb-item">
               <a href="{{< ref "partner" >}}">Business or Partner</a>
+            </li>
+          </ol>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item breadcrumb-item-home">
+              <a href="{{< ref "navbar-az-fullscreen" >}}">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{< ref "phonebook" >}}">Phonebook</a>
             </li>
           </ol>
         </nav>
