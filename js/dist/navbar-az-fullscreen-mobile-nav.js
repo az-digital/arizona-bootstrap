@@ -45,21 +45,40 @@
    * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
+
   /**
    * Arizona Bootstrap Fullscreen Navbar Mobile Navigation (experimental)
    * Handles paged navigation for mobile view of #navbar-az-fullscreen-nav-mobile-col.
    */
+
+  var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset';
   var NavbarAzFullscreenMobileNav = /*#__PURE__*/function () {
     function NavbarAzFullscreenMobileNav() {
+      var _this$mobileCol,
+        _topFooter$innerHTML,
+        _bottomFooter$innerHT,
+        _topFooter$className,
+        _bottomFooter$classNa,
+        _this$modalElement,
+        _this = this;
       this.primaryNavElementId = '#az-navbar-az-fullscreen-primary-accordion';
       this.primaryNavContainer = document.querySelector(this.primaryNavElementId);
       this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col');
       this.modalFooterTopId = '#navbar-az-fullscreen-modal-footer-top';
       this.modalFooterBottomId = '#navbar-az-fullscreen-modal-footer-bottom';
+      this.modalElement = (_this$mobileCol = this.mobileCol) == null ? void 0 : _this$mobileCol.closest(FULLSCREEN_MODAL_SELECTOR);
       if (!this.primaryNavContainer || !this.mobileCol) {
         // One or more required containers not found
         return;
       }
+      this.mobileColInitialHTML = this.mobileCol.innerHTML;
+      var topFooter = document.querySelector(this.modalFooterTopId);
+      var bottomFooter = document.querySelector(this.modalFooterBottomId);
+      this.modalFooterTopInitialHTML = (_topFooter$innerHTML = topFooter == null ? void 0 : topFooter.innerHTML) != null ? _topFooter$innerHTML : null;
+      this.modalFooterBottomInitialHTML = (_bottomFooter$innerHT = bottomFooter == null ? void 0 : bottomFooter.innerHTML) != null ? _bottomFooter$innerHT : null;
+      this.modalFooterTopInitialClassName = (_topFooter$className = topFooter == null ? void 0 : topFooter.className) != null ? _topFooter$className : null;
+      this.modalFooterBottomInitialClassName = (_bottomFooter$classNa = bottomFooter == null ? void 0 : bottomFooter.className) != null ? _bottomFooter$classNa : null;
 
       // Save call-to-action items
       var ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions');
@@ -67,13 +86,41 @@
       if (ctaElement) {
         this.mobileCtaHTML = ctaElement.cloneNode(true).outerHTML;
       }
+      (_this$modalElement = this.modalElement) == null || _this$modalElement.addEventListener(FULLSCREEN_MODAL_RESET_EVENT, function () {
+        _this.resetToDefaultState();
+      });
+      this.init();
+    }
+    var _proto = NavbarAzFullscreenMobileNav.prototype;
+    _proto.resetToDefaultState = function resetToDefaultState() {
+      if (!(this.mobileCol instanceof HTMLElement)) {
+        return;
+      }
+      this.mobileCol.innerHTML = this.mobileColInitialHTML;
+      var topFooter = document.querySelector(this.modalFooterTopId);
+      if (topFooter instanceof HTMLElement) {
+        if (typeof this.modalFooterTopInitialClassName === 'string') {
+          topFooter.className = this.modalFooterTopInitialClassName;
+        }
+        if (typeof this.modalFooterTopInitialHTML === 'string') {
+          topFooter.innerHTML = this.modalFooterTopInitialHTML;
+        }
+      }
+      var bottomFooter = document.querySelector(this.modalFooterBottomId);
+      if (bottomFooter instanceof HTMLElement) {
+        if (typeof this.modalFooterBottomInitialClassName === 'string') {
+          bottomFooter.className = this.modalFooterBottomInitialClassName;
+        }
+        if (typeof this.modalFooterBottomInitialHTML === 'string') {
+          bottomFooter.innerHTML = this.modalFooterBottomInitialHTML;
+        }
+      }
       this.init();
     }
 
     /**
      * Initialize the mobile navigation
-     */
-    var _proto = NavbarAzFullscreenMobileNav.prototype;
+     */;
     _proto.init = function init() {
       var activeLinkFound = false;
 
@@ -135,7 +182,7 @@
      * @returns {boolean} Whether an active link was found in this footer's links during initialization
      */;
     _proto.setupModalMobileFooter = function setupModalMobileFooter(footerPosition, activeLinkFound) {
-      var _this = this;
+      var _this2 = this;
       if (activeLinkFound === void 0) {
         activeLinkFound = false;
       }
@@ -205,7 +252,7 @@
           if (targetId) {
             // Extract the menu label from button aria-label text
             var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
-            _this.showSecondaryNav(targetId, toggleLabel);
+            _this2.showSecondaryNav(targetId, toggleLabel);
           }
         });
       };
@@ -465,7 +512,7 @@
      * @param {string} parentElementId - The ID of the parent element (optional)
      */;
     _proto.setupNavListeners = function setupNavListeners(navLevel, sourceElementId, label, parentLabel, parentElementId) {
-      var _this2 = this;
+      var _this3 = this;
       if (label === void 0) {
         label = null;
       }
@@ -481,9 +528,9 @@
         if (backButton) {
           backButton.addEventListener('click', function () {
             if (navLevel === 2) {
-              _this2.showPrimaryNav(_this2.primaryNavElementId);
+              _this3.showPrimaryNav(_this3.primaryNavElementId);
             } else {
-              _this2.showSecondaryNav(parentElementId, parentLabel);
+              _this3.showSecondaryNav(parentElementId, parentLabel);
             }
           });
         }
@@ -500,9 +547,9 @@
               // Extract the menu label from button aria-label text
               var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
               if (navLevel === 1) {
-                _this2.showSecondaryNav(targetId, toggleLabel);
+                _this3.showSecondaryNav(targetId, toggleLabel);
               } else {
-                _this2.showTertiaryNav(targetId, toggleLabel, label, sourceElementId);
+                _this3.showTertiaryNav(targetId, toggleLabel, label, sourceElementId);
               }
             }
           });

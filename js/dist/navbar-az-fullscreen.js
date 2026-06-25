@@ -42,7 +42,10 @@
   var DESKTOP_MEDIA_QUERY = '(min-width: 992px)';
   var RESIZE_DEBOUNCE_MS = 100;
   var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset';
   var NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col';
+  var COLLAPSE_SELECTOR = '.collapse[id]';
+  var COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]';
   var PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary';
   var PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary';
   var SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary';
@@ -206,6 +209,66 @@
       }, waitMs);
     };
   }
+  function captureModalDefaultState(modalElement) {
+    var collapseStates = [];
+    for (var _iterator9 = _createForOfIteratorHelperLoose(modalElement.querySelectorAll(COLLAPSE_SELECTOR)), _step9; !(_step9 = _iterator9()).done;) {
+      var collapseElement = _step9.value;
+      if (collapseElement instanceof HTMLElement) {
+        collapseStates.push({
+          id: collapseElement.id,
+          isShown: collapseElement.classList.contains('show')
+        });
+      }
+    }
+    var toggleStates = [];
+    for (var _iterator0 = _createForOfIteratorHelperLoose(modalElement.querySelectorAll(COLLAPSE_TOGGLE_SELECTOR)), _step0; !(_step0 = _iterator0()).done;) {
+      var toggleElement = _step0.value;
+      if (toggleElement instanceof HTMLElement) {
+        toggleStates.push({
+          element: toggleElement,
+          isCollapsed: toggleElement.classList.contains('collapsed'),
+          isExpanded: toggleElement.getAttribute('aria-expanded') === 'true'
+        });
+      }
+    }
+    return {
+      collapseStates: collapseStates,
+      toggleStates: toggleStates
+    };
+  }
+  function restoreModalDefaultState(modalElement, modalDefaultState) {
+    if (!modalDefaultState) {
+      return;
+    }
+    for (var _iterator1 = _createForOfIteratorHelperLoose(modalDefaultState.collapseStates), _step1; !(_step1 = _iterator1()).done;) {
+      var collapseState = _step1.value;
+      var collapseElement = modalElement.querySelector("#" + CSS.escape(collapseState.id));
+      if (!(collapseElement instanceof HTMLElement)) {
+        continue;
+      }
+      collapseElement.classList.remove('collapsing');
+      collapseElement.style.height = '';
+      if (collapseState.isShown) {
+        collapseElement.classList.add('show');
+      } else {
+        collapseElement.classList.remove('show');
+      }
+    }
+    for (var _iterator10 = _createForOfIteratorHelperLoose(modalDefaultState.toggleStates), _step10; !(_step10 = _iterator10()).done;) {
+      var toggleState = _step10.value;
+      if (!(toggleState.element instanceof HTMLElement)) {
+        continue;
+      }
+      toggleState.element.classList.toggle('collapsed', toggleState.isCollapsed);
+      toggleState.element.setAttribute('aria-expanded', String(toggleState.isExpanded));
+    }
+    modalElement.dispatchEvent(new CustomEvent(FULLSCREEN_MODAL_RESET_EVENT, {
+      bubbles: true,
+      detail: {
+        modal: modalElement
+      }
+    }));
+  }
   function scheduleRefresh(refresh, frameState) {
     if (frameState.isQueued) {
       return;
@@ -230,13 +293,14 @@
       return;
     }
     var _loop = function _loop() {
-      var modal = _step9.value;
+      var modal = _step11.value;
       if (!(modal instanceof HTMLElement)) {
         return 1; // continue
       }
       var refresh = function refresh() {
         synchronizeNavColumnHeights(modal);
       };
+      var modalDefaultState = captureModalDefaultState(modal);
       var refreshFrameState = {
         isQueued: false
       };
@@ -246,8 +310,13 @@
           scheduleRefresh(refresh, refreshFrameState);
         }
       };
+      var resetOnModalHidden = function resetOnModalHidden() {
+        restoreModalDefaultState(modal, modalDefaultState);
+        refresh();
+      };
       var debouncedRefresh = debounce(refresh, RESIZE_DEBOUNCE_MS);
       EventHandler.on(modal, 'shown.bs.modal', refresh);
+      EventHandler.on(modal, 'hidden.bs.modal', resetOnModalHidden);
       EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent);
@@ -257,7 +326,7 @@
       // Sync once so initially shown states render correctly on first paint.
       refresh();
     };
-    for (var _iterator9 = _createForOfIteratorHelperLoose(fullscreenModals), _step9; !(_step9 = _iterator9()).done;) {
+    for (var _iterator11 = _createForOfIteratorHelperLoose(fullscreenModals), _step11; !(_step11 = _iterator11()).done;) {
       if (_loop()) continue;
     }
   }
