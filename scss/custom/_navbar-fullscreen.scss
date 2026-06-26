@@ -194,7 +194,8 @@
   margin-right: 30px;
 
   &:hover {
-    .input-group {
+    .form-control,
+    .btn {
       border-color: var(--az-navbar-fullscreen-search-hover-color);
     }
   }
@@ -202,17 +203,11 @@
   .input-group {
     flex-wrap: nowrap;
     height: var(--az-navbar-fullscreen-search-height);
-    overflow: hidden;
-    border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
-    @include border-radius(8px);
-
-    &:focus-within {
-      border-color: var(--az-navbar-fullscreen-search-focus-ring-color);
-      box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-search-focus-ring-width) var(--az-navbar-fullscreen-search-focus-ring-color);
-    }
+    overflow: visible;
 
     .btn {
       padding: 13px;
+      border-width: var(--az-navbar-fullscreen-search-border-width);
     }
 
     .btn::before {
@@ -232,8 +227,10 @@
     font: var(--az-navbar-fullscreen-search-font);
     color: var(--az-navbar-fullscreen-search-color);
     background-color: transparent;
-    border: 0;
-    @include border-radius(0);
+    border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
+    border-right: 0;
+    @include border-start-radius(8px);
+    @include border-end-radius(0);
 
     &::placeholder {
       color: var(--az-navbar-fullscreen-search-color);
@@ -250,22 +247,43 @@
     }
 
     &:focus-visible {
+      position: relative;
+      z-index: 1;
       outline: 0;
+      box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-search-focus-ring-width) var(--az-navbar-fullscreen-search-focus-ring-color);
     }
   }
 
   .btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: var(--az-navbar-fullscreen-search-height);
     margin: 0;
     color: var(--az-navbar-fullscreen-search-color);
-    border: 0;
-    @include border-radius(0);
+    border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
+    border-left: 0;
+    @include border-start-radius(0);
+    @include border-end-radius(8px);
+
+    &:focus,
+    &:focus-visible {
+      @include border-start-radius(0);
+      @include border-end-radius(8px);
+    }
+
+    &:focus-visible {
+      position: relative;
+      z-index: 1;
+      outline: 0;
+      box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-search-focus-ring-width) var(--az-navbar-fullscreen-search-focus-ring-color);
+    }
   }
 
   .navbar-toggler-search {
+    border: 0;
+
     &:focus-visible {
       @include border-radius(4px);
       outline: 0;
@@ -896,7 +914,13 @@
     margin-right: 18px;
 
     .navbar-toggler-search {
+      @include border-radius(4px);
       padding: 6px 5px 4px;
+
+      &:focus,
+      &:focus-visible {
+        @include border-radius(4px);
+      }
     }
   }
 
@@ -905,16 +929,22 @@
       --az-navbar-fullscreen-search-height: 51px;
 
       .input-group {
-        border-width: 1px;
-        @include border-radius(4px);
-
         .form-control {
           font-size: 14px;
           line-height: 17px;
+          border-width: 1px;
+          @include border-start-radius(4px);
         }
 
         .btn {
           padding: 10px 14px;
+          border-width: 1px;
+          @include border-radius(4px);
+
+          &:focus,
+          &:focus-visible {
+            @include border-radius(4px);
+          }
         }
       }
 
