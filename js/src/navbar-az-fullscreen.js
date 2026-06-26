@@ -10,6 +10,7 @@ import EventHandler from '../../node_modules/bootstrap/js/src/dom/event-handler.
 const DESKTOP_MEDIA_QUERY = '(min-width: 992px)'
 const RESIZE_DEBOUNCE_MS = 100
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
+const MODAL_SECTION_SELECTOR = '.modal-header, .modal-body, .modal-footer'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
 const NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col'
 const COLLAPSE_SELECTOR = '.collapse[id]'
@@ -273,6 +274,39 @@ function scheduleRefresh(refresh, frameState) {
   })
 }
 
+// Mirror Bootstrap's scrollbar-width `padding-right` compensation onto each
+// fullscreen modal section (header, body, footer) so their inner
+// `.container-lg` wrappers all align with the `.fixed-top` non-modal navbar
+// (which Bootstrap also compensates) while the modal is open. Padding is
+// applied per-section, rather than on `.modal-content`, so the modal-footer's
+// colored background continues to reach the right edge of the viewport.
+// See https://github.com/az-digital/arizona-bootstrap/issues/2100.
+function getScrollbarWidth() {
+  return Math.abs(window.innerWidth - document.documentElement.clientWidth)
+}
+
+function getModalSections(modalElement) {
+  return [...modalElement.querySelectorAll(MODAL_SECTION_SELECTOR)]
+    .filter(section => section instanceof HTMLElement)
+}
+
+function synchronizeModalScrollbarPadding(modalElement) {
+  const scrollbarWidth = getScrollbarWidth()
+  if (scrollbarWidth <= 0) {
+    return
+  }
+
+  for (const section of getModalSections(modalElement)) {
+    section.style.paddingRight = `${scrollbarWidth}px`
+  }
+}
+
+function clearModalScrollbarPadding(modalElement) {
+  for (const section of getModalSections(modalElement)) {
+    section.style.paddingRight = ''
+  }
+}
+
 /**
  * Keep fullscreen nav columns equal-height to the tallest visible column while
  * preserving independent scrolling when available vertical space is limited.
@@ -319,6 +353,9 @@ function enableNavbarAzFullscreen() {
     EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'hidden.bs.collapse', refreshOnCollapseEvent)
+
+    EventHandler.on(modal, 'show.bs.modal', () => synchronizeModalScrollbarPadding(modal))
+    EventHandler.on(modal, 'hidden.bs.modal', () => clearModalScrollbarPadding(modal))
 
     window.addEventListener('resize', debouncedRefresh)
 

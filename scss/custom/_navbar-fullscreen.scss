@@ -80,6 +80,15 @@
   }
 }
 
+// Optional helper to offset content when using `.fixed-top` with fullscreen navbar.
+.navbar-az-fullscreen-fixed-top-offset {
+  padding-top: 100px;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: 69px;
+  }
+}
+
 .navbar-az-fullscreen-actions {
   // scss-docs-start navbar-az-fullscreen-actions-css-vars
   --az-navbar-fullscreen-actions-font-weight: bold;
@@ -888,8 +897,9 @@
   }
 
   .navbar-az-fullscreen-modal {
-    .modal-body {
-      overflow: auto;
+    .navbar-az-fullscreen-modal-menu {
+      flex: 1 1 auto;
+      min-height: 0;
     }
 
     .container-lg {
@@ -968,6 +978,10 @@
 
 /* stylelint-disable selector-max-id */
 #navbar-az-fullscreen-nav-mobile-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
   --az-navbar-fullscreen-back-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><g transform='translate(1 1)'><circle fill='none' stroke='#{$white}' stroke-width='2' cx='20' cy='20' r='20' transform='translate(0 40) rotate(-90)'/><path fill='none' stroke='#{$white}' stroke-width='2' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate(23127.197 11482)'/></g></svg>"))};
   --az-navbar-fullscreen-back-icon-hover: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='41.88' height='41.88' viewBox='0 0 41.88 41.88'><circle fill='none' stroke='#{$sky}' stroke-width='3' cx='20.94' cy='20.94' r='19.44'/><path fill='none' stroke='#{$sky}' stroke-width='3' stroke-linecap='round' d='M17.26 11.22l9.72 9.72-9.72 9.72'/></svg>"))};
   // https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23AB0520&selected=Material+Symbols+Rounded:expand_circle_down:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=expand+ci
@@ -1001,6 +1015,7 @@
   }
 
   .navbar-az-fullscreen-modal-menu-nav-col {
+    flex: 1 1 auto;
     padding-top: 0;
     border-right: 0;
 
@@ -1124,6 +1139,13 @@
 
   .nav-toggle:not(.collapsed) .nav-toggle-icon {
     transform: none;
+  }
+
+  .navbar-az-fullscreen-nav-menu-mobile {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
   }
 }
 /* stylelint-enable selector-max-id */
