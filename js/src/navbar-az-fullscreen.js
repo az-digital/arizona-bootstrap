@@ -11,7 +11,10 @@ const DESKTOP_MEDIA_QUERY = '(min-width: 992px)'
 const RESIZE_DEBOUNCE_MS = 100
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const MODAL_SECTION_SELECTOR = '.modal-header, .modal-body, .modal-footer'
+const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
 const NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col'
+const COLLAPSE_SELECTOR = '.collapse[id]'
+const COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]'
 const PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary'
 const PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary'
 const SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary'
@@ -194,6 +197,70 @@ function debounce(callback, waitMs) {
   }
 }
 
+function captureModalDefaultState(modalElement) {
+  const collapseStates = []
+  for (const collapseElement of modalElement.querySelectorAll(COLLAPSE_SELECTOR)) {
+    if (collapseElement instanceof HTMLElement) {
+      collapseStates.push({
+        id: collapseElement.id,
+        isShown: collapseElement.classList.contains('show')
+      })
+    }
+  }
+
+  const toggleStates = []
+  for (const toggleElement of modalElement.querySelectorAll(COLLAPSE_TOGGLE_SELECTOR)) {
+    if (toggleElement instanceof HTMLElement) {
+      toggleStates.push({
+        element: toggleElement,
+        isCollapsed: toggleElement.classList.contains('collapsed'),
+        isExpanded: toggleElement.getAttribute('aria-expanded') === 'true'
+      })
+    }
+  }
+
+  return {
+    collapseStates,
+    toggleStates
+  }
+}
+
+function restoreModalDefaultState(modalElement, modalDefaultState) {
+  if (!modalDefaultState) {
+    return
+  }
+
+  for (const collapseState of modalDefaultState.collapseStates) {
+    const collapseElement = modalElement.querySelector(`#${CSS.escape(collapseState.id)}`)
+    if (!(collapseElement instanceof HTMLElement)) {
+      continue
+    }
+
+    collapseElement.classList.remove('collapsing')
+    collapseElement.style.height = ''
+
+    if (collapseState.isShown) {
+      collapseElement.classList.add('show')
+    } else {
+      collapseElement.classList.remove('show')
+    }
+  }
+
+  for (const toggleState of modalDefaultState.toggleStates) {
+    if (!(toggleState.element instanceof HTMLElement)) {
+      continue
+    }
+
+    toggleState.element.classList.toggle('collapsed', toggleState.isCollapsed)
+    toggleState.element.setAttribute('aria-expanded', String(toggleState.isExpanded))
+  }
+
+  modalElement.dispatchEvent(new CustomEvent(FULLSCREEN_MODAL_RESET_EVENT, {
+    bubbles: true,
+    detail: { modal: modalElement }
+  }))
+}
+
 function scheduleRefresh(refresh, frameState) {
   if (frameState.isQueued) {
     return
@@ -263,6 +330,7 @@ function enableNavbarAzFullscreen() {
       synchronizeNavColumnHeights(modal)
     }
 
+    const modalDefaultState = captureModalDefaultState(modal)
     const refreshFrameState = { isQueued: false }
 
     const refreshOnCollapseEvent = event => {
@@ -272,9 +340,15 @@ function enableNavbarAzFullscreen() {
       }
     }
 
+    const resetOnModalHidden = () => {
+      restoreModalDefaultState(modal, modalDefaultState)
+      refresh()
+    }
+
     const debouncedRefresh = debounce(refresh, RESIZE_DEBOUNCE_MS)
 
     EventHandler.on(modal, 'shown.bs.modal', refresh)
+    EventHandler.on(modal, 'hidden.bs.modal', resetOnModalHidden)
     EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent)
     EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent)
