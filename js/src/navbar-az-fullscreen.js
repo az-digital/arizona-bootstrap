@@ -298,11 +298,6 @@ function synchronizeModalScrollbarPadding(modalElement) {
   }
 
   for (const section of getModalSections(modalElement)) {
-    // if (section.classList.contains('modal-body') && !isDesktopViewport()) {
-    //   section.style.paddingRight = '0'
-    //   continue
-    // }
-
     section.style.paddingRight = `${scrollbarWidth}px`
   }
 }
