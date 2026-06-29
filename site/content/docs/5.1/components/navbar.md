@@ -932,7 +932,7 @@ To fix the non-modal AZ Navbar Fullscreen to the top of the viewport, add Bootst
 Because fixed navbars are removed from normal document flow, also add `.navbar-az-fullscreen-fixed-top-offset` to your main content wrapper so page content does not render underneath the navbar.
 
 {{< example show_markup=false >}}
-<main class="navbar-az-fullscreen-fixed-top-offset">
+<div class="navbar-az-fullscreen-fixed-top-offset">
   <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
     <div class="container-lg">
       <a class="navbar-brand" href="#">
@@ -943,11 +943,11 @@ Because fixed navbars are removed from normal document flow, also add `.navbar-a
       </button>
     </div>
   </nav>
-</main>
+</div>
 {{< /example >}}
 
 ```html
-<main class="navbar-az-fullscreen-fixed-top-offset">
+<div class="navbar-az-fullscreen-fixed-top-offset">
   <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
     <div class="container-lg">
       <a class="navbar-brand" href="#">
@@ -958,7 +958,7 @@ Because fixed navbars are removed from normal document flow, also add `.navbar-a
       </button>
     </div>
   </nav>
-</main>
+</div>
 ```
 
 ### CSS Variables
