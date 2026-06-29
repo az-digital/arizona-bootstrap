@@ -926,6 +926,26 @@ This behavior is initialized by `enableNavbarAzFullscreen()` and is included aut
 #### Mobile Menu
 Documentation coming soon.
 
+### Fixed Top
+To fix the non-modal AZ Navbar Fullscreen to the top of the viewport, add Bootstrap's `.fixed-top` class to `.navbar-az-fullscreen`.
+
+Because fixed navbars are removed from normal document flow, also add `.navbar-az-fullscreen-fixed-top-offset` to your main content wrapper so page content does not render underneath the navbar.
+
+{{< example >}}
+<main class="navbar-az-fullscreen-fixed-top-offset">
+  <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" aria-label="Open site menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</main>
+{{< /example >}}
+
 ### CSS Variables
 The following properties are set and used:
 
