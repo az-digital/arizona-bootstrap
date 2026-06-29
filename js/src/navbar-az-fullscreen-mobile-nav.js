@@ -433,8 +433,9 @@ class NavbarAzFullscreenMobileNav {
     if (footerLinks && footerLinks.length > 0) {
       for (const link of footerLinks) {
         const isActive = link.href === window.location.href ? ' active' : ''
+        const ariaCurrent = isActive ? ' aria-current="page"' : ''
         html += '<li class="nav-item">'
-        html += `<a class="nav-link${isActive}" href="${link.href}">`
+        html += `<a class="nav-link${isActive}" href="${link.href}"${ariaCurrent}>`
         html += `<span class="nav-link-text">${link.text}</span>`
         html += '</a>'
         html += '</li>'
