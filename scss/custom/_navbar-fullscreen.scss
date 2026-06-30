@@ -262,8 +262,7 @@
     overflow: hidden;
   }
 
-  .az-search,
-  .navbar-az-fullscreen-search {
+  .az-search {
     --az-search-color: var(--bs-cool-gray);
     --az-search-font: italic normal normal 20px/24px proxima-nova;
     max-width: none;
@@ -773,15 +772,13 @@
       }
     }
 
-    .az-search,
-    .navbar-az-fullscreen-search {
+    .az-search {
       margin-top: 12px;
       margin-bottom: 0;
     }
   }
 
-  .az-search,
-  .navbar-az-fullscreen-search {
+  .az-search {
     --az-search-height: 35px;
     flex: none;
     margin-right: 18px;
@@ -799,8 +796,7 @@
   }
 
   .modal-header {
-    .az-search,
-    .navbar-az-fullscreen-search {
+    .az-search {
       --az-search-height: 51px;
 
       .input-group {

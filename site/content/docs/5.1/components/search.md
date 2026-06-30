@@ -11,11 +11,10 @@ toc: true
 
 The AZ Search component provides a stylized search field built with Bootstrap form controls and input groups. It is intended to be reusable in AZ Navbar Fullscreen and other page regions where a prominent site search is needed.
 
-The preferred class is `.az-search`. The legacy `.navbar-az-fullscreen-search` class is still supported for compatibility.
+Use the `.az-search` class for all AZ Search component implementations.
 
 <style>
-  .bd-content .az-search,
-  .bd-content .navbar-az-fullscreen-search {
+  .bd-content .az-search {
     --az-search-height: 43px;
     --az-search-width: 265px;
     padding: 5px 15px;
@@ -74,10 +73,10 @@ The preferred class is `.az-search`. The legacy `.navbar-az-fullscreen-search` c
 
 ## Navbar Fullscreen Integration
 
-When used in AZ Navbar Fullscreen, combine `.az-search` with `.navbar-az-fullscreen-search` to keep existing fullscreen-specific spacing and responsive overrides.
+When used in AZ Navbar Fullscreen, apply `.az-search` directly and combine it with utility classes as needed for spacing and responsive layout.
 
 {{< example >}}
-<form class="az-search navbar-az-fullscreen-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
+<form class="az-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
   <label class="visually-hidden" for="az-search-navbar-example">Search the site</label>
   <div class="input-group d-none d-lg-flex">
     <input id="az-search-navbar-example" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -92,7 +91,7 @@ When used in AZ Navbar Fullscreen, combine `.az-search` with `.navbar-az-fullscr
 {{< /example >}}
 
 ```html
-<form class="az-search navbar-az-fullscreen-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
+<form class="az-search ms-auto ms-lg-0 me-2 me-lg-4" role="search">
   <label class="visually-hidden" for="az-search-navbar-example">Search the site</label>
   <div class="input-group d-none d-lg-flex">
     <input id="az-search-navbar-example" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
