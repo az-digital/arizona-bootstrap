@@ -21690,6 +21690,18 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
     column-count: 4;
   }
 }
+.proxima-nova {
+  font-family: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.proxima-nova-condensed {
+  font-family: proxima-nova-condensed, proxima-nova, calibri, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.garamond-premier-pro {
+  font-family: garamond-premier-pro, garamond-premier-pro, serif;
+}
+
 .list-group-item.active h1,
 .list-group-item.active h2,
 .list-group-item.active h3,
