@@ -20,7 +20,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -31,7 +31,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -46,7 +46,7 @@ The blue Arizona Header is to be used on marketing-approved subdomains of arizon
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -57,7 +57,7 @@ The blue Arizona Header is to be used on marketing-approved subdomains of arizon
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -73,7 +73,7 @@ The Arizona Header can be extended with off-canvas search and navigation for mob
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
       <div class="d-lg-none d-flex col-auto px-0">
         <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavExample" aria-controls="azMobileNavExample" class="btn btn-arizona-header" id="jsAzSearch">
@@ -108,7 +108,7 @@ The Arizona Header can be extended with off-canvas search and navigation for mob
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
       <div class="d-lg-none d-flex col-auto px-0">
         <button data-bs-toggle="offcanvas" type="button" data-bs-target="#azMobileNavExample" aria-controls="azMobileNavExample" class="btn btn-arizona-header" id="jsAzSearch">
@@ -150,7 +150,7 @@ In most cases, the Arizona Header element is intended to be fixed to the top of 
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="../../dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
@@ -162,7 +162,7 @@ In most cases, the Arizona Header element is intended to be fixed to the top of 
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
-        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.min.svg" fetchpriority="high">
+        <img class="arizona-line-logo" alt="The University of Arizona Wordmark Line Logo White" src="/dist/css/img/ua_wordmark_line_logo_white_rgb.svg" fetchpriority="high">
       </a>
     </div>
   </div>
