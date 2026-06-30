@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: navbar-az-fullscreen.js
+ * Arizona Bootstrap: navbar-az-fullscreen-mobile-nav.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -10,6 +10,9 @@
  * Handles paged navigation for mobile view of #navbar-az-fullscreen-nav-mobile-col.
  */
 
+const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
+const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
+
 class NavbarAzFullscreenMobileNav {
   constructor() {
     this.primaryNavElementId = '#az-navbar-az-fullscreen-primary-accordion'
@@ -17,17 +20,63 @@ class NavbarAzFullscreenMobileNav {
     this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col')
     this.modalFooterTopId = '#navbar-az-fullscreen-modal-footer-top'
     this.modalFooterBottomId = '#navbar-az-fullscreen-modal-footer-bottom'
+    this.modalElement = this.mobileCol?.closest(FULLSCREEN_MODAL_SELECTOR)
 
     if (!this.primaryNavContainer || !this.mobileCol) {
       // One or more required containers not found
       return
     }
 
+    this.mobileColInitialHTML = this.mobileCol.innerHTML
+
+    const topFooter = document.querySelector(this.modalFooterTopId)
+    const bottomFooter = document.querySelector(this.modalFooterBottomId)
+    this.modalFooterTopInitialHTML = topFooter?.innerHTML ?? null
+    this.modalFooterBottomInitialHTML = bottomFooter?.innerHTML ?? null
+    this.modalFooterTopInitialClassName = topFooter?.className ?? null
+    this.modalFooterBottomInitialClassName = bottomFooter?.className ?? null
+
     // Save call-to-action items
     const ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions')
     this.mobileCtaHTML = null
     if (ctaElement) {
       this.mobileCtaHTML = ctaElement.cloneNode(true).outerHTML
+    }
+
+    this.modalElement?.addEventListener(FULLSCREEN_MODAL_RESET_EVENT, () => {
+      this.resetToDefaultState()
+    })
+
+    this.init()
+  }
+
+  resetToDefaultState() {
+    if (!(this.mobileCol instanceof HTMLElement)) {
+      return
+    }
+
+    this.mobileCol.innerHTML = this.mobileColInitialHTML
+
+    const topFooter = document.querySelector(this.modalFooterTopId)
+    if (topFooter instanceof HTMLElement) {
+      if (typeof this.modalFooterTopInitialClassName === 'string') {
+        topFooter.className = this.modalFooterTopInitialClassName
+      }
+
+      if (typeof this.modalFooterTopInitialHTML === 'string') {
+        topFooter.innerHTML = this.modalFooterTopInitialHTML
+      }
+    }
+
+    const bottomFooter = document.querySelector(this.modalFooterBottomId)
+    if (bottomFooter instanceof HTMLElement) {
+      if (typeof this.modalFooterBottomInitialClassName === 'string') {
+        bottomFooter.className = this.modalFooterBottomInitialClassName
+      }
+
+      if (typeof this.modalFooterBottomInitialHTML === 'string') {
+        bottomFooter.innerHTML = this.modalFooterBottomInitialHTML
+      }
     }
 
     this.init()
