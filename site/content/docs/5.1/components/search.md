@@ -13,21 +13,54 @@ The AZ Search component provides a stylized search field built with Bootstrap fo
 
 The preferred class is `.az-search`. The legacy `.navbar-az-fullscreen-search` class is still supported for compatibility.
 
+<style>
+  .bd-content .az-search,
+  .bd-content .navbar-az-fullscreen-search {
+    --az-navbar-fullscreen-search-height: 43px;
+    --az-navbar-fullscreen-search-width: 265px;
+    padding: 5px 15px;
+    margin-right: 0;
+
+    .input-group {
+      .btn {
+        padding: 9px;
+      }
+      
+      .btn::before {
+        /* position: absolute; */
+        top: 9px;
+        bottom: 9px;
+      }
+    }
+
+    .form-control {
+      padding: 6px 12px 6px 12px;
+    }
+
+    .az-search-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>
+
 ## Example
 
 {{< example >}}
-<form class="az-search" role="search">
-  <label class="visually-hidden" for="az-search-example">Search the site</label>
-  <div class="input-group">
-    <input id="az-search-example" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-    <button class="btn" type="submit" aria-label="Submit site search">
-      <span class="az-search-icon" aria-hidden="true"></span>
-    </button>
-  </div>
-</form>
+<div class="bg-blue">
+  <form class="az-search" role="search">
+    <label class="visually-hidden" for="az-search-example">Search the site</label>
+    <div class="input-group">
+      <input id="az-search-example" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+      <button class="btn" type="submit" aria-label="Submit site search">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+</div>
 {{< /example >}}
 
-```html
+<!-- ```html
 <form class="az-search" role="search">
   <label class="visually-hidden" for="az-search-example">Search the site</label>
   <div class="input-group">
@@ -37,7 +70,7 @@ The preferred class is `.az-search`. The legacy `.navbar-az-fullscreen-search` c
     </button>
   </div>
 </form>
-```
+``` -->
 
 ## Navbar Fullscreen Integration
 
