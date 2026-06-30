@@ -82,6 +82,8 @@
   .az-search {
     --az-search-width: 280px;
     --az-search-height: 60px;
+    --az-search-padding-y: 0;
+    --az-search-padding-x: 0;
   }
 }
 
@@ -270,6 +272,8 @@
   .az-search {
     --az-search-width: 280px;
     --az-search-height: 60px;
+    --az-search-padding-y: 0;
+    --az-search-padding-x: 0;
     --az-search-color: var(--bs-cool-gray);
     --az-search-font: italic normal normal 20px/24px proxima-nova;
     max-width: none;
