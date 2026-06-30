@@ -15,8 +15,9 @@ Use the `.az-search` class for all AZ Search component implementations.
 
 <style>
   .bd-content .az-search {
-    --az-search-height: 43px;
-    --az-search-width: 265px;
+    /* --az-search-width: 265px;
+    --az-search-height: 43px; */
+
     padding: 5px 15px;
     margin-right: 0;
 
