@@ -16,8 +16,8 @@ The preferred class is `.az-search`. The legacy `.navbar-az-fullscreen-search` c
 <style>
   .bd-content .az-search,
   .bd-content .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-height: 43px;
-    --az-navbar-fullscreen-search-width: 265px;
+    --az-search-height: 43px;
+    --az-search-width: 265px;
     padding: 5px 15px;
     margin-right: 0;
 

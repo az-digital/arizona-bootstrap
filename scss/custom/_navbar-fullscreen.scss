@@ -264,8 +264,8 @@
 
   .az-search,
   .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
-    --az-navbar-fullscreen-search-font: italic normal normal 20px/24px proxima-nova;
+    --az-search-color: var(--bs-cool-gray);
+    --az-search-font: italic normal normal 20px/24px proxima-nova;
     max-width: none;
     margin-top: 40px;
     margin-right: 0;
@@ -782,7 +782,7 @@
 
   .az-search,
   .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-height: 35px;
+    --az-search-height: 35px;
     flex: none;
     margin-right: 18px;
 
@@ -801,7 +801,7 @@
   .modal-header {
     .az-search,
     .navbar-az-fullscreen-search {
-      --az-navbar-fullscreen-search-height: 51px;
+      --az-search-height: 51px;
 
       .input-group {
         .form-control {
