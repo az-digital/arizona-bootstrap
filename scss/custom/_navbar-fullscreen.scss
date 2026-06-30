@@ -84,6 +84,7 @@
     --az-search-height: 60px;
     --az-search-padding-y: 0;
     --az-search-padding-x: 0;
+    margin-right: 30px;
   }
 }
 
@@ -760,6 +761,10 @@
       margin-bottom: 0;
       @include border-radius(4px);
     }
+
+    .az-search {
+      margin-right: 18px;
+    }
   }
 
   .navbar-az-fullscreen-modal {
@@ -792,7 +797,6 @@
   .az-search {
     --az-search-height: 35px;
     flex: none;
-    margin-right: 18px;
 
     .az-search-toggle,
     .navbar-toggler-search {

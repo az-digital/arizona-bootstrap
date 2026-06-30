@@ -19,7 +19,7 @@ Use the `.az-search` class for all AZ Search component implementations.
     --az-search-height: 43px;*/
 
     /* padding: 5px 15px; */
-    margin-right: 0;
+    /* margin-right: 0; */
 
     .input-group {
       .btn {
