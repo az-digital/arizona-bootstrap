@@ -18,9 +18,9 @@ import Tab from '../node_modules/bootstrap/js/src/tab.js'
 import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
-import AzTab from './src/az-tab.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
 import enableAzNavbar from './src/navbar.js'
+import enableNavbarAzFullscreen from './src/navbar-az-fullscreen.js'
 import enableNavbarAzFullscreenMobileNav from './src/navbar-az-fullscreen-mobile-nav.js'
 
 export default {
@@ -34,12 +34,12 @@ export default {
   Popover,
   ScrollSpy,
   Tab,
-  AzTab,
   Toast,
   Tooltip,
   fixModalAriaHidden,
   photoGalleryGridSlideToImage,
   enableAzNavbar,
+  enableNavbarAzFullscreen,
   enableNavbarAzFullscreenMobileNav
 }
 
@@ -59,6 +59,11 @@ photoGalleryGridSlideToImage()
  * Enable hover-driven dropdowns on AZ Navbar.
  */
 enableAzNavbar()
+
+/**
+ * Enable AZ Navbar Fullscreen desktop nav column height synchronization.
+ */
+enableNavbarAzFullscreen()
 
 /**
  * Enable AZ Navbar Fullscreen mobile navigation.

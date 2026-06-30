@@ -6,6 +6,12 @@ updates:
       interval: "daily"
     target-branch: "2.x"
     ignore:
+      - dependency-name: "@babel/cli"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/preset-env"
+        update-types: ["version-update:semver-major"]
       - dependency-name: "bootstrap"
       - dependency-name: "eslint"
       - dependency-name: "eslint-config-xo"
@@ -31,6 +37,12 @@ updates:
       interval: "daily"
     target-branch: "main"
     ignore:
+      - dependency-name: "@babel/cli"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/preset-env"
+        update-types: ["version-update:semver-major"]
       - dependency-name: "bootstrap"
       - dependency-name: "eslint"
       - dependency-name: "eslint-config-xo"

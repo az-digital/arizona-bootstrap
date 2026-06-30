@@ -321,7 +321,7 @@ Use data attributes to easily control the position of the carousel. `data-bs-sli
 Call carousel manually with:
 
 ```js
-const carousel = new bootstrap.Carousel('#myCarousel')
+const carousel = new arizonaBootstrap.Carousel('#myCarousel')
 ```
 
 ### Options
@@ -352,7 +352,7 @@ You can create a carousel instance with the carousel constructor, and pass on an
 ```js
 const myCarouselElement = document.querySelector('#myCarousel')
 
-const carousel = new bootstrap.Carousel(myCarouselElement, {
+const carousel = new arizonaBootstrap.Carousel(myCarouselElement, {
   interval: 2000,
   touch: false
 })
@@ -363,8 +363,8 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 | --- | --- |
 | `cycle` | Starts cycling through the carousel items from left to right. |
 | `dispose` | Destroys an element's carousel. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the carousel instance associated to a DOM element. You can use it like this: `bootstrap.Carousel.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a carousel instance associated to a DOM element, or creates a new one in case it wasn't initialized. You can use it like this: `bootstrap.Carousel.getOrCreateInstance(element)`. |
+| `getInstance` | Static method which allows you to get the carousel instance associated to a DOM element. You can use it like this: `arizonaBootstrap.Carousel.getInstance(element)`. |
+| `getOrCreateInstance` | Static method which returns a carousel instance associated to a DOM element, or creates a new one in case it wasn't initialized. You can use it like this: `arizonaBootstrap.Carousel.getOrCreateInstance(element)`. |
 | `next` | Cycles to the next item. **Returns to the caller before the next item has been shown** (e.g., before the `slid.bs.carousel` event occurs). |
 | `nextWhenVisible` | Don't cycle carousel to next when the page, the carousel, or the carousel's parent aren't visible. **Returns to the caller before the target item has been shown**. |
 | `pause` | Stops the carousel from cycling through items. |

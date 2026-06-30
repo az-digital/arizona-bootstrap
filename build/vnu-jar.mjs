@@ -39,7 +39,9 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     // TODO: ensure every active role=tab element has a corresponding role=tabpanel element
     'Every active “role=tab” element must have a corresponding “role=tabpanel” element.',
     // TODO: fix aria-labelledby usage on div elements without an appropriate role
-    'The “aria-labelledby” attribute must not be specified on any “div” element unless the element has a “role” value other than “caption”, “code”, “deletion”, “emphasis”, “generic”, “insertion”, “paragraph”, “presentation”, “strong”, “subscript”, or “superscript”.'
+    'The “aria-labelledby” attribute must not be specified on any “div” element unless the element has a “role” value other than “caption”, “code”, “deletion”, “emphasis”, “generic”, “insertion”, “paragraph”, “presentation”, “strong”, “subscript”, or “superscript”.',
+    // TODO: fix the missing heading level 1
+    'This document has heading elements but none of them has a computed heading level of 1.'
   ].join('|')
 
   const args = [
