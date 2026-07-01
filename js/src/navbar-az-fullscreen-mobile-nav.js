@@ -205,7 +205,7 @@ class NavbarAzFullscreenMobileNav {
     parentNav.insertBefore(clonedNavItem, parentNav.firstChild)
 
     // Set up event listeners for footer buttons
-    const footerButtons = clonedNavItem.querySelectorAll('.btn')
+    const footerButtons = clonedNavItem.querySelectorAll(':scope .btn')
     for (const button of footerButtons) {
       button.addEventListener('click', e => {
         const targetId = button.getAttribute('data-az-menu-element')
@@ -343,28 +343,26 @@ class NavbarAzFullscreenMobileNav {
       // Clone the nav element to avoid modifying the original
       const navClone = nav.cloneNode(true)
 
-      // Remove secondary panels if they exist
-      const secondaryPanels = navClone.querySelectorAll('.navbar-az-fullscreen-modal-menu-primary-submenu')
+      // Remove secondary and tertiary panels if they exist
+      const secondaryPanels = navClone.querySelectorAll(':scope .navbar-az-fullscreen-modal-menu-primary-submenu')
       if (secondaryPanels) {
         for (const panel of secondaryPanels) {
           panel.remove()
         }
       }
-
-      // Remove tertiary panels if they exist
-      const tertiaryPanel = navClone.querySelectorAll('.navbar-az-fullscreen-modal-menu-secondary-submenu')
-      if (tertiaryPanel) {
-        for (const panel of tertiaryPanel) {
+      const tertiaryPanels = navClone.querySelectorAll(':scope .navbar-az-fullscreen-modal-menu-secondary-submenu')
+      if (tertiaryPanels) {
+        for (const panel of tertiaryPanels) {
           panel.remove()
         }
       }
 
       // Confirm if any active links are present
-      const activeLinkExists = navClone.querySelectorAll('.nav-link.active').length > 0
+      const activeLinkExists = navClone.querySelectorAll(':scope .nav-link.active').length > 0
 
       // Process all buttons in the cloned nav
       let buttonCounter = 0
-      const buttons = navClone.querySelectorAll('button')
+      const buttons = navClone.querySelectorAll(':scope button')
       for (const button of buttons) {
         // Store data-bs-target value before removing attributes
         const targetId = button.getAttribute('data-bs-target')
