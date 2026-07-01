@@ -94,7 +94,7 @@ class NavbarAzFullscreenMobileNav {
         const tertiaryLabel = link.textContent.trim()
         // Extract parent label from the secondary menu containing this tertiary panel
         const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
-        const parentLabel = secondaryContentButton?.previousElementSibling.textContent || ''
+        const parentLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
         const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
         const secondaryContentId = secondaryContent?.getAttribute('id') || ''
 
@@ -302,7 +302,7 @@ class NavbarAzFullscreenMobileNav {
    * @returns {string} HTML string for the menu
    */
   buildMenuHtml(navLevel, sourceElement, label = null, parentLabel = null) {
-    let html = '<div class="navbar-az-fullscreen-nav-menu-mobile">'
+    let html = ''
 
     if (navLevel === 1) {
       if (this.primaryNavMenuHTML) {
@@ -415,10 +415,8 @@ class NavbarAzFullscreenMobileNav {
    * @returns {string} HTML string for the footer menu
    */
   buildFooterMenuHtml(sourceElement, label = null) {
-    let html = '<div class="navbar-az-fullscreen-nav-menu-mobile">'
-
     // Add back button
-    html += this.createBackButton('Main Menu')
+    let html = this.createBackButton('Main Menu')
 
     // Get the original heading element and extract its text
     const originalHeading = sourceElement.querySelector('h2.navbar-brand')
@@ -440,17 +438,11 @@ class NavbarAzFullscreenMobileNav {
     if (footerLinks && footerLinks.length > 0) {
       for (const link of footerLinks) {
         const isActive = link.href === window.location.href ? ' active' : ''
-        html += '<li class="nav-item">'
-        html += `<a class="nav-link${isActive}" href="${link.href}">`
-        html += `<span class="nav-link-text">${link.text}</span>`
-        html += '</a>'
-        html += '</li>'
+        html += `<li class="nav-item"><a class="nav-link${isActive}" href="${link.href}"><span class="nav-link-text">${link.text}</span></a></li>`
       }
     }
 
-    html += '</ul>'
-    html += '</div>'
-    html += '</div>'
+    html += '</ul></div></div>'
 
     return html
   }
