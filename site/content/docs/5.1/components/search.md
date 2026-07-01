@@ -66,7 +66,7 @@ When used in AZ Navbar Fullscreen, apply `.az-search` directly and combine it wi
 - Keep a programmatic label by including either a visible label or a `.visually-hidden` label.
 - Keep descriptive `aria-label` text on icon-only submit or mobile toggle buttons.
 - Use `type="search"` for proper browser semantics and platform affordances.
-- The component includes `:focus-within` styles to improve keyboard focus visibility.
+- The component includes `:focus-visible` styles on search controls to improve keyboard focus visibility.
 
 ## CSS Variables
 
