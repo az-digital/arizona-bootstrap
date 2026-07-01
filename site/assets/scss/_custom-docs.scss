@@ -207,6 +207,20 @@
 .arizona-header.az-fixed-header-on-mobile {
   position: static;
 }
+
+// >> AZ Navbar Fullscreen
+// Keep docs examples visually compact by disabling fixed utility framing styles
+// and helper offset padding that are only needed in real page layout context.
+.bd-example {
+  .navbar-az-fullscreen.fixed-top {
+    margin: 0;
+  }
+
+  .navbar-az-fullscreen-fixed-top-offset {
+    padding-top: 0;
+  }
+}
+
 @media screen and (max-width: 992px) {
   body:has(.az-fixed-header-on-mobile) {
     padding-top: unset;
