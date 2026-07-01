@@ -22,15 +22,15 @@ Use the `.az-search` class for all AZ Search component implementations.
     /* margin-right: 0; */
 
     .input-group {
-      .btn {
+      /* .btn {
         padding: 9px;
-      }
-      
-      .btn::before {
-        /* position: absolute; */
+      } */
+
+      /* .btn::before {
+        position: absolute;
         top: 9px;
         bottom: 9px;
-      }
+      } */
     }
 
     .form-control {

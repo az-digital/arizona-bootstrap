@@ -8,6 +8,7 @@
   --az-search-height: 43px;
   --az-search-padding-y: 5px;
   --az-search-padding-x: 15px;
+  --az-search-btn-padding: 9px;
   --az-search-color: var(--bs-white);
   --az-search-hover-color: var(--bs-sky);
   --az-search-border-width: 2px;
@@ -37,7 +38,7 @@
     overflow: visible;
 
     .btn {
-      padding: 13px;
+      padding: var(--az-search-btn-padding);
       border-width: var(--az-search-border-width);
     }
 
