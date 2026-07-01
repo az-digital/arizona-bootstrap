@@ -252,10 +252,10 @@ class NavbarAzFullscreenMobileNav {
 
     // Hide footer button for the current footer menu page
     if (isFooterNav) {
-      if (sourceElementId === this.modalFooterTop?.id) {
+      if (sourceElementId === '#' + this.modalFooterTop?.id) {
         this.modalFooterTop.classList.add('d-none')
         this.modalFooterBottom.classList.remove('d-none')
-      } else if (sourceElementId === this.modalFooterBottom?.id) {
+      } else if (sourceElementId === '#' + this.modalFooterBottom?.id) {
         this.modalFooterBottom.classList.add('d-none')
         this.modalFooterTop.classList.remove('d-none')
       }
