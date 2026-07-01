@@ -305,8 +305,10 @@ class NavbarAzFullscreenMobileNav {
     let html = '<div class="navbar-az-fullscreen-nav-menu-mobile">'
 
     if (navLevel === 1) {
-      // Add call-to-action items
-      if (this.mobileCtaHTML) {
+      if (this.primaryNavMenuHTML) {
+        return this.primaryNavMenuHTML
+      } else if (this.mobileCtaHTML) {
+        // Add call-to-action items
         html += this.mobileCtaHTML
       }
     } else {
@@ -397,6 +399,12 @@ class NavbarAzFullscreenMobileNav {
     }
 
     html += '</div>'
+
+    // Save the primary nav menu HTML for future use
+    if (navLevel === 1) {
+      this.primaryNavMenuHTML = html
+    }
+
     return html
   }
 
