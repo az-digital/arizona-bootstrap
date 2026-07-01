@@ -1115,6 +1115,7 @@
       font-size: 18px;
       line-height: 21px;
       letter-spacing: .36px;
+      pointer-events: none;
     }
   }
 
@@ -1155,4 +1156,8 @@
   flex-direction: column;
   padding: 0;
   text-align: left;
+
+  > * {
+    pointer-events: none;
+  }
 }
