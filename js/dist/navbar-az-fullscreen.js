@@ -42,6 +42,7 @@
   var DESKTOP_MEDIA_QUERY = '(min-width: 992px)';
   var RESIZE_DEBOUNCE_MS = 100;
   var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var MODAL_SECTION_SELECTOR = '.modal-header, .modal-body, .modal-footer';
   var FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset';
   var NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col';
   var COLLAPSE_SELECTOR = '.collapse[id]';
@@ -280,6 +281,39 @@
     });
   }
 
+  // Mirror Bootstrap's scrollbar-width `padding-right` compensation onto each
+  // fullscreen modal section (header, body, footer) so their inner
+  // `.container-lg` wrappers all align with the `.fixed-top` non-modal navbar
+  // (which Bootstrap also compensates) while the modal is open. Padding is
+  // applied per-section, rather than on `.modal-content`, so the modal-footer's
+  // colored background continues to reach the right edge of the viewport.
+  // See https://github.com/az-digital/arizona-bootstrap/issues/2100.
+  function getScrollbarWidth() {
+    return Math.abs(window.innerWidth - document.documentElement.clientWidth);
+  }
+  function getModalSections(modalElement) {
+    return [].concat(modalElement.querySelectorAll(MODAL_SECTION_SELECTOR)).filter(function (section) {
+      return section instanceof HTMLElement;
+    });
+  }
+  function synchronizeModalScrollbarPadding(modalElement) {
+    var scrollbarWidth = getScrollbarWidth();
+    if (scrollbarWidth <= 0) {
+      clearModalScrollbarPadding(modalElement);
+      return;
+    }
+    for (var _iterator11 = _createForOfIteratorHelperLoose(getModalSections(modalElement)), _step11; !(_step11 = _iterator11()).done;) {
+      var section = _step11.value;
+      section.style.paddingRight = scrollbarWidth + "px";
+    }
+  }
+  function clearModalScrollbarPadding(modalElement) {
+    for (var _iterator12 = _createForOfIteratorHelperLoose(getModalSections(modalElement)), _step12; !(_step12 = _iterator12()).done;) {
+      var section = _step12.value;
+      section.style.paddingRight = '';
+    }
+  }
+
   /**
    * Keep fullscreen nav columns equal-height to the tallest visible column while
    * preserving independent scrolling when available vertical space is limited.
@@ -293,7 +327,7 @@
       return;
     }
     var _loop = function _loop() {
-      var modal = _step11.value;
+      var modal = _step13.value;
       if (!(modal instanceof HTMLElement)) {
         return 1; // continue
       }
@@ -321,12 +355,18 @@
       EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'hidden.bs.collapse', refreshOnCollapseEvent);
+      EventHandler.on(modal, 'show.bs.modal', function () {
+        return synchronizeModalScrollbarPadding(modal);
+      });
+      EventHandler.on(modal, 'hidden.bs.modal', function () {
+        return clearModalScrollbarPadding(modal);
+      });
       window.addEventListener('resize', debouncedRefresh);
 
       // Sync once so initially shown states render correctly on first paint.
       refresh();
     };
-    for (var _iterator11 = _createForOfIteratorHelperLoose(fullscreenModals), _step11; !(_step11 = _iterator11()).done;) {
+    for (var _iterator13 = _createForOfIteratorHelperLoose(fullscreenModals), _step13; !(_step13 = _iterator13()).done;) {
       if (_loop()) continue;
     }
   }
