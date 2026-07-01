@@ -84,7 +84,7 @@
     &:focus-visible {
       position: relative;
       z-index: 1;
-      border-color: var(--az-search-focus-ring-color);
+      border: var(--az-search-border-width) solid var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
     }
@@ -112,7 +112,7 @@
     &:focus-visible {
       position: relative;
       z-index: 1;
-      border-color: var(--az-search-focus-ring-color);
+      border: var(--az-search-border-width) solid var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
 
