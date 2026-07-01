@@ -11,12 +11,12 @@ extra_js:
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 mt-0">Heads Up!</p>
-  If you're using Arizona Bootstrap, Proxima Nova will still need to be added to
+  If you're using Arizona Bootstrap, Proxima Nova and Garamond Premier Pro will still need to be added to
   your project.
 </div>
 
 ## How to Use
-The Proxima Nova font suite is available for official use by University of Arizona
+The Proxima Nova and Garamond Premier Pro font suites are available for official use by University of Arizona
 employees through a license with Adobe Typekit.
 
 ### Reference link
@@ -29,6 +29,8 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 ```html
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Garamond Premier Pro reference. -->
+<link href="https://use.typekit.net/eyf6fhr.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
@@ -88,6 +90,57 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 ## Adding Specific CSS Classes
 <span class="badge bg-warning align-text-top">Important</span> The following instructions are for adding specific CSS classes for font weights or styles. If using Arizona Bootstrap, you will most likely not need to do this unless you are trying to use a specific variant.
 
+
+
+## Utility Classes
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+`.proxima-nova`.
+
+{{< example >}}
+<p class="proxima-nova">
+  This is the regular Proxima Nova font.
+</p>
+{{< /example >}}
+
+`.proxima-nova-condensed`.
+
+{{< example >}}
+<p class="proxima-nova-condensed">
+  This is the condensed Proxima Nova font.
+</p>
+{{< /example >}}
+
+`.garamond-premier-pro`.
+
+{{< example >}}
+<p class="garamond-premier-pro">
+  This is the Garamond Premier Pro font.
+</p>
+{{< /example >}}
+
+<div>
+  <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+</div>
+
+### Garamond Premier Pro
+
+```css
+.garamond-premier-pro {
+font-family: garamond-premier-pro, serif;
+font-weight: 500;
+font-style: normal;
+}
+```
+{{< example >}}
+<div class="garamond-premier-pro">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span> <br>
+  <span>0123456789</span> <br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
 
 <div>
   <button class="js-specimen-modal-trigger btn btn-info float-end" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
