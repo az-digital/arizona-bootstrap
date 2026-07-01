@@ -533,13 +533,16 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< /example >}}
 
 ### Search
+
+For standalone usage and full component guidance, see [Search]({{< docsref "/components/search" >}}).
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search ms-auto me-4" role="search">
-      <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
+    <form class="az-search ms-auto me-4" role="search">
+      <label class="visually-hidden" for="az-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
-        <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+        <input id="az-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
         <button class="btn" type="submit" aria-label="Submit site search">
           <span class="search-icon" aria-hidden="true"></span>
         </button>
@@ -721,7 +724,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
+          <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -804,7 +807,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
+          <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
@@ -972,9 +975,9 @@ On the `.navbar-az-fullscreen-actions` custom class:
 
 {{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
-On the `.navbar-az-fullscreen-search` custom class:
+On the `.az-search` custom class:
 
-{{< scss-docs name="navbar-az-fullscreen-search-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+{{< scss-docs name="az-search-css-vars" file="custom/_search.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-modal` custom class:
 
