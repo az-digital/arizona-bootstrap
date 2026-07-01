@@ -9,6 +9,8 @@
   --az-search-padding-y: 5px;
   --az-search-padding-x: 15px;
   --az-search-btn-padding: 9px;
+  --az-search-input-padding: 6px 12px 6px 12px;
+  --az-search-icon-size: 24px;
   --az-search-color: var(--bs-white);
   --az-search-hover-color: var(--bs-sky);
   --az-search-border-width: 2px;
@@ -55,7 +57,7 @@
   }
 
   .form-control {
-    padding: 8px 12px 8px 16px;
+    padding: var(--az-search-input-padding);
     font: var(--az-search-font);
     color: var(--az-search-color);
     background-color: transparent;
@@ -133,8 +135,8 @@
   .az-search-icon,
   .search-icon {
     display: block;
-    width: 35px;
-    height: 35px;
+    width: var(--az-search-icon-size);
+    height: var(--az-search-icon-size);
     background-image: var(--az-search-icon);
     background-repeat: no-repeat;
     background-position: center;

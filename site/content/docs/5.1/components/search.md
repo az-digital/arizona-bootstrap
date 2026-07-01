@@ -33,14 +33,14 @@ Use the `.az-search` class for all AZ Search component implementations.
       } */
     }
 
-    .form-control {
+    /* .form-control {
       padding: 6px 12px 6px 12px;
-    }
+    } */
 
-    .az-search-icon {
+    /* .az-search-icon {
       width: 24px;
       height: 24px;
-    }
+    } */
   }
 </style>
 
