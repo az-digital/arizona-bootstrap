@@ -12,6 +12,7 @@
 
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
+const MAIN_MENU_LABEL = 'Main Menu'
 
 class NavbarAzFullscreenMobileNav {
   constructor() {
@@ -79,7 +80,7 @@ class NavbarAzFullscreenMobileNav {
         const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
         const secondaryContentId = secondaryContent?.getAttribute('id') || ''
 
-        this.showTertiaryNav(tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
+        this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
         activeLinkFound = true
       }
     }
@@ -94,7 +95,7 @@ class NavbarAzFullscreenMobileNav {
           const label = link.textContent.trim()
 
           if (targetId) {
-            this.showSecondaryNav(`#${targetId}`, label)
+            this.showNavMenu(2, `#${targetId}`, label)
             activeLinkFound = true
             break
           }
@@ -180,7 +181,7 @@ class NavbarAzFullscreenMobileNav {
 
     // If a match was found in the this footer's links, display the menu page
     if (!activeLinkFound && found) {
-      this.showSecondaryNav(`#${footer.id}`, headingText)
+      this.showNavMenu(2, `#${footer.id}`, headingText)
     }
 
     // Clone the first nav item
@@ -241,7 +242,7 @@ class NavbarAzFullscreenMobileNav {
         if (targetId) {
           // Extract the menu label from button aria-label text
           const toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
-          this.showSecondaryNav(targetId, toggleLabel)
+          this.showNavMenu(2, targetId, toggleLabel)
         }
       })
     }
@@ -261,6 +262,10 @@ class NavbarAzFullscreenMobileNav {
     const element = document.querySelector(`${sourceElementId}`)
     if (!element) {
       return
+    }
+
+    if (navLevel === 2) {
+      parentLabel = MAIN_MENU_LABEL
     }
 
     this.currentNavLevel = navLevel
@@ -292,33 +297,6 @@ class NavbarAzFullscreenMobileNav {
     }
   }
 
-  /**
-   * Display primary navigation
-   * @param {string} sourceElementId - The ID of the source primary content element
-   */
-  showPrimaryNav(sourceElementId) {
-    this.showNavMenu(1, sourceElementId)
-  }
-
-  /**
-   * Display secondary navigation for a primary menu item
-   * @param {string} sourceElementId - The ID of the source secondary content element
-   * @param {string} label - The label of the secondary menu
-   */
-  showSecondaryNav(sourceElementId, label) {
-    this.showNavMenu(2, sourceElementId, label, 'Main Menu')
-  }
-
-  /**
-   * Display tertiary navigation
-   * @param {string} sourceElementId - The ID of the source tertiary content element
-   * @param {string} label - The label of the tertiary menu
-   * @param {string} parentLabel - The label of the parent secondary menu
-   * @param {string} parentElementId - The ID of the parent secondary content element (optional)
-   */
-  showTertiaryNav(sourceElementId, label, parentLabel, parentElementId = null) {
-    this.showNavMenu(3, sourceElementId, label, parentLabel, parentElementId)
-  }
 
   /**
    * Build HTML for menu page display
@@ -438,7 +416,7 @@ class NavbarAzFullscreenMobileNav {
    */
   buildFooterMenuNode(sourceElement, label = null) {
     const fragment = document.createDocumentFragment()
-    fragment.append(this.createBackButtonElement('Main Menu'))
+    fragment.append(this.createBackButtonElement(MAIN_MENU_LABEL))
 
     const originalHeading = sourceElement.querySelector('h2.navbar-brand')
     const headingText = originalHeading?.textContent.trim() || label || 'Menu'
@@ -507,9 +485,9 @@ class NavbarAzFullscreenMobileNav {
       if (button.classList.contains('navbar-az-fullscreen-nav-back-btn')) {
         // Handle back button events
         if (this.currentNavLevel === 2) {
-          this.showPrimaryNav(this.primaryNavElementId)
+          this.showNavMenu(1, this.primaryNavElementId)
         } else if (this.currentNavLevel === 3) {
-          this.showSecondaryNav(this.currentMenuParentElementId, this.currentMenuParentLabel)
+          this.showNavMenu(2, this.currentMenuParentElementId, this.currentMenuParentLabel)
         }
       } else if (button.classList.contains('nav-toggle')) {
         // Handle menu nav toggle button events
@@ -519,9 +497,9 @@ class NavbarAzFullscreenMobileNav {
           // Extract the menu label from button aria-label text
           const toggleLabel = button.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
           if (this.currentNavLevel === 1) {
-            this.showSecondaryNav(targetId, toggleLabel)
+            this.showNavMenu(2, targetId, toggleLabel)
           } else {
-            this.showTertiaryNav(targetId, toggleLabel, this.currentMenuLabel, this.currentMenuSourceId)
+            this.showNavMenu(3, targetId, toggleLabel, this.currentMenuLabel, this.currentMenuSourceId)
           }
         }
       }
