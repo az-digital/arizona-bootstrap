@@ -133,14 +133,13 @@ class NavbarAzFullscreenMobileNav {
     const clone = this.mobileColInitialContent.cloneNode(true)
     this.mobileCol.replaceChildren(...Array.from(clone.childNodes))
 
-    this.modalFooterTop?.classList.remove('d-none')
-    this.modalFooterBottom?.classList.remove('d-none')
-
     this.currentNavLevel = this.initialNavLevel
     this.currentMenuSourceId = this.initialMenuSourceId
     this.currentMenuLabel = this.initialMenuLabel
     this.currentMenuParentLabel = this.initialMenuParentLabel
     this.currentMenuParentElementId = this.initialMenuParentElementId
+
+    this.toggleFooterDisplay(this.currentMenuSourceId)
   }
 
   /**
@@ -274,29 +273,14 @@ class NavbarAzFullscreenMobileNav {
     this.currentMenuParentLabel = parentLabel
     this.currentMenuParentElementId = parentElementId
 
-    const isFooterNav = sourceElementId.includes('footer')
-
     // Create the menu display
-    const menuNode = isFooterNav ? this.buildFooterMenuNode(element, label) : this.buildMenuNode(navLevel, element, label, parentLabel)
+    const menuNode = sourceElementId.includes('footer') ? this.buildFooterMenuNode(element, label) : this.buildMenuNode(navLevel, element, label, parentLabel)
 
     // Update mobile column
     this.mobileCol.replaceChildren(...Array.from(menuNode.childNodes))
 
-    // Hide footer button for the current footer menu page
-    if (isFooterNav) {
-      if (sourceElementId === `#${this.modalFooterTop?.id}`) {
-        this.modalFooterTop?.classList.add('d-none')
-        this.modalFooterBottom?.classList.remove('d-none')
-      } else if (sourceElementId === `#${this.modalFooterBottom?.id}`) {
-        this.modalFooterBottom?.classList.add('d-none')
-        this.modalFooterTop?.classList.remove('d-none')
-      }
-    } else {
-      this.modalFooterTop?.classList.remove('d-none')
-      this.modalFooterBottom?.classList.remove('d-none')
-    }
+    this.toggleFooterDisplay(sourceElementId)
   }
-
 
   /**
    * Build HTML for menu page display
@@ -466,6 +450,24 @@ class NavbarAzFullscreenMobileNav {
     fragment.append(column)
 
     return fragment
+  }
+
+  /**
+   * Hide the footer for the current footer menu page
+   * 
+   * @param {string} sourceElementId - The ID of the source element for the current menu page
+   */
+  toggleFooterDisplay(sourceElementId) {
+    if (sourceElementId === `#${this.modalFooterTop?.id}`) {
+      this.modalFooterTop?.classList.add('d-none')
+      this.modalFooterBottom?.classList.remove('d-none')
+    } else if (sourceElementId === `#${this.modalFooterBottom?.id}`) {
+      this.modalFooterBottom?.classList.add('d-none')
+      this.modalFooterTop?.classList.remove('d-none')
+    } else {
+      this.modalFooterTop?.classList.remove('d-none')
+      this.modalFooterBottom?.classList.remove('d-none')
+    }
   }
 
   /**
