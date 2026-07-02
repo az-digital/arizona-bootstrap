@@ -47,27 +47,6 @@ class NavbarAzFullscreenMobileNav {
   }
 
   /**
-   * Reset the mobile nav to its initial state upon page load.
-   */
-  resetToInitialState() {
-    if (!(this.mobileCol instanceof HTMLElement) || !this.mobileColInitialContent) {
-      return
-    }
-
-    const clone = this.mobileColInitialContent.cloneNode(true)
-    this.mobileCol.replaceChildren(...Array.from(clone.childNodes))
-
-    this.modalFooterTop?.classList.remove('d-none')
-    this.modalFooterBottom?.classList.remove('d-none')
-
-    this.currentNavLevel = this.initialNavLevel
-    this.currentMenuSourceId = this.initialMenuSourceId
-    this.currentMenuLabel = this.initialMenuLabel
-    this.currentMenuParentLabel = this.initialMenuParentLabel
-    this.currentMenuParentElementId = this.initialMenuParentElementId
-  }
-
-  /**
    * Initialize the mobile navigation
    */
   init() {
@@ -140,6 +119,27 @@ class NavbarAzFullscreenMobileNav {
     }
 
     this.setupNavListeners()
+  }
+
+  /**
+   * Reset the mobile nav to its initial state upon page load.
+   */
+  resetToInitialState() {
+    if (!(this.mobileCol instanceof HTMLElement) || !this.mobileColInitialContent) {
+      return
+    }
+
+    const clone = this.mobileColInitialContent.cloneNode(true)
+    this.mobileCol.replaceChildren(...Array.from(clone.childNodes))
+
+    this.modalFooterTop?.classList.remove('d-none')
+    this.modalFooterBottom?.classList.remove('d-none')
+
+    this.currentNavLevel = this.initialNavLevel
+    this.currentMenuSourceId = this.initialMenuSourceId
+    this.currentMenuLabel = this.initialMenuLabel
+    this.currentMenuParentLabel = this.initialMenuParentLabel
+    this.currentMenuParentElementId = this.initialMenuParentElementId
   }
 
   /**
