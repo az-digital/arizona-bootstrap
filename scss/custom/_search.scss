@@ -19,7 +19,7 @@
   --az-search-font: italic normal normal 18px/22px proxima-nova-condensed;
   --az-search-separator-color: var(--bs-bloom);
   --az-search-focus-ring-color: var(--bs-sky);
-  --az-search-focus-ring-width: 2px;
+  --az-search-focus-ring-width: 1px;
   // scss-docs-end az-search-css-vars
   display: flex;
   flex: 1 1 var(--az-search-width);
