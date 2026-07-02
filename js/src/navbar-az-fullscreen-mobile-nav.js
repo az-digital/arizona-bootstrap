@@ -25,9 +25,10 @@ class NavbarAzFullscreenMobileNav {
       return
     }
 
-    // Initialize variables for HTML strings
-    this.mobileColInitialHTML = this.mobileCol.innerHTML
-    this.mobileCtaHTML = null
+    // Initialize variables for preserved DOM content
+    this.mobileColInitialContent = this.mobileCol.cloneNode(true)
+    this.mobileCtaNode = null
+    this.primaryNavMenuNode = null
 
     // Initialize state variables
     this.navListenersInitialized = false
@@ -49,11 +50,12 @@ class NavbarAzFullscreenMobileNav {
    * Reset the mobile nav to its initial state upon page load.
    */
   resetToInitialState() {
-    if (!(this.mobileCol instanceof HTMLElement) && this.mobileColInitialHTML) {
+    if (!(this.mobileCol instanceof HTMLElement) || !this.mobileColInitialContent) {
       return
     }
 
-    this.mobileCol.innerHTML = this.mobileColInitialHTML
+    const clone = this.mobileColInitialContent.cloneNode(true)
+    this.mobileCol.replaceChildren(...Array.from(clone.childNodes))
 
     this.modalFooterTop?.classList.remove('d-none')
     this.modalFooterBottom?.classList.remove('d-none')
@@ -76,7 +78,7 @@ class NavbarAzFullscreenMobileNav {
     // Save call-to-action items
     const ctaElement = this.mobileCol.querySelector('.navbar-az-fullscreen-actions')
     if (ctaElement) {
-      this.mobileCtaHTML = ctaElement.cloneNode(true).outerHTML
+      this.mobileCtaNode = ctaElement.cloneNode(true)
     }
 
     let activeLinkFound = false
@@ -127,9 +129,9 @@ class NavbarAzFullscreenMobileNav {
     activeLinkFound = this.setupModalMobileFooter('top', activeLinkFound)
     activeLinkFound = this.setupModalMobileFooter('bottom', activeLinkFound)
 
-    // Save HTML and state of initial mobile menu
+    // Save DOM and state of initial mobile menu
     if (activeLinkFound) {
-      this.mobileColInitialHTML = this.mobileCol.innerHTML
+      this.mobileColInitialContent = this.mobileCol.cloneNode(true)
       this.initialNavLevel = this.currentNavLevel
       this.initialMenuSourceId = this.currentMenuSourceId
       this.initialMenuLabel = this.currentMenuLabel
@@ -193,11 +195,37 @@ class NavbarAzFullscreenMobileNav {
     // Create aria-label text for the button
     const ariaLabel = `Toggle ${headingText.replace(':', '').trim()} submenu`
 
-    let html = `<button class="btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="${ariaLabel}" data-az-menu-element="#${footer.id}"><h2 class="navbar-brand nav-link-text m-0" id="${headingId}">${headingText}</h2><span class="text-white">${footerText}</span></button>`
-    html += `<button class="btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn" type="button" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="${ariaLabel}" data-az-menu-element="#${footer.id}">`
-    html += '<span class="nav-toggle-icon" aria-hidden="true"></span></button>'
+    const primaryButton = document.createElement('button')
+    primaryButton.type = 'button'
+    primaryButton.className = 'btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text'
+    primaryButton.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+    primaryButton.setAttribute('aria-label', ariaLabel)
+    primaryButton.setAttribute('data-az-menu-element', `#${footer.id}`)
 
-    clonedNavItem.innerHTML = html
+    const heading = document.createElement('h2')
+    heading.className = 'navbar-brand nav-link-text m-0'
+    heading.setAttribute('id', headingId)
+    heading.textContent = headingText
+    primaryButton.append(heading)
+
+    const footerTextNode = document.createElement('span')
+    footerTextNode.className = 'text-white'
+    footerTextNode.textContent = footerText
+    primaryButton.append(footerTextNode)
+
+    const toggleButton = document.createElement('button')
+    toggleButton.type = 'button'
+    toggleButton.className = 'btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn'
+    toggleButton.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+    toggleButton.setAttribute('aria-label', ariaLabel)
+    toggleButton.setAttribute('data-az-menu-element', `#${footer.id}`)
+
+    const toggleIcon = document.createElement('span')
+    toggleIcon.className = 'nav-toggle-icon'
+    toggleIcon.setAttribute('aria-hidden', 'true')
+    toggleButton.append(toggleIcon)
+
+    clonedNavItem.replaceChildren(primaryButton, toggleButton)
     clonedNavItem.classList.add('d-lg-none')
 
     // Insert the cloned item as the first child of the parent
@@ -244,20 +272,19 @@ class NavbarAzFullscreenMobileNav {
     const isFooterNav = sourceElementId.includes('footer')
 
     // Create the menu display
-    let menuHtml = ''
-    menuHtml = isFooterNav ? this.buildFooterMenuHtml(element, label) : this.buildMenuHtml(navLevel, element, label, parentLabel)
+    const menuNode = isFooterNav ? this.buildFooterMenuNode(element, label) : this.buildMenuNode(navLevel, element, label, parentLabel)
 
     // Update mobile column
-    this.mobileCol.innerHTML = menuHtml
+    this.mobileCol.replaceChildren(...Array.from(menuNode.childNodes))
 
     // Hide footer button for the current footer menu page
     if (isFooterNav) {
-      if (sourceElementId === '#' + this.modalFooterTop?.id) {
-        this.modalFooterTop.classList.add('d-none')
-        this.modalFooterBottom.classList.remove('d-none')
-      } else if (sourceElementId === '#' + this.modalFooterBottom?.id) {
-        this.modalFooterBottom.classList.add('d-none')
-        this.modalFooterTop.classList.remove('d-none')
+      if (sourceElementId === `#${this.modalFooterTop?.id}`) {
+        this.modalFooterTop?.classList.add('d-none')
+        this.modalFooterBottom?.classList.remove('d-none')
+      } else if (sourceElementId === `#${this.modalFooterBottom?.id}`) {
+        this.modalFooterBottom?.classList.add('d-none')
+        this.modalFooterTop?.classList.remove('d-none')
       }
     } else {
       this.modalFooterTop?.classList.remove('d-none')
@@ -299,24 +326,26 @@ class NavbarAzFullscreenMobileNav {
    * @param {Element} sourceElement - The source element for the menu page content
    * @param {string} label - The label for the menu heading (optional)
    * @param {string} parentLabel - The label of the parent menu (optional)
-   * @returns {string} HTML string for the menu
+   * @returns {DocumentFragment} Document fragment for the menu
    */
-  buildMenuHtml(navLevel, sourceElement, label = null, parentLabel = null) {
-    let html = ''
+  buildMenuNode(navLevel, sourceElement, label = null, parentLabel = null) {
+    const fragment = document.createDocumentFragment()
 
     if (navLevel === 1) {
-      if (this.primaryNavMenuHTML) {
-        return this.primaryNavMenuHTML
-      } else if (this.mobileCtaHTML) {
-        // Add call-to-action items
-        html += this.mobileCtaHTML
+      if (this.primaryNavMenuNode) {
+        return this.primaryNavMenuNode.cloneNode(true)
+      }
+
+      if (this.mobileCtaNode) {
+        fragment.append(this.mobileCtaNode.cloneNode(true))
       }
     } else {
-      // Add back button
-      html += this.createBackButton(parentLabel)
+      fragment.append(this.createBackButtonElement(parentLabel))
 
-      // Add menu heading
-      html += `<h2 class="navbar-az-fullscreen-nav-mobile-menu-heading">${label} Menu</h2>`
+      const heading = document.createElement('h2')
+      heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading'
+      heading.textContent = `${label} Menu`
+      fragment.append(heading)
     }
 
     let nav
@@ -342,21 +371,18 @@ class NavbarAzFullscreenMobileNav {
     }
 
     if (nav) {
-      // Clone the nav element to avoid modifying the original
       const navClone = nav.cloneNode(true)
 
-      // Remove secondary and tertiary panels if they exist
+      // Remove secondary panels if they exist
       const secondaryPanels = navClone.querySelectorAll(':scope .navbar-az-fullscreen-modal-menu-primary-submenu')
-      if (secondaryPanels) {
-        for (const panel of secondaryPanels) {
-          panel.remove()
-        }
+      for (const panel of secondaryPanels) {
+        panel.remove()
       }
+
+      // Remove tertiary panels if they exist
       const tertiaryPanels = navClone.querySelectorAll(':scope .navbar-az-fullscreen-modal-menu-secondary-submenu')
-      if (tertiaryPanels) {
-        for (const panel of tertiaryPanels) {
-          panel.remove()
-        }
+      for (const panel of tertiaryPanels) {
+        panel.remove()
       }
 
       // Confirm if any active links are present
@@ -376,7 +402,7 @@ class NavbarAzFullscreenMobileNav {
 
         // Create dynamic id
         buttonCounter++
-        button.id = `az-fullscreen-nav-mobile-${buttonCounter}`
+        button.setAttribute('id', `az-fullscreen-nav-mobile-${buttonCounter}`)
 
         // Update aria-controls
         button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
@@ -392,59 +418,76 @@ class NavbarAzFullscreenMobileNav {
         }
       }
 
-      html += navClone.outerHTML
+      fragment.append(navClone)
     } else {
-      // Fallback: use the entire source element if no nav element found
-      html += sourceElement.outerHTML
+      fragment.append(sourceElement.cloneNode(true))
     }
 
-    html += '</div>'
-
-    // Save the primary nav menu HTML for future use
-    if (navLevel === 1) {
-      this.primaryNavMenuHTML = html
+    if (navLevel === 1 && !this.primaryNavMenuNode) {
+      this.primaryNavMenuNode = fragment.cloneNode(true)
     }
 
-    return html
+    return fragment
   }
 
   /**
    * Build HTML for footer menu page display
    * @param {Element} sourceElement - The source footer element
    * @param {string} label - The label for the menu heading (optional)
-   * @returns {string} HTML string for the footer menu
+   * @returns {DocumentFragment} Document fragment for the footer menu
    */
-  buildFooterMenuHtml(sourceElement, label = null) {
-    // Add back button
-    let html = this.createBackButton('Main Menu')
+  buildFooterMenuNode(sourceElement, label = null) {
+    const fragment = document.createDocumentFragment()
+    fragment.append(this.createBackButtonElement('Main Menu'))
 
-    // Get the original heading element and extract its text
     const originalHeading = sourceElement.querySelector('h2.navbar-brand')
     const headingText = originalHeading?.textContent.trim() || label || 'Menu'
 
-    // Add menu heading
-    html += `<h2 class="navbar-az-fullscreen-nav-mobile-menu-heading">${headingText}</h2>`
+    const heading = document.createElement('h2')
+    heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading'
+    heading.textContent = headingText
+    fragment.append(heading)
 
-    // Determine which footer links to use
     const footerId = sourceElement.id
     const footerLinks = footerId === 'navbar-az-fullscreen-modal-footer-top' ? this.topFooterLinks : this.bottomFooterLinks
     const navId = footerId === 'navbar-az-fullscreen-modal-footer-top' ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav'
     const ariaLabel = headingText.replace(':', '').trim()
 
-    // Build the nav structure with all footer links
-    html += '<div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">'
-    html += `<ul class="nav" id="${navId}" aria-label="${ariaLabel}">`
+    const column = document.createElement('div')
+    column.className = 'col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary'
+
+    const list = document.createElement('ul')
+    list.className = 'nav'
+    list.setAttribute('id', navId)
+    list.setAttribute('aria-label', ariaLabel)
 
     if (footerLinks && footerLinks.length > 0) {
       for (const link of footerLinks) {
-        const isActive = link.href === window.location.href ? ' active' : ''
-        html += `<li class="nav-item"><a class="nav-link${isActive}" href="${link.href}"><span class="nav-link-text">${link.text}</span></a></li>`
+        const item = document.createElement('li')
+        item.className = 'nav-item'
+
+        const anchor = document.createElement('a')
+        anchor.className = 'nav-link'
+        if (link.href === window.location.href) {
+          anchor.classList.add('active')
+        }
+
+        anchor.href = link.href
+
+        const anchorText = document.createElement('span')
+        anchorText.className = 'nav-link-text'
+        anchorText.textContent = link.text
+
+        anchor.append(anchorText)
+        item.append(anchor)
+        list.append(item)
       }
     }
 
-    html += '</ul></div></div>'
+    column.append(list)
+    fragment.append(column)
 
-    return html
+    return fragment
   }
 
   /**
@@ -490,16 +533,24 @@ class NavbarAzFullscreenMobileNav {
   /**
    * Create a back button element
    * @param {string} label - The label for the back button
-   * @returns {string} HTML string for the back button
+   * @returns {Element} The new back button element
    */
-  createBackButton(label) {
-    return `
-      <div class="navbar-az-fullscreen-nav-back">
-        <button type="button" class="btn navbar-az-fullscreen-nav-back-btn" aria-label="Back to ${label}">
-          <span>Back to ${label}</span>
-        </button>
-      </div>
-    `
+  createBackButtonElement(label) {
+    const wrapper = document.createElement('div')
+    wrapper.className = 'navbar-az-fullscreen-nav-back'
+
+    const button = document.createElement('button')
+    button.type = 'button'
+    button.className = 'btn navbar-az-fullscreen-nav-back-btn'
+    button.setAttribute('aria-label', `Back to ${label}`)
+
+    const span = document.createElement('span')
+    span.textContent = `Back to ${label}`
+
+    button.append(span)
+    wrapper.append(button)
+
+    return wrapper
   }
 }
 
