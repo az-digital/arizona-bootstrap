@@ -15,12 +15,12 @@ const IDS = {
   FOOTER_TOP_HEADING: 'resources-for-label',
   FOOTER_BOTTOM: 'navbar-az-fullscreen-modal-footer-bottom',
   FOOTER_BOTTOM_HEADING: 'helpful-links-label',
-  MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col',
+  MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col'
 }
 const LABELS = {
   FOOTER_TOP_HEADING: 'Resources For:',
   FOOTER_BOTTOM_HEADING: 'Helpful Links:',
-  MAIN_MENU: 'Main Menu',
+  MAIN_MENU: 'Main Menu'
 }
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
@@ -464,7 +464,7 @@ class NavbarAzFullscreenMobileNav {
 
   /**
    * Hide the footer for the current footer menu page
-   * 
+   *
    * @param {string} sourceElementId - The ID of the source element for the current menu page
    */
   toggleFooterDisplay(sourceElementId) {
