@@ -10,16 +10,27 @@
  * Handles paged navigation for the mobile view of AZ Navbar Fullscreen.
  */
 
+const IDS = {
+  FOOTER_TOP: 'navbar-az-fullscreen-modal-footer-top',
+  FOOTER_TOP_HEADING: 'resources-for-label',
+  FOOTER_BOTTOM: 'navbar-az-fullscreen-modal-footer-bottom',
+  FOOTER_BOTTOM_HEADING: 'helpful-links-label',
+  MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col',
+}
+const LABELS = {
+  FOOTER_TOP_HEADING: 'Resources For:',
+  FOOTER_BOTTOM_HEADING: 'Helpful Links:',
+  MAIN_MENU: 'Main Menu',
+}
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
-const MAIN_MENU_LABEL = 'Main Menu'
 
 class NavbarAzFullscreenMobileNav {
   constructor() {
     this.primaryNavElementId = '#az-navbar-az-fullscreen-primary-accordion'
-    this.mobileCol = document.querySelector('#navbar-az-fullscreen-nav-mobile-col')
-    this.modalFooterTop = document.querySelector('#navbar-az-fullscreen-modal-footer-top')
-    this.modalFooterBottom = document.querySelector('#navbar-az-fullscreen-modal-footer-bottom')
+    this.mobileCol = document.getElementById(IDS.MOBILE_COL)
+    this.modalFooterTop = document.getElementById(IDS.FOOTER_TOP)
+    this.modalFooterBottom = document.getElementById(IDS.FOOTER_BOTTOM)
     this.modalElement = this.mobileCol?.closest(FULLSCREEN_MODAL_SELECTOR)
 
     if (!document.querySelector(this.primaryNavElementId) || !this.mobileCol) {
@@ -161,8 +172,8 @@ class NavbarAzFullscreenMobileNav {
 
     // Get the original heading element and extract its text and id
     const originalHeading = footer.querySelector('.nav-item > .navbar-brand')
-    const headingText = originalHeading?.textContent.trim() || (footerPosition === 'top' ? 'Resources For:' : 'Helpful Links:')
-    const headingId = originalHeading?.id || (footerPosition === 'top' ? 'resources-for-label' : 'helpful-links-label')
+    const headingText = originalHeading?.textContent.trim() || (footerPosition === 'top' ? LABELS.FOOTER_TOP_HEADING : LABELS.FOOTER_BOTTOM_HEADING)
+    const headingId = originalHeading?.id || (footerPosition === 'top' ? IDS.FOOTER_TOP_HEADING : IDS.FOOTER_BOTTOM_HEADING)
 
     // Save footer nav links to an array
     const footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks'
@@ -198,7 +209,7 @@ class NavbarAzFullscreenMobileNav {
     const primaryButton = document.createElement('button')
     primaryButton.type = 'button'
     primaryButton.className = 'btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text'
-    primaryButton.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+    primaryButton.setAttribute('aria-controls', IDS.MOBILE_COL)
     primaryButton.setAttribute('aria-label', ariaLabel)
     primaryButton.setAttribute('data-az-menu-element', `#${footer.id}`)
 
@@ -216,7 +227,7 @@ class NavbarAzFullscreenMobileNav {
     const toggleButton = document.createElement('button')
     toggleButton.type = 'button'
     toggleButton.className = 'btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn'
-    toggleButton.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+    toggleButton.setAttribute('aria-controls', IDS.MOBILE_COL)
     toggleButton.setAttribute('aria-label', ariaLabel)
     toggleButton.setAttribute('data-az-menu-element', `#${footer.id}`)
 
@@ -264,7 +275,7 @@ class NavbarAzFullscreenMobileNav {
     }
 
     if (navLevel === 2) {
-      parentLabel = MAIN_MENU_LABEL
+      parentLabel = LABELS.MAIN_MENU
     }
 
     this.currentNavLevel = navLevel
@@ -367,7 +378,7 @@ class NavbarAzFullscreenMobileNav {
         button.setAttribute('id', `az-fullscreen-nav-mobile-${buttonCounter}`)
 
         // Update aria-controls
-        button.setAttribute('aria-controls', 'navbar-az-fullscreen-nav-mobile-col')
+        button.setAttribute('aria-controls', IDS.MOBILE_COL)
 
         // Add data-az-menu-element attribute with original target value
         if (targetId) {
@@ -400,7 +411,7 @@ class NavbarAzFullscreenMobileNav {
    */
   buildFooterMenuNode(sourceElement, label = null) {
     const fragment = document.createDocumentFragment()
-    fragment.append(this.createBackButtonElement(MAIN_MENU_LABEL))
+    fragment.append(this.createBackButtonElement(LABELS.MAIN_MENU))
 
     const originalHeading = sourceElement.querySelector('h2.navbar-brand')
     const headingText = originalHeading?.textContent.trim() || label || 'Menu'
@@ -410,9 +421,8 @@ class NavbarAzFullscreenMobileNav {
     heading.textContent = headingText
     fragment.append(heading)
 
-    const footerId = sourceElement.id
-    const footerLinks = footerId === 'navbar-az-fullscreen-modal-footer-top' ? this.topFooterLinks : this.bottomFooterLinks
-    const navId = footerId === 'navbar-az-fullscreen-modal-footer-top' ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav'
+    const footerLinks = sourceElement.id === IDS.FOOTER_TOP ? this.topFooterLinks : this.bottomFooterLinks
+    const navId = sourceElement.id === IDS.FOOTER_TOP ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav'
     const ariaLabel = headingText.replace(':', '').trim()
 
     const column = document.createElement('div')
@@ -458,10 +468,10 @@ class NavbarAzFullscreenMobileNav {
    * @param {string} sourceElementId - The ID of the source element for the current menu page
    */
   toggleFooterDisplay(sourceElementId) {
-    if (sourceElementId === `#${this.modalFooterTop?.id}`) {
+    if (sourceElementId === `#${IDS.FOOTER_TOP}`) {
       this.modalFooterTop?.classList.add('d-none')
       this.modalFooterBottom?.classList.remove('d-none')
-    } else if (sourceElementId === `#${this.modalFooterBottom?.id}`) {
+    } else if (sourceElementId === `#${IDS.FOOTER_BOTTOM}`) {
       this.modalFooterBottom?.classList.add('d-none')
       this.modalFooterTop?.classList.remove('d-none')
     } else {
