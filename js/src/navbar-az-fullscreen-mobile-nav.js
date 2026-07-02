@@ -20,7 +20,7 @@ const IDS = {
 const LABELS = {
   FOOTER_TOP_HEADING: 'Resources For:',
   FOOTER_BOTTOM_HEADING: 'Helpful Links:',
-  MAIN_MENU: 'Main Menu'
+  MAIN_MENU: 'Main'
 }
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
@@ -74,9 +74,9 @@ class NavbarAzFullscreenMobileNav {
 
     let activeLinkFound = false
 
-    // Check tertiary links for match with current pathname
-    const tertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
-    for (const link of tertiaryLinks) {
+    // Check active tertiary links for a match with the current pathname
+    const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
+    for (const link of activeTertiaryLinks) {
       if (link.href === window.location.href) {
         const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
         if (!tertiaryPanel) {
@@ -84,10 +84,9 @@ class NavbarAzFullscreenMobileNav {
         }
 
         const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
-        const tertiaryLabel = link.textContent.trim()
-        // Extract parent label from the secondary menu containing this tertiary panel
         const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
-        const parentLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
+        const tertiaryLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
+        const parentLabel = secondaryContentButton?.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
         const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
         const secondaryContentId = secondaryContent?.getAttribute('id') || ''
 
@@ -96,14 +95,14 @@ class NavbarAzFullscreenMobileNav {
       }
     }
 
-    // Check secondary links for match with current pathname
+    // Check active secondary links for a match with the current pathname
     if (!activeLinkFound) {
-      const secondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
-      for (const link of secondaryLinks) {
+      const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
+      for (const link of activeSecondaryLinks) {
         if (link.href === window.location.href) {
           const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
           const targetId = secondaryContent?.getAttribute('id') || ''
-          const label = link.textContent.trim()
+          const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
 
           if (targetId) {
             this.showNavMenu(2, `#${targetId}`, label)
@@ -532,10 +531,10 @@ class NavbarAzFullscreenMobileNav {
     const button = document.createElement('button')
     button.type = 'button'
     button.className = 'btn navbar-az-fullscreen-nav-back-btn'
-    button.setAttribute('aria-label', `Back to ${label}`)
+    button.setAttribute('aria-label', `Back to ${label} Menu`)
 
     const span = document.createElement('span')
-    span.textContent = `Back to ${label}`
+    span.textContent = `Back to ${label} Menu`
 
     button.append(span)
     wrapper.append(button)
