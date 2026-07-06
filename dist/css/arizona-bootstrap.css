@@ -23274,6 +23274,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 0.36px;
+  pointer-events: none;
 }
 #navbar-az-fullscreen-nav-mobile-col .nav-toggle-icon {
   pointer-events: none;
@@ -23323,6 +23324,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   flex-direction: column;
   padding: 0;
   text-align: left;
+}
+.navbar-az-fullscreen-mobile-footer-btn-text > * {
+  pointer-events: none;
 }
 
 .background-wrapper {
