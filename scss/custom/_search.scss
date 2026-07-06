@@ -53,7 +53,15 @@
       width: var(--az-search-border-width);
       content: "";
       background-color: var(--az-search-separator-color);
+      @include transition(background-color .15s ease-in-out, top .15s ease-in-out, bottom .15s ease-in-out, width .15s ease-in-out);
       @include border-radius(999px);
+    }
+
+    .form-control:focus-visible + .btn::before {
+      top: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+      bottom: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+      background-color: var(--az-search-focus-ring-color);
+      @include border-radius(0);
     }
   }
 
@@ -82,9 +90,7 @@
     }
 
     &:focus-visible {
-      position: relative;
-      z-index: 1;
-      border: var(--az-search-border-width) solid var(--az-search-focus-ring-color);
+      border-color: var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
     }
@@ -110,14 +116,16 @@
     }
 
     &:focus-visible {
-      position: relative;
-      z-index: 1;
-      border: var(--az-search-border-width) solid var(--az-search-focus-ring-color);
+      border-color: var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
 
       &::before {
-        content: none;
+        top: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+        bottom: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+        width: 3px;
+        background-color: var(--az-search-focus-ring-color);
+        @include border-radius(0);
       }
     }
   }
