@@ -544,10 +544,12 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
       <div class="input-group d-none d-lg-flex">
         <input id="az-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
         <button class="btn" type="submit" aria-label="Submit site search">
-          <span class="search-icon" aria-hidden="true"></span>
+          <span class="az-search-icon" aria-hidden="true"></span>
         </button>
       </div>
-      <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
+      <button class="btn d-lg-none az-search-toggle navbar-toggler-search" type="button" aria-label="Search the site">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
     </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
       <span class="navbar-toggler-icon"></span>
@@ -729,7 +731,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -812,7 +814,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
