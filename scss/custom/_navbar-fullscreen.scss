@@ -1066,7 +1066,6 @@
     .nav {
       margin-right: 0;
       margin-left: 0;
-      border-top: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
       border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
     }
 
@@ -1156,14 +1155,16 @@
 /* stylelint-enable selector-max-id */
 
 .navbar-az-fullscreen-nav-mobile-menu-heading {
+  padding-bottom: 16px;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   font-family: proxima-nova-condensed, #{$font-family-sans-serif};
   font-size: 22px;
   font-weight: 800;
   line-height: 27px;
   color: var(--bs-sky);
   letter-spacing: .44px;
+  border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
 }
 
 .nav-toggle.navbar-az-fullscreen-mobile-footer-btn {
