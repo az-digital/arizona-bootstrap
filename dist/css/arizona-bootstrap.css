@@ -22241,6 +22241,166 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   transition-property: none;
 }
 
+.az-search {
+  --az-search-width: 265px;
+  --az-search-height: 43px;
+  --az-search-padding-y: 5px;
+  --az-search-padding-x: 15px;
+  --az-search-btn-padding: 9px;
+  --az-search-input-padding: 6px 12px 6px 12px;
+  --az-search-icon-size: 24px;
+  --az-search-color: var(--bs-white);
+  --az-search-hover-color: var(--bs-sky);
+  --az-search-border-width: 2px;
+  --az-search-border-color: var(--az-search-color);
+  --az-search-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%23fff' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
+  --az-search-font: italic normal normal 18px/22px proxima-nova-condensed;
+  --az-search-separator-color: var(--bs-bloom);
+  --az-search-focus-ring-color: var(--bs-sky);
+  --az-search-focus-ring-width: 1px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1 var(--az-search-width);
+  flex: 1 1 var(--az-search-width);
+  min-width: 0;
+  max-width: var(--az-search-width);
+  padding: var(--az-search-padding-y) var(--az-search-padding-x);
+}
+.az-search:hover .form-control,
+.az-search:hover .btn {
+  border-color: var(--az-search-hover-color);
+}
+.az-search .input-group {
+  --bs-border-width: 0;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: var(--az-search-height);
+  overflow: visible;
+}
+.az-search .input-group .btn {
+  padding: var(--az-search-btn-padding);
+  border-width: var(--az-search-border-width);
+}
+.az-search .input-group .btn::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: var(--az-search-border-width);
+  content: "";
+  background-color: var(--az-search-separator-color);
+  transition: background-color 0.15s ease-in-out, top 0.15s ease-in-out, bottom 0.15s ease-in-out, width 0.15s ease-in-out;
+  border-radius: 999px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .az-search .input-group .btn::before {
+    transition: none;
+  }
+}
+.az-search .input-group .form-control:focus-visible + .btn::before {
+  top: calc(-1 * var(--az-search-border-width));
+  bottom: calc(-1 * var(--az-search-border-width));
+  background-color: var(--az-search-focus-ring-color);
+  border-radius: 0;
+}
+.az-search .form-control {
+  padding: var(--az-search-input-padding);
+  font: var(--az-search-font);
+  color: var(--az-search-color);
+  background-color: transparent;
+  border: var(--az-search-border-width) solid var(--az-search-border-color);
+  border-right: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.az-search .form-control::-webkit-input-placeholder {
+  color: var(--az-search-color);
+}
+.az-search .form-control::-moz-placeholder {
+  color: var(--az-search-color);
+}
+.az-search .form-control:-ms-input-placeholder {
+  color: var(--az-search-color);
+}
+.az-search .form-control::-ms-input-placeholder {
+  color: var(--az-search-color);
+}
+.az-search .form-control::placeholder {
+  color: var(--az-search-color);
+}
+.az-search .form-control[type=search]::-webkit-search-cancel-button {
+  cursor: pointer;
+  -webkit-filter: invert(1) brightness(1.25);
+  filter: invert(1) brightness(1.25);
+  opacity: 1;
+}
+.az-search .form-control:focus {
+  box-shadow: none;
+}
+.az-search .form-control:focus-visible {
+  border-color: var(--az-search-focus-ring-color);
+  outline: 0;
+  box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+}
+.az-search .btn {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: var(--az-search-height);
+  margin: 0;
+  color: var(--az-search-color);
+  border: var(--az-search-border-width) solid var(--az-search-border-color);
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.az-search .btn:focus, .az-search .btn:focus-visible {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.az-search .btn:focus-visible {
+  border-color: var(--az-search-focus-ring-color);
+  outline: 0;
+  box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+}
+.az-search .btn:focus-visible::before {
+  top: calc(-1 * var(--az-search-border-width));
+  bottom: calc(-1 * var(--az-search-border-width));
+  width: 3px;
+  background-color: var(--az-search-focus-ring-color);
+  border-radius: 0;
+}
+.az-search .az-search-toggle,
+.az-search .navbar-toggler-search {
+  border: 0;
+}
+.az-search .az-search-toggle:focus-visible,
+.az-search .navbar-toggler-search:focus-visible {
+  border-radius: 4px;
+  outline: 0;
+  box-shadow: 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+}
+.az-search .az-search-icon,
+.az-search .search-icon {
+  display: block;
+  width: var(--az-search-icon-size);
+  height: var(--az-search-icon-size);
+  background-image: var(--az-search-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .navbar-az-fullscreen {
   --az-navbar-fullscreen-height: 100px;
   --az-navbar-fullscreen-bg: var(--bs-blue);
@@ -22312,6 +22472,18 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .navbar-az-fullscreen .navbar-toggler-icon {
   width: var(--az-navbar-fullscreen-toggler-icon-size);
   height: var(--az-navbar-fullscreen-toggler-icon-size);
+}
+.navbar-az-fullscreen .az-search {
+  --az-search-width: 280px;
+  --az-search-height: 60px;
+  --az-search-padding-y: 0;
+  --az-search-padding-x: 0;
+  --az-search-btn-padding: 13px;
+  --az-search-input-padding: 8px 12px 8px 16px;
+  --az-search-icon-size: 35px;
+  --az-search-focus-ring-color: var(--az-navbar-fullscreen-focus-ring-color);
+  --az-search-focus-ring-width: var(--az-navbar-fullscreen-focus-ring-width);
+  margin-right: 30px;
 }
 
 .navbar-az-fullscreen-fixed-top-offset {
@@ -22407,145 +22579,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   }
 }
 
-.navbar-az-fullscreen-search {
-  --az-navbar-fullscreen-search-width: 280px;
-  --az-navbar-fullscreen-search-height: 60px;
-  --az-navbar-fullscreen-search-color: var(--bs-white);
-  --az-navbar-fullscreen-search-hover-color: var(--bs-sky);
-  --az-navbar-fullscreen-search-border-width: 2px;
-  --az-navbar-fullscreen-search-border-color: var(--az-navbar-fullscreen-search-color);
-  --az-navbar-fullscreen-search-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%23fff' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
-  --az-navbar-fullscreen-search-font: italic normal normal 18px/22px proxima-nova-condensed;
-  --az-navbar-fullscreen-search-separator-color: var(--bs-bloom);
-  --az-navbar-fullscreen-search-focus-ring-color: var(--az-navbar-fullscreen-focus-ring-color);
-  --az-navbar-fullscreen-search-focus-ring-width: var(--az-navbar-fullscreen-focus-ring-width);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex: 1 1 var(--az-navbar-fullscreen-search-width);
-  flex: 1 1 var(--az-navbar-fullscreen-search-width);
-  min-width: 0;
-  max-width: var(--az-navbar-fullscreen-search-width);
-  margin-right: 30px;
-}
-.navbar-az-fullscreen-search:hover .form-control,
-.navbar-az-fullscreen-search:hover .btn {
-  border-color: var(--az-navbar-fullscreen-search-hover-color);
-}
-.navbar-az-fullscreen-search .input-group {
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: var(--az-navbar-fullscreen-search-height);
-  overflow: visible;
-}
-.navbar-az-fullscreen-search .input-group .btn {
-  padding: 13px;
-  border-width: var(--az-navbar-fullscreen-search-border-width);
-}
-.navbar-az-fullscreen-search .input-group .btn::before {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 0;
-  width: var(--az-navbar-fullscreen-search-border-width);
-  content: "";
-  background-color: var(--az-navbar-fullscreen-search-separator-color);
-  border-radius: 999px;
-}
-.navbar-az-fullscreen-search .form-control {
-  padding: 8px 12px 8px 16px;
-  font: var(--az-navbar-fullscreen-search-font);
-  color: var(--az-navbar-fullscreen-search-color);
-  background-color: transparent;
-  border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
-  border-right: 0;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.navbar-az-fullscreen-search .form-control::-webkit-input-placeholder {
-  color: var(--az-navbar-fullscreen-search-color);
-}
-.navbar-az-fullscreen-search .form-control::-moz-placeholder {
-  color: var(--az-navbar-fullscreen-search-color);
-}
-.navbar-az-fullscreen-search .form-control:-ms-input-placeholder {
-  color: var(--az-navbar-fullscreen-search-color);
-}
-.navbar-az-fullscreen-search .form-control::-ms-input-placeholder {
-  color: var(--az-navbar-fullscreen-search-color);
-}
-.navbar-az-fullscreen-search .form-control::placeholder {
-  color: var(--az-navbar-fullscreen-search-color);
-}
-.navbar-az-fullscreen-search .form-control[type=search]::-webkit-search-cancel-button {
-  cursor: pointer;
-  -webkit-filter: invert(1) brightness(1.25);
-  filter: invert(1) brightness(1.25);
-  opacity: 1;
-}
-.navbar-az-fullscreen-search .form-control:focus {
-  box-shadow: none;
-}
-.navbar-az-fullscreen-search .form-control:focus-visible {
-  position: relative;
-  z-index: 1;
-  border-color: var(--az-navbar-fullscreen-search-focus-ring-color);
-  outline: 0;
-  box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-search-focus-ring-width) var(--az-navbar-fullscreen-search-focus-ring-color);
-}
-.navbar-az-fullscreen-search .btn {
-  position: relative;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-width: var(--az-navbar-fullscreen-search-height);
-  margin: 0;
-  color: var(--az-navbar-fullscreen-search-color);
-  border: var(--az-navbar-fullscreen-search-border-width) solid var(--az-navbar-fullscreen-search-border-color);
-  border-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-.navbar-az-fullscreen-search .btn:focus, .navbar-az-fullscreen-search .btn:focus-visible {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-.navbar-az-fullscreen-search .btn:focus-visible {
-  position: relative;
-  z-index: 1;
-  border-color: var(--az-navbar-fullscreen-search-focus-ring-color);
-  outline: 0;
-  box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-search-focus-ring-width) var(--az-navbar-fullscreen-search-focus-ring-color);
-}
-.navbar-az-fullscreen-search .btn:focus-visible::before {
-  content: none;
-}
-.navbar-az-fullscreen-search .navbar-toggler-search {
-  border: 0;
-}
-.navbar-az-fullscreen-search .navbar-toggler-search:focus-visible {
-  border-radius: 4px;
-  outline: 0;
-  box-shadow: 0 0 0 var(--az-navbar-fullscreen-focus-ring-width) var(--az-navbar-fullscreen-focus-ring-color);
-}
-.navbar-az-fullscreen-search .search-icon {
-  display: block;
-  width: 35px;
-  height: 35px;
-  background-image: var(--az-navbar-fullscreen-search-icon);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 .navbar-az-fullscreen-modal {
   --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
@@ -22637,9 +22670,18 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   min-height: 0;
   overflow: hidden;
 }
-.navbar-az-fullscreen-modal .navbar-az-fullscreen-search {
-  --az-navbar-fullscreen-search-color: var(--bs-cool-gray);
-  --az-navbar-fullscreen-search-font: italic normal normal 20px/24px proxima-nova;
+.navbar-az-fullscreen-modal .az-search {
+  --az-search-width: 280px;
+  --az-search-height: 60px;
+  --az-search-padding-y: 0;
+  --az-search-padding-x: 0;
+  --az-search-btn-padding: 13px;
+  --az-search-input-padding: 8px 12px 8px 16px;
+  --az-search-icon-size: 35px;
+  --az-search-color: var(--bs-cool-gray);
+  --az-search-font: italic normal normal 20px/24px proxima-nova;
+  --az-search-focus-ring-color: var(--az-navbar-fullscreen-modal-focus-ring-color);
+  --az-search-focus-ring-width: var(--az-navbar-fullscreen-modal-focus-ring-width);
   max-width: none;
   margin-top: 40px;
   margin-right: 0;
@@ -23069,6 +23111,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
     margin-bottom: 0;
     border-radius: 4px;
   }
+  .navbar-az-fullscreen .az-search {
+    margin-right: 18px;
+  }
   .navbar-az-fullscreen-modal .navbar-az-fullscreen-modal-menu {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -23090,42 +23135,44 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   .navbar-az-fullscreen-modal .modal-footer .nav-item:nth-child(n+2) {
     display: none;
   }
-  .navbar-az-fullscreen-modal .navbar-az-fullscreen-search {
+  .navbar-az-fullscreen-modal .az-search {
     margin-top: 12px;
     margin-bottom: 0;
   }
-  .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-height: 35px;
+  .az-search {
+    --az-search-height: 35px;
     -ms-flex: none;
     flex: none;
-    margin-right: 18px;
   }
-  .navbar-az-fullscreen-search .navbar-toggler-search {
+  .az-search .az-search-toggle,
+  .az-search .navbar-toggler-search {
     border-radius: 4px;
     padding: 6px 5px 4px;
   }
-  .navbar-az-fullscreen-search .navbar-toggler-search:focus, .navbar-az-fullscreen-search .navbar-toggler-search:focus-visible {
+  .az-search .az-search-toggle:focus, .az-search .az-search-toggle:focus-visible,
+  .az-search .navbar-toggler-search:focus,
+  .az-search .navbar-toggler-search:focus-visible {
     border-radius: 4px;
   }
-  .modal-header .navbar-az-fullscreen-search {
-    --az-navbar-fullscreen-search-height: 51px;
+  .modal-header .az-search {
+    --az-search-height: 51px;
+    --az-search-border-width: 1px;
   }
-  .modal-header .navbar-az-fullscreen-search .input-group .form-control {
+  .modal-header .az-search .input-group .form-control {
     font-size: 14px;
     line-height: 17px;
-    border-width: 1px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
-  .modal-header .navbar-az-fullscreen-search .input-group .btn {
+  .modal-header .az-search .input-group .btn {
     padding: 10px 14px;
-    border-width: 1px;
     border-radius: 4px;
   }
-  .modal-header .navbar-az-fullscreen-search .input-group .btn:focus, .modal-header .navbar-az-fullscreen-search .input-group .btn:focus-visible {
+  .modal-header .az-search .input-group .btn:focus, .modal-header .az-search .input-group .btn:focus-visible {
     border-radius: 4px;
   }
-  .modal-header .navbar-az-fullscreen-search .search-icon {
+  .modal-header .az-search .az-search-icon,
+  .modal-header .az-search .search-icon {
     width: 30px;
     height: 30px;
   }
