@@ -1188,7 +1188,7 @@
     pointer-events: none;
 
     .navbar-brand {
-      --az-navbar-fullscreen-modal-footer-brand-letter-spacing: 0.18px;
+      --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .18px;
       padding-top: 0;
       padding-bottom: 0;
       margin-right: 0;
@@ -1201,7 +1201,7 @@
       font-weight: initial;
       line-height: 20px;
       color: var(--bs-navbar-brand-color);
-      letter-spacing: 0.16px;
+      letter-spacing: .16px;
       pointer-events: none;
     }
   }
