@@ -883,7 +883,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
         </div>
       </div>
       <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
-        <nav class="navbar" aria-labelledby="resources-for-label">
+        <nav class="navbar d-none d-lg-flex" aria-labelledby="resources-for-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
