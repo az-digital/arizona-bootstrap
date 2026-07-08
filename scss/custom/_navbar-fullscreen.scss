@@ -1192,13 +1192,14 @@
       padding-bottom: 0;
       margin-right: 0;
       margin-bottom: 4px;
+      color: var(--bs-navbar-brand-color);
       pointer-events: none;
     }
 
     .more-links-text {
       font-weight: initial;
       line-height: 20px;
-      color: var(--bs-white);
+      color: var(--bs-navbar-brand-color);
       pointer-events: none;
     }
   }
