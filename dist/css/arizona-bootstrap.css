@@ -22604,6 +22604,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-modal-footer-bg: var(--bs-azurite);
   --bs-modal-footer-border-color: var(--bs-blue);
   --bs-modal-footer-border-width: 2px;
+  /* stylelint-disable selector-max-id */
+  /* stylelint-enable selector-max-id */
 }
 @media (max-width: 1399.98px) {
   .navbar-az-fullscreen-modal {
@@ -22686,21 +22688,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin-top: 40px;
   margin-right: 0;
   margin-bottom: 8px;
-}
-@media (min-width: 992px) {
-  .navbar-az-fullscreen-modal .modal-content > .modal-footer:not(.modal-footer ~ .modal-footer)::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
-    pointer-events: none;
-    content: "";
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--az-navbar-fullscreen-modal-fade-color) 100%);
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
 }
 .navbar-az-fullscreen-modal .modal-footer .navbar {
   --bs-navbar-padding-y: var(--az-navbar-fullscreen-modal-footer-navbar-padding-y);
@@ -22861,6 +22848,19 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   content: "";
   background-color: var(--bs-bloom);
   border-radius: 999px;
+}
+.navbar-az-fullscreen-modal #navbar-az-fullscreen-modal-footer-top::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(to top, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .navbar-az-fullscreen-modal-menu {
@@ -23227,13 +23227,22 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col .nav-item {
   margin-right: 0;
 }
+#navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-primary::before {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  height: 2px;
+  content: "";
+  background-color: var(--az-navbar-fullscreen-modal-menu-separator-color);
+}
 #navbar-az-fullscreen-nav-mobile-col .nav.navbar-az-fullscreen-nav-primary {
   --az-navbar-fullscreen-nav-toggle-size: 38px;
   --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
   --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
   margin-right: 0;
   margin-left: 0;
-  border-top: 2px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
   border-bottom: 2px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
 }
 #navbar-az-fullscreen-nav-mobile-col .nav.navbar-az-fullscreen-nav-primary .nav-item:not(:last-child) {
@@ -23254,11 +23263,21 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   padding-top: 0;
   border-right: 0;
 }
+#navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-secondary::before,
+#navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-tertiary::before {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  height: 1px;
+  content: "";
+  background-color: var(--az-navbar-fullscreen-modal-menu-separator-color);
+}
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-secondary .nav,
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-tertiary .nav {
   margin-right: 0;
   margin-left: 0;
-  border-top: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
   border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
 }
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-modal-menu-nav-col-secondary .nav-link,
