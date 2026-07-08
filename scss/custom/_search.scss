@@ -1,0 +1,154 @@
+// AZ Search
+//
+// Reusable search input-group component that can be used in navbars and other layouts.
+
+.az-search {
+  // scss-docs-start az-search-css-vars
+  --az-search-width: 265px;
+  --az-search-height: 43px;
+  --az-search-padding-y: 5px;
+  --az-search-padding-x: 15px;
+  --az-search-btn-padding: 9px;
+  --az-search-input-padding: 6px 12px 6px 12px;
+  --az-search-icon-size: 24px;
+  --az-search-color: var(--bs-white);
+  --az-search-hover-color: var(--bs-sky);
+  --az-search-border-width: 2px;
+  --az-search-border-color: var(--az-search-color);
+  --az-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'><ellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='#{$white}' stroke-width='5'/><line x1='31' y1='31' x2='40' y2='40' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/></svg>"))};
+  --az-search-font: italic normal normal 18px/22px proxima-nova-condensed;
+  --az-search-separator-color: var(--bs-bloom);
+  --az-search-focus-ring-color: var(--bs-sky);
+  --az-search-focus-ring-width: 1px;
+  // scss-docs-end az-search-css-vars
+  display: flex;
+  flex: 1 1 var(--az-search-width);
+  min-width: 0;
+  max-width: var(--az-search-width);
+  padding: var(--az-search-padding-y) var(--az-search-padding-x);
+
+  &:hover {
+    .form-control,
+    .btn {
+      border-color: var(--az-search-hover-color);
+    }
+  }
+
+  .input-group {
+    --bs-border-width: 0;
+    flex-wrap: nowrap;
+    height: var(--az-search-height);
+    overflow: visible;
+
+    .btn {
+      padding: var(--az-search-btn-padding);
+      border-width: var(--az-search-border-width);
+    }
+
+    .btn::before {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      width: var(--az-search-border-width);
+      content: "";
+      background-color: var(--az-search-separator-color);
+      @include transition(background-color .15s ease-in-out, top .15s ease-in-out, bottom .15s ease-in-out, width .15s ease-in-out);
+      @include border-radius(999px);
+    }
+
+    .form-control:focus-visible + .btn::before {
+      top: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+      bottom: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+      background-color: var(--az-search-focus-ring-color);
+      @include border-radius(0);
+    }
+  }
+
+  .form-control {
+    padding: var(--az-search-input-padding);
+    font: var(--az-search-font);
+    color: var(--az-search-color);
+    background-color: transparent;
+    border: var(--az-search-border-width) solid var(--az-search-border-color);
+    border-right: 0;
+    @include border-start-radius(8px);
+    @include border-end-radius(0);
+
+    &::placeholder {
+      color: var(--az-search-color);
+    }
+
+    &[type="search"]::-webkit-search-cancel-button {
+      cursor: pointer;
+      filter: invert(1) brightness(1.25);
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      border-color: var(--az-search-focus-ring-color);
+      outline: 0;
+      box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+    }
+  }
+
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--az-search-height);
+    margin: 0;
+    color: var(--az-search-color);
+    border: var(--az-search-border-width) solid var(--az-search-border-color);
+    border-left: 0;
+    @include border-start-radius(0);
+    @include border-end-radius(8px);
+
+    &:focus,
+    &:focus-visible {
+      @include border-start-radius(0);
+      @include border-end-radius(8px);
+    }
+
+    &:focus-visible {
+      border-color: var(--az-search-focus-ring-color);
+      outline: 0;
+      box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+
+      &::before {
+        top: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+        bottom: calc(-1 * var(--az-search-border-width)); // stylelint-disable-line function-disallowed-list
+        width: 3px;
+        background-color: var(--az-search-focus-ring-color);
+        @include border-radius(0);
+      }
+    }
+  }
+
+  .az-search-toggle,
+  .navbar-toggler-search {
+    border: 0;
+
+    &:focus-visible {
+      @include border-radius(4px);
+      outline: 0;
+      box-shadow: 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
+    }
+  }
+
+  .az-search-icon,
+  .search-icon {
+    display: block;
+    width: var(--az-search-icon-size);
+    height: var(--az-search-icon-size);
+    background-image: var(--az-search-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
