@@ -53,9 +53,7 @@
 
   var IDS = {
     FOOTER_TOP: 'navbar-az-fullscreen-modal-footer-top',
-    FOOTER_TOP_HEADING: 'resources-for-label',
     FOOTER_BOTTOM: 'navbar-az-fullscreen-modal-footer-bottom',
-    FOOTER_BOTTOM_HEADING: 'helpful-links-label',
     MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col'
   };
   var LABELS = {
@@ -206,15 +204,10 @@
       if (!footer) {
         return;
       }
-      var firstNavItem = footer.querySelector('.navbar-nav .nav-item');
-      if (!firstNavItem) {
-        return;
-      }
 
       // Get the original heading element and extract its text and id
       var originalHeading = footer.querySelector('.nav-item > .navbar-brand');
       var headingText = (originalHeading == null ? void 0 : originalHeading.textContent.trim()) || (footerPosition === 'top' ? LABELS.FOOTER_TOP_HEADING : LABELS.FOOTER_BOTTOM_HEADING);
-      var headingId = (originalHeading == null ? void 0 : originalHeading.id) || (footerPosition === 'top' ? IDS.FOOTER_TOP_HEADING : IDS.FOOTER_BOTTOM_HEADING);
 
       // Save footer nav links to an array
       var footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks';
@@ -229,58 +222,25 @@
         };
       });
 
-      // If a match was found in the this footer's links, display the menu page
+      // If a match was found in this footer's links, display the menu page
       if (!activeLinkFound && found) {
         this.showNavMenu(2, "#" + footer.id, headingText);
       }
 
-      // Clone the first nav item
-      var clonedNavItem = firstNavItem.cloneNode(true);
-
-      // Get the first 3 link texts
-      var linkTexts = this[footerLinksProperty] ? this[footerLinksProperty].slice(0, 3).map(function (link) {
+      // Get the first 2 link texts
+      var linkTexts = this[footerLinksProperty] ? this[footerLinksProperty].slice(0, 2).map(function (link) {
         return link.text;
       }) : [];
 
       // Create the text with "and more..."
       var footerText = linkTexts.length > 0 ? linkTexts.join(', ') + ", and more..." : 'View more...';
-
-      // Create aria-label text for the button
-      var ariaLabel = "Toggle " + headingText.replace(':', '').trim() + " submenu";
-      var primaryButton = document.createElement('button');
-      primaryButton.type = 'button';
-      primaryButton.className = 'btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text';
-      primaryButton.setAttribute('aria-controls', IDS.MOBILE_COL);
-      primaryButton.setAttribute('aria-label', ariaLabel);
-      primaryButton.setAttribute('data-az-menu-element', "#" + footer.id);
-      var heading = document.createElement('h2');
-      heading.className = 'navbar-brand nav-link-text m-0';
-      heading.setAttribute('id', headingId);
-      heading.textContent = headingText;
-      primaryButton.append(heading);
-      var footerTextNode = document.createElement('span');
-      footerTextNode.className = 'text-white';
-      footerTextNode.textContent = footerText;
-      primaryButton.append(footerTextNode);
-      var toggleButton = document.createElement('button');
-      toggleButton.type = 'button';
-      toggleButton.className = 'btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn';
-      toggleButton.setAttribute('aria-controls', IDS.MOBILE_COL);
-      toggleButton.setAttribute('aria-label', ariaLabel);
-      toggleButton.setAttribute('data-az-menu-element', "#" + footer.id);
-      var toggleIcon = document.createElement('span');
-      toggleIcon.className = 'nav-toggle-icon';
-      toggleIcon.setAttribute('aria-hidden', 'true');
-      toggleButton.append(toggleIcon);
-      clonedNavItem.replaceChildren(primaryButton, toggleButton);
-      clonedNavItem.classList.add('d-lg-none');
-
-      // Insert the cloned item as the first child of the parent
-      var parentNav = firstNavItem.parentElement;
-      parentNav.insertBefore(clonedNavItem, parentNav.firstChild);
+      var footerMoreLinksText = footer.querySelector('.navbar-az-fullscreen-mobile-footer-btn-text .more-links-text');
+      if (footerMoreLinksText) {
+        footerMoreLinksText.textContent = footerText;
+      }
 
       // Set up event listeners for footer buttons
-      var footerButtons = clonedNavItem.querySelectorAll(':scope .btn');
+      var footerButtons = footer.querySelectorAll(':scope .btn');
       var _loop = function _loop() {
         var button = _step3.value;
         button.addEventListener('click', function (e) {
