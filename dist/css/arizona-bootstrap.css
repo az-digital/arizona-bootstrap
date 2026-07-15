@@ -22278,6 +22278,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   overflow: visible;
 }
 .az-search .input-group .btn {
+  min-width: var(--az-search-height);
   padding: var(--az-search-btn-padding);
   border-width: var(--az-search-border-width);
 }
@@ -22352,7 +22353,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-width: var(--az-search-height);
   margin: 0;
   color: var(--az-search-color);
   border: var(--az-search-border-width) solid var(--az-search-border-color);
