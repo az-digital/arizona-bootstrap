@@ -16,7 +16,7 @@
   --az-search-border-width: 2px;
   --az-search-border-color: var(--az-search-color);
   --az-search-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'><ellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='#{$white}' stroke-width='5'/><line x1='31' y1='31' x2='40' y2='40' stroke='#{$white}' stroke-width='5' stroke-linecap='round'/></svg>"))};
-  --az-search-font: italic normal normal 18px/22px proxima-nova-condensed;
+  --az-search-font: normal normal normal 18px/22px proxima-nova;
   --az-search-separator-color: var(--bs-bloom);
   --az-search-focus-ring-color: var(--bs-sky);
   --az-search-focus-ring-width: 1px;
