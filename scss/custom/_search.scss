@@ -65,8 +65,6 @@
     background-color: transparent;
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-right: 0;
-    // @include border-start-radius(var(--bs-border-radius));
-    // @include border-end-radius(0);
 
     &::placeholder {
       color: var(--az-search-color);
@@ -95,14 +93,12 @@
     }
 
     &:focus {
-      // box-shadow: none;
       border-color: var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
     }
 
     &:focus-visible {
-      // border-color: var(--az-search-border-color);
       outline: 0;
       box-shadow: none;
     }
@@ -117,8 +113,6 @@
     color: var(--az-search-color);
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-left: 0;
-    // @include border-start-radius(0);
-    // @include border-end-radius(var(--bs-border-radius));
 
     &:focus-visible {
       border-color: var(--az-search-focus-ring-color);
