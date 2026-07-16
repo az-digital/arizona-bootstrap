@@ -35,6 +35,7 @@
     overflow: visible;
 
     .btn {
+      --bs-btn-border-radius: var(--bs-border-radius);
       min-width: var(--az-search-height);
       padding: var(--az-search-btn-padding);
       border-width: var(--az-search-border-width);
