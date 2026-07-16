@@ -826,13 +826,7 @@
 
     .az-search-toggle,
     .navbar-toggler-search {
-      // @include border-radius(4px);
       padding: 6px 5px 4px;
-
-      // &:focus,
-      // &:focus-visible {
-      //   @include border-radius(4px);
-      // }
     }
   }
 
@@ -846,17 +840,10 @@
         .form-control {
           font-size: 14px;
           line-height: 17px;
-          // @include border-start-radius(4px);
         }
 
         .btn {
           padding: 10px 14px;
-          // @include border-radius(4px);
-
-          // &:focus,
-          // &:focus-visible {
-          //   @include border-radius(4px);
-          // }
         }
       }
 
