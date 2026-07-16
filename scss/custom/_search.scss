@@ -52,6 +52,7 @@
       @include transition(background-color .15s ease-in-out);
     }
 
+    .form-control:focus + .btn::before,
     .form-control:focus-visible + .btn::before {
       background-color: var(--az-search-focus-ring-color);
     }
@@ -91,13 +92,9 @@
       mask-size: contain;
     }
 
-    &:focus {
-      border-color: var(--az-search-focus-ring-color);
-      outline: 0;
-      box-shadow: inset 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
-    }
-
+    &:focus,
     &:focus-visible {
+      border-color: var(--az-search-focus-ring-color);
       outline: 0;
       box-shadow: none;
     }
@@ -113,6 +110,7 @@
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-left: 0;
 
+    &:focus,
     &:focus-visible,
     &:active {
       border-color: var(--az-search-focus-ring-color);
