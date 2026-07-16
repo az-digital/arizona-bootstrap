@@ -20,6 +20,7 @@
   --az-search-separator-color: var(--bs-bloom);
   --az-search-focus-ring-color: var(--bs-sky);
   --az-search-focus-ring-width: 1px;
+  --bs-border-radius: 8px;
   // scss-docs-end az-search-css-vars
 
   display: flex;
@@ -74,8 +75,6 @@
     background-color: transparent;
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-right: 0;
-    @include border-start-radius(8px);
-    @include border-end-radius(0);
 
     &::placeholder {
       color: var(--az-search-color);
@@ -110,14 +109,6 @@
     color: var(--az-search-color);
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-left: 0;
-    @include border-start-radius(0);
-    @include border-end-radius(8px);
-
-    &:focus,
-    &:focus-visible {
-      @include border-start-radius(0);
-      @include border-end-radius(8px);
-    }
 
     &:focus-visible {
       border-color: var(--az-search-focus-ring-color);
@@ -136,10 +127,9 @@
 
   .az-search-toggle,
   .navbar-toggler-search {
-    border: 0;
+    --bs-btn-border-radius: var(--bs-border-radius);
 
     &:focus-visible {
-      @include border-radius(4px);
       outline: 0;
       box-shadow: 0 0 0 var(--az-search-focus-ring-width) var(--az-search-focus-ring-color);
     }
