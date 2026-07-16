@@ -16,8 +16,8 @@ const IDS = {
   MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col'
 }
 const LABELS = {
-  FOOTER_TOP_HEADING: 'Resources For:',
-  FOOTER_BOTTOM_HEADING: 'Helpful Links:',
+  FOOTER_TOP_HEADING: 'Resources by Audience',
+  FOOTER_BOTTOM_HEADING: 'Helpful Links',
   MAIN_MENU: 'Main'
 }
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
@@ -183,17 +183,6 @@ class NavbarAzFullscreenMobileNav {
     // If a match was found in this footer's links, display the menu page
     if (!activeLinkFound && found) {
       this.showNavMenu(2, `#${footer.id}`, headingText)
-    }
-
-    // Get the first 2 link texts
-    const linkTexts = this[footerLinksProperty] ? this[footerLinksProperty].slice(0, 2).map(link => link.text) : []
-
-    // Create the text with "and more..."
-    const footerText = linkTexts.length > 0 ? `${linkTexts.join(', ')}, and more...` : 'View more...'
-
-    const footerMoreLinksText = footer.querySelector('.navbar-az-fullscreen-mobile-footer-btn-text .more-links-text')
-    if (footerMoreLinksText) {
-      footerMoreLinksText.textContent = footerText
     }
 
     // Set up event listeners for footer buttons
