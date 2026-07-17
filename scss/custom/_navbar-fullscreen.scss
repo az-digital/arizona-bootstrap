@@ -293,7 +293,7 @@
     --az-search-input-padding: 8px 12px 8px 16px;
     --az-search-icon-size: 35px;
     --az-search-color: var(--bs-cool-gray);
-    --az-search-font: italic normal normal 20px/24px proxima-nova;
+    --az-search-font: normal normal normal 20px/24px proxima-nova;
     --az-search-focus-ring-color: var(--az-navbar-fullscreen-modal-focus-ring-color);
     --az-search-focus-ring-width: var(--az-navbar-fullscreen-modal-focus-ring-width);
     max-width: none;
@@ -780,6 +780,8 @@
     }
 
     .az-search {
+      --az-search-border-width: 0;
+      --bs-border-radius: 4px;
       margin-right: 18px;
     }
   }
@@ -819,17 +821,12 @@
 
   .az-search {
     --az-search-height: 35px;
+    --bs-border-radius: 4px;
     flex: none;
 
     .az-search-toggle,
     .navbar-toggler-search {
-      @include border-radius(4px);
       padding: 6px 5px 4px;
-
-      &:focus,
-      &:focus-visible {
-        @include border-radius(4px);
-      }
     }
   }
 
@@ -837,22 +834,16 @@
     .az-search {
       --az-search-height: 51px;
       --az-search-border-width: 1px;
+      --bs-border-radius: 4px;
 
       .input-group {
         .form-control {
           font-size: 14px;
           line-height: 17px;
-          @include border-start-radius(4px);
         }
 
         .btn {
           padding: 10px 14px;
-          @include border-radius(4px);
-
-          &:focus,
-          &:focus-visible {
-            @include border-radius(4px);
-          }
         }
       }
 
