@@ -542,7 +542,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
     <form class="az-search ms-auto me-4" role="search">
       <label class="visually-hidden" for="az-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
-        <input id="az-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+        <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
         <button class="btn" type="submit" aria-label="Submit site search">
           <span class="az-search-icon" aria-hidden="true"></span>
         </button>
@@ -729,7 +729,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
           <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
                 <span class="az-search-icon" aria-hidden="true"></span>
               </button>
@@ -812,7 +812,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
           <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
                 <span class="az-search-icon" aria-hidden="true"></span>
               </button>
