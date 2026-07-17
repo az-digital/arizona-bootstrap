@@ -916,6 +916,14 @@
     .nav-item {
       margin-right: 0;
     }
+
+    .nav-link:hover {
+      color: var(--bs-nav-link-color);
+    }
+
+    .nav-link-text {
+      pointer-events: none;
+    }
   }
 
   .navbar-az-fullscreen-modal-menu-nav-col-primary {
