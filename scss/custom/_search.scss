@@ -71,15 +71,6 @@
       color: var(--az-search-color);
     }
 
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
-      font: var(--az-search-font);
-      box-shadow: 0 0 0 1000px transparent inset;
-      -webkit-text-fill-color: var(--az-search-color);
-      @include transition(background-color 9999s ease-in-out 0s);
-    }
-
     &[type="search"]::-webkit-search-cancel-button {
       width: 16px;
       height: 16px;
