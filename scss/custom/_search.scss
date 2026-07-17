@@ -41,6 +41,7 @@
     overflow: visible;
 
     .btn {
+      min-width: var(--az-search-height);
       padding: var(--az-search-btn-padding);
       border-width: var(--az-search-border-width);
     }
@@ -101,7 +102,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: var(--az-search-height);
     margin: 0;
     color: var(--az-search-color);
     border: var(--az-search-border-width) solid var(--az-search-border-color);
