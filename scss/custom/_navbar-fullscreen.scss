@@ -661,11 +661,6 @@
       outline: 0;
       box-shadow: inset 0 0 0 var(--az-navbar-fullscreen-modal-focus-ring-width) var(--az-navbar-fullscreen-modal-focus-ring-color);
     }
-
-    &:hover {
-      color: var(--bs-nav-link-hover-color);
-      background-color: transparent;
-    }
   }
 
   .nav-link-text {
