@@ -413,7 +413,7 @@
     justify-content: center;
     width: var(--az-navbar-fullscreen-nav-toggle-size);
     height: var(--az-navbar-fullscreen-nav-toggle-size);
-    padding: var(--az-navbar-fullscreen-nav-toggle-padding-y) 0;
+    padding: var(--az-navbar-fullscreen-modal-menu-nav-toggle-padding-top, var(--az-navbar-fullscreen-nav-toggle-padding-y)) 0 var(--az-navbar-fullscreen-nav-toggle-padding-y);
     --bs-btn-focus-box-shadow: none;
     border: 0;
     @include border-radius(0);
@@ -463,7 +463,7 @@
 
     &::before {
       position: absolute;
-      top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
+      top: var(--az-navbar-fullscreen-modal-menu-nav-toggle-separator-top, var(--az-navbar-fullscreen-nav-toggle-padding-y));
       bottom: var(--az-navbar-fullscreen-nav-toggle-padding-y);
       left: 0;
       z-index: 0;
@@ -570,6 +570,11 @@
 
   .nav {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-underline-height);
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: var(--az-navbar-fullscreen-modal-menu-line-height);
+    --az-navbar-fullscreen-nav-toggle-padding-y: 15px;
+    --az-navbar-fullscreen-modal-menu-nav-link-padding-top: var(--bs-nav-link-padding-y);
+    --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
+    --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 18px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-font-size);
@@ -618,6 +623,9 @@
 
       > .nav-item:first-child {
         padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
+        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: 0;
+        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: 0;
+        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: 0;
       }
     }
   }
@@ -629,6 +637,7 @@
 
     .nav-item {
       display: flex;
+      align-items: flex-start;
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -648,6 +657,9 @@
     position: relative;
     display: flex;
     flex-grow: 1;
+    padding-top: var(--az-navbar-fullscreen-modal-menu-nav-link-padding-top, var(--bs-nav-link-padding-y));
+    padding-bottom: var(--bs-nav-link-padding-y);
+    line-height: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
 
     &:active,
     &.active,
@@ -670,6 +682,10 @@
 
   .nav-link-text {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    block-size: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
+    line-height: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
     &:hover {
       &::after {
         opacity: 1;
@@ -699,12 +715,14 @@
 
   .navbar-az-fullscreen-nav-primary {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-primary-underline-height);
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: var(--az-navbar-fullscreen-modal-menu-primary-line-height);
     --bs-nav-link-padding-y: 24px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-primary-font-size);
     --bs-nav-link-font-weight: var(--az-navbar-fullscreen-modal-menu-primary-font-weight);
     --az-navbar-fullscreen-nav-toggle-size: 40px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 24px;
-    --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    // --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    --az-navbar-fullscreen-nav-toggle-padding-y: 24px;
     padding-left: 0;
     margin-left: 0;
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
@@ -968,6 +986,7 @@
     }
 
     .nav {
+      --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
       margin-right: 0;
       margin-left: 0;
       border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
