@@ -75,7 +75,7 @@
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-replace": "^6.0.3",
-    "autoprefixer": "^10.5.2",
+    "autoprefixer": "^10.5.3",
     "bootstrap": "^5.3.8",
     "clean-css-cli": "^5.6.3",
     "clipboard": "^2.0.11",
@@ -94,16 +94,16 @@
     "linkinator": "^7.6.1",
     "nodemon": "^3.1.14",
     "npm-run-all2": "^9.0.1",
-    "postcss": "^8.5.16",
+    "postcss": "^8.5.19",
     "postcss-cli": "^11.0.1",
     "rollup": "^4.62.2",
     "sass": "1.78.0",
     "shelljs": "^0.10.0",
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
-    "svgo": "4.0.1",
+    "svgo": "4.0.2",
     "terser": "^5.47.1",
-    "vnu-jar": "26.7.3"
+    "vnu-jar": "26.7.11"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
