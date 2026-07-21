@@ -1064,7 +1064,9 @@
 }
 
 .navbar-az-fullscreen-mobile-footer-btn {
-  padding: 12px 20px 10px;
+  padding: 12px 22px 10px;
+  border-right: 0;
+  border-left: 0;
 
   &:focus-visible {
     @include border-radius(2px);
