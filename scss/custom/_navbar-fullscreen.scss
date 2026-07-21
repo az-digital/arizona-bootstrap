@@ -1103,7 +1103,6 @@
 
   .navbar-az-fullscreen-mobile-footer-btn-icon {
     --az-navbar-fullscreen-nav-toggle-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10.828' height='18.827' viewBox='0 0 10.828 18.827'><path fill='none' stroke='#{$white}' stroke-width='2' stroke-linecap='round' d='M-23110.982-11472l8,8-8,8' transform='translate(23112.396 11473.415)'/></svg>"))};
-    --az-navbar-fullscreen-nav-toggle-icon-active: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10.828' height='18.827' viewBox='0 0 10.828 18.827'><path fill='none' stroke='#{$sky}' stroke-width='2' stroke-linecap='round' d='M-23110.982-11472l8,8-8,8' transform='translate(23112.396 11473.415)'/></svg>"))};
     --az-navbar-fullscreen-nav-toggle-size: 16px;
     padding-left: 20px;
     margin-right: -6px;
