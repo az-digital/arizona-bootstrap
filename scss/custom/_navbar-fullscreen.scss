@@ -623,7 +623,12 @@
 
       > .nav-item:first-child {
         padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
-        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: 0;
+        // The nav-toggle is zeroed out completely, but the nav-link is offset
+        // by the difference between its padding-y and the nav-toggle's
+        // padding-y so both elements shift up by the same amount, keeping
+        // the nav-link text vertically aligned with the nav-toggle and
+        // separator on the first row.
+        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y)); // stylelint-disable-line function-disallowed-list
         --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: 0;
         --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: 0;
       }
