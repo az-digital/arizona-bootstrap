@@ -954,6 +954,7 @@
     --az-navbar-fullscreen-nav-toggle-size: 38px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
     --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: 1em;
     margin-right: 0;
     margin-left: 0;
     border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -962,7 +963,6 @@
       padding-top: 12px;
       padding-bottom: 12px;
       font-size: 38px;
-      line-height: 1em;
       letter-spacing: .38px;
     }
   }
@@ -988,6 +988,7 @@
 
     .nav {
       --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+      --az-navbar-fullscreen-modal-menu-nav-link-line-height: 22px;
       margin-right: 0;
       margin-left: 0;
       border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -995,7 +996,6 @@
 
     .nav-link {
       font-size: 18px;
-      line-height: 22px;
       letter-spacing: .36px;
     }
   }
