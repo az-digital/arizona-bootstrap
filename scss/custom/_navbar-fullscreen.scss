@@ -418,7 +418,6 @@
     border: 0;
     @include border-radius(0);
 
-    &:focus,
     &:focus-visible {
       @include border-radius(2px);
       outline: var(--az-navbar-fullscreen-focus-ring-width) solid var(--az-navbar-fullscreen-focus-ring-color);
@@ -456,7 +455,6 @@
     position: relative;
     padding-left: var(--az-navbar-fullscreen-nav-toggle-separator-offset);
 
-    &:focus::before,
     &:focus-visible::before {
       background-color: transparent;
     }
