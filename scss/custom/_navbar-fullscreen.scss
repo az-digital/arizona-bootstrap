@@ -197,13 +197,13 @@
 
 .navbar-az-fullscreen-modal {
   // scss-docs-start navbar-az-fullscreen-modal-css-vars
-  --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 16px/20px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
-  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 20px;
-  --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 15px;
-  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
+  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
   --az-navbar-fullscreen-modal-top-fade-size: 60px;
   --az-navbar-fullscreen-modal-bottom-fade-size: 30px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
@@ -221,19 +221,6 @@
   --bs-modal-footer-bg: var(--bs-azurite);
   --bs-modal-footer-border-color: var(--bs-blue);
   --bs-modal-footer-border-width: 2px;
-
-  @include media-breakpoint-down(xxl) {
-    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
-  }
-
-  @include media-breakpoint-down(xl) {
-    --az-navbar-fullscreen-modal-footer-font: normal normal bold 16px/20px proxima-nova-condensed;
-    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
-  }
   // scss-docs-end navbar-az-fullscreen-modal-css-vars
 
   .modal-header {
