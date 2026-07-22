@@ -6302,6 +6302,11 @@ class NavbarAzFullscreenMobileNav {
     this.initialMenuLabel = null;
     this.initialMenuParentLabel = null;
     this.initialMenuParentElementId = null;
+
+    // Initialize window location variable
+    this.cleanWindowLocation = new URL(window.location.href);
+    this.cleanWindowLocation.search = '';
+    this.cleanWindowLocation.hash = '';
     this.init();
   }
 
@@ -6324,7 +6329,7 @@ class NavbarAzFullscreenMobileNav {
     // Check active tertiary links for a match with the current pathname
     var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
     for (var link of activeTertiaryLinks) {
-      if (link.href === window.location.href) {
+      if (link.href === this.cleanWindowLocation.href) {
         var _secondaryContentButt;
         var tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
         if (!tertiaryPanel) {
@@ -6345,7 +6350,7 @@ class NavbarAzFullscreenMobileNav {
     if (!activeLinkFound) {
       var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active');
       for (var _link of activeSecondaryLinks) {
-        if (_link.href === window.location.href) {
+        if (_link.href === this.cleanWindowLocation.href) {
           var _link$closest;
           var _secondaryContent = _link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
           var targetId = (_secondaryContent === null || _secondaryContent === void 0 ? void 0 : _secondaryContent.getAttribute('id')) || '';
@@ -6416,7 +6421,7 @@ class NavbarAzFullscreenMobileNav {
     var footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks';
     var found = false;
     this[footerLinksProperty] = Array.from(document.querySelectorAll("#".concat(footer.id, " .nav-link"))).map(link => {
-      if (!activeLinkFound && !found && link.href === window.location.href) {
+      if (!activeLinkFound && !found && link.href === this.cleanWindowLocation.href) {
         found = true;
       }
       return {
@@ -6608,7 +6613,7 @@ class NavbarAzFullscreenMobileNav {
         item.className = 'nav-item';
         var anchor = document.createElement('a');
         anchor.className = 'nav-link';
-        if (link.href === window.location.href) {
+        if (link.href === this.cleanWindowLocation.href) {
           anchor.classList.add('active');
         }
         anchor.href = link.href;
