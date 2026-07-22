@@ -22567,13 +22567,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .navbar-az-fullscreen-modal {
-  --az-navbar-fullscreen-modal-footer-font: normal normal bold 18px/22px proxima-nova-condensed;
+  --az-navbar-fullscreen-modal-footer-font: normal normal bold 16px/20px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
-  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 20px;
-  --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 15px;
-  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
+  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
   --az-navbar-fullscreen-modal-top-fade-size: 60px;
   --az-navbar-fullscreen-modal-bottom-fade-size: 30px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
@@ -22593,21 +22593,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-modal-footer-border-width: 2px;
   /* stylelint-disable selector-max-id */
   /* stylelint-enable selector-max-id */
-}
-@media (max-width: 1399.98px) {
-  .navbar-az-fullscreen-modal {
-    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 10px;
-  }
-}
-@media (max-width: 1199.98px) {
-  .navbar-az-fullscreen-modal {
-    --az-navbar-fullscreen-modal-footer-font: normal normal bold 16px/20px proxima-nova-condensed;
-    --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
-    --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
-  }
 }
 .navbar-az-fullscreen-modal .modal-header {
   -ms-flex-direction: column;
