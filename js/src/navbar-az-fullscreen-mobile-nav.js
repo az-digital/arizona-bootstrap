@@ -53,6 +53,11 @@ class NavbarAzFullscreenMobileNav {
     this.initialMenuParentLabel = null
     this.initialMenuParentElementId = null
 
+    // Initialize window location variable
+    this.cleanWindowLocation = new URL(window.location.href)
+    this.cleanWindowLocation.search = ''
+    this.cleanWindowLocation.hash = ''
+
     this.init()
   }
 
@@ -75,7 +80,7 @@ class NavbarAzFullscreenMobileNav {
     // Check active tertiary links for a match with the current pathname
     const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
     for (const link of activeTertiaryLinks) {
-      if (link.href === window.location.href) {
+      if (link.href === this.cleanWindowLocation.href) {
         const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
         if (!tertiaryPanel) {
           continue
@@ -97,7 +102,7 @@ class NavbarAzFullscreenMobileNav {
     if (!activeLinkFound) {
       const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
       for (const link of activeSecondaryLinks) {
-        if (link.href === window.location.href) {
+        if (link.href === this.cleanWindowLocation.href) {
           const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
           const targetId = secondaryContent?.getAttribute('id') || ''
           const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
@@ -170,7 +175,7 @@ class NavbarAzFullscreenMobileNav {
     const footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks'
     let found = false
     this[footerLinksProperty] = Array.from(document.querySelectorAll(`#${footer.id} .nav-link`)).map(link => {
-      if (!activeLinkFound && !found && link.href === window.location.href) {
+      if (!activeLinkFound && !found && link.href === this.cleanWindowLocation.href) {
         found = true
       }
 
@@ -393,7 +398,7 @@ class NavbarAzFullscreenMobileNav {
 
         const anchor = document.createElement('a')
         anchor.className = 'nav-link'
-        if (link.href === window.location.href) {
+        if (link.href === this.cleanWindowLocation.href) {
           anchor.classList.add('active')
         }
 
