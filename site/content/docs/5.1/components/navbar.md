@@ -743,7 +743,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -826,7 +826,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
