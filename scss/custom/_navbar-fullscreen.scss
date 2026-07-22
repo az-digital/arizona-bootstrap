@@ -400,7 +400,7 @@
     justify-content: center;
     width: var(--az-navbar-fullscreen-nav-toggle-size);
     height: var(--az-navbar-fullscreen-nav-toggle-size);
-    padding: var(--az-navbar-fullscreen-nav-toggle-padding-y) 0;
+    padding: var(--az-navbar-fullscreen-modal-menu-nav-toggle-padding-top, var(--az-navbar-fullscreen-nav-toggle-padding-y)) 0 var(--az-navbar-fullscreen-nav-toggle-padding-y);
     --bs-btn-focus-box-shadow: none;
     border: 0;
     @include border-radius(0);
@@ -448,7 +448,7 @@
 
     &::before {
       position: absolute;
-      top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
+      top: var(--az-navbar-fullscreen-modal-menu-nav-toggle-separator-top, var(--az-navbar-fullscreen-nav-toggle-padding-y));
       bottom: var(--az-navbar-fullscreen-nav-toggle-padding-y);
       left: 0;
       z-index: 0;
@@ -555,6 +555,11 @@
 
   .nav {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-underline-height);
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: var(--az-navbar-fullscreen-modal-menu-line-height);
+    --az-navbar-fullscreen-nav-toggle-padding-y: 15px;
+    --az-navbar-fullscreen-modal-menu-nav-link-padding-top: var(--bs-nav-link-padding-y);
+    --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
+    --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: var(--az-navbar-fullscreen-nav-toggle-padding-y);
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 18px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-font-size);
@@ -603,6 +608,14 @@
 
       > .nav-item:first-child {
         padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
+        // The nav-toggle is zeroed out completely, but the nav-link is offset
+        // by the difference between its padding-y and the nav-toggle's
+        // padding-y so both elements shift up by the same amount, keeping
+        // the nav-link text vertically aligned with the nav-toggle and
+        // separator on the first row.
+        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y)); // stylelint-disable-line function-disallowed-list
+        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: 0;
+        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: 0;
       }
     }
   }
@@ -614,6 +627,7 @@
 
     .nav-item {
       display: flex;
+      align-items: flex-start;
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -633,6 +647,9 @@
     position: relative;
     display: flex;
     flex-grow: 1;
+    padding-top: var(--az-navbar-fullscreen-modal-menu-nav-link-padding-top, var(--bs-nav-link-padding-y));
+    padding-bottom: var(--bs-nav-link-padding-y);
+    line-height: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
 
     &:active,
     &.active,
@@ -650,6 +667,10 @@
 
   .nav-link-text {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    block-size: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
+    line-height: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
     &:hover {
       &::after {
         opacity: 1;
@@ -679,12 +700,14 @@
 
   .navbar-az-fullscreen-nav-primary {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-primary-underline-height);
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: var(--az-navbar-fullscreen-modal-menu-primary-line-height);
     --bs-nav-link-padding-y: 24px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-primary-font-size);
     --bs-nav-link-font-weight: var(--az-navbar-fullscreen-modal-menu-primary-font-weight);
     --az-navbar-fullscreen-nav-toggle-size: 40px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 24px;
-    --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    // --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    --az-navbar-fullscreen-nav-toggle-padding-y: 24px;
     padding-left: 0;
     margin-left: 0;
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
@@ -918,6 +941,7 @@
     --az-navbar-fullscreen-nav-toggle-size: 38px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
     --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+    --az-navbar-fullscreen-modal-menu-nav-link-line-height: 1em;
     margin-right: 0;
     margin-left: 0;
     border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -926,7 +950,6 @@
       padding-top: 12px;
       padding-bottom: 12px;
       font-size: 38px;
-      line-height: 1em;
       letter-spacing: .38px;
     }
   }
@@ -951,6 +974,8 @@
     }
 
     .nav {
+      --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
+      --az-navbar-fullscreen-modal-menu-nav-link-line-height: 22px;
       margin-right: 0;
       margin-left: 0;
       border-bottom: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
@@ -958,7 +983,6 @@
 
     .nav-link {
       font-size: 18px;
-      line-height: 22px;
       letter-spacing: .36px;
     }
   }
