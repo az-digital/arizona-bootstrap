@@ -68,7 +68,7 @@
     "@babel/preset-env": "^7.29.2",
     "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "autoprefixer": "^10.5.2",
+    "autoprefixer": "^10.5.3",
     "babel-plugin-istanbul": "^8.0.0",
     "bootstrap": "^4.6.2",
     "clean-css-cli": "^5.6.3",
@@ -85,14 +85,14 @@
     "nodemon": "^3.1.14",
     "npm-run-all2": "^9.0.2",
     "popper.js": "^1.16.1",
-    "postcss": "^8.5.16",
+    "postcss": "^8.5.19",
     "postcss-cli": "^11.0.1",
     "rollup": "^4.62.2",
     "sass": "1.78.0",
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "terser": "^5.49.0",
-    "vnu-jar": "26.7.3"
+    "vnu-jar": "26.7.11"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
