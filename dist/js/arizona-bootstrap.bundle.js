@@ -8102,8 +8102,6 @@
     MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col'
   };
   var LABELS = {
-    FOOTER_TOP_HEADING: 'Resources For:',
-    FOOTER_BOTTOM_HEADING: 'Helpful Links:',
     MAIN_MENU: 'Main'
   };
   var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
@@ -8137,6 +8135,11 @@
       this.initialMenuLabel = null;
       this.initialMenuParentLabel = null;
       this.initialMenuParentElementId = null;
+
+      // Initialize window location variable
+      this.cleanWindowLocation = new URL(window.location.href);
+      this.cleanWindowLocation.search = '';
+      this.cleanWindowLocation.hash = '';
       this.init();
     }
 
@@ -8159,7 +8162,7 @@
       // Check active tertiary links for a match with the current pathname
       var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
       for (var link of activeTertiaryLinks) {
-        if (link.href === window.location.href) {
+        if (link.href === this.cleanWindowLocation.href) {
           var _secondaryContentButt;
           var tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
           if (!tertiaryPanel) {
@@ -8180,7 +8183,7 @@
       if (!activeLinkFound) {
         var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active');
         for (var _link of activeSecondaryLinks) {
-          if (_link.href === window.location.href) {
+          if (_link.href === this.cleanWindowLocation.href) {
             var _link$closest;
             var _secondaryContent = _link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
             var targetId = (_secondaryContent === null || _secondaryContent === void 0 ? void 0 : _secondaryContent.getAttribute('id')) || '';
@@ -8243,15 +8246,15 @@
         return;
       }
 
-      // Get the original heading element and extract its text and id
-      var originalHeading = footer.querySelector('.nav-item > .navbar-brand');
-      var headingText = (originalHeading === null || originalHeading === void 0 ? void 0 : originalHeading.textContent.trim()) || (footerPosition === 'top' ? LABELS.FOOTER_TOP_HEADING : LABELS.FOOTER_BOTTOM_HEADING);
+      // Get the mobile footer button and extract its heading text
+      var mobileFooterHeading = footer.querySelector('.navbar-az-fullscreen-mobile-footer-btn-text .navbar-brand');
+      var headingText = mobileFooterHeading === null || mobileFooterHeading === void 0 ? void 0 : mobileFooterHeading.textContent.trim();
 
       // Save footer nav links to an array
       var footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks';
       var found = false;
       this[footerLinksProperty] = Array.from(document.querySelectorAll("#".concat(footer.id, " .nav-link"))).map(link => {
-        if (!activeLinkFound && !found && link.href === window.location.href) {
+        if (!activeLinkFound && !found && link.href === this.cleanWindowLocation.href) {
           found = true;
         }
         return {
@@ -8265,25 +8268,13 @@
         this.showNavMenu(2, "#".concat(footer.id), headingText);
       }
 
-      // Get the first 2 link texts
-      var linkTexts = this[footerLinksProperty] ? this[footerLinksProperty].slice(0, 2).map(link => link.text) : [];
-
-      // Create the text with "and more..."
-      var footerText = linkTexts.length > 0 ? "".concat(linkTexts.join(', '), ", and more...") : 'View more...';
-      var footerMoreLinksText = footer.querySelector('.navbar-az-fullscreen-mobile-footer-btn-text .more-links-text');
-      if (footerMoreLinksText) {
-        footerMoreLinksText.textContent = footerText;
-      }
-
       // Set up event listeners for footer buttons
       var footerButtons = footer.querySelectorAll(':scope .btn');
       var _loop = function _loop(button) {
-        button.addEventListener('click', e => {
+        button.addEventListener('click', () => {
           var targetId = button.getAttribute('data-az-menu-element');
           if (targetId) {
-            // Extract the menu label from button aria-label text
-            var toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '');
-            _this.showNavMenu(2, targetId, toggleLabel);
+            _this.showNavMenu(2, targetId, headingText);
           }
         });
       };
@@ -8430,35 +8421,32 @@
     /**
      * Build HTML for footer menu page display
      * @param {Element} sourceElement - The source footer element
-     * @param {string} label - The label for the menu heading (optional)
+     * @param {string} label - The label for the menu heading
      * @returns {DocumentFragment} Document fragment for the footer menu
      */
     buildFooterMenuNode(sourceElement) {
-      var label = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var label = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       var fragment = document.createDocumentFragment();
       fragment.append(this.createBackButtonElement(LABELS.MAIN_MENU));
-      var originalHeading = sourceElement.querySelector('h2.navbar-brand');
-      var headingText = (originalHeading === null || originalHeading === void 0 ? void 0 : originalHeading.textContent.trim()) || label || 'Menu';
       var heading = document.createElement('h2');
       heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading';
-      heading.textContent = headingText;
+      heading.textContent = label;
       fragment.append(heading);
       var footerLinks = sourceElement.id === IDS.FOOTER_TOP ? this.topFooterLinks : this.bottomFooterLinks;
       var navId = sourceElement.id === IDS.FOOTER_TOP ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav';
-      var ariaLabel = headingText.replace(':', '').trim();
       var column = document.createElement('div');
       column.className = 'col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary';
       var list = document.createElement('ul');
       list.className = 'nav';
       list.setAttribute('id', navId);
-      list.setAttribute('aria-label', ariaLabel);
+      list.setAttribute('aria-label', label);
       if (footerLinks && footerLinks.length > 0) {
         for (var link of footerLinks) {
           var item = document.createElement('li');
           item.className = 'nav-item';
           var anchor = document.createElement('a');
           anchor.className = 'nav-link';
-          if (link.href === window.location.href) {
+          if (link.href === this.cleanWindowLocation.href) {
             anchor.classList.add('active');
           }
           anchor.href = link.href;

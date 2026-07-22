@@ -84,7 +84,6 @@
       mask-size: contain;
     }
 
-    &:focus,
     &:focus-visible {
       border-color: var(--az-search-focus-ring-color);
       outline: 0;
@@ -102,7 +101,6 @@
     border: var(--az-search-border-width) solid var(--az-search-border-color);
     border-left: 0;
 
-    &:focus,
     &:focus-visible,
     &:active {
       border-color: var(--az-search-focus-ring-color);
