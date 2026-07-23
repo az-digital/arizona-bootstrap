@@ -4,11 +4,11 @@
 
 // Logo series wrapper
 .bd-brand-logos {
-  color: $bd-violet;
+  color: var(--bd-violet);
 
   .inverse {
-    color: $white;
-    background-color: $bd-violet;
+    color: var(--bs-white);
+    background-color: var(--bd-violet);
   }
 }
 
@@ -36,10 +36,10 @@
 
   // Docs colors
   .bd-purple {
-    background-color: $bd-purple;
+    background-color: var(--bd-purple);
   }
   .bd-purple-light {
-    background-color: $bd-purple-light;
+    background-color: var(--bd-purple-light);
   }
   .bd-purple-lighter {
     background-color: #e5e1ea;
