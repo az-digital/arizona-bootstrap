@@ -533,18 +533,23 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< /example >}}
 
 ### Search
+
+For standalone usage and full component guidance, see [Search]({{< docsref "/components/search" >}}).
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search ms-auto me-4" role="search">
-      <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
+    <form class="az-search ms-auto me-4" role="search">
+      <label class="visually-hidden" for="az-search">Search the site</label>
       <div class="input-group d-none d-lg-flex">
-        <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+        <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
         <button class="btn" type="submit" aria-label="Submit site search">
-          <span class="search-icon" aria-hidden="true"></span>
+          <span class="az-search-icon" aria-hidden="true"></span>
         </button>
       </div>
-      <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
+      <button class="btn d-lg-none az-search-toggle navbar-toggler-search" type="button" aria-label="Search the site">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
     </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
       <span class="navbar-toggler-icon"></span>
@@ -721,12 +726,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
+          <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -738,7 +743,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -804,12 +809,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
+          <form class="az-search" role="search">
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search the site">
               <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -821,7 +826,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -878,7 +883,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
         </div>
       </div>
       <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
-        <nav class="navbar" aria-labelledby="resources-for-label">
+        <nav class="navbar d-none d-lg-flex" aria-labelledby="resources-for-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
@@ -926,6 +931,41 @@ This behavior is initialized by `enableNavbarAzFullscreen()` and is included aut
 #### Mobile Menu
 Documentation coming soon.
 
+### Fixed Top
+To fix the non-modal AZ Navbar Fullscreen to the top of the viewport, add Bootstrap's `.fixed-top` class to `.navbar-az-fullscreen`.
+
+Because fixed navbars are removed from normal document flow, also add `.navbar-az-fullscreen-fixed-top-offset` to your main content wrapper so page content does not render underneath the navbar.
+
+{{< example show_markup=false >}}
+<div class="navbar-az-fullscreen-fixed-top-offset">
+  <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" aria-label="Open site menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+{{< /example >}}
+
+```html
+<div class="navbar-az-fullscreen-fixed-top-offset">
+  <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" aria-label="Open site menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+```
+
 ### CSS Variables
 The following properties are set and used:
 
@@ -937,9 +977,9 @@ On the `.navbar-az-fullscreen-actions` custom class:
 
 {{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
-On the `.navbar-az-fullscreen-search` custom class:
+On the `.az-search` custom class:
 
-{{< scss-docs name="navbar-az-fullscreen-search-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+{{< scss-docs name="az-search-css-vars" file="custom/_search.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-modal` custom class:
 

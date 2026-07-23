@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap navbar-az-fullscreen.js v5.1.4 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap navbar-az-fullscreen.js v5.1.6 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -42,7 +42,11 @@
   var DESKTOP_MEDIA_QUERY = '(min-width: 992px)';
   var RESIZE_DEBOUNCE_MS = 100;
   var FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal';
+  var MODAL_SECTION_SELECTOR = '.modal-header, .modal-body, .modal-footer';
+  var FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset';
   var NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col';
+  var COLLAPSE_SELECTOR = '.collapse[id]';
+  var COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]';
   var PRIMARY_NAV_COL_SELECTOR = '.navbar-az-fullscreen-modal-menu-nav-col-primary';
   var PRIMARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-primary';
   var SECONDARY_NAV_SELECTOR = '.navbar-az-fullscreen-nav-secondary';
@@ -206,6 +210,66 @@
       }, waitMs);
     };
   }
+  function captureModalDefaultState(modalElement) {
+    var collapseStates = [];
+    for (var _iterator9 = _createForOfIteratorHelperLoose(modalElement.querySelectorAll(COLLAPSE_SELECTOR)), _step9; !(_step9 = _iterator9()).done;) {
+      var collapseElement = _step9.value;
+      if (collapseElement instanceof HTMLElement) {
+        collapseStates.push({
+          id: collapseElement.id,
+          isShown: collapseElement.classList.contains('show')
+        });
+      }
+    }
+    var toggleStates = [];
+    for (var _iterator0 = _createForOfIteratorHelperLoose(modalElement.querySelectorAll(COLLAPSE_TOGGLE_SELECTOR)), _step0; !(_step0 = _iterator0()).done;) {
+      var toggleElement = _step0.value;
+      if (toggleElement instanceof HTMLElement) {
+        toggleStates.push({
+          element: toggleElement,
+          isCollapsed: toggleElement.classList.contains('collapsed'),
+          isExpanded: toggleElement.getAttribute('aria-expanded') === 'true'
+        });
+      }
+    }
+    return {
+      collapseStates: collapseStates,
+      toggleStates: toggleStates
+    };
+  }
+  function restoreModalDefaultState(modalElement, modalDefaultState) {
+    if (!modalDefaultState) {
+      return;
+    }
+    for (var _iterator1 = _createForOfIteratorHelperLoose(modalDefaultState.collapseStates), _step1; !(_step1 = _iterator1()).done;) {
+      var collapseState = _step1.value;
+      var collapseElement = modalElement.querySelector("#" + CSS.escape(collapseState.id));
+      if (!(collapseElement instanceof HTMLElement)) {
+        continue;
+      }
+      collapseElement.classList.remove('collapsing');
+      collapseElement.style.height = '';
+      if (collapseState.isShown) {
+        collapseElement.classList.add('show');
+      } else {
+        collapseElement.classList.remove('show');
+      }
+    }
+    for (var _iterator10 = _createForOfIteratorHelperLoose(modalDefaultState.toggleStates), _step10; !(_step10 = _iterator10()).done;) {
+      var toggleState = _step10.value;
+      if (!(toggleState.element instanceof HTMLElement)) {
+        continue;
+      }
+      toggleState.element.classList.toggle('collapsed', toggleState.isCollapsed);
+      toggleState.element.setAttribute('aria-expanded', String(toggleState.isExpanded));
+    }
+    modalElement.dispatchEvent(new CustomEvent(FULLSCREEN_MODAL_RESET_EVENT, {
+      bubbles: true,
+      detail: {
+        modal: modalElement
+      }
+    }));
+  }
   function scheduleRefresh(refresh, frameState) {
     if (frameState.isQueued) {
       return;
@@ -215,6 +279,39 @@
       frameState.isQueued = false;
       refresh();
     });
+  }
+
+  // Mirror Bootstrap's scrollbar-width `padding-right` compensation onto each
+  // fullscreen modal section (header, body, footer) so their inner
+  // `.container-lg` wrappers all align with the `.fixed-top` non-modal navbar
+  // (which Bootstrap also compensates) while the modal is open. Padding is
+  // applied per-section, rather than on `.modal-content`, so the modal-footer's
+  // colored background continues to reach the right edge of the viewport.
+  // See https://github.com/az-digital/arizona-bootstrap/issues/2100.
+  function getScrollbarWidth() {
+    return Math.abs(window.innerWidth - document.documentElement.clientWidth);
+  }
+  function getModalSections(modalElement) {
+    return [].concat(modalElement.querySelectorAll(MODAL_SECTION_SELECTOR)).filter(function (section) {
+      return section instanceof HTMLElement;
+    });
+  }
+  function synchronizeModalScrollbarPadding(modalElement) {
+    var scrollbarWidth = getScrollbarWidth();
+    if (scrollbarWidth <= 0) {
+      clearModalScrollbarPadding(modalElement);
+      return;
+    }
+    for (var _iterator11 = _createForOfIteratorHelperLoose(getModalSections(modalElement)), _step11; !(_step11 = _iterator11()).done;) {
+      var section = _step11.value;
+      section.style.paddingRight = scrollbarWidth + "px";
+    }
+  }
+  function clearModalScrollbarPadding(modalElement) {
+    for (var _iterator12 = _createForOfIteratorHelperLoose(getModalSections(modalElement)), _step12; !(_step12 = _iterator12()).done;) {
+      var section = _step12.value;
+      section.style.paddingRight = '';
+    }
   }
 
   /**
@@ -230,13 +327,14 @@
       return;
     }
     var _loop = function _loop() {
-      var modal = _step9.value;
+      var modal = _step13.value;
       if (!(modal instanceof HTMLElement)) {
         return 1; // continue
       }
       var refresh = function refresh() {
         synchronizeNavColumnHeights(modal);
       };
+      var modalDefaultState = captureModalDefaultState(modal);
       var refreshFrameState = {
         isQueued: false
       };
@@ -246,18 +344,29 @@
           scheduleRefresh(refresh, refreshFrameState);
         }
       };
+      var resetOnModalHidden = function resetOnModalHidden() {
+        restoreModalDefaultState(modal, modalDefaultState);
+        refresh();
+      };
       var debouncedRefresh = debounce(refresh, RESIZE_DEBOUNCE_MS);
       EventHandler.on(modal, 'shown.bs.modal', refresh);
+      EventHandler.on(modal, 'hidden.bs.modal', resetOnModalHidden);
       EventHandler.on(modal, 'show.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'hide.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'shown.bs.collapse', refreshOnCollapseEvent);
       EventHandler.on(modal, 'hidden.bs.collapse', refreshOnCollapseEvent);
+      EventHandler.on(modal, 'show.bs.modal', function () {
+        return synchronizeModalScrollbarPadding(modal);
+      });
+      EventHandler.on(modal, 'hidden.bs.modal', function () {
+        return clearModalScrollbarPadding(modal);
+      });
       window.addEventListener('resize', debouncedRefresh);
 
       // Sync once so initially shown states render correctly on first paint.
       refresh();
     };
-    for (var _iterator9 = _createForOfIteratorHelperLoose(fullscreenModals), _step9; !(_step9 = _iterator9()).done;) {
+    for (var _iterator13 = _createForOfIteratorHelperLoose(fullscreenModals), _step13; !(_step13 = _iterator13()).done;) {
       if (_loop()) continue;
     }
   }
