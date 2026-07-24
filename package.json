@@ -68,7 +68,7 @@
     "@babel/preset-env": "^7.29.2",
     "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "autoprefixer": "^10.5.3",
+    "autoprefixer": "^10.5.4",
     "babel-plugin-istanbul": "^8.0.0",
     "bootstrap": "^4.6.2",
     "clean-css-cli": "^5.6.3",
@@ -92,7 +92,7 @@
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "terser": "^5.49.0",
-    "vnu-jar": "26.7.11"
+    "vnu-jar": "26.7.16"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
