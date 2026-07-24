@@ -22388,8 +22388,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   background-size: contain;
 }
 
-.navbar-az-fullscreen {
+:root {
   --az-navbar-fullscreen-height: 100px;
+}
+
+.navbar-az-fullscreen {
   --az-navbar-fullscreen-bg: var(--bs-blue);
   --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
   --az-navbar-fullscreen-bottom-border-width: 3px;
@@ -22474,12 +22477,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .navbar-az-fullscreen-fixed-top-offset {
-  padding-top: 100px;
-}
-@media (max-width: 991.98px) {
-  .navbar-az-fullscreen-fixed-top-offset {
-    padding-top: 69px;
-  }
+  padding-top: var(--az-navbar-fullscreen-height);
 }
 
 .navbar-az-fullscreen-actions {
@@ -23080,8 +23078,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 /* Mobile Nav styling */
 @media (max-width: 991.98px) {
-  .navbar-az-fullscreen {
+  :root {
     --az-navbar-fullscreen-height: 69px;
+  }
+  .navbar-az-fullscreen {
     --az-navbar-fullscreen-brand-height: 45px;
     --az-navbar-fullscreen-toggler-icon-size: 24px;
     --bs-navbar-brand-padding-x: 12px;
