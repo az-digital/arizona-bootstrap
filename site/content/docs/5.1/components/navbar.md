@@ -551,11 +551,11 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
       <label class="visually-hidden" for="az-search">Search site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
-        <button class="btn" type="submit" aria-label="Submit site search">
+        <button class="btn" type="submit" aria-label="Submit search">
           <span class="az-search-icon" aria-hidden="true"></span>
         </button>
       </div>
-      <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search site">
+      <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
         <span class="az-search-icon" aria-hidden="true"></span>
       </button>
     </form>
@@ -744,8 +744,8 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
-              <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -827,8 +827,8 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
             <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
             <div class="input-group">
               <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
-              <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -987,7 +987,7 @@ Because fixed navbars are removed from normal document flow, also add `.navbar-a
 
 - `aria-modal="true"` on `.navbar-az-fullscreen-modal`, together with a visually-hidden `<h2>` referenced by `aria-labelledby`, announces the site menu to assistive technology when it opens.
 - Collapse toggles pair `aria-expanded` and `aria-controls` with a descriptive `aria-label` (for example, "Toggle Admissions submenu") so screen reader users know what each toggle affects.
-- Decorative icons, including `.nav-toggle-icon`, `.navbar-toggler-icon`, and `.search-icon`, are marked `aria-hidden="true"`.
+- Decorative icons, including `.nav-toggle-icon`, `.navbar-toggler-icon`, and `.az-search-icon`, are marked `aria-hidden="true"`.
 - Interactive elements expose `:focus-visible` styling through the `--az-navbar-fullscreen-focus-ring-*` custom properties.
 
 ### CSS Variables
