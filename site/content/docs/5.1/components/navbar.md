@@ -1001,7 +1001,7 @@ On the `.navbar-az-fullscreen-actions` custom class:
 
 {{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
-On the `.az-search` custom class:
+The `.az-search` component is defined separately (see [Search]({{< docsref "/components/search" >}})), but AZ Navbar Fullscreen overrides several of its CSS variables within `.navbar-az-fullscreen` and `.modal-header .az-search` contexts to fit the fullscreen layout:
 
 {{< scss-docs name="az-search-css-vars" file="custom/_search.scss" scssroot="scss" >}}
 
