@@ -868,7 +868,7 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
 
 #### Modal Menu Footer
 
-One or more `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns.
+Up to two `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns, using the `#navbar-az-fullscreen-modal-footer-top` and `#navbar-az-fullscreen-modal-footer-bottom` ids shown below. If you only need one footer bar, use the `-top` id to retain the overflow fade effect above it; omit both if your menu doesn't need footer link groups.
 
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
