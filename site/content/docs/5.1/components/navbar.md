@@ -969,7 +969,7 @@ Because fixed navbars are removed from normal document flow, also add `.navbar-a
 ### CSS Variables
 The following properties are set and used:
 
-On the `.navbar-az-fullscreen` custom class:
+The `--az-navbar-fullscreen-height` token is available globally on `:root` for page-level layout rules such as fixed-top content offsets. The remaining fullscreen navbar variables continue to be scoped to the `.navbar-az-fullscreen` custom class.
 
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
