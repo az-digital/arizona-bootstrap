@@ -103,7 +103,7 @@
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "svgo": "4.0.2",
     "terser": "^5.47.1",
-    "vnu-jar": "26.7.15"
+    "vnu-jar": "26.7.16"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
