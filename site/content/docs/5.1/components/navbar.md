@@ -601,7 +601,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
                     <a class="nav-link" href="#">
                       <span class="nav-link-text">Home</span>
                     </a>
-                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home menu">
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home submenu">
                       <span class="nav-toggle-icon" aria-hidden="true"></span>
                     </button>
                     <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
@@ -670,7 +670,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
                     <a class="nav-link" href="#">
                       <span class="nav-link-text">Home</span>
                     </a>
-                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home menu">
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home submenu">
                       <span class="nav-toggle-icon" aria-hidden="true"></span>
                     </button>
                   </div>
