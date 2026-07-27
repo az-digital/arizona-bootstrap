@@ -741,9 +741,9 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
         </div>
         <div class="container-lg">
           <form class="az-search" role="search">
-            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-menu-header-search">Search site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+              <input id="navbar-az-fullscreen-modal-menu-header-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
               <button class="btn" type="submit" aria-label="Submit search">
                 <span class="az-search-icon" aria-hidden="true"></span>
               </button>
