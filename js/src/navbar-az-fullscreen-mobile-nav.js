@@ -51,11 +51,6 @@ class NavbarAzFullscreenMobileNav {
     this.initialMenuParentLabel = null
     this.initialMenuParentElementId = null
 
-    // Initialize window location variable
-    this.cleanWindowLocation = new URL(window.location.href)
-    this.cleanWindowLocation.search = ''
-    this.cleanWindowLocation.hash = ''
-
     this.init()
   }
 
@@ -75,42 +70,46 @@ class NavbarAzFullscreenMobileNav {
 
     let activeLinkFound = false
 
-    // Check active tertiary links for a match with the current pathname
-    const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
-    for (const link of activeTertiaryLinks) {
-      if (link.href === this.cleanWindowLocation.href) {
-        const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
-        if (!tertiaryPanel) {
-          continue
+    // Check for an active link in the primary menu
+    const activePrimaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-primary > .nav-item > .nav-link.active')
+    if (activePrimaryLinks.length > 0) {
+      activeLinkFound = true
+    }
+
+    // Show secondary menu page if an active secondary link is found
+    if (!activeLinkFound) {
+      const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary a.nav-link.active')
+      for (const link of activeSecondaryLinks) {
+        const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
+        const targetId = secondaryContent?.getAttribute('id') || ''
+        if (targetId) {
+          const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+          this.showNavMenu(2, `#${targetId}`, label)
+          activeLinkFound = true
+          break
         }
-
-        const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
-        const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
-        const tertiaryLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
-        const parentLabel = secondaryContentButton?.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
-        const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
-        const secondaryContentId = secondaryContent?.getAttribute('id') || ''
-
-        this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
-        activeLinkFound = true
       }
     }
 
-    // Check active secondary links for a match with the current pathname
-    if (!activeLinkFound) {
-      const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
-      for (const link of activeSecondaryLinks) {
-        if (link.href === this.cleanWindowLocation.href) {
-          const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
-          const targetId = secondaryContent?.getAttribute('id') || ''
-          const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+    // Show tertiary menu page if an active tertiary link is found
+    const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
+    for (const link of activeTertiaryLinks) {
+      const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
+      if (!tertiaryPanel) {
+        continue
+      }
 
-          if (targetId) {
-            this.showNavMenu(2, `#${targetId}`, label)
-            activeLinkFound = true
-            break
-          }
-        }
+      const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
+      const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
+      const tertiaryLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
+      const parentLabel = secondaryContentButton?.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+      const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
+      const secondaryContentId = secondaryContent?.getAttribute('id') || ''
+
+      if (tertiaryPanelId && secondaryContentId) {
+        this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
+        activeLinkFound = true
+        break
       }
     }
 
@@ -173,13 +172,14 @@ class NavbarAzFullscreenMobileNav {
     const footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks'
     let found = false
     this[footerLinksProperty] = Array.from(document.querySelectorAll(`#${footer.id} .nav-link`)).map(link => {
-      if (!activeLinkFound && !found && link.href === this.cleanWindowLocation.href) {
+      if (!activeLinkFound && !found && link.classList.contains('active')) {
         found = true
       }
 
       return {
         href: link.href,
-        text: link.textContent.trim()
+        text: link.textContent.trim(),
+        active: link.classList.contains('active')
       }
     })
 
@@ -377,11 +377,7 @@ class NavbarAzFullscreenMobileNav {
         item.className = 'nav-item'
 
         const anchor = document.createElement('a')
-        anchor.className = 'nav-link'
-        if (link.href === this.cleanWindowLocation.href) {
-          anchor.classList.add('active')
-        }
-
+        anchor.className = `nav-link${link.active ? ' active' : ''}`
         anchor.href = link.href
 
         const anchorText = document.createElement('span')
