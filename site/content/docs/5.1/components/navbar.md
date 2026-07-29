@@ -900,11 +900,11 @@ Up to two `.modal-footer` bars can present secondary, audience-based link groups
         </div>
       </div>
       <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
-        <nav class="navbar d-none d-lg-flex" aria-labelledby="resources-for-label">
+        <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-top-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
+                  <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-top-label">Resources For:</h2>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
