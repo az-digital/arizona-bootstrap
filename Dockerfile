@@ -10,6 +10,7 @@ COPY scripts/create-release.sh /usr/local/bin/create-release
 COPY scripts/expose-review-site.sh /usr/local/bin/expose-review-site
 COPY scripts/lint.sh /usr/local/bin/lint
 COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
+COPY scripts/vr-run.sh /usr/local/bin/vr-run
 
 # Build args don't normally persist as environment variables.
 ARG AZ_BOOTSTRAP_FROZEN_DIR
@@ -52,6 +53,13 @@ RUN mkdir /home/node/.npm \
   && npm install --foreground-scripts=true --loglevel=verbose \
   && find node_modules -name '.DS_Store' -exec rm {} \; \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
+
+# Install the Chromium browser (and its OS libraries) for Playwright visual
+# regression. Browsers go to a world-readable path so the runtime 'node' user
+# can launch them.
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+RUN npx playwright install --with-deps chromium \
+  && chmod -R a+rX /ms-playwright
 
 USER node:node
 
