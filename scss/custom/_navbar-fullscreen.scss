@@ -222,6 +222,20 @@
   --bs-modal-footer-border-width: 2px;
   // scss-docs-end navbar-az-fullscreen-modal-css-vars
 
+  // Pin the outer `.modal` element to the dynamic viewport so that mobile
+  // browsers (Safari, Chrome iOS, etc.) can't scroll the modal-content up
+  // inside `.modal` when the browser chrome (URL bar, bottom toolbar)
+  // animates in or out. Without this, `.modal { height: 100% }` resolves to
+  // the static viewport while `.modal-content { height: 100dvh }` grows with
+  // the dynamic viewport, allowing Bootstrap's default `.modal { overflow-y:
+  // auto }` to expose the page underneath.
+  height: 100dvh;
+  overflow: hidden;
+
+  .modal-dialog.modal-fullscreen {
+    height: 100dvh;
+  }
+
   .modal-header {
     flex-direction: column;
     align-items: stretch;
@@ -268,6 +282,7 @@
     flex: 1 1 auto;
     min-height: 0;
     overflow: hidden;
+    overscroll-behavior: contain;
   }
 
   .az-search {
@@ -624,6 +639,7 @@
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     .nav-item {
       display: flex;
