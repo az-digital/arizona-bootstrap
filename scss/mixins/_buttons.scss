@@ -5,14 +5,17 @@
 // >> Regular
 @mixin az-button-variant($background) {
   // check for inaccessible color contrast
-  $button-text-color: $white;
-
   @if $background == $sky or $background == $leaf or $background == $light {
-    $button-text-color: $midnight;
+    --bs-btn-color: var(--bs-midnight);
+    --bs-btn-hover-color: var(--bs-midnight);
+    --bs-btn-active-color: var(--bs-midnight);
+  } @else if $background == $warning {
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-active-color: var(--bs-black);
+  } @else {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-active-color: var(--bs-white);
   }
-  @else if $background == $warning {
-    $button-text-color: $black;
-  }
-
-  color: $button-text-color;
 }
