@@ -112,10 +112,5 @@
   ],
   "hugo-bin": {
     "buildTags": "extended"
-  },
-  "allowScripts": {
-    "fsevents@2.3.3": true,
-    "hugo-bin@0.149.2": true,
-    "vnu-jar@26.7.3": true
   }
 }
