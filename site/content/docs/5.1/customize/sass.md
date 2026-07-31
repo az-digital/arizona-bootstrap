@@ -137,8 +137,8 @@ Here's an example that changes the `background-color` and `color` for the `<body
 @import "../node_modules/bootstrap/scss/functions";
 
 // Default variable overrides
-$body-bg: $black;
-$body-color: $gray-900;
+$body-bg: #000;
+$body-color: #111;
 
 // Required
 @import "../node_modules/bootstrap/scss/variables";
