@@ -6,6 +6,12 @@ updates:
       interval: "daily"
     target-branch: "2.x"
     ignore:
+      - dependency-name: "@babel/cli"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/preset-env"
+        update-types: ["version-update:semver-major"]
       - dependency-name: "bootstrap"
       - dependency-name: "eslint"
       - dependency-name: "eslint-config-xo"
@@ -13,7 +19,6 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     cooldown:
       default-days: 5
@@ -32,6 +37,12 @@ updates:
       interval: "daily"
     target-branch: "main"
     ignore:
+      - dependency-name: "@babel/cli"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/preset-env"
+        update-types: ["version-update:semver-major"]
       - dependency-name: "bootstrap"
       - dependency-name: "eslint"
       - dependency-name: "eslint-config-xo"
@@ -39,7 +50,6 @@ updates:
       - dependency-name: "jquery"
       - dependency-name: "sass"
       - dependency-name: "stylelint"
-      - dependency-name: "vnu-jar"
     open-pull-requests-limit: 10
     cooldown:
       default-days: 5

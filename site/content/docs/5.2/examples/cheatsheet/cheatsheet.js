@@ -1,4 +1,4 @@
-/* global bootstrap: false */
+/* global arizonaBootstrap: false */
 
 (() => {
   'use strict'
@@ -6,19 +6,19 @@
   // Tooltip and popover demos
   document.querySelectorAll('.tooltip-demo')
     .forEach(tooltip => {
-      new bootstrap.Tooltip(tooltip, {
+      new arizonaBootstrap.Tooltip(tooltip, {
         selector: '[data-bs-toggle="tooltip"]'
       })
     })
 
   document.querySelectorAll('[data-bs-toggle="popover"]')
     .forEach(popover => {
-      new bootstrap.Popover(popover)
+      new arizonaBootstrap.Popover(popover)
     })
 
   document.querySelectorAll('.toast')
     .forEach(toastNode => {
-      const toast = new bootstrap.Toast(toastNode, {
+      const toast = new arizonaBootstrap.Toast(toastNode, {
         autohide: false
       })
 

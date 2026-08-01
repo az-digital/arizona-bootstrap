@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the tooltip plugin:
 
-- Tooltips rely on the third party library [Popper](https://popper.js.org/docs/v2/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before `bootstrap.js`, or use one `bootstrap.bundle.min.js` which contains Popper.
+- Tooltips rely on the third party library [Popper](https://popper.js.org/docs/v2/) for positioning. You must include [popper.min.js]({{< param "cdn.popper" >}}) before `arizona-bootstrap.js`, or use `arizona-bootstrap.bundle.min.js`, which contains Popper.
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
 - Specify `container: 'body'` to avoid rendering problems in more complex components (like our input groups, button groups, etc).
@@ -38,7 +38,7 @@ As mentioned above, you must initialize tooltips before they can be used. One wa
 
 ```js
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new arizonaBootstrap.Tooltip(tooltipTriggerEl))
 ```
 
 ### Tooltips on links
@@ -139,14 +139,14 @@ The tooltip plugin generates content and markup on demand, and by default places
 
 ```js
 const exampleEl = document.getElementById('example')
-const tooltip = new bootstrap.Tooltip(exampleEl, options)
+const tooltip = new arizonaBootstrap.Tooltip(exampleEl, options)
 ```
 
 {{< callout warning >}}
 Tooltips automatically attempt to change positions when a parent container has `overflow: auto` or `overflow: scroll`, but still keeps the original placement's positioning. Set the [`boundary` option](https://popper.js.org/docs/v2/modifiers/flip/#boundary) (for the flip modifier using the `popperConfig` option) to any HTMLElement to override the default value, `'clippingParents'`, such as `document.body`:
 
 ```js
-const tooltip = new bootstrap.Tooltip('#example', {
+const tooltip = new arizonaBootstrap.Tooltip('#example', {
   boundary: document.body // or document.querySelector('#boundary')
 })
 ```
@@ -225,7 +225,7 @@ Options for individual tooltips can alternatively be specified through the use o
 #### Using function with `popperConfig`
 
 ```js
-const tooltip = new bootstrap.Tooltip(element, {
+const tooltip = new arizonaBootstrap.Tooltip(element, {
   popperConfig(defaultBsPopperConfig) {
     // const newPopperConfig = {...}
     // use defaultBsPopperConfig if needed...
@@ -257,7 +257,7 @@ const tooltip = new bootstrap.Tooltip(element, {
 {{< /bs-table >}}
 
 ```js
-const tooltip = bootstrap.Tooltip.getInstance('#example') // Returns a Bootstrap tooltip instance
+const tooltip = arizonaBootstrap.Tooltip.getInstance('#example') // Returns an Arizona Bootstrap tooltip instance
 
 // setContent example
 tooltip.setContent({ '.tooltip-inner': 'another title' })
@@ -282,7 +282,7 @@ The `setContent` method accepts an `object` argument, where each property-key is
 
 ```js
 const myTooltipEl = document.getElementById('myTooltip')
-const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
+const tooltip = arizonaBootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
 
 myTooltipEl.addEventListener('hidden.bs.tooltip', () => {
   // do something...

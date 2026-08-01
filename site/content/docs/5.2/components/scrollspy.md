@@ -337,7 +337,7 @@ document.querySelectorAll('#nav-tab>[data-bs-toggle="tab"]').forEach(el => {
   el.addEventListener('shown.bs.tab', () => {
     const target = el.getAttribute('data-bs-target')
     const scrollElem = document.querySelector(`${target} [data-bs-spy="scroll"]`)
-    bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
+    arizonaBootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
   })
 })
 ```
@@ -363,7 +363,7 @@ To easily add scrollspy behavior to your topbar navigation, add `data-bs-spy="sc
 ### Via JavaScript
 
 ```js
-const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+const scrollSpy = new arizonaBootstrap.ScrollSpy(document.body, {
   target: '#navbar-example'
 })
 ```
@@ -407,7 +407,7 @@ Here's an example using the refresh method:
 ```js
 const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]')
 dataSpyList.forEach(dataSpyEl => {
-  bootstrap.ScrollSpy.getInstance(dataSpyEl).refresh()
+  arizonaBootstrap.ScrollSpy.getInstance(dataSpyEl).refresh()
 })
 ```
 
