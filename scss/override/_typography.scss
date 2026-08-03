@@ -53,6 +53,13 @@ h3,
   font-family: $headings-font-family-h1-h3;
 }
 
+// >> display-1 - display-3 use the same serif family as h1-h3; display-4-6 stay sans-serif
+.display-1,
+.display-2,
+.display-3 {
+  font-family: $headings-font-family-h1-h3;
+}
+
 /*
 * > LINKS
 */
