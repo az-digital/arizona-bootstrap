@@ -43,6 +43,16 @@ h6,
   color: $blue;
 }
 
+// >> h1 - h3 use a distinct serif family from the h4-h6/body sans-serif default
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-family: $headings-font-family-h1-h3;
+}
+
 /*
 * > LINKS
 */
