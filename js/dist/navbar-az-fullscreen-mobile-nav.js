@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap navbar-az-fullscreen-mobile-nav.js v5.1.6 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap navbar-az-fullscreen-mobile-nav.js v5.1.7 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -90,11 +90,6 @@
       this.initialMenuLabel = null;
       this.initialMenuParentLabel = null;
       this.initialMenuParentElementId = null;
-
-      // Initialize window location variable
-      this.cleanWindowLocation = new URL(window.location.href);
-      this.cleanWindowLocation.search = '';
-      this.cleanWindowLocation.hash = '';
       this.init();
     }
 
@@ -116,43 +111,48 @@
       }
       var activeLinkFound = false;
 
-      // Check active tertiary links for a match with the current pathname
-      var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
-      for (var _iterator = _createForOfIteratorHelperLoose(activeTertiaryLinks), _step; !(_step = _iterator()).done;) {
-        var _link = _step.value;
-        if (_link.href === this.cleanWindowLocation.href) {
-          var _secondaryContentButt;
-          var tertiaryPanel = _link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
-          if (!tertiaryPanel) {
-            continue;
+      // Check for an active link in the primary menu
+      var activePrimaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-primary > .nav-item > .nav-link.active');
+      if (activePrimaryLinks.length > 0) {
+        activeLinkFound = true;
+      }
+
+      // Show secondary menu page if an active secondary link is found
+      if (!activeLinkFound) {
+        var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary a.nav-link.active');
+        for (var _iterator = _createForOfIteratorHelperLoose(activeSecondaryLinks), _step; !(_step = _iterator()).done;) {
+          var link = _step.value;
+          var secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+          var targetId = (secondaryContent == null ? void 0 : secondaryContent.getAttribute('id')) || '';
+          if (targetId) {
+            var _link$closest;
+            var label = ((_link$closest = link.closest('.navbar-az-fullscreen-nav-secondary')) == null ? void 0 : _link$closest.getAttribute('aria-label')) || '';
+            this.showNavMenu(2, "#" + targetId, label);
+            activeLinkFound = true;
+            break;
           }
-          var tertiaryPanelId = tertiaryPanel != null && tertiaryPanel.getAttribute('id') ? "#" + tertiaryPanel.getAttribute('id') : '';
-          var secondaryContentButton = document.querySelector("[data-bs-target=\"" + tertiaryPanelId + "\"]");
-          var tertiaryLabel = (secondaryContentButton == null ? void 0 : secondaryContentButton.previousElementSibling.textContent.trim()) || '';
-          var parentLabel = (secondaryContentButton == null || (_secondaryContentButt = secondaryContentButton.closest('.navbar-az-fullscreen-nav-secondary')) == null ? void 0 : _secondaryContentButt.getAttribute('aria-label')) || '';
-          var _secondaryContent = secondaryContentButton == null ? void 0 : secondaryContentButton.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
-          var secondaryContentId = (_secondaryContent == null ? void 0 : _secondaryContent.getAttribute('id')) || '';
-          this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, "#" + secondaryContentId);
-          activeLinkFound = true;
         }
       }
 
-      // Check active secondary links for a match with the current pathname
-      if (!activeLinkFound) {
-        var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active');
-        for (var _iterator2 = _createForOfIteratorHelperLoose(activeSecondaryLinks), _step2; !(_step2 = _iterator2()).done;) {
-          var link = _step2.value;
-          if (link.href === this.cleanWindowLocation.href) {
-            var _link$closest;
-            var secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
-            var targetId = (secondaryContent == null ? void 0 : secondaryContent.getAttribute('id')) || '';
-            var label = ((_link$closest = link.closest('.navbar-az-fullscreen-nav-secondary')) == null ? void 0 : _link$closest.getAttribute('aria-label')) || '';
-            if (targetId) {
-              this.showNavMenu(2, "#" + targetId, label);
-              activeLinkFound = true;
-              break;
-            }
-          }
+      // Show tertiary menu page if an active tertiary link is found
+      var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
+      for (var _iterator2 = _createForOfIteratorHelperLoose(activeTertiaryLinks), _step2; !(_step2 = _iterator2()).done;) {
+        var _secondaryContentButt;
+        var _link = _step2.value;
+        var tertiaryPanel = _link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
+        if (!tertiaryPanel) {
+          continue;
+        }
+        var tertiaryPanelId = tertiaryPanel != null && tertiaryPanel.getAttribute('id') ? "#" + tertiaryPanel.getAttribute('id') : '';
+        var secondaryContentButton = document.querySelector("[data-bs-target=\"" + tertiaryPanelId + "\"]");
+        var tertiaryLabel = (secondaryContentButton == null ? void 0 : secondaryContentButton.previousElementSibling.textContent.trim()) || '';
+        var parentLabel = (secondaryContentButton == null || (_secondaryContentButt = secondaryContentButton.closest('.navbar-az-fullscreen-nav-secondary')) == null ? void 0 : _secondaryContentButt.getAttribute('aria-label')) || '';
+        var _secondaryContent = secondaryContentButton == null ? void 0 : secondaryContentButton.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+        var secondaryContentId = (_secondaryContent == null ? void 0 : _secondaryContent.getAttribute('id')) || '';
+        if (tertiaryPanelId && secondaryContentId) {
+          this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, "#" + secondaryContentId);
+          activeLinkFound = true;
+          break;
         }
       }
 
@@ -216,12 +216,13 @@
       var footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks';
       var found = false;
       this[footerLinksProperty] = Array.from(document.querySelectorAll("#" + footer.id + " .nav-link")).map(function (link) {
-        if (!activeLinkFound && !found && link.href === _this2.cleanWindowLocation.href) {
+        if (!activeLinkFound && !found && link.classList.contains('active')) {
           found = true;
         }
         return {
           href: link.href,
-          text: link.textContent.trim()
+          text: link.textContent.trim(),
+          active: link.classList.contains('active')
         };
       });
 
@@ -425,10 +426,7 @@
           var item = document.createElement('li');
           item.className = 'nav-item';
           var anchor = document.createElement('a');
-          anchor.className = 'nav-link';
-          if (link.href === this.cleanWindowLocation.href) {
-            anchor.classList.add('active');
-          }
+          anchor.className = "nav-link" + (link.active ? ' active' : '');
           anchor.href = link.href;
           var anchorText = document.createElement('span');
           anchorText.className = 'nav-link-text';

@@ -1,7 +1,10 @@
+// scss-docs-start navbar-az-fullscreen-css-vars
+:root {
+  --az-navbar-fullscreen-height: 100px;
+}
+
 // Experimental custom az-fullscreen navbar
 .navbar-az-fullscreen {
-  // scss-docs-start navbar-az-fullscreen-css-vars
-  --az-navbar-fullscreen-height: 100px;
   --az-navbar-fullscreen-bg: var(--bs-blue);
   --az-navbar-fullscreen-bottom-border-color: var(--bs-red);
   --az-navbar-fullscreen-bottom-border-width: 3px;
@@ -95,11 +98,7 @@
 
 // Optional helper to offset content when using `.fixed-top` with fullscreen navbar.
 .navbar-az-fullscreen-fixed-top-offset {
-  padding-top: 100px;
-
-  @include media-breakpoint-down(lg) {
-    padding-top: 69px;
-  }
+  padding-top: var(--az-navbar-fullscreen-height);
 }
 
 .navbar-az-fullscreen-actions {
@@ -342,6 +341,7 @@
     }
 
     .nav-link {
+      --bs-nav-link-font-weight: 600;
       padding-top: var(--bs-nav-link-padding-y);
       padding-bottom: var(--bs-nav-link-padding-y);
       white-space: nowrap;
@@ -761,8 +761,11 @@
 
 /* Mobile Nav styling */
 @include media-breakpoint-down(lg) {
-  .navbar-az-fullscreen {
+  :root {
     --az-navbar-fullscreen-height: 69px;
+  }
+
+  .navbar-az-fullscreen {
     --az-navbar-fullscreen-brand-height: 45px;
     --az-navbar-fullscreen-toggler-icon-size: 24px;
     --bs-navbar-brand-padding-x: 12px;
@@ -887,7 +890,6 @@
       padding: 0 30px;
       font-size: 20px;
       line-height: 38px;
-      color: var(--bs-sky);
 
       &::after {
         top: 0;
