@@ -37,7 +37,7 @@
         - accessible: "black"
     - color: "bloom"
       contrast:
-        - null
+        - accessible: "midnight"
     - color: "red"
       contrast:
         - accessible: "white"
@@ -79,6 +79,7 @@
     - color: "midnight"
       contrast:
         - accessible: "white"
+        - accessible: "bloom"
         - accessible: "sky"
         - accessible: "cool-gray"
         - accessible: "warm-gray"
@@ -106,6 +107,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
@@ -117,6 +119,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
@@ -142,6 +145,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "river"
@@ -155,6 +159,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
