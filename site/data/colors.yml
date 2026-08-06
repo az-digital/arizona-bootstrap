@@ -12,7 +12,6 @@
   contrast_color: black
 - name: oasis
   hex: "#106ab1"
-  contrast_color: black
 - name: azurite
   hex: "#1e5288"
 - name: midnight
