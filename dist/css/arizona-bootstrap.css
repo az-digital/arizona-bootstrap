@@ -19181,6 +19181,15 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   margin: 0;
 }
 
+.accordion-anchor {
+  position: absolute;
+  margin-left: 0.5rem;
+}
+
+.accordion-anchor:hover {
+  cursor: pointer;
+}
+
 .arizona-header > .container > .row {
   -ms-flex-align: center;
   align-items: center;
