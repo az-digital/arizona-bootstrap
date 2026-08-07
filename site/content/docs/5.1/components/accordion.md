@@ -105,6 +105,53 @@ Add `.accordion-flush` to remove some borders and rounded corners to render acco
 </div>
 {{< /example >}}
 
+### Accordion Anchor links
+Anchor links allow users to click to copy direct links to accordions. The page will auto-scroll to the referenced accordion and open it. This is useful for pages with many accordions such as FAQs.
+
+{{< example >}}
+<div class="accordion" id="accordionAnchorExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <a onclick="copyAnchor('collapseAnchorOne', event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy Accordion Link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <button class="accordion-button z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchorOne" aria-expanded="true" aria-controls="collapseAnchorOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseAnchorOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <a onclick="copyAnchor('collapseAnchorTwo', event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <button class="accordion-button collapsed z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchorTwo" aria-expanded="false" aria-controls="collapseAnchorTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseAnchorTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <a onclick="copyAnchor('collapseAnchorThree', event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <button class="accordion-button collapsed z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchorThree" aria-expanded="false" aria-controls="collapseAnchorThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseAnchorThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### Always open
 
 Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accordion items stay open when another item is opened.
@@ -167,3 +214,6 @@ As part of Bootstrap's evolving CSS variables approach, accordions now use local
 ### Sass variables
 
 {{< scss-docs name="accordion-variables" file="scss/_variables.scss" >}}
+
+<!-- Include JavaScript for Background Wrapper demo -->
+<script defer src="{{< docsrefazold `/assets/js/accordion.js` >}}"></script>
