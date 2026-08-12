@@ -6,6 +6,7 @@
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-color-rgb: #{to-rgb(az-text-bg-color($value))};
     --bs-bg-bg: #{az-text-bg-background($color)};
     @include az-color-contrast($color);
   }
@@ -22,6 +23,7 @@
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
     --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-color-rgb: #{to-rgb(az-text-bg-color($value))};
     --bs-bg-bg: #{$value};
     @include az-color-contrast($color);
   }
@@ -31,6 +33,7 @@
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
     --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-color-rgb: #{to-rgb(az-text-bg-color($value))};
     @include background-transparent($color);
     @include az-color-contrast($color);
   }
@@ -40,6 +43,7 @@
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
     --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-color-rgb: #{to-rgb(az-text-bg-color($value))};
     @include background-gradient($color);
     @include az-color-contrast($color);
   }
