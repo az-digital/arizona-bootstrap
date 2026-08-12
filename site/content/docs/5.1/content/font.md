@@ -27,8 +27,8 @@ Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 ```html
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
-<!-- Garamond Premier Pro reference. -->
-<link href="https://use.typekit.net/eyf6fhr.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Proxima Nova + Garamond Premier Pro reference. -->
+<link href="https://use.typekit.net/sgx0zzg.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
