@@ -6,6 +6,7 @@
 [class*=" text-bg-"] {
   --bs-bg-color: var(--bs-body-color);
   --bs-bg-bg: rgb(var(--bs-body-rgb-bg) / var(--bs-bg-opacity));
+  --bs-heading-color: var(--bs-bg-color);
   color: var(--bs-bg-color);
   background-color: var(--bs-bg-bg);
 }
