@@ -10,41 +10,28 @@
   --bs-heading-color: var(--bs-bg-color);
   color: var(--bs-bg-color);
   background-color: var(--bs-bg-bg);
-}
 
-[class^="text-bg-"] h1,
-[class^="text-bg-"] h2,
-[class^="text-bg-"] h3,
-[class^="text-bg-"] h4,
-[class^="text-bg-"] h5,
-[class^="text-bg-"] h6,
-[class^="text-bg-"] .h1,
-[class^="text-bg-"] .h2,
-[class^="text-bg-"] .h3,
-[class^="text-bg-"] .h4,
-[class^="text-bg-"] .h5,
-[class^="text-bg-"] .h6,
-[class*=" text-bg-"] h1,
-[class*=" text-bg-"] h2,
-[class*=" text-bg-"] h3,
-[class*=" text-bg-"] h4,
-[class*=" text-bg-"] h5,
-[class*=" text-bg-"] h6,
-[class*=" text-bg-"] .h1,
-[class*=" text-bg-"] .h2,
-[class*=" text-bg-"] .h3,
-[class*=" text-bg-"] .h4,
-[class*=" text-bg-"] .h5,
-[class*=" text-bg-"] .h6 {
-  --bs-heading-color: var(--bs-bg-color);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    --bs-heading-color: var(--bs-bg-color);
+  }
 
-[class^="text-bg-"] a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo),
-[class*=" text-bg-"] a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo) {
-  --bs-link-color: var(--bs-bg-color);
-  --bs-link-hover-color: var(--bs-bg-color);
-  --bs-link-color-rgb: var(--bs-bg-color-rgb);
-  --bs-link-hover-color-rgb: var(--bs-bg-color-rgb);
+  a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo) {
+    --bs-link-color: var(--bs-bg-color);
+    --bs-link-hover-color: var(--bs-bg-color);
+    --bs-link-color-rgb: var(--bs-bg-color-rgb);
+    --bs-link-hover-color-rgb: var(--bs-bg-color-rgb);
+  }
 }
 
 // >>> Transparent
