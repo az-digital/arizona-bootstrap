@@ -89,7 +89,7 @@ These text background classes set the text color by default. Other background cl
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Arizona Bootstrap includes additional styling to ensure that headings and links within elements styled by a `.text-bg-*` class have an accessible and brand-appropriate text color as well.
+Arizona Bootstrap includes additional styling to ensure that headings and links within elements styled by a `.text-bg-*` class have an accessible and brand-appropriate text color as well. See the [Background Wrappers example]({{< docsref "/components/background-wrappers" >}}) for a full-width live demo.
 
 {{< example >}}
 {{< text-bg.inline >}}
