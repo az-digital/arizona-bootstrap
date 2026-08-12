@@ -1,6 +1,13 @@
 //
 // > Custom Background utility classes
 //
+// >> Set the shared default CSS custom properties for the background utility classes.
+[class^="text-bg-"], [class*=" text-bg-"] {
+  --bs-bg-color: var(--bs-body-color);
+  --bs-bg-bg: rgb(var(--bs-body-rgb-bg) / var(--bs-bg-opacity));
+  color: var(--bs-bg-color);
+  background-color: var(--bs-bg-bg);
+}
 // >>> Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-transparent-#{$color} {

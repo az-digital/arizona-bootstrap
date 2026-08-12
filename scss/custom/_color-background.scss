@@ -5,8 +5,8 @@
 // >> Brand
 @each $color, $value in $colors {
   .text-bg-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-bg: #{az-text-bg-background($color)};
     @include az-color-contrast($color);
   }
 }
@@ -21,8 +21,8 @@
 // >> Grays
 @each $color, $value in $grays {
   .text-bg-gray-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
-    background-color: $value if($enable-important-utilities, !important, null);
+    --bs-bg-color: #{az-text-bg-color($value)};
+    --bs-bg-bg: #{$value};
     @include az-color-contrast($color);
   }
 }
@@ -30,7 +30,7 @@
 // >> Brand Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    --bs-bg-color: #{az-text-bg-color($value)};
     @include background-transparent($color);
     @include az-color-contrast($color);
   }
@@ -39,12 +39,12 @@
 // >> Brand Gradient
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
-    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    --bs-bg-color: #{az-text-bg-color($value)};
     @include background-gradient($color);
     @include az-color-contrast($color);
   }
 }
 
 .text-bg-dark .btn-close {
-  color: var(--bs-white);
+  --bs-btn-close-color: var(--bs-white);
 }

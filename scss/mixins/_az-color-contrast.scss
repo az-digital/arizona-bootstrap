@@ -2,34 +2,20 @@
 
 @use "sass:list";
 
-@mixin az-color-contrast($bg-color-name) {
+@function az-text-bg-color($value) {
+  @return color-contrast($value);
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6 {
-    color: inherit;
-  }
+@function az-text-bg-background($color-name, $opacity: var(--#{$prefix}bg-opacity, 1)) {
+  @return rgba(var(--#{$prefix}#{$color-name}-rgb), $opacity);
+}
+
+@mixin az-color-contrast($bg-color-name) {
 
   // Gray colors in these variables do not have the gray- prefix to match the $grays sass map.
   $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "success", "info", "light", "100", "200", "300", "400", "500";
   $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "100", "200", "300", "400", "500";
   $dark-background-colors: "red", "chili", "blue", "azurite", "midnight", "river", "mesa", "ash", "sage", "black", "primary", "secondary", "danger", "dark", "600", "700", "800", "900";
-
-  // Change the link color if red links should not be used with the background color.
-  @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
-    a:not(.btn):not(.nav-link) {
-      color: inherit;
-    }
-  }
 
   // Change the focus-visible color if red outline should not be used with the background color.
   @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
