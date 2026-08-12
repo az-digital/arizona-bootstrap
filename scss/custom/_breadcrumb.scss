@@ -1,11 +1,9 @@
 .breadcrumb-item-home::before {
   float: left; // Suppress inline spacings and underlining of the separator
-  padding-right: .15rem;
-  margin-top: -.22rem;
+  padding-right: $breadcrumb-item-padding-x;
   font-family: "Material Symbols Rounded", monospace;
-  font-size: 1.2rem;
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-  color: $azurite;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: $breadcrumb-divider-color;
   // Material Symbols Rounded: Home
   // https://fonts.google.com/icons?selected=Material+Symbols+Rounded:home
   content: "\e88a";

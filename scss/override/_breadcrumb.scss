@@ -1,50 +1,17 @@
 // Overrides for Breadcrumbs
 .breadcrumb {
   a {
-    padding: 1px 0 0;
+    padding: 1px 0;
+    font-weight: 500;
     color: $breadcrumb-color;
-    text-decoration: none;
     &:hover {
       color: $breadcrumb-hover-color;
     }
   }
 }
 
-.breadcrumb-item {
-  line-height: 1;
-}
-
-// Extra bottom padding matches this <li>'s box height to `.breadcrumb a`'s.
-.breadcrumb-item-home {
-  padding: 1px 0 1.5px;
-}
-
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: monospace;
-}
-
-.breadcrumb-item a:hover {
-  margin-bottom: -1px;
-  border-bottom: 1px solid $breadcrumb-hover-color;
-}
-
-// :not(.active) skips the underline when Home is the current page (no <a>).
-// We want the hover underline to not run past the home icon, so we use
-// a background line to allow insetting it from the left.
-.breadcrumb-item-home:not(.active):hover {
-  background-image: linear-gradient($breadcrumb-hover-color, $breadcrumb-hover-color);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: calc(100% - 3.5px) 1px; // stylelint-disable-line function-disallowed-list
-}
-
-// Cancels the `.breadcrumb-item a:hover` underline (above) on this <a>.
-.breadcrumb-item-home a:hover {
-  border-bottom: 0;
-}
-
-.breadcrumb-item.active {
-  font-weight: 500;
+  font-family: "Material Symbols Rounded", monospace;
 }
 
 // Remove margins/padding on Breadcrumbs for larger displays
