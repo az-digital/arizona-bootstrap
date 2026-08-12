@@ -15,27 +15,22 @@ function scrollToAccordion() {
         return
     }
 
-    const scrollOffset = 85; // How many Pixels above the scroll target (top of screen)
+    const parentAccordionHeading = document.getElementById(anchorTag);
 
-    // Get the accordion
-    const parentAccordion = document.querySelector(
-        `[data-bs-target="#${anchorTag}"]`,
-    );
-    if (parentAccordion !== null) {
+    if (parentAccordionHeading !== null) {
+        // Get button so we can re-enable the accordion
+        const parentAccordion = parentAccordionHeading.children[1];
         // Un-collapse parent accordion if collapsed
         if (parentAccordion.classList.contains('collapsed')) {
             parentAccordion.classList.remove('collapsed');
             parentAccordion.setAttribute('aria-expanded', 'true');
-            const accordionBodyElem = document.getElementById(anchorTag);
-            accordionBodyElem.classList.add('show');
+            const anchorTagNoLink = anchorTag.substring(0, anchorTag.length - 5); // remove '-link' from tag
+            const accordionBodyElem = document.getElementById(anchorTagNoLink);
+            accordionBodyElem.classList.add('show')
+            // const bsCollapse = new bootstrap.Collapse('#'+anchorTagNoLink, {
+            //     toggle: false
+            // });
         }
-
-        // Scroll to element with offset
-        const elementPosition = parentAccordion.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-            top: elementPosition - scrollOffset,
-            behavior: 'smooth',
-        });
     }
 }
 
@@ -51,7 +46,7 @@ window.addEventListener('hashchange', scrollToAccordion);
  * @param event - the onclick event.
  */
 
-function copyAnchor(accordionId, event) {
+function copyAnchor(accordionElement, event) {
     // Prevents anchor link from activating on click (from sitting on top of another button)
     if (event) {
         event.stopPropagation();
@@ -61,12 +56,14 @@ function copyAnchor(accordionId, event) {
     // Get the current URL without any existing hash
     const baseUrl = window.location.href.split('#')[0];
 
+    // Get the accordion ID
+    const accordionId = accordionElement.parentElement.id;
+
+    // Get the span for visual feedback
+    const copyAccordionLinkSpan = accordionElement.children[0];
+
     // Construct the URL with the accordion ID anchor
     const urlToCopy = `${baseUrl}#${accordionId}`;
-
-    const copyAccordionLinkSpan = document.querySelector(
-        `[data-bs-target="#${accordionId}"]`,
-    ).previousElementSibling.children[0]
 
     // Copy to clipboard using the Clipboard API
     navigator.clipboard.writeText(urlToCopy).then(() => {

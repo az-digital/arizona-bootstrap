@@ -5,6 +5,15 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.accordion-anchor {
+  scroll-margin-top: 160px !important;
+  scroll-behavior: smooth;
+}
+
 .accordion-anchor:hover {
   cursor: pointer;
 }
