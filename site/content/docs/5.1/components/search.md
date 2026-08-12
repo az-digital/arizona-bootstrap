@@ -13,10 +13,10 @@ The AZ Search component provides a stylized search field built with Bootstrap fo
 {{< example >}}
 <div class="bg-blue">
   <form class="az-search" role="search">
-    <label class="visually-hidden" for="az-search-example">Search the site</label>
+    <label class="visually-hidden" for="az-search-example">Search</label>
     <div class="input-group">
-      <input id="az-search-example" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-      <button class="btn" type="submit" aria-label="Submit site search">
+      <input id="az-search-example" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" type="submit" aria-label="Submit search">
         <span class="az-search-icon" aria-hidden="true"></span>
       </button>
     </div>

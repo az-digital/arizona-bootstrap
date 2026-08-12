@@ -12,8 +12,6 @@
 
   nav {
     @include font-size(.875rem);
-    --bs-link-color-rgb: var(--bs-body-color-rgb);
-    --bs-link-hover-color-rgb: var(--bs-azurite-rgb);
 
     ul {
       padding-left: 0;
@@ -32,14 +30,14 @@
       text-decoration: none;
       border-left: .125rem solid transparent;
 
-      &:hover {
-        border-left-color: rgba(var(--bs-link-color-rgb), 1);
+      &:hover,
+      &.active {
+        color: var(--bd-toc-color);
+        border-left-color: var(--bd-toc-color);
       }
 
       &.active {
         font-weight: 500;
-        color: rgba(var(--bs-link-hover-color-rgb), 1);
-        border-left-color: rgba(var(--bs-link-color-rgb), 1);
       }
 
       code {

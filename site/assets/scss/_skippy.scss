@@ -1,5 +1,7 @@
 .skippy {
-  background-color: var(--bs-secondary);
-  --bs-link-color-rgb: var(--bs-white-rgb);
-  --bs-link-hover-color-rgb: var(--bs-white-rgb);
+  background-color: $bd-purple;
+
+  a {
+    color: $white;
+  }
 }
