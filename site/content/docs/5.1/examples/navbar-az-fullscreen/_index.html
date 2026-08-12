@@ -30,15 +30,15 @@ title: AZ Navbar Fullscreen - Home
         </ul>
 
         <form class="az-search ms-auto ms-lg-0" role="search">
-          <label class="visually-hidden" for="az-search">Search the site</label>
+          <label class="visually-hidden" for="az-search">Search site</label>
           <div class="input-group d-none d-lg-flex">
-            <input id="az-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-            <button class="btn" type="submit" aria-label="Submit site search">
-              <span class="search-icon" aria-hidden="true"></span>
+            <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+            <button class="btn" type="submit" aria-label="Submit search">
+              <span class="az-search-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site">
-            <span class="search-icon" aria-hidden="true"></span>
+          <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
+            <span class="az-search-icon" aria-hidden="true"></span>
           </button>
         </form>
 
@@ -83,11 +83,11 @@ title: AZ Navbar Fullscreen - Home
           </div>
           <div class="container-lg">
             <form class="az-search" role="search">
-              <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
+              <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
               <div class="input-group">
-                <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-                <button class="btn" type="submit" aria-label="Submit site search">
-                  <span class="search-icon" aria-hidden="true"></span>
+                <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+                <button class="btn" type="submit" aria-label="Submit search">
+                  <span class="az-search-icon" aria-hidden="true"></span>
                 </button>
               </div>
             </form>
@@ -409,7 +409,7 @@ title: AZ Navbar Fullscreen - Home
               </div>
               <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
                 <!-- call-to-action items -->
-                <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+                <ul class="navbar-nav navbar-az-fullscreen-actions">
                   <li class="nav-item">
                     <a class="nav-link" href="{{< ref "apply" >}}">
                       <span class="nav-link-text">Apply</span>
@@ -474,11 +474,11 @@ title: AZ Navbar Fullscreen - Home
         </div>
 
         <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
-          <nav class="navbar d-none d-lg-flex" aria-labelledby="resources-for-label">
+          <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-top-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
+                    <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-top-label">Resources For:</h2>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -505,23 +505,12 @@ title: AZ Navbar Fullscreen - Home
                       <span class="nav-link-text">Business or Partner</span>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{< ref "partner" >}}">
-                      <span class="nav-link-text">Business or Partner</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{< ref "partner" >}}">
-                      <span class="nav-link-text">Business or Partner</span>
-                    </a>
-                  </li>
                 </ul>
             </div>
           </nav>
-          <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Resources For submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-top">
+          <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Resources by Audience submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-top">
             <span class="navbar-az-fullscreen-mobile-footer-btn-text">
-              <span class="h2 navbar-brand">Resources For:</span>
-              <span class="more-links-text"></span>
+              <span class="h2 navbar-brand">Resources by Audience</span>
             </span>
             <span class="nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn-icon">
               <span class="nav-toggle-icon" aria-hidden="true"></span>
@@ -529,11 +518,11 @@ title: AZ Navbar Fullscreen - Home
           </button>
         </div>
         <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-bottom">
-          <nav class="navbar d-none d-lg-flex" aria-labelledby="helpful-links-label">
+          <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-bottom-label">
             <div class="container-lg">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <h2 class="navbar-brand" id="helpful-links-label">Helpful Links:</h2>
+                    <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-bottom-label">Helpful Links:</h2>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -575,8 +564,7 @@ title: AZ Navbar Fullscreen - Home
           </nav>
           <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Helpful Links submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-bottom">
             <span class="navbar-az-fullscreen-mobile-footer-btn-text">
-              <span class="h2 navbar-brand">Helpful Links:</span>
-              <span class="more-links-text"></span>
+              <span class="h2 navbar-brand">Helpful Links</span>
             </span>
             <span class="nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn-icon">
               <span class="nav-toggle-icon" aria-hidden="true"></span>
