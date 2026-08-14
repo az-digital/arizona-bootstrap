@@ -13,9 +13,9 @@
   background-size: contain;
 }
 
-// Extra bottom padding matches this <li>'s box height to `.breadcrumb a`'s.
+// Bottom padding matches this <li>'s box height to `.breadcrumb a`'s.
 .breadcrumb-item-home {
-  padding: 1px 0 1.5px;
+  padding: 0 0 2.5px;
 }
 
 // :not(.active) skips the underline when Home is the current page (no <a>).
