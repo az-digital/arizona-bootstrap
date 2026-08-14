@@ -20,9 +20,9 @@
   }
 
   // Gray colors in these variables do not have the gray- prefix to match the $grays sass map.
-  $light-background-colors: "bloom", "sky", "oasis", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "success", "info", "light", "100", "200", "300", "400", "500";
+  $light-background-colors: "bloom", "sky", "cool-gray", "warm-gray", "leaf", "silver", "white", "warning", "success", "info", "light", "100", "200", "300", "400", "500";
   $light-background-colors-with-red-links: "cool-gray", "warm-gray", "white", "100", "200", "300", "400", "500";
-  $dark-background-colors: "red", "chili", "blue", "azurite", "midnight", "river", "mesa", "ash", "sage", "black", "primary", "secondary", "danger", "dark", "600", "700", "800", "900";
+  $dark-background-colors: "red", "chili", "blue", "oasis", "azurite", "midnight", "river", "mesa", "ash", "sage", "black", "primary", "secondary", "danger", "dark", "600", "700", "800", "900";
 
   // Change the link color if red links should not be used with the background color.
   @if not list.index($light-background-colors-with-red-links, $bg-color-name) {
