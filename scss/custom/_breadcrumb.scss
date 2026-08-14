@@ -12,3 +12,23 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+// Extra bottom padding matches this <li>'s box height to `.breadcrumb a`'s.
+.breadcrumb-item-home {
+  padding: 1px 0 1.5px;
+}
+
+// :not(.active) skips the underline when Home is the current page (no <a>).
+// We want the hover underline to not run past the home icon, so we use
+// a background line to allow insetting it from the left.
+.breadcrumb-item-home:not(.active):hover {
+  background-image: linear-gradient($breadcrumb-hover-color, $breadcrumb-hover-color);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: calc(100% - 3.5px) 1px; // stylelint-disable-line function-disallowed-list
+}
+
+// Cancels the generic `.breadcrumb-item a:hover` underline on this <a>.
+.breadcrumb-item-home a:hover {
+  border-bottom: 0;
+}
