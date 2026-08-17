@@ -104,7 +104,7 @@ $breadcrumb-padding-x: .609rem;
 $breadcrumb-padding-y: .75rem;
 $breadcrumb-active-color: $azurite;
 $breadcrumb-divider-color: $bloom;
-$breadcrumb-divider: quote("/");
+$breadcrumb-divider: quote("/") / "";
 // fusv-enable
 
 // >> Buttons
