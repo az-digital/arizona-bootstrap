@@ -12,14 +12,10 @@
 
 const IDS = {
   FOOTER_TOP: 'navbar-az-fullscreen-modal-footer-top',
-  FOOTER_TOP_HEADING: 'resources-for-label',
   FOOTER_BOTTOM: 'navbar-az-fullscreen-modal-footer-bottom',
-  FOOTER_BOTTOM_HEADING: 'helpful-links-label',
   MOBILE_COL: 'navbar-az-fullscreen-nav-mobile-col'
 }
 const LABELS = {
-  FOOTER_TOP_HEADING: 'Resources For:',
-  FOOTER_BOTTOM_HEADING: 'Helpful Links:',
   MAIN_MENU: 'Main'
 }
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
@@ -74,42 +70,46 @@ class NavbarAzFullscreenMobileNav {
 
     let activeLinkFound = false
 
-    // Check active tertiary links for a match with the current pathname
-    const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
-    for (const link of activeTertiaryLinks) {
-      if (link.href === window.location.href) {
-        const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
-        if (!tertiaryPanel) {
-          continue
+    // Check for an active link in the primary menu
+    const activePrimaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-primary > .nav-item > .nav-link.active')
+    if (activePrimaryLinks.length > 0) {
+      activeLinkFound = true
+    }
+
+    // Show secondary menu page if an active secondary link is found
+    if (!activeLinkFound) {
+      const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary a.nav-link.active')
+      for (const link of activeSecondaryLinks) {
+        const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
+        const targetId = secondaryContent?.getAttribute('id') || ''
+        if (targetId) {
+          const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+          this.showNavMenu(2, `#${targetId}`, label)
+          activeLinkFound = true
+          break
         }
-
-        const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
-        const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
-        const tertiaryLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
-        const parentLabel = secondaryContentButton?.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
-        const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
-        const secondaryContentId = secondaryContent?.getAttribute('id') || ''
-
-        this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
-        activeLinkFound = true
       }
     }
 
-    // Check active secondary links for a match with the current pathname
-    if (!activeLinkFound) {
-      const activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active')
-      for (const link of activeSecondaryLinks) {
-        if (link.href === window.location.href) {
-          const secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
-          const targetId = secondaryContent?.getAttribute('id') || ''
-          const label = link.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+    // Show tertiary menu page if an active tertiary link is found
+    const activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active')
+    for (const link of activeTertiaryLinks) {
+      const tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu')
+      if (!tertiaryPanel) {
+        continue
+      }
 
-          if (targetId) {
-            this.showNavMenu(2, `#${targetId}`, label)
-            activeLinkFound = true
-            break
-          }
-        }
+      const tertiaryPanelId = tertiaryPanel?.getAttribute('id') ? `#${tertiaryPanel.getAttribute('id')}` : ''
+      const secondaryContentButton = document.querySelector(`[data-bs-target="${tertiaryPanelId}"]`)
+      const tertiaryLabel = secondaryContentButton?.previousElementSibling.textContent.trim() || ''
+      const parentLabel = secondaryContentButton?.closest('.navbar-az-fullscreen-nav-secondary')?.getAttribute('aria-label') || ''
+      const secondaryContent = secondaryContentButton?.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show')
+      const secondaryContentId = secondaryContent?.getAttribute('id') || ''
+
+      if (tertiaryPanelId && secondaryContentId) {
+        this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, `#${secondaryContentId}`)
+        activeLinkFound = true
+        break
       }
     }
 
@@ -164,94 +164,37 @@ class NavbarAzFullscreenMobileNav {
       return
     }
 
-    const firstNavItem = footer.querySelector('.navbar-nav .nav-item')
-    if (!firstNavItem) {
-      return
-    }
-
-    // Get the original heading element and extract its text and id
-    const originalHeading = footer.querySelector('.nav-item > .navbar-brand')
-    const headingText = originalHeading?.textContent.trim() || (footerPosition === 'top' ? LABELS.FOOTER_TOP_HEADING : LABELS.FOOTER_BOTTOM_HEADING)
-    const headingId = originalHeading?.id || (footerPosition === 'top' ? IDS.FOOTER_TOP_HEADING : IDS.FOOTER_BOTTOM_HEADING)
+    // Get the mobile footer button and extract its heading text
+    const mobileFooterHeading = footer.querySelector('.navbar-az-fullscreen-mobile-footer-btn-text .navbar-brand')
+    const headingText = mobileFooterHeading?.textContent.trim()
 
     // Save footer nav links to an array
     const footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks'
     let found = false
     this[footerLinksProperty] = Array.from(document.querySelectorAll(`#${footer.id} .nav-link`)).map(link => {
-      if (!activeLinkFound && !found && link.href === window.location.href) {
+      if (!activeLinkFound && !found && link.classList.contains('active')) {
         found = true
       }
 
       return {
         href: link.href,
-        text: link.textContent.trim()
+        text: link.textContent.trim(),
+        active: link.classList.contains('active')
       }
     })
 
-    // If a match was found in the this footer's links, display the menu page
+    // If a match was found in this footer's links, display the menu page
     if (!activeLinkFound && found) {
       this.showNavMenu(2, `#${footer.id}`, headingText)
     }
 
-    // Clone the first nav item
-    const clonedNavItem = firstNavItem.cloneNode(true)
-
-    // Get the first 3 link texts
-    const linkTexts = this[footerLinksProperty] ? this[footerLinksProperty].slice(0, 3).map(link => link.text) : []
-
-    // Create the text with "and more..."
-    const footerText = linkTexts.length > 0 ? `${linkTexts.join(', ')}, and more...` : 'View more...'
-
-    // Create aria-label text for the button
-    const ariaLabel = `Toggle ${headingText.replace(':', '').trim()} submenu`
-
-    const primaryButton = document.createElement('button')
-    primaryButton.type = 'button'
-    primaryButton.className = 'btn navbar-az-fullscreen-mobile-footer-btn navbar-az-fullscreen-mobile-footer-btn-text'
-    primaryButton.setAttribute('aria-controls', IDS.MOBILE_COL)
-    primaryButton.setAttribute('aria-label', ariaLabel)
-    primaryButton.setAttribute('data-az-menu-element', `#${footer.id}`)
-
-    const heading = document.createElement('h2')
-    heading.className = 'navbar-brand nav-link-text m-0'
-    heading.setAttribute('id', headingId)
-    heading.textContent = headingText
-    primaryButton.append(heading)
-
-    const footerTextNode = document.createElement('span')
-    footerTextNode.className = 'text-white'
-    footerTextNode.textContent = footerText
-    primaryButton.append(footerTextNode)
-
-    const toggleButton = document.createElement('button')
-    toggleButton.type = 'button'
-    toggleButton.className = 'btn nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn'
-    toggleButton.setAttribute('aria-controls', IDS.MOBILE_COL)
-    toggleButton.setAttribute('aria-label', ariaLabel)
-    toggleButton.setAttribute('data-az-menu-element', `#${footer.id}`)
-
-    const toggleIcon = document.createElement('span')
-    toggleIcon.className = 'nav-toggle-icon'
-    toggleIcon.setAttribute('aria-hidden', 'true')
-    toggleButton.append(toggleIcon)
-
-    clonedNavItem.replaceChildren(primaryButton, toggleButton)
-    clonedNavItem.classList.add('d-lg-none')
-
-    // Insert the cloned item as the first child of the parent
-    const parentNav = firstNavItem.parentElement
-    parentNav.insertBefore(clonedNavItem, parentNav.firstChild)
-
     // Set up event listeners for footer buttons
-    const footerButtons = clonedNavItem.querySelectorAll(':scope .btn')
+    const footerButtons = footer.querySelectorAll(':scope .btn')
     for (const button of footerButtons) {
-      button.addEventListener('click', e => {
+      button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-az-menu-element')
-
         if (targetId) {
-          // Extract the menu label from button aria-label text
-          const toggleLabel = e.target.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
-          this.showNavMenu(2, targetId, toggleLabel)
+          this.showNavMenu(2, targetId, headingText)
         }
       })
     }
@@ -405,24 +348,20 @@ class NavbarAzFullscreenMobileNav {
   /**
    * Build HTML for footer menu page display
    * @param {Element} sourceElement - The source footer element
-   * @param {string} label - The label for the menu heading (optional)
+   * @param {string} label - The label for the menu heading
    * @returns {DocumentFragment} Document fragment for the footer menu
    */
-  buildFooterMenuNode(sourceElement, label = null) {
+  buildFooterMenuNode(sourceElement, label = '') {
     const fragment = document.createDocumentFragment()
     fragment.append(this.createBackButtonElement(LABELS.MAIN_MENU))
 
-    const originalHeading = sourceElement.querySelector('h2.navbar-brand')
-    const headingText = originalHeading?.textContent.trim() || label || 'Menu'
-
     const heading = document.createElement('h2')
     heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading'
-    heading.textContent = headingText
+    heading.textContent = label
     fragment.append(heading)
 
     const footerLinks = sourceElement.id === IDS.FOOTER_TOP ? this.topFooterLinks : this.bottomFooterLinks
     const navId = sourceElement.id === IDS.FOOTER_TOP ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav'
-    const ariaLabel = headingText.replace(':', '').trim()
 
     const column = document.createElement('div')
     column.className = 'col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary'
@@ -430,7 +369,7 @@ class NavbarAzFullscreenMobileNav {
     const list = document.createElement('ul')
     list.className = 'nav'
     list.setAttribute('id', navId)
-    list.setAttribute('aria-label', ariaLabel)
+    list.setAttribute('aria-label', label)
 
     if (footerLinks && footerLinks.length > 0) {
       for (const link of footerLinks) {
@@ -438,11 +377,7 @@ class NavbarAzFullscreenMobileNav {
         item.className = 'nav-item'
 
         const anchor = document.createElement('a')
-        anchor.className = 'nav-link'
-        if (link.href === window.location.href) {
-          anchor.classList.add('active')
-        }
-
+        anchor.className = `nav-link${link.active ? ' active' : ''}`
         anchor.href = link.href
 
         const anchorText = document.createElement('span')

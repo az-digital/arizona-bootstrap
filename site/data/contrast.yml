@@ -27,6 +27,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "river"
@@ -37,7 +38,7 @@
         - accessible: "black"
     - color: "bloom"
       contrast:
-        - null
+        - accessible: "midnight"
     - color: "red"
       contrast:
         - accessible: "white"
@@ -59,8 +60,9 @@
         - accessible: "black"
     - color: "oasis"
       contrast:
-        - accessible: "midnight"
-        - accessible: "black"
+        - accessible: "white"
+        - accessible: "warm-gray"
+        - accessible: "cool-gray"
     - color: "azurite"
       contrast:
         - accessible: "white"
@@ -78,8 +80,8 @@
     - color: "midnight"
       contrast:
         - accessible: "white"
+        - accessible: "bloom"
         - accessible: "sky"
-        - accessible: "oasis"
         - accessible: "cool-gray"
         - accessible: "warm-gray"
         - accessible: "leaf"
@@ -106,6 +108,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
@@ -117,6 +120,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
@@ -142,6 +146,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "river"
@@ -155,6 +160,7 @@
         - accessible: "red"
         - accessible: "chili"
         - accessible: "azurite"
+        - accessible: "oasis"
         - accessible: "blue"
         - accessible: "midnight"
         - accessible: "sage"
@@ -215,7 +221,6 @@
         - accessible: "white"
         - accessible: "bloom"
         - accessible: "sky"
-        - accessible: "oasis"
         - accessible: "cool-gray"
         - accessible: "warm-gray"
         - accessible: "leaf"

@@ -474,6 +474,14 @@ AZ Navbar Fullscreen requires both the **Proxima Nova Condensed** and **Garamond
 
 Existing Bootstrap navigation elements and patterns are used whenever possible. Overrides of existing Bootstrap classes are scoped to the `.navbar-az-fullscreen*` custom classes provided in [_navbar-fullscreen.scss](https://github.com/az-digital/arizona-bootstrap/blob/main/scss/custom/_navbar-fullscreen.scss) to minimize conflict with existing overrides. New CSS properties are prefixed with `--az-navbar-fullscreen-*` and contained within custom `navbar-az-fullscreen*` classes.
 
+Here's what you need to know before getting started with AZ Navbar Fullscreen:
+
+- The non-modal `.navbar-az-fullscreen` supports a [brand](#brand-1), a [calls to action menu](#calls-to-action-menu), a [search](#search) box, and a toggle that opens the [modal menu](#modal-menu).
+- The modal menu is built on Bootstrap's [Modal]({{< docsref "/components/modal" >}}) and [Collapse]({{< docsref "/components/collapse" >}}) plugins to present a multicolumn, 3-tier accordion navigation, with optional [footer menu bars](#modal-menu-footer).
+- Two initializers are bundled automatically in Arizona Bootstrap's JavaScript build: `enableNavbarAzFullscreen()` synchronizes desktop nav-column heights, and `enableNavbarAzFullscreenMobileNav()` powers paged navigation on mobile.
+- When the modal menu is closed, its accordion returns to the default open/closed state it had on page load.
+- Add `.fixed-top` to `.navbar-az-fullscreen` to pin the non-modal navbar to the top of the viewport; see [Fixed Top](#fixed-top).
+
 ### Brand
 The brand element displays the logo of the site. A University of Arizona wordmark SVG is packaged with Arizona Bootstrap for use as a default.
 
@@ -533,18 +541,23 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< /example >}}
 
 ### Search
+
+For standalone usage and full component guidance, see [Search]({{< docsref "/components/search" >}}).
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="navbar-az-fullscreen-search ms-auto me-4" role="search">
-      <label class="visually-hidden" for="navbar-az-fullscreen-search">Search the site</label>
+    <form class="az-search ms-auto me-4" role="search">
+      <label class="visually-hidden" for="az-search">Search site</label>
       <div class="input-group d-none d-lg-flex">
-        <input id="navbar-az-fullscreen-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-        <button class="btn" type="submit" aria-label="Submit site search">
-          <span class="search-icon" aria-hidden="true"></span>
+        <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+        <button class="btn" type="submit" aria-label="Submit search">
+          <span class="az-search-icon" aria-hidden="true"></span>
         </button>
       </div>
-      <button class="btn d-lg-none navbar-toggler-search" type="button" aria-label="Search the site"></button>
+      <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
     </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
       <span class="navbar-toggler-icon"></span>
@@ -554,6 +567,9 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< /example >}}
 
 ### Modal Menu
+
+Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing up to three tiers of navigation, each level built with Bootstrap's [Collapse]({{< docsref "/components/collapse" >}}) plugin.
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -585,7 +601,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
                     <a class="nav-link" href="#">
                       <span class="nav-link-text">Home</span>
                     </a>
-                    <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home menu">
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home submenu">
                       <span class="nav-toggle-icon" aria-hidden="true"></span>
                     </button>
                     <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
@@ -596,7 +612,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
                               <a class="nav-link" href="#">
                                 <span class="nav-link-text">Action</span>
                               </a>
-                              <button class="btn nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-secondary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-secondary-submenu" aria-label="Toggle Action submenu">
+                              <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-secondary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-secondary-submenu" aria-label="Toggle Action submenu">
                                 <span class="nav-toggle-icon" aria-hidden="true"></span>
                               </button>
                               <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="navbar-az-fullscreen-secondary-submenu">
@@ -654,7 +670,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
                     <a class="nav-link" href="#">
                       <span class="nav-link-text">Home</span>
                     </a>
-                    <button class="btn nav-toggle" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home menu">
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home submenu">
                       <span class="nav-toggle-icon" aria-hidden="true"></span>
                     </button>
                   </div>
@@ -680,6 +696,9 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 {{< /example >}}
 
 #### Modal Menu Header
+
+The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action, and search elements alongside a close button, so wayfinding stays consistent while the menu is open.
+
 {{< example show_markup=false >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -721,12 +740,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
-            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
+          <form class="az-search" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-menu-header-search">Search site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-              <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+              <input id="navbar-az-fullscreen-modal-menu-header-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -738,7 +757,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -804,12 +823,12 @@ The Calls to Action menu provides greater visibility for certain high-value acti
           </div>
         </div>
         <div class="container-lg">
-          <form class="navbar-az-fullscreen-search" role="search">
-            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search the site</label>
+          <form class="az-search" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
             <div class="input-group">
-              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" placeholder="Search" aria-label="Search the site">
-              <button class="btn" type="submit" aria-label="Submit site search">
-                <span class="search-icon" aria-hidden="true"></span>
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
               </button>
             </div>
           </form>
@@ -821,7 +840,7 @@ The Calls to Action menu provides greater visibility for certain high-value acti
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
             <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
               <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions d-flex flex-row align-items-center justify-content-center my-4">
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     <span class="nav-link-text">Apply</span>
@@ -848,6 +867,9 @@ The Calls to Action menu provides greater visibility for certain high-value acti
 ```
 
 #### Modal Menu Footer
+
+Up to two `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns, using the `#navbar-az-fullscreen-modal-footer-top` and `#navbar-az-fullscreen-modal-footer-bottom` ids shown below. If you only need one footer bar, use the `-top` id to retain the overflow fade effect above it; omit both if your menu doesn't need footer link groups.
+
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
@@ -878,11 +900,11 @@ The Calls to Action menu provides greater visibility for certain high-value acti
         </div>
       </div>
       <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
-        <nav class="navbar" aria-labelledby="resources-for-label">
+        <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-top-label">
           <div class="container-lg">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <h2 class="navbar-brand" id="resources-for-label">Resources For:</h2>
+                  <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-top-label">Resources For:</h2>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -961,10 +983,17 @@ Because fixed navbars are removed from normal document flow, also add `.navbar-a
 </div>
 ```
 
+### Accessibility
+
+- `aria-modal="true"` on `.navbar-az-fullscreen-modal`, together with a visually-hidden `<h2>` referenced by `aria-labelledby`, announces the site menu to assistive technology when it opens.
+- Collapse toggles pair `aria-expanded` and `aria-controls` with a descriptive `aria-label` (for example, "Toggle Admissions submenu") so screen reader users know what each toggle affects.
+- Decorative icons, including `.nav-toggle-icon`, `.navbar-toggler-icon`, and `.az-search-icon`, are marked `aria-hidden="true"`.
+- Interactive elements expose `:focus-visible` styling through the `--az-navbar-fullscreen-focus-ring-*` custom properties.
+
 ### CSS Variables
 The following properties are set and used:
 
-On the `.navbar-az-fullscreen` custom class:
+The `--az-navbar-fullscreen-height` token is available globally on `:root` for page-level layout rules such as fixed-top content offsets. The remaining fullscreen navbar variables continue to be scoped to the `.navbar-az-fullscreen` custom class.
 
 {{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
@@ -972,9 +1001,9 @@ On the `.navbar-az-fullscreen-actions` custom class:
 
 {{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
 
-On the `.navbar-az-fullscreen-search` custom class:
+The `.az-search` component is defined separately (see [Search]({{< docsref "/components/search" >}})), but AZ Navbar Fullscreen overrides several of its CSS variables within `.navbar-az-fullscreen` and `.modal-header .az-search` contexts to fit the fullscreen layout:
 
-{{< scss-docs name="navbar-az-fullscreen-search-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+{{< scss-docs name="az-search-css-vars" file="custom/_search.scss" scssroot="scss" >}}
 
 On the `.navbar-az-fullscreen-modal` custom class:
 
