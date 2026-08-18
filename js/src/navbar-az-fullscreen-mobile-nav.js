@@ -38,6 +38,9 @@ class NavbarAzFullscreenMobileNav {
     this.mobileCtaNode = null
     this.primaryNavMenuNode = null
 
+    // Initialize observer
+    this.mobileMenuObserver = null
+
     // Initialize state variables
     this.navListenersInitialized = false
     this.currentNavLevel = 1
@@ -145,7 +148,12 @@ class NavbarAzFullscreenMobileNav {
       return
     }
 
-    const mobileMenuObserver = new IntersectionObserver(entries => {
+    // Disconnect the previous observer if it exists
+    if (this.mobileMenuObserver) {
+      this.mobileMenuObserver.disconnect()
+    }
+
+    this.mobileMenuObserver = new IntersectionObserver(entries => {
       for (const entry of entries) {
         if (entry.target === menuListTop) {
           container.classList.toggle('show-shadow', !entry.isIntersecting)
@@ -155,7 +163,7 @@ class NavbarAzFullscreenMobileNav {
       root: container
     })
 
-    mobileMenuObserver.observe(menuListTop)
+    this.mobileMenuObserver.observe(menuListTop)
   }
 
   /**
