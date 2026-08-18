@@ -131,6 +131,32 @@ class NavbarAzFullscreenMobileNav {
     }
 
     this.setupNavListeners()
+    this.setupMobileMenuObserver()
+  }
+
+  /**
+   * Set up an observer for the mobile menu container to add a scroll shadow to
+   * the top of the menu when the user scrolls down.
+   */
+  setupMobileMenuObserver() {
+    const container = document.querySelector('.navbar-az-fullscreen-nav-mobile-menu-container')
+    const menuListTop = document.querySelector('.navbar-az-fullscreen-nav-mobile-menu-list-top')
+
+    if (!container || !menuListTop) {
+      return
+    }
+
+    const mobileMenuObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.target === menuListTop) {
+          container.classList.toggle('show-shadow', !entry.isIntersecting)
+        }
+      }
+    }, {
+      root: container
+    })
+
+    mobileMenuObserver.observe(menuListTop)
   }
 
   /**
@@ -233,6 +259,7 @@ class NavbarAzFullscreenMobileNav {
     this.mobileCol.replaceChildren(...Array.from(menuNode.childNodes))
 
     this.toggleFooterDisplay(sourceElementId)
+    this.setupMobileMenuObserver()
   }
 
   /**
@@ -262,6 +289,9 @@ class NavbarAzFullscreenMobileNav {
       heading.textContent = `${label} Menu`
       fragment.append(heading)
     }
+
+    const mobileMenuContainer = document.createElement('div')
+    mobileMenuContainer.className = 'navbar-az-fullscreen-nav-mobile-menu-container'
 
     let nav
     switch (navLevel) {
@@ -300,6 +330,11 @@ class NavbarAzFullscreenMobileNav {
         panel.remove()
       }
 
+      // Create sentinel element at the top of the nav content
+      const menuListTop = document.createElement('div')
+      menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top'
+      navClone.prepend(menuListTop)
+
       // Confirm if any active links are present
       const activeLinkExists = navClone.querySelectorAll(':scope .nav-link.active').length > 0
 
@@ -333,7 +368,8 @@ class NavbarAzFullscreenMobileNav {
         }
       }
 
-      fragment.append(navClone)
+      mobileMenuContainer.append(navClone)
+      fragment.append(mobileMenuContainer)
     } else {
       fragment.append(sourceElement.cloneNode(true))
     }
@@ -360,11 +396,19 @@ class NavbarAzFullscreenMobileNav {
     heading.textContent = label
     fragment.append(heading)
 
+    const mobileMenuContainer = document.createElement('div')
+    mobileMenuContainer.className = 'navbar-az-fullscreen-nav-mobile-menu-container'
+
     const footerLinks = sourceElement.id === IDS.FOOTER_TOP ? this.topFooterLinks : this.bottomFooterLinks
     const navId = sourceElement.id === IDS.FOOTER_TOP ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav'
 
     const column = document.createElement('div')
-    column.className = 'col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary'
+    column.className = 'col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary'
+
+    // Create sentinel element at the top of the nav content
+    const menuListTop = document.createElement('div')
+    menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top'
+    column.append(menuListTop)
 
     const list = document.createElement('ul')
     list.className = 'nav'
@@ -395,7 +439,8 @@ class NavbarAzFullscreenMobileNav {
     }
 
     column.append(list)
-    fragment.append(column)
+    mobileMenuContainer.append(column)
+    fragment.append(mobileMenuContainer)
 
     return fragment
   }
