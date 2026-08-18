@@ -613,14 +613,12 @@
 
       > .nav-item:first-child {
         padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
-        // The nav-toggle is zeroed out completely, but the nav-link is offset
-        // by the difference between its padding-y and the nav-toggle's
-        // padding-y so both elements shift up by the same amount, keeping
-        // the nav-link text vertically aligned with the nav-toggle and
-        // separator on the first row.
-        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y)); // stylelint-disable-line function-disallowed-list
-        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: 0;
-        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: 0;
+        // Shift the nav-link and nav-toggle up by the same amount — the smaller
+        // of their two padding-y values — so their contents stay aligned on the
+        // first row while neither padding-top can resolve negative (invalid).
+        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: max(0px, calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y))); // stylelint-disable-line function-disallowed-list
+        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: max(0px, calc(var(--az-navbar-fullscreen-nav-toggle-padding-y) - var(--bs-nav-link-padding-y))); // stylelint-disable-line function-disallowed-list
+        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: max(0px, calc(var(--az-navbar-fullscreen-nav-toggle-padding-y) - var(--bs-nav-link-padding-y))); // stylelint-disable-line function-disallowed-list
       }
     }
   }
