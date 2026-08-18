@@ -96,9 +96,6 @@ function clearNavColumnHeights(modalElement) {
   for (const column of allColumns) {
     if (column instanceof HTMLElement) {
       column.style.height = ''
-      column.style.flexGrow = ''
-      column.style.flexShrink = ''
-      column.style.flexBasis = ''
     }
   }
 }
@@ -174,11 +171,6 @@ function synchronizeNavColumnHeights(modalElement) {
   const visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets)
 
   for (const column of visibleColumns) {
-    // Secondary/tertiary columns can be flex-grown by CSS; lock flex sizing
-    // during sync so inline height can consistently control divider length.
-    column.style.flexGrow = '0'
-    column.style.flexShrink = '0'
-    column.style.flexBasis = 'auto'
     column.style.height = `${syncedHeight}px`
   }
 }
