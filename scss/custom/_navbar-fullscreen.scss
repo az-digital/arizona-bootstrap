@@ -355,6 +355,7 @@
     }
 
     .nav-link {
+      --bs-nav-link-font-weight: 600;
       padding-top: var(--bs-nav-link-padding-y);
       padding-bottom: var(--bs-nav-link-padding-y);
       white-space: nowrap;
@@ -881,7 +882,6 @@
       padding: 0 30px;
       font-size: 20px;
       line-height: 38px;
-      color: var(--bs-sky);
 
       &::after {
         top: 0;

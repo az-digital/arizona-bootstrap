@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v5.1.6 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.1.7 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -8135,11 +8135,6 @@
       this.initialMenuLabel = null;
       this.initialMenuParentLabel = null;
       this.initialMenuParentElementId = null;
-
-      // Initialize window location variable
-      this.cleanWindowLocation = new URL(window.location.href);
-      this.cleanWindowLocation.search = '';
-      this.cleanWindowLocation.hash = '';
       this.init();
     }
 
@@ -8159,41 +8154,46 @@
       }
       var activeLinkFound = false;
 
-      // Check active tertiary links for a match with the current pathname
-      var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
-      for (var link of activeTertiaryLinks) {
-        if (link.href === this.cleanWindowLocation.href) {
-          var _secondaryContentButt;
-          var tertiaryPanel = link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
-          if (!tertiaryPanel) {
-            continue;
+      // Check for an active link in the primary menu
+      var activePrimaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-primary > .nav-item > .nav-link.active');
+      if (activePrimaryLinks.length > 0) {
+        activeLinkFound = true;
+      }
+
+      // Show secondary menu page if an active secondary link is found
+      if (!activeLinkFound) {
+        var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-secondary a.nav-link.active');
+        for (var link of activeSecondaryLinks) {
+          var secondaryContent = link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+          var targetId = (secondaryContent === null || secondaryContent === void 0 ? void 0 : secondaryContent.getAttribute('id')) || '';
+          if (targetId) {
+            var _link$closest;
+            var label = ((_link$closest = link.closest('.navbar-az-fullscreen-nav-secondary')) === null || _link$closest === void 0 ? void 0 : _link$closest.getAttribute('aria-label')) || '';
+            this.showNavMenu(2, "#".concat(targetId), label);
+            activeLinkFound = true;
+            break;
           }
-          var tertiaryPanelId = tertiaryPanel !== null && tertiaryPanel !== void 0 && tertiaryPanel.getAttribute('id') ? "#".concat(tertiaryPanel.getAttribute('id')) : '';
-          var secondaryContentButton = document.querySelector("[data-bs-target=\"".concat(tertiaryPanelId, "\"]"));
-          var tertiaryLabel = (secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.previousElementSibling.textContent.trim()) || '';
-          var parentLabel = (secondaryContentButton === null || secondaryContentButton === void 0 || (_secondaryContentButt = secondaryContentButton.closest('.navbar-az-fullscreen-nav-secondary')) === null || _secondaryContentButt === void 0 ? void 0 : _secondaryContentButt.getAttribute('aria-label')) || '';
-          var secondaryContent = secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
-          var secondaryContentId = (secondaryContent === null || secondaryContent === void 0 ? void 0 : secondaryContent.getAttribute('id')) || '';
-          this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, "#".concat(secondaryContentId));
-          activeLinkFound = true;
         }
       }
 
-      // Check active secondary links for a match with the current pathname
-      if (!activeLinkFound) {
-        var activeSecondaryLinks = document.querySelectorAll('.navbar-az-fullscreen-modal-menu-nav-col-secondary a.nav-link.active');
-        for (var _link of activeSecondaryLinks) {
-          if (_link.href === this.cleanWindowLocation.href) {
-            var _link$closest;
-            var _secondaryContent = _link.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
-            var targetId = (_secondaryContent === null || _secondaryContent === void 0 ? void 0 : _secondaryContent.getAttribute('id')) || '';
-            var label = ((_link$closest = _link.closest('.navbar-az-fullscreen-nav-secondary')) === null || _link$closest === void 0 ? void 0 : _link$closest.getAttribute('aria-label')) || '';
-            if (targetId) {
-              this.showNavMenu(2, "#".concat(targetId), label);
-              activeLinkFound = true;
-              break;
-            }
-          }
+      // Show tertiary menu page if an active tertiary link is found
+      var activeTertiaryLinks = document.querySelectorAll('.navbar-az-fullscreen-nav-tertiary a.nav-link.active');
+      for (var _link of activeTertiaryLinks) {
+        var _secondaryContentButt;
+        var tertiaryPanel = _link.closest('.navbar-az-fullscreen-modal-menu-secondary-submenu');
+        if (!tertiaryPanel) {
+          continue;
+        }
+        var tertiaryPanelId = tertiaryPanel !== null && tertiaryPanel !== void 0 && tertiaryPanel.getAttribute('id') ? "#".concat(tertiaryPanel.getAttribute('id')) : '';
+        var secondaryContentButton = document.querySelector("[data-bs-target=\"".concat(tertiaryPanelId, "\"]"));
+        var tertiaryLabel = (secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.previousElementSibling.textContent.trim()) || '';
+        var parentLabel = (secondaryContentButton === null || secondaryContentButton === void 0 || (_secondaryContentButt = secondaryContentButton.closest('.navbar-az-fullscreen-nav-secondary')) === null || _secondaryContentButt === void 0 ? void 0 : _secondaryContentButt.getAttribute('aria-label')) || '';
+        var _secondaryContent = secondaryContentButton === null || secondaryContentButton === void 0 ? void 0 : secondaryContentButton.closest('.navbar-az-fullscreen-modal-menu-primary-submenu.show');
+        var secondaryContentId = (_secondaryContent === null || _secondaryContent === void 0 ? void 0 : _secondaryContent.getAttribute('id')) || '';
+        if (tertiaryPanelId && secondaryContentId) {
+          this.showNavMenu(3, tertiaryPanelId, tertiaryLabel, parentLabel, "#".concat(secondaryContentId));
+          activeLinkFound = true;
+          break;
         }
       }
 
@@ -8254,12 +8254,13 @@
       var footerLinksProperty = footerPosition === 'top' ? 'topFooterLinks' : 'bottomFooterLinks';
       var found = false;
       this[footerLinksProperty] = Array.from(document.querySelectorAll("#".concat(footer.id, " .nav-link"))).map(link => {
-        if (!activeLinkFound && !found && link.href === this.cleanWindowLocation.href) {
+        if (!activeLinkFound && !found && link.classList.contains('active')) {
           found = true;
         }
         return {
           href: link.href,
-          text: link.textContent.trim()
+          text: link.textContent.trim(),
+          active: link.classList.contains('active')
         };
       });
 
@@ -8445,10 +8446,7 @@
           var item = document.createElement('li');
           item.className = 'nav-item';
           var anchor = document.createElement('a');
-          anchor.className = 'nav-link';
-          if (link.href === this.cleanWindowLocation.href) {
-            anchor.classList.add('active');
-          }
+          anchor.className = "nav-link".concat(link.active ? ' active' : '');
           anchor.href = link.href;
           var anchorText = document.createElement('span');
           anchorText.className = 'nav-link-text';
