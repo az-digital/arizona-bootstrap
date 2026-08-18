@@ -88,21 +88,7 @@
     repeat: no-repeat;
   }
 
-  p,
-  li,
-  hr {
-    background-color: rgba(255, 255, 255, .7);
-  }
-
-  @each $color, $value in $colors {
-    &.text-bg-#{$color} {
-      p,
-      li,
-      hr {
-        background-color: rgba($value, .7);
-      }
-    }
-  }
+  @include background-text-legibility();
 }
 
 // >>> Monsoon
@@ -118,6 +104,8 @@
     repeat: repeat-y;
     size: 300px;
   }
+
+  @include background-text-legibility();
 }
 
 .bg-monsoon-sky-start,
