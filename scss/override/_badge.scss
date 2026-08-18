@@ -1,5 +1,9 @@
+// `.text-bg-light` is a Bootstrap theme color emitted with `!important`, so the
+// var-driven color/background must also be `!important` to be consumed on hover.
 /* stylelint-disable declaration-no-important */
 .text-bg-light {
+  --bs-bg-bg: rgba(var(--bs-light-rgb), var(--bs-bg-opacity, 1));
   color: var(--bs-bg-color) !important;
+  background-color: var(--bs-bg-bg) !important;
 }
 /* stylelint-enable declaration-no-important */
