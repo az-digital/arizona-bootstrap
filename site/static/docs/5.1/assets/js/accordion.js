@@ -14,9 +14,7 @@ const copyAnchor = (function () {
   'use strict'
 
   return function (event, element) {
-    const accordionElement = element || event?.currentTarget || event?.target
-
-    if (!accordionElement) {
+    if (!element) {
       return
     }
 
@@ -26,8 +24,16 @@ const copyAnchor = (function () {
       event.preventDefault()
     }
 
-    const anchorElement = accordionElement.closest('a') || accordionElement
-    const accordionId = anchorElement.getAttribute('href')?.replace('#', '') || anchorElement.parentElement?.id
+    // Prefer the closest anchor (<a>) for href/hash information
+    const anchorElement = element.closest('a') || (element.tagName === 'A' ? element : null)
+
+    if (!anchorElement) {
+      return
+    }
+
+    // Extract id from href (e.g. "#collapseAnchor1-link") or fall back to parent id
+    const href = anchorElement.getAttribute('href') || ''
+    const accordionId = href.startsWith('#') ? href.slice(1) : anchorElement.parentElement.id
 
     if (!accordionId) {
       return
