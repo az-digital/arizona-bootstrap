@@ -112,7 +112,7 @@ Anchor links allow users to click to copy direct links to accordions. The page w
 <div class="accordion" id="accordionAnchorExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="collapseAnchor1-link">
-      <a onclick="copyAnchor(this, event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy Accordion Link" href="#collapseAnchor1-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <a class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy Accordion Link" href="#collapseAnchor1-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
       <button class="accordion-button z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor1" aria-expanded="true" aria-controls="collapseAnchor1">
         Accordion Item #1
       </button>
@@ -125,7 +125,7 @@ Anchor links allow users to click to copy direct links to accordions. The page w
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="collapseAnchor2-link">
-      <a onclick="copyAnchor(this, event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" href="#collapseAnchor2-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <a class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy Accordion Link" href="#collapseAnchor2-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
       <button class="accordion-button collapsed z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor2" aria-expanded="false" aria-controls="collapseAnchor2">
         Accordion Item #2
       </button>
@@ -138,7 +138,7 @@ Anchor links allow users to click to copy direct links to accordions. The page w
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="collapseAnchor3-link">
-      <a onclick="copyAnchor(this, event)" class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" href="#collapseAnchor3-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
+      <a class="position-absolute ms-2 me-2 accordion-anchor z-1 pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy Accordion Link" href="#collapseAnchor3-link"><span class="material-symbols-rounded" style="font-size:32px;">link</span></a>
       <button class="accordion-button collapsed z-0 ps-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor3" aria-expanded="false" aria-controls="collapseAnchor3">
         Accordion Item #3
       </button>
