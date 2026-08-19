@@ -43,16 +43,19 @@
     padding-left: 2.25rem; // 20px marker plus a 16px gap
     list-style: none;
 
+    // The box is one line tall and the art is centred inside it, so the marker
+    // stays aligned if the root or base font size changes.
     &::before {
       position: absolute;
-      top: .125rem; // centers the marker on the 24px line box
+      top: 0;
       left: 0;
       width: 1.25rem;
-      height: 1.25rem;
+      height: $line-height-base * 1em;
       content: "";
       background-image: var(--az-list-marker);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-position: center;
+      background-size: 1.25rem 1.25rem;
     }
   }
 
