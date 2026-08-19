@@ -62,13 +62,13 @@ const copyAnchor = (function () {
 /**
  * Expands accordion if its anchor link is in the URL.
  */
-const checkAnchorAccordionOnLoad = (function () {
+function checkAnchorAccordionOnLoad() {
   'use strict'
   // Get anchor link hash without the '#' sign
   const anchorTag = window.location.hash.slice(1)
 
   if (!anchorTag) {
-    return // No anchor link found, do nothing.
+    return false // No anchor link found, do nothing.
   }
 
   const parentAccordionHeading = document.getElementById(anchorTag)
@@ -86,7 +86,17 @@ const checkAnchorAccordionOnLoad = (function () {
       accordionBodyElem.classList.add('show')
     }
   }
-})()
+
+  return true
+}
+
+const anchors = document.getElementsByClassName('accordion-anchor')
+Object.values(anchors).forEach(anchor => {
+  'use strict'
+  anchor.addEventListener('click', function (event) {
+    copyAnchor(event, this)
+  })
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -96,16 +106,3 @@ window.addEventListener('hashchange', () => {
   'use strict'
   checkAnchorAccordionOnLoad()
 })
-document.getElementById('collapseAnchor1-link').querySelector('a').addEventListener('click', function (event) {
-  'use strict'
-  copyAnchor(event, this)
-})
-document.getElementById('collapseAnchor2-link').querySelector('a').addEventListener('click', function (event) {
-  'use strict'
-  copyAnchor(event, this)
-})
-document.getElementById('collapseAnchor3-link').querySelector('a').addEventListener('click', function (event) {
-  'use strict'
-  copyAnchor(event, this)
-})
-
