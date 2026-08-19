@@ -217,14 +217,14 @@ Add the `.az-list-triangles` class to your **unordered list** to replace the def
 </ul>
 {{< /example >}}
 
-### Diamonds
+### Focus points
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
-Add the `.az-list-diamonds` class to your **unordered list** to replace the default bullets with diamonds. Diamond list items function the same as an unordered list.
+Add the `.az-list-focus-points` class to your **unordered list** to replace the default bullets with focus points. Focus point list items function the same as an unordered list.
 
 {{< example >}}
-<ul class="az-list-diamonds">
+<ul class="az-list-focus-points">
   <li>Lorem ipsum dolor sit amet</li>
   <li>Consectetur adipiscing elit</li>
   <li>Integer molestie lorem at massa</li>
@@ -251,7 +251,7 @@ Add the `.az-list-checkmarks` class to your **unordered list** to replace the de
 
 ### Dark backgrounds
 
-On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Sky, because its solid Oasis disc is too dark to read there. The diamond does not change — it keeps its Bloom and Sky on every background.
+On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Sky, because its solid Oasis disc is too dark to read there. The focus point does not change — it keeps its Bloom and Sky on every background.
 
 {{< example >}}
 <div class="text-bg-blue p-4">
@@ -259,7 +259,7 @@ On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
   </ul>
-  <ul class="az-list-diamonds mb-0">
+  <ul class="az-list-focus-points mb-0">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
   </ul>

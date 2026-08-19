@@ -31,10 +31,10 @@
   }
 }
 
-// >> Diamond and checkmark bullets
+// >> Focus point and checkmark bullets
 // Marker is a custom property so az-color-contrast() can swap it on dark backgrounds.
 // Sized in rem, not em: these are for body copy, so the marker is always 20px.
-.az-list-diamonds,
+.az-list-focus-points,
 .az-list-checkmarks {
   overflow: hidden;
 
@@ -74,7 +74,7 @@
 }
 
 // Uses the palette's current Sky and Oasis, not the older values in the source art.
-.az-list-diamonds {
+.az-list-focus-points {
   --az-list-marker: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 21 21'><path fill='#{$bloom}' d='M10.548,0A10.548,10.548,0,1,0,21.1,10.548,10.548,10.548,0,0,0,10.548,0m.236,20.485-.209.444-.208-.444A20.243,20.243,0,0,0,.542,10.724l-.45-.208.45-.21A20.238,20.238,0,0,0,10.334.486l.209-.45.209.45A20.235,20.235,0,0,0,20.6,10.311l.452.209-.452.209a20.241,20.241,0,0,0-9.814,9.755'/><path fill='#{$sky}' d='M20.964,17.74l.469-.217-.469-.217a6.666,6.666,0,0,1-3.245-3.238L17.5,13.6l-.216.468A6.668,6.668,0,0,1,14.058,17.3l-.467.218.468.216A6.676,6.676,0,0,1,17.3,20.955l.216.461.217-.461a6.67,6.67,0,0,1,3.234-3.215' transform='translate(-6.984 -6.989)'/></svg>"))};
 }
 
