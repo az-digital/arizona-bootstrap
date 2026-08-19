@@ -251,7 +251,7 @@ Add the `.az-list-checkmarks` class to your **unordered list** to replace the de
 
 ### Dark backgrounds
 
-On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to white, because its solid Arizona Blue disc is too dark to read there. The diamond does not change — it keeps its Bloom and Sky on every background.
+On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Sky, because its solid Oasis disc is too dark to read there. The diamond does not change — it keeps its Bloom and Sky on every background.
 
 {{< example >}}
 <div class="text-bg-blue p-4">
@@ -268,7 +268,7 @@ On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}
 
 ### Nested lists
 
-Nested lists inherit the marker and run at half the rhythm — 14px between items instead of 28px.
+Nested lists inherit the marker and run tighter — 14px between items instead of 24px.
 
 {{< example >}}
 <ul class="az-list-checkmarks">
@@ -286,7 +286,7 @@ Nested lists inherit the marker and run at half the rhythm — 14px between item
 
 ### Item spacing
 
-The 28px gap between items is part of both styles, so there is nothing to add. If you are writing the markup yourself and want a different gap, override it with the [spacing utilities]({{< docsref "/utilities/spacing" >}}) on the list items.
+The 24px gap between items is part of both styles, so there is nothing to add. If you are writing the markup yourself and want a different gap, override it with the [spacing utilities]({{< docsref "/utilities/spacing" >}}) on the list items.
 
 {{< example >}}
 <ul class="az-list-checkmarks">

@@ -56,13 +56,13 @@
     }
   }
 
-  // 28px between items; the last is skipped so the list keeps the normal gap below it.
+  // 24px between items; the last is skipped so the list keeps the normal gap below it.
   > li:not(:last-child) {
-    margin-bottom: $spacer * 1.75;
+    margin-bottom: $spacer * 1.5;
   }
 
-  // Nested lists run at half the parent's rhythm, and drop reboot's 2rem indent
-  // because the item's own marker padding already sets them in.
+  // Nested lists run tighter at 14px, and drop reboot's 2rem indent because the
+  // item's own marker padding already sets them in.
   ul {
     padding-left: 0;
     margin-top: $spacer * .875;
