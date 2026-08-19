@@ -21,7 +21,7 @@
   .tag-now { background: #106ab1; color: #fff; }
   .tag-likely { background: #ab0520; color: #fff; }
   .tag-unlikely { background: #49595e; color: #fff; }
-  iframe { display: block; width: 100%; border: 0; }
+  iframe { display: block; width: 100%; height: 500px; border: 0; }
   .lede { font-size: 1.0625rem; }
 </style>
 </head>
@@ -30,9 +30,9 @@
 
 <h1 class="h3">List bullets: what a bigger base font size would do</h1>
 
-<p class="lede">Arizona Bootstrap may move its base font size from 16px to 18px. There are two ways to do that, and they affect these bullets differently. Each panel below renders the same CSS under one of those conditions and measures itself — <strong>PASS</strong> means the marker art is centred on the text's line box.</p>
+<p class="lede">Arizona Bootstrap may move its base font size from 16px to 18px. There are two ways to do that, and they affect these bullets differently. Each panel below renders the same CSS under one of those conditions and renders the same CSS under one of those conditions. <strong>PASS</strong> means the marker art is centred on the text's line box.</p>
 
-<p>The marker's vertical position is not a fixed number. Its box is one line tall (<code>height: $line-height-base * 1em</code>) and the art is centred inside it, so it follows the text whatever size that text ends up being.</p>
+<p>The marker's vertical position is not a fixed number. Its box is one line tall (<code>height: $line-height-base * 1em</code>) and the art is centred inside it, so it follows the text whatever size that text ends up being. The bullets in each panel are live; the measurements beneath them were read off these same panels in Chrome.</p>
 
 <section class="scenario">
   <header>
@@ -40,7 +40,7 @@
     <h2>Root 16px</h2>
     <p>What ships right now. Body text is 16px, so the marker is 20px and the gap between items is 24px.</p>
   </header>
-  <iframe src="/lists-root-frame.html?root=16" title="Root 16px"></iframe>
+  <iframe src="/lists-root-frame-16.html" title="Root 16px"></iframe>
 </section>
 
 <section class="scenario">
@@ -49,7 +49,7 @@
     <h2>Body text 18px, root untouched</h2>
     <p>Set <code>$font-size-base: 1.125rem</code> and leave <code>$font-size-root</code> alone. Only the body type grows; <code>1rem</code> stays 16px, so the marker stays 20px and the gaps stay 24px and 14px. This is the route the repo points to — the docs commit to keeping the browser's default root size, and the SCSS is mostly px, which would not scale if the root moved.</p>
   </header>
-  <iframe src="/lists-root-frame.html?root=16&amp;base=18" title="Base 18px, root 16px"></iframe>
+  <iframe src="/lists-root-frame-base18.html" title="Body text 18px, root 16px"></iframe>
 </section>
 
 <section class="scenario">
@@ -58,19 +58,9 @@
     <h2>Root 18px</h2>
     <p>Set <code>$font-size-root: 18px</code>, which redefines what <code>1rem</code> means so every rem value in the framework grows at once — the marker becomes 22.5px and the item gap 27px.</p>
   </header>
-  <iframe src="/lists-root-frame.html?root=18" title="Root 18px"></iframe>
+  <iframe src="/lists-root-frame-root18.html" title="Root 18px"></iframe>
 </section>
 
 </div>
-<script>
-  // Size each frame to its content so nothing scrolls inside a panel.
-  const fit = f => { try { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; } catch (e) {} };
-  document.querySelectorAll('iframe').forEach(f => {
-    f.addEventListener('load', () => fit(f));
-    if (f.contentDocument && f.contentDocument.readyState === 'complete') fit(f);
-  });
-  window.addEventListener('load', () => document.querySelectorAll('iframe').forEach(fit));
-  setTimeout(() => document.querySelectorAll('iframe').forEach(fit), 1200);
-</script>
 </body>
 </html>
