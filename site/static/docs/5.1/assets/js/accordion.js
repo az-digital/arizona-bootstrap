@@ -88,19 +88,24 @@ const checkAnchorAccordionOnLoad = (function () {
   }
 })()
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  checkAnchorAccordionOnLoad
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict'
+  checkAnchorAccordionOnLoad()
 })
-window.addEventListener('hashchange', function (event) {
-  checkAnchorAccordionOnLoad
+window.addEventListener('hashchange', () => {
+  'use strict'
+  checkAnchorAccordionOnLoad()
 })
 document.getElementById('collapseAnchor1-link').querySelector('a').addEventListener('click', function (event) {
+  'use strict'
   copyAnchor(event, this)
 })
 document.getElementById('collapseAnchor2-link').querySelector('a').addEventListener('click', function (event) {
+  'use strict'
   copyAnchor(event, this)
 })
 document.getElementById('collapseAnchor3-link').querySelector('a').addEventListener('click', function (event) {
+  'use strict'
   copyAnchor(event, this)
 })
 
