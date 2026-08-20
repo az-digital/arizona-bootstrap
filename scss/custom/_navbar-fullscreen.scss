@@ -587,12 +587,6 @@
         )
         1;
 
-      &.navbar-az-fullscreen-modal-menu-nav-col-tertiary {
-        flex: 0 0 auto;
-        border-right: 0;
-        border-image: none;
-      }
-
       &::-webkit-scrollbar-track {
         background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
       }
@@ -637,6 +631,8 @@
 
   .navbar-az-fullscreen-modal-menu-nav-col-secondary,
   .navbar-az-fullscreen-modal-menu-nav-col-tertiary {
+    flex: 1 1 auto;
+
     .nav-link {
       padding-right: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
       padding-left: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
@@ -751,6 +747,7 @@
 
   .navbar-az-fullscreen-modal-menu-nav-col-tertiary {
     border-right: 0;
+    border-image: none;
   }
 
 }
