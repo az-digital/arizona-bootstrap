@@ -62,7 +62,7 @@ const copyAnchor = (function () {
 /**
  * Expands accordion if its anchor link is in the URL.
  */
-function checkAnchorAccordionOnLoad() {
+const checkAnchorAccordionOnLoad = function () {
   'use strict'
   // Get anchor link hash without the '#' sign
   const anchorTag = window.location.hash.slice(1)

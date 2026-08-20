@@ -214,6 +214,3 @@ As part of Bootstrap's evolving CSS variables approach, accordions now use local
 ### Sass variables
 
 {{< scss-docs name="accordion-variables" file="scss/_variables.scss" >}}
-
-<!-- Include JavaScript for Background Wrapper demo -->
-<script defer src="{{< docsrefazold `/assets/js/accordion.js` >}}"></script>
