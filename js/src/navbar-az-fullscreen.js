@@ -96,6 +96,7 @@ function clearNavColumnHeights(modalElement) {
   for (const column of allColumns) {
     if (column instanceof HTMLElement) {
       column.style.height = ''
+      column.style.maxHeight = ''
     }
   }
 }
@@ -171,7 +172,10 @@ function synchronizeNavColumnHeights(modalElement) {
   const visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets)
 
   for (const column of visibleColumns) {
+    // Cap the height so `flex-grow` on secondary/tertiary columns can't stretch
+    // the divider past the tallest content while still filling up to it.
     column.style.height = `${syncedHeight}px`
+    column.style.maxHeight = `${syncedHeight}px`
   }
 }
 
