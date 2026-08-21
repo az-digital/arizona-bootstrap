@@ -379,6 +379,9 @@ class NavbarAzFullscreenMobileNav {
         const anchor = document.createElement('a')
         anchor.className = `nav-link${link.active ? ' active' : ''}`
         anchor.href = link.href
+        if (link.active) {
+          anchor.setAttribute('aria-current', 'page')
+        }
 
         const anchorText = document.createElement('span')
         anchorText.className = 'nav-link-text'
