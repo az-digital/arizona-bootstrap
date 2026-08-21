@@ -595,7 +595,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
         <div class="navbar-az-fullscreen-modal-menu container-lg ">
           <div class="row g-0">
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
-              <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-12 col-lg-4">
+              <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-lg-4">
                 <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
                   <div class="nav-item">
                     <a class="nav-link" href="#">
@@ -606,7 +606,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
                     </button>
                     <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
                       <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                        <div class="col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                        <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
                           <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Home menu">
                             <li class="nav-item">
                               <a class="nav-link" href="#">
@@ -617,7 +617,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
                               </button>
                               <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="navbar-az-fullscreen-secondary-submenu">
                                 <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
-                                  <div class="col navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                  <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
                                     <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Action submenu">
                                       <li class="nav-item">
                                         <a class="nav-link" href="#">
