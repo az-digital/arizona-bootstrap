@@ -7,6 +7,12 @@
   hyphens: auto;
 }
 
+// >> Serif headings
+// Opt-in serif style; combine with headings, e.g. h1.az-serif or .h1.az-serif.
+.az-serif {
+  font-family: $font-family-serif;
+}
+
 // >> Lists
 .az-list-triangles {
   overflow: hidden;

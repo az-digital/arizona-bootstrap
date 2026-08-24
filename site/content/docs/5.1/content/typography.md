@@ -53,6 +53,43 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h6">h6. Bootstrap heading</p>
 {{< /example >}}
 
+### Serif headings
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-serif` class alongside a heading element or `.h1`-`.h6` class to switch that heading to the serif type stack.
+
+{{< bs-table >}}
+| Heading | Example |
+| --- | --- |
+| `<h1 class="az-serif"></h1>` | <span class="h1 az-serif d-inline-block">h1. Bootstrap heading</span> |
+| `<h2 class="az-serif"></h2>` | <span class="h2 az-serif d-inline-block">h2. Bootstrap heading</span> |
+| `<h3 class="az-serif"></h3>` | <span class="h3 az-serif d-inline-block">h3. Bootstrap heading</span> |
+| `<h4 class="az-serif"></h4>` | <span class="h4 az-serif d-inline-block">h4. Bootstrap heading</span> |
+| `<h5 class="az-serif"></h5>` | <span class="h5 az-serif d-inline-block">h5. Bootstrap heading</span> |
+| `<h6 class="az-serif"></h6>` | <span class="h6 az-serif d-inline-block">h6. Bootstrap heading</span> |
+{{< /bs-table >}}
+
+```html
+<h1 class="az-serif">h1. Bootstrap heading</h1>
+<h2 class="az-serif">h2. Bootstrap heading</h2>
+<h3 class="az-serif">h3. Bootstrap heading</h3>
+<h4 class="az-serif">h4. Bootstrap heading</h4>
+<h5 class="az-serif">h5. Bootstrap heading</h5>
+<h6 class="az-serif">h6. Bootstrap heading</h6>
+```
+
+`.h1` through `.h6` classes can also be combined with `.az-serif`, for when you want to match the serif heading styling but cannot use the associated HTML element.
+
+{{< example >}}
+<p class="h1 az-serif">h1. Bootstrap heading</p>
+<p class="h2 az-serif">h2. Bootstrap heading</p>
+<p class="h3 az-serif">h3. Bootstrap heading</p>
+<p class="h4 az-serif">h4. Bootstrap heading</p>
+<p class="h5 az-serif">h5. Bootstrap heading</p>
+<p class="h6 az-serif">h6. Bootstrap heading</p>
+{{< /example >}}
+
 ### Customizing headings
 
 Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.
