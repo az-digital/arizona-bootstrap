@@ -95,14 +95,15 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 `$font-family-base` and recompile Arizona Bootstrap.
 
 ## Adding Specific CSS Classes
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
 <span class="badge bg-warning align-text-top">Important</span> The following instructions are for adding specific CSS classes for font weights or styles to your project. If using Arizona Bootstrap, you will most likely not need to do this unless you are trying to use a specific variant.
 
 
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova' data-font-name='Proxima Nova' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova
-
-<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 ```css
 .proxima-nova {
@@ -187,8 +188,6 @@ font-style: italic;
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed' data-font-name='Proxima Nova Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova Condensed
-
-<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 ```css
 .proxima-nova-condensed {
@@ -357,8 +356,6 @@ font-style: italic;
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Garamond Premier Pro
-
-<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 ```css
 .garamond-premier-pro {
