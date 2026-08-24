@@ -290,6 +290,69 @@ font-style: normal;
 </div>
 {{< /example >}}
 
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-italic' data-font-name='Garamond Premier Pro Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Garamond Premier Pro Italic
+
+```css
+.garamond-premier-pro-italic {
+font-family: garamond-premier-pro, serif;
+font-weight: 400;
+font-style: italic;
+}
+```
+
+{{< example >}}
+<div class="garamond-premier-pro-italic">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-bold' data-font-name='Garamond Premier Pro Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Garamond Premier Pro Bold
+
+```css
+.garamond-premier-pro-bold {
+font-family: garamond-premier-pro, serif;
+font-weight: 700;
+font-style: normal;
+}
+```
+
+{{< example >}}
+<div class="garamond-premier-pro-bold">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-bold-italic' data-font-name='Garamond Premier Pro Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Garamond Premier Pro Bold Italic
+
+```css
+.garamond-premier-pro-bold-italic {
+font-family: garamond-premier-pro, serif;
+font-weight: 700;
+font-style: italic;
+}
+```
+
+{{< example >}}
+<div class="garamond-premier-pro-bold-italic">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
 ## Examples
 
 Below are two examples of how you would use the Proxima Nova fonts in your project.
