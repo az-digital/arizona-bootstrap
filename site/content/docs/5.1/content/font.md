@@ -41,35 +41,6 @@ Previous versions of Arizona Bootstrap required only Proxima Nova (and Garamond 
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
 
-## Utility Classes
-
-<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
-
-`.proxima-nova`.
-
-{{< example >}}
-<p class="proxima-nova">
-  This is the regular Proxima Nova font.
-</p>
-{{< /example >}}
-
-`.proxima-nova-condensed`.
-
-{{< example >}}
-<p class="proxima-nova-condensed">
-  This is the condensed Proxima Nova font.
-</p>
-{{< /example >}}
-
-`.garamond-premier-pro`.
-
-{{< example >}}
-<p class="garamond-premier-pro">
-  This is the Garamond Premier Pro font.
-</p>
-{{< /example >}}
-
-
 ## Centrally-managed Typekit Webfonts
 
 For ease of integration into web projects around campus, the Arizona Digital
@@ -127,20 +98,22 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 <span class="badge bg-warning align-text-top">Important</span> The following instructions are for adding specific CSS classes for font weights or styles to your project. If using Arizona Bootstrap, you will most likely not need to do this unless you are trying to use a specific variant.
 
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova' data-font-name='Proxima Nova' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
-### Proxima Nova Bold
+### Proxima Nova
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
 
 ```css
-.proxima-nova-bold {
+.proxima-nova {
 font-family: proxima-nova, sans-serif;
-font-weight: 700;
+font-weight: 400;
 font-style: normal;
 }
 ```
 
 {{< example >}}
-<div class="proxima-nova-bold">
+<div class="proxima-nova">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
   <span>abcdefghijklmnopqrstuvwxyz</span><br>
   <span>0123456789</span><br>
@@ -169,6 +142,27 @@ font-style: italic;
 </div>
 {{< /example >}}
 
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Proxima Nova Bold
+
+```css
+.proxima-nova-bold {
+font-family: proxima-nova, sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+```
+
+{{< example >}}
+<div class="proxima-nova-bold">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-bold-italic' data-font-name='Proxima Nova Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova Bold Italic
@@ -183,6 +177,50 @@ font-style: italic;
 
 {{< example >}}
 <div class="proxima-nova-bold-italic">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed' data-font-name='Proxima Nova Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Proxima Nova Condensed
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+```css
+.proxima-nova-condensed {
+font-family: proxima-nova-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+```
+
+{{< example >}}
+<div class="proxima-nova-condensed">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-italic' data-font-name='Proxima Nova Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Proxima Nova Condensed Italic
+
+```css
+.proxima-nova-condensed-italic {
+font-family: proxima-nova-condensed, sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+```
+
+{{< example >}}
+<div class="proxima-nova-condensed-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
   <span>abcdefghijklmnopqrstuvwxyz</span><br>
   <span>0123456789</span><br>
@@ -211,27 +249,6 @@ font-style: normal;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-italic' data-font-name='Proxima Nova Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Condensed Italic
-
-```css
-.proxima-nova-condensed-italic {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-condensed-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-bold-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova Condensed Bold Italic
@@ -253,7 +270,7 @@ font-style: italic;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed' data-font-name='Proxima Nova Extra Condensed Regular' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed' data-font-name='Proxima Nova Extra Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova Extra Condensed
 
@@ -267,6 +284,27 @@ font-style: normal;
 
 {{< example >}}
 <div class="proxima-nova-extra-condensed">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Proxima Nova Extra Condensed Italic
+
+```css
+.proxima-nova-extra-condensed-italic {
+font-family: proxima-nova-extra-condensed, sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+```
+
+{{< example >}}
+<div class="proxima-nova-extra-condensed-italic">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
   <span>abcdefghijklmnopqrstuvwxyz</span><br>
   <span>0123456789</span><br>
@@ -295,27 +333,6 @@ font-style: normal;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Extra Condensed Italic
-
-```css
-.proxima-nova-extra-condensed-italic {
-font-family: proxima-nova, sans-serif;
-font-weight: 400;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-extra-condensed-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Proxima Nova Extra Condensed Bold Italic
@@ -330,6 +347,29 @@ font-style: italic;
 
 {{< example >}}
 <div class="proxima-nova-extra-condensed-bold-italic">
+  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
+  <span>abcdefghijklmnopqrstuvwxyz</span><br>
+  <span>0123456789</span><br>
+  <span>!@#$%^&</span>
+</div>
+{{< /example >}}
+
+<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+
+### Garamond Premier Pro
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Classes</span>
+
+```css
+.garamond-premier-pro {
+font-family: garamond-premier-pro, serif;
+font-weight: 400;
+font-style: normal;
+}
+```
+
+{{< example >}}
+<div class="garamond-premier-pro">
   <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
   <span>abcdefghijklmnopqrstuvwxyz</span><br>
   <span>0123456789</span><br>
