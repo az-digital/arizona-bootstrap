@@ -269,90 +269,6 @@ font-style: italic;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed' data-font-name='Proxima Nova Extra Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Extra Condensed
-
-```css
-.proxima-nova-extra-condensed {
-font-family: proxima-nova-extra-condensed, sans-serif;
-font-weight: 400;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-extra-condensed">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-italic' data-font-name='Proxima Nova Extra Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Extra Condensed Italic
-
-```css
-.proxima-nova-extra-condensed-italic {
-font-family: proxima-nova-extra-condensed, sans-serif;
-font-weight: 400;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-extra-condensed-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-bold' data-font-name='Proxima Nova Extra Condensed Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Extra Condensed Bold
-
-```css
-.proxima-nova-extra-condensed-bold {
-font-family: proxima-nova-extra-condensed, sans-serif;
-font-weight: 700;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-extra-condensed-bold">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-extra-condensed-bold-italic' data-font-name='Proxima Nova Extra Condensed Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Extra Condensed Bold Italic
-
-```css
-.proxima-nova-extra-condensed-bold-italic {
-font-family: proxima-nova-extra-condensed, sans-serif;
-font-weight: 700;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-extra-condensed-bold-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
 ### Garamond Premier Pro
@@ -396,13 +312,13 @@ Below are two examples of how you would use the Proxima Nova fonts in your proje
 **Example 2: Using a Project-Specific Class**
 
 ```css
-.proxima-nova-extra-condensed {
-  font-family: proxima-nova-extra-condensed, sans-serif;
+.proxima-nova-condensed {
+  font-family: proxima-nova-condensed, sans-serif;
 }
 ```
 
 {{< example >}}
-<p class="proxima-nova-extra-condensed">Proxima Nova Extra Condensed</p>
+<p class="proxima-nova-condensed">Proxima Nova Condensed</p>
 {{< /example >}}
 
 <div id="specimen-modal" tabindex="-1" class="modal fade bs-example-modal-lg" aria-labelledby="myModalLabel" aria-hidden="true">
