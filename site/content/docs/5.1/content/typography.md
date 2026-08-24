@@ -217,6 +217,85 @@ Add the `.az-list-triangles` class to your **unordered list** to replace the def
 </ul>
 {{< /example >}}
 
+### Focus points
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-list-focus-points` class to your **unordered list** to replace the default bullets with focus points. Focus point list items function the same as an unordered list.
+
+{{< example >}}
+<ul class="az-list-focus-points">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>This is a longer list item that runs past the width of its container and wraps onto a second line, so you can see that the marker stays put on the first line.</li>
+  <li>Here is another long one. However far the text wraps, every line after the first stays lined up with the one above it instead of sliding back under the marker.</li>
+</ul>
+{{< /example >}}
+
+### Checkmarks
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-list-checkmarks` class to your **unordered list** to replace the default bullets with checkmarks. Checkmark list items function the same as an unordered list.
+
+{{< example >}}
+<ul class="az-list-checkmarks">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>This is a longer list item that runs past the width of its container and wraps onto a second line, so you can see that the marker stays put on the first line.</li>
+  <li>Here is another long one. However far the text wraps, every line after the first stays lined up with the one above it instead of sliding back under the marker.</li>
+</ul>
+{{< /example >}}
+
+### Dark backgrounds
+
+On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Sky, because its solid Oasis disc is too dark to read there. The focus point does not change — it keeps its Bloom and Sky on every background.
+
+{{< example >}}
+<div class="text-bg-blue p-4">
+  <ul class="az-list-checkmarks mb-5">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+  </ul>
+  <ul class="az-list-focus-points mb-0">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+  </ul>
+</div>
+{{< /example >}}
+
+### Nested lists
+
+Nested lists inherit the marker and run tighter — 14px between items instead of 24px.
+
+{{< example >}}
+<ul class="az-list-checkmarks">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit, with a nested list:
+    <ul>
+      <li>Integer molestie lorem at massa</li>
+      <li>Facilisis in pretium nisl aliquet</li>
+      <li>Nulla volutpat aliquam velit</li>
+    </ul>
+  </li>
+  <li>Vestibulum ante ipsum primis</li>
+</ul>
+{{< /example >}}
+
+### Item spacing
+
+The 24px gap between items is part of both styles, so there is nothing to add. If you are writing the markup yourself and want a different gap, override it with the [spacing utilities]({{< docsref "/utilities/spacing" >}}) on the list items.
+
+{{< example >}}
+<ul class="az-list-checkmarks">
+  <li class="mb-1">Lorem ipsum dolor sit amet</li>
+  <li class="mb-1">Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+</ul>
+{{< /example >}}
+
 ### Unstyled
 
 Remove the default `list-style` and left margin on list items (immediate children only). **This only applies to immediate children list items**, meaning you will need to add the class for any nested lists as well.
