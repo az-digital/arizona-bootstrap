@@ -8,9 +8,35 @@
 }
 
 // >> Serif headings
-// Opt-in serif style; combine with headings, e.g. h1.az-serif or .h1.az-serif.
-.az-serif {
-  font-family: $font-family-serif;
+// Container classes: apply to a wrapper (e.g. <body>) to switch descendant headings to serif.
+.az-headings-mixed {
+  // Garamond for h1-h3 only; h4-h6 stay Proxima Nova.
+  h1,
+  h2,
+  h3,
+  .h1,
+  .h2,
+  .h3 {
+    font-family: garamond-premier-pro, Georgia, "Times New Roman", serif;
+  }
+}
+
+.az-headings-serif {
+  // Garamond for all heading levels.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: garamond-premier-pro, Georgia, "Times New Roman", serif;
+  }
 }
 
 // >> Lists

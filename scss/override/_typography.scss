@@ -41,6 +41,28 @@ h6,
 .h6 {
   margin: $heading-margins;
   color: $blue;
+  letter-spacing: 0;
+}
+
+@each $level, $props in $headings-scale {
+  h#{$level},
+  .h#{$level} {
+    font-size: map-get($props, font-size);
+    font-weight: map-get($props, font-weight);
+    line-height: map-get($props, line-height);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @each $level, $props in $headings-scale {
+    @if map-has-key($props, font-size-lg) {
+      h#{$level},
+      .h#{$level} {
+        font-size: map-get($props, font-size-lg);
+        line-height: map-get($props, line-height-lg);
+      }
+    }
+  }
 }
 
 /*

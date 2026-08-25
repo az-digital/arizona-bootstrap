@@ -53,41 +53,86 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h6">h6. Bootstrap heading</p>
 {{< /example >}}
 
+### Mixed headings
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-headings-mixed` class to a container (such as `<body>` or any wrapping element) to switch that container's `<h1>`-`<h3>` and `.h1`-`.h3` to the serif type stack, leaving `<h4>`-`<h6>` and `.h4`-`.h6` on Proxima Nova.
+
+{{< example >}}
+<div class="az-headings-mixed">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+{{< /example >}}
+
+```html
+<div class="az-headings-mixed">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+```
+
+`.h1` through `.h6` classes can also be used in place of the associated HTML element within a container using `.az-headings-mixed`.
+
+{{< example >}}
+<div class="az-headings-mixed">
+  <p class="h1">h1. Bootstrap heading</p>
+  <p class="h2">h2. Bootstrap heading</p>
+  <p class="h3">h3. Bootstrap heading</p>
+  <p class="h4">h4. Bootstrap heading</p>
+  <p class="h5">h5. Bootstrap heading</p>
+  <p class="h6">h6. Bootstrap heading</p>
+</div>
+{{< /example >}}
+
 ### Serif headings
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
-Add the `.az-serif` class alongside a heading element or `.h1`-`.h6` class to switch that heading to the serif type stack.
-
-{{< bs-table >}}
-| Heading | Example |
-| --- | --- |
-| `<h1 class="az-serif"></h1>` | <span class="h1 az-serif d-inline-block">h1. Bootstrap heading</span> |
-| `<h2 class="az-serif"></h2>` | <span class="h2 az-serif d-inline-block">h2. Bootstrap heading</span> |
-| `<h3 class="az-serif"></h3>` | <span class="h3 az-serif d-inline-block">h3. Bootstrap heading</span> |
-| `<h4 class="az-serif"></h4>` | <span class="h4 az-serif d-inline-block">h4. Bootstrap heading</span> |
-| `<h5 class="az-serif"></h5>` | <span class="h5 az-serif d-inline-block">h5. Bootstrap heading</span> |
-| `<h6 class="az-serif"></h6>` | <span class="h6 az-serif d-inline-block">h6. Bootstrap heading</span> |
-{{< /bs-table >}}
-
-```html
-<h1 class="az-serif">h1. Bootstrap heading</h1>
-<h2 class="az-serif">h2. Bootstrap heading</h2>
-<h3 class="az-serif">h3. Bootstrap heading</h3>
-<h4 class="az-serif">h4. Bootstrap heading</h4>
-<h5 class="az-serif">h5. Bootstrap heading</h5>
-<h6 class="az-serif">h6. Bootstrap heading</h6>
-```
-
-`.h1` through `.h6` classes can also be combined with `.az-serif`, for when you want to match the serif heading styling but cannot use the associated HTML element.
+Add the `.az-headings-serif` class to a container (such as `<body>` or any wrapping element) to switch all of that container's `<h1>`-`<h6>` and `.h1`-`.h6` to the serif type stack.
 
 {{< example >}}
-<p class="h1 az-serif">h1. Bootstrap heading</p>
-<p class="h2 az-serif">h2. Bootstrap heading</p>
-<p class="h3 az-serif">h3. Bootstrap heading</p>
-<p class="h4 az-serif">h4. Bootstrap heading</p>
-<p class="h5 az-serif">h5. Bootstrap heading</p>
-<p class="h6 az-serif">h6. Bootstrap heading</p>
+<div class="az-headings-serif">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+{{< /example >}}
+
+```html
+<div class="az-headings-serif">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+```
+
+`.h1` through `.h6` classes can also be used in place of the associated HTML element within a container using `.az-headings-serif`.
+
+{{< example >}}
+<div class="az-headings-serif">
+  <p class="h1">h1. Bootstrap heading</p>
+  <p class="h2">h2. Bootstrap heading</p>
+  <p class="h3">h3. Bootstrap heading</p>
+  <p class="h4">h4. Bootstrap heading</p>
+  <p class="h5">h5. Bootstrap heading</p>
+  <p class="h6">h6. Bootstrap heading</p>
+</div>
 {{< /example >}}
 
 ### Customizing headings
