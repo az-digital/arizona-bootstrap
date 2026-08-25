@@ -105,13 +105,7 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 
 ### Proxima Nova
 
-```css
-.proxima-nova {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-```
+{{< scss-docs name="font-proxima-nova" file="custom/_font.scss" scssroot="scss" >}}
 
 {{< example >}}
 <div class="proxima-nova">
@@ -143,13 +137,7 @@ Additional Proxima Nova weights and styles are available via the embed code. Rat
 
 ### Proxima Nova Condensed
 
-```css
-.proxima-nova-condensed {
-  font-family: proxima-nova-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-```
+{{< scss-docs name="font-proxima-nova-condensed" file="custom/_font.scss" scssroot="scss" >}}
 
 {{< example >}}
 <div class="proxima-nova-condensed">
@@ -181,13 +169,7 @@ Additional Proxima Nova Condensed weights and styles are available via the embed
 
 ### Garamond Premier Pro
 
-```css
-.garamond-premier-pro {
-  font-family: garamond-premier-pro, serif;
-  font-weight: 400;
-  font-style: normal;
-}
-```
+{{< scss-docs name="font-garamond-premier-pro" file="custom/_font.scss" scssroot="scss" >}}
 
 {{< example >}}
 <div class="garamond-premier-pro">

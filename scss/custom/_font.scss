@@ -4,14 +4,20 @@
 // Combine these base classes with Bootstrap's font-weight (.fw-*) and
 // font-style (.fst-italic) utilities to access other weights/styles.
 
+// scss-docs-start font-proxima-nova
 .proxima-nova {
   font-family: $font-family-sans-serif;
 }
+// scss-docs-end font-proxima-nova
 
+// scss-docs-start font-proxima-nova-condensed
 .proxima-nova-condensed {
   font-family: proxima-nova-condensed, #{$font-family-sans-serif};
 }
+// scss-docs-end font-proxima-nova-condensed
 
+// scss-docs-start font-garamond-premier-pro
 .garamond-premier-pro {
   font-family: garamond-premier-pro, serif;
 }
+// scss-docs-end font-garamond-premier-pro
