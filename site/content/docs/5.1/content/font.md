@@ -217,13 +217,13 @@ Below are two examples of how you would use the Proxima Nova fonts in your proje
 **Example 2: Using a Project-Specific Class**
 
 ```css
-.proxima-nova-condensed {
+.my-condensed-font {
   font-family: proxima-nova-condensed, sans-serif;
 }
 ```
 
 {{< example >}}
-<p class="proxima-nova-condensed">Proxima Nova Condensed</p>
+<p class="my-condensed-font">Proxima Nova Condensed</p>
 {{< /example >}}
 
 <div id="specimen-modal" tabindex="-1" class="modal fade bs-example-modal-lg" aria-labelledby="myModalLabel" aria-hidden="true">
