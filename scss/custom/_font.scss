@@ -1,69 +1,17 @@
 //
 // > Custom font styles
 //
+// Combine these base classes with Bootstrap's font-weight (.fw-*) and
+// font-style (.fst-italic) utilities to access other weights/styles.
 
 .proxima-nova {
   font-family: $font-family-sans-serif;
-}
-
-.proxima-nova-italic {
-  font-family: $font-family-sans-serif;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.proxima-nova-bold {
-  font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.proxima-nova-bold-italic {
-  font-family: $font-family-sans-serif;
-  font-style: italic;
-  font-weight: 700;
 }
 
 .proxima-nova-condensed {
   font-family: proxima-nova-condensed, #{$font-family-sans-serif};
 }
 
-.proxima-nova-condensed-italic {
-  font-family: proxima-nova-condensed, #{$font-family-sans-serif};
-  font-style: italic;
-  font-weight: 400;
-}
-
-.proxima-nova-condensed-bold {
-  font-family: proxima-nova-condensed, #{$font-family-sans-serif};
-  font-style: normal;
-  font-weight: 700;
-}
-
-.proxima-nova-condensed-bold-italic {
-  font-family: proxima-nova-condensed, #{$font-family-sans-serif};
-  font-style: italic;
-  font-weight: 700;
-}
-
 .garamond-premier-pro {
   font-family: garamond-premier-pro, serif;
-}
-
-.garamond-premier-pro-italic {
-  font-family: garamond-premier-pro, serif;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.garamond-premier-pro-bold {
-  font-family: garamond-premier-pro, serif;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.garamond-premier-pro-bold-italic {
-  font-family: garamond-premier-pro, serif;
-  font-style: italic;
-  font-weight: 700;
 }

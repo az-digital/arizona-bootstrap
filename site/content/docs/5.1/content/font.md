@@ -107,9 +107,9 @@ globally throughout Bootstrap. To switch the global `font-family`, update
 
 ```css
 .proxima-nova {
-font-family: proxima-nova, sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 ```
 
@@ -122,68 +122,22 @@ font-style: normal;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-italic' data-font-name='Proxima Nova Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+Additional Proxima Nova weights and styles are available via the embed code. Rather than adding a dedicated class for each variation, combine the `.proxima-nova` class with Bootstrap's [font-weight]({{< docsref "/utilities/text/#font-weight-and-italics" >}}) `.fw-*` and `.fst-italic` utility classes.
 
-### Proxima Nova Italic
-
-```css
-.proxima-nova-italic {
-font-family: proxima-nova, sans-serif;
-font-weight: 400;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Bold
-
-```css
-.proxima-nova-bold {
-font-family: proxima-nova, sans-serif;
-font-weight: 700;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-bold">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-bold-italic' data-font-name='Proxima Nova Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Bold Italic
-
-```css
-.proxima-nova-bold-italic {
-font-family: proxima-nova, sans-serif;
-font-weight: 700;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-bold-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
+{{< bs-table "table align-middle font-variants-table" >}}
+| Weight | Style | Classes | Sample |
+| --- | --- | --- | ---: |
+| Light (300) | Normal | `proxima-nova fw-light` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-light' data-font-name='Proxima Nova Light' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Light (300) | Italic | `proxima-nova fw-light fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-light fst-italic' data-font-name='Proxima Nova Light Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Regular (400) | Normal | `proxima-nova` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova' data-font-name='Proxima Nova' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Regular (400) | Italic | `proxima-nova fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fst-italic' data-font-name='Proxima Nova Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Normal | `proxima-nova fw-medium` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-medium' data-font-name='Proxima Nova Medium' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Italic | `proxima-nova fw-medium fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-medium fst-italic' data-font-name='Proxima Nova Medium Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Normal | `proxima-nova fw-semibold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-semibold' data-font-name='Proxima Nova Semibold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Italic | `proxima-nova fw-semibold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-semibold fst-italic' data-font-name='Proxima Nova Semibold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Normal | `proxima-nova fw-bold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-bold' data-font-name='Proxima Nova Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Italic | `proxima-nova fw-bold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova fw-bold fst-italic' data-font-name='Proxima Nova Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+{{< /bs-table >}}
 
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed' data-font-name='Proxima Nova Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
@@ -191,9 +145,9 @@ font-style: italic;
 
 ```css
 .proxima-nova-condensed {
-font-family: proxima-nova-condensed, sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-family: proxima-nova-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 ```
 
@@ -206,68 +160,22 @@ font-style: normal;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-italic' data-font-name='Proxima Nova Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+Additional Proxima Nova Condensed weights and styles are available via the embed code. Combine the `.proxima-nova-condensed` class with Bootstrap's `.fw-*` and `.fst-italic` utility classes.
 
-### Proxima Nova Condensed Italic
-
-```css
-.proxima-nova-condensed-italic {
-font-family: proxima-nova-condensed, sans-serif;
-font-weight: 400;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-condensed-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-bold' data-font-name='Proxima Nova Condensed Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Condensed Bold
-
-```css
-.proxima-nova-condensed-bold {
-font-family: proxima-nova-condensed, sans-serif;
-font-weight: 700;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-condensed-bold">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='proxima-nova-condensed-bold-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Proxima Nova Condensed Bold Italic
-
-```css
-.proxima-nova-condensed-bold-italic {
-font-family: proxima-nova-condensed, sans-serif;
-font-weight: 700;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="proxima-nova-condensed-bold-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
+{{< bs-table "table align-middle font-variants-table" >}}
+| Weight | Style | Classes | Sample |
+| --- | --- | --- | ---: |
+| Light (300) | Normal | `proxima-nova-condensed fw-light` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-light' data-font-name='Proxima Nova Condensed Light' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Light (300) | Italic | `proxima-nova-condensed fw-light fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-light fst-italic' data-font-name='Proxima Nova Condensed Light Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Regular (400) | Normal | `proxima-nova-condensed` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed' data-font-name='Proxima Nova Condensed' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Regular (400) | Italic | `proxima-nova-condensed fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fst-italic' data-font-name='Proxima Nova Condensed Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Normal | `proxima-nova-condensed fw-medium` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-medium' data-font-name='Proxima Nova Condensed Medium' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Italic | `proxima-nova-condensed fw-medium fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-medium fst-italic' data-font-name='Proxima Nova Condensed Medium Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Normal | `proxima-nova-condensed fw-semibold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-semibold' data-font-name='Proxima Nova Condensed Semibold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Italic | `proxima-nova-condensed fw-semibold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-semibold fst-italic' data-font-name='Proxima Nova Condensed Semibold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Normal | `proxima-nova-condensed fw-bold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-bold' data-font-name='Proxima Nova Condensed Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Italic | `proxima-nova-condensed fw-bold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='proxima-nova-condensed fw-bold fst-italic' data-font-name='Proxima Nova Condensed Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+{{< /bs-table >}}
 
 <button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
 
@@ -275,9 +183,9 @@ font-style: italic;
 
 ```css
 .garamond-premier-pro {
-font-family: garamond-premier-pro, serif;
-font-weight: 400;
-font-style: normal;
+  font-family: garamond-premier-pro, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 ```
 
@@ -290,68 +198,20 @@ font-style: normal;
 </div>
 {{< /example >}}
 
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-italic' data-font-name='Garamond Premier Pro Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
+Additional Garamond Premier Pro weights and styles are available via the embed code (note: no Light/300 weight is available for this font). Combine the `.garamond-premier-pro` class with Bootstrap's `.fw-*` and `.fst-italic` utility classes.
 
-### Garamond Premier Pro Italic
-
-```css
-.garamond-premier-pro-italic {
-font-family: garamond-premier-pro, serif;
-font-weight: 400;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="garamond-premier-pro-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-bold' data-font-name='Garamond Premier Pro Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Garamond Premier Pro Bold
-
-```css
-.garamond-premier-pro-bold {
-font-family: garamond-premier-pro, serif;
-font-weight: 700;
-font-style: normal;
-}
-```
-
-{{< example >}}
-<div class="garamond-premier-pro-bold">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
-
-<button class="js-specimen-modal-trigger btn btn-info float-end mt-2" data-font-class='garamond-premier-pro-bold-italic' data-font-name='Garamond Premier Pro Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button>
-
-### Garamond Premier Pro Bold Italic
-
-```css
-.garamond-premier-pro-bold-italic {
-font-family: garamond-premier-pro, serif;
-font-weight: 700;
-font-style: italic;
-}
-```
-
-{{< example >}}
-<div class="garamond-premier-pro-bold-italic">
-  <span class="text-uppercase">abcdefghijklmnopqrstuvwxyz</span>
-  <span>abcdefghijklmnopqrstuvwxyz</span><br>
-  <span>0123456789</span><br>
-  <span>!@#$%^&</span>
-</div>
-{{< /example >}}
+{{< bs-table "table align-middle font-variants-table" >}}
+| Weight | Style | Classes | Sample |
+| --- | --- | --- | ---: |
+| Regular (400) | Normal | `garamond-premier-pro` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro' data-font-name='Garamond Premier Pro' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Regular (400) | Italic | `garamond-premier-pro fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fst-italic' data-font-name='Garamond Premier Pro Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Normal | `garamond-premier-pro fw-medium` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-medium' data-font-name='Garamond Premier Pro Medium' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Medium (500) | Italic | `garamond-premier-pro fw-medium fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-medium fst-italic' data-font-name='Garamond Premier Pro Medium Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Normal | `garamond-premier-pro fw-semibold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-semibold' data-font-name='Garamond Premier Pro Semibold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Semibold (600) | Italic | `garamond-premier-pro fw-semibold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-semibold fst-italic' data-font-name='Garamond Premier Pro Semibold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Normal | `garamond-premier-pro fw-bold` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-bold' data-font-name='Garamond Premier Pro Bold' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+| Bold (700) | Italic | `garamond-premier-pro fw-bold fst-italic` | <button class="js-specimen-modal-trigger btn btn-sm btn-info" data-font-class='garamond-premier-pro fw-bold fst-italic' data-font-name='Garamond Premier Pro Bold Italic' data-bs-target='.bs-example-modal-lg' data-bs-toggle='modal' type='button'>View Sample</button> |
+{{< /bs-table >}}
 
 ## Examples
 
