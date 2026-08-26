@@ -4,6 +4,26 @@
 // > BUTTONS
 //
 
+.btn {
+  // Padding adjustment for Proxima Nova Condensed.
+  padding-top: 11px;
+  padding-bottom: 9px;
+  letter-spacing: .14px;
+}
+
+.btn-sm {
+  padding-top: 6px;
+  padding-bottom: 4px;
+  line-height: .9375rem;
+}
+
+.btn-lg {
+  padding-top: 13px;
+  padding-bottom: 11px;
+  line-height: 1.6875rem;
+  letter-spacing: .18px;
+}
+
 // >> Variants
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
