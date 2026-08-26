@@ -88,10 +88,10 @@
     "eslint-plugin-unicorn": "56.0.1",
     "find-unused-sass-variables": "^6.2.0",
     "globby": "^16.2.2",
-    "hugo-bin": "^0.161.0",
+    "hugo-bin": "^0.162.0",
     "jquery": "3.7.1",
     "js-yaml": "^5.2.2",
-    "linkinator": "^7.6.1",
+    "linkinator": "^8.0.4",
     "nodemon": "^3.1.14",
     "npm-run-all2": "^9.0.1",
     "postcss": "^8.5.19",
@@ -103,7 +103,7 @@
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "svgo": "4.0.2",
     "terser": "^5.47.1",
-    "vnu-jar": "26.7.16"
+    "vnu-jar": "26.8.21"
   },
   "files": [
     "dist/{css,js}/**/*.{css,js,map,svg}",
