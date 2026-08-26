@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Search
-description: <span class="badge badge-az-experimental mt-3">Arizona Bootstrap Experimental Feature</span>
+description: <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
 toc: true
 ---
 
-The AZ Search component provides a stylized search field built with Bootstrap form controls and input groups. It is intended to be reusable in AZ Navbar Fullscreen and other page regions where a prominent site search is needed.
+The AZ Search component provides a stylized search field built with Bootstrap form controls and input groups. It is intended to be used in AZ Navbar Fullscreen and other page regions where a prominent site search is needed.
 
 ## Example
 
