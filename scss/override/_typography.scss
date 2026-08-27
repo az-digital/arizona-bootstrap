@@ -60,6 +60,9 @@ h6,
     font-size: map-get($props, font-size);
     font-weight: #{map-get($props, font-weight)};
     line-height: map-get($props, line-height);
+    @if map-has-key($props, margin-top) {
+      margin-top: map-get($props, margin-top);
+    }
   }
 }
 

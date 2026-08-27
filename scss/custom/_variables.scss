@@ -397,7 +397,8 @@ $heading-margins: 1.042em 0 .667em;
 // larger font-size-lg/line-height-lg at the $lg breakpoint. h4-h6 stay constant.
 // Consumed in scss/override/_typography.scss.
 $headings-scale: (
-  1: (font-size: 3rem, line-height: 3.5rem, font-weight: 600, font-size-lg: 4rem, line-height-lg: 4.625rem),
+  // margin-top matches margin-bottom so h1 spacing is symmetrical, unlike h2-h6.
+  1: (font-size: 3rem, line-height: 3.5rem, font-weight: 600, font-size-lg: 4rem, line-height-lg: 4.625rem, margin-top: .667em),
   2: (font-size: 2.375rem, line-height: 2.875rem, font-weight: 600, font-size-lg: 3.25rem, line-height-lg: 3.875rem),
   3: (font-size: 1.875rem, line-height: 2.375rem, font-weight: 600, font-size-lg: 2.5rem, line-height-lg: 3.125rem),
   4: (font-size: 1.75rem, line-height: 2.25rem, font-weight: 600),
