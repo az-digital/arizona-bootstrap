@@ -16,15 +16,17 @@
   --az-heading-font-family: #{$font-family-serif};
 }
 
-.az-headings-mixed h1,
-.az-headings-mixed h2,
-.az-headings-mixed h3,
-.az-headings-mixed .h1,
-.az-headings-mixed .h2,
-.az-headings-mixed .h3 {
+.az-headings-mixed {
   // h1-h3 only; h4-h6 stay Proxima Nova, so this has to target those levels
   // directly rather than relying on inheritance from the container.
-  --az-heading-font-family: #{$font-family-serif};
+  h1,
+  h2,
+  h3,
+  .h1,
+  .h2,
+  .h3 {
+    --az-heading-font-family: #{$font-family-serif};
+  }
 }
 
 // >> Lists
