@@ -41,6 +41,37 @@ h6,
 .h6 {
   margin: $heading-margins;
   color: $blue;
+  letter-spacing: 0;
+}
+
+// Each level's font-size/line-height/font-family are CSS custom properties, not
+// applied directly, so a page can override a single level (e.g. just --az-h2-font-size)
+// without a Sass rebuild, and so .az-headings-mixed/.az-headings-serif below can
+// swap font-family with a one-line property override instead of restating this
+// whole selector list per opt-in class.
+@each $level, $props in $headings-scale {
+  h#{$level},
+  .h#{$level} {
+    --az-h#{$level}-font-size: #{map-get($props, font-size)};
+    --az-h#{$level}-line-height: #{map-get($props, line-height)};
+
+    font-family: var(--az-h#{$level}-font-family, #{$headings-font-family});
+    font-size: var(--az-h#{$level}-font-size);
+    font-weight: #{map-get($props, font-weight)};
+    line-height: var(--az-h#{$level}-line-height);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @each $level, $props in $headings-scale {
+    @if map-has-key($props, font-size-lg) {
+      h#{$level},
+      .h#{$level} {
+        --az-h#{$level}-font-size: #{map-get($props, font-size-lg)};
+        --az-h#{$level}-line-height: #{map-get($props, line-height-lg)};
+      }
+    }
+  }
 }
 
 /*

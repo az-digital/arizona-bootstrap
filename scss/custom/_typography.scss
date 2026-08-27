@@ -7,6 +7,27 @@
   hyphens: auto;
 }
 
+// >> Serif headings
+// Container classes: apply to a wrapper (e.g. <body>) to switch descendant headings
+// to serif. Overrides the --az-h#{n}-font-family custom property each heading level
+// reads in scss/override/_typography.scss, rather than restating font-family against
+// the full h1-h6/.h1-.h6 selector list per class.
+@each $level in 1, 2, 3 {
+  .az-headings-mixed h#{$level},
+  .az-headings-mixed .h#{$level} {
+    // Garamond for h1-h3 only; h4-h6 stay Proxima Nova.
+    --az-h#{$level}-font-family: #{$font-family-serif};
+  }
+}
+
+@each $level in 1, 2, 3, 4, 5, 6 {
+  .az-headings-serif h#{$level},
+  .az-headings-serif .h#{$level} {
+    // Garamond for all heading levels.
+    --az-h#{$level}-font-family: #{$font-family-serif};
+  }
+}
+
 // >> Lists
 .az-list-triangles {
   overflow: hidden;
