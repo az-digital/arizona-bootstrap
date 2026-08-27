@@ -113,9 +113,9 @@ Add the `.az-headings-serif` class to a container (such as `<body>` or any wrapp
 </div>
 {{< /example >}}
 
-### Overriding a single heading level
+### Switching a single heading's font without a wrapper
 
-Each heading level's font-size and line-height are CSS custom properties (`--az-h1-font-size`, `--az-h1-line-height`, and so on through `h6`) rather than fixed values, and font-family reads a shared `--az-heading-font-family` (the same one `.az-headings-mixed`/`.az-headings-serif` above set), so any of these can be adjusted on a specific page or component without a Sass rebuild — no new utility class needed for one-off cases.
+Heading font-family reads a shared `--az-heading-font-family` custom property — the same one `.az-headings-mixed`/`.az-headings-serif` above set on a container. Setting it directly on one heading works the same way, for a one-off case that doesn't need a wrapping element or a new utility class.
 
 {{< example >}}
 <h2 style="--az-heading-font-family: garamond-premier-pro, Georgia, 'Times New Roman', serif;">h2. Just this heading, in serif</h2>

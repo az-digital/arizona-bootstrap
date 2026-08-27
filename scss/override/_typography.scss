@@ -44,25 +44,26 @@ h6,
   letter-spacing: 0;
 }
 
-// Each level's font-size/line-height are CSS custom properties, not applied
-// directly, so a single level can be adjusted (e.g. just --az-h2-font-size)
-// without a Sass rebuild. font-family reads a single shared, inherited
-// --az-heading-font-family instead - not one custom property per level, since
-// .az-headings-mixed/.az-headings-serif below only ever need to set the same
-// value across every level they touch. A single heading can still be
-// overridden on its own (e.g. style="--az-heading-font-family: ...") without a
-// second property: set directly on an element, it wins over any inherited
-// value the normal way, no nested var() fallback required.
+// font-family reads a single shared, inherited --az-heading-font-family custom
+// property (rather than a plain Sass value) specifically because
+// .az-headings-mixed/.az-headings-serif below need to set the same value
+// across several heading levels at once - a custom property on a container,
+// inherited down, does that in one declaration; plain CSS can't. A single
+// heading can also be overridden this way (e.g. style="--az-heading-font-family:
+// ..."), since setting it directly on an element wins over an inherited value
+// the normal way.
+//
+// font-size/line-height stay plain values - there's no equivalent case for
+// them (each level's size is already different, and a page overriding one
+// heading's size can just write font-size directly), so a custom property
+// here would just restate the same value on the same selector for no reason.
 @each $level, $props in $headings-scale {
   h#{$level},
   .h#{$level} {
-    --az-h#{$level}-font-size: #{map-get($props, font-size)};
-    --az-h#{$level}-line-height: #{map-get($props, line-height)};
-
     font-family: var(--az-heading-font-family, #{$headings-font-family});
-    font-size: var(--az-h#{$level}-font-size);
+    font-size: map-get($props, font-size);
     font-weight: #{map-get($props, font-weight)};
-    line-height: var(--az-h#{$level}-line-height);
+    line-height: map-get($props, line-height);
   }
 }
 
@@ -71,8 +72,8 @@ h6,
     @if map-has-key($props, font-size-lg) {
       h#{$level},
       .h#{$level} {
-        --az-h#{$level}-font-size: #{map-get($props, font-size-lg)};
-        --az-h#{$level}-line-height: #{map-get($props, line-height-lg)};
+        font-size: map-get($props, font-size-lg);
+        line-height: map-get($props, line-height-lg);
       }
     }
   }
