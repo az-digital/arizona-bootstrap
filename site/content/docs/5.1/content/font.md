@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Font
-description: Additional fonts are available for official use by University of Arizona employees through a license with Adobe.
+description: The Proxima Nova font suite is available for official use by University of Arizona employees through a license with Adobe.
 group: content
 toc: true
 extra_js:
@@ -11,11 +11,13 @@ extra_js:
 
 <div class="alert alert-warning" role="alert">
   <p class="h4 mt-0">Heads Up!</p>
-  If you're using Arizona Bootstrap, Proxima Nova and Garamond Premier Pro will still need to be added to your project.
+  If you're using Arizona Bootstrap, Proxima Nova will still need to be added to
+  your project.
 </div>
 
 ## How to Use
-The Proxima Nova and Garamond Premier Pro font suites are available for official use by University of Arizona employees through a license with Adobe Typekit.
+The Proxima Nova font suite is available for official use by University of Arizona
+employees through a license with Adobe Typekit.
 
 ### Reference link
 
@@ -25,23 +27,13 @@ manage our font reference links within Arizona Bootstrap.
 Put this within your `<head>` tag **above** the reference to Arizona Bootstrap.
 
 ```html
-<!-- Proxima Nova + Garamond Premier Pro reference. -->
-<link href="https://use.typekit.net/sgx0zzg.css" rel="stylesheet" crossorigin="anonymous">
-<!-- Arizona Bootstrap reference. -->
-<link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
-```
-
-Previous versions of Arizona Bootstrap required only Proxima Nova (and Garamond Premier Pro if AZ Navbar Fullscreen was used). Arizona Bootstrap 5.2 now requires both Proxima Nova and Garamond Premier Pro. If your application requires a lower version of Arizona Bootstrap than 5.2, use the legacy embed code(s).
-```html
 <!-- Proxima Nova reference. -->
 <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
-<!-- Garamond Premier Pro reference (only needed for AZ Navbar Fullscreen). -->
-<link href="https://use.typekit.net/eyf6fhr.css" rel="stylesheet" crossorigin="anonymous">
 <!-- Arizona Bootstrap reference. -->
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
 
-## Centrally-managed Typekit Webfonts
+## Centrally-managed Typekit Webfont
 
 For ease of integration into web projects around campus, the Arizona Digital
 team manages Typekit webfont projects that can be referenced by your site.
