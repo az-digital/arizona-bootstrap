@@ -41,7 +41,7 @@ Previous versions of Arizona Bootstrap required only Proxima Nova (and Garamond 
 <link rel="stylesheet" href="{{< param "cdn.css" >}}" crossorigin="anonymous">
 ```
 
-## Centrally-managed Typekit Webfont
+## Centrally-managed Typekit Webfonts
 
 For ease of integration into web projects around campus, the Arizona Digital
 team manages a Typekit webfont project that can be referenced by your site.
