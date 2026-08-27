@@ -115,10 +115,10 @@ Add the `.az-headings-serif` class to a container (such as `<body>` or any wrapp
 
 ### Overriding a single heading level
 
-Each heading level's font-size, line-height, and font-family are CSS custom properties (`--az-h1-font-size`, `--az-h1-line-height`, `--az-h1-font-family`, and so on through `h6`) rather than fixed values, so a single level can be adjusted on a specific page or component without a Sass rebuild — no new utility class needed for one-off cases.
+Each heading level's font-size and line-height are CSS custom properties (`--az-h1-font-size`, `--az-h1-line-height`, and so on through `h6`) rather than fixed values, and font-family reads a shared `--az-heading-font-family` (the same one `.az-headings-mixed`/`.az-headings-serif` above set), so any of these can be adjusted on a specific page or component without a Sass rebuild — no new utility class needed for one-off cases.
 
 {{< example >}}
-<h2 style="--az-h2-font-family: garamond-premier-pro, Georgia, 'Times New Roman', serif;">h2. Just this heading, in serif</h2>
+<h2 style="--az-heading-font-family: garamond-premier-pro, Georgia, 'Times New Roman', serif;">h2. Just this heading, in serif</h2>
 {{< /example >}}
 
 ### Customizing headings

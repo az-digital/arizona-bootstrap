@@ -44,18 +44,22 @@ h6,
   letter-spacing: 0;
 }
 
-// Each level's font-size/line-height/font-family are CSS custom properties, not
-// applied directly, so a page can override a single level (e.g. just --az-h2-font-size)
-// without a Sass rebuild, and so .az-headings-mixed/.az-headings-serif below can
-// swap font-family with a one-line property override instead of restating this
-// whole selector list per opt-in class.
+// Each level's font-size/line-height are CSS custom properties, not applied
+// directly, so a single level can be adjusted (e.g. just --az-h2-font-size)
+// without a Sass rebuild. font-family reads a single shared, inherited
+// --az-heading-font-family instead - not one custom property per level, since
+// .az-headings-mixed/.az-headings-serif below only ever need to set the same
+// value across every level they touch. A single heading can still be
+// overridden on its own (e.g. style="--az-heading-font-family: ...") without a
+// second property: set directly on an element, it wins over any inherited
+// value the normal way, no nested var() fallback required.
 @each $level, $props in $headings-scale {
   h#{$level},
   .h#{$level} {
     --az-h#{$level}-font-size: #{map-get($props, font-size)};
     --az-h#{$level}-line-height: #{map-get($props, line-height)};
 
-    font-family: var(--az-h#{$level}-font-family, #{$headings-font-family});
+    font-family: var(--az-heading-font-family, #{$headings-font-family});
     font-size: var(--az-h#{$level}-font-size);
     font-weight: #{map-get($props, font-weight)};
     line-height: var(--az-h#{$level}-line-height);
