@@ -23,9 +23,11 @@ If you are using the `.btn` class on its own, remember to at least define some e
 ## Variants
 
 ### Brand Color Variants
+
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
 Red and Blue are the recommended button variants for Arizona Bootstrap projects.
+
 {{< example >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
@@ -68,6 +70,7 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
 
 ### Brand Color Variants
+
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
 {{< example >}}
