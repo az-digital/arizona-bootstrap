@@ -21,12 +21,24 @@ If you are using the `.btn` class on its own, remember to at least define some e
 {{< /callout >}}
 
 ## Variants
+
+### Brand Color Variants
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
+
+Red and Blue are the recommended button variants for Arizona Bootstrap projects.
 {{< example >}}
-{{< buttons.inline >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
-{{< /buttons.inline >}}
-<button type="button" class="btn btn-link">Link</button>
+{{< /example >}}
+
+### Theme Color Variants
+
+{{< example >}}
+{{< buttons.inline >}}
+{{- range (index $.Site.Data "theme-colors") -}}
+<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
+{{ end -}}
+{{< /buttons.inline >}}<button type="button" class="btn btn-link">Link</button>
 {{< /example >}}
 
 {{< callout info >}}
@@ -55,20 +67,15 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 
 In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
 
+### Brand Color Variants
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
+
 {{< example >}}
-{{< buttons.inline >}}
 <button type="button" class="btn btn-outline-red">Red</button>
 <button type="button" class="btn btn-outline-blue">Blue</button>
-{{< /buttons.inline >}}
 {{< /example >}}
 
-{{< callout info >}}
-Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
-{{< /callout >}}
-
-<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
-
-For outline buttons on a **dark background color**, use the `.btn-outline-white`.
+For outline buttons on a **dark background color**, use the `.btn-outline-white` variant.
 
 <div class="bd-example">
   <div class="d-inline-block w-25 text-bg-red p-3">
@@ -93,6 +100,20 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
 ```
+
+### Theme Color Variants
+
+{{< example >}}
+{{< buttons.inline >}}
+{{- range (index $.Site.Data "theme-colors") -}}
+<button type="button" class="btn btn-outline-{{ .name }}">{{ .name | title }}</button>
+{{ end -}}
+{{< /buttons.inline >}}
+{{< /example >}}
+
+{{< callout info >}}
+Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
+{{< /callout >}}
 
 ## Sizes
 
