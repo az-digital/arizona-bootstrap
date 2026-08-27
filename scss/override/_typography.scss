@@ -27,13 +27,11 @@ figure:has(blockquote) > :last-child {
 */
 
 // >> h1 - h6
-// font-family is a shared, inherited custom property (not a plain value)
-// so .az-headings-mixed/.az-headings-serif can set it once per container
+// font-family is a shared, inherited custom property (not a plain value),
+// defaulted at :root (see scss/custom/_typography.scss), so
+// .az-headings-mixed/.az-headings-serif can override it once per container
 // instead of once per heading level, and so a single heading can override it
-// directly (e.g. style="--az-heading-font-family: ..."). Falls back to
-// --bs-body-font-family - Bootstrap's own live custom property for this,
-// rather than a separately compiled value - so overriding that alone also
-// changes headings' default font.
+// directly (e.g. style="--az-heading-font-family: ...").
 h1,
 h2,
 h3,
@@ -47,7 +45,7 @@ h6,
 .h5,
 .h6 {
   margin: $heading-margins;
-  font-family: var(--az-heading-font-family, var(--#{$prefix}body-font-family));
+  font-family: var(--az-heading-font-family);
   color: $blue;
   letter-spacing: 0;
 }
