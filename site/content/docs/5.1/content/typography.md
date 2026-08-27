@@ -115,7 +115,7 @@ Add the `.az-headings-serif` class to a container (such as `<body>` or any wrapp
 
 ### Switching a single heading's font without a wrapper
 
-Heading font-family reads a shared `--az-heading-font-family` custom property — the same one `.az-headings-mixed`/`.az-headings-serif` above set on a container. Setting it directly on one heading works the same way, for a one-off case that doesn't need a wrapping element or a new utility class.
+Heading font-family reads a shared `--az-heading-font-family` custom property — the same one `.az-headings-serif` sets on a container and `.az-headings-mixed` sets on its `h1`–`h3`/`.h1`–`.h3` descendants above. Setting it directly on one heading works the same way, for a one-off case that doesn't need a wrapping element or a new utility class.
 
 {{< example >}}
 <h2 style="--az-heading-font-family: garamond-premier-pro, Georgia, 'Times New Roman', serif;">h2. Just this heading, in serif</h2>
