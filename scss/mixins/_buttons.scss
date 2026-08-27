@@ -7,7 +7,7 @@
   // check for inaccessible color contrast
   $button-text-color: $white;
 
-  @if $background == $sky or $background == $leaf or $background == $light {
+  @if $background == $light {
     $button-text-color: $midnight;
   }
   @else if $background == $warning {
@@ -15,4 +15,8 @@
   }
 
   color: $button-text-color;
+
+  @if $background == $blue {
+    --az-btn-focus-outline-color: var(--bs-sky);
+  }
 }

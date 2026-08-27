@@ -2,7 +2,6 @@
 // > BUTTONS
 //
 
-// hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
   @extend .btn-primary;
 }
