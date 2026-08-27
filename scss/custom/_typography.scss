@@ -9,23 +9,26 @@
 
 // >> Serif headings
 // Container classes: apply to a wrapper (e.g. <body>) to switch descendant headings
-// to serif. Overrides the --az-h#{n}-font-family custom property each heading level
-// reads in scss/override/_typography.scss, rather than restating font-family against
-// the full h1-h6/.h1-.h6 selector list per class.
-@each $level in 1, 2, 3 {
-  .az-headings-mixed h#{$level},
-  .az-headings-mixed .h#{$level} {
-    // Garamond for h1-h3 only; h4-h6 stay Proxima Nova.
-    --az-h#{$level}-font-family: #{$font-family-serif};
-  }
+// to serif. Both set the single shared --az-heading-font-family custom property
+// (see scss/override/_typography.scss) once and let inheritance carry it to every
+// descendant heading - not once per level, since every level they touch gets the
+// same value.
+.az-headings-serif {
+  // Garamond for all heading levels. Inherits to every descendant, so no need to
+  // enumerate h1-h6/.h1-.h6 here at all.
+  --az-heading-font-family: #{$font-family-serif};
 }
 
-@each $level in 1, 2, 3, 4, 5, 6 {
-  .az-headings-serif h#{$level},
-  .az-headings-serif .h#{$level} {
-    // Garamond for all heading levels.
-    --az-h#{$level}-font-family: #{$font-family-serif};
-  }
+.az-headings-mixed h1,
+.az-headings-mixed h2,
+.az-headings-mixed h3,
+.az-headings-mixed .h1,
+.az-headings-mixed .h2,
+.az-headings-mixed .h3 {
+  // Garamond for h1-h3 only; h4-h6 stay Proxima Nova, so (unlike .az-headings-serif
+  // above) this can't just set the property on the container and rely on inheritance -
+  // it has to target the specific levels that should change.
+  --az-heading-font-family: #{$font-family-serif};
 }
 
 // >> Lists
