@@ -27,6 +27,13 @@ figure:has(blockquote) > :last-child {
 */
 
 // >> h1 - h6
+// font-family is a shared, inherited custom property (not a plain value)
+// so .az-headings-mixed/.az-headings-serif can set it once per container
+// instead of once per heading level, and so a single heading can override it
+// directly (e.g. style="--az-heading-font-family: ..."). Falls back to
+// --bs-body-font-family - Bootstrap's own live custom property for this,
+// rather than a separately compiled value - so overriding that alone also
+// changes headings' default font.
 h1,
 h2,
 h3,
@@ -40,27 +47,16 @@ h6,
 .h5,
 .h6 {
   margin: $heading-margins;
+  font-family: var(--az-heading-font-family, var(--#{$prefix}body-font-family));
   color: $blue;
   letter-spacing: 0;
 }
 
-// font-family reads a single shared, inherited --az-heading-font-family custom
-// property (rather than a plain Sass value) specifically because
-// .az-headings-mixed/.az-headings-serif below need to set the same value
-// across several heading levels at once - a custom property on a container,
-// inherited down, does that in one declaration; plain CSS can't. A single
-// heading can also be overridden this way (e.g. style="--az-heading-font-family:
-// ..."), since setting it directly on an element wins over an inherited value
-// the normal way.
-//
-// font-size/line-height stay plain values - there's no equivalent case for
-// them (each level's size is already different, and a page overriding one
-// heading's size can just write font-size directly), so a custom property
-// here would just restate the same value on the same selector for no reason.
+// font-size/line-height/font-weight vary by level, so no custom property here -
+// a page overriding one heading's size can already write font-size directly.
 @each $level, $props in $headings-scale {
   h#{$level},
   .h#{$level} {
-    font-family: var(--az-heading-font-family, #{$headings-font-family});
     font-size: map-get($props, font-size);
     font-weight: #{map-get($props, font-weight)};
     line-height: map-get($props, line-height);
