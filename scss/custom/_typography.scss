@@ -7,6 +7,34 @@
   hyphens: auto;
 }
 
+// >> Serif headings
+// Default: headings track the body font via the live --bs-body-font-family
+// custom property, so overriding that alone also changes heading font.
+:root {
+  --az-heading-font-family: var(--#{$prefix}body-font-family);
+}
+
+// Container classes: apply to a wrapper (e.g. <body>) to switch descendant
+// headings to serif, by overriding the --az-heading-font-family custom
+// property each heading reads (see scss/override/_typography.scss).
+.az-headings-serif {
+  // All heading levels. Set once and inherited - no need to target h1-h6 individually.
+  --az-heading-font-family: #{$font-family-serif};
+}
+
+.az-headings-mixed {
+  // h1-h3 only; h4-h6 stay Proxima Nova, so this has to target those levels
+  // directly rather than relying on inheritance from the container.
+  h1,
+  h2,
+  h3,
+  .h1,
+  .h2,
+  .h3 {
+    --az-heading-font-family: #{$font-family-serif};
+  }
+}
+
 // >> Lists
 .az-list-triangles {
   overflow: hidden;
