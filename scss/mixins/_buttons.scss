@@ -9,11 +9,9 @@
 
   @if $background == $light {
     $button-text-color: $midnight;
-  }
-  @else if $background == $sky or $background == $info {
+  } @else if $background == $sky or $background == $info {
     $button-text-color: $blue;
-  }
-  @else if $background == $warning {
+  } @else if $background == $warning {
     $button-text-color: $black;
   }
 
