@@ -10,12 +10,20 @@
   @extend .btn-secondary;
 }
 
+.btn-sky {
+  @extend .btn-info;
+}
+
 .btn-outline-red {
   @extend .btn-outline-primary;
 }
 
 .btn-outline-blue {
   @extend .btn-outline-secondary;
+}
+
+.btn-outline-sky {
+  @extend .btn-outline-info;
 }
 
 .btn-outline-white {

@@ -26,11 +26,12 @@ If you are using the `.btn` class on its own, remember to at least define some e
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
-Red and Blue are the recommended button variants for Arizona Bootstrap projects.
+Red and Blue are the recommended button variants for Arizona Bootstrap projects. Sky buttons are also available.
 
 {{< example >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
+<button type="button" class="btn btn-sky">Sky</button>
 {{< /example >}}
 
 ### Theme Color Variants
@@ -78,17 +79,17 @@ In need of a button, but not the hefty background colors they bring? Replace the
 <button type="button" class="btn btn-outline-blue">Blue</button>
 {{< /example >}}
 
-For outline buttons on a **dark background color**, use the `.btn-outline-white` variant.
+For outline buttons on a **dark background color**, use the `.btn-outline-white` or `.btn-outline-sky` variants.
 
 <div class="bd-example">
   <div class="d-inline-block w-25 text-bg-red p-3">
     <button type="button" class="btn btn-outline-white">White</button>
   </div>
   <div class="d-inline-block w-25 text-bg-blue p-3">
-    <button type="button" class="btn btn-outline-white">White</button>
+    <button type="button" class="btn btn-outline-sky">Sky</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-dark p-3">
-    <button type="button" class="btn btn-outline-white">White</button>
+  <div class="d-inline-block w-25 text-bg-azurite p-3">
+    <button type="button" class="btn btn-outline-sky">Sky</button>
   </div>
 </div>
 
@@ -97,10 +98,10 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
 <div class="text-bg-blue p-3">
-  <button type="button" class="btn btn-outline-white">White</button>
+  <button type="button" class="btn btn-outline-sky">Sky</button>
 </div>
-<div class="text-bg-dark p-3">
-  <button type="button" class="btn btn-outline-white">White</button>
+<div class="text-bg-azurite p-3">
+  <button type="button" class="btn btn-outline-sky">Sky</button>
 </div>
 ```
 
