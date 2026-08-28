@@ -34,7 +34,7 @@ figure:has(blockquote) > :last-child {
 */
 small,
 .small {
-  line-height: 1.5; // 24px at $small-font-size (16px)
+  line-height: 1.5; // 24px when small computes to 16px (e.g. 18px body context)
 }
 
 /*
