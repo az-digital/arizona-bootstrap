@@ -1,0 +1,12 @@
+//
+// > Arizona Accordion custom component
+//
+
+.accordion-anchor {
+  scroll-margin-top: var(--az-static-scroll-offset);
+  scroll-behavior: smooth;
+}
+
+.accordion-anchor:hover {
+  cursor: pointer;
+}

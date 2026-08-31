@@ -19,6 +19,7 @@ import Toast from '../node_modules/bootstrap/js/src/toast.js'
 import Tooltip from '../node_modules/bootstrap/js/src/tooltip.js'
 import fixModalAriaHidden from './src/modal.js'
 import photoGalleryGridSlideToImage from './src/photogallery.js'
+import enableAccordionAnchors from './src/accordion.js'
 import enableAzNavbar from './src/navbar.js'
 import enableNavbarAzFullscreen from './src/navbar-az-fullscreen.js'
 import enableNavbarAzFullscreenMobileNav from './src/navbar-az-fullscreen-mobile-nav.js'
@@ -38,6 +39,7 @@ export default {
   Tooltip,
   fixModalAriaHidden,
   photoGalleryGridSlideToImage,
+  enableAccordionAnchors,
   enableAzNavbar,
   enableNavbarAzFullscreen,
   enableNavbarAzFullscreenMobileNav
@@ -54,6 +56,11 @@ fixModalAriaHidden()
  * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
  */
 photoGalleryGridSlideToImage()
+
+/**
+ * Enable accordion anchor links: copy-to-clipboard, open, and scroll-to.
+ */
+enableAccordionAnchors()
 
 /**
  * Enable hover-driven dropdowns on AZ Navbar.

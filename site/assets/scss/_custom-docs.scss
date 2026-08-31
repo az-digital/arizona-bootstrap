@@ -3,6 +3,11 @@
 //
 // > Custom Arizona Bootstrap Badge
 //
+
+:root {
+  --az-static-scroll-offset: 160px;
+}
+
 .badge-az-custom {
   padding-top: .5625rem;
   padding-right: .75rem;
@@ -429,3 +434,4 @@
 .pn strong {
   font-weight: 700;
 }
+
