@@ -90,13 +90,27 @@ function resolvePanelFromHash(hash) {
   return selector ? document.querySelector(selector) : null
 }
 
-// Expand the panel referenced by the current URL hash
+// Expand the panel referenced by the current URL hash, then scroll its
+// heading into view once the show transition actually finishes. Native
+// browser fragment-scroll fires too early on a fresh page load - before this
+// panel's sibling (if one was open, per data-bs-parent) has finished
+// collapsing - so it can commit to a scroll position based on stale, taller
+// layout and overshoot once that sibling shrinks.
 function openPanelFromHash() {
   const panel = resolvePanelFromHash(window.location.hash)
   if (!panel) {
     return
   }
 
+  const header = panel.closest('.accordion-item')?.querySelector('.accordion-header')
+  const scrollHeaderIntoView = () => header?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+  if (panel.classList.contains('show')) {
+    scrollHeaderIntoView()
+    return
+  }
+
+  panel.addEventListener('shown.bs.collapse', scrollHeaderIntoView, { once: true })
   Collapse.getOrCreateInstance(panel).show()
 }
 
