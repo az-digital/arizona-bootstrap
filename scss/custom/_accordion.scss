@@ -7,6 +7,7 @@
 // target, so it's the one whose offset from a sticky header matters.
 .accordion-header {
   scroll-margin-top: var(--az-static-scroll-offset);
+  scroll-behavior: smooth;
 }
 
 .accordion-anchor:hover {

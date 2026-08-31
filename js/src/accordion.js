@@ -91,12 +91,19 @@ function resolvePanelFromHash(hash) {
 }
 
 // Expand the panel referenced by the current URL hash, then scroll its
-// heading into view once the show transition actually finishes. Native
-// browser fragment-scroll fires too early on a fresh page load - before this
-// panel's sibling (if one was open, per data-bs-parent) has finished
-// collapsing - so it can commit to a scroll position based on stale, taller
-// layout and overshoot once that sibling shrinks.
-function openPanelFromHash() {
+// heading into view once the show transition actually finishes. On a fresh
+// page load, the browser's native fragment-scroll fires immediately, before
+// this panel's sibling (if one was open, per data-bs-parent) has finished
+// collapsing - so it commits to a resting position based on stale layout,
+// holds there for the whole ~350ms transition, then gets corrected in a
+// separate hop once this function's own scroll runs. That jump-pause-hop
+// sequence reads as a stutter even when the correction itself is small.
+//
+// isInitialLoad neutralizes it: on a fresh load only (never on a same-tab
+// hashchange, which doesn't have this problem), reset scroll to the top
+// instantly before the transition plays, so there's nothing to hold at -
+// just a brief pause, then one continuous scroll to the final position.
+function openPanelFromHash(isInitialLoad) {
   const panel = resolvePanelFromHash(window.location.hash)
   if (!panel) {
     return
@@ -110,8 +117,42 @@ function openPanelFromHash() {
     return
   }
 
-  panel.addEventListener('shown.bs.collapse', scrollHeaderIntoView, { once: true })
+  if (isInitialLoad) {
+    window.scrollTo(0, 0)
+  }
+
+  // data-bs-parent means opening this panel also closes whichever sibling is
+  // currently open. That sibling's hide transition is a separate Collapse
+  // instance with its own independently-queued completion callback, so this
+  // panel's shown.bs.collapse firing doesn't guarantee the sibling's own
+  // hidden.bs.collapse has too - scrolling before it has can mean the page
+  // is still settling underneath the scroll animation. Wait for both.
+  const parentSelector = panel.getAttribute('data-bs-parent')
+  const openSibling = parentSelector ?
+    document.querySelector(parentSelector)?.querySelector('.accordion-collapse.show') :
+    null
+  const awaitedTransitions = openSibling && openSibling !== panel ? 2 : 1
+  let settledTransitions = 0
+  const onTransitionSettled = () => {
+    settledTransitions += 1
+    if (settledTransitions >= awaitedTransitions) {
+      scrollHeaderIntoView()
+    }
+  }
+
+  panel.addEventListener('shown.bs.collapse', onTransitionSettled, { once: true })
+  if (openSibling && openSibling !== panel) {
+    openSibling.addEventListener('hidden.bs.collapse', onTransitionSettled, { once: true })
+  }
+
   Collapse.getOrCreateInstance(panel).show()
+}
+
+// Deferred a frame: the browser's own native fragment-scroll on a fresh load
+// can otherwise race this code and run after it, undoing the reset in
+// openPanelFromHash() before it has any effect.
+function openInitialPanelFromHash() {
+  requestAnimationFrame(() => openPanelFromHash(true))
 }
 
 /**
@@ -132,12 +173,12 @@ function enableAccordionAnchors() {
   })
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', openPanelFromHash, { once: true })
+    document.addEventListener('DOMContentLoaded', openInitialPanelFromHash, { once: true })
   } else {
-    openPanelFromHash()
+    openInitialPanelFromHash()
   }
 
-  window.addEventListener('hashchange', openPanelFromHash)
+  window.addEventListener('hashchange', () => openPanelFromHash(false))
 }
 
 export { enableAccordionAnchors as default }

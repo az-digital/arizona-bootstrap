@@ -116,7 +116,7 @@ Anchored links allow users to click to copy links directly to accordions. The co
         Accordion Item #1
       </button>
     </h2>
-    <div id="collapseAnchor1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+    <div id="collapseAnchor1" class="accordion-collapse collapse show" data-bs-parent="#accordionAnchorExample">
       <div class="accordion-body">
         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
@@ -131,7 +131,7 @@ Anchored links allow users to click to copy links directly to accordions. The co
         Accordion Item #2
       </button>
     </h2>
-    <div id="collapseAnchor2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+    <div id="collapseAnchor2" class="accordion-collapse collapse" data-bs-parent="#accordionAnchorExample">
       <div class="accordion-body">
         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
@@ -146,7 +146,7 @@ Anchored links allow users to click to copy links directly to accordions. The co
         Accordion Item #3
       </button>
     </h2>
-    <div id="collapseAnchor3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+    <div id="collapseAnchor3" class="accordion-collapse collapse" data-bs-parent="#accordionAnchorExample">
       <div class="accordion-body">
         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
