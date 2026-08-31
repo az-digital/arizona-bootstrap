@@ -14,6 +14,34 @@
   @extend .btn-info;
 }
 
+.btn-white-with-blue {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $blue,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $blue,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $blue
+  );
+}
+
+.btn-white-with-red {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $red,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $red,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $red
+  );
+}
+
 .btn-outline-red {
   @extend .btn-outline-primary;
 }
