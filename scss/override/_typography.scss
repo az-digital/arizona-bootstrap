@@ -42,6 +42,11 @@ small,
 */
 
 // >> h1 - h6
+// font-family is a shared, inherited custom property (not a plain value),
+// defaulted at :root (see scss/custom/_typography.scss), so
+// .az-headings-mixed/.az-headings-serif can override it once per container
+// instead of once per heading level, and so a single heading can override it
+// directly (e.g. style="--az-heading-font-family: ...").
 h1,
 h2,
 h3,
@@ -55,7 +60,35 @@ h6,
 .h5,
 .h6 {
   margin: $heading-margins;
+  font-family: var(--az-heading-font-family);
   color: $blue;
+  letter-spacing: 0;
+}
+
+// font-size/line-height/font-weight vary by level, so no custom property here -
+// a page overriding one heading's size can already write font-size directly.
+@each $level, $props in $headings-scale {
+  h#{$level},
+  .h#{$level} {
+    font-size: map-get($props, font-size);
+    font-weight: #{map-get($props, font-weight)};
+    line-height: map-get($props, line-height);
+    @if map-has-key($props, margin-top) {
+      margin-top: map-get($props, margin-top);
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @each $level, $props in $headings-scale {
+    @if map-has-key($props, font-size-lg) {
+      h#{$level},
+      .h#{$level} {
+        font-size: map-get($props, font-size-lg);
+        line-height: map-get($props, line-height-lg);
+      }
+    }
+  }
 }
 
 /*
