@@ -40,7 +40,11 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 {{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
-### Brand Color Variants
+{{< callout info >}}
+Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
+{{< /callout >}}
+
+### Solid brand color variants
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
@@ -52,27 +56,27 @@ Red and Blue are the recommended solid button variants for Arizona Bootstrap pro
 <button type="button" class="btn btn-sky">Sky</button>
 {{< /example >}}
 
-Two white button variants are available: use `.btn-white-with-red` on a red background and `.btn-white-with-blue` on an oasis background.
+Two white button variants are available: use `.btn-white-text-red` on a red background and `.btn-white-text-blue` on an oasis background.
 
 <div class="bd-example d-flex gap-2">
   <div class="d-inline-block text-bg-red px-4 py-3">
-    <button type="button" class="btn btn-white-with-red">White With Red</button>
+    <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
   </div>
   <div class="d-inline-block text-bg-oasis px-4 py-3">
-    <button type="button" class="btn btn-white-with-blue">White With Blue</button>
+    <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
   </div>
 </div>
 
 ```html
 <div class="text-bg-red px-4 py-3">
-  <button type="button" class="btn btn-white-with-red">White Text Red</button>
+  <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
 </div>
 <div class="text-bg-oasis px-4 py-3">
-  <button type="button" class="btn btn-white-with-blue">White Text Blue</button>
+  <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
 </div>
 ```
 
-### Theme Color Variants
+### Solid theme color variants
 
 {{< example >}}
 {{< buttons.inline >}}
@@ -82,19 +86,11 @@ Two white button variants are available: use `.btn-white-with-red` on a red back
 {{< /buttons.inline >}}
 {{< /example >}}
 
-### Link Variant
-
-{{< example >}}
-<button type="button" class="btn btn-link">Link</button>
-{{< /example >}}
-
-## Outline buttons
-
-In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
-
-### Brand Color Variants
+### Outline brand color variants
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
+
+In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
 
 {{< example >}}
 <button type="button" class="btn btn-outline-red">Red</button>
@@ -127,7 +123,7 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
 </div>
 ```
 
-### Theme Color Variants
+### Outline theme color variants
 
 {{< example >}}
 {{< buttons.inline >}}
@@ -137,9 +133,11 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
 {{< /buttons.inline >}}
 {{< /example >}}
 
-{{< callout info >}}
-Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
-{{< /callout >}}
+### Link variant
+
+{{< example >}}
+<button type="button" class="btn btn-link">Link</button>
+{{< /example >}}
 
 ## Sizes
 

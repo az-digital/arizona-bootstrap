@@ -14,7 +14,7 @@
   @extend .btn-info;
 }
 
-.btn-white-with-blue {
+.btn-white-text-blue {
   @include button-variant(
     $background: $white,
     $border: $white,
@@ -28,7 +28,7 @@
   );
 }
 
-.btn-white-with-red {
+.btn-white-text-red {
   @include button-variant(
     $background: $white,
     $border: $white,
