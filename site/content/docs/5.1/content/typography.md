@@ -53,6 +53,74 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h6">h6. Bootstrap heading</p>
 {{< /example >}}
 
+### Mixed headings
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-headings-mixed` class to a container (such as `<body>` or any wrapping element) to switch that container's `<h1>`-`<h3>` and `.h1`-`.h3` to the serif type stack, leaving `<h4>`-`<h6>` and `.h4`-`.h6` on Proxima Nova.
+
+{{< example >}}
+<div class="az-headings-mixed">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+{{< /example >}}
+
+`.h1` through `.h6` classes can also be used in place of the associated HTML element within a container using `.az-headings-mixed`.
+
+{{< example >}}
+<div class="az-headings-mixed">
+  <p class="h1">h1. Bootstrap heading</p>
+  <p class="h2">h2. Bootstrap heading</p>
+  <p class="h3">h3. Bootstrap heading</p>
+  <p class="h4">h4. Bootstrap heading</p>
+  <p class="h5">h5. Bootstrap heading</p>
+  <p class="h6">h6. Bootstrap heading</p>
+</div>
+{{< /example >}}
+
+### Serif headings
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
+
+Add the `.az-headings-serif` class to a container (such as `<body>` or any wrapping element) to switch all of that container's `<h1>`-`<h6>` and `.h1`-`.h6` to the serif type stack.
+
+{{< example >}}
+<div class="az-headings-serif">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+</div>
+{{< /example >}}
+
+`.h1` through `.h6` classes can also be used in place of the associated HTML element within a container using `.az-headings-serif`.
+
+{{< example >}}
+<div class="az-headings-serif">
+  <p class="h1">h1. Bootstrap heading</p>
+  <p class="h2">h2. Bootstrap heading</p>
+  <p class="h3">h3. Bootstrap heading</p>
+  <p class="h4">h4. Bootstrap heading</p>
+  <p class="h5">h5. Bootstrap heading</p>
+  <p class="h6">h6. Bootstrap heading</p>
+</div>
+{{< /example >}}
+
+### Switching a single heading's font without a wrapper
+
+Heading font-family reads a shared `--az-heading-font-family` custom property — the same one `.az-headings-serif` sets on a container and `.az-headings-mixed` sets on its `h1`–`h3`/`.h1`–`.h3` descendants above. Setting it directly on one heading works the same way, for a one-off case that doesn't need a wrapping element or a new utility class.
+
+{{< example >}}
+<h2 style="--az-heading-font-family: garamond-premier-pro, Georgia, 'Times New Roman', serif;">h2. Just this heading, in serif</h2>
+{{< /example >}}
+
 ### Customizing headings
 
 Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.
