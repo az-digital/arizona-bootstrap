@@ -10,6 +10,21 @@
   scroll-behavior: smooth;
 }
 
+// Flex alignment/spacing (icon and text can differ arbitrarily in height -
+// the Material Symbols icon is a fixed 24px, unrelated to $font-size-base,
+// while the text scales with it) comes from Bootstrap's .icon-link helper
+// class on the markup. Unlike .icon-link's own .bi SVG icons - which are
+// immune to text-decoration entirely - Material Symbols is real text, so it
+// still needs an explicit underline fix: off by default on the anchor,
+// re-applied to just the text span.
+.accordion-anchor {
+  text-decoration: none;
+
+  > span:last-child {
+    text-decoration: underline;
+  }
+}
+
 .accordion-anchor:hover {
   cursor: pointer;
 }

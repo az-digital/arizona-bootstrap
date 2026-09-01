@@ -120,7 +120,10 @@ Anchored links allow users to click to copy links directly to accordions. The co
       <div class="accordion-body">
         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-        <a class="accordion-anchor" href="#collapseAnchor1-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click"><span class="material-symbols-rounded float-start pe-1">link</span><span>Copy link</span></a>
+          <a class="accordion-anchor icon-link" href="#collapseAnchor1-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
         </div>
       </div>
     </div>
@@ -135,7 +138,10 @@ Anchored links allow users to click to copy links directly to accordions. The co
       <div class="accordion-body">
         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-        <a class="accordion-anchor" href="#collapseAnchor2-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click"><span class="material-symbols-rounded float-start pe-1">link</span><span>Copy link</span></a>
+          <a class="accordion-anchor icon-link" href="#collapseAnchor2-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
         </div>
       </div>
     </div>
@@ -150,7 +156,10 @@ Anchored links allow users to click to copy links directly to accordions. The co
       <div class="accordion-body">
         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-        <a class="accordion-anchor" href="#collapseAnchor3-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click"><span class="material-symbols-rounded float-start pe-1">link</span><span>Copy link</span></a>
+          <a class="accordion-anchor icon-link" href="#collapseAnchor3-link" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
         </div>
       </div>
     </div>
