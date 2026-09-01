@@ -98,12 +98,7 @@ function resolvePanelFromHash(hash) {
 // holds there for the whole ~350ms transition, then gets corrected in a
 // separate hop once this function's own scroll runs. That jump-pause-hop
 // sequence reads as a stutter even when the correction itself is small.
-//
-// isInitialLoad neutralizes it: on a fresh load only (never on a same-tab
-// hashchange, which doesn't have this problem), reset scroll to the top
-// instantly before the transition plays, so there's nothing to hold at -
-// just a brief pause, then one continuous scroll to the final position.
-function openPanelFromHash(isInitialLoad) {
+function openPanelFromHash() {
   const panel = resolvePanelFromHash(window.location.hash)
   if (!panel) {
     return
@@ -115,10 +110,6 @@ function openPanelFromHash(isInitialLoad) {
   if (panel.classList.contains('show')) {
     scrollHeaderIntoView()
     return
-  }
-
-  if (isInitialLoad) {
-    window.scrollTo(0, 0)
   }
 
   // data-bs-parent means opening this panel also closes whichever sibling is

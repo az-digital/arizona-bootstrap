@@ -2,6 +2,11 @@
 // > Arizona Accordion custom component
 //
 
+// Scroll offset reflects the header size with some extra top padding
+:root {
+  --az-static-scroll-offset: 86px;
+}
+
 // scroll-margin-top belongs on .accordion-header, not .accordion-anchor -
 // it's the element with the id that anchor links / scrollIntoView() actually
 // target, so it's the one whose offset from a sticky header matters.
