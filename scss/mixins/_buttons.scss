@@ -7,7 +7,7 @@
   // check for inaccessible color contrast
   $button-text-color: $white;
 
-  @if $background == $light {
+  @if $background == $light or $background == $leaf {
     $button-text-color: $midnight;
   } @else if $background == $sky or $background == $info {
     $button-text-color: $blue;
