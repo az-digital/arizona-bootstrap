@@ -12,6 +12,8 @@
 
 .btn-sky {
   @extend .btn-info;
+  --bs-btn-hover-bg: #65c0db;
+  --bs-btn-hover-border-color: #65c0db;
 }
 
 .btn-white-text-blue {
@@ -26,6 +28,7 @@
     $active-border: $cool-gray,
     $active-color: $blue
   );
+  --az-btn-focus-outline-color: #{$white};
 }
 
 .btn-white-text-red {
@@ -40,6 +43,7 @@
     $active-border: $cool-gray,
     $active-color: $red
   );
+  --az-btn-focus-outline-color: #{$white};
 }
 
 .btn-outline-red {
@@ -52,7 +56,8 @@
 
 .btn-outline-sky {
   @extend .btn-outline-info;
-  color: $sky;
+  --bs-btn-color: #{$sky};
+  --az-btn-focus-outline-color: #{$white};
 }
 
 .btn-outline-white {
@@ -61,6 +66,7 @@
     $color-hover: $gray-800,
     $active-background: $white,
   );
+  --az-btn-focus-outline-color: #{$white};
 }
 
 // >> Arrow Buttons
