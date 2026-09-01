@@ -198,7 +198,7 @@ On page load, the page will scroll to the anchor with the offset set by the vari
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="AnchoredAccordion1">
+    <h2 class="accordion-header" id="AnchoredAccordion3">
       <button class="accordion-button collapsed" type="button" tabindex="0" data-bs-toggle="collapse" data-bs-target="#collapseAnchor3" aria-expanded="true" aria-controls="collapseAnchor3">
         Accordion Item #3
       </button>
