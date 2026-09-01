@@ -22,7 +22,7 @@
 // immune to text-decoration entirely - Material Symbols is real text, so it
 // still needs an explicit underline fix: off by default on the anchor,
 // re-applied to just the text span.
-.accordion-anchor {
+.az-accordion-anchor {
   text-decoration: none;
 
   > span:last-child {
