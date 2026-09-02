@@ -14,3 +14,10 @@ main {
     scroll-margin-bottom: 100px;
   }
 }
+
+// This docs site has a sticky header - restore the accordion anchor scroll
+// offset the component itself defaults to 0, since most consumer sites
+// don't have one.
+:root {
+  --az-accordion-anchor-scroll-offset: 86px;
+}
