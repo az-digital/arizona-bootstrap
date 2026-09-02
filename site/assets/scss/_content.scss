@@ -103,6 +103,7 @@
 
 .bd-title {
   --bs-heading-color: var(--bs-emphasis-color);
+  @include font-size(3rem);
 }
 
 .bd-lead {
