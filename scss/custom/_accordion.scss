@@ -2,9 +2,10 @@
 // > Arizona Accordion custom component
 //
 
-// Scroll offset reflects the header size with some extra top padding
+// No offset by default - most consumer sites have no fixed/sticky header.
+// Sites that do have one should override this variable to match its height.
 :root {
-  --az-accordion-anchor-scroll-offset: 86px;
+  --az-accordion-anchor-scroll-offset: 0;
 }
 
 // Flex alignment/spacing (icon and text can differ arbitrarily in height -
