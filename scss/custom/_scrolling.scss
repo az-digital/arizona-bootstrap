@@ -7,18 +7,8 @@
   --az-scroll-margin-bottom: 0px;
 }
 
-main {
-  a,
-  button,
-  input,
-  select,
-  textarea,
-  h2,
-  h3,
-  h4,
-  [tabindex="0"] {
-    scroll-behavior: var(--az-scroll-behavior);
-    scroll-margin-top: var(--az-scroll-margin-top);
-    scroll-margin-bottom: var(--az-scroll-margin-bottom);
-  }
+:target {
+  scroll-behavior: var(--az-scroll-behavior);
+  scroll-margin-top: var(--az-scroll-margin-top);
+  scroll-margin-bottom: var(--az-scroll-margin-bottom);
 }
