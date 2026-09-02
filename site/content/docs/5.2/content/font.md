@@ -5,7 +5,7 @@ description: Additional fonts are available for official use by University of Ar
 group: content
 toc: true
 extra_js:
-  - src: "docs/5.1/assets/js/font-sample.js"
+  - src: "docs/5.2/assets/js/font-sample.js"
     async: true
 ---
 

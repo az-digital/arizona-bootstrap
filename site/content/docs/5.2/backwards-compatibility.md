@@ -5,7 +5,7 @@ description: Some styles and classes available in Arizona Bootstrap 2 (Bootstrap
 group: backwards-compatibility
 redirect_from:
   - "/backwards-compatibility/"
-  - "/docs/5.1/backwards-compatibility/"
+  - "/docs/5.2/backwards-compatibility/"
 toc: true
 ---
 
