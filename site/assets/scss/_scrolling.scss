@@ -1,23 +1,6 @@
 // When navigating with the keyboard, prevent focus from landing behind the sticky header
-
-main {
-  a,
-  button,
-  input,
-  select,
-  textarea,
-  h2,
-  h3,
-  h4,
-  [tabindex="0"] {
-    scroll-margin-top: 80px;
-    scroll-margin-bottom: 100px;
-  }
-}
-
-// This docs site has a sticky header - restore the accordion anchor scroll
-// offset the component itself defaults to 0, since most consumer sites
-// don't have one.
 :root {
-  --az-accordion-anchor-scroll-offset: 86px;
+  --az-scroll-behavior: smooth;
+  --az-scroll-margin-top: 86px;
+  --az-scroll-margin-bottom: 100px;
 }

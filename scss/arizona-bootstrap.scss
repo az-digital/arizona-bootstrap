@@ -1,6 +1,8 @@
 // Upstream Bootstrap functions before anything else.
 @import "../node_modules/bootstrap/scss/functions";
 
+@import "custom/scrolling";
+
 // Arizona Bootstrap custom variables.
 @import "custom/variables";
 
