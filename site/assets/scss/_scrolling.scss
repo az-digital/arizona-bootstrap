@@ -1,10 +1,4 @@
 // When navigating with the keyboard, prevent focus from landing behind the sticky header
-:root {
-  --az-scroll-behavior: smooth;
-  --az-scroll-margin-top: 80px;
-  --az-scroll-margin-bottom: 100px;
-}
-
 main {
   a,
   button,
@@ -15,7 +9,8 @@ main {
   h3,
   h4,
   [tabindex="0"] {
-    scroll-margin-top: var(--az-scroll-margin-top);
-    scroll-margin-bottom: var(--az-scroll-margin-bottom);
+    --az-scroll-behavior: smooth;
+    --az-scroll-margin-top: 86px;
+    --az-scroll-margin-bottom: 100px;
   }
 }
