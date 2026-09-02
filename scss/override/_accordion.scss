@@ -1,6 +1,19 @@
-// This style override is needed because we have set a top margin
-// on h2s globally in override/_typography.scss. TWBS does not set a margin
-// on headings so this is not needed for clean TWBS5.
+// .accordion-header is a semantic-only <h2> wrapper - .accordion-button
+// supplies the actual visible styling - but the global h1-h6 rule in
+// override/_typography.scss (margin, font-family, font-size, font-weight,
+// line-height, color, letter-spacing) still applies to it like any other
+// heading. Most notably, line-height is set in a fixed unit (rem), so its
+// computed length inherits into .accordion-button unchanged regardless of
+// the button's own font-size, ballooning the button's content-box height
+// (e.g. to the h2 lg-breakpoint line-height of 3.875rem/62px). Neutralize
+// the whole heading-scale block back to inherited/normal values so
+// .accordion-button always sizes itself off its own font-size.
 .accordion-header {
   margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  letter-spacing: normal;
 }

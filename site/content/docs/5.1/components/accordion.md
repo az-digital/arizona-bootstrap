@@ -150,6 +150,89 @@ Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accord
 </div>
 {{< /example >}}
 
+### Anchored
+
+Give each `.accordion-header` a unique `id`, then add a `.az-accordion-anchor` link inside its `.accordion-body` whose `href` points at that `id`. Clicking the link copies the item's full URL to the clipboard; visiting that URL opens the item and scrolls to it.
+
+This is built into Arizona Bootstrap's JavaScript, so no additional script is required — though the "Copied!" confirmation depends on [Bootstrap's tooltip plugin]({{< docsref "/components/tooltips" >}}) being initialized on the page.
+
+<div class="bd-callout bd-callout-warning">
+  <p>Anchored accordions work best in the <strong>Always open</strong> style — omit <code>data-bs-parent</code>, as the example below does. With <code>data-bs-parent</code>, opening a linked item also collapses its sibling, and on a fresh page load the browser jumps to the anchor before that collapse finishes, which can read as a stutter as the position corrects.</p>
+</div>
+
+{{< example >}}
+<div class="accordion" id="accordionAnchorExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="accordionAnchor1">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor1" aria-expanded="true" aria-controls="collapseAnchor1">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseAnchor1" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        <div class="pt-2">
+          <a class="az-accordion-anchor icon-link" href="#accordionAnchor1" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="accordionAnchor2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor2" aria-expanded="false" aria-controls="collapseAnchor2">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseAnchor2" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        <div class="pt-2">
+          <a class="az-accordion-anchor icon-link" href="#accordionAnchor2" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="accordionAnchor3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnchor3" aria-expanded="false" aria-controls="collapseAnchor3">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseAnchor3" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        <div class="pt-2">
+          <a class="az-accordion-anchor icon-link" href="#accordionAnchor3" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+            <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            <span>Copy link</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+#### Scroll offset
+
+If your site has a fixed or sticky header, set the `--az-scroll-margin-top` CSS variable in your own site's CSS to that header's height — plus a little more, if you want some breathing room — so it doesn't cover the accordion item when a hash-linked item scrolls into view:
+
+```css
+:root {
+  --az-scroll-margin-top: 64px; /* match your header's height */
+}
+```
+
+Most sites don't need this — the offset defaults to `0`. The scroll happens both on page load and afterward, whenever the page's hash changes again (from another in-page link, or the browser's back/forward buttons).
+
+The Arizona Bootstrap docs site overrides this property to `86px`, which is approximately 66px for the fixed navbar height and another 20px for breathing room.
+
 ## Accessibility
 
 Please read the [collapse accessibility section]({{< docsref "/components/collapse#accessibility" >}}) for more information.
