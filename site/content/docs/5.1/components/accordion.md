@@ -221,7 +221,7 @@ This is built into Arizona Bootstrap's JavaScript, so no additional script is re
 
 #### Scroll offset
 
-If your site has a fixed or sticky header, set the `--az-accordion-anchor-scroll-offset` CSS variable in your own site's CSS to that header's height — plus a little more, if you want some breathing room — so it doesn't cover the accordion item when a hash-linked item scrolls into view:
+If your site has a fixed or sticky header, set the `--az-scroll-margin-top` CSS variable in your own site's CSS to that header's height — plus a little more, if you want some breathing room — so it doesn't cover the accordion item when a hash-linked item scrolls into view:
 
 ```css
 :root {
