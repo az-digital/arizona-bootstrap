@@ -6,10 +6,6 @@
 
 .btn {
   --az-btn-focus-outline-color: var(--bs-bloom);
-
-  // Padding adjustment for Proxima Nova Condensed.
-  padding-top: $btn-padding-y + 1px;
-  padding-bottom: $btn-padding-y - 1px;
   letter-spacing: .14px;
 
   &:focus-visible {
@@ -20,14 +16,10 @@
 }
 
 .btn-sm {
-  padding-top: $btn-padding-y-sm + 1px;
-  padding-bottom: $btn-padding-y-sm - 1px;
   line-height: .9375rem;
 }
 
 .btn-lg {
-  padding-top: $btn-padding-y-lg + 1px;
-  padding-bottom: $btn-padding-y-lg - 1px;
   line-height: 1.6875rem;
   letter-spacing: .18px;
 }
