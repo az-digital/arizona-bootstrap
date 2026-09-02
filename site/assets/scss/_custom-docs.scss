@@ -3,6 +3,7 @@
 //
 // > Custom Arizona Bootstrap Badge
 //
+
 .badge-az-custom {
   padding-top: .5625rem;
   padding-right: .75rem;
@@ -52,7 +53,7 @@
   --#{$prefix}nav-link-color: var(--#{$prefix}navbar-color);
 
   &::after {
-    background-image: linear-gradient(var(--bs-chili), var(--bs-chili) 95%);
+    background-image: linear-gradient(var(--bs-blue), var(--bs-blue) 95%);
   }
 }
 
@@ -285,6 +286,19 @@
 // > CONTENT
 //
 
+// >> Page title
+// Upstream Bootstrap's docs pin .bd-title to a flat, RFS-scaled 3rem, which
+// beats Arizona Bootstrap's own h1 sizing (3rem, growing to 4rem at $lg).
+// .bd-title is only ever applied to an h1, so re-assert the h1 values from
+// $headings-scale and let docs page titles match headings everywhere else.
+.bd-title {
+  font-size: map-get(map-get($headings-scale, 1), font-size);
+
+  @include media-breakpoint-up(lg) {
+    font-size: map-get(map-get($headings-scale, 1), font-size-lg);
+  }
+}
+
 // >> Font
 .proxima-nova-bold {
   font-family: proxima-nova, sans-serif;
@@ -429,3 +443,4 @@
 .pn strong {
   font-weight: 700;
 }
+

@@ -499,7 +499,7 @@
   --az-navbar-fullscreen-modal-menu-primary-font-weight: 600;
   --az-navbar-fullscreen-modal-menu-primary-font-size: 48px;
   --az-navbar-fullscreen-modal-menu-primary-line-height: 48px;
-  --az-navbar-fullscreen-modal-menu-primary-font-family: garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-font-family: #{$font-family-serif};
   --az-navbar-fullscreen-modal-menu-primary-font: normal normal var(--az-navbar-fullscreen-modal-menu-primary-font-weight) var(--az-navbar-fullscreen-modal-menu-primary-font-size) / var(--az-navbar-fullscreen-modal-menu-primary-line-height) var(--az-navbar-fullscreen-modal-menu-primary-font-family);
   --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .1px;
   --az-navbar-fullscreen-modal-menu-primary-color: var(--az-navbar-fullscreen-modal-menu-color);
