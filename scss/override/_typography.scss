@@ -23,6 +23,21 @@ figure:has(blockquote) > :last-child {
 }
 
 /*
+* > LEAD
+*/
+.lead {
+  line-height: 1.5; // 30px at $lead-font-size (20px)
+}
+
+/*
+* > SMALL
+*/
+small,
+.small {
+  line-height: 1.5; // 24px when small computes to 16px (e.g. 18px body context)
+}
+
+/*
 * > HEADINGS
 */
 

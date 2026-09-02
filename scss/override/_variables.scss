@@ -34,10 +34,13 @@ $enable-dark-mode: false;
 * > FONTS
 */
 $font-size-base: 1.125rem;
+$line-height-base: 1.5556; // 28px at $font-size-base (18px)
 $link-color: $red;
 $link-hover-color: $chili;
 // fusv-disable
-$lead-font-weight: 400;
+$lead-font-size: 1.25rem; // 20px
+$lead-font-weight: 500;
+$small-font-size: 1rem;
 // fusv-enable
 
 /*
