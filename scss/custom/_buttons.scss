@@ -2,13 +2,48 @@
 // > BUTTONS
 //
 
-// hard-code red/blue since we removed primary/secondary; in favor of red/blue being more intuitive
 .btn-red {
   @extend .btn-primary;
 }
 
 .btn-blue {
   @extend .btn-secondary;
+}
+
+.btn-sky {
+  @extend .btn-info;
+  --bs-btn-hover-bg: #65c0db;
+  --bs-btn-hover-border-color: #65c0db;
+}
+
+.btn-white-text-blue {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $blue,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $blue,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $blue
+  );
+  --az-btn-focus-outline-color: #{$white};
+}
+
+.btn-white-text-red {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $red,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $red,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $red
+  );
+  --az-btn-focus-outline-color: #{$white};
 }
 
 .btn-outline-red {
@@ -19,12 +54,19 @@
   @extend .btn-outline-secondary;
 }
 
+.btn-outline-sky {
+  @extend .btn-outline-info;
+  --bs-btn-color: #{$sky};
+  --az-btn-focus-outline-color: #{$white};
+}
+
 .btn-outline-white {
   @include button-outline-variant(
     $color: $white,
     $color-hover: $gray-800,
     $active-background: $white,
   );
+  --az-btn-focus-outline-color: #{$white};
 }
 
 // >> Arrow Buttons

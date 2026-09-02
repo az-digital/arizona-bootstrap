@@ -20,23 +20,6 @@ The `.btn` class is intended to be used in conjunction with our button variants,
 If you are using the `.btn` class on its own, remember to at least define some explicit `:focus` and/or `:focus-visible` styles.
 {{< /callout >}}
 
-## Variants
-{{< example >}}
-{{< buttons.inline >}}
-<button type="button" class="btn btn-red">Red</button>
-<button type="button" class="btn btn-blue">Blue</button>
-{{< /buttons.inline >}}
-<button type="button" class="btn btn-link">Link</button>
-{{< /example >}}
-
-{{< callout info >}}
-{{< partial "callouts/warning-color-assistive-technologies.md" >}}
-{{< /callout >}}
-
-## Disable text wrapping
-
-If you don't want the button text to wrap, you can add the `.text-nowrap` class to the button. In Sass, you can set `$btn-white-space: nowrap` to disable text wrapping for each button.
-
 ## Button tags
 
 The `.btn` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
@@ -51,34 +34,80 @@ When using button classes on `<a>` elements that are used to trigger in-page fun
 <input class="btn btn-red" type="reset" value="Reset">
 {{< /example >}}
 
-## Outline buttons
+## Variants
 
-In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
-
-{{< example >}}
-{{< buttons.inline >}}
-<button type="button" class="btn btn-outline-red">Red</button>
-<button type="button" class="btn btn-outline-blue">Blue</button>
-{{< /buttons.inline >}}
-{{< /example >}}
+{{< callout info >}}
+{{< partial "callouts/warning-color-assistive-technologies.md" >}}
+{{< /callout >}}
 
 {{< callout info >}}
 Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
 {{< /callout >}}
 
-<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Class</span>
+### Solid brand color variants
 
-For outline buttons on a **dark background color**, use the `.btn-outline-white`.
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
+
+Red and Blue are the recommended solid button variants for Arizona Bootstrap projects. Sky buttons are also available.
+
+{{< example >}}
+<button type="button" class="btn btn-red">Red</button>
+<button type="button" class="btn btn-blue">Blue</button>
+<button type="button" class="btn btn-sky">Sky</button>
+{{< /example >}}
+
+Two white button variants are available: use `.btn-white-text-red` on a red background and `.btn-white-text-blue` on an oasis background.
+
+<div class="bd-example d-flex gap-2">
+  <div class="d-inline-block text-bg-red px-4 py-3">
+    <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
+  </div>
+  <div class="d-inline-block text-bg-oasis px-4 py-3">
+    <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
+  </div>
+</div>
+
+```html
+<div class="text-bg-red px-4 py-3">
+  <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
+</div>
+<div class="text-bg-oasis px-4 py-3">
+  <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
+</div>
+```
+
+### Solid theme color variants
+
+{{< example >}}
+{{< buttons.inline >}}
+{{- range (index $.Site.Data "theme-colors") -}}
+<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
+{{ end -}}
+{{< /buttons.inline >}}
+{{< /example >}}
+
+### Outline brand color variants
+
+<span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
+
+In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
+
+{{< example >}}
+<button type="button" class="btn btn-outline-red">Red</button>
+<button type="button" class="btn btn-outline-blue">Blue</button>
+{{< /example >}}
+
+For outline buttons on a **dark background color**, use the `.btn-outline-white` or `.btn-outline-sky` variants.
 
 <div class="bd-example">
   <div class="d-inline-block w-25 text-bg-red p-3">
     <button type="button" class="btn btn-outline-white">White</button>
   </div>
   <div class="d-inline-block w-25 text-bg-blue p-3">
-    <button type="button" class="btn btn-outline-white">White</button>
+    <button type="button" class="btn btn-outline-sky">Sky</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-dark p-3">
-    <button type="button" class="btn btn-outline-white">White</button>
+  <div class="d-inline-block w-25 text-bg-azurite p-3">
+    <button type="button" class="btn btn-outline-sky">Sky</button>
   </div>
 </div>
 
@@ -87,12 +116,28 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
 <div class="text-bg-blue p-3">
-  <button type="button" class="btn btn-outline-white">White</button>
+  <button type="button" class="btn btn-outline-sky">Sky</button>
 </div>
-<div class="text-bg-dark p-3">
-  <button type="button" class="btn btn-outline-white">White</button>
+<div class="text-bg-azurite p-3">
+  <button type="button" class="btn btn-outline-sky">Sky</button>
 </div>
 ```
+
+### Outline theme color variants
+
+{{< example >}}
+{{< buttons.inline >}}
+{{- range (index $.Site.Data "theme-colors") -}}
+<button type="button" class="btn btn-outline-{{ .name }}">{{ .name | title }}</button>
+{{ end -}}
+{{< /buttons.inline >}}
+{{< /example >}}
+
+### Link variant
+
+{{< example >}}
+<button type="button" class="btn btn-link">Link</button>
+{{< /example >}}
 
 ## Sizes
 
@@ -163,6 +208,10 @@ Disabled buttons using the `<a>` element behave a bit different:
 <a class="btn btn-red disabled" role="button" aria-disabled="true">Primary link</a>
 <a class="btn btn-blue disabled" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
+
+## Disable text wrapping
+
+If you don't want the button text to wrap, you can add the `.text-nowrap` class to the button. In Sass, you can set `$btn-white-space: nowrap` to disable text wrapping for each button.
 
 ### Link functionality caveat
 
