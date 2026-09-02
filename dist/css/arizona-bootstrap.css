@@ -1,5 +1,20 @@
 @charset "UTF-8";
 /*
+* > SCROLLING
+*/
+:root {
+  --az-scroll-behavior: smooth;
+  --az-scroll-margin-top: 0px;
+  --az-scroll-margin-bottom: 0px;
+}
+
+:target {
+  scroll-behavior: var(--az-scroll-behavior);
+  scroll-margin-top: var(--az-scroll-margin-top);
+  scroll-margin-bottom: var(--az-scroll-margin-bottom);
+}
+
+/*
 * > COLORS
 */
 /*
@@ -32,12 +47,12 @@
   --bs-bloom: #ef4056;
   --bs-chili: #8b0015;
   --bs-blue: #0c234b;
-  --bs-sky: #81d3eb;
-  --bs-oasis: #378dbd;
+  --bs-sky: #81ceeb;
+  --bs-oasis: #106ab1;
   --bs-azurite: #1e5288;
-  --bs-midnight: #001c48;
-  --bs-cool-gray: #e2e9eb;
-  --bs-warm-gray: #f4ede5;
+  --bs-midnight: #03132e;
+  --bs-cool-gray: #e5eff7;
+  --bs-warm-gray: #f2efea;
   --bs-leaf: #70b865;
   --bs-river: #007d84;
   --bs-silver: #9eabae;
@@ -58,7 +73,7 @@
   --bs-primary: #ab0520;
   --bs-secondary: #0c234b;
   --bs-success: #70b865;
-  --bs-info: #81d3eb;
+  --bs-info: #81ceeb;
   --bs-warning: #f19e1f;
   --bs-danger: #a95c42;
   --bs-light: #dee2e6;
@@ -66,7 +81,7 @@
   --bs-primary-rgb: 171, 5, 32;
   --bs-secondary-rgb: 12, 35, 75;
   --bs-success-rgb: 112, 184, 101;
-  --bs-info-rgb: 129, 211, 235;
+  --bs-info-rgb: 129, 206, 235;
   --bs-warning-rgb: 241, 158, 31;
   --bs-danger-rgb: 169, 92, 66;
   --bs-light-rgb: 222, 226, 230;
@@ -74,7 +89,7 @@
   --bs-primary-text-emphasis: #44020d;
   --bs-secondary-text-emphasis: #050e1e;
   --bs-success-text-emphasis: #2d4a28;
-  --bs-info-text-emphasis: #34545e;
+  --bs-info-text-emphasis: #34525e;
   --bs-warning-text-emphasis: #603f0c;
   --bs-danger-text-emphasis: #44251a;
   --bs-light-text-emphasis: #495057;
@@ -82,7 +97,7 @@
   --bs-primary-bg-subtle: #eecdd2;
   --bs-secondary-bg-subtle: #ced3db;
   --bs-success-bg-subtle: #e2f1e0;
-  --bs-info-bg-subtle: #e6f6fb;
+  --bs-info-bg-subtle: #e6f5fb;
   --bs-warning-bg-subtle: #fcecd2;
   --bs-danger-bg-subtle: #eeded9;
   --bs-light-bg-subtle: #fcfcfd;
@@ -90,7 +105,7 @@
   --bs-primary-border-subtle: #dd9ba6;
   --bs-secondary-border-subtle: #9ea7b7;
   --bs-success-border-subtle: #c6e3c1;
-  --bs-info-border-subtle: #cdedf7;
+  --bs-info-border-subtle: #cdebf7;
   --bs-warning-border-subtle: #f9d8a5;
   --bs-danger-border-subtle: #ddbeb3;
   --bs-light-border-subtle: #e9ecef;
@@ -101,9 +116,9 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
+  --bs-body-font-size: 1.125rem;
   --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
+  --bs-body-line-height: 1.5556;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg: #fff;
@@ -194,47 +209,52 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.40625rem + 1.875vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2.8125rem;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.35rem + 1.2vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: calc(1.321875rem + 0.8625vw);
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 1.96875rem;
   }
 }
 
 h4, .h4 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.29375rem + 0.525vw);
 }
 @media (min-width: 1200px) {
   h4, .h4 {
-    font-size: 1.5rem;
+    font-size: 1.6875rem;
   }
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
+}
+@media (min-width: 1200px) {
+  h5, .h5 {
+    font-size: 1.40625rem;
+  }
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 p {
@@ -294,7 +314,7 @@ strong {
 }
 
 small, .small {
-  font-size: 0.875em;
+  font-size: 1rem;
 }
 
 mark, .mark {
@@ -345,7 +365,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  font-size: 0.875em;
+  font-size: 1rem;
 }
 pre code {
   font-size: inherit;
@@ -354,7 +374,7 @@ pre code {
 }
 
 code {
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-code-color);
   word-wrap: break-word;
 }
@@ -364,7 +384,7 @@ a > code {
 
 kbd {
   padding: 0.1875rem 0.375rem;
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-body-bg);
   background-color: var(--bs-body-color);
   border-radius: 0.25rem;
@@ -573,7 +593,7 @@ progress {
 
 .lead {
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .display-1 {
@@ -660,13 +680,18 @@ progress {
 }
 
 .initialism {
-  font-size: 0.875em;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
+}
+@media (min-width: 1200px) {
+  .blockquote {
+    font-size: 1.40625rem;
+  }
 }
 .blockquote > :last-child {
   margin-bottom: 0;
@@ -675,7 +700,7 @@ progress {
 .blockquote-footer {
   margin-top: -1rem;
   margin-bottom: 1rem;
-  font-size: 0.875em;
+  font-size: 1rem;
   color: #6c757d;
 }
 .blockquote-footer::before {
@@ -706,7 +731,7 @@ progress {
 }
 
 .figure-caption {
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-secondary-color);
 }
 
@@ -2548,28 +2573,28 @@ progress {
 
 .table-sky {
   --bs-table-color: #000;
-  --bs-table-bg: #81d3eb;
-  --bs-table-border-color: #67a9bc;
-  --bs-table-striped-bg: #75c0d6;
+  --bs-table-bg: #81ceeb;
+  --bs-table-border-color: #67a5bc;
+  --bs-table-striped-bg: #75bbd6;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #74bed4;
+  --bs-table-active-bg: #74b9d4;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #6aadc1;
+  --bs-table-hover-bg: #6aa9c1;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
 }
 
 .table-oasis {
-  --bs-table-color: #000;
-  --bs-table-bg: #378dbd;
-  --bs-table-border-color: #2c7197;
-  --bs-table-striped-bg: #3280ac;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #327faa;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #2d749b;
-  --bs-table-hover-color: #fff;
+  --bs-table-color: #fff;
+  --bs-table-bg: #106ab1;
+  --bs-table-border-color: #4088c1;
+  --bs-table-striped-bg: #2677b8;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #2879b9;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #3b85bf;
+  --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
 }
@@ -2590,13 +2615,13 @@ progress {
 
 .table-midnight {
   --bs-table-color: #fff;
-  --bs-table-bg: #001c48;
-  --bs-table-border-color: #33496d;
-  --bs-table-striped-bg: #173058;
+  --bs-table-bg: #03132e;
+  --bs-table-border-color: #354258;
+  --bs-table-striped-bg: #1a2841;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #1a335a;
+  --bs-table-active-bg: #1c2b43;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #2e4569;
+  --bs-table-hover-bg: #303d54;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2604,13 +2629,13 @@ progress {
 
 .table-cool-gray {
   --bs-table-color: #000;
-  --bs-table-bg: #e2e9eb;
-  --bs-table-border-color: #b5babc;
-  --bs-table-striped-bg: #ced4d6;
+  --bs-table-bg: #e5eff7;
+  --bs-table-border-color: #b7bfc6;
+  --bs-table-striped-bg: #d0d9e1;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbd2d4;
+  --bs-table-active-bg: #ced7de;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #b9bfc1;
+  --bs-table-hover-bg: #bcc4cb;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2618,13 +2643,13 @@ progress {
 
 .table-warm-gray {
   --bs-table-color: #000;
-  --bs-table-bg: #f4ede5;
-  --bs-table-border-color: #c3beb7;
-  --bs-table-striped-bg: #ded8d0;
+  --bs-table-bg: #f2efea;
+  --bs-table-border-color: #c2bfbb;
+  --bs-table-striped-bg: #dcd9d5;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dcd5ce;
+  --bs-table-active-bg: #dad7d3;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c8c2bc;
+  --bs-table-hover-bg: #c6c4c0;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -2733,24 +2758,29 @@ progress {
   margin-bottom: 0;
   font-size: inherit;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.5556;
 }
 
 .col-form-label-lg {
   padding-top: calc(0.5rem + var(--bs-border-width));
   padding-bottom: calc(0.5rem + var(--bs-border-width));
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
+}
+@media (min-width: 1200px) {
+  .col-form-label-lg {
+    font-size: 1.40625rem;
+  }
 }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + var(--bs-border-width));
   padding-bottom: calc(0.25rem + var(--bs-border-width));
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
 }
 
 .form-text {
   margin-top: 0.25rem;
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-secondary-color);
 }
 
@@ -2758,9 +2788,9 @@ progress {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.5556;
   color: var(--bs-body-color);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2791,7 +2821,7 @@ progress {
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 85px;
-  height: 1.5em;
+  height: 1.5556em;
   margin: 0;
 }
 .form-control::-webkit-datetime-edit {
@@ -2875,7 +2905,7 @@ progress {
   width: 100%;
   padding: 0.375rem 0;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1.5556;
   color: var(--bs-body-color);
   background-color: transparent;
   border: solid transparent;
@@ -2890,9 +2920,9 @@ progress {
 }
 
 .form-control-sm {
-  min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5556em + 0.5rem + calc(var(--bs-border-width) * 2));
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   border-radius: var(--bs-border-radius-sm);
 }
 .form-control-sm::-webkit-file-upload-button {
@@ -2910,10 +2940,15 @@ progress {
 }
 
 .form-control-lg {
-  min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5556em + 1rem + calc(var(--bs-border-width) * 2));
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
   border-radius: var(--bs-border-radius-lg);
+}
+@media (min-width: 1200px) {
+  .form-control-lg {
+    font-size: 1.40625rem;
+  }
 }
 .form-control-lg::-webkit-file-upload-button {
   padding: 0.5rem 1rem;
@@ -2930,18 +2965,18 @@ progress {
 }
 
 textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5556em + 0.75rem + calc(var(--bs-border-width) * 2));
 }
 textarea.form-control-sm {
-  min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5556em + 0.5rem + calc(var(--bs-border-width) * 2));
 }
 textarea.form-control-lg {
-  min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5556em + 1rem + calc(var(--bs-border-width) * 2));
 }
 
 .form-control-color {
   width: 3rem;
-  height: calc(1.5em + 0.75rem + calc(var(--bs-border-width) * 2));
+  height: calc(1.5556em + 0.75rem + calc(var(--bs-border-width) * 2));
   padding: 0.375rem;
 }
 .form-control-color:not(:disabled):not([readonly]) {
@@ -2956,10 +2991,10 @@ textarea.form-control-lg {
   border-radius: var(--bs-border-radius);
 }
 .form-control-color.form-control-sm {
-  height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+  height: calc(1.5556em + 0.5rem + calc(var(--bs-border-width) * 2));
 }
 .form-control-color.form-control-lg {
-  height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+  height: calc(1.5556em + 1rem + calc(var(--bs-border-width) * 2));
 }
 
 .form-select {
@@ -2967,9 +3002,9 @@ textarea.form-control-lg {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.5556;
   color: var(--bs-body-color);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3009,7 +3044,7 @@ textarea.form-control-lg {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   border-radius: var(--bs-border-radius-sm);
 }
 
@@ -3017,13 +3052,18 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
   border-radius: var(--bs-border-radius-lg);
+}
+@media (min-width: 1200px) {
+  .form-select-lg {
+    font-size: 1.40625rem;
+  }
 }
 
 .form-check {
   display: block;
-  min-height: 1.5rem;
+  min-height: 1.75005rem;
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
 }
@@ -3049,7 +3089,7 @@ textarea.form-control-lg {
   flex-shrink: 0;
   width: 1em;
   height: 1em;
-  margin-top: 0.25em;
+  margin-top: 0.2778em;
   vertical-align: top;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3419,9 +3459,9 @@ textarea.form-control-lg {
   -ms-flex-align: center;
   align-items: center;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.5556;
   color: var(--bs-body-color);
   text-align: center;
   white-space: nowrap;
@@ -3435,8 +3475,16 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
   border-radius: var(--bs-border-radius-lg);
+}
+@media (min-width: 1200px) {
+  .input-group-lg > .form-control,
+  .input-group-lg > .form-select,
+  .input-group-lg > .input-group-text,
+  .input-group-lg > .btn {
+    font-size: 1.40625rem;
+  }
 }
 
 .input-group-sm > .form-control,
@@ -3444,7 +3492,7 @@ textarea.form-control-lg {
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   border-radius: var(--bs-border-radius-sm);
 }
 
@@ -3482,7 +3530,7 @@ textarea.form-control-lg {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-form-valid-color);
 }
 
@@ -3494,7 +3542,7 @@ textarea.form-control-lg {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: 0.1rem;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   color: #fff;
   background-color: var(--bs-success);
   border-radius: var(--bs-border-radius);
@@ -3509,11 +3557,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: var(--bs-form-valid-border-color);
-  padding-right: calc(1.5em + 0.75rem);
+  padding-right: calc(1.5556em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-position: right calc(0.3889em + 0.1875rem) center;
+  background-size: calc(0.7778em + 0.375rem) calc(0.7778em + 0.375rem);
 }
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
   border-color: var(--bs-form-valid-border-color);
@@ -3521,8 +3569,8 @@ textarea.form-control-lg {
 }
 
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
-  padding-right: calc(1.5em + 0.75rem);
-  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  padding-right: calc(1.5556em + 0.75rem);
+  background-position: top calc(0.3889em + 0.1875rem) right calc(0.3889em + 0.1875rem);
 }
 
 .was-validated .form-select:valid, .form-select.is-valid {
@@ -3532,7 +3580,7 @@ textarea.form-control-lg {
   --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2370b865' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
   padding-right: 4.125rem;
   background-position: right 0.75rem center, center right 2.25rem;
-  background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-size: 16px 12px, calc(0.7778em + 0.375rem) calc(0.7778em + 0.375rem);
 }
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
   border-color: var(--bs-form-valid-border-color);
@@ -3540,7 +3588,7 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-control-color:valid, .form-control-color.is-valid {
-  width: calc(3rem + calc(1.5em + 0.75rem));
+  width: calc(3rem + calc(1.5556em + 0.75rem));
 }
 
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
@@ -3572,7 +3620,7 @@ textarea.form-control-lg {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.875em;
+  font-size: 1rem;
   color: var(--bs-form-invalid-color);
 }
 
@@ -3584,7 +3632,7 @@ textarea.form-control-lg {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: 0.1rem;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   color: #fff;
   background-color: var(--bs-danger);
   border-radius: var(--bs-border-radius);
@@ -3599,11 +3647,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: var(--bs-form-invalid-border-color);
-  padding-right: calc(1.5em + 0.75rem);
+  padding-right: calc(1.5556em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a95c42'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-position: right calc(0.3889em + 0.1875rem) center;
+  background-size: calc(0.7778em + 0.375rem) calc(0.7778em + 0.375rem);
 }
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
   border-color: var(--bs-form-invalid-border-color);
@@ -3611,8 +3659,8 @@ textarea.form-control-lg {
 }
 
 .was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
-  padding-right: calc(1.5em + 0.75rem);
-  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  padding-right: calc(1.5556em + 0.75rem);
+  background-position: top calc(0.3889em + 0.1875rem) right calc(0.3889em + 0.1875rem);
 }
 
 .was-validated .form-select:invalid, .form-select.is-invalid {
@@ -3622,7 +3670,7 @@ textarea.form-control-lg {
   --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a95c42'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a95c42' stroke='none'/%3e%3c/svg%3e");
   padding-right: 4.125rem;
   background-position: right 0.75rem center, center right 2.25rem;
-  background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-size: 16px 12px, calc(0.7778em + 0.375rem) calc(0.7778em + 0.375rem);
 }
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
   border-color: var(--bs-form-invalid-border-color);
@@ -3630,7 +3678,7 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-control-color:invalid, .form-control-color.is-invalid {
-  width: calc(3rem + calc(1.5em + 0.75rem));
+  width: calc(3rem + calc(1.5556em + 0.75rem));
 }
 
 .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
@@ -3659,17 +3707,17 @@ textarea.form-control-lg {
 }
 
 .btn {
-  --bs-btn-padding-x: 1.25rem;
-  --bs-btn-padding-y: 0.5rem;
-  --bs-btn-font-family: ;
-  --bs-btn-font-size: 1rem;
-  --bs-btn-font-weight: 500;
-  --bs-btn-line-height: 1.5;
+  --bs-btn-padding-x: 28px;
+  --bs-btn-padding-y: 10px;
+  --bs-btn-font-family: proxima-nova-condensed, proxima-nova, calibri, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-btn-font-size: 1.125rem;
+  --bs-btn-font-weight: 700;
+  --bs-btn-line-height: 22px;
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 2px;
   --bs-btn-border-color: transparent;
-  --bs-btn-border-radius: 3rem;
+  --bs-btn-border-radius: 256px;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   --bs-btn-disabled-opacity: 0.65;
@@ -3791,21 +3839,21 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #70b865;
 }
 
-.btn-info {
+.btn-info, .btn-sky {
   --bs-btn-color: #000;
-  --bs-btn-bg: #81d3eb;
-  --bs-btn-border-color: #81d3eb;
+  --bs-btn-bg: #81ceeb;
+  --bs-btn-border-color: #81ceeb;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #94daee;
-  --bs-btn-hover-border-color: #8ed7ed;
-  --bs-btn-focus-shadow-rgb: 110, 179, 200;
+  --bs-btn-hover-bg: #94d5ee;
+  --bs-btn-hover-border-color: #8ed3ed;
+  --bs-btn-focus-shadow-rgb: 110, 175, 200;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #9adcef;
-  --bs-btn-active-border-color: #8ed7ed;
+  --bs-btn-active-bg: #9ad8ef;
+  --bs-btn-active-border-color: #8ed3ed;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #81d3eb;
-  --bs-btn-disabled-border-color: #81d3eb;
+  --bs-btn-disabled-bg: #81ceeb;
+  --bs-btn-disabled-border-color: #81ceeb;
 }
 
 .btn-warning {
@@ -3927,20 +3975,20 @@ textarea.form-control-lg {
   --bs-gradient: none;
 }
 
-.btn-outline-info {
-  --bs-btn-color: #81d3eb;
-  --bs-btn-border-color: #81d3eb;
+.btn-outline-info, .btn-outline-sky {
+  --bs-btn-color: #81ceeb;
+  --bs-btn-border-color: #81ceeb;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #81d3eb;
-  --bs-btn-hover-border-color: #81d3eb;
-  --bs-btn-focus-shadow-rgb: 129, 211, 235;
+  --bs-btn-hover-bg: #81ceeb;
+  --bs-btn-hover-border-color: #81ceeb;
+  --bs-btn-focus-shadow-rgb: 129, 206, 235;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #81d3eb;
-  --bs-btn-active-border-color: #81d3eb;
+  --bs-btn-active-bg: #81ceeb;
+  --bs-btn-active-border-color: #81ceeb;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #81d3eb;
+  --bs-btn-disabled-color: #81ceeb;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #81d3eb;
+  --bs-btn-disabled-border-color: #81ceeb;
   --bs-gradient: none;
 }
 
@@ -4035,17 +4083,22 @@ textarea.form-control-lg {
 }
 
 .btn-lg, .btn-group-lg > .btn {
-  --bs-btn-padding-y: 0.5rem;
-  --bs-btn-padding-x: 1rem;
-  --bs-btn-font-size: 1.25rem;
-  --bs-btn-border-radius: 3rem;
+  --bs-btn-padding-y: 12px;
+  --bs-btn-padding-x: 34px;
+  --bs-btn-font-size: calc(1.2625rem + 0.15vw);
+  --bs-btn-border-radius: 256px;
+}
+@media (min-width: 1200px) {
+  .btn-lg, .btn-group-lg > .btn {
+    --bs-btn-font-size: 1.375rem;
+  }
 }
 
 .btn-sm, .btn-group-sm > .btn {
-  --bs-btn-padding-y: 0.25rem;
-  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-padding-y: 5px;
+  --bs-btn-padding-x: 11px;
   --bs-btn-font-size: 0.875rem;
-  --bs-btn-border-radius: 3rem;
+  --bs-btn-border-radius: 48px;
 }
 
 .fade {
@@ -4117,8 +4170,8 @@ textarea.form-control-lg {
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 0.5rem;
   --bs-dropdown-spacer: 0.125rem;
-  --bs-dropdown-font-size: 1rem;
-  --bs-dropdown-color: #e2e9eb;
+  --bs-dropdown-font-size: 1.125rem;
+  --bs-dropdown-color: #e5eff7;
   --bs-dropdown-bg: #0c234b;
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-border-radius: var(--bs-border-radius);
@@ -4376,7 +4429,7 @@ textarea.form-control-lg {
   display: block;
   padding: var(--bs-dropdown-header-padding-y) var(--bs-dropdown-header-padding-x);
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
   color: var(--bs-dropdown-header-color);
   white-space: nowrap;
 }
@@ -4443,7 +4496,7 @@ textarea.form-control-lg {
 }
 
 .btn-group {
-  border-radius: 3rem;
+  border-radius: 256px;
 }
 .btn-group > :not(.btn-check:first-child) + .btn,
 .btn-group > .btn-group:not(:first-child) {
@@ -4463,8 +4516,8 @@ textarea.form-control-lg {
 }
 
 .dropdown-toggle-split {
-  padding-right: 0.9375rem;
-  padding-left: 0.9375rem;
+  padding-right: 21px;
+  padding-left: 21px;
 }
 .dropdown-toggle-split::after, .dropup .dropdown-toggle-split::after, .dropend .dropdown-toggle-split::after {
   margin-left: 0;
@@ -4474,13 +4527,13 @@ textarea.form-control-lg {
 }
 
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
-  padding-right: 0.375rem;
-  padding-left: 0.375rem;
+  padding-right: 8.25px;
+  padding-left: 8.25px;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding-right: 25.5px;
+  padding-left: 25.5px;
 }
 
 .btn-group-vertical {
@@ -4516,7 +4569,7 @@ textarea.form-control-lg {
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: 700;
   --bs-nav-link-color: #1e5288;
-  --bs-nav-link-hover-color: #001c48;
+  --bs-nav-link-hover-color: #03132e;
   --bs-nav-link-disabled-color: #49595e;
   display: -ms-flexbox;
   display: flex;
@@ -4561,7 +4614,7 @@ textarea.form-control-lg {
   --bs-nav-tabs-border-color: #e9ecef;
   --bs-nav-tabs-border-radius: var(--bs-border-radius);
   --bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-secondary-bg) #e9ecef;
-  --bs-nav-tabs-link-active-color: #001c48;
+  --bs-nav-tabs-link-active-color: #03132e;
   --bs-nav-tabs-link-active-bg: #fff;
   --bs-nav-tabs-link-active-border-color: #e9ecef #e9ecef #fff;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
@@ -4590,7 +4643,7 @@ textarea.form-control-lg {
 
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
-  --bs-nav-pills-link-active-color: #001c48;
+  --bs-nav-pills-link-active-color: #03132e;
   --bs-nav-pills-link-active-bg: #e9ecef;
 }
 .nav-pills .nav-link {
@@ -4605,7 +4658,7 @@ textarea.form-control-lg {
 .nav-underline {
   --bs-nav-underline-gap: 1rem;
   --bs-nav-underline-border-width: 0.125rem;
-  --bs-nav-underline-link-active-color: #001c48;
+  --bs-nav-underline-link-active-color: #03132e;
   gap: var(--bs-nav-underline-gap);
 }
 .nav-underline .nav-link {
@@ -4655,21 +4708,21 @@ textarea.form-control-lg {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0;
   --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
-  --bs-navbar-hover-color: #001c48;
+  --bs-navbar-hover-color: #03132e;
   --bs-navbar-disabled-color: #49595e;
-  --bs-navbar-active-color: #001c48;
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-active-color: #03132e;
+  --bs-navbar-brand-padding-y: 0.28124375rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: #001c48;
-  --bs-navbar-brand-hover-color: #001c48;
+  --bs-navbar-brand-font-size: 1.40625rem;
+  --bs-navbar-brand-color: #03132e;
+  --bs-navbar-brand-hover-color: #03132e;
   --bs-navbar-nav-link-padding-x: 1rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.25rem;
+  --bs-navbar-toggler-font-size: 1.40625rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
-  --bs-navbar-toggler-border-radius: 3rem;
+  --bs-navbar-toggler-border-radius: 256px;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
   position: relative;
@@ -5366,7 +5419,7 @@ textarea.form-control-lg {
   align-items: center;
   width: 100%;
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--bs-accordion-btn-color);
   text-align: left;
   background-color: var(--bs-accordion-btn-bg);
@@ -5471,14 +5524,14 @@ textarea.form-control-lg {
 }
 
 .breadcrumb {
-  --bs-breadcrumb-padding-x: 1rem;
+  --bs-breadcrumb-padding-x: 0.609rem;
   --bs-breadcrumb-padding-y: 0.75rem;
   --bs-breadcrumb-margin-bottom: 1rem;
   --bs-breadcrumb-bg: #fff;
   --bs-breadcrumb-border-radius: ;
-  --bs-breadcrumb-divider-color: #6c757d;
+  --bs-breadcrumb-divider-color: #ef4056;
   --bs-breadcrumb-item-padding-x: 0.5rem;
-  --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
+  --bs-breadcrumb-item-active-color: #1e5288;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -5498,7 +5551,7 @@ textarea.form-control-lg {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: var(--bs-breadcrumb-divider-color);
-  content: var(--bs-breadcrumb-divider, "\e5cc") /* rtl: var(--bs-breadcrumb-divider, "\e5cc") */;
+  content: var(--bs-breadcrumb-divider, "/"/"") /* rtl: var(--bs-breadcrumb-divider, "/"/"") */;
 }
 .breadcrumb-item.active {
   color: var(--bs-breadcrumb-item-active-color);
@@ -5507,13 +5560,13 @@ textarea.form-control-lg {
 .pagination {
   --bs-pagination-padding-x: 0.75rem;
   --bs-pagination-padding-y: 0.375rem;
-  --bs-pagination-font-size: 1rem;
+  --bs-pagination-font-size: 1.125rem;
   --bs-pagination-color: #1e5288;
   --bs-pagination-bg: var(--bs-body-bg);
   --bs-pagination-border-width: var(--bs-border-width);
   --bs-pagination-border-color: var(--bs-border-color);
   --bs-pagination-border-radius: var(--bs-border-radius);
-  --bs-pagination-hover-color: #001c48;
+  --bs-pagination-hover-color: #03132e;
   --bs-pagination-hover-bg: var(--bs-tertiary-bg);
   --bs-pagination-hover-border-color: var(--bs-border-color);
   --bs-pagination-focus-color: #0c234b;
@@ -5588,14 +5641,19 @@ textarea.form-control-lg {
 .pagination-lg {
   --bs-pagination-padding-x: 1.5rem;
   --bs-pagination-padding-y: 0.75rem;
-  --bs-pagination-font-size: 1.25rem;
+  --bs-pagination-font-size: calc(1.265625rem + 0.1875vw);
   --bs-pagination-border-radius: var(--bs-border-radius-lg);
+}
+@media (min-width: 1200px) {
+  .pagination-lg {
+    --bs-pagination-font-size: 1.40625rem;
+  }
 }
 
 .pagination-sm {
   --bs-pagination-padding-x: 0.5rem;
   --bs-pagination-padding-y: 0.25rem;
-  --bs-pagination-font-size: 0.875rem;
+  --bs-pagination-font-size: 0.984375rem;
   --bs-pagination-border-radius: var(--bs-border-radius-sm);
 }
 
@@ -5735,7 +5793,7 @@ textarea.form-control-lg {
 .progress,
 .progress-stacked {
   --bs-progress-height: 1rem;
-  --bs-progress-font-size: 0.75rem;
+  --bs-progress-font-size: 0.84375rem;
   --bs-progress-bg: var(--bs-secondary-bg);
   --bs-progress-border-radius: var(--bs-border-radius);
   --bs-progress-box-shadow: var(--bs-box-shadow-inset);
@@ -6282,7 +6340,7 @@ textarea.form-control-lg {
   --bs-modal-header-padding: 1rem 1rem;
   --bs-modal-header-border-color: var(--bs-border-color);
   --bs-modal-header-border-width: var(--bs-border-width);
-  --bs-modal-title-line-height: 1.5;
+  --bs-modal-title-line-height: 1.5556;
   --bs-modal-footer-gap: 0.5rem;
   --bs-modal-footer-bg: ;
   --bs-modal-footer-border-color: var(--bs-border-color);
@@ -6583,7 +6641,7 @@ textarea.form-control-lg {
   --bs-tooltip-padding-x: 0.5rem;
   --bs-tooltip-padding-y: 0.25rem;
   --bs-tooltip-margin: ;
-  --bs-tooltip-font-size: 0.875rem;
+  --bs-tooltip-font-size: 0.984375rem;
   --bs-tooltip-color: var(--bs-body-bg);
   --bs-tooltip-bg: #0c234b;
   --bs-tooltip-border-radius: var(--bs-border-radius);
@@ -6596,7 +6654,7 @@ textarea.form-control-lg {
   font-family: var(--bs-font-sans-serif);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.5556;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -6682,7 +6740,7 @@ textarea.form-control-lg {
 .popover {
   --bs-popover-zindex: 1070;
   --bs-popover-max-width: 276px;
-  --bs-popover-font-size: 1rem;
+  --bs-popover-font-size: 1.125rem;
   --bs-popover-bg: var(--bs-body-bg);
   --bs-popover-border-width: var(--bs-border-width);
   --bs-popover-border-color: var(--bs-border-color-translucent);
@@ -6691,7 +6749,7 @@ textarea.form-control-lg {
   --bs-popover-box-shadow: var(--bs-box-shadow);
   --bs-popover-header-padding-x: 1rem;
   --bs-popover-header-padding-y: 0.5rem;
-  --bs-popover-header-font-size: 1rem;
+  --bs-popover-header-font-size: 1.125rem;
   --bs-popover-header-color: inherit;
   --bs-popover-header-bg: var(--bs-secondary-bg);
   --bs-popover-body-padding-x: 1rem;
@@ -6706,7 +6764,7 @@ textarea.form-control-lg {
   font-family: var(--bs-font-sans-serif);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.5556;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -7146,7 +7204,7 @@ textarea.form-control-lg {
   --bs-offcanvas-border-color: var(--bs-border-color-translucent);
   --bs-offcanvas-box-shadow: var(--bs-box-shadow-sm);
   --bs-offcanvas-transition: transform 0.3s ease-in-out;
-  --bs-offcanvas-title-line-height: 1.5;
+  --bs-offcanvas-title-line-height: 1.5556;
 }
 
 @media (max-width: 575.98px) {
@@ -7839,9 +7897,9 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-info-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-info:hover, .link-info:focus {
-  color: RGBA(154, 220, 239, var(--bs-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(154, 220, 239, var(--bs-link-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(154, 220, 239, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(154, 216, 239, var(--bs-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(154, 216, 239, var(--bs-link-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(154, 216, 239, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-warning {
@@ -8145,12 +8203,12 @@ textarea.form-control-lg {
   --bs-bloom-rgb: 239, 64, 86;
   --bs-chili-rgb: 139, 0, 21;
   --bs-blue-rgb: 12, 35, 75;
-  --bs-sky-rgb: 129, 211, 235;
-  --bs-oasis-rgb: 55, 141, 189;
+  --bs-sky-rgb: 129, 206, 235;
+  --bs-oasis-rgb: 16, 106, 177;
   --bs-azurite-rgb: 30, 82, 136;
-  --bs-midnight-rgb: 0, 28, 72;
-  --bs-cool-gray-rgb: 226, 233, 235;
-  --bs-warm-gray-rgb: 244, 237, 229;
+  --bs-midnight-rgb: 3, 19, 46;
+  --bs-cool-gray-rgb: 229, 239, 247;
+  --bs-warm-gray-rgb: 242, 239, 234;
   --bs-leaf-rgb: 112, 184, 101;
   --bs-river-rgb: 0, 125, 132;
   --bs-silver-rgb: 158, 171, 174;
@@ -10559,27 +10617,27 @@ textarea.form-control-lg {
 }
 
 .fs-1 {
-  font-size: calc(1.375rem + 1.5vw) !important;
+  font-size: calc(1.40625rem + 1.875vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.325rem + 0.9vw) !important;
+  font-size: calc(1.35rem + 1.2vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.3rem + 0.6vw) !important;
+  font-size: calc(1.321875rem + 0.8625vw) !important;
 }
 
 .fs-4 {
-  font-size: calc(1.275rem + 0.3vw) !important;
+  font-size: calc(1.29375rem + 0.525vw) !important;
 }
 
 .fs-5 {
-  font-size: 1.25rem !important;
+  font-size: calc(1.265625rem + 0.1875vw) !important;
 }
 
 .fs-6 {
-  font-size: 1rem !important;
+  font-size: 1.125rem !important;
 }
 
 .fst-italic {
@@ -10627,7 +10685,7 @@ textarea.form-control-lg {
 }
 
 .lh-base {
-  line-height: 1.5 !important;
+  line-height: 1.5556 !important;
 }
 
 .lh-lg {
@@ -18838,16 +18896,19 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2.5rem !important;
+    font-size: 2.8125rem !important;
   }
   .fs-2 {
-    font-size: 2rem !important;
+    font-size: 2.25rem !important;
   }
   .fs-3 {
-    font-size: 1.75rem !important;
+    font-size: 1.96875rem !important;
   }
   .fs-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.6875rem !important;
+  }
+  .fs-5 {
+    font-size: 1.40625rem !important;
   }
 }
 @media print {
@@ -18974,7 +19035,7 @@ textarea.form-control-lg {
   border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 0;
-  border-color: #81d3eb;
+  border-color: #81ceeb;
 }
 .card-clickable .card-body {
   padding: 2.5rem;
@@ -18994,7 +19055,7 @@ textarea.form-control-lg {
 
 .card-landing-grid {
   border-width: 2px 0 0 2px;
-  box-shadow: 3px 3px 0 0 rgba(129, 211, 235, 0.5);
+  box-shadow: 3px 3px 0 0 rgba(129, 206, 235, 0.5);
 }
 .card-landing-grid.landing-red {
   box-shadow: 3px 3px 0 0 rgba(171, 5, 32, 0.5);
@@ -19009,16 +19070,16 @@ textarea.form-control-lg {
   box-shadow: 3px 3px 0 0 rgba(12, 35, 75, 0.5);
 }
 .card-landing-grid.landing-sky {
-  box-shadow: 3px 3px 0 0 rgba(129, 211, 235, 0.5);
+  box-shadow: 3px 3px 0 0 rgba(129, 206, 235, 0.5);
 }
 .card-landing-grid.landing-oasis {
-  box-shadow: 3px 3px 0 0 rgba(55, 141, 189, 0.5);
+  box-shadow: 3px 3px 0 0 rgba(16, 106, 177, 0.5);
 }
 .card-landing-grid.landing-azurite {
   box-shadow: 3px 3px 0 0 rgba(30, 82, 136, 0.5);
 }
 .card-landing-grid.landing-midnight {
-  box-shadow: 3px 3px 0 0 rgba(0, 28, 72, 0.5);
+  box-shadow: 3px 3px 0 0 rgba(3, 19, 46, 0.5);
 }
 .card-landing-grid.landing-leaf {
   box-shadow: 3px 3px 0 0 rgba(112, 184, 101, 0.5);
@@ -19103,6 +19164,23 @@ img:not(.card-img, .card-img-top, .card-img-bottom) {
   hyphens: auto;
 }
 
+:root {
+  --az-heading-font-family: var(--bs-body-font-family);
+}
+
+.az-headings-serif {
+  --az-heading-font-family: garamond-premier-pro, Georgia, Times New Roman, serif;
+}
+
+.az-headings-mixed h1,
+.az-headings-mixed h2,
+.az-headings-mixed h3,
+.az-headings-mixed .h1,
+.az-headings-mixed .h2,
+.az-headings-mixed .h3 {
+  --az-heading-font-family: garamond-premier-pro, Georgia, Times New Roman, serif;
+}
+
 .az-list-triangles, .ul-triangles {
   overflow: hidden;
 }
@@ -19124,12 +19202,62 @@ img:not(.card-img, .card-img-top, .card-img-bottom) {
   border-left: 4px solid #0c234b;
 }
 
+.az-list-focus-points,
+.az-list-checkmarks {
+  overflow: hidden;
+}
+.az-list-focus-points li,
+.az-list-checkmarks li {
+  position: relative;
+  padding-left: 2.25rem;
+  list-style: none;
+}
+.az-list-focus-points li::before,
+.az-list-checkmarks li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.5556em;
+  content: "";
+  background-image: var(--az-list-marker);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.25rem 1.25rem;
+}
+.az-list-focus-points > li:not(:last-child),
+.az-list-checkmarks > li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.az-list-focus-points ul,
+.az-list-checkmarks ul {
+  padding-left: 0;
+  margin-top: 0.875rem;
+}
+.az-list-focus-points ul > li:not(:last-child),
+.az-list-checkmarks ul > li:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+
+.az-list-focus-points {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 21 21'%3e%3cpath fill='%23ef4056' d='M10.548,0A10.548,10.548,0,1,0,21.1,10.548,10.548,10.548,0,0,0,10.548,0m.236,20.485-.209.444-.208-.444A20.243,20.243,0,0,0,.542,10.724l-.45-.208.45-.21A20.238,20.238,0,0,0,10.334.486l.209-.45.209.45A20.235,20.235,0,0,0,20.6,10.311l.452.209-.452.209a20.241,20.241,0,0,0-9.814,9.755'/%3e%3cpath fill='%2381ceeb' d='M20.964,17.74l.469-.217-.469-.217a6.666,6.666,0,0,1-3.245-3.238L17.5,13.6l-.216.468A6.668,6.668,0,0,1,14.058,17.3l-.467.218.468.216A6.676,6.676,0,0,1,17.3,20.955l.216.461.217-.461a6.67,6.67,0,0,1,3.234-3.215' transform='translate%28-6.984 -6.989%29'/%3e%3c/svg%3e");
+}
+
+.az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%23106ab1' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
+
 /*
 * > BLOCKQUOTE
 */
 figure:has(blockquote) {
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
   margin-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  figure:has(blockquote) {
+    font-size: 1.40625rem;
+  }
 }
 
 figure:has(blockquote) > :first-child {
@@ -19150,6 +19278,21 @@ figure:has(blockquote) > :last-child {
 }
 
 /*
+* > LEAD
+*/
+.lead {
+  line-height: 1.5;
+}
+
+/*
+* > SMALL
+*/
+small,
+.small {
+  line-height: 1.5;
+}
+
+/*
 * > HEADINGS
 */
 h1,
@@ -19165,9 +19308,71 @@ h6,
 .h5,
 .h6 {
   margin: 1.042em 0 0.667em;
+  font-family: var(--az-heading-font-family);
   color: #0c234b;
+  letter-spacing: 0;
 }
 
+h1,
+.h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.5rem;
+  margin-top: 0.667em;
+}
+
+h2,
+.h2 {
+  font-size: 2.375rem;
+  font-weight: 600;
+  line-height: 2.875rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.375rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+}
+
+@media (min-width: 992px) {
+  h1,
+  .h1 {
+    font-size: 4rem;
+    line-height: 4.625rem;
+  }
+  h2,
+  .h2 {
+    font-size: 3.25rem;
+    line-height: 3.875rem;
+  }
+  h3,
+  .h3 {
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+  }
+}
 /*
 * > LINKS
 */
@@ -19179,6 +19384,23 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .accordion-header {
   margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  letter-spacing: normal;
+}
+
+.az-accordion-anchor {
+  text-decoration: none;
+}
+.az-accordion-anchor > span:last-child {
+  text-decoration: underline;
+}
+
+.az-accordion-anchor:hover {
+  cursor: pointer;
 }
 
 .arizona-header > .container > .row {
@@ -19199,10 +19421,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 @media screen and (max-width: 992px) {
   body:has(.az-fixed-header-on-mobile) {
+    --az-scroll-margin-top: 58px;
     padding-top: 50px;
-  }
-  body:has(.az-fixed-header-on-mobile) :target {
-    scroll-margin-top: 58px;
   }
   .arizona-header {
     height: 50px;
@@ -19287,11 +19507,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .bg-transparent-sky {
-  background-color: rgba(129, 211, 235, 0.8);
+  background-color: rgba(129, 206, 235, 0.8);
 }
 
 .bg-transparent-oasis {
-  background-color: rgba(55, 141, 189, 0.8);
+  background-color: rgba(16, 106, 177, 0.8);
 }
 
 .bg-transparent-azurite {
@@ -19299,15 +19519,15 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .bg-transparent-midnight {
-  background-color: rgba(0, 28, 72, 0.8);
+  background-color: rgba(3, 19, 46, 0.8);
 }
 
 .bg-transparent-cool-gray {
-  background-color: rgba(226, 233, 235, 0.8);
+  background-color: rgba(229, 239, 247, 0.8);
 }
 
 .bg-transparent-warm-gray {
-  background-color: rgba(244, 237, 229, 0.8);
+  background-color: rgba(242, 239, 234, 0.8);
 }
 
 .bg-transparent-white {
@@ -19335,11 +19555,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .bg-gradient-sky {
-  background-image: linear-gradient(180deg, transparent, #81d3eb);
+  background-image: linear-gradient(180deg, transparent, #81ceeb);
 }
 
 .bg-gradient-oasis {
-  background-image: linear-gradient(180deg, transparent, #378dbd);
+  background-image: linear-gradient(180deg, transparent, #106ab1);
 }
 
 .bg-gradient-azurite {
@@ -19347,15 +19567,15 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .bg-gradient-midnight {
-  background-image: linear-gradient(180deg, transparent, #001c48);
+  background-image: linear-gradient(180deg, transparent, #03132e);
 }
 
 .bg-gradient-cool-gray {
-  background-image: linear-gradient(180deg, transparent, #e2e9eb);
+  background-image: linear-gradient(180deg, transparent, #e5eff7);
 }
 
 .bg-gradient-warm-gray {
-  background-image: linear-gradient(180deg, transparent, #f4ede5);
+  background-image: linear-gradient(180deg, transparent, #f2efea);
 }
 
 .bg-gradient-white {
@@ -19367,7 +19587,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .badge.text-bg-light {
-  color: #001c48;
+  color: #03132e;
 }
 
 /* stylelint-disable declaration-no-important */
@@ -19392,16 +19612,29 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 /* stylelint-enable declaration-no-important */
 .breadcrumb a {
-  padding: 1px 0;
-  font-weight: 500;
+  padding: 1px 0 0;
   color: #1e5288;
+  text-decoration: none;
 }
 .breadcrumb a:hover {
-  color: #001c48;
+  color: #1e5288;
+}
+
+.breadcrumb-item {
+  line-height: 1;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: "Material Symbols Rounded", monospace;
+  font-family: monospace;
+}
+
+.breadcrumb-item a:hover {
+  margin-bottom: -1px;
+  border-bottom: 1px solid #1e5288;
+}
+
+.breadcrumb-item.active {
+  font-weight: 500;
 }
 
 @media (min-width: 992px) {
@@ -19411,43 +19644,83 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .breadcrumb-item-home::before {
   float: left;
-  padding-right: 0.5rem;
-  font-family: "Material Symbols Rounded", monospace;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-  color: #6c757d;
-  content: "\e88a";
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: -0.22rem;
+  margin-right: 0.15rem;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3e%3cpath fill='%231e5288' d='M240-200h133.85v-201.54q0-15.36 10.39-25.76 10.4-10.39 25.76-10.39h140q15.36 0 25.76 10.39 10.39 10.4 10.39 25.76V-200H720v-353.85q0-3.07-1.35-5.57-1.34-2.5-3.65-4.43L487.31-735q-3.08-2.69-7.31-2.69-4.23 0-7.31 2.69L245-563.85q-2.31 1.93-3.65 4.43-1.35 2.5-1.35 5.57V-200Zm-60 0v-353.85q0-17.17 7.68-32.53 7.69-15.37 21.24-25.31l227.7-171.54q18.95-14.46 43.32-14.46t43.44 14.46l227.7 171.54q13.55 9.94 21.24 25.31 7.68 15.36 7.68 32.53V-200q0 24.54-17.73 42.27Q744.54-140 720-140H562.31q-15.37 0-25.76-10.4-10.4-10.39-10.4-25.76v-201.53h-92.3v201.53q0 15.37-10.4 25.76-10.39 10.4-25.76 10.4H240q-24.54 0-42.27-17.73Q180-175.46 180-200Zm300-269.23Z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.btn-primary, .btn-red {
-  color: #fff;
+.breadcrumb-item-home {
+  padding: 0 0 2.5px;
+}
+
+.breadcrumb-item-home:not(.active):hover {
+  background-image: linear-gradient(#1e5288, #1e5288);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: calc(100% - 3.5px) 1px;
+}
+
+.breadcrumb-item-home a:hover {
+  border-bottom: 0;
+}
+
+.btn {
+  --az-btn-focus-outline-color: var(--bs-bloom);
+  letter-spacing: 0.14px;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--az-btn-focus-outline-color);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  line-height: 0.9375rem;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  line-height: 1.6875rem;
+  letter-spacing: 0.18px;
 }
 
 .btn-secondary, .btn-blue {
-  color: #fff;
+  --az-btn-focus-outline-color: #0c234b;
 }
 
 .btn-success {
-  color: #001c48;
+  --bs-btn-color: #03132e;
+  --bs-btn-hover-color: #03132e;
+  --az-btn-focus-outline-color: #70b865;
 }
 
-.btn-info {
-  color: #001c48;
+.btn-info, .btn-sky {
+  --bs-btn-color: #0c234b;
+  --bs-btn-hover-color: #03132e;
+  --az-btn-focus-outline-color: #81ceeb;
 }
 
 .btn-warning {
-  color: #000;
+  --bs-btn-color: #000;
+  --bs-btn-hover-color: #000;
+  --az-btn-focus-outline-color: #f19e1f;
 }
 
 .btn-danger {
-  color: #fff;
+  --az-btn-focus-outline-color: #a95c42;
 }
 
 .btn-light {
-  color: #001c48;
+  --bs-btn-color: #03132e;
+  --az-btn-focus-outline-color: #dee2e6;
 }
 
 .btn-dark {
-  color: #fff;
+  --az-btn-focus-outline-color: #343a40;
 }
 
 .btn-primary, .btn-red {
@@ -19482,6 +19755,40 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0c234b;
   --bs-btn-disabled-border-color: #0c234b;
+  --az-btn-focus-outline-color: #0c234b;
+}
+
+.btn-outline-secondary, .btn-outline-blue {
+  --az-btn-focus-outline-color: #0c234b;
+}
+
+.btn-outline-success {
+  --az-btn-focus-outline-color: #70b865;
+}
+
+.btn-outline-info, .btn-outline-sky {
+  --bs-btn-color: #1e5288;
+  --bs-btn-hover-color: #03132e;
+  --az-btn-focus-outline-color: #81ceeb;
+}
+
+.btn-outline-warning {
+  --bs-btn-color: #403635;
+  --bs-btn-hover-color: #000;
+  --az-btn-focus-outline-color: #f19e1f;
+}
+
+.btn-outline-danger {
+  --az-btn-focus-outline-color: #a95c42;
+}
+
+.btn-outline-light {
+  --bs-btn-color: #403635;
+  --az-btn-focus-outline-color: #dee2e6;
+}
+
+.btn-outline-dark {
+  --az-btn-focus-outline-color: #343a40;
 }
 
 .btn-outline-primary, .btn-outline-red {
@@ -19516,6 +19823,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #0c234b;
   --bs-gradient: none;
+  --az-btn-focus-outline-color: #0c234b;
 }
 
 .btn-link {
@@ -19525,29 +19833,50 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   color: #8b0015;
 }
 
-.btn-success:hover,
-.btn-info:hover,
-.btn-outline-info:hover {
-  color: #001c48;
+.btn-sky {
+  --bs-btn-hover-bg: #65c0db;
+  --bs-btn-hover-border-color: #65c0db;
 }
 
-.btn-warning:hover {
-  color: #000;
+.btn-white-text-blue {
+  --bs-btn-color: #0c234b;
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: #0c234b;
+  --bs-btn-hover-bg: #e5eff7;
+  --bs-btn-hover-border-color: #e5eff7;
+  --bs-btn-focus-shadow-rgb: 219, 222, 228;
+  --bs-btn-active-color: #0c234b;
+  --bs-btn-active-bg: #e5eff7;
+  --bs-btn-active-border-color: #e5eff7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #fff;
+  --bs-btn-disabled-border-color: #fff;
+  --az-btn-focus-outline-color: #fff;
 }
 
-.btn-outline-info {
-  color: #1e5288;
+.btn-white-text-red {
+  --bs-btn-color: #ab0520;
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: #ab0520;
+  --bs-btn-hover-bg: #e5eff7;
+  --bs-btn-hover-border-color: #e5eff7;
+  --bs-btn-focus-shadow-rgb: 242, 218, 222;
+  --bs-btn-active-color: #ab0520;
+  --bs-btn-active-bg: #e5eff7;
+  --bs-btn-active-border-color: #e5eff7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #fff;
+  --bs-btn-disabled-border-color: #fff;
+  --az-btn-focus-outline-color: #fff;
 }
 
-.btn-outline-warning {
-  color: #403635;
-}
-.btn-outline-warning:hover {
-  color: #000;
-}
-
-.btn-outline-light {
-  color: #403635;
+.btn-outline-sky {
+  --bs-btn-color: #81ceeb;
+  --az-btn-focus-outline-color: #fff;
 }
 
 .btn-outline-white {
@@ -19565,6 +19894,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #fff;
   --bs-gradient: none;
+  --az-btn-focus-outline-color: #fff;
 }
 
 .btn-arrow::after {
@@ -19653,12 +19983,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-red .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -19666,6 +19990,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-red .ul-triangles li::before,
 .text-bg-red .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-red .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-bloom {
@@ -19692,9 +20019,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-bloom .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-bloom .ul-triangles li::before,
 .text-bg-bloom .az-list-triangles li::before {
@@ -19726,12 +20050,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-chili .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -19739,6 +20057,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-chili .ul-triangles li::before,
 .text-bg-chili .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-chili .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-blue {
@@ -19766,12 +20087,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-blue .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -19779,6 +20094,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-blue .ul-triangles li::before,
 .text-bg-blue .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-blue .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-sky {
@@ -19806,16 +20124,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-sky .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .text-bg-sky .ul-triangles li::before,
 .text-bg-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
 .text-bg-oasis {
-  color: #000 !important;
+  color: #fff !important;
   background-color: RGBA(var(--bs-oasis-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 .text-bg-oasis h1,
@@ -19839,12 +20154,16 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-oasis .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+.text-bg-oasis .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-oasis .ul-triangles li::before,
 .text-bg-oasis .az-list-triangles li::before {
-  border-left-color: #000;
+  border-left-color: #fff;
+}
+.text-bg-oasis .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-azurite {
@@ -19872,12 +20191,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-azurite .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -19885,6 +20198,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-azurite .ul-triangles li::before,
 .text-bg-azurite .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-azurite .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-midnight {
@@ -19912,12 +20228,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-midnight .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -19925,6 +20235,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-midnight .ul-triangles li::before,
 .text-bg-midnight .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-midnight .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-cool-gray {
@@ -19998,9 +20311,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-leaf button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-leaf .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .text-bg-leaf .ul-triangles li::before,
 .text-bg-leaf .az-list-triangles li::before {
   border-left-color: #000;
@@ -20031,12 +20341,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-river button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-river .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-river .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-river .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20044,6 +20348,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-river .ul-triangles li::before,
 .text-bg-river .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-river .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-silver {
@@ -20070,9 +20377,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-silver a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-silver button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-silver .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-silver .ul-triangles li::before,
 .text-bg-silver .az-list-triangles li::before {
@@ -20104,12 +20408,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-mesa button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-mesa .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-mesa .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20117,6 +20415,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-mesa .ul-triangles li::before,
 .text-bg-mesa .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-mesa .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-ash {
@@ -20144,12 +20445,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-ash button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-ash .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-ash .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20157,6 +20452,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-ash .ul-triangles li::before,
 .text-bg-ash .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-ash .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-sage {
@@ -20184,12 +20482,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-sage button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-sage .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-sage .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20197,6 +20489,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-sage .ul-triangles li::before,
 .text-bg-sage .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-sage .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-white {
@@ -20247,12 +20542,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-black .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20260,6 +20549,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-black .ul-triangles li::before,
 .text-bg-black .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-black .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-primary h1,
@@ -20283,12 +20575,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-primary button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-primary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-primary .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20296,6 +20582,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-primary .ul-triangles li::before,
 .text-bg-primary .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-primary .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-secondary h1,
@@ -20319,12 +20608,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-secondary button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-secondary .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-secondary .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20332,6 +20615,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-secondary .ul-triangles li::before,
 .text-bg-secondary .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-secondary .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-success h1,
@@ -20354,9 +20640,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-success a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-success button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-success .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-success .ul-triangles li::before,
 .text-bg-success .az-list-triangles li::before {
@@ -20384,9 +20667,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-info button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-info .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .text-bg-info .ul-triangles li::before,
 .text-bg-info .az-list-triangles li::before {
   border-left-color: #000;
@@ -20412,9 +20692,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-warning a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-warning button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-warning .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-warning .ul-triangles li::before,
 .text-bg-warning .az-list-triangles li::before {
@@ -20442,12 +20719,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-danger button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-danger .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-danger .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20455,6 +20726,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-danger .ul-triangles li::before,
 .text-bg-danger .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-danger .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-light h1,
@@ -20477,9 +20751,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-light a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-light button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-light .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-light .ul-triangles li::before,
 .text-bg-light .az-list-triangles li::before {
@@ -20507,12 +20778,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-dark button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-dark .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-dark .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20520,6 +20785,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-dark .ul-triangles li::before,
 .text-bg-dark .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-dark .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gray-100 {
@@ -20662,12 +20930,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-600 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gray-600 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gray-600 .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20675,6 +20937,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-600 .ul-triangles li::before,
 .text-bg-gray-600 .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gray-600 .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gray-700 {
@@ -20702,12 +20967,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-700 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gray-700 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gray-700 .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20715,6 +20974,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-700 .ul-triangles li::before,
 .text-bg-gray-700 .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gray-700 .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gray-800 {
@@ -20742,12 +21004,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-800 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gray-800 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gray-800 .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20755,6 +21011,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-800 .ul-triangles li::before,
 .text-bg-gray-800 .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gray-800 .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gray-900 {
@@ -20782,12 +21041,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-900 button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gray-900 .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gray-900 .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20795,6 +21048,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gray-900 .ul-triangles li::before,
 .text-bg-gray-900 .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gray-900 .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-transparent-red {
@@ -20822,12 +21078,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-red .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20835,6 +21085,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-red .ul-triangles li::before,
 .text-bg-transparent-red .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-transparent-red .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-transparent-bloom {
@@ -20861,9 +21114,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-transparent-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-transparent-bloom .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-transparent-bloom .ul-triangles li::before,
 .text-bg-transparent-bloom .az-list-triangles li::before {
@@ -20895,12 +21145,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-chili .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20908,6 +21152,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-chili .ul-triangles li::before,
 .text-bg-transparent-chili .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-transparent-chili .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-transparent-blue {
@@ -20935,12 +21182,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-blue .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -20949,10 +21190,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-blue .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-transparent-blue .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-transparent-sky {
   color: #000 !important;
-  background-color: rgba(129, 211, 235, 0.8);
+  background-color: rgba(129, 206, 235, 0.8);
 }
 .text-bg-transparent-sky h1,
 .text-bg-transparent-sky h2,
@@ -20975,17 +21219,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-sky .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .text-bg-transparent-sky .ul-triangles li::before,
 .text-bg-transparent-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
 .text-bg-transparent-oasis {
-  color: #000 !important;
-  background-color: rgba(55, 141, 189, 0.8);
+  color: #fff !important;
+  background-color: rgba(16, 106, 177, 0.8);
 }
 .text-bg-transparent-oasis h1,
 .text-bg-transparent-oasis h2,
@@ -21008,12 +21249,16 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-oasis .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+.text-bg-transparent-oasis .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-transparent-oasis .ul-triangles li::before,
 .text-bg-transparent-oasis .az-list-triangles li::before {
-  border-left-color: #000;
+  border-left-color: #fff;
+}
+.text-bg-transparent-oasis .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-transparent-azurite {
@@ -21041,12 +21286,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-azurite .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21055,10 +21294,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-azurite .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-transparent-azurite .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-transparent-midnight {
   color: #fff !important;
-  background-color: rgba(0, 28, 72, 0.8);
+  background-color: rgba(3, 19, 46, 0.8);
 }
 .text-bg-transparent-midnight h1,
 .text-bg-transparent-midnight h2,
@@ -21081,12 +21323,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-midnight .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21095,10 +21331,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-midnight .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-transparent-midnight .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-transparent-cool-gray {
   color: #000 !important;
-  background-color: rgba(226, 233, 235, 0.8);
+  background-color: rgba(229, 239, 247, 0.8);
 }
 .text-bg-transparent-cool-gray h1,
 .text-bg-transparent-cool-gray h2,
@@ -21121,7 +21360,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-transparent-warm-gray {
   color: #000 !important;
-  background-color: rgba(244, 237, 229, 0.8);
+  background-color: rgba(242, 239, 234, 0.8);
 }
 .text-bg-transparent-warm-gray h1,
 .text-bg-transparent-warm-gray h2,
@@ -21190,12 +21429,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-transparent-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-transparent-black .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21203,6 +21436,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-transparent-black .ul-triangles li::before,
 .text-bg-transparent-black .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-transparent-black .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gradient-red {
@@ -21230,12 +21466,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-red button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-red .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-red .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21243,6 +21473,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-red .ul-triangles li::before,
 .text-bg-gradient-red .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gradient-red .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gradient-bloom {
@@ -21269,9 +21502,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-bloom a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
 .text-bg-gradient-bloom button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
-}
-.text-bg-gradient-bloom .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 .text-bg-gradient-bloom .ul-triangles li::before,
 .text-bg-gradient-bloom .az-list-triangles li::before {
@@ -21303,12 +21533,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-chili button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-chili .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-chili .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21316,6 +21540,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-chili .ul-triangles li::before,
 .text-bg-gradient-chili .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gradient-chili .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gradient-blue {
@@ -21343,12 +21570,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-blue button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-blue .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-blue .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21357,10 +21578,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-blue .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-gradient-blue .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-gradient-sky {
   color: #000 !important;
-  background-image: linear-gradient(180deg, transparent, #81d3eb);
+  background-image: linear-gradient(180deg, transparent, #81ceeb);
 }
 .text-bg-gradient-sky h1,
 .text-bg-gradient-sky h2,
@@ -21383,17 +21607,14 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-sky button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-sky .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .text-bg-gradient-sky .ul-triangles li::before,
 .text-bg-gradient-sky .az-list-triangles li::before {
   border-left-color: #000;
 }
 
 .text-bg-gradient-oasis {
-  color: #000 !important;
-  background-image: linear-gradient(180deg, transparent, #378dbd);
+  color: #fff !important;
+  background-image: linear-gradient(180deg, transparent, #106ab1);
 }
 .text-bg-gradient-oasis h1,
 .text-bg-gradient-oasis h2,
@@ -21416,12 +21637,16 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-oasis button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-oasis .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+.text-bg-gradient-oasis .az-gallery-grid-btn:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
 }
 .text-bg-gradient-oasis .ul-triangles li::before,
 .text-bg-gradient-oasis .az-list-triangles li::before {
-  border-left-color: #000;
+  border-left-color: #fff;
+}
+.text-bg-gradient-oasis .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-gradient-azurite {
@@ -21449,12 +21674,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-azurite button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-azurite .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-azurite .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21463,10 +21682,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-azurite .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-gradient-azurite .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-gradient-midnight {
   color: #fff !important;
-  background-image: linear-gradient(180deg, transparent, #001c48);
+  background-image: linear-gradient(180deg, transparent, #03132e);
 }
 .text-bg-gradient-midnight h1,
 .text-bg-gradient-midnight h2,
@@ -21489,12 +21711,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-midnight button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-midnight .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-midnight .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21503,10 +21719,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-midnight .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.text-bg-gradient-midnight .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .text-bg-gradient-cool-gray {
   color: #000 !important;
-  background-image: linear-gradient(180deg, transparent, #e2e9eb);
+  background-image: linear-gradient(180deg, transparent, #e5eff7);
 }
 .text-bg-gradient-cool-gray h1,
 .text-bg-gradient-cool-gray h2,
@@ -21529,7 +21748,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 
 .text-bg-gradient-warm-gray {
   color: #000 !important;
-  background-image: linear-gradient(180deg, transparent, #f4ede5);
+  background-image: linear-gradient(180deg, transparent, #f2efea);
 }
 .text-bg-gradient-warm-gray h1,
 .text-bg-gradient-warm-gray h2,
@@ -21598,12 +21817,6 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-black button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
-.text-bg-gradient-black .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.75);
-}
 .text-bg-gradient-black .az-gallery-grid-btn:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75), inset 0 0 0 2px rgba(255, 255, 255, 0.75);
@@ -21611,6 +21824,9 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .text-bg-gradient-black .ul-triangles li::before,
 .text-bg-gradient-black .az-list-triangles li::before {
   border-left-color: #fff;
+}
+.text-bg-gradient-black .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
 }
 
 .text-bg-dark .btn-close {
@@ -21711,16 +21927,16 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .list-group-item.active button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
   box-shadow: 0 0 0 2px;
 }
-.list-group-item.active .btn:not(.btn-arizona-header):focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
-}
 .list-group-item.active .ul-triangles li::before,
 .list-group-item.active .az-list-triangles li::before {
   border-left-color: #fff;
 }
+.list-group-item.active .az-list-checkmarks {
+  --az-list-marker: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21.002' viewBox='0 0 21 21.002'%3e%3cg transform='translate%28-1.141 -1.141%29'%3e%3cpath fill='%2381ceeb' d='M-17546.359,22926.143a10.432,10.432,0,0,1-7.424-3.076,10.44,10.44,0,0,1-3.076-7.426,10.513,10.513,0,0,1,10.5-10.5,10.449,10.449,0,0,1,8.281,4.043l-9.455,9.7-3.676-3.223a1.5,1.5,0,0,0-.988-.371,1.505,1.505,0,0,0-1.135.516,1.492,1.492,0,0,0-.365,1.09,1.484,1.484,0,0,0,.508,1.021l4.748,4.16a1.222,1.222,0,0,0,.225.16l.006.006.068.035,0,0a.019.019,0,0,1,.01.008l.016.008.008,0a.01.01,0,0,1,.008.006s.006,0,.01,0l.008,0a.143.143,0,0,1,.053.021.044.044,0,0,1,.023.012l.057.018a.022.022,0,0,0,.018.006l.029.012a.05.05,0,0,1,.014,0l.025.01.012,0a.144.144,0,0,0,.027.008.17.17,0,0,1,.037.01h.01c.023.006.047.012.07.016a.007.007,0,0,1,.006,0h.006a.108.108,0,0,0,.033.006l.035.006.018,0a.233.233,0,0,0,.063.006h.023a.268.268,0,0,1,.059,0h.016a.029.029,0,0,1,.018,0h.1a.028.028,0,0,1,.012,0l.012,0a.323.323,0,0,0,.074-.01h.006l.006,0a.184.184,0,0,0,.059-.01.145.145,0,0,0,.033-.006.025.025,0,0,1,.012,0,.017.017,0,0,1,.012,0,.062.062,0,0,0,.035-.01l.006,0c.008,0,.014,0,.018-.006a.184.184,0,0,0,.045-.012.022.022,0,0,0,.012-.006,1.5,1.5,0,0,0,.662-.432.157.157,0,0,1,.039-.041l9.742-10a10.436,10.436,0,0,1,.684,3.736,10.433,10.433,0,0,1-3.076,7.426A10.432,10.432,0,0,1-17546.359,22926.143Z' transform='translate%2817558 -22904%29'/%3e%3c/g%3e%3c/svg%3e");
+}
 
 .nav-link.active, .nav-link:active, .nav-link.is-active {
-  color: #001c48;
+  color: #03132e;
   background-color: #e9ecef;
   border-radius: var(--bs-border-radius);
 }
@@ -21842,7 +22058,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   font-weight: 600;
 }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.is-active, .navbar-nav .nav-link:active, .navbar-nav .nav-link.show {
-  color: #001c48;
+  color: #03132e;
 }
 .navbar-nav .dropdown-toggle {
   display: -ms-flexbox;
@@ -21881,7 +22097,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-navbar-font-hover-color: #0c234b;
   --az-navbar-font-active-color: #0c234b;
   --az-navbar-font-disabled-color: #49595e;
-  --az-navbar-border-color: #e2e9eb;
+  --az-navbar-border-color: #e5eff7;
   --az-navbar-accent-color: #ab0520;
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 18px;
@@ -22063,7 +22279,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border-bottom: 1px solid var(--az-navbar-border-color);
 }
 .navbar-az .dropdown-menu li:has(.collapse .active) .dropdown-toggle {
-  background-color: #e2e9eb;
+  background-color: #e5eff7;
 }
 .navbar-az .dropdown-menu .btn-group {
   display: -ms-flexbox;
@@ -22106,13 +22322,13 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   border: 0;
 }
 .navbar-az .dropdown-menu .dropdown-toggle[aria-expanded=true] {
-  background-color: #e2e9eb;
+  background-color: #e5eff7;
 }
 .navbar-az .dropdown-menu .dropdown-toggle[aria-expanded=true]::after {
   content: "\e15b";
 }
 .navbar-az .dropdown-menu .dropdown-toggle:hover {
-  background-color: #e2e9eb;
+  background-color: #e5eff7;
 }
 .navbar-az .dropdown-menu .dropdown-toggle:focus-visible {
   box-shadow: var(--az-navbar-focus-ring-inset);
@@ -22156,7 +22372,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: #e2e9eb;
+  background-color: #e5eff7;
   /* stylelint-disable selector-max-compound-selectors */
   /* stylelint-enable selector-max-compound-selectors */
 }
@@ -22253,7 +22469,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-search-border-width: 2px;
   --az-search-border-color: var(--az-search-color);
   --az-search-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%23fff' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
-  --az-search-icon-hover: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%2381d3eb' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%2381d3eb' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
+  --az-search-icon-hover: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='43.535' height='43.535' viewBox='0 0 43.535 43.535' fill='none'%3e%3cellipse cx='17.972' cy='17.831' rx='15.472' ry='15.331' stroke='%2381ceeb' stroke-width='5'/%3e%3cline x1='31' y1='31' x2='40' y2='40' stroke='%2381ceeb' stroke-width='5' stroke-linecap='round'/%3e%3c/svg%3e");
   --az-search-font: normal normal normal 16px/22px proxima-nova;
   --az-search-focus-ring-color: var(--bs-sky);
   --az-search-focus-ring-width: 1px;
@@ -22767,8 +22983,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 .navbar-az-fullscreen-modal .nav-toggle {
   --az-navbar-fullscreen-nav-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='39.68' height='39.68' viewBox='0 0 39.68 39.68'%3e%3ccircle fill='none' stroke='%23fff' stroke-width='2' cx='19.84' cy='19.84' r='18.84'/%3e%3cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' d='M16.27 10.42l9.42 9.42-9.42 9.42'/%3e%3c/svg%3e");
-  --az-navbar-fullscreen-nav-toggle-icon-hover: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='41.88' height='41.88' viewBox='0 0 41.88 41.88'%3e%3ccircle fill='none' stroke='%2381d3eb' stroke-width='3' cx='20.94' cy='20.94' r='19.44'/%3e%3cpath fill='none' stroke='%2381d3eb' stroke-width='3' stroke-linecap='round' d='M17.26 11.22l9.72 9.72-9.72 9.72'/%3e%3c/svg%3e");
-  --az-navbar-fullscreen-nav-toggle-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'%3e%3cg transform='translate%281 1%29'%3e%3ccircle fill='%2381d3eb' stroke='none' cx='20' cy='20' r='20' transform='translate%280 40%29 rotate%28-90%29'/%3e%3cpath fill='none' stroke='%230c234b' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate%2823127.197 11482%29'/%3e%3c/g%3e%3c/svg%3e");
+  --az-navbar-fullscreen-nav-toggle-icon-hover: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='41.88' height='41.88' viewBox='0 0 41.88 41.88'%3e%3ccircle fill='none' stroke='%2381ceeb' stroke-width='3' cx='20.94' cy='20.94' r='19.44'/%3e%3cpath fill='none' stroke='%2381ceeb' stroke-width='3' stroke-linecap='round' d='M17.26 11.22l9.72 9.72-9.72 9.72'/%3e%3c/svg%3e");
+  --az-navbar-fullscreen-nav-toggle-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'%3e%3cg transform='translate%281 1%29'%3e%3ccircle fill='%2381ceeb' stroke='none' cx='20' cy='20' r='20' transform='translate%280 40%29 rotate%28-90%29'/%3e%3cpath fill='none' stroke='%230c234b' stroke-width='3' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate%2823127.197 11482%29'/%3e%3c/g%3e%3c/svg%3e");
   position: relative;
   z-index: 1;
   box-sizing: content-box;
@@ -22852,7 +23068,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   --az-navbar-fullscreen-modal-menu-primary-font-weight: 600;
   --az-navbar-fullscreen-modal-menu-primary-font-size: 48px;
   --az-navbar-fullscreen-modal-menu-primary-line-height: 48px;
-  --az-navbar-fullscreen-modal-menu-primary-font-family: garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-font-family: garamond-premier-pro, Georgia, Times New Roman, serif;
   --az-navbar-fullscreen-modal-menu-primary-font: normal normal var(--az-navbar-fullscreen-modal-menu-primary-font-weight) var(--az-navbar-fullscreen-modal-menu-primary-font-size) / var(--az-navbar-fullscreen-modal-menu-primary-line-height) var(--az-navbar-fullscreen-modal-menu-primary-font-family);
   --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .1px;
   --az-navbar-fullscreen-modal-menu-primary-color: var(--az-navbar-fullscreen-modal-menu-color);
@@ -23167,8 +23383,8 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
   flex-direction: column;
   min-height: 0;
   --az-navbar-fullscreen-back-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'%3e%3cg transform='translate%281 1%29'%3e%3ccircle fill='none' stroke='%23fff' stroke-width='2' cx='20' cy='20' r='20' transform='translate%280 40%29 rotate%28-90%29'/%3e%3cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' d='M-23110.98-11472l10,10-10,10' transform='translate%2823127.197 11482%29'/%3e%3c/g%3e%3c/svg%3e");
-  --az-navbar-fullscreen-back-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2381d3eb'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3e%3c/svg%3e");
-  --az-navbar-fullscreen-back-icon-active-child: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2381d3eb'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/%3e%3c/svg%3e");
+  --az-navbar-fullscreen-back-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2381ceeb'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3e%3c/svg%3e");
+  --az-navbar-fullscreen-back-icon-active-child: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2381ceeb'%3e%3cpath d='m480-453-95-95q-11-11-27.5-11T329-548q-12 12-12 28.5t12 28.5l123 123q12 12 28 12t28-12l124-124q12-12 11.5-28T631-548q-12-11-28-11.5T575-548l-95 95Zm0 373q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/%3e%3c/svg%3e");
 }
 #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions {
   --bs-nav-link-padding-y: 12px;
@@ -23505,12 +23721,12 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-trilines.text-bg-sky p,
 .bg-trilines.text-bg-sky li,
 .bg-trilines.text-bg-sky hr {
-  background-color: rgba(129, 211, 235, 0.7);
+  background-color: rgba(129, 206, 235, 0.7);
 }
 .bg-trilines.text-bg-oasis p,
 .bg-trilines.text-bg-oasis li,
 .bg-trilines.text-bg-oasis hr {
-  background-color: rgba(55, 141, 189, 0.7);
+  background-color: rgba(16, 106, 177, 0.7);
 }
 .bg-trilines.text-bg-azurite p,
 .bg-trilines.text-bg-azurite li,
@@ -23520,17 +23736,17 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-trilines.text-bg-midnight p,
 .bg-trilines.text-bg-midnight li,
 .bg-trilines.text-bg-midnight hr {
-  background-color: rgba(0, 28, 72, 0.7);
+  background-color: rgba(3, 19, 46, 0.7);
 }
 .bg-trilines.text-bg-cool-gray p,
 .bg-trilines.text-bg-cool-gray li,
 .bg-trilines.text-bg-cool-gray hr {
-  background-color: rgba(226, 233, 235, 0.7);
+  background-color: rgba(229, 239, 247, 0.7);
 }
 .bg-trilines.text-bg-warm-gray p,
 .bg-trilines.text-bg-warm-gray li,
 .bg-trilines.text-bg-warm-gray hr {
-  background-color: rgba(244, 237, 229, 0.7);
+  background-color: rgba(242, 239, 234, 0.7);
 }
 .bg-trilines.text-bg-leaf p,
 .bg-trilines.text-bg-leaf li,
@@ -23571,6 +23787,32 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-trilines.text-bg-black li,
 .bg-trilines.text-bg-black hr {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bg-monsoon-sky-start,
+.bg-monsoon-sky-end {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.bg-monsoon-sky-start::before,
+.bg-monsoon-sky-end::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  opacity: 0.4;
+  background-image: url("img/monsoon-sky.svg");
+  background-repeat: repeat-y;
+  background-size: 300px;
+}
+
+.bg-monsoon-sky-start::before {
+  background-position: top left;
+}
+
+.bg-monsoon-sky-end::before {
+  background-position: top right;
 }
 
 .hover:hover .hover-text-underline,
@@ -23668,11 +23910,11 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .callout-sky {
-  border-color: #81d3eb;
+  border-color: #81ceeb;
 }
 
 .callout-oasis {
-  border-color: #378dbd;
+  border-color: #106ab1;
 }
 
 .callout-azurite {
@@ -23694,7 +23936,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .callout-midnight {
-  border-color: #001c48;
+  border-color: #03132e;
 }
 .callout-midnight h1,
 .callout-midnight h2,
@@ -23708,15 +23950,15 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .callout-midnight .h4,
 .callout-midnight .h5,
 .callout-midnight .h6 {
-  color: #001c48;
+  color: #03132e;
 }
 
 .callout-cool-gray {
-  border-color: #e2e9eb;
+  border-color: #e5eff7;
 }
 
 .callout-warm-gray {
-  border-color: #f4ede5;
+  border-color: #f2efea;
 }
 
 .callout-ash {
@@ -23846,7 +24088,7 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .callout-info {
-  border-color: #81d3eb;
+  border-color: #81ceeb;
 }
 .callout-info h1,
 .callout-info h2,
@@ -24050,11 +24292,16 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .col-form-label-lg {
-  font-size: 1.25rem;
+  font-size: calc(1.265625rem + 0.1875vw);
+}
+@media (min-width: 1200px) {
+  .col-form-label-lg {
+    font-size: 1.40625rem;
+  }
 }
 
 .col-form-label-sm {
-  font-size: 0.875rem;
+  font-size: 0.984375rem;
 }
 
 .input-group .btn {
