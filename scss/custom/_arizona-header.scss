@@ -17,8 +17,8 @@
 
 @media screen and (max-width: 992px) {
   body:has(.az-fixed-header-on-mobile) {
-    padding-top: 50px;
     --az-scroll-margin-top: 58px;
+    padding-top: 50px;
   }
   .arizona-header {
     height: 50px;
