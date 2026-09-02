@@ -225,7 +225,7 @@ If your site has a fixed or sticky header, set the `--az-scroll-margin-top` CSS 
 
 ```css
 :root {
-  --az-accordion-anchor-scroll-offset: 64px; /* match your header's height */
+  --az-scroll-margin-top: 64px; /* match your header's height */
 }
 ```
 
