@@ -19,6 +19,7 @@ export { default as Toast } from '../node_modules/bootstrap/js/src/toast.js'
 export { default as Tooltip } from '../node_modules/bootstrap/js/src/tooltip.js'
 export { default as fixModalAriaHidden } from './src/modal.js'
 export { default as photoGalleryGridSlideToImage } from './src/photogallery.js'
+export { default as enableAccordionAnchors } from './src/accordion-anchors.js'
 export { default as enableAzNavbar } from './src/navbar.js'
 export { default as enableNavbarAzFullscreen } from './src/navbar-az-fullscreen.js'
 export { default as enableNavbarAzFullscreenMobileNav } from './src/navbar-az-fullscreen-mobile-nav.js'
@@ -36,6 +37,12 @@ fixModalAriaHidden()
  */
 /* global photoGalleryGridSlideToImage */
 photoGalleryGridSlideToImage()
+
+/**
+ * Enable accordion anchor links: copy-to-clipboard, open, and scroll-to.
+ */
+/* global enableAccordionAnchors */
+enableAccordionAnchors()
 
 /**
  * Enable hover-driven dropdowns on AZ Navbar.
