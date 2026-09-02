@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Arizona Bootstrap: accordion.js
+ * Arizona Bootstrap: accordion-anchors.js
  * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
