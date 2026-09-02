@@ -16,4 +16,6 @@
   line-height: inherit;
   color: inherit;
   letter-spacing: normal;
+  scroll-margin-top: var(--az-accordion-anchor-scroll-offset);
+  scroll-behavior: smooth;
 }

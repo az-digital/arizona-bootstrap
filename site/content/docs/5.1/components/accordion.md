@@ -171,7 +171,7 @@ On page load, the page will scroll to the anchor with the offset set by the vari
       <div class="accordion-body">
         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-          <a class="accordion-anchor icon-link" href="#AnchoredAccordion1" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+          <a class="az-accordion-anchor icon-link" href="#AnchoredAccordion1" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
             <span class="material-symbols-rounded" aria-hidden="true">link</span>
             <span>Copy link</span>
           </a>
@@ -189,7 +189,7 @@ On page load, the page will scroll to the anchor with the offset set by the vari
       <div class="accordion-body">
         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-          <a class="accordion-anchor icon-link" href="#AnchoredAccordion2" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+          <a class="az-accordion-anchor icon-link" href="#AnchoredAccordion2" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
             <span class="material-symbols-rounded" aria-hidden="true">link</span>
             <span>Copy link</span>
           </a>
@@ -207,7 +207,7 @@ On page load, the page will scroll to the anchor with the offset set by the vari
       <div class="accordion-body">
         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         <div class="pt-2">
-          <a class="accordion-anchor icon-link" href="#AnchoredAccordion3" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
+          <a class="az-accordion-anchor icon-link" href="#AnchoredAccordion3" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Copied!" data-bs-trigger="click">
             <span class="material-symbols-rounded" aria-hidden="true">link</span>
             <span>Copy link</span>
           </a>

@@ -7,14 +7,6 @@
   --az-accordion-anchor-scroll-offset: 86px;
 }
 
-// scroll-margin-top belongs on .accordion-header, not .accordion-anchor -
-// it's the element with the id that anchor links / scrollIntoView() actually
-// target, so it's the one whose offset from a sticky header matters.
-.accordion-header {
-  scroll-margin-top: var(--az-static-scroll-offset);
-  scroll-behavior: smooth;
-}
-
 // Flex alignment/spacing (icon and text can differ arbitrarily in height -
 // the Material Symbols icon is a fixed 24px, unrelated to $font-size-base,
 // while the text scales with it) comes from Bootstrap's .icon-link helper

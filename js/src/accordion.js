@@ -8,7 +8,7 @@
 import Collapse from '../../node_modules/bootstrap/js/src/collapse.js'
 import Tooltip from '../../node_modules/bootstrap/js/src/tooltip.js'
 
-const ANCHOR_SELECTOR = '.accordion-anchor'
+const ANCHOR_SELECTOR = '.az-accordion-anchor'
 const COLLAPSE_TOGGLE_SELECTOR = '[data-bs-toggle="collapse"]'
 const COPY_FEEDBACK_MS = 3000
 const COPY_ICON = 'link'
