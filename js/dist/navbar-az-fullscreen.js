@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap navbar-az-fullscreen.js v5.1.7 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap navbar-az-fullscreen.js v5.1.8 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -121,9 +121,7 @@
       var column = _step4.value;
       if (column instanceof HTMLElement) {
         column.style.height = '';
-        column.style.flexGrow = '';
-        column.style.flexShrink = '';
-        column.style.flexBasis = '';
+        column.style.maxHeight = '';
       }
     }
   }
@@ -188,12 +186,10 @@
     var visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets);
     for (var _iterator8 = _createForOfIteratorHelperLoose(visibleColumns), _step8; !(_step8 = _iterator8()).done;) {
       var column = _step8.value;
-      // Secondary/tertiary columns can be flex-grown by CSS; lock flex sizing
-      // during sync so inline height can consistently control divider length.
-      column.style.flexGrow = '0';
-      column.style.flexShrink = '0';
-      column.style.flexBasis = 'auto';
+      // Cap each column's height so flex layout can't stretch the divider past the tallest visible content.
+      // Columns can still scroll normally when content exceeds available vertical space.
       column.style.height = syncedHeight + "px";
+      column.style.maxHeight = syncedHeight + "px";
     }
   }
   function debounce(callback, waitMs) {
