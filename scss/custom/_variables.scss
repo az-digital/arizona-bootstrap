@@ -383,6 +383,15 @@ $colors: (
 // scss-docs-end colors-map
 
 /*
+* > SCROLLING
+*/
+:root {
+  --az-scroll-behavior: smooth;
+  --az-scroll-margin-top: 0px;
+  --az-scroll-margin-bottom: 0px;
+}
+
+/*
 * > FONTS
 */
 // stylelint-disable value-keyword-case
