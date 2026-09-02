@@ -18,9 +18,10 @@
 @media screen and (max-width: 992px) {
   body:has(.az-fixed-header-on-mobile) {
     padding-top: 50px;
-
     :target {
-      scroll-margin-top: 58px;
+      scroll-behavior: var(--az-scroll-behavior);
+      scroll-margin-top: var(--az-scroll-margin-top);
+      scroll-margin-bottom: var(--az-scroll-margin-bottom);
     }
   }
   .arizona-header {
