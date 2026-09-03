@@ -94,6 +94,12 @@
 // >>> Monsoon
 // Pattern is rendered on a pseudo-element so opacity fades only the
 // decorative image, not the wrapper's text content.
+//
+// The pseudo-element is a band pinned to one edge, not the full wrapper, so
+// the pattern stays a proportional accent rather than washing across the
+// whole element on narrow viewports. Each side pins only its own edge and
+// leaves the opposite one auto: setting both would over-constrain `width`,
+// which resolves by dropping a different edge under ltr than under rtl.
 .bg-monsoon-sky-start,
 .bg-monsoon-sky-end {
   position: relative;
@@ -102,8 +108,10 @@
 
   &::before {
     position: absolute;
-    inset: 0;
     z-index: -1;
+    width: 20%;
+    min-width: 75px;
+    max-width: 200px;
     content: "";
     opacity: .4;
     background: {
@@ -115,9 +123,11 @@
 }
 
 .bg-monsoon-sky-start::before {
+  inset: 0 auto 0 0;
   background-position: top left;
 }
 
 .bg-monsoon-sky-end::before {
+  inset: 0 0 0 auto;
   background-position: top right;
 }
