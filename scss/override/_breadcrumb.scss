@@ -6,13 +6,30 @@
   --bs-link-hover-color-rgb: var(--bs-midnight-rgb);
 
   a {
-    padding: 1px 0;
-    font-weight: 500;
+    padding: 1px 0 0;
+    color: $breadcrumb-color;
+    text-decoration: none;
+    &:hover {
+      color: $breadcrumb-hover-color;
+    }
   }
 }
 
+.breadcrumb-item {
+  line-height: 1;
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
-  font-family: var(--bs-breadcrumb-divider-font-family);
+  font-family: monospace;
+}
+
+.breadcrumb-item a:hover {
+  margin-bottom: -1px;
+  border-bottom: 1px solid $breadcrumb-hover-color;
+}
+
+.breadcrumb-item.active {
+  font-weight: 500;
 }
 
 // Remove margins/padding on Breadcrumbs for larger displays

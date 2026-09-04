@@ -1,5 +1,5 @@
 /*!
-  * Arizona Bootstrap v5.1.7 (https://github.com/az-digital/arizona-bootstrap)
+  * Arizona Bootstrap v5.2.0 (https://github.com/az-digital/arizona-bootstrap)
   * Copyright 2026 The Arizona Board of Regents on behalf of The University of Arizona
   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
   */
@@ -7191,6 +7191,167 @@
     }
   }
 
+  /**
+   * --------------------------------------------------------------------------
+   * Arizona Bootstrap: accordion-anchors.js
+   * Licensed under MIT (https://github.com/az-digital/arizona-bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var ANCHOR_SELECTOR = '.az-accordion-anchor';
+  var COLLAPSE_TOGGLE_SELECTOR$1 = '[data-bs-toggle="collapse"]';
+  var COPY_FEEDBACK_MS = 3000;
+  var COPY_ICON = 'link';
+  var COPIED_ICON = 'check';
+
+  // Copy the accordion's direct link to the clipboard and give visual feedback,
+  // without navigating or toggling the panel on click.
+  function copyAnchorLink(event, anchor) {
+    var _anchor$parentElement;
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    var href = anchor.getAttribute('href') || '';
+    var anchorId = href.startsWith('#') ? href.slice(1) : (_anchor$parentElement = anchor.parentElement) === null || _anchor$parentElement === void 0 ? void 0 : _anchor$parentElement.id;
+    if (!anchorId) {
+      return;
+    }
+    var baseUrl = window.location.href.split('#')[0];
+    var urlToCopy = "".concat(baseUrl, "#").concat(anchorId);
+    var feedbackSpan = anchor.querySelector('span') || anchor.children[0];
+    var feedbackTooltip = Tooltip.getInstance(anchor);
+    if (!navigator.clipboard) {
+      return;
+    }
+    navigator.clipboard.writeText(urlToCopy).then(() => {
+      if (!feedbackSpan) {
+        return;
+      }
+      feedbackSpan.innerHTML = COPIED_ICON;
+      setTimeout(() => {
+        feedbackSpan.innerHTML = COPY_ICON;
+        feedbackTooltip.hide();
+      }, COPY_FEEDBACK_MS);
+    });
+  }
+
+  // Resolve the collapsible panel referenced by a URL hash. The hash may point at
+  // the panel itself or at an accordion heading whose toggle targets the panel.
+  function resolvePanelFromHash(hash) {
+    var id = (hash || '').replace(/^#/, '');
+    if (!id) {
+      return null;
+    }
+    var target = document.getElementById(id);
+    if (!target) {
+      return null;
+    }
+    if (target.classList.contains('accordion-collapse')) {
+      return target;
+    }
+
+    // Check accordion dropdown
+    var targetButton = target.querySelectorAll('button');
+    if (targetButton[0] === null) {
+      return null;
+    }
+    if (!targetButton[0].classList.contains('collapsed')) {
+      return null; // Do nothing if the panel is already opened.
+    }
+    var toggle = target.matches(COLLAPSE_TOGGLE_SELECTOR$1) ? target : target.querySelector(COLLAPSE_TOGGLE_SELECTOR$1);
+    if (!toggle) {
+      return null;
+    }
+    var ariaControls = toggle.getAttribute('aria-controls');
+    var selector = toggle.getAttribute('data-bs-target') || (ariaControls ? "#".concat(ariaControls) : '');
+    return selector ? document.querySelector(selector) : null;
+  }
+
+  // Expand the panel referenced by the current URL hash, then scroll its
+  // heading into view once the show transition actually finishes. On a fresh
+  // page load, the browser's native fragment-scroll fires immediately, before
+  // this panel's sibling (if one was open, per data-bs-parent) has finished
+  // collapsing - so it commits to a resting position based on stale layout,
+  // holds there for the whole ~350ms transition, then gets corrected in a
+  // separate hop once this function's own scroll runs. That jump-pause-hop
+  // sequence reads as a stutter even when the correction itself is small.
+  function openPanelFromHash() {
+    var _panel$closest, _document$querySelect;
+    var panel = resolvePanelFromHash(window.location.hash);
+    if (!panel) {
+      return;
+    }
+    var header = (_panel$closest = panel.closest('.accordion-item')) === null || _panel$closest === void 0 ? void 0 : _panel$closest.querySelector('.accordion-header');
+    var scrollHeaderIntoView = () => header === null || header === void 0 ? void 0 : header.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+    if (panel.classList.contains('show')) {
+      scrollHeaderIntoView();
+      return;
+    }
+
+    // data-bs-parent means opening this panel also closes whichever sibling is
+    // currently open. That sibling's hide transition is a separate Collapse
+    // instance with its own independently-queued completion callback, so this
+    // panel's shown.bs.collapse firing doesn't guarantee the sibling's own
+    // hidden.bs.collapse has too - scrolling before it has can mean the page
+    // is still settling underneath the scroll animation. Wait for both.
+    var parentSelector = panel.getAttribute('data-bs-parent');
+    var openSibling = parentSelector ? (_document$querySelect = document.querySelector(parentSelector)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.querySelector('.accordion-collapse.show') : null;
+    var awaitedTransitions = openSibling && openSibling !== panel ? 2 : 1;
+    var settledTransitions = 0;
+    var onTransitionSettled = () => {
+      settledTransitions += 1;
+      if (settledTransitions >= awaitedTransitions) {
+        scrollHeaderIntoView();
+      }
+    };
+    panel.addEventListener('shown.bs.collapse', onTransitionSettled, {
+      once: true
+    });
+    if (openSibling && openSibling !== panel) {
+      openSibling.addEventListener('hidden.bs.collapse', onTransitionSettled, {
+        once: true
+      });
+    }
+    Collapse.getOrCreateInstance(panel).show();
+  }
+
+  // Deferred a frame: the browser's own native fragment-scroll on a fresh load
+  // can otherwise race this code and run after it, undoing the reset in
+  // openPanelFromHash() before it has any effect.
+  function openInitialPanelFromHash() {
+    requestAnimationFrame(() => openPanelFromHash());
+  }
+
+  /**
+   * Enable accordion anchor links: copy-to-clipboard on the anchor, plus
+   * open-and-scroll-to the referenced panel when its link is in the URL.
+   */
+  function enableAccordionAnchors() {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    // Delegate so anchors added after init still work and timing is not an issue.
+    document.addEventListener('click', event => {
+      var anchor = event.target.closest(ANCHOR_SELECTOR);
+      if (anchor) {
+        copyAnchorLink(event, anchor);
+      }
+    });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openInitialPanelFromHash, {
+        once: true
+      });
+    } else {
+      openInitialPanelFromHash();
+    }
+    window.addEventListener('hashchange', () => openPanelFromHash());
+  }
+
   function _arrayLikeToArray(r, a) {
     (null == a || a > r.length) && (a = r.length);
     for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
@@ -7851,9 +8012,7 @@
     for (var column of allColumns) {
       if (column instanceof HTMLElement) {
         column.style.height = '';
-        column.style.flexGrow = '';
-        column.style.flexShrink = '';
-        column.style.flexBasis = '';
+        column.style.maxHeight = '';
       }
     }
   }
@@ -7914,12 +8073,10 @@
     var syncedHeight = Math.min(tallestVisibleContent, maxAvailableHeight);
     var visibleColumns = isCollapseTransitioning ? getDesktopVisibleNavColumns(modalElement) : getUniqueColumns(activeTargets);
     for (var column of visibleColumns) {
-      // Secondary/tertiary columns can be flex-grown by CSS; lock flex sizing
-      // during sync so inline height can consistently control divider length.
-      column.style.flexGrow = '0';
-      column.style.flexShrink = '0';
-      column.style.flexBasis = 'auto';
+      // Cap each column's height so flex layout can't stretch the divider past the tallest visible content.
+      // Columns can still scroll normally when content exceeds available vertical space.
       column.style.height = "".concat(syncedHeight, "px");
+      column.style.maxHeight = "".concat(syncedHeight, "px");
     }
   }
   function debounce(callback, waitMs) {
@@ -8123,6 +8280,9 @@
       this.mobileCtaNode = null;
       this.primaryNavMenuNode = null;
 
+      // Initialize observer
+      this.mobileMenuObserver = null;
+
       // Initialize state variables
       this.navListenersInitialized = false;
       this.currentNavLevel = 1;
@@ -8213,6 +8373,34 @@
         this.initialMenuParentElementId = this.currentMenuParentElementId;
       }
       this.setupNavListeners();
+      this.setupMobileMenuObserver();
+    }
+
+    /**
+     * Set up an observer for the mobile menu container to add a scroll shadow to
+     * the top of the menu when the user scrolls down.
+     */
+    setupMobileMenuObserver() {
+      var container = document.querySelector('.navbar-az-fullscreen-nav-mobile-menu-container');
+      var menuListTop = document.querySelector('.navbar-az-fullscreen-nav-mobile-menu-list-top');
+      if (!container || !menuListTop) {
+        return;
+      }
+
+      // Disconnect the previous observer if it exists
+      if (this.mobileMenuObserver) {
+        this.mobileMenuObserver.disconnect();
+      }
+      this.mobileMenuObserver = new IntersectionObserver(entries => {
+        for (var entry of entries) {
+          if (entry.target === menuListTop) {
+            container.classList.toggle('show-shadow', !entry.isIntersecting);
+          }
+        }
+      }, {
+        root: container
+      });
+      this.mobileMenuObserver.observe(menuListTop);
     }
 
     /**
@@ -8316,6 +8504,7 @@
       // Update mobile column
       this.mobileCol.replaceChildren(...Array.from(menuNode.childNodes));
       this.toggleFooterDisplay(sourceElementId);
+      this.setupMobileMenuObserver();
     }
 
     /**
@@ -8344,6 +8533,8 @@
         heading.textContent = "".concat(label, " Menu");
         fragment.append(heading);
       }
+      var mobileMenuContainer = document.createElement('div');
+      mobileMenuContainer.className = 'navbar-az-fullscreen-nav-mobile-menu-container';
       var nav;
       switch (navLevel) {
         case 1:
@@ -8377,6 +8568,11 @@
           _panel.remove();
         }
 
+        // Create sentinel element at the top of the nav content
+        var menuListTop = document.createElement('div');
+        menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top';
+        navClone.prepend(menuListTop);
+
         // Confirm if any active links are present
         var activeLinkExists = navClone.querySelectorAll(':scope .nav-link.active').length > 0;
 
@@ -8409,7 +8605,8 @@
             button.classList.add('collapsed');
           }
         }
-        fragment.append(navClone);
+        mobileMenuContainer.append(navClone);
+        fragment.append(mobileMenuContainer);
       } else {
         fragment.append(sourceElement.cloneNode(true));
       }
@@ -8433,10 +8630,17 @@
       heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading';
       heading.textContent = label;
       fragment.append(heading);
+      var mobileMenuContainer = document.createElement('div');
+      mobileMenuContainer.className = 'navbar-az-fullscreen-nav-mobile-menu-container';
       var footerLinks = sourceElement.id === IDS.FOOTER_TOP ? this.topFooterLinks : this.bottomFooterLinks;
       var navId = sourceElement.id === IDS.FOOTER_TOP ? 'az-navbar-az-fullscreen-footer-top-secondary-nav' : 'az-navbar-az-fullscreen-footer-bottom-secondary-nav';
       var column = document.createElement('div');
-      column.className = 'col col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary';
+      column.className = 'col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary';
+
+      // Create sentinel element at the top of the nav content
+      var menuListTop = document.createElement('div');
+      menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top';
+      column.append(menuListTop);
       var list = document.createElement('ul');
       list.className = 'nav';
       list.setAttribute('id', navId);
@@ -8457,7 +8661,8 @@
         }
       }
       column.append(list);
-      fragment.append(column);
+      mobileMenuContainer.append(column);
+      fragment.append(mobileMenuContainer);
       return fragment;
     }
 
@@ -8580,6 +8785,7 @@
     Tooltip,
     fixModalAriaHidden,
     photoGalleryGridSlideToImage,
+    enableAccordionAnchors,
     enableAzNavbar,
     enableNavbarAzFullscreen,
     enableNavbarAzFullscreenMobileNav
@@ -8596,6 +8802,11 @@
    * See https://github.com/az-digital/arizona-bootstrap/issues/1705.
    */
   photoGalleryGridSlideToImage();
+
+  /**
+   * Enable accordion anchor links: copy-to-clipboard, open, and scroll-to.
+   */
+  enableAccordionAnchors();
 
   /**
    * Enable hover-driven dropdowns on AZ Navbar.
