@@ -1,0 +1,64 @@
+name: Manual visual regression (before/after)
+
+on:
+  workflow_dispatch:
+    inputs:
+      after_url:
+        description: 'The site to test (e.g. this PR''s review site)'
+        required: true
+        type: string
+      before_url:
+        description: 'The baseline site to compare against'
+        required: false
+        type: string
+        default: 'https://review.digital.arizona.edu/arizona-bootstrap/main/'
+
+env:
+  AZ_SITE_HOST: ${{ vars.AZ_SITE_HOST }}
+  AZ_REPORT_BASEURL: /arizona-bootstrap/vr-reports/${{ github.run_id }}
+
+jobs:
+  visual-regression:
+    name: Compare before/after screenshots
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository to workspace
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          # Match the Node version the Dockerfile pins for every other build
+          # in this repo - a mismatch broke Hugo's PostCSS pipeline (a
+          # `--permission`-flag incompatibility) under Node 20.
+          node-version: '22.23.2'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright's Chromium browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run visual regression
+        run: |
+          scripts/vr-url-test.sh --after "${{ inputs.after_url }}" --before "${{ inputs.before_url }}"
+
+      - name: Configure AWS credentials
+        if: ${{ !cancelled() }}
+        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy the Playwright report to the review site bucket
+        if: ${{ !cancelled() }}
+        run: |
+          aws s3 sync --delete playwright-report/ "s3://${{ secrets.REVIEW_BUCKET }}${AZ_REPORT_BASEURL}/"
+          report_url="${AZ_SITE_HOST}${AZ_REPORT_BASEURL}/"
+          {
+            echo "### Visual regression report"
+            echo "[${report_url}](${report_url})"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "Report deployed to ${report_url}"
