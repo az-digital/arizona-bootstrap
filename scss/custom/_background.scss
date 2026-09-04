@@ -1,6 +1,39 @@
 //
 // > Custom Background utility classes
 //
+// >> Set the shared default CSS custom properties for the background utility classes.
+[class^="text-bg-"],
+[class*=" text-bg-"] {
+  --bs-bg-color: var(--bs-body-color);
+  --bs-bg-color-rgb: var(--bs-body-color-rgb);
+  --bs-bg-bg: rgb(var(--bs-body-rgb-bg) / var(--bs-bg-opacity));
+  --bs-heading-color: var(--bs-bg-color);
+  color: var(--bs-bg-color);
+  background-color: var(--bs-bg-bg);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    --bs-heading-color: var(--bs-bg-color);
+  }
+
+  a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo) {
+    --bs-link-color: var(--bs-bg-color);
+    --bs-link-hover-color: var(--bs-bg-color);
+    --bs-link-color-rgb: var(--bs-bg-color-rgb);
+    --bs-link-hover-color-rgb: var(--bs-bg-color-rgb);
+  }
+}
+
 // >>> Transparent
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-transparent-#{$color} {
