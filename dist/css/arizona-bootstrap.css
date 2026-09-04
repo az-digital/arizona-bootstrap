@@ -23798,8 +23798,10 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 .bg-monsoon-sky-start::before,
 .bg-monsoon-sky-end::before {
   position: absolute;
-  inset: 0;
   z-index: -1;
+  width: 20%;
+  min-width: 75px;
+  max-width: 200px;
   content: "";
   opacity: 0.4;
   background-image: url("img/monsoon-sky.svg");
@@ -23808,10 +23810,12 @@ a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible 
 }
 
 .bg-monsoon-sky-start::before {
+  inset: 0 auto 0 0;
   background-position: top left;
 }
 
 .bg-monsoon-sky-end::before {
+  inset: 0 0 0 auto;
   background-position: top right;
 }
 
