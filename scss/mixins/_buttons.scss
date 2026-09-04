@@ -2,20 +2,42 @@
  * > BUTTONS
  */
 
-// >> Regular
+// >> Solid Buttons
 @mixin az-button-variant($background) {
-  // check for inaccessible color contrast
-  @if $background == $sky or $background == $leaf or $background == $light {
-    --bs-btn-color: var(--bs-midnight);
-    --bs-btn-hover-color: var(--bs-midnight);
-    --bs-btn-active-color: var(--bs-midnight);
+
+  // Modify colors to ensure accessible color contrast.
+  @if $background == $success or $background == $leaf {
+    --bs-btn-color: #{$midnight};
+    --bs-btn-hover-color: #{$midnight};
   } @else if $background == $warning {
-    --bs-btn-color: var(--bs-black);
-    --bs-btn-hover-color: var(--bs-black);
-    --bs-btn-active-color: var(--bs-black);
-  } @else {
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-active-color: var(--bs-white);
+    --bs-btn-color: #{$black};
+    --bs-btn-hover-color: #{$black};
+  } @else if $background == $info or $background == $sky {
+    --bs-btn-color: #{$blue};
+    --bs-btn-hover-color: #{$midnight};
+  } @else if $background == $light {
+    --bs-btn-color: #{$midnight};
+  }
+
+  @if $background != $red {
+    --az-btn-focus-outline-color: #{$background};
+  }
+}
+
+// >> Outline Buttons
+@mixin az-button-outline-variant($color, $value) {
+
+  @if $color == "info" {
+    --bs-btn-color: #{$azurite};
+    --bs-btn-hover-color: #{$midnight};
+  } @else if $value == $warning {
+    --bs-btn-color: #{$ash};
+    --bs-btn-hover-color: #{$black};
+  } @else if $value == $light {
+    --bs-btn-color: #{$ash};
+  }
+
+  @if $value != $red {
+    --az-btn-focus-outline-color: #{$value};
   }
 }

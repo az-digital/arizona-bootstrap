@@ -33,11 +33,15 @@ $enable-dark-mode: false;
 /*
 * > FONTS
 */
-$font-size-base: 1rem;
+$font-size-base: 1.125rem;
+$line-height-base: 1.5556; // 28px at $font-size-base (18px)
 $link-color: $red;
 // fusv-disable
 $link-hover-color: $chili;
-$lead-font-weight: 400;
+// fusv-disable
+$lead-font-size: 1.25rem; // 20px
+$lead-font-weight: 500;
+$small-font-size: 1rem;
 // fusv-enable
 
 /*
@@ -99,23 +103,31 @@ $accordion-button-active-color: var(--bs-accordion-btn-color);
 
 // >> Breadcrumbs
 // fusv-disable
-$breadcrumb-bg: var(--bs-body-bg);
-$breadcrumb-padding-x: 1rem;
+$breadcrumb-bg: $white;
+$breadcrumb-padding-x: .609rem;
 $breadcrumb-padding-y: .75rem;
-// Material Symbols Rounded: Chevron Right
-// https://fonts.google.com/icons?selected=Material+Symbols+Rounded:chevron_right
-$breadcrumb-divider: "\e5cc";
+$breadcrumb-active-color: $azurite;
+$breadcrumb-divider-color: $bloom;
+$breadcrumb-divider: quote("/") / "";
 // fusv-enable
 
 // >> Buttons
 // fusv-disable
-$btn-font-weight: 500;
+$btn-padding-y: 10px;
+$btn-padding-x: 28px;
+$btn-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
+$btn-line-height: 22px;
+$btn-padding-y-sm: 5px;
+$btn-padding-x-sm: 11px;
+$btn-font-size-sm: .875rem;
+$btn-padding-y-lg: 12px;
+$btn-padding-x-lg: 34px;
+$btn-font-size-lg: 1.375rem;
+$btn-font-weight: 700;
 $btn-border-width: 2px;
-$btn-padding-y: .5rem;
-$btn-padding-x: 1.25rem;
-$btn-border-radius: 3rem;
-$btn-border-radius-sm: 3rem;
-$btn-border-radius-lg: 3rem;
+$btn-border-radius: 256px;
+$btn-border-radius-sm: 48px;
+$btn-border-radius-lg: 256px;
 // fusv-enable
 
 // >> Dropdowns
