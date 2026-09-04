@@ -8,6 +8,7 @@
 
 .navbar-nav {
   --#{$prefix}nav-link-color: var(--bs-navbar-color);
+  --#{$prefix}nav-link-padding-x: var(--bs-navbar-nav-link-padding-x);
   --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
 
   .nav-item {
@@ -30,7 +31,10 @@
       font-weight: 600;
     }
 
-    &.is-active {
+    &.active,
+    &.is-active,
+    &:active,
+    &.show {
       --#{$prefix}nav-link-color: var(--bs-navbar-active-color);
     }
   }
@@ -67,7 +71,10 @@
     }
 
     .nav-link {
-      &.is-active {
+      &.active,
+      &.is-active,
+      &:active,
+      &.show {
         --#{$prefix}nav-link-hover-color: var(--bs-white);
       }
 

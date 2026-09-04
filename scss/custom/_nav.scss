@@ -17,14 +17,15 @@
     &.active,
     &:active,
     &.is-active {
+      --bs-nav-link-color: var(--bs-dark-silver);
       background-color: initial;
-      border-bottom-color: currentcolor;
+      border-bottom-color: var(--bs-dark-silver);
       @include border-radius(0);
     }
 
     &:hover,
     &:focus {
-      border-bottom-color: currentcolor;
+      border-bottom-color: var(--bs-dark-silver);
     }
   }
 }
