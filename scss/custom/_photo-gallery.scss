@@ -13,7 +13,7 @@
 
     &:focus-visible > .material-symbols-rounded {
       @include border-radius(2px);
-      box-shadow: $focus-ring-box-shadow;
+      box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
     }
   }
 
@@ -40,7 +40,7 @@
 
   &:focus-visible {
     outline: 0;
-    box-shadow: 0 0 $focus-ring-blur 2px $focus-ring-color, inset 0 0 $focus-ring-blur 2px $focus-ring-color;
+    box-shadow: 0 0 0 2px var(--bs-focus-ring-color), inset 0 0 0 2px var(--bs-focus-ring-color);
   }
 }
 
@@ -48,10 +48,10 @@
 .az-gallery-slider-crop {
   .carousel-control-prev,
   .carousel-control-next {
-    color: $blue;
+    color: var(--bs-blue);
 
     &:hover {
-      color: $azurite;
+      color: var(--bs-azurite);
     }
   }
 
@@ -118,7 +118,7 @@
     &:focus-visible {
       .material-symbols-rounded {
         @include border-radius(2px);
-        box-shadow: 0 0 $focus-ring-blur 2px $white;
+        box-shadow: 0 0 0 2px var(--bs-white);
       }
     }
   }
@@ -126,7 +126,7 @@
     button {
       &:focus-visible {
         @include border-radius(2px);
-        box-shadow: 0 0 $focus-ring-blur 2px $white;
+        box-shadow: 0 0 0 2px var(--bs-white);
       }
     }
   }

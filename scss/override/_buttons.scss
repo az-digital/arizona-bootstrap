@@ -33,17 +33,17 @@
 
 // Overriding btn-primary to mirror custom .btn-red
 .btn-primary {
-  @include button-variant(
-    $background: $red,
-    $border: $red,
-    $color: $white,
-    $hover-background: $chili,
-    $hover-border: $chili,
-    $hover-color: $white,
-    $active-background: $red,
-    $active-border: $red,
-    $active-color: $white
-  );
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-chili);
+  --bs-btn-hover-border-color: var(--bs-chili);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(var(--bs-black-rgb), .125);
 }
 
 // Overriding .btn-secondary to mirror custom .btn-blue
@@ -71,10 +71,16 @@
 
 // Overriding .btn-outline-primary to mirror custom .btn-outline-red
 .btn-outline-primary {
-  @include button-outline-variant(
-    $color: $red,
-    $color-hover: $white
-  );
+  --bs-btn-color: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-red);
+  --bs-btn-hover-border-color: var(--bs-red);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(var(--bs-black-rgb), .125);
 }
 
 // Overriding .btn-outline-secondary to mirror custom .btn-outline-blue
@@ -87,8 +93,6 @@
 }
 
 .btn-link {
-  color: $link-color;
-  &:hover {
-    color: $link-hover-color;
-  }
+  --bs-btn-color: var(--bs-link-color);
+  --bs-btn-hover-color: var(--bs-link-hover-color);
 }
