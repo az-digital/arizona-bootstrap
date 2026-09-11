@@ -1,6 +1,7 @@
 // scss-docs-start navbar-az-fullscreen-css-vars
 :root {
   --az-navbar-fullscreen-height: 100px;
+  --az-navbar-fullscreen-mobile-padding-xy: 20px;
 }
 
 // Experimental custom az-fullscreen navbar
@@ -30,6 +31,7 @@
   --bs-navbar-toggler-border-radius: 8px;
   // scss-docs-end navbar-az-fullscreen-css-vars
 
+  flex-wrap: nowrap;
   min-height: var(--az-navbar-fullscreen-height);
   background-color: var(--az-navbar-fullscreen-bg);
   border-top: 0;
@@ -43,6 +45,7 @@
     }
 
     img {
+      width: 100%;
       height: var(--az-navbar-fullscreen-brand-height);
       @include border-radius(0);
     }
@@ -200,10 +203,10 @@
   --az-navbar-fullscreen-modal-footer-letter-spacing: .18px;
   --az-navbar-fullscreen-modal-footer-brand-font: normal normal bold 18px/22px proxima-nova-condensed;
   --az-navbar-fullscreen-modal-footer-brand-letter-spacing: .36px;
-  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 8px;
+  --az-navbar-fullscreen-modal-footer-navbar-padding-y: 9px;
   --az-navbar-fullscreen-modal-footer-nav-link-padding-x: 10px;
-  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 11px;
-  --az-navbar-fullscreen-modal-top-fade-size: 60px;
+  --az-navbar-fullscreen-modal-footer-nav-link-padding-y: 9px;
+  --az-navbar-fullscreen-modal-top-fade-size: 40px;
   --az-navbar-fullscreen-modal-bottom-fade-size: 30px;
   --az-navbar-fullscreen-modal-fade-color: var(--bs-blue);
   --az-navbar-fullscreen-modal-scrollbar-thumb-color: #{shade-color($blue, 50%)};
@@ -231,6 +234,24 @@
       --bs-navbar-toggler-icon-bg: var(--az-navbar-fullscreen-toggler-icon-close);
     }
 
+    > .container-lg .az-search {
+      --az-search-width: 280px;
+      --az-search-height: 60px;
+      --az-search-padding-y: 0;
+      --az-search-padding-x: 0;
+      --az-search-btn-padding: 13px;
+      --az-search-input-padding: 8px 12px 8px 16px;
+      --az-search-icon-size: 35px;
+      --az-search-color: var(--bs-cool-gray);
+      --az-search-font: normal normal normal 20px/24px proxima-nova;
+      --az-search-focus-ring-color: var(--az-navbar-fullscreen-modal-focus-ring-color);
+      --az-search-focus-ring-width: var(--az-navbar-fullscreen-modal-focus-ring-width);
+      max-width: none;
+      margin-top: 28px;
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+
     @include media-breakpoint-up(lg) {
       &::after {
         position: absolute;
@@ -241,7 +262,7 @@
         height: var(--az-navbar-fullscreen-modal-top-fade-size);
         pointer-events: none;
         content: "";
-        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 20px, rgb(0 0 0 / 0) var(--az-navbar-fullscreen-modal-top-fade-size));
+        background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0, var(--az-navbar-fullscreen-modal-fade-color) 12px, rgb(0 0 0 / 0) var(--az-navbar-fullscreen-modal-top-fade-size));
         transform: translateY(100%);
       }
     }
@@ -268,24 +289,19 @@
     flex: 1 1 auto;
     min-height: 0;
     overflow: hidden;
-  }
 
-  .az-search {
-    --az-search-width: 280px;
-    --az-search-height: 60px;
-    --az-search-padding-y: 0;
-    --az-search-padding-x: 0;
-    --az-search-btn-padding: 13px;
-    --az-search-input-padding: 8px 12px 8px 16px;
-    --az-search-icon-size: 35px;
-    --az-search-color: var(--bs-cool-gray);
-    --az-search-font: normal normal normal 20px/24px proxima-nova;
-    --az-search-focus-ring-color: var(--az-navbar-fullscreen-modal-focus-ring-color);
-    --az-search-focus-ring-width: var(--az-navbar-fullscreen-modal-focus-ring-width);
-    max-width: none;
-    margin-top: 40px;
-    margin-right: 0;
-    margin-bottom: 8px;
+    // Static shadow at the bottom of modal body content (desktop and mobile).
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -2px;
+      left: 0;
+      z-index: 1;
+      height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
+      pointer-events: none;
+      content: "";
+      background: linear-gradient(to top, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgb(0 0 0 / 0) 100%);
+    }
   }
 
   .modal-footer {
@@ -304,7 +320,12 @@
       border-bottom: 0;
     }
 
+    .container-lg {
+      padding-left: 2px;
+    }
+
     .navbar-brand {
+      padding-left: 10px;
       margin: 0 15px 0 0;
       font: var(--az-navbar-fullscreen-modal-footer-brand-font);
       letter-spacing: var(--az-navbar-fullscreen-modal-footer-brand-letter-spacing);
@@ -458,21 +479,6 @@
       @include border-radius(999px);
     }
   }
-
-  /* stylelint-disable selector-max-id */
-  #navbar-az-fullscreen-modal-footer-top::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
-    pointer-events: none;
-    content: "";
-    background: linear-gradient(to top, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgb(0 0 0 / 0) 100%);
-    transform: translateY(-100%);
-  }
-  /* stylelint-enable selector-max-id */
 }
 
 .navbar-az-fullscreen-modal-menu {
@@ -493,7 +499,7 @@
   --az-navbar-fullscreen-modal-menu-primary-font-weight: 600;
   --az-navbar-fullscreen-modal-menu-primary-font-size: 48px;
   --az-navbar-fullscreen-modal-menu-primary-line-height: 48px;
-  --az-navbar-fullscreen-modal-menu-primary-font-family: garamond-premier-pro;
+  --az-navbar-fullscreen-modal-menu-primary-font-family: #{$font-family-serif};
   --az-navbar-fullscreen-modal-menu-primary-font: normal normal var(--az-navbar-fullscreen-modal-menu-primary-font-weight) var(--az-navbar-fullscreen-modal-menu-primary-font-size) / var(--az-navbar-fullscreen-modal-menu-primary-line-height) var(--az-navbar-fullscreen-modal-menu-primary-font-family);
   --az-navbar-fullscreen-modal-menu-primary-letter-spacing: .1px;
   --az-navbar-fullscreen-modal-menu-primary-color: var(--az-navbar-fullscreen-modal-menu-color);
@@ -588,11 +594,6 @@
         )
         1;
 
-      &.navbar-az-fullscreen-modal-menu-nav-col-tertiary {
-        border-right: 0;
-        border-image: none;
-      }
-
       &::-webkit-scrollbar-track {
         background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
       }
@@ -608,14 +609,12 @@
 
       > .nav-item:first-child {
         padding-top: var(--az-navbar-fullscreen-modal-top-fade-size);
-        // The nav-toggle is zeroed out completely, but the nav-link is offset
-        // by the difference between its padding-y and the nav-toggle's
-        // padding-y so both elements shift up by the same amount, keeping
-        // the nav-link text vertically aligned with the nav-toggle and
-        // separator on the first row.
-        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y)); // stylelint-disable-line function-disallowed-list
-        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: 0;
-        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: 0;
+        // Shift the nav-link and nav-toggle up by the same amount — the smaller
+        // of their two padding-y values — so their contents stay aligned on the
+        // first row while neither padding-top can resolve negative (invalid).
+        --az-navbar-fullscreen-modal-menu-nav-link-padding-top: max(0px, calc(var(--bs-nav-link-padding-y) - var(--az-navbar-fullscreen-nav-toggle-padding-y))); // stylelint-disable-line function-disallowed-list
+        --az-navbar-fullscreen-modal-menu-nav-toggle-padding-top: max(0px, calc(var(--az-navbar-fullscreen-nav-toggle-padding-y) - var(--bs-nav-link-padding-y))); // stylelint-disable-line function-disallowed-list
+        --az-navbar-fullscreen-modal-menu-nav-toggle-separator-top: max(0px, calc(var(--az-navbar-fullscreen-nav-toggle-padding-y) - var(--bs-nav-link-padding-y))); // stylelint-disable-line function-disallowed-list
       }
     }
   }
@@ -637,6 +636,8 @@
 
   .navbar-az-fullscreen-modal-menu-nav-col-secondary,
   .navbar-az-fullscreen-modal-menu-nav-col-tertiary {
+    flex: 1 1 auto;
+
     .nav-link {
       padding-right: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
       padding-left: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
@@ -701,13 +702,12 @@
   .navbar-az-fullscreen-nav-primary {
     --az-nav-link-text-underline-height: var(--az-navbar-fullscreen-modal-menu-primary-underline-height);
     --az-navbar-fullscreen-modal-menu-nav-link-line-height: var(--az-navbar-fullscreen-modal-menu-primary-line-height);
-    --bs-nav-link-padding-y: 24px;
     --bs-nav-link-font-size: var(--az-navbar-fullscreen-modal-menu-primary-font-size);
     --bs-nav-link-font-weight: var(--az-navbar-fullscreen-modal-menu-primary-font-weight);
     --az-navbar-fullscreen-nav-toggle-size: 40px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 24px;
     // --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
-    --az-navbar-fullscreen-nav-toggle-padding-y: 24px;
+    --az-navbar-fullscreen-nav-toggle-padding-y: 22px;
     padding-left: 0;
     margin-left: 0;
     font: var(--az-navbar-fullscreen-modal-menu-primary-font);
@@ -745,16 +745,13 @@
     height: 100%;
   }
 
-  .navbar-az-fullscreen-modal-menu-nav-col-secondary {
-    flex: 1 1 auto;
-  }
-
   .navbar-az-fullscreen-modal-menu-secondary-submenu {
     left: 50%;
   }
 
   .navbar-az-fullscreen-modal-menu-nav-col-tertiary {
     border-right: 0;
+    border-image: none;
   }
 
 }
@@ -774,8 +771,8 @@
     padding-bottom: 0;
 
     .container-lg {
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: var(--az-navbar-fullscreen-mobile-padding-xy);
+      padding-left: var(--az-navbar-fullscreen-mobile-padding-xy);
     }
 
     .navbar-toggler {
@@ -800,12 +797,37 @@
     }
 
     .container-lg {
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: var(--az-navbar-fullscreen-mobile-padding-xy);
+      padding-left: var(--az-navbar-fullscreen-mobile-padding-xy);
     }
 
-    .navbar-az-fullscreen-modal-menu.container-lg {
-      padding-right: 0;
+    .modal-header > .container-lg .az-search {
+      --az-search-height: 51px;
+      --az-search-border-width: 1px;
+      --bs-border-radius: 4px;
+      margin-top: 12px;
+      margin-bottom: 0;
+
+      /* stylelint-disable selector-max-class, selector-max-compound-selectors */
+      .az-search-icon,
+      .search-icon {
+        width: 30px;
+        height: 30px;
+      }
+      /* stylelint-enable selector-max-class, selector-max-compound-selectors */
+    }
+
+    .az-search {
+      .input-group {
+        .form-control {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        .btn {
+          padding: 10px 14px;
+        }
+      }
     }
 
     .modal-footer {
@@ -818,11 +840,6 @@
         display: none;
       }
     }
-
-    .az-search {
-      margin-top: 12px;
-      margin-bottom: 0;
-    }
   }
 
   .az-search {
@@ -833,31 +850,6 @@
     .az-search-toggle,
     .navbar-toggler-search {
       padding: 6px 5px 4px;
-    }
-  }
-
-  .modal-header {
-    .az-search {
-      --az-search-height: 51px;
-      --az-search-border-width: 1px;
-      --bs-border-radius: 4px;
-
-      .input-group {
-        .form-control {
-          font-size: 14px;
-          line-height: 17px;
-        }
-
-        .btn {
-          padding: 10px 14px;
-        }
-      }
-
-      .az-search-icon,
-      .search-icon {
-        width: 30px;
-        height: 30px;
-      }
     }
   }
 
@@ -903,10 +895,10 @@
   }
 
   .navbar-az-fullscreen-modal-menu-nav-col {
-    flex: 1 1 auto;
+    z-index: 0;
     padding-top: 0;
-    padding-right: 20px;
-    border-right: 0;
+    padding-right: var(--az-navbar-fullscreen-mobile-padding-xy);
+    margin-right: calc(-1 * var(--az-navbar-fullscreen-mobile-padding-xy));  // stylelint-disable-line function-disallowed-list
 
     .nav {
       padding-right: 0;
@@ -923,19 +915,6 @@
 
     .nav-link-text {
       pointer-events: none;
-    }
-  }
-
-  .navbar-az-fullscreen-modal-menu-nav-col-primary {
-    // Sticky separator that stays put while the nav items scroll under it.
-    &::before {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      display: block;
-      height: 1px;
-      content: "";
-      background-color: var(--az-navbar-fullscreen-modal-menu-separator-color);
     }
   }
 
@@ -961,19 +940,6 @@
     --az-navbar-fullscreen-nav-toggle-size: 38px;
     --az-navbar-fullscreen-nav-toggle-separator-offset: 20px;
     --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
-    padding-top: 0;
-    border-right: 0;
-
-    // Sticky separator that stays put while the nav items scroll under it.
-    &::before {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      display: block;
-      height: 1px;
-      content: "";
-      background-color: var(--az-navbar-fullscreen-modal-menu-separator-color);
-    }
 
     .nav {
       --az-navbar-fullscreen-nav-toggle-padding-y: 6px;
@@ -990,8 +956,6 @@
   }
 
   .navbar-az-fullscreen-nav-secondary {
-    width: unset;
-
     .nav-link {
       padding-right: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
       padding-left: var(--az-navbar-fullscreen-modal-menu-focus-text-padding-x);
@@ -1074,8 +1038,34 @@
   letter-spacing: .44px;
 }
 
+.navbar-az-fullscreen-nav-mobile-menu-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  border-top: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+
+  // Dynamic scroll shadow at the top of mobile menus.
+  &::before {
+    position: absolute;
+    right: var(--az-navbar-fullscreen-mobile-padding-xy);
+    left: var(--az-navbar-fullscreen-mobile-padding-xy);
+    z-index: 1;
+    height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgb(0 0 0 / 0) 100%);
+    opacity: 0;
+    @include transition(opacity .25s ease);
+  }
+
+  &.show-shadow::before {
+    opacity: 1;
+  }
+}
+
 .navbar-az-fullscreen-mobile-footer-btn {
-  padding: 12px 22px 10px;
+  padding: 12px 22px 10px 12px;
   border-right: 0;
   border-left: 0;
 
@@ -1119,4 +1109,18 @@
     margin-right: -6px;
     pointer-events: none;
   }
+}
+
+// Additional styling adjustments for extra small screen widths
+@media (max-width: 359.98px) {
+  .navbar-az-fullscreen .az-search {
+    margin-right: 10px;
+  }
+
+  /* stylelint-disable selector-max-id */
+  #navbar-az-fullscreen-nav-mobile-col .navbar-az-fullscreen-actions .nav-link {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+  /* stylelint-enable selector-max-id */
 }

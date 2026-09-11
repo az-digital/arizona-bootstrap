@@ -5,16 +5,16 @@
 - name: blue
   hex: "#0c234b"
 - name: oasis
-  hex: "#378dbd"
+  hex: "#106ab1"
 - name: azurite
   hex: "#1e5288"
 - name: midnight
-  hex: "#001c48"
+  hex: "#03132e"
 - name: cool-gray
-  hex: "#e2e9eb"
+  hex: "#e5eff7"
   contrast_color: black
 - name: warm-gray
-  hex: "#f4ede5"
+  hex: "#f2efea"
   contrast_color: black
 - name: white
   hex: "#ffffff"

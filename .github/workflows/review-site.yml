@@ -34,9 +34,9 @@ jobs:
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+        uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4.3.0
       - name: Docker authentication
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4.5.1
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
           registry: ${{ vars.AZ_DOCKER_REGISTRY }}
           username: ${{ github.actor }}
@@ -98,9 +98,9 @@ jobs:
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+        uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4.3.0
       - name: Docker authentication
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4.5.1
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
           registry: ${{ vars.AZ_DOCKER_REGISTRY }}
           username: ${{ github.actor }}
@@ -145,7 +145,7 @@ jobs:
           fi
         shell: sh
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c # v6.2.4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

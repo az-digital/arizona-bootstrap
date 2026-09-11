@@ -1,0 +1,1397 @@
+---
+layout: docs
+title: Navbar
+description: Documentation and examples for Bootstrap's powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.
+group: components
+toc: true
+---
+
+## How it works
+
+Here's what you need to know before getting started with the navbar:
+
+- Navbars require a wrapping `.navbar` with `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` for responsive collapsing and [color scheme](#color-schemes) classes.
+- Navbars and their contents are fluid by default. Change the [container](#containers) to limit their horizontal width in different ways.
+- Use our [spacing]({{< docsref "/utilities/spacing" >}}) and [flex]({{< docsref "/utilities/flex" >}}) utility classes for controlling spacing and alignment within navbars.
+- Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.
+- Ensure accessibility by using a `<nav>` element or, if using a more generic element such as a `<div>`, add a `role="navigation"` to every navbar to explicitly identify it as a landmark region for users of assistive technologies.
+- Indicate the current item by using `aria-current="page"` for the current page or `aria-current="true"` for the current item in a set.
+- **New in v5.2.0:** Navbars can be themed with CSS variables that are scoped to the `.navbar` base class. `.navbar-light` has been deprecated and `.navbar-dark` has been rewritten to override CSS variables instead of adding additional styles.
+
+{{< callout info >}}
+{{< partial "callouts/info-prefersreducedmotion.md" >}}
+{{< /callout >}}
+
+## Supported content
+
+Navbars come with built-in support for a handful of sub-components. Choose from the following as needed:
+
+- `.navbar-brand` for your company, product, or project name.
+- `.navbar-nav` for a full-height and lightweight navigation (including support for dropdowns).
+- `.navbar-toggler` for use with our collapse plugin and other [navigation toggling](#responsive-behaviors) behaviors.
+- Flex and spacing utilities for any form controls and actions.
+- `.navbar-text` for adding vertically centered strings of text.
+- `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
+- Add an optional `.navbar-scroll` to set a `max-height` and [scroll expanded navbar content](#scrolling).
+
+Here's an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the `lg` (large) breakpoint.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+This example uses [spacing]({{< docsref "/utilities/spacing" >}}) (`me-auto`, `mb-2`, `mb-lg-0`, `me-2`) utility classes.
+
+### Brand
+
+The `.navbar-brand` can be applied to most elements, but an anchor works best, as some elements might require utility classes or custom styles.
+
+#### Text
+
+Add your text within an element with the `.navbar-brand` class.
+
+{{< example >}}
+<!-- As a link -->
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </div>
+</nav>
+
+<!-- As a heading -->
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-brand my-0 h1">Navbar</span>
+  </div>
+</nav>
+{{< /example >}}
+
+#### Image
+
+You can replace the text within the `.navbar-brand` with an `<img>`.
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-colored-background.svg" >}}" alt="Arizona Bootstrap" width="37" height="37">
+    </a>
+  </div>
+</nav>
+{{< /example >}}
+
+#### Image and text
+
+You can also make use of some additional utilities to add an image and text at the same time. Note the addition of `.d-inline-block` and `.align-text-center` on the `<img>`.
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-colored-background.svg" >}}" alt="Logo" width="37" height="37" class="d-inline-block align-text-center me-1">
+      Arizona Bootstrap
+    </a>
+  </div>
+</nav>
+{{< /example >}}
+
+### Nav
+
+Navbar navigation links build on our `.nav` options with their own modifier class and require the use of [toggler classes](#toggler) for proper responsive styling. **Navigation in navbars will also grow to occupy as much horizontal space as possible** to keep your navbar contents securely aligned.
+
+Add the `.active` class on `.nav-link` to indicate the current page.
+
+Please note that you should also add the `aria-current` attribute on the active `.nav-link`.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+And because we use classes for our navs, you can avoid the list-based approach entirely if you like.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+You can also use dropdowns in your navbar. Dropdown menus require a wrapping element for positioning, so be sure to use separate and nested elements for `.nav-item` and `.nav-link` as shown below.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+  
+<p class="mt-4"><span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span></p>
+
+Arizona Bootstrap overrides some styling for dropdowns in navbars to ensure that link text wraps if needed and dropdown carets are positioned correctly.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdownWrapping" aria-controls="navbarNavDropdownWrapping" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdownWrapping">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Page Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            A Third Dropdown Link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            A Fourth Dropdown Link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+### Forms
+
+Place various form controls and components within a navbar:
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+{{< /example >}}
+
+Immediate child elements of `.navbar` use flex layout and will default to `justify-content: space-between`. Use additional [flex utilities]({{< docsref "/utilities/flex" >}}) as needed to adjust this behavior.
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+{{< /example >}}
+
+Input groups work, too. If your navbar is an entire form, or mostly a form, you can use the `<form>` element as the container and save some HTML.
+
+{{< example >}}
+<nav class="navbar">
+  <form class="container-fluid">
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </form>
+</nav>
+{{< /example >}}
+
+Various buttons are supported as part of these navbar forms, too. This is also a great reminder that vertical alignment utilities can be used to align different sized elements.
+
+{{< example >}}
+<nav class="navbar">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button">Main button</button>
+    <button class="btn btn-sm btn-outline-blue" type="button">Smaller button</button>
+  </form>
+</nav>
+{{< /example >}}
+
+### Text
+
+Navbars may contain bits of text with the help of `.navbar-text`. This class adjusts vertical alignment and horizontal spacing for strings of text.
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
+{{< /example >}}
+
+Mix and match with other components and utilities as needed.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+## AZ Navbar
+
+<p class="mt-4"><span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span></p>
+
+Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styling and gain support for a third level of navigation.
+
+{{< example >}}
+<nav class="navbar navbar-az navbar-expand">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAz" aria-controls="navbarAz" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarAz">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Single Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item dropdown btn-group">
+          <a class="nav-link" href="#">Split Dropdown</a>
+          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu" id="secondaryMenu1">
+            <li><a class="dropdown-item" href="#">Secondary Navigation - No Children</a></li>
+            <li>
+              <div class="btn-group">
+                <a class="dropdown-item" href="#">Secondary Navigation - Children</a>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu1" data-bs-auto-close="outside" aria-controls="tertiaryMenu1" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+              </div>
+              <ul id="tertiaryMenu1" class="collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 1">
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+            <li>
+              <div class="btn-group">
+                <a class="dropdown-item" href="#">Secondary Navigation - Children Disabled</a>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu2" data-bs-auto-close="outside" aria-controls="tertiaryMenu2" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+              </div>
+              <ul id="tertiaryMenu2" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+## AZ Navbar Fullscreen
+<span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span>
+
+The fullscreen AZ Navbar navigation pattern presents a minimal, (non-modal) navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal element supports a [logo (brand)](#brand-1), a minimal [Call to Actions](#calls-to-action-menu) menu, a [search](#search) box, and a modal activation toggle. When the [modal menu](#modal-menu) is open, the same [header elements](#modal-menu-header) are supported along with a multicolumn, 3-tier deep menu structure, and support for modal [footer menu bars](#modal-menu-footer).
+
+To see a comprehensive example of this navigation experience, see the [Navbar AZ fullscreen]({{< ref "navbar-az-fullscreen" >}}) Example.
+
+{{< callout warning >}}
+AZ Navbar Fullscreen requires both the **Proxima Nova Condensed** and **Garamond Premier Pro** fonts to render correctly.
+{{< /callout >}}
+
+Existing Bootstrap navigation elements and patterns are used whenever possible. Overrides of existing Bootstrap classes are scoped to the `.navbar-az-fullscreen*` custom classes provided in [_navbar-fullscreen.scss](https://github.com/az-digital/arizona-bootstrap/blob/main/scss/custom/_navbar-fullscreen.scss) to minimize conflict with existing overrides. New CSS properties are prefixed with `--az-navbar-fullscreen-*` and contained within custom `navbar-az-fullscreen*` classes.
+
+Here's what you need to know before getting started with AZ Navbar Fullscreen:
+
+- The non-modal `.navbar-az-fullscreen` supports a [brand](#brand-1), a [calls to action menu](#calls-to-action-menu), a [search](#search) box, and a toggle that opens the [modal menu](#modal-menu).
+- The modal menu is built on Bootstrap's [Modal]({{< docsref "/components/modal" >}}) and [Collapse]({{< docsref "/components/collapse" >}}) plugins to present a multicolumn, 3-tier accordion navigation, with optional [footer menu bars](#modal-menu-footer).
+- Two initializers are bundled automatically in Arizona Bootstrap's JavaScript build: `enableNavbarAzFullscreen()` synchronizes desktop nav-column heights, and `enableNavbarAzFullscreenMobileNav()` powers paged navigation on mobile.
+- When the modal menu is closed, its accordion returns to the default open/closed state it had on page load.
+- Add `.fixed-top` to `.navbar-az-fullscreen` to pin the non-modal navbar to the top of the viewport; see [Fixed Top](#fixed-top).
+
+### Brand
+The brand element displays the logo of the site. A University of Arizona wordmark SVG is packaged with Arizona Bootstrap for use as a default.
+
+{{< example show_markup=false >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <a class="navbar-brand" href="#">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+```html
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <a class="navbar-brand" href="#">
+      <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+```
+
+### Calls to Action Menu
+The Calls to Action menu provides greater visibility for certain high-value actions. It is recommended to provide no more than 3 CTAs.
+
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Apply</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Visit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Give</span>
+        </a>
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+### Search
+
+For standalone usage and full component guidance, see [Search]({{< docsref "/components/search" >}}).
+
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <form class="az-search ms-auto me-4" role="search">
+      <label class="visually-hidden" for="az-search">Search site</label>
+      <div class="input-group d-none d-lg-flex">
+        <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+        <button class="btn" type="submit" aria-label="Submit search">
+          <span class="az-search-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
+    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+### Modal Menu
+
+Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing up to three tiers of navigation, each level built with Bootstrap's [Collapse]({{< docsref "/components/collapse" >}}) plugin.
+
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-menu" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg ">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion">
+              <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-lg-4">
+                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Home</span>
+                    </a>
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-primary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-primary-submenu" aria-label="Toggle Home submenu">
+                      <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-primary-submenu collapse" id="navbar-az-fullscreen-primary-submenu" data-bs-parent="#az-navbar-az-fullscreen-primary-accordion">
+                      <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                        <div class="col-lg-6 navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-secondary">
+                          <ul class="nav navbar-az-fullscreen-nav-secondary" aria-label="Home menu">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Action</span>
+                              </a>
+                              <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-az-fullscreen-secondary-submenu" aria-expanded="false" aria-controls="navbar-az-fullscreen-secondary-submenu" aria-label="Toggle Action submenu">
+                                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                              </button>
+                              <div class="navbar-az-fullscreen-modal-menu-submenu navbar-az-fullscreen-modal-menu-secondary-submenu collapse" id="navbar-az-fullscreen-secondary-submenu">
+                                <div class="navbar-az-fullscreen-modal-menu-submenu-inner">
+                                  <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-tertiary">
+                                    <ul class="nav navbar-az-fullscreen-nav-tertiary" aria-label="Action submenu">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                          <span class="nav-link-text">Yet another action</span>
+                                        </a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                          <span class="nav-link-text">A final action</span>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Another action</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">
+                                <span class="nav-link-text">Something else here</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Features</span>
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Pricing</span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
+              <!-- initial mobile nav items -->
+              <div class="navbar-az-fullscreen-modal-menu-nav-col col-12">
+                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Home</span>
+                    </a>
+                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home submenu">
+                      <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Features</span>
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Pricing</span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+#### Modal Menu Header
+
+The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action, and search elements alongside a close button, so wayfinding stays consistent while the menu is open.
+
+{{< example show_markup=false >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-header">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-header-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-header-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <a class="navbar-brand" href="#">
+              <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+            </a>
+            <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Apply</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Visit</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Give</span>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="container-lg">
+          <form class="az-search" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-menu-header-search">Search site</label>
+            <div class="input-group">
+              <input id="navbar-az-fullscreen-modal-menu-header-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
+              <!-- call-to-action items -->
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Apply</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Visit</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Give</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+```html
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-header">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-header" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-header-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-header-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <a class="navbar-brand" href="#">
+              <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+            </a>
+            <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Apply</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Visit</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="nav-link-text">Give</span>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="container-lg">
+          <form class="az-search" role="search">
+            <label class="visually-hidden" for="navbar-az-fullscreen-modal-search">Search site</label>
+            <div class="input-group">
+              <input id="navbar-az-fullscreen-modal-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+              <button class="btn" type="submit" aria-label="Submit search">
+                <span class="az-search-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
+              <!-- call-to-action items -->
+              <ul class="navbar-nav navbar-az-fullscreen-actions">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Apply</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Visit</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Give</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+#### Modal Menu Footer
+
+Up to two `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns, using the `#navbar-az-fullscreen-modal-footer-top` and `#navbar-az-fullscreen-modal-footer-bottom` ids shown below. If you only need one footer bar, use the `-top` id to retain the overflow fade effect above it; omit both if your menu doesn't need footer link groups.
+
+{{< example >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-modal-menu-footer">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div class="modal navbar-az-fullscreen-modal" id="navbar-az-fullscreen-modal-menu-footer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="navbar-az-fullscreen-menu-footer-label" aria-hidden="true">
+  <h2 id="navbar-az-fullscreen-menu-footer-label" class="visually-hidden">Site menu</h2>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="navbar navbar-az-fullscreen">
+          <div class="container-lg">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="navbar-az-fullscreen-modal-menu container-lg">
+          <div class="row g-0">
+            <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-footer"></div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-footer" class="col-12 d-lg-none"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-lg-flex" id="navbar-az-fullscreen-modal-footer-top">
+        <nav class="navbar d-none d-lg-flex" aria-labelledby="navbar-az-fullscreen-modal-footer-top-label">
+          <div class="container-lg">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <h2 class="navbar-brand" id="navbar-az-fullscreen-modal-footer-top-label">Resources For:</h2>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Current Students</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Faculty &amp; Staff</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Alumni</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Parents &amp; Families</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span class="nav-link-text">Business or Partner</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+#### Desktop Column Sync
+On desktop viewports (`lg` and above), the fullscreen modal synchronizes the height of the visible primary, secondary, and tertiary navigation columns to the tallest visible navigation column. This keeps column separators aligned while preserving independent scrolling within each column when content exceeds the available modal body height.
+
+This behavior is initialized by `enableNavbarAzFullscreen()` and is included automatically in the bundled Arizona Bootstrap JavaScript builds. If you assemble the component markup manually, keep the primary column on `.navbar-az-fullscreen-modal-menu-nav-col-primary` and apply `.navbar-az-fullscreen-nav-secondary` and `.navbar-az-fullscreen-nav-tertiary` to secondary and tertiary nav lists so the desktop synchronization logic can target the active columns correctly.
+
+#### Mobile Menu
+Documentation coming soon.
+
+### Fixed Top
+To fix the non-modal AZ Navbar Fullscreen to the top of the viewport, add Bootstrap's `.fixed-top` class to `.navbar-az-fullscreen`.
+
+Because fixed navbars are removed from normal document flow, also add `.navbar-az-fullscreen-fixed-top-offset` to your main content wrapper so page content does not render underneath the navbar.
+
+{{< example show_markup=false >}}
+<div class="navbar-az-fullscreen-fixed-top-offset">
+  <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" aria-label="Open site menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+{{< /example >}}
+
+```html
+<div class="navbar-az-fullscreen-fixed-top-offset">
+  <nav class="navbar navbar-az-fullscreen fixed-top" aria-label="Main navigation">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="/dist/css/img/arizona-bootstrap-logo-webheader-white.svg" alt="University of Arizona">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" aria-label="Open site menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+```
+
+### Accessibility
+
+- `aria-modal="true"` on `.navbar-az-fullscreen-modal`, together with a visually-hidden `<h2>` referenced by `aria-labelledby`, announces the site menu to assistive technology when it opens.
+- Collapse toggles pair `aria-expanded` and `aria-controls` with a descriptive `aria-label` (for example, "Toggle Admissions submenu") so screen reader users know what each toggle affects.
+- Decorative icons, including `.nav-toggle-icon`, `.navbar-toggler-icon`, and `.az-search-icon`, are marked `aria-hidden="true"`.
+- Interactive elements expose `:focus-visible` styling through the `--az-navbar-fullscreen-focus-ring-*` custom properties.
+
+### CSS Variables
+The following properties are set and used:
+
+The `--az-navbar-fullscreen-height` token is available globally on `:root` for page-level layout rules such as fixed-top content offsets. The remaining fullscreen navbar variables continue to be scoped to the `.navbar-az-fullscreen` custom class.
+
+{{< scss-docs name="navbar-az-fullscreen-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-actions` custom class:
+
+{{< scss-docs name="navbar-az-fullscreen-actions-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+The `.az-search` component is defined separately (see [Search]({{< docsref "/components/search" >}})), but AZ Navbar Fullscreen overrides several of its CSS variables within `.navbar-az-fullscreen` and `.modal-header .az-search` contexts to fit the fullscreen layout:
+
+{{< scss-docs name="az-search-css-vars" file="custom/_search.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-modal` custom class:
+
+{{< scss-docs name="navbar-az-fullscreen-modal-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+On the `.navbar-az-fullscreen-modal-menu` custom class:
+
+{{< scss-docs name="navbar-az-fullscreen-modal-menu-css-vars" file="custom/_navbar-fullscreen.scss" scssroot="scss" >}}
+
+## Containers
+
+Although it's not required, you can wrap a navbar in a `.container` to center it on a page–though note that an inner container is still required. Or you can add a container inside the `.navbar` to only center the contents of a [fixed or static top navbar](#placement).
+
+{{< example >}}
+<div class="container">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+    </div>
+  </nav>
+</div>
+{{< /example >}}
+
+Use any of the responsive containers to change how wide the content in your navbar is presented.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-md">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </div>
+</nav>
+{{< /example >}}
+
+## Placement
+
+Use our [position utilities]({{< docsref "/utilities/position" >}}) to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, stickied to the top (scrolls with the page until it reaches the top, then stays there), or stickied to the bottom (scrolls with the page until it reaches the bottom, then stays there).
+
+Fixed navbars use `position: fixed`, meaning they're pulled from the normal flow of the DOM and may require custom CSS (e.g., `padding-top` on the `<body>`) to prevent overlap with other elements.
+
+{{< example >}}
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Default</a>
+  </div>
+</nav>
+{{< /example >}}
+
+{{< example >}}
+<nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fixed top</a>
+  </div>
+</nav>
+{{< /example >}}
+
+{{< example >}}
+<nav class="navbar fixed-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </div>
+</nav>
+{{< /example >}}
+
+{{< example >}}
+<nav class="navbar sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sticky top</a>
+  </div>
+</nav>
+{{< /example >}}
+
+{{< example >}}
+<nav class="navbar sticky-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sticky bottom</a>
+  </div>
+</nav>
+{{< /example >}}
+
+## Scrolling
+
+Add `.navbar-nav-scroll` to a `.navbar-nav` (or other navbar sub-component) to enable vertical scrolling within the toggleable contents of a collapsed navbar. By default, scrolling kicks in at `75vh` (or 75% of the viewport height), but you can override that with the local CSS custom property `--bs-navbar-height` or custom styles. At larger viewports when the navbar is expanded, content will appear as it does in a default navbar.
+
+Please note that this behavior comes with a potential drawback of `overflow`—when setting `overflow-y: auto` (required to scroll the content here), `overflow-x` is the equivalent of `auto`, which will crop some horizontal content.
+
+Here's an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-height: 100px;"`, with some extra margin utilities for optimum spacing.
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Link</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+## Responsive behaviors
+
+Navbars can use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to determine when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.
+
+For navbars that never collapse, add the `.navbar-expand` class on the navbar. For navbars that always collapse, don't add any `.navbar-expand` class.
+
+### Toggler
+
+Navbar togglers are left-aligned by default, but should they follow a sibling element like a `.navbar-brand`, they'll automatically be aligned to the far right. Reversing your markup will reverse the placement of the toggler. Below are examples of different toggle styles.
+
+With no `.navbar-brand` shown at the smallest breakpoint:
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Hidden brand</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+With a brand name shown on the left and toggler on the right:
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+With a toggler on the left and brand name on the right:
+
+{{< example >}}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+### External content
+
+Sometimes you want to use the collapse plugin to trigger a container element for content that structurally sits outside of the `.navbar` . Because our plugin works on the `id` and `data-bs-target` matching, that's easily done!
+
+{{< example >}}
+<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+  <div class="bg-dark p-4">
+    <h5 class="text-body-emphasis h4">Collapsed content</h5>
+    <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+
+When you do this, we recommend including additional JavaScript to move the focus programmatically to the container when it is opened. Otherwise, keyboard users and users of assistive technologies will likely have a hard time finding the newly revealed content - particularly if the container that was opened comes *before* the toggler in the document's structure. We also recommend making sure that the toggler has the `aria-controls` attribute, pointing to the `id` of the content container. In theory, this allows assistive technology users to jump directly from the toggler to the container it controls–but support for this is currently quite patchy.
+
+### Offcanvas
+
+Transform your expanding and collapsing navbar into an offcanvas drawer with the [offcanvas component]({{< docsref "/components/offcanvas" >}}). We extend both the offcanvas default styles and use our `.navbar-expand-*` classes to create a dynamic and flexible navigation sidebar.
+
+In the example below, to create an offcanvas navbar that is always collapsed across all breakpoints, omit the `.navbar-expand-*` class entirely.
+
+{{< example >}}
+<nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+To create an offcanvas navbar that expands into a normal navbar at a specific breakpoint like `lg`, use `.navbar-expand-lg`.
+
+```html
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="#">Offcanvas navbar</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+    ...
+  </div>
+</nav>
+```
+
+When using offcanvas in a dark navbar, be aware that you may need to have a dark background on the offcanvas content to avoid the text becoming illegible. In the example below, we add `.navbar-dark` and `.bg-dark` to the `.navbar`, `.text-bg-dark` to the `.offcanvas`, `.dropdown-menu-dark` to `.dropdown-menu`, and `.btn-close-white` to `.btn-close` for proper styling with a dark offcanvas.
+
+{{< example >}}
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+
+## CSS
+
+### Variables
+
+{{< added-in "5.2.0" >}}
+
+As part of Bootstrap's evolving CSS variables approach, navbars now use local CSS variables on `.navbar` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+
+{{< scss-docs name="navbar-css-vars" file="scss/_navbar.scss" >}}
+
+Some additional CSS variables are also present on `.navbar-nav`:
+
+{{< scss-docs name="navbar-nav-css-vars" file="scss/_navbar.scss" >}}
+
+Customization through CSS variables can be seen on the `.navbar-dark` class where we override specific values without adding duplicate CSS selectors.
+
+{{< scss-docs name="navbar-dark-css-vars" file="scss/_navbar.scss" >}}
+
+### Sass variables
+
+Variables for all navbars:
+
+{{< scss-docs name="navbar-variables" file="scss/_variables.scss" >}}
+
+Variables for the [dark navbar](#color-schemes):
+
+{{< scss-docs name="navbar-dark-variables" file="scss/_variables.scss" >}}
+
+### Sass loops
+
+[Responsive navbar expand/collapse classes](#responsive-behaviors) (e.g., `.navbar-expand-lg`) are combined with the `$breakpoints` map and generated through a loop in `scss/_navbar.scss`.
+
+{{< scss-docs name="navbar-expand-loop" file="scss/_navbar.scss" >}}

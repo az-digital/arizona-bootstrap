@@ -33,12 +33,12 @@ $red: #ab0520;
 $bloom: #ef4056;
 $chili: #8b0015;
 $blue: #0c234b;
-$sky: #81d3eb;
-$oasis: #378dbd;
+$sky: #81ceeb;
+$oasis: #106ab1;
 $azurite: #1e5288;
-$midnight: #001c48;
-$cool-gray: #e2e9eb;
-$warm-gray: #f4ede5;
+$midnight: #03132e;
+$cool-gray: #e5eff7;
+$warm-gray: #f2efea;
 $leaf: #70b865;
 $river: #007d84;
 $silver: #9eabae;
@@ -387,9 +387,24 @@ $colors: (
 */
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-serif: garamond-premier-pro, Georgia, "Times New Roman", serif;
 // stylelint-enable value-keyword-case
 
 $heading-margins: 1.042em 0 .667em;
+
+// >> Heading type scale
+// Mobile-first font-size/line-height/font-weight per heading level; h1-h3 pick up
+// larger font-size-lg/line-height-lg at the $lg breakpoint. h4-h6 stay constant.
+// Consumed in scss/override/_typography.scss.
+$headings-scale: (
+  // margin-top matches margin-bottom so h1 spacing is symmetrical, unlike h2-h6.
+  1: (font-size: 3rem, line-height: 3.5rem, font-weight: 600, font-size-lg: 4rem, line-height-lg: 4.625rem, margin-top: .667em),
+  2: (font-size: 2.375rem, line-height: 2.875rem, font-weight: 600, font-size-lg: 3.25rem, line-height-lg: 3.875rem),
+  3: (font-size: 1.875rem, line-height: 2.375rem, font-weight: 600, font-size-lg: 2.5rem, line-height-lg: 3.125rem),
+  4: (font-size: 1.75rem, line-height: 2.25rem, font-weight: 600),
+  5: (font-size: 1.375rem, line-height: 1.875rem, font-weight: 600),
+  6: (font-size: 1.125rem, line-height: 1.625rem, font-weight: 600)
+);
 
 /*
 * > COMPONENTS
@@ -397,7 +412,7 @@ $heading-margins: 1.042em 0 .667em;
 
 // >> Breadcrumbs
 $breadcrumb-color: $azurite;
-$breadcrumb-hover-color: $midnight;
+$breadcrumb-hover-color: $azurite;
 
 // >> Navs
 $nav-tabs-link-bg: $gray-200;

@@ -45,3 +45,10 @@ Thumbs.db
 # Folders to ignore
 /js/coverage/
 /node_modules/
+
+# Visual regression (Playwright) artifacts, baselines, and local-only page list
+/playwright-report/
+/test-results/
+/playwright/.cache/
+/.vr-baselines/
+/tests/.vr-pages.json
