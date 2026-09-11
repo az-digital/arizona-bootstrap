@@ -18,8 +18,32 @@ const IDS = {
 const LABELS = {
   MAIN_MENU: 'Main'
 }
+const MENU_HEADING_CLASS = 'navbar-az-fullscreen-nav-mobile-menu-heading'
 const FULLSCREEN_MODAL_SELECTOR = '.navbar-az-fullscreen-modal'
 const FULLSCREEN_MODAL_RESET_EVENT = 'az.navbar-fullscreen.reset'
+
+/**
+ * Derive the human-readable menu label for a nav toggle button.
+ *
+ * Prefers the label cached by normalizeMenuButtons(), then the adjacent nav
+ * link's visible text, and only then falls back to parsing the authored
+ * aria-label, which keeps menus built from older markup working.
+ *
+ * @param {Element} button - The nav toggle button
+ * @returns {string} The menu label, or an empty string if none can be derived
+ */
+function getMenuLabel(button) {
+  if (button.dataset.azMenuLabel) {
+    return button.dataset.azMenuLabel
+  }
+
+  const linkText = button.previousElementSibling?.querySelector('.nav-link-text')?.textContent.trim()
+  if (linkText) {
+    return linkText
+  }
+
+  return (button.getAttribute('aria-label') || '').replace('Toggle ', '').replace(' submenu', '').trim()
+}
 
 class NavbarAzFullscreenMobileNav {
   constructor() {
@@ -32,6 +56,10 @@ class NavbarAzFullscreenMobileNav {
     if (!document.querySelector(this.primaryNavElementId) || !this.mobileCol) {
       return
     }
+
+    // Correct the authored toggle labels before any content is cached, so
+    // restored and cloned menus carry the corrected labels too.
+    this.normalizeMenuButtons(this.mobileCol)
 
     // Initialize variables for preserved DOM content
     this.mobileColInitialContent = this.mobileCol.cloneNode(true)
@@ -225,10 +253,16 @@ class NavbarAzFullscreenMobileNav {
     // Set up event listeners for footer buttons
     const footerButtons = footer.querySelectorAll(':scope .btn')
     for (const button of footerButtons) {
+      // These open a menu page rather than expanding anything in place, so the
+      // authored "Toggle ..." name describes something that does not happen.
+      if (headingText) {
+        button.setAttribute('aria-label', `Show ${headingText} submenu`)
+      }
+
       button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-az-menu-element')
-        if (targetId) {
-          this.showNavMenu(2, targetId, headingText)
+        if (targetId && this.showNavMenu(2, targetId, headingText)) {
+          this.focusCurrentMenu()
         }
       })
     }
@@ -243,11 +277,12 @@ class NavbarAzFullscreenMobileNav {
    * @param {string} label - The label for the menu heading (optional)
    * @param {string} parentLabel - Parent label to use for back navigation (optional)
    * @param {string} parentElementId - Parent element ID to use for back navigation (optional)
+   * @returns {boolean} Whether the menu page was displayed
    */
   showNavMenu(navLevel, sourceElementId, label = null, parentLabel = null, parentElementId = null) {
     const element = document.querySelector(`${sourceElementId}`)
     if (!element) {
-      return
+      return false
     }
 
     if (navLevel === 2) {
@@ -268,6 +303,79 @@ class NavbarAzFullscreenMobileNav {
 
     this.toggleFooterDisplay(sourceElementId)
     this.setupMobileMenuObserver()
+
+    return true
+  }
+
+  /**
+   * Give the paged mobile menu's toggle buttons an accurate accessible name.
+   *
+   * These buttons are cloned from the desktop markup, where they expand a
+   * submenu in place. On mobile they replace the whole menu column instead, so
+   * the authored "Toggle ... submenu" name describes something that does not
+   * happen here. The derived label is cached on the button for later lookups.
+   *
+   * @param {Element} root - The element containing the buttons to normalize
+   */
+  normalizeMenuButtons(root) {
+    if (!root || typeof root.querySelectorAll !== 'function') {
+      return
+    }
+
+    for (const button of root.querySelectorAll('button.nav-toggle')) {
+      const label = getMenuLabel(button)
+      if (!label) {
+        continue
+      }
+
+      button.dataset.azMenuLabel = label
+      button.setAttribute('aria-label', `Show ${label} submenu`)
+    }
+  }
+
+  /**
+   * Move focus into the menu page now displayed in the mobile column.
+   *
+   * The column's contents are replaced wholesale, which destroys the element the
+   * user just activated and leaves focus on the document body. This restores it:
+   * to the toggle being returned to when navigating back, otherwise to the new
+   * menu's heading.
+   *
+   * Only called from user-initiated navigation. Menu pages built during
+   * initialization must not take focus away from the document.
+   *
+   * @param {string} returnToTargetId - Source element ID of the menu being left,
+   *   used to find the toggle that opened it (optional)
+   */
+  focusCurrentMenu(returnToTargetId = null) {
+    if (!(this.mobileCol instanceof HTMLElement)) {
+      return
+    }
+
+    let target = null
+
+    if (returnToTargetId) {
+      const selector = `[data-az-menu-element="${returnToTargetId}"]`
+      // Footer menus are opened from a button outside the mobile column.
+      target = this.mobileCol.querySelector(selector) || document.querySelector(selector)
+    }
+
+    if (!target) {
+      target = this.mobileCol.querySelector(`.${MENU_HEADING_CLASS}`)
+    }
+
+    if (!target) {
+      return
+    }
+
+    // Headings are not focusable on their own. tabindex="-1" allows programmatic
+    // focus without adding the heading to the tab order, and does not match
+    // :focus-visible, so no focus ring is rendered.
+    if (!target.hasAttribute('tabindex') && target.tagName !== 'BUTTON') {
+      target.setAttribute('tabindex', '-1')
+    }
+
+    target.focus()
   }
 
   /**
@@ -293,7 +401,7 @@ class NavbarAzFullscreenMobileNav {
       fragment.append(this.createBackButtonElement(parentLabel))
 
       const heading = document.createElement('h2')
-      heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading'
+      heading.className = MENU_HEADING_CLASS
       heading.textContent = `${label} Menu`
       fragment.append(heading)
     }
@@ -338,6 +446,20 @@ class NavbarAzFullscreenMobileNav {
         panel.remove()
       }
 
+      // Only the primary menu is authored as a <nav> landmark; levels 2 and 3
+      // are bare lists. Promote the cloned column so the menu is announced with
+      // a name, and drop the now-duplicate name from the list itself.
+      if (navLevel !== 1) {
+        const navList = navClone.querySelector('.nav[aria-label]')
+        const navLabel = label || navList?.getAttribute('aria-label') || ''
+
+        if (navLabel) {
+          navClone.setAttribute('role', 'navigation')
+          navClone.setAttribute('aria-label', navLabel)
+          navList?.removeAttribute('aria-label')
+        }
+      }
+
       // Create sentinel element at the top of the nav content
       const menuListTop = document.createElement('div')
       menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top'
@@ -376,6 +498,8 @@ class NavbarAzFullscreenMobileNav {
         }
       }
 
+      this.normalizeMenuButtons(navClone)
+
       mobileMenuContainer.append(navClone)
       fragment.append(mobileMenuContainer)
     } else {
@@ -400,7 +524,7 @@ class NavbarAzFullscreenMobileNav {
     fragment.append(this.createBackButtonElement(LABELS.MAIN_MENU))
 
     const heading = document.createElement('h2')
-    heading.className = 'navbar-az-fullscreen-nav-mobile-menu-heading'
+    heading.className = MENU_HEADING_CLASS
     heading.textContent = label
     fragment.append(heading)
 
@@ -418,10 +542,14 @@ class NavbarAzFullscreenMobileNav {
     menuListTop.className = 'navbar-az-fullscreen-nav-mobile-menu-list-top'
     column.append(menuListTop)
 
+    if (label) {
+      column.setAttribute('role', 'navigation')
+      column.setAttribute('aria-label', label)
+    }
+
     const list = document.createElement('ul')
     list.className = 'nav'
     list.setAttribute('id', navId)
-    list.setAttribute('aria-label', label)
 
     if (footerLinks && footerLinks.length > 0) {
       for (const link of footerLinks) {
@@ -485,23 +613,32 @@ class NavbarAzFullscreenMobileNav {
       }
 
       if (button.classList.contains('navbar-az-fullscreen-nav-back-btn')) {
-        // Handle back button events
+        // Handle back button events. Remember the menu being left so focus can
+        // be restored to the toggle that opened it.
+        const leavingSourceId = this.currentMenuSourceId
+        let displayed = false
+
         if (this.currentNavLevel === 2) {
-          this.showNavMenu(1, this.primaryNavElementId)
+          displayed = this.showNavMenu(1, this.primaryNavElementId)
         } else if (this.currentNavLevel === 3) {
-          this.showNavMenu(2, this.currentMenuParentElementId, this.currentMenuParentLabel)
+          displayed = this.showNavMenu(2, this.currentMenuParentElementId, this.currentMenuParentLabel)
+        }
+
+        if (displayed) {
+          this.focusCurrentMenu(leavingSourceId)
         }
       } else if (button.classList.contains('nav-toggle')) {
         // Handle menu nav toggle button events
         const targetId = button.getAttribute('data-az-menu-element')
 
         if (targetId) {
-          // Extract the menu label from button aria-label text
-          const toggleLabel = button.ariaLabel.replace('Toggle ', '').replace(' submenu', '')
-          if (this.currentNavLevel === 1) {
-            this.showNavMenu(2, targetId, toggleLabel)
-          } else {
+          const toggleLabel = getMenuLabel(button)
+          const displayed = this.currentNavLevel === 1 ?
+            this.showNavMenu(2, targetId, toggleLabel) :
             this.showNavMenu(3, targetId, toggleLabel, this.currentMenuLabel, this.currentMenuSourceId)
+
+          if (displayed) {
+            this.focusCurrentMenu()
           }
         }
       }
