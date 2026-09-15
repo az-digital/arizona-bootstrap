@@ -4,7 +4,14 @@
   &.active,
   &:active,
   &.is-active {
-    --bs-nav-link-color: var(--bs-midnight);
+    // These are `color`/`background-color` declarations rather than custom
+    // properties because Bootstrap sets `color` directly on
+    // `.navbar-nav .nav-link.active`, which outranks `--bs-nav-link-color`.
+    // `$nav-pills-border-radius` stays a Sass variable: the CSS custom
+    // property is only defined on `.nav-pills`, and this rule is generic.
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-bg;
+    @include border-radius($nav-pills-border-radius);
   }
 
   &.dropdown-toggle::after {

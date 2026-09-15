@@ -37,10 +37,10 @@
     &.is-active,
     &:active,
     &.show {
-      // Not `--bs-navbar-active-color`: that resolves to #fff on a dark
-      // navbar, leaving the active label white on its light active
-      // background.
-      --#{$prefix}nav-link-color: #{$navbar-light-active-color};
+      // Bootstrap declares `color` directly on `.navbar-nav .nav-link.active`,
+      // which outranks the `--bs-nav-link-color` that `.nav-link` reads, so
+      // this has to be a `color` declaration to take effect.
+      color: $navbar-light-active-color;
     }
   }
 
@@ -80,7 +80,7 @@
       &.is-active,
       &:active,
       &.show {
-        --#{$prefix}nav-link-color: var(--bs-white);
+        color: var(--bs-white);
       }
     }
   }
