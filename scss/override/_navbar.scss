@@ -37,7 +37,10 @@
     &.is-active,
     &:active,
     &.show {
-      --#{$prefix}nav-link-color: var(--bs-navbar-active-color);
+      // Not `--bs-navbar-active-color`: that resolves to #fff on a dark
+      // navbar, leaving the active label white on its light active
+      // background.
+      --#{$prefix}nav-link-color: #{$navbar-light-active-color};
     }
   }
 
