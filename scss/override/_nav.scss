@@ -62,7 +62,7 @@
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
-  border: solid 1px var(--bs-nav-tabs-border-color);
+  border: solid 1px var(--bs-gray-200);
 
   ul > li {
     border: 0;

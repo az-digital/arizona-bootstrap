@@ -7,9 +7,11 @@
 }
 
 .navbar-nav {
-  --#{$prefix}nav-link-color: var(--bs-navbar-color);
+  --#{$prefix}nav-link-color: #{$nav-link-color};
   --#{$prefix}nav-link-padding-x: var(--bs-navbar-nav-link-padding-x);
-  --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y);
+  // `--az-navbar-nav-link-padding-y` is only defined on `.navbar-az`, so plain
+  // navbars need the fallback or the padding collapses.
+  --#{$prefix}nav-link-padding-y: var(--az-navbar-nav-link-padding-y, 1.25rem);
 
   .nav-item {
     &:hover {
@@ -20,7 +22,7 @@
     &:has(> .nav-link.is-active),
     &:has(> .nav-link:active),
     &:has(> .nav-link.show) {
-      background-color: var(--bs-nav-tabs-link-active-bg);
+      background-color: var(--bs-secondary-bg);
     }
   }
 
@@ -75,11 +77,7 @@
       &.is-active,
       &:active,
       &.show {
-        --#{$prefix}nav-link-hover-color: var(--bs-white);
-      }
-
-      &:hover {
-        --#{$prefix}nav-link-hover-color: var(--bs-sky);
+        --#{$prefix}nav-link-color: var(--bs-white);
       }
     }
   }
