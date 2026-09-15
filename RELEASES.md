@@ -6,28 +6,33 @@ websites up to date with security updates and other critical improvements
 without having to track the ongoing feature development of Arizona Bootstrap.
 
 ## Release Overview
-Arizona Digital development proceeds in the `main` branch of the
-[GitHub repository](https://github.com/az-digital/arizona-bootstrap) applying
-bug fixes and adding new features. Although the repository contains other
-branches, these are not intended for use elsewhere. Releases correspond to a Git
-tag in the repository, and fully built CSS and JavaScript files in a CDN, where
-they are available for immediate use or downloading. The CDN contains versions
-of the assets from all releases, all prefixed by
-`https://cdn.digital.arizona.edu/lib/arizona-bootstrap/`_releasenumber_
+Arizona Digital development proceeds in parallel on two long-lived branches of
+the [GitHub repository](https://github.com/az-digital/arizona-bootstrap): `main`,
+which tracks the current major version (5.x) and receives new features as well
+as bug fixes, and `2.x`, which receives only bug fixes, security updates, and
+other critical improvements for sites that have not yet migrated to 5.x. Fixes
+that apply to both lines are generally made on `main` first and then backported
+to `2.x`. The repository may also contain other branches, such as short-lived
+branches used to prepare an upcoming release; these are not intended for use
+elsewhere. Releases correspond to a Git tag in the repository, and fully built
+CSS and JavaScript files in a CDN, where they are available for immediate use or
+downloading. The CDN contains versions of the assets from all releases, all
+prefixed by `https://cdn.digital.arizona.edu/lib/arizona-bootstrap/`_releasenumber_
 (ensuring that anything using a particular release from the CDN does not receive
-unexpected changes). A
+unexpected changes). The CDN also publishes rolling `5.x`, `2.x`, `latest-5.x`,
+and `latest-2.x` paths that track the most recent commit and the most recent
+release, respectively, on the corresponding branch. A
 [documentation site](https://digital.arizona.edu/arizona-bootstrap/) tracks the
-latest release of Arizona Bootstrap, but not previous versions. Security issues
-and major bug fixes rarely affect the built assets for a particular release, so
-there is no organized backporting workflow. The developer tooling used to build
-those assets does receive frequent updates, but those initially modify only the
-`main` branch in the repository. Development tools are derived from those that
-Bootstrap uses, mainly based on NodeJS and the Hugo static site builder for
-generating the documentation, and developers can use those in their own local
-environments. Continuous Integration (CI) software can use the same tools, but
-also make changes to the main Git repository and CDN; GitHub actions are the
-primary CI mechanism, with a configuration that is specific to Arizona
-Bootstrap.
+latest release of each actively maintained branch (`main` and `2.x`), but not
+previous versions within either line. The developer tooling used to build those
+assets does receive frequent updates, mainly via _dependabot_, and those updates
+are proposed separately against both the `main` and `2.x` branches. Development
+tools are derived from those that Bootstrap uses, mainly based on NodeJS and the
+Hugo static site builder for generating the documentation, and developers can
+use those in their own local environments. Continuous Integration (CI) software
+can use the same tools, but also make changes to the Git repository and CDN;
+GitHub actions are the primary CI mechanism, with a configuration that is
+specific to Arizona Bootstrap.
 
 ## Interdependencies
 Arizona Bootstrap is a customized version of
@@ -109,7 +114,7 @@ action.
 
 ## Triggering a Minor Release
 
-Same as a patch release, except you must change the minor verson number folder at:
+Same as a patch release, except you must change the minor version number folder at:
 - `/site/content/docs/5.x`
 - `/site/static/docs/5.x`
 
