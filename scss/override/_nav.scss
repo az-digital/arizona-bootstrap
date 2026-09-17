@@ -47,6 +47,9 @@
   &.active,
   &:active,
   &.is-active {
+    // Underline tabs sit on the page background, not on the grey block the
+    // generic `.nav-link.active` rule paints, so this has to override it.
+    background-color: $nav-tabs-link-active-bg;
     @include border-radius(revert);
   }
 }
