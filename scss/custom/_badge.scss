@@ -7,6 +7,21 @@
 .badge.badge-link:focus {
   text-decoration: none;
 
+  // `!important` is required to win against the `.text-bg-*` utilities, which
+  // are themselves emitted with `!important`.
+  /* stylelint-disable declaration-no-important */
+  &.text-bg-chili,
+  &.text-bg-midnight {
+    color: var(--bs-text-bg-color) !important;
+  }
+
+  &.text-bg-chili,
+  &.text-bg-midnight,
+  &.text-bg-light {
+    background-color: var(--bs-text-bg-bg) !important;
+  }
+  /* stylelint-enable declaration-no-important */
+
   &.text-bg-chili {
     --bs-text-bg-color: var(--bs-white);
     --bs-text-bg-bg: rgba(var(--bs-red-rgb), var(--bs-bg-opacity, 1));

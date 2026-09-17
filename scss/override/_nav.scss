@@ -4,7 +4,14 @@
   &.active,
   &:active,
   &.is-active {
-    --bs-nav-link-color: var(--bs-midnight);
+    // These are `color`/`background-color` declarations rather than custom
+    // properties because Bootstrap sets `color` directly on
+    // `.navbar-nav .nav-link.active`, which outranks `--bs-nav-link-color`.
+    // `$nav-pills-border-radius` stays a Sass variable: the CSS custom
+    // property is only defined on `.nav-pills`, and this rule is generic.
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-bg;
+    @include border-radius($nav-pills-border-radius);
   }
 
   &.dropdown-toggle::after {
@@ -19,7 +26,9 @@
   }
 
   .nav-link {
-    background-color: var(--bs-nav-tabs-link-active-bg);
+    // `$nav-tabs-link-bg` (grey), not `--bs-nav-tabs-link-active-bg` (white):
+    // this is the resting background for every tab, not the active one.
+    background-color: $nav-tabs-link-bg;
 
     &.active,
     &:active,
@@ -38,6 +47,9 @@
   &.active,
   &:active,
   &.is-active {
+    // Underline tabs sit on the page background, not on the grey block the
+    // generic `.nav-link.active` rule paints, so this has to override it.
+    background-color: $nav-tabs-link-active-bg;
     @include border-radius(revert);
   }
 }
@@ -62,7 +74,7 @@
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
-  border: solid 1px var(--bs-nav-tabs-border-color);
+  border: solid 1px var(--bs-gray-200);
 
   ul > li {
     border: 0;

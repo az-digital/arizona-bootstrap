@@ -17,7 +17,10 @@
     &.active,
     &:active,
     &.is-active {
-      --bs-nav-link-color: var(--bs-dark-silver);
+      // A `color` declaration, not `--bs-nav-link-color`: the generic
+      // `.nav-link.active` rule in override/_nav.scss sets `color` directly at
+      // higher specificity, so a custom property here would lose to it.
+      color: $dark-silver;
       background-color: initial;
       border-bottom-color: var(--bs-dark-silver);
       @include border-radius(0);
