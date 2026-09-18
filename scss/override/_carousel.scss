@@ -11,5 +11,5 @@
 .carousel-indicators > button:focus-visible {
   @include border-radius(2px);
   outline: 0;
-  box-shadow: 0 0 $focus-ring-blur 2px $red, 0 0 $focus-ring-blur 4px $white;
+  box-shadow: 0 0 0 2px var(--bs-red), 0 0 0 4px var(--bs-white);
 }
