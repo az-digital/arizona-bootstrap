@@ -1043,11 +1043,31 @@
 }
 
 .navbar-az-fullscreen-nav-mobile-menu-container {
+  --az-navbar-fullscreen-mobile-menu-rule-height: 1px;
+
   display: flex;
   flex-direction: column;
   min-height: 0;
   max-height: 100%;
-  border-top: 1px solid var(--az-navbar-fullscreen-modal-menu-separator-color);
+
+  // The rule above the first menu item is painted inside the scrolling column
+  // rather than as a border on this container, so that it resolves to the same
+  // width as the `.nav-item` separators below it. A border here would span the
+  // container's full width and overhang those separators by the width of a
+  // classic scrollbar. `sticky` keeps it pinned to the top of the scrollport,
+  // where the border used to sit, instead of scrolling away with the content.
+  > .navbar-az-fullscreen-modal-menu-nav-col::before {
+    position: sticky;
+    top: 0;
+    // Above `.nav-toggle`, which is positioned at `z-index: 1` and so would
+    // otherwise win the tie on document order and draw itself — and the bloom
+    // separator it carries in its stacking context — over the rule.
+    z-index: 2;
+    display: block;
+    height: var(--az-navbar-fullscreen-mobile-menu-rule-height);
+    content: "";
+    background-color: var(--az-navbar-fullscreen-modal-menu-separator-color);
+  }
 
   // Dynamic scroll shadow at the top of mobile menus.
   &::before {
@@ -1056,6 +1076,11 @@
     left: var(--az-navbar-fullscreen-mobile-padding-xy);
     z-index: 1;
     height: var(--az-navbar-fullscreen-modal-bottom-fade-size);
+    // Start the fade below the rule above the first menu item, so it doesn't
+    // paint over it. This pseudo-element has no `top`, so it sits at its static
+    // position: previously that was below the container's `border-top`, and the
+    // margin keeps it clear of the rule that replaced that border.
+    margin-top: var(--az-navbar-fullscreen-mobile-menu-rule-height);
     pointer-events: none;
     content: "";
     background: linear-gradient(to bottom, var(--az-navbar-fullscreen-modal-fade-color) 0%, rgb(0 0 0 / 0) 100%);
