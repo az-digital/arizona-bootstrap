@@ -582,7 +582,6 @@
   @include media-breakpoint-up(lg) {
     .navbar-az-fullscreen-modal-menu-nav-col {
       padding-right: 0;
-      scrollbar-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color) var(--az-navbar-fullscreen-modal-scrollbar-track-color);
       border-right: 1px solid transparent;
       border-image:
         linear-gradient(
@@ -593,15 +592,6 @@
           var(--bs-azurite) 100%
         )
         1;
-
-      &::-webkit-scrollbar-track {
-        background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color);
-        @include border-radius(6px);
-      }
     }
 
     .navbar-az-fullscreen-modal-menu-nav-col > .nav {
@@ -623,6 +613,20 @@
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    // These columns scroll at every breakpoint, so the scrollbar has to be
+    // styled unconditionally. Gating this behind `lg` left the mobile layout
+    // with a default scrollbar on any platform that draws classic (non-overlay)
+    // scrollbars — most visibly a desktop window narrowed past the breakpoint.
+    scrollbar-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color) var(--az-navbar-fullscreen-modal-scrollbar-track-color);
+
+    &::-webkit-scrollbar-track {
+      background: var(--az-navbar-fullscreen-modal-scrollbar-track-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--az-navbar-fullscreen-modal-scrollbar-thumb-color);
+      @include border-radius(6px);
+    }
 
     .nav-item {
       display: flex;
