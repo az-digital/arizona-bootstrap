@@ -186,6 +186,69 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 <button type="button" class="btn btn-sm btn-outline-red btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
+## Adding icons to buttons
+
+Add an icon to a button by including the appropriate `<span>` element inside the `<button>` element. For more details about using icons with Arizona Bootstrap, see the [Icons]({{< docsref "/icons" >}}) page. Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button.
+
+### Default size
+
+{{< example >}}
+<button type="button" class="btn btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+</button>
+{{< /example >}}
+
+{{< example >}}
+<button type="button" class="btn btn-red">
+  Badge
+  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
+</button>
+{{< /example >}}
+
+### Large size
+
+{{< example >}}
+<button type="button" class="btn btn-lg btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-lg btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+</button>
+{{< /example >}}
+
+{{< example >}}
+<button type="button" class="btn btn-lg btn-red">
+  Badge
+  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
+</button>
+{{< /example >}}
+
+### Small size
+
+{{< example >}}
+<button type="button" class="btn btn-sm btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-sm btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded fs-5 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
+</button>
+{{< /example >}}
+
+{{< example >}}
+<button type="button" class="btn btn-sm btn-red">Badge
+  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
+</button>
+{{< /example >}}
+
 ## Disabled state
 
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.
