@@ -6,6 +6,9 @@
 
 .btn {
   --az-btn-focus-outline-color: var(--bs-bloom);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   letter-spacing: .14px;
 
   &:focus-visible {
