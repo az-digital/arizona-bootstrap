@@ -674,7 +674,7 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    block-size: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
+    min-block-size: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
     line-height: var(--az-navbar-fullscreen-modal-menu-nav-link-line-height);
     &:hover {
       &::after {
