@@ -6,15 +6,21 @@
 
 .btn {
   --az-btn-focus-outline-color: var(--bs-bloom);
+  --az-btn-flex-gap: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--az-btn-flex-gap);
   letter-spacing: .14px;
 
   &:focus-visible {
     outline: 2px solid var(--az-btn-focus-outline-color);
     outline-offset: 2px;
     box-shadow: none;
+  }
+
+  .badge {
+    top: 0;
   }
 }
 
