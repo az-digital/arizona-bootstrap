@@ -19,6 +19,10 @@
     box-shadow: none;
   }
 
+  &.placeholder {
+    display: inline-block;
+  }
+
   .badge {
     top: 0;
   }
