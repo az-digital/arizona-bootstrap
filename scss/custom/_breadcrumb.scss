@@ -18,17 +18,9 @@
   padding: 0 0 2.5px;
 }
 
-// :not(.active) skips the underline when Home is the current page (no <a>).
-// We want the hover underline to not run past the home icon, so we use
-// a background line to allow insetting it from the left.
-.breadcrumb-item-home:not(.active):hover {
-  background-image: linear-gradient($breadcrumb-hover-color, $breadcrumb-hover-color);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: calc(100% - 3.5px) 1px; // stylelint-disable-line function-disallowed-list
-}
-
-// Cancels the generic `.breadcrumb-item a:hover` underline on this <a>.
-.breadcrumb-item-home a:hover {
-  border-bottom: 0;
+// Extends the link under the icon, so the shared `.breadcrumb-item a:hover`
+// underline runs from the glyph's left edge (3.5px into the icon) to the text.
+.breadcrumb-item-home a {
+  padding-left: calc(1.35rem - 3.5px); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(3.5px - 1.35rem); // stylelint-disable-line function-disallowed-list
 }
