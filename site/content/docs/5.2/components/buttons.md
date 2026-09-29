@@ -203,13 +203,6 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 </button>
 {{< /example >}}
 
-{{< example >}}
-<button type="button" class="btn btn-red">
-  Badge
-  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
-</button>
-{{< /example >}}
-
 ### Large size
 
 {{< example >}}
@@ -223,13 +216,6 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 </button>
 {{< /example >}}
 
-{{< example >}}
-<button type="button" class="btn btn-lg btn-red">
-  Badge
-  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
-</button>
-{{< /example >}}
-
 ### Small size
 
 {{< example >}}
@@ -240,12 +226,6 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 <button type="button" class="btn btn-sm btn-red">
   Material Symbol
   <span class="material-symbols-rounded fs-5 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
-</button>
-{{< /example >}}
-
-{{< example >}}
-<button type="button" class="btn btn-sm btn-red">Badge
-  <span class="badge text-bg-light ms-2">1<span class="visually-hidden">Active filters: </span></span>
 </button>
 {{< /example >}}
 
