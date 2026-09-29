@@ -31,7 +31,7 @@ jobs:
           # Match the Node version the Dockerfile pins for every other build
           # in this repo - a mismatch broke Hugo's PostCSS pipeline (a
           # `--permission`-flag incompatibility) under Node 20.
-          node-version: '22.23.2'
+          node-version: '22.23.3'
           cache: npm
 
       - name: Install dependencies
