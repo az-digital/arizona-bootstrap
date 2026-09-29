@@ -5,12 +5,14 @@
 //
 
 .btn {
-  --az-btn-focus-outline-color: var(--bs-bloom);
   --az-btn-flex-gap: 4px;
+  --az-btn-focus-outline-color: var(--bs-bloom);
+  --az-btn-min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--az-btn-flex-gap);
+  min-height: var(--az-btn-min-height);
   letter-spacing: .14px;
 
   &:focus-visible {
@@ -19,20 +21,18 @@
     box-shadow: none;
   }
 
-  &.placeholder {
-    display: inline-block;
-  }
-
   .badge {
     top: 0;
   }
 }
 
 .btn-sm {
+  --az-btn-min-height: 29px;
   line-height: 1.0625rem;
 }
 
 .btn-lg {
+  --az-btn-min-height: 55px;
   line-height: 1.6875rem;
   letter-spacing: .18px;
 }
