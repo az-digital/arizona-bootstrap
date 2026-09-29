@@ -194,12 +194,12 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 
 {{< example >}}
 <button type="button" class="btn btn-red">
-  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  <span class="az-icon az-icon-arizona me-1" aria-hidden="true"></span>
   Arizona Icon
 </button>
 <button type="button" class="btn btn-red">
   Material Symbol
-  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+  <span class="material-symbols-rounded ms-1 me-n2" aria-hidden="true">arrow_forward_ios</span>
 </button>
 {{< /example >}}
 
@@ -207,12 +207,12 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 
 {{< example >}}
 <button type="button" class="btn btn-lg btn-red">
-  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  <span class="az-icon az-icon-arizona me-1" aria-hidden="true"></span>
   Arizona Icon
 </button>
 <button type="button" class="btn btn-lg btn-red">
   Material Symbol
-  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+  <span class="material-symbols-rounded ms-1 me-n2" aria-hidden="true">arrow_forward_ios</span>
 </button>
 {{< /example >}}
 
@@ -220,12 +220,12 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 
 {{< example >}}
 <button type="button" class="btn btn-sm btn-red">
-  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  <span class="az-icon az-icon-arizona me-1" aria-hidden="true"></span>
   Arizona Icon
 </button>
 <button type="button" class="btn btn-sm btn-red">
   Material Symbol
-  <span class="material-symbols-rounded fs-5 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
+  <span class="material-symbols-rounded fs-5 me-n1" aria-hidden="true">arrow_forward_ios</span>
 </button>
 {{< /example >}}
 
