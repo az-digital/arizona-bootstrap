@@ -9,9 +9,9 @@
   --az-btn-focus-outline-color: var(--bs-bloom);
   --az-btn-min-height: 46px;
   display: inline-flex;
+  gap: var(--az-btn-flex-gap);
   align-items: center;
   justify-content: center;
-  gap: var(--az-btn-flex-gap);
   min-height: var(--az-btn-min-height);
   letter-spacing: .14px;
 
