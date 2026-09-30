@@ -6,11 +6,9 @@
 
 .btn {
   --az-btn-focus-outline-color: var(--bs-bloom);
-  --az-btn-min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--az-btn-min-height);
   letter-spacing: .14px;
 
   &:focus-visible {
@@ -19,20 +17,40 @@
     box-shadow: none;
   }
 
-  .badge {
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 46px;
+  }
+
+  > [aria-hidden="true"] {
+    line-height: var(--bs-btn-line-height);
+  }
+
+  > .badge {
     top: 0;
   }
 }
 
 .btn-sm {
-  --az-btn-min-height: 29px;
-  line-height: 1.0625rem;
+  --bs-btn-line-height: 1.0625rem;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 29px;
+  }
 }
 
 .btn-lg {
-  --az-btn-min-height: 55px;
-  line-height: 1.6875rem;
+  --bs-btn-line-height: 1.6875rem;
   letter-spacing: .18px;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 55px;
+  }
 }
 
 // >> Solid Variants
