@@ -188,7 +188,11 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 
 ## Adding icons to buttons
 
-Add an icon to a button by including the appropriate `<span>` element inside the `<button>` element. For more details about using icons with Arizona Bootstrap, see the [Icons]({{< docsref "/icons" >}}) page. Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button.
+Add an icon to a button by including the appropriate `<span>` element inside the `<button>` element. For more details about using icons with Arizona Bootstrap, see the [Icons]({{< docsref "/icons" >}}) page.
+
+{{< callout warning >}}
+Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button.
+{{< /callout >}}
 
 ### Default size
 
@@ -200,6 +204,10 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 <button type="button" class="btn btn-red">
   Material Symbol
   <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+</button>
+<button type="button" class="btn btn-red">
+  <span class="material-symbols-rounded fs-3" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
 </button>
 {{< /example >}}
 
@@ -214,6 +222,10 @@ Add an icon to a button by including the appropriate `<span>` element inside the
   Material Symbol
   <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
 </button>
+<button type="button" class="btn btn-lg btn-red">
+  <span class="material-symbols-rounded fs-2" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
+</button>
 {{< /example >}}
 
 ### Small size
@@ -225,7 +237,11 @@ Add an icon to a button by including the appropriate `<span>` element inside the
 </button>
 <button type="button" class="btn btn-sm btn-red">
   Material Symbol
-  <span class="material-symbols-rounded fs-5 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
+  <span class="material-symbols-rounded fs-6 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
+</button>
+<button type="button" class="btn btn-sm btn-red">
+  <span class="material-symbols-rounded" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
 </button>
 {{< /example >}}
 
