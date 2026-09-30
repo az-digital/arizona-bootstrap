@@ -25,13 +25,16 @@ jobs:
       - name: Checkout repository to workspace
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - name: Determine the Node.js version used in the current Docker images
+        run: echo "NODE_VERSION=$(sed -nE 's/^FROM node:([0-9.]+).*/\1/p' Dockerfile)" >> "$GITHUB_ENV"
+
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           # Match the Node version the Dockerfile pins for every other build
           # in this repo - a mismatch broke Hugo's PostCSS pipeline (a
           # `--permission`-flag incompatibility) under Node 20.
-          node-version: '22.23.2'
+          node-version: '${{ env.NODE_VERSION }}'
           cache: npm
 
       - name: Install dependencies
@@ -46,7 +49,7 @@ jobs:
 
       - name: Configure AWS credentials
         if: ${{ !cancelled() }}
-        uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c # v6.2.4
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
