@@ -81,8 +81,6 @@ params:
 
   download:
     source:             "https://github.com/az-digital/arizona-bootstrap/archive/v{{az_version}}.zip"
-    dist:               "V5_AUDIT_dist"
-    dist_examples:      "V5_AUDIT_dist_examples"
 
   cdn:
     # See https://www.srihash.org for info on how to generate the hashes

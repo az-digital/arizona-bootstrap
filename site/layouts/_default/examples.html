@@ -129,7 +129,7 @@
     {{- end }}
 
     {{ range .Page.Params.extra_js -}}
-      <script{{ with .async }} async{{ end }}{{ with .defer }} defer{{ end }} src="{{ .src | relURL -}}"></script>
+      <script{{ with .async }} async{{ end }}{{ with .defer }} defer{{ end }} src="{{ .src }}"></script>
     {{- end -}}
   </body>
 </html>
