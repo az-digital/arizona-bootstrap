@@ -27,7 +27,7 @@ Badges can be used as part of links or buttons to provide a counter.
 
 {{< example >}}
 <button type="button" class="btn btn-red">
-  Notifications <span class="badge ms-1 text-bg-light">4</span>
+  Notifications<span class="badge ms-1 text-bg-light">4</span>
 </button>
 {{< /example >}}
 
