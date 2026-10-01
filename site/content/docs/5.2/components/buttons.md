@@ -162,7 +162,7 @@ You can even roll your own custom sizing with CSS variables:
 </button>
 {{< /example >}}
 
-## Arrow Buttons
+## Arrow buttons
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
@@ -188,10 +188,12 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 
 ## Adding icons to buttons
 
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
 Add an icon to a button by including the appropriate `<span>` element inside the `<button>` element. For more details about using icons with Arizona Bootstrap, see the [Icons]({{< docsref "/icons" >}}) page.
 
 {{< callout warning >}}
-Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button.
+Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button. Ensure that icon elements include `aria-hidden="true"` for accessibility.
 {{< /callout >}}
 
 ### Default size
