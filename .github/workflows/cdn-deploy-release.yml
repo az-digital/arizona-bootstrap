@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: az_bootstrap_release
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     name: Build & deploy CDN assets
