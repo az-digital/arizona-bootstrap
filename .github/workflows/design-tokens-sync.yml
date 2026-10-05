@@ -55,6 +55,8 @@ jobs:
       - name: Create new branch and PR
         env:
           GH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          # Open the PR in this repository, never in a fork's parent.
+          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
 
