@@ -45,13 +45,13 @@
 // .card-icon-hover-{normal}-{hover} preset below sets values only, and a site
 // can set the same variables inline for its own colors.
 .card-icon-hover {
-  --#{$prefix}card-bg: #{$cool-gray};
-  --#{$prefix}card-color: #{$midnight};
-  --#{$prefix}card-title-color: #{$azurite};
+  --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
+  --#{$prefix}card-color: var(--#{$prefix}midnight);
+  --#{$prefix}card-title-color: var(--#{$prefix}azurite);
   --#{$prefix}card-border-width: 0;
-  --az-card-hover-bg: #{$blue};
-  --az-card-hover-color: #{$white};
-  --az-card-hover-accent: #{$sky};
+  --az-card-hover-bg: var(--#{$prefix}blue);
+  --az-card-hover-color: var(--#{$prefix}white);
+  --az-card-hover-accent: var(--#{$prefix}sky);
   --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
   // The fade timing (0.3s, ease-out) is from the brand mockup.
   @include transition(background-color .3s ease-out);
@@ -97,31 +97,31 @@
 // Each preset meets WCAG 2.2 AA contrast in both states. If you change a
 // color here, check the contrast again.
 .card-icon-hover-blue-sky {
-  --#{$prefix}card-bg: #{$blue};
-  --#{$prefix}card-color: #{$white};
-  --#{$prefix}card-title-color: #{$sky};
+  --#{$prefix}card-bg: var(--#{$prefix}blue);
+  --#{$prefix}card-color: var(--#{$prefix}white);
+  --#{$prefix}card-title-color: var(--#{$prefix}sky);
   // Make links white, because the default red links are too dark on blue.
   --#{$prefix}link-color-rgb: var(--#{$prefix}white-rgb);
   --#{$prefix}link-hover-color-rgb: var(--#{$prefix}white-rgb);
-  --az-card-hover-bg: #{$sky};
-  --az-card-hover-color: #{$black};
-  --az-card-hover-accent: #{$blue};
+  --az-card-hover-bg: var(--#{$prefix}sky);
+  --az-card-hover-color: var(--#{$prefix}black);
+  --az-card-hover-accent: var(--#{$prefix}blue);
   --az-card-hover-link-rgb: var(--#{$prefix}black-rgb);
 }
 
 .card-icon-hover-white-azurite {
-  --#{$prefix}card-bg: #{$white};
+  --#{$prefix}card-bg: var(--#{$prefix}white);
   // Show the card border, because a white card on a white page needs an edge.
   --#{$prefix}card-border-width: var(--#{$prefix}border-width);
-  --az-card-hover-bg: #{$azurite};
-  --az-card-hover-accent: #{$white};
+  --az-card-hover-bg: var(--#{$prefix}azurite);
+  --az-card-hover-accent: var(--#{$prefix}white);
 }
 
 .card-icon-hover-warm-gray-chili {
-  --#{$prefix}card-bg: #{$warm-gray};
-  --#{$prefix}card-title-color: #{$red};
-  --az-card-hover-bg: #{$chili};
-  --az-card-hover-accent: #{$white};
+  --#{$prefix}card-bg: var(--#{$prefix}warm-gray);
+  --#{$prefix}card-title-color: var(--#{$prefix}red);
+  --az-card-hover-bg: var(--#{$prefix}chili);
+  --az-card-hover-accent: var(--#{$prefix}white);
 }
 
 // >> Card titles on touch screens
