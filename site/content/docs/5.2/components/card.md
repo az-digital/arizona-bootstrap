@@ -74,6 +74,112 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 </div>
 {{< /example >}}
 
+### Icons
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Use an icon in place of an image by adding `.card-icon` to an icon at the top of the `.card-body`. The icon takes its color from the text color, so you can color it with the [`.text-{color}`]({{< docsref "/utilities/colors" >}}) utilities. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG that uses `fill="currentColor"` or `stroke="currentColor"`. Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
+
+Add `.card-icon-hover` to the card to give it the brand colors: cool gray, then blue when you hover over the card. The title link has `.stretched-link`, so the whole card is clickable. When you press <kbd>Tab</kbd> to reach the link, the card also shows its hover colors.
+
+{{< example >}}
+<div class="card card-icon-hover" style="max-width: 20rem;">
+  <div class="card-body p-4">
+    <span class="card-icon material-symbols-rounded" aria-hidden="true">person_raised_hand</span>
+    <h3 class="card-title h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
+    </h3>
+    <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
+  </div>
+</div>
+{{< /example >}}
+
+#### Icon card colors
+
+Add a preset class next to `.card-icon-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
+
+| Class | Normal colors | Hover colors |
+| --- | --- | --- |
+| `.card-icon-hover` | Cool gray background, azurite icon and title, midnight text | Blue background, sky icon and title, white text |
+| `.card-icon-hover-blue-sky` | Blue background, sky icon and title, white text | Sky background, blue icon and title, black text |
+| `.card-icon-hover-white-azurite` | White background with a border, azurite icon and title, midnight text | Azurite background, white icon and title, white text |
+| `.card-icon-hover-warm-gray-chili` | Warm gray background, red icon and title, midnight text | Chili background, white icon and title, white text |
+
+{{< example >}}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card card-icon-hover h-100">
+      <div class="card-body p-4">
+        <i class="card-icon az-icon-grad-cap" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to blue</a>
+        </h3>
+        <p class="card-text">The default icon card colors.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-icon-hover card-icon-hover-blue-sky h-100">
+      <div class="card-body p-4">
+        <i class="card-icon az-icon-majors-and-degrees" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Blue to sky</a>
+        </h3>
+        <p class="card-text">A dark card that turns light on hover.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-icon-hover card-icon-hover-white-azurite h-100">
+      <div class="card-body p-4">
+        <i class="card-icon az-icon-scholarship" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">White to azurite</a>
+        </h3>
+        <p class="card-text">For a section that already has a gray background.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-icon-hover card-icon-hover-warm-gray-chili h-100">
+      <div class="card-body p-4">
+        <i class="card-icon az-icon-financial-aid" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Warm gray to chili</a>
+        </h3>
+        <p class="card-text">A red set.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+#### Custom icon card colors
+
+To use your own colors, set these CSS variables on a `.card-icon-hover` card. The normal colors use Bootstrap's own [card variables](#variables). If you make your own set, check that both states meet WCAG contrast, for example with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+| Variable | What it sets |
+| --- | --- |
+| `--bs-card-bg` | Normal background |
+| `--bs-card-color` | Normal text color |
+| `--bs-card-title-color` | Normal icon and title color |
+| `--az-card-hover-bg` | Hover background |
+| `--az-card-hover-color` | Hover text color |
+| `--az-card-hover-accent` | Hover icon and title color |
+| `--az-card-hover-link-rgb` | Hover color of other links in the card, as RGB numbers, for example `var(--bs-white-rgb)` |
+
+{{< example >}}
+<div class="card card-icon-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-accent: var(--bs-white);">
+  <div class="card-body p-4">
+    <i class="card-icon az-icon-award" aria-hidden="true"></i>
+    <h3 class="card-title h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to azurite</a>
+    </h3>
+    <p class="card-text">The default normal colors, with an azurite hover background.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ### List groups
 
 Create lists of content in a card with a flush list group.

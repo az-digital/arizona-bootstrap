@@ -12,6 +12,117 @@
   @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
 }
 
+// >> Card icons
+
+// An icon in place of a card's image, above the card title. It takes its color
+// from the text color, so .text-* classes work on it. The extra .card in the
+// selector wins over the font-size that icon font classes set (for example,
+// .material-symbols-rounded sets 24px).
+.card .card-icon {
+  display: block;
+  margin-bottom: $spacer * 1.5;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+// Make an inline SVG icon 1em square, so font-size sets its size, the same as
+// an icon font. The SVG needs fill="currentColor" (or stroke="currentColor") to
+// take the text color.
+// stylelint-disable-next-line selector-no-qualifying-type
+.card svg.card-icon {
+  width: 1em;
+  height: 1em;
+}
+
+// >> Card color presets
+
+// Give a card a normal and a hover set of colors: background, text, and an
+// accent for the icon and title. The default set is from the brand mockup:
+// cool gray, then blue on hover.
+// The normal colors use Bootstrap's own card variables (--bs-card-bg,
+// --bs-card-color, --bs-card-title-color), and one hover rule swaps in the
+// --az-card-hover-* values. This is how .btn uses --bs-btn-hover-bg. So each
+// .card-icon-hover-{normal}-{hover} preset below sets values only, and a site
+// can set the same variables inline for its own colors.
+.card-icon-hover {
+  --#{$prefix}card-bg: #{$cool-gray};
+  --#{$prefix}card-color: #{$midnight};
+  --#{$prefix}card-title-color: #{$azurite};
+  --#{$prefix}card-border-width: 0;
+  --az-card-hover-bg: #{$blue};
+  --az-card-hover-color: #{$white};
+  --az-card-hover-accent: #{$sky};
+  --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
+  @include transition(background-color .25s ease);
+
+  .card-body,
+  .card-title,
+  .card-icon {
+    @include transition(color .25s ease);
+  }
+
+  // Color the icon and the title with the accent. The title needs this rule
+  // too: if it has a heading class such as .h5, the heading color rule in
+  // override/_typography.scss comes after Bootstrap's .card-title rule and
+  // makes the title blue.
+  .card-icon,
+  .card-title {
+    color: var(--#{$prefix}card-title-color);
+  }
+
+  // Switch to the hover colors when you hover over the card, or when Tab
+  // reaches its stretched link. See the .hover utility in _hover.scss for why
+  // this uses :has(:focus-visible).
+  &:is(:hover, :has(:focus-visible)) {
+    --#{$prefix}card-bg: var(--az-card-hover-bg);
+    --#{$prefix}card-color: var(--az-card-hover-color);
+    --#{$prefix}card-title-color: var(--az-card-hover-accent);
+    --#{$prefix}link-color-rgb: var(--az-card-hover-link-rgb);
+    --#{$prefix}link-hover-color-rgb: var(--az-card-hover-link-rgb);
+
+    .card-title {
+      text-decoration: underline;
+    }
+
+    // Draw the link focus ring in the link's own color, the same as
+    // az-color-contrast() does. Rationale: the default red ring is too dark to
+    // see on a dark hover background, such as blue.
+    a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur 2px;
+    }
+  }
+}
+
+// Each preset meets WCAG 2.2 AA contrast in both states. If you change a
+// color here, check the contrast again.
+.card-icon-hover-blue-sky {
+  --#{$prefix}card-bg: #{$blue};
+  --#{$prefix}card-color: #{$white};
+  --#{$prefix}card-title-color: #{$sky};
+  // Make links white, because the default red links are too dark on blue.
+  --#{$prefix}link-color-rgb: var(--#{$prefix}white-rgb);
+  --#{$prefix}link-hover-color-rgb: var(--#{$prefix}white-rgb);
+  --az-card-hover-bg: #{$sky};
+  --az-card-hover-color: #{$black};
+  --az-card-hover-accent: #{$blue};
+  --az-card-hover-link-rgb: var(--#{$prefix}black-rgb);
+}
+
+.card-icon-hover-white-azurite {
+  --#{$prefix}card-bg: #{$white};
+  // Show the card border, because a white card on a white page needs an edge.
+  --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  --az-card-hover-bg: #{$azurite};
+  --az-card-hover-accent: #{$white};
+}
+
+.card-icon-hover-warm-gray-chili {
+  --#{$prefix}card-bg: #{$warm-gray};
+  --#{$prefix}card-title-color: #{$red};
+  --az-card-hover-bg: #{$chili};
+  --az-card-hover-accent: #{$white};
+}
+
 // >> Card header and footer
 
 // Remove top margin from card title
