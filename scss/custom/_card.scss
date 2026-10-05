@@ -4,20 +4,18 @@
 
 // >> Card images
 
-// Round the top corners of a box that clips a card's top image, to match the
-// card's corners. Rationale: .hover-img-zoom-in scales the image up past the
-// box on hover, so the box's corners become the image's corners. With square
-// box corners, the zoomed image would stick out past the card's round corners.
+// Round the top corners of the .overflow-hidden wrapper around a card's top
+// image. Without this rule a hover-zoomed image would stick out past the
+// card's round corners.
 .card > .overflow-hidden:first-child:has(.card-img-top) {
   @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
 }
 
 // >> Card icons
 
-// An icon in place of a card's image, above the card title. It takes its color
-// from the text color, so .text-* classes work on it. The extra .card in the
-// selector wins over the font-size that icon font classes set (for example,
-// .material-symbols-rounded sets 24px).
+// An icon in place of a card's image. It takes its color from the text color.
+// The extra .card in the selector wins over the font-size that icon font
+// classes set (for example, .material-symbols-rounded sets 24px).
 .card .card-icon {
   display: block;
   margin-bottom: $spacer * 1.5;
@@ -34,14 +32,13 @@
   height: 1em;
 }
 
-// >> Card color presets
+// >> Icon card color presets
 
-// Give a card a normal and a hover set of colors: background, text, and an
-// accent for the icon and title. The default set is from the brand mockup:
-// cool gray, then blue on hover.
+// Give an icon card (.card-icon-hover) a normal and a hover set of colors:
+// background, text, and an accent for the icon and title.
 // The normal colors use Bootstrap's own card variables (--bs-card-bg,
 // --bs-card-color, --bs-card-title-color), and one hover rule swaps in the
-// --az-card-hover-* values. This is how .btn uses --bs-btn-hover-bg. So each
+// --az-card-hover-* values, similar to how .btn uses --bs-btn-hover-bg. So each
 // .card-icon-hover-{normal}-{hover} preset below sets values only, and a site
 // can set the same variables inline for its own colors.
 .card-icon-hover {
@@ -72,8 +69,7 @@
   }
 
   // Switch to the hover colors when you hover over the card, or when Tab
-  // reaches its stretched link. See the .hover utility in _hover.scss for why
-  // this uses :has(:focus-visible).
+  // reaches its stretched link.
   &:is(:hover, :has(:focus-visible)) {
     --#{$prefix}card-bg: var(--az-card-hover-bg);
     --#{$prefix}card-color: var(--az-card-hover-color);
@@ -127,9 +123,7 @@
 // >> Card titles on touch screens
 
 // If the device can't hover (most phones and tablets), always underline a
-// clickable card title. Rationale: these titles otherwise show their underline
-// only on hover or keyboard focus, so on a touch screen they would look like
-// plain headings, not links. The mobile brand mockup underlines them too.
+// clickable card title.
 @media (hover: none) {
   .card-icon-hover .card-title,
   .card .hover-text-underline {

@@ -6,7 +6,7 @@ group: utilities
 toc: true
 ---
 
-Put the `.hover` class on a parent element, and a `.hover-*` class on each child element that should change. The effects turn on when you hover over the parent, or when the parent or anything inside it has keyboard focus. For example, when you press <kbd>Tab</kbd> to reach a `.stretched-link` inside a card, the card's hover effects turn on. A mouse click on the link does not turn them on.
+Put the `.hover` class on a parent element, and a `.hover-*` class on each child element that should change on hover. The children's hover effects (the `.hover-*` classes) turn on when you hover over the parent, or when the parent or anything inside it has keyboard focus. For example, when you press <kbd>Tab</kbd> to reach a `.stretched-link` inside a card, the card's hover effects turn on.
 
 ## Text Decoration
 
