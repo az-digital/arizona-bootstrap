@@ -98,12 +98,64 @@ Add `.card-icon-hover` to the card to give it the brand colors: cool gray, then 
 
 Add a preset class next to `.card-icon-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
 
-| Class | Normal colors | Hover colors |
-| --- | --- | --- |
-| `.card-icon-hover` | Cool gray background, azurite icon and title, midnight text | Blue background, sky icon and title, white text |
-| `.card-icon-hover-blue-sky` | Blue background, sky icon and title, white text | Sky background, blue icon and title, black text |
-| `.card-icon-hover-white-azurite` | White background with a border, azurite icon and title, midnight text | Azurite background, white icon and title, white text |
-| `.card-icon-hover-warm-gray-chili` | Warm gray background, red icon and title, midnight text | Chili background, white icon and title, white text |
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Class</th>
+        <th scope="colgroup" colspan="2">Background</th>
+        <th scope="colgroup" colspan="2" class="border-start">Icon and title</th>
+        <th scope="colgroup" colspan="2" class="border-start">Text</th>
+      </tr>
+      <tr>
+        <th scope="col" class="ps-2">Normal</th>
+        <th scope="col">Hover</th>
+        <th scope="col" class="border-start">Normal</th>
+        <th scope="col">Hover</th>
+        <th scope="col" class="border-start">Normal</th>
+        <th scope="col">Hover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>.card-icon-hover</code></th>
+        <td>Cool gray</td>
+        <td>Blue</td>
+        <td class="border-start">Azurite</td>
+        <td>Sky</td>
+        <td class="border-start">Midnight</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-icon-hover-<wbr>blue-sky</code></th>
+        <td>Blue</td>
+        <td>Sky</td>
+        <td class="border-start">Sky</td>
+        <td>Blue</td>
+        <td class="border-start">White</td>
+        <td>Black</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-icon-hover-<wbr>white-azurite</code></th>
+        <td>White, with a border</td>
+        <td>Azurite</td>
+        <td class="border-start">Azurite</td>
+        <td>White</td>
+        <td class="border-start">Midnight</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-icon-hover-<wbr>warm-gray-chili</code></th>
+        <td>Warm gray</td>
+        <td>Chili</td>
+        <td class="border-start">Red</td>
+        <td>White</td>
+        <td class="border-start">Midnight</td>
+        <td>White</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {{< example >}}
 <div class="row row-cols-1 row-cols-md-2 g-4">
