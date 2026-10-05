@@ -53,12 +53,13 @@
   --az-card-hover-color: #{$white};
   --az-card-hover-accent: #{$sky};
   --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
-  @include transition(background-color .25s ease);
+  // The fade timing (0.3s, ease-out) is from the brand mockup.
+  @include transition(background-color .3s ease-out);
 
   .card-body,
   .card-title,
   .card-icon {
-    @include transition(color .25s ease);
+    @include transition(color .3s ease-out);
   }
 
   // Color the icon and the title with the accent. The title needs this rule
