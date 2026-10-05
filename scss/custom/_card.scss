@@ -124,6 +124,19 @@
   --az-card-hover-accent: #{$white};
 }
 
+// >> Card titles on touch screens
+
+// If the device can't hover (most phones and tablets), always underline a
+// clickable card title. Rationale: these titles otherwise show their underline
+// only on hover or keyboard focus, so on a touch screen they would look like
+// plain headings, not links. The mobile brand mockup underlines them too.
+@media (hover: none) {
+  .card-icon-hover .card-title,
+  .card .hover-text-underline {
+    text-decoration: underline;
+  }
+}
+
 // >> Card header and footer
 
 // Remove top margin from card title
