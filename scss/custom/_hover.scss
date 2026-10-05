@@ -1,7 +1,14 @@
 // Hover utility
 
-.hover:hover,
-.hover:focus {
+// Every .hover-* effect turns on when you hover over the .hover element, or
+// when it or anything inside it has keyboard focus. Rationale: in a clickable
+// card, Tab lands on the .stretched-link inside the card, not on the card.
+// - :has(:focus-visible) catches that link. Don't use :focus-within here: a
+//   mouse click also focuses the link, so :focus-within would keep the card in
+//   its hover state after the pointer leaves.
+// - The plain :focus-visible covers a .hover element that is itself the link,
+//   because :has() only looks at the elements inside it.
+.hover:is(:hover, :focus-visible, :has(:focus-visible)) {
   .hover-text-underline {
     text-decoration: underline;
   }
