@@ -513,7 +513,7 @@ Cards with the title on image style put the title of the card on top of the imag
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
   </div>
   <div class="card-body d-flex flex-column">
