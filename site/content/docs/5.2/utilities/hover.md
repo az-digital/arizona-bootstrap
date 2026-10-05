@@ -32,7 +32,7 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
 
 {{< example >}}
 <div class="card hover" style="width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">

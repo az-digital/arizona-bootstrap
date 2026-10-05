@@ -2,6 +2,16 @@
 // > Custom styling for the Card component
 //
 
+// >> Card images
+
+// Round the top corners of a box that clips a card's top image, to match the
+// card's corners. Rationale: .hover-img-zoom-in scales the image up past the
+// box on hover, so the box's corners become the image's corners. With square
+// box corners, the zoomed image would stick out past the card's round corners.
+.card > .overflow-hidden:first-child:has(.card-img-top) {
+  @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
+}
+
 // >> Card header and footer
 
 // Remove top margin from card title
