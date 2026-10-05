@@ -206,6 +206,32 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
 </div>
 {{< /example >}}
 
+#### Custom icon card colors
+
+To use your own colors, set these CSS variables on a `.card-icon-hover` card. The normal colors use Bootstrap's own [card variables](#variables). If you make your own set, check that both states meet WCAG contrast, for example with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+| Variable | What it sets |
+| --- | --- |
+| `--bs-card-bg` | Normal background |
+| `--bs-card-color` | Normal text color |
+| `--bs-card-title-color` | Normal icon and title color |
+| `--az-card-hover-bg` | Hover background |
+| `--az-card-hover-color` | Hover text color |
+| `--az-card-hover-accent` | Hover icon and title color |
+| `--az-card-hover-link-rgb` | Hover color of other links in the card, as RGB numbers, for example `var(--bs-white-rgb)` |
+
+{{< example >}}
+<div class="card card-icon-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-accent: var(--bs-white);">
+  <div class="card-body p-4">
+    <i class="card-icon az-icon-award" aria-hidden="true"></i>
+    <h3 class="card-title h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to azurite</a>
+    </h3>
+    <p class="card-text">The default normal colors, with an azurite hover background.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ### List groups
 
 Create lists of content in a card with a flush list group.
