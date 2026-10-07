@@ -10,7 +10,7 @@
   @extend .btn-secondary;
 }
 
-.btn-sky {
+.btn-rain {
   @extend .btn-info;
   --bs-btn-hover-bg: #65c0db;
   --bs-btn-hover-border-color: #65c0db;
@@ -21,11 +21,11 @@
     $background: $white,
     $border: $white,
     $color: $blue,
-    $hover-background: $cool-gray,
-    $hover-border: $cool-gray,
+    $hover-background: $cloud,
+    $hover-border: $cloud,
     $hover-color: $blue,
-    $active-background: $cool-gray,
-    $active-border: $cool-gray,
+    $active-background: $cloud,
+    $active-border: $cloud,
     $active-color: $blue
   );
   --az-btn-focus-outline-color: #{$white};
@@ -36,11 +36,11 @@
     $background: $white,
     $border: $white,
     $color: $red,
-    $hover-background: $cool-gray,
-    $hover-border: $cool-gray,
+    $hover-background: $cloud,
+    $hover-border: $cloud,
     $hover-color: $red,
-    $active-background: $cool-gray,
-    $active-border: $cool-gray,
+    $active-background: $cloud,
+    $active-border: $cloud,
     $active-color: $red
   );
   --az-btn-focus-outline-color: #{$white};
@@ -54,9 +54,9 @@
   @extend .btn-outline-secondary;
 }
 
-.btn-outline-sky {
+.btn-outline-rain {
   @extend .btn-outline-info;
-  --bs-btn-color: #{$sky};
+  --bs-btn-color: #{$rain};
   --az-btn-focus-outline-color: #{$white};
 }
 

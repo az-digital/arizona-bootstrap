@@ -59,7 +59,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< example >}}
 <div class="position-relative overflow-hidden">
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
+{{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
   <div class="bg-transparent-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-transparent-{{ $color.name }}</div>
 {{- end -}}
@@ -76,7 +76,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< example >}}
 <div class="position-relative overflow-hidden">
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
+{{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
   <div class="bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-gradient-{{ $color.name }}</div>
 {{- end -}}
@@ -107,34 +107,34 @@ As of v5.1.0, `background-color` utilities are generated with Sass using CSS var
 
 ### How it works
 
-Consider our default `.bg-oasis` utility.
+Consider our default `.bg-arroyo-blue` utility.
 
 ```css
-.bg-oasis {
+.bg-arroyo-blue {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-oasis-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-arroyo-blue-rgb), var(--bs-bg-opacity)) !important;
 }
 ```
 
-We use an RGB version of our `--bs-oasis` (with the value of `55, 141, 189`) CSS variable and attached a second CSS variable, `--bs-bg-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.bg-oasis` now, your computed `color` value is `rgba(55, 141, 189, 1)`. The local CSS variable inside each `.bg-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
+We use an RGB version of our `--bs-arroyo-blue` (with the value of `55, 141, 189`) CSS variable and attached a second CSS variable, `--bs-bg-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.bg-arroyo-blue` now, your computed `color` value is `rgba(55, 141, 189, 1)`. The local CSS variable inside each `.bg-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
 
 ### Example
 
 To change that opacity, override `--bs-bg-opacity` via custom styles or inline styles.
 
 {{< example >}}
-<div class="bg-oasis p-2 text-white">This is default oasis background</div>
-<div class="bg-oasis p-2" style="--bs-bg-opacity: .5;">This is 50% opacity oasis background</div>
+<div class="bg-arroyo-blue p-2 text-white">This is default arroyo-blue background</div>
+<div class="bg-arroyo-blue p-2" style="--bs-bg-opacity: .5;">This is 50% opacity arroyo-blue background</div>
 {{< /example >}}
 
 Or, choose from any of the `.bg-opacity` utilities:
 
 {{< example >}}
-<div class="bg-oasis p-2 text-white">This is default success background</div>
-<div class="bg-oasis p-2 text-white bg-opacity-75">This is 75% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-50">This is 50% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-25">This is 25% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-10">This is 10% opacity success background</div>
+<div class="bg-arroyo-blue p-2 text-white">This is default success background</div>
+<div class="bg-arroyo-blue p-2 text-white bg-opacity-75">This is 75% opacity success background</div>
+<div class="bg-arroyo-blue p-2 text-dark bg-opacity-50">This is 50% opacity success background</div>
+<div class="bg-arroyo-blue p-2 text-dark bg-opacity-25">This is 25% opacity success background</div>
+<div class="bg-arroyo-blue p-2 text-dark bg-opacity-10">This is 10% opacity success background</div>
 {{< /example >}}
 
 ## CSS

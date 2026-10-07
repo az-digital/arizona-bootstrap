@@ -29,113 +29,118 @@ $grays: (
 );
 // fusv-enable
 
-$red: #ab0520;
-$bloom: #ef4056;
-$chili: #8b0015;
-$blue: #0c234b;
-$sky: #81ceeb;
-$oasis: #106ab1;
-$azurite: #1e5288;
-$midnight: #03132e;
-$cool-gray: #e5eff7;
-$warm-gray: #f2efea;
-$leaf: #70b865;
-$river: #007d84;
+// Brand colors come from the Arizona Digital design tokens in
+// scss/_design-tokens-variables.scss. The deprecated names they replace are
+// aliased after the $colors map.
+$red: $az-color-brand-red;
+$bougainvillea: $az-color-brand-bougainvillea;
+$sonoran-red: $az-color-brand-sonoran-red;
+$blue: $az-color-brand-blue;
+$rain: $az-color-brand-rain;
+$arroyo-blue: $az-color-brand-arroyo-blue;
+$azurite: $az-color-brand-azurite;
+$tinta: $az-color-brand-tinta;
+$cloud: $az-color-brand-cloud;
+$caliche: $az-color-brand-caliche;
+$saguaro: $az-color-brand-saguaro;
+$shade: $az-color-brand-shade;
+$brick: $az-color-brand-brick;
+$white: $az-color-brand-white;
+
+// No design token for these.
 $silver: #9eabae;
 $dark-silver: #49595e;  // to be used for text only
-$mesa: #a95c42;
 $ash: #403635;
 $sage: #4a634e;
-$white: #fff;
 $black: #000;
 
 // fusv-disable
-$bloom-100: tint-color($bloom, 80%) !default;
-$bloom-200: tint-color($bloom, 60%) !default;
-$bloom-300: tint-color($bloom, 40%) !default;
-$bloom-400: tint-color($bloom, 20%) !default;
-$bloom-500: $bloom !default;
-$bloom-600: shade-color($bloom, 20%) !default;
-$bloom-700: shade-color($bloom, 40%) !default;
-$bloom-800: shade-color($bloom, 60%) !default;
-$bloom-900: shade-color($bloom, 80%) !default;
+$bougainvillea-100: tint-color($bougainvillea, 80%) !default;
+$bougainvillea-200: tint-color($bougainvillea, 60%) !default;
+$bougainvillea-300: tint-color($bougainvillea, 40%) !default;
+$bougainvillea-400: tint-color($bougainvillea, 20%) !default;
+$bougainvillea-500: $bougainvillea !default;
+$bougainvillea-600: shade-color($bougainvillea, 20%) !default;
+$bougainvillea-700: shade-color($bougainvillea, 40%) !default;
+$bougainvillea-800: shade-color($bougainvillea, 60%) !default;
+$bougainvillea-900: shade-color($bougainvillea, 80%) !default;
 
-$blooms: (
-  "bloom-100": $bloom-100,
-  "bloom-200": $bloom-200,
-  "bloom-300": $bloom-300,
-  "bloom-400": $bloom-400,
-  "bloom-500": $bloom-500,
-  "bloom-600": $bloom-600,
-  "bloom-700": $bloom-700,
-  "bloom-800": $bloom-800,
-  "bloom-900": $bloom-900
+$bougainvilleas: (
+  "bougainvillea-100": $bougainvillea-100,
+  "bougainvillea-200": $bougainvillea-200,
+  "bougainvillea-300": $bougainvillea-300,
+  "bougainvillea-400": $bougainvillea-400,
+  "bougainvillea-500": $bougainvillea-500,
+  "bougainvillea-600": $bougainvillea-600,
+  "bougainvillea-700": $bougainvillea-700,
+  "bougainvillea-800": $bougainvillea-800,
+  "bougainvillea-900": $bougainvillea-900
 ) !default;
 
-$chili-100: tint-color($chili, 80%) !default;
-$chili-200: tint-color($chili, 60%) !default;
-$chili-300: tint-color($chili, 40%) !default;
-$chili-400: tint-color($chili, 20%) !default;
-$chili-500: $chili !default;
-$chili-600: shade-color($chili, 20%) !default;
-$chili-700: shade-color($chili, 40%) !default;
-$chili-800: shade-color($chili, 60%) !default;
-$chili-900: shade-color($chili, 80%) !default;
+$sonoran-red-100: tint-color($sonoran-red, 80%) !default;
+$sonoran-red-200: tint-color($sonoran-red, 60%) !default;
+$sonoran-red-300: tint-color($sonoran-red, 40%) !default;
+$sonoran-red-400: tint-color($sonoran-red, 20%) !default;
+$sonoran-red-500: $sonoran-red !default;
+$sonoran-red-600: shade-color($sonoran-red, 20%) !default;
+$sonoran-red-700: shade-color($sonoran-red, 40%) !default;
+$sonoran-red-800: shade-color($sonoran-red, 60%) !default;
+$sonoran-red-900: shade-color($sonoran-red, 80%) !default;
 
-$chilis: (
-  "chili-100": $chili-100,
-  "chili-200": $chili-200,
-  "chili-300": $chili-300,
-  "chili-400": $chili-400,
-  "chili-500": $chili-500,
-  "chili-600": $chili-600,
-  "chili-700": $chili-700,
-  "chili-800": $chili-800,
-  "chili-900": $chili-900
+$sonoran-reds: (
+  "sonoran-red-100": $sonoran-red-100,
+  "sonoran-red-200": $sonoran-red-200,
+  "sonoran-red-300": $sonoran-red-300,
+  "sonoran-red-400": $sonoran-red-400,
+  "sonoran-red-500": $sonoran-red-500,
+  "sonoran-red-600": $sonoran-red-600,
+  "sonoran-red-700": $sonoran-red-700,
+  "sonoran-red-800": $sonoran-red-800,
+  "sonoran-red-900": $sonoran-red-900
 ) !default;
 
-$sky-100: tint-color($sky, 80%) !default;
-$sky-200: tint-color($sky, 60%) !default;
-$sky-300: tint-color($sky, 40%) !default;
-$sky-400: tint-color($sky, 20%) !default;
-$sky-500: $sky !default;
-$sky-600: shade-color($sky, 20%) !default;
-$sky-700: shade-color($sky, 40%) !default;
-$sky-800: shade-color($sky, 60%) !default;
-$sky-900: shade-color($sky, 80%) !default;
+$rain-100: tint-color($rain, 80%) !default;
+$rain-200: tint-color($rain, 60%) !default;
+$rain-300: tint-color($rain, 40%) !default;
+$rain-400: tint-color($rain, 20%) !default;
+$rain-500: $rain !default;
+$rain-600: shade-color($rain, 20%) !default;
+$rain-700: shade-color($rain, 40%) !default;
+$rain-800: shade-color($rain, 60%) !default;
+$rain-900: shade-color($rain, 80%) !default;
 
-$skys: (
-  "sky-100": $sky-100,
-  "sky-200": $sky-200,
-  "sky-300": $sky-300,
-  "sky-400": $sky-400,
-  "sky-500": $sky-500,
-  "sky-600": $sky-600,
-  "sky-700": $sky-700,
-  "sky-800": $sky-800,
-  "sky-900": $sky-900
+$rains: (
+  "rain-100": $rain-100,
+  "rain-200": $rain-200,
+  "rain-300": $rain-300,
+  "rain-400": $rain-400,
+  "rain-500": $rain-500,
+  "rain-600": $rain-600,
+  "rain-700": $rain-700,
+  "rain-800": $rain-800,
+  "rain-900": $rain-900
 ) !default;
 
-$oasis-100: tint-color($oasis, 80%) !default;
-$oasis-200: tint-color($oasis, 60%) !default;
-$oasis-300: tint-color($oasis, 40%) !default;
-$oasis-400: tint-color($oasis, 20%) !default;
-$oasis-500: $oasis !default;
-$oasis-600: shade-color($oasis, 20%) !default;
-$oasis-700: shade-color($oasis, 40%) !default;
-$oasis-800: shade-color($oasis, 60%) !default;
-$oasis-900: shade-color($oasis, 80%) !default;
+$arroyo-blue-100: tint-color($arroyo-blue, 80%) !default;
+$arroyo-blue-200: tint-color($arroyo-blue, 60%) !default;
+$arroyo-blue-300: tint-color($arroyo-blue, 40%) !default;
+$arroyo-blue-400: tint-color($arroyo-blue, 20%) !default;
+$arroyo-blue-500: $arroyo-blue !default;
+$arroyo-blue-600: shade-color($arroyo-blue, 20%) !default;
+$arroyo-blue-700: shade-color($arroyo-blue, 40%) !default;
+$arroyo-blue-800: shade-color($arroyo-blue, 60%) !default;
+$arroyo-blue-900: shade-color($arroyo-blue, 80%) !default;
 
-$oases: (
-  "oasis-100": $oasis-100,
-  "oasis-200": $oasis-200,
-  "oasis-300": $oasis-300,
-  "oasis-400": $oasis-400,
-  "oasis-500": $oasis-500,
-  "oasis-600": $oasis-600,
-  "oasis-700": $oasis-700,
-  "oasis-800": $oasis-800,
-  "oasis-900": $oasis-900
+$arroyo-blues: (
+  "arroyo-blue-100": $arroyo-blue-100,
+  "arroyo-blue-200": $arroyo-blue-200,
+  "arroyo-blue-300": $arroyo-blue-300,
+  "arroyo-blue-400": $arroyo-blue-400,
+  "arroyo-blue-500": $arroyo-blue-500,
+  "arroyo-blue-600": $arroyo-blue-600,
+  "arroyo-blue-700": $arroyo-blue-700,
+  "arroyo-blue-800": $arroyo-blue-800,
+  "arroyo-blue-900": $arroyo-blue-900
 ) !default;
 
 $azurite-100: tint-color($azurite, 80%) !default;
@@ -160,114 +165,114 @@ $azurites: (
   "azurite-900": $azurite-900
 ) !default;
 
-$midnight-100: tint-color($midnight, 80%) !default;
-$midnight-200: tint-color($midnight, 60%) !default;
-$midnight-300: tint-color($midnight, 40%) !default;
-$midnight-400: tint-color($midnight, 20%) !default;
-$midnight-500: $midnight !default;
-$midnight-600: shade-color($midnight, 20%) !default;
-$midnight-700: shade-color($midnight, 40%) !default;
-$midnight-800: shade-color($midnight, 60%) !default;
-$midnight-900: shade-color($midnight, 80%) !default;
+$tinta-100: tint-color($tinta, 80%) !default;
+$tinta-200: tint-color($tinta, 60%) !default;
+$tinta-300: tint-color($tinta, 40%) !default;
+$tinta-400: tint-color($tinta, 20%) !default;
+$tinta-500: $tinta !default;
+$tinta-600: shade-color($tinta, 20%) !default;
+$tinta-700: shade-color($tinta, 40%) !default;
+$tinta-800: shade-color($tinta, 60%) !default;
+$tinta-900: shade-color($tinta, 80%) !default;
 
-$midnights: (
-  "midnight-100": $midnight-100,
-  "midnight-200": $midnight-200,
-  "midnight-300": $midnight-300,
-  "midnight-400": $midnight-400,
-  "midnight-500": $midnight-500,
-  "midnight-600": $midnight-600,
-  "midnight-700": $midnight-700,
-  "midnight-800": $midnight-800,
-  "midnight-900": $midnight-900
+$tintas: (
+  "tinta-100": $tinta-100,
+  "tinta-200": $tinta-200,
+  "tinta-300": $tinta-300,
+  "tinta-400": $tinta-400,
+  "tinta-500": $tinta-500,
+  "tinta-600": $tinta-600,
+  "tinta-700": $tinta-700,
+  "tinta-800": $tinta-800,
+  "tinta-900": $tinta-900
 ) !default;
 
-$cool-gray-100: tint-color($cool-gray, 80%) !default;
-$cool-gray-200: tint-color($cool-gray, 60%) !default;
-$cool-gray-300: tint-color($cool-gray, 40%) !default;
-$cool-gray-400: tint-color($cool-gray, 20%) !default;
-$cool-gray-500: $cool-gray !default;
-$cool-gray-600: shade-color($cool-gray, 20%) !default;
-$cool-gray-700: shade-color($cool-gray, 40%) !default;
-$cool-gray-800: shade-color($cool-gray, 60%) !default;
-$cool-gray-900: shade-color($cool-gray, 80%) !default;
+$cloud-100: tint-color($cloud, 80%) !default;
+$cloud-200: tint-color($cloud, 60%) !default;
+$cloud-300: tint-color($cloud, 40%) !default;
+$cloud-400: tint-color($cloud, 20%) !default;
+$cloud-500: $cloud !default;
+$cloud-600: shade-color($cloud, 20%) !default;
+$cloud-700: shade-color($cloud, 40%) !default;
+$cloud-800: shade-color($cloud, 60%) !default;
+$cloud-900: shade-color($cloud, 80%) !default;
 
-$cool-grays: (
-  "cool-gray-100": $cool-gray-100,
-  "cool-gray-200": $cool-gray-200,
-  "cool-gray-300": $cool-gray-300,
-  "cool-gray-400": $cool-gray-400,
-  "cool-gray-500": $cool-gray-500,
-  "cool-gray-600": $cool-gray-600,
-  "cool-gray-700": $cool-gray-700,
-  "cool-gray-800": $cool-gray-800,
-  "cool-gray-900": $cool-gray-900
+$clouds: (
+  "cloud-100": $cloud-100,
+  "cloud-200": $cloud-200,
+  "cloud-300": $cloud-300,
+  "cloud-400": $cloud-400,
+  "cloud-500": $cloud-500,
+  "cloud-600": $cloud-600,
+  "cloud-700": $cloud-700,
+  "cloud-800": $cloud-800,
+  "cloud-900": $cloud-900
 ) !default;
 
-$warm-gray-100: tint-color($warm-gray, 80%) !default;
-$warm-gray-200: tint-color($warm-gray, 60%) !default;
-$warm-gray-300: tint-color($warm-gray, 40%) !default;
-$warm-gray-400: tint-color($warm-gray, 20%) !default;
-$warm-gray-500: $warm-gray !default;
-$warm-gray-600: shade-color($warm-gray, 20%) !default;
-$warm-gray-700: shade-color($warm-gray, 40%) !default;
-$warm-gray-800: shade-color($warm-gray, 60%) !default;
-$warm-gray-900: shade-color($warm-gray, 80%) !default;
+$caliche-100: tint-color($caliche, 80%) !default;
+$caliche-200: tint-color($caliche, 60%) !default;
+$caliche-300: tint-color($caliche, 40%) !default;
+$caliche-400: tint-color($caliche, 20%) !default;
+$caliche-500: $caliche !default;
+$caliche-600: shade-color($caliche, 20%) !default;
+$caliche-700: shade-color($caliche, 40%) !default;
+$caliche-800: shade-color($caliche, 60%) !default;
+$caliche-900: shade-color($caliche, 80%) !default;
 
-$warm-grays: (
-  "warm-gray-100": $warm-gray-100,
-  "warm-gray-200": $warm-gray-200,
-  "warm-gray-300": $warm-gray-300,
-  "warm-gray-400": $warm-gray-400,
-  "warm-gray-500": $warm-gray-500,
-  "warm-gray-600": $warm-gray-600,
-  "warm-gray-700": $warm-gray-700,
-  "warm-gray-800": $warm-gray-800,
-  "warm-gray-900": $warm-gray-900
+$caliches: (
+  "caliche-100": $caliche-100,
+  "caliche-200": $caliche-200,
+  "caliche-300": $caliche-300,
+  "caliche-400": $caliche-400,
+  "caliche-500": $caliche-500,
+  "caliche-600": $caliche-600,
+  "caliche-700": $caliche-700,
+  "caliche-800": $caliche-800,
+  "caliche-900": $caliche-900
 ) !default;
 
-$leaf-100: tint-color($leaf, 80%) !default;
-$leaf-200: tint-color($leaf, 60%) !default;
-$leaf-300: tint-color($leaf, 40%) !default;
-$leaf-400: tint-color($leaf, 20%) !default;
-$leaf-500: $leaf !default;
-$leaf-600: shade-color($leaf, 20%) !default;
-$leaf-700: shade-color($leaf, 40%) !default;
-$leaf-800: shade-color($leaf, 60%) !default;
-$leaf-900: shade-color($leaf, 80%) !default;
+$saguaro-100: tint-color($saguaro, 80%) !default;
+$saguaro-200: tint-color($saguaro, 60%) !default;
+$saguaro-300: tint-color($saguaro, 40%) !default;
+$saguaro-400: tint-color($saguaro, 20%) !default;
+$saguaro-500: $saguaro !default;
+$saguaro-600: shade-color($saguaro, 20%) !default;
+$saguaro-700: shade-color($saguaro, 40%) !default;
+$saguaro-800: shade-color($saguaro, 60%) !default;
+$saguaro-900: shade-color($saguaro, 80%) !default;
 
-$leafs: (
-  "leaf-100": $leaf-100,
-  "leaf-200": $leaf-200,
-  "leaf-300": $leaf-300,
-  "leaf-400": $leaf-400,
-  "leaf-500": $leaf-500,
-  "leaf-600": $leaf-600,
-  "leaf-700": $leaf-700,
-  "leaf-800": $leaf-800,
-  "leaf-900": $leaf-900
+$saguaros: (
+  "saguaro-100": $saguaro-100,
+  "saguaro-200": $saguaro-200,
+  "saguaro-300": $saguaro-300,
+  "saguaro-400": $saguaro-400,
+  "saguaro-500": $saguaro-500,
+  "saguaro-600": $saguaro-600,
+  "saguaro-700": $saguaro-700,
+  "saguaro-800": $saguaro-800,
+  "saguaro-900": $saguaro-900
 ) !default;
 
-$river-100: tint-color($river, 80%) !default;
-$river-200: tint-color($river, 60%) !default;
-$river-300: tint-color($river, 40%) !default;
-$river-400: tint-color($river, 20%) !default;
-$river-500: $river !default;
-$river-600: shade-color($river, 20%) !default;
-$river-700: shade-color($river, 40%) !default;
-$river-800: shade-color($river, 60%) !default;
-$river-900: shade-color($river, 80%) !default;
+$shade-100: tint-color($shade, 80%) !default;
+$shade-200: tint-color($shade, 60%) !default;
+$shade-300: tint-color($shade, 40%) !default;
+$shade-400: tint-color($shade, 20%) !default;
+$shade-500: $shade !default;
+$shade-600: shade-color($shade, 20%) !default;
+$shade-700: shade-color($shade, 40%) !default;
+$shade-800: shade-color($shade, 60%) !default;
+$shade-900: shade-color($shade, 80%) !default;
 
-$rivers: (
-  "river-100": $river-100,
-  "river-200": $river-200,
-  "river-300": $river-300,
-  "river-400": $river-400,
-  "river-500": $river-500,
-  "river-600": $river-600,
-  "river-700": $river-700,
-  "river-800": $river-800,
-  "river-900": $river-900
+$shades: (
+  "shade-100": $shade-100,
+  "shade-200": $shade-200,
+  "shade-300": $shade-300,
+  "shade-400": $shade-400,
+  "shade-500": $shade-500,
+  "shade-600": $shade-600,
+  "shade-700": $shade-700,
+  "shade-800": $shade-800,
+  "shade-900": $shade-900
 ) !default;
 
 $silver-100: tint-color($silver, 80%) !default;
@@ -292,26 +297,26 @@ $silvers: (
   "silver-900": $silver-900
 ) !default;
 
-$mesa-100: tint-color($mesa, 80%) !default;
-$mesa-200: tint-color($mesa, 60%) !default;
-$mesa-300: tint-color($mesa, 40%) !default;
-$mesa-400: tint-color($mesa, 20%) !default;
-$mesa-500: $mesa !default;
-$mesa-600: shade-color($mesa, 20%) !default;
-$mesa-700: shade-color($mesa, 40%) !default;
-$mesa-800: shade-color($mesa, 60%) !default;
-$mesa-900: shade-color($mesa, 80%) !default;
+$brick-100: tint-color($brick, 80%) !default;
+$brick-200: tint-color($brick, 60%) !default;
+$brick-300: tint-color($brick, 40%) !default;
+$brick-400: tint-color($brick, 20%) !default;
+$brick-500: $brick !default;
+$brick-600: shade-color($brick, 20%) !default;
+$brick-700: shade-color($brick, 40%) !default;
+$brick-800: shade-color($brick, 60%) !default;
+$brick-900: shade-color($brick, 80%) !default;
 
-$mesas: (
-  "mesa-100": $mesa-100,
-  "mesa-200": $mesa-200,
-  "mesa-300": $mesa-300,
-  "mesa-400": $mesa-400,
-  "mesa-500": $mesa-500,
-  "mesa-600": $mesa-600,
-  "mesa-700": $mesa-700,
-  "mesa-800": $mesa-800,
-  "mesa-900": $mesa-900
+$bricks: (
+  "brick-100": $brick-100,
+  "brick-200": $brick-200,
+  "brick-300": $brick-300,
+  "brick-400": $brick-400,
+  "brick-500": $brick-500,
+  "brick-600": $brick-600,
+  "brick-700": $brick-700,
+  "brick-800": $brick-800,
+  "brick-900": $brick-900
 ) !default;
 
 $ash-100: tint-color($ash, 80%) !default;
@@ -362,25 +367,164 @@ $sages: (
 // scss-docs-start colors-map
 $colors: (
   "red": $red,
-  "bloom": $bloom,
-  "chili": $chili,
+  "bougainvillea": $bougainvillea,
+  "sonoran-red": $sonoran-red,
   "blue":  $blue,
-  "sky": $sky,
-  "oasis": $oasis,
+  "rain": $rain,
+  "arroyo-blue": $arroyo-blue,
   "azurite": $azurite,
-  "midnight": $midnight,
-  "cool-gray": $cool-gray,
-  "warm-gray": $warm-gray,
-  "leaf": $leaf,
-  "river": $river,
+  "tinta": $tinta,
+  "cloud": $cloud,
+  "caliche": $caliche,
+  "saguaro": $saguaro,
+  "shade": $shade,
   "silver": $silver,
-  "mesa": $mesa,
+  "brick": $brick,
   "ash": $ash,
   "sage": $sage,
   "white": $white,
   "black": $black
 );
 // scss-docs-end colors-map
+
+// >> Deprecated brand color names
+// The brand colors were renamed to match the Arizona Digital design tokens.
+// The old names are kept as aliases. scss/deprecated/_colors.scss uses this map
+// to alias the old class names and CSS custom properties.
+// fusv-disable
+$deprecated-color-names: (
+  "midnight": "tinta",
+  "oasis": "arroyo-blue",
+  "sky": "rain",
+  "chili": "sonoran-red",
+  "bloom": "bougainvillea",
+  "leaf": "saguaro",
+  "river": "shade",
+  "mesa": "brick",
+  "cool-gray": "cloud",
+  "warm-gray": "caliche"
+);
+
+$midnight: $tinta;
+$midnight-100: $tinta-100;
+$midnight-200: $tinta-200;
+$midnight-300: $tinta-300;
+$midnight-400: $tinta-400;
+$midnight-500: $tinta-500;
+$midnight-600: $tinta-600;
+$midnight-700: $tinta-700;
+$midnight-800: $tinta-800;
+$midnight-900: $tinta-900;
+$midnights: $tintas;
+
+$oasis: $arroyo-blue;
+$oasis-100: $arroyo-blue-100;
+$oasis-200: $arroyo-blue-200;
+$oasis-300: $arroyo-blue-300;
+$oasis-400: $arroyo-blue-400;
+$oasis-500: $arroyo-blue-500;
+$oasis-600: $arroyo-blue-600;
+$oasis-700: $arroyo-blue-700;
+$oasis-800: $arroyo-blue-800;
+$oasis-900: $arroyo-blue-900;
+$oases: $arroyo-blues;
+
+$sky: $rain;
+$sky-100: $rain-100;
+$sky-200: $rain-200;
+$sky-300: $rain-300;
+$sky-400: $rain-400;
+$sky-500: $rain-500;
+$sky-600: $rain-600;
+$sky-700: $rain-700;
+$sky-800: $rain-800;
+$sky-900: $rain-900;
+$skys: $rains;
+
+$chili: $sonoran-red;
+$chili-100: $sonoran-red-100;
+$chili-200: $sonoran-red-200;
+$chili-300: $sonoran-red-300;
+$chili-400: $sonoran-red-400;
+$chili-500: $sonoran-red-500;
+$chili-600: $sonoran-red-600;
+$chili-700: $sonoran-red-700;
+$chili-800: $sonoran-red-800;
+$chili-900: $sonoran-red-900;
+$chilis: $sonoran-reds;
+
+$bloom: $bougainvillea;
+$bloom-100: $bougainvillea-100;
+$bloom-200: $bougainvillea-200;
+$bloom-300: $bougainvillea-300;
+$bloom-400: $bougainvillea-400;
+$bloom-500: $bougainvillea-500;
+$bloom-600: $bougainvillea-600;
+$bloom-700: $bougainvillea-700;
+$bloom-800: $bougainvillea-800;
+$bloom-900: $bougainvillea-900;
+$blooms: $bougainvilleas;
+
+$leaf: $saguaro;
+$leaf-100: $saguaro-100;
+$leaf-200: $saguaro-200;
+$leaf-300: $saguaro-300;
+$leaf-400: $saguaro-400;
+$leaf-500: $saguaro-500;
+$leaf-600: $saguaro-600;
+$leaf-700: $saguaro-700;
+$leaf-800: $saguaro-800;
+$leaf-900: $saguaro-900;
+$leafs: $saguaros;
+
+$river: $shade;
+$river-100: $shade-100;
+$river-200: $shade-200;
+$river-300: $shade-300;
+$river-400: $shade-400;
+$river-500: $shade-500;
+$river-600: $shade-600;
+$river-700: $shade-700;
+$river-800: $shade-800;
+$river-900: $shade-900;
+$rivers: $shades;
+
+$mesa: $brick;
+$mesa-100: $brick-100;
+$mesa-200: $brick-200;
+$mesa-300: $brick-300;
+$mesa-400: $brick-400;
+$mesa-500: $brick-500;
+$mesa-600: $brick-600;
+$mesa-700: $brick-700;
+$mesa-800: $brick-800;
+$mesa-900: $brick-900;
+$mesas: $bricks;
+
+$cool-gray: $cloud;
+$cool-gray-100: $cloud-100;
+$cool-gray-200: $cloud-200;
+$cool-gray-300: $cloud-300;
+$cool-gray-400: $cloud-400;
+$cool-gray-500: $cloud-500;
+$cool-gray-600: $cloud-600;
+$cool-gray-700: $cloud-700;
+$cool-gray-800: $cloud-800;
+$cool-gray-900: $cloud-900;
+$cool-grays: $clouds;
+
+$warm-gray: $caliche;
+$warm-gray-100: $caliche-100;
+$warm-gray-200: $caliche-200;
+$warm-gray-300: $caliche-300;
+$warm-gray-400: $caliche-400;
+$warm-gray-500: $caliche-500;
+$warm-gray-600: $caliche-600;
+$warm-gray-700: $caliche-700;
+$warm-gray-800: $caliche-800;
+$warm-gray-900: $caliche-900;
+$warm-grays: $caliches;
+// fusv-enable
 
 /*
 * > FONTS

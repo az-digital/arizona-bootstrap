@@ -2,7 +2,7 @@
 // > Custom styling for the Badge component
 //
 
-// Include custom .badge-link styles for chili, midnight, and light badges.
+// Include custom .badge-link styles for sonoran-red, tinta, and light badges.
 .badge.badge-link:hover,
 .badge.badge-link:focus {
   text-decoration: none;
@@ -10,23 +10,23 @@
   // `!important` is required to win against the `.text-bg-*` utilities, which
   // are themselves emitted with `!important`.
   /* stylelint-disable declaration-no-important */
-  &.text-bg-chili,
-  &.text-bg-midnight {
+  &.text-bg-sonoran-red,
+  &.text-bg-tinta {
     color: var(--bs-text-bg-color) !important;
   }
 
-  &.text-bg-chili,
-  &.text-bg-midnight,
+  &.text-bg-sonoran-red,
+  &.text-bg-tinta,
   &.text-bg-light {
     background-color: var(--bs-text-bg-bg) !important;
   }
   /* stylelint-enable declaration-no-important */
 
-  &.text-bg-chili {
+  &.text-bg-sonoran-red {
     --bs-text-bg-color: var(--bs-white);
     --bs-text-bg-bg: rgba(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
   }
-  &.text-bg-midnight {
+  &.text-bg-tinta {
     --bs-text-bg-color: var(--bs-white);
     --bs-text-bg-bg: rgba(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
   }

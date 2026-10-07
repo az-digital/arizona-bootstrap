@@ -25,6 +25,9 @@
 // Upstream Bootstrap functions before anything else.
 @import "../../../node_modules/bootstrap/scss/functions";
 
+// Arizona Digital design tokens as Sass variables, synced from az-digital/design.
+@import "../../../scss/design-tokens-variables";
+
 // Arizona Bootstrap custom variables.
 @import "../../../scss/custom/variables";
 

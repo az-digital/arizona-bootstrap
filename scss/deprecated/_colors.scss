@@ -1,0 +1,25 @@
+// Deprecated brand color names, aliased to their design token names.
+// $deprecated-color-names is defined in scss/custom/_variables.scss.
+
+// Deprecated CSS custom properties: --bs-$color, --bs-$color-rgb
+:root,
+[data-bs-theme="light"] {
+  @each $old, $new in $deprecated-color-names {
+    --#{$prefix}#{$old}: var(--#{$prefix}#{$new});
+    --#{$prefix}#{$old}-rgb: var(--#{$prefix}#{$new}-rgb);
+  }
+}
+
+// Deprecated classes such as .bg-$color, .text-bg-$color, .btn-$color
+// Each old class extends its new class, so it also matches every selector the
+// new class appears in (for example `.text-bg-tinta a:focus-visible`). Not
+// every color has every class, so the extends are optional.
+$deprecated-color-class-prefixes: "bg", "bg-gradient", "bg-transparent", "border", "btn", "btn-outline", "callout", "focus-ring", "table", "text", "text-bg", "text-bg-gradient", "text-bg-transparent";
+
+@each $old, $new in $deprecated-color-names {
+  @each $class-prefix in $deprecated-color-class-prefixes {
+    .#{$class-prefix}-#{$old} {
+      @extend .#{$class-prefix}-#{$new} !optional;
+    }
+  }
+}

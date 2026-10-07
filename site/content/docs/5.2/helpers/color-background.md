@@ -62,7 +62,7 @@ These text background classes set the text color by default. Other background cl
 {{< example >}}
 <div class="position-relative overflow-hidden">
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
+{{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
   <div class="text-bg-transparent-{{ $color.name }} p-3 position-relative">.text-bg-transparent-{{ $color.name }} with contrasting color</div>
 {{- end -}}
@@ -77,7 +77,7 @@ These text background classes set the text color by default. Other background cl
 {{< example >}}
 <div class="position-relative overflow-hidden">
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
+{{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
   <div class="text-bg-gradient-{{ $color.name }} p-3 position-relative">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
 {{- end -}}
@@ -114,21 +114,21 @@ Arizona Bootstrap includes additional styling to ensure that headings and links 
 Use them in place of combined `.text-*` and `.bg-*` classes, like on [badges]({{< docsref "/components/badge#background-colors" >}}):
 
 {{< example >}}
-<span class="badge text-bg-leaf">Leaf</span>
-<span class="badge text-bg-sky">Sky</span>
-<span class="badge text-bg-mesa">Mesa</span>
+<span class="badge text-bg-saguaro">Saguaro</span>
+<span class="badge text-bg-rain">Rain</span>
+<span class="badge text-bg-brick">Brick</span>
 {{< /example >}}
 
 Or on [cards]({{< docsref "/components/card#background-and-color" >}}):
 
 {{< example >}}
-<div class="card text-bg-warm-gray mb-3" style="max-width: 18rem;">
+<div class="card text-bg-caliche mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-<div class="card text-bg-chili mb-3" style="max-width: 18rem;">
+<div class="card text-bg-sonoran-red mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

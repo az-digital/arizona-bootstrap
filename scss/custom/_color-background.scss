@@ -28,7 +28,7 @@
 }
 
 // >> Brand Transparent
-@each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
+@each $color, $value in (map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     @include background-transparent($color);
@@ -37,7 +37,7 @@
 }
 
 // >> Brand Gradient
-@each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
+@each $color, $value in (map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     @include background-gradient($color);
