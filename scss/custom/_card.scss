@@ -32,15 +32,16 @@
   height: 1em;
 }
 
-// >> Icon card colors
+// >> Icon card color presets
 
 // Give an icon card (.card-icon-hover) a normal and a hover set of colors:
 // background, text, and an accent for the icon and title.
 // The normal colors use Bootstrap's own card variables (--bs-card-bg,
 // --bs-card-color, --bs-card-title-color). The hover rule reads the
 // --az-card-hover-* variables and leaves the normal ones alone, the same way
-// .btn reads --bs-btn-hover-bg. So a site can set any of these variables, even
-// in an inline style, for its own colors.
+// .btn reads --bs-btn-hover-bg. So each .card-icon-hover-{normal}-{hover}
+// preset below sets values only, and a site can set any of these variables,
+// even in an inline style, for its own colors.
 .card-icon-hover {
   --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
   --#{$prefix}card-color: var(--#{$prefix}midnight);
@@ -104,6 +105,36 @@
       box-shadow: 0 0 $focus-ring-blur 2px;
     }
   }
+}
+
+// Each preset meets WCAG 2.2 AA contrast in both states. If you change a
+// color here, check the contrast again.
+.card-icon-hover-blue-sky {
+  --#{$prefix}card-bg: var(--#{$prefix}blue);
+  --#{$prefix}card-color: var(--#{$prefix}white);
+  --#{$prefix}card-title-color: var(--#{$prefix}sky);
+  // Make links white, because the default red links are too dark on blue.
+  --#{$prefix}link-color-rgb: var(--#{$prefix}white-rgb);
+  --#{$prefix}link-hover-color-rgb: var(--#{$prefix}white-rgb);
+  --az-card-hover-bg: var(--#{$prefix}sky);
+  --az-card-hover-color: var(--#{$prefix}black);
+  --az-card-hover-accent: var(--#{$prefix}blue);
+  --az-card-hover-link-rgb: var(--#{$prefix}black-rgb);
+}
+
+.card-icon-hover-white-azurite {
+  --#{$prefix}card-bg: var(--#{$prefix}white);
+  // Show the card border, because a white card on a white page needs an edge.
+  --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  --az-card-hover-bg: var(--#{$prefix}azurite);
+  --az-card-hover-accent: var(--#{$prefix}white);
+}
+
+.card-icon-hover-warm-gray-chili {
+  --#{$prefix}card-bg: var(--#{$prefix}warm-gray);
+  --#{$prefix}card-title-color: var(--#{$prefix}red);
+  --az-card-hover-bg: var(--#{$prefix}chili);
+  --az-card-hover-accent: var(--#{$prefix}white);
 }
 
 // >> Card titles on touch screens
