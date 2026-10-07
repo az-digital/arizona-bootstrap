@@ -162,7 +162,7 @@ You can even roll your own custom sizing with CSS variables:
 </button>
 {{< /example >}}
 
-## Arrow Buttons
+## Arrow buttons
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
@@ -184,6 +184,67 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 <button type="button" class="btn btn-sm btn-red btn-arrow">Small Arrow Button</button>
 <button type="button" class="btn btn-sm btn-blue btn-arrow">Small Arrow Button</button>
 <button type="button" class="btn btn-sm btn-outline-red btn-arrow">Small Arrow Button</button>
+{{< /example >}}
+
+## Adding icons to buttons
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Add an icon to a button by including the appropriate `<span>` element inside the `<button>` element. For more details about using icons with Arizona Bootstrap, see the [Icons]({{< docsref "/icons" >}}) page.
+
+{{< callout warning >}}
+Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]({{< docsref "/utilities/text/#font-size" >}}) adjustments to display appropriately in a button. Ensure that icon elements include `aria-hidden="true"` for accessibility.
+{{< /callout >}}
+
+### Default size
+
+{{< example >}}
+<button type="button" class="btn btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+</button>
+<button type="button" class="btn btn-red">
+  <span class="material-symbols-rounded fs-3" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
+</button>
+{{< /example >}}
+
+### Large size
+
+{{< example >}}
+<button type="button" class="btn btn-lg btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-lg btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
+</button>
+<button type="button" class="btn btn-lg btn-red">
+  <span class="material-symbols-rounded fs-2" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
+</button>
+{{< /example >}}
+
+### Small size
+
+{{< example >}}
+<button type="button" class="btn btn-sm btn-red">
+  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  Arizona Icon
+</button>
+<button type="button" class="btn btn-sm btn-red">
+  Material Symbol
+  <span class="material-symbols-rounded fs-6 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
+</button>
+<button type="button" class="btn btn-sm btn-red">
+  <span class="material-symbols-rounded" aria-hidden="true">close</span>
+  <span class="visually-hidden">Close</span>
+</button>
 {{< /example >}}
 
 ## Disabled state

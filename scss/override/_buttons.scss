@@ -6,6 +6,9 @@
 
 .btn {
   --az-btn-focus-outline-color: var(--bs-bloom);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   letter-spacing: .14px;
 
   &:focus-visible {
@@ -13,15 +16,41 @@
     outline-offset: 2px;
     box-shadow: none;
   }
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 46px;
+  }
+
+  > [aria-hidden="true"] {
+    line-height: var(--bs-btn-line-height);
+  }
+
+  > .badge {
+    top: 0;
+  }
 }
 
 .btn-sm {
-  line-height: .9375rem;
+  --bs-btn-line-height: 1.0625rem;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 29px;
+  }
 }
 
 .btn-lg {
-  line-height: 1.6875rem;
+  --bs-btn-line-height: 1.6875rem;
   letter-spacing: .18px;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 55px;
+  }
 }
 
 // >> Solid Variants
