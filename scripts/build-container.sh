@@ -78,13 +78,13 @@ fi
 oldhash=$(taghash Dockerfile package-lock.json package.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"
 oldtag="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${oldhash}"
-tagsearch=$(docker image ls "$oldtag" ) \
+tagsearch=$(docker image ls --format '{{.ID}}' "$oldtag" ) \
   || errorexit "Docker error when searching for the presence or absence of an existing image"
 
 #------------------------------------------------------------------------------
 # If the image doesn't yet exist, build it.
 
-if echo "$tagsearch" | grep -q "$oldhash" ; then
+if [ -n "$tagsearch" ]; then
   logmessage "Found a pre-built image, ${oldtag}"
   ephemeral="$oldtag"
   lockhash="$oldhash"
@@ -113,12 +113,9 @@ fi
 #------------------------------------------------------------------------------
 # Find the pre-existing or newly built image ID.
 
-imagelsout=$(docker image ls "$ephemeral" | grep "$lockhash")
-[ -n "$imagelsout" ] \
-  || errorexit  "Couldn't find the Docker image details"
-imageid=$(echo "$imagelsout" | awk '{ print $3 }')
+imageid=$(docker image ls --format '{{.ID}}' "$ephemeral")
 [ -n "$imageid" ] \
-  || errorexit  "Couldn't extract the Docker image ID code"
+  || errorexit  "Couldn't find the Docker image ID code"
 docker tag "$imageid" "${AZ_EPHEMERALIMAGENAME}:latest" \
   || errorexit "Failed to make a convenience tag of '${AZ_EPHEMERALIMAGENAME}:latest' for the image ID ${imageid}"
 logmessage "The image ID is ${imageid} (you can use this to run your own Docker containers with the same configuration)"
