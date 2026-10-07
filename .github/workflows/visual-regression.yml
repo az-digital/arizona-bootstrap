@@ -17,6 +17,9 @@ env:
   AZ_SITE_HOST: ${{ vars.AZ_SITE_HOST }}
   AZ_REPORT_BASEURL: /arizona-bootstrap/vr-reports/${{ github.run_id }}
 
+permissions:
+  contents: read
+
 jobs:
   visual-regression:
     name: Compare before/after screenshots
