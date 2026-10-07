@@ -3,6 +3,9 @@
 
 @import "custom/scrolling";
 
+// Arizona Digital design tokens as Sass variables, synced from az-digital/design.
+@import "design-tokens-variables";
+
 // Arizona Bootstrap custom variables.
 @import "custom/variables";
 
@@ -17,6 +20,9 @@
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
+
+// Arizona Digital design tokens as CSS custom properties (--az-color-brand-*).
+@import "design-tokens";
 
 // Optional upstream Bootstrap imports.
 @import "../node_modules/bootstrap/scss/utilities";

@@ -29,24 +29,28 @@ $grays: (
 );
 // fusv-enable
 
-$red: #ab0520;
-$bloom: #ef4056;
-$chili: #8b0015;
-$blue: #0c234b;
-$sky: #81ceeb;
-$oasis: #106ab1;
-$azurite: #1e5288;
-$midnight: #03132e;
-$cool-gray: #e5eff7;
-$warm-gray: #f2efea;
-$leaf: #70b865;
-$river: #007d84;
+// Brand colors come from the Arizona Digital design tokens in
+// scss/_design-tokens-variables.scss. Old AZBS name → design token name.
+$red: $az-color-brand-red;
+$bloom: $az-color-brand-bougainvillea;
+$chili: $az-color-brand-sonoran-red;
+$blue: $az-color-brand-blue;
+$sky: $az-color-brand-rain;
+$oasis: $az-color-brand-arroyo-blue;
+$azurite: $az-color-brand-azurite;
+$midnight: $az-color-brand-tinta;
+$cool-gray: $az-color-brand-cloud;
+$warm-gray: $az-color-brand-caliche;
+$leaf: $az-color-brand-saguaro;
+$river: $az-color-brand-shade;
+$mesa: $az-color-brand-brick;
+$white: $az-color-brand-white;
+
+// No design token for these.
 $silver: #9eabae;
 $dark-silver: #49595e;  // to be used for text only
-$mesa: #a95c42;
 $ash: #403635;
 $sage: #4a634e;
-$white: #fff;
 $black: #000;
 
 // fusv-disable
