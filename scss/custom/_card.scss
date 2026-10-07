@@ -125,7 +125,7 @@
 .card-icon-hover-white-azurite {
   --#{$prefix}card-bg: var(--#{$prefix}white);
   // Show the card border, because a white card on a white page needs an edge.
-  --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}card-border-color: var(--#{$prefix}border-color-translucent);
   --az-card-hover-bg: var(--#{$prefix}azurite);
   --az-card-hover-accent: var(--#{$prefix}white);
 }
