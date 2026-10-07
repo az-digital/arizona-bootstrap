@@ -6,17 +6,17 @@
 @mixin az-button-variant($background) {
 
   // Modify colors to ensure accessible color contrast.
-  @if $background == $success or $background == $leaf {
-    --bs-btn-color: #{$midnight};
-    --bs-btn-hover-color: #{$midnight};
+  @if $background == $success or $background == $saguaro {
+    --bs-btn-color: #{$tinta};
+    --bs-btn-hover-color: #{$tinta};
   } @else if $background == $warning {
     --bs-btn-color: #{$black};
     --bs-btn-hover-color: #{$black};
-  } @else if $background == $info or $background == $sky {
+  } @else if $background == $info or $background == $rain {
     --bs-btn-color: #{$blue};
-    --bs-btn-hover-color: #{$midnight};
+    --bs-btn-hover-color: #{$tinta};
   } @else if $background == $light {
-    --bs-btn-color: #{$midnight};
+    --bs-btn-color: #{$tinta};
   }
 
   @if $background != $red {
@@ -29,7 +29,7 @@
 
   @if $color == "info" {
     --bs-btn-color: #{$azurite};
-    --bs-btn-hover-color: #{$midnight};
+    --bs-btn-hover-color: #{$tinta};
   } @else if $value == $warning {
     --bs-btn-color: #{$ash};
     --bs-btn-hover-color: #{$black};

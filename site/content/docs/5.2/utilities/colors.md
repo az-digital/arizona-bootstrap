@@ -21,7 +21,7 @@ When using these colors, it is important to maintain sufficient color contrast b
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "colors") }}
-<p class="text-{{ .name }}{{- if or (eq .name "cool-gray") (eq .name "warm-gray") (eq .name "silver")  (eq .name "white") }} bg-dark{{ end }}">.text-{{ .name }}</p>
+<p class="text-{{ .name }}{{- if or (eq .name "cloud") (eq .name "caliche") (eq .name "silver")  (eq .name "white") }} bg-dark{{ end }}">.text-{{ .name }}</p>
 {{- end -}}
 {{< /colors.inline >}}
 <p class="text-dark-silver">.text-dark-silver</p>
@@ -49,33 +49,33 @@ As of v5.1.0, text color utilities are generated with Sass using CSS variables. 
 
 #### How it works
 
-Consider our default `.text-midnight` utility.
+Consider our default `.text-tinta` utility.
 
 ```css
-.text-midnight {
+.text-tinta {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-midnight-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-tinta-rgb), var(--bs-text-opacity)) !important;
 }
 ```
 
-We use an RGB version of our `--bs-midnight` (with the value of `0, 28, 72`) CSS variable and attached a second CSS variable, `--bs-text-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.text-midnight` now, your computed `color` value is `rgba(0, 28, 72, 1)`. The local CSS variable inside each `.text-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
+We use an RGB version of our `--bs-tinta` (with the value of `0, 28, 72`) CSS variable and attached a second CSS variable, `--bs-text-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.text-tinta` now, your computed `color` value is `rgba(0, 28, 72, 1)`. The local CSS variable inside each `.text-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
 
 #### Example
 
 To change that opacity, override `--bs-text-opacity` via custom styles or inline styles.
 
 {{< example >}}
-<div class="text-midnight">This is default midnight text</div>
-<div class="text-midnight" style="--bs-text-opacity: .5;">This is 50% opacity midnight text</div>
+<div class="text-tinta">This is default tinta text</div>
+<div class="text-tinta" style="--bs-text-opacity: .5;">This is 50% opacity tinta text</div>
 {{< /example >}}
 
 Or, choose from any of the `.text-opacity` utilities:
 
 {{< example >}}
-<div class="text-midnight">This is default midnight text</div>
-<div class="text-midnight text-opacity-75">This is 75% opacity midnight text</div>
-<div class="text-midnight text-opacity-50">This is 50% opacity midnight text</div>
-<div class="text-midnight text-opacity-25">This is 25% opacity midnight text</div>
+<div class="text-tinta">This is default tinta text</div>
+<div class="text-tinta text-opacity-75">This is 75% opacity tinta text</div>
+<div class="text-tinta text-opacity-50">This is 50% opacity tinta text</div>
+<div class="text-tinta text-opacity-25">This is 25% opacity tinta text</div>
 {{< /example >}}
 
 ### Specificity

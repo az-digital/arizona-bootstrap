@@ -116,3 +116,7 @@
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "override/forms";
+
+// Deprecated brand color names. Imported last so the old class names can
+// extend every rule that uses the new class names.
+@import "deprecated/colors";

@@ -26,7 +26,7 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 
 ### Badges
 
-Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Chili, Midnight, and Light color and background helpers.
+Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Sonoran Red, Tinta, and Light color and background helpers.
 
 ### Primary Color Change
 
@@ -73,6 +73,23 @@ The following utilities are deprecated in Arizona Bootstrap 5 and will be remove
 ### Border Thick
 
 The `.border-thick` custom Arizona Bootstrap class has been deprecated. The `.border-4` class from the new [border width]({{< docsref "/utilities/borders/#width" >}}) utilities can be used as a direct replacement.
+
+### Brand Color Names
+
+Ten brand colors have been renamed to match the Arizona Digital design tokens. The old names still work as aliases of the new names, in class names (such as `.bg-midnight` and `.text-bg-cool-gray`), CSS custom properties (such as `--bs-midnight` and `--bs-midnight-rgb`) and Sass variables (such as `$midnight` and `$midnight-100`), but they are deprecated.
+
+| Deprecated name | New name |
+| --- | --- |
+| `midnight` | `tinta` |
+| `oasis` | `arroyo-blue` |
+| `sky` | `rain` |
+| `chili` | `sonoran-red` |
+| `bloom` | `bougainvillea` |
+| `leaf` | `saguaro` |
+| `river` | `shade` |
+| `mesa` | `brick` |
+| `cool-gray` | `cloud` |
+| `warm-gray` | `caliche` |
 
 ### UL Triangles
 
@@ -146,7 +163,7 @@ Thumbnails were deprecated in Arizona Bootstrap 2 and have been removed in Arizo
 ### Wells
 
 Wells were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: **these classes are not direct replacements**.
- - `well` &rarr; `card p-card text-bg-cool-gray`
+ - `well` &rarr; `card p-card text-bg-cloud`
  - `well-hollow` &rarr; `text-bg-white`
 
 

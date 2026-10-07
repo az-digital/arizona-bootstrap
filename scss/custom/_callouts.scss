@@ -46,8 +46,8 @@
   }
 }
 
-// Do not create callouts for the "leaf", "river", "silver", and "mesa" brand colors.
-@each $color, $value in map-remove($colors, "leaf", "river", "silver", "mesa") {
+// Do not create callouts for the "saguaro", "shade", "silver", and "brick" brand colors.
+@each $color, $value in map-remove($colors, "saguaro", "shade", "silver", "brick") {
   .callout-#{$color} {
     @include callout-variant($color, $value);
   }
