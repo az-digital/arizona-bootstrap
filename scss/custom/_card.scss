@@ -45,7 +45,9 @@
   --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
   --#{$prefix}card-color: var(--#{$prefix}midnight);
   --#{$prefix}card-title-color: var(--#{$prefix}azurite);
-  --#{$prefix}card-border-width: 0;
+  // A transparent border, not none: Windows high contrast (forced colors) mode
+  // draws it, so the card keeps its edge when background colors are removed.
+  --#{$prefix}card-border-color: transparent;
   --az-card-hover-bg: var(--#{$prefix}blue);
   --az-card-hover-color: var(--#{$prefix}white);
   --az-card-hover-accent: var(--#{$prefix}sky);
