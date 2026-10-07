@@ -71,6 +71,9 @@
   // Switch to the hover colors when you hover over the card, or when Tab
   // reaches its stretched link.
   &:is(:hover, :has(:focus-visible)) {
+    // Bootstrap's .link-underline-* and .icon-link underlines read these.
+    --#{$prefix}link-color-rgb: var(--az-card-hover-link-rgb);
+    --#{$prefix}link-hover-color-rgb: var(--az-card-hover-link-rgb);
     background-color: var(--az-card-hover-bg);
 
     .card-body {
