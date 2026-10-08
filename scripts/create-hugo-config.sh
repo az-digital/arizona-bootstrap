@@ -76,10 +76,17 @@ elif [ "$AZ_SITE_HOST" = 'internal_files' ] ; then
   AZ_SITE_HOST=''
 fi
 
+# Hugo 0.167 and later replace an empty baseURL with https://example.org/,
+# so use a root-relative one when there's no host or prefix.
+az_hugo_base_url="${AZ_SITE_HOST}${AZ_SITE_BASE_URL}"
+[ -n "$az_hugo_base_url" ] \
+  || az_hugo_base_url='/'
+
 #------------------------------------------------------------------------------
 # Process the template.
 
-sed -e "s#{{az_short_version}}#$AZ_SHORT_VERSION#g" \
+sed -e "s#{{az_hugo_base_url}}#$az_hugo_base_url#g" \
+  -e "s#{{az_short_version}}#$AZ_SHORT_VERSION#g" \
   -e "s#{{az_site_base_url}}#$AZ_SITE_BASE_URL#g" \
   -e "s#{{az_site_host}}#$AZ_SITE_HOST#g" \
   -e "s#{{az_version}}#$AZ_VERSION#g" \
