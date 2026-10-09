@@ -6,6 +6,8 @@ group: utilities
 toc: true
 ---
 
+Put the `.hover` class on a parent element, and a `.hover-*` class on each child element that should change on hover. The children's hover effects (the `.hover-*` classes) turn on when you hover over the parent, or when the parent or anything inside it has keyboard focus. For example, when you press <kbd>Tab</kbd> to reach a `.stretched-link` inside a card, the card's hover effects turn on.
+
 ## Text Decoration
 
 Add a text underline on hover with the `.hover` class on the parent element and the `.hover-text-underline` class on the target child element.
@@ -32,7 +34,7 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
 
 {{< example >}}
 <div class="card hover" style="width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">

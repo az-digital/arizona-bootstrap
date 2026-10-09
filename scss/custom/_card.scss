@@ -2,6 +2,121 @@
 // > Custom styling for the Card component
 //
 
+// >> Card images
+
+// Round the top corners of the .overflow-hidden wrapper around a card's top
+// image. Without this rule a hover-zoomed image would stick out past the
+// card's round corners.
+.card > .overflow-hidden:first-child:has(.card-img-top) {
+  @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
+}
+
+// >> Card icons
+
+// An icon in place of a card's image. It takes its color from the text color.
+// The extra .card in the selector wins over the font-size that icon font
+// classes set (for example, .material-symbols-rounded sets 24px).
+.card .card-icon {
+  display: block;
+  margin-bottom: $spacer * 1.5;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+// Make an inline SVG icon 1em square, so font-size sets its size, the same as
+// an icon font. The SVG needs fill="currentColor" (or stroke="currentColor") to
+// take the text color.
+// stylelint-disable-next-line selector-no-qualifying-type
+.card svg.card-icon {
+  width: 1em;
+  height: 1em;
+}
+
+// >> Icon card colors
+
+// Give an icon card (.card-icon-hover) a normal and a hover set of colors:
+// background, text, and a title color that the icon uses too.
+// The normal colors use Bootstrap's own card variables (--bs-card-bg,
+// --bs-card-color, --bs-card-title-color). The hover rule reads the
+// --az-card-hover-* variables and leaves the normal ones alone, the same way
+// .btn reads --bs-btn-hover-bg. So a site can set any of these variables, even
+// in an inline style, for its own colors.
+.card-icon-hover {
+  --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
+  --#{$prefix}card-color: var(--#{$prefix}midnight);
+  --#{$prefix}card-title-color: var(--#{$prefix}azurite);
+  // A transparent border, not none: Windows high contrast (forced colors) mode
+  // draws it, so the card keeps its edge when background colors are removed.
+  --#{$prefix}card-border-color: transparent;
+  --az-card-hover-bg: var(--#{$prefix}blue);
+  --az-card-hover-color: var(--#{$prefix}white);
+  --az-card-hover-title-color: var(--#{$prefix}sky);
+  --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
+  // The fade timing (0.3s, ease-out) is from the brand mockup.
+  @include transition(background-color .3s ease-out);
+
+  .card-body,
+  .card-title,
+  .card-icon {
+    @include transition(color .3s ease-out);
+  }
+
+  // Color the icon and the title with the accent. The title needs this rule
+  // too: if it has a heading class such as .h5, the heading color rule in
+  // override/_typography.scss comes after Bootstrap's .card-title rule and
+  // makes the title blue.
+  .card-icon,
+  .card-title {
+    color: var(--#{$prefix}card-title-color);
+  }
+
+  // Switch to the hover colors when you hover over the card, or when Tab
+  // reaches its stretched link.
+  &:is(:hover, :has(:focus-visible)) {
+    // Bootstrap's .link-underline-* and .icon-link underlines read these.
+    --#{$prefix}link-color-rgb: var(--az-card-hover-link-rgb);
+    --#{$prefix}link-hover-color-rgb: var(--az-card-hover-link-rgb);
+    background-color: var(--az-card-hover-bg);
+
+    .card-body {
+      color: var(--az-card-hover-color);
+    }
+
+    .card-icon,
+    .card-title {
+      color: var(--az-card-hover-title-color);
+    }
+
+    .card-title {
+      text-decoration: underline;
+    }
+
+    // Give other links in the card the hover link color, so they stay readable
+    // on the hover background.
+    a:not(.btn, .nav-link) {
+      color: rgba(var(--az-card-hover-link-rgb), var(--#{$prefix}link-opacity, 1));
+    }
+
+    // Draw the link focus ring in the link's own color, the same as
+    // az-color-contrast() does. Rationale: the default red ring is too dark to
+    // see on a dark hover background, such as blue.
+    a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur 2px;
+    }
+  }
+}
+
+// >> Card titles on touch screens
+
+// If the device can't hover (most phones and tablets), always underline a
+// clickable card title.
+@media (hover: none) {
+  .card-icon-hover .card-title,
+  .card .hover-text-underline {
+    text-decoration: underline;
+  }
+}
+
 // >> Card header and footer
 
 // Remove top margin from card title

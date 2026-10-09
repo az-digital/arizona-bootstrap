@@ -74,6 +74,26 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 </div>
 {{< /example >}}
 
+### Icons
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Use an icon in place of an image by adding `.card-icon` to an icon at the top of the `.card-body`. The icon takes its color from the text color, so you can color it with the [`.text-{color}`]({{< docsref "/utilities/colors" >}}) utilities. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG that uses `fill="currentColor"` or `stroke="currentColor"`. Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
+
+Add `.card-icon-hover` to the card to give it the brand colors: cool gray, then blue when you hover over the card. The title link has `.stretched-link`, so the whole card is clickable. When you press <kbd>Tab</kbd> to reach the link, the card also shows its hover colors. On a device that can't hover, such as a phone, the title is always underlined.
+
+{{< example >}}
+<div class="card card-icon-hover" style="max-width: 20rem;">
+  <div class="card-body p-4">
+    <span class="card-icon material-symbols-rounded" aria-hidden="true">person_raised_hand</span>
+    <h3 class="card-title h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
+    </h3>
+    <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
+  </div>
+</div>
+{{< /example >}}
+
 ### List groups
 
 Create lists of content in a card with a flush list group.
@@ -461,7 +481,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling.
+Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling. On a device that can't hover, such as a phone, a title with `.hover-text-underline` is always underlined.
 
 {{< example >}}
 <div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 18rem;">
@@ -487,7 +507,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
   </div>
 </div>
 <div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
@@ -506,14 +526,14 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility.
+Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility. On a device that can't hover, such as a phone, the title is always underlined.
 
 {{< example >}}
 <div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
   </div>
   <div class="card-body d-flex flex-column">
