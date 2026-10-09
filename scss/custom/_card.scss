@@ -35,7 +35,7 @@
 // >> Icon card colors
 
 // Give an icon card (.card-icon-hover) a normal and a hover set of colors:
-// background, text, and an accent for the icon and title.
+// background, text, and a title color that the icon uses too.
 // The normal colors use Bootstrap's own card variables (--bs-card-bg,
 // --bs-card-color, --bs-card-title-color). The hover rule reads the
 // --az-card-hover-* variables and leaves the normal ones alone, the same way
@@ -50,7 +50,7 @@
   --#{$prefix}card-border-color: transparent;
   --az-card-hover-bg: var(--#{$prefix}blue);
   --az-card-hover-color: var(--#{$prefix}white);
-  --az-card-hover-accent: var(--#{$prefix}sky);
+  --az-card-hover-title-color: var(--#{$prefix}sky);
   --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
   // The fade timing (0.3s, ease-out) is from the brand mockup.
   @include transition(background-color .3s ease-out);
@@ -84,7 +84,7 @@
 
     .card-icon,
     .card-title {
-      color: var(--az-card-hover-accent);
+      color: var(--az-card-hover-title-color);
     }
 
     .card-title {
