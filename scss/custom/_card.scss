@@ -113,7 +113,7 @@
   --#{$prefix}link-hover-color-rgb: var(--#{$prefix}white-rgb);
   --az-card-hover-bg: var(--#{$prefix}sky);
   --az-card-hover-color: var(--#{$prefix}black);
-  --az-card-hover-accent: var(--#{$prefix}blue);
+  --az-card-hover-title-color: var(--#{$prefix}blue);
   --az-card-hover-link-rgb: var(--#{$prefix}black-rgb);
 }
 
@@ -122,14 +122,14 @@
   // Show the card border, because a white card on a white page needs an edge.
   --#{$prefix}card-border-color: var(--#{$prefix}border-color-translucent);
   --az-card-hover-bg: var(--#{$prefix}azurite);
-  --az-card-hover-accent: var(--#{$prefix}white);
+  --az-card-hover-title-color: var(--#{$prefix}white);
 }
 
 .card-icon-hover-warm-gray-chili {
   --#{$prefix}card-bg: var(--#{$prefix}warm-gray);
   --#{$prefix}card-title-color: var(--#{$prefix}red);
   --az-card-hover-bg: var(--#{$prefix}chili);
-  --az-card-hover-accent: var(--#{$prefix}white);
+  --az-card-hover-title-color: var(--#{$prefix}white);
 }
 
 // >> Card titles on touch screens
