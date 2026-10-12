@@ -217,11 +217,11 @@ To use your own colors, set these CSS variables on a `.card-icon-hover` card. Th
 | `--bs-card-title-color` | Normal icon and title color |
 | `--az-card-hover-bg` | Hover background |
 | `--az-card-hover-color` | Hover text color |
-| `--az-card-hover-accent` | Hover icon and title color |
+| `--az-card-hover-title-color` | Hover icon and title color |
 | `--az-card-hover-link-rgb` | Hover color of other links in the card, as RGB numbers, for example `var(--bs-white-rgb)` |
 
 {{< example >}}
-<div class="card card-icon-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-accent: var(--bs-white);">
+<div class="card card-icon-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-title-color: var(--bs-white);">
   <div class="card-body p-4">
     <i class="card-icon az-icon-award" aria-hidden="true"></i>
     <h3 class="card-title h5 fw-bold">
