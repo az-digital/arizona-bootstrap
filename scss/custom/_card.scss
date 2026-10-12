@@ -2,15 +2,6 @@
 // > Custom styling for the Card component
 //
 
-// >> Card images
-
-// Round the top corners of the .overflow-hidden wrapper around a card's top
-// image. Without this rule a hover-zoomed image would stick out past the
-// card's round corners.
-.card > .overflow-hidden:first-child:has(.card-img-top) {
-  @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
-}
-
 // >> Card icons
 
 // An icon in place of a card's image. It takes its color from the text color.

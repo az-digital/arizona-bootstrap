@@ -506,7 +506,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-blue h-100 hover mb-3 overflow-hidden" style="max-width: 18rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
@@ -529,7 +529,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility. On a device that can't hover, such as a phone, the title is always underlined.
 
 {{< example >}}
-<div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
+<div class="card shadow text-bg-white h-100 hover overflow-hidden" style="max-width: 18rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">

@@ -30,10 +30,10 @@ Add a text underline on hover with the `.hover` class on the parent element and 
 
 Add an image zoom-in effect on hover with the `.hover` class on the parent element and the `.hover-img-zoom-in` class on the target child image element.
 
-In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
+In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. The card also has `.overflow-hidden`, so the zoomed image stays inside the card's round corners. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
 
 {{< example >}}
-<div class="card hover" style="width: 18rem;">
+<div class="card hover overflow-hidden" style="width: 18rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
