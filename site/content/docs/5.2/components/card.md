@@ -157,6 +157,8 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
   </table>
 </div>
 
+A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hover, it changes to the hover text color, so it stays readable. Add `.position-relative` and `.z-2` to the link, so it sits above the title's stretched link and you can still click it.
+
 {{< example >}}
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col">
@@ -166,7 +168,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to blue</a>
         </h3>
-        <p class="card-text">The default icon card colors.</p>
+        <p class="card-text">The default icon card colors. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
       </div>
     </div>
   </div>
@@ -177,7 +179,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Blue to sky</a>
         </h3>
-        <p class="card-text">A dark card that turns light on hover.</p>
+        <p class="card-text">A dark card that turns light on hover. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
       </div>
     </div>
   </div>
@@ -188,7 +190,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">White to azurite</a>
         </h3>
-        <p class="card-text">For a section that already has a gray background.</p>
+        <p class="card-text">For a section that already has a gray background. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
       </div>
     </div>
   </div>
@@ -199,7 +201,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Warm gray to chili</a>
         </h3>
-        <p class="card-text">A red set.</p>
+        <p class="card-text">A red set. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
       </div>
     </div>
   </div>
