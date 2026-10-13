@@ -234,7 +234,7 @@ Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]
 
 {{< example >}}
 <button type="button" class="btn btn-sm btn-red">
-  <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
+  <span class="az-icon az-icon-arizona me-2 mt-min mb-nmin" aria-hidden="true"></span>
   Arizona Icon
 </button>
 <button type="button" class="btn btn-sm btn-red">
