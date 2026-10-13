@@ -52,9 +52,9 @@
     @include transition(color .3s ease-out);
   }
 
-  // Color the icon and the title with the accent. The title needs this rule
-  // too: if it has a heading class such as .h5, the heading color rule in
-  // override/_typography.scss comes after Bootstrap's .card-title rule and
+  // Color the icon and the title with the title color. The title needs this
+  // rule too: if it has a heading class such as .h5, the heading color rule
+  // in override/_typography.scss comes after Bootstrap's .card-title rule and
   // makes the title blue.
   .card-icon,
   .card-title {
