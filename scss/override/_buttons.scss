@@ -35,6 +35,10 @@
 .btn-sm {
   --bs-btn-line-height: 1.1875rem;
 
+  &:has(.badge) {
+    --bs-btn-padding-y: 4px;
+  }
+
   &:has(.spinner-border),
   &:has(.spinner-grow),
   &.placeholder {
