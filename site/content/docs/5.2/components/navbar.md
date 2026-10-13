@@ -466,7 +466,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
 
 The fullscreen AZ Navbar navigation pattern presents a minimal, (non-modal) navbar with the option to toggle open a comprehensive, fullscreen menu as a modal. The non-modal element supports a [logo (brand)](#brand-1), a minimal [Call to Actions](#calls-to-action-menu) menu, a [search](#search) box, and a modal activation toggle. When the [modal menu](#modal-menu) is open, the same [header elements](#modal-menu-header) are supported along with a multicolumn, 3-tier deep menu structure, and support for modal [footer menu bars](#modal-menu-footer).
 
-To see a comprehensive example of this navigation experience, see the [Navbar AZ fullscreen]({{< ref "navbar-az-fullscreen" >}}) Example.
+To see a comprehensive example of this navigation experience, see the [Navbar AZ fullscreen]({{< docsref "/examples/navbar-az-fullscreen" >}}) Example.
 
 {{< callout warning >}}
 AZ Navbar Fullscreen requires both the **Proxima Nova Condensed** and **Garamond Premier Pro** fonts to render correctly.
