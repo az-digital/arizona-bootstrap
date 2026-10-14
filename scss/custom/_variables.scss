@@ -386,36 +386,41 @@ $colors: (
 );
 // scss-docs-end colors-map
 
-// Semantic class names for the colors in $colors (plus "dark-silver"). Every
-// color class (.text-bg-*, .bg-*, .text-*, .border-*, .focus-ring-*,
-// .callout-*, .table-* and the transparent and gradient variants) is
-// generated with these names. The color-named classes are still generated
-// alongside them, unchanged, but are deprecated: their generators are marked
-// "Deprecated: color-named classes" and can be removed in the next major
-// version. Colors that are not listed keep their name (white, black).
+// Class names for the colors in $colors, following the groups in the
+// university brand guidelines (https://marcom.arizona.edu/brand-guidelines/colors):
+// primary (Arizona Red) and default (Arizona Blue), then secondary-1 to
+// secondary-6, accent-1 to accent-3 and neutral-1 to neutral-2, numbered in
+// the order the guidelines list them. Every color class (.text-bg-*, .bg-*,
+// .text-*, .border-*, .focus-ring-*, .callout-*, .table-* and the transparent
+// and gradient variants) is generated with these names. The classes with the
+// old color names are still generated alongside them, unchanged, but are
+// deprecated: their generators are marked "Deprecated: color-named classes"
+// and can be removed in the next major version. Colors that are not listed
+// keep their names: white, black, and silver, ash, sage and dark-silver (not
+// in the brand guidelines).
 // scss-docs-start color-class-names-map
 $color-class-names: (
+  // Primary brand colors
   "red": "primary",
   "blue": "default",
-  "sky": "alternate1",
-  "oasis": "alternate2",
-  "azurite": "alternate3",
-  "midnight": "alternate4",
-  "bloom": "alternate5",
-  "chili": "alternate6",
-  "leaf": "alternate7",
-  "river": "alternate8",
-  "mesa": "alternate9",
-  "sage": "alternate10",
-  "cool-gray": "neutral1",
-  "warm-gray": "neutral2",
-  "silver": "neutral3",
-  "ash": "neutral4",
-  "dark-silver": "neutral5"
+  // Secondary brand colors: Tinta, Azurite, Arroyo Blue, Rain, Sonoran Red, Bougainvillea
+  "midnight": "secondary-1",
+  "azurite": "secondary-2",
+  "oasis": "secondary-3",
+  "sky": "secondary-4",
+  "chili": "secondary-5",
+  "bloom": "secondary-6",
+  // Accent colors: Saguaro, Shade, Brick
+  "leaf": "accent-1",
+  "river": "accent-2",
+  "mesa": "accent-3",
+  // Neutral colors: Cloud, Caliche
+  "cool-gray": "neutral-1",
+  "warm-gray": "neutral-2"
 );
 // scss-docs-end color-class-names-map
 
-// Returns the semantic class name for a color in $colors.
+// Returns the class name for a color in $colors.
 @function color-class-name($color) {
   @if map-has-key($color-class-names, $color) {
     @return map-get($color-class-names, $color);
@@ -423,14 +428,14 @@ $color-class-names: (
   @return $color;
 }
 
-// Whether a color's semantic class name is a theme color (red → primary),
+// Whether a color's class name is a theme color (red → primary),
 // whose classes Bootstrap already generates.
 @function color-class-is-theme($color) {
   @return map-has-key($theme-colors, color-class-name($color));
 }
 
-// The colors in $color-map that have a semantic class name, that is, the ones
-// whose color-named classes are deprecated. Red is left out unless
+// The colors in $color-map whose class name changed, that is, the ones whose
+// old color-named classes are deprecated. Red is left out unless
 // $include-theme is true: for most classes, Bootstrap already generates its
 // semantic versions from $theme-colors (.text-bg-primary, .bg-primary).
 @function color-classes-renamed($color-map, $include-theme: false) {

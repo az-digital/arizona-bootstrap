@@ -2,15 +2,15 @@
 // > Custom Background utility classes
 //
 // >>> Transparent
-// Deprecated: color-named classes. Remove in the next major version,
-// keeping white and black.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-transparent-#{$color} {
     @include background-transparent($color);
   }
 }
 
-// >>> Transparent (semantic names)
+// >>> Transparent (new names)
 @each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage"), $include-theme: true) {
   .bg-transparent-#{color-class-name($color)} {
     @include background-transparent($color);
@@ -18,15 +18,15 @@
 }
 
 // >>> Gradient
-// Deprecated: color-named classes. Remove in the next major version,
-// keeping white and black.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .bg-gradient-#{$color} {
     @include background-gradient($color);
   }
 }
 
-// >>> Gradient (semantic names)
+// >>> Gradient (new names)
 @each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage"), $include-theme: true) {
   .bg-gradient-#{color-class-name($color)} {
     @include background-gradient($color);

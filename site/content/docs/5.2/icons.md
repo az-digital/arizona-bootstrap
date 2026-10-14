@@ -175,7 +175,7 @@ Google's Material Symbols can be implemented just like text, in that they can co
 Your `span` should include the `.material-symbols-rounded` class along with any utility classes you want to include. The text inside the `span` should be the ID/name of the icon you want to use. [Browse the font icon library (rounded style)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) to find the ID of your desired icon.
 
 {{< example >}}
-<span class="material-symbols-rounded text-alternate1 display-4">accessible_forward</span>
-<span class="material-symbols-rounded text-alternate3 display-3">accessible_forward</span>
+<span class="material-symbols-rounded text-secondary-4 display-4">accessible_forward</span>
+<span class="material-symbols-rounded text-secondary-2 display-3">accessible_forward</span>
 <span class="material-symbols-rounded text-default display-1">accessible_forward</span>
 {{< /example >}}

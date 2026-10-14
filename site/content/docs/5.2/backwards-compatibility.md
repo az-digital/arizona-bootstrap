@@ -23,19 +23,19 @@ For information on changes made in upstream Bootstrap 5, see the [Migration page
 
 ### Deprecated in 5.3
 
-Color classes and color-named button classes now use semantic names instead of color names. The classes named after a color are deprecated. They are still included, unchanged, so existing markup continues to look the same, and they will be removed in the next major version.
+Color classes and color-named button classes now use names that follow the color groups in the [university brand guidelines](https://marcom.arizona.edu/brand-guidelines/colors): `primary` for Arizona Red, `default` for Arizona Blue, then numbered names for the secondary, accent and neutral brand colors. The classes named after a color are deprecated. They are still included, unchanged, so existing markup continues to look the same, and they will be removed in the next major version.
 
-The theme color classes, such as `.text-bg-success` and `.btn-danger`, are not affected.
+The theme color classes, such as `.text-bg-success` and `.btn-danger`, are not affected. Neither are the silver, ash, sage and dark-silver classes, which are not part of the brand guidelines and keep their names.
 
 #### Button Classes
 
 These custom Arizona Bootstrap button classes are deprecated in Arizona Bootstrap 5.3:
  - `.btn-red`: Replace with `.btn-primary`.
  - `.btn-blue`: Replace with `.btn-default`.
- - `.btn-sky`: Replace with `.btn-alternate1`.
+ - `.btn-sky`: Replace with `.btn-secondary-4`.
  - `.btn-outline-red`: Replace with `.btn-outline-primary`.
  - `.btn-outline-blue`: Replace with `.btn-outline-default`.
- - `.btn-outline-sky`: Replace with `.btn-outline-alternate1`.
+ - `.btn-outline-sky`: Replace with `.btn-outline-secondary-4`.
  - `.btn-outline-white`: Replace with `.btn-outline-inverse`.
  - `.btn-white-text-red`: Replace with `.btn-inverse-primary`.
  - `.btn-white-text-blue`: Replace with `.btn-inverse-default`.
@@ -44,35 +44,31 @@ These custom Arizona Bootstrap button classes are deprecated in Arizona Bootstra
 
 #### Color Classes
 
-The color-named classes are deprecated in every color class family: `.text-bg-*`, `.text-bg-transparent-*`, `.text-bg-gradient-*`, `.bg-*`, `.bg-transparent-*`, `.bg-gradient-*`, `.text-*`, `.border-*`, `.focus-ring-*`, `.callout-*`, and `.table-*`. Replace the deprecated suffix with the new one, for example `.text-bg-sky` with `.text-bg-alternate1`.
+The color-named classes are deprecated in every color class family: `.text-bg-*`, `.text-bg-transparent-*`, `.text-bg-gradient-*`, `.bg-*`, `.bg-transparent-*`, `.bg-gradient-*`, `.text-*`, `.border-*`, `.focus-ring-*`, `.callout-*`, and `.table-*`. Replace the deprecated suffix with the new one, for example `.text-bg-sky` with `.text-bg-secondary-4`.
 
-| Deprecated suffix | Replacement suffix |
-| --- | --- |
-| `-red` | `-primary` |
-| `-blue` | `-default` |
-| `-sky` | `-alternate1` |
-| `-oasis` | `-alternate2` |
-| `-azurite` | `-alternate3` |
-| `-midnight` | `-alternate4` |
-| `-bloom` | `-alternate5` |
-| `-chili` | `-alternate6` |
-| `-leaf` | `-alternate7` |
-| `-river` | `-alternate8` |
-| `-mesa` | `-alternate9` |
-| `-sage` | `-alternate10` |
-| `-cool-gray` | `-neutral1` |
-| `-warm-gray` | `-neutral2` |
-| `-silver` | `-neutral3` |
-| `-ash` | `-neutral4` |
-| `-dark-silver` | `-neutral5` |
+| Deprecated suffix | Replacement suffix | Brand guidelines |
+| --- | --- | --- |
+| `-red` | `-primary` | Primary: Arizona Red |
+| `-blue` | `-default` | Primary: Arizona Blue |
+| `-midnight` | `-secondary-1` | Secondary: Tinta |
+| `-azurite` | `-secondary-2` | Secondary: Azurite |
+| `-oasis` | `-secondary-3` | Secondary: Arroyo Blue |
+| `-sky` | `-secondary-4` | Secondary: Rain |
+| `-chili` | `-secondary-5` | Secondary: Sonoran Red |
+| `-bloom` | `-secondary-6` | Secondary: Bougainvillea |
+| `-leaf` | `-accent-1` | Accent: Saguaro |
+| `-river` | `-accent-2` | Accent: Shade |
+| `-mesa` | `-accent-3` | Accent: Brick |
+| `-cool-gray` | `-neutral-1` | Neutral: Cloud |
+| `-warm-gray` | `-neutral-2` | Neutral: Caliche |
 
 `.callout-red` keeps its colored heading. Its replacement, `.callout-primary`, uses the body text color for headings.
 
 #### Sass Variables
 
-The brand color Sass variables and their tints and shades also have semantic names, using the same replacements as the table above. For example, `$sky` is now `$alternate1` and `$sky-100` is now `$alternate1-100`. For red, use the `$primary` theme color, with `$primary-100` to `$primary-900` for the tints and shades. For blue, use `$default` and `$default-100` to `$default-900`.
+The brand color Sass variables and their tints and shades also have new names, using the same replacements as the table above. For example, `$sky` is now `$secondary-4` and `$sky-100` is now `$secondary-4-100`. For red, use the `$primary` theme color, with `$primary-100` to `$primary-900` for the tints and shades. For blue, use `$default` and `$default-100` to `$default-900`.
 
-The color-named variables, such as `$sky` and `$sky-100`, are deprecated. They still work, and the semantic variables use their values, so overriding a color-named variable also changes its semantic variable.
+The color-named variables, such as `$sky` and `$sky-100`, are deprecated. They still work, and the new variables use their values, so overriding a color-named variable also changes its new variable.
 
 
 ## Arizona Bootstrap 2 to 5
@@ -90,7 +86,7 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 
 #### Badges
 
-Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the `.text-bg-alternate6`, `.text-bg-alternate4`, and `.text-bg-light` color and background helpers.
+Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the `.text-bg-secondary-5`, `.text-bg-secondary-1`, and `.text-bg-light` color and background helpers.
 
 #### Primary Color Change
 
@@ -214,7 +210,7 @@ Thumbnails were deprecated in Arizona Bootstrap 2 and have been removed in Arizo
 #### Wells
 
 Wells were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: **these classes are not direct replacements**.
- - `well` &rarr; `card p-card text-bg-neutral1`
+ - `well` &rarr; `card p-card text-bg-neutral-1`
  - `well-hollow` &rarr; `text-bg-white`
 
 

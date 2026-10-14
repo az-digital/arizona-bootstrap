@@ -48,21 +48,21 @@ Some of the button styles use a relatively light foreground color, and should on
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
-Primary and Default are the recommended solid button variants for Arizona Bootstrap projects. The Alternate 1 button is also available.
+Primary and Default are the recommended solid button variants for Arizona Bootstrap projects. The Secondary 4 button is also available.
 
 {{< example >}}
 <button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-default">Default</button>
-<button type="button" class="btn btn-alternate1">Alternate 1</button>
+<button type="button" class="btn btn-secondary-4">Secondary 4</button>
 {{< /example >}}
 
-Two inverse button variants are available: use `.btn-inverse-primary` on a `.text-bg-primary` background and `.btn-inverse-default` on a `.text-bg-alternate2` background.
+Two inverse button variants are available: use `.btn-inverse-primary` on a `.text-bg-primary` background and `.btn-inverse-default` on a `.text-bg-secondary-3` background.
 
 <div class="bd-example d-flex gap-2">
   <div class="d-inline-block text-bg-primary px-4 py-3">
     <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
   </div>
-  <div class="d-inline-block text-bg-alternate2 px-4 py-3">
+  <div class="d-inline-block text-bg-secondary-3 px-4 py-3">
     <button type="button" class="btn btn-inverse-default">Inverse Default</button>
   </div>
 </div>
@@ -71,7 +71,7 @@ Two inverse button variants are available: use `.btn-inverse-primary` on a `.tex
 <div class="text-bg-primary px-4 py-3">
   <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
 </div>
-<div class="text-bg-alternate2 px-4 py-3">
+<div class="text-bg-secondary-3 px-4 py-3">
   <button type="button" class="btn btn-inverse-default">Inverse Default</button>
 </div>
 ```
@@ -97,17 +97,17 @@ In need of a button, but not the hefty background colors they bring? Replace the
 <button type="button" class="btn btn-outline-default">Default</button>
 {{< /example >}}
 
-For outline buttons on a **dark background color**, use the `.btn-outline-inverse` or `.btn-outline-alternate1` variants.
+For outline buttons on a **dark background color**, use the `.btn-outline-inverse` or `.btn-outline-secondary-4` variants.
 
 <div class="bd-example">
   <div class="d-inline-block w-25 text-bg-primary p-3">
     <button type="button" class="btn btn-outline-inverse">Inverse</button>
   </div>
   <div class="d-inline-block w-25 text-bg-default p-3">
-    <button type="button" class="btn btn-outline-alternate1">Alternate 1</button>
+    <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-alternate3 p-3">
-    <button type="button" class="btn btn-outline-alternate1">Alternate 1</button>
+  <div class="d-inline-block w-25 text-bg-secondary-2 p-3">
+    <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
   </div>
 </div>
 
@@ -116,10 +116,10 @@ For outline buttons on a **dark background color**, use the `.btn-outline-invers
   <button type="button" class="btn btn-outline-inverse">Inverse</button>
 </div>
 <div class="text-bg-default p-3">
-  <button type="button" class="btn btn-outline-alternate1">Alternate 1</button>
+  <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
 </div>
-<div class="text-bg-alternate3 p-3">
-  <button type="button" class="btn btn-outline-alternate1">Alternate 1</button>
+<div class="text-bg-secondary-2 p-3">
+  <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
 </div>
 ```
 

@@ -532,13 +532,13 @@ Cards with the title on image style put the title of the card on top of the imag
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-alternate3 mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-alternate3">Header</div>
-  <div class="card-body text-alternate3">
-    <h5 class="card-title">Alternate3 card title</h5>
+<div class="card border-secondary-2 mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-secondary-2">Header</div>
+  <div class="card-body text-secondary-2">
+    <h5 class="card-title">Secondary 2 card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div class="card-footer bg-transparent border-alternate3">Footer</div>
+  <div class="card-footer bg-transparent border-secondary-2">Footer</div>
 </div>
 {{< /example >}}
 

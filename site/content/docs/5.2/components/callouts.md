@@ -28,7 +28,7 @@ Callouts call attention to a small portion of content that needs to stand out ag
 ## Contextual (Theme)
 
 
-<div class="callout callout-alternate3">
+<div class="callout callout-secondary-2">
   <p><strong>Note:</strong> Although an "info" callout is included below, callouts of any brand color may be used for informational purposes (like this azurite callout).</p>
 </div>
 

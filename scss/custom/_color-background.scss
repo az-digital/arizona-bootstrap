@@ -5,8 +5,8 @@
 @use "sass:list";
 
 // >> Brand
-// Deprecated: color-named classes. Remove in the next major version,
-// keeping white and black.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -32,8 +32,8 @@
 }
 
 // >> Brand Transparent
-// Deprecated: color-named classes. Remove in the next major version,
-// keeping white and black.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -43,8 +43,8 @@
 }
 
 // >> Brand Gradient
-// Deprecated: color-named classes. Remove in the next major version,
-// keeping white and black.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -53,8 +53,8 @@
   }
 }
 
-// >> Brand (semantic names)
-// The semantic brand color classes (.text-bg-alternate1, and the transparent
+// >> Brand (new names)
+// The brand color classes with new names (.text-bg-secondary-4, and the transparent
 // and gradient variants such as .text-bg-transparent-primary) share one set
 // of contrast rules instead of each repeating the az-color-contrast() rules.
 // Each class sets its colors and the --az-text-bg-* custom properties, and
@@ -77,21 +77,21 @@
 
 $text-bg-patterned-colors: color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage"), true);
 
-// Semantic class names → color names.
-$text-bg-semantic-classes: ();
+// New class names → color names.
+$text-bg-renamed-classes: ();
 @each $color, $value in color-classes-renamed($colors) {
-  $text-bg-semantic-classes: map-merge($text-bg-semantic-classes, ("text-bg-#{color-class-name($color)}": $color));
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-#{color-class-name($color)}": $color));
 }
 @each $color, $value in $text-bg-patterned-colors {
-  $text-bg-semantic-classes: map-merge($text-bg-semantic-classes, ("text-bg-transparent-#{color-class-name($color)}": $color));
-  $text-bg-semantic-classes: map-merge($text-bg-semantic-classes, ("text-bg-gradient-#{color-class-name($color)}": $color));
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-transparent-#{color-class-name($color)}": $color));
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-gradient-#{color-class-name($color)}": $color));
 }
 
-// Selector list of the semantic classes in a background category: "all",
+// Selector list of the new classes in a background category: "all",
 // "inherit-links" (backgrounds that do not use red links) or "dark".
 @function text-bg-selector($category) {
   $selectors: ();
-  @each $class, $color in $text-bg-semantic-classes {
+  @each $class, $color in $text-bg-renamed-classes {
     $include: true;
     @if $category == "inherit-links" {
       $include: not list.index($az-light-background-colors-with-red-links, $color);

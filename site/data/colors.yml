@@ -4,58 +4,58 @@
 - name: blue
   class: default
   hex: "#0c234b"
+- name: midnight
+  class: secondary-1
+  hex: "#03132e"
+- name: azurite
+  class: secondary-2
+  hex: "#1e5288"
+- name: oasis
+  class: secondary-3
+  hex: "#106ab1"
 - name: sky
-  class: alternate1
+  class: secondary-4
   hex: "#81ceeb"
   contrast_color: black
-- name: oasis
-  class: alternate2
-  hex: "#106ab1"
-- name: azurite
-  class: alternate3
-  hex: "#1e5288"
-- name: midnight
-  class: alternate4
-  hex: "#03132e"
+- name: chili
+  class: secondary-5
+  hex: "#8b0015"
 - name: bloom
-  class: alternate5
+  class: secondary-6
   hex: "#ef4056"
   contrast_color: black
-- name: chili
-  class: alternate6
-  hex: "#8b0015"
 - name: leaf
-  class: alternate7
+  class: accent-1
   hex: "#70b865"
   contrast_color: black
 - name: river
-  class: alternate8
+  class: accent-2
   hex: "#007d84"
 - name: mesa
-  class: alternate9
+  class: accent-3
   hex: "#a95c42"
-- name: sage
-  class: alternate10
-  hex: "#4a634e"
 - name: cool-gray
-  class: neutral1
+  class: neutral-1
   hex: "#e5eff7"
   contrast_color: black
 - name: warm-gray
-  class: neutral2
+  class: neutral-2
   hex: "#f2efea"
   contrast_color: black
-- name: silver
-  class: neutral3
-  hex: "#9eabae"
-  contrast_color: black
-- name: ash
-  class: neutral4
-  hex: "#403635"
 - name: white
   class: white
   hex: "#fff"
   contrast_color: black
+- name: silver
+  class: silver
+  hex: "#9eabae"
+  contrast_color: black
+- name: ash
+  class: ash
+  hex: "#403635"
+- name: sage
+  class: sage
+  hex: "#4a634e"
 - name: black
   class: black
   hex: "#000"

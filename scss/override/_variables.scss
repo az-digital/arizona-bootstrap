@@ -86,7 +86,7 @@ $table-variants: map-merge(
   map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black"),
   map-remove($theme-colors, "success", "danger", "warning", "info")
 );
-// Brand color table variants with semantic names. The color-named variants
+// Brand color table variants with the new names. The color-named variants
 // above are deprecated (except white) and can be removed in the next major
 // version.
 @each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black")) {

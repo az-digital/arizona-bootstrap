@@ -42,7 +42,7 @@ Use utilities to modify a `.badge` and position it in the corner of a link or bu
 {{< example >}}
 <button type="button" class="btn btn-primary position-relative">
   Inbox
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-alternate4">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary-1">
     99+
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -54,7 +54,7 @@ You can also replace the `.badge` class with a few more utilities without a coun
 {{< example >}}
 <button type="button" class="btn btn-primary position-relative">
   Profile
-  <span class="position-absolute top-0 start-100 translate-middle p-2 text-bg-alternate4 border border-light rounded-circle">
+  <span class="position-absolute top-0 start-100 translate-middle p-2 text-bg-secondary-1 border border-light rounded-circle">
     <span class="visually-hidden">New alerts</span>
   </span>
 </button>
@@ -71,7 +71,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{- range (index $.Site.Data "pnc-colors") }}
 <span class="badge text-bg-{{ .class }}">{{ .class | title }}</span>{{- end -}}
 {{< /badge.inline >}}
-<span class="badge text-bg-alternate1">Alternate1</span>
+<span class="badge text-bg-secondary-4">Secondary 4</span>
 {{< /example >}}
 
 {{< callout info >}}
@@ -87,18 +87,18 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 {{- range (index $.Site.Data "pnc-colors") }}
 <span class="badge rounded-pill text-bg-{{ .class }}">{{ .class | title }}</span>{{- end -}}
 {{< /badge.inline >}}
-<span class="badge rounded-pill text-bg-alternate1">Alternate1</span>
+<span class="badge rounded-pill text-bg-secondary-4">Secondary 4</span>
 {{< /example >}}
 
 ## Badge links
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Class</span>
 
-Use the custom `.badge-link` class on an `<a>` element with the Alternate6, Alternate4, or Light [`.text-bg-{color}` helper classes]({{< docsref "helpers/color-background" >}}) to provide _actionable_ badges with hover and focus states.
+Use the custom `.badge-link` class on an `<a>` element with the Secondary 5, Secondary 1, or Light [`.text-bg-{color}` helper classes]({{< docsref "helpers/color-background" >}}) to provide _actionable_ badges with hover and focus states.
 
 {{< example >}}
-<a href="#" class="badge badge-link text-bg-alternate6">Alternate6</a>
-<a href="#" class="badge badge-link text-bg-alternate4">Alternate4</a>
+<a href="#" class="badge badge-link text-bg-secondary-5">Secondary 5</a>
+<a href="#" class="badge badge-link text-bg-secondary-1">Secondary 1</a>
 <a href="#" class="badge badge-link text-bg-light">Light</a>
 {{< /example >}}
 

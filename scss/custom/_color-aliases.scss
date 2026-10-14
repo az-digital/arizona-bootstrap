@@ -1,8 +1,9 @@
-// Semantic Sass variable names for the brand colors and their tints and
-// shades, matching the semantic class names in $color-class-names. The
-// color-named variables they point to ($sky, $sky-100, and so on) are
-// deprecated: in the next major version, these become the definitions and
-// the color-named variables are removed.
+// Sass variable names that match the color class names in $color-class-names:
+// default for Arizona Blue, and secondary-1 to secondary-6, accent-1 to
+// accent-3 and neutral-1 to neutral-2 for the other brand colors, following
+// the university brand guidelines. The color-named variables they point to
+// ($sky, $sky-100, and so on) are deprecated: in the next major version,
+// these become the definitions and the old variables are removed.
 //
 // Imported after the upstream Bootstrap variables, which define $red-100 to
 // $red-900 and $blue-100 to $blue-900. $primary is the theme color, so only
@@ -31,160 +32,125 @@ $default-700: $blue-700;
 $default-800: $blue-800;
 $default-900: $blue-900;
 
-$alternate1: $sky;
-$alternate1-100: $sky-100;
-$alternate1-200: $sky-200;
-$alternate1-300: $sky-300;
-$alternate1-400: $sky-400;
-$alternate1-500: $sky-500;
-$alternate1-600: $sky-600;
-$alternate1-700: $sky-700;
-$alternate1-800: $sky-800;
-$alternate1-900: $sky-900;
+$secondary-1: $midnight;
+$secondary-1-100: $midnight-100;
+$secondary-1-200: $midnight-200;
+$secondary-1-300: $midnight-300;
+$secondary-1-400: $midnight-400;
+$secondary-1-500: $midnight-500;
+$secondary-1-600: $midnight-600;
+$secondary-1-700: $midnight-700;
+$secondary-1-800: $midnight-800;
+$secondary-1-900: $midnight-900;
 
-$alternate2: $oasis;
-$alternate2-100: $oasis-100;
-$alternate2-200: $oasis-200;
-$alternate2-300: $oasis-300;
-$alternate2-400: $oasis-400;
-$alternate2-500: $oasis-500;
-$alternate2-600: $oasis-600;
-$alternate2-700: $oasis-700;
-$alternate2-800: $oasis-800;
-$alternate2-900: $oasis-900;
+$secondary-2: $azurite;
+$secondary-2-100: $azurite-100;
+$secondary-2-200: $azurite-200;
+$secondary-2-300: $azurite-300;
+$secondary-2-400: $azurite-400;
+$secondary-2-500: $azurite-500;
+$secondary-2-600: $azurite-600;
+$secondary-2-700: $azurite-700;
+$secondary-2-800: $azurite-800;
+$secondary-2-900: $azurite-900;
 
-$alternate3: $azurite;
-$alternate3-100: $azurite-100;
-$alternate3-200: $azurite-200;
-$alternate3-300: $azurite-300;
-$alternate3-400: $azurite-400;
-$alternate3-500: $azurite-500;
-$alternate3-600: $azurite-600;
-$alternate3-700: $azurite-700;
-$alternate3-800: $azurite-800;
-$alternate3-900: $azurite-900;
+$secondary-3: $oasis;
+$secondary-3-100: $oasis-100;
+$secondary-3-200: $oasis-200;
+$secondary-3-300: $oasis-300;
+$secondary-3-400: $oasis-400;
+$secondary-3-500: $oasis-500;
+$secondary-3-600: $oasis-600;
+$secondary-3-700: $oasis-700;
+$secondary-3-800: $oasis-800;
+$secondary-3-900: $oasis-900;
 
-$alternate4: $midnight;
-$alternate4-100: $midnight-100;
-$alternate4-200: $midnight-200;
-$alternate4-300: $midnight-300;
-$alternate4-400: $midnight-400;
-$alternate4-500: $midnight-500;
-$alternate4-600: $midnight-600;
-$alternate4-700: $midnight-700;
-$alternate4-800: $midnight-800;
-$alternate4-900: $midnight-900;
+$secondary-4: $sky;
+$secondary-4-100: $sky-100;
+$secondary-4-200: $sky-200;
+$secondary-4-300: $sky-300;
+$secondary-4-400: $sky-400;
+$secondary-4-500: $sky-500;
+$secondary-4-600: $sky-600;
+$secondary-4-700: $sky-700;
+$secondary-4-800: $sky-800;
+$secondary-4-900: $sky-900;
 
-$alternate5: $bloom;
-$alternate5-100: $bloom-100;
-$alternate5-200: $bloom-200;
-$alternate5-300: $bloom-300;
-$alternate5-400: $bloom-400;
-$alternate5-500: $bloom-500;
-$alternate5-600: $bloom-600;
-$alternate5-700: $bloom-700;
-$alternate5-800: $bloom-800;
-$alternate5-900: $bloom-900;
+$secondary-5: $chili;
+$secondary-5-100: $chili-100;
+$secondary-5-200: $chili-200;
+$secondary-5-300: $chili-300;
+$secondary-5-400: $chili-400;
+$secondary-5-500: $chili-500;
+$secondary-5-600: $chili-600;
+$secondary-5-700: $chili-700;
+$secondary-5-800: $chili-800;
+$secondary-5-900: $chili-900;
 
-$alternate6: $chili;
-$alternate6-100: $chili-100;
-$alternate6-200: $chili-200;
-$alternate6-300: $chili-300;
-$alternate6-400: $chili-400;
-$alternate6-500: $chili-500;
-$alternate6-600: $chili-600;
-$alternate6-700: $chili-700;
-$alternate6-800: $chili-800;
-$alternate6-900: $chili-900;
+$secondary-6: $bloom;
+$secondary-6-100: $bloom-100;
+$secondary-6-200: $bloom-200;
+$secondary-6-300: $bloom-300;
+$secondary-6-400: $bloom-400;
+$secondary-6-500: $bloom-500;
+$secondary-6-600: $bloom-600;
+$secondary-6-700: $bloom-700;
+$secondary-6-800: $bloom-800;
+$secondary-6-900: $bloom-900;
 
-$alternate7: $leaf;
-$alternate7-100: $leaf-100;
-$alternate7-200: $leaf-200;
-$alternate7-300: $leaf-300;
-$alternate7-400: $leaf-400;
-$alternate7-500: $leaf-500;
-$alternate7-600: $leaf-600;
-$alternate7-700: $leaf-700;
-$alternate7-800: $leaf-800;
-$alternate7-900: $leaf-900;
+$accent-1: $leaf;
+$accent-1-100: $leaf-100;
+$accent-1-200: $leaf-200;
+$accent-1-300: $leaf-300;
+$accent-1-400: $leaf-400;
+$accent-1-500: $leaf-500;
+$accent-1-600: $leaf-600;
+$accent-1-700: $leaf-700;
+$accent-1-800: $leaf-800;
+$accent-1-900: $leaf-900;
 
-$alternate8: $river;
-$alternate8-100: $river-100;
-$alternate8-200: $river-200;
-$alternate8-300: $river-300;
-$alternate8-400: $river-400;
-$alternate8-500: $river-500;
-$alternate8-600: $river-600;
-$alternate8-700: $river-700;
-$alternate8-800: $river-800;
-$alternate8-900: $river-900;
+$accent-2: $river;
+$accent-2-100: $river-100;
+$accent-2-200: $river-200;
+$accent-2-300: $river-300;
+$accent-2-400: $river-400;
+$accent-2-500: $river-500;
+$accent-2-600: $river-600;
+$accent-2-700: $river-700;
+$accent-2-800: $river-800;
+$accent-2-900: $river-900;
 
-$alternate9: $mesa;
-$alternate9-100: $mesa-100;
-$alternate9-200: $mesa-200;
-$alternate9-300: $mesa-300;
-$alternate9-400: $mesa-400;
-$alternate9-500: $mesa-500;
-$alternate9-600: $mesa-600;
-$alternate9-700: $mesa-700;
-$alternate9-800: $mesa-800;
-$alternate9-900: $mesa-900;
+$accent-3: $mesa;
+$accent-3-100: $mesa-100;
+$accent-3-200: $mesa-200;
+$accent-3-300: $mesa-300;
+$accent-3-400: $mesa-400;
+$accent-3-500: $mesa-500;
+$accent-3-600: $mesa-600;
+$accent-3-700: $mesa-700;
+$accent-3-800: $mesa-800;
+$accent-3-900: $mesa-900;
 
-$alternate10: $sage;
-$alternate10-100: $sage-100;
-$alternate10-200: $sage-200;
-$alternate10-300: $sage-300;
-$alternate10-400: $sage-400;
-$alternate10-500: $sage-500;
-$alternate10-600: $sage-600;
-$alternate10-700: $sage-700;
-$alternate10-800: $sage-800;
-$alternate10-900: $sage-900;
+$neutral-1: $cool-gray;
+$neutral-1-100: $cool-gray-100;
+$neutral-1-200: $cool-gray-200;
+$neutral-1-300: $cool-gray-300;
+$neutral-1-400: $cool-gray-400;
+$neutral-1-500: $cool-gray-500;
+$neutral-1-600: $cool-gray-600;
+$neutral-1-700: $cool-gray-700;
+$neutral-1-800: $cool-gray-800;
+$neutral-1-900: $cool-gray-900;
 
-$neutral1: $cool-gray;
-$neutral1-100: $cool-gray-100;
-$neutral1-200: $cool-gray-200;
-$neutral1-300: $cool-gray-300;
-$neutral1-400: $cool-gray-400;
-$neutral1-500: $cool-gray-500;
-$neutral1-600: $cool-gray-600;
-$neutral1-700: $cool-gray-700;
-$neutral1-800: $cool-gray-800;
-$neutral1-900: $cool-gray-900;
-
-$neutral2: $warm-gray;
-$neutral2-100: $warm-gray-100;
-$neutral2-200: $warm-gray-200;
-$neutral2-300: $warm-gray-300;
-$neutral2-400: $warm-gray-400;
-$neutral2-500: $warm-gray-500;
-$neutral2-600: $warm-gray-600;
-$neutral2-700: $warm-gray-700;
-$neutral2-800: $warm-gray-800;
-$neutral2-900: $warm-gray-900;
-
-$neutral3: $silver;
-$neutral3-100: $silver-100;
-$neutral3-200: $silver-200;
-$neutral3-300: $silver-300;
-$neutral3-400: $silver-400;
-$neutral3-500: $silver-500;
-$neutral3-600: $silver-600;
-$neutral3-700: $silver-700;
-$neutral3-800: $silver-800;
-$neutral3-900: $silver-900;
-
-$neutral4: $ash;
-$neutral4-100: $ash-100;
-$neutral4-200: $ash-200;
-$neutral4-300: $ash-300;
-$neutral4-400: $ash-400;
-$neutral4-500: $ash-500;
-$neutral4-600: $ash-600;
-$neutral4-700: $ash-700;
-$neutral4-800: $ash-800;
-$neutral4-900: $ash-900;
-
-$neutral5: $dark-silver;
+$neutral-2: $warm-gray;
+$neutral-2-100: $warm-gray-100;
+$neutral-2-200: $warm-gray-200;
+$neutral-2-300: $warm-gray-300;
+$neutral-2-400: $warm-gray-400;
+$neutral-2-500: $warm-gray-500;
+$neutral-2-600: $warm-gray-600;
+$neutral-2-700: $warm-gray-700;
+$neutral-2-800: $warm-gray-800;
+$neutral-2-900: $warm-gray-900;
 
 // fusv-enable

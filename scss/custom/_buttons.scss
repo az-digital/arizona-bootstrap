@@ -2,13 +2,13 @@
 // > BUTTONS
 //
 
-// >> Semantic variants
+// >> New variants
 
 .btn-default {
   @extend .btn-secondary;
 }
 
-.btn-alternate1 {
+.btn-secondary-4 {
   @extend .btn-info;
   --bs-btn-hover-bg: #65c0db;
   --bs-btn-hover-border-color: #65c0db;
@@ -48,7 +48,7 @@
   @extend .btn-outline-secondary;
 }
 
-.btn-outline-alternate1 {
+.btn-outline-secondary-4 {
   @extend .btn-outline-info;
   --bs-btn-color: #{$sky};
   --az-btn-focus-outline-color: #{$white};
@@ -65,10 +65,10 @@
 
 // >> Deprecated: color-named classes. Remove in the next major version.
 // Replacements: .btn-red → .btn-primary, .btn-blue → .btn-default,
-// .btn-sky → .btn-alternate1, .btn-white-text-red → .btn-inverse-primary,
+// .btn-sky → .btn-secondary-4, .btn-white-text-red → .btn-inverse-primary,
 // .btn-white-text-blue → .btn-inverse-default, .btn-outline-red →
 // .btn-outline-primary, .btn-outline-blue → .btn-outline-default,
-// .btn-outline-sky → .btn-outline-alternate1, .btn-outline-white →
+// .btn-outline-sky → .btn-outline-secondary-4, .btn-outline-white →
 // .btn-outline-inverse.
 
 .btn-red {

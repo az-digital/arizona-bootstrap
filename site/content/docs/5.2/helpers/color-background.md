@@ -114,21 +114,21 @@ Arizona Bootstrap includes additional styling to ensure that headings and links 
 Use them in place of combined `.text-*` and `.bg-*` classes, like on [badges]({{< docsref "/components/badge#background-colors" >}}):
 
 {{< example >}}
-<span class="badge text-bg-alternate7">Alternate7</span>
-<span class="badge text-bg-alternate1">Alternate1</span>
-<span class="badge text-bg-alternate9">Alternate9</span>
+<span class="badge text-bg-accent-1">Accent 1</span>
+<span class="badge text-bg-secondary-4">Secondary 4</span>
+<span class="badge text-bg-accent-3">Accent 3</span>
 {{< /example >}}
 
 Or on [cards]({{< docsref "/components/card#background-and-color" >}}):
 
 {{< example >}}
-<div class="card text-bg-neutral2 mb-3" style="max-width: 18rem;">
+<div class="card text-bg-neutral-2 mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-<div class="card text-bg-alternate6 mb-3" style="max-width: 18rem;">
+<div class="card text-bg-secondary-5 mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

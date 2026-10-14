@@ -26,7 +26,7 @@ $colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb,
   }
 }
 
-// Utility values for the semantic class names of the colors in $color-map.
+// Utility values for the new class names of the colors in $color-map.
 // They are merged after the color-named values, which are deprecated
 // (except white and black) and can be removed in the next major version.
 @function color-utility-values($color-map, $target) {
