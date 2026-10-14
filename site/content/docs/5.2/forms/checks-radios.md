@@ -277,16 +277,16 @@ Visually, these checkbox toggle buttons are identical to the [button plugin togg
 
 {{< example >}}
 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-<label class="btn btn-secondary" for="option1">Checked</label>
+<label class="btn btn-default" for="option1">Checked</label>
 
 <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-<label class="btn btn-secondary" for="option2">Radio</label>
+<label class="btn btn-default" for="option2">Radio</label>
 
 <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
-<label class="btn btn-secondary" for="option3">Disabled</label>
+<label class="btn btn-default" for="option3">Disabled</label>
 
 <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-<label class="btn btn-secondary" for="option4">Radio</label>
+<label class="btn btn-default" for="option4">Radio</label>
 {{< /example >}}
 
 {{< example >}}
@@ -312,7 +312,7 @@ Different variants of `.btn`, such as the various outlined styles, are supported
 <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
 
 <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-<label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
+<label class="btn btn-outline-default" for="btn-check-2-outlined">Checked</label><br>
 
 <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
 <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>

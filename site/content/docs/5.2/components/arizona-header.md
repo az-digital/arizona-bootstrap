@@ -16,7 +16,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <p class="mb-0">The wordmark logo without a Block "A" header should only be used when near a Block "A" logo. Typically, the Block "A" logo is included as part of the site branding just below the Arizona Header.</p>
 </div>
 
-<div class="arizona-header bg-secondary">
+<div class="arizona-header bg-default">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -27,7 +27,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 </div>
 
 ```html
-<div class="arizona-header az-fixed-header-on-mobile bg-secondary" id="header_arizona">
+<div class="arizona-header az-fixed-header-on-mobile bg-default" id="header_arizona">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -69,7 +69,7 @@ The original red Arizona Header will be deprecated in a future release.
 The Arizona Header can be extended with off-canvas search and navigation for mobile devices, as shown in the example below.
 
 {{< example >}}
-<div class="arizona-header az-fixed-header-on-mobile bg-secondary" id="header_arizona_example_1">
+<div class="arizona-header az-fixed-header-on-mobile bg-default" id="header_arizona_example_1">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -111,7 +111,7 @@ In most cases, the Arizona Header element is intended to be fixed to the top of 
 **Note:** For this documentation site, this fixed-position behavior has been overridden to prevent the example Arizona Headers from disappearing behind the existing Arizona Bootstrap navbar above.
 
 {{< example >}}
-<div class="arizona-header bg-secondary" id="header_arizona_example_2">
+<div class="arizona-header bg-default" id="header_arizona_example_2">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">

@@ -5,8 +5,8 @@
 // the color-named variables are removed.
 //
 // Imported after the upstream Bootstrap variables, which define $red-100 to
-// $red-900 and $blue-100 to $blue-900. $primary and $secondary are the theme
-// colors, so only their tints and shades are added here.
+// $red-900 and $blue-100 to $blue-900. $primary is the theme color, so only
+// its tints and shades are added here.
 
 // fusv-disable
 
@@ -20,15 +20,16 @@ $primary-700: $red-700;
 $primary-800: $red-800;
 $primary-900: $red-900;
 
-$secondary-100: $blue-100;
-$secondary-200: $blue-200;
-$secondary-300: $blue-300;
-$secondary-400: $blue-400;
-$secondary-500: $blue-500;
-$secondary-600: $blue-600;
-$secondary-700: $blue-700;
-$secondary-800: $blue-800;
-$secondary-900: $blue-900;
+$default: $blue;
+$default-100: $blue-100;
+$default-200: $blue-200;
+$default-300: $blue-300;
+$default-400: $blue-400;
+$default-500: $blue-500;
+$default-600: $blue-600;
+$default-700: $blue-700;
+$default-800: $blue-800;
+$default-900: $blue-900;
 
 $alternate1: $sky;
 $alternate1-100: $sky-100;

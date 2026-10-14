@@ -42,121 +42,121 @@ In general, developers should use the main branch version of the icons for devel
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-arizona"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-arizona</code></p>
+      <p class="small"><code class="text-default">.az-icon-arizona</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-award"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-award</code></p>
+      <p class="small"><code class="text-default">.az-icon-award</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-cost"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-cost</code></p>
+      <p class="small"><code class="text-default">.az-icon-cost</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-facebook"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-facebook</code></p>
+      <p class="small"><code class="text-default">.az-icon-facebook</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-financial-aid"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-financial-aid</code></p>
+      <p class="small"><code class="text-default">.az-icon-financial-aid</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-grad-cap"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-grad-cap</code></p>
+      <p class="small"><code class="text-default">.az-icon-grad-cap</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-instagram"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-instagram</code></p>
+      <p class="small"><code class="text-default">.az-icon-instagram</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-linkedin"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-linkedin</code></p>
+      <p class="small"><code class="text-default">.az-icon-linkedin</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-majors-and-degrees"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-majors-and-degrees</code></p>
+      <p class="small"><code class="text-default">.az-icon-majors-and-degrees</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-map-marker"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-map-marker</code></p>
+      <p class="small"><code class="text-default">.az-icon-map-marker</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-pinterest"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-pinterest</code></p>
+      <p class="small"><code class="text-default">.az-icon-pinterest</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-scholarship"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-scholarship</code></p>
+      <p class="small"><code class="text-default">.az-icon-scholarship</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-sign-post"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-sign-post</code></p>
+      <p class="small"><code class="text-default">.az-icon-sign-post</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-spotify"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-spotify</code></p>
+      <p class="small"><code class="text-default">.az-icon-spotify</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-spring-fling"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-spring-fling</code></p>
+      <p class="small"><code class="text-default">.az-icon-spring-fling</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-tiktok"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-tiktok</code></p>
+      <p class="small"><code class="text-default">.az-icon-tiktok</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-twitter"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-twitter</code></p>
+      <p class="small"><code class="text-default">.az-icon-twitter</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-x-twitter"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-x-twitter</code></p>
+      <p class="small"><code class="text-default">.az-icon-x-twitter</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-wildcat"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-wildcat</code></p>
+      <p class="small"><code class="text-default">.az-icon-wildcat</code></p>
     </div>
   </div>
   <div class="col-6 col-md-3 col-sm-1 col-lg-3">
     <div class="text-center mb-4">
       <p class="fs-2 mb-2"><i class="az-icon-youtube"></i></p>
-      <p class="small"><code class="text-secondary">.az-icon-youtube</code></p>
+      <p class="small"><code class="text-default">.az-icon-youtube</code></p>
     </div>
   </div>
 </div>
@@ -177,5 +177,5 @@ Your `span` should include the `.material-symbols-rounded` class along with any 
 {{< example >}}
 <span class="material-symbols-rounded text-alternate1 display-4">accessible_forward</span>
 <span class="material-symbols-rounded text-alternate3 display-3">accessible_forward</span>
-<span class="material-symbols-rounded text-secondary display-1">accessible_forward</span>
+<span class="material-symbols-rounded text-default display-1">accessible_forward</span>
 {{< /example >}}

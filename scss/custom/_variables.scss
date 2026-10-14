@@ -396,7 +396,7 @@ $colors: (
 // scss-docs-start color-class-names-map
 $color-class-names: (
   "red": "primary",
-  "blue": "secondary",
+  "blue": "default",
   "sky": "alternate1",
   "oasis": "alternate2",
   "azurite": "alternate3",
@@ -423,16 +423,16 @@ $color-class-names: (
   @return $color;
 }
 
-// Whether a color's semantic class name is a theme color (red → primary,
-// blue → secondary), whose classes Bootstrap already generates.
+// Whether a color's semantic class name is a theme color (red → primary),
+// whose classes Bootstrap already generates.
 @function color-class-is-theme($color) {
   @return map-has-key($theme-colors, color-class-name($color));
 }
 
 // The colors in $color-map that have a semantic class name, that is, the ones
-// whose color-named classes are deprecated. Red and blue are left out unless
-// $include-theme is true: for most classes, Bootstrap already generates their
-// semantic versions from $theme-colors (.text-bg-primary, .bg-secondary).
+// whose color-named classes are deprecated. Red is left out unless
+// $include-theme is true: for most classes, Bootstrap already generates its
+// semantic versions from $theme-colors (.text-bg-primary, .bg-primary).
 @function color-classes-renamed($color-map, $include-theme: false) {
   $result: ();
   @each $color, $value in $color-map {

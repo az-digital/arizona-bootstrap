@@ -2,7 +2,7 @@
   class: primary
   hex: "#ab0520"
 - name: blue
-  class: secondary
+  class: default
   hex: "#0c234b"
 - name: sky
   class: alternate1

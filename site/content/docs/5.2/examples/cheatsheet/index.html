@@ -698,7 +698,7 @@ body_class: "bg-body-tertiary"
       <div>
         {{< example show_markup="false" >}}
         <p class="h1">Example heading <span class="badge bg-primary">New</span></p>
-        <p class="h2">Example heading <span class="badge bg-secondary">New</span></p>
+        <p class="h2">Example heading <span class="badge bg-default">New</span></p>
         <p class="h3">Example heading <span class="badge bg-success">New</span></p>
         <p class="h4">Example heading <span class="badge bg-danger">New</span></p>
         <p class="h5">Example heading <span class="badge text-bg-warning">New</span></p>
@@ -775,18 +775,18 @@ body_class: "bg-body-tertiary"
         {{< example show_markup="false" >}}
         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <div class="btn-group me-2" role="group" aria-label="First group">
-            <button type="button" class="btn btn-secondary">1</button>
-            <button type="button" class="btn btn-secondary">2</button>
-            <button type="button" class="btn btn-secondary">3</button>
-            <button type="button" class="btn btn-secondary">4</button>
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
           </div>
           <div class="btn-group me-2" role="group" aria-label="Second group">
-            <button type="button" class="btn btn-secondary">5</button>
-            <button type="button" class="btn btn-secondary">6</button>
-            <button type="button" class="btn btn-secondary">7</button>
+            <button type="button" class="btn btn-default">5</button>
+            <button type="button" class="btn btn-default">6</button>
+            <button type="button" class="btn btn-default">7</button>
           </div>
           <div class="btn-group" role="group" aria-label="Third group">
-            <button type="button" class="btn btn-secondary">8</button>
+            <button type="button" class="btn btn-default">8</button>
           </div>
         </div>
         {{< /example >}}
@@ -922,7 +922,7 @@ body_class: "bg-body-tertiary"
         {{< example show_markup="false" >}}
         <div class="btn-group w-100 align-items-center justify-content-between flex-wrap me-0">
           <div class="dropdown">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown button
             </button>
             <ul class="dropdown-menu">
@@ -935,7 +935,7 @@ body_class: "bg-body-tertiary"
             </ul>
           </div>
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown button
             </button>
             <ul class="dropdown-menu">
@@ -948,7 +948,7 @@ body_class: "bg-body-tertiary"
             </ul>
           </div>
           <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown button
             </button>
             <ul class="dropdown-menu">
@@ -976,8 +976,8 @@ body_class: "bg-body-tertiary"
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button type="button" class="btn btn-secondary">Secondary</button>
-          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <button type="button" class="btn btn-default">Secondary</button>
+          <button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu">
@@ -1035,7 +1035,7 @@ body_class: "bg-body-tertiary"
         {{< example show_markup="false" >}}
         <div class="btn-group w-100 align-items-center justify-content-between flex-wrap me-0">
           <div class="dropend">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropend button
             </button>
             <ul class="dropdown-menu">
@@ -1048,7 +1048,7 @@ body_class: "bg-body-tertiary"
             </ul>
           </div>
           <div class="dropup">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropup button
             </button>
             <ul class="dropdown-menu">
@@ -1061,7 +1061,7 @@ body_class: "bg-body-tertiary"
             </ul>
           </div>
           <div class="dropstart">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropstart button
             </button>
             <ul class="dropdown-menu">
@@ -1079,7 +1079,7 @@ body_class: "bg-body-tertiary"
         {{< example show_markup="false" >}}
         <div class="btn-group">
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               End-aligned menu
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -1372,16 +1372,16 @@ body_class: "bg-body-tertiary"
         {{< /example >}}
 
         {{< example show_markup="false" >}}
-        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="btn btn-default" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on top
         </button>
-        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="btn btn-default" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on end
         </button>
-        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="btn btn-default" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on bottom
         </button>
-        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        <button type="button" class="btn btn-default" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
           Popover on start
         </button>
         {{< /example >}}
@@ -1525,11 +1525,11 @@ body_class: "bg-body-tertiary"
 
       <div>
         {{< example show_markup="false" class="tooltip-demo" >}}
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Tooltip on top</button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on end">Tooltip on end</button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on start">Tooltip on start</button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
+        <button type="button" class="btn btn-default" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Tooltip on top</button>
+        <button type="button" class="btn btn-default" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on end">Tooltip on end</button>
+        <button type="button" class="btn btn-default" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+        <button type="button" class="btn btn-default" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on start">Tooltip on start</button>
+        <button type="button" class="btn btn-default" data-bs-toggle="tooltip" data-bs-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
         {{< /example >}}
       </div>
     </article>
@@ -1547,7 +1547,7 @@ body_class: "bg-body-tertiary"
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -1564,7 +1564,7 @@ body_class: "bg-body-tertiary"
         <p>I will not close if you click outside me. Don't even try to press escape key.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
@@ -1583,7 +1583,7 @@ body_class: "bg-body-tertiary"
         <p>This content should appear at the bottom after you scroll.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -1600,7 +1600,7 @@ body_class: "bg-body-tertiary"
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -24,7 +24,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 
 {{< example >}}
 {{< colors.inline >}}
-{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red" "blue") }}
+{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red") }}
 <div class="p-3 mb-2 bg-{{ .class }}{{ if .contrast_color }} text-{{ .contrast_color }} {{ else }} text-white{{ end }}">.bg-{{ .class }}</div>
 {{- end -}}
 {{< /colors.inline >}}

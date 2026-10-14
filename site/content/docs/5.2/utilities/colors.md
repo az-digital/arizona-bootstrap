@@ -20,7 +20,7 @@ When using these colors, it is important to maintain sufficient color contrast b
 
 {{< example >}}
 {{< colors.inline >}}
-{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red" "blue") }}
+{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red") }}
 <p class="text-{{ .class }}{{- if or (eq .name "cool-gray") (eq .name "warm-gray") (eq .name "silver")  (eq .name "white") }} bg-dark{{ end }}">.text-{{ .class }}</p>
 {{- end -}}
 {{< /colors.inline >}}

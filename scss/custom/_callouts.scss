@@ -55,8 +55,8 @@
   }
 }
 
-// Brand color callouts with semantic names. Red and blue are the primary and
-// secondary theme color callouts below.
+// Brand color callouts with semantic names. Red is the primary theme color
+// callout below.
 @each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa")) {
   .callout-#{color-class-name($color)} {
     @include callout-variant($color, $value);

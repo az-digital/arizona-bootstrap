@@ -90,10 +90,10 @@ Here are some real life examples of these classes:
 
 {{< example class="bd-example-position-examples d-flex justify-content-around align-items-center" >}}
 <button type="button" class="btn btn-primary position-relative">
-  Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
+  Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-default">+99 <span class="visually-hidden">unread messages</span></span>
 </button>
 
-<div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
+<div class="position-relative py-2 px-4 text-bg-default border border-secondary rounded-pill">
   Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
 </div>
 
@@ -111,7 +111,7 @@ You can use these classes with existing components to create new ones. Remember 
   </div>
   <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
   <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-  <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
+  <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-default rounded-pill" style="width: 2rem; height:2rem;">3</button>
 </div>
 {{< /example >}}
 

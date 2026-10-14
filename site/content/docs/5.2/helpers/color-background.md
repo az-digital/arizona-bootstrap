@@ -22,7 +22,7 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 
 {{< example >}}
 {{< text-bg.inline >}}
-{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red" "blue") }}
+{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red") }}
 <div class="text-bg-{{ .class }} p-3">{{ .class | title }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
