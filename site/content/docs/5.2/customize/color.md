@@ -398,11 +398,11 @@ Be sure to monitor contrast ratios as you customize colors. As shown below, we'v
     {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark")) (not (eq $color.name "black"))) }}
     <div class="col-md-4 mb-3">
       <div class="p-3 mb-2 position-relative swatch-{{ $color.name }}">
-        <strong class="d-block">${{ $color.name }}</strong>
+        <strong class="d-block">${{ $color.class }}</strong>
         {{ $color.hex }}
       </div>
       {{ range (seq 100 100 900) }}
-      <div class="p-3 bd-{{ $color.name }}-{{ . }}">${{ $color.name }}-{{ . }}</div>
+      <div class="p-3 bd-{{ $color.name }}-{{ . }}">${{ $color.class }}-{{ . }}</div>
       {{ end }}
     </div>
     {{ end -}}

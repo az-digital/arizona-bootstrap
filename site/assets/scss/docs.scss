@@ -38,6 +38,9 @@
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/variables-dark";
 
+// Semantic names for the brand color Sass variables.
+@import "../../../scss/custom/color-aliases";
+
 // Load Bootstrap variables and mixins
 @import "../../../node_modules/bootstrap/scss/mixins";
 

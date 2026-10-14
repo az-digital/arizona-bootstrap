@@ -66,6 +66,12 @@ The color-named classes are deprecated in every color class family: `.text-bg-*`
 
 `.callout-red` and `.callout-blue` keep their colored headings. Their replacements, `.callout-primary` and `.callout-secondary`, use the body text color for headings.
 
+#### Sass Variables
+
+The brand color Sass variables and their tints and shades also have semantic names, using the same replacements as the table above. For example, `$sky` is now `$alternate1` and `$sky-100` is now `$alternate1-100`. For red and blue, use the `$primary` and `$secondary` theme colors, with `$primary-100` to `$primary-900` and `$secondary-100` to `$secondary-900` for the tints and shades.
+
+The color-named variables, such as `$sky` and `$sky-100`, are deprecated. They still work, and the semantic variables use their values, so overriding a color-named variable also changes its semantic variable.
+
 
 ## Arizona Bootstrap 2 to 5
 
