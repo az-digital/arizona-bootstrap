@@ -5,10 +5,12 @@
 // >> Theme Colors
 $primary: $red;
 $secondary: $blue;
-$success: $leaf;
+// Success and danger keep their values from before the design tokens (the
+// former leaf and mesa) until there are design token colors for these roles.
+$success: #70b865;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
+$danger: #a95c42;
 $light: $gray-300;
 $dark: $gray-800;
 
