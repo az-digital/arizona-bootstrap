@@ -26,14 +26,14 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 
 ### Badges
 
-Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Chili, Midnight, and Light color and background helpers.
+Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the `.text-bg-alternate6`, `.text-bg-alternate4`, and `.text-bg-light` color and background helpers.
 
 ### Primary Color Change
 
 In Arizona Bootstrap 2, classes using the "primary" color were styled with Arizona Blue. In Arizona Bootstrap 5, "primary" now corresponds with Arizona Red and "secondary" (unused in Arizona Bootstrap 2) corresponds with Arizona Blue. Below are examples of replacements which can be made to update existing content while maintaining the same Arizona Blue color:
- - `.bg-primary`: Replace with `.text-bg-blue`.
- - `.btn-primary`: Replace with `.btn-blue`.
- - `.text-primary`: Replace with `.text-blue`.
+ - `.bg-primary`: Replace with `.text-bg-secondary`.
+ - `.btn-primary`: Replace with `.btn-secondary`.
+ - `.text-primary`: Replace with `.text-secondary`.
 
 
 ## Deprecated Components
@@ -52,6 +52,49 @@ These custom Arizona Bootstrap classes for the Arizona Header are now deprecated
 - `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
 
 For both of these deprecated classes, the original CSS has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
+
+### Button Classes
+
+These custom Arizona Bootstrap button classes are now deprecated:
+ - `.btn-red`: Replace with `.btn-primary`.
+ - `.btn-blue`: Replace with `.btn-secondary`.
+ - `.btn-sky`: Replace with `.btn-alternate1`.
+ - `.btn-outline-red`: Replace with `.btn-outline-primary`.
+ - `.btn-outline-blue`: Replace with `.btn-outline-secondary`.
+ - `.btn-outline-sky`: Replace with `.btn-outline-alternate1`.
+ - `.btn-outline-white`: Replace with `.btn-outline-inverse`.
+ - `.btn-white-text-red`: Replace with `.btn-inverse-primary`.
+ - `.btn-white-text-blue`: Replace with `.btn-inverse-secondary`.
+
+The deprecated classes are still included, unchanged, so existing markup continues to look the same. They will be removed in the next major version.
+
+### Color Classes
+
+Color classes now use semantic names. The classes named after a color are deprecated. They are still included, unchanged, so existing markup continues to look the same, and will be removed in the next major version.
+
+This applies to every color class: `.text-bg-*`, `.text-bg-transparent-*`, `.text-bg-gradient-*`, `.bg-*`, `.bg-transparent-*`, `.bg-gradient-*`, `.text-*`, `.border-*`, `.focus-ring-*`, `.callout-*`, and `.table-*`. Replace the deprecated suffix with the new one, for example `.text-bg-sky` with `.text-bg-alternate1`.
+
+| Deprecated suffix | Replacement suffix |
+| --- | --- |
+| `-red` | `-primary` |
+| `-blue` | `-secondary` |
+| `-sky` | `-alternate1` |
+| `-oasis` | `-alternate2` |
+| `-azurite` | `-alternate3` |
+| `-midnight` | `-alternate4` |
+| `-bloom` | `-alternate5` |
+| `-chili` | `-alternate6` |
+| `-leaf` | `-alternate7` |
+| `-river` | `-alternate8` |
+| `-mesa` | `-alternate9` |
+| `-sage` | `-alternate10` |
+| `-cool-gray` | `-neutral1` |
+| `-warm-gray` | `-neutral2` |
+| `-silver` | `-neutral3` |
+| `-ash` | `-neutral4` |
+| `-dark-silver` | `-neutral5` |
+
+`.callout-red` and `.callout-blue` keep their colored headings. Their replacements, `.callout-primary` and `.callout-secondary`, use the body text color for headings.
 
 ### Card Classes
 
@@ -91,10 +134,10 @@ The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper p
 
 The following `.btn-*` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5:
 
- - `.btn-default`: Replace with `.btn-red`.
- - `.btn-hollow-default`: Replace with `.btn-outline-red`.
- - `.btn-hollow-primary`: Replace with `.btn-outline-blue`.
- - `.btn-hollow-reverse`: Replace with `.btn-outline-white`.
+ - `.btn-default`: Replace with `.btn-primary`.
+ - `.btn-hollow-default`: Replace with `.btn-outline-primary`.
+ - `.btn-hollow-primary`: Replace with `.btn-outline-secondary`.
+ - `.btn-hollow-reverse`: Replace with `.btn-outline-inverse`.
 
 ### Callout Variants
 

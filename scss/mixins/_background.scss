@@ -22,8 +22,21 @@
     background-color: rgba(255, 255, 255, .7);
   }
 
+  // Deprecated: color-named classes. Remove in the next major version,
+  // keeping white and black.
   @each $color, $value in $colors {
     &.text-bg-#{$color} {
+      p,
+      li,
+      hr {
+        background-color: rgba($value, .7);
+      }
+    }
+  }
+
+  // Semantic names
+  @each $color, $value in color-classes-renamed($colors, $include-theme: true) {
+    &.text-bg-#{color-class-name($color)} {
       p,
       li,
       hr {

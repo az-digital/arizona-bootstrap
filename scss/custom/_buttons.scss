@@ -2,6 +2,67 @@
 // > BUTTONS
 //
 
+// >> Semantic variants
+
+.btn-alternate1 {
+  @extend .btn-info;
+  --bs-btn-hover-bg: #65c0db;
+  --bs-btn-hover-border-color: #65c0db;
+}
+
+.btn-inverse-secondary {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $blue,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $blue,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $blue
+  );
+  --az-btn-focus-outline-color: #{$white};
+}
+
+.btn-inverse-primary {
+  @include button-variant(
+    $background: $white,
+    $border: $white,
+    $color: $red,
+    $hover-background: $cool-gray,
+    $hover-border: $cool-gray,
+    $hover-color: $red,
+    $active-background: $cool-gray,
+    $active-border: $cool-gray,
+    $active-color: $red
+  );
+  --az-btn-focus-outline-color: #{$white};
+}
+
+.btn-outline-alternate1 {
+  @extend .btn-outline-info;
+  --bs-btn-color: #{$sky};
+  --az-btn-focus-outline-color: #{$white};
+}
+
+.btn-outline-inverse {
+  @include button-outline-variant(
+    $color: $white,
+    $color-hover: $gray-800,
+    $active-background: $white,
+  );
+  --az-btn-focus-outline-color: #{$white};
+}
+
+// >> Deprecated: color-named classes. Remove in the next major version.
+// Replacements: .btn-red → .btn-primary, .btn-blue → .btn-secondary,
+// .btn-sky → .btn-alternate1, .btn-white-text-red → .btn-inverse-primary,
+// .btn-white-text-blue → .btn-inverse-secondary, .btn-outline-red →
+// .btn-outline-primary, .btn-outline-blue → .btn-outline-secondary,
+// .btn-outline-sky → .btn-outline-alternate1, .btn-outline-white →
+// .btn-outline-inverse.
+
 .btn-red {
   @extend .btn-primary;
 }
@@ -68,6 +129,8 @@
   );
   --az-btn-focus-outline-color: #{$white};
 }
+
+// >> End of deprecated color-named classes.
 
 // >> Arrow Buttons
 .btn-arrow {

@@ -26,11 +26,24 @@ $colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb,
   }
 }
 
+// Utility values for the semantic class names of the colors in $color-map.
+// They are merged after the color-named values, which are deprecated
+// (except white and black) and can be removed in the next major version.
+@function color-utility-values($color-map, $target) {
+  $result: ();
+  @each $color, $value in color-classes-renamed($color-map) {
+    $result: map-merge($result, (color-class-name($color): rgba-css-var($color, $target)));
+  }
+  @return $result;
+}
+
 // text colors
 $text-colors: map-loop($colors-rgb, rgba-css-var, "$key", "text");
+$text-colors: map-merge($text-colors, color-utility-values($colors-rgb, "text"));
 
 // background colors
 $background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-var, "$key", "bg");
+$background-colors: map-merge($background-colors, color-utility-values(map-remove($colors-rgb, "dark-silver"), "bg"));
 
 $bg-grays: ();
 @each $key, $value in $grays {
@@ -43,9 +56,11 @@ $pnc-colors: map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "riv
 
 // border colors
 $border-colors: map-loop(map-merge($pnc-colors, ("bloom": $bloom)), rgba-css-var, "$key", "border");
+$border-colors: map-merge($border-colors, color-utility-values(map-merge($pnc-colors, ("bloom": $bloom)), "border"));
 
 // focus ring colors
 $focus-ring-colors: map-loop($pnc-colors, rgba-css-var, "$key", "focus-ring");
+$focus-ring-colors: map-merge($focus-ring-colors, color-utility-values($pnc-colors, "focus-ring"));
 
 $utilities: map-merge(
   $utilities,

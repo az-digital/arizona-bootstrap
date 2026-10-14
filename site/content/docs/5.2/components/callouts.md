@@ -15,10 +15,10 @@ Callouts call attention to a small portion of content that needs to stand out ag
 
 {{< example >}}
 {{< callout.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" }}
+{{ $excluded := slice "red" "blue" "leaf" "river" "silver" "mesa" }}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-  <div class="callout callout-{{ $color.name }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
-    <p class="h4">{{ .name | title }} Callout</p>
+  <div class="callout callout-{{ $color.class }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
+    <p class="h4">{{ .class | title }} Callout</p>
     <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
   </div>
 {{ end }}
@@ -28,7 +28,7 @@ Callouts call attention to a small portion of content that needs to stand out ag
 ## Contextual (Theme)
 
 
-<div class="callout callout-azurite">
+<div class="callout callout-alternate3">
   <p><strong>Note:</strong> Although an "info" callout is included below, callouts of any brand color may be used for informational purposes (like this azurite callout).</p>
 </div>
 
@@ -38,8 +38,8 @@ Callouts call attention to a small portion of content that needs to stand out ag
 {{ $excluded := slice "light" "dark" }}
 {{ $siteThemeColors := index $.Site.Data "theme-colors" }}
 {{- range $color := where $siteThemeColors "name" "not in" $excluded }}
-  <div class="callout callout-{{ $color.name }}">
-    <p class="h4">{{ .name | title }} Callout</p>
+  <div class="callout callout-{{ $color.class }}">
+    <p class="h4">{{ .class | title }} Callout</p>
     <p>A callout is useful for drawing attention to an important piece of content. You can use any of the available brand and theme colors in conjunction with the callout to change its border and text color.</p>
   </div>
 {{ end }}

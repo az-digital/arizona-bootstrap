@@ -19,6 +19,7 @@
     blend-mode: multiply;
   }
 }
+// Deprecated: color-named classes. Remove in the next major version: .text-bg-red and .text-bg-blue.
 .text-bg-red.bg-triangles-top-left {
   background: {
     image: url("img/triangles-top-left-red.svg");
@@ -26,6 +27,18 @@
   }
 }
 .text-bg-blue.bg-triangles-top-left {
+  background: {
+    image: url("img/triangles-top-left-blue.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-primary.bg-triangles-top-left {
+  background: {
+    image: url("img/triangles-top-left-red.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-secondary.bg-triangles-top-left {
   background: {
     image: url("img/triangles-top-left-blue.svg");
     blend-mode: initial;
@@ -42,6 +55,7 @@
     blend-mode: multiply;
   }
 }
+// Deprecated: color-named classes. Remove in the next major version: .text-bg-red and .text-bg-blue.
 .text-bg-red.bg-triangles-top-right {
   background: {
     image: url("img/triangles-top-right-red.svg");
@@ -49,6 +63,18 @@
   }
 }
 .text-bg-blue.bg-triangles-top-right {
+  background: {
+    image: url("img/triangles-top-right-blue.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-primary.bg-triangles-top-right {
+  background: {
+    image: url("img/triangles-top-right-red.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-secondary.bg-triangles-top-right {
   background: {
     image: url("img/triangles-top-right-blue.svg");
     blend-mode: initial;
@@ -65,6 +91,7 @@
     blend-mode: multiply;
   }
 }
+// Deprecated: color-named classes. Remove in the next major version: .text-bg-red and .text-bg-blue.
 .text-bg-red.bg-triangles-centered {
   background: {
     image: url("img/triangles-centered-red.svg");
@@ -72,6 +99,18 @@
   }
 }
 .text-bg-blue.bg-triangles-centered {
+  background: {
+    image: url("img/triangles-centered-blue.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-primary.bg-triangles-centered {
+  background: {
+    image: url("img/triangles-centered-red.svg");
+    blend-mode: initial;
+  }
+}
+.text-bg-secondary.bg-triangles-centered {
   background: {
     image: url("img/triangles-centered-blue.svg");
     blend-mode: initial;

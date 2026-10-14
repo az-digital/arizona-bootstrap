@@ -46,7 +46,7 @@ Add borders with <a href="https://marcom.arizona.edu/brand-guidelines/colors">Ar
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
 {{- range (index $.Site.Data "border-colors") }}
-<span class="border border-{{ .name }}"></span>
+<span class="border border-{{ .class }}"></span>
 {{- end -}}
 {{< /border.inline >}}
 {{< /example >}}
@@ -57,7 +57,7 @@ Use upstream Bootstrap's colors to convey meaning and contextual information (e.
 {{< example class="bd-example-border-utils" >}}
 {{< border.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<span class="border border-{{ .name }}"></span>
+<span class="border border-{{ .class }}"></span>
 {{- end -}}
 {{< /border.inline >}}
 {{< /example >}}

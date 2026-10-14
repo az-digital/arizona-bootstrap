@@ -1,23 +1,32 @@
 - name: 100
+  class: "100"
   hex: "#f8f9fa"
   contrast_color: black
 - name: 200
+  class: "200"
   hex: "#e9ecef"
   contrast_color: black
 - name: 300
+  class: "300"
   hex: "#dee2e6"
   contrast_color: black
 - name: 400
+  class: "400"
   hex: "#ced4da"
   contrast_color: black
 - name: 500
+  class: "500"
   hex: "#adb5bd"
   contrast_color: black
 - name: 600
+  class: "600"
   hex: "#868e96"
 - name: 700
+  class: "700"
   hex: "#495057"
 - name: 800
+  class: "800"
   hex: "#343a40"
 - name: 900
+  class: "900"
   hex: "#212529"

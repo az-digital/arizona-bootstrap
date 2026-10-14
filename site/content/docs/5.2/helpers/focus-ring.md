@@ -59,7 +59,7 @@ In addition to `.focus-ring`, we have several `.focus-ring-*` utilities to modif
 {{< example >}}
 {{< focus-ring.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<p><a href="#" class="d-inline-flex focus-ring focus-ring-{{ .name }} py-1 px-2 text-decoration-none border rounded-2">{{ title .name }} focus</a></p>
+<p><a href="#" class="d-inline-flex focus-ring focus-ring-{{ .class }} py-1 px-2 text-decoration-none border rounded-2">{{ title .class }} focus</a></p>
 {{- end -}}
 {{< /focus-ring.inline >}}
 {{< /example >}}

@@ -24,8 +24,8 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 
 {{< example >}}
 {{< colors.inline >}}
-{{- range (index $.Site.Data "colors") }}
-<div class="p-3 mb-2 bg-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }} {{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
+{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red" "blue") }}
+<div class="p-3 mb-2 bg-{{ .class }}{{ if .contrast_color }} text-{{ .contrast_color }} {{ else }} text-white{{ end }}">.bg-{{ .class }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 {{< /example >}}
@@ -34,7 +34,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<div class="p-3 mb-2 bg-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-{{ .name }}</div>
+<div class="p-3 mb-2 bg-{{ .class }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-{{ .class }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
@@ -47,7 +47,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "grays") }}
-<div class="p-3 mb-2 bg-gray-{{ .name }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-gray-{{ .name }}</div>
+<div class="p-3 mb-2 bg-gray-{{ .class }}{{ if .contrast_color }} text-{{ .contrast_color }}{{ else }} text-white{{ end }}">.bg-gray-{{ .class }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 {{< /example >}}
@@ -61,7 +61,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
 {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-  <div class="bg-transparent-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-transparent-{{ $color.name }}</div>
+  <div class="bg-transparent-{{ $color.class }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-transparent-{{ $color.class }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 </div>
@@ -78,7 +78,7 @@ Background utilities like `.bg-*` that generated from our original `$theme-color
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< colors.inline >}}
 {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-  <div class="bg-gradient-{{ $color.name }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-gradient-{{ $color.name }}</div>
+  <div class="bg-gradient-{{ $color.class }}{{ if $color.contrast_color }} text-{{ $color.contrast_color }}{{ else }} text-white{{ end }} p-3 position-relative">.bg-gradient-{{ $color.class }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 </div>
@@ -93,7 +93,7 @@ Do you need a gradient in your custom CSS? Just add `background-image: var(--bs-
 {{< markdown >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="p-3 mb-2 bg-{{ .name }} bg-gradient{{ with .contrast_color }} text-{{ . }}{{ else }} text-white{{ end }}">.bg-{{ .name }}.bg-gradient</div>
+<div class="p-3 mb-2 bg-{{ .class }} bg-gradient{{ with .contrast_color }} text-{{ . }}{{ else }} text-white{{ end }}">.bg-{{ .class }}.bg-gradient</div>
 {{- end -}}
 {{< /colors.inline >}}
 <div class="p-3 mb-2 bg-black bg-gradient text-white">.bg-black.bg-gradient</div>
@@ -107,34 +107,34 @@ As of v5.1.0, `background-color` utilities are generated with Sass using CSS var
 
 ### How it works
 
-Consider our default `.bg-oasis` utility.
+Consider our default `.bg-alternate2` utility.
 
 ```css
-.bg-oasis {
+.bg-alternate2 {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-oasis-rgb), var(--bs-bg-opacity)) !important;
 }
 ```
 
-We use an RGB version of our `--bs-oasis` (with the value of `55, 141, 189`) CSS variable and attached a second CSS variable, `--bs-bg-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.bg-oasis` now, your computed `color` value is `rgba(55, 141, 189, 1)`. The local CSS variable inside each `.bg-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
+We use an RGB version of our `--bs-oasis` (with the value of `55, 141, 189`) CSS variable and attached a second CSS variable, `--bs-bg-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.bg-alternate2` now, your computed `color` value is `rgba(55, 141, 189, 1)`. The local CSS variable inside each `.bg-*` class avoids inheritance issues so nested instances of the utilities don't automatically have a modified alpha transparency.
 
 ### Example
 
 To change that opacity, override `--bs-bg-opacity` via custom styles or inline styles.
 
 {{< example >}}
-<div class="bg-oasis p-2 text-white">This is default oasis background</div>
-<div class="bg-oasis p-2" style="--bs-bg-opacity: .5;">This is 50% opacity oasis background</div>
+<div class="bg-alternate2 p-2 text-white">This is default oasis background</div>
+<div class="bg-alternate2 p-2" style="--bs-bg-opacity: .5;">This is 50% opacity oasis background</div>
 {{< /example >}}
 
 Or, choose from any of the `.bg-opacity` utilities:
 
 {{< example >}}
-<div class="bg-oasis p-2 text-white">This is default success background</div>
-<div class="bg-oasis p-2 text-white bg-opacity-75">This is 75% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-50">This is 50% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-25">This is 25% opacity success background</div>
-<div class="bg-oasis p-2 text-dark bg-opacity-10">This is 10% opacity success background</div>
+<div class="bg-alternate2 p-2 text-white">This is default success background</div>
+<div class="bg-alternate2 p-2 text-white bg-opacity-75">This is 75% opacity success background</div>
+<div class="bg-alternate2 p-2 text-dark bg-opacity-50">This is 50% opacity success background</div>
+<div class="bg-alternate2 p-2 text-dark bg-opacity-25">This is 25% opacity success background</div>
+<div class="bg-alternate2 p-2 text-dark bg-opacity-10">This is 10% opacity success background</div>
 {{< /example >}}
 
 ## CSS

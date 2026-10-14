@@ -386,6 +386,63 @@ $colors: (
 );
 // scss-docs-end colors-map
 
+// Semantic class names for the colors in $colors (plus "dark-silver"). Every
+// color class (.text-bg-*, .bg-*, .text-*, .border-*, .focus-ring-*,
+// .callout-*, .table-* and the transparent and gradient variants) is
+// generated with these names. The color-named classes are still generated
+// alongside them, unchanged, but are deprecated: their generators are marked
+// "Deprecated: color-named classes" and can be removed in the next major
+// version. Colors that are not listed keep their name (white, black).
+// scss-docs-start color-class-names-map
+$color-class-names: (
+  "red": "primary",
+  "blue": "secondary",
+  "sky": "alternate1",
+  "oasis": "alternate2",
+  "azurite": "alternate3",
+  "midnight": "alternate4",
+  "bloom": "alternate5",
+  "chili": "alternate6",
+  "leaf": "alternate7",
+  "river": "alternate8",
+  "mesa": "alternate9",
+  "sage": "alternate10",
+  "cool-gray": "neutral1",
+  "warm-gray": "neutral2",
+  "silver": "neutral3",
+  "ash": "neutral4",
+  "dark-silver": "neutral5"
+);
+// scss-docs-end color-class-names-map
+
+// Returns the semantic class name for a color in $colors.
+@function color-class-name($color) {
+  @if map-has-key($color-class-names, $color) {
+    @return map-get($color-class-names, $color);
+  }
+  @return $color;
+}
+
+// Whether a color's semantic class name is a theme color (red → primary,
+// blue → secondary), whose classes Bootstrap already generates.
+@function color-class-is-theme($color) {
+  @return map-has-key($theme-colors, color-class-name($color));
+}
+
+// The colors in $color-map that have a semantic class name, that is, the ones
+// whose color-named classes are deprecated. Red and blue are left out unless
+// $include-theme is true: for most classes, Bootstrap already generates their
+// semantic versions from $theme-colors (.text-bg-primary, .bg-secondary).
+@function color-classes-renamed($color-map, $include-theme: false) {
+  $result: ();
+  @each $color, $value in $color-map {
+    @if color-class-name($color) != $color and ($include-theme or not color-class-is-theme($color)) {
+      $result: map-merge($result, ($color: $value));
+    }
+  }
+  @return $result;
+}
+
 /*
 * > FONTS
 */
