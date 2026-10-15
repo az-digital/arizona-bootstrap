@@ -2,7 +2,7 @@
   class: primary
   hex: "#ab0520"
 - name: blue
-  class: default
+  class: primary-2
   hex: "#0c234b"
 - name: midnight
   class: secondary-1

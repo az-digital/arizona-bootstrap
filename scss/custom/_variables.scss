@@ -388,7 +388,7 @@ $colors: (
 
 // Class names for the colors in $colors, following the groups in the
 // university brand guidelines (https://marcom.arizona.edu/brand-guidelines/colors):
-// primary (Arizona Red) and default (Arizona Blue), then secondary-1 to
+// primary (Arizona Red) and primary-2 (Arizona Blue), then secondary-1 to
 // secondary-6, accent-1 to accent-3 and neutral-1 to neutral-2, numbered in
 // the order the guidelines list them. Every color class (.text-bg-*, .bg-*,
 // .text-*, .border-*, .focus-ring-*, .callout-*, .table-* and the transparent
@@ -402,7 +402,7 @@ $colors: (
 $color-class-names: (
   // Primary brand colors
   "red": "primary",
-  "blue": "default",
+  "blue": "primary-2",
   // Secondary brand colors: Tinta, Azurite, Arroyo Blue, Rain, Sonoran Red, Bougainvillea
   "midnight": "secondary-1",
   "azurite": "secondary-2",

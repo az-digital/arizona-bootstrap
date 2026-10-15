@@ -23,7 +23,7 @@ For information on changes made in upstream Bootstrap 5, see the [Migration page
 
 ### Deprecated in 5.3
 
-Color classes and color-named button classes now use names that follow the color groups in the [university brand guidelines](https://marcom.arizona.edu/brand-guidelines/colors): `primary` for Arizona Red, `default` for Arizona Blue, then numbered names for the secondary, accent and neutral brand colors. The classes named after a color are deprecated. They are still included, unchanged, so existing markup continues to look the same, and they will be removed in the next major version.
+Color classes and color-named button classes now use names that follow the color groups in the [university brand guidelines](https://marcom.arizona.edu/brand-guidelines/colors): `primary` for Arizona Red, `primary-2` for Arizona Blue, then numbered names for the secondary, accent and neutral brand colors. The classes named after a color are deprecated. They are still included, unchanged, so existing markup continues to look the same, and they will be removed in the next major version.
 
 The theme color classes, such as `.text-bg-success` and `.btn-danger`, are not affected. Neither are the silver, ash, sage and dark-silver classes, which are not part of the brand guidelines and keep their names.
 
@@ -31,16 +31,14 @@ The theme color classes, such as `.text-bg-success` and `.btn-danger`, are not a
 
 These custom Arizona Bootstrap button classes are deprecated in Arizona Bootstrap 5.3:
  - `.btn-red`: Replace with `.btn-primary`.
- - `.btn-blue`: Replace with `.btn-default`.
+ - `.btn-blue`: Replace with `.btn-primary-2`.
  - `.btn-sky`: Replace with `.btn-secondary-4`.
  - `.btn-outline-red`: Replace with `.btn-outline-primary`.
- - `.btn-outline-blue`: Replace with `.btn-outline-default`.
+ - `.btn-outline-blue`: Replace with `.btn-outline-primary-2`.
  - `.btn-outline-sky`: Replace with `.btn-outline-secondary-4`.
  - `.btn-outline-white`: Replace with `.btn-outline-inverse`.
  - `.btn-white-text-red`: Replace with `.btn-inverse-primary`.
- - `.btn-white-text-blue`: Replace with `.btn-inverse-default`.
-
-`.btn-default` was the Arizona Red button in Arizona Bootstrap 2. See the [note on removed button classes](#button-classes-1) if your site still has Arizona Bootstrap 2 markup.
+ - `.btn-white-text-blue`: Replace with `.btn-inverse-primary-2`.
 
 #### Color Classes
 
@@ -49,7 +47,7 @@ The color-named classes are deprecated in every color class family: `.text-bg-*`
 | Deprecated suffix | Replacement suffix | Brand guidelines |
 | --- | --- | --- |
 | `-red` | `-primary` | Primary: Arizona Red |
-| `-blue` | `-default` | Primary: Arizona Blue |
+| `-blue` | `-primary-2` | Primary: Arizona Blue |
 | `-midnight` | `-secondary-1` | Secondary: Tinta |
 | `-azurite` | `-secondary-2` | Secondary: Azurite |
 | `-oasis` | `-secondary-3` | Secondary: Arroyo Blue |
@@ -66,7 +64,7 @@ The color-named classes are deprecated in every color class family: `.text-bg-*`
 
 #### Sass Variables
 
-The brand color Sass variables and their tints and shades also have new names, using the same replacements as the table above. For example, `$sky` is now `$secondary-4` and `$sky-100` is now `$secondary-4-100`. For red, use the `$primary` theme color, with `$primary-100` to `$primary-900` for the tints and shades. For blue, use `$default` and `$default-100` to `$default-900`.
+The brand color Sass variables and their tints and shades also have new names, using the same replacements as the table above. For example, `$sky` is now `$secondary-4` and `$sky-100` is now `$secondary-4-100`. For red, use the `$primary` theme color, with `$primary-100` to `$primary-900` for the tints and shades. For blue, use `$primary-2` and `$primary-2-100` to `$primary-2-900`.
 
 The color-named variables, such as `$sky` and `$sky-100`, are deprecated. They still work, and the new variables use their values, so overriding a color-named variable also changes its new variable.
 
@@ -91,11 +89,11 @@ Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{<
 #### Primary Color Change
 
 In Arizona Bootstrap 2, classes using the "primary" color were styled with Arizona Blue. In Arizona Bootstrap 5, "primary" now corresponds with Arizona Red and "secondary" (unused in Arizona Bootstrap 2) corresponds with Arizona Blue. Below are examples of replacements which can be made to update existing content while maintaining the same Arizona Blue color:
- - `.bg-primary`: Replace with `.text-bg-default`.
- - `.btn-primary`: Replace with `.btn-default`.
- - `.text-primary`: Replace with `.text-default`.
+ - `.bg-primary`: Replace with `.text-bg-primary-2`.
+ - `.btn-primary`: Replace with `.btn-primary-2`.
+ - `.text-primary`: Replace with `.text-primary-2`.
 
-Arizona Bootstrap 5.3 added `default` as the class name for Arizona Blue. The `secondary` theme color classes, such as `.btn-secondary`, are still Arizona Blue as well.
+Arizona Bootstrap 5.3 added `primary-2` as the class name for Arizona Blue. The `secondary` theme color classes, such as `.btn-secondary`, are still Arizona Blue as well.
 
 
 ### Deprecated Components
@@ -155,10 +153,9 @@ The following `.btn-*` classes were deprecated in Arizona Bootstrap 2 and have b
 
  - `.btn-default`: Replace with `.btn-primary`.
  - `.btn-hollow-default`: Replace with `.btn-outline-primary`.
- - `.btn-hollow-primary`: Replace with `.btn-outline-default`.
+ - `.btn-hollow-primary`: Replace with `.btn-outline-primary-2`.
  - `.btn-hollow-reverse`: Replace with `.btn-outline-inverse`.
 
-**Note:** Arizona Bootstrap 5.3 reuses the `.btn-default` class name for the Arizona Blue button. In Arizona Bootstrap 2, `.btn-default` was the Arizona Red button. Any Arizona Bootstrap 2 markup that still uses `.btn-default` was unstyled in earlier versions of Arizona Bootstrap 5, but it now displays as an Arizona Blue button. Change it to `.btn-primary` to keep the Arizona Red button.
 
 #### Callout Variants
 

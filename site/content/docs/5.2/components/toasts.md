@@ -162,7 +162,7 @@ Alternatively, you can also add additional controls and components to toasts.
     Hello, world! This is a toast message.
     <div class="mt-2 pt-2 border-top">
       <button type="button" class="btn btn-primary btn-sm">Take action</button>
-      <button type="button" class="btn btn-default btn-sm" data-bs-dismiss="toast">Close</button>
+      <button type="button" class="btn btn-primary-2 btn-sm" data-bs-dismiss="toast">Close</button>
     </div>
   </div>
 </div>

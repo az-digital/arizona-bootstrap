@@ -1,5 +1,5 @@
 // Sass variable names that match the color class names in $color-class-names:
-// default for Arizona Blue, and secondary-1 to secondary-6, accent-1 to
+// primary-2 for Arizona Blue, and secondary-1 to secondary-6, accent-1 to
 // accent-3 and neutral-1 to neutral-2 for the other brand colors, following
 // the university brand guidelines. The color-named variables they point to
 // ($sky, $sky-100, and so on) are deprecated: in the next major version,
@@ -21,16 +21,16 @@ $primary-700: $red-700;
 $primary-800: $red-800;
 $primary-900: $red-900;
 
-$default: $blue;
-$default-100: $blue-100;
-$default-200: $blue-200;
-$default-300: $blue-300;
-$default-400: $blue-400;
-$default-500: $blue-500;
-$default-600: $blue-600;
-$default-700: $blue-700;
-$default-800: $blue-800;
-$default-900: $blue-900;
+$primary-2: $blue;
+$primary-2-100: $blue-100;
+$primary-2-200: $blue-200;
+$primary-2-300: $blue-300;
+$primary-2-400: $blue-400;
+$primary-2-500: $blue-500;
+$primary-2-600: $blue-600;
+$primary-2-700: $blue-700;
+$primary-2-800: $blue-800;
+$primary-2-900: $blue-900;
 
 $secondary-1: $midnight;
 $secondary-1-100: $midnight-100;

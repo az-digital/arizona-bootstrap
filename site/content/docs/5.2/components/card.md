@@ -471,7 +471,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="btn btn-default d-block w-100">Button link</a>
+      <a href="#top" class="btn btn-primary-2 d-block w-100">Button link</a>
     </div>
   </div>
 </div>
@@ -486,7 +486,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-default h-100 hover mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-primary-2 h-100 hover mb-3" style="max-width: 18rem;">
   <div class="rounded-top position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>

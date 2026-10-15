@@ -95,9 +95,9 @@ Combine sets of button groups into button toolbars for more complex components. 
     <button type="button" class="btn btn-primary">4</button>
   </div>
   <div class="btn-group me-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-default">5</button>
-    <button type="button" class="btn btn-default">6</button>
-    <button type="button" class="btn btn-default">7</button>
+    <button type="button" class="btn btn-primary-2">5</button>
+    <button type="button" class="btn btn-primary-2">6</button>
+    <button type="button" class="btn btn-primary-2">7</button>
   </div>
   <div class="btn-group" role="group" aria-label="Third group">
     <button type="button" class="btn btn-info">8</button>
@@ -110,10 +110,10 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 {{< example >}}
 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-outline-default">1</button>
-    <button type="button" class="btn btn-outline-default">2</button>
-    <button type="button" class="btn btn-outline-default">3</button>
-    <button type="button" class="btn btn-outline-default">4</button>
+    <button type="button" class="btn btn-outline-primary-2">1</button>
+    <button type="button" class="btn btn-outline-primary-2">2</button>
+    <button type="button" class="btn btn-outline-primary-2">3</button>
+    <button type="button" class="btn btn-outline-primary-2">4</button>
   </div>
   <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon">@</div>
@@ -123,10 +123,10 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 
 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group" role="group" aria-label="First group">
-    <button type="button" class="btn btn-outline-default">1</button>
-    <button type="button" class="btn btn-outline-default">2</button>
-    <button type="button" class="btn btn-outline-default">3</button>
-    <button type="button" class="btn btn-outline-default">4</button>
+    <button type="button" class="btn btn-outline-primary-2">1</button>
+    <button type="button" class="btn btn-outline-primary-2">2</button>
+    <button type="button" class="btn btn-outline-primary-2">3</button>
+    <button type="button" class="btn btn-outline-primary-2">4</button>
   </div>
   <div class="input-group">
     <div class="input-group-text" id="btnGroupAddon2">@</div>
@@ -168,7 +168,7 @@ Add the `.btn-group-justified` class to your `.btn-group` to make each button in
 {{< example >}}
 <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
   <button type="button" class="btn btn-primary">Left Button with More Text</button>
-  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-primary-2">Middle</button>
   <button type="button" class="btn btn-info">Right Button</button>
 </div>
 {{< /example >}}

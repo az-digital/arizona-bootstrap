@@ -4,7 +4,7 @@
 
 // >> New variants
 
-.btn-default {
+.btn-primary-2 {
   @extend .btn-secondary;
 }
 
@@ -14,7 +14,7 @@
   --bs-btn-hover-border-color: #65c0db;
 }
 
-.btn-inverse-default {
+.btn-inverse-primary-2 {
   @include button-variant(
     $background: $white,
     $border: $white,
@@ -44,7 +44,7 @@
   --az-btn-focus-outline-color: #{$white};
 }
 
-.btn-outline-default {
+.btn-outline-primary-2 {
   @extend .btn-outline-secondary;
 }
 
@@ -64,10 +64,10 @@
 }
 
 // >> Deprecated: color-named classes. Remove in the next major version.
-// Replacements: .btn-red → .btn-primary, .btn-blue → .btn-default,
+// Replacements: .btn-red → .btn-primary, .btn-blue → .btn-primary-2,
 // .btn-sky → .btn-secondary-4, .btn-white-text-red → .btn-inverse-primary,
-// .btn-white-text-blue → .btn-inverse-default, .btn-outline-red →
-// .btn-outline-primary, .btn-outline-blue → .btn-outline-default,
+// .btn-white-text-blue → .btn-inverse-primary-2, .btn-outline-red →
+// .btn-outline-primary, .btn-outline-blue → .btn-outline-primary-2,
 // .btn-outline-sky → .btn-outline-secondary-4, .btn-outline-white →
 // .btn-outline-inverse.
 

@@ -48,22 +48,22 @@ Some of the button styles use a relatively light foreground color, and should on
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
-Primary and Default are the recommended solid button variants for Arizona Bootstrap projects. The Secondary 4 button is also available.
+Primary and Primary 2 are the recommended solid button variants for Arizona Bootstrap projects. The Secondary 4 button is also available.
 
 {{< example >}}
 <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary-2">Primary 2</button>
 <button type="button" class="btn btn-secondary-4">Secondary 4</button>
 {{< /example >}}
 
-Two inverse button variants are available: use `.btn-inverse-primary` on a `.text-bg-primary` background and `.btn-inverse-default` on a `.text-bg-secondary-3` background.
+Two inverse button variants are available: use `.btn-inverse-primary` on a `.text-bg-primary` background and `.btn-inverse-primary-2` on a `.text-bg-secondary-3` background.
 
 <div class="bd-example d-flex gap-2">
   <div class="d-inline-block text-bg-primary px-4 py-3">
     <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
   </div>
   <div class="d-inline-block text-bg-secondary-3 px-4 py-3">
-    <button type="button" class="btn btn-inverse-default">Inverse Default</button>
+    <button type="button" class="btn btn-inverse-primary-2">Inverse Primary 2</button>
   </div>
 </div>
 
@@ -72,7 +72,7 @@ Two inverse button variants are available: use `.btn-inverse-primary` on a `.tex
   <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
 </div>
 <div class="text-bg-secondary-3 px-4 py-3">
-  <button type="button" class="btn btn-inverse-default">Inverse Default</button>
+  <button type="button" class="btn btn-inverse-primary-2">Inverse Primary 2</button>
 </div>
 ```
 
@@ -94,7 +94,7 @@ In need of a button, but not the hefty background colors they bring? Replace the
 
 {{< example >}}
 <button type="button" class="btn btn-outline-primary">Primary</button>
-<button type="button" class="btn btn-outline-default">Default</button>
+<button type="button" class="btn btn-outline-primary-2">Primary 2</button>
 {{< /example >}}
 
 For outline buttons on a **dark background color**, use the `.btn-outline-inverse` or `.btn-outline-secondary-4` variants.
@@ -103,7 +103,7 @@ For outline buttons on a **dark background color**, use the `.btn-outline-invers
   <div class="d-inline-block w-25 text-bg-primary p-3">
     <button type="button" class="btn btn-outline-inverse">Inverse</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-default p-3">
+  <div class="d-inline-block w-25 text-bg-primary-2 p-3">
     <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
   </div>
   <div class="d-inline-block w-25 text-bg-secondary-2 p-3">
@@ -115,7 +115,7 @@ For outline buttons on a **dark background color**, use the `.btn-outline-invers
 <div class="text-bg-primary p-3">
   <button type="button" class="btn btn-outline-inverse">Inverse</button>
 </div>
-<div class="text-bg-default p-3">
+<div class="text-bg-primary-2 p-3">
   <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
 </div>
 <div class="text-bg-secondary-2 p-3">
@@ -145,12 +145,12 @@ Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes
 
 {{< example >}}
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
-<button type="button" class="btn btn-default btn-lg">Large button</button>
+<button type="button" class="btn btn-primary-2 btn-lg">Large button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-primary btn-sm">Small button</button>
-<button type="button" class="btn btn-default btn-sm">Small button</button>
+<button type="button" class="btn btn-primary-2 btn-sm">Small button</button>
 {{< /example >}}
 
 You can even roll your own custom sizing with CSS variables:
@@ -170,19 +170,19 @@ Add an arrow to any button style by adding the `.btn-arrow` class.
 
 {{< example >}}
 <button type="button" class="btn btn-lg btn-primary btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-default btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-primary-2 btn-arrow">Large Arrow Button</button>
 <button type="button" class="btn btn-lg btn-outline-primary btn-arrow">Large Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-primary btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-default btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-primary-2 btn-arrow">Regular Arrow Button</button>
 <button type="button" class="btn btn-outline-primary btn-arrow">Regular Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
 <button type="button" class="btn btn-sm btn-primary btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-default btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-primary-2 btn-arrow">Small Arrow Button</button>
 <button type="button" class="btn btn-sm btn-outline-primary btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
@@ -253,9 +253,9 @@ Make buttons look inactive by adding the `disabled` boolean attribute to any `<b
 
 {{< example >}}
 <button type="button" class="btn btn-primary" disabled>Primary button</button>
-<button type="button" class="btn btn-default" disabled>Button</button>
+<button type="button" class="btn btn-primary-2" disabled>Button</button>
 <button type="button" class="btn btn-outline-primary" disabled>Primary button</button>
-<button type="button" class="btn btn-outline-default" disabled>Button</button>
+<button type="button" class="btn btn-outline-primary-2" disabled>Button</button>
 {{< /example >}}
 
 Disabled buttons using the `<a>` element behave a bit different:
@@ -267,7 +267,7 @@ Disabled buttons using the `<a>` element behave a bit different:
 
 {{< example >}}
 <a class="btn btn-primary disabled" role="button" aria-disabled="true">Primary link</a>
-<a class="btn btn-default disabled" role="button" aria-disabled="true">Link</a>
+<a class="btn btn-primary-2 disabled" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
 
 ## Disable text wrapping
@@ -280,7 +280,7 @@ To cover cases where you have to keep the `href` attribute on a disabled link, t
 
 {{< example >}}
 <a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-<a href="#" class="btn btn-default disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+<a href="#" class="btn btn-primary-2 disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
 
 ## Block buttons
