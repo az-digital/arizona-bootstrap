@@ -5,10 +5,12 @@
 // >> Theme Colors
 $primary: $red;
 $secondary: $blue;
-$success: $leaf;
+// Success and danger keep their values from before the design tokens (the
+// former leaf and mesa) until there are design token colors for these roles.
+$success: #70b865;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
+$danger: #a95c42;
 $light: $gray-300;
 $dark: $gray-800;
 
@@ -84,6 +86,12 @@ $table-variants: map-merge(
   map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black"),
   map-remove($theme-colors, "success", "danger", "warning", "info")
 );
+// Brand color table variants with the new names. The color-named variants
+// above are deprecated (except white) and can be removed in the next major
+// version.
+@each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black")) {
+  $table-variants: map-merge($table-variants, (color-class-name($color): $value));
+}
 $table-striped-bg-factor: .09;
 $table-striped-bg: rgba(var(--bs-gray-300-rgb), .35);
 $table-hover-bg-factor: .18;

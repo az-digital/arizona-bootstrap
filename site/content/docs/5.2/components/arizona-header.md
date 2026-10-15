@@ -16,7 +16,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
   <p class="mb-0">The wordmark logo without a Block "A" header should only be used when near a Block "A" logo. Typically, the Block "A" logo is included as part of the site branding just below the Arizona Header.</p>
 </div>
 
-<div class="arizona-header bg-blue">
+<div class="arizona-header bg-primary-2">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -27,7 +27,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 </div>
 
 ```html
-<div class="arizona-header az-fixed-header-on-mobile bg-blue" id="header_arizona">
+<div class="arizona-header az-fixed-header-on-mobile bg-primary-2" id="header_arizona">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -42,7 +42,7 @@ The Arizona Header is to be used on all subdomains of arizona.edu.
 
 The original red Arizona Header will be deprecated in a future release.
 
-<div class="arizona-header bg-red">
+<div class="arizona-header bg-primary">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -53,7 +53,7 @@ The original red Arizona Header will be deprecated in a future release.
 </div>
 
 ```html
-<div class="arizona-header az-fixed-header-on-mobile bg-red" id="header_arizona_2">
+<div class="arizona-header az-fixed-header-on-mobile bg-primary" id="header_arizona_2">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -69,7 +69,7 @@ The original red Arizona Header will be deprecated in a future release.
 The Arizona Header can be extended with off-canvas search and navigation for mobile devices, as shown in the example below.
 
 {{< example >}}
-<div class="arizona-header az-fixed-header-on-mobile bg-blue" id="header_arizona_example_1">
+<div class="arizona-header az-fixed-header-on-mobile bg-primary-2" id="header_arizona_example_1">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">
@@ -86,7 +86,7 @@ The Arizona Header can be extended with off-canvas search and navigation for mob
         </button>
         <!-- Offcanvas mobile navigation -->
         <div class="offcanvas offcanvas-end mw-100 w-100 bg-white d-flex d-lg-none overflow-y-auto" tabindex="-1" id="azMobileNavExample">
-          <div class="offcanvas-header sticky-top p-0 mb-2 text-bg-red d-flex justify-content-between align-items-center">
+          <div class="offcanvas-header sticky-top p-0 mb-2 text-bg-primary d-flex justify-content-between align-items-center">
             <a href="#" class="btn btn-arizona-header">
               <span aria-hidden="true" class="icon material-symbols-rounded">home</span>
               <span class="icon-text">Home</span>
@@ -111,7 +111,7 @@ In most cases, the Arizona Header element is intended to be fixed to the top of 
 **Note:** For this documentation site, this fixed-position behavior has been overridden to prevent the example Arizona Headers from disappearing behind the existing Arizona Bootstrap navbar above.
 
 {{< example >}}
-<div class="arizona-header bg-blue" id="header_arizona_example_2">
+<div class="arizona-header bg-primary-2" id="header_arizona_example_2">
   <div class="container">
     <div class="row">
       <a class="arizona-logo col-auto" href="https://www.arizona.edu" title="The University of Arizona homepage">

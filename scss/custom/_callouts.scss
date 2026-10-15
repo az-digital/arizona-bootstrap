@@ -47,8 +47,18 @@
 }
 
 // Do not create callouts for the "leaf", "river", "silver", and "mesa" brand colors.
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in map-remove($colors, "leaf", "river", "silver", "mesa") {
   .callout-#{$color} {
+    @include callout-variant($color, $value);
+  }
+}
+
+// Brand color callouts with the new names. Red is the primary theme color
+// callout below.
+@each $color, $value in color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa")) {
+  .callout-#{color-class-name($color)} {
     @include callout-variant($color, $value);
   }
 }

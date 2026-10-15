@@ -33,4 +33,24 @@
   &.text-bg-light {
     --bs-text-bg-bg: var(--bs-silver-300);
   }
+
+  // The same styles for the new names of chili and midnight. The
+  // .text-bg-chili and .text-bg-midnight selectors above are deprecated and
+  // can be removed in the next major version.
+  /* stylelint-disable declaration-no-important */
+  &.text-bg-secondary-5,
+  &.text-bg-secondary-1 {
+    color: var(--bs-text-bg-color) !important;
+    background-color: var(--bs-text-bg-bg) !important;
+  }
+  /* stylelint-enable declaration-no-important */
+
+  &.text-bg-secondary-5 {
+    --bs-text-bg-color: var(--bs-white);
+    --bs-text-bg-bg: rgba(var(--bs-red-rgb), var(--bs-bg-opacity, 1));
+  }
+  &.text-bg-secondary-1 {
+    --bs-text-bg-color: var(--bs-white);
+    --bs-text-bg-bg: rgba(var(--bs-azurite-rgb), var(--bs-bg-opacity, 1));
+  }
 }

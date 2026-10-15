@@ -2,7 +2,11 @@
 // > Custom Color and Background helper classes
 //
 
+@use "sass:list";
+
 // >> Brand
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in $colors {
   .text-bg-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -28,6 +32,8 @@
 }
 
 // >> Brand Transparent
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-transparent-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -37,11 +43,141 @@
 }
 
 // >> Brand Gradient
+// Deprecated: color-named classes. In the next major version, generate only
+// the colors that are not renamed (see color-classes-renamed()).
 @each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
   .text-bg-gradient-#{$color} {
     color: color-contrast($value) if($enable-important-utilities, !important, null);
     @include background-gradient($color);
     @include az-color-contrast($color);
+  }
+}
+
+// >> Brand (new names)
+// The brand color classes with new names (.text-bg-secondary-4, and the transparent
+// and gradient variants such as .text-bg-transparent-primary) share one set
+// of contrast rules instead of each repeating the az-color-contrast() rules.
+// Each class sets its colors and the --az-text-bg-* custom properties, and
+// the shared rules below read them. Each shared rule applies to the classes
+// whose background category (see mixins/_az-color-contrast.scss) needs it.
+
+// Sets the --az-text-bg-* custom properties for a background color.
+@mixin text-bg-properties($color) {
+  @if list.index($az-light-background-colors, $color) {
+    --az-text-bg-marker-color: var(--bs-black);
+  } @else {
+    --az-text-bg-marker-color: var(--bs-white);
+  }
+  @if list.index($az-dark-background-colors, $color) {
+    --az-text-bg-btn-focus-shadow: 0 0 #{$focus-ring-blur} #{$focus-ring-width} rgba(var(--bs-white-rgb), .75);
+  } @else if not list.index($az-light-background-colors-with-red-links, $color) {
+    --az-text-bg-btn-focus-shadow: 0 0 #{$focus-ring-blur} #{$focus-ring-width} rgba(var(--bs-black-rgb), .5);
+  }
+}
+
+$text-bg-patterned-colors: color-classes-renamed(map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage"), true);
+
+// New class names → color names.
+$text-bg-renamed-classes: ();
+@each $color, $value in color-classes-renamed($colors) {
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-#{color-class-name($color)}": $color));
+}
+@each $color, $value in $text-bg-patterned-colors {
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-transparent-#{color-class-name($color)}": $color));
+  $text-bg-renamed-classes: map-merge($text-bg-renamed-classes, ("text-bg-gradient-#{color-class-name($color)}": $color));
+}
+
+// Selector list of the new classes in a background category: "all",
+// "inherit-links" (backgrounds that do not use red links) or "dark".
+@function text-bg-selector($category) {
+  $selectors: ();
+  @each $class, $color in $text-bg-renamed-classes {
+    $include: true;
+    @if $category == "inherit-links" {
+      $include: not list.index($az-light-background-colors-with-red-links, $color);
+    } @else if $category == "dark" {
+      $include: list.index($az-dark-background-colors, $color) != null;
+    }
+    @if $include {
+      $selectors: list.append($selectors, ".#{$class}", comma);
+    }
+  }
+  @return $selectors;
+}
+
+// >>> Colors and custom properties
+@each $color, $value in color-classes-renamed($colors) {
+  .text-bg-#{color-class-name($color)} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    background-color: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    @include text-bg-properties($color);
+  }
+}
+
+@each $color, $value in $text-bg-patterned-colors {
+  .text-bg-transparent-#{color-class-name($color)} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    @include background-transparent($color);
+    @include text-bg-properties($color);
+  }
+}
+
+@each $color, $value in $text-bg-patterned-colors {
+  .text-bg-gradient-#{color-class-name($color)} {
+    color: color-contrast($value) if($enable-important-utilities, !important, null);
+    @include background-gradient($color);
+    @include text-bg-properties($color);
+  }
+}
+
+// >>> Shared contrast rules
+#{text-bg-selector("all")} {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: inherit;
+  }
+
+  .ul-triangles li::before,
+  .az-list-triangles li::before {
+    border-left-color: var(--az-text-bg-marker-color);
+  }
+}
+
+// Links and focus indicators follow the text color, except on the light
+// backgrounds that keep red links.
+#{text-bg-selector("inherit-links")} {
+  a:not(.btn):not(.nav-link) {
+    color: inherit;
+  }
+
+  a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible,
+  button:not(.btn, .carousel-control-next, .carousel-control-prev, .az-gallery-grid-btn, .btn-arizona-header):focus-visible {
+    box-shadow: 0 0 $focus-ring-blur 2px;
+  }
+
+  .btn:not(.btn-arizona-header):focus-visible {
+    box-shadow: var(--az-text-bg-btn-focus-shadow);
+  }
+}
+
+#{text-bg-selector("dark")} {
+  .az-gallery-grid-btn:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 $focus-ring-blur 2px #{"rgba(var(--bs-white-rgb), .75)"}, inset 0 0 $focus-ring-blur 2px #{"rgba(var(--bs-white-rgb), .75)"};
+  }
+
+  .az-list-checkmarks {
+    --az-list-marker: #{$az-list-checkmark-marker-on-dark};
   }
 }
 

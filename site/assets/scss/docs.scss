@@ -25,6 +25,9 @@
 // Upstream Bootstrap functions before anything else.
 @import "../../../node_modules/bootstrap/scss/functions";
 
+// Arizona Digital design tokens as Sass variables, synced from az-digital/design.
+@import "../../../scss/design-tokens-variables";
+
 // Arizona Bootstrap custom variables.
 @import "../../../scss/custom/variables";
 
@@ -34,6 +37,9 @@
 // Required upstream Bootstrap variable imports.
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/variables-dark";
+
+// Semantic names for the brand color Sass variables.
+@import "../../../scss/custom/color-aliases";
 
 // Load Bootstrap variables and mixins
 @import "../../../node_modules/bootstrap/scss/mixins";

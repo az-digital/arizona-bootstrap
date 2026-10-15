@@ -22,7 +22,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -149,7 +149,7 @@ Add an optional header and/or footer within a card.
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -162,7 +162,7 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -189,7 +189,7 @@ Card headers can be styled by adding `.card-header` to `<h*>` elements.
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
   <div class="card-footer text-body-secondary">
     2 days ago
@@ -212,7 +212,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-red">Go somewhere</a>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -221,7 +221,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-red">Go somewhere</a>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -237,7 +237,7 @@ Use our handful of [available sizing utilities]({{< docsref "/utilities/sizing" 
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Button</a>
+    <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div>
 
@@ -245,7 +245,7 @@ Use our handful of [available sizing utilities]({{< docsref "/utilities/sizing" 
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Button</a>
+    <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div>
 {{< /example >}}
@@ -259,7 +259,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -273,7 +273,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 
@@ -281,7 +281,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 
@@ -289,7 +289,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -316,7 +316,7 @@ Add some navigation to a card's header (or block) with Bootstrap's [nav componen
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -339,7 +339,7 @@ Add some navigation to a card's header (or block) with Bootstrap's [nav componen
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-red">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 {{< /example >}}
@@ -424,10 +424,10 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card text-bg-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card text-bg-{{ .class }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
-    <h5 class="card-title">{{ .name | title }} card title</h5>
+    <h5 class="card-title">{{ .class | title }} card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
@@ -446,10 +446,10 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card border-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card border-{{ .class }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
-  <div class="card-body{{ if not .contrast_color }} text-{{ .name }}{{ end }}">
-    <h5 class="card-title">{{ .name | title }} card title</h5>
+  <div class="card-body{{ if not .contrast_color }} text-{{ .class }}{{ end }}">
+    <h5 class="card-title">{{ .class | title }} card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
@@ -471,7 +471,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="btn btn-blue d-block w-100">Button link</a>
+      <a href="#top" class="btn btn-primary-2 d-block w-100">Button link</a>
     </div>
   </div>
 </div>
@@ -486,7 +486,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-primary-2 h-100 hover mb-3" style="max-width: 18rem;">
   <div class="rounded-top position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
@@ -496,7 +496,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="btn btn-outline-white d-block w-100 stretched-link">Button link</a>
+      <a href="#top" class="btn btn-outline-inverse d-block w-100 stretched-link">Button link</a>
     </div>
   </div>
 </div>
@@ -521,7 +521,7 @@ Cards with the title on image style put the title of the card on top of the imag
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div class="mt-auto">
-      <a href="#top" class="btn btn-red d-block w-100 stretched-link">Button link</a>
+      <a href="#top" class="btn btn-primary d-block w-100 stretched-link">Button link</a>
     </div>
   </div>
 </div>
@@ -532,13 +532,13 @@ Cards with the title on image style put the title of the card on top of the imag
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-azurite mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-azurite">Header</div>
-  <div class="card-body text-azurite">
-    <h5 class="card-title">Azurite card title</h5>
+<div class="card border-secondary-2 mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-secondary-2">Header</div>
+  <div class="card-body text-secondary-2">
+    <h5 class="card-title">Secondary 2 card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div class="card-footer bg-transparent border-azurite">Footer</div>
+  <div class="card-footer bg-transparent border-secondary-2">Footer</div>
 </div>
 {{< /example >}}
 

@@ -33,7 +33,7 @@ The border spinner uses `currentColor` for its `border-color`, meaning you can c
 {{< example >}}
 {{< spinner.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="spinner-border text-{{ .name }}" role="status">
+<div class="spinner-border text-{{ .class }}" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 {{- end -}}
@@ -59,7 +59,7 @@ Once again, this spinner is built with `currentColor`, so you can easily change 
 {{< example >}}
 {{< spinner.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="spinner-grow text-{{ .name }}" role="status">
+<div class="spinner-grow text-{{ .class }}" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 {{- end -}}
@@ -150,22 +150,22 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
 Use spinners within buttons to indicate an action is currently processing or taking place. You may also swap the text out of the spinner element and utilize button text as needed.
 
 {{< example >}}
-<button class="btn btn-red" type="button" disabled>
+<button class="btn btn-primary" type="button" disabled>
   <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
   <span class="visually-hidden" role="status">Loading...</span>
 </button>
-<button class="btn btn-red" type="button" disabled>
+<button class="btn btn-primary" type="button" disabled>
   <span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>
   <span role="status">Loading...</span>
 </button>
 {{< /example >}}
 
 {{< example >}}
-<button class="btn btn-red" type="button" disabled>
+<button class="btn btn-primary" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
   <span class="visually-hidden" role="status">Loading...</span>
 </button>
-<button class="btn btn-red" type="button" disabled>
+<button class="btn btn-primary" type="button" disabled>
   <span class="spinner-grow spinner-grow-sm me-1" aria-hidden="true"></span>
   <span role="status">Loading...</span>
 </button>

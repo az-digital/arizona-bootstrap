@@ -22,8 +22,8 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 
 {{< example >}}
 {{< text-bg.inline >}}
-{{- range (index $.Site.Data "colors") }}
-<div class="text-bg-{{ .name }} p-3">{{ .name | title }} with contrasting color</div>
+{{- range where (index $.Site.Data "colors") "name" "not in" (slice "red") }}
+<div class="text-bg-{{ .class }} p-3">{{ .class | title }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
@@ -32,7 +32,7 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<div class="text-bg-{{ .name }} p-3">{{ .name | title }} with contrasting color</div>
+<div class="text-bg-{{ .class }} p-3">{{ .class | title }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
@@ -48,7 +48,7 @@ Color and background helpers combine the power of our [`.text-*` utilities]({{< 
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "grays") }}
-<div class="text-bg-gray-{{ .name }} p-3">.gray-{{ .name | title }} with contrasting color</div>
+<div class="text-bg-gray-{{ .class }} p-3">.gray-{{ .class | title }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
@@ -64,7 +64,7 @@ These text background classes set the text color by default. Other background cl
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
 {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-  <div class="text-bg-transparent-{{ $color.name }} p-3 position-relative">.text-bg-transparent-{{ $color.name }} with contrasting color</div>
+  <div class="text-bg-transparent-{{ $color.class }} p-3 position-relative">.text-bg-transparent-{{ $color.class }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 </div>
@@ -79,7 +79,7 @@ These text background classes set the text color by default. Other background cl
   <img class="position-absolute bottom-0" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">{{< text-bg.inline >}}
 {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-  <div class="text-bg-gradient-{{ $color.name }} p-3 position-relative">.text-bg-gradient-{{ $color.name }} with contrasting color</div>
+  <div class="text-bg-gradient-{{ $color.class }} p-3 position-relative">.text-bg-gradient-{{ $color.class }} with contrasting color</div>
 {{- end -}}
 {{< /text-bg.inline >}}
 </div>
@@ -94,17 +94,17 @@ Arizona Bootstrap includes additional styling to ensure that headings and links 
 {{< example >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "colors") }}
-<div class="text-bg-{{ .name }} p-3"><h3 class="h6 my-0">{{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+<div class="text-bg-{{ .class }} p-3"><h3 class="h6 my-0">{{ .class | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<div class="text-bg-{{ .name }} p-3"><h3 class="h6 my-0">{{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+<div class="text-bg-{{ .class }} p-3"><h3 class="h6 my-0">{{ .class | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< text-bg.inline >}}
 {{- range (index $.Site.Data "grays") }}
-<div class="text-bg-gray-{{ .name }} p-3"><h3 class="h6 my-0">Gray {{ .name | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
+<div class="text-bg-gray-{{ .class }} p-3"><h3 class="h6 my-0">Gray {{ .class | title }} with contrasting heading color and <a href="#top">link color</a></h3></div>
 {{- end -}}
 {{< /text-bg.inline >}}
 {{< /example >}}
@@ -114,21 +114,21 @@ Arizona Bootstrap includes additional styling to ensure that headings and links 
 Use them in place of combined `.text-*` and `.bg-*` classes, like on [badges]({{< docsref "/components/badge#background-colors" >}}):
 
 {{< example >}}
-<span class="badge text-bg-leaf">Leaf</span>
-<span class="badge text-bg-sky">Sky</span>
-<span class="badge text-bg-mesa">Mesa</span>
+<span class="badge text-bg-accent-1">Accent 1</span>
+<span class="badge text-bg-secondary-4">Secondary 4</span>
+<span class="badge text-bg-accent-3">Accent 3</span>
 {{< /example >}}
 
 Or on [cards]({{< docsref "/components/card#background-and-color" >}}):
 
 {{< example >}}
-<div class="card text-bg-warm-gray mb-3" style="max-width: 18rem;">
+<div class="card text-bg-neutral-2 mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-<div class="card text-bg-chili mb-3" style="max-width: 18rem;">
+<div class="card text-bg-secondary-5 mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

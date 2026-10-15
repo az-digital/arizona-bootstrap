@@ -27,11 +27,11 @@ The `.btn` classes are designed to be used with the `<button>` element. However,
 When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
 
 {{< example >}}
-<a class="btn btn-red" href="#" role="button">Link</a>
-<button class="btn btn-red" type="submit">Button</button>
-<input class="btn btn-red" type="button" value="Input">
-<input class="btn btn-red" type="submit" value="Submit">
-<input class="btn btn-red" type="reset" value="Reset">
+<a class="btn btn-primary" href="#" role="button">Link</a>
+<button class="btn btn-primary" type="submit">Button</button>
+<input class="btn btn-primary" type="button" value="Input">
+<input class="btn btn-primary" type="submit" value="Submit">
+<input class="btn btn-primary" type="reset" value="Reset">
 {{< /example >}}
 
 ## Variants
@@ -48,31 +48,31 @@ Some of the button styles use a relatively light foreground color, and should on
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
-Red and Blue are the recommended solid button variants for Arizona Bootstrap projects. Sky buttons are also available.
+Primary and Primary 2 are the recommended solid button variants for Arizona Bootstrap projects. The Secondary 4 button is also available.
 
 {{< example >}}
-<button type="button" class="btn btn-red">Red</button>
-<button type="button" class="btn btn-blue">Blue</button>
-<button type="button" class="btn btn-sky">Sky</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-primary-2">Primary 2</button>
+<button type="button" class="btn btn-secondary-4">Secondary 4</button>
 {{< /example >}}
 
-Two white button variants are available: use `.btn-white-text-red` on a red background and `.btn-white-text-blue` on an oasis background.
+Two inverse button variants are available: use `.btn-inverse-primary` on a `.text-bg-primary` background and `.btn-inverse-primary-2` on a `.text-bg-secondary-3` background.
 
 <div class="bd-example d-flex gap-2">
-  <div class="d-inline-block text-bg-red px-4 py-3">
-    <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
+  <div class="d-inline-block text-bg-primary px-4 py-3">
+    <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
   </div>
-  <div class="d-inline-block text-bg-oasis px-4 py-3">
-    <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
+  <div class="d-inline-block text-bg-secondary-3 px-4 py-3">
+    <button type="button" class="btn btn-inverse-primary-2">Inverse Primary 2</button>
   </div>
 </div>
 
 ```html
-<div class="text-bg-red px-4 py-3">
-  <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
+<div class="text-bg-primary px-4 py-3">
+  <button type="button" class="btn btn-inverse-primary">Inverse Primary</button>
 </div>
-<div class="text-bg-oasis px-4 py-3">
-  <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
+<div class="text-bg-secondary-3 px-4 py-3">
+  <button type="button" class="btn btn-inverse-primary-2">Inverse Primary 2</button>
 </div>
 ```
 
@@ -93,33 +93,33 @@ Two white button variants are available: use `.btn-white-text-red` on a red back
 In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
 
 {{< example >}}
-<button type="button" class="btn btn-outline-red">Red</button>
-<button type="button" class="btn btn-outline-blue">Blue</button>
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-primary-2">Primary 2</button>
 {{< /example >}}
 
-For outline buttons on a **dark background color**, use the `.btn-outline-white` or `.btn-outline-sky` variants.
+For outline buttons on a **dark background color**, use the `.btn-outline-inverse` or `.btn-outline-secondary-4` variants.
 
 <div class="bd-example">
-  <div class="d-inline-block w-25 text-bg-red p-3">
-    <button type="button" class="btn btn-outline-white">White</button>
+  <div class="d-inline-block w-25 text-bg-primary p-3">
+    <button type="button" class="btn btn-outline-inverse">Inverse</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-blue p-3">
-    <button type="button" class="btn btn-outline-sky">Sky</button>
+  <div class="d-inline-block w-25 text-bg-primary-2 p-3">
+    <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
   </div>
-  <div class="d-inline-block w-25 text-bg-azurite p-3">
-    <button type="button" class="btn btn-outline-sky">Sky</button>
+  <div class="d-inline-block w-25 text-bg-secondary-2 p-3">
+    <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
   </div>
 </div>
 
 ```html
-<div class="text-bg-red p-3">
-  <button type="button" class="btn btn-outline-white">White</button>
+<div class="text-bg-primary p-3">
+  <button type="button" class="btn btn-outline-inverse">Inverse</button>
 </div>
-<div class="text-bg-blue p-3">
-  <button type="button" class="btn btn-outline-sky">Sky</button>
+<div class="text-bg-primary-2 p-3">
+  <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
 </div>
-<div class="text-bg-azurite p-3">
-  <button type="button" class="btn btn-outline-sky">Sky</button>
+<div class="text-bg-secondary-2 p-3">
+  <button type="button" class="btn btn-outline-secondary-4">Secondary 4</button>
 </div>
 ```
 
@@ -144,19 +144,19 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
 Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes.
 
 {{< example >}}
-<button type="button" class="btn btn-red btn-lg">Large button</button>
-<button type="button" class="btn btn-blue btn-lg">Large button</button>
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-primary-2 btn-lg">Large button</button>
 {{< /example >}}
 
 {{< example >}}
-<button type="button" class="btn btn-red btn-sm">Small button</button>
-<button type="button" class="btn btn-blue btn-sm">Small button</button>
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
+<button type="button" class="btn btn-primary-2 btn-sm">Small button</button>
 {{< /example >}}
 
 You can even roll your own custom sizing with CSS variables:
 
 {{< example >}}
-<button type="button" class="btn btn-red"
+<button type="button" class="btn btn-primary"
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
   Custom button
 </button>
@@ -169,21 +169,21 @@ You can even roll your own custom sizing with CSS variables:
 Add an arrow to any button style by adding the `.btn-arrow` class.
 
 {{< example >}}
-<button type="button" class="btn btn-lg btn-red btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-blue btn-arrow">Large Arrow Button</button>
-<button type="button" class="btn btn-lg btn-outline-red btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-primary btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-primary-2 btn-arrow">Large Arrow Button</button>
+<button type="button" class="btn btn-lg btn-outline-primary btn-arrow">Large Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
-<button type="button" class="btn btn-red btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-blue btn-arrow">Regular Arrow Button</button>
-<button type="button" class="btn btn-outline-red btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-primary btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-primary-2 btn-arrow">Regular Arrow Button</button>
+<button type="button" class="btn btn-outline-primary btn-arrow">Regular Arrow Button</button>
 {{< /example >}}
 
 {{< example >}}
-<button type="button" class="btn btn-sm btn-red btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-blue btn-arrow">Small Arrow Button</button>
-<button type="button" class="btn btn-sm btn-outline-red btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-primary btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-primary-2 btn-arrow">Small Arrow Button</button>
+<button type="button" class="btn btn-sm btn-outline-primary btn-arrow">Small Arrow Button</button>
 {{< /example >}}
 
 ## Adding icons to buttons
@@ -199,15 +199,15 @@ Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]
 ### Default size
 
 {{< example >}}
-<button type="button" class="btn btn-red">
+<button type="button" class="btn btn-primary">
   <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
   Arizona Icon
 </button>
-<button type="button" class="btn btn-red">
+<button type="button" class="btn btn-primary">
   Material Symbol
   <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
 </button>
-<button type="button" class="btn btn-red">
+<button type="button" class="btn btn-primary">
   <span class="material-symbols-rounded fs-3" aria-hidden="true">close</span>
   <span class="visually-hidden">Close</span>
 </button>
@@ -216,15 +216,15 @@ Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]
 ### Large size
 
 {{< example >}}
-<button type="button" class="btn btn-lg btn-red">
+<button type="button" class="btn btn-lg btn-primary">
   <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
   Arizona Icon
 </button>
-<button type="button" class="btn btn-lg btn-red">
+<button type="button" class="btn btn-lg btn-primary">
   Material Symbol
   <span class="material-symbols-rounded ms-2 me-n2" aria-hidden="true">arrow_forward_ios</span>
 </button>
-<button type="button" class="btn btn-lg btn-red">
+<button type="button" class="btn btn-lg btn-primary">
   <span class="material-symbols-rounded fs-2" aria-hidden="true">close</span>
   <span class="visually-hidden">Close</span>
 </button>
@@ -233,15 +233,15 @@ Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]
 ### Small size
 
 {{< example >}}
-<button type="button" class="btn btn-sm btn-red">
+<button type="button" class="btn btn-sm btn-primary">
   <span class="az-icon az-icon-arizona me-2" aria-hidden="true"></span>
   Arizona Icon
 </button>
-<button type="button" class="btn btn-sm btn-red">
+<button type="button" class="btn btn-sm btn-primary">
   Material Symbol
   <span class="material-symbols-rounded fs-6 ms-1 me-n1" aria-hidden="true">arrow_forward_ios</span>
 </button>
-<button type="button" class="btn btn-sm btn-red">
+<button type="button" class="btn btn-sm btn-primary">
   <span class="material-symbols-rounded" aria-hidden="true">close</span>
   <span class="visually-hidden">Close</span>
 </button>
@@ -252,10 +252,10 @@ Icons may require [spacing]({{< docsref "/utilities/spacing" >}}) or [font size]
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.
 
 {{< example >}}
-<button type="button" class="btn btn-red" disabled>Red button</button>
-<button type="button" class="btn btn-blue" disabled>Button</button>
-<button type="button" class="btn btn-outline-red" disabled>Red button</button>
-<button type="button" class="btn btn-outline-blue" disabled>Button</button>
+<button type="button" class="btn btn-primary" disabled>Primary button</button>
+<button type="button" class="btn btn-primary-2" disabled>Button</button>
+<button type="button" class="btn btn-outline-primary" disabled>Primary button</button>
+<button type="button" class="btn btn-outline-primary-2" disabled>Button</button>
 {{< /example >}}
 
 Disabled buttons using the `<a>` element behave a bit different:
@@ -266,8 +266,8 @@ Disabled buttons using the `<a>` element behave a bit different:
 - Disabled buttons using `<a>` *should not* include the `href` attribute.
 
 {{< example >}}
-<a class="btn btn-red disabled" role="button" aria-disabled="true">Primary link</a>
-<a class="btn btn-blue disabled" role="button" aria-disabled="true">Link</a>
+<a class="btn btn-primary disabled" role="button" aria-disabled="true">Primary link</a>
+<a class="btn btn-primary-2 disabled" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
 
 ## Disable text wrapping
@@ -279,8 +279,8 @@ If you don't want the button text to wrap, you can add the `.text-nowrap` class 
 To cover cases where you have to keep the `href` attribute on a disabled link, the `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s. Note that this CSS property is not yet standardized for HTML, but all modern browsers support it. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, in addition to `aria-disabled="true"`, also include a `tabindex="-1"` attribute on these links to prevent them from receiving keyboard focus, and use custom JavaScript to disable their functionality altogether.
 
 {{< example >}}
-<a href="#" class="btn btn-red disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-<a href="#" class="btn btn-blue disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+<a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+<a href="#" class="btn btn-primary-2 disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
 
 ## Block buttons
@@ -289,8 +289,8 @@ Create responsive stacks of full-width, "block buttons" like those in Bootstrap 
 
 {{< example >}}
 <div class="d-grid gap-2">
-  <button class="btn btn-red" type="button">Button</button>
-  <button class="btn btn-red" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
@@ -298,8 +298,8 @@ Here we create a responsive variation, starting with vertically stacked buttons 
 
 {{< example >}}
 <div class="d-grid gap-2 d-md-block">
-  <button class="btn btn-red" type="button">Button</button>
-  <button class="btn btn-red" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
@@ -307,8 +307,8 @@ You can adjust the width of your block buttons with grid column width classes. F
 
 {{< example >}}
 <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-red" type="button">Button</button>
-  <button class="btn btn-red" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
@@ -316,8 +316,8 @@ Additional utilities can be used to adjust the alignment of buttons when horizon
 
 {{< example >}}
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-red me-md-2" type="button">Button</button>
-  <button class="btn btn-red" type="button">Button</button>
+  <button class="btn btn-primary me-md-2" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
@@ -340,9 +340,9 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
   <button type="button" class="btn" disabled data-bs-toggle="button">Disabled toggle button</button>
 </p>
 <p class="d-inline-flex gap-1">
-  <button type="button" class="btn btn-red" data-bs-toggle="button">Toggle button</button>
-  <button type="button" class="btn btn-red active" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
-  <button type="button" class="btn btn-red" disabled data-bs-toggle="button">Disabled toggle button</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
+  <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
+  <button type="button" class="btn btn-primary" disabled data-bs-toggle="button">Disabled toggle button</button>
 </p>
 {{< /example >}}
 
@@ -353,9 +353,9 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
   <a class="btn disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
 </p>
 <p class="d-inline-flex gap-1">
-  <a href="#" class="btn btn-red" role="button" data-bs-toggle="button">Toggle link</a>
-  <a href="#" class="btn btn-red active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
-  <a class="btn btn-red disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
+  <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
+  <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
+  <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
 </p>
 {{< /example >}}
 

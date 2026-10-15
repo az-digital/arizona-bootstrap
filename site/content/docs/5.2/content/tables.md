@@ -42,10 +42,10 @@ Arizona Bootstrap includes table variants for many brand colors as well as the "
         <td>Cell</td>
       </tr>
       {{< table-brand-colors.inline >}}
-      {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+      {{- $excluded := slice "red" "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
       {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-        <tr class="table-{{ $color.name }}">
-          <th scope="row">{{ $color.name | title }}</th>
+        <tr class="table-{{ $color.class }}">
+          <th scope="row">{{ $color.class | title }}</th>
           <td>Cell</td>
           <td>Cell</td>
         </tr>
@@ -55,8 +55,8 @@ Arizona Bootstrap includes table variants for many brand colors as well as the "
       {{- $siteThemeColors := index $.Site.Data "theme-colors" -}}
       {{- $excluded := slice "success" "danger" "warning" "info" -}}
       {{- range $color := where $siteThemeColors "name" "not in" $excluded }}
-        <tr class="table-{{ $color.name }}">
-          <th scope="row">{{ $color.name | title }}</th>
+        <tr class="table-{{ $color.class }}">
+          <th scope="row">{{ $color.class | title }}</th>
           <td>Cell</td>
           <td>Cell</td>
         </tr>
@@ -68,15 +68,15 @@ Arizona Bootstrap includes table variants for many brand colors as well as the "
 
 {{< highlight html >}}
 <!-- On rows -->{{< table-brand-colors.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+{{- $excluded := slice "red" "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
-<tr class="table-{{ $color.name }}">...</tr>
+<tr class="table-{{ $color.class }}">...</tr>
 {{- end -}}
 {{< /table-brand-colors.inline >}}{{< table-theme-colors.inline >}}
 {{- $siteThemeColors := index $.Site.Data "theme-colors" -}}
 {{- $excluded := slice "success" "danger" "warning" "info" -}}
 {{- range $color := where $siteThemeColors "name" "not in" $excluded }}
-<tr class="table-{{ $color.name }}">...</tr>
+<tr class="table-{{ $color.class }}">...</tr>
 {{- end -}}
 {{< /table-theme-colors.inline >}}
 {{< /highlight >}}
@@ -255,7 +255,7 @@ Add `.table-bordered` for borders on all sides of the table and cells.
 
 [Border color utilities]({{< docsref "/utilities/borders#border-color" >}}) can be added to change colors:
 
-{{< table class="table table-bordered border-red" >}}
+{{< table class="table table-bordered border-primary" >}}
 
 ### Tables without borders
 
