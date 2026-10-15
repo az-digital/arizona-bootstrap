@@ -4,6 +4,11 @@
   &.active,
   &:active,
   &.is-active {
+    // These are `color`/`background-color` declarations rather than custom
+    // properties because Bootstrap sets `color` directly on
+    // `.navbar-nav .nav-link.active`, which outranks `--bs-nav-link-color`.
+    // `$nav-pills-border-radius` stays a Sass variable: the CSS custom
+    // property is only defined on `.nav-pills`, and this rule is generic.
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-bg;
     @include border-radius($nav-pills-border-radius);
@@ -21,12 +26,14 @@
   }
 
   .nav-link {
+    // `$nav-tabs-link-bg` (grey), not `--bs-nav-tabs-link-active-bg` (white):
+    // this is the resting background for every tab, not the active one.
     background-color: $nav-tabs-link-bg;
 
     &.active,
     &:active,
     &.is-active {
-      @include border-radius($nav-tabs-border-radius $nav-tabs-border-radius 0 0);
+      @include border-radius(var(--bs-nav-tabs-border-radius) var(--bs-nav-tabs-border-radius) 0 0);
     }
 
     &.disabled,
@@ -40,20 +47,26 @@
   &.active,
   &:active,
   &.is-active {
+    // Underline tabs sit on the page background, not on the grey block the
+    // generic `.nav-link.active` rule paints, so this has to override it.
     background-color: $nav-tabs-link-active-bg;
     @include border-radius(revert);
   }
 }
 
+.nav-pills {
+  --#{$prefix}nav-pills-link-active-color: var(--bs-midnight);
+}
+
 .nav.nav-pills > .nav-item:not(.nav-item .nav-item) {
   &:first-child {
-    @include border-top-start-radius($nav-pills-border-radius);
-    @include border-top-end-radius($nav-pills-border-radius);
+    @include border-top-start-radius(var(--bs-nav-pills-border-radius));
+    @include border-top-end-radius(var(--bs-nav-pills-border-radius));
     overflow-x: hidden;
   }
   &:last-child {
-    @include border-bottom-start-radius($nav-pills-border-radius);
-    @include border-bottom-end-radius($nav-pills-border-radius);
+    @include border-bottom-start-radius(var(--bs-nav-pills-border-radius));
+    @include border-bottom-end-radius(var(--bs-nav-pills-border-radius));
     overflow-x: hidden;
   }
 }
@@ -61,7 +74,7 @@
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .nav.nav-pills.flex-column > li {
   margin: -1px 0 0;
-  border: solid 1px $nav-tabs-border-color;
+  border: solid 1px var(--bs-gray-200);
 
   ul > li {
     border: 0;
@@ -96,7 +109,7 @@
 
     &:hover,
     &:focus {
-      background-color: $nav-pills-link-active-bg;
+      background-color: var(--bs-nav-pills-link-active-bg);
     }
   }
 }
@@ -105,5 +118,5 @@
 .nav-link:focus-visible {
   @include border-radius(2px);
   outline: 0;
-  box-shadow: $focus-ring-box-shadow;
+  box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
 }
