@@ -212,5 +212,8 @@ $box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 
 // >> Focus
 // fusv-disable
-$focus-ring-opacity: .5 !default;
+$focus-ring-opacity: 1 !default;
 // fusv-enable
+// This is Bougainvillea, the brand color that replaces Bloom.
+// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
+$focus-ring-color: #c62840 !default;
