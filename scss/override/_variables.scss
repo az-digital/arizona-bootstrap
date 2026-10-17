@@ -211,10 +211,12 @@ $box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 // fusv-enable
 
 // >> Focus
-// Keep this at .8 or higher. Anything below that, the .is-invalid
-// focus ring (Mesa) drops under 3:1 (WCAG 2.2) on cool gray.
+// At .7, the Bougainvillea ring passes 3:1 (WCAG 2.2) on white, cool gray
+// and warm gray. Below .68 it fails on cool gray and warm gray.
+// The .is-valid and .is-invalid focus rings use this opacity too, and both
+// fail 3:1 at .7.
 // fusv-disable
-$focus-ring-opacity: .8 !default;
+$focus-ring-opacity: .7 !default;
 // fusv-enable
 // This is Bougainvillea, the brand color that replaces Bloom.
 // See https://github.com/az-digital/arizona-bootstrap/issues/2270.
