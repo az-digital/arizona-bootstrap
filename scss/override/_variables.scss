@@ -211,9 +211,11 @@ $box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 // fusv-enable
 
 // >> Focus
+// Keep this at .8 or higher. Anything below that, the .is-invalid
+// focus ring (Mesa) drops under 3:1 (WCAG 2.2) on cool gray.
 // fusv-disable
-$focus-ring-opacity: 1 !default;
+$focus-ring-opacity: .8 !default;
 // fusv-enable
 // This is Bougainvillea, the brand color that replaces Bloom.
 // See https://github.com/az-digital/arizona-bootstrap/issues/2270.
-$focus-ring-color: #c62840 !default;
+$focus-ring-color: rgba(#c62840, $focus-ring-opacity) !default;
