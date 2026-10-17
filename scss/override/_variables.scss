@@ -148,6 +148,13 @@ $dropdown-header-color: $white;
 // fusv-disable
 $form-label-font-size: 1.125rem;
 $form-label-font-weight: 700;
+// Field borders need 3:1 contrast (WCAG 2.2)
+$input-border-color: $gray-600;
+$form-check-input-border: var(--bs-border-width) solid $gray-600;
+$form-switch-color: $gray-600;
+// This is Bougainvillea, the brand color that replaces Bloom.
+// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
+$input-focus-border-color: #c62840;
 // fusv-enable
 
 // >> List Groups
