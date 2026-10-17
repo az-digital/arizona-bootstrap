@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#2382 focus ring options for radios</title>
+<link href="https://use.typekit.net/sgx0zzg.css" rel="stylesheet" crossorigin="anonymous">
+<link href="docs/5.2/dist/css/arizona-bootstrap.css" rel="stylesheet">
+<style>
+  /*
+   * Each table row sets --demo-ring. Controls with .demo-focus show that ring
+   * all the time, with the border the real :focus style uses, so the states
+   * can be compared side by side without pressing Tab.
+   */
+  .demo-grid {
+    --bs-table-bg: transparent;
+  }
+  .demo-grid th,
+  .demo-grid td {
+    padding: .75rem 1rem;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .demo-grid .form-check {
+    pointer-events: none;
+  }
+  .demo-grid .demo-focus {
+    outline: 0;
+    box-shadow: 0 0 0 .25rem var(--demo-ring);
+  }
+  .demo-grid .demo-focus:not(:checked) {
+    border-color: #d58290;
+  }
+</style>
+</head>
+<body>
+<main class="container py-5">
+  <h1>#2382: Which focus ring works best on radios?</h1>
+  <p class="lead">All 3 options pass the 3:1 contrast that <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html">WCAG 2.2 SC 1.4.11</a> needs. This page helps pick the one that also keeps focus easy to tell apart from selection.</p>
+
+  <figure class="border-start border-4 ps-3 my-4">
+    <blockquote class="blockquote mb-2">
+      <p>The selected state must be visually distinct from the focus indicator.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer mb-0">ARIA Authoring Practices Guide, <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#focusvsselectionandtheperceptionofdualfocus">Focus VS Selection and the Perception of Dual Focus</a></figcaption>
+  </figure>
+
+  <h2 class="h3">How to read this page</h2>
+  <ul>
+    <li>Each table has a row for each option and a column for each state.</li>
+    <li>Compare <strong>Focused, not selected</strong> with <strong>Selected</strong>. If they look alike, a keyboard user can't tell whether a radio has focus or is selected.</li>
+    <li>A selected radio or checkbox is filled with Arizona Red (<code>#ab0520</code>).</li>
+    <li>The rings on this page show all the time, so you don't need to press <kbd>Tab</kbd>.</li>
+    <li>Branch <code>issue/2382</code> uses option 3. To try it for real, open <a href="https://review.digital.arizona.edu/arizona-bootstrap/issue/2382/docs/5.2/forms/checks-radios/#radios">Forms &gt; Checks and radios</a>, press <kbd>Tab</kbd> into a radio group, then use the arrow keys.</li>
+  </ul>
+
+  <h2 class="h3 mt-5">Contrast</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Option</th>
+          <th scope="col">Ring on white</th>
+          <th scope="col">Ring on cool gray</th>
+          <th scope="col">Ring on warm gray</th>
+          <th scope="col">Ring next to the selected fill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1. Arizona Red</th>
+          <td>7.57:1 ✅</td>
+          <td>6.50:1 ✅</td>
+          <td>6.60:1 ✅</td>
+          <td>1.00:1 (the same color)</td>
+        </tr>
+        <tr>
+          <th scope="row">2. Bougainvillea</th>
+          <td>5.56:1 ✅</td>
+          <td>4.77:1 ✅</td>
+          <td>4.85:1 ✅</td>
+          <td>1.36:1</td>
+        </tr>
+        <tr>
+          <th scope="row">3. Bougainvillea at 70%</th>
+          <td>3.39:1 ✅</td>
+          <td>3.14:1 ✅</td>
+          <td>3.14:1 ✅</td>
+          <td>2.23:1 on white, 2.07:1 on cool gray, 2.11:1 on warm gray</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The last column is the contrast between the ring and the red fill of a selected radio. It isn't a WCAG requirement. A higher number means the ring looks more different from the selected state.</p>
+
+  <section class="mt-5">
+    <h2 class="h3">Radios on white</h2>
+    <div class="table-responsive bg-white border p-3">
+      <table class="table demo-grid mb-0">
+        <caption class="visually-hidden">Radios on white: each focus ring option in each state</caption>
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Not selected</th>
+            <th scope="col">Focused, not selected</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Selected and focused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="--demo-ring: #ab0520">
+            <th scope="row">1. Arizona Red<br><code>#ab0520</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-red-idle" tabindex="-1"><label class="form-check-label" for="radio-white-red-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-red-focus" tabindex="-1"><label class="form-check-label" for="radio-white-red-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-red-sel" tabindex="-1" checked><label class="form-check-label" for="radio-white-red-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-red-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-white-red-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: #c62840">
+            <th scope="row">2. Bougainvillea<br><code>#c62840</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-boug-idle" tabindex="-1"><label class="form-check-label" for="radio-white-boug-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-boug-focus" tabindex="-1"><label class="form-check-label" for="radio-white-boug-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-boug-sel" tabindex="-1" checked><label class="form-check-label" for="radio-white-boug-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-boug-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-white-boug-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: rgba(198, 40, 64, .7)">
+            <th scope="row">3. Bougainvillea at 70%<br><code>rgba(198, 40, 64, .7)</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-boug70-idle" tabindex="-1"><label class="form-check-label" for="radio-white-boug70-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-boug70-focus" tabindex="-1"><label class="form-check-label" for="radio-white-boug70-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-white-boug70-sel" tabindex="-1" checked><label class="form-check-label" for="radio-white-boug70-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-white-boug70-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-white-boug70-selfocus">Radio</label></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3">Checkboxes on white</h2>
+    <div class="table-responsive bg-white border p-3">
+      <table class="table demo-grid mb-0">
+        <caption class="visually-hidden">Checkboxes on white: each focus ring option in each state</caption>
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Not selected</th>
+            <th scope="col">Focused, not selected</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Selected and focused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="--demo-ring: #ab0520">
+            <th scope="row">1. Arizona Red<br><code>#ab0520</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-red-idle" tabindex="-1"><label class="form-check-label" for="check-white-red-idle">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-red-focus" tabindex="-1"><label class="form-check-label" for="check-white-red-focus">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-red-sel" tabindex="-1" checked><label class="form-check-label" for="check-white-red-sel">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-red-selfocus" tabindex="-1" checked><label class="form-check-label" for="check-white-red-selfocus">Check</label></div></td>
+          </tr>
+          <tr style="--demo-ring: #c62840">
+            <th scope="row">2. Bougainvillea<br><code>#c62840</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-boug-idle" tabindex="-1"><label class="form-check-label" for="check-white-boug-idle">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-boug-focus" tabindex="-1"><label class="form-check-label" for="check-white-boug-focus">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-boug-sel" tabindex="-1" checked><label class="form-check-label" for="check-white-boug-sel">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-boug-selfocus" tabindex="-1" checked><label class="form-check-label" for="check-white-boug-selfocus">Check</label></div></td>
+          </tr>
+          <tr style="--demo-ring: rgba(198, 40, 64, .7)">
+            <th scope="row">3. Bougainvillea at 70%<br><code>rgba(198, 40, 64, .7)</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-boug70-idle" tabindex="-1"><label class="form-check-label" for="check-white-boug70-idle">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-boug70-focus" tabindex="-1"><label class="form-check-label" for="check-white-boug70-focus">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="check-white-boug70-sel" tabindex="-1" checked><label class="form-check-label" for="check-white-boug70-sel">Check</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="checkbox" id="check-white-boug70-selfocus" tabindex="-1" checked><label class="form-check-label" for="check-white-boug70-selfocus">Check</label></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3">Radios on cool gray</h2>
+    <div class="table-responsive bg-cool-gray border p-3">
+      <table class="table demo-grid mb-0">
+        <caption class="visually-hidden">Radios on cool gray: each focus ring option in each state</caption>
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Not selected</th>
+            <th scope="col">Focused, not selected</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Selected and focused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="--demo-ring: #ab0520">
+            <th scope="row">1. Arizona Red<br><code>#ab0520</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-red-idle" tabindex="-1"><label class="form-check-label" for="radio-cool-red-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-red-focus" tabindex="-1"><label class="form-check-label" for="radio-cool-red-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-red-sel" tabindex="-1" checked><label class="form-check-label" for="radio-cool-red-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-red-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-cool-red-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: #c62840">
+            <th scope="row">2. Bougainvillea<br><code>#c62840</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-boug-idle" tabindex="-1"><label class="form-check-label" for="radio-cool-boug-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-boug-focus" tabindex="-1"><label class="form-check-label" for="radio-cool-boug-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-boug-sel" tabindex="-1" checked><label class="form-check-label" for="radio-cool-boug-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-boug-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-cool-boug-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: rgba(198, 40, 64, .7)">
+            <th scope="row">3. Bougainvillea at 70%<br><code>rgba(198, 40, 64, .7)</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-boug70-idle" tabindex="-1"><label class="form-check-label" for="radio-cool-boug70-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-boug70-focus" tabindex="-1"><label class="form-check-label" for="radio-cool-boug70-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-cool-boug70-sel" tabindex="-1" checked><label class="form-check-label" for="radio-cool-boug70-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-cool-boug70-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-cool-boug70-selfocus">Radio</label></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3">Radios on warm gray</h2>
+    <div class="table-responsive bg-warm-gray border p-3">
+      <table class="table demo-grid mb-0">
+        <caption class="visually-hidden">Radios on warm gray: each focus ring option in each state</caption>
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Not selected</th>
+            <th scope="col">Focused, not selected</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Selected and focused</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="--demo-ring: #ab0520">
+            <th scope="row">1. Arizona Red<br><code>#ab0520</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-red-idle" tabindex="-1"><label class="form-check-label" for="radio-warm-red-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-red-focus" tabindex="-1"><label class="form-check-label" for="radio-warm-red-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-red-sel" tabindex="-1" checked><label class="form-check-label" for="radio-warm-red-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-red-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-warm-red-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: #c62840">
+            <th scope="row">2. Bougainvillea<br><code>#c62840</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-boug-idle" tabindex="-1"><label class="form-check-label" for="radio-warm-boug-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-boug-focus" tabindex="-1"><label class="form-check-label" for="radio-warm-boug-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-boug-sel" tabindex="-1" checked><label class="form-check-label" for="radio-warm-boug-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-boug-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-warm-boug-selfocus">Radio</label></div></td>
+          </tr>
+          <tr style="--demo-ring: rgba(198, 40, 64, .7)">
+            <th scope="row">3. Bougainvillea at 70%<br><code>rgba(198, 40, 64, .7)</code></th>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-boug70-idle" tabindex="-1"><label class="form-check-label" for="radio-warm-boug70-idle">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-boug70-focus" tabindex="-1"><label class="form-check-label" for="radio-warm-boug70-focus">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input" type="radio" id="radio-warm-boug70-sel" tabindex="-1" checked><label class="form-check-label" for="radio-warm-boug70-sel">Radio</label></div></td>
+            <td><div class="form-check mb-0"><input class="form-check-input demo-focus" type="radio" id="radio-warm-boug70-selfocus" tabindex="-1" checked><label class="form-check-label" for="radio-warm-boug70-selfocus">Radio</label></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3">What we see</h2>
+    <ol>
+      <li><strong>Arizona Red:</strong> the ring is the same color as the selected fill. A focused radio looks like a selected radio. A selected, focused radio looks like a bigger selected radio. This option doesn't meet the APG rule.</li>
+      <li><strong>Bougainvillea:</strong> the ring is a little lighter than the selected fill, but not different enough to see at a glance.</li>
+      <li><strong>Bougainvillea at 70%:</strong> the ring is the most different from the selected fill, and it still passes 3:1 on every background. Don't go lower than 70%: below 68%, the ring fails 3:1 on cool gray and warm gray.</li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>
