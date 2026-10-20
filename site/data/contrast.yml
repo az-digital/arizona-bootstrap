@@ -24,6 +24,7 @@
   colors: 
     - color: "white"
       contrast:
+        - accessible: "bougainvillea"
         - accessible: "red"
         - accessible: "sonoran-red"
         - accessible: "azurite"
@@ -38,7 +39,9 @@
         - accessible: "black"
     - color: "bougainvillea"
       contrast:
-        - accessible: "tinta"
+        - accessible: "white"
+        - accessible: "caliche"
+        - accessible: "cloud"
     - color: "red"
       contrast:
         - accessible: "white"
@@ -56,6 +59,7 @@
         - accessible: "azurite"
         - accessible: "blue"
         - accessible: "tinta"
+        - accessible: "brick"
         - accessible: "ash"
         - accessible: "black"
     - color: "arroyo-blue"
@@ -75,12 +79,10 @@
         - accessible: "rain"
         - accessible: "cloud"
         - accessible: "caliche"
-        - accessible: "saguaro"
         - accessible: "silver"
     - color: "tinta"
       contrast:
         - accessible: "white"
-        - accessible: "bougainvillea"
         - accessible: "rain"
         - accessible: "cloud"
         - accessible: "caliche"
@@ -88,9 +90,7 @@
         - accessible: "silver"
     - color: "saguaro"
       contrast:
-        - accessible: "blue"
         - accessible: "tinta"
-        - accessible: "ash"
         - accessible: "black"
     - color: "shade"
       contrast:
@@ -103,8 +103,12 @@
     - color: "brick"
       contrast:
         - accessible: "white"
+        - accessible: "rain"
+        - accessible: "caliche"
+        - accessible: "cloud"
     - color: "caliche"
       contrast:
+        - accessible: "bougainvillea"
         - accessible: "red"
         - accessible: "sonoran-red"
         - accessible: "azurite"
@@ -112,11 +116,13 @@
         - accessible: "blue"
         - accessible: "tinta"
         - accessible: "sage"
+        - accessible: "brick"
         - accessible: "dark-silver"
         - accessible: "ash"
         - accessible: "black"
     - color: "cloud"
       contrast:
+        - accessible: "bougainvillea"
         - accessible: "red"
         - accessible: "sonoran-red"
         - accessible: "azurite"
@@ -124,6 +130,7 @@
         - accessible: "blue"
         - accessible: "tinta"
         - accessible: "sage"
+        - accessible: "brick"
         - accessible: "dark-silver"
         - accessible: "ash"
         - accessible: "black"
@@ -139,10 +146,10 @@
         - accessible: "rain"
         - accessible: "cloud"
         - accessible: "caliche"
-        - accessible: "saguaro"
         - accessible: "silver"
     - color: "gray-100"
       contrast:
+        - accessible: "bougainvillea"
         - accessible: "red"
         - accessible: "sonoran-red"
         - accessible: "azurite"
@@ -157,6 +164,7 @@
         - accessible: "black"
     - color: "gray-200"
       contrast:
+        - accessible: "bougainvillea"
         - accessible: "red"
         - accessible: "sonoran-red"
         - accessible: "azurite"
@@ -164,6 +172,7 @@
         - accessible: "blue"
         - accessible: "tinta"
         - accessible: "sage"
+        - accessible: "brick"
         - accessible: "dark-silver"
         - accessible: "ash"
         - accessible: "black"
@@ -175,6 +184,7 @@
         - accessible: "blue"
         - accessible: "tinta"
         - accessible: "sage"
+        - accessible: "brick"
         - accessible: "dark-silver"
         - accessible: "ash"
         - accessible: "black"
@@ -185,6 +195,7 @@
         - accessible: "azurite"
         - accessible: "blue"
         - accessible: "tinta"
+        - accessible: "brick"
         - accessible: "dark-silver"
         - accessible: "ash"
         - accessible: "black"
@@ -219,7 +230,6 @@
     - color: "black"
       contrast:
         - accessible: "white"
-        - accessible: "bougainvillea"
         - accessible: "rain"
         - accessible: "cloud"
         - accessible: "caliche"

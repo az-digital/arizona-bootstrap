@@ -2,7 +2,6 @@
   hex: "#ab0520"
 - name: bougainvillea
   hex: "#c62840"
-  contrast_color: black
 - name: sonoran-red
   hex: "#850000"
 - name: blue
