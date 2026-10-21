@@ -80,10 +80,10 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 
 Use an icon in place of an image by adding `.card-icon` to an icon at the top of the `.card-body`. The icon takes its color from the text color, so you can color it with the [`.text-{color}`]({{< docsref "/utilities/colors" >}}) utilities. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG that uses `fill="currentColor"` or `stroke="currentColor"`. Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
 
-Add `.card-icon-hover` to the card to give it the brand colors: cool gray, then blue when you hover over the card. The title link has `.stretched-link`, so the whole card is clickable. When you press <kbd>Tab</kbd> to reach the link, the card also shows its hover colors. On a device that can't hover, such as a phone, the title is always underlined.
+Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
 
 {{< example >}}
-<div class="card card-icon-hover" style="max-width: 20rem;">
+<div class="card card-bold-hover" style="max-width: 20rem;">
   <div class="card-body">
     <span class="card-icon material-symbols-rounded" aria-hidden="true">person_raised_hand</span>
     <h3 class="card-title h5 fw-bold">

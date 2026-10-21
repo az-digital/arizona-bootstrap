@@ -23,16 +23,16 @@
   height: 1em;
 }
 
-// >> Icon card colors
+// >> Bold hover colors
 
-// Give an icon card (.card-icon-hover) a normal and a hover set of colors:
-// background, text, and a title color that the icon uses too.
+// Give a card (.card-bold-hover) a normal and a hover set of colors:
+// background, text, and a title color that a .card-icon uses too.
 // The normal colors use Bootstrap's own card variables (--bs-card-bg,
 // --bs-card-color, --bs-card-title-color). The hover rule reads the
 // --az-card-hover-* variables and leaves the normal ones alone, the same way
 // .btn reads --bs-btn-hover-bg. So a site can set any of these variables, even
 // in an inline style, for its own colors.
-.card-icon-hover {
+.card-bold-hover {
   --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
   --#{$prefix}card-color: var(--#{$prefix}midnight);
   --#{$prefix}card-title-color: var(--#{$prefix}azurite);
@@ -102,7 +102,7 @@
 // If the device can't hover (most phones and tablets), always underline a
 // clickable card title.
 @media (hover: none) {
-  .card-icon-hover .card-title,
+  .card-bold-hover .card-title,
   .card .hover-text-underline {
     text-decoration: underline;
   }
