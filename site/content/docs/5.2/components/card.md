@@ -98,7 +98,7 @@ The example uses the outline style of a [Material Symbols]({{< docsref "/icons" 
 
 #### Icon card colors
 
-Add a preset class next to `.card-icon-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
+Add a preset class next to `.card-bold-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
 
 <div class="table-responsive">
   <table class="table">
@@ -120,7 +120,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
     </thead>
     <tbody>
       <tr>
-        <th scope="row"><code>.card-icon-hover</code></th>
+        <th scope="row"><code>.card-bold-hover</code></th>
         <td>Cool gray</td>
         <td>Blue</td>
         <td class="border-start">Azurite</td>
@@ -129,7 +129,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <td>White</td>
       </tr>
       <tr>
-        <th scope="row"><code>.card-icon-hover-<wbr>blue-sky</code></th>
+        <th scope="row"><code>.card-bold-hover-<wbr>blue-sky</code></th>
         <td>Blue</td>
         <td>Sky</td>
         <td class="border-start">Sky</td>
@@ -138,7 +138,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <td>Black</td>
       </tr>
       <tr>
-        <th scope="row"><code>.card-icon-hover-<wbr>white-azurite</code></th>
+        <th scope="row"><code>.card-bold-hover-<wbr>white-azurite</code></th>
         <td>White, with a border</td>
         <td>Azurite</td>
         <td class="border-start">Azurite</td>
@@ -147,7 +147,7 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
         <td>White</td>
       </tr>
       <tr>
-        <th scope="row"><code>.card-icon-hover-<wbr>warm-gray-chili</code></th>
+        <th scope="row"><code>.card-bold-hover-<wbr>warm-gray-chili</code></th>
         <td>Warm gray</td>
         <td>Chili</td>
         <td class="border-start">Red</td>
@@ -159,12 +159,12 @@ Add a preset class next to `.card-icon-hover` to use a different color set. Each
   </table>
 </div>
 
-A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hover, it changes to the hover text color, so it stays readable. Add `.position-relative` and `.z-2` to the link, so it sits above the title's stretched link and you can still click it.
+A link in the card text is red, or white in `.card-bold-hover-blue-sky`. On hover, it changes to the hover text color, so it stays readable. Add `.position-relative` and `.z-2` to the link, so it sits above the title's stretched link and you can still click it.
 
 {{< example >}}
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col">
-    <div class="card card-icon-hover h-100">
+    <div class="card card-bold-hover h-100">
       <div class="card-body p-4">
         <i class="card-icon az-icon-grad-cap" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
@@ -175,7 +175,7 @@ A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hove
     </div>
   </div>
   <div class="col">
-    <div class="card card-icon-hover card-icon-hover-blue-sky h-100">
+    <div class="card card-bold-hover card-bold-hover-blue-sky h-100">
       <div class="card-body p-4">
         <i class="card-icon az-icon-majors-and-degrees" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
@@ -186,7 +186,7 @@ A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hove
     </div>
   </div>
   <div class="col">
-    <div class="card card-icon-hover card-icon-hover-white-azurite h-100">
+    <div class="card card-bold-hover card-bold-hover-white-azurite h-100">
       <div class="card-body p-4">
         <i class="card-icon az-icon-scholarship" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
@@ -197,7 +197,7 @@ A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hove
     </div>
   </div>
   <div class="col">
-    <div class="card card-icon-hover card-icon-hover-warm-gray-chili h-100">
+    <div class="card card-bold-hover card-bold-hover-warm-gray-chili h-100">
       <div class="card-body p-4">
         <i class="card-icon az-icon-financial-aid" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
@@ -212,7 +212,7 @@ A link in the card text is red, or white in `.card-icon-hover-blue-sky`. On hove
 
 #### Custom icon card colors
 
-To use your own colors, set these CSS variables on a `.card-icon-hover` card. The normal colors use Bootstrap's own [card variables](#variables). If you make your own set, check that both states meet WCAG contrast, for example with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+To use your own colors, set these CSS variables on a `.card-bold-hover` card. The normal colors use Bootstrap's own [card variables](#variables). If you make your own set, check that both states meet WCAG contrast, for example with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
 | Variable | What it sets |
 | --- | --- |
@@ -225,7 +225,7 @@ To use your own colors, set these CSS variables on a `.card-icon-hover` card. Th
 | `--az-card-hover-link-rgb` | Hover color of other links in the card, as RGB numbers, for example `var(--bs-white-rgb)` |
 
 {{< example >}}
-<div class="card card-icon-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-title-color: var(--bs-white);">
+<div class="card card-bold-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-title-color: var(--bs-white);">
   <div class="card-body p-4">
     <i class="card-icon az-icon-award" aria-hidden="true"></i>
     <h3 class="card-title h5 fw-bold">
