@@ -9,7 +9,7 @@
 // classes set (for example, .material-symbols-rounded sets 24px).
 .card .card-icon {
   display: block;
-  margin-bottom: $spacer * 1.5;
+  margin-bottom: $spacer * 1.125;
   font-size: 4rem;
   line-height: 1;
 }
@@ -110,9 +110,11 @@
 
 // >> Card header and footer
 
-// Remove top margin from card title
+// Remove top margin from card title, and use Bootstrap's card title spacing
+// below it, not the larger heading margin from $heading-margins.
 .card-title {
   margin-top: 0;
+  margin-bottom: var(--#{$prefix}card-title-spacer-y);
 }
 
 // Set default background color
