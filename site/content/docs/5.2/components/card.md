@@ -17,7 +17,7 @@ Cards are built with as little markup and styles as possible, but still manage t
 Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they'll naturally fill the full width of its parent element. This is easily customized with our various [sizing options](#sizing).
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -50,7 +50,7 @@ Card titles are used by adding `.card-title` to a `<h*>` tag. In the same way, l
 Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-title` and the `.card-subtitle` items are placed in a `.card-body` item, the card title and subtitle are aligned nicely.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -66,7 +66,7 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 `.card-img-top` and `.card-img-bottom` respectively set the top and bottom corners rounded to match the card's borders. With `.card-text`, text can be added to the card. Text within `.card-text` can also be styled with the standard HTML tags.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -101,7 +101,7 @@ The example uses the outline style of a [Material Symbols]({{< docsref "/icons" 
 Create lists of content in a card with a flush list group.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -111,7 +111,7 @@ Create lists of content in a card with a flush list group.
 {{< /example >}}
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-header">
     Featured
   </div>
@@ -124,7 +124,7 @@ Create lists of content in a card with a flush list group.
 {{< /example >}}
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -141,7 +141,7 @@ Create lists of content in a card with a flush list group.
 Mix and match multiple content types to create the card you need, or throw everything in there. Shown below are image styles, blocks, text styles, and a list group—all wrapped in a fixed-width card.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -277,7 +277,7 @@ Use our handful of [available sizing utilities]({{< docsref "/utilities/sizing" 
 Use custom CSS in your stylesheets or as inline styles to set a width.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -291,7 +291,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{< docsref "/utilities/text#text-alignment" >}}).
 
 {{< example >}}
-<div class="card mb-3" style="width: 18rem;">
+<div class="card mb-3" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -299,7 +299,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   </div>
 </div>
 
-<div class="card text-center mb-3" style="width: 18rem;">
+<div class="card text-center mb-3" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -307,7 +307,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   </div>
 </div>
 
-<div class="card text-end" style="width: 18rem;">
+<div class="card text-end" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -446,7 +446,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card text-bg-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card text-bg-{{ .name }} mb-3" style="max-width: 20rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <h5 class="card-title">{{ .name | title }} card title</h5>
@@ -468,7 +468,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card border-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card border-{{ .name }} mb-3" style="max-width: 20rem;">
   <div class="card-header">Header</div>
   <div class="card-body{{ if not .contrast_color }} text-{{ .name }}{{ end }}">
     <h5 class="card-title">{{ .name | title }} card title</h5>
@@ -486,7 +486,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling. On a device that can't hover, such as a phone, a title with `.hover-text-underline` is always underlined.
 
 {{< example >}}
-<div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 20rem;">
   <div class="card-body d-flex flex-column">
     <h3 class="card-title mb-3 text-left h5 fw-bold">Simple Borderless Card</h3>
     <div class="card-text">
@@ -497,7 +497,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 20rem;">
   <div class="card-body d-flex flex-column">
     <h3 class="card-title mb-3 text-left h5 fw-bold hover-text-underline">Clickable Borderless Card</h3>
     <div class="card-text">
@@ -586,7 +586,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-azurite mb-3" style="max-width: 18rem;">
+<div class="card border-azurite mb-3" style="max-width: 20rem;">
   <div class="card-header bg-transparent border-azurite">Header</div>
   <div class="card-body text-azurite">
     <h5 class="card-title">Azurite card title</h5>

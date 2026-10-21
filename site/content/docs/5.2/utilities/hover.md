@@ -13,7 +13,7 @@ Put the `.hover` class on a parent element, and a `.hover-*` class on each child
 Add a text underline on hover with the `.hover` class on the parent element and the `.hover-text-underline` class on the target child element.
 
 {{< example >}}
-<div class="card hover" style="width: 18rem;">
+<div class="card hover" style="width: 20rem;">
   <div class="card-body">
     <h3 class="card-title mb-3 h5 fw-bold hover-text-underline">Card with Hover Underline</h3>
     <div class="card-text">
@@ -33,7 +33,7 @@ Add an image zoom-in effect on hover with the `.hover` class on the parent eleme
 In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. The card also has `.overflow-hidden`, so the zoomed image stays inside the card's round corners. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
 
 {{< example >}}
-<div class="card hover overflow-hidden" style="width: 18rem;">
+<div class="card hover overflow-hidden" style="width: 20rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
