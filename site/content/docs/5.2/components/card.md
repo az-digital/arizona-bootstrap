@@ -82,10 +82,12 @@ Use an icon in place of an image by adding `.card-icon` to an icon at the top of
 
 Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
 
+The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. The outline style needs the Material Symbols stylesheet with `FILL` set to `0..1`, not `1`.
+
 {{< example >}}
 <div class="card card-bold-hover" style="max-width: 20rem;">
   <div class="card-body">
-    <span class="card-icon material-symbols-rounded" aria-hidden="true">person_raised_hand</span>
+    <span class="card-icon material-symbols-rounded" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">person_raised_hand</span>
     <h3 class="card-title h5 fw-bold">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
     </h3>
