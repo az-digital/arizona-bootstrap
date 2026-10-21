@@ -84,7 +84,7 @@ Add `.card-icon-hover` to the card to give it the brand colors: cool gray, then 
 
 {{< example >}}
 <div class="card card-icon-hover" style="max-width: 20rem;">
-  <div class="card-body p-4">
+  <div class="card-body">
     <span class="card-icon material-symbols-rounded" aria-hidden="true">person_raised_hand</span>
     <h3 class="card-title h5 fw-bold">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>

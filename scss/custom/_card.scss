@@ -140,3 +140,11 @@
 .card > .card-header:has(.nav-pills) {
   background-color: initial;
 }
+
+// >> List groups in cards
+
+// Line up list group items with the card padding, so their text starts at the
+// same left edge as the card header and body.
+.card > .list-group {
+  --#{$prefix}list-group-item-padding-x: var(--#{$prefix}card-spacer-x);
+}
