@@ -15,10 +15,10 @@ Background wrappers span the full-width of the screen and help to break up conte
 
 Click on the background color options below to see a live preview of what the background wrapper looks like in your selected color and/or background pattern.
 
-<div class="row mb-3">
+<div class="row row-cols-xl-5 mb-3">
   {{< wrapperdemo.inline >}}
   {{ range (index $.Site.Data "colors") }}
-  <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-3">
+  <div class="col-6 col-md-4 col-lg-3 mt-3">
     <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn d-block w-100 px-2 btn-background-wrapper-demo {{ if eq .name "sonoran-red" }}btn-red{{ else if eq .name "blue" }}btn-blue{{ else }}text-bg-{{ .name }}{{ end }}">{{ .name | title }}</button>
   </div>
   {{ end }}
