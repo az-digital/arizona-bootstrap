@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card Design Demo</title>
+  <!-- Arizona Bootstrap CSS from the PR #2365 build. The path is relative, so it works on the review site too. -->
+  <link href="docs/5.2/dist/css/arizona-bootstrap.css" rel="stylesheet">
+  <link href="https://use.typekit.net/sgx0zzg.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" rel="stylesheet">
+  <!-- The same Material Symbols link as the docs: FILL from 0 to 1, so an icon can use the outline style (FILL 0) like the mockup. -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
+</head>
+<body>
+<main class="container py-5">
+  <h1 class="h2 mb-2">Cards</h1>
+  <p class="text-body-secondary mb-5">The arizona.edu card mockup built only from Arizona Bootstrap classes on PR #2365 (<code>issue/2350</code>). No custom CSS, except one inline font-family on the link lists, and inline <code>font-variation-settings</code> for the outline icons. Based on @djcelaya’s demo page, updated for the latest changes in #2365.</p>
+
+  <!-- Row 1: title on image. No card body, so the photo fills the card. -->
+  <h2 class="h6 text-uppercase text-body-secondary mb-3">Title on image</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+    <div class="col">
+      <div class="card border-0 h-100 hover overflow-hidden">
+        <div class="ratio ratio-1x1 overflow-hidden">
+          <img class="card-img object-fit-cover hover-img-zoom-in" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-2.jpg" alt="">
+        </div>
+        <div class="card-img-overlay p-0 d-flex flex-column">
+          <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Undergraduate</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 h-100 hover overflow-hidden">
+        <div class="ratio ratio-1x1 overflow-hidden">
+          <img class="card-img object-fit-cover hover-img-zoom-in" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-3.jpg" alt="">
+        </div>
+        <div class="card-img-overlay p-0 d-flex flex-column">
+          <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Graduate</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 h-100 hover overflow-hidden">
+        <div class="ratio ratio-1x1 overflow-hidden">
+          <img class="card-img object-fit-cover hover-img-zoom-in" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-4.jpg" alt="">
+        </div>
+        <div class="card-img-overlay p-0 d-flex flex-column">
+          <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Online</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: image and text, with the bold hover colors and the hover image zoom. -->
+  <h2 class="h6 text-uppercase text-body-secondary mb-3">Image and text</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+    <div class="col">
+      <div class="card card-bold-hover h-100 hover overflow-hidden">
+        <div class="overflow-hidden">
+          <img class="card-img-top object-fit-cover hover-img-zoom-in" style="aspect-ratio: 5 / 3;" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-1.jpg" alt="">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Undergraduate Degrees</a>
+          </h3>
+          <p class="card-text">Our undergraduate programs give you the freedom to follow your interests.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover h-100 hover overflow-hidden">
+        <div class="overflow-hidden">
+          <img class="card-img-top object-fit-cover hover-img-zoom-in" style="aspect-ratio: 5 / 3;" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-3.jpg" alt="">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Graduate</a>
+          </h3>
+          <p class="card-text">I’m pursuing a master’s, doctoral, or professional degree in a specific field.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover h-100 hover overflow-hidden">
+        <div class="overflow-hidden">
+          <img class="card-img-top object-fit-cover hover-img-zoom-in" style="aspect-ratio: 5 / 3;" src="docs/5.2/assets/img/photo-gallery-demo/gallery-img-4.jpg" alt="">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Online</a>
+          </h3>
+          <p class="card-text">I want to earn my Arizona degree on my own schedule, from anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: icon cards. Each card is only as tall as its content, like the mockup. -->
+  <h2 class="h6 text-uppercase text-body-secondary mb-3">Icons</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 align-items-start mb-5">
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <span class="card-icon material-symbols-rounded" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">person_raised_hand</span>
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Future Students</a>
+          </h3>
+          <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <span class="card-icon material-symbols-rounded" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">backpack</span>
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Current Students</a>
+          </h3>
+          <p class="card-text">Access student email and BrightSpace, discover academic resources and student services, and get involved on campus.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <span class="card-icon material-symbols-rounded" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">diversity_1</span>
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Parents &amp; Families</a>
+          </h3>
+          <p class="card-text">Explore Parent &amp; Family Programs and other networks so you can support your Wildcat (or future Wildcat!) from near and far.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <span class="card-icon material-symbols-rounded" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">school</span>
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Alumni</a>
+          </h3>
+          <p class="card-text">Once a Wildcat, always a Wildcat. Stay connected, give back, and celebrate what’s next.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4: text only, with the bold hover colors. -->
+  <h2 class="h6 text-uppercase text-body-secondary mb-3">Text only</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 align-items-start">
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Distance Locations</a>
+          </h3>
+          <p class="card-text">Close-to-home flexibility with locations across the state of Arizona.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">Returning Students</a>
+          </h3>
+          <p class="card-text">Continue your academic journey where you left off with flexible options and support.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card card-bold-hover">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold">
+            <a href="#" class="stretched-link text-reset text-decoration-none">DACA</a>
+          </h3>
+          <p class="card-text">Learn about resources and opportunities available to DACA students pursuing higher education.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 5: link lists. Many links per card, so the card itself isn't a link and has no hover colors. -->
+  <h2 class="h6 text-uppercase text-body-secondary mt-5 mb-3">Link lists</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 align-items-start mb-5">
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Academic Resources</h3>
+          <p class="card-text">Find the support and guidance you need to succeed in the classroom. Explore tutoring options, connect with academic advisors, access the course catalog, and plan your academic journey.</p>
+          <!-- No utility class sets the condensed font, so it's inline. -->
+          <ul class="list-unstyled mb-0 fw-semibold" style="font-family: proxima-nova-condensed, sans-serif;">
+            <li class="mb-2"><a href="#" class="text-azurite">Contact Your Advisor</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Course Catalog &amp; Degree Programs</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Registrar &amp; Transcripts</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Tutoring &amp; Academic Support</a></li>
+            <li><a href="#" class="text-azurite">University Libraries</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Campus Life &amp; Involvement</h3>
+          <p class="card-text">Find your community and make the most of your time at Arizona. Explore clubs and organizations, learn about on-campus housing and meal plans, and discover ways to connect through events, clubs, and programs.</p>
+          <ul class="list-unstyled mb-0 fw-semibold" style="font-family: proxima-nova-condensed, sans-serif;">
+            <li class="mb-2"><a href="#" class="text-azurite">Calendar of Events</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Campus Dining</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Campus Recreation</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Clubs &amp; Organizations</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Fraternity &amp; Sorority Programs</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Housing &amp; Residence Life</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Off-Campus Housing</a></li>
+            <li><a href="#" class="text-azurite">ZonaZoo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Health &amp; Safety</h3>
+          <p class="card-text">Take care of your mind, body, and overall well-being. Access healthcare, mental health services, accessibility resources, and support programs designed to help you feel your best and stay balanced throughout your college experience.</p>
+          <ul class="list-unstyled mb-0 fw-semibold" style="font-family: proxima-nova-condensed, sans-serif;">
+            <li class="mb-2"><a href="#" class="text-azurite">Campus Health</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Campus Safety</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Counseling &amp; CAPS Support</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Disability Resource Center</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Health &amp; Wellness</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Housing &amp; Residence Life</a></li>
+            <li class="mb-2"><a href="#" class="text-azurite">Off-Campus Housing</a></li>
+            <li><a href="#" class="text-azurite">SafeCats</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 6: calls to action. Buttons and icon links, so again no whole-card link or hover colors. -->
+  <h2 class="h6 text-uppercase text-body-secondary mb-3">Calls to action</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 align-items-start">
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Student Media</h3>
+          <p class="card-text">Arizona Student Media brings the campus community stories that matter while giving students hands-on experience in journalism, radio, TV, design, and business. From the student-run Arizona Daily Wildcat and KAMP Student Radio to UATV-3, these outlets showcase Wildcats making an impact</p>
+          <a href="#" class="btn btn-red mt-3">Listen Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Bear Down Rundown</h3>
+          <p class="card-text">The Bear Down Rundown is your weekly update for all main campus undergraduates during the academic year. Stay in the loop with event highlights, important reminders, and tips to make the most of your Wildcat experience.</p>
+          <a href="#" class="btn btn-red mt-3">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-0 text-bg-cool-gray">
+        <div class="card-body">
+          <h3 class="card-title h5 fw-bold text-azurite">Follow Along</h3>
+          <p class="card-text">Follow the university’s social media channels to stay up to date on events, campus highlights, and everything happening across Arizona.</p>
+          <div class="d-flex gap-2 mt-3 fs-1 lh-1">
+            <a href="#" class="text-red text-decoration-none" aria-label="LinkedIn"><i class="az-icon-linkedin-circle" aria-hidden="true"></i></a>
+            <a href="#" class="text-red text-decoration-none" aria-label="Instagram"><i class="az-icon-instagram-circle" aria-hidden="true"></i></a>
+            <a href="#" class="text-red text-decoration-none" aria-label="Facebook"><i class="az-icon-facebook-circle" aria-hidden="true"></i></a>
+            <a href="#" class="text-red text-decoration-none" aria-label="YouTube"><i class="az-icon-youtube-circle" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
