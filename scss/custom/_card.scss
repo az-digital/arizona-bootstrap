@@ -36,15 +36,19 @@
   --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
   --#{$prefix}card-color: var(--#{$prefix}midnight);
   --#{$prefix}card-title-color: var(--#{$prefix}azurite);
-  // A transparent border, not none: Windows high contrast (forced colors) mode
-  // draws it, so the card keeps its edge when background colors are removed.
-  --#{$prefix}card-border-color: transparent;
+  --#{$prefix}card-border-width: 0;
   --az-card-hover-bg: var(--#{$prefix}blue);
   --az-card-hover-color: var(--#{$prefix}white);
   --az-card-hover-title-color: var(--#{$prefix}sky);
   --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
   // The fade timing (0.3s, ease-out) is from the brand mockup.
   @include transition(background-color .3s ease-out);
+
+  // Show a border only in Windows high contrast (forced colors) mode. That mode
+  // removes background colors, so the border keeps the card's edge.
+  @media (forced-colors: active) {
+    --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  }
 
   .card-body,
   .card-title,
