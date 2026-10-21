@@ -165,7 +165,7 @@ A link in the card text is red, or white in `.card-bold-hover-blue-sky`. On hove
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col">
     <div class="card card-bold-hover h-100">
-      <div class="card-body p-4">
+      <div class="card-body">
         <i class="card-icon az-icon-grad-cap" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to blue</a>
@@ -176,7 +176,7 @@ A link in the card text is red, or white in `.card-bold-hover-blue-sky`. On hove
   </div>
   <div class="col">
     <div class="card card-bold-hover card-bold-hover-blue-sky h-100">
-      <div class="card-body p-4">
+      <div class="card-body">
         <i class="card-icon az-icon-majors-and-degrees" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Blue to sky</a>
@@ -187,7 +187,7 @@ A link in the card text is red, or white in `.card-bold-hover-blue-sky`. On hove
   </div>
   <div class="col">
     <div class="card card-bold-hover card-bold-hover-white-azurite h-100">
-      <div class="card-body p-4">
+      <div class="card-body">
         <i class="card-icon az-icon-scholarship" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">White to azurite</a>
@@ -198,7 +198,7 @@ A link in the card text is red, or white in `.card-bold-hover-blue-sky`. On hove
   </div>
   <div class="col">
     <div class="card card-bold-hover card-bold-hover-warm-gray-chili h-100">
-      <div class="card-body p-4">
+      <div class="card-body">
         <i class="card-icon az-icon-financial-aid" aria-hidden="true"></i>
         <h3 class="card-title h5 fw-bold">
           <a href="#top" class="stretched-link text-reset text-decoration-none">Warm gray to chili</a>
@@ -226,7 +226,7 @@ To use your own colors, set these CSS variables on a `.card-bold-hover` card. Th
 
 {{< example >}}
 <div class="card card-bold-hover" style="max-width: 20rem; --az-card-hover-bg: var(--bs-azurite); --az-card-hover-title-color: var(--bs-white);">
-  <div class="card-body p-4">
+  <div class="card-body">
     <i class="card-icon az-icon-award" aria-hidden="true"></i>
     <h3 class="card-title h5 fw-bold">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Cool gray to azurite</a>
