@@ -13,6 +13,6 @@
   // stylelint-disable-next-line selector-no-qualifying-type
   img.hover-img-zoom-in {
     @include transition(transform .25s ease);
-    transform: scale(1.03);
+    transform: scale(1.08);
   }
 }
