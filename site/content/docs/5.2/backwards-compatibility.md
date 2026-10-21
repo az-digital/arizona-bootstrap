@@ -19,10 +19,10 @@ For information on changes made in upstream Bootstrap 5, see the [Migration page
 
 For reference, Arizona Quickstart 3 includes a [mapping of classes from Arizona Bootstrap 2 to Arizona Bootstrap 5](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Utility/AZBootstrapMarkupConverter.php#L183-L760) as part of a markup converter class. This mapping is used by drush commands such as [this one](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Drush/Commands/README.md#arizona-bootstrap-5-block-class-updates), which can be used to update Arizona Bootstrap 2 classes after a site has been migrated to Quickstart 3.
 
-This page also covers deprecations made within Arizona Bootstrap 5, such as the [brand color names](#brand-color-names) changed in Arizona Bootstrap 5.3.
+This page also covers deprecations made within Arizona Bootstrap 5, such as the [brand color updates](#brand-color-updates) in Arizona Bootstrap 5.3.
 
 
-## Brand Color Names
+## Brand Color Updates
 
 {{< deprecated-in "5.3.0" >}}
 
