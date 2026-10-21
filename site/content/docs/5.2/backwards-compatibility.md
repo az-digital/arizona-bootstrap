@@ -19,6 +19,38 @@ For information on changes made in upstream Bootstrap 5, see the [Migration page
 
 For reference, Arizona Quickstart 3 includes a [mapping of classes from Arizona Bootstrap 2 to Arizona Bootstrap 5](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Utility/AZBootstrapMarkupConverter.php#L183-L760) as part of a markup converter class. This mapping is used by drush commands such as [this one](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Drush/Commands/README.md#arizona-bootstrap-5-block-class-updates), which can be used to update Arizona Bootstrap 2 classes after a site has been migrated to Quickstart 3.
 
+This page also covers deprecations made within Arizona Bootstrap 5, such as the [brand color names](#brand-color-names) changed in Arizona Bootstrap 5.3.
+
+
+## Brand Color Names
+
+{{< deprecated-in "5.3.0" >}}
+
+Ten brand colors have new names to match the University of Arizona's [updated brand color palette](https://marcom.arizona.edu/brand-guidelines/colors), and five of them also have new color values. The old names are deprecated and will be removed in the next major version. Until then, they work as aliases of the new names in:
+
+ - Classes, such as `.bg-bloom`, `.text-bloom`, and `.text-bg-cool-gray`
+ - CSS custom properties, such as `--bs-bloom` and `--bs-bloom-rgb`
+ - Sass variables, such as `$bloom`, `$bloom-100` through `$bloom-900`, and `$blooms`
+
+To update, replace the old name with the new one. For example, `.bg-bloom` becomes `.bg-bougainvillea`.
+
+Because the old names point to the new colors, content using the old names will show the updated colors without any changes. Check content that relies on these colors, especially text placed directly on them. For example, `.text-bg-bloom` and `.text-bg-bougainvillea` now use white text instead of black to keep [accessible color contrast]({{< docsref "/getting-started/color-contrast" >}}).
+
+{{< bs-table "table" >}}
+| Deprecated name | New name | Color change |
+| --- | --- | --- |
+| `midnight` | `tinta` | None |
+| `oasis` | `arroyo-blue` | None |
+| `sky` | `rain` | None |
+| `chili` | `sonoran-red` | `#8b0015` &rarr; `#850000` |
+| `bloom` | `bougainvillea` | `#ef4056` &rarr; `#c62840` |
+| `leaf` | `saguaro` | `#70b865` &rarr; `#7f8b5a` |
+| `river` | `shade` | `#007d84` &rarr; `#3f7a7a` |
+| `mesa` | `brick` | `#a95c42` &rarr; `#85372b` |
+| `cool-gray` | `cloud` | None |
+| `warm-gray` | `caliche` | None |
+{{< /bs-table >}}
+
 
 ## Backwards Compatible Components
 
@@ -73,23 +105,6 @@ The following utilities are deprecated in Arizona Bootstrap 5 and will be remove
 ### Border Thick
 
 The `.border-thick` custom Arizona Bootstrap class has been deprecated. The `.border-4` class from the new [border width]({{< docsref "/utilities/borders/#width" >}}) utilities can be used as a direct replacement.
-
-### Brand Color Names
-
-Ten brand colors have been renamed to match the Arizona Digital design tokens. The old names still work as aliases of the new names, in class names (such as `.bg-midnight` and `.text-bg-cool-gray`), CSS custom properties (such as `--bs-midnight` and `--bs-midnight-rgb`) and Sass variables (such as `$midnight` and `$midnight-100`), but they are deprecated.
-
-| Deprecated name | New name |
-| --- | --- |
-| `midnight` | `tinta` |
-| `oasis` | `arroyo-blue` |
-| `sky` | `rain` |
-| `chili` | `sonoran-red` |
-| `bloom` | `bougainvillea` |
-| `leaf` | `saguaro` |
-| `river` | `shade` |
-| `mesa` | `brick` |
-| `cool-gray` | `cloud` |
-| `warm-gray` | `caliche` |
 
 ### UL Triangles
 
