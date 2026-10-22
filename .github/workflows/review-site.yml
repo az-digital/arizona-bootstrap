@@ -69,6 +69,12 @@ jobs:
   review-site:
     name: Build & deploy review site
     needs: lint-code
+    # One deploy at a time per review site folder (named after the branch), so
+    # overlapping `aws s3 sync --delete` runs can't remove each other's files
+    # or both post a PR comment.
+    concurrency:
+      group: ${{ github.workflow }}-review-site-${{ github.head_ref || github.ref }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       checks: write
