@@ -14,7 +14,7 @@
   --az-navbar-font-hover-color: var(--bs-blue);
   --az-navbar-font-active-color: var(--bs-blue);
   --az-navbar-font-disabled-color: var(--bs-dark-silver);
-  --az-navbar-border-color: var(--bs-cool-gray);
+  --az-navbar-border-color: var(--bs-cloud);
   --az-navbar-accent-color: var(--bs-red);
   --az-navbar-min-height: 60px;
   --az-navbar-nav-item-margin-y: 18px;
@@ -235,7 +235,7 @@
       border-bottom: 1px solid var(--az-navbar-border-color);
 
       &:has(.collapse .active) .dropdown-toggle {
-        background-color: var(--bs-cool-gray);
+        background-color: var(--bs-cloud);
       }
     }
 
@@ -281,7 +281,7 @@
 
       // Subtract icon when expanded
       &[aria-expanded="true"] {
-        background-color: var(--bs-cool-gray);
+        background-color: var(--bs-cloud);
         &::after {
           // Material Symbols "Remove" - https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3&selected=Material+Symbols+Rounded:remove:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=remove
           content: "\e15b";
@@ -289,7 +289,7 @@
       }
 
       &:hover {
-        background-color: var(--bs-cool-gray);
+        background-color: var(--bs-cloud);
       }
 
       &:focus-visible {
@@ -348,7 +348,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    background-color: var(--bs-cool-gray);
+    background-color: var(--bs-cloud);
 
     li {
       border-bottom: 0;
