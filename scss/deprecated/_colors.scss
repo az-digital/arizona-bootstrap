@@ -23,3 +23,15 @@ $deprecated-color-class-prefixes: "bg", "bg-gradient", "bg-transparent", "border
     }
   }
 }
+
+// Deprecated background wrapper pattern names that used the old Sky color name:
+// .bg-monsoon-sky-start, .bg-monsoon-sky-end
+// The image they used, img/monsoon-sky.svg, is also kept, as a copy of
+// img/monsoon-rain.svg, for anything that links to it directly.
+.bg-monsoon-sky-start {
+  @extend .bg-monsoon-rain-start;
+}
+
+.bg-monsoon-sky-end {
+  @extend .bg-monsoon-rain-end;
+}

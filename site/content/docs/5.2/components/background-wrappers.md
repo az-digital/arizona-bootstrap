@@ -38,10 +38,10 @@ Click on the background color options below to see a live preview of what the ba
     <button id="triangles-background-btn-trilines" data-triangles="trilines" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Trilines</button>
   </div>
   <div class="col-6 col-lg-4 col-xl-3 mt-3">
-    <button id="monsoon-background-btn-rain-start" data-triangles="monsoon-sky-start" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain Start</button>
+    <button id="monsoon-background-btn-rain-start" data-triangles="monsoon-rain-start" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain Start</button>
   </div>
   <div class="col-6 col-lg-4 col-xl-3 mt-3">
-    <button id="monsoon-background-btn-rain-end" data-triangles="monsoon-sky-end" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain End</button>
+    <button id="monsoon-background-btn-rain-end" data-triangles="monsoon-rain-end" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain End</button>
   </div>
 </div>
 

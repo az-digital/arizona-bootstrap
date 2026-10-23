@@ -51,6 +51,8 @@ Because the old names point to the new colors, content using the old names will 
 | `warm-gray` | `caliche` | `#f4ede5` &rarr; `#f2efea` |
 {{< /bs-table >}}
 
+The Monsoon Sky [background wrapper patterns]({{< docsref "/components/background-wrappers" >}}) are renamed to match. `.bg-monsoon-sky-start` and `.bg-monsoon-sky-end` are deprecated and work as aliases of `.bg-monsoon-rain-start` and `.bg-monsoon-rain-end`. The pattern image is now `monsoon-rain.svg`, and `monsoon-sky.svg` is kept as a deprecated copy.
+
 
 ## Backwards Compatible Components
 
