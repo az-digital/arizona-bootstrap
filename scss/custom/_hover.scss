@@ -1,5 +1,11 @@
 // Hover utility
 
+// Make hovered images zoom back out smoothly
+// stylelint-disable-next-line selector-no-qualifying-type
+img.hover-img-zoom-in {
+  @include transition(transform .25s ease);
+}
+
 // Every .hover-* effect turns on when you hover over the .hover element, or
 // when it or anything inside it has keyboard focus. Rationale: in a clickable
 // card, Tab lands on the .stretched-link inside the card, not on the card.
@@ -12,7 +18,6 @@
   }
   // stylelint-disable-next-line selector-no-qualifying-type
   img.hover-img-zoom-in {
-    @include transition(transform .25s ease);
     transform: scale(1.08);
   }
 }
