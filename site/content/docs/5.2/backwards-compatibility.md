@@ -26,7 +26,7 @@ This page also covers deprecations made within Arizona Bootstrap 5, such as the 
 
 {{< deprecated-in "5.3.0" >}}
 
-Ten brand colors have new names to match the University of Arizona's [updated brand color palette](https://marcom.arizona.edu/brand-guidelines/colors), and five of them also have new color values. The old names are deprecated and will be removed in the next major version. Until then, they work as aliases of the new names in:
+Ten brand colors have new names to match the University of Arizona's [updated brand color palette](https://marcom.arizona.edu/brand-guidelines/colors). All ten also have new color values since Arizona Bootstrap 5.1. The old names are deprecated and will be removed in the next major version. Until then, they work as aliases of the new names in:
 
  - Classes, such as `.bg-bloom`, `.text-bloom`, and `.text-bg-cool-gray`
  - CSS custom properties, such as `--bs-bloom` and `--bs-bloom-rgb`
@@ -39,16 +39,16 @@ Because the old names point to the new colors, content using the old names will 
 {{< bs-table "table" >}}
 | Deprecated name | New name | Color change |
 | --- | --- | --- |
-| `midnight` | `tinta` | None |
-| `oasis` | `arroyo-blue` | None |
-| `sky` | `rain` | None |
+| `midnight` | `tinta` | `#001c48` &rarr; `#03132e` |
+| `oasis` | `arroyo-blue` | `#378dbd` &rarr; `#106ab1` |
+| `sky` | `rain` | `#81d3eb` &rarr; `#81ceeb` |
 | `chili` | `sonoran-red` | `#8b0015` &rarr; `#850000` |
 | `bloom` | `bougainvillea` | `#ef4056` &rarr; `#c62840` |
 | `leaf` | `saguaro` | `#70b865` &rarr; `#7f8b5a` |
 | `river` | `shade` | `#007d84` &rarr; `#3f7a7a` |
 | `mesa` | `brick` | `#a95c42` &rarr; `#85372b` |
-| `cool-gray` | `cloud` | None |
-| `warm-gray` | `caliche` | None |
+| `cool-gray` | `cloud` | `#e2e9eb` &rarr; `#e5eff7` |
+| `warm-gray` | `caliche` | `#f4ede5` &rarr; `#f2efea` |
 {{< /bs-table >}}
 
 
