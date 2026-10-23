@@ -17,7 +17,7 @@ Cards are built with as little markup and styles as possible, but still manage t
 Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they'll naturally fill the full width of its parent element. This is easily customized with our various [sizing options](#sizing).
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -50,7 +50,7 @@ Card titles are used by adding `.card-title` to a `<h*>` tag. In the same way, l
 Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-title` and the `.card-subtitle` items are placed in a `.card-body` item, the card title and subtitle are aligned nicely.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -66,10 +66,32 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 `.card-img-top` and `.card-img-bottom` respectively set the top and bottom corners rounded to match the card's borders. With `.card-text`, text can be added to the card. Text within `.card-text` can also be styled with the standard HTML tags.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+{{< /example >}}
+
+### Icons
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Add `.card-icon` to an icon at the top of the `.card-body`. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG whose `fill` or `stroke` is `currentColor`. The icon uses the text color, which you can set with [`.text-{color}`]({{< docsref "/utilities/colors" >}}). Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
+
+Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
+
+The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon. To match the example, sites may need to update their Material Symbols stylesheet link to allow `FILL` `0` and weight `300`.
+
+{{< example >}}
+<div class="card card-bold-hover" style="max-width: 20rem;">
+  <div class="card-body">
+    <span class="card-icon material-symbols-rounded fw-light" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">person_raised_hand</span>
+    <h3 class="card-title h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
+    </h3>
+    <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
   </div>
 </div>
 {{< /example >}}
@@ -79,7 +101,7 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 Create lists of content in a card with a flush list group.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -89,7 +111,7 @@ Create lists of content in a card with a flush list group.
 {{< /example >}}
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-header">
     Featured
   </div>
@@ -102,7 +124,7 @@ Create lists of content in a card with a flush list group.
 {{< /example >}}
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -119,7 +141,7 @@ Create lists of content in a card with a flush list group.
 Mix and match multiple content types to create the card you need, or throw everything in there. Shown below are image styles, blocks, text styles, and a list group—all wrapped in a fixed-width card.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="Image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -255,7 +277,7 @@ Use our handful of [available sizing utilities]({{< docsref "/utilities/sizing" 
 Use custom CSS in your stylesheets or as inline styles to set a width.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -269,7 +291,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{< docsref "/utilities/text#text-alignment" >}}).
 
 {{< example >}}
-<div class="card mb-3" style="width: 18rem;">
+<div class="card mb-3" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -277,7 +299,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   </div>
 </div>
 
-<div class="card text-center mb-3" style="width: 18rem;">
+<div class="card text-center mb-3" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -285,7 +307,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
   </div>
 </div>
 
-<div class="card text-end" style="width: 18rem;">
+<div class="card text-end" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -424,7 +446,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card text-bg-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card text-bg-{{ .name }} mb-3" style="max-width: 20rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <h5 class="card-title">{{ .name | title }} card title</h5>
@@ -446,7 +468,7 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 {{< example >}}
 {{< card.inline >}}
 {{- range (index $.Site.Data "pnc-colors") }}
-<div class="card border-{{ .name }} mb-3" style="max-width: 18rem;">
+<div class="card border-{{ .name }} mb-3" style="max-width: 20rem;">
   <div class="card-header">Header</div>
   <div class="card-body{{ if not .contrast_color }} text-{{ .name }}{{ end }}">
     <h5 class="card-title">{{ .name | title }} card title</h5>
@@ -461,10 +483,10 @@ Use [border utilities]({{< docsref "/utilities/borders" >}}) to change just the 
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling.
+Remove the border around the card content with `.border-0`. Use the [Stretched Link]({{< docsref "/helpers/stretched-link" >}}) helper along with the custom Arizona Bootstrap [Hover]({{< docsref "/utilities/hover" >}}) utility to make the entire card clickable with the appropriate hover styling. On a device that can't hover, such as a phone, a title with `.hover-text-underline` is always underlined.
 
 {{< example >}}
-<div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-gray-200 h-100 mb-3" style="max-width: 20rem;">
   <div class="card-body d-flex flex-column">
     <h3 class="card-title mb-3 text-left h5 fw-bold">Simple Borderless Card</h3>
     <div class="card-text">
@@ -475,7 +497,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 18rem;">
+<div class="card border-0 text-bg-gray-200 h-100 hover mb-3" style="max-width: 20rem;">
   <div class="card-body d-flex flex-column">
     <h3 class="card-title mb-3 text-left h5 fw-bold hover-text-underline">Clickable Borderless Card</h3>
     <div class="card-text">
@@ -486,8 +508,17 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
-<div class="card border-0 text-bg-blue h-100 hover mb-3" style="max-width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+{{< /example >}}
+
+### Clickable Cards With Images
+
+<span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
+
+Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) utility to the image, so it zooms in on hover. Add `.overflow-hidden` to the image wrapper and to the card, so the zoom stays inside the image area and the round corners. If the card has no button, put the stretched link on the title. For bold hover colors, add `.card-bold-hover`, and leave off `.text-bg-*` and `.text-*` utilities, because they block those colors.
+
+{{< example >}}
+<div class="card border-0 text-bg-blue h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body d-flex flex-column">
@@ -500,20 +531,33 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
     </div>
   </div>
 </div>
+<div class="card card-bold-hover h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
+  <div class="position-relative overflow-hidden">
+    <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title text-left h5 fw-bold">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Clickable Card With Bold Hover</a>
+    </h3>
+    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</div>
 {{< /example >}}
 
 ### Title on Image
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility.
+Cards with the title on image style put the title of the card on top of the image with a gradient background. This type of card also uses the custom [Hover]({{< docsref "/utilities/hover" >}}) utility. On a device that can't hover, such as a phone, the title is always underlined.
+
+To make a card with only an image and a title, put the image in a `.ratio` and `.ratio-1x1` wrapper to make it square, and add `.object-fit-cover` to the image, so any photo fills the square. Add `.h-50` to the title, so its gradient covers the bottom half of the image, and put the stretched link on the title.
 
 {{< example >}}
-<div class="card shadow text-bg-white h-100 hover" style="max-width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+<div class="card shadow text-bg-white h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-black fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
   </div>
   <div class="card-body d-flex flex-column">
@@ -525,6 +569,16 @@ Cards with the title on image style put the title of the card on top of the imag
     </div>
   </div>
 </div>
+<div class="card border-0 h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
+  <div class="ratio ratio-1x1 overflow-hidden">
+    <img class="card-img-top object-fit-cover hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
+    <div class="card-img-overlay p-0 d-flex flex-column">
+      <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+        <a href="#top" class="stretched-link text-reset text-decoration-none">Card Title on Image Only</a>
+      </h3>
+    </div>
+  </div>
+</div>
 {{< /example >}}
 
 ### Mixins utilities
@@ -532,7 +586,7 @@ Cards with the title on image style put the title of the card on top of the imag
 You can also change the borders on the card header and footer as needed, and even remove their `background-color` with `.bg-transparent`.
 
 {{< example >}}
-<div class="card border-azurite mb-3" style="max-width: 18rem;">
+<div class="card border-azurite mb-3" style="max-width: 20rem;">
   <div class="card-header bg-transparent border-azurite">Header</div>
   <div class="card-body text-azurite">
     <h5 class="card-title">Azurite card title</h5>
