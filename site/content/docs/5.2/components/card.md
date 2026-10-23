@@ -82,7 +82,7 @@ Add `.card-icon` to an icon at the top of the `.card-body`. It works with [Arizo
 
 Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
 
-The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon.
+The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon. To match the example, sites may need to update their Material Symbols stylesheet link to allow `FILL` `0` and weight `300`.
 
 {{< example >}}
 <div class="card card-bold-hover" style="max-width: 20rem;">
