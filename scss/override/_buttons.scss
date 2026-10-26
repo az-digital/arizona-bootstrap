@@ -37,11 +37,11 @@
     $background: $red,
     $border: $red,
     $color: $white,
-    $hover-background: $chili,
-    $hover-border: $chili,
+    $hover-background: $btn-primary-hover-bg,
+    $hover-border: $btn-primary-hover-border,
     $hover-color: $white,
-    $active-background: $red,
-    $active-border: $red,
+    $active-background: $btn-primary-active-bg,
+    $active-border: $btn-primary-active-border,
     $active-color: $white
   );
 }
@@ -52,11 +52,11 @@
     $background: $blue,
     $border: $blue,
     $color: $white,
-    $hover-background: $azurite,
-    $hover-border: $azurite,
+    $hover-background: $btn-secondary-hover-bg,
+    $hover-border: $btn-secondary-hover-border,
     $hover-color: $white,
-    $active-background: tint-color($blue, 20%),
-    $active-border: tint-color($blue, 20%),
+    $active-background: $btn-secondary-active-bg,
+    $active-border: $btn-secondary-active-border,
     $active-color: $white
   );
   --az-btn-focus-outline-color: #{$blue};

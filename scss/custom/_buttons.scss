@@ -12,8 +12,8 @@
 
 .btn-sky {
   @extend .btn-info;
-  --bs-btn-hover-bg: #65c0db;
-  --bs-btn-hover-border-color: #65c0db;
+  --bs-btn-hover-bg: #{$btn-sky-hover-bg};
+  --bs-btn-hover-border-color: #{$btn-sky-hover-border-color};
 }
 
 .btn-white-text-blue {
@@ -21,11 +21,11 @@
     $background: $white,
     $border: $white,
     $color: $blue,
-    $hover-background: $cool-gray,
-    $hover-border: $cool-gray,
+    $hover-background: $btn-white-hover-bg,
+    $hover-border: $btn-white-hover-border,
     $hover-color: $blue,
-    $active-background: $cool-gray,
-    $active-border: $cool-gray,
+    $active-background: $btn-white-active-bg,
+    $active-border: $btn-white-active-border,
     $active-color: $blue
   );
   --az-btn-focus-outline-color: #{$white};
@@ -36,11 +36,11 @@
     $background: $white,
     $border: $white,
     $color: $red,
-    $hover-background: $cool-gray,
-    $hover-border: $cool-gray,
+    $hover-background: $btn-white-hover-bg,
+    $hover-border: $btn-white-hover-border,
     $hover-color: $red,
-    $active-background: $cool-gray,
-    $active-border: $cool-gray,
+    $active-background: $btn-white-active-bg,
+    $active-border: $btn-white-active-border,
     $active-color: $red
   );
   --az-btn-focus-outline-color: #{$white};
@@ -63,8 +63,8 @@
 .btn-outline-white {
   @include button-outline-variant(
     $color: $white,
-    $color-hover: $gray-800,
-    $active-background: $white,
+    $color-hover: $btn-outline-white-hover-color,
+    $active-background: $btn-outline-white-active-bg,
   );
   --az-btn-focus-outline-color: #{$white};
 }

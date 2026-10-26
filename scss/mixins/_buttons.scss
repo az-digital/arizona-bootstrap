@@ -7,16 +7,16 @@
 
   // Modify colors to ensure accessible color contrast.
   @if $background == $success or $background == $leaf {
-    --bs-btn-color: #{$midnight};
-    --bs-btn-hover-color: #{$midnight};
+    --bs-btn-color: #{$btn-success-color};
+    --bs-btn-hover-color: #{$btn-success-hover-color};
   } @else if $background == $warning {
-    --bs-btn-color: #{$black};
-    --bs-btn-hover-color: #{$black};
+    --bs-btn-color: #{$btn-warning-color};
+    --bs-btn-hover-color: #{$btn-warning-hover-color};
   } @else if $background == $info or $background == $sky {
-    --bs-btn-color: #{$blue};
-    --bs-btn-hover-color: #{$midnight};
+    --bs-btn-color: #{$btn-info-color};
+    --bs-btn-hover-color: #{$btn-info-hover-color};
   } @else if $background == $light {
-    --bs-btn-color: #{$midnight};
+    --bs-btn-color: #{$btn-light-color};
   }
 
   @if $background != $red {
@@ -28,13 +28,13 @@
 @mixin az-button-outline-variant($color, $value) {
 
   @if $color == "info" {
-    --bs-btn-color: #{$azurite};
-    --bs-btn-hover-color: #{$midnight};
+    --bs-btn-color: #{$btn-outline-info-color};
+    --bs-btn-hover-color: #{$btn-outline-info-hover-color};
   } @else if $value == $warning {
-    --bs-btn-color: #{$ash};
-    --bs-btn-hover-color: #{$black};
+    --bs-btn-color: #{$btn-outline-warning-color};
+    --bs-btn-hover-color: #{$btn-outline-warning-hover-color};
   } @else if $value == $light {
-    --bs-btn-color: #{$ash};
+    --bs-btn-color: #{$btn-outline-light-color};
   }
 
   @if $value != $red {
