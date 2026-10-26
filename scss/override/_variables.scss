@@ -114,19 +114,22 @@ $breadcrumb-divider: quote("/") / "";
 // >> Buttons
 // fusv-disable
 $btn-primary-hover-bg: $chili !default;
-$btn-primary-hover-border: $chili !default;
+$btn-primary-hover-border-color: $chili !default;
 $btn-primary-active-bg: $red !default;
-$btn-primary-active-border: $red !default;
+$btn-primary-active-border-color: $red !default;
 $btn-secondary-hover-bg: $azurite !default;
-$btn-secondary-hover-border: $azurite !default;
+$btn-secondary-hover-border-color: $azurite !default;
 $btn-secondary-active-bg: tint-color($blue, 20%) !default;
-$btn-secondary-active-border: tint-color($blue, 20%) !default;
+$btn-secondary-active-border-color: tint-color($blue, 20%) !default;
 $btn-white-hover-bg: $cool-gray !default;
-$btn-white-hover-border: $cool-gray !default;
+$btn-white-hover-border-color: $cool-gray !default;
 $btn-white-active-bg: $cool-gray !default;
-$btn-white-active-border: $cool-gray !default;
+$btn-white-active-border-color: $cool-gray !default;
 $btn-outline-white-hover-color: $gray-800 !default;
+$btn-outline-white-hover-bg: $white !default;
+$btn-outline-white-hover-border-color: $white !default;
 $btn-outline-white-active-bg: $white !default;
+$btn-outline-white-active-border-color: $white !default;
 $btn-sky-hover-bg: #65c0db !default;
 $btn-sky-hover-border-color: #65c0db !default;
 $btn-success-color: $midnight !default;
@@ -208,7 +211,6 @@ $navbar-nav-link-padding-x: 1rem;
 $navbar-light-active-color: $nav-tabs-link-active-color;
 $navbar-light-hover-color: $nav-link-hover-color;
 $navbar-light-disabled-color: $nav-link-disabled-color;
-$navbar-az-dropdown-bg: $white !default;
 // fusv-enable
 
 // >> Pagination

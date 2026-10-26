@@ -22,10 +22,10 @@
     $border: $white,
     $color: $blue,
     $hover-background: $btn-white-hover-bg,
-    $hover-border: $btn-white-hover-border,
+    $hover-border: $btn-white-hover-border-color,
     $hover-color: $blue,
     $active-background: $btn-white-active-bg,
-    $active-border: $btn-white-active-border,
+    $active-border: $btn-white-active-border-color,
     $active-color: $blue
   );
   --az-btn-focus-outline-color: #{$white};
@@ -37,10 +37,10 @@
     $border: $white,
     $color: $red,
     $hover-background: $btn-white-hover-bg,
-    $hover-border: $btn-white-hover-border,
+    $hover-border: $btn-white-hover-border-color,
     $hover-color: $red,
     $active-background: $btn-white-active-bg,
-    $active-border: $btn-white-active-border,
+    $active-border: $btn-white-active-border-color,
     $active-color: $red
   );
   --az-btn-focus-outline-color: #{$white};
@@ -65,7 +65,16 @@
     $color: $white,
     $color-hover: $btn-outline-white-hover-color,
     $active-background: $btn-outline-white-active-bg,
+    $active-border: $btn-outline-white-active-border-color,
   );
+  // The outline mixin gives hover the active colors, so set hover separately
+  // when a project gives them different values.
+  @if $btn-outline-white-hover-bg != $btn-outline-white-active-bg {
+    --bs-btn-hover-bg: #{$btn-outline-white-hover-bg};
+  }
+  @if $btn-outline-white-hover-border-color != $btn-outline-white-active-border-color {
+    --bs-btn-hover-border-color: #{$btn-outline-white-hover-border-color};
+  }
   --az-btn-focus-outline-color: #{$white};
 }
 

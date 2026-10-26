@@ -38,10 +38,10 @@
     $border: $red,
     $color: $white,
     $hover-background: $btn-primary-hover-bg,
-    $hover-border: $btn-primary-hover-border,
+    $hover-border: $btn-primary-hover-border-color,
     $hover-color: $white,
     $active-background: $btn-primary-active-bg,
-    $active-border: $btn-primary-active-border,
+    $active-border: $btn-primary-active-border-color,
     $active-color: $white
   );
 }
@@ -53,10 +53,10 @@
     $border: $blue,
     $color: $white,
     $hover-background: $btn-secondary-hover-bg,
-    $hover-border: $btn-secondary-hover-border,
+    $hover-border: $btn-secondary-hover-border-color,
     $hover-color: $white,
     $active-background: $btn-secondary-active-bg,
-    $active-border: $btn-secondary-active-border,
+    $active-border: $btn-secondary-active-border-color,
     $active-color: $white
   );
   --az-btn-focus-outline-color: #{$blue};
