@@ -17,7 +17,7 @@ npm install github:az-digital/arizona-bootstrap#v{{< param current_version >}}
 npm install --save-dev sass
 ```
 
-Bootstrap is installed automatically as a dependency. To include Arizona Bootstrap in your `scss/custom.scss`, use:
+Bootstrap is a peer dependency. npm 7 and later install it automatically; with an older npm or Yarn 1, add `bootstrap` to your project yourself. If your project already uses a version of Bootstrap that doesn't match, npm stops with an error rather than installing a second copy. To include Arizona Bootstrap in your `scss/custom.scss`, use:
 
 ```scss
 // Include any default variable overrides here.
