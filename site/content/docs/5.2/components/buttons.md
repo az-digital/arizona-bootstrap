@@ -348,6 +348,10 @@ Here's an example of building a custom `.btn-*` modifier class as we do for the 
 
 {{< scss-docs name="btn-variables" file="scss/_variables.scss" >}}
 
+Arizona Bootstrap adds variables for each button's state colors. Set them before importing Arizona Bootstrap to change a button's colors without changing the color palette.
+
+{{< scss-docs name="az-btn-state-variables" file="override/_variables.scss" scssroot="scss" >}}
+
 ### Sass mixins
 
 There are three mixins for buttons: button and button outline variant mixins (both based on `$theme-colors`), plus a button size mixin.

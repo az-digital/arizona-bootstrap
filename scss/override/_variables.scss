@@ -113,6 +113,7 @@ $breadcrumb-divider: quote("/") / "";
 
 // >> Buttons
 // fusv-disable
+// scss-docs-start az-btn-state-variables
 $btn-primary-hover-bg: $chili !default;
 $btn-primary-hover-border-color: $chili !default;
 $btn-primary-active-bg: $red !default;
@@ -144,6 +145,7 @@ $btn-outline-info-hover-color: $midnight !default;
 $btn-outline-warning-color: $ash !default;
 $btn-outline-warning-hover-color: $black !default;
 $btn-outline-light-color: $ash !default;
+// scss-docs-end az-btn-state-variables
 $btn-padding-y: 10px;
 $btn-padding-x: 28px;
 $btn-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
