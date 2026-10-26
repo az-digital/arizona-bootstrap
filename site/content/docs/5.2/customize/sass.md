@@ -13,7 +13,7 @@ Utilize our source Sass files to take advantage of variables, maps, mixins, and 
 Install Arizona Bootstrap from a GitHub release tag and add Sass to your project:
 
 ```shell
-npm install github:az-digital/arizona-bootstrap#v5.2.2
+npm install github:az-digital/arizona-bootstrap#v{{< param current_version >}}
 npm install --save-dev sass
 ```
 
