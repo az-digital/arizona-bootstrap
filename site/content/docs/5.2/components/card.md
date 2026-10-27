@@ -82,7 +82,7 @@ Add `.card-icon` to an icon at the top of the `.card-body`. It works with [Arizo
 
 Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
 
-The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon.
+The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon. To match the example, sites may need to update their Material Symbols stylesheet link to allow `FILL` `0` and weight `300`.
 
 {{< example >}}
 <div class="card card-bold-hover" style="max-width: 20rem;">
@@ -517,7 +517,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) utility to the image, so it zooms in on hover. Add `.overflow-hidden` to the image wrapper and to the card, so the zoom stays inside the image area and the round corners. If the card has no button, put the stretched link on the title. For bold hover colors, add `.card-bold-hover`, and leave off `.text-bg-*` and `.text-*` utilities, because they block those colors.
 
 {{< example >}}
-<div class="card border-0 text-bg-blue h-100 hover mb-3 overflow-hidden" style="max-width: 26rem;">
+<div class="card border-0 text-bg-blue h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
@@ -531,7 +531,7 @@ Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) ut
     </div>
   </div>
 </div>
-<div class="card card-bold-hover h-100 hover mb-3 overflow-hidden" style="max-width: 26rem;">
+<div class="card card-bold-hover h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
@@ -553,7 +553,7 @@ Cards with the title on image style put the title of the card on top of the imag
 To make a card with only an image and a title, put the image in a `.ratio` and `.ratio-1x1` wrapper to make it square, and add `.object-fit-cover` to the image, so any photo fills the square. Add `.h-50` to the title, so its gradient covers the bottom half of the image, and put the stretched link on the title.
 
 {{< example >}}
-<div class="card shadow text-bg-white h-100 hover mb-3 overflow-hidden" style="max-width: 26rem;">
+<div class="card shadow text-bg-white h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
@@ -569,7 +569,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
     </div>
   </div>
 </div>
-<div class="card border-0 h-100 hover mb-3 overflow-hidden" style="max-width: 26rem;">
+<div class="card border-0 h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
   <div class="ratio ratio-1x1 overflow-hidden">
     <img class="card-img-top object-fit-cover hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
     <div class="card-img-overlay p-0 d-flex flex-column">
