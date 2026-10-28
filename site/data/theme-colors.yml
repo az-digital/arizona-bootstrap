@@ -5,10 +5,10 @@
   hex: "#0c234b"
   contrast_color: white
 - name: success
-  hex: "#70b865"
+  hex: "#7f8b5a"
   contrast_color: black
 - name: danger
-  hex: "#a95c42"
+  hex: "#85372b"
 - name: warning
   hex: "#f19e1f"
   contrast_color: black
