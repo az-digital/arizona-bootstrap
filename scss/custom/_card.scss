@@ -33,13 +33,13 @@
 // .btn reads --bs-btn-hover-bg. So a site can set any of these variables, even
 // in an inline style, for its own colors.
 .card-bold-hover {
-  --#{$prefix}card-bg: var(--#{$prefix}cool-gray);
-  --#{$prefix}card-color: var(--#{$prefix}midnight);
+  --#{$prefix}card-bg: var(--#{$prefix}cloud);
+  --#{$prefix}card-color: var(--#{$prefix}tinta);
   --#{$prefix}card-title-color: var(--#{$prefix}azurite);
   --#{$prefix}card-border-width: 0;
   --az-card-hover-bg: var(--#{$prefix}blue);
   --az-card-hover-color: var(--#{$prefix}white);
-  --az-card-hover-title-color: var(--#{$prefix}sky);
+  --az-card-hover-title-color: var(--#{$prefix}rain);
   --az-card-hover-link-rgb: var(--#{$prefix}white-rgb);
   // The fade timing (0.3s, ease-out) is from the brand mockup.
   @include transition(background-color .3s ease-out);
