@@ -6,7 +6,7 @@
 @mixin callout-variant($color, $value) {
   --bs-callout-border-color: var(--bs-#{$color});
 
-  $inaccessible-brand-callouts: "bloom", "sky", "oasis", "cool-gray", "warm-gray";
+  $inaccessible-brand-callouts: "bougainvillea", "rain", "arroyo-blue", "cloud", "caliche";
 
   @if map.has-key($theme-colors, $color) {
     // Theme color callouts: use body color for headings
