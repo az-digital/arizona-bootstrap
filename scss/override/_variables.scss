@@ -116,7 +116,8 @@ $breadcrumb-divider: quote("/") / "" !default;
 // fusv-disable
 $btn-padding-y: 9px !default;
 $btn-padding-x: 28px !default;
-$btn-font-family: proxima-nova-condensed, #{$font-family-sans-serif} !default;
+// inspect() keeps the quotes that Bootstrap's interpolation would strip.
+$btn-font-family: inspect(join(proxima-nova-condensed, $font-family-sans-serif, comma)) !default;
 $btn-line-height: 24px !default;
 $btn-padding-y-sm: 4px !default;
 $btn-padding-x-sm: 14px !default;
