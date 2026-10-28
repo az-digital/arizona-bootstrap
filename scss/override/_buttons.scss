@@ -27,13 +27,13 @@
     line-height: var(--bs-btn-line-height);
   }
 
-  > .badge {
+  .badge {
     top: 0;
   }
 }
 
 .btn-sm {
-  --bs-btn-line-height: 1.0625rem;
+  --bs-btn-line-height: 1.4375rem;
 
   &:has(.spinner-border),
   &:has(.spinner-grow),
