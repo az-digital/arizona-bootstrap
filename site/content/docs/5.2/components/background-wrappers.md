@@ -15,11 +15,11 @@ Background wrappers span the full-width of the screen and help to break up conte
 
 Click on the background color options below to see a live preview of what the background wrapper looks like in your selected color and/or background pattern.
 
-<div class="row mb-3">
+<div class="row row-cols-xl-5 mb-3">
   {{< wrapperdemo.inline >}}
   {{ range (index $.Site.Data "colors") }}
-  <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-3">
-    <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn d-block w-100 px-2 btn-background-wrapper-demo {{ if eq .name "chili" }}btn-red{{ else if eq .name "blue" }}btn-blue{{ else }}text-bg-{{ .name }}{{ end }}">{{ .name | title }}</button>
+  <div class="col-6 col-md-4 col-lg-3 mt-3">
+    <button id="background-wrapper-btn-{{ .name }}" data-bgcolor="{{ .name }}" class="btn d-block w-100 px-2 btn-background-wrapper-demo {{ if eq .name "sonoran-red" }}btn-red{{ else if eq .name "blue" }}btn-blue{{ else }}text-bg-{{ .name }}{{ end }}">{{ .name | title }}</button>
   </div>
   {{ end }}
   {{< /wrapperdemo.inline >}}
@@ -38,10 +38,10 @@ Click on the background color options below to see a live preview of what the ba
     <button id="triangles-background-btn-trilines" data-triangles="trilines" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Trilines</button>
   </div>
   <div class="col-6 col-lg-4 col-xl-3 mt-3">
-    <button id="monsoon-background-btn-sky-start" data-triangles="monsoon-sky-start" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Sky Start</button>
+    <button id="monsoon-background-btn-rain-start" data-triangles="monsoon-rain-start" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain Start</button>
   </div>
   <div class="col-6 col-lg-4 col-xl-3 mt-3">
-    <button id="monsoon-background-btn-sky-end" data-triangles="monsoon-sky-end" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Sky End</button>
+    <button id="monsoon-background-btn-rain-end" data-triangles="monsoon-rain-end" class="btn d-block w-100 btn-outline-blue btn-triangle-background-demo">Monsoon Rain End</button>
   </div>
 </div>
 

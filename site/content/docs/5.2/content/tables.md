@@ -42,7 +42,7 @@ Arizona Bootstrap includes table variants for many brand colors as well as the "
         <td>Cell</td>
       </tr>
       {{< table-brand-colors.inline >}}
-      {{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+      {{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" "white" "black" -}}
       {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
         <tr class="table-{{ $color.name }}">
           <th scope="row">{{ $color.name | title }}</th>
@@ -68,7 +68,7 @@ Arizona Bootstrap includes table variants for many brand colors as well as the "
 
 {{< highlight html >}}
 <!-- On rows -->{{< table-brand-colors.inline >}}
-{{- $excluded := slice "leaf" "river" "silver" "mesa" "ash" "sage" "white" "black" -}}
+{{- $excluded := slice "saguaro" "shade" "silver" "brick" "ash" "sage" "white" "black" -}}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
 <tr class="table-{{ $color.name }}">...</tr>
 {{- end -}}

@@ -48,21 +48,21 @@ Some of the button styles use a relatively light foreground color, and should on
 
 <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Classes</span>
 
-Red and Blue are the recommended solid button variants for Arizona Bootstrap projects. Sky buttons are also available.
+Red and Blue are the recommended solid button variants for Arizona Bootstrap projects. Rain buttons are also available.
 
 {{< example >}}
 <button type="button" class="btn btn-red">Red</button>
 <button type="button" class="btn btn-blue">Blue</button>
-<button type="button" class="btn btn-sky">Sky</button>
+<button type="button" class="btn btn-rain">Rain</button>
 {{< /example >}}
 
-Two white button variants are available: use `.btn-white-text-red` on a red background and `.btn-white-text-blue` on an oasis background.
+Two white button variants are available: use `.btn-white-text-red` on a red background and `.btn-white-text-blue` on an arroyo-blue background.
 
 <div class="bd-example d-flex gap-2">
   <div class="d-inline-block text-bg-red px-4 py-3">
     <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
   </div>
-  <div class="d-inline-block text-bg-oasis px-4 py-3">
+  <div class="d-inline-block text-bg-arroyo-blue px-4 py-3">
     <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
   </div>
 </div>
@@ -71,7 +71,7 @@ Two white button variants are available: use `.btn-white-text-red` on a red back
 <div class="text-bg-red px-4 py-3">
   <button type="button" class="btn btn-white-text-red">White (Text Red)</button>
 </div>
-<div class="text-bg-oasis px-4 py-3">
+<div class="text-bg-arroyo-blue px-4 py-3">
   <button type="button" class="btn btn-white-text-blue">White (Text Blue)</button>
 </div>
 ```
@@ -97,17 +97,17 @@ In need of a button, but not the hefty background colors they bring? Replace the
 <button type="button" class="btn btn-outline-blue">Blue</button>
 {{< /example >}}
 
-For outline buttons on a **dark background color**, use the `.btn-outline-white` or `.btn-outline-sky` variants.
+For outline buttons on a **dark background color**, use the `.btn-outline-white` or `.btn-outline-rain` variants.
 
 <div class="bd-example">
   <div class="d-inline-block w-25 text-bg-red p-3">
     <button type="button" class="btn btn-outline-white">White</button>
   </div>
   <div class="d-inline-block w-25 text-bg-blue p-3">
-    <button type="button" class="btn btn-outline-sky">Sky</button>
+    <button type="button" class="btn btn-outline-rain">Rain</button>
   </div>
   <div class="d-inline-block w-25 text-bg-azurite p-3">
-    <button type="button" class="btn btn-outline-sky">Sky</button>
+    <button type="button" class="btn btn-outline-rain">Rain</button>
   </div>
 </div>
 
@@ -116,10 +116,10 @@ For outline buttons on a **dark background color**, use the `.btn-outline-white`
   <button type="button" class="btn btn-outline-white">White</button>
 </div>
 <div class="text-bg-blue p-3">
-  <button type="button" class="btn btn-outline-sky">Sky</button>
+  <button type="button" class="btn btn-outline-rain">Rain</button>
 </div>
 <div class="text-bg-azurite p-3">
-  <button type="button" class="btn btn-outline-sky">Sky</button>
+  <button type="button" class="btn btn-outline-rain">Rain</button>
 </div>
 ```
 

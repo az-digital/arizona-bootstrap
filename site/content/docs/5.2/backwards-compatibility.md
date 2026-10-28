@@ -19,6 +19,40 @@ For information on changes made in upstream Bootstrap 5, see the [Migration page
 
 For reference, Arizona Quickstart 3 includes a [mapping of classes from Arizona Bootstrap 2 to Arizona Bootstrap 5](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Utility/AZBootstrapMarkupConverter.php#L183-L760) as part of a markup converter class. This mapping is used by drush commands such as [this one](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Drush/Commands/README.md#arizona-bootstrap-5-block-class-updates), which can be used to update Arizona Bootstrap 2 classes after a site has been migrated to Quickstart 3.
 
+This page also covers deprecations made within Arizona Bootstrap 5, such as the [brand color updates](#brand-color-updates) in Arizona Bootstrap 5.3.
+
+
+## Brand Color Updates
+
+{{< deprecated-in "5.3.0" >}}
+
+Ten brand colors have new names to match the University of Arizona's [updated brand color palette](https://marcom.arizona.edu/brand-guidelines/colors). All ten also have new color values since Arizona Bootstrap 5.1. The old names are deprecated and will be removed in the next major version. Until then, they work as aliases of the new names in:
+
+ - Classes, such as `.bg-bloom`, `.text-bloom`, and `.text-bg-cool-gray`
+ - CSS custom properties, such as `--bs-bloom` and `--bs-bloom-rgb`
+ - Sass variables, such as `$bloom`, `$bloom-100` through `$bloom-900`, and `$blooms`
+
+To update, replace the old name with the new one. For example, `.bg-bloom` becomes `.bg-bougainvillea`.
+
+Because the old names point to the new colors, content using the old names will show the updated colors without any changes. Check content that relies on these colors, especially text placed directly on them. For example, `.text-bg-bloom` and `.text-bg-bougainvillea` now use white text instead of black to keep [accessible color contrast]({{< docsref "/getting-started/color-contrast" >}}).
+
+{{< bs-table "table" >}}
+| Deprecated name | New name | Color change |
+| --- | --- | --- |
+| `midnight` | `tinta` | `#001c48` &rarr; `#03132e` |
+| `oasis` | `arroyo-blue` | `#378dbd` &rarr; `#106ab1` |
+| `sky` | `rain` | `#81d3eb` &rarr; `#81ceeb` |
+| `chili` | `sonoran-red` | `#8b0015` &rarr; `#850000` |
+| `bloom` | `bougainvillea` | `#ef4056` &rarr; `#c62840` |
+| `leaf` | `saguaro` | `#70b865` &rarr; `#7f8b5a` |
+| `river` | `shade` | `#007d84` &rarr; `#3f7a7a` |
+| `mesa` | `brick` | `#a95c42` &rarr; `#85372b` |
+| `cool-gray` | `cloud` | `#e2e9eb` &rarr; `#e5eff7` |
+| `warm-gray` | `caliche` | `#f4ede5` &rarr; `#f2efea` |
+{{< /bs-table >}}
+
+The Monsoon Sky [background wrapper patterns]({{< docsref "/components/background-wrappers" >}}) are renamed to match. `.bg-monsoon-sky-start` and `.bg-monsoon-sky-end` are deprecated and work as aliases of `.bg-monsoon-rain-start` and `.bg-monsoon-rain-end`. The pattern image is now `monsoon-rain.svg`, and `monsoon-sky.svg` is kept as a deprecated copy.
+
 
 ## Backwards Compatible Components
 
@@ -26,7 +60,7 @@ Arizona Bootstrap 2 utilized components that are no longer supported/maintained 
 
 ### Badges
 
-Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Chili, Midnight, and Light color and background helpers.
+Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Sonoran Red, Tinta, and Light color and background helpers.
 
 ### Primary Color Change
 
@@ -146,7 +180,7 @@ Thumbnails were deprecated in Arizona Bootstrap 2 and have been removed in Arizo
 ### Wells
 
 Wells were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: **these classes are not direct replacements**.
- - `well` &rarr; `card p-card text-bg-cool-gray`
+ - `well` &rarr; `card p-card text-bg-cloud`
  - `well-hollow` &rarr; `text-bg-white`
 
 

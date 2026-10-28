@@ -5,10 +5,10 @@
 // >> Theme Colors
 $primary: $red;
 $secondary: $blue;
-$success: $leaf;
-$info: $sky;
+$success: $saguaro;
+$info: $rain;
 $warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
+$danger: $brick;
 $light: $gray-300;
 $dark: $gray-800;
 
@@ -37,7 +37,7 @@ $font-size-base: 1.125rem;
 $line-height-base: 1.5556; // 28px at $font-size-base (18px)
 $link-color: $red;
 // fusv-disable
-$link-hover-color: $chili;
+$link-hover-color: $sonoran-red;
 // fusv-disable
 $lead-font-size: 1.25rem; // 20px
 $lead-font-weight: 500;
@@ -81,7 +81,7 @@ $enable-negative-margins: true;
 */
 // fusv-disable
 $table-variants: map-merge(
-  map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black"),
+  map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage", "white", "black"),
   map-remove($theme-colors, "success", "danger", "warning", "info")
 );
 $table-striped-bg-factor: .09;
@@ -108,7 +108,7 @@ $breadcrumb-bg: $white;
 $breadcrumb-padding-x: .609rem;
 $breadcrumb-padding-y: .75rem;
 $breadcrumb-active-color: $azurite;
-$breadcrumb-divider-color: $bloom;
+$breadcrumb-divider-color: $bougainvillea;
 $breadcrumb-divider: quote("/") / "";
 // fusv-enable
 
@@ -133,7 +133,7 @@ $btn-border-radius-lg: 256px;
 
 // >> Dropdowns
 // fusv-disable
-$dropdown-color: var(--bs-cool-gray);
+$dropdown-color: var(--bs-cloud);
 $dropdown-bg: var(--bs-blue);
 $dropdown-divider-bg: var(--bs-white);
 $dropdown-link-color: var(--bs-white);
@@ -160,18 +160,18 @@ $list-group-active-bg: var(--bs-blue);
 // fusv-disable
 $nav-link-font-weight: 700;
 $nav-link-color: var(--bs-azurite);
-$nav-link-hover-color: var(--bs-midnight);
+$nav-link-hover-color: var(--bs-tinta);
 $nav-link-disabled-color: var(--bs-dark-silver);
 
 $nav-tabs-border-color: var(--bs-gray-200);
-$nav-tabs-link-active-color: var(--bs-midnight);
+$nav-tabs-link-active-color: var(--bs-tinta);
 $nav-tabs-link-active-bg: var(--bs-white);
 $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
 
-$nav-pills-link-active-color: var(--bs-midnight);
+$nav-pills-link-active-color: var(--bs-tinta);
 $nav-pills-link-active-bg: var(--bs-gray-200);
 
-$nav-underline-link-active-color: var(--bs-midnight);
+$nav-underline-link-active-color: var(--bs-tinta);
 // fusv-enable
 
 // >> Navbar
@@ -186,7 +186,7 @@ $navbar-light-disabled-color: $nav-link-disabled-color;
 // >> Pagination
 // fusv-disable
 $pagination-color: var(--bs-azurite);
-$pagination-hover-color: var(--bs-midnight);
+$pagination-hover-color: var(--bs-tinta);
 $pagination-active-bg: var(--bs-blue);
 $pagination-active-border-color: var(--bs-blue);
 $pagination-focus-color: var(--bs-blue);

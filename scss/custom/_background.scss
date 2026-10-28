@@ -2,14 +2,14 @@
 // > Custom Background utility classes
 //
 // >>> Transparent
-@each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
+@each $color, $value in (map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage")) {
   .bg-transparent-#{$color} {
     @include background-transparent($color);
   }
 }
 
 // >>> Gradient
-@each $color, $value in (map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage")) {
+@each $color, $value in (map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage")) {
   .bg-gradient-#{$color} {
     @include background-gradient($color);
   }
