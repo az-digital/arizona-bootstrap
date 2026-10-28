@@ -130,6 +130,8 @@ You will find the complete list of Bootstrap's variables in `scss/_variables.scs
 
 Variable overrides must come after our functions are imported, but before the rest of the imports.
 
+Arizona Bootstrap's variables also include the `!default` flag, so set your overrides before importing Arizona Bootstrap. Don't import Bootstrap's `variables` before Arizona Bootstrap: Bootstrap's values would replace Arizona's brand colors, type sizes and other settings.
+
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
