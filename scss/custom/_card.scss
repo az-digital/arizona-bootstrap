@@ -50,9 +50,12 @@
     --#{$prefix}card-border-width: var(--#{$prefix}border-width);
   }
 
+  // A link with .text-reset takes its color from its parent, which already
+  // fades, so leave it out. A second fade would make it lag behind.
   .card-body,
   .card-title,
-  .card-icon {
+  .card-icon,
+  a:not(.btn, .nav-link, .text-reset) {
     @include transition(color .3s ease-out);
   }
 
@@ -72,10 +75,10 @@
     color: inherit;
   }
 
-  // Switch to the hover colors when you hover over the card, or when Tab
-  // reaches its stretched link.
+  // Switch to the hover colors when you hover over the card, or when anything
+  // in it has keyboard focus, such as its stretched link.
   &:is(:hover, :has(:focus-visible)) {
-    // Bootstrap's .link-underline-* and .icon-link underlines read these.
+    // Bootstrap's .link-underline and .icon-link underlines read these.
     --#{$prefix}link-color-rgb: var(--az-card-prominent-hover-link-rgb);
     --#{$prefix}link-hover-color-rgb: var(--az-card-prominent-hover-link-rgb);
     background-color: var(--az-card-prominent-hover-bg);
@@ -110,8 +113,8 @@
 
 // >> Card titles on touch screens
 
-// If the device can't hover (most phones and tablets), always underline a
-// clickable card title.
+// If the device can't hover (most phones and tablets), always underline the
+// title of a prominent hover card, and any .hover-text-underline in a card.
 @media (hover: none) {
   .card-prominent-hover .card-title,
   .card .hover-text-underline {
