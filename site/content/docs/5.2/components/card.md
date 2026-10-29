@@ -96,6 +96,164 @@ The example uses the outline style of a [Material Symbols]({{< docsref "/icons" 
 </div>
 {{< /example >}}
 
+#### Prominent hover color presets
+
+Add a preset class next to `.card-prominent-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Class</th>
+        <th scope="colgroup" colspan="2">Background</th>
+        <th scope="colgroup" colspan="2" class="border-start">Icon and title</th>
+        <th scope="colgroup" colspan="2" class="border-start">Text</th>
+      </tr>
+      <tr>
+        <th scope="col" class="ps-2">Normal</th>
+        <th scope="col">Hover</th>
+        <th scope="col" class="border-start">Normal</th>
+        <th scope="col">Hover</th>
+        <th scope="col" class="border-start">Normal</th>
+        <th scope="col">Hover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>.card-prominent-hover</code></th>
+        <td>Cloud</td>
+        <td>Arizona Blue</td>
+        <td class="border-start">Azurite</td>
+        <td>Rain</td>
+        <td class="border-start">Tinta</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-prominent-hover-<wbr>blue-rain</code></th>
+        <td>Arizona Blue</td>
+        <td>Rain</td>
+        <td class="border-start">Rain</td>
+        <td>Arizona Blue</td>
+        <td class="border-start">White</td>
+        <td>Black</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-prominent-hover-<wbr>white-azurite</code></th>
+        <td>White, with a border</td>
+        <td>Azurite</td>
+        <td class="border-start">Azurite</td>
+        <td>White</td>
+        <td class="border-start">Tinta</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>.card-prominent-hover-<wbr>caliche-sonoran-red</code></th>
+        <td>Caliche</td>
+        <td>Sonoran Red</td>
+        <td class="border-start">Arizona Red</td>
+        <td>White</td>
+        <td class="border-start">Tinta</td>
+        <td>White</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+A link in the card text is red, or white in `.card-prominent-hover-blue-rain`. On hover, it changes to the hover text color, so it stays readable. Add `.position-relative` and `.z-2` to the link, so it sits above the title's stretched link and you can still click it.
+
+{{< example >}}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card card-prominent-hover h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-grad-cap" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Cloud to Arizona Blue</a>
+        </h3>
+        <p class="card-text">The default colors. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-prominent-hover card-prominent-hover-blue-rain h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-majors-and-degrees" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Arizona Blue to Rain</a>
+        </h3>
+        <p class="card-text">A dark card that turns light on hover. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-prominent-hover card-prominent-hover-white-azurite h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-scholarship" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">White to Azurite</a>
+        </h3>
+        <p class="card-text">For a section that already has a gray background. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-prominent-hover card-prominent-hover-caliche-sonoran-red h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-financial-aid" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Caliche to Sonoran Red</a>
+        </h3>
+        <p class="card-text">A red set. Text can also have <a href="#top" class="position-relative z-2">a link</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
+#### Custom prominent hover colors
+
+To use your own colors, set these CSS variables. In a card's `style` attribute, they change only that card. On a parent element, or on `:root`, they change every prominent hover card inside it, the same way a theme does. A preset sets them on the card itself, so a preset card keeps its own colors inside that parent. If you make your own set, check that both states meet WCAG contrast, for example with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+| Variable | What it sets |
+| --- | --- |
+| `--az-card-prominent-bg` | Normal background |
+| `--az-card-prominent-color` | Normal text color |
+| `--az-card-prominent-title-color` | Normal icon and title color |
+| `--az-card-prominent-link-rgb` | Normal color of other links in the card, as RGB numbers, for example `var(--bs-red-rgb)` |
+| `--az-card-prominent-hover-bg` | Hover background |
+| `--az-card-prominent-hover-color` | Hover text color |
+| `--az-card-prominent-hover-title-color` | Hover icon and title color |
+| `--az-card-prominent-hover-link-rgb` | Hover color of other links in the card, as RGB numbers, for example `var(--bs-white-rgb)` |
+
+In this example, the parent `.row` sets an Azurite hover background and white hover titles. The first card takes those colors. The second card has the `.card-prominent-hover-blue-rain` preset, so it keeps its own colors.
+
+{{< example >}}
+<div class="row row-cols-1 row-cols-md-2 g-4" style="--az-card-prominent-hover-bg: var(--bs-azurite); --az-card-prominent-hover-title-color: var(--bs-white);">
+  <div class="col">
+    <div class="card card-prominent-hover h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-award" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Cloud to Azurite</a>
+        </h3>
+        <p class="card-text">Takes its hover colors from the parent.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card card-prominent-hover card-prominent-hover-blue-rain h-100">
+      <div class="card-body">
+        <i class="card-icon az-icon-majors-and-degrees" aria-hidden="true"></i>
+        <h3 class="card-title h5 fw-bold mb-2">
+          <a href="#top" class="stretched-link text-reset text-decoration-none">Arizona Blue to Rain</a>
+        </h3>
+        <p class="card-text">The preset keeps its own colors.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{< /example >}}
+
 ### List groups
 
 Create lists of content in a card with a flush list group.
