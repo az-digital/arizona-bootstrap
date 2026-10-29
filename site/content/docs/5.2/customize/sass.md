@@ -144,6 +144,13 @@ $primary: $az-color-brand-azurite;
 
 Don't import Arizona Bootstrap's `custom/variables` first to get these values: maps such as `$colors` would be built from the default values and ignore your overrides.
 
+Some related variables are set separately rather than derived from each other. For example, `$link-hover-color` is Sonoran Red whatever `$link-color` is, so set them together:
+
+```scss
+$link-color: $az-color-brand-azurite;
+$link-hover-color: $az-color-brand-tinta;
+```
+
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
