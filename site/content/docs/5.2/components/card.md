@@ -80,15 +80,15 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 
 Add `.card-icon` to an icon at the top of the `.card-body`. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG whose `fill` or `stroke` is `currentColor`. The icon uses the text color, which you can set with [`.text-{color}`]({{< docsref "/utilities/colors" >}}). Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
 
-Add `.card-bold-hover` to any card for the brand's bold hover colors: cool gray, then blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
+Add `.card-prominent-hover` to any card for the brand's prominent hover colors: Cloud, then Arizona Blue. Put `.stretched-link` and `.text-reset` on the link in the title, so the whole card is clickable and the link uses the title color. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined. Don't put a button in the card, because the whole card is already a link.
 
 The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon. To match the example, sites may need to update their Material Symbols stylesheet link to allow `FILL` `0` and weight `300`.
 
 {{< example >}}
-<div class="card card-bold-hover" style="max-width: 20rem;">
+<div class="card card-prominent-hover" style="max-width: 20rem;">
   <div class="card-body">
     <span class="card-icon material-symbols-rounded fw-light" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">person_raised_hand</span>
-    <h3 class="card-title h5 fw-bold">
+    <h3 class="card-title h5 fw-bold mb-2">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
     </h3>
     <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
@@ -514,7 +514,7 @@ Remove the border around the card content with `.border-0`. Use the [Stretched L
 
 <span class="badge badge-az-custom">Custom Arizona Bootstrap Styling</span>
 
-Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) utility to the image, so it zooms in on hover. Add `.overflow-hidden` to the image wrapper and to the card, so the zoom stays inside the image area and the round corners. If the card has no button, put the stretched link on the title. For bold hover colors, add `.card-bold-hover`, and leave off `.text-bg-*` and `.text-*` utilities, because they block those colors.
+Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) utility to the image, so it zooms in on hover. Add `.overflow-hidden` to the image wrapper and to the card, so the zoom stays inside the image area and the round corners. If the card has no button, put the stretched link on the title. For prominent hover colors, add `.card-prominent-hover`, and leave off `.text-bg-*` and text color utilities, such as `.text-white`, because they block those colors.
 
 {{< example >}}
 <div class="card border-0 text-bg-blue h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
@@ -531,13 +531,13 @@ Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) ut
     </div>
   </div>
 </div>
-<div class="card card-bold-hover h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
+<div class="card card-prominent-hover h-100 hover mb-3 overflow-hidden" style="max-width: 20rem;">
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body">
-    <h3 class="card-title text-left h5 fw-bold">
-      <a href="#top" class="stretched-link text-reset text-decoration-none">Clickable Card With Bold Hover</a>
+    <h3 class="card-title h5 fw-bold mb-2">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Clickable Card With Prominent Hover</a>
     </h3>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
@@ -557,7 +557,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-4 pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
   </div>
   <div class="card-body d-flex flex-column">
@@ -573,7 +573,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
   <div class="ratio ratio-1x1 overflow-hidden">
     <img class="card-img-top object-fit-cover hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+      <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 p-4 d-flex align-items-end h5 hover-text-underline">
         <a href="#top" class="stretched-link text-reset text-decoration-none">Card Title on Image Only</a>
       </h3>
     </div>

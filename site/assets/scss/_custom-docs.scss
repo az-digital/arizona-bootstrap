@@ -90,7 +90,7 @@
 .bd-toc-item {
   &.active {
     .bd-toc-link {
-      color: $midnight;
+      color: $tinta;
       background-color: $gray-400;
     }
 
@@ -107,7 +107,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $midnight;
+      color: $tinta;
       background-color: $gray-200;
     }
   }
@@ -118,7 +118,7 @@
   li {
     a {
       font-weight: initial;
-      color: $midnight;
+      color: $tinta;
       text-decoration: none;
     }
   }
@@ -138,7 +138,7 @@
     li {
       a {
         &:hover {
-          color: $midnight;
+          color: $tinta;
           background-color: $gray-100;
         }
       }
@@ -156,8 +156,8 @@
 
   &:hover,
   &.active {
-    color: $midnight;
-    border-left-color: $midnight;
+    color: $tinta;
+    border-left-color: $tinta;
   }
 }
 // stylelint-enable selector-no-qualifying-type
@@ -169,10 +169,10 @@
   background-color: $blue;
 }
 .bd-example-container-sidebar {
-  background-color: $bloom;
+  background-color: $bougainvillea;
 }
 .bd-example-container-body {
-  background-color: $river;
+  background-color: $shade;
 }
 
 // >> Background and border colors for grid items
@@ -274,7 +274,7 @@
 .btn-background-wrapper-demo:hover {
   @each $color, $value in $colors {
     &.text-bg-#{$color} {
-      @if $color == "midnight" or $color == "ash" or $color == "black" {
+      @if $color == "tinta" or $color == "ash" or $color == "black" {
         /* stylelint-disable-next-line declaration-no-important */
         background-color: tint-color($value, 15%) !important;
       }

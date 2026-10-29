@@ -3,6 +3,9 @@
 
 @import "custom/scrolling";
 
+// Arizona Digital design tokens as Sass variables, copied from az-digital/design.
+@import "design-tokens";
+
 // Arizona Bootstrap custom variables.
 @import "custom/variables";
 
@@ -110,3 +113,7 @@
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "override/forms";
+
+// Deprecated brand color names. Imported last so the old class names can
+// extend every rule that uses the new class names.
+@import "deprecated/colors";

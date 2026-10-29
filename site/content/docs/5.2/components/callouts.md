@@ -15,7 +15,7 @@ Callouts call attention to a small portion of content that needs to stand out ag
 
 {{< example >}}
 {{< callout.inline >}}
-{{ $excluded := slice "leaf" "river" "silver" "mesa" }}
+{{ $excluded := slice "saguaro" "shade" "silver" "brick" }}
 {{- range $color := where $.Site.Data.colors "name" "not in" $excluded }}
   <div class="callout callout-{{ $color.name }}{{ if eq .name "white" }} text-bg-dark{{ end }}">
     <p class="h4">{{ .name | title }} Callout</p>
