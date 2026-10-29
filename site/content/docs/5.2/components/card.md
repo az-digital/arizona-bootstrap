@@ -100,6 +100,8 @@ The example uses the outline style of a [Material Symbols]({{< docsref "/icons" 
 
 Add a preset class next to `.card-prominent-hover` to use a different color set. Each set meets WCAG 2.2 level AA contrast in both states.
 
+In dark mode (demo only: use the color mode toggle in the navbar), every prominent hover card is dark at rest and turns light on hover. The default colors and each preset that is light at rest swap their two states, so their contrast stays the same. `.card-prominent-hover-blue-rain` is already dark at rest, so it stays the same.
+
 <div class="table-responsive">
   <table class="table">
     <thead>
