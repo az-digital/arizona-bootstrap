@@ -8,6 +8,32 @@ toc: true
 
 Utilize our source Sass files to take advantage of variables, maps, mixins, and more.
 
+## Using Arizona Bootstrap as a dependency
+
+Install Arizona Bootstrap from a GitHub release tag and add Sass to your project:
+
+```shell
+npm install github:az-digital/arizona-bootstrap#v{{< param current_version >}}
+npm install --save-dev sass
+```
+
+Bootstrap is a peer dependency. npm 7 and later install it automatically; with an older npm or Yarn 1, add `bootstrap` to your project yourself. If your project already uses a version of Bootstrap that doesn't match, npm stops with an error rather than installing a second copy. To include Arizona Bootstrap in your `scss/custom.scss`, use:
+
+```scss
+// Include any default variable overrides here.
+@import "arizona-bootstrap/scss/arizona-bootstrap";
+
+// Add your custom styles here.
+```
+
+Compile from your project root with `node_modules` on Sass's load path:
+
+```shell
+npx sass --load-path=node_modules scss/custom.scss css/custom.css
+```
+
+The load path resolves both Arizona Bootstrap and its `bootstrap/scss/...` imports, including when npm hoists Bootstrap into your project's `node_modules`. If you use the Sass JavaScript API, set `loadPaths: ['node_modules']` in the options passed to `sass.compile()`. Configure the equivalent load path in other build tools.
+
 ## File structure
 
 Whenever possible, avoid modifying Bootstrap's core files. For Sass, that means creating your own stylesheet that imports Bootstrap so you can modify and extend it. Assuming you're using a package manager like npm, you'll have a file structure that looks like this:

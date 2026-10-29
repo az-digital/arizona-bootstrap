@@ -7,6 +7,10 @@ on:
     branches:
       - main
       - 2.x
+
+permissions:
+  contents: read
+
 jobs:
   deploy:
     name: Build & deploy CDN assets

@@ -17,11 +17,16 @@ on:
         default: false
         type: boolean
 
+permissions:
+  contents: read
+
 jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      contents: write
+      packages: write
     outputs:
       release_sha: ${{ steps.update_version.outputs.release_sha }}
       branch_name: ${{ steps.update_version.outputs.branch_name }}
