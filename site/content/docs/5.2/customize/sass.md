@@ -128,6 +128,8 @@ Every Sass variable in Bootstrap includes the `!default` flag allowing you to ov
 
 You will find the complete list of Bootstrap's variables in `scss/_variables.scss`. Some variables are set to `null`, these variables don't output the property unless they are overridden in your configuration.
 
+Setting an Arizona Bootstrap variable to `null` doesn't bring back Bootstrap's value: `!default` treats `null` as unset, so Arizona's value is used. For example, `$btn-line-height: null;` still gives buttons Arizona's `24px`. To use Bootstrap's value, set it directly.
+
 Variable overrides must come after our functions are imported, but before the rest of the imports.
 
 Arizona Bootstrap's variables also include the `!default` flag, so set your overrides before importing Arizona Bootstrap. Don't import Bootstrap's `variables` before Arizona Bootstrap: Bootstrap's values would replace Arizona's brand colors, type sizes and other settings.
