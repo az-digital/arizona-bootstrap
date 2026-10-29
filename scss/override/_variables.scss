@@ -153,9 +153,7 @@ $form-label-font-weight: 700;
 $input-border-color: $gray-600 !default;
 $form-check-input-border: var(--bs-border-width) solid $gray-600 !default;
 $form-switch-color: $gray-600 !default;
-// This is Bougainvillea, the brand color that replaces Bloom.
-// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
-$input-focus-border-color: #c62840 !default;
+$input-focus-border-color: $bougainvillea !default;
 // Keep a disabled field's border lighter than an enabled one, so it still
 // looks disabled.
 $input-disabled-border-color: $gray-400 !default;
@@ -228,7 +226,5 @@ $box-shadow-lg: 0 .75rem 3rem #{"rgba(var(--bs-black-rgb), .175)"} !default;
 // fail 3:1 at .7.
 // fusv-disable
 $focus-ring-opacity: .7 !default;
+$focus-ring-color: rgba($bougainvillea, $focus-ring-opacity) !default;
 // fusv-enable
-// This is Bougainvillea, the brand color that replaces Bloom.
-// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
-$focus-ring-color: rgba(#c62840, $focus-ring-opacity) !default;
