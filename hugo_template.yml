@@ -67,7 +67,9 @@ params:
   color_mode:           "light"
   # enable_color_mode_toggler gates inclusion of the color-modes.js and the UI button.
   # When false, the site stays in the color_mode above.
-  enable_color_mode_toggler: false
+  # On only in the issue/2350-presets demo branch, to show prominent hover
+  # cards in dark mode.
+  enable_color_mode_toggler: true
 
   current_version:      "{{az_version}}"
   current_ruby_version: "{{az_version}}"

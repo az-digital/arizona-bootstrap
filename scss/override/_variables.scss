@@ -26,8 +26,10 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 // > Dark mode
+// On only in the issue/2350-presets demo branch, to show prominent hover cards
+// in dark mode on the card docs page.
 // fusv-disable
-$enable-dark-mode: false;
+$enable-dark-mode: true;
 // fusv-enable
 
 /*
