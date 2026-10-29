@@ -319,7 +319,7 @@ Add the `.az-list-checkmarks` class to your **unordered list** to replace the de
 
 ### Dark backgrounds
 
-On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Sky, because its solid Oasis disc is too dark to read there. The focus point does not change — it keeps its Bloom and Sky on every background.
+On a dark [`.text-bg-{color}` helper]({{< docsref "helpers/color-background" >}}) the checkmark switches to Rain, because its solid Arroyo Blue disc is too dark to read there. The focus point does not change — it keeps its Bougainvillea and Rain on every background.
 
 {{< example >}}
 <div class="text-bg-blue p-4">

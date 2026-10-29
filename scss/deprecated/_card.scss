@@ -7,7 +7,7 @@
     right-width: 1px;
     bottom-width: 1px;
     left-width: 0;
-    color: $sky;
+    color: $rain;
   }
 
   .card-body {
@@ -40,10 +40,17 @@
 // Deprecated custom classes: .card-landing-grid, .landing-$color
 .card-landing-grid {
   border-width: 2px 0 0 2px;
-  box-shadow: 3px 3px 0 0 rgba($sky, .5);
+  box-shadow: 3px 3px 0 0 rgba($rain, .5);
 
-  @each $color, $value in (map-remove($colors, "cool-gray", "warm-gray", "mesa", "sage", "white", "black")) {
-    &.landing-#{$color} {
+  @each $color, $value in (map-remove($colors, "cloud", "caliche", "brick", "sage", "white", "black")) {
+    // These classes are deprecated, so they keep the deprecated color names.
+    $name: $color;
+    @each $old, $new in $deprecated-color-names {
+      @if $new == $color {
+        $name: $old;
+      }
+    }
+    &.landing-#{$name} {
       box-shadow: 3px 3px 0 0 rgba($value, .5);
     }
   }
