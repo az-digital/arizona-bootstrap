@@ -149,6 +149,14 @@ $dropdown-header-color: var(--bs-white);
 // fusv-disable
 $form-label-font-size: 1.125rem;
 $form-label-font-weight: 700;
+// Field borders need 3:1 contrast (WCAG 2.2)
+$input-border-color: $gray-600 !default;
+$form-check-input-border: var(--bs-border-width) solid $gray-600 !default;
+$form-switch-color: $gray-600 !default;
+$input-focus-border-color: $bougainvillea !default;
+// Keep a disabled field's border lighter than an enabled one, so it still
+// looks disabled.
+$input-disabled-border-color: $gray-400 !default;
 // fusv-enable
 
 // >> List Groups
@@ -212,6 +220,11 @@ $box-shadow-lg: 0 .75rem 3rem #{"rgba(var(--bs-black-rgb), .175)"} !default;
 // fusv-enable
 
 // >> Focus
+// At .7, the Bougainvillea ring passes 3:1 (WCAG 2.2) on white, cool gray
+// and warm gray. Below .68 it fails on cool gray and warm gray.
+// The .is-valid and .is-invalid focus rings use this opacity too, and both
+// fail 3:1 at .7.
 // fusv-disable
-$focus-ring-opacity: .5 !default;
+$focus-ring-opacity: .7 !default;
+$focus-ring-color: rgba($bougainvillea, $focus-ring-opacity) !default;
 // fusv-enable
