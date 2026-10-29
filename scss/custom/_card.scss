@@ -164,6 +164,55 @@
   --az-card-prominent-hover-link-rgb: var(--#{$prefix}white-rgb);
 }
 
+// >> Prominent hover colors in dark mode
+
+// In dark mode, every prominent hover card is dark at rest and turns light on
+// hover, so no card glares on a dark page. The default colors and each preset
+// that is light at rest swap their two states, so their contrast stays the
+// same. .card-prominent-hover-blue-rain is already dark at rest, so it stays.
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+    --az-card-prominent-bg: var(--#{$prefix}blue);
+    --az-card-prominent-color: var(--#{$prefix}white);
+    --az-card-prominent-title-color: var(--#{$prefix}rain);
+    --az-card-prominent-link-rgb: var(--#{$prefix}white-rgb);
+    --az-card-prominent-hover-bg: var(--#{$prefix}cloud);
+    --az-card-prominent-hover-color: var(--#{$prefix}tinta);
+    --az-card-prominent-hover-title-color: var(--#{$prefix}azurite);
+    --az-card-prominent-hover-link-rgb: var(--#{$prefix}red-rgb);
+  }
+
+  @include color-mode(dark) {
+    // Show a thin light edge. Arizona Blue is as dark as the dark page, so
+    // without it, the card blends in.
+    .card-prominent-hover {
+      --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+    }
+
+    .card-prominent-hover-white-azurite {
+      --az-card-prominent-bg: var(--#{$prefix}azurite);
+      --az-card-prominent-color: var(--#{$prefix}white);
+      --az-card-prominent-title-color: var(--#{$prefix}white);
+      --az-card-prominent-link-rgb: var(--#{$prefix}white-rgb);
+      --az-card-prominent-hover-bg: var(--#{$prefix}white);
+      --az-card-prominent-hover-color: var(--#{$prefix}tinta);
+      --az-card-prominent-hover-title-color: var(--#{$prefix}azurite);
+      --az-card-prominent-hover-link-rgb: var(--#{$prefix}red-rgb);
+    }
+
+    .card-prominent-hover-caliche-sonoran-red {
+      --az-card-prominent-bg: var(--#{$prefix}sonoran-red);
+      --az-card-prominent-color: var(--#{$prefix}white);
+      --az-card-prominent-title-color: var(--#{$prefix}white);
+      --az-card-prominent-link-rgb: var(--#{$prefix}white-rgb);
+      --az-card-prominent-hover-bg: var(--#{$prefix}caliche);
+      --az-card-prominent-hover-color: var(--#{$prefix}tinta);
+      --az-card-prominent-hover-title-color: var(--#{$prefix}red);
+      --az-card-prominent-hover-link-rgb: var(--#{$prefix}red-rgb);
+    }
+  }
+}
+
 // >> Card titles on touch screens
 
 // If the device can't hover (most phones and tablets), always underline the
