@@ -121,11 +121,9 @@
 
 // >> Card header and footer
 
-// Remove top margin from card title, and use Bootstrap's card title spacing
-// below it, not the larger heading margin from $heading-margins.
+// Remove top margin from card title
 .card-title {
   margin-top: 0;
-  margin-bottom: var(--#{$prefix}card-title-spacer-y);
 }
 
 // Set default background color

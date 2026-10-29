@@ -88,7 +88,7 @@ The example uses the outline style of a [Material Symbols]({{< docsref "/icons" 
 <div class="card card-prominent-hover" style="max-width: 20rem;">
   <div class="card-body">
     <span class="card-icon material-symbols-rounded fw-light" style="font-variation-settings: 'FILL' 0;" aria-hidden="true">person_raised_hand</span>
-    <h3 class="card-title h5 fw-bold">
+    <h3 class="card-title h5 fw-bold mb-2">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Future Students</a>
     </h3>
     <p class="card-text">Become a Wildcat and embrace “Bear Down!” Explore information on applying, transferring, Arizona Online, and more.</p>
@@ -536,7 +536,7 @@ Add `.hover-img-zoom-in` from the [Hover]({{< docsref "/utilities/hover" >}}) ut
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling">
   </div>
   <div class="card-body">
-    <h3 class="card-title text-left h5 fw-bold">
+    <h3 class="card-title text-left h5 fw-bold mb-2">
       <a href="#top" class="stretched-link text-reset text-decoration-none">Clickable Card With Prominent Hover</a>
     </h3>
     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
