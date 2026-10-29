@@ -80,7 +80,7 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 
 Add `.card-icon` to an icon at the top of the `.card-body`. It works with [Arizona Icons and Material Symbols]({{< docsref "/icons" >}}), and with an inline SVG whose `fill` or `stroke` is `currentColor`. The icon uses the text color, which you can set with [`.text-{color}`]({{< docsref "/utilities/colors" >}}). Add `aria-hidden="true"` to a decorative icon, so screen readers skip it.
 
-Add `.card-prominent-hover` to any card for the brand's prominent hover colors: Cloud, then Arizona Blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined.
+Add `.card-prominent-hover` to any card for the brand's prominent hover colors: Cloud, then Arizona Blue. Put `.stretched-link` on the title link, so the whole card is clickable. The card also shows its hover colors when <kbd>Tab</kbd> reaches the link. On a device that can't hover, such as a phone, the title is always underlined. Don't put a button in the card, because the whole card is already a link.
 
 The example uses the outline style of a [Material Symbols]({{< docsref "/icons" >}}) icon, with `font-variation-settings: 'FILL' 0`. It also adds `.fw-light`, for a thinner icon. To match the example, sites may need to update their Material Symbols stylesheet link to allow `FILL` `0` and weight `300`.
 

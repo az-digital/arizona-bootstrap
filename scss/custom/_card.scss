@@ -65,6 +65,13 @@
     color: var(--#{$prefix}card-title-color);
   }
 
+  // Give other headings in the card the card's text color, in both states.
+  // Without this, the heading color rule in override/_typography.scss makes
+  // them blue, which can't be seen on a blue card.
+  :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):not(.card-title) {
+    color: inherit;
+  }
+
   // Switch to the hover colors when you hover over the card, or when Tab
   // reaches its stretched link.
   &:is(:hover, :has(:focus-visible)) {
