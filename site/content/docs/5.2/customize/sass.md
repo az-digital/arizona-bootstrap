@@ -132,6 +132,18 @@ Variable overrides must come after our functions are imported, but before the re
 
 Arizona Bootstrap's variables also include the `!default` flag, so set your overrides before importing Arizona Bootstrap. Don't import Bootstrap's `variables` before Arizona Bootstrap: Bootstrap's values would replace Arizona's brand colors, type sizes and other settings.
 
+Arizona Bootstrap's own variables, such as `$azurite`, aren't defined until you import it, so your overrides can't use them. To use a brand color in an override, import the design tokens first and use their `$az-color-brand-*` variables:
+
+```scss
+@import "../node_modules/arizona-bootstrap/scss/design-tokens";
+
+$primary: $az-color-brand-azurite;
+
+@import "../node_modules/arizona-bootstrap/scss/arizona-bootstrap";
+```
+
+Don't import Arizona Bootstrap's `custom/variables` first to get these values: maps such as `$colors` would be built from the default values and ignore your overrides.
+
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
