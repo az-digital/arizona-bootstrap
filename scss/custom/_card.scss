@@ -26,8 +26,8 @@
 // >> Prominent hover colors
 
 // The default colors for .card-prominent-hover, from the brand mockup. Each
-// variable is a role, not a color name, so a theme can give every prominent
-// hover card its own colors at once, for example in [data-bs-theme="dark"].
+// variable is named for its job, not for a color, so a theme can give every
+// prominent hover card its own colors.
 :root,
 [data-bs-theme="light"] {
   --az-card-prominent-bg: var(--#{$prefix}cloud);
@@ -42,10 +42,10 @@
 
 // Give a card (.card-prominent-hover) a normal and a hover set of colors:
 // background, text, links, and a title color that a .card-icon uses too.
-// The rule reads the --az-card-prominent-* roles above and names no colors,
-// the same way Bootstrap's .card reads --bs-body-bg. So a theme can change
-// the roles for the whole page, and a class or an inline style can change
-// them for one card.
+// The rule reads the --az-card-prominent-* variables above and names no
+// colors, the same way Bootstrap's .card reads --bs-body-bg. So a theme can
+// change the variables for the whole page, and a class or an inline style
+// can change them for one card.
 .card-prominent-hover {
   --#{$prefix}card-bg: var(--az-card-prominent-bg);
   --#{$prefix}card-color: var(--az-card-prominent-color);
