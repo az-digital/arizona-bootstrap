@@ -179,6 +179,8 @@ Bootstrap includes a handful of Sass maps, key value pairs that make it easier t
 
 Some of our Sass maps are merged into empty ones by default. This is done to allow easy expansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
 
+Setting a map before the import replaces the whole map, not just the keys you list. This includes Arizona Bootstrap's own maps, such as `$headings-scale`: if you set it to `(1: (font-size: 3.5rem))`, `h1` loses its line height, weight and larger-screen sizes, and `h2` to `h6` fall back to Bootstrap's sizes. Copy the whole map from `scss/custom/_variables.scss` and change the values you need.
+
 ### Modify map
 
 All variables in the `$theme-colors` map are defined as standalone variables. To modify an existing color in our `$theme-colors` map, add the following to your custom Sass file:
