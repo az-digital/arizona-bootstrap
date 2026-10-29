@@ -122,6 +122,48 @@
   }
 }
 
+// >> Prominent hover color presets
+
+// Each preset sets all 8 --az-card-prominent-* colors on the card itself. So
+// it keeps its colors inside a theme that sets its own, and its contrast
+// stays the same. Each preset meets WCAG 2.2 AA contrast in both states. If
+// you change a color here, check the contrast again.
+.card-prominent-hover-blue-rain {
+  --az-card-prominent-bg: var(--#{$prefix}blue);
+  --az-card-prominent-color: var(--#{$prefix}white);
+  --az-card-prominent-title-color: var(--#{$prefix}rain);
+  --az-card-prominent-link-rgb: var(--#{$prefix}white-rgb);
+  --az-card-prominent-hover-bg: var(--#{$prefix}rain);
+  --az-card-prominent-hover-color: var(--#{$prefix}black);
+  --az-card-prominent-hover-title-color: var(--#{$prefix}blue);
+  --az-card-prominent-hover-link-rgb: var(--#{$prefix}black-rgb);
+}
+
+.card-prominent-hover-white-azurite {
+  --az-card-prominent-bg: var(--#{$prefix}white);
+  --az-card-prominent-color: var(--#{$prefix}tinta);
+  --az-card-prominent-title-color: var(--#{$prefix}azurite);
+  --az-card-prominent-link-rgb: var(--#{$prefix}red-rgb);
+  --az-card-prominent-hover-bg: var(--#{$prefix}azurite);
+  --az-card-prominent-hover-color: var(--#{$prefix}white);
+  --az-card-prominent-hover-title-color: var(--#{$prefix}white);
+  --az-card-prominent-hover-link-rgb: var(--#{$prefix}white-rgb);
+  // Show the card border, because a white card on a white page needs an edge.
+  // This rule must come after .card-prominent-hover, which sets it to 0.
+  --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+}
+
+.card-prominent-hover-caliche-sonoran-red {
+  --az-card-prominent-bg: var(--#{$prefix}caliche);
+  --az-card-prominent-color: var(--#{$prefix}tinta);
+  --az-card-prominent-title-color: var(--#{$prefix}red);
+  --az-card-prominent-link-rgb: var(--#{$prefix}red-rgb);
+  --az-card-prominent-hover-bg: var(--#{$prefix}sonoran-red);
+  --az-card-prominent-hover-color: var(--#{$prefix}white);
+  --az-card-prominent-hover-title-color: var(--#{$prefix}white);
+  --az-card-prominent-hover-link-rgb: var(--#{$prefix}white-rgb);
+}
+
 // >> Card titles on touch screens
 
 // If the device can't hover (most phones and tablets), always underline the
