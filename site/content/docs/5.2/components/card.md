@@ -557,7 +557,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
   <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1-thumb.jpg` >}}" alt="University of Arizona Spring Fling">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-card pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
+      <h3 class="card-title text-bg-gradient-blue fw-bold mt-auto mb-0 p-4 pt-8 text-left h5 hover-text-underline">Card Title on Image</h3>
     </div>
   </div>
   <div class="card-body d-flex flex-column">
@@ -573,7 +573,7 @@ To make a card with only an image and a title, put the image in a `.ratio` and `
   <div class="ratio ratio-1x1 overflow-hidden">
     <img class="card-img-top object-fit-cover hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-4.jpg` >}}" alt="Ceiling tiles">
     <div class="card-img-overlay p-0 d-flex flex-column">
-      <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 px-4 pb-4 d-flex align-items-end h5 hover-text-underline">
+      <h3 class="card-title text-bg-gradient-blue fw-bold h-50 mt-auto mb-0 p-4 d-flex align-items-end h5 hover-text-underline">
         <a href="#top" class="stretched-link text-reset text-decoration-none">Card Title on Image Only</a>
       </h3>
     </div>
