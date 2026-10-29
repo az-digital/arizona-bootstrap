@@ -25,22 +25,33 @@
 
 // >> Prominent hover colors
 
-// Give a card (.card-prominent-hover) a normal and a hover set of colors:
-// background, text, and a title color that a .card-icon uses too.
-// The normal colors use Bootstrap's own card variables (--bs-card-bg,
-// --bs-card-color, --bs-card-title-color). The hover rule reads the
-// --az-card-prominent-hover-* variables and leaves the normal ones alone,
-// the same way .btn reads --bs-btn-hover-bg. So a site can set any of these
-// variables, even in an inline style, for its own colors.
-.card-prominent-hover {
-  --#{$prefix}card-bg: var(--#{$prefix}cloud);
-  --#{$prefix}card-color: var(--#{$prefix}tinta);
-  --#{$prefix}card-title-color: var(--#{$prefix}azurite);
-  --#{$prefix}card-border-width: 0;
+// The default colors for .card-prominent-hover, from the brand mockup. Each
+// variable is a role, not a color name, so a theme can give every prominent
+// hover card its own colors at once, for example in [data-bs-theme="dark"].
+:root,
+[data-bs-theme="light"] {
+  --az-card-prominent-bg: var(--#{$prefix}cloud);
+  --az-card-prominent-color: var(--#{$prefix}tinta);
+  --az-card-prominent-title-color: var(--#{$prefix}azurite);
+  --az-card-prominent-link-rgb: var(--#{$prefix}link-color-rgb);
   --az-card-prominent-hover-bg: var(--#{$prefix}blue);
   --az-card-prominent-hover-color: var(--#{$prefix}white);
   --az-card-prominent-hover-title-color: var(--#{$prefix}rain);
   --az-card-prominent-hover-link-rgb: var(--#{$prefix}white-rgb);
+}
+
+// Give a card (.card-prominent-hover) a normal and a hover set of colors:
+// background, text, links, and a title color that a .card-icon uses too.
+// The rule reads the --az-card-prominent-* roles above and names no colors,
+// the same way Bootstrap's .card reads --bs-body-bg. So a theme can change
+// the roles for the whole page, and a class or an inline style can change
+// them for one card.
+.card-prominent-hover {
+  --#{$prefix}card-bg: var(--az-card-prominent-bg);
+  --#{$prefix}card-color: var(--az-card-prominent-color);
+  --#{$prefix}card-title-color: var(--az-card-prominent-title-color);
+  --#{$prefix}link-color-rgb: var(--az-card-prominent-link-rgb);
+  --#{$prefix}card-border-width: 0;
   // The fade timing (0.3s, ease-out) is from the brand mockup.
   @include transition(background-color .3s ease-out);
 
