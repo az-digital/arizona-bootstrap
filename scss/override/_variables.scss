@@ -134,9 +134,9 @@ $btn-border-radius-lg: 256px !default;
 
 // >> Cards
 // fusv-disable
-$card-spacer-y: $spacer * 1.5;
-$card-spacer-x: $spacer * 1.5;
-$card-border-radius: 16px;
+$card-spacer-y: $spacer * 1.5 !default;
+$card-spacer-x: $spacer * 1.5 !default;
+$card-border-radius: 16px !default;
 // fusv-enable
 
 // >> Dropdowns
