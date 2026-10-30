@@ -23,100 +23,12 @@
   height: 1em;
 }
 
-// >> Prominent hover colors
-
-// Give a card (.card-prominent-hover) a normal and a hover set of colors:
-// background, text, and a title color that a .card-icon uses too.
-// The normal colors use Bootstrap's own card variables (--bs-card-bg,
-// --bs-card-color, --bs-card-title-color). The hover rule reads the
-// --az-card-prominent-hover-* variables and leaves the normal ones alone,
-// the same way .btn reads --bs-btn-hover-bg. So a site can set any of these
-// variables, even in an inline style, for its own colors.
-.card-prominent-hover {
-  --#{$prefix}card-bg: var(--#{$prefix}cloud);
-  --#{$prefix}card-color: var(--#{$prefix}tinta);
-  --#{$prefix}card-title-color: var(--#{$prefix}azurite);
-  --#{$prefix}card-border-width: 0;
-  --az-card-prominent-hover-bg: var(--#{$prefix}blue);
-  --az-card-prominent-hover-color: var(--#{$prefix}white);
-  --az-card-prominent-hover-title-color: var(--#{$prefix}rain);
-  --az-card-prominent-hover-link-rgb: var(--#{$prefix}white-rgb);
-  // The fade timing (0.3s, ease-out) is from the brand mockup.
-  @include transition(background-color .3s ease-out);
-
-  // Show a border only in Windows high contrast (forced colors) mode. That mode
-  // removes background colors, so the border keeps the card's edge.
-  @media (forced-colors: active) {
-    --#{$prefix}card-border-width: var(--#{$prefix}border-width);
-  }
-
-  // A link with .text-reset takes its color from its parent, which already
-  // fades, so leave it out. A second fade would make it lag behind.
-  .card-body,
-  .card-title,
-  .card-icon,
-  a:not(.btn, .nav-link, .text-reset) {
-    @include transition(color .3s ease-out);
-  }
-
-  // Color the icon and the title with the title color. The title needs this
-  // rule too: if it has a heading class such as .h5, the heading color rule
-  // in override/_typography.scss comes after Bootstrap's .card-title rule and
-  // makes the title blue.
-  .card-icon,
-  .card-title {
-    color: var(--#{$prefix}card-title-color);
-  }
-
-  // Give other headings in the card the card's text color, in both states.
-  // Without this, the heading color rule in override/_typography.scss makes
-  // them blue, which can't be seen on a blue card.
-  :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):not(.card-title) {
-    color: inherit;
-  }
-
-  // Switch to the hover colors when you hover over the card, or when anything
-  // in it has keyboard focus, such as its stretched link.
-  &:is(:hover, :has(:focus-visible)) {
-    // Bootstrap's .link-underline and .icon-link underlines read these.
-    --#{$prefix}link-color-rgb: var(--az-card-prominent-hover-link-rgb);
-    --#{$prefix}link-hover-color-rgb: var(--az-card-prominent-hover-link-rgb);
-    background-color: var(--az-card-prominent-hover-bg);
-
-    .card-body {
-      color: var(--az-card-prominent-hover-color);
-    }
-
-    .card-icon,
-    .card-title {
-      color: var(--az-card-prominent-hover-title-color);
-    }
-
-    .card-title {
-      text-decoration: underline;
-    }
-
-    // Give other links in the card the hover link color, so they stay readable
-    // on the hover background.
-    a:not(.btn, .nav-link) {
-      color: rgba(var(--az-card-prominent-hover-link-rgb), var(--#{$prefix}link-opacity, 1));
-    }
-
-    // Draw the link focus ring in the link's own color, the same as
-    // az-color-contrast() does. Rationale: the default red ring is too dark to
-    // see on a dark hover background, such as blue.
-    a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
-      box-shadow: 0 0 $focus-ring-blur 2px;
-    }
-  }
-}
-
 // >> Card titles on touch screens
 
-// If the device can't hover (most phones and tablets), always underline the
-// title of a prominent hover card, and any .hover-text-underline in a card.
+// If the device can't hover (most phones and tablets), always underline any
+// .hover-text-underline in a card. (A card with hover colors underlines its
+// own title there too; see custom/_hover.scss.)
 @media (hover: none) {
-  .card-prominent-hover .card-title,
   .card .hover-text-underline {
     text-decoration: underline;
   }

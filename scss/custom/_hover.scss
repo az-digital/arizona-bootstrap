@@ -12,12 +12,132 @@ img.hover-img-zoom-in {
 // - :has(:focus-visible) catches that link.
 // - The plain :focus-visible covers a .hover element that is itself the link,
 //   because :has() only looks at the elements inside it.
-.hover:is(:hover, :focus-visible, :has(:focus-visible)) {
-  .hover-text-underline {
-    text-decoration: underline;
+// The card hover colors below reuse this mixin, so the two can't drift apart.
+@mixin az-hover-on {
+  &:is(:hover, :focus-visible, :has(:focus-visible)) {
+    @content;
   }
-  // stylelint-disable-next-line selector-no-qualifying-type
-  img.hover-img-zoom-in {
-    transform: scale(1.08);
+}
+
+.hover {
+  @include az-hover-on() {
+    .hover-text-underline {
+      text-decoration: underline;
+    }
+    // stylelint-disable-next-line selector-no-qualifying-type
+    img.hover-img-zoom-in {
+      transform: scale(1.08);
+    }
+  }
+}
+
+// >> Card hover colors
+
+// A card with .hover and one of the .bg-* classes in $card-hover-presets
+// (for example `.card.bg-cloud.hover`) changes all of its colors on hover:
+// background, text, title, icon, and links.
+//
+// The .bg-* class paints the resting state background. The preset sets
+// the other colors as custom properties on the card. This block reads those
+// properties and names no color itself, so a theme or an inline style can set
+// its own.
+%card-hover-colors {
+  --#{$prefix}card-border-width: 0;
+  // The fade timing (0.3s, ease-out) is from the brand mockup.
+  @include transition(background-color .3s ease-out);
+
+  // Show a border only in Windows high contrast (forced colors) mode. That mode
+  // removes background colors, so the border keeps the card's edge.
+  @media (forced-colors: active) {
+    --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  }
+
+  // If the device can't hover (most phones and tablets), always underline the
+  // title, as in the brand's mobile mockup.
+  @media (hover: none) {
+    .card-title {
+      text-decoration: underline;
+    }
+  }
+
+  // A link with .text-reset takes its color from its parent, which already
+  // fades, so leave it out. A second fade would make it lag behind.
+  .card-body,
+  .card-title,
+  .card-icon,
+  a:not(.btn, .nav-link, .text-reset) {
+    @include transition(color .3s ease-out);
+  }
+
+  // Color the icon and the title with the title color. The title needs this
+  // rule too: if it has a heading class such as .h5, the heading color rule
+  // in override/_typography.scss comes after Bootstrap's .card-title rule and
+  // makes the title blue.
+  .card-icon,
+  .card-title {
+    color: var(--#{$prefix}card-title-color);
+  }
+
+  // Give other headings in the card the card's text color, in both states.
+  // Without this, the heading color rule in override/_typography.scss makes
+  // them blue, which can't be seen on a blue card.
+  :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):not(.card-title) {
+    color: inherit;
+  }
+
+  // Switch to the hover colors when you hover over the card, or when it or
+  // anything in it has keyboard focus, such as its stretched link.
+  @include az-hover-on() {
+    // Bootstrap's .link-underline and .icon-link underlines read these.
+    --#{$prefix}link-color-rgb: var(--az-card-hover-link-rgb);
+    --#{$prefix}link-hover-color-rgb: var(--az-card-hover-link-rgb);
+    // `!important` is required to win against the `.bg-*` utility on the same
+    // element, which paints its background with `!important`. Same reason as
+    // .badge-link in custom/_badge.scss.
+    // stylelint-disable-next-line declaration-no-important
+    background-color: var(--az-card-hover-bg) !important;
+
+    .card-body {
+      color: var(--az-card-hover-color);
+    }
+
+    .card-icon,
+    .card-title {
+      color: var(--az-card-hover-title-color);
+    }
+
+    .card-title {
+      text-decoration: underline;
+    }
+
+    // Give other links in the card the hover link color, so they stay readable
+    // on the hover background.
+    a:not(.btn, .nav-link) {
+      color: rgba(var(--az-card-hover-link-rgb), var(--#{$prefix}link-opacity, 1));
+    }
+
+    // Draw the link focus ring in the link's own color, the same as
+    // az-color-contrast() does. Rationale: the default red ring is too dark to
+    // see on a dark hover background, such as blue.
+    a:not(.btn, .nav-link, .page-link, .dropdown-item, .arizona-logo):focus-visible {
+      box-shadow: 0 0 $focus-ring-blur 2px;
+    }
+  }
+}
+
+// One preset per entry in $card-hover-presets (custom/_variables.scss).
+// `[class~="bg-cloud"]` matches the same elements as `.bg-cloud`, with the same
+// specificity. The only reason we write it this way: the color aliases in
+// deprecated/_colors.scss do `.bg-cool-gray { @extend .bg-cloud }`, and Sass
+// would copy this preset onto `.card.hover.bg-cool-gray` too. We don't want
+// that right now, because rankings in az_quickstart use that class set.
+// `@extend` can't see an attribute selector.
+@each $name, $preset in $card-hover-presets {
+  .card[class~="bg-#{$name}"].hover {
+    @extend %card-hover-colors;
+
+    @each $prop, $value in $preset {
+      --#{$prop}: #{$value};
+    }
   }
 }
