@@ -156,6 +156,20 @@ You will find the complete list of Bootstrap's variables in `scss/_variables.scs
 
 Variable overrides must come after our functions are imported, but before the rest of the imports.
 
+## Sass modules
+
+Arizona Bootstrap currently follows Bootstrap 5's Sass `@import` API. Bootstrap 5 will remain on `@import` for compatibility; Bootstrap 6 uses Sass modules with `@use` and `@forward` and requires Dart Sass ([Bootstrap issue #40962](https://github.com/twbs/bootstrap/issues/40962)). Arizona Bootstrap will keep its current Sass API while based on Bootstrap 5 and migrate alongside its move to Bootstrap 6, rather than independently changing the import model.
+
+As part of that migration, configurable variables will remain public and use `!default`, allowing projects to set them through the module configuration API:
+
+```scss
+@use "arizona-bootstrap/scss/arizona-bootstrap" with (
+  $primary: #0074d9
+);
+```
+
+The module entry point will forward those configurable variables, and Arizona Bootstrap's Sass files will use the module system. The existing `@import` examples below describe the current Bootstrap 5 workflow.
+
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
 ```scss
