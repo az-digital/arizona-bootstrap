@@ -1,5 +1,9 @@
 {
     "recurse": true,
-    "skip": "\"^(?!http://localhost)\"|| /\/docs\/2.0\//",
+    "skip": [
+        "^(?!http://(localhost|127\\.0\\.0\\.1))",
+        "/docs/2\\.0/",
+        "/dist/css/arizona-bootstrap\\.rtl(\\.min)?\\.css$"
+    ],
     "verbosity": "error"
 }
