@@ -1,0 +1,273 @@
+---
+layout: docs
+title: Backwards Compatibility
+description: Some styles and classes available in Arizona Bootstrap 2 (Bootstrap 4) have been deprecated, replaced, or removed in Arizona Bootstrap 5 (Bootstrap 5).
+group: backwards-compatibility
+redirect_from:
+  - "/backwards-compatibility/"
+  - "/docs/5.3/backwards-compatibility/"
+toc: true
+---
+
+## Overview
+
+Although backwards compatibility is included for some components and utilities available in Arizona Bootstrap 2, it is highly recommended that you utilize the new classes available in Arizona Bootstrap 5. They are simply included here to lessen the burden on site builders for migrating from Drupal sites using Arizona Bootstrap 2 to sites using Arizona Bootstrap 5.
+
+All items that are included with backwards compatibility are built by extending the classes and styles available in Arizona Bootstrap 5. Any items that were marked as "deprecated" in Arizona Bootstrap 2 do not include backwards compatibility; these items are listed in the [Removed Components](#removed-components) and [Removed Utilities](#removed-utilities) sections.
+
+For information on changes made in upstream Bootstrap 5, see the [Migration page](../migration).
+
+For reference, Arizona Quickstart 3 includes a [mapping of classes from Arizona Bootstrap 2 to Arizona Bootstrap 5](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Utility/AZBootstrapMarkupConverter.php#L183-L760) as part of a markup converter class. This mapping is used by drush commands such as [this one](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_core/src/Drush/Commands/README.md#arizona-bootstrap-5-block-class-updates), which can be used to update Arizona Bootstrap 2 classes after a site has been migrated to Quickstart 3.
+
+This page also covers deprecations made within Arizona Bootstrap 5, such as the [brand color updates](#brand-color-updates) in Arizona Bootstrap 5.3.
+
+
+## Brand Color Updates
+
+{{< deprecated-in "5.3.0" >}}
+
+Ten brand colors have new names to match the University of Arizona's [updated brand color palette](https://marcom.arizona.edu/brand-guidelines/colors). All ten also have new color values since Arizona Bootstrap 5.1. The old names are deprecated and will be removed in the next major version. Until then, they work as aliases of the new names in:
+
+ - Classes, such as `.bg-bloom`, `.text-bloom`, and `.text-bg-cool-gray`
+ - CSS custom properties, such as `--bs-bloom` and `--bs-bloom-rgb`
+ - Sass variables, such as `$bloom`, `$bloom-100` through `$bloom-900`, and `$blooms`
+
+To update, replace the old name with the new one. For example, `.bg-bloom` becomes `.bg-bougainvillea`.
+
+Because the old names point to the new colors, content using the old names will show the updated colors without any changes. Check content that relies on these colors, especially text placed directly on them. For example, `.text-bg-bloom` and `.text-bg-bougainvillea` now use white text instead of black to keep [accessible color contrast]({{< docsref "/getting-started/color-contrast" >}}).
+
+{{< bs-table "table" >}}
+| Deprecated name | New name | Color change |
+| --- | --- | --- |
+| `midnight` | `tinta` | `#001c48` &rarr; `#03132e` |
+| `oasis` | `arroyo-blue` | `#378dbd` &rarr; `#106ab1` |
+| `sky` | `rain` | `#81d3eb` &rarr; `#81ceeb` |
+| `chili` | `sonoran-red` | `#8b0015` &rarr; `#850000` |
+| `bloom` | `bougainvillea` | `#ef4056` &rarr; `#c62840` |
+| `leaf` | `saguaro` | `#70b865` &rarr; `#7f8b5a` |
+| `river` | `shade` | `#007d84` &rarr; `#3f7a7a` |
+| `mesa` | `brick` | `#a95c42` &rarr; `#85372b` |
+| `cool-gray` | `cloud` | `#e2e9eb` &rarr; `#e5eff7` |
+| `warm-gray` | `caliche` | `#f4ede5` &rarr; `#f2efea` |
+{{< /bs-table >}}
+
+The Monsoon Sky [background wrapper patterns]({{< docsref "/components/background-wrappers" >}}) are renamed to match. `.bg-monsoon-sky-start` and `.bg-monsoon-sky-end` are deprecated and work as aliases of `.bg-monsoon-rain-start` and `.bg-monsoon-rain-end`. The pattern image is now `monsoon-rain.svg`, and `monsoon-sky.svg` is kept as a deprecated copy.
+
+
+## Backwards Compatible Components
+
+Arizona Bootstrap 2 utilized components that are no longer supported/maintained in {{< ourname >}}, but can be replicated by utilizing a combination of available classes. They have been included with backwards compatibility in Arizona Bootstrap 5 to avoid breaking changes.
+
+### Badges
+
+Arizona Bootstrap 5 largely follows [upstream Bootstrap's changes to badges]({{< docsref "/migration#badges" >}}). The `badge-variant()` mixin override from Arizona Bootstrap 2 has been removed since badges will now use [color and background helpers]({{< docsref "/helpers/color-background" >}}) to ensure accessible color combinations. The `.badge-link` class dropped by upstream Bootstrap has been converted to a [custom Arizona Bootstrap class]({{< docsref "/components/badge#badge-links" >}}) that works with badges using the Sonoran Red, Tinta, and Light color and background helpers.
+
+### Primary Color Change
+
+In Arizona Bootstrap 2, classes using the "primary" color were styled with Arizona Blue. In Arizona Bootstrap 5, "primary" now corresponds with Arizona Red and "secondary" (unused in Arizona Bootstrap 2) corresponds with Arizona Blue. Below are examples of replacements which can be made to update existing content while maintaining the same Arizona Blue color:
+ - `.bg-primary`: Replace with `.text-bg-blue`.
+ - `.btn-primary`: Replace with `.btn-blue`.
+ - `.text-primary`: Replace with `.text-blue`.
+
+
+## Deprecated Components
+
+The following components are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
+
+### Accordion Implementation
+
+Arizona Bootstrap 2 used the card component to extend the default collapse behavior and create an accordion. To properly achieve the accordion style, a custom class `.accordion` was also needed as a wrapper. In Arizona Bootstrap 5, the [accordion component](../components/accordion/) is natively provided by Bootstrap. Site owners who have used accordions in their Arizona Bootstrap 2 sites are encouraged to review relevant HTML and update to the latest implementation.
+
+### Arizona Header Classes
+
+These custom Arizona Bootstrap classes for the Arizona Header are now deprecated:
+- `.block-a-line-logo`: This class has no replacement. Instead, the `.arizona-line-logo` class should be used with the appropriate logo image.
+- `.redbar-buttons`: This class has no replacement (the element now uses standard Arizona Bootstrap classes instead).
+- `.btn-redbar`: This class has been replaced with `.btn-arizona-header`.
+
+For both of these deprecated classes, the original CSS has been preserved. However, if these classes are used with the Arizona Header on a Quickstart 3 site, it will not be displayed correctly due to updates to the markup.
+
+### Card Classes
+
+These custom Arizona Bootstrap classes are now deprecated:
+
+ - `.card-borderless`: This class can be replaced with `.border-0`.
+ - `.card-clickable` and `.card-clickable-link`: These classes can be replaced with styling using the standard [Stretched Link helper]({{< docsref "/helpers/stretched-link/" >}}) along with our custom [Hover utilities]({{< docsref "/utilities/hover/" >}}). See the [examples on the Card page]({{< docsref "/components/card/#borderless-and-clickable-cards" >}}).
+ - `.card-landing-grid` and `.landing-$color`: The "landing grid" card style from Arizona Bootstrap 2 has been deprecated and should no longer be used.
+
+### Nav Tabs Large
+
+The `.nav-tabs-lg` custom Arizona Bootstrap class is now deprecated.
+
+
+## Deprecated Utilities
+
+The following utilities are deprecated in Arizona Bootstrap 5 and will be removed in the next major version.
+
+### Border Thick
+
+The `.border-thick` custom Arizona Bootstrap class has been deprecated. The `.border-4` class from the new [border width]({{< docsref "/utilities/borders/#width" >}}) utilities can be used as a direct replacement.
+
+### UL Triangles
+
+The `.ul-triangles` custom Arizona Bootstrap class has been deprecated and replaced by `.az-list-triangles`.
+
+
+## Removed Components
+
+The following components have been removed in Arizona Bootstrap 5.
+
+### Background Wrapper Patterns
+
+The Triangles Fade, Triangle Mosaic, and Catalinas Abstract background wrapper patterns were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5.
+
+### Button Classes
+
+The following `.btn-*` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5:
+
+ - `.btn-default`: Replace with `.btn-red`.
+ - `.btn-hollow-default`: Replace with `.btn-outline-red`.
+ - `.btn-hollow-primary`: Replace with `.btn-outline-blue`.
+ - `.btn-hollow-reverse`: Replace with `.btn-outline-white`.
+
+### Callout Variants
+
+For our custom [Callouts component]({{< docsref "/components/callouts/" >}}), the following callout variants have been removed:
+ - `.callout-leaf`
+ - `.callout-river`
+ - `.callout-silver`
+ - `.callout-mesa`
+ - `.callout-light`
+ - `.callout-dark`
+
+### Card Color Classes
+
+Card color classes such as `.card-primary` and `.card-primary-outline` were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. See [Card styles]({{< docsref "/components/card/#card-styles" >}}) for information on how to customize card colors and borders.
+
+### Dropdown Dividers
+
+The `.divider` and `.nav-divider` classes deprecated in Arizona Bootstrap 2 have been replaced by the `.dropdown-divider` class.
+
+### Labels
+
+The `.label-*` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. Existing labels can be replaced with [badges]({{< docsref "/components/badge/" >}}).
+
+### Modal Dark
+
+The `.modal-bg-dark` class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. See the [Modal documentation]({{< docsref "/components/modal/" >}}) for details about customizing modals.
+
+### Navbar Default
+
+The `.navbar-default` class deprecated in Arizona Bootstrap 2 has been removed in Arizona Bootstrap 5. See the [Navbar documentation]({{< docsref "/components/navbar/" >}}) for information on theming navbars.
+
+### Navbar Off Canvas
+
+The Navbar Off Canvas component custom to Arizona Bootstrap has been removed. This component is no longer used in Arizona Quickstart. Instead of displaying a single nav in different ways for mobile and desktop devices, Quickstart now uses separate navs (with different functionality) for mobile and desktop devices. For an example from upstream Bootstrap of building a similar component, see [Offcanvas navbar]({{< docsref "/examples/offcanvas-navbar/" >}}).
+
+### Panels
+
+Panels were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: **these classes are not direct replacements**.
+ - `panel` &rarr; `card`
+ - `panel-body` &rarr; `card-body`
+ - `panel-heading` &rarr; `card-header`
+ - `panel-title` &rarr; `card-title`
+ - `panel-footer` &rarr; `card-footer`
+
+### Thumbnails
+
+Thumbnails were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. Thumbnails can be replaced with [cards]({{< docsref "/components/card/" >}}) as appropriate.
+
+### Wells
+
+Wells were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The following classes may be used as a starting point for updating the HTML for the component: **these classes are not direct replacements**.
+ - `well` &rarr; `card p-card text-bg-cloud`
+ - `well-hollow` &rarr; `text-bg-white`
+
+
+## Removed Utilities
+
+The following utilities have been removed in Arizona Bootstrap 5.
+
+### Background Color: Silver Tint
+
+The `.bg-silver-tint` class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. Use `.text-bg-gray-100` instead.
+
+### Blockquote Reverse
+
+The `.blockquote-reverse` class was removed in upstream Bootstrap 4 and has been removed from Arizona Bootstrap 5.
+
+### Bold Custom Class
+
+The `.bold` Arizona Bootstrap class was [deprecated in Arizona Bootstrap 2](https://digital.arizona.edu/arizona-bootstrap/docs/2.0/backwards-compatibility/#fonts--font-styles) and has been removed from Arizona Bootstrap 5. Use `.fw-bold` from the [font-weight classes]({{< docsref "/utilities/text/#font-weight-and-italics" >}}) instead.
+
+### Column Offset Classes
+
+Column offset classes with the format `.col-<breakpoint>-offset-<size>` (e.g., `.col-md-offset-2`) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. The format `.offset-<breakpoint>-<size>` should be used instead: see [Offsetting columns]({{< docsref "/layout/columns/#offsetting-columns" >}}).
+
+### Heading Style
+
+The `.heading-style` class has been removed from Arizona Bootstrap 5. The Bootstrap `.h1` - `.h6` styles should be used instead.
+
+### Mailto
+
+The `.mailto` class, which is placed directly on the `<a>` link tag, has been removed in favor of Bootstrap's `.text-truncate` class, which is placed on the surrounding `<div>` instead. See [Text Truncation]({{< docsref "/helpers/text-truncation/" >}}) for more details.
+
+### Page Header
+
+The `.page-header` class was deprecated in Arizona Bootstrap 2 and has been removed in Arizona Bootstrap 5. This class can be replaced with this set of classes: `mt-5 mb-4 pb-3`.
+
+### Pull Classes
+
+The `.pull-left` and `.pull-right` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. They can be replaced with `.float-start` and `.float-end`, respectively.
+
+### Text Alignment *-not Classes
+
+The custom Arizona Bootstrap `*-not` classes from UA Bootstrap (e.g., `.text-left-not-xs`, `.text-justify-not-lg`) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. See [Text alignment]({{< docsref "/utilities/text/#text-alignment" >}}) for examples of the available responsive text alignment classes.
+
+### Text Size Heading Classes
+
+The custom Arizona Bootstrap `.text-size-*` classes (e.g., `.text-size-h1`) were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. These classes can be replaced with the appropriate [heading style class]({{< docsref "/content/typography/#headings" >}}) in combination with `mb-0` to match the original styling (e.g., `.h1 mb-0`).
+
+### Text Vertical Alignment
+
+The custom Arizona Bootstrap `.margin-align-*` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. These classes can be replaced with standard [Vertical align]({{< docsref "/utilities/vertical-align" >}}) classes as follows:
+ - `margin-align-top` &rarr; `align-text-bottom`
+ - `margin-align-middle` &rarr; `align-middle`
+ - `margin-align-bottom` &rarr; `align-text-top`
+
+### Triangle List Class
+
+The `.triangle` class for styling list bullets was deprecated in Arizona Bootstrap 2 and has been replaced with `.az-list-triangles` in Arizona Bootstrap 5.
+
+### Sans
+
+The legacy `.sans` class has been removed from Arizona Bootstrap 5, which already uses a sans-serif font for both body and heading text.
+
+### Zero Margin Classes
+
+The `.margin-zero-top` and `.margin-zero-bottom` classes were deprecated in Arizona Bootstrap 2 and have been removed in Arizona Bootstrap 5. They can be replaced with `.mt-0` and `.mb-0`, respectively.
+
+
+## Removed JavaScript
+
+Components listed in the JavaScript section of Arizona Bootstrap 2 (e.g., Modals, Tooltips, Popovers) have had certain methods, options, and events removed or changed in Arizona Bootstrap 5. These items are not backwards compatible. They should not cause breaking changes, but if you are manually calling any of these methods, they will need to be updated to use the methods/events/functions that {{< ourname >}} uses. Refer to each individual component's documentation for an explanation of proper methods, options, and events.
+
+### Offcanvasmenu
+
+The Offcanvasmenu JavaScript module included in Arizona Bootstrap 2 has been removed from Arizona Bootstrap 5. This module supported the custom Navbar Off Canvas component, which has also been removed.
+
+
+## Tables
+
+Arizona Bootstrap 5 includes a custom set of [table variants]({{< docsref "content/tables/#variants" >}}). From the theme colors, only Light and Dark table variants are included. Table variants for select university brand colors are also included.
+
+**Note:** In Bootstrap 5, [`.thead-light` and `.thead-dark` have been replaced with the `.table-*` color variant classes]({{< docsref "migration/#content-reboot-etc" >}}). Also, the default `.table` class now sets a white background color for its nested elements: it did not do so in Arizona Bootstrap 2. For tables placed on a background that isn't white, site owners can add the appropriate `.table-*` color variant class to the `.table` element.
+
+
+## Icons
+
+[Google Material Icons (Sharp)](https://fonts.google.com/icons?icon.style=Sharp&icon.set=Material+Icons) are deprecated in Arizona Bootstrap 5. Site owners are encouraged to review
+the [updated documentation](../icons/) around importing and using the approved [Material Symbols (Rounded)](https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols&icon.size=24&icon.color=%23e3e3e3) in Arizona
+Bootstrap 5.
+
+ - `.material-icons-sharp`: Replace with `.material-symbols-rounded`.
