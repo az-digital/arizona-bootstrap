@@ -126,6 +126,8 @@ In your `custom.scss`, you'll import Arizona Bootstrap's source Sass files. You 
 // 9. Add additional custom code here
 ```
 
+This list follows the order in `scss/arizona-bootstrap.scss`, which can change between releases. If you include only parts of Arizona Bootstrap, compare your list with that file when you upgrade.
+
 With that setup in place, you can begin to modify any of the Sass variables and maps in your `custom.scss`. You can also start to add parts of Bootstrap under the `// Optional` section as needed. We suggest using the full import stack from our `scss/arizona-bootstrap.scss` file as your starting point. Its Arizona Bootstrap imports are relative to its own folder, so add the `arizona-bootstrap/scss/` prefix to them when you copy them.
 
 ## Compiling
