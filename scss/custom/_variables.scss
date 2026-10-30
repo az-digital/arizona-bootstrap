@@ -5,15 +5,15 @@
 // >> Brand Colors
 
 // >>> Upstream Bootstrap grayscale
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
 
 // fusv-disable
 $grays: (
@@ -26,33 +26,33 @@ $grays: (
   "700": $gray-700,
   "800": $gray-800,
   "900": $gray-900
-);
+) !default;
 // fusv-enable
 
 // Brand colors come from the Arizona Digital design tokens in
 // scss/_design-tokens.scss. The deprecated names they replace are
 // aliased after the $colors map.
-$red: $az-color-brand-red;
-$bougainvillea: $az-color-brand-bougainvillea;
-$sonoran-red: $az-color-brand-sonoran-red;
-$blue: $az-color-brand-blue;
-$rain: $az-color-brand-rain;
-$arroyo-blue: $az-color-brand-arroyo-blue;
-$azurite: $az-color-brand-azurite;
-$tinta: $az-color-brand-tinta;
-$cloud: $az-color-brand-cloud;
-$caliche: $az-color-brand-caliche;
-$saguaro: $az-color-brand-saguaro;
-$shade: $az-color-brand-shade;
-$brick: $az-color-brand-brick;
-$white: $az-color-brand-white;
+$red: $az-color-brand-red !default;
+$bougainvillea: $az-color-brand-bougainvillea !default;
+$sonoran-red: $az-color-brand-sonoran-red !default;
+$blue: $az-color-brand-blue !default;
+$rain: $az-color-brand-rain !default;
+$arroyo-blue: $az-color-brand-arroyo-blue !default;
+$azurite: $az-color-brand-azurite !default;
+$tinta: $az-color-brand-tinta !default;
+$cloud: $az-color-brand-cloud !default;
+$caliche: $az-color-brand-caliche !default;
+$saguaro: $az-color-brand-saguaro !default;
+$shade: $az-color-brand-shade !default;
+$brick: $az-color-brand-brick !default;
+$white: $az-color-brand-white !default;
 
 // No design token for these.
-$silver: #9eabae;
-$dark-silver: #49595e;  // to be used for text only
-$ash: #403635;
-$sage: #4a634e;
-$black: #000;
+$silver: #9eabae !default;
+$dark-silver: #49595e !default;  // to be used for text only
+$ash: #403635 !default;
+$sage: #4a634e !default;
+$black: #000 !default;
 
 // fusv-disable
 $bougainvillea-100: tint-color($bougainvillea, 80%) !default;
@@ -384,7 +384,7 @@ $colors: (
   "sage": $sage,
   "white": $white,
   "black": $black
-);
+) !default;
 // scss-docs-end colors-map
 
 // >> Deprecated brand color names
@@ -403,138 +403,138 @@ $deprecated-color-names: (
   "mesa": "brick",
   "cool-gray": "cloud",
   "warm-gray": "caliche"
-);
+) !default;
 
-$midnight: $tinta;
-$midnight-100: $tinta-100;
-$midnight-200: $tinta-200;
-$midnight-300: $tinta-300;
-$midnight-400: $tinta-400;
-$midnight-500: $tinta-500;
-$midnight-600: $tinta-600;
-$midnight-700: $tinta-700;
-$midnight-800: $tinta-800;
-$midnight-900: $tinta-900;
-$midnights: $tintas;
+$midnight: $tinta !default;
+$midnight-100: $tinta-100 !default;
+$midnight-200: $tinta-200 !default;
+$midnight-300: $tinta-300 !default;
+$midnight-400: $tinta-400 !default;
+$midnight-500: $tinta-500 !default;
+$midnight-600: $tinta-600 !default;
+$midnight-700: $tinta-700 !default;
+$midnight-800: $tinta-800 !default;
+$midnight-900: $tinta-900 !default;
+$midnights: $tintas !default;
 
-$oasis: $arroyo-blue;
-$oasis-100: $arroyo-blue-100;
-$oasis-200: $arroyo-blue-200;
-$oasis-300: $arroyo-blue-300;
-$oasis-400: $arroyo-blue-400;
-$oasis-500: $arroyo-blue-500;
-$oasis-600: $arroyo-blue-600;
-$oasis-700: $arroyo-blue-700;
-$oasis-800: $arroyo-blue-800;
-$oasis-900: $arroyo-blue-900;
-$oases: $arroyo-blues;
+$oasis: $arroyo-blue !default;
+$oasis-100: $arroyo-blue-100 !default;
+$oasis-200: $arroyo-blue-200 !default;
+$oasis-300: $arroyo-blue-300 !default;
+$oasis-400: $arroyo-blue-400 !default;
+$oasis-500: $arroyo-blue-500 !default;
+$oasis-600: $arroyo-blue-600 !default;
+$oasis-700: $arroyo-blue-700 !default;
+$oasis-800: $arroyo-blue-800 !default;
+$oasis-900: $arroyo-blue-900 !default;
+$oases: $arroyo-blues !default;
 
-$sky: $rain;
-$sky-100: $rain-100;
-$sky-200: $rain-200;
-$sky-300: $rain-300;
-$sky-400: $rain-400;
-$sky-500: $rain-500;
-$sky-600: $rain-600;
-$sky-700: $rain-700;
-$sky-800: $rain-800;
-$sky-900: $rain-900;
-$skys: $rains;
+$sky: $rain !default;
+$sky-100: $rain-100 !default;
+$sky-200: $rain-200 !default;
+$sky-300: $rain-300 !default;
+$sky-400: $rain-400 !default;
+$sky-500: $rain-500 !default;
+$sky-600: $rain-600 !default;
+$sky-700: $rain-700 !default;
+$sky-800: $rain-800 !default;
+$sky-900: $rain-900 !default;
+$skys: $rains !default;
 
-$chili: $sonoran-red;
-$chili-100: $sonoran-red-100;
-$chili-200: $sonoran-red-200;
-$chili-300: $sonoran-red-300;
-$chili-400: $sonoran-red-400;
-$chili-500: $sonoran-red-500;
-$chili-600: $sonoran-red-600;
-$chili-700: $sonoran-red-700;
-$chili-800: $sonoran-red-800;
-$chili-900: $sonoran-red-900;
-$chilis: $sonoran-reds;
+$chili: $sonoran-red !default;
+$chili-100: $sonoran-red-100 !default;
+$chili-200: $sonoran-red-200 !default;
+$chili-300: $sonoran-red-300 !default;
+$chili-400: $sonoran-red-400 !default;
+$chili-500: $sonoran-red-500 !default;
+$chili-600: $sonoran-red-600 !default;
+$chili-700: $sonoran-red-700 !default;
+$chili-800: $sonoran-red-800 !default;
+$chili-900: $sonoran-red-900 !default;
+$chilis: $sonoran-reds !default;
 
-$bloom: $bougainvillea;
-$bloom-100: $bougainvillea-100;
-$bloom-200: $bougainvillea-200;
-$bloom-300: $bougainvillea-300;
-$bloom-400: $bougainvillea-400;
-$bloom-500: $bougainvillea-500;
-$bloom-600: $bougainvillea-600;
-$bloom-700: $bougainvillea-700;
-$bloom-800: $bougainvillea-800;
-$bloom-900: $bougainvillea-900;
-$blooms: $bougainvilleas;
+$bloom: $bougainvillea !default;
+$bloom-100: $bougainvillea-100 !default;
+$bloom-200: $bougainvillea-200 !default;
+$bloom-300: $bougainvillea-300 !default;
+$bloom-400: $bougainvillea-400 !default;
+$bloom-500: $bougainvillea-500 !default;
+$bloom-600: $bougainvillea-600 !default;
+$bloom-700: $bougainvillea-700 !default;
+$bloom-800: $bougainvillea-800 !default;
+$bloom-900: $bougainvillea-900 !default;
+$blooms: $bougainvilleas !default;
 
-$leaf: $saguaro;
-$leaf-100: $saguaro-100;
-$leaf-200: $saguaro-200;
-$leaf-300: $saguaro-300;
-$leaf-400: $saguaro-400;
-$leaf-500: $saguaro-500;
-$leaf-600: $saguaro-600;
-$leaf-700: $saguaro-700;
-$leaf-800: $saguaro-800;
-$leaf-900: $saguaro-900;
-$leafs: $saguaros;
+$leaf: $saguaro !default;
+$leaf-100: $saguaro-100 !default;
+$leaf-200: $saguaro-200 !default;
+$leaf-300: $saguaro-300 !default;
+$leaf-400: $saguaro-400 !default;
+$leaf-500: $saguaro-500 !default;
+$leaf-600: $saguaro-600 !default;
+$leaf-700: $saguaro-700 !default;
+$leaf-800: $saguaro-800 !default;
+$leaf-900: $saguaro-900 !default;
+$leafs: $saguaros !default;
 
-$river: $shade;
-$river-100: $shade-100;
-$river-200: $shade-200;
-$river-300: $shade-300;
-$river-400: $shade-400;
-$river-500: $shade-500;
-$river-600: $shade-600;
-$river-700: $shade-700;
-$river-800: $shade-800;
-$river-900: $shade-900;
-$rivers: $shades;
+$river: $shade !default;
+$river-100: $shade-100 !default;
+$river-200: $shade-200 !default;
+$river-300: $shade-300 !default;
+$river-400: $shade-400 !default;
+$river-500: $shade-500 !default;
+$river-600: $shade-600 !default;
+$river-700: $shade-700 !default;
+$river-800: $shade-800 !default;
+$river-900: $shade-900 !default;
+$rivers: $shades !default;
 
-$mesa: $brick;
-$mesa-100: $brick-100;
-$mesa-200: $brick-200;
-$mesa-300: $brick-300;
-$mesa-400: $brick-400;
-$mesa-500: $brick-500;
-$mesa-600: $brick-600;
-$mesa-700: $brick-700;
-$mesa-800: $brick-800;
-$mesa-900: $brick-900;
-$mesas: $bricks;
+$mesa: $brick !default;
+$mesa-100: $brick-100 !default;
+$mesa-200: $brick-200 !default;
+$mesa-300: $brick-300 !default;
+$mesa-400: $brick-400 !default;
+$mesa-500: $brick-500 !default;
+$mesa-600: $brick-600 !default;
+$mesa-700: $brick-700 !default;
+$mesa-800: $brick-800 !default;
+$mesa-900: $brick-900 !default;
+$mesas: $bricks !default;
 
-$cool-gray: $cloud;
-$cool-gray-100: $cloud-100;
-$cool-gray-200: $cloud-200;
-$cool-gray-300: $cloud-300;
-$cool-gray-400: $cloud-400;
-$cool-gray-500: $cloud-500;
-$cool-gray-600: $cloud-600;
-$cool-gray-700: $cloud-700;
-$cool-gray-800: $cloud-800;
-$cool-gray-900: $cloud-900;
-$cool-grays: $clouds;
+$cool-gray: $cloud !default;
+$cool-gray-100: $cloud-100 !default;
+$cool-gray-200: $cloud-200 !default;
+$cool-gray-300: $cloud-300 !default;
+$cool-gray-400: $cloud-400 !default;
+$cool-gray-500: $cloud-500 !default;
+$cool-gray-600: $cloud-600 !default;
+$cool-gray-700: $cloud-700 !default;
+$cool-gray-800: $cloud-800 !default;
+$cool-gray-900: $cloud-900 !default;
+$cool-grays: $clouds !default;
 
-$warm-gray: $caliche;
-$warm-gray-100: $caliche-100;
-$warm-gray-200: $caliche-200;
-$warm-gray-300: $caliche-300;
-$warm-gray-400: $caliche-400;
-$warm-gray-500: $caliche-500;
-$warm-gray-600: $caliche-600;
-$warm-gray-700: $caliche-700;
-$warm-gray-800: $caliche-800;
-$warm-gray-900: $caliche-900;
-$warm-grays: $caliches;
+$warm-gray: $caliche !default;
+$warm-gray-100: $caliche-100 !default;
+$warm-gray-200: $caliche-200 !default;
+$warm-gray-300: $caliche-300 !default;
+$warm-gray-400: $caliche-400 !default;
+$warm-gray-500: $caliche-500 !default;
+$warm-gray-600: $caliche-600 !default;
+$warm-gray-700: $caliche-700 !default;
+$warm-gray-800: $caliche-800 !default;
+$warm-gray-900: $caliche-900 !default;
+$warm-grays: $caliches !default;
 // fusv-enable
 
 /*
 * > FONTS
 */
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-serif: garamond-premier-pro, Georgia, "Times New Roman", serif;
+$font-family-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: garamond-premier-pro, Georgia, "Times New Roman", serif !default;
 // stylelint-enable value-keyword-case
 
-$heading-margins: 1.042em 0 .667em;
+$heading-margins: 1.042em 0 .667em !default;
 
 // >> Heading type scale
 // Mobile-first font-size/line-height/font-weight per heading level; h1-h3 pick up
@@ -548,15 +548,15 @@ $headings-scale: (
   4: (font-size: 1.75rem, line-height: 2.25rem, font-weight: 600),
   5: (font-size: 1.375rem, line-height: 1.875rem, font-weight: 600),
   6: (font-size: 1.125rem, line-height: 1.625rem, font-weight: 600)
-);
+) !default;
 
 /*
 * > COMPONENTS
 */
 
 // >> Breadcrumbs
-$breadcrumb-color: $azurite;
-$breadcrumb-hover-color: $azurite;
+$breadcrumb-color: $azurite !default;
+$breadcrumb-hover-color: $azurite !default;
 
 // >> Cards
 
@@ -577,5 +577,5 @@ $card-hover-presets: (
 );
 
 // >> Navs
-$nav-tabs-link-bg: var(--bs-secondary-bg);
-$nav-tabs-lg-link-padding: 1.25em 1.75em;
+$nav-tabs-link-bg: var(--bs-secondary-bg) !default;
+$nav-tabs-lg-link-padding: 1.25em 1.75em !default;

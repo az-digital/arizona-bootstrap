@@ -154,7 +154,30 @@ Every Sass variable in Bootstrap includes the `!default` flag allowing you to ov
 
 You will find the complete list of Bootstrap's variables in `scss/_variables.scss`. Some variables are set to `null`, these variables don't output the property unless they are overridden in your configuration.
 
+Setting an Arizona Bootstrap variable to `null` doesn't bring back Bootstrap's value: `!default` treats `null` as unset, so Arizona's value is used. For example, `$btn-line-height: null;` still gives buttons Arizona's `24px`. To use Bootstrap's value, set it directly.
+
 Variable overrides must come after our functions are imported, but before the rest of the imports.
+
+Arizona Bootstrap's variables also include the `!default` flag, so set your overrides before importing Arizona Bootstrap. Don't import Bootstrap's `variables` before Arizona Bootstrap: Bootstrap's values would replace Arizona's brand colors, type sizes and other settings.
+
+Arizona Bootstrap's own variables, such as `$azurite`, aren't defined until you import it, so your overrides can't use them. To use a brand color in an override, import the design tokens first and use their `$az-color-brand-*` variables:
+
+```scss
+@import "arizona-bootstrap/scss/design-tokens";
+
+$primary: $az-color-brand-azurite;
+
+@import "arizona-bootstrap/scss/arizona-bootstrap";
+```
+
+Don't import Arizona Bootstrap's `custom/variables` first to get these values: maps such as `$colors` would be built from the default values and ignore your overrides.
+
+Some related variables are set separately rather than derived from each other. For example, `$link-hover-color` is Sonoran Red whatever `$link-color` is, so set them together:
+
+```scss
+$link-color: $az-color-brand-azurite;
+$link-hover-color: $az-color-brand-tinta;
+```
 
 Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
 
@@ -190,6 +213,8 @@ Repeat as necessary for any variable in Bootstrap, including the global options 
 Bootstrap includes a handful of Sass maps, key value pairs that make it easier to generate families of related CSS. We use Sass maps for our colors, grid breakpoints, and more. Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
 
 Some of our Sass maps are merged into empty ones by default. This is done to allow easy expansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
+
+Setting a map before the import replaces the whole map, not just the keys you list. This includes Arizona Bootstrap's own maps, such as `$headings-scale`: if you set it to `(1: (font-size: 3.5rem))`, `h1` loses its line height, weight and larger-screen sizes, and `h2` to `h6` fall back to Bootstrap's sizes. Copy the whole map from `scss/custom/_variables.scss` and change the values you need.
 
 ### Modify map
 
