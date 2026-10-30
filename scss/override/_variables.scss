@@ -3,14 +3,14 @@
 */
 
 // >> Theme Colors
-$primary: $red;
-$secondary: $blue;
-$success: $leaf;
-$info: $sky;
-$warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
-$light: $gray-300;
-$dark: $gray-800;
+$primary: $red !default;
+$secondary: $blue !default;
+$success: $saguaro !default;
+$info: $rain !default;
+$warning: #f19e1f !default; // to be used for warnings only
+$danger: $brick !default;
+$light: $gray-300 !default;
+$dark: $gray-800 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -22,32 +22,33 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark
-);
+) !default;
 // scss-docs-end theme-colors-map
 
 // > Dark mode
 // fusv-disable
-$enable-dark-mode: false;
+$enable-dark-mode: false !default;
 // fusv-enable
 
 /*
 * > FONTS
 */
-$font-size-base: 1.125rem;
-$line-height-base: 1.5556; // 28px at $font-size-base (18px)
-$link-color: $red;
-$link-hover-color: $chili;
+$font-size-base: 1.125rem !default;
+$line-height-base: 1.5556 !default; // 28px at $font-size-base (18px)
+$link-color: $red !default;
 // fusv-disable
-$lead-font-size: 1.25rem; // 20px
-$lead-font-weight: 500;
-$small-font-size: 1rem;
+$link-hover-color: $sonoran-red !default;
+// fusv-disable
+$lead-font-size: 1.25rem !default; // 20px
+$lead-font-weight: 500 !default;
+$small-font-size: 1rem !default;
 // fusv-enable
 
 /*
 * > HEADINGS
 */
 // fusv-disable
-$headings-font-family: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif !default;
 // fusv-enable
 
 /*
@@ -71,8 +72,8 @@ $spacers: (
   10:$spacer * 8,
   20:$spacer * 16,
   30:$spacer * 24,
-);
-$enable-negative-margins: true;
+) !default;
+$enable-negative-margins: true !default;
 // fusv-enable
 
 /*
@@ -80,13 +81,13 @@ $enable-negative-margins: true;
 */
 // fusv-disable
 $table-variants: map-merge(
-  map-remove($colors, "leaf", "river", "silver", "mesa", "ash", "sage", "white", "black"),
+  map-remove($colors, "saguaro", "shade", "silver", "brick", "ash", "sage", "white", "black"),
   map-remove($theme-colors, "success", "danger", "warning", "info")
-);
-$table-striped-bg-factor: .09;
-$table-striped-bg: rgba($gray-300, .35);
-$table-hover-bg-factor: .18;
-$table-hover-bg: rgba($gray-300, .6);
+) !default;
+$table-striped-bg-factor: .09 !default;
+$table-striped-bg: rgba(var(--bs-gray-300-rgb), .35) !default;
+$table-hover-bg-factor: .18 !default;
+$table-hover-bg: rgba(var(--bs-gray-300-rgb), .6) !default;
 // fusv-enable
 
 /*
@@ -95,66 +96,72 @@ $table-hover-bg: rgba($gray-300, .6);
 
 // >> Accordion
 // fusv-disable
-$accordion-button-bg: $gray-200;
-$accordion-button-active-bg: $gray-200;
-$accordion-button-active-color: var(--bs-accordion-btn-color);
+$accordion-button-bg: var(--bs-secondary-bg) !default;
+$accordion-button-active-bg: var(--bs-secondary-bg) !default;
+$accordion-button-active-color: var(--bs-accordion-btn-color) !default;
 // fusv-enable
 
 // >> Breadcrumbs
 // fusv-disable
-$breadcrumb-font-size: 1rem;
-$breadcrumb-bg: $white;
-$breadcrumb-padding-x: .609rem;
-$breadcrumb-padding-y: .75rem;
-$breadcrumb-active-color: $azurite;
-$breadcrumb-divider-color: $bloom;
-$breadcrumb-divider: quote("/") / "";
+$breadcrumb-font-size: 1rem !default;
+$breadcrumb-bg: $white !default;
+$breadcrumb-padding-x: .609rem !default;
+$breadcrumb-padding-y: .75rem !default;
+$breadcrumb-active-color: $azurite !default;
+$breadcrumb-divider-color: $bougainvillea !default;
+$breadcrumb-divider: quote("/") / "" !default;
 // fusv-enable
 
 // >> Buttons
 // fusv-disable
-$btn-padding-y: 10px;
-$btn-padding-x: 28px;
-$btn-font-family: proxima-nova-condensed, #{$font-family-sans-serif};
-$btn-line-height: 22px;
-$btn-padding-y-sm: 5px;
-$btn-padding-x-sm: 11px;
-$btn-font-size-sm: .875rem;
-$btn-padding-y-lg: 12px;
-$btn-padding-x-lg: 34px;
-$btn-font-size-lg: 1.375rem;
-$btn-font-weight: 700;
-$btn-border-width: 2px;
-$btn-border-radius: 256px;
-$btn-border-radius-sm: 48px;
-$btn-border-radius-lg: 256px;
+$btn-padding-y: 9px !default;
+$btn-padding-x: 28px !default;
+// inspect() keeps the quotes that Bootstrap's interpolation would strip.
+$btn-font-family: inspect(join(proxima-nova-condensed, $font-family-sans-serif, comma)) !default;
+$btn-line-height: 24px !default;
+$btn-padding-y-sm: 4px !default;
+$btn-padding-x-sm: 14px !default;
+$btn-font-size-sm: 1rem !default;
+$btn-padding-y-lg: 12px !default;
+$btn-padding-x-lg: 34px !default;
+$btn-font-size-lg: 1.375rem !default;
+$btn-font-weight: 700 !default;
+$btn-border-width: 2px !default;
+$btn-border-radius: 256px !default;
+$btn-border-radius-sm: 48px !default;
+$btn-border-radius-lg: 256px !default;
+// fusv-enable
+
+// >> Cards
+// fusv-disable
+$card-spacer-y: $spacer * 1.5 !default;
+$card-spacer-x: $spacer * 1.5 !default;
+$card-border-radius: 16px !default;
 // fusv-enable
 
 // >> Dropdowns
 // fusv-disable
-$dropdown-color: $cool-gray;
-$dropdown-bg: $blue;
-$dropdown-divider-bg: $white;
-$dropdown-link-color: $white;
-$dropdown-link-hover-color: $white;
-$dropdown-link-hover-bg: $azurite;
-$dropdown-link-active-color: $blue;
-$dropdown-link-active-bg: $white;
-$dropdown-link-disabled-color: $gray-600;
-$dropdown-header-color: $white;
+$dropdown-color: var(--bs-cloud) !default;
+$dropdown-bg: var(--bs-blue) !default;
+$dropdown-divider-bg: var(--bs-white) !default;
+$dropdown-link-color: var(--bs-white) !default;
+$dropdown-link-hover-color: var(--bs-white) !default;
+$dropdown-link-hover-bg: var(--bs-azurite) !default;
+$dropdown-link-active-color: var(--bs-blue) !default;
+$dropdown-link-active-bg: var(--bs-white) !default;
+$dropdown-link-disabled-color: var(--bs-gray-600) !default;
+$dropdown-header-color: var(--bs-white) !default;
 // fusv-enable
 
 // >> Forms
 // fusv-disable
-$form-label-font-size: 1.125rem;
-$form-label-font-weight: 700;
+$form-label-font-size: 1.125rem !default;
+$form-label-font-weight: 700 !default;
 // Field borders need 3:1 contrast (WCAG 2.2)
 $input-border-color: $gray-600 !default;
 $form-check-input-border: var(--bs-border-width) solid $gray-600 !default;
 $form-switch-color: $gray-600 !default;
-// This is Bougainvillea, the brand color that replaces Bloom.
-// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
-$input-focus-border-color: #c62840 !default;
+$input-focus-border-color: $bougainvillea !default;
 // Keep a disabled field's border lighter than an enabled one, so it still
 // looks disabled.
 $input-disabled-border-color: $gray-400 !default;
@@ -162,62 +169,62 @@ $input-disabled-border-color: $gray-400 !default;
 
 // >> List Groups
 // fusv-disable
-$list-group-active-bg: $blue;
+$list-group-active-bg: var(--bs-blue) !default;
 // fusv-enable
 
 // >> Navs
 // fusv-disable
-$nav-link-font-weight: 700;
-$nav-link-color: $azurite;
-$nav-link-hover-color: $midnight;
-$nav-link-disabled-color: $dark-silver;
+$nav-link-font-weight: 700 !default;
+$nav-link-color: var(--bs-azurite) !default;
+$nav-link-hover-color: var(--bs-tinta) !default;
+$nav-link-disabled-color: var(--bs-dark-silver) !default;
 
-$nav-tabs-border-color: $gray-200;
-$nav-tabs-link-active-color: $midnight;
-$nav-tabs-link-active-bg: $white;
-$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $white;
+$nav-tabs-border-color: var(--bs-gray-200) !default;
+$nav-tabs-link-active-color: var(--bs-tinta) !default;
+$nav-tabs-link-active-bg: var(--bs-white) !default;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg !default;
 
-$nav-pills-link-active-color: $midnight;
-$nav-pills-link-active-bg: $gray-200;
+$nav-pills-link-active-color: var(--bs-tinta) !default;
+$nav-pills-link-active-bg: var(--bs-gray-200) !default;
 
-$nav-underline-link-active-color: $midnight;
+$nav-underline-link-active-color: var(--bs-tinta) !default;
 // fusv-enable
 
 // >> Navbar
 // fusv-disable
-$navbar-padding-y: 0;
-$navbar-nav-link-padding-x: 1rem;
-$navbar-light-active-color: $nav-tabs-link-active-color;
-$navbar-light-hover-color: $nav-link-hover-color;
-$navbar-light-disabled-color: $nav-link-disabled-color;
+$navbar-padding-y: 0 !default;
+$navbar-nav-link-padding-x: 1rem !default;
+$navbar-light-active-color: $nav-tabs-link-active-color !default;
+$navbar-light-hover-color: $nav-link-hover-color !default;
+$navbar-light-disabled-color: $nav-link-disabled-color !default;
 // fusv-enable
 
 // >> Pagination
 // fusv-disable
-$pagination-color: $breadcrumb-color;
-$pagination-hover-color: $midnight;
-$pagination-active-bg: $blue;
-$pagination-active-border-color: $blue;
-$pagination-focus-color: $blue;
-$pagination-focus-ring-box-shadow: 0 0 0 .25rem rgba($blue, .25);
-$pagination-focus-box-shadow: $pagination-focus-ring-box-shadow;
+$pagination-color: var(--bs-azurite) !default;
+$pagination-hover-color: var(--bs-tinta) !default;
+$pagination-active-bg: var(--bs-blue) !default;
+$pagination-active-border-color: var(--bs-blue) !default;
+$pagination-focus-color: var(--bs-blue) !default;
+$pagination-focus-ring-box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color) !default;
+$pagination-focus-box-shadow: $pagination-focus-ring-box-shadow !default;
 // fusv-enable
 
 // >> Popovers
 // fusv-disable
-$popover-font-size: $font-size-base;
+$popover-font-size: $font-size-base !default;
 // fusv-enable
 
 // >> Tooltips
 // fusv-disable
-$tooltip-bg: $blue;
+$tooltip-bg: var(--bs-blue) !default;
 // fusv-enable
 
 // >> Shadows
 // fusv-disable
-$box-shadow:                  0 .25rem 1rem rgba($black, .15) !default;
-$box-shadow-sm:             0 .1rem .25rem rgba($black, .075) !default;
-$box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
+$box-shadow:    0 .25rem 1rem #{"rgba(var(--bs-black-rgb), .15)"} !default;
+$box-shadow-sm: 0 .1rem .25rem #{"rgba(var(--bs-black-rgb), .075)"} !default;
+$box-shadow-lg: 0 .75rem 3rem #{"rgba(var(--bs-black-rgb), .175)"} !default;
 // fusv-enable
 
 // >> Focus
@@ -227,7 +234,5 @@ $box-shadow-lg:               0 .75rem 3rem rgba($black, .175) !default;
 // fail 3:1 at .7.
 // fusv-disable
 $focus-ring-opacity: .7 !default;
+$focus-ring-color: rgba($bougainvillea, $focus-ring-opacity) !default;
 // fusv-enable
-// This is Bougainvillea, the brand color that replaces Bloom.
-// See https://github.com/az-digital/arizona-bootstrap/issues/2270.
-$focus-ring-color: rgba(#c62840, $focus-ring-opacity) !default;

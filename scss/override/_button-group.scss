@@ -1,10 +1,12 @@
 // Scoped overrides for buttons in btn-group-vertical
 .btn-group-vertical .btn {
-  @include border-radius($border-radius); // Use BS5 default
+  --bs-btn-border-radius: var(--bs-border-radius);
+
   &.btn-sm {
-    @include border-radius($border-radius-sm); // Use BS5 default for small buttons
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
   }
+
   &.btn-lg {
-    @include border-radius($border-radius-lg); // Use BS5 default for large buttons
+    --bs-btn-border-radius: var(--bs-border-radius-lg);
   }
 }

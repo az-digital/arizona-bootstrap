@@ -3,6 +3,9 @@
 
 @import "custom/scrolling";
 
+// Arizona Digital design tokens as Sass variables, copied from az-digital/design.
+@import "design-tokens";
+
 // Arizona Bootstrap custom variables.
 @import "custom/variables";
 
@@ -50,7 +53,18 @@
 @import "bootstrap/scss/spinners";
 @import "bootstrap/scss/offcanvas";
 @import "bootstrap/scss/placeholders";
-@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/helpers/clearfix";
+@import "bootstrap/scss/helpers/colored-links";
+@import "bootstrap/scss/helpers/color-bg";
+@import "bootstrap/scss/helpers/focus-ring";
+@import "bootstrap/scss/helpers/icon-link";
+@import "bootstrap/scss/helpers/ratio";
+@import "bootstrap/scss/helpers/position";
+@import "bootstrap/scss/helpers/stacks";
+@import "bootstrap/scss/helpers/visually-hidden";
+@import "bootstrap/scss/helpers/stretched-link";
+@import "bootstrap/scss/helpers/text-truncation";
+@import "bootstrap/scss/helpers/vr";
 
 // Include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "override/utilities";
@@ -75,7 +89,6 @@
 @import "custom/accordion";
 @import "custom/arizona-header";
 @import "custom/background";
-@import "override/badge";
 @import "custom/badge";
 @import "override/breadcrumb";
 @import "custom/breadcrumb";
@@ -100,3 +113,7 @@
 @import "override/carousel";
 @import "custom/photo-gallery";
 @import "override/forms";
+
+// Deprecated brand color names. Imported last so the old class names can
+// extend every rule that uses the new class names.
+@import "deprecated/colors";
