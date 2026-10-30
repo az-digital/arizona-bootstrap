@@ -6,12 +6,14 @@ group: utilities
 toc: true
 ---
 
+Put the `.hover` class on a parent element, and a `.hover-*` class on each child element that should change on hover. The children's hover effects (the `.hover-*` classes) turn on when you hover over the parent, or when the parent or anything inside it has keyboard focus. For example, when you press <kbd>Tab</kbd> to reach a `.stretched-link` inside a card, the card's hover effects turn on.
+
 ## Text Decoration
 
 Add a text underline on hover with the `.hover` class on the parent element and the `.hover-text-underline` class on the target child element.
 
 {{< example >}}
-<div class="card hover" style="width: 18rem;">
+<div class="card hover" style="width: 20rem;">
   <div class="card-body">
     <h3 class="card-title mb-3 h5 fw-bold hover-text-underline">Card with Hover Underline</h3>
     <div class="card-text">
@@ -28,11 +30,11 @@ Add a text underline on hover with the `.hover` class on the parent element and 
 
 Add an image zoom-in effect on hover with the `.hover` class on the parent element and the `.hover-img-zoom-in` class on the target child image element.
 
-In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
+In this example, the `.overflow-hidden` class is added to a `<div>` element surrounding the image in order to contain the image when the hover effect is applied. The card also has `.overflow-hidden`, so the zoomed image stays inside the card's round corners. [Learn more about the overflow utility classes]({{< docsref "/utilities/overflow" >}}).
 
 {{< example >}}
-<div class="card hover" style="width: 18rem;">
-  <div class="rounded-top position-relative overflow-hidden">
+<div class="card hover overflow-hidden" style="width: 20rem;">
+  <div class="position-relative overflow-hidden">
     <img class="card-img-top img-fluid hover-img-zoom-in" src="{{< docsrefazold `/assets/img/photo-gallery-demo/gallery-img-1.jpg` >}}" alt="University of Arizona Spring Fling" title="">
   </div>
   <div class="card-body">
@@ -43,6 +45,21 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
     <div class="mt-auto">
       <a href="#top" class="stretched-link">This is a link</a>
     </div>
+  </div>
+</div>
+{{< /example >}}
+
+## Card Colors
+
+On a `.card`, `.hover` together with `.bg-cloud` also changes the card's colors on hover: the background, the body text, the title, the icon, and the links. See [Cards: Icons]({{< docsref "/components/card#icons" >}}) for the full example and the rules. Only `.bg-cloud` turns this on. `.text-bg-cloud` and the other `.bg-*` classes do not.
+
+{{< example >}}
+<div class="card bg-cloud hover" style="width: 20rem;">
+  <div class="card-body">
+    <h3 class="card-title h5 fw-bold mb-2">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Card with Hover Colors</a>
+    </h3>
+    <p class="card-text">This card's colors should change when the card receives hover or focus.</p>
   </div>
 </div>
 {{< /example >}}

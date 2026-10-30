@@ -12,7 +12,7 @@ Cards have `position: relative` by default in Bootstrap, so in this case you can
 Multiple links and tap targets are not recommended with stretched links. However, some `position` and `z-index` styles can help should this be required.
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="false" title="Card image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card with stretched link</h5>
@@ -58,7 +58,7 @@ If the stretched link doesn't seem to work, the [containing block](https://devel
 - A `filter` value other than `none` or a `will-change` value of `filter` (only works on Firefox)
 
 {{< example >}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   {{< placeholder width="100%" height="180" class="card-img-top" text="false" title="Card image cap" >}}
   <div class="card-body">
     <h5 class="card-title">Card with stretched links</h5>

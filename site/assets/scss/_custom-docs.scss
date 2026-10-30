@@ -38,6 +38,15 @@
 //
 // > MISC
 //
+// >> Material Symbols fill
+// The docs load Material Symbols with FILL from 0 to 1, so an example can show
+// an outline icon with font-variation-settings: "FILL" 0. Keep every other
+// icon filled, the same as a site that loads only the filled icons.
+.material-symbols-rounded,
+.badge-az-experimental::before {
+  font-variation-settings: "FILL" 1;
+}
+
 // >> Highlighted preformatted text
 .highlight pre {
   padding-bottom: 1em;
