@@ -112,6 +112,7 @@ In your `custom.scss`, you'll import Arizona Bootstrap's source Sass files. You 
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "arizona-bootstrap/scss/override/utilities";
