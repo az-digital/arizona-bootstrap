@@ -36,25 +36,31 @@ The load path resolves both Arizona Bootstrap and its `bootstrap/scss/...` impor
 
 ## File structure
 
-Whenever possible, avoid modifying Bootstrap's core files. For Sass, that means creating your own stylesheet that imports Bootstrap so you can modify and extend it. Assuming you're using a package manager like npm, you'll have a file structure that looks like this:
+Whenever possible, avoid modifying Arizona Bootstrap's or Bootstrap's core files. For Sass, that means creating your own stylesheet that imports Arizona Bootstrap so you can modify and extend it. Assuming you're using a package manager like npm, you'll have a file structure that looks like this:
 
 ```text
 your-project/
 ├── scss/
 │   └── custom.scss
-└── node_modules/
+├── node_modules/
+│   ├── arizona-bootstrap/
+│   │   ├── js/
+│   │   └── scss/
 │   └── bootstrap/
 │       ├── js/
 │       └── scss/
 └── index.html
 ```
 
-If you've downloaded our source files and aren't using a package manager, you'll want to manually create something similar to that structure, keeping Bootstrap's source files separate from your own.
+If you've downloaded our source files and aren't using a package manager, you'll want to manually create something similar to that structure, keeping Arizona Bootstrap's and Bootstrap's source files separate from your own. Name the folders `arizona-bootstrap` and `bootstrap`, and use the folder that contains them as Sass's load path, here `--load-path=.` instead of `--load-path=node_modules`.
 
 ```text
 your-project/
 ├── scss/
 │   └── custom.scss
+├── arizona-bootstrap/
+│   ├── js/
+│   └── scss/
 ├── bootstrap/
 │   ├── js/
 │   └── scss/
@@ -63,68 +69,79 @@ your-project/
 
 ## Importing
 
-In your `custom.scss`, you'll import Bootstrap's source Sass files. You have two options: include all of Bootstrap, or pick the parts you need. We encourage the latter, though be aware there are some requirements and dependencies across our components. You also will need to include some JavaScript for our plugins.
+In your `custom.scss`, you'll import Arizona Bootstrap's source Sass files. You have two options: include all of Arizona Bootstrap, or pick the parts you need. Arizona Bootstrap's styles build on Bootstrap's and depend on each other, so we encourage the former. You also will need to include some JavaScript for our plugins.
 
 ```scss
 // Custom.scss
-// Option A: Include all of Bootstrap
+// Option A: Include all of Arizona Bootstrap
 
 // Include any default variable overrides here (though functions won't be available)
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "arizona-bootstrap/scss/arizona-bootstrap";
 
 // Then add additional custom code here
 ```
 
 ```scss
 // Custom.scss
-// Option B: Include parts of Bootstrap
+// Option B: Include parts of Arizona Bootstrap
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
 
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
+// 3. Include Arizona Bootstrap's variables, then the remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "arizona-bootstrap/scss/design-tokens";
+@import "arizona-bootstrap/scss/custom/variables";
+@import "arizona-bootstrap/scss/override/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
 
 // 5. Include remainder of required parts
-@import "../node_modules/bootstrap/scss/maps";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/root";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
 
 // 6. Optionally include any other parts as needed
-@import "../node_modules/bootstrap/scss/utilities";
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
-@import "../node_modules/bootstrap/scss/images";
-@import "../node_modules/bootstrap/scss/containers";
-@import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-@import "../node_modules/bootstrap/scss/utilities/api";
+@import "arizona-bootstrap/scss/override/utilities";
+@import "arizona-bootstrap/scss/custom/utilities";
+@import "bootstrap/scss/utilities/api";
 
-// 8. Add additional custom code here
+// 8. Optionally include Arizona Bootstrap's parts as needed
+@import "arizona-bootstrap/scss/custom/typography";
+@import "arizona-bootstrap/scss/override/typography";
+
+// 9. Add additional custom code here
 ```
 
-With that setup in place, you can begin to modify any of the Sass variables and maps in your `custom.scss`. You can also start to add parts of Bootstrap under the `// Optional` section as needed. We suggest using the full import stack from our `bootstrap.scss` file as your starting point.
+This list follows the order in `scss/arizona-bootstrap.scss`, which can change between releases. If you include only parts of Arizona Bootstrap, compare your list with that file when you upgrade.
+
+With that setup in place, you can begin to modify any of the Sass variables and maps in your `custom.scss`. You can also start to add parts of Bootstrap under the `// Optional` section as needed. We suggest using the full import stack from our `scss/arizona-bootstrap.scss` file as your starting point. Its Arizona Bootstrap imports are relative to its own folder, so add the `arizona-bootstrap/scss/` prefix to them when you copy them.
 
 ## Compiling
 
 In order to use your custom Sass code as CSS in the browser, you need a Sass compiler. Sass ships as a CLI package, but you can also compile it with other build tools like [Gulp](https://gulpjs.com/) or [Webpack](https://webpack.js.org/), or with a GUI applications. Some IDEs also have Sass compilers built in or as downloadable extensions.
 
-We like to use the CLI to compile our Sass, but you can use whichever method you prefer. From the command line, run the following:
+We like to use the CLI to compile our Sass, but you can use whichever method you prefer. From your project root, run the following:
 
 ```shell
-# Install Sass globally
-npm install -g sass
+# Install Sass in your project
+npm install --save-dev sass
 
 # Watch your custom Sass for changes and compile it to CSS
-sass --watch ./scss/custom.scss ./css/custom.css
+npx sass --watch --load-path=node_modules scss/custom.scss css/custom.css
 ```
 
 Learn more about your options at [sass-lang.com/install](https://sass-lang.com/install/) and [compiling with VS Code](https://code.visualstudio.com/docs/languages/css#_transpiling-sass-and-less-into-css).
@@ -154,42 +171,66 @@ Every Sass variable in Bootstrap includes the `!default` flag allowing you to ov
 
 You will find the complete list of Bootstrap's variables in `scss/_variables.scss`. Some variables are set to `null`, these variables don't output the property unless they are overridden in your configuration.
 
+Setting an Arizona Bootstrap variable to `null` doesn't bring back Bootstrap's value: `!default` treats `null` as unset, so Arizona's value is used. For example, `$btn-line-height: null;` still gives buttons Arizona's `24px`. To use Bootstrap's value, set it directly.
+
 Variable overrides must come after our functions are imported, but before the rest of the imports.
 
-Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Bootstrap via npm:
+Arizona Bootstrap's variables also include the `!default` flag, so set your overrides before importing Arizona Bootstrap. Don't import Bootstrap's `variables` before Arizona Bootstrap: Bootstrap's values would replace Arizona's brand colors, type sizes and other settings.
+
+Arizona Bootstrap's own variables, such as `$azurite`, aren't defined until you import it, so your overrides can't use them. To use a brand color in an override, import the design tokens first and use their `$az-color-brand-*` variables:
+
+```scss
+@import "arizona-bootstrap/scss/design-tokens";
+
+$primary: $az-color-brand-azurite;
+
+@import "arizona-bootstrap/scss/arizona-bootstrap";
+```
+
+Don't import Arizona Bootstrap's `custom/variables` first to get these values: maps such as `$colors` would be built from the default values and ignore your overrides.
+
+Some related variables are set separately rather than derived from each other. For example, `$link-hover-color` is Sonoran Red whatever `$link-color` is, so set them together:
+
+```scss
+$link-color: $az-color-brand-azurite;
+$link-hover-color: $az-color-brand-tinta;
+```
+
+Here's an example that changes the `background-color` and `color` for the `<body>` when importing and compiling Arizona Bootstrap via npm:
 
 ```scss
 // Required
-@import "../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 
 // Default variable overrides
 $body-bg: #000;
 $body-color: #111;
 
 // Required
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
-@import "../node_modules/bootstrap/scss/maps";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/root";
+@import "arizona-bootstrap/scss/design-tokens";
+@import "arizona-bootstrap/scss/custom/variables";
+@import "arizona-bootstrap/scss/override/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
 
 // Optional Bootstrap components here
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
 // etc
 ```
 
-Repeat as necessary for any variable in Bootstrap, including the global options below.
-
-{{< callout info >}}
-{{< partial "callouts/info-npm-starter.md" >}}
-{{< /callout >}}
+Repeat as necessary for any variable in Arizona Bootstrap or Bootstrap, including the global options below.
 
 ## Maps and loops
 
 Bootstrap includes a handful of Sass maps, key value pairs that make it easier to generate families of related CSS. We use Sass maps for our colors, grid breakpoints, and more. Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
 
 Some of our Sass maps are merged into empty ones by default. This is done to allow easy expansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
+
+Setting a map before the import replaces the whole map, not just the keys you list. This includes Arizona Bootstrap's own maps, such as `$headings-scale`: if you set it to `(1: (font-size: 3.5rem))`, `h1` loses its line height, weight and larger-screen sizes, and `h2` to `h6` fall back to Bootstrap's sizes. Copy the whole map from `scss/custom/_variables.scss` and change the values you need.
 
 ### Modify map
 
@@ -229,19 +270,22 @@ To remove colors from `$theme-colors`, or any other map, use `map-remove`. Be aw
 
 ```scss
 // Required
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
+@import "bootstrap/scss/functions";
+@import "arizona-bootstrap/scss/design-tokens";
+@import "arizona-bootstrap/scss/custom/variables";
+@import "arizona-bootstrap/scss/override/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
 $theme-colors: map-remove($theme-colors, "info", "light", "dark");
 
-@import "../node_modules/bootstrap/scss/maps";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/root";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
 
 // Optional
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
 // etc
 ```
 
