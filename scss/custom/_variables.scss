@@ -558,6 +558,24 @@ $headings-scale: (
 $breadcrumb-color: $azurite;
 $breadcrumb-hover-color: $azurite;
 
+// >> Cards
+
+// Brand-approved hover color sets for cards (see custom/_hover.scss). "cloud"
+// becomes .card.hover.bg-cloud, which triggers this preset; .bg-cloud paints the
+// resting state background, so the preset sets no background of its own. Each
+// key is a custom property the preset sets on the card, and each value is its
+// value.
+$card-hover-presets: (
+  "cloud": (
+    "bs-card-color": var(--bs-tinta),
+    "bs-card-title-color": var(--bs-azurite),
+    "az-card-hover-bg": var(--bs-blue),
+    "az-card-hover-color": var(--bs-white),
+    "az-card-hover-title-color": var(--bs-rain),
+    "az-card-hover-link-rgb": var(--bs-white-rgb),
+  ),
+);
+
 // >> Navs
 $nav-tabs-link-bg: var(--bs-secondary-bg);
 $nav-tabs-lg-link-padding: 1.25em 1.75em;

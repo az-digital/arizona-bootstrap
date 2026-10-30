@@ -48,3 +48,18 @@ In this example, the `.overflow-hidden` class is added to a `<div>` element surr
   </div>
 </div>
 {{< /example >}}
+
+## Card Colors
+
+On a `.card`, `.hover` together with `.bg-cloud` also changes the card's colors on hover: the background, the body text, the title, the icon, and the links. See [Cards: Icons]({{< docsref "/components/card#icons" >}}) for the full example and the rules. Only `.bg-cloud` turns this on. `.text-bg-cloud` and the other `.bg-*` classes do not.
+
+{{< example >}}
+<div class="card bg-cloud hover" style="width: 20rem;">
+  <div class="card-body">
+    <h3 class="card-title h5 fw-bold mb-2">
+      <a href="#top" class="stretched-link text-reset text-decoration-none">Card with Hover Colors</a>
+    </h3>
+    <p class="card-text">This card's colors should change when the card receives hover or focus.</p>
+  </div>
+</div>
+{{< /example >}}
