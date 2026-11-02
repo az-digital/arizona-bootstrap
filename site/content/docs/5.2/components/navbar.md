@@ -575,7 +575,7 @@ The brand element displays the logo of the site. A University of Arizona wordmar
     <a class="navbar-brand" href="#">
       <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#">
+    <button class="navbar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
@@ -597,7 +597,33 @@ The brand element displays the logo of the site. A University of Arizona wordmar
 ### Calls to Action Menu
 The Calls to Action menu provides greater visibility for certain high-value actions. It is recommended to provide no more than 3 CTAs.
 
-{{< example >}}
+{{< example show_markup=false >}}
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Apply</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Visit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="nav-link-text">Give</span>
+        </a>
+      </li>
+    </ul>
+    <button class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+```html
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
     <ul class="navbar-nav navbar-az-fullscreen-actions d-none d-lg-flex ms-auto me-3">
@@ -622,16 +648,40 @@ The Calls to Action menu provides greater visibility for certain high-value acti
     </button>
   </div>
 </nav>
-{{< /example >}}
+```
 
 ### Search
 
 For standalone usage and full component guidance, see [Search]({{< docsref "/components/search" >}}).
 
-{{< example >}}
+{{< example show_markup=false >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <form class="az-search ms-auto me-4" role="search">
+    <a class="navbar-brand invisible">
+      <img src="{{<docsextraref "/assets/brand/arizona-bootstrap-logo-webheader-white.svg" >}}" alt="University of Arizona">
+    </a>
+    <form class="az-search ms-auto" role="search">
+      <label class="visually-hidden" for="az-search">Search site</label>
+      <div class="input-group d-none d-lg-flex">
+        <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
+        <button class="btn" type="submit" aria-label="Submit search">
+          <span class="az-search-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <button class="btn d-lg-none az-search-toggle" type="button" aria-label="Search site">
+        <span class="az-search-icon" aria-hidden="true"></span>
+      </button>
+    </form>
+    <button class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+{{< /example >}}
+```html
+<nav class="navbar navbar-az-fullscreen">
+  <div class="container-lg">
+    <form class="az-search ms-auto ms-lg-0" role="search">
       <label class="visually-hidden" for="az-search">Search site</label>
       <div class="input-group d-none d-lg-flex">
         <input id="az-search" class="form-control" type="search" autocomplete="off" placeholder="Search" aria-label="Search site">
@@ -648,7 +698,7 @@ For standalone usage and full component guidance, see [Search]({{< docsref "/com
     </button>
   </div>
 </nav>
-{{< /example >}}
+```
 
 ### Modal Menu
 
