@@ -4491,16 +4491,12 @@
     return Toast._jQueryInterface
   };
 
-  function _defineProperties(e, r) {
-    for (var t = 0; t < r.length; t++) {
-      var o = r[t];
-      o.enumerable = o.enumerable || false, o.configurable = true, "value" in o && (o.writable = true), Object.defineProperty(e, _toPropertyKey(o.key), o);
-    }
-  }
-  function _createClass(e, r, t) {
-    return t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
-      writable: false
-    }), e;
+  function _defineAccessor(e, r, n, t) {
+    var c = {
+      configurable: true,
+      enumerable: true
+    };
+    return c[e] = t, Object.defineProperty(r, n, c);
   }
   function _extends() {
     return _extends = Object.assign ? Object.assign.bind() : function (n) {
@@ -4510,20 +4506,6 @@
       }
       return n;
     }, _extends.apply(null, arguments);
-  }
-  function _toPrimitive(t, e) {
-    if ("object" != typeof t || !t) return t;
-    var r;
-    if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) {
-      var i = r.call(t, e);
-      if ("object" != typeof i) return i;
-      throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return (String )(t);
-  }
-  function _toPropertyKey(t) {
-    var i = _toPrimitive(t, "string");
-    return "symbol" == typeof i ? i : i + "";
   }
 
   /**
@@ -4595,8 +4577,16 @@
     }
 
     // Getters
-    var _proto = Offcanvasmenu.prototype;
+    _defineAccessor("get", Offcanvasmenu, "AZ_VERSION", function () {
+      return AZ_VERSION;
+    });
+    _defineAccessor("get", Offcanvasmenu, "Default", function () {
+      return Default;
+    }
+
     // Public
+    );
+    var _proto = Offcanvasmenu.prototype;
     _proto.toggle = function toggle() {
       if ($(this._element).hasClass(CLASS_NAME_OPEN)) {
         this.close();
@@ -4775,17 +4765,7 @@
         }
       });
     };
-    return _createClass(Offcanvasmenu, null, [{
-      key: "AZ_VERSION",
-      get: function get() {
-        return AZ_VERSION;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default;
-      }
-    }]);
+    return Offcanvasmenu;
   }();
   /**
    * ------------------------------------------------------------------------
