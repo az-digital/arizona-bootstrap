@@ -380,7 +380,91 @@ Mix and match with other components and utilities as needed.
 
 Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styling and gain support for a third level of navigation.
 
-{{< example >}}
+{{< callout warning >}}
+AZ Navbar does not have a corresponding mobile display: applications using AZ Navbar should provide their own menu display for mobile devices.
+{{< /callout >}}
+
+{{< example show_markup=false  >}}
+<nav class="navbar navbar-az navbar-expand">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAz" aria-controls="navbarAz" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarAz">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Single Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            <li><a class="dropdown-item" href="#">Secondary Navigation</a></li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+          </ul>
+        </li>
+        <li class="nav-item d-none d-lg-flex" aria-hidden="true">
+          <span class="vr"></span>
+        </li>
+        <li class="nav-item dropdown btn-group d-none d-lg-flex">
+          <a class="nav-link" href="#">Split Dropdown</a>
+          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu" id="secondaryMenu1">
+            <li><a class="dropdown-item" href="#">Secondary Navigation - No Children</a></li>
+            <li>
+              <div class="btn-group">
+                <a class="dropdown-item" href="#">Secondary Navigation - Children</a>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu1" data-bs-auto-close="outside" aria-controls="tertiaryMenu1" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+              </div>
+              <ul id="tertiaryMenu1" class="collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 1">
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item disabled" aria-disabled="true">Secondary Navigation - Disabled</a></li>
+            <li>
+              <div class="btn-group">
+                <a class="dropdown-item" href="#">Secondary Navigation - Children Disabled</a>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="collapse" data-bs-target="#tertiaryMenu2" data-bs-auto-close="outside" aria-controls="tertiaryMenu2" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+              </div>
+              <ul id="tertiaryMenu2" class=" collapse" data-bs-parent="#secondaryMenu1" role="group" aria-label="Tertiary Menu 2">
+                <li><a href="#">Tertiary Navigation</a></li>
+                <li><a class="disabled" aria-disabled="true">Tertiary Navigation - Disabled</a></li>
+                <li><a href="#">Tertiary Navigation</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{< /example >}}
+```html
 <nav class="navbar navbar-az navbar-expand">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAz" aria-controls="navbarAz" aria-expanded="false" aria-label="Toggle navigation">
@@ -459,7 +543,7 @@ Add `.navbar-az` to an existing `.navbar` to gain additional Brand-approved styl
     </div>
   </div>
 </nav>
-{{< /example >}}
+```
 
 ## AZ Navbar Fullscreen
 <span class="badge badge-az-experimental mt-0">Arizona Bootstrap Experimental Feature</span>
