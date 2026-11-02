@@ -707,7 +707,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
   <div class="container-lg">
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbar-az-fullscreen-menu" aria-controls="navbar-az-fullscreen-menu" aria-label="Open site menu">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
@@ -719,7 +719,7 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
       <div class="modal-header">
         <div class="navbar navbar-az-fullscreen">
           <div class="container-lg">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
+            <button class="navbar-toggler" type="button" data-bs-dismiss="modal" aria-label="Close site menu">
               <span class="navbar-toggler-icon" aria-hidden="true"></span>
             </button>
           </div>
@@ -798,27 +798,30 @@ Opening the `.navbar-toggler` launches a `.modal-fullscreen` dialog containing u
             </div>
             <div id="navbar-az-fullscreen-nav-mobile-col" class="col-12 d-lg-none">
               <!-- initial mobile nav items -->
-              <div class="navbar-az-fullscreen-modal-menu-nav-col col-12">
-                <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Home</span>
-                    </a>
-                    <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home submenu">
-                      <span class="nav-toggle-icon" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Features</span>
-                    </a>
-                  </div>
-                  <div class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Pricing</span>
-                    </a>
-                  </div>
-                </nav>
+              <div class="navbar-az-fullscreen-nav-mobile-menu-container">
+                <div class="navbar-az-fullscreen-modal-menu-nav-col navbar-az-fullscreen-modal-menu-nav-col-primary col-lg-4">
+                  <div class="navbar-az-fullscreen-nav-mobile-menu-list-top"></div>
+                  <nav class="nav navbar-az-fullscreen-nav-primary" aria-label="Main navigation sections">
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Home</span>
+                      </a>
+                      <button class="btn nav-toggle nav-toggle-separated collapsed" type="button" data-az-menu-element="#navbar-az-fullscreen-primary-submenu" aria-controls="navbar-az-fullscreen-nav-mobile-col" aria-label="Toggle Home submenu">
+                        <span class="nav-toggle-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Features</span>
+                      </a>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span class="nav-link-text">Pricing</span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
