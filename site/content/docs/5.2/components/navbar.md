@@ -892,26 +892,7 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
         <div class="navbar-az-fullscreen-modal-menu container-lg">
           <div class="row g-0">
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
-            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
-              <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Apply</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Visit</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Give</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header-example" class="col-12 d-lg-none"></div>
           </div>
         </div>
       </div>
@@ -975,26 +956,7 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
         <div class="navbar-az-fullscreen-modal-menu container-lg">
           <div class="row g-0">
             <div class="col d-none d-lg-flex position-relative" id="az-navbar-az-fullscreen-primary-accordion-header"></div>
-            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none">
-              <!-- call-to-action items -->
-              <ul class="navbar-nav navbar-az-fullscreen-actions">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Apply</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Visit</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span class="nav-link-text">Give</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <div id="navbar-az-fullscreen-nav-mobile-col-header" class="col-12 d-lg-none"></div>
           </div>
         </div>
       </div>
