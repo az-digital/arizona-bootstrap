@@ -5,7 +5,10 @@
 //
 
 .btn {
-  --az-btn-focus-outline-color: var(--bs-bloom);
+  --az-btn-focus-outline-color: var(--bs-bougainvillea);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   letter-spacing: .14px;
 
   &:focus-visible {
@@ -13,15 +16,41 @@
     outline-offset: 2px;
     box-shadow: none;
   }
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 46px;
+  }
+
+  > [aria-hidden="true"] {
+    line-height: var(--bs-btn-line-height);
+  }
+
+  .badge {
+    top: 0;
+  }
 }
 
 .btn-sm {
-  line-height: .9375rem;
+  --bs-btn-line-height: 1.4375rem;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 29px;
+  }
 }
 
 .btn-lg {
-  line-height: 1.6875rem;
+  --bs-btn-line-height: 1.6875rem;
   letter-spacing: .18px;
+
+  &:has(.spinner-border),
+  &:has(.spinner-grow),
+  &.placeholder {
+    min-height: 55px;
+  }
 }
 
 // >> Solid Variants
@@ -33,17 +62,17 @@
 
 // Overriding btn-primary to mirror custom .btn-red
 .btn-primary {
-  @include button-variant(
-    $background: $red,
-    $border: $red,
-    $color: $white,
-    $hover-background: $chili,
-    $hover-border: $chili,
-    $hover-color: $white,
-    $active-background: $red,
-    $active-border: $red,
-    $active-color: $white
-  );
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-sonoran-red);
+  --bs-btn-hover-border-color: var(--bs-sonoran-red);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(var(--bs-black-rgb), .125);
 }
 
 // Overriding .btn-secondary to mirror custom .btn-blue
@@ -71,10 +100,16 @@
 
 // Overriding .btn-outline-primary to mirror custom .btn-outline-red
 .btn-outline-primary {
-  @include button-outline-variant(
-    $color: $red,
-    $color-hover: $white
-  );
+  --bs-btn-color: var(--bs-red);
+  --bs-btn-border-color: var(--bs-red);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--bs-red);
+  --bs-btn-hover-border-color: var(--bs-red);
+  --bs-btn-focus-shadow-rgb: var(--bs-red-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--bs-red);
+  --bs-btn-active-border-color: var(--bs-red);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(var(--bs-black-rgb), .125);
 }
 
 // Overriding .btn-outline-secondary to mirror custom .btn-outline-blue
@@ -87,8 +122,6 @@
 }
 
 .btn-link {
-  color: $link-color;
-  &:hover {
-    color: $link-hover-color;
-  }
+  --bs-btn-color: var(--bs-link-color);
+  --bs-btn-hover-color: var(--bs-link-hover-color);
 }

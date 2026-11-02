@@ -2,6 +2,38 @@
 // > Custom styling for the Card component
 //
 
+// >> Card icons
+
+// An icon in place of a card's image. It takes its color from the text color.
+// The extra .card in the selector wins over the font-size that icon font
+// classes set (for example, .material-symbols-rounded sets 24px).
+.card .card-icon {
+  display: block;
+  margin-bottom: $spacer;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+// Make an inline SVG icon 1em square, so font-size sets its size, the same as
+// an icon font. The SVG needs fill="currentColor" (or stroke="currentColor") to
+// take the text color.
+// stylelint-disable-next-line selector-no-qualifying-type
+.card svg.card-icon {
+  width: 1em;
+  height: 1em;
+}
+
+// >> Card titles on touch screens
+
+// If the device can't hover (most phones and tablets), always underline any
+// .hover-text-underline in a card. (A card with hover colors underlines its
+// own title there too; see custom/_hover.scss.)
+@media (hover: none) {
+  .card .hover-text-underline {
+    text-decoration: underline;
+  }
+}
+
 // >> Card header and footer
 
 // Remove top margin from card title
@@ -10,11 +42,8 @@
 }
 
 // Set default background color
-.card:not([class*=" text-bg-"]) > {
-  .card-header,
-  .card-footer {
-    background-color: $gray-200;
-  }
+.card:not([class*=" text-bg-"]) {
+  --bs-card-cap-bg: var(--bs-gray-200);
 }
 
 .card-header {
@@ -36,4 +65,12 @@
 .card > .card-header:has(.nav-tabs),
 .card > .card-header:has(.nav-pills) {
   background-color: initial;
+}
+
+// >> List groups in cards
+
+// Line up list group items with the card padding, so their text starts at the
+// same left edge as the card header and body.
+.card > .list-group {
+  --#{$prefix}list-group-item-padding-x: var(--#{$prefix}card-spacer-x);
 }

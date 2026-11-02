@@ -30,6 +30,21 @@
       }
     },
     {
+      "files": [
+        "scss/custom/_variables.scss",
+        "scss/override/_utilities.scss",
+        "scss/override/_variables.scss"
+      ],
+      "rules": {
+        "scss/dollar-variable-default": [
+          true,
+          {
+            "ignore": "local"
+          }
+        ]
+      }
+    },
+    {
       "files": "scss/**/*.{test,spec}.scss",
       "rules": {
         "scss/dollar-variable-default": null,

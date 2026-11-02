@@ -3,36 +3,52 @@
 */
 
 // generate rgb CSS custom properties for all colors
-$colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb, "$value");
+$colors-rgb: map-loop(map-merge($colors, ("dark-silver": $dark-silver)), to-rgb, "$value") !default;
 
 :root,
 [data-bs-theme="light"] {
+  --bs-font-material-symbols: "Material Symbols Rounded";
+  --bs-text-opacity: 1;
+  --bs-dark-silver: #{$dark-silver};
   @each $color, $value in $colors-rgb {
     --#{$prefix}#{$color}-rgb: #{$value};
+  }
+
+  @each $token, $value in $silvers {
+    --#{$prefix}#{$token}: #{$value};
+  }
+
+  // Gray scale needs rgb triplets too: Bootstrap emits `--bs-gray-*` but no
+  // `--bs-gray-*-rgb`, and rgba(var(--bs-gray-300-rgb), …) is used for the
+  // table striped/hover backgrounds.
+  @each $key, $value in $grays {
+    --#{$prefix}gray-#{$key}-rgb: #{to-rgb($value)};
   }
 }
 
 // text colors
-$text-colors: map-loop($colors-rgb, rgba-css-var, "$key", "text");
+$text-colors: map-loop($colors-rgb, rgba-css-var, "$key", "text") !default;
 
 // background colors
-$background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-var, "$key", "bg");
+$background-colors: map-loop(map-remove($colors-rgb, "dark-silver"), rgba-css-var, "$key", "bg") !default;
 
-$bg-grays: ();
+$bg-grays: () !default;
 @each $key, $value in $grays {
-  $bg-grays: map-merge($bg-grays, ("gray-" + $key: $value));
+  $bg-grays: map-merge($bg-grays, ("gray-" + $key: var(--#{$prefix}gray-#{$key})));
 }
+// stylelint-disable-next-line scss/dollar-variable-default -- Adds to the value above; !default would skip it
 $background-colors: map-merge($background-colors, $bg-grays);
 
 // primary, neutral, complimentary colors
-$pnc-colors: map-remove($colors-rgb, "dark-silver", "bloom", "sky", "leaf", "river", "mesa", "silver", "ash", "sage", "black");
+$pnc-colors: map-remove($colors-rgb, "dark-silver", "bougainvillea", "rain", "saguaro", "shade", "brick", "silver", "ash", "sage", "black") !default;
 
 // border colors
-$border-colors: map-loop(map-merge($pnc-colors, ("bloom": $bloom)), rgba-css-var, "$key", "border");
+$border-colors: map-loop(map-merge($pnc-colors, ("bougainvillea": $bougainvillea)), rgba-css-var, "$key", "border") !default;
 
 // focus ring colors
-$focus-ring-colors: map-loop($pnc-colors, rgba-css-var, "$key", "focus-ring");
+$focus-ring-colors: map-loop($pnc-colors, rgba-css-var, "$key", "focus-ring") !default;
 
+// stylelint-disable-next-line scss/dollar-variable-default -- Bootstrap already set $utilities; !default would skip this
 $utilities: map-merge(
   $utilities,
   (
@@ -84,6 +100,7 @@ $utilities: map-merge(
 );
 
 // override "info" text color
+// stylelint-disable-next-line scss/dollar-variable-default -- Bootstrap already set $utilities; !default would skip this
 $utilities: map-merge(
   $utilities,
   (

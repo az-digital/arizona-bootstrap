@@ -3,3 +3,4 @@
 **/vendor/
 /_site/
 /js/coverage/
+/scss/_design-tokens.scss

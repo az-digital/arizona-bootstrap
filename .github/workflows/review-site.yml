@@ -34,9 +34,9 @@ jobs:
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4.3.0
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
       - name: Docker authentication
-        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
         with:
           registry: ${{ vars.AZ_DOCKER_REGISTRY }}
           username: ${{ github.actor }}
@@ -69,6 +69,12 @@ jobs:
   review-site:
     name: Build & deploy review site
     needs: lint-code
+    # One deploy at a time per review site folder (named after the branch), so
+    # overlapping `aws s3 sync --delete` runs can't remove each other's files
+    # or both post a PR comment.
+    concurrency:
+      group: ${{ github.workflow }}-review-site-${{ github.head_ref || github.ref_name }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       checks: write
@@ -98,9 +104,9 @@ jobs:
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4.3.0
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
       - name: Docker authentication
-        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
         with:
           registry: ${{ vars.AZ_DOCKER_REGISTRY }}
           username: ${{ github.actor }}
@@ -145,7 +151,7 @@ jobs:
           fi
         shell: sh
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c # v6.2.4
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -154,7 +160,43 @@ jobs:
         run: |
           aws s3 sync --delete _site/ s3://${{ secrets.REVIEW_BUCKET }}${AZ_REVIEW_BASEURL}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.REVIEW_CDN }} --paths ${AZ_REVIEW_BASEURL}/*
+      - name: Comment review site URL on PR
+        # Fork PRs only get a read-only token, which can't comment.
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const marker = '<!-- arizona-bootstrap-review-site -->';
+            const body = `${marker}
+            Review site: ${process.env.AZ_SITE_HOST}${process.env.AZ_REVIEW_BASEURL}/`;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+
+            const previous = comments.filter((comment) =>
+              comment.user?.type === 'Bot' && comment.body?.includes(marker)
+            );
+
+            // Post a fresh comment so the link shows up near the latest
+            // activity, then remove the old ones (like Tugboat does).
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+            for (const comment of previous) {
+              await github.rest.issues.deleteComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: comment.id,
+              });
+            }
       - name: Display review site URL
-        # TODO: replace with step that publishes link to review site on PR.
         run: |
           echo "Review site deployed to ${AZ_SITE_HOST}${AZ_REVIEW_BASEURL}"

@@ -100,8 +100,8 @@
 // whole element on narrow viewports. Each side pins only its own edge and
 // leaves the opposite one auto: setting both would over-constrain `width`,
 // which resolves by dropping a different edge under ltr than under rtl.
-.bg-monsoon-sky-start,
-.bg-monsoon-sky-end {
+.bg-monsoon-rain-start,
+.bg-monsoon-rain-end {
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -115,19 +115,19 @@
     content: "";
     opacity: .4;
     background: {
-      image: url("img/monsoon-sky.svg");
+      image: url("img/monsoon-rain.svg");
       repeat: repeat-y;
       size: 300px;
     }
   }
 }
 
-.bg-monsoon-sky-start::before {
+.bg-monsoon-rain-start::before {
   inset: 0 auto 0 0;
   background-position: top left;
 }
 
-.bg-monsoon-sky-end::before {
+.bg-monsoon-rain-end::before {
   inset: 0 0 0 auto;
   background-position: top right;
 }
