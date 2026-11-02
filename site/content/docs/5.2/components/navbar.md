@@ -967,7 +967,7 @@ The modal's `.modal-header` reuses the non-modal navbar's brand, calls to action
 
 #### Modal Menu Footer
 
-Up to two `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns, using the `#navbar-az-fullscreen-modal-footer-top` and `#navbar-az-fullscreen-modal-footer-bottom` ids shown below. If you only need one footer bar, use the `-top` id to retain the overflow fade effect above it; omit both if your menu doesn't need footer link groups.
+Up to two `.modal-footer` bars can present secondary, audience-based link groups below the primary menu columns, using the `#navbar-az-fullscreen-modal-footer-top` and `#navbar-az-fullscreen-modal-footer-bottom` ids shown below.
 
 {{< example >}}
 <nav class="navbar navbar-az-fullscreen">
@@ -1033,6 +1033,14 @@ Up to two `.modal-footer` bars can present secondary, audience-based link groups
               </ul>
           </div>
         </nav>
+        <button type="button" class="btn navbar navbar-az-fullscreen-mobile-footer-btn d-lg-none" aria-controls="navbar-az-fullscreen-nav-mobile-col-footer" aria-label="Toggle Resources by Audience submenu" data-az-menu-element="#navbar-az-fullscreen-modal-footer-top">
+          <span class="navbar-az-fullscreen-mobile-footer-btn-text">
+            <span class="h2 navbar-brand">Resources by Audience</span>
+          </span>
+          <span class="nav-toggle collapsed navbar-az-fullscreen-mobile-footer-btn-icon">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -1044,8 +1052,11 @@ On desktop viewports (`lg` and above), the fullscreen modal synchronizes the hei
 
 This behavior is initialized by `enableNavbarAzFullscreen()` and is included automatically in the bundled Arizona Bootstrap JavaScript builds. If you assemble the component markup manually, keep the primary column on `.navbar-az-fullscreen-modal-menu-nav-col-primary` and apply `.navbar-az-fullscreen-nav-secondary` and `.navbar-az-fullscreen-nav-tertiary` to secondary and tertiary nav lists so the desktop synchronization logic can target the active columns correctly.
 
-#### Mobile Menu
-Documentation coming soon.
+#### Mobile Modal Display
+On mobile devices, the fullscreen modal has a different presentation, enabled by the `enableNavbarAzFullscreenMobileNav()` JavaScript included with Arizona Bootstrap:
+ - The Calls to Action menu is displayed below the search box instead of next to the menu toggle button.
+ - The menu is converted from a three-column collapsible menu to a paged display of the same three tiers of menu items. This display is enabled by JavaScript which parses the existing HTML for the desktop menu items. When the user scrolls a long list of menu items, a custom scroll shadow appears at the top of the list.
+ - The footer menus are converted to additional menu pages, accessible from footer buttons at the bottom of the modal.
 
 ### Fixed Top
 To fix the non-modal AZ Navbar Fullscreen to the top of the viewport, add Bootstrap's `.fixed-top` class to `.navbar-az-fullscreen`.
