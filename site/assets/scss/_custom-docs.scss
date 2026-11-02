@@ -238,11 +238,13 @@
   }
 
   .navbar-az-fullscreen-modal {
+    /* stylelint-disable-next-line declaration-no-important */
     padding-right: revert !important;
 
     .modal-header,
     .modal-body,
     .modal-footer {
+      /* stylelint-disable-next-line declaration-no-important */
       padding-right: revert !important;
     }
   }
