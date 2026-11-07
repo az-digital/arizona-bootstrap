@@ -108,7 +108,11 @@
 
     {{ range .Page.Params.extra_css -}}
     {{ "<!-- Custom styles for this template -->" | safeHTML }}
+    {{ with $.Page.Resources.Get . -}}
+    <link href="{{ .RelPermalink }}" rel="stylesheet">
+    {{- else -}}
     <link href="{{ . }}" rel="stylesheet">
+    {{- end }}
     {{- end }}
   </head>
   <body{{ with .Page.Params.body_class }} class="{{ . }}"{{ end }}>
