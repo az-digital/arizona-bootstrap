@@ -66,9 +66,11 @@
   "dependencies": {},
   "peerDependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "@az-digital/tokens": "^0.1.0"
   },
   "devDependencies": {
+    "@az-digital/tokens": "^0.1.0",
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
