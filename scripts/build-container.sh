@@ -75,7 +75,7 @@ fi
 #------------------------------------------------------------------------------
 # Use the checksum for the scripts, Dockerfile, & npm lockfile as an image tag.
 
-oldhash=$(taghash Dockerfile package-lock.json package.json scripts) \
+oldhash=$(taghash Dockerfile .npmrc package-lock.json package.json scripts) \
   || errorexit "Couldn't obtain the checksum for the lock files"
 oldtag="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${oldhash}"
 tagsearch=$(docker image ls --format '{{.ID}}' "$oldtag" ) \
@@ -91,7 +91,7 @@ if [ -n "$tagsearch" ]; then
 else
   logmessage "Building a new ${AZ_EPHEMERALIMAGENAME} image"
   workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
-  docker buildx build --load  --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR . \
+  docker buildx build --load  --platform=linux/amd64 --no-cache --secret id=npm_token,env=NODE_AUTH_TOKEN -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR . \
     || errorexit "Failed to build a new ${AZ_EPHEMERALIMAGENAME} Docker image preconfigured with the ${AZ_BOOTSTRAP_FROZEN_DIR} npm directory"
   tempname="old${oldhash}"
   logmessage "Making a throwaway container, named ${tempname}, to extract the updated npm setup"
@@ -102,7 +102,7 @@ else
   docker rm "$tempname" \
     || errorexit "Failed to clean up the temporary container ${tempname}"
   logmessage "Updated the npm setup in the actual source directory, to include in the hash for the tag"
-  lockhash=$(taghash Dockerfile package-lock.json package.json scripts) \
+  lockhash=$(taghash Dockerfile .npmrc package-lock.json package.json scripts) \
     || errorexit "Couldn't obtain the checksum from the updated files"
   ephemeral="${AZ_IMAGEPREFIX}${AZ_EPHEMERALIMAGENAME}:${lockhash}"
   docker tag "$workingtitle" "$ephemeral" \

@@ -33,6 +33,8 @@ scripts/build-container.sh
 
 The script tries to discover if you have already built an image using the current versions of several important configuration files, and doesn't try to re-build this if it already exists.
 
+Building requires access to `@az-digital/tokens` from GitHub Packages. For local builds, set `NODE_AUTH_TOKEN` to a GitHub personal access token (classic) with `read:packages` access to the package. In GitHub Actions, `GITHUB_TOKEN` is used; the `arizona-bootstrap` repository must be granted read access in the package's access settings. Do not commit access tokens.
+
 The initial build will be relatively slow, and may require reasonably fast Internet access. If you see errors that complain about failing to download various resources, and these errors aren't consistent from one build attempt to the next, you may be suffering a connection speed problem.
 
 The build environment uses a huge set of Node.js packages (under the control of the commonly used `npm` utility). Setting these packages up causes most of the delay, but ideally the image will provide you with Docker containers that start up quickly pre-configured with the build environment you need.
