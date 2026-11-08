@@ -15,7 +15,7 @@
 {{- end }}
 
 {{- if (ne .Page.Layout "examples") }}
-{{- $sassOptions := dict "outputStyle" "expanded" "precision" 6 -}}
+{{- $sassOptions := dict "outputStyle" "expanded" "precision" 6 "includePaths" (slice "node_modules") -}}
 {{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
 
 {{- $targetDocsCssPath := path.Join "docs" .Site.Params.docs_version "assets/css/docs.css" -}}

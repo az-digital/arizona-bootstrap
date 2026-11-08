@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Set variables for Docker images
         run: |
-          oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
+          oldhash=${{ hashFiles('Dockerfile', '.npmrc', 'package.json', 'package-lock.json', 'scripts/*') }}
           imageprefix=${{ vars.AZ_DOCKER_REGISTRY }}"/${GITHUB_REPOSITORY}/"
           imagestem="${imageprefix}${AZ_EPHEMERALIMAGENAME}:"
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
@@ -48,14 +48,16 @@ jobs:
           docker pull "$AZ_EPHEMERAL_IMAGE"
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
-          docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
+          docker buildx build --load --platform=linux/amd64 --no-cache --secret id=npm_token,env=NODE_AUTH_TOKEN -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
           docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
-          lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
+          lockhash=${{ hashFiles('Dockerfile', '.npmrc', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
           docker tag "$workingtitle" "$ephemeral"
           docker push "$ephemeral"
@@ -95,7 +97,7 @@ jobs:
         run: echo "AZ_TRIMMED_REF=${GITHUB_HEAD_REF}" >> ${GITHUB_ENV}
       - name: Set variables for Docker images
         run: |
-          oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
+          oldhash=${{ hashFiles('Dockerfile', '.npmrc', 'package.json', 'package-lock.json', 'scripts/*') }}
           imageprefix=${{ vars.AZ_DOCKER_REGISTRY }}"/${GITHUB_REPOSITORY}/"
           imagestem="${imageprefix}${AZ_EPHEMERALIMAGENAME}:"
           echo "AZ_OLD_HASH=${oldhash}" >> ${GITHUB_ENV}
@@ -118,14 +120,16 @@ jobs:
           docker pull "$AZ_EPHEMERAL_IMAGE"
       - name: Conditionally rebuild and save the Docker image
         if: ${{ steps.dockerpull.outcome == 'failure' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           workingtitle="${AZ_EPHEMERALIMAGENAME}:working"
-          docker buildx build --load --platform=linux/amd64 --no-cache -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
+          docker buildx build --load --platform=linux/amd64 --no-cache --secret id=npm_token,env=NODE_AUTH_TOKEN -t "$workingtitle" --build-arg AZ_BOOTSTRAP_FROZEN_DIR .
           tempname="old${AZ_OLD_HASH}"
           docker run --name "$tempname" "$workingtitle" true
           docker cp -a "${tempname}:${AZ_BOOTSTRAP_FROZEN_DIR}/." .
           docker rm "$tempname"
-          lockhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
+          lockhash=${{ hashFiles('Dockerfile', '.npmrc', 'package.json', 'package-lock.json', 'scripts/*') }}
           ephemeral="${AZ_IMAGE_STEM}${lockhash}"
           docker tag "$workingtitle" "$ephemeral"
           docker push "$ephemeral"

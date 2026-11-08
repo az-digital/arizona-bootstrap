@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.10
 FROM node:22.23.3-bookworm-slim
 
 ENV LANG=C.UTF-8
@@ -22,7 +23,7 @@ ENV NO_UPDATE_NOTIFIER=1
 
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
 
-COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
+COPY "package.json" ".npmrc" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
@@ -46,7 +47,8 @@ RUN apt-get update \
 
 WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 
-RUN mkdir /home/node/.npm \
+RUN --mount=type=secret,id=npm_token,env=NODE_AUTH_TOKEN,required=true \
+  mkdir /home/node/.npm \
   && chown node:node /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
   && npm install --foreground-scripts=true --loglevel=verbose \
