@@ -1,1 +1,2 @@
-{{ partial "redirect" (.Page.Params.redirect | absURL) }}
+{{- /* Trim the leading slash so absURL keeps the baseURL path, such as /arizona-bootstrap/v5. */ -}}
+{{ partial "redirect" (strings.TrimPrefix "/" .Page.Params.redirect | absURL) }}

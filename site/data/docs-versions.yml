@@ -10,9 +10,13 @@
   versions:
     - "2.0"
 
+# The docs version switcher lists every version in this group, newest first.
+# Add each new minor version here when preparing its release.
 - group: v5.x
-  baseurl: "https://digital.arizona.edu/arizona-bootstrap/docs"
+  baseurl: "https://digital.arizona.edu/arizona-bootstrap/v5/docs"
   description: "Current release, based on upstream Bootstrap v5."
   versions:
     - "5.0"
-
+    - "5.1"
+    - "5.2"
+    - "5.3"
