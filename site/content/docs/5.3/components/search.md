@@ -3,6 +3,7 @@ layout: docs
 title: Search
 description: <span class="badge badge-az-custom mt-3">Custom Arizona Bootstrap Component</span>
 group: components
+az_added_version: "5.1"
 toc: true
 ---
 

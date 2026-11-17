@@ -10,19 +10,43 @@
   {{- $versions_link = urls.JoinPath $page_slug "/" -}}
 {{- end -}}
 
+{{- /*
+  Pages added after 5.0 set `az_added_version` in their front matter, so older
+  versions link to their introduction instead of a page they don't have. (The
+  `added` parameter is the upstream Bootstrap version, not ours.)
+*/ -}}
+{{- $added_key := 0 -}}
+{{- with .Params.az_added_version -}}
+  {{- $parts := split (string .) "." -}}
+  {{- $added_key = add (mul (int (index $parts 0)) 1000) (int (index $parts 1)) -}}
+{{- end -}}
+
+{{- $v5 := index (where (index site.Data "docs-versions") "group" "v5.x") 0 -}}
+{{- $versions := slice -}}
+{{- range union $v5.versions (slice .Site.Params.docs_version) -}}
+  {{- $parts := split . "." -}}
+  {{- $versions = $versions | append (dict "version" . "key" (add (mul (int (index $parts 0)) 1000) (int (index $parts 1)))) -}}
+{{- end -}}
+
 <li class="nav-item dropdown">
   <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
     <span class="d-lg-none" aria-hidden="true">Arizona Bootstrap</span><span class="visually-hidden">Arizona Bootstrap&nbsp;</span> v{{ .Site.Params.docs_version }} <span class="visually-hidden">(switch to other versions)</span>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
     <li><h6 class="dropdown-header">v5 releases</h6></li>
+    {{- range sort $versions "key" "desc" }}
+      {{- $link := cond (and $versions_link (ge .key $added_key)) $versions_link "getting-started/introduction/" }}
+      {{- if eq .version $.Site.Params.docs_version }}
     <li>
-      <a class="dropdown-item d-flex align-items-center justify-content-between active" aria-current="true" href="{{ if .IsHome }}/{{ else }}{{- (printf `docs/%s/%s` $.Site.Params.docs_version $versions_link ) | relURL -}}{{ end }}">
-        Latest ({{ .Site.Params.docs_version }}.x)
+      <a class="dropdown-item d-flex align-items-center justify-content-between active" aria-current="true" href="{{ if $.IsHome }}{{ $.RelPermalink }}{{ else }}{{ (printf `docs/%s/%s` .version $link) | relURL }}{{ end }}">
+        v{{ .version }}.x
         <svg class="bi" aria-hidden="true"><use xlink:href="#check2"></use></svg>
       </a>
     </li>
-    <li>
+      {{- else }}
+    <li><a class="dropdown-item" href="{{ $v5.baseurl }}/{{ .version }}/{{ $link }}">v{{ .version }}.x</a></li>
+      {{- end }}
+    {{- end }}
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header">Previous releases</h6></li>
     <li><a class="dropdown-item" href="https://review.digital.arizona.edu/arizona-bootstrap/2.x/">v2.x</a></li>
