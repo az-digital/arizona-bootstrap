@@ -1,4 +1,4 @@
-FROM node:22.23.3-bookworm-slim
+FROM node:22.23.5-bookworm-slim
 
 ENV LANG=C.UTF-8
 
