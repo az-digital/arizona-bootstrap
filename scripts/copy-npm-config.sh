@@ -63,8 +63,8 @@ ownership=$(stat --format='%u:%g' "${AZ_BOOTSTRAP_SOURCE_DIR}/package.json") \
 
 if [ "$AZ_BOOTSTRAP_FROZEN_DIR" = "$AZ_BOOTSTRAP_SOURCE_DIR" ] ; then
   logmessage "Saved npm configuration specified as ${AZ_BOOTSTRAP_SOURCE_DIR}, so re-generating in place"
-  npm install \
-    || errorexit "npm install failed with status ${?}"
+  npm ci \
+    || errorexit "npm ci failed with status ${?}"
 else
   logmessage "Copying saved configuration from ${AZ_BOOTSTRAP_FROZEN_DIR} to ${AZ_BOOTSTRAP_SOURCE_DIR}"
   rsync --recursive --links "${AZ_BOOTSTRAP_FROZEN_DIR}/" "$AZ_BOOTSTRAP_SOURCE_DIR" \

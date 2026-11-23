@@ -22,7 +22,7 @@ ENV NO_UPDATE_NOTIFIER=1
 
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
 
-COPY "package.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
+COPY "package.json" "package-lock.json" "$AZ_BOOTSTRAP_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
@@ -49,7 +49,7 @@ WORKDIR $AZ_BOOTSTRAP_FROZEN_DIR
 RUN mkdir /home/node/.npm \
   && chown node:node /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
-  && npm install --foreground-scripts=true --loglevel=verbose \
+  && npm ci --foreground-scripts=true --loglevel=verbose \
   && find node_modules -name '.DS_Store' -exec rm {} \; \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
 
